@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="49738" started-at="2021-01-15T13:37:02Z" finished-at="2021-01-15T13:37:52Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="49738" started-at="2021-01-15T13:37:02Z" finished-at="2021-01-15T13:37:52Z">
+      <class name="com.platformX.tests.QA_017_Neuspjesno_Dodavanje_Ugovora_Test4">
+        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.platformX.tests.QA_017_Neuspjesno_Dodavanje_Ugovora_Test4@3967e60c]" name="setUp" is-config="true" duration-ms="5386" started-at="2021-01-15T14:37:03Z" finished-at="2021-01-15T14:37:08Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="qa_017_nesupjesno_dodavanje_ugovora_test4()[pri:0, instance:com.platformX.tests.QA_017_Neuspjesno_Dodavanje_Ugovora_Test4@3967e60c]" name="qa_017_nesupjesno_dodavanje_ugovora_test4" duration-ms="44336" started-at="2021-01-15T14:37:08Z" finished-at="2021-01-15T14:37:52Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- qa_017_nesupjesno_dodavanje_ugovora_test4 -->
+        <test-method status="PASS" signature="cleanUp()[pri:0, instance:com.platformX.tests.QA_017_Neuspjesno_Dodavanje_Ugovora_Test4@3967e60c]" name="cleanUp" is-config="true" duration-ms="1" started-at="2021-01-15T14:37:52Z" finished-at="2021-01-15T14:37:52Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- cleanUp -->
+      </class> <!-- com.platformX.tests.QA_017_Neuspjesno_Dodavanje_Ugovora_Test4 -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

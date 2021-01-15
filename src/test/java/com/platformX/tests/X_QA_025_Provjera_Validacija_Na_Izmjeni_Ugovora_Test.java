@@ -1,0 +1,32 @@
+package com.platformX.tests;
+
+import org.testng.annotations.Test;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import com.platformX.base.BaseTest;
+import com.platformX.page.HomePage;
+import com.platformX.page.LogInPage;
+import com.platformX.page.UgovoriPage;
+
+public class X_QA_025_Provjera_Validacija_Na_Izmjeni_Ugovora_Test extends BaseTest {
+
+	public X_QA_025_Provjera_Validacija_Na_Izmjeni_Ugovora_Test() throws IOException, FileNotFoundException {
+		super();
+	}
+
+	@Test
+	public void qa_025_provjera_validacija_na_izmjeni_ugovora_test() throws Exception {
+		LogInPage logInPage = new LogInPage(driver, PLATFORMX_PROPERTIES);
+		logInPage.verifyLogInPage();
+		logInPage.logIn();
+		HomePage homePage = new HomePage(driver);
+		homePage.verifyHomePage();
+		UgovoriPage ugovoriPage = homePage.navigateToUgovori();
+		ugovoriPage.verifikujUgovori();
+		String mjernoMjesto = ugovoriPage.dodajPotpisanUgovor();
+		ugovoriPage.verifikujUgovori();
+		ugovoriPage.verifikujUgovor(mjernoMjesto);
+		ugovoriPage.verifikujObaveznaPoljaIzmjenaUgovora(); // bug na UI, ne mogu se brisati vrijednosti u poljima
+	}
+
+}

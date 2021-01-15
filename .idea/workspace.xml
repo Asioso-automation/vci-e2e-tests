@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="8b4dd787-556a-4704-827d-a7affe3c56de" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/platformX/page/AvansiPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/platformX/page/AvansneFakturePage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/platformX/page/EnergetskiObracunPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/platformX/page/FinansijskeKarticePage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/platformX/page/IzvjestajiPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/platformX/page/KamatePage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/platformX/page/KorekcijeKamatePage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/platformX/page/KorekcijeRacunaPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/platformX/page/KupciZaTestneRacunePage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/platformX/page/LogInPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/platformX/page/MjernaMjestaPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/platformX/page/MonitoringEnergetskogObracunaPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/platformX/page/MonitoringObracunaPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/platformX/page/NaloziZaObracunPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/platformX/page/NerasporedjeneUplatePage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/platformX/page/OcitanjaBrojilaPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/platformX/page/RacuniPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/platformX/page/SapPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/platformX/page/SveUplatePage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/platformX/page/UmanjenjaCijenePage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/platformX/page/VrsteKnjizenjaPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/platformX/page/VrsteStavkiFinansijskeKarticePage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/platformX/tests/QA_002_Verifikuj_Stranice_Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/platformX/tests/QA_010_Dodaj_Uplatu_Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/platformX/tests/QA_011_Dodaj_Radnu_Jedinicu_Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/platformX/tests/QA_012_Dodaj_Operativno_Podrucje_Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/platformX/tests/QA_013_Dodaj_Ugovor_Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/platformX/tests/QA_014_Neuspjesno_Dodavanje_Ugovora_Test1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/platformX/tests/QA_015_Neuspjesno_Dodavanje_Ugovora_Test2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/platformX/tests/QA_016_Neuspjesno_Dodavanje_Ugovora_Test3.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/platformX/tests/QA_017_Neuspjesno_Dodavanje_Ugovora_Test4.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/platformX/tests/QA_018_Neuspjesno_Dodavanje_Ugovora_Test5.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/platformX/tests/QA_019_Neuspjesno_Dodavanje_Ugovora_Test6.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/platformX/tests/QA_020_Neuspjesno_Dodavanje_Ugovora_Test7.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/platformX/tests/QA_021_Provjera_Validacija_Na_Ugovoru_Test1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/platformX/tests/QA_022_Provjera_Validacija_Na_Ugovoru_Test2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/platformX/tests/QA_023_Izmjeni_Ugovor_Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/platformX/tests/QA_024_Izmjena_Polja_Potpisan_Na_Ugovoru_Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/platformX/tests/QA_027_Neuspjesna_Deaktivacija_Ugovora_Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/platformX/tests/QA_028_Odbaci_Ugovor_Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/platformX/tests/X_QA_025_Provjera_Validacija_Na_Izmjeni_Ugovora_Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/platformX/tests/X_QA_026_Deaktiviraj_Ugovor_Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/platformX/platformx.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/test suites/Ugovori.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-output/TM regression suite/TM regression tests.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-output/TM regression suite/TM regression tests.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-output/Ugovori validacije/Ugovori validacije.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-output/Ugovori validacije/Ugovori validacije.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-output/Ugovori validacije/testng-failed.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-output/junitreports/TEST-com.platformX.tests.QA_002_Verifikuj_Stranice_Test.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-output/junitreports/TEST-com.platformX.tests.QA_011_Dodaj_Radnu_Jedinicu_Test.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-output/junitreports/TEST-com.platformX.tests.QA_012_Dodaj_Operativno_Podrucje_Test.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-output/junitreports/TEST-com.platformX.tests.QA_013_Dodaj_Ugovor_Test.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-output/junitreports/TEST-com.platformX.tests.QA_014_Neuspjesno_Dodavanje_Ugovora_Test.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-output/junitreports/TEST-com.platformX.tests.QA_014_Neuspjesno_Dodavanje_Ugovora_Test1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-output/junitreports/TEST-com.platformX.tests.QA_015_Neuspjesno_Dodavanje_Ugovora_Test2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-output/junitreports/TEST-com.platformX.tests.QA_016_Neuspjesno_Dodavanje_Ugovora_Test3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-output/junitreports/TEST-com.platformX.tests.QA_017_Neuspjesno_Dodavanje_Ugovora_Test4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-output/junitreports/TEST-com.platformX.tests.QA_018_Neuspjesno_Dodavanje_Ugovora_Test5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-output/junitreports/TEST-com.platformX.tests.QA_019_Neuspjesno_Dodavanje_Ugovora_Test6.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-output/junitreports/TEST-com.platformX.tests.QA_020_Neuspjesno_Dodavanje_Ugovora_Test7.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-output/junitreports/TEST-com.platformX.tests.QA_021_Provjera_Validacija_Na_Ugovoru_Test.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-output/junitreports/TEST-com.platformX.tests.QA_021_Provjera_Validacija_Na_Ugovoru_Test1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-output/junitreports/TEST-com.platformX.tests.QA_022_Provjera_Validacija_Na_Ugovoru_Test2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-output/junitreports/TEST-com.platformX.tests.QA_023_Izmjeni_Ugovor_Test.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-output/junitreports/TEST-com.platformX.tests.QA_024_Izmjena_Polja_Signed_Na_Ugovoru_Test.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-output/junitreports/TEST-com.platformX.tests.QA_025_Provjera_Validacija_Na_Izmjeni_Ugovora_Test.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-output/junitreports/TEST-com.platformX.tests.QA_026_Deaktiviraj_Ugovor_Test.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-output/junitreports/TEST-com.platformX.tests.QA_027_Neuspjesna_Deaktivacija_Ugovora_Test.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-output/junitreports/TEST-com.platformX.tests.QA_028_Odbaci_Ugovor_Test.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-output/junitreports/TEST-com.platformX.tests.X_QA_026_Deaktiviraj_Ugovor_Test.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-output/old/TM regression suite/TM regression tests.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-output/old/TM regression suite/classes.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-output/old/TM regression suite/groups.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-output/old/TM regression suite/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-output/old/TM regression suite/main.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-output/old/TM regression suite/methods-alphabetical.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-output/old/TM regression suite/methods-not-run.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-output/old/TM regression suite/methods.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-output/old/TM regression suite/reporter-output.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-output/old/TM regression suite/testng.xml.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-output/old/TM regression suite/toc.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-output/old/Ugovori validacije/Ugovori validacije.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-output/old/Ugovori validacije/classes.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-output/old/Ugovori validacije/groups.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-output/old/Ugovori validacije/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-output/old/Ugovori validacije/main.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-output/old/Ugovori validacije/methods-alphabetical.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-output/old/Ugovori validacije/methods-not-run.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-output/old/Ugovori validacije/methods.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-output/old/Ugovori validacije/reporter-output.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-output/old/Ugovori validacije/testng.xml.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-output/old/Ugovori validacije/toc.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.project" beforeDir="false" afterPath="$PROJECT_DIR$/.project" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Facebook.iml" beforeDir="false" afterPath="$PROJECT_DIR$/PlatformX.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/debug.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/facebook/base/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/platformX/base/BaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/facebook/base/PageBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/platformX/base/PageBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/facebook/page/LoginFacebook.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/facebook/tests/FB_0001_LogIn_Test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/facebook/tests/FB_0002_SignUp_Test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/facebook/tests/FB_0003_SignUp_With_1000_Users_Test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/facebook/tests/FB_0004_SignUp_Validations_Test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/facebook/util/HandlerUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/platformX/util/HandlerUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/facebook/util/HelperUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/platformX/util/HelperUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/facebook/util/PropertiesUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/platformX/util/PropertiesUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/facebook/fb.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/maven/com.nesto.test/Test/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/maven/com.nesto.test/Test/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/facebook/base/BaseTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/facebook/base/PageBase.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/facebook/page/LoginFacebook.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/facebook/tests/FB_0001_LogIn_Test.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/facebook/tests/FB_0002_SignUp_Test.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/facebook/tests/FB_0003_SignUp_With_1000_Users_Test.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/facebook/tests/FB_0004_SignUp_Validations_Test.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/facebook/util/HandlerUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/facebook/util/HelperUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/facebook/util/PropertiesUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/facebook/fb.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-output/Default suite/Default test.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/Default suite/Default test.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-output/Default suite/Default test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/Default suite/Default test.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-output/Default suite/testng-failed.xml" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/Default suite/testng-failed.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-output/emailable-report.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/emailable-report.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-output/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-output/junitreports/TEST-com.facebook.tests.FB_0001_LogIn_Test.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-output/junitreports/TEST-com.facebook.tests.FB_0002_SignUp_Test.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-output/old/Default suite/classes.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/old/Default suite/classes.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-output/old/Default suite/methods-alphabetical.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/old/Default suite/methods-alphabetical.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-output/old/Default suite/methods.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/old/Default suite/methods.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-output/old/Default suite/testng.xml.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/old/Default suite/testng.xml.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-output/old/Default suite/toc.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/old/Default suite/toc.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-output/old/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/old/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-output/testng-failed.xml" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/testng-failed.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-output/testng-results.xml" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/testng-results.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="isMigrated" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>lp_properties</find>
+      <find>verifyca</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="vmOptionsForImporter" value="-Xmx768m" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1fEK1hjNnI4w11h0qKIhkI6X0CL" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553978227915" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Aleksandar\IdeaProjects\samPlatform\src\test\resources\prod" />
+      <recent name="C:\Users\Aleksandar\IdeaProjects\samPlatform\src\test\resources\integration" />
+    </key>
+  </component>
+  <component name="RunManager" selected="TestNG.QA_001_LogIn_LogOut_Test.qa_001_logIn_logOut_test">
+    <configuration name="BS_0000_LogIn_LogOut_Test.bs_0000_LogIn_LogOut_Test" type="TestNG" nameIsGenerated="true">
+      <module name="SAMPlatform" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.wayseven.sam.tests.bs.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.wayseven.sam.tests.bs" />
+      <option name="MAIN_CLASS_NAME" value="com.wayseven.sam.tests.bs.BS_0000_LogIn_LogOut_Test" />
+      <option name="METHOD_NAME" value="bs_0000_LogIn_LogOut_Test" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LP_0000_LogIn_LogOut_Test" type="TestNG" nameIsGenerated="true">
+      <module name="SAMPlatform" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.wayseven.sam.tests.lp.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.wayseven.sam.tests.lp" />
+      <option name="MAIN_CLASS_NAME" value="com.wayseven.sam.tests.lp.LP_0000_LogIn_LogOut_Test" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="QA_001_LogIn_LogOut_Test.qa_001_logIn_logOut_test" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.platformX.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.platformX.tests" />
+      <option name="MAIN_CLASS_NAME" value="com.platformX.tests.QA_001_LogIn_LogOut_Test" />
+      <option name="METHOD_NAME" value="qa_001_logIn_logOut_test" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="QA_002_Verifikuj_Stranice_Test.qa_002_verifikuj_stranice_test" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.platformX.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.platformX.tests" />
+      <option name="MAIN_CLASS_NAME" value="com.platformX.tests.QA_002_Verifikuj_Stranice_Test" />
+      <option name="METHOD_NAME" value="qa_002_verifikuj_stranice_test" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="QA_013_Dodaj_Ugovor_Test" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.platformX.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.platformX.tests" />
+      <option name="MAIN_CLASS_NAME" value="com.platformX.tests.QA_013_Dodaj_Ugovor_Test" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="QA_013_Dodaj_Ugovor_Test.qa_013_dodaj_ugovor_test" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.platformX.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.platformX.tests" />
+      <option name="MAIN_CLASS_NAME" value="com.platformX.tests.QA_013_Dodaj_Ugovor_Test" />
+      <option name="METHOD_NAME" value="qa_013_dodaj_ugovor_test" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="X_QA_026_Deaktiviraj_Ugovor_Test.qa_026_deaktiviraj_ugovor_test" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.platformX.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.platformX.tests" />
+      <option name="MAIN_CLASS_NAME" value="com.platformX.tests.X_QA_026_Deaktiviraj_Ugovor_Test" />
+      <option name="METHOD_NAME" value="qa_026_deaktiviraj_ugovor_test" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="TestNG.QA_001_LogIn_LogOut_Test.qa_001_logIn_logOut_test" />
+        <item itemvalue="TestNG.X_QA_026_Deaktiviraj_Ugovor_Test.qa_026_deaktiviraj_ugovor_test" />
+        <item itemvalue="TestNG.QA_013_Dodaj_Ugovor_Test.qa_013_dodaj_ugovor_test" />
+        <item itemvalue="TestNG.QA_013_Dodaj_Ugovor_Test" />
+        <item itemvalue="TestNG.QA_002_Verifikuj_Stranice_Test.qa_002_verifikuj_stranice_test" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8b4dd787-556a-4704-827d-a7affe3c56de" name="Default Changelist" comment="" />
+      <created>1553881451565</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1553881451565</updated>
+      <workItem from="1595777604777" duration="721000" />
+      <workItem from="1595778352417" duration="8000" />
+      <workItem from="1597840662193" duration="580000" />
+      <workItem from="1597842294085" duration="654000" />
+      <workItem from="1599287979955" duration="92000" />
+      <workItem from="1600591856212" duration="68000" />
+      <workItem from="1601712395825" duration="230000" />
+      <workItem from="1601712858614" duration="214000" />
+      <workItem from="1603010590337" duration="65000" />
+      <workItem from="1603010762182" duration="126000" />
+      <workItem from="1603655772002" duration="186000" />
+      <workItem from="1604744396890" duration="631000" />
+      <workItem from="1607240925716" duration="62000" />
+      <workItem from="1607850699098" duration="6000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+</project>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Ugovori validacije]">
+  <test name="Ugovori validacije(failed)">
+    <classes>
+      <class name="com.platformX.tests.QA_020_Neuspjesno_Dodavanje_Ugovora_Test7">
+        <methods>
+          <include name="setUp"/>
+          <include name="cleanUp"/>
+          <include name="qa_020_nesupjesno_dodavanje_ugovora_test7"/>
+        </methods>
+      </class> <!-- com.platformX.tests.QA_020_Neuspjesno_Dodavanje_Ugovora_Test7 -->
+    </classes>
+  </test> <!-- Ugovori validacije(failed) -->
+</suite> <!-- Failed suite [Ugovori validacije] -->

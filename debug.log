@@ -1,0 +1,28 @@
+[0826/103846.049:ERROR:prune_crash_reports.cc(34)] PruneCrashReportDatabase: Failed to get pending reports
+[0830/130816.517:ERROR:prune_crash_reports.cc(34)] PruneCrashReportDatabase: Failed to get pending reports
+[0905/104924.509:ERROR:prune_crash_reports.cc(34)] PruneCrashReportDatabase: Failed to get pending reports
+[0916/092047.539:ERROR:file_io.cc(89)] ReadExactly: expected 36, observed 0
+[0728/194007.073:ERROR:file_io.cc(89)] ReadExactly: expected 36, observed 0
+[0910/214854.613:ERROR:file_io.cc(90)] ReadExactly: expected 36, observed 0
+[0926/115055.668:ERROR:file_io.cc(90)] ReadExactly: expected 36, observed 0
+[1031/100215.315:ERROR:file_io.cc(90)] ReadExactly: expected 36, observed 0
+[1031/100243.000:ERROR:file_io.cc(90)] ReadExactly: expected 36, observed 0
+[1112/132755.470:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
+[1112/134154.247:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
+[1124/143231.134:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
+[1124/145402.520:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
+[1126/111243.906:ERROR:file_io.cc(90)] ReadExactly: expected 36, observed 0
+[1126/114733.060:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
+[1126/123054.619:ERROR:file_io.cc(90)] ReadExactly: expected 36, observed 0
+[1130/113621.886:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
+[1130/115051.116:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
+[1205/103408.957:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
+[1205/103628.706:ERROR:file_io.cc(90)] ReadExactly: expected 36, observed 0
+[1206/104336.620:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
+[1212/085307.670:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
+[1212/091744.830:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
+[1213/091242.656:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
+[1213/093441.510:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
+[1214/123348.090:ERROR:file_io.cc(90)] ReadExactly: expected 36, observed 0
+[1219/093440.322:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
+[1219/101004.194:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
