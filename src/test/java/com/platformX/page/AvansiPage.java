@@ -23,6 +23,7 @@ public class AvansiPage extends HomePage {
 		assertTrue(stranicaBtnWE.getText().trim().equals("AVANSI"), "Avansi: Naziv stranice nije dobar!");
 		assertTrue(naslovStraniceWE.getText().trim().equals("AVANSI"), "Avansi: Naziv stranice nije dobar!");
 		assertTrue(brojKolona().size() == 6, "Avansi: Broj kolona nije dobar!");
+		//test
 	}
 
 }
