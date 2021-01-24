@@ -37,6 +37,7 @@ public class QA_006_Dodaj_Uplatu_Poziv_Na_Broj_Test1 extends BaseTest {
 		dnevniciUplataPage.verifikujDnevniciUplataPage();
 		dnevniciUplataPage.dodajDnevnikUplata(banka, ziroRacun);
 		dnevniciUplataPage.verifyDnevnikUplata(banka, ziroRacun);
+		// TODO doraditi verifikaciju DnevnikUplata
 		dnevniciUplataPage.navigateToUplateSaSDetalja();
 		UplatePage uplatePage = new UplatePage(driver);
 		String uplatilac = uplatePage.dodajUplatuPozivNaBroj();

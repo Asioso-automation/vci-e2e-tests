@@ -3,13 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.platformX.tests.QA_028_Odbaci_Ugovor_Test">
+      <class name="com.platformX.tests.QA_008_Dodaj_Uplatu_Sa_Kupcem_Test">
         <methods>
           <include name="setUp"/>
           <include name="cleanUp"/>
-          <include name="qa_028_odbaci_ugovor_test"/>
+          <include name="qa_008_dodaj_uplatu_sa_kupcem_test"/>
         </methods>
-      </class> <!-- com.platformX.tests.QA_028_Odbaci_Ugovor_Test -->
+      </class> <!-- com.platformX.tests.QA_008_Dodaj_Uplatu_Sa_Kupcem_Test -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

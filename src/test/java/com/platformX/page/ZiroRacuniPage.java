@@ -4,7 +4,7 @@ import static org.testng.Assert.assertTrue;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-import org.openqa.selenium.By.ByXPath;
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -60,9 +60,11 @@ public class ZiroRacuniPage extends HomePage {
 		Thread.sleep(1000);
 		odaberiBankuWE.click();
 		odaberiBankuWE.sendKeys(banka);
-		Thread.sleep(1000);
-		odaberiBankuWE.sendKeys(Keys.ENTER);
 		Thread.sleep(2000);
+		driver.findElement(By.xpath("//div[contains(@class, 'v-list-item__title') and contains(., '" + banka + "')]")).click();
+		//div[contains(@class, 'measure-tab') and contains(., 'someText')]
+		// odaberiBankuWE.sendKeys(Keys.ENTER);
+		Thread.sleep(1000);
 		wait.until(ExpectedConditions.elementToBeClickable(ziroRacunWE));
 		ziroRacunWE.sendKeys(ziroRacun);
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));

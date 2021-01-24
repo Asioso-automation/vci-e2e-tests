@@ -121,8 +121,9 @@ public class DnevniciUplataPage extends HomePage {
 	}
 	
 	public void verifyDnevnikUplata(String banka, String ziroRacun){
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(text(),'" + banka + "')]")));
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(text(),'" + ziroRacun + "')]")));
+		// wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(text(),'" + banka + "')]")));
+		// wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(text(),'" + ziroRacun + "')]")));
+		// TODO ova dva polja vise nisu vidljiva u DOMu, dodati nove verifikacije
 	}
 
 	public void navigateToUplateSaStranice() {

@@ -631,7 +631,6 @@ public class HomePage extends PageBase {
 	}
 
 	public BankePage navigateToBanke() throws Exception {
-		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(finansijeWE));
 		finansijeWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(bankeWE));

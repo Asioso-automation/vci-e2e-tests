@@ -48,7 +48,7 @@ public class UplatePage extends HomePage {
 	@FindBy(xpath = "//div[4]/div/div/div[1]/div/input") 
 	private WebElement iznosWE;
 	
-	@FindBy(xpath = "//*[@id='application']/div[1]/main/div/div/div/div[2]/form/div[3]/div/button") 
+	@FindBy(xpath = "//div[2]/div/button") 
 	private WebElement dodajBtnWE;
 	
 	@FindBy(xpath = "//main/div/div/div/div[2]/div/div[1]") 
@@ -83,7 +83,6 @@ public class UplatePage extends HomePage {
 	}
 	
 	public String obrisiPozivNaBroj() throws InterruptedException {
-		WebDriverWait wait = new WebDriverWait(driver, 20);
 		String uplatilac = "Uplatilac " + getRandomName();
 		wait.until(ExpectedConditions.elementToBeClickable(pozivNaBrojWE));
 		pozivNaBrojWE.sendKeys("1987 - Poziv na broj: 1987, Broj računa: 1988");
@@ -119,6 +118,7 @@ public class UplatePage extends HomePage {
 		uplatilacWE.sendKeys(uplatilac);
 		wait.until(ExpectedConditions.elementToBeClickable(iznosWE));
 		iznosWE.sendKeys("100");
+		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
 		dodajBtnWE.click();
 		Thread.sleep(1000);
 		wait.until(ExpectedConditions.visibilityOf(porukaWE));
