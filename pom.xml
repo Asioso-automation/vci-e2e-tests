@@ -5,6 +5,9 @@
 	<groupId>com.nesto.test</groupId>
 	<artifactId>Test</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<properties>
+    	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
 	<dependencies>
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
@@ -37,6 +40,7 @@
 				<configuration>
 					<source>1.8</source>
 					<target>1.8</target>
+					<encoding>${project.build.sourceEncoding}</encoding>
 				</configuration>
 			</plugin>	
 		</plugins>
