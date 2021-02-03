@@ -48,8 +48,11 @@ public class UplatePage extends HomePage {
 	@FindBy(xpath = "//div[4]/div/div/div[1]/div/input") 
 	private WebElement iznosWE;
 	
-	@FindBy(xpath = "//div[2]/div/button") 
+	@FindBy(xpath = "//div[3]/div/button")
 	private WebElement dodajBtnWE;
+	
+	@FindBy(xpath = "//div[2]/div/button")
+	private WebElement dodaj2BtnWE;
 	
 	@FindBy(xpath = "//main/div/div/div/div[2]/div/div[1]") 
 	private WebElement porukaWE;
@@ -118,8 +121,8 @@ public class UplatePage extends HomePage {
 		uplatilacWE.sendKeys(uplatilac);
 		wait.until(ExpectedConditions.elementToBeClickable(iznosWE));
 		iznosWE.sendKeys("100");
-		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
-		dodajBtnWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(dodaj2BtnWE));
+		dodaj2BtnWE.click();
 		Thread.sleep(1000);
 		wait.until(ExpectedConditions.visibilityOf(porukaWE));
 		assertTrue(porukaWE.getText().equals("Uspješno završeno"), "UplatePage: Title is not good!");

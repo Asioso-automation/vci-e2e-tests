@@ -22,7 +22,7 @@ public class OpstinePage extends HomePage {
 		assertTrue(sekcijaBtnWE.getText().trim().equals("ŠIFARNICI"), "Opstine: Naziv sekcije nije dobar!");
 		assertTrue(stranicaBtnWE.getText().trim().equals("OPŠTINE"), "Opstine: Naziv stranice nije dobar!");
 		assertTrue(naslovStraniceWE.getText().trim().equals("OPŠTINE"), "Opstine: Naziv stranice nije dobar!");
-		assertTrue(brojKolona().size() == 3, "Opstine: Broj kolona nije dobar! ");
+		assertTrue(brojKolona().size() == 4, "Opstine: Broj kolona nije dobar! ");
 	}
 
 }

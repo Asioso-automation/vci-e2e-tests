@@ -76,6 +76,7 @@ public class ZiroRacuniPage extends HomePage {
 		WebDriverWait wait = new WebDriverWait(driver, 20);
 		wait.until(ExpectedConditions.visibilityOf(pretraziZiroRacuneWE));
 		Thread.sleep(1000);
+		wait.until(ExpectedConditions.elementToBeClickable(pretraziZiroRacuneWE));
 		pretraziZiroRacuneWE.click();
 		pretraziZiroRacuneWE.sendKeys(ziroRacun);
 		pretraziZiroRacuneWE.sendKeys(Keys.ENTER);

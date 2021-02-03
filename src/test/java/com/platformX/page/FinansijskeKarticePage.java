@@ -17,10 +17,10 @@ public class FinansijskeKarticePage extends HomePage {
 	@FindBy(xpath = "//header/div/button[2]")
 	private WebElement stampajBtnWE;
 
-	@FindBy(xpath = "//header/div/button[3]")
+	@FindBy(xpath = "//header/div/button[1]")
 	private WebElement ukloniFiltereBtnWE;
 	
-	@FindBy(xpath = "//header/div/button[4]")
+	@FindBy(xpath = "//header/div/button[2]")
 	private WebElement osvjeziBtnWE;
 	
 	public void verifikujFinansijskeKartice() {

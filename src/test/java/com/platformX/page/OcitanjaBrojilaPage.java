@@ -21,7 +21,7 @@ public class OcitanjaBrojilaPage extends HomePage {
 		assertTrue(sekcijaBtnWE.getText().trim().equals("OČITANJA"), "OcitanjaBrojila: Naziv sekcije nije dobar!"); // bug, los naziv sekcije
 		assertTrue(stranicaBtnWE.getText().trim().equals("OČITANJA BROJILA"), "OcitanjaBrojila: Naziv stranice nije dobar!");
 		assertTrue(naslovStraniceWE.getText().trim().equals("OČITANJA BROJILA"), "OcitanjaBrojila: Naziv stranice nije dobar!");
-		assertTrue(brojKolona().size() == 13, "OcitanjaBrojila: Broj kolona nije dobar! ");
+		assertTrue(brojKolona().size() == 12, "OcitanjaBrojila: Broj kolona nije dobar! ");
 	}
 
 }

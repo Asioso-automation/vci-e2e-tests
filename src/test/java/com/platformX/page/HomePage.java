@@ -25,7 +25,7 @@ public class HomePage extends PageBase {
 		return driver.findElements(By.xpath("//th"));
 	}
 
-	@FindBy(xpath = "//div[2]/div[2]")
+	@FindBy(xpath = "//div[2]/div/div[3]/div[2]")
 	protected WebElement izlogujSeWE;
 
 	@FindBy(xpath = "//div/div[1]/div[1]/header/div/div[1]")
@@ -72,7 +72,7 @@ public class HomePage extends PageBase {
 	@FindBy(xpath = "//div[3]/a")
 	protected WebElement izvjestajiWE;
 
-	@FindBy(xpath = "//button[7]")
+	@FindBy(xpath = "//button[8]")
 	protected WebElement profilWE;
 
 	// Stranice

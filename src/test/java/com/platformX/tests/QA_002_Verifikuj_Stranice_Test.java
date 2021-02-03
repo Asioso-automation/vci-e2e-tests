@@ -163,8 +163,8 @@ public class QA_002_Verifikuj_Stranice_Test extends BaseTest {
 		vrsteKnjizenjaPage.verifikujVrsteKnjizenja();
 		VrsteStavkiFinansijskeKarticePage vrsteStavkiFinansijskeKartice = homePage.navigateToVrsteStavkiFinansijskeKartice();
 		vrsteStavkiFinansijskeKartice.verifikujVrsteStavkiFinansijskeKartice();
-		SapPage sapPage = homePage.navigateToSap();
-		sapPage.verifikujSap();
+//		SapPage sapPage = homePage.navigateToSap();
+//		sapPage.verifikujSap();
 		IzvjestajiPage izvjestajiPage = homePage.navigateToIzvjestaji();
 		izvjestajiPage.verifikujIzvjestaji();
 	}
