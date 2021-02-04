@@ -101,6 +101,12 @@ public class UgovoriPage extends HomePage {
 
 	@FindBy(xpath = "//div[2]/div[6]/div/div/div[1]/div/input")
 	private WebElement procenatUmanjenjaPDVaWE;
+	
+	@FindBy(xpath = "//div[2]/div[7]/div/div/div[1]/div[1]/input[1]")
+	private WebElement tipUgovoraWE;
+	
+	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '1 - Tip 1')]")
+	private WebElement tipUgovora1WE; 
 
 	@FindBy(xpath = "//div[2]/div[7]/div/div/div[1]/div/div")
 	private WebElement potpisanCBWE;
@@ -323,6 +329,10 @@ public class UgovoriPage extends HomePage {
 		cjenovnaKategorijaZaMrezuWE.sendKeys("20 - Kategorija mrezarine");
 		Thread.sleep(1000);
 		cjenovnaKategorijaZaMrezuWE.sendKeys(Keys.ENTER);
+		wait.until(ExpectedConditions.elementToBeClickable(tipUgovoraWE));
+		tipUgovoraWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(tipUgovora1WE));
+		tipUgovora1WE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(datumPocetkaWE));
 		datumPocetkaWE.clear();
 		datumPocetkaWE.sendKeys(datumPocetka);
@@ -591,6 +601,10 @@ public class UgovoriPage extends HomePage {
 		cjenovnaKategorijaZaMrezuWE.sendKeys("20 - Kategorija mrezarine");
 		Thread.sleep(1000);
 		cjenovnaKategorijaZaMrezuWE.sendKeys(Keys.ENTER);
+		wait.until(ExpectedConditions.elementToBeClickable(tipUgovoraWE));
+		tipUgovoraWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(tipUgovora1WE));
+		tipUgovora1WE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(potpisanCBWE));
 		potpisanCBWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(datumPotpisaWE));
