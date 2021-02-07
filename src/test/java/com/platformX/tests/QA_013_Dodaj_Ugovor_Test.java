@@ -24,7 +24,6 @@ public class QA_013_Dodaj_Ugovor_Test extends BaseTest {
 		UgovoriPage ugovoriPage = homePage.navigateToUgovori();
 		ugovoriPage.verifikujUgovori();
 		String mjernoMjesto = ugovoriPage.dodajUgovor("7 - Kategorija cijene 2", "15.07.2020.", "15.07.2020.", "1 - AMOSA542A", true);
-		// Kreiranje ugovora nije moguće. Datum važenja nije definisan na izabranoj cjenovnoj kategoriji.
 		ugovoriPage.verifikujUgovori();
 		ugovoriPage.verifikujUgovor(mjernoMjesto);
 	}

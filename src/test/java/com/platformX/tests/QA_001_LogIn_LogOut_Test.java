@@ -12,6 +12,8 @@ public class QA_001_LogIn_LogOut_Test extends BaseTest {
 	public QA_001_LogIn_LogOut_Test() throws IOException, FileNotFoundException {
 		super();
 	}
+	
+	// LogIn i logOut sa verifikacijama stranica
 
 	@Test
 	public void qa_001_logIn_logOut_test() throws Exception {

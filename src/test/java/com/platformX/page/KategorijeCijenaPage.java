@@ -22,7 +22,7 @@ public class KategorijeCijenaPage extends HomePage {
 		assertTrue(sekcijaBtnWE.getText().trim().equals("TARIFNI SISTEM"), "KategorijeCijena: Naziv sekcije nije dobar!");
 		assertTrue(stranicaBtnWE.getText().trim().equals("KATEGORIJE CIJENA"), "KategorijeCijena: Naziv stranice nije dobar!");
 		assertTrue(naslovStraniceWE.getText().trim().equals("KATEGORIJE CIJENA"), "KategorijeCijena: Naziv stranice nije dobar!");
-		assertTrue(brojKolona().size() == 7, "KategorijeCijena: Broj kolona nije dobar! ");
+		assertTrue(brojKolona().size() == 6, "KategorijeCijena: Broj kolona nije dobar! ");
 	}
 
 }

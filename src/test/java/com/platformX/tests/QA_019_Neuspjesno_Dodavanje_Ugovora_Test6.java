@@ -29,6 +29,7 @@ public class QA_019_Neuspjesno_Dodavanje_Ugovora_Test6 extends BaseTest {
 		ugovoriPage.verifikujUgovor(mjernoMjesto);
 		ugovoriPage.dodajUgovor("7 - Kategorija cijene 2", "15.07.2020.", "15.07.2020.", "2 - 1514BASD99", true);
 		ugovoriPage.verifikujPoruku("Broj protokola je već u upotrebi.");
+		// TODO Prolazi kreiranje ugovora, nema validacije
 	}
 
 }

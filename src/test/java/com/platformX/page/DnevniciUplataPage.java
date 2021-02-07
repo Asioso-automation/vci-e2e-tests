@@ -23,7 +23,7 @@ public class DnevniciUplataPage extends HomePage {
 	@FindBy(xpath = "//tr[2]/td[12]/button/span/i")
 	private WebElement barWE;
 
-	@FindBy(xpath = "//*[@id='application']/div[3]/div/div/a[3]/div[2]/div")
+	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., 'Uplate')]")
 	private WebElement uplateWE;
 	
 	@FindBy(xpath = "//header/div/a")

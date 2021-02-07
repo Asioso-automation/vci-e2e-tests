@@ -31,6 +31,7 @@ public class QA_024_Izmjena_Polja_Potpisan_Na_Ugovoru_Test extends BaseTest {
 		ugovoriPage.verifikujUgovor(mjernoMjesto);
 		ugovoriPage.verifikujBrojNecekranihKolona(1);
 		ugovoriPage.izmjeniPotpisanUgovor();
+		// TODO Nemoguce je odcekirati CB "potpisan", sto je ranije bio slucaj
 		ugovoriPage.verifikujUgovori();
 		ugovoriPage.verifikujUgovor(mjernoMjesto);
 		ugovoriPage.verifikujBrojNecekranihKolona(2);

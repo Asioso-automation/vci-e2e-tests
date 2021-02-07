@@ -29,10 +29,10 @@ public class UgovoriPage extends HomePage {
 	@FindBy(xpath = "//tr[2]/td[6]")
 	private WebElement kategorijaTabelaWE;
 
-	@FindBy(xpath = "//main/div/div/div[2]/div")
+	@FindBy(xpath = "//main/div/div/div/div[2]/div/div")
 	private WebElement porukaWE;
 
-	@FindBy(xpath = "//td[14]/button")
+	@FindBy(xpath = "//td[15]/button")
 	private WebElement burgerBarWE;
 
 	@FindBy(xpath = "//div[contains(text(), 'Uredi')]")
@@ -47,7 +47,7 @@ public class UgovoriPage extends HomePage {
 	@FindBy(xpath = "//div[2]/input")
 	private WebElement datumDeaktivacijeWE;
 	
-	@FindBy(xpath = "//main/div/div/div[2]/div/div[1]")
+	@FindBy(xpath = "//main/div/div/div/div[2]/div/div/div")
 	private WebElement datumDeaktivacijePorukaWE;
 	
 	@FindBy(xpath = "//div[2]/button[1]")
@@ -59,7 +59,7 @@ public class UgovoriPage extends HomePage {
 	@FindBy(xpath = "//textarea")
 	private WebElement napomenaWE;
 	
-	@FindBy(xpath = "//div[6]/div/div/div[4]/button[2]/span")
+	@FindBy(xpath = "//div[5]/div/div/div[4]/button[2]/span")
 	private WebElement potvrdiOdbacivanjeWE;
 	
 	@FindBy(xpath = "//tr[2]/td")
@@ -108,7 +108,7 @@ public class UgovoriPage extends HomePage {
 	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '1 - Tip 1')]")
 	private WebElement tipUgovora1WE; 
 
-	@FindBy(xpath = "//div[2]/div[7]/div/div/div[1]/div/div")
+	@FindBy(xpath = "//div[2]/div[8]/div/div/div[1]/div")
 	private WebElement potpisanCBWE;
 
 	@FindBy(xpath = "//div[1]/div[1]/div/div[1]/div[2]/input")
