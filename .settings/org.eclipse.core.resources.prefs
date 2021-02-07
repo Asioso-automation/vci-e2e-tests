@@ -57,3 +57,7 @@ encoding//src/test/java/com/platformX/tests/QA_019_Neuspjesno_Dodavanje_Ugovora_
 encoding//src/test/java/com/platformX/tests/QA_020_Neuspjesno_Dodavanje_Ugovora_Test7.java=UTF-8
 encoding//src/test/java/com/platformX/tests/QA_021_Provjera_Validacija_Na_Ugovoru_Test1.java=UTF-8
 encoding//src/test/java/com/platformX/tests/QA_022_Provjera_Validacija_Na_Ugovoru_Test2.java=UTF-8
+encoding//src/test/java/com/platformX/tests/QA_029_Iskljuci_Ugovor_Test.java=UTF-8
+encoding//src/test/java/com/platformX/tests/QA_030_Neuspjesno_Iskljucivanje_Ugovora_Test.java=UTF-8
+encoding//src/test/java/com/platformX/tests/QA_031_Ukljuci_Ugovor_Test.java=UTF-8
+encoding//src/test/java/com/platformX/tests/QA_032_Neuspjesno_Ukljucivanje_Ugovora_Test.java=UTF-8

@@ -64,6 +64,21 @@ public class UgovoriPage extends HomePage {
 	
 	@FindBy(xpath = "//tr[2]/td")
 	private WebElement porukaNaPraznojStraniciWE;
+	
+	@FindBy(xpath = "//div[9]/div[2]")
+	private WebElement iskljuciBtnWE;
+	
+	@FindBy(xpath = "//div[2]/input")
+	private WebElement datumIskljucenjaWE;
+	
+	@FindBy(xpath = "//div[5]//div/div[3]/button[2]")
+	private WebElement potvrdiIskljucivanjeWE;
+	
+	@FindBy(xpath = "//div[6]/div/form/div/div[2]/div/div/div[1]/div/div[1]/div[2]/input")
+	private WebElement datumUkljucenjaWE;
+	
+	@FindBy(xpath = "//div[6]//form/div/div[3]/button[2]")
+	private WebElement potvrdiUkljucivanjeWE;
 
 	// Dodaj ugovor elementi
 
@@ -720,6 +735,39 @@ public class UgovoriPage extends HomePage {
 		napomenaWE.sendKeys("Test");
 		wait.until(ExpectedConditions.elementToBeClickable(potvrdiOdbacivanjeWE));
 		potvrdiOdbacivanjeWE.click();
+	}
+	
+	public void iskljuciUgovor(String datumIskljucenja) throws InterruptedException {
+		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
+		burgerBarWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(iskljuciBtnWE));
+		iskljuciBtnWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(napomenaWE));
+		napomenaWE.sendKeys("Test");
+		wait.until(ExpectedConditions.elementToBeClickable(datumIskljucenjaWE));
+		datumIskljucenjaWE.sendKeys(datumIskljucenja);
+		wait.until(ExpectedConditions.elementToBeClickable(potvrdiIskljucivanjeWE));
+		potvrdiIskljucivanjeWE.click();
+		Thread.sleep(2000);
+	}
+	
+	public void provjeraIskljucenostiUgovora(String akcija) {
+		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
+		burgerBarWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(iskljuciBtnWE));
+		assertTrue(iskljuciBtnWE.getText().trim().equals(akcija), "Ugovori: Ugovor nema odgovarajucuakciju!");
+	}
+	
+	public void ukljuciUgovor(String datumUkljucenja) throws InterruptedException {
+		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
+		burgerBarWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(iskljuciBtnWE));
+		iskljuciBtnWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(datumUkljucenjaWE));
+		datumUkljucenjaWE.sendKeys(datumUkljucenja);
+		wait.until(ExpectedConditions.elementToBeClickable(potvrdiUkljucivanjeWE));
+		potvrdiUkljucivanjeWE.click();
+		Thread.sleep(2000);
 	}
 
 }
