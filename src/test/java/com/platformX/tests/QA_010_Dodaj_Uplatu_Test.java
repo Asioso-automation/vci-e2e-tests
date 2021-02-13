@@ -27,9 +27,8 @@ public class QA_010_Dodaj_Uplatu_Test extends BaseTest {
 		dnevniciUplataPage.verifikujDnevniciUplataPage();
 		dnevniciUplataPage.navigateToUplateSaStranice();
 		UplatePage uplatePage = new UplatePage(driver);
-		String uplatilac = uplatePage.dodajUplatuPozivNaBroj();
+		String uplatilac = uplatePage.dodajUplatu();
 		uplatePage.verifikujUplatu(uplatilac);
-		// TODO Promjenjena logika, test treba prilagoditi novim koracima 
 	}
 
 }

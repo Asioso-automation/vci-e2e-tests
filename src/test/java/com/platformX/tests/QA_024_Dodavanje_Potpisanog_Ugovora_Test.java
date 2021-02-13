@@ -8,9 +8,9 @@ import com.platformX.page.HomePage;
 import com.platformX.page.LogInPage;
 import com.platformX.page.UgovoriPage;
 
-public class QA_024_Izmjena_Polja_Potpisan_Na_Ugovoru_Test extends BaseTest {
+public class QA_024_Dodavanje_Potpisanog_Ugovora_Test extends BaseTest {
 
-	public QA_024_Izmjena_Polja_Potpisan_Na_Ugovoru_Test() throws IOException, FileNotFoundException {
+	public QA_024_Dodavanje_Potpisanog_Ugovora_Test() throws IOException, FileNotFoundException {
 		super();
 	}
 	
@@ -18,7 +18,7 @@ public class QA_024_Izmjena_Polja_Potpisan_Na_Ugovoru_Test extends BaseTest {
 	 uklanja opciju "potpisan" i provjerava kolonu na gridu*/
 
 	@Test
-	public void qa_024_izmjena_polja_potpisan_na_ugovoru_test() throws Exception {
+	public void qa_024_dodavanje_potpisanog_ugovora_test() throws Exception {
 		LogInPage logInPage = new LogInPage(driver, PLATFORMX_PROPERTIES);
 		logInPage.verifyLogInPage();
 		logInPage.logIn();
@@ -29,12 +29,14 @@ public class QA_024_Izmjena_Polja_Potpisan_Na_Ugovoru_Test extends BaseTest {
 		String mjernoMjesto = ugovoriPage.dodajPotpisanUgovor();
 		ugovoriPage.verifikujUgovori();
 		ugovoriPage.verifikujUgovor(mjernoMjesto);
-		ugovoriPage.verifikujBrojNecekranihKolona(1);
-		ugovoriPage.izmjeniPotpisanUgovor();
-		// TODO Nemoguce je odcekirati CB "potpisan", sto je ranije bio slucaj
-		ugovoriPage.verifikujUgovori();
-		ugovoriPage.verifikujUgovor(mjernoMjesto);
-		ugovoriPage.verifikujBrojNecekranihKolona(2);
+		ugovoriPage.verifikujBrojNecekiranihKolona(1);
+//		ugovoriPage.izmjeniPotpisanUgovor();
+//		Nemoguce je odcekirati CB "potpisan", sto je ranije bio slucaj
+//		ugovoriPage.verifikujUgovori();
+//		ugovoriPage.verifikujUgovor(mjernoMjesto);
+//		ugovoriPage.verifikujBrojNecekranihKolona(2);
+//		TODO napraviti obrnutu logiku, kroz uredi napraviti potpisan ugovor "IzmjenaPoljaPotpisanNaUgovoruTest"
+		
 	}
 
 }

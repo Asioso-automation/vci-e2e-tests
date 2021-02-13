@@ -51,7 +51,7 @@ public class UplatePage extends HomePage {
 	@FindBy(xpath = "//div[3]/div/button")
 	private WebElement dodajBtnWE;
 	
-	@FindBy(xpath = "//div[2]/div/button")
+	@FindBy(xpath = "//div[3]/div/button")
 	private WebElement dodaj2BtnWE;
 	
 	@FindBy(xpath = "//main/div/div/div/div[2]/div/div[1]") 
@@ -62,6 +62,27 @@ public class UplatePage extends HomePage {
 	
 	@FindBy(xpath = "//div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/button") 
 	private WebElement obrisiKupcaWE;
+	
+	public String dodajUplatu() throws InterruptedException {
+		String uplatilac = "Uplatilac " + getRandomName();
+			wait.until(ExpectedConditions.elementToBeClickable(dodajUplatuBtnWE));
+		dodajUplatuBtnWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(pozivNaBrojWE));
+		pozivNaBrojWE.sendKeys("1987 - Poziv na broj: 1987, Broj računa: 1988");
+		Thread.sleep(1000);
+		wait.until(ExpectedConditions.elementToBeClickable(odaberiBrojWE));
+		odaberiBrojWE.click();
+		Thread.sleep(1000);
+		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
+		wait.until(ExpectedConditions.elementToBeClickable(uplatilacWE));
+		uplatilacWE.sendKeys(uplatilac);
+		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
+		dodajBtnWE.click();
+		Thread.sleep(1000);
+		wait.until(ExpectedConditions.visibilityOf(porukaWE));
+		assertTrue(porukaWE.getText().equals("Uspješno završeno"), "UplatePage: Title is not good!");
+		return uplatilac;
+	}
 	
 	
 	public String dodajUplatuPozivNaBroj() throws InterruptedException {
@@ -113,7 +134,7 @@ public class UplatePage extends HomePage {
 		WebDriverWait wait = new WebDriverWait(driver, 20);
 		String uplatilac = "Uplatilac " + getRandomName();
 		wait.until(ExpectedConditions.elementToBeClickable(kupacWE));
-		kupacWE.sendKeys("1100016 - Korporacija 5");
+		kupacWE.sendKeys("4100010 - Firma 2");
 		Thread.sleep(500);
 		kupacWE.sendKeys(Keys.ENTER);
 		Thread.sleep(1000);

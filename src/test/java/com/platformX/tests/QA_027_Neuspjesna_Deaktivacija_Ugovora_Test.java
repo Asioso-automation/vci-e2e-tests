@@ -29,7 +29,7 @@ public class QA_027_Neuspjesna_Deaktivacija_Ugovora_Test extends BaseTest {
 		String mjernoMjesto = ugovoriPage.dodajUgovor("7 - Kategorija cijene 2", "15.07.2020.", "15.07.2020.", "1 - AMOSA542A", true);
 		ugovoriPage.verifikujUgovori();
 		ugovoriPage.verifikujUgovor(mjernoMjesto);
-		ugovoriPage.verifikujBrojNecekranihKolona(2);
+		ugovoriPage.verifikujBrojNecekiranihKolona(2);
 		ugovoriPage.deaktivirajUgovor("01.01.2020.");
 	}
 

@@ -62,7 +62,7 @@ public class QA_002_Verifikuj_Stranice_Test extends BaseTest {
 		super();
 	}
 	
-	// Test prolazi kroz sve sekcije i stranice na aplikaciji i verifikije ih
+	// Test prolazi kroz sve sekcije i stranice na aplikaciji i verifikuje ih
 
 	@Test
 	public void qa_002_verifikuj_stranice_test() throws Exception {

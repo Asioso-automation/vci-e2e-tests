@@ -3,7 +3,6 @@ package com.platformX.page;
 import static org.testng.Assert.assertTrue;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -29,7 +28,7 @@ public class ZiroRacuniPage extends HomePage {
 
 	// Kreiraj ziro racun elementi
 
-	@FindBy(xpath = "//div[2]/div[1]/div/div/div[1]/div[1]/input[1]")
+	@FindBy(xpath = "//div[1]/div/div/div[1]/div[1]/input[1]")
 	private WebElement odaberiBankuWE;
 
 	@FindBy(xpath = "//div[2]/div/div/div[1]/div/input")
@@ -61,6 +60,7 @@ public class ZiroRacuniPage extends HomePage {
 		odaberiBankuWE.click();
 		odaberiBankuWE.sendKeys(banka);
 		Thread.sleep(2000);
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(@class, 'v-list-item__title') and contains(., '" + banka + "')]")));
 		driver.findElement(By.xpath("//div[contains(@class, 'v-list-item__title') and contains(., '" + banka + "')]")).click();
 		//div[contains(@class, 'measure-tab') and contains(., 'someText')]
 		// odaberiBankuWE.sendKeys(Keys.ENTER);

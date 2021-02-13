@@ -8,9 +8,9 @@ import com.platformX.page.HomePage;
 import com.platformX.page.LogInPage;
 import com.platformX.page.UgovoriPage;
 
-public class X_QA_025_Provjera_Validacija_Na_Izmjeni_Ugovora_Test extends BaseTest {
+public class QA_025_Provjera_Validacija_Na_Izmjeni_Ugovora_Test extends BaseTest {
 
-	public X_QA_025_Provjera_Validacija_Na_Izmjeni_Ugovora_Test() throws IOException, FileNotFoundException {
+	public QA_025_Provjera_Validacija_Na_Izmjeni_Ugovora_Test() throws IOException, FileNotFoundException {
 		super();
 	}
 
@@ -26,7 +26,7 @@ public class X_QA_025_Provjera_Validacija_Na_Izmjeni_Ugovora_Test extends BaseTe
 		String mjernoMjesto = ugovoriPage.dodajPotpisanUgovor();
 		ugovoriPage.verifikujUgovori();
 		ugovoriPage.verifikujUgovor(mjernoMjesto);
-		ugovoriPage.verifikujObaveznaPoljaIzmjenaUgovora(); // bug na UI, ne mogu se brisati vrijednosti u poljima
+		ugovoriPage.verifikujObaveznaPoljaIzmjenaUgovora();
 	}
 
 }

@@ -41,7 +41,6 @@ public class QA_009_Preknjizi_Dnevnik_Uplata_Test extends BaseTest {
 		UplatePage uplatePage = new UplatePage(driver);
 		String uplatilac = uplatePage.dodajUplatuKupac();
 		uplatePage.verifikujUplatu(uplatilac);
-		// TODO Test ne prolazi, dobijem poruku: "Kupac nema nijednog duga niti aktivnog ugovora."
 	}
 
 }

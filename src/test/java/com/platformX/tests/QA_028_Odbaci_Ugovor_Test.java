@@ -30,7 +30,7 @@ public class QA_028_Odbaci_Ugovor_Test extends BaseTest {
 		String mjernoMjesto = ugovoriPage.dodajPotpisanUgovor();
 		ugovoriPage.verifikujUgovori();
 		ugovoriPage.verifikujUgovor(mjernoMjesto);
-		ugovoriPage.verifikujBrojNecekranihKolona(1);
+		ugovoriPage.verifikujBrojNecekiranihKolona(1);
 		ugovoriPage.odbaciUgovor();
 		ugovoriPage.verifikujOdbaceniUgovor(mjernoMjesto);
 		homePage.navigateToOdbaceniUgovori();

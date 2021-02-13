@@ -21,7 +21,7 @@ public class KorekcijeRacunaPage extends HomePage {
 		assertTrue(sekcijaBtnWE.getText().trim().equals("OBRAČUN"), "KorekcijeRacuna: Naziv sekcije nije dobar!");
 		assertTrue(stranicaBtnWE.getText().trim().equals("KOREKCIJE RAČUNA"), "KorekcijeRacuna: Naziv stranice nije dobar!");
 		assertTrue(naslovStraniceWE.getText().trim().equals("KOREKCIJE RAČUNA"), "KorekcijeRacuna: Naziv stranice nije dobar!");
-		assertTrue(brojKolona().size() == 14, "KorekcijeRacuna: Broj kolona nije dobar! ");
+		assertTrue(brojKolona().size() == 15, "KorekcijeRacuna: Broj kolona nije dobar! ");
 	}
 
 }

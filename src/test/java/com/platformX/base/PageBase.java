@@ -2,6 +2,7 @@ package com.platformX.base;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.Random;
 import java.util.UUID;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -37,6 +38,19 @@ public class PageBase {
 	
 	public static String getRandomName() {
 		return UUID.randomUUID().toString().substring(0, 4);
+	}
+	
+	protected String getRandomNumbers(int randomNumbersCount) {
+		String random = "";
+		int[] randomNumbers = new int[randomNumbersCount];
+		Random number = new Random();
+		for (int i = 0; i < randomNumbersCount; i++) {
+			randomNumbers[i] = number.nextInt(8) + 1;
+		}
+		for (int j =0; j < randomNumbers.length; j++){
+			random += randomNumbers[j];
+		}
+		return random;
 	}
 
 }

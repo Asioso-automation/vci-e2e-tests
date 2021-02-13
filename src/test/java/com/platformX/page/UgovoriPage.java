@@ -71,7 +71,7 @@ public class UgovoriPage extends HomePage {
 	@FindBy(xpath = "//div[2]/input")
 	private WebElement datumIskljucenjaWE;
 	
-	@FindBy(xpath = "//div[5]//div/div[3]/button[2]")
+	@FindBy(xpath = "//form/div/div[3]/button[2]")
 	private WebElement potvrdiIskljucivanjeWE;
 	
 	@FindBy(xpath = "//div[6]/div/form/div/div[2]/div/div/div[1]/div/div[1]/div[2]/input")
@@ -684,7 +684,7 @@ public class UgovoriPage extends HomePage {
 		return driver.findElements(By.xpath("//*[contains(@class, 'v-icon notranslate fas fa-times theme--light red--text text--darken-2')]"));
 	}
 	
-	public void verifikujBrojNecekranihKolona(int n) throws Exception{
+	public void verifikujBrojNecekiranihKolona(int n) throws Exception{
 		Thread.sleep(1000);
 		assertTrue(brojNecekiranihKolona().size() == n, "Broj necekiranih kolona nije dobar! ");
 	}
@@ -695,16 +695,22 @@ public class UgovoriPage extends HomePage {
 		wait.until(ExpectedConditions.elementToBeClickable(urediBtnWE));
 		urediBtnWE.click();
 		Thread.sleep(1000);
-		wait.until(ExpectedConditions.elementToBeClickable(postaWE));
-		postaWE.click();
-		postaWE.clear();
-		wait.until(ExpectedConditions.elementToBeClickable(mjestoWE));
-		mjestoWE.click();
-		mjestoWE.clear();
+		wait.until(ExpectedConditions.elementToBeClickable(procenatUmanjenjaPDVaWE));
+		procenatUmanjenjaPDVaWE.click();
+		procenatUmanjenjaPDVaWE.clear();
+		procenatUmanjenjaPDVaWE.sendKeys(Keys.SPACE, Keys.BACK_SPACE);
+		wait.until(ExpectedConditions.elementToBeClickable(brojUliceWE));
+		brojUliceWE.click();
+		brojUliceWE.clear();
+		brojUliceWE.sendKeys(Keys.SPACE, Keys.BACK_SPACE);
 		wait.until(ExpectedConditions.elementToBeClickable(dodajFormaBtnWE));
 		dodajFormaBtnWE.click();
+		Thread.sleep(500);
+		assertTrue(procenatUmanjenjaPDVaPorukaWE.getText().trim().equals("Obavezno polje"),
+				"Izmjena ugovora: Validaciona poruka na polju Procenat umanjenja PDV-a nije dobra!");
+		assertTrue(brojUlicePorukaWE.getText().trim().equals("Obavezno polje"),
+				"Izmjena ugovora: Validaciona poruka na polju Broj u ulici nije dobra!");
 		Thread.sleep(1000);
-		// bug na UI, ne mogu se brisati vrijednosti u poljima
 	}
 	
 	public void deaktivirajUgovor(String date) {
