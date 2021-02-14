@@ -5,7 +5,6 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.List;
 import java.util.UUID;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -59,7 +58,7 @@ public class UgovoriPage extends HomePage {
 	@FindBy(xpath = "//textarea")
 	private WebElement napomenaWE;
 	
-	@FindBy(xpath = "//div[5]/div/div/div[4]/button[2]/span")
+	@FindBy(xpath = "//body/div/div/div/div/div[4]/button[2]")
 	private WebElement potvrdiOdbacivanjeWE;
 	
 	@FindBy(xpath = "//tr[2]/td")
@@ -87,6 +86,9 @@ public class UgovoriPage extends HomePage {
 
 	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '11')]")
 	private WebElement odaberiKupcaWE;
+	
+	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., kupac)]")
+	private WebElement odaberiKupca1WE;
 
 	@FindBy(xpath = "//div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/button")
 	private WebElement obrisiKupcaWE;
@@ -152,6 +154,18 @@ public class UgovoriPage extends HomePage {
 
 	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '64103711 - 36K085053')]")
 	private WebElement odaberiMjernoMjesto5WE;
+	
+	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '61100021 - 36Z1SB1200027N')]")
+	private WebElement odaberiMjernoMjesto6WE;
+	
+	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '61100265 - 36Z0100154X')]")
+	private WebElement odaberiMjernoMjesto7WE;
+	
+	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '61100089 - dfsf56456')]")
+	private WebElement odaberiMjernoMjesto8WE;
+	
+	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '66100006 - 3PD53B2W')]")
+	private WebElement odaberiMjernoMjesto9WE;
 
 	@FindBy(xpath = "//div[1]/div[5]/div[2]/div/div/div[1]/div/input")
 	private WebElement nazivMjernogMjestaWE;
@@ -311,7 +325,7 @@ public class UgovoriPage extends HomePage {
 		assertTrue(brojKolona().size() == 15, "Ugovori: Broj kolona nije dobar! ");
 	}
 
-	public String dodajUgovor(String kategorijaCijene, String datumPocetka, String datumOd, String mjernoMjesto,
+	public String dodajUgovor(String kupac, String kategorijaCijene, String datumPocetka, String datumOd, String mjernoMjesto,
 			boolean reaktivnoBrojilo) throws InterruptedException {
 		WebDriverWait wait = new WebDriverWait(driver, 30);
 		String nazivMjernogMjesta = "Mjerno mjesto " + getRandomName();
@@ -319,10 +333,12 @@ public class UgovoriPage extends HomePage {
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
 		dodajBtnWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(kupacWE));
-		kupacWE.sendKeys("1100001 - Zanatska radionica 6");
+		kupacWE.sendKeys(kupac);
 		Thread.sleep(1000);
-		wait.until(ExpectedConditions.visibilityOf(odaberiKupcaWE));
-		odaberiKupcaWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(@class, 'v-list-item__title') and contains(., '" + kupac + "')]")));
+		driver.findElement(By.xpath("//div[contains(@class, 'v-list-item__title') and contains(., '" + kupac + "')]")).click();
+		// wait.until(ExpectedConditions.visibilityOf(odaberiKupcaWE));
+		// odaberiKupcaWE.click();
 		// kupacWE.sendKeys(Keys.ENTER);
 		Thread.sleep(1000);
 		wait.until(ExpectedConditions.elementToBeClickable(tarifnaGrupaWE));
@@ -373,6 +389,22 @@ public class UgovoriPage extends HomePage {
 		} else if (mjernoMjesto == "64103711 - 36K085053") {
 			wait.until(ExpectedConditions.visibilityOf(odaberiMjernoMjesto5WE));
 			odaberiMjernoMjesto5WE.click();
+		}
+		  else if (mjernoMjesto == "61100021 - 36Z1SB1200027N"){
+			wait.until(ExpectedConditions.visibilityOf(odaberiMjernoMjesto6WE));
+			odaberiMjernoMjesto6WE.click();
+		}
+		  else if (mjernoMjesto == "61100265 - 36Z0100154X"){
+				wait.until(ExpectedConditions.visibilityOf(odaberiMjernoMjesto7WE));
+				odaberiMjernoMjesto7WE.click();
+		}
+		  else if (mjernoMjesto == "61100089 - dfsf56456"){
+				wait.until(ExpectedConditions.visibilityOf(odaberiMjernoMjesto8WE));
+				odaberiMjernoMjesto8WE.click();
+		}
+		  else if (mjernoMjesto == "66100006 - 3PD53B2W"){
+				wait.until(ExpectedConditions.visibilityOf(odaberiMjernoMjesto9WE));
+				odaberiMjernoMjesto9WE.click();
 		}
 		wait.until(ExpectedConditions.elementToBeClickable(nazivMjernogMjestaWE));
 		nazivMjernogMjestaWE.sendKeys(nazivMjernogMjesta);
@@ -425,8 +457,6 @@ public class UgovoriPage extends HomePage {
 		assertTrue(mjernoMjestoTabelaWE.getText().contains(mjernoMjesto), "Ugovori: Naziv mjernog mjesta nije dobar!");
 		assertTrue(kategorijaTabelaWE.getText().contains("7 - Kategorija cijene 2"),
 				"Ugovori: Naziv kategorije nije dobar!");
-		assertTrue(kupacTabelaWE.getText().contains("1100001 - Zanatska radionica 6"),
-				"Ugovori: Naziv kupca nije dobar!");
 	}
 	
 	public void verifikujOdbaceniUgovor(String mjernoMjesto) throws InterruptedException {
@@ -590,7 +620,7 @@ public class UgovoriPage extends HomePage {
 //			"Pregled ugovora: Djelatnost nije dobra!");
 	}
 
-	public String dodajPotpisanUgovor() throws InterruptedException {
+	public String dodajPotpisanUgovor(String mjernoMjesto) throws InterruptedException {
 		WebDriverWait wait = new WebDriverWait(driver, 30);
 		String nazivMjernogMjesta = "Mjerno mjesto " + getRandomName();
 		String aktivnoBrojilo = "Aktivno brojilo " + getRandomName();
@@ -633,10 +663,40 @@ public class UgovoriPage extends HomePage {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].scrollIntoView(true);", datumPocetkaWE);
 		wait.until(ExpectedConditions.elementToBeClickable(mjernoMjestoWE));
-		mjernoMjestoWE.sendKeys("1 - AMOSA542A");
+		mjernoMjestoWE.sendKeys(mjernoMjesto);
 		Thread.sleep(1000);
-		wait.until(ExpectedConditions.visibilityOf(odaberiMjernoMjesto3WE));
-		odaberiMjernoMjesto3WE.click();
+		if (mjernoMjesto == "2 - 1514BASD99") {
+			wait.until(ExpectedConditions.visibilityOf(odaberiMjernoMjesto1WE));
+			odaberiMjernoMjesto1WE.click();
+		} else if (mjernoMjesto == "61100001 - 36Z03800001H") {
+			wait.until(ExpectedConditions.visibilityOf(odaberiMjernoMjesto2WE));
+			odaberiMjernoMjesto2WE.click();
+		} else if (mjernoMjesto == "1 - AMOSA542A") {
+			wait.until(ExpectedConditions.visibilityOf(odaberiMjernoMjesto3WE));
+			odaberiMjernoMjesto3WE.click();
+		} else if (mjernoMjesto == "64100070 - 151414") {
+			wait.until(ExpectedConditions.visibilityOf(odaberiMjernoMjesto4WE));
+			odaberiMjernoMjesto4WE.click();
+		} else if (mjernoMjesto == "64103711 - 36K085053") {
+			wait.until(ExpectedConditions.visibilityOf(odaberiMjernoMjesto5WE));
+			odaberiMjernoMjesto5WE.click();
+		}
+		  else if (mjernoMjesto == "61100021 - 36Z1SB1200027N"){
+			wait.until(ExpectedConditions.visibilityOf(odaberiMjernoMjesto6WE));
+			odaberiMjernoMjesto6WE.click();
+		}
+		  else if (mjernoMjesto == "61100265 - 36Z0100154X"){
+				wait.until(ExpectedConditions.visibilityOf(odaberiMjernoMjesto7WE));
+				odaberiMjernoMjesto7WE.click();
+		}
+		  else if (mjernoMjesto == "61100089 - dfsf56456"){
+				wait.until(ExpectedConditions.visibilityOf(odaberiMjernoMjesto8WE));
+				odaberiMjernoMjesto8WE.click();
+		}
+		  else if (mjernoMjesto == "66100006 - 3PD53B2W"){
+				wait.until(ExpectedConditions.visibilityOf(odaberiMjernoMjesto9WE));
+				odaberiMjernoMjesto9WE.click();
+		}
 		wait.until(ExpectedConditions.elementToBeClickable(nazivMjernogMjestaWE));
 		nazivMjernogMjestaWE.sendKeys(nazivMjernogMjesta);
 		wait.until(ExpectedConditions.elementToBeClickable(nazivNaStampanimDokumentimaWE));

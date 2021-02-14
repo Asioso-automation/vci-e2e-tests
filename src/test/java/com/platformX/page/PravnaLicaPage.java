@@ -21,6 +21,9 @@ public class PravnaLicaPage extends HomePage {
 	@FindBy(xpath = "//tr[2]/td[2]")
 	private WebElement nazivPravnogLicaTabelaWE;
 	
+	@FindBy(xpath = "//tr[2]/td[1]")
+	private WebElement idTabelaWE;
+	
 	// Elementi sa forme za dodavanje pravnog lica
 	
 	@FindBy(xpath = "//div[2]/div[1]/div/div/div[1]/div/input")
@@ -108,6 +111,11 @@ public class PravnaLicaPage extends HomePage {
 		Thread.sleep(1000);
 		wait.until(ExpectedConditions.visibilityOf(nazivPravnogLicaTabelaWE));
 		assertTrue(nazivPravnogLicaTabelaWE.getText().contains(nazivPravnogLica), "Pravna lica: Naziv pravnog lica nije dobar!");
+	}
+	
+	public String kreirajKupca() {
+		String kupac = idTabelaWE.getText() + " - " +  nazivPravnogLicaTabelaWE.getText();
+		return kupac;
 	}
 
 }

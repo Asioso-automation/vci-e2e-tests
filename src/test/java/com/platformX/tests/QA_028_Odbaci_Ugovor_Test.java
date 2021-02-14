@@ -27,7 +27,7 @@ public class QA_028_Odbaci_Ugovor_Test extends BaseTest {
 		homePage.verifyHomePage();
 		UgovoriPage ugovoriPage = homePage.navigateToUgovori();
 		ugovoriPage.verifikujUgovori();
-		String mjernoMjesto = ugovoriPage.dodajPotpisanUgovor();
+		String mjernoMjesto = ugovoriPage.dodajPotpisanUgovor("1 - AMOSA542A");
 		ugovoriPage.verifikujUgovori();
 		ugovoriPage.verifikujUgovor(mjernoMjesto);
 		ugovoriPage.verifikujBrojNecekiranihKolona(1);

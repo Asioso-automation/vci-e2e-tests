@@ -6,6 +6,7 @@ import java.io.IOException;
 import com.platformX.base.BaseTest;
 import com.platformX.page.HomePage;
 import com.platformX.page.LogInPage;
+import com.platformX.page.PravnaLicaPage;
 import com.platformX.page.UgovoriPage;
 
 public class QA_017_Neuspjesno_Dodavanje_Ugovora_Test4 extends BaseTest {
@@ -23,9 +24,15 @@ public class QA_017_Neuspjesno_Dodavanje_Ugovora_Test4 extends BaseTest {
 		logInPage.logIn();
 		HomePage homePage = new HomePage(driver);
 		homePage.verifyHomePage();
+		PravnaLicaPage pravnaLicaPage = homePage.navigateToPravnaLica();
+		pravnaLicaPage.verifikujPravnaLica();
+		String pravnoLice = pravnaLicaPage.dodajPravnoLice();
+		pravnaLicaPage.verifikujPravnaLica();
+		pravnaLicaPage.verifikujPravnoLice(pravnoLice);
+		String kupac = pravnaLicaPage.kreirajKupca();
 		UgovoriPage ugovoriPage = homePage.navigateToUgovori();
 		ugovoriPage.verifikujUgovori();
-		ugovoriPage.dodajUgovor("1 - Kategorija cijene 1", "15.07.2020.", "15.07.2020.", "2 - 1514BASD99", true);
+		ugovoriPage.dodajUgovor(kupac, "1 - Kategorija cijene 1", "15.07.2020.", "15.07.2020.", "2 - 1514BASD99", true);
 		ugovoriPage.verifikujPoruku("Kreiranje ugovora nije moguće. Datum važenja nije definisan na izabranoj cjenovnoj kategoriji.");
 	}
 

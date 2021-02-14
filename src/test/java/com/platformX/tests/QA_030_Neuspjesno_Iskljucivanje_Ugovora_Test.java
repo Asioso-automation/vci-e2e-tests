@@ -23,9 +23,9 @@ public class QA_030_Neuspjesno_Iskljucivanje_Ugovora_Test extends BaseTest {
 		homePage.verifyHomePage();
 		UgovoriPage ugovoriPage = homePage.navigateToUgovori();
 		ugovoriPage.verifikujUgovori();
-		String mjernoMjesto = ugovoriPage.dodajUgovor("7 - Kategorija cijene 2", "15.07.2020.", "15.07.2020.", "1 - AMOSA542A", true);
+		// String mjernoMjesto = ugovoriPage.dodajUgovor("7 - Kategorija cijene 2", "15.07.2020.", "15.07.2020.", "1 - AMOSA542A", true);
 		ugovoriPage.verifikujUgovori();
-		ugovoriPage.verifikujUgovor(mjernoMjesto);
+		// ugovoriPage.verifikujUgovor(mjernoMjesto);
 		ugovoriPage.iskljuciUgovor("15.07.2019.");
 		ugovoriPage.provjeraIskljucenostiUgovora("Isključi");
 	}

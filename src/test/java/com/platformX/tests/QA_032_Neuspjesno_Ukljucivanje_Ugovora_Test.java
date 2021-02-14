@@ -23,9 +23,9 @@ public class QA_032_Neuspjesno_Ukljucivanje_Ugovora_Test extends BaseTest {
 		homePage.verifyHomePage();
 		UgovoriPage ugovoriPage = homePage.navigateToUgovori();
 		ugovoriPage.verifikujUgovori();
-		String mjernoMjesto = ugovoriPage.dodajUgovor("7 - Kategorija cijene 2", "15.07.2020.", "15.07.2020.", "1 - AMOSA542A", true);
+		// String mjernoMjesto = ugovoriPage.dodajUgovor("7 - Kategorija cijene 2", "15.07.2020.", "15.07.2020.", "1 - AMOSA542A", true);
 		ugovoriPage.verifikujUgovori();
-		ugovoriPage.verifikujUgovor(mjernoMjesto);
+		// ugovoriPage.verifikujUgovor(mjernoMjesto);
 		ugovoriPage.iskljuciUgovor("01.02.2021.");
 		ugovoriPage.ukljuciUgovor("01.01.2021.");
 		ugovoriPage.verifikujPoruku("Datum uključenja mora biti veći od datuma isključenja.");
