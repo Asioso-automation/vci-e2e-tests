@@ -15,25 +15,25 @@ public class QA_017_Neuspjesno_Dodavanje_Ugovora_Test4 extends BaseTest {
 		super();
 	}
 
-	// Cjenovnik nema definisan datum vazenja
+	// Cjenovnik nema definisan datum vazenja	
+	// Test je suvisan, datum vazenja je sad obavezan osim ako je cjenovna kategorija za mrezarinu
 	
-	@Test
-	public void qa_017_nesupjesno_dodavanje_ugovora_test4() throws Exception {
-		LogInPage logInPage = new LogInPage(driver, PLATFORMX_PROPERTIES);
-		logInPage.verifyLogInPage();
-		logInPage.logIn();
-		HomePage homePage = new HomePage(driver);
-		homePage.verifyHomePage();
-		PravnaLicaPage pravnaLicaPage = homePage.navigateToPravnaLica();
-		pravnaLicaPage.verifikujPravnaLica();
-		String pravnoLice = pravnaLicaPage.dodajPravnoLice();
-		pravnaLicaPage.verifikujPravnaLica();
-		pravnaLicaPage.verifikujPravnoLice(pravnoLice);
-		String kupac = pravnaLicaPage.kreirajKupca();
-		UgovoriPage ugovoriPage = homePage.navigateToUgovori();
-		ugovoriPage.verifikujUgovori();
-		ugovoriPage.dodajUgovor(kupac, "1 - Kategorija cijene 1", "15.07.2020.", "15.07.2020.", "2 - 1514BASD99", true);
-		ugovoriPage.verifikujPoruku("Kreiranje ugovora nije moguće. Datum važenja nije definisan na izabranoj cjenovnoj kategoriji.");
-	}
-
+	//@Test
+	// public void qa_017_nesupjesno_dodavanje_ugovora_test4() throws Exception {
+	// 	LogInPage logInPage = new LogInPage(driver, PLATFORMX_PROPERTIES);
+	// 	logInPage.verifyLogInPage();
+	// 	logInPage.logIn();
+	// 	HomePage homePage = new HomePage(driver);
+	// 	homePage.verifyHomePage();
+	// 	PravnaLicaPage pravnaLicaPage = homePage.navigateToPravnaLica();
+	// 	pravnaLicaPage.verifikujPravnaLica();
+	// 	String pravnoLice = pravnaLicaPage.dodajPravnoLice();
+	// 	pravnaLicaPage.verifikujPravnaLica();
+	// 	pravnaLicaPage.verifikujPravnoLice(pravnoLice);
+	// 	String kupac = pravnaLicaPage.kreirajKupca();
+	// 	UgovoriPage ugovoriPage = homePage.navigateToUgovori();
+	// 	ugovoriPage.verifikujUgovori();
+	// 	ugovoriPage.dodajUgovor(kupac, "1 - Kategorija cijene 1", "15.07.2020.", "15.07.2020.", "2 - 1514BASD99", true);
+	// 	ugovoriPage.verifikujPoruku("Kreiranje ugovora nije moguće. Datum važenja nije definisan na izabranoj cjenovnoj kategoriji.");
+	// }
 }

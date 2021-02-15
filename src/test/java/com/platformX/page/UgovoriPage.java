@@ -167,6 +167,27 @@ public class UgovoriPage extends HomePage {
 	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '66100006 - 3PD53B2W')]")
 	private WebElement odaberiMjernoMjesto9WE;
 
+	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '64102459 - SK009281150R')]")
+	private WebElement odaberiMjernoMjesto10WE;
+
+	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '64102458 - 36Z0SK009')]")
+	private WebElement odaberiMjernoMjesto11WE;	
+
+	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '64103708 - 36066699C')]")
+	private WebElement odaberiMjernoMjesto12WE;	
+
+	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '64102798 - 36Z0SK085O')]")
+	private WebElement odaberiMjernoMjesto13WE;	
+
+	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '64102666 - 36Z0S501070Z')]")
+	private WebElement odaberiMjernoMjesto14WE;	
+
+	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '64100070 - 151414')]")
+	private WebElement odaberiMjernoMjesto15WE;	
+
+	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '64102347 - K009151661R')]")
+	private WebElement odaberiMjernoMjesto16WE;	
+
 	@FindBy(xpath = "//div[1]/div[5]/div[2]/div/div/div[1]/div/input")
 	private WebElement nazivMjernogMjestaWE;
 
@@ -405,7 +426,27 @@ public class UgovoriPage extends HomePage {
 		  else if (mjernoMjesto == "66100006 - 3PD53B2W"){
 				wait.until(ExpectedConditions.visibilityOf(odaberiMjernoMjesto9WE));
 				odaberiMjernoMjesto9WE.click();
-		}
+		}		
+		  else if (mjernoMjesto == "64102458 - 36Z0SK009"){
+			wait.until(ExpectedConditions.visibilityOf(odaberiMjernoMjesto11WE));
+			odaberiMjernoMjesto11WE.click();
+		}		
+		  else if (mjernoMjesto == "64102798 - 36Z0SK085O"){
+			wait.until(ExpectedConditions.visibilityOf(odaberiMjernoMjesto13WE));
+			odaberiMjernoMjesto13WE.click();
+		}		
+		  else if (mjernoMjesto == "64102666 - 36Z0S501070Z"){
+			wait.until(ExpectedConditions.visibilityOf(odaberiMjernoMjesto14WE));
+			odaberiMjernoMjesto14WE.click();
+		}	
+		  else if (mjernoMjesto == "64100070 - 151414"){
+			wait.until(ExpectedConditions.visibilityOf(odaberiMjernoMjesto15WE));
+			odaberiMjernoMjesto15WE.click();
+		}	
+		  else if (mjernoMjesto == "64102347 - K009151661R"){
+			wait.until(ExpectedConditions.visibilityOf(odaberiMjernoMjesto16WE));
+			odaberiMjernoMjesto16WE.click();
+		}		
 		wait.until(ExpectedConditions.elementToBeClickable(nazivMjernogMjestaWE));
 		nazivMjernogMjestaWE.sendKeys(nazivMjernogMjesta);
 		wait.until(ExpectedConditions.elementToBeClickable(nazivNaStampanimDokumentimaWE));
@@ -697,6 +738,14 @@ public class UgovoriPage extends HomePage {
 				wait.until(ExpectedConditions.visibilityOf(odaberiMjernoMjesto9WE));
 				odaberiMjernoMjesto9WE.click();
 		}
+		  else if (mjernoMjesto == "64102459 - SK009281150R"){
+				wait.until(ExpectedConditions.visibilityOf(odaberiMjernoMjesto10WE));
+				odaberiMjernoMjesto10WE.click();
+		}
+		  else if (mjernoMjesto == "64103708 - 36066699C"){
+			  wait.until(ExpectedConditions.visibilityOf(odaberiMjernoMjesto12WE));
+			  odaberiMjernoMjesto12WE.click();
+	    }
 		wait.until(ExpectedConditions.elementToBeClickable(nazivMjernogMjestaWE));
 		nazivMjernogMjestaWE.sendKeys(nazivMjernogMjesta);
 		wait.until(ExpectedConditions.elementToBeClickable(nazivNaStampanimDokumentimaWE));

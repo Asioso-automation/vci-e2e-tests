@@ -7,6 +7,7 @@ import com.platformX.base.BaseTest;
 import com.platformX.page.HomePage;
 import com.platformX.page.LogInPage;
 import com.platformX.page.UgovoriPage;
+import com.platformX.page.PravnaLicaPage;
 
 public class QA_029_Iskljuci_Ugovor_Test extends BaseTest {
 
@@ -21,11 +22,17 @@ public class QA_029_Iskljuci_Ugovor_Test extends BaseTest {
 		logInPage.logIn();
 		HomePage homePage = new HomePage(driver);
 		homePage.verifyHomePage();
+		PravnaLicaPage pravnaLicaPage = homePage.navigateToPravnaLica();
+		pravnaLicaPage.verifikujPravnaLica();
+		String pravnoLice = pravnaLicaPage.dodajPravnoLice();
+		pravnaLicaPage.verifikujPravnaLica();
+		pravnaLicaPage.verifikujPravnoLice(pravnoLice);
+		String kupac = pravnaLicaPage.kreirajKupca();		
 		UgovoriPage ugovoriPage = homePage.navigateToUgovori();
+		ugovoriPage.verifikujUgovori();		
+		String mjernoMjesto = ugovoriPage.dodajUgovor(kupac, "7 - Kategorija cijene 2", "15.07.2020.", "15.07.2020.", "64102798 - 36Z0SK085O", true);
 		ugovoriPage.verifikujUgovori();
-		// String mjernoMjesto = ugovoriPage.dodajUgovor("7 - Kategorija cijene 2", "15.07.2020.", "15.07.2020.", "1 - AMOSA542A", true);
-		ugovoriPage.verifikujUgovori();
-		// ugovoriPage.verifikujUgovor(mjernoMjesto);
+		ugovoriPage.verifikujUgovor(mjernoMjesto);
 		ugovoriPage.iskljuciUgovor("01.02.2021.");
 		ugovoriPage.provjeraIskljucenostiUgovora("Uključi");
 	}
