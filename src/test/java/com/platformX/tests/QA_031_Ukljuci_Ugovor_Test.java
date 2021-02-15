@@ -30,7 +30,7 @@ public class QA_031_Ukljuci_Ugovor_Test extends BaseTest {
 		String kupac = pravnaLicaPage.kreirajKupca();		
 		UgovoriPage ugovoriPage = homePage.navigateToUgovori();
 		ugovoriPage.verifikujUgovori();
-		String mjernoMjesto = ugovoriPage.dodajUgovor(kupac, "7 - Kategorija cijene 2", "15.07.2020.", "15.07.2020.", "64100070 - 151414", true);
+		String mjernoMjesto = ugovoriPage.dodajUgovor(kupac, "7 - Kategorija cijene 2", "15.07.2020.", "15.07.2020.", "64103710 - 36SK08501E", true);
 		ugovoriPage.verifikujUgovori();
 		ugovoriPage.verifikujUgovor(mjernoMjesto);
 		ugovoriPage.iskljuciUgovor("01.02.2021.");
