@@ -11,14 +11,14 @@ import com.platformX.page.LogInPage;
 import com.platformX.page.UplatePage;
 import com.platformX.page.ZiroRacuniPage;
 
-public class QA_007_Dodaj_Uplatu_Poziv_Na_Broj_Test2 extends BaseTest {
+public class QA_012_Dodavanje_Uplate_Poziv_Na_Broj_Test2 extends BaseTest {
 
-	public QA_007_Dodaj_Uplatu_Poziv_Na_Broj_Test2() throws IOException, FileNotFoundException {
+	public QA_012_Dodavanje_Uplate_Poziv_Na_Broj_Test2() throws IOException, FileNotFoundException {
 		super();
 	}
 
 	@Test
-	public void qa_007_dodaj_uplatu_poziv_na_broj_test2() throws Exception {
+	public void qa_012_dodavanje_uplate_poziv_na_broj_test2() throws Exception {
 		LogInPage logInPage = new LogInPage(driver, PLATFORMX_PROPERTIES);
 		logInPage.verifyLogInPage();
 		logInPage.logIn();

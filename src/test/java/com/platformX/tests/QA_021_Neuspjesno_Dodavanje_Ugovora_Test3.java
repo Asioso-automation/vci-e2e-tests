@@ -9,16 +9,16 @@ import com.platformX.page.LogInPage;
 import com.platformX.page.PravnaLicaPage;
 import com.platformX.page.UgovoriPage;
 
-public class QA_016_Neuspjesno_Dodavanje_Ugovora_Test3 extends BaseTest {
+public class QA_021_Neuspjesno_Dodavanje_Ugovora_Test3 extends BaseTest {
 
-	public QA_016_Neuspjesno_Dodavanje_Ugovora_Test3() throws IOException, FileNotFoundException {
+	public QA_021_Neuspjesno_Dodavanje_Ugovora_Test3() throws IOException, FileNotFoundException {
 		super();
 	}
 
 	// Datum pocetka je prije pocetka obracunskog perioda
 	
 	@Test
-	public void qa_016_nesupjesno_dodavanje_ugovora_test3() throws Exception {
+	public void qa_021_nesupjesno_dodavanje_ugovora_test3() throws Exception {
 		LogInPage logInPage = new LogInPage(driver, PLATFORMX_PROPERTIES);
 		logInPage.verifyLogInPage();
 		logInPage.logIn();

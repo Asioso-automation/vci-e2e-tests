@@ -3,13 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.platformX.tests.QA_028_Odbaci_Ugovor_Test">
+      <class name="com.platformX.tests.QA_005_Verifikuj_Sekciju_Mjerna_Mjesta_Test">
         <methods>
           <include name="setUp"/>
+          <include name="qa_005_verifikuj_sekciju_mjerna_mjesta_test"/>
           <include name="cleanUp"/>
-          <include name="qa_028_odbaci_ugovor_test"/>
         </methods>
-      </class> <!-- com.platformX.tests.QA_028_Odbaci_Ugovor_Test -->
+      </class> <!-- com.platformX.tests.QA_005_Verifikuj_Sekciju_Mjerna_Mjesta_Test -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

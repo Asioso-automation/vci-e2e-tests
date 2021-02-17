@@ -8,16 +8,16 @@ import com.platformX.page.HomePage;
 import com.platformX.page.LogInPage;
 import com.platformX.page.UgovoriPage;
 
-public class QA_025_Provjera_Validacija_Na_Izmjeni_Ugovora_Test extends BaseTest {
+public class QA_029_Provjera_Validacija_Na_Izmjeni_Ugovora_Test extends BaseTest {
 
-	public QA_025_Provjera_Validacija_Na_Izmjeni_Ugovora_Test() throws IOException, FileNotFoundException {
+	public QA_029_Provjera_Validacija_Na_Izmjeni_Ugovora_Test() throws IOException, FileNotFoundException {
 		super();
 	}
 
 	// Ovaj test ne prolazi vjerovatno zbog pogresne validacije
 
 	// @Test
-	// public void qa_025_provjera_validacija_na_izmjeni_ugovora_test() throws Exception {
+	// public void qa_029_provjera_validacija_na_izmjeni_ugovora_test() throws Exception {
 	// 	LogInPage logInPage = new LogInPage(driver, PLATFORMX_PROPERTIES);
 	// 	logInPage.verifyLogInPage();
 	// 	logInPage.logIn();

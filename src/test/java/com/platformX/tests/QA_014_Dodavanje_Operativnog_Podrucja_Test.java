@@ -8,14 +8,14 @@ import com.platformX.page.HomePage;
 import com.platformX.page.LogInPage;
 import com.platformX.page.OperativnaPodrucjaPage;
 
-public class QA_012_Dodaj_Operativno_Podrucje_Test extends BaseTest {
+public class QA_014_Dodavanje_Operativnog_Podrucja_Test extends BaseTest {
 
-	public QA_012_Dodaj_Operativno_Podrucje_Test() throws IOException, FileNotFoundException {
+	public QA_014_Dodavanje_Operativnog_Podrucja_Test() throws IOException, FileNotFoundException {
 		super();
 	}
 
 	@Test
-	public void qa_012_dodaj_operativno_podrucje_test() throws Exception {
+	public void qa_014_dodavanje_operativnog_podrucja_test() throws Exception {
 		LogInPage logInPage = new LogInPage(driver, PLATFORMX_PROPERTIES);
 		logInPage.verifyLogInPage();
 		logInPage.logIn();

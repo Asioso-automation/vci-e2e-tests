@@ -8,14 +8,14 @@ import com.platformX.page.BankePage;
 import com.platformX.page.HomePage;
 import com.platformX.page.LogInPage;
 
-public class QA_003_Dodaj_Banku_Test extends BaseTest {
+public class QA_008_Dodavanje_Banke_Test extends BaseTest {
 
-	public QA_003_Dodaj_Banku_Test() throws IOException, FileNotFoundException {
+	public QA_008_Dodavanje_Banke_Test() throws IOException, FileNotFoundException {
 		super();
 	}
 
 	@Test
-	public void qa_003_dodaj_banku_test() throws Exception {
+	public void qa_008_dodavanje_banke_test() throws Exception {
 		LogInPage logInPage = new LogInPage(driver, PLATFORMX_PROPERTIES);
 		logInPage.verifyLogInPage();
 		logInPage.logIn();

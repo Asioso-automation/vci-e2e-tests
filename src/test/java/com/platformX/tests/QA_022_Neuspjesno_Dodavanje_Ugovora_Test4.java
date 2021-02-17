@@ -9,9 +9,9 @@ import com.platformX.page.LogInPage;
 import com.platformX.page.PravnaLicaPage;
 import com.platformX.page.UgovoriPage;
 
-public class QA_017_Neuspjesno_Dodavanje_Ugovora_Test4 extends BaseTest {
+public class QA_022_Neuspjesno_Dodavanje_Ugovora_Test4 extends BaseTest {
 
-	public QA_017_Neuspjesno_Dodavanje_Ugovora_Test4() throws IOException, FileNotFoundException {
+	public QA_022_Neuspjesno_Dodavanje_Ugovora_Test4() throws IOException, FileNotFoundException {
 		super();
 	}
 
@@ -19,7 +19,7 @@ public class QA_017_Neuspjesno_Dodavanje_Ugovora_Test4 extends BaseTest {
 	// Test je suvisan, datum vazenja je sad obavezan osim ako je cjenovna kategorija za mrezarinu
 	
 	//@Test
-	// public void qa_017_nesupjesno_dodavanje_ugovora_test4() throws Exception {
+	// public void qa_022_nesupjesno_dodavanje_ugovora_test4() throws Exception {
 	// 	LogInPage logInPage = new LogInPage(driver, PLATFORMX_PROPERTIES);
 	// 	logInPage.verifyLogInPage();
 	// 	logInPage.logIn();

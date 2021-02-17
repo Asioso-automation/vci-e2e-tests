@@ -11,14 +11,14 @@ import com.platformX.page.LogInPage;
 import com.platformX.page.UplatePage;
 import com.platformX.page.ZiroRacuniPage;
 
-public class QA_009_Preknjizi_Dnevnik_Uplata_Test extends BaseTest {
+public class QA_016_Preknjizavanje_Dnevnika_Uplata_Test extends BaseTest {
 
-	public QA_009_Preknjizi_Dnevnik_Uplata_Test() throws IOException, FileNotFoundException {
+	public QA_016_Preknjizavanje_Dnevnika_Uplata_Test() throws IOException, FileNotFoundException {
 		super();
 	}
 
 	@Test
-	public void qa_009_preknjizi_dnevnik_uplata_test() throws Exception {
+	public void qa_016_preknjizavanje_dnevnika_uplata_test() throws Exception {
 		LogInPage logInPage = new LogInPage(driver, PLATFORMX_PROPERTIES);
 		logInPage.verifyLogInPage();
 		logInPage.logIn();

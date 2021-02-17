@@ -9,16 +9,16 @@ import com.platformX.page.LogInPage;
 import com.platformX.page.PravnaLicaPage;
 import com.platformX.page.UgovoriPage;
 
-public class QA_020_Neuspjesno_Dodavanje_Ugovora_Test7 extends BaseTest {
+public class QA_024_Neuspjesno_Dodavanje_Ugovora_Test6 extends BaseTest {
 
-	public QA_020_Neuspjesno_Dodavanje_Ugovora_Test7() throws IOException, FileNotFoundException {
+	public QA_024_Neuspjesno_Dodavanje_Ugovora_Test6() throws IOException, FileNotFoundException {
 		super();
 	}
 
 	// Obavezno polje broj reaktivnog brojila
 	
 	@Test
-	public void qa_020_nesupjesno_dodavanje_ugovora_test7() throws Exception {
+	public void qa_024_nesupjesno_dodavanje_ugovora_test6() throws Exception {
 		LogInPage logInPage = new LogInPage(driver, PLATFORMX_PROPERTIES);
 		logInPage.verifyLogInPage();
 		logInPage.logIn();

@@ -8,9 +8,9 @@ import com.platformX.page.HomePage;
 import com.platformX.page.LogInPage;
 import com.platformX.page.UgovoriPage;
 
-public class QA_024_Dodavanje_Potpisanog_Ugovora_Test extends BaseTest {
+public class QA_025_Dodavanje_Potpisanog_Ugovora_Test extends BaseTest {
 
-	public QA_024_Dodavanje_Potpisanog_Ugovora_Test() throws IOException, FileNotFoundException {
+	public QA_025_Dodavanje_Potpisanog_Ugovora_Test() throws IOException, FileNotFoundException {
 		super();
 	}
 	
@@ -18,7 +18,7 @@ public class QA_024_Dodavanje_Potpisanog_Ugovora_Test extends BaseTest {
 	 uklanja opciju "potpisan" i provjerava kolonu na gridu*/
 
 	@Test
-	public void qa_024_dodavanje_potpisanog_ugovora_test() throws Exception {
+	public void qa_025_dodavanje_potpisanog_ugovora_test() throws Exception {
 		LogInPage logInPage = new LogInPage(driver, PLATFORMX_PROPERTIES);
 		logInPage.verifyLogInPage();
 		logInPage.logIn();
