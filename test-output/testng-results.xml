@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="28941" started-at="2021-02-17T14:15:31Z" finished-at="2021-02-17T14:16:00Z">
+  <suite name="Default suite" duration-ms="97722" started-at="2021-02-26T09:01:32Z" finished-at="2021-02-26T09:03:10Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="28941" started-at="2021-02-17T14:15:31Z" finished-at="2021-02-17T14:16:00Z">
-      <class name="com.platformX.tests.QA_007_Verifikuj_Sekciju_Finansije_Test">
-        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.platformX.tests.QA_007_Verifikuj_Sekciju_Finansije_Test@3967e60c]" name="setUp" is-config="true" duration-ms="5471" started-at="2021-02-17T15:15:31Z" finished-at="2021-02-17T15:15:36Z">
+    <test name="Default test" duration-ms="97722" started-at="2021-02-26T09:01:32Z" finished-at="2021-02-26T09:03:10Z">
+      <class name="com.platformX.tests.QA_038_Neuspjesno_Iskljucivanje_Ugovora_Test">
+        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.platformX.tests.QA_038_Neuspjesno_Iskljucivanje_Ugovora_Test@3967e60c]" name="setUp" is-config="true" duration-ms="5414" started-at="2021-02-26T10:01:32Z" finished-at="2021-02-26T10:01:37Z">
           <params>
             <param index="0">
               <value>
@@ -18,15 +18,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="qa_007_verifikuj_sekciju_finansije_test()[pri:0, instance:com.platformX.tests.QA_007_Verifikuj_Sekciju_Finansije_Test@3967e60c]" name="qa_007_verifikuj_sekciju_finansije_test" duration-ms="23450" started-at="2021-02-17T15:15:36Z" finished-at="2021-02-17T15:16:00Z">
+        <test-method status="PASS" signature="qa_038_neuspjesno_iskljucivanje_ugovora_test()[pri:0, instance:com.platformX.tests.QA_038_Neuspjesno_Iskljucivanje_Ugovora_Test@3967e60c]" name="qa_038_neuspjesno_iskljucivanje_ugovora_test" duration-ms="92290" started-at="2021-02-26T10:01:37Z" finished-at="2021-02-26T10:03:10Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- qa_007_verifikuj_sekciju_finansije_test -->
-        <test-method status="PASS" signature="cleanUp()[pri:0, instance:com.platformX.tests.QA_007_Verifikuj_Sekciju_Finansije_Test@3967e60c]" name="cleanUp" is-config="true" duration-ms="0" started-at="2021-02-17T15:16:00Z" finished-at="2021-02-17T15:16:00Z">
+        </test-method> <!-- qa_038_neuspjesno_iskljucivanje_ugovora_test -->
+        <test-method status="PASS" signature="cleanUp()[pri:0, instance:com.platformX.tests.QA_038_Neuspjesno_Iskljucivanje_Ugovora_Test@3967e60c]" name="cleanUp" is-config="true" duration-ms="1" started-at="2021-02-26T10:03:10Z" finished-at="2021-02-26T10:03:10Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- cleanUp -->
-      </class> <!-- com.platformX.tests.QA_007_Verifikuj_Sekciju_Finansije_Test -->
+      </class> <!-- com.platformX.tests.QA_038_Neuspjesno_Iskljucivanje_Ugovora_Test -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

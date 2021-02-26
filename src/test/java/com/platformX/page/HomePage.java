@@ -136,6 +136,9 @@ public class HomePage extends PageBase {
 
 	@FindBy(xpath = "//div[contains(text(), 'Povezana pravna lica')]")
 	protected WebElement povezanaPravnaLicaWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Zahtjevi za dostavu podataka')]")
+	protected WebElement zahtjeviZaDostavuPodatakaWE;
 
 	@FindBy(xpath = "//div[contains(text(), 'Ugovori')]")
 	protected WebElement ugovoriWE;
@@ -421,6 +424,15 @@ public class HomePage extends PageBase {
 		wait.until(ExpectedConditions.elementToBeClickable(povezanaPravnaLicaWE));
 		povezanaPravnaLicaWE.click();
 		return new PovezanaPravnaLicaPage(driver);
+	}
+	
+	public ZahtjeviZaDostavuPodatakaPage navigateToZahtjeviZaDostavuPodataka() throws Exception {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(kupciWE));
+		kupciWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(zahtjeviZaDostavuPodatakaWE));
+		zahtjeviZaDostavuPodatakaWE.click();
+		return new ZahtjeviZaDostavuPodatakaPage(driver);
 	}
 
 	public UgovoriPage navigateToUgovori() throws Exception {

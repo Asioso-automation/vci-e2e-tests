@@ -94,7 +94,7 @@ public class DnevniciUplataPage extends HomePage {
 		//poslije prvog skrola opet gledamo size
 		//ako je manja od 40 nemoj ici u sledeci skrol
 		//a ako je veca od 40 idemo u sledeci skrol
-		for (int i = 1; i < 4; i++) {
+		for (int i = 1; i < 3; i++) {
 			list = driver.findElements(By.xpath("//div[@role='listbox']/div"));
 			lastElement = list.size();
 			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",

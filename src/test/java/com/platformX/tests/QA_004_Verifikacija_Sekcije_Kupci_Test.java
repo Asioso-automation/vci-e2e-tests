@@ -14,6 +14,7 @@ import com.platformX.page.PravnaLicaPage;
 import com.platformX.page.ReklamacijePage;
 import com.platformX.page.UgovoriPage;
 import com.platformX.page.VrsteZahtjevaPage;
+import com.platformX.page.ZahtjeviZaDostavuPodatakaPage;
 
 public class QA_004_Verifikacija_Sekcije_Kupci_Test extends BaseTest {
 
@@ -36,7 +37,8 @@ public class QA_004_Verifikacija_Sekcije_Kupci_Test extends BaseTest {
 		fizickaLicaPage.verifikujFizickaLica();
 		PovezanaPravnaLicaPage povezanaPravnaLicaPage = homePage.navigateToPovezanaPravnaLica();
 		povezanaPravnaLicaPage.verifikujPovezanaPravnaLica();
-		// TODO Zahtjevi za dostavu podataka
+		ZahtjeviZaDostavuPodatakaPage zahtjeviZaDostavuPodatakaPage = homePage.navigateToZahtjeviZaDostavuPodataka();
+		zahtjeviZaDostavuPodatakaPage.verifikujZahtjeveZaDostavuPodataka();
 		UgovoriPage ugovoriPage = homePage.navigateToUgovori();
 		ugovoriPage.verifikujUgovori();
 		// TODO Ugovoreni popusti

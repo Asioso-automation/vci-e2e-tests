@@ -5,18 +5,43 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8b4dd787-556a-4704-827d-a7affe3c56de" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/platformX/page/ZahtjeviZaDostavuPodatakaPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-output/junitreports/TEST-com.platformX.tests.QA_002_Verifikacija_Sekcije_Sifarnici_Test.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-output/junitreports/TEST-com.platformX.tests.QA_003_Verifikacija_Sekcije_Tarifni_Sistem_Test.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-output/junitreports/TEST-com.platformX.tests.QA_004_Verifikacija_Sekcije_Kupci_Test.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-output/junitreports/TEST-com.platformX.tests.QA_005_Verifikacija_Sekcije_Mjerna_Mjesta_Test.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-output/junitreports/TEST-com.platformX.tests.QA_006_Verifikacija_Sekcije_Obracun_Test.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-output/junitreports/TEST-com.platformX.tests.QA_007_Verifikacija_Sekcije_Finansije_Test.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-output/junitreports/TEST-com.platformX.tests.QA_008_Dodavanje_Banke_Test.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-output/junitreports/TEST-com.platformX.tests.QA_009_Dodavanje_Ziro_Racuna_Test.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-output/junitreports/TEST-com.platformX.tests.QA_011_Dodavanje_Uplate_Poziv_Na_Broj_Test1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-output/junitreports/TEST-com.platformX.tests.QA_012_Dodavanje_Uplate_Poziv_Na_Broj_Test2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-output/junitreports/TEST-com.platformX.tests.QA_013_Dodavanje_Radne_Jedinice_Test.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-output/junitreports/TEST-com.platformX.tests.QA_014_Dodavanje_Operativnog_Podrucja_Test.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-output/junitreports/TEST-com.platformX.tests.QA_015_Dodavanje_Uplate_Sa_Kupcem_Test.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-output/junitreports/TEST-com.platformX.tests.QA_016_Preknjizavanje_Dnevnika_Uplata_Test.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-output/junitreports/TEST-com.platformX.tests.QA_017_Dodavanje_Pravnog_Lica_Test.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-output/junitreports/TEST-com.platformX.tests.QA_018_Dodavanje_Ugovora_Test.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.core.resources.prefs" beforeDir="false" afterPath="$PROJECT_DIR$/.settings/org.eclipse.core.resources.prefs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/platformX/base/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/platformX/base/BaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/platformX/page/DnevniciUplataPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/platformX/page/DnevniciUplataPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/platformX/page/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/platformX/page/HomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/platformX/page/UplatePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/platformX/page/UplatePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/platformX/tests/QA_004_Verifikacija_Sekcije_Kupci_Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/platformX/tests/QA_004_Verifikacija_Sekcije_Kupci_Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/platformX/tests/QA_010_Dodaj_Uplatu_Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/platformX/tests/QA_011_Dodavanje_Uplate_Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/platformX/platformx.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/platformX/platformx.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test-output/Default suite/Default test.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/Default suite/Default test.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test-output/Default suite/Default test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/Default suite/Default test.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-output/Default suite/testng-failed.xml" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/Default suite/testng-failed.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test-output/emailable-report.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/emailable-report.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test-output/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test-output/junitreports/TEST-com.platformX.tests.QA_001_LogIn_LogOut_Test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/junitreports/TEST-com.platformX.tests.QA_001_LogIn_LogOut_Test.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-output/junitreports/TEST-com.platformX.tests.QA_013_Dodaj_Ugovor_Test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/junitreports/TEST-com.platformX.tests.QA_013_Dodaj_Ugovor_Test.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-output/junitreports/TEST-com.platformX.tests.QA_010_Dodaj_Uplatu_Test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/junitreports/TEST-com.platformX.tests.QA_010_Dodaj_Uplatu_Test.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test-output/old/Default suite/classes.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/old/Default suite/classes.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test-output/old/Default suite/methods-alphabetical.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/old/Default suite/methods-alphabetical.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test-output/old/Default suite/methods.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/old/Default suite/methods.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-output/old/Default suite/toc.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/old/Default suite/toc.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-output/old/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/old/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-output/old/Default suite/testng.xml.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/old/Default suite/testng.xml.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-output/testng-failed.xml" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/testng-failed.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test-output/testng-results.xml" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/testng-results.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

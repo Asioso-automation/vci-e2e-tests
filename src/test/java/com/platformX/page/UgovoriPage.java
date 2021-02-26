@@ -37,7 +37,7 @@ public class UgovoriPage extends HomePage {
 	@FindBy(xpath = "//div[contains(text(), 'Uredi')]")
 	private WebElement urediBtnWE;
 
-	@FindBy(xpath = "//*[@id='application']/div[3]/div/div/div[1]/div[2]/div")
+	@FindBy(xpath = "//div[contains(text(), 'Pogledaj')]")
 	private WebElement pogledajBtnWE;
 
 	@FindBy(xpath = "//div[contains(text(), 'Deaktiviraj')]")
@@ -49,7 +49,7 @@ public class UgovoriPage extends HomePage {
 	@FindBy(xpath = "//main/div/div/div/div[2]/div/div/div")
 	private WebElement datumDeaktivacijePorukaWE;
 
-	@FindBy(xpath = "//div[2]/button[1]")
+	@FindBy(xpath = "//form/div/div[3]/button[2]")
 	private WebElement potvrdiDeaktivacijuBtnWE;
 
 	@FindBy(xpath = "//div[contains(text(), 'Odbaci')]")
@@ -233,10 +233,10 @@ public class UgovoriPage extends HomePage {
 	@FindBy(xpath = "//div[7]/div[5]/div/div/div[1]/div/input")
 	private WebElement brojUliceWE;
 
-	@FindBy(xpath = "//div[6]/div/div/div[1]/div/div")
+	@FindBy(xpath = "//div[7]/div[7]/div/div/div[1]/div/div")
 	private WebElement eMailDostavaWE;
 
-	@FindBy(xpath = "//div[7]/div[7]/div/div/div[1]/div/input")
+	@FindBy(xpath = "//div[7]/div[8]/div/div/div[1]/div/input")
 	private WebElement eMailWE;
 
 	@FindBy(xpath = "//div[9]/div[1]/div/div/div[1]/div/input")
@@ -324,9 +324,9 @@ public class UgovoriPage extends HomePage {
 	@FindBy(xpath = "//div[7]/div[2]/div/div/div[1]/div[1]/input[1]")
 	private WebElement urediPostaWE;
 
-	// Pogledaj dokument elementi
+	// Pogledaj ugovor elementi
 
-	@FindBy(xpath = "//div[2]/div[4]/div/div/div[1]/div")
+	@FindBy(xpath = "//div[3]/div[4]/div/div/div[1]/div/input")
 	private WebElement pogledajDjelatnostWE;
 
 	public UgovoriPage(WebDriver driver) throws FileNotFoundException, IOException {
@@ -476,6 +476,8 @@ public class UgovoriPage extends HomePage {
 		brojUliceWE.sendKeys("7"); // random num
 		if (reaktivnoBrojilo == false) {
 			wait.until(ExpectedConditions.elementToBeClickable(reaktivnoBrojiloWE));
+			js.executeScript("arguments[0].scrollIntoView(true);", datumPocetkaWE);
+			Thread.sleep(500);
 			reaktivnoBrojiloWE.click();
 			Thread.sleep(500);
 			reaktivnoBrojiloWE.clear();

@@ -65,7 +65,7 @@ public class UplatePage extends HomePage {
 	
 	public String dodajUplatu() throws InterruptedException {
 		String uplatilac = "Uplatilac " + getRandomName();
-			wait.until(ExpectedConditions.elementToBeClickable(dodajUplatuBtnWE));
+		wait.until(ExpectedConditions.elementToBeClickable(dodajUplatuBtnWE));
 		dodajUplatuBtnWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(pozivNaBrojWE));
 		pozivNaBrojWE.sendKeys("1987 - Poziv na broj: 1987, Broj računa: 1988");
