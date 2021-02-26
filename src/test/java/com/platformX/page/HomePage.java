@@ -19,7 +19,7 @@ public class HomePage extends PageBase {
 		super(driver);
 	}
 	
-	WebDriverWait wait = new WebDriverWait(driver, 30);
+	WebDriverWait wait = new WebDriverWait(driver, 40);
 
 	protected List<WebElement> brojKolona() {
 		return driver.findElements(By.xpath("//th"));
