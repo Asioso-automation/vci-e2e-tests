@@ -52,7 +52,7 @@ public class UgovoriPage extends HomePage {
 	@FindBy(xpath = "//div[3]/div/div/div[1]/div[1]/input[1]")
 	private WebElement razlogDeaktivacijeWE;
 	
-	@FindBy(xpath = "//div[6]/div/div/div")
+	@FindBy(xpath = "//span[contains(text(), '1 - Test 1')]")
 	private WebElement odaberiRazlogWE;
 
 	@FindBy(xpath = "//form/div/div[3]/button[2]")
