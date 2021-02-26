@@ -48,6 +48,12 @@ public class UgovoriPage extends HomePage {
 
 	@FindBy(xpath = "//main/div/div/div/div[2]/div/div/div")
 	private WebElement datumDeaktivacijePorukaWE;
+	
+	@FindBy(xpath = "//div[3]/div/div/div[1]/div[1]/input[1]")
+	private WebElement razlogDeaktivacijeWE;
+	
+	@FindBy(xpath = "//div[6]/div/div/div")
+	private WebElement odaberiRazlogWE;
 
 	@FindBy(xpath = "//form/div/div[3]/button[2]")
 	private WebElement potvrdiDeaktivacijuBtnWE;
@@ -810,7 +816,7 @@ public class UgovoriPage extends HomePage {
 	}
 
 	public void verifikujBrojNecekiranihKolona(int n) throws Exception {
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		assertTrue(brojNecekiranihKolona().size() == n, "Broj necekiranih kolona nije dobar! ");
 	}
 
@@ -838,11 +844,17 @@ public class UgovoriPage extends HomePage {
 		Thread.sleep(1000);
 	}
 
-	public void deaktivirajUgovor(String date) {
+	public void deaktivirajUgovor(String date) throws InterruptedException {
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		burgerBarWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(deaktivirajBtnWE));
 		deaktivirajBtnWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(razlogDeaktivacijeWE));
+		razlogDeaktivacijeWE.sendKeys("1 - Test 1");
+		Thread.sleep(1000);
+		wait.until(ExpectedConditions.elementToBeClickable(odaberiRazlogWE));
+		odaberiRazlogWE.click();
+		Thread.sleep(500);
 		if (date != null) {
 			datumDeaktivacijeWE.click();
 			datumDeaktivacijeWE.clear();
