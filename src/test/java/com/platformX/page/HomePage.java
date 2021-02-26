@@ -25,6 +25,9 @@ public class HomePage extends PageBase {
 		return driver.findElements(By.xpath("//th"));
 	}
 
+	@FindBy(xpath = "//div[contains(@class, 'v-snack__content') and contains(text(), 'Učitavanje, molim sačekajte')]")
+	protected WebElement molimoSacekajteLoaderWE;
+
 	@FindBy(xpath = "//div[2]/div/div[3]/div[2]")
 	protected WebElement izlogujSeWE;
 
