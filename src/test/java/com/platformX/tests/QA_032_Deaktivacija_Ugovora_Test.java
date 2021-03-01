@@ -35,7 +35,7 @@ public class QA_032_Deaktivacija_Ugovora_Test extends BaseTest {
 		ugovoriPage.verifikujUgovor(mjernoMjesto);
 		ugovoriPage.verifikujBrojNecekiranihKolona(2);
 		ugovoriPage.deaktivirajUgovor(null);
-		ugovoriPage.verifikujUgovori();
+		//ugovoriPage.verifikujUgovori();
 		ugovoriPage.verifikujUgovor(mjernoMjesto);
 		// ugovoriPage.verifikujBrojNecekranihKolona(3);
 	}

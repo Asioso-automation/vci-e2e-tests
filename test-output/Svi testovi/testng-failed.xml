@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Svi testovi]">
+  <test name="Svi testovi(failed)">
+    <classes>
+      <class name="com.platformX.tests.QA_007_Verifikacija_Sekcije_Finansije_Test">
+        <methods>
+          <include name="qa_007_verifikacija_sekcije_finansije_test"/>
+          <include name="setUp"/>
+          <include name="cleanUp"/>
+        </methods>
+      </class> <!-- com.platformX.tests.QA_007_Verifikacija_Sekcije_Finansije_Test -->
+      <class name="com.platformX.tests.QA_032_Deaktivacija_Ugovora_Test">
+        <methods>
+          <include name="setUp"/>
+          <include name="cleanUp"/>
+          <include name="qa_032_deaktivacija_ugovora_test"/>
+        </methods>
+      </class> <!-- com.platformX.tests.QA_032_Deaktivacija_Ugovora_Test -->
+      <class name="com.platformX.tests.QA_033_Neuspjesna_Deaktivacija_Ugovora_Test">
+        <methods>
+          <include name="setUp"/>
+          <include name="cleanUp"/>
+          <include name="qa_033_neuspjesna_deaktivacija_ugovora_test"/>
+        </methods>
+      </class> <!-- com.platformX.tests.QA_033_Neuspjesna_Deaktivacija_Ugovora_Test -->
+      <class name="com.platformX.tests.QA_029_Provjera_Validacija_Na_Izmjeni_Ugovora_Test">
+        <methods>
+          <include name="setUp"/>
+          <include name="cleanUp"/>
+          <include name="qa_029_provjera_validacija_na_izmjeni_ugovora_test"/>
+        </methods>
+      </class> <!-- com.platformX.tests.QA_029_Provjera_Validacija_Na_Izmjeni_Ugovora_Test -->
+    </classes>
+  </test> <!-- Svi testovi(failed) -->
+</suite> <!-- Failed suite [Svi testovi] -->

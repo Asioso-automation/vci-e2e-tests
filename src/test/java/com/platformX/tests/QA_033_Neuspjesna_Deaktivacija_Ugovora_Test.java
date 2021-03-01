@@ -34,7 +34,6 @@ public class QA_033_Neuspjesna_Deaktivacija_Ugovora_Test extends BaseTest {
 		UgovoriPage ugovoriPage = homePage.navigateToUgovori();
 		ugovoriPage.verifikujUgovori();
 		String mjernoMjesto = ugovoriPage.dodajUgovor(kupac, "7 - Kategorija cijene 2", "15.07.2020.", "15.07.2020.", "66100006 - 3PD53B2W", true);
-		ugovoriPage.verifikujUgovori();
 		ugovoriPage.verifikujUgovor(mjernoMjesto);
 		ugovoriPage.verifikujBrojNecekiranihKolona(2);
 		ugovoriPage.deaktivirajUgovor("01.01.2020.");

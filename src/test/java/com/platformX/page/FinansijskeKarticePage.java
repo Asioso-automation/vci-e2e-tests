@@ -33,7 +33,7 @@ public class FinansijskeKarticePage extends HomePage {
 		assertTrue(sekcijaBtnWE.getText().trim().equals("FINANSIJE"), "FinansijskeKartice: Naziv sekcije nije dobar!");
 		assertTrue(stranicaBtnWE.getText().trim().equals("FINANSIJSKE KARTICE"), "FinansijskeKartice: Naziv stranice nije dobar!");
 		assertTrue(naslovStraniceWE.getText().trim().equals("FINANSIJSKE KARTICE"), "FinansijskeKartice: Naziv stranice nije dobar!");
-		assertTrue(brojKolona().size() == 10, "FinansijskeKartice: Broj kolona nije dobar! ");
+		assertTrue(brojKolona().size() == 11, "FinansijskeKartice: Broj kolona nije dobar! ");
 	}
 
 }

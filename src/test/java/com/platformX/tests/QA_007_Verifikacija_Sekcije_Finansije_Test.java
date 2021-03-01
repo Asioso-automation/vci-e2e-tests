@@ -42,7 +42,7 @@ public class QA_007_Verifikacija_Sekcije_Finansije_Test extends BaseTest {
 		nerasporedjeneUplatePage.verifikujNerasporedjeneUplate();
 		AvansiPage avansiPage = homePage.navigateToAvansi();
 		avansiPage.verifikujAvansi();
-		// TOTO Reprogrami
+		// TODO Reprogrami
 		BankePage bankePage = homePage.navigateToBanke();
 		bankePage.verifikujBankeStranicu();
 		ZiroRacuniPage ziroRacuniPage = homePage.navigateToZiroRacuni();
