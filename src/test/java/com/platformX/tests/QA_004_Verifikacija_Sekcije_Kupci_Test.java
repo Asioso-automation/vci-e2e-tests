@@ -8,13 +8,17 @@ import com.platformX.page.FizickaLicaPage;
 import com.platformX.page.GrupeObrazacaBrojaUgovoraPage;
 import com.platformX.page.HomePage;
 import com.platformX.page.LogInPage;
+import com.platformX.page.MjenicePage;
+import com.platformX.page.ObavjestenjaOPromjeniSnabdjevacaPage;
 import com.platformX.page.OdbaceniUgovoriPage;
 import com.platformX.page.PovezanaPravnaLicaPage;
 import com.platformX.page.PravnaLicaPage;
 import com.platformX.page.ReklamacijePage;
+import com.platformX.page.UgovoreniPopustiPage;
 import com.platformX.page.UgovoriPage;
 import com.platformX.page.VrsteZahtjevaPage;
 import com.platformX.page.ZahtjeviZaDostavuPodatakaPage;
+import com.platformX.page.ZahtjeviZaUgovorePage;
 
 public class QA_004_Verifikacija_Sekcije_Kupci_Test extends BaseTest {
 
@@ -39,9 +43,14 @@ public class QA_004_Verifikacija_Sekcije_Kupci_Test extends BaseTest {
 		povezanaPravnaLicaPage.verifikujPovezanaPravnaLica();
 		ZahtjeviZaDostavuPodatakaPage zahtjeviZaDostavuPodatakaPage = homePage.navigateToZahtjeviZaDostavuPodataka();
 		zahtjeviZaDostavuPodatakaPage.verifikujZahtjeveZaDostavuPodataka();
+		ZahtjeviZaUgovorePage zahtjeviZaUgovorePage = homePage.navigateToZahtjeviZaUgovore();
+		zahtjeviZaUgovorePage.verifikujZahtjeviZaUgovore();
 		UgovoriPage ugovoriPage = homePage.navigateToUgovori();
 		ugovoriPage.verifikujUgovori();
-		// TODO Ugovoreni popusti
+		ObavjestenjaOPromjeniSnabdjevacaPage obavjestenjaOPromjeniSnabdjevacaPage = homePage.navigateToObavjestenjaOPromjeniSnabdjevaca();
+		obavjestenjaOPromjeniSnabdjevacaPage.verifikujObavjestenjaOPromjeniSnabdjevaca();
+		UgovoreniPopustiPage ugovoreniPopustiPage = homePage.navigateToUgovoreniPopusti();
+		ugovoreniPopustiPage.verifikujUgovoreniPopusti();
 		OdbaceniUgovoriPage odbaceniUgovoriPage = homePage.navigateToOdbaceniUgovori();
 		odbaceniUgovoriPage.verifikujOdbaceniUgovori();
 		ReklamacijePage reklamacijePage = homePage.navigateToReklamacije();
@@ -50,6 +59,7 @@ public class QA_004_Verifikacija_Sekcije_Kupci_Test extends BaseTest {
 		vrsteZahtjevaPage.verifikujVrsteZahtjeva();
 		GrupeObrazacaBrojaUgovoraPage grupeObrazacaBrojaUgovoraPage = homePage.navigateToGrupeObrazacaBrojaUgovora();
 		grupeObrazacaBrojaUgovoraPage.verifikujGrupeObrazaca();
-		// TODO Mjenice
+		MjenicePage mjenicePage = homePage.navigateToMjenice();
+		mjenicePage.verifikujMjenice();
 	}
 }

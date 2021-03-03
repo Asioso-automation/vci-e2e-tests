@@ -6,22 +6,24 @@ import java.io.IOException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class ZahtjeviZaDostavuPodatakaPage extends HomePage {
+public class ObavjestenjaOPromjeniSnabdjevacaPage extends HomePage {
 
-	public ZahtjeviZaDostavuPodatakaPage(WebDriver driver) throws FileNotFoundException, IOException {
+	public ObavjestenjaOPromjeniSnabdjevacaPage(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);
 	}
 
-	public void verifikujZahtjeveZaDostavuPodataka() throws InterruptedException {
+	public void verifikujObavjestenjaOPromjeniSnabdjevaca() throws InterruptedException {
 		wait.until(ExpectedConditions.elementToBeClickable(sekcijaBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(stranicaBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(preuzmiExcelBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(ukloniFiltereBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(osvjeziBtnWE));
 		assertTrue(sekcijaBtnWE.getText().trim().equals("KUPCI"), "OdbaceniUgovori: Naziv sekcije nije dobar!");
-		assertTrue(stranicaBtnWE.getText().trim().equals("ZAHTJEVI ZA DOSTAVU PODATAKA"), "ZahtjeviZaDostavuPodataka: Naziv stranice nije dobar!");
-		assertTrue(naslovStraniceWE.getText().trim().equals("ZAHTJEVI ZA DOSTAVU PODATAKA O KUPCIMA"), "ZahtjeviZaDostavuPodataka: Naziv stranice nije dobar!");
-		assertTrue(brojKolona().size() == 7, "ZahtjeviZaDostavuPodataka: Broj kolona nije dobar! ");
+		assertTrue(stranicaBtnWE.getText().trim().equals("OBAVJEŠTENJA O PROMJENI SNABDJEVAČA"),
+				"ObavjestenjaOPromjeniSnabdjevaca: Naziv stranice nije dobar!");
+		assertTrue(naslovStraniceWE.getText().trim().equals("OBAVJEŠTENJA O PROMJENI SNABDJEVAČA"),
+				"ObavjestenjaOPromjeniSnabdjevaca: Naziv stranice nije dobar!");
+		assertTrue(brojKolona().size() == 8, "ObavjestenjaOPromjeniSnabdjevaca: Broj kolona nije dobar! ");
 	}
 
 }

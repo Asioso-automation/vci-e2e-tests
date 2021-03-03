@@ -142,9 +142,18 @@ public class HomePage extends PageBase {
 	
 	@FindBy(xpath = "//div[contains(text(), 'Zahtjevi za dostavu podataka')]")
 	protected WebElement zahtjeviZaDostavuPodatakaWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Zahtjevi za ugovore')]")
+	protected WebElement zahtjeviZaUgovoreWE;
 
 	@FindBy(xpath = "//div[contains(text(), 'Ugovori')]")
 	protected WebElement ugovoriWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Obavještenja o promjeni snabdjevača')]")
+	protected WebElement obavjestenjaOPromjeniSnabdjevacaWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Ugovoreni popusti')]")
+	protected WebElement ugovoreniPopustiWE;
 
 	@FindBy(xpath = "//div[contains(text(), 'Odbačeni ugovori')]")
 	protected WebElement odbaceniUgovoriWE;
@@ -157,6 +166,9 @@ public class HomePage extends PageBase {
 
 	@FindBy(xpath = "//div[contains(text(), 'Grupe obrazaca broja ugovora')]")
 	protected WebElement grupeObrazacaBrojaUgovoraWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Mjenice')]")
+	protected WebElement mjeniceWE;
 	
 	@FindBy(xpath = "//div[contains(text(), 'Mjerna mjesta')]")
 	protected WebElement mjernaMjestaStrWE;
@@ -437,6 +449,15 @@ public class HomePage extends PageBase {
 		zahtjeviZaDostavuPodatakaWE.click();
 		return new ZahtjeviZaDostavuPodatakaPage(driver);
 	}
+	
+	public ZahtjeviZaUgovorePage navigateToZahtjeviZaUgovore() throws Exception {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(kupciWE));
+		kupciWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(zahtjeviZaUgovoreWE));
+		zahtjeviZaUgovoreWE.click();
+		return new ZahtjeviZaUgovorePage(driver);
+	}
 
 	public UgovoriPage navigateToUgovori() throws Exception {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
@@ -445,6 +466,24 @@ public class HomePage extends PageBase {
 		wait.until(ExpectedConditions.elementToBeClickable(ugovoriWE));
 		ugovoriWE.click();
 		return new UgovoriPage(driver);
+	}
+	
+	public ObavjestenjaOPromjeniSnabdjevacaPage navigateToObavjestenjaOPromjeniSnabdjevaca() throws Exception {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(kupciWE));
+		kupciWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(obavjestenjaOPromjeniSnabdjevacaWE));
+		obavjestenjaOPromjeniSnabdjevacaWE.click();
+		return new ObavjestenjaOPromjeniSnabdjevacaPage(driver);
+	}
+	
+	public UgovoreniPopustiPage navigateToUgovoreniPopusti() throws Exception {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(kupciWE));
+		kupciWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(ugovoreniPopustiWE));
+		ugovoreniPopustiWE.click();
+		return new UgovoreniPopustiPage(driver);
 	}
 
 	public OdbaceniUgovoriPage navigateToOdbaceniUgovori() throws Exception {
@@ -481,6 +520,15 @@ public class HomePage extends PageBase {
 		wait.until(ExpectedConditions.elementToBeClickable(grupeObrazacaBrojaUgovoraWE));
 		grupeObrazacaBrojaUgovoraWE.click();
 		return new GrupeObrazacaBrojaUgovoraPage(driver);
+	}
+	
+	public MjenicePage navigateToMjenice() throws Exception {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(kupciWE));
+		kupciWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(mjeniceWE));
+		mjeniceWE.click();
+		return new MjenicePage(driver);
 	}
 	
 	public MjernaMjestaPage navigateToMjernaMjesta() throws Exception {
