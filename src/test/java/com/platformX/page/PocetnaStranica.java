@@ -248,6 +248,12 @@ public class PocetnaStranica extends PageBase {
 	@FindBy(xpath = "//div[contains(text(), 'Opomene')]")
 	protected WebElement opomeneWE;
 	
+	@FindBy(xpath = "//div[contains(text(), 'Zahtjevi za isključenje')]")
+	protected WebElement zahtjeviZaIkljucenjeWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Isključenja od strane ODS-a')]")
+	protected WebElement iskljucenjaOdStraneODSaWE;
+	
 	@FindBy(xpath = "//div[contains(text(), 'SAP')]")
 	protected WebElement sapWE;
 	
@@ -765,6 +771,24 @@ public class PocetnaStranica extends PageBase {
 		wait.until(ExpectedConditions.elementToBeClickable(opomeneWE));
 		opomeneWE.click();
 		return new Opomene(driver);
+	}
+	
+	public ZahtjeviZaIskljucenje navigateToZahtjeviZaIskljucenje() throws Exception {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(pravniOdnosiWE));
+		pravniOdnosiWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(zahtjeviZaIkljucenjeWE));
+		zahtjeviZaIkljucenjeWE.click();
+		return new ZahtjeviZaIskljucenje(driver);
+	}
+	
+	public IskljucenjaOdStraneODSa navigateToIskljucenjaOdStraneODSa() throws Exception {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(pravniOdnosiWE));
+		pravniOdnosiWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(iskljucenjaOdStraneODSaWE));
+		iskljucenjaOdStraneODSaWE.click();
+		return new IskljucenjaOdStraneODSa(driver);
 	}
 	
 	public SapPage navigateToSap() throws Exception {

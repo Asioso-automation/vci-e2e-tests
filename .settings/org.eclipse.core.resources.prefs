@@ -8,6 +8,7 @@ encoding//src/test/java/com/platformX/page/EnergetskiObracunPage.java=UTF-8
 encoding//src/test/java/com/platformX/page/EntitetiPage.java=UTF-8
 encoding//src/test/java/com/platformX/page/FizickaLicaPage.java=UTF-8
 encoding//src/test/java/com/platformX/page/GrupeObrazacaBrojaUgovoraPage.java=UTF-8
+encoding//src/test/java/com/platformX/page/IskljucenjaOdStraneODSa.java=UTF-8
 encoding//src/test/java/com/platformX/page/IzvjestajiPage.java=UTF-8
 encoding//src/test/java/com/platformX/page/KamatePage.java=UTF-8
 encoding//src/test/java/com/platformX/page/KategorijeCijenaPage.java=UTF-8
@@ -53,6 +54,7 @@ encoding//src/test/java/com/platformX/page/VrsteStavkiFinansijskeKarticePage.jav
 encoding//src/test/java/com/platformX/page/VrsteZahtjevaPage.java=UTF-8
 encoding//src/test/java/com/platformX/page/ZahtjeviZaDostavuPodatakaOMjernimMjestima.java=UTF-8
 encoding//src/test/java/com/platformX/page/ZahtjeviZaDostavuPodatakaPage.java=UTF-8
+encoding//src/test/java/com/platformX/page/ZahtjeviZaIskljucenje.java=UTF-8
 encoding//src/test/java/com/platformX/page/ZahtjeviZaUgovorePage.java=UTF-8
 encoding//src/test/java/com/platformX/page/ZiroRacuniPage.java=UTF-8
 encoding//src/test/java/com/platformX/tests/QA_018_Dodavanje_Ugovora_Test.java=UTF-8

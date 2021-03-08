@@ -21,8 +21,18 @@ public class MjernaMjestaPage extends PocetnaStranica {
 		assertTrue(sekcijaBtnWE.getText().trim().equals("OČITANJA"), "MjernaMjesta: Naziv sekcije nije dobar!"); // bug, los naziv sekcije
 		assertTrue(stranicaBtnWE.getText().trim().equals("MJERNA MJESTA"), "MjernaMjesta: Naziv stranice nije dobar!");
 		assertTrue(naslovStraniceWE.getText().trim().equals("MJERNA MJESTA"), "MjernaMjesta: Naziv stranice nije dobar!");
-		Thread.sleep(1000);
-		assertTrue(brojKolona().size() == 6, "MjernaMjesta: Broj kolona nije dobar! ");
+		
+		try {
+			assertTrue(brojKolona().size() == 6, "MjernaMjesta: Broj kolona nije dobar! ");
+        } catch (Exception e) {
+        	Thread.sleep(1000);
+        	wait.until(ExpectedConditions.elementToBeClickable(sekcijaBtnWE));
+    		wait.until(ExpectedConditions.elementToBeClickable(stranicaBtnWE));
+    		wait.until(ExpectedConditions.elementToBeClickable(preuzmiExcelBtnWE));
+    		wait.until(ExpectedConditions.elementToBeClickable(ukloniFiltereBtnWE));
+    		wait.until(ExpectedConditions.elementToBeClickable(osvjeziBtnWE));
+        	assertTrue(brojKolona().size() == 6, "MjernaMjesta: Broj kolona nije dobar! ");
+        }
 	}
 
 }

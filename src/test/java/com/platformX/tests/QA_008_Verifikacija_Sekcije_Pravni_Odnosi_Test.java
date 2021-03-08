@@ -5,6 +5,8 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import com.platformX.base.BaseTest;
 import com.platformX.page.PocetnaStranica;
+import com.platformX.page.ZahtjeviZaIskljucenje;
+import com.platformX.page.IskljucenjaOdStraneODSa;
 import com.platformX.page.IzvjestajiPage;
 import com.platformX.page.LogInPage;
 import com.platformX.page.Opomene;
@@ -26,6 +28,10 @@ public class QA_008_Verifikacija_Sekcije_Pravni_Odnosi_Test extends BaseTest {
 		homePage.verifyHomePage();
 		Opomene opomene = homePage.navigateToOpomene();
 		opomene.verifikujOpomene();
+		ZahtjeviZaIskljucenje zahtjeviZaIskljucenje = homePage.navigateToZahtjeviZaIskljucenje();
+		zahtjeviZaIskljucenje.verifikujZahtjeviZaIskljucenje();
+		IskljucenjaOdStraneODSa iskljucenjaOdStraneODSa = homePage.navigateToIskljucenjaOdStraneODSa();
+		iskljucenjaOdStraneODSa.verifikujIskljucenjaOdStraneODSa();
 		IzvjestajiPage izvjestajiPage = homePage.navigateToIzvjestaji();
 		izvjestajiPage.verifikujIzvjestaji();
 	}
