@@ -25,7 +25,7 @@ public class MjernaMjestaPage extends PocetnaStranica {
 		try {
 			assertTrue(brojKolona().size() == 6, "MjernaMjesta: Broj kolona nije dobar! ");
         } catch (Exception e) {
-        	Thread.sleep(1000);
+        	Thread.sleep(2000);
         	wait.until(ExpectedConditions.elementToBeClickable(sekcijaBtnWE));
     		wait.until(ExpectedConditions.elementToBeClickable(stranicaBtnWE));
     		wait.until(ExpectedConditions.elementToBeClickable(preuzmiExcelBtnWE));
