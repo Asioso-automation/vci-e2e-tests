@@ -6,7 +6,7 @@ import java.io.IOException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class SapPage extends HomePage {
+public class SapPage extends PocetnaStranica {
 
 	public SapPage(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);

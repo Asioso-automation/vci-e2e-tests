@@ -6,7 +6,7 @@ import java.io.IOException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class UmanjenjaCijenePage extends HomePage {
+public class UmanjenjaCijenePage extends PocetnaStranica {
 
 	public UmanjenjaCijenePage(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);

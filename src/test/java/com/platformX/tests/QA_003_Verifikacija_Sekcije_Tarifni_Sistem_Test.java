@@ -5,7 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import com.platformX.base.BaseTest;
 import com.platformX.page.CjenovnikPage;
-import com.platformX.page.HomePage;
+import com.platformX.page.PocetnaStranica;
 import com.platformX.page.KategorijeCijenaPage;
 import com.platformX.page.LogInPage;
 import com.platformX.page.ObracunskaSnagaPage;
@@ -27,7 +27,7 @@ public class QA_003_Verifikacija_Sekcije_Tarifni_Sistem_Test extends BaseTest {
 		LogInPage logInPage = new LogInPage(driver, PLATFORMX_PROPERTIES);
 		logInPage.verifyLogInPage();
 		logInPage.logIn();
-		HomePage homePage = new HomePage(driver);
+		PocetnaStranica homePage = new PocetnaStranica(driver);
 		homePage.verifyHomePage();
 		TarifneKategorijePage tarifneKategorijePage = homePage.navigateToTarifneKategorije();
 		tarifneKategorijePage.verifikujTarifneKategorije();

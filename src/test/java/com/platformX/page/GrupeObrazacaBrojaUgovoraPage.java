@@ -6,7 +6,7 @@ import java.io.IOException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class GrupeObrazacaBrojaUgovoraPage extends HomePage {
+public class GrupeObrazacaBrojaUgovoraPage extends PocetnaStranica {
 
 	public GrupeObrazacaBrojaUgovoraPage(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);

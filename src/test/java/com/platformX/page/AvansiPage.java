@@ -6,7 +6,7 @@ import java.io.IOException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class AvansiPage extends HomePage {
+public class AvansiPage extends PocetnaStranica {
 
 	public AvansiPage(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);

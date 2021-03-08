@@ -6,7 +6,7 @@ import java.io.IOException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class FizickaLicaPage extends HomePage {
+public class FizickaLicaPage extends PocetnaStranica {
 
 	public FizickaLicaPage(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);

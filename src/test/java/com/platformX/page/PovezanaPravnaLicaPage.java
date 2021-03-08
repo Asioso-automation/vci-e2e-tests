@@ -8,7 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class PovezanaPravnaLicaPage extends HomePage {
+public class PovezanaPravnaLicaPage extends PocetnaStranica {
 	
 	@FindBy(xpath = "//header/div/button[1]")
 	protected WebElement dodajBtnWE;

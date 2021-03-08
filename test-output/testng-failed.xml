@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
-  <test name="Default test(failed)">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Svi testovi]">
+  <test name="Svi testovi(failed)">
     <classes>
+      <class name="com.platformX.tests.QA_036_Neuspjesno_Ukljucivanje_Ugovora_Test">
+        <methods>
+          <include name="setUp"/>
+          <include name="cleanUp"/>
+          <include name="qa_036_neuspjesno_ukljucivanje_ugovora_test"/>
+        </methods>
+      </class> <!-- com.platformX.tests.QA_036_Neuspjesno_Ukljucivanje_Ugovora_Test -->
       <class name="com.platformX.tests.QA_038_Neuspjesno_Iskljucivanje_Ugovora_Test">
         <methods>
           <include name="setUp"/>
@@ -10,6 +17,20 @@
           <include name="cleanUp"/>
         </methods>
       </class> <!-- com.platformX.tests.QA_038_Neuspjesno_Iskljucivanje_Ugovora_Test -->
+      <class name="com.platformX.tests.QA_035_Ukljucivanje_Ugovora_Test">
+        <methods>
+          <include name="setUp"/>
+          <include name="cleanUp"/>
+          <include name="qa_035_ukljucivanje_ugovora_test"/>
+        </methods>
+      </class> <!-- com.platformX.tests.QA_035_Ukljucivanje_Ugovora_Test -->
+      <class name="com.platformX.tests.QA_028_Izmjena_Ugovora_Test">
+        <methods>
+          <include name="setUp"/>
+          <include name="qa_028_izmjena_ugovora_test"/>
+          <include name="cleanUp"/>
+        </methods>
+      </class> <!-- com.platformX.tests.QA_028_Izmjena_Ugovora_Test -->
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- Svi testovi(failed) -->
+</suite> <!-- Failed suite [Svi testovi] -->

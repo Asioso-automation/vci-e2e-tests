@@ -6,7 +6,7 @@ import java.io.IOException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class VrsteStavkiFinansijskeKarticePage extends HomePage {
+public class VrsteStavkiFinansijskeKarticePage extends PocetnaStranica {
 
 	public VrsteStavkiFinansijskeKarticePage(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);

@@ -5,7 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import com.platformX.base.BaseTest;
 import com.platformX.page.AvansneFakturePage;
-import com.platformX.page.HomePage;
+import com.platformX.page.PocetnaStranica;
 import com.platformX.page.KamatePage;
 import com.platformX.page.KorekcijeKamatePage;
 import com.platformX.page.KorekcijeRacunaPage;
@@ -29,7 +29,7 @@ public class QA_006_Verifikacija_Sekcije_Obracun_Test extends BaseTest {
 		LogInPage logInPage = new LogInPage(driver, PLATFORMX_PROPERTIES);
 		logInPage.verifyLogInPage();
 		logInPage.logIn();
-		HomePage homePage = new HomePage(driver);
+		PocetnaStranica homePage = new PocetnaStranica(driver);
 		homePage.verifyHomePage();
 		NaloziZaObracunPage naloziZaObracunPage = homePage.navigateToNaloziZaObracun();
 		naloziZaObracunPage.verifikujNaloziZaObracun();

@@ -6,7 +6,7 @@ import java.io.IOException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class OpstinePage extends HomePage {
+public class OpstinePage extends PocetnaStranica {
 
 	public OpstinePage(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);

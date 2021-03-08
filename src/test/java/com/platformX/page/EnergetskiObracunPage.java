@@ -6,7 +6,7 @@ import java.io.IOException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class EnergetskiObracunPage extends HomePage {
+public class EnergetskiObracunPage extends PocetnaStranica {
 
 	public EnergetskiObracunPage(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);

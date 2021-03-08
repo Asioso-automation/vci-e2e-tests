@@ -6,7 +6,7 @@ import java.io.IOException;
 import com.platformX.base.BaseTest;
 import com.platformX.page.FizickaLicaPage;
 import com.platformX.page.GrupeObrazacaBrojaUgovoraPage;
-import com.platformX.page.HomePage;
+import com.platformX.page.PocetnaStranica;
 import com.platformX.page.LogInPage;
 import com.platformX.page.MjenicePage;
 import com.platformX.page.ObavjestenjaOPromjeniSnabdjevacaPage;
@@ -33,7 +33,7 @@ public class QA_004_Verifikacija_Sekcije_Kupci_Test extends BaseTest {
 		LogInPage logInPage = new LogInPage(driver, PLATFORMX_PROPERTIES);
 		logInPage.verifyLogInPage();
 		logInPage.logIn();
-		HomePage homePage = new HomePage(driver);
+		PocetnaStranica homePage = new PocetnaStranica(driver);
 		homePage.verifyHomePage();
 		PravnaLicaPage pravnaLicaPage = homePage.navigateToPravnaLica();
 		pravnaLicaPage.verifikujPravnaLica();

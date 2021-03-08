@@ -13,9 +13,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.platformX.base.PageBase;
 
-public class HomePage extends PageBase {
+public class PocetnaStranica extends PageBase {
 
-	public HomePage(WebDriver driver) throws FileNotFoundException, IOException {
+	public PocetnaStranica(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);
 	}
 	
@@ -71,6 +71,9 @@ public class HomePage extends PageBase {
 
 	@FindBy(xpath = "//button[6]")
 	protected WebElement finansijeWE;
+	
+	@FindBy(xpath = "//button[7]")
+	protected WebElement pravniOdnosiWE;
 
 	@FindBy(xpath = "//div[3]/a")
 	protected WebElement izvjestajiWE;
@@ -173,6 +176,9 @@ public class HomePage extends PageBase {
 	@FindBy(xpath = "//div[contains(text(), 'Mjerna mjesta')]")
 	protected WebElement mjernaMjestaStrWE;
 	
+	@FindBy(xpath = "//a[@href='/metering/metering-points-data-requests']")
+	protected WebElement zahtjeviZaDostavuPodataka1WE;
+	
 	@FindBy(xpath = "//div[contains(text(), 'Očitanja brojila')]")
 	protected WebElement ocitanjaBrojilaWE;
 	
@@ -223,6 +229,9 @@ public class HomePage extends PageBase {
 	
 	@FindBy(xpath = "//div[contains(text(), 'Avansi')]")
 	protected WebElement avansiWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Reprogrami')]")
+	protected WebElement reprogramiWE;
 
 	@FindBy(xpath = "//div[contains(text(), 'Banke')]")
 	protected WebElement bankeWE;
@@ -235,6 +244,9 @@ public class HomePage extends PageBase {
 	
 	@FindBy(xpath = "//div[contains(text(), 'Vrste stavki finansijske kartice')]")
 	protected WebElement vrsteStavkiFinansijskeKarticeWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Opomene')]")
+	protected WebElement opomeneWE;
 	
 	@FindBy(xpath = "//div[contains(text(), 'SAP')]")
 	protected WebElement sapWE;
@@ -540,6 +552,15 @@ public class HomePage extends PageBase {
 		return new MjernaMjestaPage(driver);
 	}
 	
+	public ZahtjeviZaDostavuPodatakaOMjernimMjestima navigateToZahtjeviZaDostavuPodataka1() throws Exception {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(mjernaMjestaWE));
+		mjernaMjestaWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(zahtjeviZaDostavuPodataka1WE));
+		zahtjeviZaDostavuPodataka1WE.click();
+		return new ZahtjeviZaDostavuPodatakaOMjernimMjestima(driver);
+	}
+	
 	public OcitanjaBrojilaPage navigateToOcitanjaBrojila() throws Exception {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(mjernaMjestaWE));
@@ -692,6 +713,15 @@ public class HomePage extends PageBase {
 		avansiWE.click();
 		return new AvansiPage(driver);
 	}
+	
+	public Reprogrami navigateToReprogrami() throws Exception {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(finansijeWE));
+		finansijeWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(reprogramiWE));
+		reprogramiWE.click();
+		return new Reprogrami(driver);
+	}
 
 	public BankePage navigateToBanke() throws Exception {
 		wait.until(ExpectedConditions.elementToBeClickable(finansijeWE));
@@ -726,6 +756,15 @@ public class HomePage extends PageBase {
 		wait.until(ExpectedConditions.elementToBeClickable(vrsteStavkiFinansijskeKarticeWE));
 		vrsteStavkiFinansijskeKarticeWE.click();
 		return new VrsteStavkiFinansijskeKarticePage(driver);
+	}
+	
+	public Opomene navigateToOpomene() throws Exception {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(pravniOdnosiWE));
+		pravniOdnosiWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(opomeneWE));
+		opomeneWE.click();
+		return new Opomene(driver);
 	}
 	
 	public SapPage navigateToSap() throws Exception {

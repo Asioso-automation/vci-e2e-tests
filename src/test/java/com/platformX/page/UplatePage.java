@@ -10,7 +10,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class UplatePage extends HomePage {
+public class UplatePage extends PocetnaStranica {
 
 	public UplatePage(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);

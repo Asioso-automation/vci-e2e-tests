@@ -4,7 +4,7 @@ import org.testng.annotations.Test;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import com.platformX.base.BaseTest;
-import com.platformX.page.HomePage;
+import com.platformX.page.PocetnaStranica;
 import com.platformX.page.LogInPage;
 
 public class QA_001_LogIn_LogOut_Test extends BaseTest {
@@ -20,7 +20,7 @@ public class QA_001_LogIn_LogOut_Test extends BaseTest {
 		LogInPage logInPage = new LogInPage(driver, PLATFORMX_PROPERTIES);
 		logInPage.verifyLogInPage();
 		logInPage.logIn();
-		HomePage homePage = new HomePage(driver);
+		PocetnaStranica homePage = new PocetnaStranica(driver);
 		homePage.verifyHomePage();
 		homePage.logOut();
 		logInPage.verifyLogInPage();

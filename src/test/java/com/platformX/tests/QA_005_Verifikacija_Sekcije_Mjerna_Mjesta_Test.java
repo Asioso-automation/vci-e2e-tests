@@ -5,11 +5,12 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import com.platformX.base.BaseTest;
 import com.platformX.page.EnergetskiObracunPage;
-import com.platformX.page.HomePage;
+import com.platformX.page.PocetnaStranica;
 import com.platformX.page.LogInPage;
 import com.platformX.page.MjernaMjestaPage;
 import com.platformX.page.MonitoringEnergetskogObracunaPage;
 import com.platformX.page.OcitanjaBrojilaPage;
+import com.platformX.page.ZahtjeviZaDostavuPodatakaOMjernimMjestima;
 
 public class QA_005_Verifikacija_Sekcije_Mjerna_Mjesta_Test extends BaseTest {
 
@@ -24,11 +25,12 @@ public class QA_005_Verifikacija_Sekcije_Mjerna_Mjesta_Test extends BaseTest {
 		LogInPage logInPage = new LogInPage(driver, PLATFORMX_PROPERTIES);
 		logInPage.verifyLogInPage();
 		logInPage.logIn();
-		HomePage homePage = new HomePage(driver);
+		PocetnaStranica homePage = new PocetnaStranica(driver);
 		homePage.verifyHomePage();
 		MjernaMjestaPage mjernaMjestaPage = homePage.navigateToMjernaMjesta();
 		mjernaMjestaPage.verifikujMjernaMjesta();
-		// TODO Zahtjevi za dostavu podataka
+		ZahtjeviZaDostavuPodatakaOMjernimMjestima zahtjeviZaDostavuPodataka = homePage.navigateToZahtjeviZaDostavuPodataka1();
+		zahtjeviZaDostavuPodataka.verifikujZahtjeviZaDostavuPodataka();
 		OcitanjaBrojilaPage ocitanjaBrojilaPage = homePage.navigateToOcitanjaBrojila();
 		ocitanjaBrojilaPage.verifikujOcitanjaBrojila();
 		EnergetskiObracunPage energetskiObracunPage = homePage.navigateToEnergetskiObracun();

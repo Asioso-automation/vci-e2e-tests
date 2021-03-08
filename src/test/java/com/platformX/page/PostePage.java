@@ -6,7 +6,7 @@ import java.io.IOException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class PostePage extends HomePage {
+public class PostePage extends PocetnaStranica {
 
 	public PostePage(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);

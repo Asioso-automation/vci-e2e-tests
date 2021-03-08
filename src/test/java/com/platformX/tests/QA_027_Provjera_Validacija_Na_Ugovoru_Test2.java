@@ -4,7 +4,7 @@ import org.testng.annotations.Test;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import com.platformX.base.BaseTest;
-import com.platformX.page.HomePage;
+import com.platformX.page.PocetnaStranica;
 import com.platformX.page.LogInPage;
 import com.platformX.page.UgovoriPage;
 
@@ -21,7 +21,7 @@ public class QA_027_Provjera_Validacija_Na_Ugovoru_Test2 extends BaseTest {
 		LogInPage logInPage = new LogInPage(driver, PLATFORMX_PROPERTIES);
 		logInPage.verifyLogInPage();
 		logInPage.logIn();
-		HomePage homePage = new HomePage(driver);
+		PocetnaStranica homePage = new PocetnaStranica(driver);
 		homePage.verifyHomePage();
 		UgovoriPage ugovoriPage = homePage.navigateToUgovori();
 		ugovoriPage.verifikujUgovori();

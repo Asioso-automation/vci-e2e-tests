@@ -3,27 +3,6 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Svi testovi]">
   <test name="Svi testovi(failed)">
     <classes>
-      <class name="com.platformX.tests.QA_037_Iskljucivanje_Ugovora_Test">
-        <methods>
-          <include name="qa_037_iskljucivanje_ugovora_test"/>
-          <include name="setUp"/>
-          <include name="cleanUp"/>
-        </methods>
-      </class> <!-- com.platformX.tests.QA_037_Iskljucivanje_Ugovora_Test -->
-      <class name="com.platformX.tests.QA_006_Verifikacija_Sekcije_Obracun_Test">
-        <methods>
-          <include name="qa_006_verifikacija_sekcije_obracun_test"/>
-          <include name="setUp"/>
-          <include name="cleanUp"/>
-        </methods>
-      </class> <!-- com.platformX.tests.QA_006_Verifikacija_Sekcije_Obracun_Test -->
-      <class name="com.platformX.tests.QA_035_Ukljucivanje_Ugovora_Test">
-        <methods>
-          <include name="setUp"/>
-          <include name="cleanUp"/>
-          <include name="qa_035_ukljucivanje_ugovora_test"/>
-        </methods>
-      </class> <!-- com.platformX.tests.QA_035_Ukljucivanje_Ugovora_Test -->
       <class name="com.platformX.tests.QA_036_Neuspjesno_Ukljucivanje_Ugovora_Test">
         <methods>
           <include name="setUp"/>
@@ -31,13 +10,6 @@
           <include name="qa_036_neuspjesno_ukljucivanje_ugovora_test"/>
         </methods>
       </class> <!-- com.platformX.tests.QA_036_Neuspjesno_Ukljucivanje_Ugovora_Test -->
-      <class name="com.platformX.tests.QA_004_Verifikacija_Sekcije_Kupci_Test">
-        <methods>
-          <include name="setUp"/>
-          <include name="cleanUp"/>
-          <include name="qa_004_verifikacija_sekcije_kupci_test"/>
-        </methods>
-      </class> <!-- com.platformX.tests.QA_004_Verifikacija_Sekcije_Kupci_Test -->
       <class name="com.platformX.tests.QA_038_Neuspjesno_Iskljucivanje_Ugovora_Test">
         <methods>
           <include name="setUp"/>
@@ -45,6 +17,20 @@
           <include name="cleanUp"/>
         </methods>
       </class> <!-- com.platformX.tests.QA_038_Neuspjesno_Iskljucivanje_Ugovora_Test -->
+      <class name="com.platformX.tests.QA_035_Ukljucivanje_Ugovora_Test">
+        <methods>
+          <include name="setUp"/>
+          <include name="cleanUp"/>
+          <include name="qa_035_ukljucivanje_ugovora_test"/>
+        </methods>
+      </class> <!-- com.platformX.tests.QA_035_Ukljucivanje_Ugovora_Test -->
+      <class name="com.platformX.tests.QA_028_Izmjena_Ugovora_Test">
+        <methods>
+          <include name="setUp"/>
+          <include name="qa_028_izmjena_ugovora_test"/>
+          <include name="cleanUp"/>
+        </methods>
+      </class> <!-- com.platformX.tests.QA_028_Izmjena_Ugovora_Test -->
     </classes>
   </test> <!-- Svi testovi(failed) -->
 </suite> <!-- Failed suite [Svi testovi] -->

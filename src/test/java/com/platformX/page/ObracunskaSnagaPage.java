@@ -8,7 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class ObracunskaSnagaPage extends HomePage {
+public class ObracunskaSnagaPage extends PocetnaStranica {
 
 	public ObracunskaSnagaPage(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);

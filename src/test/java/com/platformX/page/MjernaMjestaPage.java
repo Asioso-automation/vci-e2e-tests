@@ -6,7 +6,7 @@ import java.io.IOException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class MjernaMjestaPage extends HomePage {
+public class MjernaMjestaPage extends PocetnaStranica {
 
 	public MjernaMjestaPage(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);

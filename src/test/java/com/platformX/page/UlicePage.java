@@ -6,7 +6,7 @@ import java.io.IOException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class UlicePage extends HomePage {
+public class UlicePage extends PocetnaStranica {
 
 	public UlicePage(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);

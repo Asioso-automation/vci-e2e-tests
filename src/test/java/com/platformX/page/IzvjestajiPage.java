@@ -5,7 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import org.openqa.selenium.WebDriver;
 
-public class IzvjestajiPage extends HomePage {
+public class IzvjestajiPage extends PocetnaStranica {
 
 	public IzvjestajiPage(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);

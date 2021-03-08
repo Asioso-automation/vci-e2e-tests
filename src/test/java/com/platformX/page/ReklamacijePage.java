@@ -6,7 +6,7 @@ import java.io.IOException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class ReklamacijePage extends HomePage {
+public class ReklamacijePage extends PocetnaStranica {
 
 	public ReklamacijePage(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);

@@ -14,7 +14,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class UgovoriPage extends HomePage {
+public class UgovoriPage extends PocetnaStranica {
 
 	@FindBy(xpath = "//td[4]/div/div/div/div/input")
 	private WebElement pretraziMjernaMjestaWE;
@@ -114,12 +114,10 @@ public class UgovoriPage extends HomePage {
 	@FindBy(xpath = "//div[2]/div[4]/div/div/div[1]/div[1]/input[1]")
 	private WebElement cjenovnaKategorijaWE;
 
-	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '7 - Kate')] ") // 7 - Kategorija
-																										// cijene 2
+	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '7 - Kate')] ") // 7 - Kategorija cijene 2
 	private WebElement odaberiCjenovnuKategoriju1WE;
 
-	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '1 - Kate')] ") // 1 - Kategorija
-																										// cijene 1
+	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '1 - Kate')] ") // 1 - Kategorija cijene 1
 	private WebElement odaberiCjenovnuKategoriju2WE;
 
 	@FindBy(xpath = "//div[2]/div[5]/div/div/div[1]/div[1]/input[1]")

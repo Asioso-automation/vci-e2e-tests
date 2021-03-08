@@ -6,7 +6,7 @@ import java.io.IOException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class MonitoringObracunaPage extends HomePage {
+public class MonitoringObracunaPage extends PocetnaStranica {
 
 	public MonitoringObracunaPage(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);

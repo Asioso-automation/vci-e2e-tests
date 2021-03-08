@@ -6,7 +6,7 @@ import java.io.IOException;
 import com.platformX.base.BaseTest;
 import com.platformX.page.DjelatnostiPage;
 import com.platformX.page.EntitetiPage;
-import com.platformX.page.HomePage;
+import com.platformX.page.PocetnaStranica;
 import com.platformX.page.LogInPage;
 import com.platformX.page.NaseljenaMjestaPage;
 import com.platformX.page.OperativnaPodrucjaPage;
@@ -30,7 +30,7 @@ public class QA_002_Verifikacija_Sekcije_Sifarnici_Test extends BaseTest {
 		LogInPage logInPage = new LogInPage(driver, PLATFORMX_PROPERTIES);
 		logInPage.verifyLogInPage();
 		logInPage.logIn();
-		HomePage homePage = new HomePage(driver);
+		PocetnaStranica homePage = new PocetnaStranica(driver);
 		homePage.verifyHomePage();
 		OrganizacijePage organizacijePage = homePage.navigateToOrganizacije();
 		organizacijePage.verifikujOrganizacijeStranicu();

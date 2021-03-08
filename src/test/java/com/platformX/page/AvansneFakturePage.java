@@ -6,7 +6,7 @@ import java.io.IOException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class AvansneFakturePage extends HomePage {
+public class AvansneFakturePage extends PocetnaStranica {
 
 	public AvansneFakturePage(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);

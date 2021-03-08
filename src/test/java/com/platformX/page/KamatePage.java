@@ -6,7 +6,7 @@ import java.io.IOException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class KamatePage extends HomePage {
+public class KamatePage extends PocetnaStranica {
 
 	public KamatePage(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);

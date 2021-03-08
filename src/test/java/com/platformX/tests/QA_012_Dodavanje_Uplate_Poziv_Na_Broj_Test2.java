@@ -6,7 +6,7 @@ import java.io.IOException;
 import com.platformX.base.BaseTest;
 import com.platformX.page.BankePage;
 import com.platformX.page.DnevniciUplataPage;
-import com.platformX.page.HomePage;
+import com.platformX.page.PocetnaStranica;
 import com.platformX.page.LogInPage;
 import com.platformX.page.UplatePage;
 import com.platformX.page.ZiroRacuniPage;
@@ -22,7 +22,7 @@ public class QA_012_Dodavanje_Uplate_Poziv_Na_Broj_Test2 extends BaseTest {
 		LogInPage logInPage = new LogInPage(driver, PLATFORMX_PROPERTIES);
 		logInPage.verifyLogInPage();
 		logInPage.logIn();
-		HomePage homePage = new HomePage(driver);
+		PocetnaStranica homePage = new PocetnaStranica(driver);
 		homePage.verifyHomePage();
 		homePage.navigateToBanke();
 		BankePage bankePage = new BankePage(driver);

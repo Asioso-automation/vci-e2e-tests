@@ -8,10 +8,11 @@ import com.platformX.page.AvansiPage;
 import com.platformX.page.BankePage;
 import com.platformX.page.DnevniciUplataPage;
 import com.platformX.page.FinansijskeKarticePage;
-import com.platformX.page.HomePage;
+import com.platformX.page.PocetnaStranica;
 import com.platformX.page.IzvjestajiPage;
 import com.platformX.page.LogInPage;
 import com.platformX.page.NerasporedjeneUplatePage;
+import com.platformX.page.Reprogrami;
 import com.platformX.page.SveUplatePage;
 import com.platformX.page.VrsteKnjizenjaPage;
 import com.platformX.page.VrsteStavkiFinansijskeKarticePage;
@@ -30,7 +31,7 @@ public class QA_007_Verifikacija_Sekcije_Finansije_Test extends BaseTest {
 		LogInPage logInPage = new LogInPage(driver, PLATFORMX_PROPERTIES);
 		logInPage.verifyLogInPage();
 		logInPage.logIn();
-		HomePage homePage = new HomePage(driver);
+		PocetnaStranica homePage = new PocetnaStranica(driver);
 		homePage.verifyHomePage();
 		FinansijskeKarticePage finansijskeKarticePage = homePage.navigateToFinansijskeKartice();
 		finansijskeKarticePage.verifikujFinansijskeKartice();
@@ -42,7 +43,8 @@ public class QA_007_Verifikacija_Sekcije_Finansije_Test extends BaseTest {
 		nerasporedjeneUplatePage.verifikujNerasporedjeneUplate();
 		AvansiPage avansiPage = homePage.navigateToAvansi();
 		avansiPage.verifikujAvansi();
-		// TODO Reprogrami
+		Reprogrami reprogrami = homePage.navigateToReprogrami();
+		reprogrami.verifikujReprogrami();
 		BankePage bankePage = homePage.navigateToBanke();
 		bankePage.verifikujBankeStranicu();
 		ZiroRacuniPage ziroRacuniPage = homePage.navigateToZiroRacuni();

@@ -7,7 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class LogInPage extends HomePage {
+public class LogInPage extends PocetnaStranica {
 
 	public LogInPage(WebDriver driver, String URL) throws FileNotFoundException, IOException {
 		super(driver);

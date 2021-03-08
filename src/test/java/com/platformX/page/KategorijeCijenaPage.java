@@ -6,7 +6,7 @@ import java.io.IOException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class KategorijeCijenaPage extends HomePage {
+public class KategorijeCijenaPage extends PocetnaStranica {
 
 	public KategorijeCijenaPage(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);
