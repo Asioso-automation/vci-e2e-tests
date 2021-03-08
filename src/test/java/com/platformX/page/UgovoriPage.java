@@ -70,8 +70,11 @@ public class UgovoriPage extends HomePage {
 	@FindBy(xpath = "//tr[2]/td")
 	private WebElement porukaNaPraznojStraniciWE;
 
-	@FindBy(xpath = "//div[9]/div[2]")
+	@FindBy(xpath = "//div[contains(@class, 'v-list-item__content') and starts-with(., 'Isklju')]")
 	private WebElement iskljuciBtnWE;
+	
+	@FindBy(xpath = "//div[contains(@class, 'v-list-item__content') and starts-with(., 'Uklju')]")
+	private WebElement ukljuciBtnWE;
 
 	@FindBy(xpath = "//div[2]/input")
 	private WebElement datumIskljucenjaWE;
@@ -901,15 +904,21 @@ public class UgovoriPage extends HomePage {
 	public void provjeraIskljucenostiUgovora(String akcija) {
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		burgerBarWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(iskljuciBtnWE));
-		assertTrue(iskljuciBtnWE.getText().trim().equals(akcija), "Ugovori: Ugovor nema odgovarajucuakciju!");
+		if (akcija == "Uključi") {
+		wait.until(ExpectedConditions.elementToBeClickable(ukljuciBtnWE));
+		assertTrue(ukljuciBtnWE.getText().trim().equals(akcija), "Ugovori: Ugovor nema odgovarajucu akciju!");
+		}
+		else {
+			wait.until(ExpectedConditions.elementToBeClickable(iskljuciBtnWE));
+			assertTrue(iskljuciBtnWE.getText().trim().equals(akcija), "Ugovori: Ugovor nema odgovarajucu akciju!");	
+		}
 	}
 
 	public void ukljuciUgovor(String datumUkljucenja) throws InterruptedException {
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		burgerBarWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(iskljuciBtnWE));
-		iskljuciBtnWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(ukljuciBtnWE));
+		ukljuciBtnWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(datumUkljucenjaWE));
 		datumUkljucenjaWE.sendKeys(datumUkljucenja);
 		wait.until(ExpectedConditions.elementToBeClickable(potvrdiUkljucivanjeWE));

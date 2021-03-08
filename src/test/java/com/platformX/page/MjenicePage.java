@@ -22,7 +22,7 @@ public class MjenicePage extends HomePage {
 		assertTrue(sekcijaBtnWE.getText().trim().equals("KUPCI"), "UgovoreniPopusti: Naziv sekcije nije dobar!");
 		assertTrue(stranicaBtnWE.getText().trim().equals("MJENICE"), "Mjenice: Naziv stranice nije dobar!");
 		assertTrue(naslovStraniceWE.getText().trim().equals("MJENICE"), "Mjenice: Naziv stranice nije dobar!");
-		assertTrue(brojKolona().size() == 9, "Mjenice: Broj kolona nije dobar! ");
+		assertTrue(brojKolona().size() == 10, "Mjenice: Broj kolona nije dobar! ");
 	}
 
 }

@@ -21,6 +21,7 @@ public class MjernaMjestaPage extends HomePage {
 		assertTrue(sekcijaBtnWE.getText().trim().equals("OČITANJA"), "MjernaMjesta: Naziv sekcije nije dobar!"); // bug, los naziv sekcije
 		assertTrue(stranicaBtnWE.getText().trim().equals("MJERNA MJESTA"), "MjernaMjesta: Naziv stranice nije dobar!");
 		assertTrue(naslovStraniceWE.getText().trim().equals("MJERNA MJESTA"), "MjernaMjesta: Naziv stranice nije dobar!");
+		Thread.sleep(1000);
 		assertTrue(brojKolona().size() == 6, "MjernaMjesta: Broj kolona nije dobar! ");
 	}
 
