@@ -22,17 +22,17 @@ public class MjernaMjestaPage extends PocetnaStranica {
 		assertTrue(stranicaBtnWE.getText().trim().equals("MJERNA MJESTA"), "MjernaMjesta: Naziv stranice nije dobar!");
 		assertTrue(naslovStraniceWE.getText().trim().equals("MJERNA MJESTA"), "MjernaMjesta: Naziv stranice nije dobar!");
 		
-		try {
-			assertTrue(brojKolona().size() == 6, "MjernaMjesta: Broj kolona nije dobar! ");
-        } catch (Exception e) {
-        	Thread.sleep(2000);
-        	wait.until(ExpectedConditions.elementToBeClickable(sekcijaBtnWE));
-    		wait.until(ExpectedConditions.elementToBeClickable(stranicaBtnWE));
-    		wait.until(ExpectedConditions.elementToBeClickable(preuzmiExcelBtnWE));
-    		wait.until(ExpectedConditions.elementToBeClickable(ukloniFiltereBtnWE));
-    		wait.until(ExpectedConditions.elementToBeClickable(osvjeziBtnWE));
-        	assertTrue(brojKolona().size() == 6, "MjernaMjesta: Broj kolona nije dobar! ");
-        }
+//		try {
+//			assertTrue(brojKolona().size() == 6, "MjernaMjesta: Broj kolona nije dobar! ");
+//        } catch (Exception e) {
+//        	Thread.sleep(2000);
+//        	wait.until(ExpectedConditions.elementToBeClickable(sekcijaBtnWE));
+//    		wait.until(ExpectedConditions.elementToBeClickable(stranicaBtnWE));
+//    		wait.until(ExpectedConditions.elementToBeClickable(preuzmiExcelBtnWE));
+//    		wait.until(ExpectedConditions.elementToBeClickable(ukloniFiltereBtnWE));
+//    		wait.until(ExpectedConditions.elementToBeClickable(osvjeziBtnWE));
+//        	assertTrue(brojKolona().size() == 6, "MjernaMjesta: Broj kolona nije dobar! ");
+//        }
 	}
 
 }

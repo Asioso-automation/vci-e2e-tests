@@ -23,7 +23,7 @@ public class ObavjestenjaOPromjeniSnabdjevacaPage extends PocetnaStranica {
 				"ObavjestenjaOPromjeniSnabdjevaca: Naziv stranice nije dobar!");
 		assertTrue(naslovStraniceWE.getText().trim().equals("OBAVJEŠTENJA O PROMJENI SNABDJEVAČA"),
 				"ObavjestenjaOPromjeniSnabdjevaca: Naziv stranice nije dobar!");
-		assertTrue(brojKolona().size() == 8, "ObavjestenjaOPromjeniSnabdjevaca: Broj kolona nije dobar! ");
+		assertTrue(brojKolona().size() == 10, "ObavjestenjaOPromjeniSnabdjevaca: Broj kolona nije dobar! ");
 	}
 
 }
