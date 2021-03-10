@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="18825" started-at="2021-03-08T12:58:04Z" finished-at="2021-03-08T12:58:22Z">
+  <suite name="Default suite" duration-ms="24737" started-at="2021-03-10T10:52:09Z" finished-at="2021-03-10T10:52:33Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="18825" started-at="2021-03-08T12:58:04Z" finished-at="2021-03-08T12:58:22Z">
+    <test name="Default test" duration-ms="24737" started-at="2021-03-10T10:52:09Z" finished-at="2021-03-10T10:52:33Z">
       <class name="com.platformX.tests.QA_008_Verifikacija_Sekcije_Pravni_Odnosi_Test">
-        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.platformX.tests.QA_008_Verifikacija_Sekcije_Pravni_Odnosi_Test@3967e60c]" name="setUp" is-config="true" duration-ms="5459" started-at="2021-03-08T13:58:04Z" finished-at="2021-03-08T13:58:09Z">
+        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.platformX.tests.QA_008_Verifikacija_Sekcije_Pravni_Odnosi_Test@3967e60c]" name="setUp" is-config="true" duration-ms="5448" started-at="2021-03-10T11:52:09Z" finished-at="2021-03-10T11:52:14Z">
           <params>
             <param index="0">
               <value>
@@ -18,11 +18,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="qa_007_verifikacija_sekcije_pravni_odnosi_test()[pri:0, instance:com.platformX.tests.QA_008_Verifikacija_Sekcije_Pravni_Odnosi_Test@3967e60c]" name="qa_007_verifikacija_sekcije_pravni_odnosi_test" duration-ms="13351" started-at="2021-03-08T13:58:09Z" finished-at="2021-03-08T13:58:22Z">
+        <test-method status="PASS" signature="qa_007_verifikacija_sekcije_pravni_odnosi_test()[pri:0, instance:com.platformX.tests.QA_008_Verifikacija_Sekcije_Pravni_Odnosi_Test@3967e60c]" name="qa_007_verifikacija_sekcije_pravni_odnosi_test" duration-ms="19278" started-at="2021-03-10T11:52:14Z" finished-at="2021-03-10T11:52:33Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- qa_007_verifikacija_sekcije_pravni_odnosi_test -->
-        <test-method status="PASS" signature="cleanUp()[pri:0, instance:com.platformX.tests.QA_008_Verifikacija_Sekcije_Pravni_Odnosi_Test@3967e60c]" name="cleanUp" is-config="true" duration-ms="0" started-at="2021-03-08T13:58:22Z" finished-at="2021-03-08T13:58:22Z">
+        <test-method status="PASS" signature="cleanUp()[pri:0, instance:com.platformX.tests.QA_008_Verifikacija_Sekcije_Pravni_Odnosi_Test@3967e60c]" name="cleanUp" is-config="true" duration-ms="0" started-at="2021-03-10T11:52:33Z" finished-at="2021-03-10T11:52:33Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- cleanUp -->

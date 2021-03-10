@@ -9,7 +9,6 @@ import com.platformX.page.BankePage;
 import com.platformX.page.DnevniciUplataPage;
 import com.platformX.page.FinansijskeKarticePage;
 import com.platformX.page.PocetnaStranica;
-import com.platformX.page.IzvjestajiPage;
 import com.platformX.page.LogInPage;
 import com.platformX.page.NerasporedjeneUplatePage;
 import com.platformX.page.Reprogrami;
@@ -53,8 +52,5 @@ public class QA_007_Verifikacija_Sekcije_Finansije_Test extends BaseTest {
 		vrsteKnjizenjaPage.verifikujVrsteKnjizenja();
 		VrsteStavkiFinansijskeKarticePage vrsteStavkiFinansijskeKartice = homePage.navigateToVrsteStavkiFinansijskeKartice();
 		vrsteStavkiFinansijskeKartice.verifikujVrsteStavkiFinansijskeKartice();
-		// nova sekcija
-		IzvjestajiPage izvjestajiPage = homePage.navigateToIzvjestaji();
-		izvjestajiPage.verifikujIzvjestaji();
 	}
 }

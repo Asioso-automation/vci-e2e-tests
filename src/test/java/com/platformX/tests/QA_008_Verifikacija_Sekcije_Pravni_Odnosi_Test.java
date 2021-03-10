@@ -5,7 +5,9 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import com.platformX.base.BaseTest;
 import com.platformX.page.PocetnaStranica;
+import com.platformX.page.Tuzbe;
 import com.platformX.page.ZahtjeviZaIskljucenje;
+import com.platformX.page.ZahtjeviZaUkljucenje;
 import com.platformX.page.IskljucenjaOdStraneODSa;
 import com.platformX.page.IzvjestajiPage;
 import com.platformX.page.LogInPage;
@@ -20,7 +22,7 @@ public class QA_008_Verifikacija_Sekcije_Pravni_Odnosi_Test extends BaseTest {
 	// Test prolazi kroz sve stranice iz sekcije PRAVNI ODNOSI i IZVJESTAJI i verifikuje ih
 
 	@Test
-	public void qa_007_verifikacija_sekcije_pravni_odnosi_test() throws Exception {
+	public void qa_008_verifikacija_sekcije_pravni_odnosi_test() throws Exception {
 		LogInPage logInPage = new LogInPage(driver, PLATFORMX_PROPERTIES);
 		logInPage.verifyLogInPage();
 		logInPage.logIn();
@@ -32,6 +34,10 @@ public class QA_008_Verifikacija_Sekcije_Pravni_Odnosi_Test extends BaseTest {
 		zahtjeviZaIskljucenje.verifikujZahtjeviZaIskljucenje();
 		IskljucenjaOdStraneODSa iskljucenjaOdStraneODSa = homePage.navigateToIskljucenjaOdStraneODSa();
 		iskljucenjaOdStraneODSa.verifikujIskljucenjaOdStraneODSa();
+		ZahtjeviZaUkljucenje zahtjeviZaUkljucenje = homePage.navigateToZahtjeviZaUkljucenje();
+		zahtjeviZaUkljucenje.verifikujZahtjeviZaUkljucenje();
+		Tuzbe tuzbe = homePage.navigateToTuzbe();
+		tuzbe.verifikujTuzbe();
 		IzvjestajiPage izvjestajiPage = homePage.navigateToIzvjestaji();
 		izvjestajiPage.verifikujIzvjestaji();
 	}

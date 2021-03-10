@@ -44,6 +44,7 @@ encoding//src/test/java/com/platformX/page/SezonePage.java=UTF-8
 encoding//src/test/java/com/platformX/page/TarifneGrupePage.java=UTF-8
 encoding//src/test/java/com/platformX/page/TarifneKategorijePage.java=UTF-8
 encoding//src/test/java/com/platformX/page/TarifneNadgrupePage.java=UTF-8
+encoding//src/test/java/com/platformX/page/Tuzbe.java=UTF-8
 encoding//src/test/java/com/platformX/page/UgovoreniPopustiPage.java=UTF-8
 encoding//src/test/java/com/platformX/page/UgovoriPage.java=UTF-8
 encoding//src/test/java/com/platformX/page/UlicePage.java=UTF-8
@@ -56,6 +57,7 @@ encoding//src/test/java/com/platformX/page/ZahtjeviZaDostavuPodatakaOMjernimMjes
 encoding//src/test/java/com/platformX/page/ZahtjeviZaDostavuPodatakaPage.java=UTF-8
 encoding//src/test/java/com/platformX/page/ZahtjeviZaIskljucenje.java=UTF-8
 encoding//src/test/java/com/platformX/page/ZahtjeviZaUgovorePage.java=UTF-8
+encoding//src/test/java/com/platformX/page/ZahtjeviZaUkljucenje.java=UTF-8
 encoding//src/test/java/com/platformX/page/ZiroRacuniPage.java=UTF-8
 encoding//src/test/java/com/platformX/tests/QA_018_Dodavanje_Ugovora_Test.java=UTF-8
 encoding//src/test/java/com/platformX/tests/QA_019_Neuspjesno_Dodavanje_Ugovora_Test1.java=UTF-8
