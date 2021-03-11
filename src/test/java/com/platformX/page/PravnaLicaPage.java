@@ -44,7 +44,7 @@ public class PravnaLicaPage extends PocetnaStranica {
 	@FindBy(xpath = "//div[5]/div[1]/div/div/div[1]/div[1]/input[1]")
 	private WebElement mjestoWE;
 	
-	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '1 - Ba')]")
+	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '1 - Banja')]")
 	private WebElement odaberiMjestoWE;
 	
 	@FindBy(xpath = "//div[5]/div[2]/div/div/div[1]/div[1]/input[1]")

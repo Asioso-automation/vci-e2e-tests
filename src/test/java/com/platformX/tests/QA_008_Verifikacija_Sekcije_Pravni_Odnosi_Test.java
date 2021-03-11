@@ -8,10 +8,13 @@ import com.platformX.page.PocetnaStranica;
 import com.platformX.page.Tuzbe;
 import com.platformX.page.ZahtjeviZaIskljucenje;
 import com.platformX.page.ZahtjeviZaUkljucenje;
+import com.platformX.page.Bankroti;
 import com.platformX.page.IskljucenjaOdStraneODSa;
 import com.platformX.page.IzvjestajiPage;
 import com.platformX.page.LogInPage;
+import com.platformX.page.Medijacije;
 import com.platformX.page.Opomene;
+import com.platformX.page.OtpisiPotrazivanja;
 
 public class QA_008_Verifikacija_Sekcije_Pravni_Odnosi_Test extends BaseTest {
 
@@ -19,7 +22,7 @@ public class QA_008_Verifikacija_Sekcije_Pravni_Odnosi_Test extends BaseTest {
 		super();
 	}
 	
-	// Test prolazi kroz sve stranice iz sekcije PRAVNI ODNOSI i IZVJESTAJI i verifikuje ih
+	// Test prolazi kroz sve stranice iz sekcija PRAVNI ODNOSI i IZVJESTAJI i verifikuje ih
 
 	@Test
 	public void qa_008_verifikacija_sekcije_pravni_odnosi_test() throws Exception {
@@ -38,6 +41,12 @@ public class QA_008_Verifikacija_Sekcije_Pravni_Odnosi_Test extends BaseTest {
 		zahtjeviZaUkljucenje.verifikujZahtjeviZaUkljucenje();
 		Tuzbe tuzbe = homePage.navigateToTuzbe();
 		tuzbe.verifikujTuzbe();
+		Bankroti bankroti = homePage.navigateToBankroti();
+		bankroti.verifikujBankroti();
+		Medijacije medijacije = homePage.navigateToMedijacije();
+		medijacije.verifikujMedijacije();
+		OtpisiPotrazivanja otpisiPotrazivanja = homePage.navigateToOtpisiPotrazivanja();
+		otpisiPotrazivanja.verifikujOtpisiPotrazivanja();
 		IzvjestajiPage izvjestajiPage = homePage.navigateToIzvjestaji();
 		izvjestajiPage.verifikujIzvjestaji();
 	}

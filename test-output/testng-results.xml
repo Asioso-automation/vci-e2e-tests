@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="34790" started-at="2021-03-10T11:21:40Z" finished-at="2021-03-10T11:22:15Z">
+  <suite name="Default suite" duration-ms="23832" started-at="2021-03-11T12:09:50Z" finished-at="2021-03-11T12:10:14Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="34790" started-at="2021-03-10T11:21:40Z" finished-at="2021-03-10T11:22:15Z">
-      <class name="com.platformX.tests.QA_004_Verifikacija_Sekcije_Kupci_Test">
-        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.platformX.tests.QA_004_Verifikacija_Sekcije_Kupci_Test@3967e60c]" name="setUp" is-config="true" duration-ms="5392" started-at="2021-03-10T12:21:40Z" finished-at="2021-03-10T12:21:45Z">
+    <test name="Default test" duration-ms="23832" started-at="2021-03-11T12:09:50Z" finished-at="2021-03-11T12:10:14Z">
+      <class name="com.platformX.tests.QA_008_Verifikacija_Sekcije_Pravni_Odnosi_Test">
+        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.platformX.tests.QA_008_Verifikacija_Sekcije_Pravni_Odnosi_Test@3967e60c]" name="setUp" is-config="true" duration-ms="5385" started-at="2021-03-11T13:09:50Z" finished-at="2021-03-11T13:09:55Z">
           <params>
             <param index="0">
               <value>
@@ -18,15 +18,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="qa_004_verifikacija_sekcije_kupci_test()[pri:0, instance:com.platformX.tests.QA_004_Verifikacija_Sekcije_Kupci_Test@3967e60c]" name="qa_004_verifikacija_sekcije_kupci_test" duration-ms="29381" started-at="2021-03-10T12:21:45Z" finished-at="2021-03-10T12:22:15Z">
+        <test-method status="PASS" signature="qa_008_verifikacija_sekcije_pravni_odnosi_test()[pri:0, instance:com.platformX.tests.QA_008_Verifikacija_Sekcije_Pravni_Odnosi_Test@3967e60c]" name="qa_008_verifikacija_sekcije_pravni_odnosi_test" duration-ms="17810" started-at="2021-03-11T13:09:55Z" finished-at="2021-03-11T13:10:13Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- qa_004_verifikacija_sekcije_kupci_test -->
-        <test-method status="PASS" signature="cleanUp()[pri:0, instance:com.platformX.tests.QA_004_Verifikacija_Sekcije_Kupci_Test@3967e60c]" name="cleanUp" is-config="true" duration-ms="0" started-at="2021-03-10T12:22:15Z" finished-at="2021-03-10T12:22:15Z">
+        </test-method> <!-- qa_008_verifikacija_sekcije_pravni_odnosi_test -->
+        <test-method status="PASS" signature="cleanUp()[pri:0, instance:com.platformX.tests.QA_008_Verifikacija_Sekcije_Pravni_Odnosi_Test@3967e60c]" name="cleanUp" is-config="true" duration-ms="623" started-at="2021-03-11T13:10:13Z" finished-at="2021-03-11T13:10:14Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- cleanUp -->
-      </class> <!-- com.platformX.tests.QA_004_Verifikacija_Sekcije_Kupci_Test -->
+      </class> <!-- com.platformX.tests.QA_008_Verifikacija_Sekcije_Pravni_Odnosi_Test -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
