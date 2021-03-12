@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Svi testovi</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>32/4/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>29/7/0</td>
 </tr><tr>
-<td>Started on:</td><td>Mon Mar 08 12:40:50 CET 2021</td>
+<td>Started on:</td><td>Fri Mar 12 09:16:04 CET 2021</td>
 </tr>
-<tr><td>Total time:</td><td>1630 seconds (1630787 ms)</td>
+<tr><td>Total time:</td><td>1187 seconds (1187110 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,52 +75,17 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.platformX.tests.QA_028_Izmjena_Ugovora_Test.qa_028_izmjena_ugovora_test()'><b>qa_028_izmjena_ugovora_test</b><br>Test class: com.platformX.tests.QA_028_Izmjena_Ugovora_Test</td>
-<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator &apos;By.xpath: //div[contains(text(), &apos;Uredi&apos;)]&apos; (tried for 40 second(s) with 500 milliseconds interval)
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:113)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:283)
-	at com.platformX.page.UgovoriPage.izmjeniUgovor(UgovoriPage.java:634)
-	at com.platformX.tests.QA_028_Izmjena_Ugovora_Test.qa_028_izmjena_ugovora_test(QA_028_Izmjena_Ugovora_Test.java:36)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[contains(text(), &apos;Uredi&apos;)]&quot;}
-  (Session info: chrome=88.0.4324.190)
-  (Driver info: chromedriver=2.42.591088 (7b2b2dca23cca0862f674758c9a3933e685c27d5),platform=Windows NT 10.0.19042 x86_64) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 0 milliseconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;3.14.0&apos;, revision: &apos;aacccce0&apos;, time: &apos;2018-08-02T20:19:58.91Z&apos;
-System info: host: &apos;LAPTOP-D8GBQRP8&apos;, ip: &apos;192.168.255.105&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_261&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.42.591088 (7b2b2dca23cca0..., userDataDir: C:\Users\User\AppData\Local...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:49470}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 88.0.4324.190, webStorageEnabled: true}
-Session ID: a21a8508fde2f86c1371471560961935
-*** Element info: {Using=xpath, value=//div[contains(text(), &apos;Uredi&apos;)]}
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
-	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
-	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
-	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:322)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:424)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:314)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy11.isDisplayed(Unknown Source)
-	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:315)
-	at org.openqa.selenium.support.ui.ExpectedConditions.access$100(ExpectedConditions.java:44)
-	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:301)
-	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:298)
-	at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:686)
-	at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:682)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:260)
-	... 27 more
-... Removed 29 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace571518824", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace571518824'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator &apos;By.xpath: //div[contains(text(), &apos;Uredi&apos;)]&apos; (tried for 40 second(s) with 500 milliseconds interval)
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:113)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:283)
-	at com.platformX.page.UgovoriPage.izmjeniUgovor(UgovoriPage.java:634)
-	at com.platformX.tests.QA_028_Izmjena_Ugovora_Test.qa_028_izmjena_ugovora_test(QA_028_Izmjena_Ugovora_Test.java:36)
+<td title='com.platformX.tests.QA_007_Verifikacija_Sekcije_Finansije_Test.qa_007_verifikacija_sekcije_finansije_test()'><b>qa_007_verifikacija_sekcije_finansije_test</b><br>Test class: com.platformX.tests.QA_007_Verifikacija_Sekcije_Finansije_Test</td>
+<td><div><pre>java.lang.AssertionError: DnevniciUplata: Broj kolona nije dobar!  expected [true] but found [false]
+	at com.platformX.page.DnevniciUplataPage.verifikujDnevniciUplataPage(DnevniciUplataPage.java:79)
+	at com.platformX.tests.QA_007_Verifikacija_Sekcije_Finansije_Test.qa_007_verifikacija_sekcije_finansije_test(QA_007_Verifikacija_Sekcije_Finansije_Test.java:38)
+... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1975569721", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1975569721'><pre>java.lang.AssertionError: DnevniciUplata: Broj kolona nije dobar!  expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:93)
+	at org.testng.Assert.failNotEquals(Assert.java:512)
+	at org.testng.Assert.assertTrue(Assert.java:41)
+	at com.platformX.page.DnevniciUplataPage.verifikujDnevniciUplataPage(DnevniciUplataPage.java:79)
+	at com.platformX.tests.QA_007_Verifikacija_Sekcije_Finansije_Test.qa_007_verifikacija_sekcije_finansije_test(QA_007_Verifikacija_Sekcije_Finansije_Test.java:38)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -146,94 +111,21 @@ Session ID: a21a8508fde2f86c1371471560961935
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[contains(text(), &apos;Uredi&apos;)]&quot;}
-  (Session info: chrome=88.0.4324.190)
-  (Driver info: chromedriver=2.42.591088 (7b2b2dca23cca0862f674758c9a3933e685c27d5),platform=Windows NT 10.0.19042 x86_64) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 0 milliseconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;3.14.0&apos;, revision: &apos;aacccce0&apos;, time: &apos;2018-08-02T20:19:58.91Z&apos;
-System info: host: &apos;LAPTOP-D8GBQRP8&apos;, ip: &apos;192.168.255.105&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_261&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.42.591088 (7b2b2dca23cca0..., userDataDir: C:\Users\User\AppData\Local...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:49470}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 88.0.4324.190, webStorageEnabled: true}
-Session ID: a21a8508fde2f86c1371471560961935
-*** Element info: {Using=xpath, value=//div[contains(text(), &apos;Uredi&apos;)]}
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
-	at java.lang.reflect.Constructor.newInstance(Unknown Source)
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
-	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
-	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
-	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:322)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:424)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:314)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy11.isDisplayed(Unknown Source)
-	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:315)
-	at org.openqa.selenium.support.ui.ExpectedConditions.access$100(ExpectedConditions.java:44)
-	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:301)
-	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:298)
-	at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:686)
-	at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:682)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:260)
-	... 27 more
 </pre></div></td>
-<td>92</td>
-<td>com.platformX.tests.QA_028_Izmjena_Ugovora_Test@5abca1e0</td></tr>
+<td>9</td>
+<td>com.platformX.tests.QA_007_Verifikacija_Sekcije_Finansije_Test@31dc339b</td></tr>
 <tr>
-<td title='com.platformX.tests.QA_035_Ukljucivanje_Ugovora_Test.qa_035_ukljucivanje_ugovora_test()'><b>qa_035_ukljucivanje_ugovora_test</b><br>Test class: com.platformX.tests.QA_035_Ukljucivanje_Ugovora_Test</td>
-<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator &apos;By.xpath: //div[contains(@class, &apos;v-list-item__content&apos;) and starts-with(., &apos;Isklju&apos;)]&apos; (tried for 40 second(s) with 500 milliseconds interval)
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:113)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:283)
-	at com.platformX.page.UgovoriPage.iskljuciUgovor(UgovoriPage.java:891)
-	at com.platformX.tests.QA_035_Ukljucivanje_Ugovora_Test.qa_035_ukljucivanje_ugovora_test(QA_035_Ukljucivanje_Ugovora_Test.java:36)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[contains(@class, &apos;v-list-item__content&apos;) and starts-with(., &apos;Isklju&apos;)]&quot;}
-  (Session info: chrome=88.0.4324.190)
-  (Driver info: chromedriver=2.42.591088 (7b2b2dca23cca0862f674758c9a3933e685c27d5),platform=Windows NT 10.0.19042 x86_64) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 0 milliseconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;3.14.0&apos;, revision: &apos;aacccce0&apos;, time: &apos;2018-08-02T20:19:58.91Z&apos;
-System info: host: &apos;LAPTOP-D8GBQRP8&apos;, ip: &apos;192.168.255.105&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_261&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.42.591088 (7b2b2dca23cca0..., userDataDir: C:\Users\User\AppData\Local...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:49758}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 88.0.4324.190, webStorageEnabled: true}
-Session ID: 5daf5fe6c40fa51945bc647386c90869
-*** Element info: {Using=xpath, value=//div[contains(@class, &apos;v-list-item__content&apos;) and starts-with(., &apos;Isklju&apos;)]}
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
-	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
-	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
-	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:322)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:424)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:314)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy11.isDisplayed(Unknown Source)
-	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:315)
-	at org.openqa.selenium.support.ui.ExpectedConditions.access$100(ExpectedConditions.java:44)
-	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:301)
-	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:298)
-	at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:686)
-	at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:682)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:260)
-	... 27 more
-... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace72445487", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace72445487'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator &apos;By.xpath: //div[contains(@class, &apos;v-list-item__content&apos;) and starts-with(., &apos;Isklju&apos;)]&apos; (tried for 40 second(s) with 500 milliseconds interval)
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:113)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:283)
-	at com.platformX.page.UgovoriPage.iskljuciUgovor(UgovoriPage.java:891)
-	at com.platformX.tests.QA_035_Ukljucivanje_Ugovora_Test.qa_035_ukljucivanje_ugovora_test(QA_035_Ukljucivanje_Ugovora_Test.java:36)
+<td title='com.platformX.tests.QA_010_Dodavanje_Dnevnika_Uplata_Test.qa_010_dodavanje_dnevnika_uplata_test()'><b>qa_010_dodavanje_dnevnika_uplata_test</b><br>Test class: com.platformX.tests.QA_010_Dodavanje_Dnevnika_Uplata_Test</td>
+<td><div><pre>java.lang.AssertionError: DnevniciUplata: Broj kolona nije dobar!  expected [true] but found [false]
+	at com.platformX.page.DnevniciUplataPage.verifikujDnevniciUplataPage(DnevniciUplataPage.java:79)
+	at com.platformX.tests.QA_010_Dodavanje_Dnevnika_Uplata_Test.qa_010_dodavanje_dnevnika_uplata_test(QA_010_Dodavanje_Dnevnika_Uplata_Test.java:36)
+... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1163358778", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1163358778'><pre>java.lang.AssertionError: DnevniciUplata: Broj kolona nije dobar!  expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:93)
+	at org.testng.Assert.failNotEquals(Assert.java:512)
+	at org.testng.Assert.assertTrue(Assert.java:41)
+	at com.platformX.page.DnevniciUplataPage.verifikujDnevniciUplataPage(DnevniciUplataPage.java:79)
+	at com.platformX.tests.QA_010_Dodavanje_Dnevnika_Uplata_Test.qa_010_dodavanje_dnevnika_uplata_test(QA_010_Dodavanje_Dnevnika_Uplata_Test.java:36)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -259,93 +151,21 @@ Session ID: 5daf5fe6c40fa51945bc647386c90869
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[contains(@class, &apos;v-list-item__content&apos;) and starts-with(., &apos;Isklju&apos;)]&quot;}
-  (Session info: chrome=88.0.4324.190)
-  (Driver info: chromedriver=2.42.591088 (7b2b2dca23cca0862f674758c9a3933e685c27d5),platform=Windows NT 10.0.19042 x86_64) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 0 milliseconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;3.14.0&apos;, revision: &apos;aacccce0&apos;, time: &apos;2018-08-02T20:19:58.91Z&apos;
-System info: host: &apos;LAPTOP-D8GBQRP8&apos;, ip: &apos;192.168.255.105&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_261&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.42.591088 (7b2b2dca23cca0..., userDataDir: C:\Users\User\AppData\Local...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:49758}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 88.0.4324.190, webStorageEnabled: true}
-Session ID: 5daf5fe6c40fa51945bc647386c90869
-*** Element info: {Using=xpath, value=//div[contains(@class, &apos;v-list-item__content&apos;) and starts-with(., &apos;Isklju&apos;)]}
-	at sun.reflect.GeneratedConstructorAccessor22.newInstance(Unknown Source)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
-	at java.lang.reflect.Constructor.newInstance(Unknown Source)
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
-	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
-	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
-	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:322)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:424)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:314)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy11.isDisplayed(Unknown Source)
-	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:315)
-	at org.openqa.selenium.support.ui.ExpectedConditions.access$100(ExpectedConditions.java:44)
-	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:301)
-	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:298)
-	at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:686)
-	at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:682)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:260)
-	... 27 more
 </pre></div></td>
-<td>90</td>
-<td>com.platformX.tests.QA_035_Ukljucivanje_Ugovora_Test@13a5fe33</td></tr>
+<td>23</td>
+<td>com.platformX.tests.QA_010_Dodavanje_Dnevnika_Uplata_Test@21213b92</td></tr>
 <tr>
-<td title='com.platformX.tests.QA_036_Neuspjesno_Ukljucivanje_Ugovora_Test.qa_036_neuspjesno_ukljucivanje_ugovora_test()'><b>qa_036_neuspjesno_ukljucivanje_ugovora_test</b><br>Test class: com.platformX.tests.QA_036_Neuspjesno_Ukljucivanje_Ugovora_Test</td>
-<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator &apos;By.xpath: //div[contains(@class, &apos;v-list-item__content&apos;) and starts-with(., &apos;Isklju&apos;)]&apos; (tried for 40 second(s) with 500 milliseconds interval)
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:113)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:283)
-	at com.platformX.page.UgovoriPage.iskljuciUgovor(UgovoriPage.java:891)
-	at com.platformX.tests.QA_036_Neuspjesno_Ukljucivanje_Ugovora_Test.qa_036_neuspjesno_ukljucivanje_ugovora_test(QA_036_Neuspjesno_Ukljucivanje_Ugovora_Test.java:36)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[contains(@class, &apos;v-list-item__content&apos;) and starts-with(., &apos;Isklju&apos;)]&quot;}
-  (Session info: chrome=88.0.4324.190)
-  (Driver info: chromedriver=2.42.591088 (7b2b2dca23cca0862f674758c9a3933e685c27d5),platform=Windows NT 10.0.19042 x86_64) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 0 milliseconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;3.14.0&apos;, revision: &apos;aacccce0&apos;, time: &apos;2018-08-02T20:19:58.91Z&apos;
-System info: host: &apos;LAPTOP-D8GBQRP8&apos;, ip: &apos;192.168.255.105&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_261&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.42.591088 (7b2b2dca23cca0..., userDataDir: C:\Users\User\AppData\Local...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:49832}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 88.0.4324.190, webStorageEnabled: true}
-Session ID: 19994150a7cf30d4431f32e342798258
-*** Element info: {Using=xpath, value=//div[contains(@class, &apos;v-list-item__content&apos;) and starts-with(., &apos;Isklju&apos;)]}
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
-	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
-	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
-	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:322)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:424)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:314)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy11.isDisplayed(Unknown Source)
-	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:315)
-	at org.openqa.selenium.support.ui.ExpectedConditions.access$100(ExpectedConditions.java:44)
-	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:301)
-	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:298)
-	at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:686)
-	at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:682)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:260)
-	... 27 more
-... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace91535055", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace91535055'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator &apos;By.xpath: //div[contains(@class, &apos;v-list-item__content&apos;) and starts-with(., &apos;Isklju&apos;)]&apos; (tried for 40 second(s) with 500 milliseconds interval)
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:113)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:283)
-	at com.platformX.page.UgovoriPage.iskljuciUgovor(UgovoriPage.java:891)
-	at com.platformX.tests.QA_036_Neuspjesno_Ukljucivanje_Ugovora_Test.qa_036_neuspjesno_ukljucivanje_ugovora_test(QA_036_Neuspjesno_Ukljucivanje_Ugovora_Test.java:36)
+<td title='com.platformX.tests.QA_011_Dodavanje_Uplate_Poziv_Na_Broj_Test1.qa_011_dodavanje_uplata_poziv_na_broj_test1()'><b>qa_011_dodavanje_uplata_poziv_na_broj_test1</b><br>Test class: com.platformX.tests.QA_011_Dodavanje_Uplate_Poziv_Na_Broj_Test1</td>
+<td><div><pre>java.lang.AssertionError: DnevniciUplata: Broj kolona nije dobar!  expected [true] but found [false]
+	at com.platformX.page.DnevniciUplataPage.verifikujDnevniciUplataPage(DnevniciUplataPage.java:79)
+	at com.platformX.tests.QA_011_Dodavanje_Uplate_Poziv_Na_Broj_Test1.qa_011_dodavanje_uplata_poziv_na_broj_test1(QA_011_Dodavanje_Uplate_Poziv_Na_Broj_Test1.java:37)
+... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace20334603", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace20334603'><pre>java.lang.AssertionError: DnevniciUplata: Broj kolona nije dobar!  expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:93)
+	at org.testng.Assert.failNotEquals(Assert.java:512)
+	at org.testng.Assert.assertTrue(Assert.java:41)
+	at com.platformX.page.DnevniciUplataPage.verifikujDnevniciUplataPage(DnevniciUplataPage.java:79)
+	at com.platformX.tests.QA_011_Dodavanje_Uplate_Poziv_Na_Broj_Test1.qa_011_dodavanje_uplata_poziv_na_broj_test1(QA_011_Dodavanje_Uplate_Poziv_Na_Broj_Test1.java:37)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -371,93 +191,21 @@ Session ID: 19994150a7cf30d4431f32e342798258
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[contains(@class, &apos;v-list-item__content&apos;) and starts-with(., &apos;Isklju&apos;)]&quot;}
-  (Session info: chrome=88.0.4324.190)
-  (Driver info: chromedriver=2.42.591088 (7b2b2dca23cca0862f674758c9a3933e685c27d5),platform=Windows NT 10.0.19042 x86_64) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 0 milliseconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;3.14.0&apos;, revision: &apos;aacccce0&apos;, time: &apos;2018-08-02T20:19:58.91Z&apos;
-System info: host: &apos;LAPTOP-D8GBQRP8&apos;, ip: &apos;192.168.255.105&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_261&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.42.591088 (7b2b2dca23cca0..., userDataDir: C:\Users\User\AppData\Local...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:49832}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 88.0.4324.190, webStorageEnabled: true}
-Session ID: 19994150a7cf30d4431f32e342798258
-*** Element info: {Using=xpath, value=//div[contains(@class, &apos;v-list-item__content&apos;) and starts-with(., &apos;Isklju&apos;)]}
-	at sun.reflect.GeneratedConstructorAccessor22.newInstance(Unknown Source)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
-	at java.lang.reflect.Constructor.newInstance(Unknown Source)
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
-	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
-	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
-	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:322)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:424)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:314)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy11.isDisplayed(Unknown Source)
-	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:315)
-	at org.openqa.selenium.support.ui.ExpectedConditions.access$100(ExpectedConditions.java:44)
-	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:301)
-	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:298)
-	at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:686)
-	at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:682)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:260)
-	... 27 more
 </pre></div></td>
-<td>92</td>
-<td>com.platformX.tests.QA_036_Neuspjesno_Ukljucivanje_Ugovora_Test@3108bc</td></tr>
+<td>23</td>
+<td>com.platformX.tests.QA_011_Dodavanje_Uplate_Poziv_Na_Broj_Test1@a67c67e</td></tr>
 <tr>
-<td title='com.platformX.tests.QA_038_Neuspjesno_Iskljucivanje_Ugovora_Test.qa_038_neuspjesno_iskljucivanje_ugovora_test()'><b>qa_038_neuspjesno_iskljucivanje_ugovora_test</b><br>Test class: com.platformX.tests.QA_038_Neuspjesno_Iskljucivanje_Ugovora_Test</td>
-<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator &apos;By.xpath: //div[contains(@class, &apos;v-list-item__content&apos;) and starts-with(., &apos;Isklju&apos;)]&apos; (tried for 40 second(s) with 500 milliseconds interval)
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:113)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:283)
-	at com.platformX.page.UgovoriPage.iskljuciUgovor(UgovoriPage.java:891)
-	at com.platformX.tests.QA_038_Neuspjesno_Iskljucivanje_Ugovora_Test.qa_038_neuspjesno_iskljucivanje_ugovora_test(QA_038_Neuspjesno_Iskljucivanje_Ugovora_Test.java:36)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[contains(@class, &apos;v-list-item__content&apos;) and starts-with(., &apos;Isklju&apos;)]&quot;}
-  (Session info: chrome=88.0.4324.190)
-  (Driver info: chromedriver=2.42.591088 (7b2b2dca23cca0862f674758c9a3933e685c27d5),platform=Windows NT 10.0.19042 x86_64) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 0 milliseconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;3.14.0&apos;, revision: &apos;aacccce0&apos;, time: &apos;2018-08-02T20:19:58.91Z&apos;
-System info: host: &apos;LAPTOP-D8GBQRP8&apos;, ip: &apos;192.168.255.105&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_261&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.42.591088 (7b2b2dca23cca0..., userDataDir: C:\Users\User\AppData\Local...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:49960}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 88.0.4324.190, webStorageEnabled: true}
-Session ID: 3b8e2fbfc56c69473deba5eedc0125ac
-*** Element info: {Using=xpath, value=//div[contains(@class, &apos;v-list-item__content&apos;) and starts-with(., &apos;Isklju&apos;)]}
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
-	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
-	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
-	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:322)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:424)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:314)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy11.isDisplayed(Unknown Source)
-	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:315)
-	at org.openqa.selenium.support.ui.ExpectedConditions.access$100(ExpectedConditions.java:44)
-	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:301)
-	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:298)
-	at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:686)
-	at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:682)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:260)
-	... 27 more
-... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1473187638", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1473187638'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator &apos;By.xpath: //div[contains(@class, &apos;v-list-item__content&apos;) and starts-with(., &apos;Isklju&apos;)]&apos; (tried for 40 second(s) with 500 milliseconds interval)
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:113)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:283)
-	at com.platformX.page.UgovoriPage.iskljuciUgovor(UgovoriPage.java:891)
-	at com.platformX.tests.QA_038_Neuspjesno_Iskljucivanje_Ugovora_Test.qa_038_neuspjesno_iskljucivanje_ugovora_test(QA_038_Neuspjesno_Iskljucivanje_Ugovora_Test.java:36)
+<td title='com.platformX.tests.QA_011_Dodavanje_Uplate_Test.qa_011_dodavanje_uplate_test()'><b>qa_011_dodavanje_uplate_test</b><br>Test class: com.platformX.tests.QA_011_Dodavanje_Uplate_Test</td>
+<td><div><pre>java.lang.AssertionError: DnevniciUplata: Broj kolona nije dobar!  expected [true] but found [false]
+	at com.platformX.page.DnevniciUplataPage.verifikujDnevniciUplataPage(DnevniciUplataPage.java:79)
+	at com.platformX.tests.QA_011_Dodavanje_Uplate_Test.qa_011_dodavanje_uplate_test(QA_011_Dodavanje_Uplate_Test.java:37)
+... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2125689029", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2125689029'><pre>java.lang.AssertionError: DnevniciUplata: Broj kolona nije dobar!  expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:93)
+	at org.testng.Assert.failNotEquals(Assert.java:512)
+	at org.testng.Assert.assertTrue(Assert.java:41)
+	at com.platformX.page.DnevniciUplataPage.verifikujDnevniciUplataPage(DnevniciUplataPage.java:79)
+	at com.platformX.tests.QA_011_Dodavanje_Uplate_Test.qa_011_dodavanje_uplate_test(QA_011_Dodavanje_Uplate_Test.java:37)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -483,46 +231,129 @@ Session ID: 3b8e2fbfc56c69473deba5eedc0125ac
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[contains(@class, &apos;v-list-item__content&apos;) and starts-with(., &apos;Isklju&apos;)]&quot;}
-  (Session info: chrome=88.0.4324.190)
-  (Driver info: chromedriver=2.42.591088 (7b2b2dca23cca0862f674758c9a3933e685c27d5),platform=Windows NT 10.0.19042 x86_64) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 0 milliseconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;3.14.0&apos;, revision: &apos;aacccce0&apos;, time: &apos;2018-08-02T20:19:58.91Z&apos;
-System info: host: &apos;LAPTOP-D8GBQRP8&apos;, ip: &apos;192.168.255.105&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_261&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.42.591088 (7b2b2dca23cca0..., userDataDir: C:\Users\User\AppData\Local...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:49960}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 88.0.4324.190, webStorageEnabled: true}
-Session ID: 3b8e2fbfc56c69473deba5eedc0125ac
-*** Element info: {Using=xpath, value=//div[contains(@class, &apos;v-list-item__content&apos;) and starts-with(., &apos;Isklju&apos;)]}
-	at sun.reflect.GeneratedConstructorAccessor22.newInstance(Unknown Source)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
-	at java.lang.reflect.Constructor.newInstance(Unknown Source)
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
-	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
-	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
-	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:322)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:424)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:314)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy11.isDisplayed(Unknown Source)
-	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:315)
-	at org.openqa.selenium.support.ui.ExpectedConditions.access$100(ExpectedConditions.java:44)
-	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:301)
-	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:298)
-	at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:686)
-	at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:682)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:260)
-	... 27 more
 </pre></div></td>
-<td>92</td>
-<td>com.platformX.tests.QA_038_Neuspjesno_Iskljucivanje_Ugovora_Test@5f9d02cb</td></tr>
+<td>23</td>
+<td>com.platformX.tests.QA_011_Dodavanje_Uplate_Test@3327bd23</td></tr>
+<tr>
+<td title='com.platformX.tests.QA_012_Dodavanje_Uplate_Poziv_Na_Broj_Test2.qa_012_dodavanje_uplate_poziv_na_broj_test2()'><b>qa_012_dodavanje_uplate_poziv_na_broj_test2</b><br>Test class: com.platformX.tests.QA_012_Dodavanje_Uplate_Poziv_Na_Broj_Test2</td>
+<td><div><pre>java.lang.AssertionError: DnevniciUplata: Broj kolona nije dobar!  expected [true] but found [false]
+	at com.platformX.page.DnevniciUplataPage.verifikujDnevniciUplataPage(DnevniciUplataPage.java:79)
+	at com.platformX.tests.QA_012_Dodavanje_Uplate_Poziv_Na_Broj_Test2.qa_012_dodavanje_uplate_poziv_na_broj_test2(QA_012_Dodavanje_Uplate_Poziv_Na_Broj_Test2.java:37)
+... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2104370022", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2104370022'><pre>java.lang.AssertionError: DnevniciUplata: Broj kolona nije dobar!  expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:93)
+	at org.testng.Assert.failNotEquals(Assert.java:512)
+	at org.testng.Assert.assertTrue(Assert.java:41)
+	at com.platformX.page.DnevniciUplataPage.verifikujDnevniciUplataPage(DnevniciUplataPage.java:79)
+	at com.platformX.tests.QA_012_Dodavanje_Uplate_Poziv_Na_Broj_Test2.qa_012_dodavanje_uplate_poziv_na_broj_test2(QA_012_Dodavanje_Uplate_Poziv_Na_Broj_Test2.java:37)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:661)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
+	at org.testng.TestNG.runSuites(TestNG.java:1144)
+	at org.testng.TestNG.run(TestNG.java:1115)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>22</td>
+<td>com.platformX.tests.QA_012_Dodavanje_Uplate_Poziv_Na_Broj_Test2@4e1d422d</td></tr>
+<tr>
+<td title='com.platformX.tests.QA_015_Dodavanje_Uplate_Sa_Kupcem_Test.qa_015_dodavanje_uplate_sa_kupcem_test()'><b>qa_015_dodavanje_uplate_sa_kupcem_test</b><br>Test class: com.platformX.tests.QA_015_Dodavanje_Uplate_Sa_Kupcem_Test</td>
+<td><div><pre>java.lang.AssertionError: DnevniciUplata: Broj kolona nije dobar!  expected [true] but found [false]
+	at com.platformX.page.DnevniciUplataPage.verifikujDnevniciUplataPage(DnevniciUplataPage.java:79)
+	at com.platformX.tests.QA_015_Dodavanje_Uplate_Sa_Kupcem_Test.qa_015_dodavanje_uplate_sa_kupcem_test(QA_015_Dodavanje_Uplate_Sa_Kupcem_Test.java:37)
+... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1024558673", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1024558673'><pre>java.lang.AssertionError: DnevniciUplata: Broj kolona nije dobar!  expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:93)
+	at org.testng.Assert.failNotEquals(Assert.java:512)
+	at org.testng.Assert.assertTrue(Assert.java:41)
+	at com.platformX.page.DnevniciUplataPage.verifikujDnevniciUplataPage(DnevniciUplataPage.java:79)
+	at com.platformX.tests.QA_015_Dodavanje_Uplate_Sa_Kupcem_Test.qa_015_dodavanje_uplate_sa_kupcem_test(QA_015_Dodavanje_Uplate_Sa_Kupcem_Test.java:37)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:661)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
+	at org.testng.TestNG.runSuites(TestNG.java:1144)
+	at org.testng.TestNG.run(TestNG.java:1115)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>23</td>
+<td>com.platformX.tests.QA_015_Dodavanje_Uplate_Sa_Kupcem_Test@5ce81285</td></tr>
+<tr>
+<td title='com.platformX.tests.QA_016_Preknjizavanje_Dnevnika_Uplata_Test.qa_016_preknjizavanje_dnevnika_uplata_test()'><b>qa_016_preknjizavanje_dnevnika_uplata_test</b><br>Test class: com.platformX.tests.QA_016_Preknjizavanje_Dnevnika_Uplata_Test</td>
+<td><div><pre>java.lang.AssertionError: DnevniciUplata: Broj kolona nije dobar!  expected [true] but found [false]
+	at com.platformX.page.DnevniciUplataPage.verifikujDnevniciUplataPage(DnevniciUplataPage.java:79)
+	at com.platformX.tests.QA_016_Preknjizavanje_Dnevnika_Uplata_Test.qa_016_preknjizavanje_dnevnika_uplata_test(QA_016_Preknjizavanje_Dnevnika_Uplata_Test.java:37)
+... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace620527965", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace620527965'><pre>java.lang.AssertionError: DnevniciUplata: Broj kolona nije dobar!  expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:93)
+	at org.testng.Assert.failNotEquals(Assert.java:512)
+	at org.testng.Assert.assertTrue(Assert.java:41)
+	at com.platformX.page.DnevniciUplataPage.verifikujDnevniciUplataPage(DnevniciUplataPage.java:79)
+	at com.platformX.tests.QA_016_Preknjizavanje_Dnevnika_Uplata_Test.qa_016_preknjizavanje_dnevnika_uplata_test(QA_016_Preknjizavanje_Dnevnika_Uplata_Test.java:37)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:661)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
+	at org.testng.TestNG.runSuites(TestNG.java:1144)
+	at org.testng.TestNG.run(TestNG.java:1115)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>23</td>
+<td>com.platformX.tests.QA_016_Preknjizavanje_Dnevnika_Uplata_Test@78c03f1f</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
@@ -534,163 +365,148 @@ Session ID: 3b8e2fbfc56c69473deba5eedc0125ac
 <tr>
 <td title='com.platformX.tests.QA_001_LogIn_LogOut_Test.qa_001_logIn_logOut_test()'><b>qa_001_logIn_logOut_test</b><br>Test class: com.platformX.tests.QA_001_LogIn_LogOut_Test</td>
 <td></td>
-<td>9</td>
+<td>40</td>
 <td>com.platformX.tests.QA_001_LogIn_LogOut_Test@7e0b0338</td></tr>
 <tr>
 <td title='com.platformX.tests.QA_002_Verifikacija_Sekcije_Sifarnici_Test.qa_002_verifikacije_sekcije_sifarnici_test()'><b>qa_002_verifikacije_sekcije_sifarnici_test</b><br>Test class: com.platformX.tests.QA_002_Verifikacija_Sekcije_Sifarnici_Test</td>
 <td></td>
-<td>23</td>
+<td>20</td>
 <td>com.platformX.tests.QA_002_Verifikacija_Sekcije_Sifarnici_Test@617faa95</td></tr>
 <tr>
 <td title='com.platformX.tests.QA_003_Verifikacija_Sekcije_Tarifni_Sistem_Test.qa_003_verifikacije_sekcije_tarifni_sistem_test()'><b>qa_003_verifikacije_sekcije_tarifni_sistem_test</b><br>Test class: com.platformX.tests.QA_003_Verifikacija_Sekcije_Tarifni_Sistem_Test</td>
 <td></td>
-<td>19</td>
+<td>15</td>
 <td>com.platformX.tests.QA_003_Verifikacija_Sekcije_Tarifni_Sistem_Test@1e127982</td></tr>
 <tr>
 <td title='com.platformX.tests.QA_004_Verifikacija_Sekcije_Kupci_Test.qa_004_verifikacija_sekcije_kupci_test()'><b>qa_004_verifikacija_sekcije_kupci_test</b><br>Test class: com.platformX.tests.QA_004_Verifikacija_Sekcije_Kupci_Test</td>
 <td></td>
-<td>27</td>
+<td>23</td>
 <td>com.platformX.tests.QA_004_Verifikacija_Sekcije_Kupci_Test@60c6f5b</td></tr>
 <tr>
 <td title='com.platformX.tests.QA_005_Verifikacija_Sekcije_Mjerna_Mjesta_Test.qa_005_verifikacija_sekcije_mjerna_mjesta_test()'><b>qa_005_verifikacija_sekcije_mjerna_mjesta_test</b><br>Test class: com.platformX.tests.QA_005_Verifikacija_Sekcije_Mjerna_Mjesta_Test</td>
 <td></td>
-<td>16</td>
+<td>12</td>
 <td>com.platformX.tests.QA_005_Verifikacija_Sekcije_Mjerna_Mjesta_Test@2038ae61</td></tr>
 <tr>
 <td title='com.platformX.tests.QA_006_Verifikacija_Sekcije_Obracun_Test.qa_006_verifikacija_sekcije_obracun_test()'><b>qa_006_verifikacija_sekcije_obracun_test</b><br>Test class: com.platformX.tests.QA_006_Verifikacija_Sekcije_Obracun_Test</td>
 <td></td>
-<td>23</td>
+<td>25</td>
 <td>com.platformX.tests.QA_006_Verifikacija_Sekcije_Obracun_Test@3c0f93f1</td></tr>
-<tr>
-<td title='com.platformX.tests.QA_007_Verifikacija_Sekcije_Finansije_Test.qa_007_verifikacija_sekcije_finansije_test()'><b>qa_007_verifikacija_sekcije_finansije_test</b><br>Test class: com.platformX.tests.QA_007_Verifikacija_Sekcije_Finansije_Test</td>
-<td></td>
-<td>24</td>
-<td>com.platformX.tests.QA_007_Verifikacija_Sekcije_Finansije_Test@31dc339b</td></tr>
-<tr>
-<td title='com.platformX.tests.QA_008_Verifikacija_Sekcije_Pravni_Odnosi_Test.qa_007_verifikacija_sekcije_pravni_odnosi_test()'><b>qa_007_verifikacija_sekcije_pravni_odnosi_test</b><br>Test class: com.platformX.tests.QA_008_Verifikacija_Sekcije_Pravni_Odnosi_Test</td>
-<td></td>
-<td>9</td>
-<td>com.platformX.tests.QA_008_Verifikacija_Sekcije_Pravni_Odnosi_Test@31610302</td></tr>
 <tr>
 <td title='com.platformX.tests.QA_008_Dodavanje_Banke_Test.qa_008_dodavanje_banke_test()'><b>qa_008_dodavanje_banke_test</b><br>Test class: com.platformX.tests.QA_008_Dodavanje_Banke_Test</td>
 <td></td>
-<td>13</td>
+<td>11</td>
 <td>com.platformX.tests.QA_008_Dodavanje_Banke_Test@544fe44c</td></tr>
+<tr>
+<td title='com.platformX.tests.QA_008_Verifikacija_Sekcije_Pravni_Odnosi_Test.qa_008_verifikacija_sekcije_pravni_odnosi_test()'><b>qa_008_verifikacija_sekcije_pravni_odnosi_test</b><br>Test class: com.platformX.tests.QA_008_Verifikacija_Sekcije_Pravni_Odnosi_Test</td>
+<td></td>
+<td>18</td>
+<td>com.platformX.tests.QA_008_Verifikacija_Sekcije_Pravni_Odnosi_Test@31610302</td></tr>
 <tr>
 <td title='com.platformX.tests.QA_009_Dodavanje_Ziro_Racuna_Test.qa_009_dodavanje_ziro_racuna_test()'><b>qa_009_dodavanje_ziro_racuna_test</b><br>Test class: com.platformX.tests.QA_009_Dodavanje_Ziro_Racuna_Test</td>
 <td></td>
-<td>24</td>
+<td>22</td>
 <td>com.platformX.tests.QA_009_Dodavanje_Ziro_Racuna_Test@71318ec4</td></tr>
-<tr>
-<td title='com.platformX.tests.QA_010_Dodavanje_Dnevnika_Uplata_Test.qa_010_dodavanje_dnevnika_uplata_test()'><b>qa_010_dodavanje_dnevnika_uplata_test</b><br>Test class: com.platformX.tests.QA_010_Dodavanje_Dnevnika_Uplata_Test</td>
-<td></td>
-<td>40</td>
-<td>com.platformX.tests.QA_010_Dodavanje_Dnevnika_Uplata_Test@21213b92</td></tr>
-<tr>
-<td title='com.platformX.tests.QA_011_Dodavanje_Uplate_Poziv_Na_Broj_Test1.qa_011_dodavanje_uplata_poziv_na_broj_test1()'><b>qa_011_dodavanje_uplata_poziv_na_broj_test1</b><br>Test class: com.platformX.tests.QA_011_Dodavanje_Uplate_Poziv_Na_Broj_Test1</td>
-<td></td>
-<td>47</td>
-<td>com.platformX.tests.QA_011_Dodavanje_Uplate_Poziv_Na_Broj_Test1@a67c67e</td></tr>
-<tr>
-<td title='com.platformX.tests.QA_011_Dodavanje_Uplate_Test.qa_011_dodavanje_uplate_test()'><b>qa_011_dodavanje_uplate_test</b><br>Test class: com.platformX.tests.QA_011_Dodavanje_Uplate_Test</td>
-<td></td>
-<td>48</td>
-<td>com.platformX.tests.QA_011_Dodavanje_Uplate_Test@3327bd23</td></tr>
-<tr>
-<td title='com.platformX.tests.QA_012_Dodavanje_Uplate_Poziv_Na_Broj_Test2.qa_012_dodavanje_uplate_poziv_na_broj_test2()'><b>qa_012_dodavanje_uplate_poziv_na_broj_test2</b><br>Test class: com.platformX.tests.QA_012_Dodavanje_Uplate_Poziv_Na_Broj_Test2</td>
-<td></td>
-<td>48</td>
-<td>com.platformX.tests.QA_012_Dodavanje_Uplate_Poziv_Na_Broj_Test2@4e1d422d</td></tr>
 <tr>
 <td title='com.platformX.tests.QA_013_Dodavanje_Radne_Jedinice_Test.qa_013_dodavanje_radne_jedinice_test()'><b>qa_013_dodavanje_radne_jedinice_test</b><br>Test class: com.platformX.tests.QA_013_Dodavanje_Radne_Jedinice_Test</td>
 <td></td>
-<td>13</td>
+<td>12</td>
 <td>com.platformX.tests.QA_013_Dodavanje_Radne_Jedinice_Test@66480dd7</td></tr>
 <tr>
 <td title='com.platformX.tests.QA_014_Dodavanje_Operativnog_Podrucja_Test.qa_014_dodavanje_operativnog_podrucja_test()'><b>qa_014_dodavanje_operativnog_podrucja_test</b><br>Test class: com.platformX.tests.QA_014_Dodavanje_Operativnog_Podrucja_Test</td>
 <td></td>
-<td>13</td>
+<td>11</td>
 <td>com.platformX.tests.QA_014_Dodavanje_Operativnog_Podrucja_Test@52a86356</td></tr>
-<tr>
-<td title='com.platformX.tests.QA_015_Dodavanje_Uplate_Sa_Kupcem_Test.qa_015_dodavanje_uplate_sa_kupcem_test()'><b>qa_015_dodavanje_uplate_sa_kupcem_test</b><br>Test class: com.platformX.tests.QA_015_Dodavanje_Uplate_Sa_Kupcem_Test</td>
-<td></td>
-<td>47</td>
-<td>com.platformX.tests.QA_015_Dodavanje_Uplate_Sa_Kupcem_Test@5ce81285</td></tr>
-<tr>
-<td title='com.platformX.tests.QA_016_Preknjizavanje_Dnevnika_Uplata_Test.qa_016_preknjizavanje_dnevnika_uplata_test()'><b>qa_016_preknjizavanje_dnevnika_uplata_test</b><br>Test class: com.platformX.tests.QA_016_Preknjizavanje_Dnevnika_Uplata_Test</td>
-<td></td>
-<td>46</td>
-<td>com.platformX.tests.QA_016_Preknjizavanje_Dnevnika_Uplata_Test@78c03f1f</td></tr>
 <tr>
 <td title='com.platformX.tests.QA_017_Dodavanje_Pravnog_Lica_Test.qa_017_dodavanje_pravnog_lica_test()'><b>qa_017_dodavanje_pravnog_lica_test</b><br>Test class: com.platformX.tests.QA_017_Dodavanje_Pravnog_Lica_Test</td>
 <td></td>
-<td>18</td>
+<td>16</td>
 <td>com.platformX.tests.QA_017_Dodavanje_Pravnog_Lica_Test@5ec0a365</td></tr>
 <tr>
 <td title='com.platformX.tests.QA_018_Dodavanje_Ugovora_Test.qa_018_dodavanje_ugovora_test()'><b>qa_018_dodavanje_ugovora_test</b><br>Test class: com.platformX.tests.QA_018_Dodavanje_Ugovora_Test</td>
 <td></td>
-<td>41</td>
+<td>34</td>
 <td>com.platformX.tests.QA_018_Dodavanje_Ugovora_Test@4fe3c938</td></tr>
 <tr>
 <td title='com.platformX.tests.QA_019_Neuspjesno_Dodavanje_Ugovora_Test1.qa_019_neuspjesno_dodavanje_ugovora_test1()'><b>qa_019_neuspjesno_dodavanje_ugovora_test1</b><br>Test class: com.platformX.tests.QA_019_Neuspjesno_Dodavanje_Ugovora_Test1</td>
 <td></td>
-<td>61</td>
+<td>49</td>
 <td>com.platformX.tests.QA_019_Neuspjesno_Dodavanje_Ugovora_Test1@5383967b</td></tr>
 <tr>
 <td title='com.platformX.tests.QA_021_Neuspjesno_Dodavanje_Ugovora_Test3.qa_021_nesupjesno_dodavanje_ugovora_test3()'><b>qa_021_nesupjesno_dodavanje_ugovora_test3</b><br>Test class: com.platformX.tests.QA_021_Neuspjesno_Dodavanje_Ugovora_Test3</td>
 <td></td>
-<td>39</td>
+<td>32</td>
 <td>com.platformX.tests.QA_021_Neuspjesno_Dodavanje_Ugovora_Test3@2ac273d3</td></tr>
 <tr>
 <td title='com.platformX.tests.QA_023_Neuspjesno_Dodavanje_Ugovora_Test5.qa_023_nesupjesno_dodavanje_ugovora_test5()'><b>qa_023_nesupjesno_dodavanje_ugovora_test5</b><br>Test class: com.platformX.tests.QA_023_Neuspjesno_Dodavanje_Ugovora_Test5</td>
 <td></td>
-<td>39</td>
+<td>32</td>
 <td>com.platformX.tests.QA_023_Neuspjesno_Dodavanje_Ugovora_Test5@71423665</td></tr>
 <tr>
 <td title='com.platformX.tests.QA_024_Neuspjesno_Dodavanje_Ugovora_Test6.qa_024_nesupjesno_dodavanje_ugovora_test6()'><b>qa_024_nesupjesno_dodavanje_ugovora_test6</b><br>Test class: com.platformX.tests.QA_024_Neuspjesno_Dodavanje_Ugovora_Test6</td>
 <td></td>
-<td>42</td>
+<td>35</td>
 <td>com.platformX.tests.QA_024_Neuspjesno_Dodavanje_Ugovora_Test6@20398b7c</td></tr>
 <tr>
 <td title='com.platformX.tests.QA_025_Dodavanje_Potpisanog_Ugovora_Test.qa_025_dodavanje_potpisanog_ugovora_test()'><b>qa_025_dodavanje_potpisanog_ugovora_test</b><br>Test class: com.platformX.tests.QA_025_Dodavanje_Potpisanog_Ugovora_Test</td>
 <td></td>
-<td>37</td>
+<td>28</td>
 <td>com.platformX.tests.QA_025_Dodavanje_Potpisanog_Ugovora_Test@6fc6f14e</td></tr>
 <tr>
 <td title='com.platformX.tests.QA_026_Provjera_Validacija_Na_Ugovoru_Test1.qa_026_provjera_validacija_na_ugovoru_test1()'><b>qa_026_provjera_validacija_na_ugovoru_test1</b><br>Test class: com.platformX.tests.QA_026_Provjera_Validacija_Na_Ugovoru_Test1</td>
 <td></td>
-<td>14</td>
+<td>11</td>
 <td>com.platformX.tests.QA_026_Provjera_Validacija_Na_Ugovoru_Test1@56235b8e</td></tr>
 <tr>
 <td title='com.platformX.tests.QA_027_Provjera_Validacija_Na_Ugovoru_Test2.qa_027_provjera_validacija_na_ugovoru_test2()'><b>qa_027_provjera_validacija_na_ugovoru_test2</b><br>Test class: com.platformX.tests.QA_027_Provjera_Validacija_Na_Ugovoru_Test2</td>
 <td></td>
-<td>31</td>
+<td>21</td>
 <td>com.platformX.tests.QA_027_Provjera_Validacija_Na_Ugovoru_Test2@3632be31</td></tr>
+<tr>
+<td title='com.platformX.tests.QA_028_Izmjena_Ugovora_Test.qa_028_izmjena_ugovora_test()'><b>qa_028_izmjena_ugovora_test</b><br>Test class: com.platformX.tests.QA_028_Izmjena_Ugovora_Test</td>
+<td></td>
+<td>42</td>
+<td>com.platformX.tests.QA_028_Izmjena_Ugovora_Test@5abca1e0</td></tr>
 <tr>
 <td title='com.platformX.tests.QA_029_Provjera_Validacija_Na_Izmjeni_Ugovora_Test.qa_029_provjera_validacija_na_izmjeni_ugovora_test()'><b>qa_029_provjera_validacija_na_izmjeni_ugovora_test</b><br>Test class: com.platformX.tests.QA_029_Provjera_Validacija_Na_Izmjeni_Ugovora_Test</td>
 <td></td>
-<td>39</td>
+<td>30</td>
 <td>com.platformX.tests.QA_029_Provjera_Validacija_Na_Izmjeni_Ugovora_Test@2286778</td></tr>
 <tr>
 <td title='com.platformX.tests.QA_032_Deaktivacija_Ugovora_Test.qa_032_deaktivacija_ugovora_test()'><b>qa_032_deaktivacija_ugovora_test</b><br>Test class: com.platformX.tests.QA_032_Deaktivacija_Ugovora_Test</td>
 <td></td>
-<td>49</td>
+<td>40</td>
 <td>com.platformX.tests.QA_032_Deaktivacija_Ugovora_Test@4e9ba398</td></tr>
 <tr>
 <td title='com.platformX.tests.QA_033_Neuspjesna_Deaktivacija_Ugovora_Test.qa_033_neuspjesna_deaktivacija_ugovora_test()'><b>qa_033_neuspjesna_deaktivacija_ugovora_test</b><br>Test class: com.platformX.tests.QA_033_Neuspjesna_Deaktivacija_Ugovora_Test</td>
 <td></td>
-<td>48</td>
+<td>40</td>
 <td>com.platformX.tests.QA_033_Neuspjesna_Deaktivacija_Ugovora_Test@6d7b4f4c</td></tr>
 <tr>
 <td title='com.platformX.tests.QA_034_Odbacivanje_Ugovora_Test.qa_034_odbacivanje_ugovora_test()'><b>qa_034_odbacivanje_ugovora_test</b><br>Test class: com.platformX.tests.QA_034_Odbacivanje_Ugovora_Test</td>
 <td></td>
-<td>42</td>
+<td>35</td>
 <td>com.platformX.tests.QA_034_Odbacivanje_Ugovora_Test@527740a2</td></tr>
+<tr>
+<td title='com.platformX.tests.QA_035_Ukljucivanje_Ugovora_Test.qa_035_ukljucivanje_ugovora_test()'><b>qa_035_ukljucivanje_ugovora_test</b><br>Test class: com.platformX.tests.QA_035_Ukljucivanje_Ugovora_Test</td>
+<td></td>
+<td>42</td>
+<td>com.platformX.tests.QA_035_Ukljucivanje_Ugovora_Test@13a5fe33</td></tr>
+<tr>
+<td title='com.platformX.tests.QA_036_Neuspjesno_Ukljucivanje_Ugovora_Test.qa_036_neuspjesno_ukljucivanje_ugovora_test()'><b>qa_036_neuspjesno_ukljucivanje_ugovora_test</b><br>Test class: com.platformX.tests.QA_036_Neuspjesno_Ukljucivanje_Ugovora_Test</td>
+<td></td>
+<td>42</td>
+<td>com.platformX.tests.QA_036_Neuspjesno_Ukljucivanje_Ugovora_Test@3108bc</td></tr>
 <tr>
 <td title='com.platformX.tests.QA_037_Iskljucivanje_Ugovora_Test.qa_037_iskljucivanje_ugovora_test()'><b>qa_037_iskljucivanje_ugovora_test</b><br>Test class: com.platformX.tests.QA_037_Iskljucivanje_Ugovora_Test</td>
 <td></td>
-<td>46</td>
+<td>38</td>
 <td>com.platformX.tests.QA_037_Iskljucivanje_Ugovora_Test@370736d9</td></tr>
+<tr>
+<td title='com.platformX.tests.QA_038_Neuspjesno_Iskljucivanje_Ugovora_Test.qa_038_neuspjesno_iskljucivanje_ugovora_test()'><b>qa_038_neuspjesno_iskljucivanje_ugovora_test</b><br>Test class: com.platformX.tests.QA_038_Neuspjesno_Iskljucivanje_Ugovora_Test</td>
+<td></td>
+<td>37</td>
+<td>com.platformX.tests.QA_038_Neuspjesno_Iskljucivanje_Ugovora_Test@5f9d02cb</td></tr>
 </table><p>
 </body>
 </html>
