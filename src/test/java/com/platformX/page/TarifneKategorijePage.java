@@ -18,11 +18,10 @@ public class TarifneKategorijePage extends PocetnaStranica {
 		wait.until(ExpectedConditions.elementToBeClickable(preuzmiExcelBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(ukloniFiltereBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(osvjeziBtnWE));
-		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
 		assertTrue(sekcijaBtnWE.getText().trim().equals("TARIFNI SISTEM"), "TarifneKategorije: Naziv sekcije nije dobar!");
 		assertTrue(stranicaBtnWE.getText().trim().equals("TARIFNE KATEGORIJE"), "TarifneKategorije: Naziv stranice nije dobar!");
 		assertTrue(naslovStraniceWE.getText().trim().equals("TARIFNE KATEGORIJE"), "TarifneKategorije: Naziv stranice nije dobar!");
-		assertTrue(brojKolona().size() == 3, "TarifneKategorije: Broj kolona nije dobar! ");
+		assertTrue(brojKolona().size() == 2, "TarifneKategorije: Broj kolona nije dobar! ");
 	}
 
 }
