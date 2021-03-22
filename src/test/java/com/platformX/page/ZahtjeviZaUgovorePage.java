@@ -36,7 +36,7 @@ public class ZahtjeviZaUgovorePage extends PocetnaStranica {
 		assertTrue(sekcijaBtnWE.getText().trim().equals("KUPCI"), "ZahtjeviZaUgovore: Naziv sekcije nije dobar!");
 		assertTrue(stranicaBtnWE.getText().trim().equals("ZAHTJEVI ZA UGOVORE"), "ZahtjeviZaUgovore: Naziv stranice nije dobar!");
 		assertTrue(naslovStraniceWE.getText().trim().equals("ZAHTJEVI ZA UGOVORE"), "ZahtjeviZaUgovore: Naziv stranice nije dobar!");
-		assertTrue(brojKolona().size() == 14, "PovezanaPravnaLica: Broj kolona nije dobar! ");
+		assertTrue(brojKolona().size() == 15, "PovezanaPravnaLica: Broj kolona nije dobar! ");
 	}
 
 }
