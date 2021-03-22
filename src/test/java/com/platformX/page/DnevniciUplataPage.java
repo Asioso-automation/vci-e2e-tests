@@ -120,7 +120,8 @@ public class DnevniciUplataPage extends PocetnaStranica {
 		Thread.sleep(1000);
 	}
 	
-	public void verifyDnevnikUplata(String banka, String ziroRacun){
+	public void verifyDnevnikUplata(String banka, String ziroRacun) throws InterruptedException {
+		Thread.sleep(5000);
 		// wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(text(),'" + banka + "')]")));
 		// wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(text(),'" + ziroRacun + "')]")));
 		// TODO ova dva polja vise nisu vidljiva u DOMu, dodati nove verifikacije

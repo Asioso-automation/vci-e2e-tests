@@ -22,10 +22,10 @@ public class UplatePage extends PocetnaStranica {
 	@FindBy(xpath = "//ul/a[2]") 
 	private WebElement uplateBtnWE;
 	
-	@FindBy(xpath = "//td[5]/div/div/div/div/input") 
+	@FindBy(xpath = "//td[6]/div/div/div/div/input") 
 	private WebElement uplatilacFilterWE;
 	
-	@FindBy(xpath = "//tr[2]/td[5]") 
+	@FindBy(xpath = "//tr[2]/td[6]") 
 	private WebElement uplatilacImeWE;
 	
 	// Kreiraj uplatu elementi
