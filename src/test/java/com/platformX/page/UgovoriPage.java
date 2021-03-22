@@ -58,14 +58,8 @@ public class UgovoriPage extends PocetnaStranica {
 	@FindBy(xpath = "//form/div/div[3]/button[2]")
 	private WebElement potvrdiDeaktivacijuBtnWE;
 
-	@FindBy(xpath = "//div[contains(text(), 'Odbaci')]")
-	private WebElement odbaciUgovorBtnWE;
-
 	@FindBy(xpath = "//textarea")
 	private WebElement napomenaWE;
-
-	@FindBy(xpath = "//body/div/div/div/div/div[4]/button[2]")
-	private WebElement potvrdiOdbacivanjeWE;
 
 	@FindBy(xpath = "//tr[2]/td")
 	private WebElement porukaNaPraznojStraniciWE;
@@ -87,6 +81,12 @@ public class UgovoriPage extends PocetnaStranica {
 
 	@FindBy(xpath = "//div[6]//form/div/div[3]/button[2]")
 	private WebElement potvrdiUkljucivanjeWE;
+	
+	@FindBy(xpath = "//div[contains(@class, 'v-list-item__content') and starts-with(., 'Odbaci')]")
+	private WebElement odbaciUgovorBtnWE;
+	
+	@FindBy(xpath = "//div[6]/div/div/div[4]/button[2]")
+	private WebElement potvrdiOdbacivanjeBtnWE;
 
 	// Dodaj ugovor elementi
 
@@ -509,6 +509,17 @@ public class UgovoriPage extends PocetnaStranica {
 		assertTrue(kategorijaTabelaWE.getText().contains("7 - Kategorija cijene 2"),
 				"Ugovori: Naziv kategorije nije dobar!");
 	}
+	
+	public void pronadjiUgovor(String mjernoMjesto) throws InterruptedException {
+		wait.until(ExpectedConditions.elementToBeClickable(pretraziMjernaMjestaWE));
+		Thread.sleep(1000);
+		pretraziMjernaMjestaWE.click();
+		pretraziMjernaMjestaWE.clear();
+		pretraziMjernaMjestaWE.sendKeys(mjernoMjesto);
+		pretraziMjernaMjestaWE.sendKeys(Keys.ENTER);
+		wait.until(ExpectedConditions.visibilityOf(mjernoMjestoTabelaWE));
+		assertTrue(mjernoMjestoTabelaWE.getText().contains(mjernoMjesto), "Ugovori: Naziv mjernog mjesta nije dobar!");
+	}
 
 	public void verifikujOdbaceniUgovor(String mjernoMjesto) throws InterruptedException {
 		wait.until(ExpectedConditions.elementToBeClickable(pretraziMjernaMjestaWE));
@@ -523,7 +534,8 @@ public class UgovoriPage extends PocetnaStranica {
 				"Ugovori: Poruka na praznoj stranici nije dobra!");
 	}
 
-	public void verifikujPoruku(String poruka) {
+	public void verifikujPoruku(String poruka) throws InterruptedException {
+		Thread.sleep(1000);
 		wait.until(ExpectedConditions.visibilityOf(porukaWE));
 		assertTrue(porukaWE.getText().trim().equals(poruka), "Ugovori: Poruka upozorenja nije dobra!");
 	}
@@ -874,17 +886,6 @@ public class UgovoriPage extends PocetnaStranica {
 		}
 	}
 
-	public void odbaciUgovor() {
-		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
-		burgerBarWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(odbaciUgovorBtnWE));
-		odbaciUgovorBtnWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(napomenaWE));
-		napomenaWE.sendKeys("Test");
-		wait.until(ExpectedConditions.elementToBeClickable(potvrdiOdbacivanjeWE));
-		potvrdiOdbacivanjeWE.click();
-	}
-
 	public void iskljuciUgovor(String datumIskljucenja) throws InterruptedException {
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		burgerBarWE.click();
@@ -922,6 +923,17 @@ public class UgovoriPage extends PocetnaStranica {
 		wait.until(ExpectedConditions.elementToBeClickable(potvrdiUkljucivanjeWE));
 		potvrdiUkljucivanjeWE.click();
 		Thread.sleep(2000);
+	}
+	
+	public void odbaciUgovor() {
+		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
+		burgerBarWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(odbaciUgovorBtnWE));
+		odbaciUgovorBtnWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(napomenaWE));
+		napomenaWE.sendKeys("Razlog odbacivanja ugovora");
+		wait.until(ExpectedConditions.elementToBeClickable(potvrdiOdbacivanjeBtnWE));
+		potvrdiOdbacivanjeBtnWE.click();
 	}
 
 }
