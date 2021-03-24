@@ -16,7 +16,7 @@ public class UplatePage extends PocetnaStranica {
 		super(driver);
 	}
 
-	@FindBy(xpath = "//a/span/i")
+	@FindBy(xpath = "//header/div/a") //a[@href='/finances/payment-journals/65/payments/add']  //a/span/i
 	private WebElement dodajUplatuBtnWE;
 	
 	@FindBy(xpath = "//ul/a[2]") 
