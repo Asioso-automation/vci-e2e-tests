@@ -85,8 +85,14 @@ public class UgovoriPage extends PocetnaStranica {
 	@FindBy(xpath = "//div[contains(@class, 'v-list-item__content') and starts-with(., 'Odbaci')]")
 	private WebElement odbaciUgovorBtnWE;
 	
-	@FindBy(xpath = "//div[6]/div/div/div[4]/button[2]")
+	@FindBy(xpath = "//button[@class='v-btn v-btn--text theme--light v-size--default primary--text']")  //div[5]/div/div/div[4]/button[2]
 	private WebElement potvrdiOdbacivanjeBtnWE;
+	
+	@FindBy(xpath = "//div[contains(@class, 'v-list-item__content') and starts-with(., 'Preregistruj')]")
+	private WebElement preregistrujUgovorBtnWE;
+	
+	@FindBy(xpath = "//button[@class='v-btn v-btn--is-elevated v-btn--has-bg theme--light v-size--default primary']")
+	private WebElement potvrdiPreregistracijuBtnWE;
 
 	// Dodaj ugovor elementi
 
@@ -335,6 +341,35 @@ public class UgovoriPage extends PocetnaStranica {
 
 	@FindBy(xpath = "//div[3]/div[4]/div/div/div[1]/div/input")
 	private WebElement pogledajDjelatnostWE;
+	
+	// Preregistruj ugovor elementi
+	
+	@FindBy(xpath = "//div[6]/div[2]/div/div/div[2]/div/div")
+	private WebElement postaValidacijaWE;
+	
+	@FindBy(xpath = "//div[6]/div[3]/div/div/div[2]/div/div")
+	private WebElement mjestoValidacijaWE;
+	
+	@FindBy(xpath = "//div[6]/div[4]/div/div/div[2]/div/div")
+	private WebElement ulicaValidacijaWE;
+	
+	@FindBy(xpath = "//div[6]/div[5]/div/div/div[2]/div/div")
+	private WebElement brojValidacijaWE;
+	
+	@FindBy(xpath = "//div[4]/div[2]/div/div/div[2]/div/div")
+	private WebElement nazivMjernogMjestaValidacijaWE;
+	
+	@FindBy(xpath = "//div[4]/div[3]/div/div/div[2]/div/div")
+	private WebElement nazivMjernogMjestaNaDokumentimaValidacijaWE;
+	
+	@FindBy(xpath = "//div[9]/div[1]/div/div[2]/div/div")
+	private WebElement vaziOdValidacijaWE;
+	
+	@FindBy(xpath = "//div[2]/div[8]/div[1]/div/div[2]/div/div")
+	private WebElement datumPreregistracijeValidacijaWE;
+	
+	@FindBy(xpath = "//div[2]/div[1]/div/div/div[2]/div/div")
+	private WebElement kupacValidacijaWE;
 
 	public UgovoriPage(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);
@@ -518,6 +553,7 @@ public class UgovoriPage extends PocetnaStranica {
 		pretraziMjernaMjestaWE.sendKeys(mjernoMjesto);
 		pretraziMjernaMjestaWE.sendKeys(Keys.ENTER);
 		wait.until(ExpectedConditions.visibilityOf(mjernoMjestoTabelaWE));
+		Thread.sleep(1000);
 		assertTrue(mjernoMjestoTabelaWE.getText().contains(mjernoMjesto), "Ugovori: Naziv mjernog mjesta nije dobar!");
 	}
 
@@ -934,6 +970,37 @@ public class UgovoriPage extends PocetnaStranica {
 		napomenaWE.sendKeys("Razlog odbacivanja ugovora");
 		wait.until(ExpectedConditions.elementToBeClickable(potvrdiOdbacivanjeBtnWE));
 		potvrdiOdbacivanjeBtnWE.click();
+	}
+	
+	public void otvoriPreregistraciju() {
+		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
+		burgerBarWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(preregistrujUgovorBtnWE));
+		preregistrujUgovorBtnWE.click();
+	}
+	
+	public void verifikujObaveznaPoljaPreregistracijeUgovora() throws InterruptedException {
+		wait.until(ExpectedConditions.elementToBeClickable(potvrdiPreregistracijuBtnWE));
+		potvrdiPreregistracijuBtnWE.click();
+		Thread.sleep(500);
+		assertTrue(postaValidacijaWE.getText().trim().equals("Obavezno polje"),
+				"Preregistracija ugovora: Validaciona poruka na polju Posta nije dobra!");
+		assertTrue(mjestoValidacijaWE.getText().trim().equals("Obavezno polje"),
+				"Preregistracija ugovora: Validaciona poruka na polju Mjesto nije dobra!");
+		assertTrue(ulicaValidacijaWE.getText().trim().equals("Obavezno polje"),
+				"Preregistracija ugovora: Validaciona poruka na polju Ulica nije dobra!");
+		assertTrue(brojValidacijaWE.getText().trim().equals("Obavezno polje"),
+				"Preregistracija ugovora: Validaciona poruka na polju Broj u ulici nije dobra!");
+		assertTrue(nazivMjernogMjestaValidacijaWE.getText().trim().equals("Obavezno polje"),
+				"Preregistracija ugovora: Validaciona poruka na polju Naziv mjernog mjesta nije dobra!");
+		assertTrue(nazivMjernogMjestaNaDokumentimaValidacijaWE.getText().trim().equals("Obavezno polje"),
+				"Preregistracija ugovora: Validaciona poruka na polju Naziv mjernog mjesta na dokumentima nije dobra!");
+		assertTrue(vaziOdValidacijaWE.getText().trim().equals("Obavezno polje"),
+				"Preregistracija ugovora: Validaciona poruka na polju Vazi od nije dobra!");
+		assertTrue(datumPreregistracijeValidacijaWE.getText().trim().equals("Obavezno polje"),
+				"Preregistracija ugovora: Validaciona poruka na polju Datum preregistracije nije dobra!");
+		assertTrue(kupacValidacijaWE.getText().trim().equals("Obavezno polje"),
+				"Preregistracija ugovora: Validaciona poruka na polju Kupac nije dobra!");
 	}
 
 }
