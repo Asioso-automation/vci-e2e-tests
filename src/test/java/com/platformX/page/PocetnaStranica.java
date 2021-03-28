@@ -113,8 +113,8 @@ public class PocetnaStranica extends PageBase {
 	@FindBy(xpath = "//div[contains(text(), 'Ulice')]")
 	protected WebElement uliceWE;
 
-	@FindBy(xpath = "//div[contains(text(), 'Tarifne kategorije')]")
-	protected WebElement tarifneKategorijeWE;
+	@FindBy(xpath = "//div[contains(text(), 'Kategorije potrošnje')]")
+	protected WebElement kategorijePotrosnjeWE;
 
 	@FindBy(xpath = "//div[contains(text(), 'Tarifne nadgrupe')]")
 	protected WebElement tarifneNadgrupeWE;
@@ -384,13 +384,13 @@ public class PocetnaStranica extends PageBase {
 		return new UlicePage(driver);
 	}
 
-	public TarifneKategorijePage navigateToTarifneKategorije() throws Exception {
+	public KategorijePotrosnjePage navigateToKategorijePotrosnje() throws Exception {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(tarifniSistemWE));
 		tarifniSistemWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(tarifneKategorijeWE));
-		tarifneKategorijeWE.click();
-		return new TarifneKategorijePage(driver);
+		wait.until(ExpectedConditions.elementToBeClickable(kategorijePotrosnjeWE));
+		kategorijePotrosnjeWE.click();
+		return new KategorijePotrosnjePage(driver);
 	}
 
 	public TarifneNadgrupePage navigateToTarifneNadgrupe() throws Exception {

@@ -51,7 +51,7 @@ public class ZiroRacuniPage extends PocetnaStranica {
 
 	public String dodajZiroRacun(String banka) throws InterruptedException {
 		WebDriverWait wait = new WebDriverWait(driver, 20);
-		String ziroRacun = "Ziro racun " + getRandomName();
+		String ziroRacun = "111-" + getRandomNumbers(3) + "-" + getRandomNumbers(8) + "-" + getRandomNumbers(2);
 		wait.until(ExpectedConditions.elementToBeClickable(dodajZiroRacunBtnWE));
 		Thread.sleep(1000);
 		dodajZiroRacunBtnWE.click();

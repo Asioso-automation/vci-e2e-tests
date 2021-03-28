@@ -26,8 +26,11 @@ public class BankePage extends PocetnaStranica {
 	
 	// Kreiraj banku elementi
 	
-	@FindBy(xpath = "//input") 
+	@FindBy(xpath = "//div[1]/div/div/div[1]/div/input") 
 	private WebElement nazivBankeWE;
+	
+	@FindBy(xpath = "//div[2]/div/div/div[1]/div/input") 
+	private WebElement cifreZiroRacunaWE;
 	
 	@FindBy(xpath = "//div[2]/button[1]") 
 	private WebElement dodajBtnWE;
@@ -52,6 +55,8 @@ public class BankePage extends PocetnaStranica {
 		dodajBankuBtnWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(nazivBankeWE));
 		nazivBankeWE.sendKeys(banka);
+		wait.until(ExpectedConditions.elementToBeClickable(cifreZiroRacunaWE));
+		cifreZiroRacunaWE.sendKeys("111");
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
 		dodajBtnWE.click();
 		return banka;

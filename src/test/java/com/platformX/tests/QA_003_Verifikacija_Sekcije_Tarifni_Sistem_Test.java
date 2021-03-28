@@ -11,7 +11,7 @@ import com.platformX.page.LogInPage;
 import com.platformX.page.ObracunskaSnagaPage;
 import com.platformX.page.SezonePage;
 import com.platformX.page.TarifneGrupePage;
-import com.platformX.page.TarifneKategorijePage;
+import com.platformX.page.KategorijePotrosnjePage;
 import com.platformX.page.TarifneNadgrupePage;
 
 public class QA_003_Verifikacija_Sekcije_Tarifni_Sistem_Test extends BaseTest {
@@ -29,8 +29,8 @@ public class QA_003_Verifikacija_Sekcije_Tarifni_Sistem_Test extends BaseTest {
 		logInPage.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
 		homePage.verifyHomePage();
-		TarifneKategorijePage tarifneKategorijePage = homePage.navigateToTarifneKategorije();
-		tarifneKategorijePage.verifikujTarifneKategorije();
+		KategorijePotrosnjePage kategorijePotrosnje = homePage.navigateToKategorijePotrosnje();
+		kategorijePotrosnje.verifikujKategorijePotrosnje();
 		TarifneNadgrupePage tarifneNadgrupePage = homePage.navigateToTarifneNadgrupe();
 		tarifneNadgrupePage.verifikujTarifneNadgrupe();
 		TarifneGrupePage tarifneGrupePage = homePage.navigateToTarifneGrupe();

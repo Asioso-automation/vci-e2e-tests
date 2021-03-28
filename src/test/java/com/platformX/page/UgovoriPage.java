@@ -344,6 +344,15 @@ public class UgovoriPage extends PocetnaStranica {
 	
 	// Preregistruj ugovor elementi
 	
+	@FindBy(xpath = "//div[4]/div[2]/div/div/div[1]/div/input")
+	private WebElement nazivMjMjestaWE;
+	
+	@FindBy(xpath = "//div[8]/div[1]/div/div[1]/div[2]/input")
+	private WebElement datumPreregistracijeWE;
+	
+	@FindBy(xpath = "//div[9]/div[1]/div/div[1]/div[2]/input")
+	private WebElement datumVaziOdWE;
+	
 	@FindBy(xpath = "//div[6]/div[2]/div/div/div[2]/div/div")
 	private WebElement postaValidacijaWE;
 	
@@ -1001,6 +1010,26 @@ public class UgovoriPage extends PocetnaStranica {
 				"Preregistracija ugovora: Validaciona poruka na polju Datum preregistracije nije dobra!");
 		assertTrue(kupacValidacijaWE.getText().trim().equals("Obavezno polje"),
 				"Preregistracija ugovora: Validaciona poruka na polju Kupac nije dobra!");
+	}
+	
+	public void preregistrujUgovor() throws InterruptedException {
+		
+		wait.until(ExpectedConditions.elementToBeClickable(kupacWE));
+		kupacWE.sendKeys("4100010 - Firma 2");
+		Thread.sleep(1000);
+		wait.until(ExpectedConditions.elementToBeClickable(
+				By.xpath("//div[contains(@class, 'v-list-item__title') and contains(., '" + "4100010 - Firma 2" + "')]")));
+		driver.findElement(By.xpath("//div[contains(@class, 'v-list-item__title') and contains(., '" + "4100010 - Firma 2" + "')]"))
+				.click();
+		Thread.sleep(1000);
+		wait.until(ExpectedConditions.elementToBeClickable(nazivMjMjestaWE));
+		nazivMjMjestaWE.sendKeys(getRandomName());
+		wait.until(ExpectedConditions.elementToBeClickable(datumPreregistracijeWE));
+		datumPreregistracijeWE.sendKeys("15.07.2020.");
+		wait.until(ExpectedConditions.elementToBeClickable(datumVaziOdWE));
+		datumPreregistracijeWE.sendKeys("15.07.2020.");
+		wait.until(ExpectedConditions.elementToBeClickable(potvrdiPreregistracijuBtnWE));
+		potvrdiPreregistracijuBtnWE.click();
 	}
 
 }

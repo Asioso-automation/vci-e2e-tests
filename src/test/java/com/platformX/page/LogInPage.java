@@ -14,21 +14,17 @@ public class LogInPage extends PocetnaStranica {
 		URL = platformx_properties.getValue("URL.LOGIN");
 		driver.get(URL);
 	}
-
-	@FindBy(xpath = "//button[1]")
-	private WebElement ponistiBtnWE;
 	
-	@FindBy(xpath = "//button[2]")
+	@FindBy(xpath = "//div[4]/button")
 	private WebElement prijaviSeBtnWE;
 
-	@FindBy(xpath = "//div[1]/div/div[1]/div[2]/input")
+	@FindBy(xpath = "//div[2]/div/div/div/div[2]/input")
 	private WebElement korisnickoImeWE;
 
-	@FindBy(xpath = "//div[2]/div/div[1]/div[2]/input")
+	@FindBy(xpath = "//div[3]/div/div/div/div[2]/input")
 	private WebElement lozinkaWE;
 	
 	public void verifyLogInPage() {
-		wait.until(ExpectedConditions.elementToBeClickable(ponistiBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(korisnickoImeWE));
 		wait.until(ExpectedConditions.elementToBeClickable(lozinkaWE));
 	}
