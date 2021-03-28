@@ -353,6 +353,14 @@ public class UgovoriPage extends PocetnaStranica {
 	@FindBy(xpath = "//div[9]/div[1]/div/div[1]/div[2]/input")
 	private WebElement datumVaziOdWE;
 	
+	@FindBy(xpath = "//div[4]/div[3]/div/div/div[1]/div/input")
+	private WebElement nazivMjMjestaNaDokWE;
+	
+	@FindBy(xpath = "//div[6]/div[2]/div/div/div[1]/div[1]/input[1]")
+	private WebElement postaPreregistracijeWE;
+	
+	
+	
 	@FindBy(xpath = "//div[6]/div[2]/div/div/div[2]/div/div")
 	private WebElement postaValidacijaWE;
 	
@@ -1027,7 +1035,17 @@ public class UgovoriPage extends PocetnaStranica {
 		wait.until(ExpectedConditions.elementToBeClickable(datumPreregistracijeWE));
 		datumPreregistracijeWE.sendKeys("15.07.2020.");
 		wait.until(ExpectedConditions.elementToBeClickable(datumVaziOdWE));
-		datumPreregistracijeWE.sendKeys("15.07.2020.");
+		datumVaziOdWE.sendKeys("15.07.2020.");
+		wait.until(ExpectedConditions.elementToBeClickable(nazivMjMjestaNaDokWE));
+		nazivMjMjestaNaDokWE.sendKeys(getRandomName());
+		wait.until(ExpectedConditions.elementToBeClickable(postaPreregistracijeWE));
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView(true);", postaPreregistracijeWE);
+		Thread.sleep(500);
+		postaPreregistracijeWE.sendKeys("78000 - Banja Luka");
+		wait.until(ExpectedConditions.visibilityOf(odaberiPostuWE));
+		odaberiPostuWE.click();
+		
 		wait.until(ExpectedConditions.elementToBeClickable(potvrdiPreregistracijuBtnWE));
 		potvrdiPreregistracijuBtnWE.click();
 	}

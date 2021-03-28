@@ -21,7 +21,7 @@ public class ZahtjeviZaDostavuPodatakaPage extends PocetnaStranica {
 		assertTrue(sekcijaBtnWE.getText().trim().equals("KUPCI"), "OdbaceniUgovori: Naziv sekcije nije dobar!");
 		assertTrue(stranicaBtnWE.getText().trim().equals("ZAHTJEVI ZA DOSTAVU PODATAKA"), "ZahtjeviZaDostavuPodataka: Naziv stranice nije dobar!");
 		assertTrue(naslovStraniceWE.getText().trim().equals("ZAHTJEVI ZA DOSTAVU PODATAKA O KUPCIMA"), "ZahtjeviZaDostavuPodataka: Naziv stranice nije dobar!");
-		assertTrue(brojKolona().size() == 7, "ZahtjeviZaDostavuPodataka: Broj kolona nije dobar! ");
+		assertTrue(brojKolona().size() == 8, "ZahtjeviZaDostavuPodataka: Broj kolona nije dobar! ");
 	}
 
 }

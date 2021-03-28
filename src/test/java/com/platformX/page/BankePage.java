@@ -44,7 +44,7 @@ public class BankePage extends PocetnaStranica {
 		assertTrue(sekcijaBtnWE.getText().trim().equals("FINANSIJE"), "Banke: Naziv sekcije nije dobar!");
 		assertTrue(stranicaBtnWE.getText().trim().equals("BANKE"), "Banke: Naziv stranice nije dobar!");
 		assertTrue(naslovStraniceWE.getText().trim().equals("BANKE"), "Banke: Naziv stranice nije dobar!");
-		assertTrue(brojKolona().size() == 4, "Banke: Broj kolona nije dobar! ");
+		assertTrue(brojKolona().size() == 5, "Banke: Broj kolona nije dobar! ");
 	}
 	
 	public String dodajBanku() throws InterruptedException {
