@@ -18,12 +18,18 @@ public class UgovoriPage extends PocetnaStranica {
 
 	@FindBy(xpath = "//td[4]/div/div/div/div/input")
 	private WebElement pretraziMjernaMjestaWE;
+	
+	@FindBy(xpath = "//td[3]/div/div/div/div[1]/input")
+	private WebElement pretraziKupcaWE;
 
 	@FindBy(xpath = "//tr[2]/td[3]/a")
 	private WebElement kupacTabelaWE;
 
 	@FindBy(xpath = "//tr[2]/td[4]/a")
 	private WebElement mjernoMjestoTabelaWE;
+	
+	@FindBy(xpath = "//tr[2]/td[9]")
+	private WebElement zavrsavaTabelaWE;
 
 	@FindBy(xpath = "//tr[2]/td[6]")
 	private WebElement kategorijaTabelaWE;
@@ -359,7 +365,14 @@ public class UgovoriPage extends PocetnaStranica {
 	@FindBy(xpath = "//div[6]/div[2]/div/div/div[1]/div[1]/input[1]")
 	private WebElement postaPreregistracijeWE;
 	
+	@FindBy(xpath = "//div[6]/div[3]/div/div/div[1]/div[1]/input[1]")
+	private WebElement mjestoPreregistracijeWE;
 	
+	@FindBy(xpath = "//div[6]/div[4]/div/div/div[1]/div[1]/input[1]")
+	private WebElement ulicaPreregistracijeWE;
+	
+	@FindBy(xpath = "//div[6]/div[5]/div/div/div[1]/div/input")
+	private WebElement brojUUliciWE;
 	
 	@FindBy(xpath = "//div[6]/div[2]/div/div/div[2]/div/div")
 	private WebElement postaValidacijaWE;
@@ -572,6 +585,26 @@ public class UgovoriPage extends PocetnaStranica {
 		wait.until(ExpectedConditions.visibilityOf(mjernoMjestoTabelaWE));
 		Thread.sleep(1000);
 		assertTrue(mjernoMjestoTabelaWE.getText().contains(mjernoMjesto), "Ugovori: Naziv mjernog mjesta nije dobar!");
+	}
+	
+	public void verifikujPreregistrovanUgovor(String mjernoMjesto, String kupac) throws InterruptedException {
+		wait.until(ExpectedConditions.elementToBeClickable(pretraziMjernaMjestaWE));
+		Thread.sleep(1000);
+		pretraziMjernaMjestaWE.click();
+		pretraziMjernaMjestaWE.clear();
+		pretraziMjernaMjestaWE.sendKeys(mjernoMjesto);
+		pretraziMjernaMjestaWE.sendKeys(Keys.ENTER);
+		Thread.sleep(1000);
+		wait.until(ExpectedConditions.elementToBeClickable(pretraziKupcaWE));
+		pretraziKupcaWE.click();
+		pretraziKupcaWE.clear();
+		pretraziKupcaWE.sendKeys(kupac);
+		pretraziKupcaWE.sendKeys(Keys.ENTER);
+		Thread.sleep(1000);
+		wait.until(ExpectedConditions.visibilityOf(mjernoMjestoTabelaWE));
+		Thread.sleep(1000);
+		assertTrue(mjernoMjestoTabelaWE.getText().contains(mjernoMjesto), "Ugovori: Naziv mjernog mjesta nije dobar!");
+		assertTrue(zavrsavaTabelaWE.getText().contains("15.07.2020."), "Ugovori: Datum zavrsetka nije dobar!");
 	}
 
 	public void verifikujOdbaceniUgovor(String mjernoMjesto) throws InterruptedException {
@@ -1045,7 +1078,16 @@ public class UgovoriPage extends PocetnaStranica {
 		postaPreregistracijeWE.sendKeys("78000 - Banja Luka");
 		wait.until(ExpectedConditions.visibilityOf(odaberiPostuWE));
 		odaberiPostuWE.click();
-		
+		wait.until(ExpectedConditions.elementToBeClickable(mjestoPreregistracijeWE));
+		mjestoPreregistracijeWE.sendKeys("1 - Banja Luka (Banja Luka)");
+		wait.until(ExpectedConditions.visibilityOf(odaberiMjestoWE));
+		odaberiMjestoWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(ulicaPreregistracijeWE));
+		ulicaPreregistracijeWE.sendKeys("2 - Dr Mladena Stojanovica");
+		wait.until(ExpectedConditions.visibilityOf(odaberiUlicu1WE));
+		odaberiUlicu1WE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(brojUUliciWE));
+		brojUUliciWE.sendKeys(getRandomNumbers(2));
 		wait.until(ExpectedConditions.elementToBeClickable(potvrdiPreregistracijuBtnWE));
 		potvrdiPreregistracijuBtnWE.click();
 	}
