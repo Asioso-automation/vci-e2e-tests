@@ -65,6 +65,7 @@ public class UplatePage extends PocetnaStranica {
 	
 	public String dodajUplatu() throws InterruptedException {
 		String uplatilac = "Uplatilac " + getRandomName();
+		Thread.sleep(3000);
 		wait.until(ExpectedConditions.elementToBeClickable(dodajUplatuBtnWE));
 		dodajUplatuBtnWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(pozivNaBrojWE));

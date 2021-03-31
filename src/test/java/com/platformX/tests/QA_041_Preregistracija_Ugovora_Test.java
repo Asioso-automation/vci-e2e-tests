@@ -16,7 +16,6 @@ public class QA_041_Preregistracija_Ugovora_Test extends BaseTest {
 
 	@Test
 	public void qa_041_preregistracija_ugovora_test() throws Exception {
-		// TODO Zavrsiti test, pronadji i verifikuj ugovor metodi proslijediti potrebno mjerno mjesto za ugovor reaktivnim brojilom
 		LogInPage logInPage = new LogInPage(driver, PLATFORMX_PROPERTIES);
 		logInPage.verifyLogInPage();
 		logInPage.logIn();

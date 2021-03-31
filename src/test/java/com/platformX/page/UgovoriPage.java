@@ -30,6 +30,9 @@ public class UgovoriPage extends PocetnaStranica {
 	
 	@FindBy(xpath = "//tr[2]/td[9]")
 	private WebElement zavrsavaTabelaWE;
+	
+	@FindBy(xpath = "//tr[2]/td[8]")
+	private WebElement pocinjeOdTabelaWE;
 
 	@FindBy(xpath = "//tr[2]/td[6]")
 	private WebElement kategorijaTabelaWE;
@@ -604,7 +607,7 @@ public class UgovoriPage extends PocetnaStranica {
 		wait.until(ExpectedConditions.visibilityOf(mjernoMjestoTabelaWE));
 		Thread.sleep(1000);
 		assertTrue(mjernoMjestoTabelaWE.getText().contains(mjernoMjesto), "Ugovori: Naziv mjernog mjesta nije dobar!");
-		assertTrue(zavrsavaTabelaWE.getText().contains("15.07.2020."), "Ugovori: Datum zavrsetka nije dobar!");
+		assertTrue(pocinjeOdTabelaWE.getText().contains("15.07.2020."), "Ugovori: Datum pocetka nije dobar!");
 	}
 
 	public void verifikujOdbaceniUgovor(String mjernoMjesto) throws InterruptedException {
