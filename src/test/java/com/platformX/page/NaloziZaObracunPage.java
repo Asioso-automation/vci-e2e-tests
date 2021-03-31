@@ -22,7 +22,7 @@ public class NaloziZaObracunPage extends PocetnaStranica {
 		assertTrue(sekcijaBtnWE.getText().trim().equals("OBRAČUN"), "NaloziZaObracun: Naziv sekcije nije dobar!");
 		assertTrue(stranicaBtnWE.getText().trim().equals("NALOZI ZA OBRAČUN"), "NaloziZaObracun: Naziv stranice nije dobar!");
 		assertTrue(naslovStraniceWE.getText().trim().equals("NALOZI ZA OBRAČUN"), "NaloziZaObracun: Naziv stranice nije dobar!");
-		assertTrue(brojKolona().size() == 15, "NaloziZaObracun: Broj kolona nije dobar! ");
+		assertTrue(brojKolona().size() == 17, "NaloziZaObracun: Broj kolona nije dobar! ");
 	}
 
 }
