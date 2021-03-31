@@ -134,9 +134,12 @@ public class DnevniciUplataPage extends PocetnaStranica {
 		uplateWE.click();
 	}
 	
-	public void navigateToUplateSaSDetalja() {
+	public void navigateToUplateSaSDetalja() throws InterruptedException {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,-250)");
 		wait.until(ExpectedConditions.elementToBeClickable(dodajUplatuBtnWE));
 		dodajUplatuBtnWE.click();
+		Thread.sleep(1000);
 	}
 
 }
