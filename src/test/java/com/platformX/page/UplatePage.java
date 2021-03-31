@@ -71,12 +71,14 @@ public class UplatePage extends PocetnaStranica {
 		try {
 		wait.until(ExpectedConditions.elementToBeClickable(dodajUplatuBtnWE));
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("arguments[0].scrollIntoView(true);", dodajUplatuBtnWE);
-		Thread.sleep(1000);
+//		js.executeScript("arguments[0].scrollIntoView(true);", dodajUplatuBtnWE);
+//		js.executeScript("arguments[0].scrollIntoView();", dodajUplatuBtnWE);
+		js.executeScript("window.scrollBy(0,-250)");
+		Thread.sleep(2000);
 		dodajUplatuBtnWE.click();
 		} catch (Exception e) {
-		wait.until(ExpectedConditions.invisibilityOf(porukaWE));
-		Thread.sleep(1000);
+		// wait.until(ExpectedConditions.invisibilityOf(porukaWE));
+		Thread.sleep(10000);
 		wait.until(ExpectedConditions.elementToBeClickable(dodajUplatuBtnWE));
 		dodajUplatuBtnWE.click();
 		}
