@@ -37,9 +37,6 @@ public class UgovoriPage extends PocetnaStranica {
 	@FindBy(xpath = "//tr[2]/td[6]")
 	private WebElement kategorijaTabelaWE;
 
-	@FindBy(xpath = "//main/div/div/div/div[2]/div/div")
-	private WebElement porukaWE;
-
 	@FindBy(xpath = "//td[15]/button")
 	private WebElement burgerBarWE;
 

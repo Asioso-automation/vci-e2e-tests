@@ -3,6 +3,8 @@ package com.platformX.page;
 import static org.testng.Assert.assertTrue;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -65,9 +67,19 @@ public class UplatePage extends PocetnaStranica {
 	
 	public String dodajUplatu() throws InterruptedException {
 		String uplatilac = "Uplatilac " + getRandomName();
-		Thread.sleep(3000);
+		Thread.sleep(1000);
+		try {
+		wait.until(ExpectedConditions.elementToBeClickable(dodajUplatuBtnWE));
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView(true);", dodajUplatuBtnWE);
+		Thread.sleep(1000);
+		dodajUplatuBtnWE.click();
+		} catch (Exception e) {
+		wait.until(ExpectedConditions.invisibilityOf(porukaWE));
+		Thread.sleep(1000);
 		wait.until(ExpectedConditions.elementToBeClickable(dodajUplatuBtnWE));
 		dodajUplatuBtnWE.click();
+		}
 		wait.until(ExpectedConditions.elementToBeClickable(pozivNaBrojWE));
 		pozivNaBrojWE.sendKeys("1987 - Poziv na broj: 1987, Broj računa: 1988");
 		Thread.sleep(1000);

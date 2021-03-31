@@ -6,6 +6,7 @@ import java.util.Random;
 import java.util.UUID;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 import com.platformX.util.HandlerUtil;
@@ -19,6 +20,9 @@ public class PageBase {
 	protected PropertiesUtil platformx_properties = null;
 	protected final String PLATFORMX_PROPERTIES = "platformx.properties";
 
+	@FindBy(xpath = "//main/div/div/div/div[2]/div/div")
+	protected WebElement porukaWE;
+	
 	public PageBase(WebDriver driver) throws FileNotFoundException, IOException {
 		this.driver = driver;
 		PageFactory.initElements(this.driver, this);
