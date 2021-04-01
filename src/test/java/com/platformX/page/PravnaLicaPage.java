@@ -3,6 +3,8 @@ package com.platformX.page;
 import static org.testng.Assert.assertTrue;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -75,6 +77,7 @@ public class PravnaLicaPage extends PocetnaStranica {
 	
 	public String dodajPravnoLice() throws InterruptedException {
 		String nazivPravnogLica = "Pravno lice " + getRandomName();
+		Thread.sleep(1000);
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
 		dodajBtnWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(nazivPravnogLicaWE));
@@ -88,6 +91,8 @@ public class PravnaLicaPage extends PocetnaStranica {
 		Thread.sleep(1000);
 		wait.until(ExpectedConditions.elementToBeClickable(odaberiPostuWE));
 		odaberiPostuWE.click();
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0, -250)");
 		wait.until(ExpectedConditions.elementToBeClickable(mjestoWE));
 		mjestoWE.sendKeys("1 - Banja Luka");
 		wait.until(ExpectedConditions.visibilityOf(odaberiMjestoWE));
