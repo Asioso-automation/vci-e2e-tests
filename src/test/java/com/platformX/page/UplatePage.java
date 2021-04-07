@@ -169,7 +169,9 @@ public class UplatePage extends PocetnaStranica {
 		WebDriverWait wait = new WebDriverWait(driver, 20);
 		wait.until(ExpectedConditions.elementToBeClickable(uplateBtnWE));
 		uplateBtnWE.click();
+		Thread.sleep(2000);
 		wait.until(ExpectedConditions.elementToBeClickable(uplatilacFilterWE));
+		uplatilacFilterWE.click();
 		uplatilacFilterWE.sendKeys(uplatilac);
 		uplatilacFilterWE.sendKeys(Keys.ENTER);
 		Thread.sleep(1000);

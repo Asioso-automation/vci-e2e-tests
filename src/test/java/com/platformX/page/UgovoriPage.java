@@ -138,13 +138,13 @@ public class UgovoriPage extends PocetnaStranica {
 	@FindBy(xpath = "//div[2]/div[6]/div/div/div[1]/div/input")
 	private WebElement procenatUmanjenjaPDVaWE;
 
-	@FindBy(xpath = "//div[2]/div[7]/div/div/div[1]/div[1]/input[1]")
+	@FindBy(xpath = "//div[2]/div[8]/div/div/div[1]/div[1]/input[1]")
 	private WebElement tipUgovoraWE;
 
 	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '1 - Tip 1')]")
 	private WebElement tipUgovora1WE;
 
-	@FindBy(xpath = "//div[2]/div[8]/div/div/div[1]/div")
+	@FindBy(xpath = "//div[2]/div[9]/div/div/div[1]/div/div")
 	private WebElement potpisanCBWE;
 
 	@FindBy(xpath = "//div[1]/div[1]/div/div[1]/div[2]/input")
@@ -219,7 +219,7 @@ public class UgovoriPage extends PocetnaStranica {
 	@FindBy(xpath = "//div[5]/div[5]/div/div/div[1]/div/input")
 	private WebElement reaktivnoBrojiloWE;
 
-	@FindBy(xpath = "//div[5]/div[6]/div/div/div[1]/div/input")
+	@FindBy(xpath = "//div[5]/div[7]/div/div/div[1]/div/input")
 	private WebElement aktivnaKonstantaWE;
 
 	@FindBy(xpath = "//div[7]/div[2]/div/div/div[1]/div[1]/input[1]")
@@ -336,8 +336,11 @@ public class UgovoriPage extends PocetnaStranica {
 
 	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '1 - D1 - Djelatnost 1')]")
 	private WebElement odaberiDjelatnostWE;
+	
+	@FindBy(xpath = "//div[1]/div[1]/div/div[1]/div[2]/input")
+	private WebElement datumPotpisaUrediWE;
 
-	@FindBy(xpath = "//div[2]/div[9]/div/div/div[1]/div")
+	@FindBy(xpath = "//div[2]/div[10]/div/div/div[1]/div")
 	private WebElement rekapitulacijaWE;
 
 	@FindBy(xpath = "//div[7]/div[2]/div/div/div[1]/div[1]/input[1]")
@@ -353,10 +356,10 @@ public class UgovoriPage extends PocetnaStranica {
 	@FindBy(xpath = "//div[4]/div[2]/div/div/div[1]/div/input")
 	private WebElement nazivMjMjestaWE;
 	
-	@FindBy(xpath = "//div[8]/div[1]/div/div[1]/div[2]/input")
+	@FindBy(xpath = "//div[9]/div[1]/div/div[1]/div[2]/input")
 	private WebElement datumPreregistracijeWE;
 	
-	@FindBy(xpath = "//div[9]/div[1]/div/div[1]/div[2]/input")
+	@FindBy(xpath = "//div[10]/div[1]/div/div[1]/div[2]/input")
 	private WebElement datumVaziOdWE;
 	
 	@FindBy(xpath = "//div[4]/div[3]/div/div/div[1]/div/input")
@@ -395,7 +398,7 @@ public class UgovoriPage extends PocetnaStranica {
 	@FindBy(xpath = "//div[9]/div[1]/div/div[2]/div/div")
 	private WebElement vaziOdValidacijaWE;
 	
-	@FindBy(xpath = "//div[2]/div[8]/div[1]/div/div[2]/div/div")
+	@FindBy(xpath = "//div[9]/div[1]/div/div[2]/div/div/div")
 	private WebElement datumPreregistracijeValidacijaWE;
 	
 	@FindBy(xpath = "//div[2]/div[1]/div/div/div[2]/div/div")
@@ -797,10 +800,7 @@ public class UgovoriPage extends PocetnaStranica {
 		cjenovnaKategorijaZaMrezuWE.sendKeys("20 - Kategorija mrezarine");
 		Thread.sleep(1000);
 		cjenovnaKategorijaZaMrezuWE.sendKeys(Keys.ENTER);
-		wait.until(ExpectedConditions.elementToBeClickable(tipUgovoraWE));
-		tipUgovoraWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(tipUgovora1WE));
-		tipUgovora1WE.click();
+		
 		wait.until(ExpectedConditions.elementToBeClickable(potpisanCBWE));
 		potpisanCBWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(datumPotpisaWE));
@@ -811,6 +811,12 @@ public class UgovoriPage extends PocetnaStranica {
 		datumPocetkaWE.sendKeys("30.12.2020.");
 		wait.until(ExpectedConditions.elementToBeClickable(vaziOdWE));
 		vaziOdWE.sendKeys("30.12.2020.");
+		
+		wait.until(ExpectedConditions.elementToBeClickable(tipUgovoraWE));
+		tipUgovoraWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(tipUgovora1WE));
+		tipUgovora1WE.click();
+		
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].scrollIntoView(true);", datumPocetkaWE);
 		wait.until(ExpectedConditions.elementToBeClickable(mjernoMjestoWE));

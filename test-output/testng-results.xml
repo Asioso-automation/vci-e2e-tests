@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="31392" started-at="2021-04-01T05:03:43Z" finished-at="2021-04-01T05:04:15Z">
+  <suite name="Default suite" duration-ms="33945" started-at="2021-04-07T19:51:37Z" finished-at="2021-04-07T19:52:11Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="31392" started-at="2021-04-01T05:03:43Z" finished-at="2021-04-01T05:04:15Z">
-      <class name="com.platformX.tests.QA_017_Dodavanje_Pravnog_Lica_Test">
-        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.platformX.tests.QA_017_Dodavanje_Pravnog_Lica_Test@3967e60c]" name="setUp" is-config="true" duration-ms="6139" started-at="2021-04-01T07:03:44Z" finished-at="2021-04-01T07:03:50Z">
+    <test name="Default test" duration-ms="33945" started-at="2021-04-07T19:51:37Z" finished-at="2021-04-07T19:52:11Z">
+      <class name="com.platformX.tests.QA_041_Preregistracija_Ugovora_Test">
+        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.platformX.tests.QA_041_Preregistracija_Ugovora_Test@3967e60c]" name="setUp" is-config="true" duration-ms="5424" started-at="2021-04-07T21:51:37Z" finished-at="2021-04-07T21:51:43Z">
           <params>
             <param index="0">
               <value>
@@ -18,15 +18,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="qa_017_dodavanje_pravnog_lica_test()[pri:0, instance:com.platformX.tests.QA_017_Dodavanje_Pravnog_Lica_Test@3967e60c]" name="qa_017_dodavanje_pravnog_lica_test" duration-ms="24461" started-at="2021-04-01T07:03:50Z" finished-at="2021-04-01T07:04:14Z">
+        <test-method status="PASS" signature="qa_041_preregistracija_ugovora_test()[pri:0, instance:com.platformX.tests.QA_041_Preregistracija_Ugovora_Test@3967e60c]" name="qa_041_preregistracija_ugovora_test" duration-ms="28506" started-at="2021-04-07T21:51:43Z" finished-at="2021-04-07T21:52:11Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- qa_017_dodavanje_pravnog_lica_test -->
-        <test-method status="PASS" signature="cleanUp()[pri:0, instance:com.platformX.tests.QA_017_Dodavanje_Pravnog_Lica_Test@3967e60c]" name="cleanUp" is-config="true" duration-ms="758" started-at="2021-04-01T07:04:14Z" finished-at="2021-04-01T07:04:15Z">
+        </test-method> <!-- qa_041_preregistracija_ugovora_test -->
+        <test-method status="PASS" signature="cleanUp()[pri:0, instance:com.platformX.tests.QA_041_Preregistracija_Ugovora_Test@3967e60c]" name="cleanUp" is-config="true" duration-ms="0" started-at="2021-04-07T21:52:11Z" finished-at="2021-04-07T21:52:11Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- cleanUp -->
-      </class> <!-- com.platformX.tests.QA_017_Dodavanje_Pravnog_Lica_Test -->
+      </class> <!-- com.platformX.tests.QA_041_Preregistracija_Ugovora_Test -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
