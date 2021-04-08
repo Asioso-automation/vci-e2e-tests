@@ -24,6 +24,7 @@ public class QA_001_LogIn_LogOut_Test extends BaseTest {
 		homePage.verifyHomePage();
 		homePage.logOut();
 		logInPage.verifyLogInPage();
+		//test
 	}
 
 }
