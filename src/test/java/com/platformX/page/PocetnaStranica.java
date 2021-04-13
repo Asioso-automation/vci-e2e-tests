@@ -24,6 +24,9 @@ public class PocetnaStranica extends PageBase {
 	protected List<WebElement> brojKolona() {
 		return driver.findElements(By.xpath("//th"));
 	}
+	
+	@FindBy(xpath = "//*[@id='application']/div[1]/main/div/div/div/div[2]/div/div[1]/table/thead/tr")
+	protected WebElement tableHeaderWE;
 
 	@FindBy(xpath = "//div[contains(@class, 'v-snack__content') and contains(text(), 'Učitavanje, molim sačekajte')]")
 	protected WebElement molimoSacekajteLoaderWE;
