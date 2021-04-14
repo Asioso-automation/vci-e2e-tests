@@ -3,6 +3,8 @@ package com.platformX.page;
 import static org.testng.Assert.assertTrue;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
@@ -13,6 +15,9 @@ public class ObavjestenjaOPromjeniSnabdjevacaPage extends PocetnaStranica {
 	}
 
 	public void verifikujObavjestenjaOPromjeniSnabdjevaca() throws InterruptedException {
+		wait.until(ExpectedConditions.visibilityOf(tableHeaderWE));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
+				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Obavještenja')]")));
 		wait.until(ExpectedConditions.elementToBeClickable(sekcijaBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(stranicaBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(preuzmiExcelBtnWE));
@@ -23,7 +28,7 @@ public class ObavjestenjaOPromjeniSnabdjevacaPage extends PocetnaStranica {
 				"ObavjestenjaOPromjeniSnabdjevaca: Naziv stranice nije dobar!");
 		assertTrue(naslovStraniceWE.getText().trim().equals("OBAVJEŠTENJA O PROMJENI SNABDJEVAČA"),
 				"ObavjestenjaOPromjeniSnabdjevaca: Naziv stranice nije dobar!");
-		assertTrue(brojKolona().size() == 10, "ObavjestenjaOPromjeniSnabdjevaca: Broj kolona nije dobar! ");
+		assertTrue(brojKolona().size() == 9, "ObavjestenjaOPromjeniSnabdjevaca: Broj kolona nije dobar! ");
 	}
 
 }

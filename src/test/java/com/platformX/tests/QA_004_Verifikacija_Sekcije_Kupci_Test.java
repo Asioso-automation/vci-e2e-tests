@@ -43,8 +43,8 @@ public class QA_004_Verifikacija_Sekcije_Kupci_Test extends BaseTest {
 		povezanaPravnaLicaPage.verifikujPovezanaPravnaLica();
 		ZahtjeviZaDostavuPodatakaPage zahtjeviZaDostavuPodatakaPage = homePage.navigateToZahtjeviZaDostavuPodataka();
 		zahtjeviZaDostavuPodatakaPage.verifikujZahtjeveZaDostavuPodataka();
-		ZahtjeviZaUgovorePage zahtjeviZaUgovorePage = homePage.navigateToZahtjeviZaUgovore();
-		zahtjeviZaUgovorePage.verifikujZahtjeviZaUgovore();
+//		ZahtjeviZaUgovorePage zahtjeviZaUgovorePage = homePage.navigateToZahtjeviZaUgovore();
+//		zahtjeviZaUgovorePage.verifikujZahtjeviZaUgovore();
 		UgovoriPage ugovoriPage = homePage.navigateToUgovori();
 		ugovoriPage.verifikujUgovori();
 		ObavjestenjaOPromjeniSnabdjevacaPage obavjestenjaOPromjeniSnabdjevacaPage = homePage.navigateToObavjestenjaOPromjeniSnabdjevaca();

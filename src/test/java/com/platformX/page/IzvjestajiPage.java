@@ -4,6 +4,7 @@ import static org.testng.Assert.assertTrue;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class IzvjestajiPage extends PocetnaStranica {
 
@@ -11,7 +12,9 @@ public class IzvjestajiPage extends PocetnaStranica {
 		super(driver);
 	}
 	
-	public void verifikujIzvjestaji() {
+	public void verifikujIzvjestaji() throws InterruptedException {
+		Thread.sleep(1000);
+		wait.until(ExpectedConditions.visibilityOf(naslovStraniceWE));
 		assertTrue(naslovStraniceWE.getText().trim().equals("IZVJEŠTAJI"), "Izvjestaji: Naziv stranice nije dobar!");
 	}
 
