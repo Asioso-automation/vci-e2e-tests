@@ -614,27 +614,27 @@ INSERT [TariffSystem].[TariffSuperGroup] ([Id], [Name]) VALUES (18, N'Tarifna na
 SET IDENTITY_INSERT [TariffSystem].[TariffSuperGroup] OFF
 
 GO
-INSERT [Customer].[ContractRequestDeclineReason] ([Id], [Name]) VALUES (N'CMP', N'Prethodni snabdjevač je podnio žalbu na zahtev za ugovor')
+INSERT [Customer].[ContractDeclineReason] ([Id], [Name]) VALUES (N'CMP', N'Prethodni snabdjevač je podnio žalbu na zahtev za ugovor')
 GO
-INSERT [Customer].[ContractRequestDeclineReason] ([Id], [Name]) VALUES (N'E09', N'Instalacija se ne može identifikovati')
+INSERT [Customer].[ContractDeclineReason] ([Id], [Name]) VALUES (N'E09', N'Instalacija se ne može identifikovati')
 GO
-INSERT [Customer].[ContractRequestDeclineReason] ([Id], [Name]) VALUES (N'E0H', N'Podaci nisu dostupni')
+INSERT [Customer].[ContractDeclineReason] ([Id], [Name]) VALUES (N'E0H', N'Podaci nisu dostupni')
 GO
-INSERT [Customer].[ContractRequestDeclineReason] ([Id], [Name]) VALUES (N'E10', N'Mjerno mjesto se ne može identifikovati')
+INSERT [Customer].[ContractDeclineReason] ([Id], [Name]) VALUES (N'E10', N'Mjerno mjesto se ne može identifikovati')
 GO
-INSERT [Customer].[ContractRequestDeclineReason] ([Id], [Name]) VALUES (N'E14', N'Drugi razlog')
+INSERT [Customer].[ContractDeclineReason] ([Id], [Name]) VALUES (N'E14', N'Drugi razlog')
 GO
-INSERT [Customer].[ContractRequestDeclineReason] ([Id], [Name]) VALUES (N'E17', N'Traženi datum promene nije u vremenskim ograničenjima')
+INSERT [Customer].[ContractDeclineReason] ([Id], [Name]) VALUES (N'E17', N'Traženi datum promene nije u vremenskim ograničenjima')
 GO
-INSERT [Customer].[ContractRequestDeclineReason] ([Id], [Name]) VALUES (N'E22', N'Mjerno mjesto je blokirano za prebacivanje')
+INSERT [Customer].[ContractDeclineReason] ([Id], [Name]) VALUES (N'E22', N'Mjerno mjesto je blokirano za prebacivanje')
 GO
-INSERT [Customer].[ContractRequestDeclineReason] ([Id], [Name]) VALUES (N'E37', N'Nema važećeg ugovora o pristupu mreži')
+INSERT [Customer].[ContractDeclineReason] ([Id], [Name]) VALUES (N'E37', N'Nema važećeg ugovora o pristupu mreži')
 GO
-INSERT [Customer].[ContractRequestDeclineReason] ([Id], [Name]) VALUES (N'E50', N'Period nije validan')
+INSERT [Customer].[ContractDeclineReason] ([Id], [Name]) VALUES (N'E50', N'Period nije validan')
 GO
-INSERT [Customer].[ContractRequestDeclineReason] ([Id], [Name]) VALUES (N'E55', N'Neovlašćeno izmereni podaci')
+INSERT [Customer].[ContractDeclineReason] ([Id], [Name]) VALUES (N'E55', N'Neovlašćeno izmereni podaci')
 GO
-INSERT [Customer].[ContractRequestDeclineReason] ([Id], [Name]) VALUES (N'E81', N'Mjerno mjesto nije povezano')
+INSERT [Customer].[ContractDeclineReason] ([Id], [Name]) VALUES (N'E81', N'Mjerno mjesto nije povezano')
 GO
 
 GO
