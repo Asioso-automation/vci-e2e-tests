@@ -33,8 +33,8 @@ public class QA_006_Verifikacija_Sekcije_Obracun_Test extends BaseTest {
 		homePage.verifyHomePage();
 		NaloziZaObracunPage naloziZaObracunPage = homePage.navigateToNaloziZaObracun();
 		naloziZaObracunPage.verifikujNaloziZaObracun();
-		MonitoringObracunaPage monitoringObracunaPage = homePage.navigateToMonitoringObracuna();
-		monitoringObracunaPage.verifikujMonitoringObracuna();
+//		MonitoringObracunaPage monitoringObracunaPage = homePage.navigateToMonitoringObracuna();
+//		monitoringObracunaPage.verifikujMonitoringObracuna();
 		RacuniPage racuniPage = homePage.navigateToRacuni();
 		racuniPage.verifikujRacuni();
 		KorekcijeRacunaPage korekcijeRacunaPage = homePage.navigateToKorekcijeRacuna();

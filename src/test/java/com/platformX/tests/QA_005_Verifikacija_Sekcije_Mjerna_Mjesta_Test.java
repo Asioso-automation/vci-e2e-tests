@@ -35,7 +35,7 @@ public class QA_005_Verifikacija_Sekcije_Mjerna_Mjesta_Test extends BaseTest {
 		ocitanjaBrojilaPage.verifikujOcitanjaBrojila();
 		EnergetskiObracunPage energetskiObracunPage = homePage.navigateToEnergetskiObracun();
 		energetskiObracunPage.verifikujEnergetskiObracun();
-		MonitoringEnergetskogObracunaPage monitoringEnergetskogObracunaPage = homePage.navigateToMonitoringEnergetskogObracuna();
-		monitoringEnergetskogObracunaPage.verifikujMonitoringEnergetskogObracuna();
+//		MonitoringEnergetskogObracunaPage monitoringEnergetskogObracunaPage = homePage.navigateToMonitoringEnergetskogObracuna();
+//		monitoringEnergetskogObracunaPage.verifikujMonitoringEnergetskogObracuna();
 	}
 }
