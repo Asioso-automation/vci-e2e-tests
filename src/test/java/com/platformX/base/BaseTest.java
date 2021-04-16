@@ -30,7 +30,7 @@ public class BaseTest {
 
 	@BeforeMethod
 	@Parameters({ "browser" })
-	public void setUp(@Optional("chrome") String browser) {
+	public void setUp(@Optional("firefox") String browser) {
 		if (browser.equalsIgnoreCase("firefox")) {
 			System.setProperty("webdriver.gecko.driver", "src/test/resources/drivers/geckodriver.exe");
 			FirefoxProfile profile = new FirefoxProfile();
@@ -46,7 +46,7 @@ public class BaseTest {
 			ChromeOptions options = new ChromeOptions();
 			options.addArguments("--start-maximized");
 			// options.addArguments("--window-size=1366,768");
-			options.addArguments("incognito");
+			// options.addArguments("incognito");
 			options.addArguments("chrome.switches", "--disable-extensions");
 			driver = new ChromeDriver(options);
 		} else {

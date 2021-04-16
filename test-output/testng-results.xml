@@ -2,27 +2,27 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="30652" started-at="2021-04-16T17:06:28Z" finished-at="2021-04-16T17:06:58Z">
+  <suite name="Default suite" duration-ms="19769" started-at="2021-04-16T17:36:19Z" finished-at="2021-04-16T17:36:39Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="30652" started-at="2021-04-16T17:06:28Z" finished-at="2021-04-16T17:06:58Z">
+    <test name="Default test" duration-ms="19769" started-at="2021-04-16T17:36:19Z" finished-at="2021-04-16T17:36:39Z">
       <class name="com.platformX.tests.QA_006_Verifikacija_Sekcije_Obracun_Test">
-        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.platformX.tests.QA_006_Verifikacija_Sekcije_Obracun_Test@3967e60c]" name="setUp" is-config="true" duration-ms="5722" started-at="2021-04-16T19:06:28Z" finished-at="2021-04-16T19:06:33Z">
+        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.platformX.tests.QA_006_Verifikacija_Sekcije_Obracun_Test@3967e60c]" name="setUp" is-config="true" duration-ms="3865" started-at="2021-04-16T19:36:19Z" finished-at="2021-04-16T19:36:23Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[chrome]]>
+                <![CDATA[firefox]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="qa_006_verifikacija_sekcije_obracun_test()[pri:0, instance:com.platformX.tests.QA_006_Verifikacija_Sekcije_Obracun_Test@3967e60c]" name="qa_006_verifikacija_sekcije_obracun_test" duration-ms="24902" started-at="2021-04-16T19:06:33Z" finished-at="2021-04-16T19:06:58Z">
+        <test-method status="PASS" signature="qa_006_verifikacija_sekcije_obracun_test()[pri:0, instance:com.platformX.tests.QA_006_Verifikacija_Sekcije_Obracun_Test@3967e60c]" name="qa_006_verifikacija_sekcije_obracun_test" duration-ms="15323" started-at="2021-04-16T19:36:23Z" finished-at="2021-04-16T19:36:38Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- qa_006_verifikacija_sekcije_obracun_test -->
-        <test-method status="PASS" signature="cleanUp()[pri:0, instance:com.platformX.tests.QA_006_Verifikacija_Sekcije_Obracun_Test@3967e60c]" name="cleanUp" is-config="true" duration-ms="0" started-at="2021-04-16T19:06:58Z" finished-at="2021-04-16T19:06:58Z">
+        <test-method status="PASS" signature="cleanUp()[pri:0, instance:com.platformX.tests.QA_006_Verifikacija_Sekcije_Obracun_Test@3967e60c]" name="cleanUp" is-config="true" duration-ms="566" started-at="2021-04-16T19:36:38Z" finished-at="2021-04-16T19:36:39Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- cleanUp -->
