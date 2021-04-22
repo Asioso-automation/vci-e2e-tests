@@ -502,7 +502,7 @@ INSERT [Finance].[Transaction] ([Id], [DebitId], [CreditId], [Date], [EntryDate]
 
 SET IDENTITY_INSERT [Finance].[Transaction] OFF
 
-
+SET IDENTITY_INSERT [Metering].[MeteringPoint] ON
 
 INSERT [Metering].[MeteringPoint] ([Id], [DsoId], [EIC], [DsoOfGridId], [MeteringPointInDsoId], [PlaceId], [StreetId], [StreetText], [StreetNumber], [PostOfficeId]) VALUES (0, 1, N'Nepoznato mjm', 1, 0, 1, 1, N'Nepoznata ulica', N'NN', 78000)
 INSERT [Metering].[MeteringPoint] ([Id], [DsoId], [EIC], [DsoOfGridId], [MeteringPointInDsoId], [PlaceId], [StreetId], [StreetText], [StreetNumber], [PostOfficeId]) VALUES (1, 1, N'AMOSA542A       ', 1, 0, 1, 1, N'Nepoznata ulica', N'NN', 78000)
@@ -532,6 +532,7 @@ INSERT [Metering].[MeteringPoint] ([Id], [DsoId], [EIC], [DsoOfGridId], [Meterin
 INSERT [Metering].[MeteringPoint] ([Id], [DsoId], [EIC], [DsoOfGridId], [MeteringPointInDsoId], [PlaceId], [StreetId], [StreetText], [StreetNumber], [PostOfficeId]) VALUES (66100006, 1, N'3PD53B2W        ', 6, 1, 1, 1, N'Nepoznata ulica', N'NN', 78000)
 INSERT [Metering].[MeteringPoint] ([Id], [DsoId], [EIC], [DsoOfGridId], [MeteringPointInDsoId], [PlaceId], [StreetId], [StreetText], [StreetNumber], [PostOfficeId]) VALUES (66100007, 1, N'36ZBLNG         ', 6, 1, 1, 1, N'Nepoznata ulica', N'NN', 78000)
 
+SET IDENTITY_INSERT [Metering].[MeteringPoint] OFF
 
 INSERT [Metering].[ReadingType] ([Id], [Name]) VALUES (1, N'Type of reading 1')
 
