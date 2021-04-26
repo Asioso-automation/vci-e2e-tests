@@ -222,7 +222,7 @@ public class UgovoriPage extends PocetnaStranica {
 	@FindBy(xpath = "//div[5]/div[7]/div/div/div[1]/div/input")
 	private WebElement aktivnaKonstantaWE;
 
-	@FindBy(xpath = "//div[7]/div[2]/div/div/div[1]/div[1]/input[1]")
+	@FindBy(xpath = "//div[7]/div[1]/div/div/div[1]/div[1]/input[1]")
 	private WebElement postaWE;
 
 	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '78000 - Banja Luka')]")
@@ -231,7 +231,7 @@ public class UgovoriPage extends PocetnaStranica {
 	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '71420')]")
 	private WebElement odaberiPostu1WE;
 
-	@FindBy(xpath = "//div[7]/div[3]/div/div/div[1]/div[1]/input[1]")
+	@FindBy(xpath = "//div[7]/div[2]/div/div/div[1]/div[1]/input[1]")
 	private WebElement mjestoWE;
 
 	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '1 - Ba')]")
@@ -240,7 +240,7 @@ public class UgovoriPage extends PocetnaStranica {
 	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '3 - Pale')]")
 	private WebElement odaberiMjesto1WE;
 
-	@FindBy(xpath = "//div[7]/div[4]/div/div/div[1]/div[1]/input[1]")
+	@FindBy(xpath = "//div[7]/div[3]/div/div/div[1]/div[1]/input[1]")
 	private WebElement ulicaWE;
 
 	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '6 - Nikole Tesle')]")
@@ -249,7 +249,7 @@ public class UgovoriPage extends PocetnaStranica {
 	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '2 - Dr')]")
 	private WebElement odaberiUlicu1WE;
 
-	@FindBy(xpath = "//div[7]/div[5]/div/div/div[1]/div/input")
+	@FindBy(xpath = "//div[7]/div[4]/div/div/div[1]/div/input")
 	private WebElement brojUliceWE;
 
 	@FindBy(xpath = "//div[7]/div[7]/div/div/div[1]/div/div")
