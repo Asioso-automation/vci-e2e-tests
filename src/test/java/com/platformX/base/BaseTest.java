@@ -45,7 +45,7 @@ public class BaseTest {
 			System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver.exe");
 			ChromeOptions options = new ChromeOptions();
 			options.addArguments("--start-maximized");
-			// options.addArguments("--window-size=1366,768");
+			options.addArguments("--window-size=1366,768");
 			options.addArguments("incognito");
 			options.addArguments("chrome.switches", "--disable-extensions");
 			driver = new ChromeDriver(options);
