@@ -30,6 +30,9 @@ public class UplatePage extends PocetnaStranica {
 	@FindBy(xpath = "//tr[2]/td[6]") 
 	private WebElement uplatilacImeWE;
 	
+	@FindBy(xpath = "//form/div[2]/div/a") 
+	private WebElement odustaniWE;
+	
 	// Kreiraj uplatu elementi
 	
 	@FindBy(xpath = "//div[1]/div/div/div/div[1]/div[1]/input[1]") 
@@ -167,9 +170,12 @@ public class UplatePage extends PocetnaStranica {
 	
 	public void verifikujUplatu(String uplatilac) throws InterruptedException {
 		WebDriverWait wait = new WebDriverWait(driver, 20);
-		wait.until(ExpectedConditions.elementToBeClickable(uplateBtnWE));
-		uplateBtnWE.click();
 		Thread.sleep(2000);
+		wait.until(ExpectedConditions.elementToBeClickable(odustaniWE));
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView(true);", odustaniWE);
+		odustaniWE.click();
+		Thread.sleep(1000);
 		wait.until(ExpectedConditions.elementToBeClickable(uplatilacFilterWE));
 		uplatilacFilterWE.click();
 		uplatilacFilterWE.sendKeys(uplatilac);

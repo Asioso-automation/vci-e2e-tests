@@ -26,7 +26,7 @@ public class EnergetskiObracunPage extends PocetnaStranica {
 		assertTrue(sekcijaBtnWE.getText().trim().equals("OČITANJA"), "EnergetskiObracun: Naziv sekcije nije dobar!"); // bug, los naziv sekcije
 		assertTrue(stranicaBtnWE.getText().trim().equals("ENERGETSKI OBRAČUN"), "EnergetskiObracun: Naziv stranice nije dobar!");
 		assertTrue(naslovStraniceWE.getText().trim().equals("ENERGETSKI OBRAČUN"), "EnergetskiObracun: Naziv stranice nije dobar!");
-		assertTrue(brojKolona().size() == 8, "EnergetskiObracun: Broj kolona nije dobar! ");
+		assertTrue(brojKolona().size() == 9, "EnergetskiObracun: Broj kolona nije dobar! ");
 	}
 
 }
