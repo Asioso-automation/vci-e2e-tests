@@ -5,10 +5,28 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class DjelatnostiPage extends PocetnaStranica {
+	
+	@FindBy(xpath = "//div[1]/div/div/div[1]/div/input")
+	private WebElement sifraDjelatnostiWE;
+	
+	@FindBy(xpath = "//div[2]/div/div/div[1]/div/input")
+	private WebElement nazivDjelatnostiWE;
+	
+	@FindBy(xpath = "//div[2]/button[1]")
+	private WebElement dodajPodrucjeBtnWE;
+	
+	@FindBy(xpath = "//td[3]/div/div/div/div[1]/input")
+	private WebElement nazivFilterWE;
+	
+	@FindBy(xpath = "//tr[2]/td[3]")
+	private WebElement nazivTabelaWE;
 
 	public DjelatnostiPage(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);
@@ -28,6 +46,30 @@ public class DjelatnostiPage extends PocetnaStranica {
 		assertTrue(stranicaBtnWE.getText().trim().equals("DJELATNOSTI"), "Djelatnosti: Naziv stranice nije dobar!");
 		assertTrue(naslovStraniceWE.getText().trim().equals("DJELATNOSTI"), "Djelatnosti: Naziv stranice nije dobar!");
 		assertTrue(brojKolona().size() == 4, "Djelatnosti: Broj kolona nije dobar! ");
+	}
+	
+	public String dodajDjelatnost() throws InterruptedException {
+		String djelatnost = "Djelatnost " + getRandomName();
+		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
+		dodajBtnWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(sifraDjelatnostiWE));
+		sifraDjelatnostiWE.sendKeys(getRandomName());
+		wait.until(ExpectedConditions.elementToBeClickable(nazivDjelatnostiWE));
+		nazivDjelatnostiWE.sendKeys(djelatnost);
+		wait.until(ExpectedConditions.elementToBeClickable(dodajPodrucjeBtnWE));
+		dodajPodrucjeBtnWE.click();
+		Thread.sleep(1000);
+		return djelatnost;
+	}
+	
+	public void verifikujDjelatnost(String djelatnost) throws InterruptedException {
+		wait.until(ExpectedConditions.elementToBeClickable(nazivFilterWE));
+		nazivFilterWE.sendKeys(djelatnost);
+		nazivFilterWE.sendKeys(Keys.ENTER);
+		Thread.sleep(1000);
+		wait.until(ExpectedConditions.visibilityOf(nazivTabelaWE));
+		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
+		assertTrue(nazivTabelaWE.getText().equals(djelatnost), "Djelatnosti: Ime djelatnosti nije dobro!");
 	}
 
 }
