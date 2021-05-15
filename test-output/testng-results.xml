@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="15741" started-at="2021-05-09T20:14:03Z" finished-at="2021-05-09T20:14:19Z">
+  <suite name="Default suite" duration-ms="54977" started-at="2021-05-15T09:23:48Z" finished-at="2021-05-15T09:24:42Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="15741" started-at="2021-05-09T20:14:03Z" finished-at="2021-05-09T20:14:19Z">
-      <class name="com.platformX.tests.QA_042_Dodavanje_Djelatnosti_Test">
-        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.platformX.tests.QA_042_Dodavanje_Djelatnosti_Test@3967e60c]" name="setUp" is-config="true" duration-ms="5322" started-at="2021-05-09T22:14:03Z" finished-at="2021-05-09T22:14:08Z">
+    <test name="Default test" duration-ms="54977" started-at="2021-05-15T09:23:48Z" finished-at="2021-05-15T09:24:42Z">
+      <class name="com.platformX.tests.QA_036_Neuspjesno_Ukljucivanje_Ugovora_Test">
+        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.platformX.tests.QA_036_Neuspjesno_Ukljucivanje_Ugovora_Test@3967e60c]" name="setUp" is-config="true" duration-ms="5340" started-at="2021-05-15T11:23:48Z" finished-at="2021-05-15T11:23:53Z">
           <params>
             <param index="0">
               <value>
@@ -18,15 +18,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="qa_042_dodavanje_djelatnosti_test()[pri:0, instance:com.platformX.tests.QA_042_Dodavanje_Djelatnosti_Test@3967e60c]" name="qa_042_dodavanje_djelatnosti_test" duration-ms="10401" started-at="2021-05-09T22:14:08Z" finished-at="2021-05-09T22:14:19Z">
+        <test-method status="PASS" signature="qa_036_neuspjesno_ukljucivanje_ugovora_test()[pri:0, instance:com.platformX.tests.QA_036_Neuspjesno_Ukljucivanje_Ugovora_Test@3967e60c]" name="qa_036_neuspjesno_ukljucivanje_ugovora_test" duration-ms="49622" started-at="2021-05-15T11:23:53Z" finished-at="2021-05-15T11:24:42Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- qa_042_dodavanje_djelatnosti_test -->
-        <test-method status="PASS" signature="cleanUp()[pri:0, instance:com.platformX.tests.QA_042_Dodavanje_Djelatnosti_Test@3967e60c]" name="cleanUp" is-config="true" duration-ms="1" started-at="2021-05-09T22:14:19Z" finished-at="2021-05-09T22:14:19Z">
+        </test-method> <!-- qa_036_neuspjesno_ukljucivanje_ugovora_test -->
+        <test-method status="PASS" signature="cleanUp()[pri:0, instance:com.platformX.tests.QA_036_Neuspjesno_Ukljucivanje_Ugovora_Test@3967e60c]" name="cleanUp" is-config="true" duration-ms="0" started-at="2021-05-15T11:24:42Z" finished-at="2021-05-15T11:24:42Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- cleanUp -->
-      </class> <!-- com.platformX.tests.QA_042_Dodavanje_Djelatnosti_Test -->
+      </class> <!-- com.platformX.tests.QA_036_Neuspjesno_Ukljucivanje_Ugovora_Test -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

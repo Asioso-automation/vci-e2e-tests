@@ -35,7 +35,7 @@ public class PravnaLicaPage extends PocetnaStranica {
 	@FindBy(xpath = "//div[2]/div[2]/div/div/div[1]/div/input")
 	private WebElement stampaniNazivNaDokumentimaWE;
 	
-	@FindBy(xpath = "//div[3]/div[4]/div/div/div[1]/div/input")
+	@FindBy(xpath = "//div[3]/div[6]/div/div/div[1]/div/input")
 	private WebElement jibWE;
 	
 	@FindBy(xpath = "//div[4]/div[2]/div/div/div[1]/div[1]/input[1]")
