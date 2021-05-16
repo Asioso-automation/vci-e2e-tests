@@ -86,8 +86,8 @@ public class UplatePage extends PocetnaStranica {
 		dodajUplatuBtnWE.click();
 		}
 		wait.until(ExpectedConditions.elementToBeClickable(pozivNaBrojWE));
-		pozivNaBrojWE.sendKeys("1987 - Poziv na broj: 1987, Broj računa: 1988");
-		Thread.sleep(1000);
+		pozivNaBrojWE.sendKeys("1987");
+		Thread.sleep(2000);
 		wait.until(ExpectedConditions.elementToBeClickable(odaberiBrojWE));
 		odaberiBrojWE.click();
 		Thread.sleep(1000);

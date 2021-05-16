@@ -26,7 +26,7 @@ public class QA_041_Preregistracija_Ugovora_Test extends BaseTest {
 		ugovoriPage.pronadjiUgovor("61100069");
 		ugovoriPage.otvoriPreregistraciju();
 		ugovoriPage.preregistrujUgovor();
-		ugovoriPage.verifikujPreregistrovanUgovor("61100069", "4100010 - Firma 2");
+		ugovoriPage.verifikujPreregistrovanUgovor("61100069", "Firma 2");
 	}
 	
 }

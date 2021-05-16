@@ -19,7 +19,7 @@ public class UgovoriPage extends PocetnaStranica {
 	@FindBy(xpath = "//td[5]/div/div/div/div[1]/input")
 	private WebElement pretraziMjernaMjestaWE;
 	
-	@FindBy(xpath = "//td[3]/div/div/div/div[1]/input")
+	@FindBy(xpath = "//td[4]/div/div/div/div[1]/input")
 	private WebElement pretraziKupcaWE;
 
 	@FindBy(xpath = "//td[4]/a")
@@ -147,7 +147,7 @@ public class UgovoriPage extends PocetnaStranica {
 	@FindBy(xpath = "//div[3]/div[2]/div/div/div[1]/div/div")
 	private WebElement potpisanCBWE;
 
-	@FindBy(xpath = "//div[4]/div[1]/div/div[1]/div[2]/input")
+	@FindBy(xpath = "//div[1]/div[1]/div/div[1]/div[2]/input")
 	private WebElement datumPotpisaWE;
 
 	@FindBy(xpath = "//div[4]/div[2]/div[1]/div/div[1]/div[2]/input")
@@ -287,46 +287,46 @@ public class UgovoriPage extends PocetnaStranica {
 	@FindBy(xpath = "//div[2]/div[6]/div/div/div[2]/div/div/div")
 	private WebElement procenatUmanjenjaPDVaPorukaWE;
 
-	@FindBy(xpath = "//div[3]/div[2]/div[1]/div/div[2]/div/div/div")
+	@FindBy(xpath = "//div[4]/div[2]/div[1]/div/div[2]/div/div/div")
 	private WebElement datumPocetkaPorukaWE;
 
-	@FindBy(xpath = "//div[5]/div[1]/div/div/div[2]/div/div/div")
+	@FindBy(xpath = "//div[6]/div[1]/div/div/div[2]/div/div/div")
 	private WebElement mjernoMjestoPorukaWE;
 
-	@FindBy(xpath = "//div[5]/div[4]/div/div/div[2]/div/div/div")
+	@FindBy(xpath = "//div[6]/div[4]/div/div/div[2]/div/div/div")
 	private WebElement aktivnoBrojiloPorukaWE;
 
-	@FindBy(xpath = "//div[5]/div[5]/div/div/div[2]/div/div/div")
+	@FindBy(xpath = "//div[6]/div[5]/div/div/div[2]/div/div/div")
 	private WebElement reaktivnoBrojiloPorukaWE;
 
-	@FindBy(xpath = "//div[5]/div[2]/div/div/div[2]/div/div/div")
+	@FindBy(xpath = "//div[6]/div[2]/div/div/div[2]/div/div/div")
 	private WebElement nazivMjernogMjestaPorukaWE;
 
-	@FindBy(xpath = "//div[5]/div[3]/div/div/div[2]/div/div/div")
+	@FindBy(xpath = "//div[6]/div[3]/div/div/div[2]/div/div/div")
 	private WebElement nazivNaStampanimDokumentimaPorukaWE;
 
-	@FindBy(xpath = "//div[7]/div[2]/div/div/div[2]/div/div/div")
+	@FindBy(xpath = "//div[8]/div[1]/div/div/div[2]/div/div/div")
 	private WebElement postaPorukaWE;
 
-	@FindBy(xpath = "//div[7]/div[3]/div/div/div[2]/div/div/div")
+	@FindBy(xpath = "//div[8]/div[2]/div/div/div[2]/div/div/div")
 	private WebElement mjestoPorukaWE;
 
-	@FindBy(xpath = "//div[7]/div[3]/div/div/div[2]/div/div/div")
+	@FindBy(xpath = "//div[8]/div[3]/div/div/div[2]/div/div/div")
 	private WebElement ulicaPorukaWE;
 
-	@FindBy(xpath = "//div[7]/div[4]/div/div/div[2]/div/div/div")
+	@FindBy(xpath = "//div[8]/div[4]/div/div/div[2]/div/div/div")
 	private WebElement brojUlicePorukaWE;
 
-	@FindBy(xpath = "//div[7]/div/div/div[2]/div/div/div")
+	@FindBy(xpath = "//div[8]/div/div/div[2]/div/div/div")
 	private WebElement eMailPorukaWE;
 
-	@FindBy(xpath = "//div[9]/div[2]/div/div/div[2]/div/div/div")
+	@FindBy(xpath = "//div[10]/div[2]/div/div/div[2]/div/div/div")
 	private WebElement telefonPorukaWE;
 
-	@FindBy(xpath = "//div[9]/div[3]/div/div/div[2]/div/div/div")
+	@FindBy(xpath = "//div[10]/div[3]/div/div/div[2]/div/div/div")
 	private WebElement eMailOsobePorukaWE;
 
-	@FindBy(xpath = "//div[3]/div[3]/div[1]/div/div[2]/div/div/div")
+	@FindBy(xpath = "//div[4]/div[3]/div[1]/div/div[2]/div/div/div")
 	private WebElement vaziOdPorukaWE;
 
 	// Uredi ugovor elementi
@@ -353,7 +353,7 @@ public class UgovoriPage extends PocetnaStranica {
 	
 	// Preregistruj ugovor elementi
 	
-	@FindBy(xpath = "//div[4]/div[2]/div/div/div[1]/div/input")
+	@FindBy(xpath = "//div[5]/div[2]/div/div/div[1]/div/input")
 	private WebElement nazivMjMjestaWE;
 	
 	@FindBy(xpath = "//div[9]/div[1]/div/div[1]/div[2]/input")
@@ -362,40 +362,40 @@ public class UgovoriPage extends PocetnaStranica {
 	@FindBy(xpath = "//div[10]/div[1]/div/div[1]/div[2]/input")
 	private WebElement datumVaziOdWE;
 	
-	@FindBy(xpath = "//div[4]/div[3]/div/div/div[1]/div/input")
+	@FindBy(xpath = "//div[5]/div[3]/div/div/div[1]/div/input")
 	private WebElement nazivMjMjestaNaDokWE;
 	
-	@FindBy(xpath = "//div[6]/div[1]/div/div/div[1]/div[1]/input[1]")
+	@FindBy(xpath = "//div[7]/div[1]/div/div/div[1]/div[1]/input[1]")
 	private WebElement postaPreregistracijeWE;
 	
-	@FindBy(xpath = "//div[6]/div[2]/div/div/div[1]/div[1]/input[1]")
+	@FindBy(xpath = "//div[7]/div[2]/div/div/div[1]/div[1]/input[1]")
 	private WebElement mjestoPreregistracijeWE;
 	
-	@FindBy(xpath = "//div[6]/div[3]/div/div/div[1]/div[1]/input[1]")
+	@FindBy(xpath = "//div[7]/div[3]/div/div/div[1]/div[1]/input[1]")
 	private WebElement ulicaPreregistracijeWE;
 	
-	@FindBy(xpath = "//div[6]/div[4]/div/div/div[1]/div[1]/input[1]")
+	@FindBy(xpath = "//div[7]/div[4]/div/div/div[1]/div[1]/input[1]")
 	private WebElement brojUUliciWE;
 	
-	@FindBy(xpath = "//div[6]/div[2]/div/div/div[2]/div/div")
+	@FindBy(xpath = "//div[7]/div[1]/div/div/div[2]/div/div")
 	private WebElement postaValidacijaWE;
 	
-	@FindBy(xpath = "//div[6]/div[3]/div/div/div[2]/div/div")
+	@FindBy(xpath = "//div[7]/div[2]/div/div/div[2]/div/div")
 	private WebElement mjestoValidacijaWE;
 	
-	@FindBy(xpath = "//div[6]/div[4]/div/div/div[2]/div/div")
+	@FindBy(xpath = "//div[7]/div[3]/div/div/div[2]/div/div")
 	private WebElement ulicaValidacijaWE;
 	
-	@FindBy(xpath = "//div[6]/div[4]/div/div/div[2]/div/div/div")
+	@FindBy(xpath = "//div[7]/div[4]/div/div/div[2]/div/div")
 	private WebElement brojValidacijaWE;
 	
-	@FindBy(xpath = "//div[4]/div[2]/div/div/div[2]/div/div")
+	@FindBy(xpath = "//div[5]/div[2]/div/div/div[2]/div/div")
 	private WebElement nazivMjernogMjestaValidacijaWE;
 	
-	@FindBy(xpath = "//div[4]/div[3]/div/div/div[2]/div/div")
+	@FindBy(xpath = "//div[5]/div[3]/div/div/div[2]/div/div")
 	private WebElement nazivMjernogMjestaNaDokumentimaValidacijaWE;
 	
-	@FindBy(xpath = "//div[9]/div[1]/div/div[2]/div/div")
+	@FindBy(xpath = "//div[10]/div[1]/div/div[2]/div/div/div")
 	private WebElement vaziOdValidacijaWE;
 	
 	@FindBy(xpath = "//div[9]/div[1]/div/div[2]/div/div/div")
