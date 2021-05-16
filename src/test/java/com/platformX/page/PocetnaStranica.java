@@ -1,5 +1,7 @@
 package com.platformX.page;
 
+import static org.testng.Assert.assertTrue;
+
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.List;
@@ -868,6 +870,12 @@ public class PocetnaStranica extends PageBase {
 		wait.until(ExpectedConditions.elementToBeClickable(izvjestajiWE));
 		izvjestajiWE.click();
 		return new IzvjestajiPage(driver);
+	}
+	
+	public void verifikujPoruku(String poruka) throws InterruptedException {
+		Thread.sleep(500);
+		wait.until(ExpectedConditions.visibilityOf(porukaWE));
+		assertTrue(porukaWE.getText().trim().equals(poruka), "Djelatnosti: Poruka upozorenja nije dobra!");
 	}
 	
 }

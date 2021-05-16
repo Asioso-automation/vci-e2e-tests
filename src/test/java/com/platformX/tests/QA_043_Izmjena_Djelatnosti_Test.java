@@ -8,14 +8,14 @@ import com.platformX.page.PocetnaStranica;
 import com.platformX.page.DjelatnostiPage;
 import com.platformX.page.LogInPage;
 
-public class QA_042_Dodavanje_Djelatnosti_Test extends BaseTest {
+public class QA_043_Izmjena_Djelatnosti_Test extends BaseTest {
 
-	public QA_042_Dodavanje_Djelatnosti_Test() throws IOException, FileNotFoundException {
+	public QA_043_Izmjena_Djelatnosti_Test() throws IOException, FileNotFoundException {
 		super();
 	}
 
 	@Test
-	public void qa_042_dodavanje_djelatnosti_test() throws Exception {
+	public void qa_043_izmjena_djelatnosti_test() throws Exception {
 		LogInPage logInPage = new LogInPage(driver, PLATFORMX_PROPERTIES);
 		logInPage.verifyLogInPage();
 		logInPage.logIn();
@@ -26,6 +26,9 @@ public class QA_042_Dodavanje_Djelatnosti_Test extends BaseTest {
 		String djelatnost = djelatnosti.dodajDjelatnost();
 		djelatnosti.verifikujPoruku("Uspješno završeno.");
 		djelatnosti.verifikujDjelatnost(djelatnost);
+		String novaDjelatnost = djelatnosti.izmjeniDjelatnost();
+		djelatnosti.verifikujPoruku("Uspješno završeno.");
+		djelatnosti.verifikujDjelatnost(novaDjelatnost);
 	}
 
 }

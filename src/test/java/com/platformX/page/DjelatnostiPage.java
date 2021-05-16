@@ -20,13 +20,28 @@ public class DjelatnostiPage extends PocetnaStranica {
 	private WebElement nazivDjelatnostiWE;
 	
 	@FindBy(xpath = "//div[2]/button[1]")
-	private WebElement dodajPodrucjeBtnWE;
+	private WebElement dodajDjelatnostBtnWE;
 	
 	@FindBy(xpath = "//td[3]/div/div/div/div[1]/input")
 	private WebElement nazivFilterWE;
 	
 	@FindBy(xpath = "//tr[2]/td[3]")
 	private WebElement nazivTabelaWE;
+	
+	@FindBy(xpath = "//td[4]/button")
+	private WebElement burgerBarWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Uredi')]")
+	private WebElement urediBtnWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Briši')]")
+	private WebElement obrisiBtnWE;
+	
+	@FindBy(xpath = "//div[5]/div/div/div[4]/button[2]")
+	private WebElement potvrdiBrisanjeBtnWE;
+	
+	@FindBy(xpath = "//tr[2]/td")
+	private WebElement praznaTabelaWE;
 
 	public DjelatnostiPage(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);
@@ -56,20 +71,58 @@ public class DjelatnostiPage extends PocetnaStranica {
 		sifraDjelatnostiWE.sendKeys(getRandomName());
 		wait.until(ExpectedConditions.elementToBeClickable(nazivDjelatnostiWE));
 		nazivDjelatnostiWE.sendKeys(djelatnost);
-		wait.until(ExpectedConditions.elementToBeClickable(dodajPodrucjeBtnWE));
-		dodajPodrucjeBtnWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(dodajDjelatnostBtnWE));
+		dodajDjelatnostBtnWE.click();
 		Thread.sleep(1000);
 		return djelatnost;
 	}
 	
 	public void verifikujDjelatnost(String djelatnost) throws InterruptedException {
 		wait.until(ExpectedConditions.elementToBeClickable(nazivFilterWE));
+		nazivFilterWE.click();
+		nazivFilterWE.clear();
 		nazivFilterWE.sendKeys(djelatnost);
 		nazivFilterWE.sendKeys(Keys.ENTER);
 		Thread.sleep(1000);
 		wait.until(ExpectedConditions.visibilityOf(nazivTabelaWE));
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
 		assertTrue(nazivTabelaWE.getText().equals(djelatnost), "Djelatnosti: Ime djelatnosti nije dobro!");
+	}
+	
+	public String izmjeniDjelatnost() {
+		String djelatnost = "Djelatnost " + getRandomName();
+		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
+		burgerBarWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(urediBtnWE));
+		urediBtnWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(nazivDjelatnostiWE));
+		nazivDjelatnostiWE.click();
+		nazivDjelatnostiWE.clear();
+		nazivDjelatnostiWE.sendKeys(djelatnost);
+		wait.until(ExpectedConditions.elementToBeClickable(dodajDjelatnostBtnWE));
+		dodajDjelatnostBtnWE.click();
+		return djelatnost;
+	}
+	
+	public void obrisiDjelatnost() {
+		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
+		burgerBarWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(obrisiBtnWE));
+		obrisiBtnWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(potvrdiBrisanjeBtnWE));
+		potvrdiBrisanjeBtnWE.click();
+	}
+	
+	public void verifikujBrisanjeDjelatnosti(String djelatnost) throws InterruptedException {
+		wait.until(ExpectedConditions.elementToBeClickable(nazivFilterWE));
+		nazivFilterWE.click();
+		nazivFilterWE.clear();
+		nazivFilterWE.sendKeys(djelatnost);
+		nazivFilterWE.sendKeys(Keys.ENTER);
+		Thread.sleep(1000);
+		wait.until(ExpectedConditions.visibilityOf(praznaTabelaWE));
+		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
+		assertTrue(praznaTabelaWE.getText().equals("Nema podataka"), "Djelatnosti: Poruka prazne tabele nije dobra!");
 	}
 
 }
