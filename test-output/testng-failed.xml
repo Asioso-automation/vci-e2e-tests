@@ -3,13 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.platformX.tests.QA_044_Brisanje_Djelatnosti_Test">
+      <class name="com.platformX.tests.QA_018_Dodavanje_Ugovora_Test">
         <methods>
-          <include name="qa_044_brisanje_djelatnosti_test"/>
+          <include name="qa_018_dodavanje_ugovora_test"/>
           <include name="setUp"/>
           <include name="cleanUp"/>
         </methods>
-      </class> <!-- com.platformX.tests.QA_044_Brisanje_Djelatnosti_Test -->
+      </class> <!-- com.platformX.tests.QA_018_Dodavanje_Ugovora_Test -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

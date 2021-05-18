@@ -1,5 +1,7 @@
 package com.platformX.page;
 
+import static org.testng.Assert.assertTrue;
+
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import org.openqa.selenium.WebDriver;
@@ -24,6 +26,9 @@ public class LogInPage extends PocetnaStranica {
 	@FindBy(xpath = "//div[3]/div/div/div/div[2]/input")
 	private WebElement lozinkaWE;
 	
+	@FindBy(xpath = "//div[2]/div/div/div")
+	private WebElement porukaUpozorenjaWE;
+	
 	public void verifyLogInPage() {
 		wait.until(ExpectedConditions.elementToBeClickable(korisnickoImeWE));
 		wait.until(ExpectedConditions.elementToBeClickable(lozinkaWE));
@@ -37,6 +42,18 @@ public class LogInPage extends PocetnaStranica {
 		wait.until(ExpectedConditions.elementToBeClickable(prijaviSeBtnWE));
 		prijaviSeBtnWE.click();
 		Thread.sleep(1000);
+	}
+	
+	public void provjeraValidacija(String korisnickoIme, String lozinka) throws InterruptedException {
+		wait.until(ExpectedConditions.visibilityOf(korisnickoImeWE));
+		wait.until(ExpectedConditions.visibilityOf(lozinkaWE));
+		korisnickoImeWE.sendKeys(korisnickoIme);
+		lozinkaWE.sendKeys(lozinka);
+		wait.until(ExpectedConditions.elementToBeClickable(prijaviSeBtnWE));
+		prijaviSeBtnWE.click();
+		Thread.sleep(1000);
+		wait.until(ExpectedConditions.visibilityOf(porukaUpozorenjaWE));
+		assertTrue(porukaUpozorenjaWE.getText().equals("Pogrešno korisničko ime i/ili lozinka!"), "LogIn: Poruka upozorenja nije dobra!");
 	}
 	
 }
