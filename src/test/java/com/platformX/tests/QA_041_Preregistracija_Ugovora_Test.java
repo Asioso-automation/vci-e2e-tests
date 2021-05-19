@@ -23,10 +23,10 @@ public class QA_041_Preregistracija_Ugovora_Test extends BaseTest {
 		homePage.verifyHomePage();
 		UgovoriPage ugovoriPage = homePage.navigateToUgovori();
 		ugovoriPage.verifikujUgovori();
-		ugovoriPage.pronadjiUgovor("61100069");
+		ugovoriPage.pronadjiUgovor("Mjerno mjesto 3"); // 61100069
 		ugovoriPage.otvoriPreregistraciju();
 		ugovoriPage.preregistrujUgovor();
-		ugovoriPage.verifikujPreregistrovanUgovor("61100069", "Firma 2");
+		ugovoriPage.verifikujPreregistrovanUgovor("Mjerno mjesto 3", "Firma 2"); // 61100069
 	}
 	
 }

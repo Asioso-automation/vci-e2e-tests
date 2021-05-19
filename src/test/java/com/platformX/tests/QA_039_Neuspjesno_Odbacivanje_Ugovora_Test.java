@@ -23,7 +23,7 @@ public class QA_039_Neuspjesno_Odbacivanje_Ugovora_Test extends BaseTest {
 		homePage.verifyHomePage();	
 		UgovoriPage ugovoriPage = homePage.navigateToUgovori();
 		ugovoriPage.verifikujUgovori();
-		ugovoriPage.pronadjiUgovor("66100007 - 36ZBLNG");
+		ugovoriPage.pronadjiUgovor("Mjerno mjesto 6");  // 66100007 - 36ZBLNG
 		ugovoriPage.odbaciUgovor();
 		ugovoriPage.verifikujPoruku("Odbacivanje ovog ugovora nije moguće.");
 	}

@@ -23,7 +23,7 @@ public class QA_040_Provjera_Validacija_Na_Preregistraciji_Ugovora_Test extends 
 		homePage.verifyHomePage();
 		UgovoriPage ugovoriPage = homePage.navigateToUgovori();
 		ugovoriPage.verifikujUgovori();
-		ugovoriPage.pronadjiUgovor("61100069");
+		ugovoriPage.pronadjiUgovor("Mjerno mjesto 2"); // 61100069
 		ugovoriPage.otvoriPreregistraciju();
 		ugovoriPage.verifikujObaveznaPoljaPreregistracijeUgovora();
 	}

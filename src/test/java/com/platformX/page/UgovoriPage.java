@@ -25,7 +25,7 @@ public class UgovoriPage extends PocetnaStranica {
 	@FindBy(xpath = "//td[4]/a")
 	private WebElement kupacTabelaWE;
 
-	@FindBy(xpath = "//td[5]/a")
+	@FindBy(xpath = "//tr[2]/td[5]")
 	private WebElement mjernoMjestoTabelaWE;
 	
 	@FindBy(xpath = "//tr[2]/td[10]")
