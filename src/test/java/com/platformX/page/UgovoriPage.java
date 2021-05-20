@@ -20,13 +20,19 @@ public class UgovoriPage extends PocetnaStranica {
 	private WebElement pretraziMjernaMjestaWE;
 	
 	@FindBy(xpath = "//td[4]/div/div/div/div[1]/input")
+	private WebElement pretraziEicWE;
+	
+	@FindBy(xpath = "//td[3]/div/div/div/div[1]/input")
 	private WebElement pretraziKupcaWE;
 
-	@FindBy(xpath = "//td[4]/a")
+	@FindBy(xpath = "//td[3]/a")
 	private WebElement kupacTabelaWE;
 
 	@FindBy(xpath = "//tr[2]/td[5]")
 	private WebElement mjernoMjestoTabelaWE;
+	
+	@FindBy(xpath = "//td[4]/a")
+	private WebElement eicTabelaWE;
 	
 	@FindBy(xpath = "//tr[2]/td[10]")
 	private WebElement zavrsavaTabelaWE;
@@ -593,13 +599,25 @@ public class UgovoriPage extends PocetnaStranica {
 		assertTrue(mjernoMjestoTabelaWE.getText().contains(mjernoMjesto), "Ugovori: Naziv mjernog mjesta nije dobar!");
 	}
 	
-	public void verifikujPreregistrovanUgovor(String mjernoMjesto, String kupac) throws InterruptedException {
+	public void pronadjiUgovorPoEic(String eic) throws InterruptedException {
+		wait.until(ExpectedConditions.elementToBeClickable(pretraziEicWE));
+		Thread.sleep(1000);
+		pretraziEicWE.click();
+		pretraziEicWE.clear();
+		pretraziEicWE.sendKeys(eic);
+		pretraziMjernaMjestaWE.sendKeys(Keys.ENTER);
+		wait.until(ExpectedConditions.visibilityOf(eicTabelaWE));
+		Thread.sleep(1000);
+		assertTrue(eicTabelaWE.getText().contains(eic), "Ugovori: Naziv EIC nije dobar!");
+	}
+	
+	public void verifikujPreregistrovanUgovor(String eic, String kupac) throws InterruptedException {
 		wait.until(ExpectedConditions.elementToBeClickable(pretraziMjernaMjestaWE));
 		Thread.sleep(1000);
-		pretraziMjernaMjestaWE.click();
-		pretraziMjernaMjestaWE.clear();
-		pretraziMjernaMjestaWE.sendKeys(mjernoMjesto);
-		pretraziMjernaMjestaWE.sendKeys(Keys.ENTER);
+		pretraziEicWE.click();
+		pretraziEicWE.clear();
+		pretraziEicWE.sendKeys(eic);
+		pretraziEicWE.sendKeys(Keys.ENTER);
 		Thread.sleep(1000);
 		wait.until(ExpectedConditions.elementToBeClickable(pretraziKupcaWE));
 		pretraziKupcaWE.click();
@@ -607,9 +625,9 @@ public class UgovoriPage extends PocetnaStranica {
 		pretraziKupcaWE.sendKeys(kupac);
 		pretraziKupcaWE.sendKeys(Keys.ENTER);
 		Thread.sleep(1000);
-		wait.until(ExpectedConditions.visibilityOf(mjernoMjestoTabelaWE));
+		wait.until(ExpectedConditions.visibilityOf(eicTabelaWE));
 		Thread.sleep(1000);
-		assertTrue(mjernoMjestoTabelaWE.getText().contains(mjernoMjesto), "Ugovori: Naziv mjernog mjesta nije dobar!");
+		assertTrue(eicTabelaWE.getText().contains(eic), "Ugovori: Naziv EIC nije dobar!");
 		assertTrue(pocinjeOdTabelaWE.getText().contains("15.07.2020."), "Ugovori: Datum pocetka nije dobar!");
 	}
 
