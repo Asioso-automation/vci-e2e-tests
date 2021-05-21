@@ -165,52 +165,52 @@ public class UgovoriPage extends PocetnaStranica {
 	@FindBy(xpath = "//div[6]/div[1]/div/div/div[1]/div[1]/input[1]")
 	private WebElement mjernoMjestoWE;
 
-	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '2 - 1514BASD99')]")
+	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '1514BASD99')]")
 	private WebElement odaberiMjernoMjesto1WE;
 
-	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '61100001 - 36Z03800001H')]")
+	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '36Z03800001H')]")
 	private WebElement odaberiMjernoMjesto2WE;
 
-	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '1 - AMOSA542A')]")
+	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., 'AMOSA542A')]")
 	private WebElement odaberiMjernoMjesto3WE;
 
-	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '64100070 - 151414')]")
+	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '151414')]")
 	private WebElement odaberiMjernoMjesto4WE;
 
-	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '64103711 - 36K085053')]")
+	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '36K085053')]")
 	private WebElement odaberiMjernoMjesto5WE;
 
-	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '61100021 - 36Z1SB1200027N')]")
+	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '36Z1SB1200027N')]")
 	private WebElement odaberiMjernoMjesto6WE;
 
-	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '61100265 - 36Z0100154X')]")
+	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '36Z0100154X')]")
 	private WebElement odaberiMjernoMjesto7WE;
 
-	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '61100089 - dfsf56456')]")
+	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., 'dfsf56456')]")
 	private WebElement odaberiMjernoMjesto8WE;
 
-	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '66100006 - 3PD53B2W')]")
+	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '3PD53B2W')]")
 	private WebElement odaberiMjernoMjesto9WE;
 
-	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '64102459 - SK009281150R')]")
+	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., 'SK009281150R')]")
 	private WebElement odaberiMjernoMjesto10WE;
 
-	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '64102458 - 36Z0SK009')]")
+	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '36Z0SK009')]")
 	private WebElement odaberiMjernoMjesto11WE;
 
-	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '64103708 - 36066699C')]")
+	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '36066699C')]")
 	private WebElement odaberiMjernoMjesto12WE;
 
-	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '64102798 - 36Z0SK085O')]")
+	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '36Z0SK085O')]")
 	private WebElement odaberiMjernoMjesto13WE;
 
-	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '64102666 - 36Z0S501070Z')]")
+	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '36Z0S501070Z')]")
 	private WebElement odaberiMjernoMjesto14WE;
 
-	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '64103710 - 36SK08501E')]")
+	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '36SK08501E')]")
 	private WebElement odaberiMjernoMjesto15WE;
 
-	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '64102347 - K009151661R')]")
+	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., 'K009151661R')]")
 	private WebElement odaberiMjernoMjesto16WE;
 
 	@FindBy(xpath = "//div[1]/div[6]/div[2]/div/div/div[1]/div/input")
@@ -485,49 +485,49 @@ public class UgovoriPage extends PocetnaStranica {
 		if (mjernoMjesto == "2 - 1514BASD99") {
 			wait.until(ExpectedConditions.visibilityOf(odaberiMjernoMjesto1WE));
 			odaberiMjernoMjesto1WE.click();
-		} else if (mjernoMjesto == "61100001 - 36Z03800001H") {
+		} else if (mjernoMjesto == "36Z03800001H") {
 			wait.until(ExpectedConditions.visibilityOf(odaberiMjernoMjesto2WE));
 			odaberiMjernoMjesto2WE.click();
-		} else if (mjernoMjesto == "1 - AMOSA542A") {
+		} else if (mjernoMjesto == "AMOSA542A") {
 			wait.until(ExpectedConditions.visibilityOf(odaberiMjernoMjesto3WE));
 			odaberiMjernoMjesto3WE.click();
-		} else if (mjernoMjesto == "64100070 - 151414") {
+		} else if (mjernoMjesto == "151414") {
 			wait.until(ExpectedConditions.visibilityOf(odaberiMjernoMjesto4WE));
 			odaberiMjernoMjesto4WE.click();
-		} else if (mjernoMjesto == "64103711 - 36K085053") {
+		} else if (mjernoMjesto == "36K085053") {
 			wait.until(ExpectedConditions.visibilityOf(odaberiMjernoMjesto5WE));
 			odaberiMjernoMjesto5WE.click();
-		} else if (mjernoMjesto == "61100021 - 36Z1SB1200027N") {
+		} else if (mjernoMjesto == "36Z1SB1200027N") {
 			wait.until(ExpectedConditions.visibilityOf(odaberiMjernoMjesto6WE));
 			odaberiMjernoMjesto6WE.click();
-		} else if (mjernoMjesto == "61100265 - 36Z0100154X") {
+		} else if (mjernoMjesto == "36Z0100154X") {
 			wait.until(ExpectedConditions.visibilityOf(odaberiMjernoMjesto7WE));
 			odaberiMjernoMjesto7WE.click();
-		} else if (mjernoMjesto == "61100089 - dfsf56456") {
+		} else if (mjernoMjesto == "dfsf56456") {
 			wait.until(ExpectedConditions.visibilityOf(odaberiMjernoMjesto8WE));
 			odaberiMjernoMjesto8WE.click();
-		} else if (mjernoMjesto == "66100006 - 3PD53B2W") {
+		} else if (mjernoMjesto == "3PD53B2W") {
 			wait.until(ExpectedConditions.visibilityOf(odaberiMjernoMjesto9WE));
 			odaberiMjernoMjesto9WE.click();
-		} else if (mjernoMjesto == "64102459 - SK009281150R") {
+		} else if (mjernoMjesto == "SK009281150R") {
 			wait.until(ExpectedConditions.visibilityOf(odaberiMjernoMjesto10WE));
 			odaberiMjernoMjesto10WE.click();
-		} else if (mjernoMjesto == "64102458 - 36Z0SK009") {
+		} else if (mjernoMjesto == "36Z0SK009") {
 			wait.until(ExpectedConditions.visibilityOf(odaberiMjernoMjesto11WE));
 			odaberiMjernoMjesto11WE.click();
-		} else if (mjernoMjesto == "64103708 - 36066699C") {
+		} else if (mjernoMjesto == "36066699C") {
 			wait.until(ExpectedConditions.visibilityOf(odaberiMjernoMjesto12WE));
 			odaberiMjernoMjesto12WE.click();
-		} else if (mjernoMjesto == "64102798 - 36Z0SK085O") {
+		} else if (mjernoMjesto == "36Z0SK085O") {
 			wait.until(ExpectedConditions.visibilityOf(odaberiMjernoMjesto13WE));
 			odaberiMjernoMjesto13WE.click();
-		} else if (mjernoMjesto == "64102666 - 36Z0S501070Z") {
+		} else if (mjernoMjesto == "36Z0S501070Z") {
 			wait.until(ExpectedConditions.visibilityOf(odaberiMjernoMjesto14WE));
 			odaberiMjernoMjesto14WE.click();
-		} else if (mjernoMjesto == "64103710 - 36SK08501E") {
+		} else if (mjernoMjesto == "36SK08501E") {
 			wait.until(ExpectedConditions.visibilityOf(odaberiMjernoMjesto15WE));
 			odaberiMjernoMjesto15WE.click();
-		} else if (mjernoMjesto == "64102347 - K009151661R") {
+		} else if (mjernoMjesto == "K009151661R") {
 			wait.until(ExpectedConditions.visibilityOf(odaberiMjernoMjesto16WE));
 			odaberiMjernoMjesto16WE.click();
 		}
@@ -844,52 +844,52 @@ public class UgovoriPage extends PocetnaStranica {
 		mjernoMjestoWE.sendKeys(mjernoMjesto);
 		Thread.sleep(1000);
 		// TODO: Ovaj dio mozda refaktorisati da prima 'ID - EIC' a da dinamicki uzima mjm
-		if (mjernoMjesto == "2 - 1514BASD99") {
+		if (mjernoMjesto == "1514BASD99") {
 			wait.until(ExpectedConditions.visibilityOf(odaberiMjernoMjesto1WE));
 			odaberiMjernoMjesto1WE.click();
-		} else if (mjernoMjesto == "61100001 - 36Z03800001H") {
+		} else if (mjernoMjesto == "36Z03800001H") {
 			wait.until(ExpectedConditions.visibilityOf(odaberiMjernoMjesto2WE));
 			odaberiMjernoMjesto2WE.click();
-		} else if (mjernoMjesto == "1 - AMOSA542A") {
+		} else if (mjernoMjesto == "AMOSA542A") {
 			wait.until(ExpectedConditions.visibilityOf(odaberiMjernoMjesto3WE));
 			odaberiMjernoMjesto3WE.click();
-		} else if (mjernoMjesto == "64100070 - 151414") {
+		} else if (mjernoMjesto == "151414") {
 			wait.until(ExpectedConditions.visibilityOf(odaberiMjernoMjesto4WE));
 			odaberiMjernoMjesto4WE.click();
-		} else if (mjernoMjesto == "64103711 - 36K085053") {
+		} else if (mjernoMjesto == "36K085053") {
 			wait.until(ExpectedConditions.visibilityOf(odaberiMjernoMjesto5WE));
 			odaberiMjernoMjesto5WE.click();
-		} else if (mjernoMjesto == "61100021 - 36Z1SB1200027N") {
+		} else if (mjernoMjesto == "36Z1SB1200027N") {
 			wait.until(ExpectedConditions.visibilityOf(odaberiMjernoMjesto6WE));
 			odaberiMjernoMjesto6WE.click();
-		} else if (mjernoMjesto == "61100265 - 36Z0100154X") {
+		} else if (mjernoMjesto == "36Z0100154X") {
 			wait.until(ExpectedConditions.visibilityOf(odaberiMjernoMjesto7WE));
 			odaberiMjernoMjesto7WE.click();
-		} else if (mjernoMjesto == "61100089 - dfsf56456") {
+		} else if (mjernoMjesto == "dfsf56456") {
 			wait.until(ExpectedConditions.visibilityOf(odaberiMjernoMjesto8WE));
 			odaberiMjernoMjesto8WE.click();
-		} else if (mjernoMjesto == "66100006 - 3PD53B2W") {
+		} else if (mjernoMjesto == "3PD53B2W") {
 			wait.until(ExpectedConditions.visibilityOf(odaberiMjernoMjesto9WE));
 			odaberiMjernoMjesto9WE.click();
-		} else if (mjernoMjesto == "64102459 - SK009281150R") {
+		} else if (mjernoMjesto == "SK009281150R") {
 			wait.until(ExpectedConditions.visibilityOf(odaberiMjernoMjesto10WE));
 			odaberiMjernoMjesto10WE.click();
-		} else if (mjernoMjesto == "64102458 - 36Z0SK009") {
+		} else if (mjernoMjesto == "36Z0SK009") {
 			wait.until(ExpectedConditions.visibilityOf(odaberiMjernoMjesto11WE));
 			odaberiMjernoMjesto11WE.click();
-		} else if (mjernoMjesto == "64103708 - 36066699C") {
+		} else if (mjernoMjesto == "36066699C") {
 			wait.until(ExpectedConditions.visibilityOf(odaberiMjernoMjesto12WE));
 			odaberiMjernoMjesto12WE.click();
-		} else if (mjernoMjesto == "64102798 - 36Z0SK085O") {
+		} else if (mjernoMjesto == "36Z0SK085O") {
 			wait.until(ExpectedConditions.visibilityOf(odaberiMjernoMjesto13WE));
 			odaberiMjernoMjesto13WE.click();
-		} else if (mjernoMjesto == "64102666 - 36Z0S501070Z") {
+		} else if (mjernoMjesto == "36Z0S501070Z") {
 			wait.until(ExpectedConditions.visibilityOf(odaberiMjernoMjesto14WE));
 			odaberiMjernoMjesto14WE.click();
-		} else if (mjernoMjesto == "64103710 - 36SK08501E") {
+		} else if (mjernoMjesto == "36SK08501E") {
 			wait.until(ExpectedConditions.visibilityOf(odaberiMjernoMjesto15WE));
 			odaberiMjernoMjesto15WE.click();
-		} else if (mjernoMjesto == "64102347 - K009151661R") {
+		} else if (mjernoMjesto == "K009151661R") {
 			wait.until(ExpectedConditions.visibilityOf(odaberiMjernoMjesto16WE));
 			odaberiMjernoMjesto16WE.click();
 		}

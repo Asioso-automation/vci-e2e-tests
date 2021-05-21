@@ -26,7 +26,7 @@ public class QA_025_Dodavanje_Potpisanog_Ugovora_Test extends BaseTest {
 		homePage.verifyHomePage();
 		UgovoriPage ugovoriPage = homePage.navigateToUgovori();
 		ugovoriPage.verifikujUgovori();
-		String mjernoMjesto = ugovoriPage.dodajPotpisanUgovor("61100265 - 36Z0100154X");
+		String mjernoMjesto = ugovoriPage.dodajPotpisanUgovor("36Z0100154X");
 		ugovoriPage.verifikujUgovori();
 		ugovoriPage.verifikujUgovor(mjernoMjesto);
 		ugovoriPage.verifikujBrojNecekiranihKolona(1);

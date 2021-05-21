@@ -23,7 +23,7 @@ public class QA_029_Provjera_Validacija_Na_Izmjeni_Ugovora_Test extends BaseTest
 		homePage.verifyHomePage();
 		UgovoriPage ugovoriPage = homePage.navigateToUgovori();
 		ugovoriPage.verifikujUgovori();
-		String mjernoMjesto = ugovoriPage.dodajPotpisanUgovor("64102459 - SK009281150R");
+		String mjernoMjesto = ugovoriPage.dodajPotpisanUgovor("SK009281150R");
 		ugovoriPage.verifikujUgovori();
 		ugovoriPage.verifikujUgovor(mjernoMjesto);
 		ugovoriPage.verifikujObaveznaPoljaIzmjenaUgovora();
