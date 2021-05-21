@@ -153,7 +153,7 @@ public class UplatePage extends PocetnaStranica {
 		String uplatilac = "Uplatilac " + getRandomName();
 		wait.until(ExpectedConditions.elementToBeClickable(kupacWE));
 		kupacWE.sendKeys("4100010 - Firma 2");
-		Thread.sleep(500);
+		Thread.sleep(2000);
 		kupacWE.sendKeys(Keys.ENTER);
 		Thread.sleep(1000);
 		wait.until(ExpectedConditions.elementToBeClickable(uplatilacWE));
