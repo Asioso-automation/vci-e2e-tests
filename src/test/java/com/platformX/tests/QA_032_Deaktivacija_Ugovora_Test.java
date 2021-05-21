@@ -30,7 +30,7 @@ public class QA_032_Deaktivacija_Ugovora_Test extends BaseTest {
 		String kupac = pravnaLicaPage.kreirajKupca();
 		UgovoriPage ugovoriPage = homePage.navigateToUgovori();
 		ugovoriPage.verifikujUgovori();
-		String mjernoMjesto = ugovoriPage.dodajUgovor(kupac, "7 - Kategorija cijene 2", "15.07.2020.", "15.07.2020.", "64102458 - 36Z0SK009", true);
+		String mjernoMjesto = ugovoriPage.dodajUgovor(kupac, "7 - Kategorija cijene 2", "15.07.2020.", "15.07.2020.", "36Z0SK009", true);
 		ugovoriPage.verifikujUgovori();
 		ugovoriPage.verifikujUgovor(mjernoMjesto);
 		ugovoriPage.verifikujBrojNecekiranihKolona(2);

@@ -30,7 +30,7 @@ public class QA_036_Neuspjesno_Ukljucivanje_Ugovora_Test extends BaseTest {
 		String kupac = pravnaLicaPage.kreirajKupca();		
 		UgovoriPage ugovoriPage = homePage.navigateToUgovori();
 		ugovoriPage.verifikujUgovori();
-		String mjernoMjesto = ugovoriPage.dodajUgovor(kupac, "7 - Kategorija cijene 2", "15.07.2020.", "15.07.2020.", "64102347 - K009151661R", true);
+		String mjernoMjesto = ugovoriPage.dodajUgovor(kupac, "7 - Kategorija cijene 2", "15.07.2020.", "15.07.2020.", "K009151661R", true);
 		ugovoriPage.verifikujUgovori();
 		ugovoriPage.verifikujUgovor(mjernoMjesto);
 		ugovoriPage.iskljuciUgovor("01.02.2021.");

@@ -27,7 +27,7 @@ public class QA_034_Odbacivanje_Ugovora_Test extends BaseTest {
 		homePage.verifyHomePage();
 		UgovoriPage ugovoriPage = homePage.navigateToUgovori();
 		ugovoriPage.verifikujUgovori();
-		String mjernoMjesto = ugovoriPage.dodajPotpisanUgovor("64103708 - 36066699C");
+		String mjernoMjesto = ugovoriPage.dodajPotpisanUgovor("36066699C");
 		ugovoriPage.verifikujUgovori();
 		ugovoriPage.verifikujUgovor(mjernoMjesto);
 		ugovoriPage.verifikujBrojNecekiranihKolona(1);

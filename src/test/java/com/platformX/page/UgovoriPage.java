@@ -482,7 +482,7 @@ public class UgovoriPage extends PocetnaStranica {
 		mjernoMjestoWE.sendKeys(mjernoMjesto);
 		Thread.sleep(1000);
 		// TODO: Ovaj dio mozda refaktorisati da prima 'ID - EIC' a da dinamicki uzima mjm
-		if (mjernoMjesto == "2 - 1514BASD99") {
+		if (mjernoMjesto == "1514BASD99") {
 			wait.until(ExpectedConditions.visibilityOf(odaberiMjernoMjesto1WE));
 			odaberiMjernoMjesto1WE.click();
 		} else if (mjernoMjesto == "36Z03800001H") {
