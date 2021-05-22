@@ -27,6 +27,9 @@ public class PocetnaStranica extends PageBase {
 		return driver.findElements(By.xpath("//th"));
 	}
 	
+	@FindBy(xpath = "//div[contains(text(), '1-1 of 1')]")
+	protected WebElement jedinstvenElementWE;
+	
 	@FindBy(xpath = "//*[@id='application']/div[1]/main/div/div/div/div[2]/div/div[1]/table/thead/tr")
 	protected WebElement tableHeaderWE;
 

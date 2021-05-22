@@ -24,10 +24,10 @@ public class QA_043_Izmjena_Djelatnosti_Test extends BaseTest {
 		DjelatnostiPage  djelatnosti = homePage.navigateToDjelatnosti();
 		djelatnosti.verifikujDjelatnosti();
 		String djelatnost = djelatnosti.dodajDjelatnost();
-		djelatnosti.verifikujPoruku("Uspješno završeno.");
+		// djelatnosti.verifikujPoruku("Uspješno završeno.");
 		djelatnosti.verifikujDjelatnost(djelatnost);
 		String novaDjelatnost = djelatnosti.izmjeniDjelatnost();
-		djelatnosti.verifikujPoruku("Uspješno završeno.");
+		// djelatnosti.verifikujPoruku("Uspješno završeno.");
 		djelatnosti.verifikujDjelatnost(novaDjelatnost);
 	}
 

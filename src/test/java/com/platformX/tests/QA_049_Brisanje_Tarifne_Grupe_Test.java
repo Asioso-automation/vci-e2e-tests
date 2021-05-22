@@ -8,14 +8,14 @@ import com.platformX.page.PocetnaStranica;
 import com.platformX.page.TarifneGrupePage;
 import com.platformX.page.LogInPage;
 
-public class QA_047_Dodavanje_Tarifne_Grupe_Test extends BaseTest {
+public class QA_049_Brisanje_Tarifne_Grupe_Test extends BaseTest {
 
-	public QA_047_Dodavanje_Tarifne_Grupe_Test() throws IOException, FileNotFoundException {
+	public QA_049_Brisanje_Tarifne_Grupe_Test() throws IOException, FileNotFoundException {
 		super();
 	}
 
 	@Test
-	public void qa_047_dodavanje_tarifne_grupe_test() throws Exception {
+	public void qa_049_brisanje_tarifne_grupe_test() throws Exception {
 		LogInPage logInPage = new LogInPage(driver, PLATFORMX_PROPERTIES);
 		logInPage.verifyLogInPage();
 		logInPage.logIn();
@@ -25,6 +25,9 @@ public class QA_047_Dodavanje_Tarifne_Grupe_Test extends BaseTest {
 		tarifneGrupe.verifikujTarifneGrupe();
 		String tarifnaGrupa = tarifneGrupe.dodajTarifnuGrupu();
 		tarifneGrupe.verifikujTarifnuGrupu(tarifnaGrupa);
+		tarifneGrupe.obrisiTarifnuGrupu();
+		tarifneGrupe.verifikujTarifneGrupe();
+		tarifneGrupe.verifikujBrisanjeTarifneGrupe(tarifnaGrupa);
 	}
 
 }
