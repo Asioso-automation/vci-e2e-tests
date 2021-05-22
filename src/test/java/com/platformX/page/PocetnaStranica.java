@@ -873,7 +873,7 @@ public class PocetnaStranica extends PageBase {
 	}
 	
 	public void verifikujPoruku(String poruka) throws InterruptedException {
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		wait.until(ExpectedConditions.visibilityOf(porukaWE));
 		assertTrue(porukaWE.getText().trim().equals(poruka), "Djelatnosti: Poruka upozorenja nije dobra!");
 	}

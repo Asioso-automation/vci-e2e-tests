@@ -24,7 +24,7 @@ public class QA_042_Dodavanje_Djelatnosti_Test extends BaseTest {
 		DjelatnostiPage  djelatnosti = homePage.navigateToDjelatnosti();
 		djelatnosti.verifikujDjelatnosti();
 		String djelatnost = djelatnosti.dodajDjelatnost();
-		// djelatnosti.verifikujPoruku("Uspješno završeno.");
+		djelatnosti.verifikujPoruku("Uspješno završeno.");
 		djelatnosti.verifikujDjelatnost(djelatnost);
 	}
 
