@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="24367" started-at="2021-05-22T19:42:31Z" finished-at="2021-05-22T19:42:56Z">
+  <suite name="Default suite" duration-ms="60048" started-at="2021-05-24T18:51:45Z" finished-at="2021-05-24T18:52:45Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="24367" started-at="2021-05-22T19:42:31Z" finished-at="2021-05-22T19:42:56Z">
-      <class name="com.platformX.tests.QA_049_Brisanje_Tarifne_Grupe_Test">
-        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.platformX.tests.QA_049_Brisanje_Tarifne_Grupe_Test@3967e60c]" name="setUp" is-config="true" duration-ms="5316" started-at="2021-05-22T21:42:31Z" finished-at="2021-05-22T21:42:36Z">
+    <test name="Default test" duration-ms="60048" started-at="2021-05-24T18:51:45Z" finished-at="2021-05-24T18:52:45Z">
+      <class name="com.platformX.tests.QA_011_Dodavanje_Uplate_Test">
+        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.platformX.tests.QA_011_Dodavanje_Uplate_Test@3967e60c]" name="setUp" is-config="true" duration-ms="5405" started-at="2021-05-24T20:51:45Z" finished-at="2021-05-24T20:51:50Z">
           <params>
             <param index="0">
               <value>
@@ -18,15 +18,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="qa_049_brisanje_tarifne_grupe_test()[pri:0, instance:com.platformX.tests.QA_049_Brisanje_Tarifne_Grupe_Test@3967e60c]" name="qa_049_brisanje_tarifne_grupe_test" duration-ms="18405" started-at="2021-05-22T21:42:36Z" finished-at="2021-05-22T21:42:55Z">
+        <test-method status="PASS" signature="qa_011_dodavanje_uplate_test()[pri:0, instance:com.platformX.tests.QA_011_Dodavanje_Uplate_Test@3967e60c]" name="qa_011_dodavanje_uplate_test" duration-ms="54625" started-at="2021-05-24T20:51:50Z" finished-at="2021-05-24T20:52:45Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- qa_049_brisanje_tarifne_grupe_test -->
-        <test-method status="PASS" signature="cleanUp()[pri:0, instance:com.platformX.tests.QA_049_Brisanje_Tarifne_Grupe_Test@3967e60c]" name="cleanUp" is-config="true" duration-ms="631" started-at="2021-05-22T21:42:55Z" finished-at="2021-05-22T21:42:56Z">
+        </test-method> <!-- qa_011_dodavanje_uplate_test -->
+        <test-method status="PASS" signature="cleanUp()[pri:0, instance:com.platformX.tests.QA_011_Dodavanje_Uplate_Test@3967e60c]" name="cleanUp" is-config="true" duration-ms="1" started-at="2021-05-24T20:52:45Z" finished-at="2021-05-24T20:52:45Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- cleanUp -->
-      </class> <!-- com.platformX.tests.QA_049_Brisanje_Tarifne_Grupe_Test -->
+      </class> <!-- com.platformX.tests.QA_011_Dodavanje_Uplate_Test -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
