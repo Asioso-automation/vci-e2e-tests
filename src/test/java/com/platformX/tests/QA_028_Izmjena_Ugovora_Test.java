@@ -30,9 +30,9 @@ public class QA_028_Izmjena_Ugovora_Test extends BaseTest {
 		String kupac = pravnaLicaPage.kreirajKupca();
 		UgovoriPage ugovoriPage = homePage.navigateToUgovori();
 		ugovoriPage.verifikujUgovori();
-		String mjernoMjesto = ugovoriPage.dodajUgovor(kupac, "7 - Kategorija cijene 2", "15.07.2020.", "15.07.2020.", "dfsf56456", true);
+		ugovoriPage.dodajUgovor(kupac, "7 - Kategorija cijene 2", "15.07.2020.", "15.07.2020.", "dfsf56456", true);
 		ugovoriPage.verifikujUgovori();
-		ugovoriPage.verifikujUgovor(mjernoMjesto);
+		ugovoriPage.pronadjiUgovorPravnoLice(pravnoLice);
 		ugovoriPage.izmjeniUgovor();
 	}
 
