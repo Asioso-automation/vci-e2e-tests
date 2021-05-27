@@ -55,10 +55,10 @@ public class UgovoriPage extends PocetnaStranica {
 	@FindBy(xpath = "//div[contains(text(), 'Deaktiviraj')]")
 	private WebElement deaktivirajBtnWE;
 
-	@FindBy(xpath = "//div[2]/input")
+	@FindBy(xpath = "//div[2]/div[1]/div/div[1]/div[2]/input")
 	private WebElement datumDeaktivacijeWE;
 
-	@FindBy(xpath = "//*[@id='application']/div[1]/main/div/div/div/div[2]/div/div/div")
+	@FindBy(xpath = "/html/body/div/div[1]/main/div/div/div[1]/div[3]")
 	private WebElement datumDeaktivacijePorukaWE;
 	
 	@FindBy(xpath = "//div[2]/div/div[3]/div/div/div[1]/div[1]/input[1]")
