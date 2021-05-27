@@ -61,7 +61,7 @@ public class UgovoriPage extends PocetnaStranica {
 	@FindBy(xpath = "//*[@id='application']/div[1]/main/div/div/div/div[2]/div/div/div")
 	private WebElement datumDeaktivacijePorukaWE;
 	
-	@FindBy(xpath = "//div[3]/div/div/div[1]/div[1]/input[1]")
+	@FindBy(xpath = "//div[2]/div/div[3]/div/div/div[1]/div[1]/input[1]")
 	private WebElement razlogDeaktivacijeWE;
 	
 	@FindBy(xpath = "//span[contains(text(), '1 - Test 1')]")
@@ -91,7 +91,7 @@ public class UgovoriPage extends PocetnaStranica {
 	@FindBy(xpath = "//div[7]/div/form/div/div[2]/div/div/div[1]/div/div[1]/div[2]/input")
 	private WebElement datumUkljucenjaWE;
 
-	@FindBy(xpath = "//div[7]/div/form/div/div[3]/button[2]")
+	@FindBy(xpath = "//div[8]/div/form/div/div[3]/button[2]")
 	private WebElement potvrdiUkljucivanjeWE;
 	
 	@FindBy(xpath = "//div[contains(@class, 'v-list-item__content') and starts-with(., 'Odbaci')]")
