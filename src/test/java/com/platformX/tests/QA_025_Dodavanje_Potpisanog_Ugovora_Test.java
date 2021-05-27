@@ -5,6 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import com.platformX.base.BaseTest;
 import com.platformX.page.PocetnaStranica;
+import com.platformX.page.PravnaLicaPage;
 import com.platformX.page.LogInPage;
 import com.platformX.page.UgovoriPage;
 
@@ -24,19 +25,26 @@ public class QA_025_Dodavanje_Potpisanog_Ugovora_Test extends BaseTest {
 		logInPage.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
 		homePage.verifyHomePage();
+		
+		PravnaLicaPage pravnaLicaPage = homePage.navigateToPravnaLica();
+		pravnaLicaPage.verifikujPravnaLica();
+		String pravnoLice = pravnaLicaPage.dodajPravnoLice();
+		pravnaLicaPage.verifikujPravnaLica();
+		pravnaLicaPage.verifikujPravnoLice(pravnoLice);
+		String kupac = pravnaLicaPage.kreirajKupca();
 		UgovoriPage ugovoriPage = homePage.navigateToUgovori();
 		ugovoriPage.verifikujUgovori();
-		String mjernoMjesto = ugovoriPage.dodajPotpisanUgovor("36Z0100154X");
+		ugovoriPage.dodajPotpisanUgovor("36Z0100154X", kupac);
 		ugovoriPage.verifikujUgovori();
-		ugovoriPage.verifikujUgovor(mjernoMjesto);
-		ugovoriPage.verifikujBrojNecekiranihKolona(1);
-//		ugovoriPage.izmjeniPotpisanUgovor();
-//		Nemoguce je odcekirati CB "potpisan", sto je ranije bio slucaj
+		ugovoriPage.pronadjiUgovorPravnoLice(pravnoLice);
+		
+		
+//		UgovoriPage ugovoriPage = homePage.navigateToUgovori();
+//		ugovoriPage.verifikujUgovori();
+//		String mjernoMjesto = ugovoriPage.dodajPotpisanUgovor("36Z0100154X");
 //		ugovoriPage.verifikujUgovori();
 //		ugovoriPage.verifikujUgovor(mjernoMjesto);
-//		ugovoriPage.verifikujBrojNecekranihKolona(2);
-//		TODO napraviti obrnutu logiku, kroz uredi napraviti potpisan ugovor "IzmjenaPoljaPotpisanNaUgovoruTest"
-		
+//		ugovoriPage.verifikujBrojNecekiranihKolona(1);
 	}
 
 }

@@ -5,6 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import com.platformX.base.BaseTest;
 import com.platformX.page.PocetnaStranica;
+import com.platformX.page.PravnaLicaPage;
 import com.platformX.page.LogInPage;
 import com.platformX.page.UgovoriPage;
 
@@ -21,11 +22,24 @@ public class QA_029_Provjera_Validacija_Na_Izmjeni_Ugovora_Test extends BaseTest
 		logInPage.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
 		homePage.verifyHomePage();
+		
+		PravnaLicaPage pravnaLicaPage = homePage.navigateToPravnaLica();
+		pravnaLicaPage.verifikujPravnaLica();
+		String pravnoLice = pravnaLicaPage.dodajPravnoLice();
+		pravnaLicaPage.verifikujPravnaLica();
+		pravnaLicaPage.verifikujPravnoLice(pravnoLice);
+		String kupac = pravnaLicaPage.kreirajKupca();
 		UgovoriPage ugovoriPage = homePage.navigateToUgovori();
 		ugovoriPage.verifikujUgovori();
-		String mjernoMjesto = ugovoriPage.dodajPotpisanUgovor("SK009281150R");
+		ugovoriPage.dodajPotpisanUgovor("36Z0100154X", kupac);
 		ugovoriPage.verifikujUgovori();
-		ugovoriPage.verifikujUgovor(mjernoMjesto);
+		ugovoriPage.pronadjiUgovorPravnoLice(pravnoLice);
 		ugovoriPage.verifikujObaveznaPoljaIzmjenaUgovora();
+		
+//		UgovoriPage ugovoriPage = homePage.navigateToUgovori();
+//		ugovoriPage.verifikujUgovori();
+//		String mjernoMjesto = ugovoriPage.dodajPotpisanUgovor("SK009281150R", kupac);
+//		ugovoriPage.verifikujUgovori();
+//		ugovoriPage.verifikujUgovor(mjernoMjesto);
 	}
 }

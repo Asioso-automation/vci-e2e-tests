@@ -5,6 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import com.platformX.base.BaseTest;
 import com.platformX.page.PocetnaStranica;
+import com.platformX.page.PravnaLicaPage;
 import com.platformX.page.LogInPage;
 import com.platformX.page.OdbaceniUgovoriPage;
 import com.platformX.page.UgovoriPage;
@@ -25,18 +26,32 @@ public class QA_034_Odbacivanje_Ugovora_Test extends BaseTest {
 		logInPage.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
 		homePage.verifyHomePage();
+		
+		PravnaLicaPage pravnaLicaPage = homePage.navigateToPravnaLica();
+		pravnaLicaPage.verifikujPravnaLica();
+		String pravnoLice = pravnaLicaPage.dodajPravnoLice();
+		pravnaLicaPage.verifikujPravnaLica();
+		pravnaLicaPage.verifikujPravnoLice(pravnoLice);
+		String kupac = pravnaLicaPage.kreirajKupca();
 		UgovoriPage ugovoriPage = homePage.navigateToUgovori();
 		ugovoriPage.verifikujUgovori();
-		String mjernoMjesto = ugovoriPage.dodajPotpisanUgovor("36066699C");
+		ugovoriPage.dodajPotpisanUgovor("36Z0100154X", kupac);
 		ugovoriPage.verifikujUgovori();
-		ugovoriPage.verifikujUgovor(mjernoMjesto);
+		ugovoriPage.pronadjiUgovorPravnoLice(pravnoLice);
+		
+//		UgovoriPage ugovoriPage = homePage.navigateToUgovori();
+//		ugovoriPage.verifikujUgovori();
+//		String mjernoMjesto = ugovoriPage.dodajPotpisanUgovor("36066699C");
+//		ugovoriPage.verifikujUgovori();
+//		ugovoriPage.verifikujUgovor(mjernoMjesto);
+		
 		ugovoriPage.verifikujBrojNecekiranihKolona(1);
 		ugovoriPage.odbaciUgovor();
-		ugovoriPage.verifikujOdbaceniUgovor(mjernoMjesto);
+		ugovoriPage.verifikujOdbaceniUgovor(kupac);
 		homePage.navigateToOdbaceniUgovori();
 		OdbaceniUgovoriPage odbaceniUgovoriPage = new OdbaceniUgovoriPage(driver);
 		odbaceniUgovoriPage.verifikujOdbaceniUgovori();
-		odbaceniUgovoriPage.verifikujOdbaceniUgovor(mjernoMjesto);
+		odbaceniUgovoriPage.verifikujOdbaceniUgovor("36Z0100154X");
 	}
 
 }

@@ -16,13 +16,13 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class UgovoriPage extends PocetnaStranica {
 
-	@FindBy(xpath = "//td[5]/div/div/div/div[1]/input")
+	@FindBy(xpath = "//div[3]/div/div/div/div[1]/input[1]")
 	private WebElement pretraziMjernaMjestaWE;
 	
-	@FindBy(xpath = "//td[4]/div/div/div/div[1]/input")
+	@FindBy(xpath = "//div[2]/div/div/div/div[1]/input[1]")
 	private WebElement pretraziEicWE;
 	
-	@FindBy(xpath = "//td[3]/div/div/div/div[1]/input")
+	@FindBy(xpath = "//div[2]/div/div/div/div[1]/input[1]")
 	private WebElement pretraziKupcaWE;
 
 	@FindBy(xpath = "//td[3]/a")
@@ -73,7 +73,7 @@ public class UgovoriPage extends PocetnaStranica {
 	@FindBy(xpath = "//textarea")
 	private WebElement napomenaWE;
 
-	@FindBy(xpath = "//tr[2]/td")
+	@FindBy(xpath = "//td")
 	private WebElement porukaNaPraznojStraniciWE;
 
 	@FindBy(xpath = "//div[contains(@class, 'v-list-item__content') and starts-with(., 'Isklju')]")
@@ -82,16 +82,16 @@ public class UgovoriPage extends PocetnaStranica {
 	@FindBy(xpath = "//div[contains(@class, 'v-list-item__content') and starts-with(., 'Uklju')]")
 	private WebElement ukljuciBtnWE;
 
-	@FindBy(xpath = "//div[2]/input")
+	@FindBy(xpath = "//div[2]/div/div[1]/div[1]/div/div[1]/div[2]/input")
 	private WebElement datumIskljucenjaWE;
 
 	@FindBy(xpath = "//form/div/div[3]/button[2]")
 	private WebElement potvrdiIskljucivanjeWE;
 
-	@FindBy(xpath = "//div[6]/div/form/div/div[2]/div/div/div[1]/div/div[1]/div[2]/input")
+	@FindBy(xpath = "//div[7]/div/form/div/div[2]/div/div/div[1]/div/div[1]/div[2]/input")
 	private WebElement datumUkljucenjaWE;
 
-	@FindBy(xpath = "//div[6]//form/div/div[3]/button[2]")
+	@FindBy(xpath = "//div[7]/div/form/div/div[3]/button[2]")
 	private WebElement potvrdiUkljucivanjeWE;
 	
 	@FindBy(xpath = "//div[contains(@class, 'v-list-item__content') and starts-with(., 'Odbaci')]")
@@ -415,7 +415,6 @@ public class UgovoriPage extends PocetnaStranica {
 	}
 
 	public void verifikujUgovori() throws InterruptedException {
-		wait.until(ExpectedConditions.visibilityOf(tableHeaderWE));
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Ugovori')]")));
 		wait.until(ExpectedConditions.elementToBeClickable(sekcijaBtnWE));
@@ -600,15 +599,29 @@ public class UgovoriPage extends PocetnaStranica {
 	}
 	
 	public void pronadjiUgovorPoEic(String eic) throws InterruptedException {
-		wait.until(ExpectedConditions.elementToBeClickable(pretraziEicWE));
+		wait.until(ExpectedConditions.elementToBeClickable(pretraziMjernaMjestaWE));
 		Thread.sleep(1000);
-		pretraziEicWE.click();
-		pretraziEicWE.clear();
-		pretraziEicWE.sendKeys(eic);
+		pretraziMjernaMjestaWE.click();
+		pretraziMjernaMjestaWE.clear();
+		pretraziMjernaMjestaWE.sendKeys(eic);
+		Thread.sleep(2000);
 		pretraziMjernaMjestaWE.sendKeys(Keys.ENTER);
 		wait.until(ExpectedConditions.visibilityOf(eicTabelaWE));
 		Thread.sleep(1000);
 		assertTrue(eicTabelaWE.getText().contains(eic), "Ugovori: Naziv EIC nije dobar!");
+	}
+	
+	public void pronadjiUgovorPravnoLice(String pravnoLice) throws InterruptedException {
+		wait.until(ExpectedConditions.elementToBeClickable(pretraziEicWE));
+		Thread.sleep(1000);
+		pretraziKupcaWE.click();
+		pretraziKupcaWE.clear();
+		pretraziKupcaWE.sendKeys(pravnoLice);
+		Thread.sleep(2000);
+		pretraziKupcaWE.sendKeys(Keys.ENTER);
+		wait.until(ExpectedConditions.visibilityOf(kupacTabelaWE));
+		Thread.sleep(1000);
+		assertTrue(kupacTabelaWE.getText().contains(pravnoLice), "Ugovori: Naziv pravnog lica nije dobar!");
 	}
 	
 	public void verifikujPreregistrovanUgovor(String eic, String kupac) throws InterruptedException {
@@ -631,13 +644,13 @@ public class UgovoriPage extends PocetnaStranica {
 		assertTrue(pocinjeOdTabelaWE.getText().contains("15.07.2020."), "Ugovori: Datum pocetka nije dobar!");
 	}
 
-	public void verifikujOdbaceniUgovor(String mjernoMjesto) throws InterruptedException {
-		wait.until(ExpectedConditions.elementToBeClickable(pretraziMjernaMjestaWE));
+	public void verifikujOdbaceniUgovor(String kupac) throws InterruptedException {
+		wait.until(ExpectedConditions.elementToBeClickable(pretraziKupcaWE));
 		Thread.sleep(2000);
-		pretraziMjernaMjestaWE.click();
-		pretraziMjernaMjestaWE.clear();
-		pretraziMjernaMjestaWE.sendKeys(mjernoMjesto);
-		pretraziMjernaMjestaWE.sendKeys(Keys.ENTER);
+		pretraziKupcaWE.click();
+		pretraziKupcaWE.clear();
+		pretraziKupcaWE.sendKeys(kupac);
+		pretraziKupcaWE.sendKeys(Keys.ENTER);
 		Thread.sleep(1000);
 		wait.until(ExpectedConditions.visibilityOf(porukaNaPraznojStraniciWE));
 		assertTrue(porukaNaPraznojStraniciWE.getText().contains("Nema podataka"),
@@ -795,17 +808,26 @@ public class UgovoriPage extends PocetnaStranica {
 		// "Pregled ugovora: Djelatnost nije dobra!");
 	}
 
-	public String dodajPotpisanUgovor(String mjernoMjesto) throws InterruptedException {
+	public String dodajPotpisanUgovor(String mjernoMjesto, String kupac) throws InterruptedException {
 		WebDriverWait wait = new WebDriverWait(driver, 30);
 		String nazivMjernogMjesta = "Mjerno mjesto " + getRandomName();
 		String aktivnoBrojilo = "Aktivno brojilo " + getRandomName();
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
 		dodajBtnWE.click();
+		
 		wait.until(ExpectedConditions.elementToBeClickable(kupacWE));
-		kupacWE.sendKeys("1100001 - Zanatska radionica 6");
+		kupacWE.sendKeys(kupac);
 		Thread.sleep(1000);
-		wait.until(ExpectedConditions.visibilityOf(odaberiKupcaWE));
-		odaberiKupcaWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(
+				By.xpath("//div[contains(@class, 'v-list-item__title') and contains(., '" + kupac + "')]")));
+		driver.findElement(By.xpath("//div[contains(@class, 'v-list-item__title') and contains(., '" + kupac + "')]"))
+				.click();
+		
+//		wait.until(ExpectedConditions.elementToBeClickable(kupacWE));
+//		kupacWE.sendKeys("1100001 - Zanatska radionica 6");
+//		Thread.sleep(1000);
+//		wait.until(ExpectedConditions.visibilityOf(odaberiKupcaWE));
+//		odaberiKupcaWE.click();
 		Thread.sleep(1000);
 		wait.until(ExpectedConditions.elementToBeClickable(tarifnaGrupaWE));
 		tarifnaGrupaWE.sendKeys("19 - Tarifna grupa 2, T1");
@@ -821,7 +843,6 @@ public class UgovoriPage extends PocetnaStranica {
 		cjenovnaKategorijaZaMrezuWE.sendKeys("20 - Kategorija mrezarine");
 		Thread.sleep(1000);
 		cjenovnaKategorijaZaMrezuWE.sendKeys(Keys.ENTER);
-		
 		wait.until(ExpectedConditions.elementToBeClickable(potpisanCBWE));
 		potpisanCBWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(datumPotpisaWE));
@@ -832,12 +853,10 @@ public class UgovoriPage extends PocetnaStranica {
 		datumPocetkaWE.sendKeys("30.12.2020.");
 		wait.until(ExpectedConditions.elementToBeClickable(vaziOdWE));
 		vaziOdWE.sendKeys("30.12.2020.");
-		
 		wait.until(ExpectedConditions.elementToBeClickable(tipUgovoraWE));
 		tipUgovoraWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(tipUgovora1WE));
 		tipUgovora1WE.click();
-		
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].scrollIntoView(true);", datumPocetkaWE);
 		wait.until(ExpectedConditions.elementToBeClickable(mjernoMjestoWE));
