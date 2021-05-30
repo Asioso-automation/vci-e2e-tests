@@ -33,7 +33,7 @@ public class QA_021_Neuspjesno_Dodavanje_Ugovora_Test3 extends BaseTest {
 		UgovoriPage ugovoriPage = homePage.navigateToUgovori();
 		ugovoriPage.verifikujUgovori();
 		ugovoriPage.dodajUgovor(kupac, "7 - Kategorija cijene 2", "15.06.2020.", "15.06.2020.", "1514BASD99", true);
-		ugovoriPage.verifikujPoruku("Početni datum ne smije biti prije početka aktivnog perioda.");
+		ugovoriPage.verifikujPorukuForme("Početni datum ne smije biti prije početka aktivnog perioda.");
 	}
 
 }

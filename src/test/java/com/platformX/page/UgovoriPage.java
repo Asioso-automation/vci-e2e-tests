@@ -665,6 +665,12 @@ public class UgovoriPage extends PocetnaStranica {
 		wait.until(ExpectedConditions.visibilityOf(porukaUgovorWE));
 		assertTrue(porukaUgovorWE.getText().trim().equals(poruka), "Ugovori: Poruka upozorenja nije dobra!");
 	}
+	
+	public void verifikujPorukuForme(String poruka) throws InterruptedException {
+		Thread.sleep(1000);
+		wait.until(ExpectedConditions.visibilityOf(porukaWE));
+		assertTrue(porukaWE.getText().trim().equals(poruka), "Ugovori: Poruka upozorenja nije dobra!");
+	}
 
 	public void obrisiReaktivnoBrojilo() {
 		wait.until(ExpectedConditions.elementToBeClickable(reaktivnoBrojiloWE));

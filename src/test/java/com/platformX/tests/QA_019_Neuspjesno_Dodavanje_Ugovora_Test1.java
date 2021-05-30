@@ -36,7 +36,7 @@ public class QA_019_Neuspjesno_Dodavanje_Ugovora_Test1 extends BaseTest {
 		ugovoriPage.verifikujUgovori();
 		ugovoriPage.pronadjiUgovorPravnoLice(pravnoLice);
 		ugovoriPage.dodajUgovor(kupac, "7 - Kategorija cijene 2", "15.07.2020.", "15.07.2020.", "1514BASD99", true);
-		ugovoriPage.verifikujPoruku("Ugovor za traženo mjerno mjesto već postoji u navedenom periodu.");
+		ugovoriPage.verifikujPorukuForme("Ugovor za traženo mjerno mjesto već postoji u navedenom periodu.");
 	}
 
 }
