@@ -68,7 +68,7 @@ public class DnevniciUplataPage extends PocetnaStranica {
 	private WebElement submitDnevnikBtnWE;
 
 	public void verifikujDnevniciUplataPage() {
-		wait.until(ExpectedConditions.visibilityOf(tableHeaderWE));
+		// wait.until(ExpectedConditions.visibilityOf(tableHeaderWE));
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Dnevnici uplata')]")));
 		wait.until(ExpectedConditions.elementToBeClickable(sekcijaBtnWE));

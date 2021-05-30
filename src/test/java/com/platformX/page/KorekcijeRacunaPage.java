@@ -15,7 +15,7 @@ public class KorekcijeRacunaPage extends PocetnaStranica {
 	}
 
 	public void verifikujKorekcijeRacuna() throws InterruptedException {
-		wait.until(ExpectedConditions.visibilityOf(tableHeaderWE));
+		// wait.until(ExpectedConditions.visibilityOf(tableHeaderWE));
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Korekcije')]")));
 		wait.until(ExpectedConditions.elementToBeClickable(sekcijaBtnWE));

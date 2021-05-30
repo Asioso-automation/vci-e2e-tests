@@ -15,7 +15,7 @@ public class ZahtjeviZaIskljucenje extends PocetnaStranica {
 	}
 	
 	public void verifikujZahtjeviZaIskljucenje() {
-		wait.until(ExpectedConditions.visibilityOf(tableHeaderWE));
+	// 	wait.until(ExpectedConditions.visibilityOf(tableHeaderWE));
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Zahtjevi za')]")));
 		wait.until(ExpectedConditions.elementToBeClickable(sekcijaBtnWE));

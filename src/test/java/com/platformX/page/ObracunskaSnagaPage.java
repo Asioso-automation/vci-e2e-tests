@@ -26,7 +26,7 @@ public class ObracunskaSnagaPage extends PocetnaStranica {
 	protected WebElement dodajBtnWE;
 
 	public void verifikujObracunskaSnaga() throws InterruptedException {
-		wait.until(ExpectedConditions.visibilityOf(tableHeaderWE));
+		// wait.until(ExpectedConditions.visibilityOf(tableHeaderWE));
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Obračunska snaga')]")));
 		wait.until(ExpectedConditions.elementToBeClickable(sekcijaBtnWE));
