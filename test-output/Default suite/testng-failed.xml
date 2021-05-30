@@ -3,13 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.platformX.tests.QA_007_Verifikacija_Sekcije_Finansije_Test">
+      <class name="com.platformX.tests.QA_049_Brisanje_Tarifne_Grupe_Test">
         <methods>
-          <include name="qa_007_verifikacija_sekcije_finansije_test"/>
           <include name="setUp"/>
           <include name="cleanUp"/>
+          <include name="qa_049_brisanje_tarifne_grupe_test"/>
         </methods>
-      </class> <!-- com.platformX.tests.QA_007_Verifikacija_Sekcije_Finansije_Test -->
+      </class> <!-- com.platformX.tests.QA_049_Brisanje_Tarifne_Grupe_Test -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

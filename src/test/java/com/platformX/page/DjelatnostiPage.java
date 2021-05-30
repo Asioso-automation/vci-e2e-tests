@@ -37,7 +37,7 @@ public class DjelatnostiPage extends PocetnaStranica {
 	@FindBy(xpath = "//div[contains(text(), 'Briši')]")
 	private WebElement obrisiBtnWE;
 	
-	@FindBy(xpath = "//div[5]/div/div/div[4]/button[2]")
+	@FindBy(xpath = "//div[7]/div/div/div[3]/button[2]")
 	private WebElement potvrdiBrisanjeBtnWE;
 	
 	@FindBy(xpath = "//tr[2]/td")

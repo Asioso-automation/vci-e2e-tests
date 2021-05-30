@@ -16,6 +16,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class UgovoriPage extends PocetnaStranica {
 
+	@FindBy(xpath = "//main/div/div/div[1]/div[3]/div/div/div") 
+	protected WebElement porukaUgovorWE;
+	
 	@FindBy(xpath = "//div[3]/div/div/div/div[1]/input[1]")
 	private WebElement pretraziMjernaMjestaWE;
 	
@@ -58,7 +61,7 @@ public class UgovoriPage extends PocetnaStranica {
 	@FindBy(xpath = "//div[2]/div[1]/div/div[1]/div[2]/input")
 	private WebElement datumDeaktivacijeWE;
 
-	@FindBy(xpath = "/html/body/div/div[1]/main/div/div/div[1]/div[3]")
+	@FindBy(xpath = "/html/body/div/div[2]/main/div/div/div[1]/div[3]")
 	private WebElement datumDeaktivacijePorukaWE;
 	
 	@FindBy(xpath = "//div[2]/div/div[3]/div/div/div[1]/div[1]/input[1]")
@@ -88,10 +91,10 @@ public class UgovoriPage extends PocetnaStranica {
 	@FindBy(xpath = "//form/div/div[3]/button[2]")
 	private WebElement potvrdiIskljucivanjeWE;
 
-	@FindBy(xpath = "//div[7]/div/form/div/div[2]/div/div/div[1]/div/div[1]/div[2]/input")
+	@FindBy(xpath = "//div[9]/div/form/div/div[2]/div/div/div[1]/div/div[1]/div[2]/input")
 	private WebElement datumUkljucenjaWE;
 
-	@FindBy(xpath = "//div[8]/div/form/div/div[3]/button[2]")
+	@FindBy(xpath = "//div[9]/div/form/div/div[3]/button[2]")
 	private WebElement potvrdiUkljucivanjeWE;
 	
 	@FindBy(xpath = "//div[contains(@class, 'v-list-item__content') and starts-with(., 'Odbaci')]")
@@ -659,8 +662,8 @@ public class UgovoriPage extends PocetnaStranica {
 
 	public void verifikujPoruku(String poruka) throws InterruptedException {
 		Thread.sleep(1000);
-		wait.until(ExpectedConditions.visibilityOf(porukaWE));
-		assertTrue(porukaWE.getText().trim().equals(poruka), "Ugovori: Poruka upozorenja nije dobra!");
+		wait.until(ExpectedConditions.visibilityOf(porukaUgovorWE));
+		assertTrue(porukaUgovorWE.getText().trim().equals(poruka), "Ugovori: Poruka upozorenja nije dobra!");
 	}
 
 	public void obrisiReaktivnoBrojilo() {

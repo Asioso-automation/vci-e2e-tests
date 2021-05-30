@@ -26,7 +26,6 @@ public class QA_034_Odbacivanje_Ugovora_Test extends BaseTest {
 		logInPage.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
 		homePage.verifyHomePage();
-		
 		PravnaLicaPage pravnaLicaPage = homePage.navigateToPravnaLica();
 		pravnaLicaPage.verifikujPravnaLica();
 		String pravnoLice = pravnaLicaPage.dodajPravnoLice();
@@ -38,13 +37,11 @@ public class QA_034_Odbacivanje_Ugovora_Test extends BaseTest {
 		ugovoriPage.dodajPotpisanUgovor("36Z0100154X", kupac);
 		ugovoriPage.verifikujUgovori();
 		ugovoriPage.pronadjiUgovorPravnoLice(pravnoLice);
-		
 //		UgovoriPage ugovoriPage = homePage.navigateToUgovori();
 //		ugovoriPage.verifikujUgovori();
 //		String mjernoMjesto = ugovoriPage.dodajPotpisanUgovor("36066699C");
 //		ugovoriPage.verifikujUgovori();
 //		ugovoriPage.verifikujUgovor(mjernoMjesto);
-		
 		ugovoriPage.verifikujBrojNecekiranihKolona(1);
 		ugovoriPage.odbaciUgovor();
 		ugovoriPage.verifikujOdbaceniUgovor(kupac);

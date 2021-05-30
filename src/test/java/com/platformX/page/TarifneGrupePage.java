@@ -28,7 +28,7 @@ public class TarifneGrupePage extends PocetnaStranica {
 	@FindBy(xpath = "//div[contains(text(), 'Briši')]")
 	private WebElement obrisiWE;
 	
-	@FindBy(xpath = "//div/div[5]/div/div/div[4]/button[2]")
+	@FindBy(xpath = "//div[7]/div/div/div[3]/button[2]")
 	private WebElement potvrdiBrisanjeWE;
 	
 	@FindBy(xpath = "//tr[2]/td")
