@@ -36,7 +36,7 @@ public class PocetnaStranica extends PageBase {
 	@FindBy(xpath = "//div[contains(@class, 'v-snack__content') and contains(text(), 'Učitavanje, molim sačekajte')]")
 	protected WebElement molimoSacekajteLoaderWE;
 
-	@FindBy(xpath = "//div[2]/div/div[3]/div[2]")
+	@FindBy(xpath = "//div[contains(text(), 'Izloguj se')]")
 	protected WebElement izlogujSeWE;
 
 	@FindBy(xpath = "//div/div[1]/div[1]/header/div/div[1]")
