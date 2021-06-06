@@ -61,8 +61,8 @@ public class UgovoriPage extends PocetnaStranica {
 	@FindBy(xpath = "//div[2]/div[1]/div/div[1]/div[2]/input")
 	private WebElement datumDeaktivacijeWE;
 
-	@FindBy(xpath = "/html/body/div/div[2]/main/div/div/div[1]/div[3]")
-	private WebElement datumDeaktivacijePorukaWE;
+	@FindBy(xpath = "//div[contains(text(), 'Datum deaktivacije mora biti')]")
+	private WebElement deaktivacijaPorukaWE;
 	
 	@FindBy(xpath = "//div[2]/div/div[3]/div/div/div[1]/div[1]/input[1]")
 	private WebElement razlogDeaktivacijeWE;
@@ -1019,9 +1019,9 @@ public class UgovoriPage extends PocetnaStranica {
 		wait.until(ExpectedConditions.elementToBeClickable(potvrdiDeaktivacijuBtnWE));
 		potvrdiDeaktivacijuBtnWE.click();
 		if (date != null) {
-			wait.until(ExpectedConditions.visibilityOf(datumDeaktivacijePorukaWE));
+			wait.until(ExpectedConditions.visibilityOf(deaktivacijaPorukaWE));
 			assertTrue(
-					datumDeaktivacijePorukaWE.getText()
+					deaktivacijaPorukaWE.getText()
 							.equals("Datum deaktivacije mora biti u aktivnom obračunskom periodu ili u budućnosti."),
 					"Deaktivcija ugovora: Validaciona poruka nije dobra!");
 		}
