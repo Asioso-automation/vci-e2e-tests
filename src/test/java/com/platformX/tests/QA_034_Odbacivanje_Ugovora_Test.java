@@ -35,7 +35,7 @@ public class QA_034_Odbacivanje_Ugovora_Test extends BaseTest {
 		UgovoriPage ugovoriPage = homePage.navigateToUgovori();
 		ugovoriPage.verifikujUgovori();
 		ugovoriPage.dodajPotpisanUgovor("36Z0100154X", kupac);
-		ugovoriPage.verifikujUgovori();
+		// ugovoriPage.verifikujUgovori();
 		ugovoriPage.pronadjiUgovorPravnoLice(pravnoLice);
 //		UgovoriPage ugovoriPage = homePage.navigateToUgovori();
 //		ugovoriPage.verifikujUgovori();

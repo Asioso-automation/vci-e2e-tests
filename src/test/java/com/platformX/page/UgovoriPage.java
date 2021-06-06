@@ -615,6 +615,7 @@ public class UgovoriPage extends PocetnaStranica {
 	}
 	
 	public void pronadjiUgovorPravnoLice(String pravnoLice) throws InterruptedException {
+		Thread.sleep(1000);
 		wait.until(ExpectedConditions.elementToBeClickable(pretraziEicWE));
 		Thread.sleep(1000);
 		pretraziKupcaWE.click();
