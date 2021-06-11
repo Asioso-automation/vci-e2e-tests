@@ -169,6 +169,8 @@ Values (71000,N'Sarajevo',N'')
 ,(71420,N'Pale',N'')
 ,(78000,N'Banja Luka',N'')
 
+SET IDENTITY_INSERT BasicCatalog.Municipality ON
+
 Insert Into BasicCatalog.Municipality ([Id],[EntityId],[Name])
 Values (1,NULL,N'Banja Luka')
 ,(2,NULL,N'Sarajevo')
@@ -181,6 +183,7 @@ Values (1,NULL,N'Banja Luka')
 ,(9,NULL,N'Visegra')
 ,(0,NULL,N'Doboj')
 
+SET IDENTITY_INSERT BasicCatalog.Municipality OFF
 
 SET IDENTITY_INSERT BasicCatalog.Place ON
 
