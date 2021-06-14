@@ -26,7 +26,7 @@ public class NerasporedjeneUplatePage extends PocetnaStranica {
 		assertTrue(sekcijaBtnWE.getText().trim().equals("FINANSIJE"), "NerasporedjeneUplate: Naziv sekcije nije dobar!");
 		assertTrue(stranicaBtnWE.getText().trim().equals("NERASPOREĐENE UPLATE"), "NerasporedjeneUplate: Naziv stranice nije dobar!");
 		assertTrue(naslovStraniceWE.getText().trim().equals("NERASPOREĐENE UPLATE"), "NerasporedjeneUplate: Naziv stranice nije dobar!");
-		assertTrue(brojKolona().size() == 7, "NerasporedjeneUplate: Broj kolona nije dobar!");
+		assertTrue(brojKolona().size() == 9, "NerasporedjeneUplate: Broj kolona nije dobar!");
 	}
 
 }
