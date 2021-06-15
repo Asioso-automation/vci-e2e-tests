@@ -821,7 +821,7 @@ public class UgovoriPage extends PocetnaStranica {
 	public String dodajPotpisanUgovor(String mjernoMjesto, String kupac) throws InterruptedException {
 		WebDriverWait wait = new WebDriverWait(driver, 30);
 		String nazivMjernogMjesta = "Mjerno mjesto " + getRandomName();
-		String aktivnoBrojilo = "Aktivno brojilo " + getRandomName();
+		String aktivnoBrojilo = getRandomName();
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
 		dodajBtnWE.click();
 		

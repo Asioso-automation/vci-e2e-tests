@@ -24,7 +24,7 @@ public class TarifneNadgrupePage extends PocetnaStranica {
 		wait.until(ExpectedConditions.elementToBeClickable(ukloniFiltereBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(osvjeziBtnWE));
 		assertTrue(sekcijaBtnWE.getText().trim().equals("TARIFNI SISTEM"), "TarifneNadgrupe: Naziv sekcije nije dobar!");
-		assertTrue(stranicaBtnWE.getText().trim().equals("NADGRUPE"), "TarifneNadgrupe: Naziv stranice nije dobar!");
+		assertTrue(stranicaBtnWE.getText().trim().equals("TARIFNE NADGRUPE"), "TarifneNadgrupe: Naziv stranice nije dobar!");
 		assertTrue(naslovStraniceWE.getText().trim().equals("TARIFNE NADGRUPE"), "TarifneNadgrupe: Naziv stranice nije dobar!");
 		assertTrue(brojKolona().size() == 2, "TarifneNadgrupe: Broj kolona nije dobar! ");
 	}

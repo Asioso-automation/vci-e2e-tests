@@ -14,9 +14,6 @@ public class QA_025_Dodavanje_Potpisanog_Ugovora_Test extends BaseTest {
 	public QA_025_Dodavanje_Potpisanog_Ugovora_Test() throws IOException, FileNotFoundException {
 		super();
 	}
-	
-	/* Test dodaje ugovor koji je potpisan, zatim kroz opciju "uredi"
-	 uklanja opciju "potpisan" i provjerava kolonu na gridu*/
 
 	@Test
 	public void qa_025_dodavanje_potpisanog_ugovora_test() throws Exception {
@@ -25,7 +22,6 @@ public class QA_025_Dodavanje_Potpisanog_Ugovora_Test extends BaseTest {
 		logInPage.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
 		homePage.verifyHomePage();
-		
 		PravnaLicaPage pravnaLicaPage = homePage.navigateToPravnaLica();
 		pravnaLicaPage.verifikujPravnaLica();
 		String pravnoLice = pravnaLicaPage.dodajPravnoLice();
@@ -37,14 +33,6 @@ public class QA_025_Dodavanje_Potpisanog_Ugovora_Test extends BaseTest {
 		ugovoriPage.dodajPotpisanUgovor("36Z0100154X", kupac);
 		ugovoriPage.verifikujUgovori();
 		ugovoriPage.pronadjiUgovorPravnoLice(pravnoLice);
-		
-		
-//		UgovoriPage ugovoriPage = homePage.navigateToUgovori();
-//		ugovoriPage.verifikujUgovori();
-//		String mjernoMjesto = ugovoriPage.dodajPotpisanUgovor("36Z0100154X");
-//		ugovoriPage.verifikujUgovori();
-//		ugovoriPage.verifikujUgovor(mjernoMjesto);
-//		ugovoriPage.verifikujBrojNecekiranihKolona(1);
 	}
 
 }

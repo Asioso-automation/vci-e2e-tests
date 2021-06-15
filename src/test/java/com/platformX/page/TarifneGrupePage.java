@@ -84,7 +84,7 @@ public class TarifneGrupePage extends PocetnaStranica {
 		wait.until(ExpectedConditions.elementToBeClickable(osvjeziBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
 		assertTrue(sekcijaBtnWE.getText().trim().equals("TARIFNI SISTEM"), "TarifneGrupe: Naziv sekcije nije dobar!");
-		assertTrue(stranicaBtnWE.getText().trim().equals("GRUPE"), "TarifneGrupe: Naziv stranice nije dobar!");
+		assertTrue(stranicaBtnWE.getText().trim().equals("TARIFNE GRUPE"), "TarifneGrupe: Naziv stranice nije dobar!");
 		assertTrue(naslovStraniceWE.getText().trim().equals("TARIFNE GRUPE"), "TarifneGrupe: Naziv stranice nije dobar!");
 		assertTrue(brojKolona().size() == 9, "TarifneGrupe: Broj kolona nije dobar! ");
 	}
