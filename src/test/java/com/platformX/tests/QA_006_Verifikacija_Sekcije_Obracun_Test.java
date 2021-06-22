@@ -41,8 +41,8 @@ public class QA_006_Verifikacija_Sekcije_Obracun_Test extends BaseTest {
 		korekcijeRacunaPage.verifikujKorekcijeRacuna();
 		KamatePage kamatePage = homePage.navigateToKamate();
 		kamatePage.verifikujKamate();
-		KorekcijeKamatePage korekcijeKamatePage = homePage.navigateToKorekcijeKamate();
-		korekcijeKamatePage.verifikujKorekcijeKamate();
+//		KorekcijeKamatePage korekcijeKamatePage = homePage.navigateToKorekcijeKamate();
+//		korekcijeKamatePage.verifikujKorekcijeKamate();
 		AvansneFakturePage avansneFakturePage = homePage.navigateToAvansneFakture();
 		avansneFakturePage.verifikujAvansneFakture();
 		UmanjenjaCijenePage umanjenjaCijenePage = homePage.navigateToUmanjenjaCijene();

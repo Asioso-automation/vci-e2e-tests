@@ -429,7 +429,7 @@ public class UgovoriPage extends PocetnaStranica {
 		assertTrue(sekcijaBtnWE.getText().trim().equals("KUPCI"), "Ugovori: Naziv sekcije nije dobar!");
 		assertTrue(stranicaBtnWE.getText().trim().equals("UGOVORI"), "Ugovori: Naziv stranice nije dobar!");
 		assertTrue(naslovStraniceWE.getText().trim().equals("UGOVORI"), "Ugovori: Naziv stranice nije dobar!");
-		assertTrue(brojKolona().size() == 15, "Ugovori: Broj kolona nije dobar! ");
+		assertTrue(brojKolona().size() == 16, "Ugovori: Broj kolona nije dobar! ");
 	}
 
 	public String dodajUgovor(String kupac, String kategorijaCijene, String datumPocetka, String datumOd,
