@@ -1110,7 +1110,6 @@ public class UgovoriPage extends PocetnaStranica {
 	}
 	
 	public void preregistrujUgovor() throws InterruptedException {
-		
 		wait.until(ExpectedConditions.elementToBeClickable(kupacWE));
 		kupacWE.sendKeys("4100010 - Firma 2");
 		Thread.sleep(1000);

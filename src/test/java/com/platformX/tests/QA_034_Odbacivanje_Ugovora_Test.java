@@ -35,13 +35,7 @@ public class QA_034_Odbacivanje_Ugovora_Test extends BaseTest {
 		UgovoriPage ugovoriPage = homePage.navigateToUgovori();
 		ugovoriPage.verifikujUgovori();
 		ugovoriPage.dodajPotpisanUgovor("36Z0100154X", kupac);
-		// ugovoriPage.verifikujUgovori();
 		ugovoriPage.pronadjiUgovorPravnoLice(pravnoLice);
-//		UgovoriPage ugovoriPage = homePage.navigateToUgovori();
-//		ugovoriPage.verifikujUgovori();
-//		String mjernoMjesto = ugovoriPage.dodajPotpisanUgovor("36066699C");
-//		ugovoriPage.verifikujUgovori();
-//		ugovoriPage.verifikujUgovor(mjernoMjesto);
 		ugovoriPage.verifikujBrojNecekiranihKolona(1);
 		ugovoriPage.odbaciUgovor();
 		ugovoriPage.verifikujOdbaceniUgovor(kupac);
