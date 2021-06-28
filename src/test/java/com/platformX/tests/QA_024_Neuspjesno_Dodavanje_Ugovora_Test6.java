@@ -32,7 +32,7 @@ public class QA_024_Neuspjesno_Dodavanje_Ugovora_Test6 extends BaseTest {
 		String kupac = pravnaLicaPage.kreirajKupca();
 		UgovoriPage ugovoriPage = homePage.navigateToUgovori();
 		ugovoriPage.verifikujUgovori();
-		ugovoriPage.dodajUgovor(kupac, "7 - Kategorija cijene 2", "15.07.2020.", "15.07.2020.", "AMOSA542A", false);
+		ugovoriPage.dodajUgovor(kupac, "7 - Kategorija cijene 2", "15.07.2020.", "15.07.2020.", "36066699C", false);
 		ugovoriPage.verifikujPorukuForme("Reaktivno brojilo ne smije biti prazno za odabranu tarifnu grupu.");
 	}
 

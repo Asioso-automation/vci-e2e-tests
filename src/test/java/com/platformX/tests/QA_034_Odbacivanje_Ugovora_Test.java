@@ -34,7 +34,7 @@ public class QA_034_Odbacivanje_Ugovora_Test extends BaseTest {
 		String kupac = pravnaLicaPage.kreirajKupca();
 		UgovoriPage ugovoriPage = homePage.navigateToUgovori();
 		ugovoriPage.verifikujUgovori();
-		ugovoriPage.dodajPotpisanUgovor("36Z0100154X", kupac);
+		ugovoriPage.dodajPotpisanUgovor("SK009281150R", kupac);
 		ugovoriPage.pronadjiUgovorPravnoLice(pravnoLice);
 		ugovoriPage.verifikujBrojNecekiranihKolona(1);
 		ugovoriPage.odbaciUgovor();
@@ -42,7 +42,7 @@ public class QA_034_Odbacivanje_Ugovora_Test extends BaseTest {
 		homePage.navigateToOdbaceniUgovori();
 		OdbaceniUgovoriPage odbaceniUgovoriPage = new OdbaceniUgovoriPage(driver);
 		odbaceniUgovoriPage.verifikujOdbaceniUgovori();
-		odbaceniUgovoriPage.verifikujOdbaceniUgovor("36Z0100154X");
+		odbaceniUgovoriPage.verifikujOdbaceniUgovor("SK009281150R");
 	}
 
 }
