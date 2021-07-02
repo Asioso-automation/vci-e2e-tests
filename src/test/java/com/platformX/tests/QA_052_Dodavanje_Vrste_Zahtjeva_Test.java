@@ -1,0 +1,29 @@
+package com.platformX.tests;
+
+import org.testng.annotations.Test;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import com.platformX.base.BaseTest;
+import com.platformX.page.PocetnaStranica;
+import com.platformX.page.LogInPage;
+import com.platformX.page.VrsteZahtjevaPage;
+
+public class QA_052_Dodavanje_Vrste_Zahtjeva_Test extends BaseTest {
+
+	public QA_052_Dodavanje_Vrste_Zahtjeva_Test() throws IOException, FileNotFoundException {
+		super();
+	}
+
+	@Test
+	public void qa_052_dodavanje_tarifne_grupe_test() throws Exception {
+		LogInPage logInPage = new LogInPage(driver, PLATFORMX_PROPERTIES);
+		logInPage.verifyLogInPage();
+		logInPage.logIn();
+		PocetnaStranica homePage = new PocetnaStranica(driver);
+		homePage.verifyHomePage();
+		VrsteZahtjevaPage vrsteZahtjeva = homePage.navigateToVrsteZahtjeva();
+		vrsteZahtjeva.verifikujVrsteZahtjeva();
+		String opis = vrsteZahtjeva.dodajVrstuZahtjeva();
+		vrsteZahtjeva.verifikujVrstuZahtjeva(opis);
+	}
+}
