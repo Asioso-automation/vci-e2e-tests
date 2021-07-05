@@ -24,6 +24,21 @@ public class VrsteZahtjevaPage extends PocetnaStranica {
 	
 	@FindBy(xpath = "//td[2]/div/div/div/div[1]/input")
 	private WebElement opisFilterWE;
+	
+	@FindBy(xpath = "//td[3]/button")
+	private WebElement burgerBarWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Uredi')]")
+	private WebElement urediBtnWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Briši')]")
+	private WebElement obrisiWE;
+	
+	@FindBy(xpath = "//div[7]/div/div/div[3]/button[2]")
+	private WebElement potvrdiBrisanjeWE;
+	
+	@FindBy(xpath = "//tr[2]/td")
+	private WebElement praznaTabelaWE;
 
 	public VrsteZahtjevaPage(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);
@@ -65,6 +80,42 @@ public class VrsteZahtjevaPage extends PocetnaStranica {
 		wait.until(ExpectedConditions.visibilityOf(opisTabelaWE));
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
 		assertTrue(opisTabelaWE.getText().equals(opis), "VrsteZahtjeva: Opis nije dobar!");
+	}
+	
+	public String urediVrstuZahtjeva() {
+		String opis = getRandomName();
+		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
+		burgerBarWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(urediBtnWE));
+		urediBtnWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(opisWE));
+		opisWE.click();
+		opisWE.clear();
+		opisWE.sendKeys(opis);
+		dodajVrstuWE.click();
+		return opis;
+	}
+	
+	public void obrisiVrstuZahtjeva() throws InterruptedException {
+		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
+		burgerBarWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(obrisiWE));
+		obrisiWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(potvrdiBrisanjeWE));
+		potvrdiBrisanjeWE.click();
+		Thread.sleep(1000);
+	}
+	
+	public void verifikujBrisanjeVrsteZahtjeva(String opis) throws InterruptedException {
+		wait.until(ExpectedConditions.elementToBeClickable(opisFilterWE));
+		opisFilterWE.click();
+		opisFilterWE.clear();
+		opisFilterWE.sendKeys(opis);
+		opisFilterWE.sendKeys(Keys.ENTER);
+		Thread.sleep(1000);
+		wait.until(ExpectedConditions.visibilityOf(praznaTabelaWE));
+		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
+		assertTrue(praznaTabelaWE.getText().equals("Nema podataka"), "TarifneGrupe: Poruka prazne tabele nije dobra!");
 	}
 
 }

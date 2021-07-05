@@ -8,14 +8,14 @@ import com.platformX.page.PocetnaStranica;
 import com.platformX.page.LogInPage;
 import com.platformX.page.VrsteZahtjevaPage;
 
-public class QA_052_Dodavanje_Vrste_Zahtjeva_Test extends BaseTest {
+public class QA_053_Izmjena_Vrste_Zahtjeva_Test extends BaseTest {
 
-	public QA_052_Dodavanje_Vrste_Zahtjeva_Test() throws IOException, FileNotFoundException {
+	public QA_053_Izmjena_Vrste_Zahtjeva_Test() throws IOException, FileNotFoundException {
 		super();
 	}
 
 	@Test
-	public void qa_052_dodavanje_vrste_zahtjeva_test() throws Exception {
+	public void qa_053_izmjena_vrste_zahtjeva_test() throws Exception {
 		LogInPage logInPage = new LogInPage(driver, PLATFORMX_PROPERTIES);
 		logInPage.verifyLogInPage();
 		logInPage.logIn();
@@ -25,5 +25,7 @@ public class QA_052_Dodavanje_Vrste_Zahtjeva_Test extends BaseTest {
 		vrsteZahtjeva.verifikujVrsteZahtjeva();
 		String opis = vrsteZahtjeva.dodajVrstuZahtjeva();
 		vrsteZahtjeva.verifikujVrstuZahtjeva(opis);
+		String noviOpis = vrsteZahtjeva.urediVrstuZahtjeva();
+		vrsteZahtjeva.verifikujVrstuZahtjeva(noviOpis);
 	}
 }
