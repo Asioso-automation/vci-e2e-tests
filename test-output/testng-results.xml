@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="20791" started-at="2021-07-16T07:10:03Z" finished-at="2021-07-16T07:10:24Z">
+  <suite name="Default suite" duration-ms="33820" started-at="2021-07-16T07:24:26Z" finished-at="2021-07-16T07:25:00Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="20791" started-at="2021-07-16T07:10:03Z" finished-at="2021-07-16T07:10:24Z">
-      <class name="com.platformX.tests.QA_055_Brisanje_Kategorije_Cijene_Test">
-        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.platformX.tests.QA_055_Brisanje_Kategorije_Cijene_Test@3967e60c]" name="setUp" is-config="true" duration-ms="5406" started-at="2021-07-16T09:10:03Z" finished-at="2021-07-16T09:10:08Z">
+    <test name="Default test" duration-ms="33820" started-at="2021-07-16T07:24:26Z" finished-at="2021-07-16T07:25:00Z">
+      <class name="com.platformX.tests.QA_056_Izmjena_Ziro_Racuna_Test">
+        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.platformX.tests.QA_056_Izmjena_Ziro_Racuna_Test@3967e60c]" name="setUp" is-config="true" duration-ms="5443" started-at="2021-07-16T09:24:26Z" finished-at="2021-07-16T09:24:31Z">
           <params>
             <param index="0">
               <value>
@@ -18,15 +18,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="qa_055_brisanje_kategorije_cijene_test()[pri:0, instance:com.platformX.tests.QA_055_Brisanje_Kategorije_Cijene_Test@3967e60c]" name="qa_055_brisanje_kategorije_cijene_test" duration-ms="15367" started-at="2021-07-16T09:10:08Z" finished-at="2021-07-16T09:10:24Z">
+        <test-method status="PASS" signature="qa_056_izmjena_ziro_racuna_test()[pri:0, instance:com.platformX.tests.QA_056_Izmjena_Ziro_Racuna_Test@3967e60c]" name="qa_056_izmjena_ziro_racuna_test" duration-ms="28361" started-at="2021-07-16T09:24:31Z" finished-at="2021-07-16T09:25:00Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- qa_055_brisanje_kategorije_cijene_test -->
-        <test-method status="PASS" signature="cleanUp()[pri:0, instance:com.platformX.tests.QA_055_Brisanje_Kategorije_Cijene_Test@3967e60c]" name="cleanUp" is-config="true" duration-ms="0" started-at="2021-07-16T09:10:24Z" finished-at="2021-07-16T09:10:24Z">
+        </test-method> <!-- qa_056_izmjena_ziro_racuna_test -->
+        <test-method status="PASS" signature="cleanUp()[pri:0, instance:com.platformX.tests.QA_056_Izmjena_Ziro_Racuna_Test@3967e60c]" name="cleanUp" is-config="true" duration-ms="0" started-at="2021-07-16T09:25:00Z" finished-at="2021-07-16T09:25:00Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- cleanUp -->
-      </class> <!-- com.platformX.tests.QA_055_Brisanje_Kategorije_Cijene_Test -->
+      </class> <!-- com.platformX.tests.QA_056_Izmjena_Ziro_Racuna_Test -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

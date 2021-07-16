@@ -25,6 +25,15 @@ public class ZiroRacuniPage extends PocetnaStranica {
 
 	@FindBy(xpath = "//tr[2]/td[3]")
 	private WebElement ziroRacunTableWE;
+	
+	@FindBy(xpath = "//td[6]/button")
+	private WebElement burgerBarWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Uredi')]")
+	private WebElement urediWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Briši')]")
+	private WebElement obrisiWE;
 
 	// Kreiraj ziro racun elementi
 
@@ -76,17 +85,33 @@ public class ZiroRacuniPage extends PocetnaStranica {
 	}
 
 	public void verifikujZiroRacun(String ziroRacun) throws InterruptedException {
-		WebDriverWait wait = new WebDriverWait(driver, 20);
 		wait.until(ExpectedConditions.visibilityOf(pretraziZiroRacuneWE));
 		Thread.sleep(1000);
 		wait.until(ExpectedConditions.elementToBeClickable(pretraziZiroRacuneWE));
 		pretraziZiroRacuneWE.click();
+		pretraziZiroRacuneWE.clear();
 		pretraziZiroRacuneWE.sendKeys(ziroRacun);
 		pretraziZiroRacuneWE.sendKeys(Keys.ENTER);
 		Thread.sleep(1000);
 		wait.until(ExpectedConditions.elementToBeClickable(dodajZiroRacunBtnWE));
 		wait.until(ExpectedConditions.visibilityOf(ziroRacunTableWE));
 		assertTrue(ziroRacunTableWE.getText().equals(ziroRacun), "ZiroRacuniPage: Ime ziro racuna nije dobro!");
+	}
+	
+	public String izmjeniZiroRacun() throws InterruptedException {
+		String noviZiroRacun = "111-" + getRandomNumbers(3) + "-" + getRandomNumbers(8) + "-" + getRandomNumbers(2);
+		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
+		burgerBarWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(urediWE));
+		urediWE.click();
+		Thread.sleep(1000);
+		wait.until(ExpectedConditions.elementToBeClickable(ziroRacunWE));
+		ziroRacunWE.click();
+		ziroRacunWE.clear();
+		ziroRacunWE.sendKeys(noviZiroRacun);
+		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
+		dodajBtnWE.click();
+		return noviZiroRacun;
 	}
 
 }
