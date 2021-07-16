@@ -30,13 +30,21 @@ public class KategorijeCijenaPage extends PocetnaStranica {
 	
 	@FindBy(xpath = "//div[contains(text(), 'Uredi')]")
 	private WebElement urediWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Briši')]")
+	private WebElement obrisiWE;
+	
+	@FindBy(xpath = "//div/div/div[3]/button[2]")
+	private WebElement potvrdiBrisanjeWE;
+	
+	@FindBy(xpath = "//tr[2]/td")
+	private WebElement praznaTabelaWE;
 
 	public KategorijeCijenaPage(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);
 	}
 
 	public void verifikujKategorijeCijena() throws InterruptedException {
-	// 	wait.until(ExpectedConditions.visibilityOf(tableHeaderWE));
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Kategorije cijena')]")));
 		wait.until(ExpectedConditions.elementToBeClickable(sekcijaBtnWE));
@@ -86,6 +94,28 @@ public class KategorijeCijenaPage extends PocetnaStranica {
 		wait.until(ExpectedConditions.elementToBeClickable(dodajKategorijuWE));
 		dodajKategorijuWE.click();
 		return novaKategorija;
+	}
+	
+	public void obrisiKategorijuCijene() throws InterruptedException {
+		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
+		burgerBarWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(obrisiWE));
+		obrisiWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(potvrdiBrisanjeWE));
+		potvrdiBrisanjeWE.click();
+		Thread.sleep(1000);
+	}
+	
+	public void verifikujBrisanjeKategorije(String kategorija) throws InterruptedException {
+		wait.until(ExpectedConditions.elementToBeClickable(filterNazivWE));
+		filterNazivWE.click();
+		filterNazivWE.clear();
+		filterNazivWE.sendKeys(kategorija);
+		filterNazivWE.sendKeys(Keys.ENTER);
+		Thread.sleep(1000);
+		wait.until(ExpectedConditions.visibilityOf(praznaTabelaWE));
+		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
+		assertTrue(praznaTabelaWE.getText().equals("Nema podataka"), "TarifneGrupe: Poruka prazne tabele nije dobra!");
 	}
 
 }

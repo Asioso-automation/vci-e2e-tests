@@ -15,7 +15,7 @@ public class QA_051_Izmjena_Kategorije_Cijene_Test extends BaseTest {
 	}
 
 	@Test
-	public void qa_047_dodavanje_tarifne_grupe_test() throws Exception {
+	public void qa_051_izmjena_kategorije_cijene_test() throws Exception {
 		LogInPage logInPage = new LogInPage(driver, PLATFORMX_PROPERTIES);
 		logInPage.verifyLogInPage();
 		logInPage.logIn();

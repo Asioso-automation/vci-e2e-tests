@@ -8,14 +8,14 @@ import com.platformX.page.PocetnaStranica;
 import com.platformX.page.KategorijeCijenaPage;
 import com.platformX.page.LogInPage;
 
-public class QA_050_Dodavanje_Kategorije_Cijene_Test extends BaseTest {
+public class QA_055_Brisanje_Kategorije_Cijene_Test extends BaseTest {
 
-	public QA_050_Dodavanje_Kategorije_Cijene_Test() throws IOException, FileNotFoundException {
+	public QA_055_Brisanje_Kategorije_Cijene_Test() throws IOException, FileNotFoundException {
 		super();
 	}
 
 	@Test
-	public void qa_050_dodavanje_kategorije_cijene_test() throws Exception {
+	public void qa_055_brisanje_kategorije_cijene_test() throws Exception {
 		LogInPage logInPage = new LogInPage(driver, PLATFORMX_PROPERTIES);
 		logInPage.verifyLogInPage();
 		logInPage.logIn();
@@ -25,6 +25,8 @@ public class QA_050_Dodavanje_Kategorije_Cijene_Test extends BaseTest {
 		kategorijeCijena.verifikujKategorijeCijena();
 		String kategorija = kategorijeCijena.dodajKategoriju();
 		kategorijeCijena.verifikujKategoriju(kategorija);
+		kategorijeCijena.obrisiKategorijuCijene();
+		kategorijeCijena.verifikujBrisanjeKategorije(kategorija);
 	}
 
 }
