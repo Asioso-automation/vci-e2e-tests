@@ -493,7 +493,7 @@ SET IDENTITY_INSERT [Finance].[PaymentDebitCredit] OFF
 
 SET IDENTITY_INSERT [Finance].[PaymentJournal] ON 
 
-INSERT [Finance].[PaymentJournal] ([Id], [BankAccountId], [JournalNumber], [EntryDate], [DueDate], [NumberOfPayments], [Amount], [Note], [Closed], [PaymentForTransferId], [Refund]) VALUES (46, 117, 1, CAST(N'2020-10-15T00:00:00.000' AS DateTime), CAST(N'2020-10-15' AS Date), 2, CAST(25.00 AS Decimal(12, 2)), NULL, 1, NULL, 0)
+INSERT [Finance].[PaymentJournal] ([Id], [BankAccountId], [JournalNumber], [EntryDate], [DueDate], [NumberOfPayments], [Amount], [Note], [MarkedForClosure], [Closed], [PaymentForTransferId], [Refund]) VALUES (46, 117, 1, CAST(N'2020-10-15T00:00:00.000' AS DateTime), CAST(N'2020-10-15' AS Date), 2, CAST(25.00 AS Decimal(12, 2)), NULL, 0, 1, NULL, 0)
 
 SET IDENTITY_INSERT [Finance].[PaymentJournal] OFF
 
