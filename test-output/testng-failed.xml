@@ -3,13 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.platformX.tests.QA_056_Izmjena_Ziro_Racuna_Test">
+      <class name="com.platformX.tests.QA_008_Verifikacija_Sekcije_Pravni_Odnosi_Test">
         <methods>
           <include name="setUp"/>
           <include name="cleanUp"/>
-          <include name="qa_056_izmjena_ziro_racuna_test"/>
+          <include name="qa_008_verifikacija_sekcije_pravni_odnosi_test"/>
         </methods>
-      </class> <!-- com.platformX.tests.QA_056_Izmjena_Ziro_Racuna_Test -->
+      </class> <!-- com.platformX.tests.QA_008_Verifikacija_Sekcije_Pravni_Odnosi_Test -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

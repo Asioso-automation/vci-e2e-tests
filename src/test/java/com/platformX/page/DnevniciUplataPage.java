@@ -79,7 +79,7 @@ public class DnevniciUplataPage extends PocetnaStranica {
 		assertTrue(sekcijaBtnWE.getText().trim().equals("FINANSIJE"), "DnevniciUplata: Naziv sekcije nije dobar!");
 		assertTrue(stranicaBtnWE.getText().trim().equals("DNEVNICI UPLATA"), "DnevniciUplata: Naziv stranice nije dobar!");
 		assertTrue(naslovStraniceWE.getText().trim().equals("DNEVNICI UPLATA"), "DnevniciUplata: Naziv stranice nije dobar!");
-		assertTrue(brojKolona().size() == 14, "DnevniciUplata: Broj kolona nije dobar! ");
+		assertTrue(brojKolona().size() == 15, "DnevniciUplata: Broj kolona nije dobar! ");
 	}
 
 	public void dodajDnevnikUplata(String banka, String ziroRacun) throws InterruptedException {

@@ -26,7 +26,7 @@ public class Opomene extends PocetnaStranica {
 		assertTrue(sekcijaBtnWE.getText().trim().equals("PRAVNI ODNOSI"), "Opomene: Naziv sekcije nije dobar!");
 		assertTrue(stranicaBtnWE.getText().trim().equals("OPOMENE"), "Opomene: Naziv stranice nije dobar!");
 		assertTrue(naslovStraniceWE.getText().trim().equals("OPOMENE"), "Opomene: Naziv stranice nije dobar!");
-		assertTrue(brojKolona().size() == 11, "Opomene: Broj kolona nije dobar! ");
+		assertTrue(brojKolona().size() == 12, "Opomene: Broj kolona nije dobar! ");
 	}
 
 }
