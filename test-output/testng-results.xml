@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="33708" started-at="2021-07-19T13:25:17Z" finished-at="2021-07-19T13:25:51Z">
+  <suite name="Default suite" duration-ms="68930" started-at="2021-07-23T14:00:57Z" finished-at="2021-07-23T14:02:06Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="33708" started-at="2021-07-19T13:25:17Z" finished-at="2021-07-19T13:25:51Z">
-      <class name="com.platformX.tests.QA_008_Verifikacija_Sekcije_Pravni_Odnosi_Test">
-        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.platformX.tests.QA_008_Verifikacija_Sekcije_Pravni_Odnosi_Test@3967e60c]" name="setUp" is-config="true" duration-ms="5524" started-at="2021-07-19T15:25:17Z" finished-at="2021-07-19T15:25:23Z">
+    <test name="Default test" duration-ms="68930" started-at="2021-07-23T14:00:57Z" finished-at="2021-07-23T14:02:06Z">
+      <class name="com.platformX.tests.QA_010_Dodavanje_Dnevnika_Uplata_Test">
+        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.platformX.tests.QA_010_Dodavanje_Dnevnika_Uplata_Test@3967e60c]" name="setUp" is-config="true" duration-ms="5552" started-at="2021-07-23T16:00:57Z" finished-at="2021-07-23T16:01:02Z">
           <params>
             <param index="0">
               <value>
@@ -18,15 +18,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="qa_008_verifikacija_sekcije_pravni_odnosi_test()[pri:0, instance:com.platformX.tests.QA_008_Verifikacija_Sekcije_Pravni_Odnosi_Test@3967e60c]" name="qa_008_verifikacija_sekcije_pravni_odnosi_test" duration-ms="28166" started-at="2021-07-19T15:25:23Z" finished-at="2021-07-19T15:25:51Z">
+        <test-method status="PASS" signature="qa_010_dodavanje_dnevnika_uplata_test()[pri:0, instance:com.platformX.tests.QA_010_Dodavanje_Dnevnika_Uplata_Test@3967e60c]" name="qa_010_dodavanje_dnevnika_uplata_test" duration-ms="63359" started-at="2021-07-23T16:01:02Z" finished-at="2021-07-23T16:02:06Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- qa_008_verifikacija_sekcije_pravni_odnosi_test -->
-        <test-method status="PASS" signature="cleanUp()[pri:0, instance:com.platformX.tests.QA_008_Verifikacija_Sekcije_Pravni_Odnosi_Test@3967e60c]" name="cleanUp" is-config="true" duration-ms="0" started-at="2021-07-19T15:25:51Z" finished-at="2021-07-19T15:25:51Z">
+        </test-method> <!-- qa_010_dodavanje_dnevnika_uplata_test -->
+        <test-method status="PASS" signature="cleanUp()[pri:0, instance:com.platformX.tests.QA_010_Dodavanje_Dnevnika_Uplata_Test@3967e60c]" name="cleanUp" is-config="true" duration-ms="0" started-at="2021-07-23T16:02:06Z" finished-at="2021-07-23T16:02:06Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- cleanUp -->
-      </class> <!-- com.platformX.tests.QA_008_Verifikacija_Sekcije_Pravni_Odnosi_Test -->
+      </class> <!-- com.platformX.tests.QA_010_Dodavanje_Dnevnika_Uplata_Test -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

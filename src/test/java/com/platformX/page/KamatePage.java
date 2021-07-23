@@ -26,7 +26,7 @@ public class KamatePage extends PocetnaStranica {
 		assertTrue(sekcijaBtnWE.getText().trim().equals("OBRAČUN"), "Kamate: Naziv sekcije nije dobar!");
 		assertTrue(stranicaBtnWE.getText().trim().equals("KAMATE"), "Kamate: Naziv stranice nije dobar!");
 		assertTrue(naslovStraniceWE.getText().trim().equals("KAMATE"), "Kamate: Naziv stranice nije dobar!");
-		assertTrue(brojKolona().size() == 8, "Kamate: Broj kolona nije dobar! ");
+		assertTrue(brojKolona().size() == 7, "Kamate: Broj kolona nije dobar! ");
 	}
 
 }
