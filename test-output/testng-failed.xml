@@ -3,13 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.platformX.tests.QA_010_Dodavanje_Dnevnika_Uplata_Test">
+      <class name="com.platformX.tests.QA_058_Dodavanje_Umanjenja_Cijene_Test">
         <methods>
-          <include name="qa_010_dodavanje_dnevnika_uplata_test"/>
+          <include name="qa_058_dodavanje_umanjenja_cijene_test"/>
           <include name="setUp"/>
           <include name="cleanUp"/>
         </methods>
-      </class> <!-- com.platformX.tests.QA_010_Dodavanje_Dnevnika_Uplata_Test -->
+      </class> <!-- com.platformX.tests.QA_058_Dodavanje_Umanjenja_Cijene_Test -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

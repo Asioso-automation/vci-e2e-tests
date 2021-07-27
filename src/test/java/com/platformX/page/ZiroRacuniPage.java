@@ -9,7 +9,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class ZiroRacuniPage extends PocetnaStranica {
 
@@ -34,6 +33,12 @@ public class ZiroRacuniPage extends PocetnaStranica {
 	
 	@FindBy(xpath = "//div[contains(text(), 'Briši')]")
 	private WebElement obrisiWE;
+	
+	@FindBy(xpath = "//div/div/div[3]/button[2]")
+	private WebElement potvrdiBrisanjeWE;
+	
+	@FindBy(xpath = "//tr[2]/td")
+	private WebElement praznaTabelaWE;
 
 	// Kreiraj ziro racun elementi
 
@@ -47,7 +52,6 @@ public class ZiroRacuniPage extends PocetnaStranica {
 	private WebElement dodajBtnWE;
 
 	public void verifikujZiroRacuni() throws InterruptedException {
-		// wait.until(ExpectedConditions.visibilityOf(tableHeaderWE));
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Žiro računi')]")));
 		wait.until(ExpectedConditions.elementToBeClickable(sekcijaBtnWE));
@@ -62,7 +66,6 @@ public class ZiroRacuniPage extends PocetnaStranica {
 	}
 
 	public String dodajZiroRacun(String banka) throws InterruptedException {
-		WebDriverWait wait = new WebDriverWait(driver, 20);
 		String ziroRacun = "111-" + getRandomNumbers(3) + "-" + getRandomNumbers(8) + "-" + getRandomNumbers(2);
 		wait.until(ExpectedConditions.elementToBeClickable(dodajZiroRacunBtnWE));
 		Thread.sleep(1000);
@@ -112,6 +115,30 @@ public class ZiroRacuniPage extends PocetnaStranica {
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
 		dodajBtnWE.click();
 		return noviZiroRacun;
+	}
+	
+	public void obrisiZiroRacun() throws InterruptedException {
+		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
+		burgerBarWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(obrisiWE));
+		obrisiWE.click();
+		Thread.sleep(1000);
+		wait.until(ExpectedConditions.elementToBeClickable(potvrdiBrisanjeWE));
+		potvrdiBrisanjeWE.click();
+	}
+	
+	public void verifikujBrisanjeZiroRacuna(String ziroRacun) throws InterruptedException {
+		wait.until(ExpectedConditions.visibilityOf(pretraziZiroRacuneWE));
+		Thread.sleep(1000);
+		wait.until(ExpectedConditions.elementToBeClickable(pretraziZiroRacuneWE));
+		pretraziZiroRacuneWE.click();
+		pretraziZiroRacuneWE.clear();
+		pretraziZiroRacuneWE.sendKeys(ziroRacun);
+		pretraziZiroRacuneWE.sendKeys(Keys.ENTER);
+		Thread.sleep(1000);
+		wait.until(ExpectedConditions.visibilityOf(praznaTabelaWE));
+		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
+		assertTrue(praznaTabelaWE.getText().equals("Nema podataka"), "TarifneGrupe: Poruka prazne tabele nije dobra!");
 	}
 
 }
