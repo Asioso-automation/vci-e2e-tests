@@ -23,9 +23,10 @@ public class QA_041_Preregistracija_Ugovora_Test extends BaseTest {
 		homePage.verifyHomePage();
 		UgovoriPage ugovoriPage = homePage.navigateToUgovori();
 		ugovoriPage.verifikujUgovori();
-		ugovoriPage.pronadjiUgovorPoEic("36Z0SB00"); // Id mjernog mjesta: 61100069
+		ugovoriPage.pronadjiUgovorPoEic("36Z0SB00");
 		ugovoriPage.otvoriPreregistraciju();
 		ugovoriPage.preregistrujUgovor();
+		ugovoriPage.verifikujUgovori();
 		// TODO Refaktorisati verifikaciju 
 		// ugovoriPage.verifikujPreregistrovanUgovor("36Z0SB00", "Firma 2");
 	}

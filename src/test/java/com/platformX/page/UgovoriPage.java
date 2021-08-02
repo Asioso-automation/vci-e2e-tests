@@ -354,6 +354,27 @@ public class UgovoriPage extends PocetnaStranica {
 
 	@FindBy(xpath = "//div[8]/div[1]/div/div/div[1]/div[1]/input[1]")
 	private WebElement urediPostaWE;
+	
+	@FindBy(xpath = "//div[6]/div[3]/div/div/div[1]/div/input")
+	private WebElement urediNazivNaStampanimDokumentimaWE;
+	
+	@FindBy(xpath = "//div[8]/div[2]/div/div/div[1]/div[1]/input[1]")
+	private WebElement urediMjestoWE;
+	
+	@FindBy(xpath = "//div[8]/div[3]/div/div/div[1]/div[1]/input[1]")
+	private WebElement urediUlicuWE;
+	
+	@FindBy(xpath = "//div[8]/div[4]/div/div/div[1]/div[1]/input[1]")
+	private WebElement urediBrojUliceWE;
+	
+	@FindBy(xpath = "//div[7]/div/div/div[1]/div/div")
+	private WebElement urediEmailDostavaWE;
+	
+	@FindBy(xpath = "//div[8]/div[8]/div/div/div[1]/div/input")
+	private WebElement urediEmailWE;
+	
+	@FindBy(xpath = "//div[8]/div[4]/div/div/div[2]/div/div/div")
+	private WebElement urediBrojUlicePorukaWE;
 
 	// Pogledaj ugovor elementi
 
@@ -784,26 +805,26 @@ public class UgovoriPage extends PocetnaStranica {
 		odaberiDjelatnostWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(rekapitulacijaWE));
 		rekapitulacijaWE.click();
-		nazivNaStampanimDokumentimaWE.sendKeys(getRandomName());
-		postaWE.sendKeys("71420 - Pale");
+		urediNazivNaStampanimDokumentimaWE.sendKeys(getRandomName());
+		urediPostaWE.sendKeys("71420 - Pale");
 		Thread.sleep(500);
 		wait.until(ExpectedConditions.visibilityOf(odaberiPostu1WE));
 		odaberiPostu1WE.click();
-		mjestoWE.sendKeys("3 - Pale");
+		urediMjestoWE.sendKeys("3 - Pale");
 		wait.until(ExpectedConditions.visibilityOf(odaberiMjesto1WE));
 		odaberiMjesto1WE.click();
-		ulicaWE.sendKeys("2 - Dr Mladena Stojanovica");
+		urediUlicuWE.sendKeys("2 - Dr Mladena Stojanovica");
 		wait.until(ExpectedConditions.visibilityOf(odaberiUlicu1WE));
 		odaberiUlicu1WE.click();
-		brojUliceWE.click();
-		brojUliceWE.clear();
-		brojUliceWE.sendKeys("5");
+		urediBrojUliceWE.click();
+		urediBrojUliceWE.clear();
+		urediBrojUliceWE.sendKeys("5");
 		wait.until(ExpectedConditions.elementToBeClickable(imeIPrezimeWE));
 		imeIPrezimeWE.sendKeys("Name " + getRandomName());
-		wait.until(ExpectedConditions.elementToBeClickable(eMailDostavaWE));
-		eMailDostavaWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(eMailWE));
-		eMailWE.sendKeys(getRandomName() + "@" + getRandomName() + ".com");
+		wait.until(ExpectedConditions.elementToBeClickable(urediEmailDostavaWE));
+		urediEmailDostavaWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(urediEmailWE));
+		urediEmailWE.sendKeys(getRandomName() + "@" + getRandomName() + ".com");
 		wait.until(ExpectedConditions.elementToBeClickable(dodajFormaBtnWE));
 		dodajFormaBtnWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
@@ -985,18 +1006,18 @@ public class UgovoriPage extends PocetnaStranica {
 		procenatUmanjenjaPDVaWE.click();
 		procenatUmanjenjaPDVaWE.clear();
 		procenatUmanjenjaPDVaWE.sendKeys(Keys.SPACE, Keys.BACK_SPACE);
-		wait.until(ExpectedConditions.elementToBeClickable(brojUliceWE));
+		wait.until(ExpectedConditions.elementToBeClickable(urediBrojUliceWE));
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("arguments[0].scrollIntoView(true);", brojUliceWE);
-		brojUliceWE.click();
-		brojUliceWE.clear();
-		brojUliceWE.sendKeys(Keys.SPACE, Keys.BACK_SPACE);
+		js.executeScript("arguments[0].scrollIntoView(true);", urediBrojUliceWE);
+		urediBrojUliceWE.click();
+		urediBrojUliceWE.clear();
+		urediBrojUliceWE.sendKeys(Keys.SPACE, Keys.BACK_SPACE);
 		wait.until(ExpectedConditions.elementToBeClickable(dodajFormaBtnWE));
 		dodajFormaBtnWE.click();
 		Thread.sleep(500);
 		assertTrue(procenatUmanjenjaPDVaPorukaWE.getText().trim().equals("Obavezno polje"),
 				"Izmjena ugovora: Validaciona poruka na polju Procenat umanjenja PDV-a nije dobra!");
-		assertTrue(brojUlicePorukaWE.getText().trim().equals("Obavezno polje"),
+		assertTrue(urediBrojUlicePorukaWE.getText().trim().equals("Obavezno polje"),
 				"Izmjena ugovora: Validaciona poruka na polju Broj u ulici nije dobra!");
 		Thread.sleep(1000);
 	}
