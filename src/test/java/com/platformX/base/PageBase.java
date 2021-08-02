@@ -56,5 +56,11 @@ public class PageBase {
 		}
 		return random;
 	}
+	
+	public void osvjeziStranicu() throws InterruptedException {
+		Thread.sleep(1000);
+		driver.navigate().refresh();
+		Thread.sleep(1000);
+		}
 
 }

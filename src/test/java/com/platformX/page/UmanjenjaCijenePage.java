@@ -29,8 +29,26 @@ public class UmanjenjaCijenePage extends PocetnaStranica {
 	@FindBy(xpath = "//td[2]/div/div[1]/div/div/div/div[1]/input")
 	private WebElement filterBrojMjeseciWE;
 	
+	@FindBy(xpath = "//div[4]/div/div[2]/div/div/input")
+	private WebElement drugiFilterBrojMjeseciWE;
+	
 	@FindBy(xpath = "//tr[2]/td[2]")
 	private WebElement brojMjeseciTabelaWE;
+	
+	@FindBy(xpath = "//td[4]/button")
+	private WebElement burgerBarWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Uredi')]")
+	private WebElement urediWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Briši')]")
+	private WebElement obrisiWE;
+	
+	@FindBy(xpath = "//div/div/div[3]/button[2]")
+	private WebElement potvrdiBrisanjeWE;
+	
+	@FindBy(xpath = "//tr[2]/td")
+	private WebElement praznaTabelaWE;
 
 	public void verifikujUmanjenjaCijene() throws InterruptedException {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
@@ -74,5 +92,49 @@ public class UmanjenjaCijenePage extends PocetnaStranica {
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
 		assertTrue(brojMjeseciTabelaWE.getText().equals(brojMjeseci), "UmanjenjaCijena: Broj mjeseci nije dobar!");
 	}
-
+	
+	public String izmjeniUmanjenjeCijene() throws InterruptedException {
+		String brojMjeseci = getRandomNumbers(2);
+		String procenat = getRandomNumbers(2);
+		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
+		Thread.sleep(1000);
+		burgerBarWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(urediWE));
+		urediWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(brojMjeseciWE));
+		brojMjeseciWE.click();
+		brojMjeseciWE.clear();
+		brojMjeseciWE.sendKeys(brojMjeseci);
+		procenatWE.click();
+		procenatWE.clear();
+		procenatWE.sendKeys(procenat);
+		wait.until(ExpectedConditions.elementToBeClickable(dodajUmanjenjeCijeneWE));
+		dodajUmanjenjeCijeneWE.click();
+		return brojMjeseci;
+	}
+	
+	public void obrisiUmanjenjeCijene() throws InterruptedException {
+		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
+		burgerBarWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(obrisiWE));
+		obrisiWE.click();
+		Thread.sleep(1000);
+		wait.until(ExpectedConditions.elementToBeClickable(potvrdiBrisanjeWE));
+		potvrdiBrisanjeWE.click();
+	}
+	
+	public void verifikujBrisanjeUmanjenjaCijene(String brojMjeseci) throws InterruptedException {
+		wait.until(ExpectedConditions.elementToBeClickable(filterBrojMjeseciWE));
+		filterBrojMjeseciWE.click();
+		Thread.sleep(1000);
+		filterBrojMjeseciWE.click();
+		filterBrojMjeseciWE.clear();
+		filterBrojMjeseciWE.sendKeys(brojMjeseci);
+		filterBrojMjeseciWE.sendKeys(Keys.ENTER);
+		Thread.sleep(1000);
+		wait.until(ExpectedConditions.visibilityOf(praznaTabelaWE));
+		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
+		assertTrue(praznaTabelaWE.getText().equals("Nema podataka"), "TarifneGrupe: Poruka prazne tabele nije dobra!");
+	}
+	
 }
