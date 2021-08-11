@@ -1,18 +1,15 @@
 package com.platformX.page;
 
 import static org.testng.Assert.assertTrue;
-
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.List;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import com.platformX.base.PageBase;
 
 public class PocetnaStranica extends PageBase {
@@ -26,6 +23,15 @@ public class PocetnaStranica extends PageBase {
 	protected List<WebElement> brojKolona() {
 		return driver.findElements(By.xpath("//th"));
 	}
+	
+	@FindBy(xpath = "//a[@href='/']")
+	protected WebElement pocetnaStranicaWE;
+	
+	@FindBy(xpath = "//div[1]/div/div/div/div/div/div[2]/input[1]")
+	protected WebElement filterKupacWE;
+	
+	@FindBy(xpath = "//div[2]/div/div/div/div/div/div[2]/input[1]")
+	protected WebElement filterMjernoMjestoWE;
 	
 	@FindBy(xpath = "//div[contains(text(), '1-1 of 1')]")
 	protected WebElement jedinstvenElementWE;
@@ -881,4 +887,25 @@ public class PocetnaStranica extends PageBase {
 		assertTrue(porukaWE.getText().trim().equals(poruka), "Djelatnosti: Poruka upozorenja nije dobra!");
 	}
 	
+	public PocetnaStranica navigateToPocetnaStranica() throws FileNotFoundException, IOException {
+		wait.until(ExpectedConditions.elementToBeClickable(pocetnaStranicaWE));
+		pocetnaStranicaWE.click();
+		return new PocetnaStranica(driver);
+	}
+	
+	public void pretraziKupce(String kupac) throws InterruptedException {
+		wait.until(ExpectedConditions.elementToBeClickable(filterKupacWE));
+		filterKupacWE.sendKeys(kupac);
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(@class, 'v-list-item__title') and contains(., '" + kupac + "')]")));
+		driver.findElement(By.xpath("//div[contains(@class, 'v-list-item__title') and contains(., '" + kupac + "')]")).click();
+		Thread.sleep(2000);
+	}
+	
+	public void pretraziMjernaMjesta(String mjernoMjesto) throws InterruptedException {
+		wait.until(ExpectedConditions.elementToBeClickable(filterMjernoMjestoWE));
+		filterMjernoMjestoWE.sendKeys(mjernoMjesto);
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(@class, 'v-list-item__title') and contains(., '" + mjernoMjesto + "')]")));
+		driver.findElement(By.xpath("//div[contains(@class, 'v-list-item__title') and contains(., '" + mjernoMjesto + "')]")).click();
+		Thread.sleep(1000);
+	}
 }

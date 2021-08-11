@@ -137,4 +137,15 @@ public class UmanjenjaCijenePage extends PocetnaStranica {
 		assertTrue(praznaTabelaWE.getText().equals("Nema podataka"), "TarifneGrupe: Poruka prazne tabele nije dobra!");
 	}
 	
+	public void dodajPredefinisanoUmanjenjeCijene(String brojMjeseci) {
+		String procenat = getRandomNumbers(2);
+		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
+		dodajBtnWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(brojMjeseciWE));
+		brojMjeseciWE.sendKeys(brojMjeseci);
+		procenatWE.sendKeys(procenat);
+		wait.until(ExpectedConditions.elementToBeClickable(dodajUmanjenjeCijeneWE));
+		dodajUmanjenjeCijeneWE.click();
+	}
+	
 }

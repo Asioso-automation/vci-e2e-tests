@@ -6,16 +6,20 @@ import java.io.IOException;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class MjernaMjestaPage extends PocetnaStranica {
+	
+	@FindBy(xpath = "//header/div/button[3]")
+	protected WebElement osvjeziDetaljeBtnWE;
 
 	public MjernaMjestaPage(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);
 	}
 
 	public void verifikujMjernaMjesta() throws InterruptedException {
-		// wait.until(ExpectedConditions.visibilityOf(tableHeaderWE));
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Mjerna mjesta')]")));
 		wait.until(ExpectedConditions.elementToBeClickable(sekcijaBtnWE));
@@ -28,5 +32,10 @@ public class MjernaMjestaPage extends PocetnaStranica {
 		assertTrue(naslovStraniceWE.getText().trim().equals("MJERNA MJESTA"), "MjernaMjesta: Naziv stranice nije dobar!");
 		assertTrue(brojKolona().size() == 6, "MjernaMjesta: Broj kolona nije dobar! ");
 	}
-
+	
+	public void verifikujDetaljeMjernogMjesta() {
+	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[contains(text(), 'Mjerno mjesto')]")));
+	wait.until(ExpectedConditions.elementToBeClickable(osvjeziDetaljeBtnWE));
+	}
+	
 }
