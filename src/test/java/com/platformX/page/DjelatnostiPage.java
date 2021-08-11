@@ -115,6 +115,7 @@ public class DjelatnostiPage extends PocetnaStranica {
 	
 	public void verifikujBrisanjeDjelatnosti(String djelatnost) throws InterruptedException {
 		wait.until(ExpectedConditions.elementToBeClickable(nazivFilterWE));
+		Thread.sleep(1000);
 		nazivFilterWE.click();
 		nazivFilterWE.clear();
 		nazivFilterWE.sendKeys(djelatnost);
