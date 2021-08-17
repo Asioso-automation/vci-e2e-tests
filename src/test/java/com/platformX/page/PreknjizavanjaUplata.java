@@ -16,15 +16,15 @@ public class PreknjizavanjaUplata extends PocetnaStranica {
 
 	public void verifikujPreknjizavanjaUplata() {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
-				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Preknjižavanja uplata')]")));
+				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' PreknjiÅ¾avanja uplata')]")));
 		wait.until(ExpectedConditions.elementToBeClickable(sekcijaBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(stranicaBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(preuzmiExcelBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(ukloniFiltereBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(osvjeziBtnWE));
 		assertTrue(sekcijaBtnWE.getText().trim().equals("FINANSIJE"), "PreknjizavanjaUplata: Naziv sekcije nije dobar!");
-		assertTrue(stranicaBtnWE.getText().trim().equals("PREKNJIŽAVANJA UPLATA"), "PreknjizavanjaUplata: Naziv stranice nije dobar!");
-		assertTrue(naslovStraniceWE.getText().trim().equals("PREKNJIŽAVANJA UPLATA"), "PreknjizavanjaUplata: Naziv stranice nije dobar!");
+		assertTrue(stranicaBtnWE.getText().trim().equals("PREKNJIÅ½AVANJA UPLATA"), "PreknjizavanjaUplata: Naziv stranice nije dobar!");
+		assertTrue(naslovStraniceWE.getText().trim().equals("PREKNJIÅ½AVANJA UPLATA"), "PreknjizavanjaUplata: Naziv stranice nije dobar!");
 		assertTrue(brojKolona().size() == 13, "PreknjizavanjaUplata: Broj kolona nije dobar! ");
 	}
 
