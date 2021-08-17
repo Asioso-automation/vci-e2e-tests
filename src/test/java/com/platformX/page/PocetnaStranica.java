@@ -238,6 +238,9 @@ public class PocetnaStranica extends PageBase {
 	@FindBy(xpath = "//div[contains(text(), 'Sve uplate')]")
 	protected WebElement sveUplateWE;
 	
+	@FindBy(xpath = "//div[contains(text(), 'Preknjižavanja uplata')]")
+	protected WebElement preknjizavanjaUplataWE;
+	
 	@FindBy(xpath = "//div[contains(text(), 'Neraspoređene uplate')]")
 	protected WebElement nerasporedjeneUplateWE;
 	
@@ -729,6 +732,15 @@ public class PocetnaStranica extends PageBase {
 		wait.until(ExpectedConditions.elementToBeClickable(sveUplateWE));
 		sveUplateWE.click();
 		return new SveUplatePage(driver);
+	}
+	
+	public PreknjizavanjaUplata navigateToPreknjizavanjaUplata() throws FileNotFoundException, IOException {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(finansijeWE));
+		finansijeWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(preknjizavanjaUplataWE));
+		preknjizavanjaUplataWE.click();
+		return new PreknjizavanjaUplata(driver);	
 	}
 	
 	public NerasporedjeneUplatePage navigateToNerasporedjeneUplate() throws Exception {

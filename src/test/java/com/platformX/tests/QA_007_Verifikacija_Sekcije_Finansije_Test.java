@@ -9,6 +9,7 @@ import com.platformX.page.BankePage;
 import com.platformX.page.DnevniciUplataPage;
 import com.platformX.page.FinansijskeKarticePage;
 import com.platformX.page.PocetnaStranica;
+import com.platformX.page.PreknjizavanjaUplata;
 import com.platformX.page.LogInPage;
 import com.platformX.page.NerasporedjeneUplatePage;
 import com.platformX.page.Reprogrami;
@@ -36,6 +37,8 @@ public class QA_007_Verifikacija_Sekcije_Finansije_Test extends BaseTest {
 		finansijskeKarticePage.verifikujFinansijskeKartice();
 		DnevniciUplataPage dnevniciUplataPage = homePage.navigateToDnevniciUplata();
 		dnevniciUplataPage.verifikujDnevniciUplataPage();
+		PreknjizavanjaUplata preknjizavanja = homePage.navigateToPreknjizavanjaUplata();
+		preknjizavanja.verifikujPreknjizavanjaUplata();
 		SveUplatePage sveUplatePage = homePage.navigateToSveUplate();
 		sveUplatePage.verifikujSveUplate();
 		NerasporedjeneUplatePage nerasporedjeneUplatePage = homePage.navigateToNerasporedjeneUplate();
