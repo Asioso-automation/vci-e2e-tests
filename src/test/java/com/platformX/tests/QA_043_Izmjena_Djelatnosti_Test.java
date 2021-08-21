@@ -5,7 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import com.platformX.base.BaseTest;
 import com.platformX.page.PocetnaStranica;
-import com.platformX.page.DjelatnostiPage;
+import com.platformX.page.Djelatnosti;
 import com.platformX.page.LogInPage;
 
 public class QA_043_Izmjena_Djelatnosti_Test extends BaseTest {
@@ -21,7 +21,7 @@ public class QA_043_Izmjena_Djelatnosti_Test extends BaseTest {
 		logInPage.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
 		homePage.verifyHomePage();
-		DjelatnostiPage  djelatnosti = homePage.navigateToDjelatnosti();
+		Djelatnosti  djelatnosti = homePage.navigirajNaDjelatnosti();
 		djelatnosti.verifikujDjelatnosti();
 		String djelatnost = djelatnosti.dodajDjelatnost();
 		// djelatnosti.verifikujPoruku("Uspješno završeno.");

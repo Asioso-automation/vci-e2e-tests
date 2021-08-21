@@ -10,10 +10,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import com.platformX.base.Kolone;
 
-public class OperativnaPodrucjaPage extends PocetnaStranica {
+public class OperativnaPodrucja extends PocetnaStranica {
 
-	public OperativnaPodrucjaPage(WebDriver driver) throws FileNotFoundException, IOException {
+	public OperativnaPodrucja(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);
 	}
 	
@@ -38,10 +39,15 @@ public class OperativnaPodrucjaPage extends PocetnaStranica {
 	@FindBy(xpath = "//tr[2]/td[2]")
 	private WebElement nazivOperativnogPodrucjaTableWE;
 
-	public void verifikujOperativnaPodrucja() throws InterruptedException {
-		// wait.until(ExpectedConditions.visibilityOf(tableHeaderWE));
+	public void verifikujOperativnaPodrucja() throws InterruptedException, FileNotFoundException, IOException {
+		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Operativna podru')]")));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNazivWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTelefonZaPrijavuKvaraWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTelefonZaInformacijeWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTelefonZaPrigovoreWE));
 		wait.until(ExpectedConditions.elementToBeClickable(sekcijaBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(stranicaBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(preuzmiExcelBtnWE));

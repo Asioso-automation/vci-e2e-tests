@@ -4,18 +4,18 @@ import org.testng.annotations.Test;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import com.platformX.base.BaseTest;
-import com.platformX.page.DjelatnostiPage;
-import com.platformX.page.EntitetiPage;
+import com.platformX.page.Djelatnosti;
+import com.platformX.page.Entiteti;
 import com.platformX.page.PocetnaStranica;
 import com.platformX.page.LogInPage;
-import com.platformX.page.NaseljenaMjestaPage;
-import com.platformX.page.OperativnaPodrucjaPage;
-import com.platformX.page.OperatoriSistemaPage;
-import com.platformX.page.OpstinePage;
-import com.platformX.page.OrganizacijePage;
-import com.platformX.page.PostePage;
-import com.platformX.page.RadneJedinicePage;
-import com.platformX.page.UlicePage;
+import com.platformX.page.NaseljenaMjesta;
+import com.platformX.page.OperativnaPodrucja;
+import com.platformX.page.OperatoriSistema;
+import com.platformX.page.Opstine;
+import com.platformX.page.Organizacije;
+import com.platformX.page.Poste;
+import com.platformX.page.RadneJedinice;
+import com.platformX.page.Ulice;
 
 public class QA_002_Verifikacija_Sekcije_Sifarnici_Test extends BaseTest {
 
@@ -23,34 +23,34 @@ public class QA_002_Verifikacija_Sekcije_Sifarnici_Test extends BaseTest {
 		super();
 	}
 	
-	// Test prolazi kroz sve stranice u sekciji SIFARNICI i verifikuje ih
+	// Test prolazi kroz stranice sekcije SIFARNICI i verifikuje ih
 
 	@Test
 	public void qa_002_verifikacije_sekcije_sifarnici_test() throws Exception {
 		LogInPage logInPage = new LogInPage(driver, PLATFORMX_PROPERTIES);
 		logInPage.verifyLogInPage();
 		logInPage.logIn();
-		PocetnaStranica homePage = new PocetnaStranica(driver);
-		homePage.verifyHomePage();
-		OrganizacijePage organizacijePage = homePage.navigateToOrganizacije();
-		organizacijePage.verifikujOrganizacijeStranicu();
-		OperatoriSistemaPage operatoriSistemaPage = homePage.navigateToOperatoriSistema();
-		operatoriSistemaPage.verifikujOperatoreSistemaStranicu();
-		RadneJedinicePage radneJedinicePage = homePage.navigateToRadneJedinice();
-		radneJedinicePage.verifikujRadneJedinice();
-		OperativnaPodrucjaPage opertivnaPodrucjaPage = homePage.navigateToOperativnaPodrucja();
-		opertivnaPodrucjaPage.verifikujOperativnaPodrucja();
-		DjelatnostiPage djelatnostiPage = homePage.navigateToDjelatnosti();
-		djelatnostiPage.verifikujDjelatnosti();
-		EntitetiPage entitetiPage = homePage.navigateToEntiteti();
-		entitetiPage.verifikujEntiteti();
-		OpstinePage opstinePage = homePage.navigateToOpstine();
-		opstinePage.verifikujOpstine();
-		NaseljenaMjestaPage naseljenaMjestaPage = homePage.navigateToNaseljenaMjesta();
-		naseljenaMjestaPage.verifikujNaseljenaMjesta();
-		PostePage postePage = homePage.navigateToPoste();
-		postePage.verifikujPoste();
-		UlicePage ulicePage = homePage.navigateToUlice();
-		ulicePage.verifikujUlice();
+		PocetnaStranica pocetnaStranica = new PocetnaStranica(driver);
+		pocetnaStranica.verifyHomePage();
+		Organizacije organizacije = pocetnaStranica.navigirajNaOrganizacije();
+		organizacije.verifikujOrganizacije();
+		OperatoriSistema operatoriSistema = pocetnaStranica.navigirajNaOperatoreSistema();
+		operatoriSistema.verifikujOperatoreSistema();
+		RadneJedinice radneJedinice = pocetnaStranica.navigirajNaRadneJedinice();
+		radneJedinice.verifikujRadneJedinice();
+		OperativnaPodrucja opertivnaPodrucja = pocetnaStranica.navigirajNaOperativnaPodrucja();
+		opertivnaPodrucja.verifikujOperativnaPodrucja();
+		Djelatnosti djelatnosti = pocetnaStranica.navigirajNaDjelatnosti();
+		djelatnosti.verifikujDjelatnosti();
+		Entiteti entiteti = pocetnaStranica.navigirajNaEntitete();
+		entiteti.verifikujEntitete();
+		Opstine opstine = pocetnaStranica.navigirajNaOpstine();
+		opstine.verifikujOpstine();
+		NaseljenaMjesta naseljenaMjesta = pocetnaStranica.navigirajNaNaseljenaMjesta();
+		naseljenaMjesta.verifikujNaseljenaMjesta();
+		Poste poste = pocetnaStranica.navigirajNaPoste();
+		poste.verifikujPoste();
+		Ulice ulice = pocetnaStranica.navigirajNaUlice();
+		ulice.verifikujUlice();
 	}
 }

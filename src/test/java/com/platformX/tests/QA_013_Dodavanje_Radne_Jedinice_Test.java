@@ -6,7 +6,7 @@ import java.io.IOException;
 import com.platformX.base.BaseTest;
 import com.platformX.page.PocetnaStranica;
 import com.platformX.page.LogInPage;
-import com.platformX.page.RadneJedinicePage;
+import com.platformX.page.RadneJedinice;
 
 public class QA_013_Dodavanje_Radne_Jedinice_Test extends BaseTest {
 
@@ -21,10 +21,10 @@ public class QA_013_Dodavanje_Radne_Jedinice_Test extends BaseTest {
 		logInPage.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
 		homePage.verifyHomePage();
-		RadneJedinicePage radneJedinicePage = homePage.navigateToRadneJedinice();
-		radneJedinicePage.verifikujRadneJedinice();
-		String radneJedinice= radneJedinicePage.dodajRadnuJedinicu();
-		radneJedinicePage.verifikujRadnuJedinicu(radneJedinice);
+		RadneJedinice radneJedinice = homePage.navigirajNaRadneJedinice();
+		radneJedinice.verifikujRadneJedinice();
+		String jedinice= radneJedinice.dodajRadnuJedinicu();
+		radneJedinice.verifikujRadnuJedinicu(jedinice);
 	}
 
 }

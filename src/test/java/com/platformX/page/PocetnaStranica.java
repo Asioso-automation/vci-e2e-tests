@@ -310,95 +310,95 @@ public class PocetnaStranica extends PageBase {
 		izlogujSeWE.click();
 	}
 
-	public OrganizacijePage navigateToOrganizacije() throws Exception {
+	public Organizacije navigirajNaOrganizacije() throws Exception {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(sifarniciWE));
 		sifarniciWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(organizacijeWE));
 		organizacijeWE.click();
-		return new OrganizacijePage(driver);
+		return new Organizacije(driver);
 	}
 
-	public OperatoriSistemaPage navigateToOperatoriSistema() throws Exception {
+	public OperatoriSistema navigirajNaOperatoreSistema() throws Exception {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(sifarniciWE));
 		sifarniciWE.click();
 		Thread.sleep(500);
 		wait.until(ExpectedConditions.elementToBeClickable(operatoriSistemaWE));
 		operatoriSistemaWE.click();
-		return new OperatoriSistemaPage(driver);
+		return new OperatoriSistema(driver);
 	}
 
-	public RadneJedinicePage navigateToRadneJedinice() throws Exception {
+	public RadneJedinice navigirajNaRadneJedinice() throws Exception {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(sifarniciWE));
 		sifarniciWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(radneJediniceWE));
 		radneJediniceWE.click();
-		return new RadneJedinicePage(driver);
+		return new RadneJedinice(driver);
 	}
 
-	public OperativnaPodrucjaPage navigateToOperativnaPodrucja() throws Exception {
+	public OperativnaPodrucja navigirajNaOperativnaPodrucja() throws Exception {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(sifarniciWE));
 		sifarniciWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(operativnaPodrucjaWE));
 		operativnaPodrucjaWE.click();
-		return new OperativnaPodrucjaPage(driver);
+		return new OperativnaPodrucja(driver);
 	}
 
-	public DjelatnostiPage navigateToDjelatnosti() throws Exception {
+	public Djelatnosti navigirajNaDjelatnosti() throws Exception {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(sifarniciWE));
 		sifarniciWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(djelatnostiWE));
 		djelatnostiWE.click();
-		return new DjelatnostiPage(driver);
+		return new Djelatnosti(driver);
 	}
 
-	public EntitetiPage navigateToEntiteti() throws Exception {
+	public Entiteti navigirajNaEntitete() throws Exception {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(sifarniciWE));
 		sifarniciWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(entitetiWE));
 		entitetiWE.click();
-		return new EntitetiPage(driver);
+		return new Entiteti(driver);
 	}
 
-	public OpstinePage navigateToOpstine() throws Exception {
+	public Opstine navigirajNaOpstine() throws Exception {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(sifarniciWE));
 		sifarniciWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(opstineWE));
 		opstineWE.click();
-		return new OpstinePage(driver);
+		return new Opstine(driver);
 	}
 
-	public NaseljenaMjestaPage navigateToNaseljenaMjesta() throws Exception {
+	public NaseljenaMjesta navigirajNaNaseljenaMjesta() throws Exception {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(sifarniciWE));
 		sifarniciWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(naseljenaMjestaWE));
 		naseljenaMjestaWE.click();
-		return new NaseljenaMjestaPage(driver);
+		return new NaseljenaMjesta(driver);
 	}
 
-	public PostePage navigateToPoste() throws Exception {
+	public Poste navigirajNaPoste() throws Exception {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(sifarniciWE));
 		sifarniciWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(posteWE));
 		posteWE.click();
-		return new PostePage(driver);
+		return new Poste(driver);
 	}
 
-	public UlicePage navigateToUlice() throws Exception {
+	public Ulice navigirajNaUlice() throws Exception {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(sifarniciWE));
 		sifarniciWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(uliceWE));
 		uliceWE.click();
-		return new UlicePage(driver);
+		return new Ulice(driver);
 	}
 
 	public KategorijePotrosnjePage navigateToKategorijePotrosnje() throws Exception {

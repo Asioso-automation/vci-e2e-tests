@@ -6,7 +6,7 @@ import java.io.IOException;
 import com.platformX.base.BaseTest;
 import com.platformX.page.PocetnaStranica;
 import com.platformX.page.LogInPage;
-import com.platformX.page.OperativnaPodrucjaPage;
+import com.platformX.page.OperativnaPodrucja;
 
 public class QA_014_Dodavanje_Operativnog_Podrucja_Test extends BaseTest {
 
@@ -21,10 +21,10 @@ public class QA_014_Dodavanje_Operativnog_Podrucja_Test extends BaseTest {
 		logInPage.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
 		homePage.verifyHomePage();
-		OperativnaPodrucjaPage operativnaPodrucjaPage = homePage.navigateToOperativnaPodrucja();
-		operativnaPodrucjaPage.verifikujOperativnaPodrucja();
-		String operativnaPodrucja= operativnaPodrucjaPage.dodajOperativnoPodrucje();
-		operativnaPodrucjaPage.verifikujOperativnoPodrucje(operativnaPodrucja);
+		OperativnaPodrucja operativnaPodrucja = homePage.navigirajNaOperativnaPodrucja();
+		operativnaPodrucja.verifikujOperativnaPodrucja();
+		String podrucje = operativnaPodrucja.dodajOperativnoPodrucje();
+		operativnaPodrucja.verifikujOperativnoPodrucje(podrucje);
 	}
 
 }
