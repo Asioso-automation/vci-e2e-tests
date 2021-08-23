@@ -11,6 +11,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
+import com.platformX.base.Kolone;
+
 public class UmanjenjaCijenePage extends PocetnaStranica {
 
 	public UmanjenjaCijenePage(WebDriver driver) throws FileNotFoundException, IOException {
@@ -50,9 +52,13 @@ public class UmanjenjaCijenePage extends PocetnaStranica {
 	@FindBy(xpath = "//tr[2]/td")
 	private WebElement praznaTabelaWE;
 
-	public void verifikujUmanjenjaCijene() throws InterruptedException {
+	public void verifikujUmanjenjaCijene() throws InterruptedException, FileNotFoundException, IOException {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Umanjenja cijene')]")));
+		Kolone kolone = new Kolone(driver);
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojMjeseciWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaProcenatWE));
 		wait.until(ExpectedConditions.elementToBeClickable(sekcijaBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(stranicaBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(preuzmiExcelBtnWE));
@@ -62,7 +68,7 @@ public class UmanjenjaCijenePage extends PocetnaStranica {
 		assertTrue(sekcijaBtnWE.getText().trim().equals("OBRAČUN"), "UmanjenjaCijene: Naziv sekcije nije dobar!");
 		assertTrue(stranicaBtnWE.getText().trim().equals("UMANJENJA CIJENE"), "UmanjenjaCijene: Naziv stranice nije dobar!");
 		assertTrue(naslovStraniceWE.getText().trim().equals("UMANJENJA CIJENE"), "UmanjenjaCijene: Naziv stranice nije dobar!");
-		assertTrue(brojKolona().size() == 4, "UmanjenjaCijene: Broj kolona nije dobar! ");
+		assertTrue(brojKolona().size() == 4, "UmanjenjaCijene: Broj kolona nije dobar!");
 	}
 	
 	public String dodajUmanjenjeCijene() {

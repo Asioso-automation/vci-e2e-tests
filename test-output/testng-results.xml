@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="29895" started-at="2021-08-21T21:19:13Z" finished-at="2021-08-21T21:19:43Z">
+  <suite name="Default suite" duration-ms="61363" started-at="2021-08-23T19:51:19Z" finished-at="2021-08-23T19:52:20Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="29895" started-at="2021-08-21T21:19:13Z" finished-at="2021-08-21T21:19:43Z">
-      <class name="com.platformX.tests.QA_002_Verifikacija_Sekcije_Sifarnici_Test">
-        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.platformX.tests.QA_002_Verifikacija_Sekcije_Sifarnici_Test@3967e60c]" name="setUp" is-config="true" duration-ms="5389" started-at="2021-08-21T23:19:13Z" finished-at="2021-08-21T23:19:19Z">
+    <test name="Default test" duration-ms="61363" started-at="2021-08-23T19:51:19Z" finished-at="2021-08-23T19:52:20Z">
+      <class name="com.platformX.tests.QA_059_Izmjena_Umanjenja_Cijene_Test">
+        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.platformX.tests.QA_059_Izmjena_Umanjenja_Cijene_Test@3967e60c]" name="setUp" is-config="true" duration-ms="5907" started-at="2021-08-23T21:51:19Z" finished-at="2021-08-23T21:51:25Z">
           <params>
             <param index="0">
               <value>
@@ -18,15 +18,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="qa_002_verifikacije_sekcije_sifarnici_test()[pri:0, instance:com.platformX.tests.QA_002_Verifikacija_Sekcije_Sifarnici_Test@3967e60c]" name="qa_002_verifikacije_sekcije_sifarnici_test" duration-ms="23841" started-at="2021-08-21T23:19:19Z" finished-at="2021-08-21T23:19:43Z">
+        <test-method status="PASS" signature="qa_059_izmjena_umanjenja_cijene_test()[pri:0, instance:com.platformX.tests.QA_059_Izmjena_Umanjenja_Cijene_Test@3967e60c]" name="qa_059_izmjena_umanjenja_cijene_test" duration-ms="54735" started-at="2021-08-23T21:51:25Z" finished-at="2021-08-23T21:52:20Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- qa_002_verifikacije_sekcije_sifarnici_test -->
-        <test-method status="PASS" signature="cleanUp()[pri:0, instance:com.platformX.tests.QA_002_Verifikacija_Sekcije_Sifarnici_Test@3967e60c]" name="cleanUp" is-config="true" duration-ms="644" started-at="2021-08-21T23:19:43Z" finished-at="2021-08-21T23:19:43Z">
+        </test-method> <!-- qa_059_izmjena_umanjenja_cijene_test -->
+        <test-method status="PASS" signature="cleanUp()[pri:0, instance:com.platformX.tests.QA_059_Izmjena_Umanjenja_Cijene_Test@3967e60c]" name="cleanUp" is-config="true" duration-ms="686" started-at="2021-08-23T21:52:20Z" finished-at="2021-08-23T21:52:20Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- cleanUp -->
-      </class> <!-- com.platformX.tests.QA_002_Verifikacija_Sekcije_Sifarnici_Test -->
+      </class> <!-- com.platformX.tests.QA_059_Izmjena_Umanjenja_Cijene_Test -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
