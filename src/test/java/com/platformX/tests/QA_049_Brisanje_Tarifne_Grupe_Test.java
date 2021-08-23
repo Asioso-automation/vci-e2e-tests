@@ -5,7 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import com.platformX.base.BaseTest;
 import com.platformX.page.PocetnaStranica;
-import com.platformX.page.TarifneGrupePage;
+import com.platformX.page.TarifneGrupe;
 import com.platformX.page.LogInPage;
 
 public class QA_049_Brisanje_Tarifne_Grupe_Test extends BaseTest {
@@ -21,7 +21,7 @@ public class QA_049_Brisanje_Tarifne_Grupe_Test extends BaseTest {
 		logInPage.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
 		homePage.verifyHomePage();
-		TarifneGrupePage tarifneGrupe = homePage.navigateToTarifneGrupe();
+		TarifneGrupe tarifneGrupe = homePage.navigirajNaTarifneGrupe();
 		tarifneGrupe.verifikujTarifneGrupe();
 		String tarifnaGrupa = tarifneGrupe.dodajTarifnuGrupu();
 		tarifneGrupe.verifikujTarifnuGrupu(tarifnaGrupa);

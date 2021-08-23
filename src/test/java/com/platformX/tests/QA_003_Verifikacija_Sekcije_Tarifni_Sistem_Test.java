@@ -4,15 +4,15 @@ import org.testng.annotations.Test;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import com.platformX.base.BaseTest;
-import com.platformX.page.CjenovnikPage;
+import com.platformX.page.Cjenovnik;
 import com.platformX.page.PocetnaStranica;
-import com.platformX.page.KategorijeCijenaPage;
+import com.platformX.page.KategorijeCijena;
 import com.platformX.page.LogInPage;
-import com.platformX.page.ObracunskaSnagaPage;
-import com.platformX.page.SezonePage;
-import com.platformX.page.TarifneGrupePage;
-import com.platformX.page.KategorijePotrosnjePage;
-import com.platformX.page.TarifneNadgrupePage;
+import com.platformX.page.ObracunskaSnaga;
+import com.platformX.page.Sezone;
+import com.platformX.page.TarifneGrupe;
+import com.platformX.page.KategorijePotrosnje;
+import com.platformX.page.TarifneNadgrupe;
 
 public class QA_003_Verifikacija_Sekcije_Tarifni_Sistem_Test extends BaseTest {
 
@@ -29,19 +29,19 @@ public class QA_003_Verifikacija_Sekcije_Tarifni_Sistem_Test extends BaseTest {
 		logInPage.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
 		homePage.verifyHomePage();
-		KategorijePotrosnjePage kategorijePotrosnje = homePage.navigateToKategorijePotrosnje();
+		KategorijePotrosnje kategorijePotrosnje = homePage.navigirajNaKategorijePotrosnje();
 		kategorijePotrosnje.verifikujKategorijePotrosnje();
-		TarifneNadgrupePage tarifneNadgrupePage = homePage.navigateToTarifneNadgrupe();
-		tarifneNadgrupePage.verifikujTarifneNadgrupe();
-		TarifneGrupePage tarifneGrupePage = homePage.navigateToTarifneGrupe();
-		tarifneGrupePage.verifikujTarifneGrupe();
-		SezonePage sezonePage = homePage.navigateToSezone();
-		sezonePage.verifikujSezone();
-		ObracunskaSnagaPage obracunskaSnagaPage = homePage.navigateToObracunskaSnaga();
-		obracunskaSnagaPage.verifikujObracunskaSnaga();
-		KategorijeCijenaPage kategorijeCijenaPage = homePage.navigateToKategorijeCijena();
-		kategorijeCijenaPage.verifikujKategorijeCijena();
-		CjenovnikPage cjenovnikPage = homePage.navigateToCjenovnik();
-		cjenovnikPage.verifikujCjenovnik();
+		TarifneNadgrupe tarifneNadgrupe = homePage.navigirajNaTarifneNadgrupe();
+		tarifneNadgrupe.verifikujTarifneNadgrupe();
+		TarifneGrupe tarifneGrupe = homePage.navigirajNaTarifneGrupe();
+		tarifneGrupe.verifikujTarifneGrupe();
+		Sezone sezone = homePage.navigirajNaSezone();
+		sezone.verifikujSezone();
+		ObracunskaSnaga obracunskaSnaga = homePage.navigirajNaObracunskaSnaga();
+		obracunskaSnaga.verifikujObracunskaSnaga();
+		KategorijeCijena kategorijeCijena = homePage.navigirajNaKategorijeCijena();
+		kategorijeCijena.verifikujKategorijeCijena();
+		Cjenovnik cjenovnik = homePage.navigirajNaCjenovnik();
+		cjenovnik.verifikujCjenovnik();
 	}
 }

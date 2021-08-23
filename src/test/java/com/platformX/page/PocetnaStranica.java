@@ -401,67 +401,67 @@ public class PocetnaStranica extends PageBase {
 		return new Ulice(driver);
 	}
 
-	public KategorijePotrosnjePage navigateToKategorijePotrosnje() throws Exception {
+	public KategorijePotrosnje navigirajNaKategorijePotrosnje() throws Exception {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(tarifniSistemWE));
 		tarifniSistemWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(kategorijePotrosnjeWE));
 		kategorijePotrosnjeWE.click();
-		return new KategorijePotrosnjePage(driver);
+		return new KategorijePotrosnje(driver);
 	}
 
-	public TarifneNadgrupePage navigateToTarifneNadgrupe() throws Exception {
+	public TarifneNadgrupe navigirajNaTarifneNadgrupe() throws Exception {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(tarifniSistemWE));
 		tarifniSistemWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(tarifneNadgrupeWE));
 		tarifneNadgrupeWE.click();
-		return new TarifneNadgrupePage(driver);
+		return new TarifneNadgrupe(driver);
 	}
 
-	public TarifneGrupePage navigateToTarifneGrupe() throws Exception {
+	public TarifneGrupe navigirajNaTarifneGrupe() throws Exception {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(tarifniSistemWE));
 		tarifniSistemWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(tarifneGrupeWE));
 		tarifneGrupeWE.click();
-		return new TarifneGrupePage(driver);
+		return new TarifneGrupe(driver);
 	}
 
-	public SezonePage navigateToSezone() throws Exception {
+	public Sezone navigirajNaSezone() throws Exception {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(tarifniSistemWE));
 		tarifniSistemWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(sezoneWE));
 		sezoneWE.click();
-		return new SezonePage(driver);
+		return new Sezone(driver);
 	}
 
-	public ObracunskaSnagaPage navigateToObracunskaSnaga() throws Exception {
+	public ObracunskaSnaga navigirajNaObracunskaSnaga() throws Exception {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(tarifniSistemWE));
 		tarifniSistemWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(obracunskaSnagaWE));
 		obracunskaSnagaWE.click();
-		return new ObracunskaSnagaPage(driver);
+		return new ObracunskaSnaga(driver);
 	}
 
-	public KategorijeCijenaPage navigateToKategorijeCijena() throws Exception {
+	public KategorijeCijena navigirajNaKategorijeCijena() throws Exception {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(tarifniSistemWE));
 		tarifniSistemWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(kategorijeCijenaWE));
 		kategorijeCijenaWE.click();
-		return new KategorijeCijenaPage(driver);
+		return new KategorijeCijena(driver);
 	}
 
-	public CjenovnikPage navigateToCjenovnik() throws Exception {
+	public Cjenovnik navigirajNaCjenovnik() throws Exception {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(tarifniSistemWE));
 		tarifniSistemWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(cjenovnikWE));
 		cjenovnikWE.click();
-		return new CjenovnikPage(driver);
+		return new Cjenovnik(driver);
 	}
 
 	public PravnaLicaPage navigateToPravnaLica() throws Exception {

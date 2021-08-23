@@ -5,7 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import com.platformX.base.BaseTest;
 import com.platformX.page.PocetnaStranica;
-import com.platformX.page.KategorijeCijenaPage;
+import com.platformX.page.KategorijeCijena;
 import com.platformX.page.LogInPage;
 
 public class QA_051_Izmjena_Kategorije_Cijene_Test extends BaseTest {
@@ -21,7 +21,7 @@ public class QA_051_Izmjena_Kategorije_Cijene_Test extends BaseTest {
 		logInPage.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
 		homePage.verifyHomePage();
-		KategorijeCijenaPage kategorijeCijena = homePage.navigateToKategorijeCijena();
+		KategorijeCijena kategorijeCijena = homePage.navigirajNaKategorijeCijena();
 		kategorijeCijena.verifikujKategorijeCijena();
 		String kategorija = kategorijeCijena.dodajKategoriju();
 		kategorijeCijena.verifikujKategoriju(kategorija);

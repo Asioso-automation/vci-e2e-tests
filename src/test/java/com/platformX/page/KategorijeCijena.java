@@ -11,7 +11,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class KategorijeCijenaPage extends PocetnaStranica {
+import com.platformX.base.Kolone;
+
+public class KategorijeCijena extends PocetnaStranica {
 	
 	@FindBy(xpath = "//div[1]/div/div/div/div[1]/div/input")
 	private WebElement nazivKategorijeWE;
@@ -40,13 +42,19 @@ public class KategorijeCijenaPage extends PocetnaStranica {
 	@FindBy(xpath = "//tr[2]/td")
 	private WebElement praznaTabelaWE;
 
-	public KategorijeCijenaPage(WebDriver driver) throws FileNotFoundException, IOException {
+	public KategorijeCijena(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);
 	}
 
-	public void verifikujKategorijeCijena() throws InterruptedException {
+	public void verifikujKategorijeCijena() throws InterruptedException, FileNotFoundException, IOException {
+		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Kategorije cijena')]")));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNazivWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKategorijaMrezarineWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTenderskaCijenaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaVremenskiOgranicenaWE));
 		wait.until(ExpectedConditions.elementToBeClickable(sekcijaBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(stranicaBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(preuzmiExcelBtnWE));

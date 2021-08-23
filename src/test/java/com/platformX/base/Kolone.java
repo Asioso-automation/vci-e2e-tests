@@ -93,5 +93,77 @@ public class Kolone extends PageBase {
 	
 	@FindBy(xpath = "//*[contains(text(), 'Procenat')]")
 	public WebElement kolonaProcenatWE;
+	
+	@FindBy(xpath = "//*[contains(text(), 'Grupa obrasca broja ugovora')]")
+	public WebElement kolonaGrupaObrascaWE;
+	
+	@FindBy(xpath = "//*[contains(text(), 'Nadgrupa')]")
+	public WebElement kolonaNadgrupaWE;
+	
+	@FindBy(xpath = "//*[contains(text(), 'Kategorija')]")
+	public WebElement kolonaKategorijaWE;
+	
+	@FindBy(xpath = "//*[contains(text(), 'Vrsta brojila')]")
+	public WebElement kolonaVrstaBrojilaWE;
+	
+	@FindBy(xpath = "//*[contains(text(), 'Maxigraf')]") //typo x-ks
+	public WebElement kolonaMaxigrafWE;
+	
+	@FindBy(xpath = "//*[contains(text(), 'Reaktivna')]")
+	public WebElement kolonaReaktivnaWE;
+	
+	@FindBy(xpath = "//*[contains(text(), 'Od')]")
+	public WebElement kolonaOdWE;
+	
+	@FindBy(xpath = "//*[contains(text(), 'Do')]")
+	public WebElement kolonaDoWE;
+	
+	@FindBy(xpath = "//*[contains(text(), 'Tarifna grupa')]")
+	public WebElement kolonaTarifnaGrupaWE;
+	
+	@FindBy(xpath = "//*[contains(text(), 'Datum od')]")
+	public WebElement kolonaDatumOdWE;
+	
+	@FindBy(xpath = "//*[contains(text(), 'Datum do')]")
+	public WebElement kolonaDatumDoWE;
+	
+	@FindBy(xpath = "//*[contains(text(), 'kW')]")
+	public WebElement kolonakWWE;
+	
+	@FindBy(xpath = "//*[contains(text(), 'Mjerenje')]")
+	public WebElement kolonaMjerenjeWE;
+	
+	@FindBy(xpath = "//*[contains(text(), 'Validna')]")
+	public WebElement kolonaValidnaWE;
+	
+	@FindBy(xpath = "//*[contains(text(), 'Kategorija mrežarine')]")
+	public WebElement kolonaKategorijaMrezarineWE;
+	
+	@FindBy(xpath = "//*[contains(text(), 'Tenderska cijena')]")
+	public WebElement kolonaTenderskaCijenaWE;
+	
+	@FindBy(xpath = "//*[contains(text(), 'Vremenski ograničena')]")
+	public WebElement kolonaVremenskiOgranicenaWE;
+	
+	@FindBy(xpath = "//*[contains(text(), 'Kategorija cijene')]")
+	public WebElement kolonaKategorijaCijeneWE;
+	
+	@FindBy(xpath = "//*[contains(text(), 'Vrsta tarife')]")
+	public WebElement kolonaVrstaTarifeWE;
+	
+	@FindBy(xpath = "//*[contains(text(), 'Sezona')]")
+	public WebElement kolonaSezonaWE;
+	
+	@FindBy(xpath = "//*[contains(text(), 'Cijena')]")
+	public WebElement kolonaCijenaWE;
+	
+	@FindBy(xpath = "//*[contains(text(), 'PDV')]")
+	public WebElement kolonaPdvWE;
+	
+	@FindBy(xpath = "//*[contains(text(), 'Cijena mrežarine')]")
+	public WebElement kolonaCijenaMrezarineWE;
+	
+	@FindBy(xpath = "//*[contains(text(), 'Aktivan')]")
+	public WebElement kolonaAktivanWE;
 
 }

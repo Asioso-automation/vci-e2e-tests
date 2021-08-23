@@ -8,16 +8,29 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class CjenovnikPage extends PocetnaStranica {
+import com.platformX.base.Kolone;
 
-	public CjenovnikPage(WebDriver driver) throws FileNotFoundException, IOException {
+public class Cjenovnik extends PocetnaStranica {
+
+	public Cjenovnik(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);
 	}
 
-	public void verifikujCjenovnik() throws InterruptedException {
-		// wait.until(ExpectedConditions.visibilityOf(tableHeaderWE));
+	public void verifikujCjenovnik() throws InterruptedException, FileNotFoundException, IOException {
+		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Cjenovnik')]")));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTarifnaGrupaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKategorijaCijeneWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaVrstaTarifeWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaSezonaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumOdWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumDoWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaCijenaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPdvWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaCijenaMrezarineWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAktivanWE));
 		wait.until(ExpectedConditions.elementToBeClickable(sekcijaBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(stranicaBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(preuzmiExcelBtnWE));

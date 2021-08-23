@@ -10,9 +10,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class ObracunskaSnagaPage extends PocetnaStranica {
+import com.platformX.base.Kolone;
 
-	public ObracunskaSnagaPage(WebDriver driver) throws FileNotFoundException, IOException {
+public class ObracunskaSnaga extends PocetnaStranica {
+
+	public ObracunskaSnaga(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);
 	}
 	
@@ -25,10 +27,17 @@ public class ObracunskaSnagaPage extends PocetnaStranica {
 	@FindBy(xpath = "//header/div/a")
 	protected WebElement dodajBtnWE;
 
-	public void verifikujObracunskaSnaga() throws InterruptedException {
-		// wait.until(ExpectedConditions.visibilityOf(tableHeaderWE));
+	public void verifikujObracunskaSnaga() throws InterruptedException, FileNotFoundException, IOException {
+		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Obračunska snaga')]")));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTarifnaGrupaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumOdWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumDoWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonakWWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMjerenjeWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaValidnaWE));
 		wait.until(ExpectedConditions.elementToBeClickable(sekcijaBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(stranicaBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(ukloniFiltereBtnWE));

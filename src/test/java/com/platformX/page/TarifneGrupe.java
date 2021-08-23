@@ -11,7 +11,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class TarifneGrupePage extends PocetnaStranica {
+import com.platformX.base.Kolone;
+
+public class TarifneGrupe extends PocetnaStranica {
 	
 	@FindBy(xpath = "//td[2]/div/div/div/div[1]/input")
 	private WebElement nazivFilterWE;
@@ -69,14 +71,22 @@ public class TarifneGrupePage extends PocetnaStranica {
 	@FindBy(xpath = "//div[2]/button[1]")
 	private WebElement dodajTarifnuGrupuWE;
 
-	public TarifneGrupePage(WebDriver driver) throws FileNotFoundException, IOException {
+	public TarifneGrupe(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);
 	}
 
-	public void verifikujTarifneGrupe() throws InterruptedException {
-		// wait.until(ExpectedConditions.visibilityOf(tableHeaderWE));
+	public void verifikujTarifneGrupe() throws InterruptedException, FileNotFoundException, IOException {
+		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Tarifne grupe')]")));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNazivWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaGrupaObrascaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNadgrupaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaVrstaBrojilaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKategorijaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMaxigrafWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaReaktivnaWE));
 		wait.until(ExpectedConditions.elementToBeClickable(sekcijaBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(stranicaBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(preuzmiExcelBtnWE));
