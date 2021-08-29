@@ -14,6 +14,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import com.platformX.base.Kolone;
+
 public class UgovoriPage extends PocetnaStranica {
 
 	@FindBy(xpath = "//main/div/div/div[1]/div[3]/div/div/div") 
@@ -438,9 +440,25 @@ public class UgovoriPage extends PocetnaStranica {
 		super(driver);
 	}
 
-	public void verifikujUgovori() throws InterruptedException {
+	public void verifikujUgovori() throws InterruptedException, FileNotFoundException, IOException {
+		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Ugovori')]")));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKupacIdWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNazivKupcaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNazivMjmWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTGWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKategorijaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTipWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPocinjeWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaZavrsavaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaVaziOdWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaVaziDoWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPripremaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPotpisanWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAktivanWE));
 		wait.until(ExpectedConditions.elementToBeClickable(sekcijaBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(stranicaBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(preuzmiExcelBtnWE));

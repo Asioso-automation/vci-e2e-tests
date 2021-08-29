@@ -55,6 +55,9 @@ public class Kolone extends PageBase {
 	@FindBy(xpath = "//*[contains(text(), 'Eic')]")
 	public WebElement kolonaEicWE;
 	
+	@FindBy(xpath = "//*[contains(text(), 'EIC')]")
+	public WebElement kolonaEic2WE;
+	
 	@FindBy(xpath = "//*[contains(text(), 'E-mail')]")
 	public WebElement kolonaEmail2WE;
 	
@@ -165,5 +168,85 @@ public class Kolone extends PageBase {
 	
 	@FindBy(xpath = "//*[contains(text(), 'Aktivan')]")
 	public WebElement kolonaAktivanWE;
+	
+	@FindBy(xpath = "//*[contains(text(), 'Odgovorni ODS')]")
+	public WebElement kolonaOdgovorniODSWE;
+	
+	@FindBy(xpath = "//*[contains(text(), 'Odgovorno lice')]")
+	public WebElement kolonaOdgovornoLiceWE;
 
+	@FindBy(xpath = "//*[contains(text(), 'JIB')]")
+	public WebElement kolonaJIBWE;
+	
+	@FindBy(xpath = "//*[contains(text(), 'IB')]")
+	public WebElement kolonaIBWE;
+	
+	@FindBy(xpath = "//*[contains(text(), 'PDV obveznik')]")
+	public WebElement kolonaPdvObveznikWE;
+	
+	@FindBy(xpath = "//*[contains(text(), 'Ime i Prezime')]") // P-p
+	public WebElement kolonaImeIPrezimeWE;
+	
+	@FindBy(xpath = "//*[contains(text(), 'Broj lične karte')]")
+	public WebElement kolonaBrojLicneKarteWE;
+	
+	@FindBy(xpath = "//*[contains(text(), 'PIB')]")
+	public WebElement kolonaPIBWE;
+	
+	@FindBy(xpath = "//*[contains(text(), 'Ulica')]")
+	public WebElement kolonaUlicaWE;
+	
+	@FindBy(xpath = "//*[contains(text(), 'SAP šifra')]")
+	public WebElement kolonaSAPSifraWE;
+	
+	@FindBy(xpath = "//*[contains(text(), 'Datum slanja')]")
+	public WebElement kolonaDatumSlanjaWE;
+	
+	@FindBy(xpath = "//*[contains(text(), 'Razlog odbijanja')]")
+	public WebElement kolonaRazlogOdbijanjaWE;
+	
+	@FindBy(xpath = "//*[contains(text(), 'Inicirao snabdjevač')]")
+	public WebElement kolonaIniciraoSnabdjevacWE;
+	
+	@FindBy(xpath = "//*[contains(text(), 'Odbijeno')]")
+	public WebElement kolonaOdbijenoWE;
+	
+	@FindBy(xpath = "//*[contains(text(), 'Realizovano')]")
+	public WebElement kolonaRealizovanoWE;
+	
+	@FindBy(xpath = "//*[contains(text(), 'Broj')]")
+	public WebElement kolonaBrojWE;
+	
+	@FindBy(xpath = "//*[contains(text(), 'Kupac ID')]")
+	public WebElement kolonaKupacIdWE;
+	
+	@FindBy(xpath = "//*[contains(text(), 'Naziv kupca')]")
+	public WebElement kolonaNazivKupcaWE;
+	
+	@FindBy(xpath = "//*[contains(text(), 'Naziv mjm.')]")
+	public WebElement kolonaNazivMjmWE;
+	
+	@FindBy(xpath = "//*[contains(text(), 'T.G.')]")
+	public WebElement kolonaTGWE;
+	
+	@FindBy(xpath = "//*[contains(text(), 'Tip')]")
+	public WebElement kolonaTipWE;
+	
+	@FindBy(xpath = "//*[contains(text(), 'Počinje')]")
+	public WebElement kolonaPocinjeWE;
+	
+	@FindBy(xpath = "//*[contains(text(), 'Završava')]")
+	public WebElement kolonaZavrsavaWE;
+	
+	@FindBy(xpath = "//*[contains(text(), 'Važi od')]")
+	public WebElement kolonaVaziOdWE;
+	
+	@FindBy(xpath = "//*[contains(text(), 'Važi do')]")
+	public WebElement kolonaVaziDoWE;
+	
+	@FindBy(xpath = "//*[contains(text(), 'Priprema')]")
+	public WebElement kolonaPripremaWE;
+	
+	@FindBy(xpath = "//*[contains(text(), 'Potpisan')]")
+	public WebElement kolonaPotpisanWE;
 }

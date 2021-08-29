@@ -71,7 +71,17 @@ public class PravnaLicaPage extends PocetnaStranica {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Pravna lica')]")));
-	//	wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
+	    wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
+	    wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNazivWE));
+	    wait.until(ExpectedConditions.visibilityOf(kolone.kolonaOdgovorniODSWE));
+	    wait.until(ExpectedConditions.visibilityOf(kolone.kolonaOdgovornoLiceWE));
+	    wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAdresaWE));
+	    wait.until(ExpectedConditions.visibilityOf(kolone.kolonaJIBWE));
+	    wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIBWE));
+	    wait.until(ExpectedConditions.visibilityOf(kolone.kolonaEmail2WE));
+	    wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTelefonWE));
+	    wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPdvObveznikWE));
+	    wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAktivanWE));
 		wait.until(ExpectedConditions.elementToBeClickable(sekcijaBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(stranicaBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(preuzmiExcelBtnWE));
