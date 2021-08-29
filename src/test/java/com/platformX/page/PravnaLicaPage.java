@@ -12,6 +12,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
+import com.platformX.base.Kolone;
+
 public class PravnaLicaPage extends PocetnaStranica {
 
 	public PravnaLicaPage(WebDriver driver) throws FileNotFoundException, IOException {
@@ -65,9 +67,11 @@ public class PravnaLicaPage extends PocetnaStranica {
 	@FindBy(xpath = "//main/div/div/div/div[1]/header/div/button[1]")
 	private WebElement urediPravnoLiceBtnWE;
 
-	public void verifikujPravnaLica() throws InterruptedException {
+	public void verifikujPravnaLica() throws InterruptedException, FileNotFoundException, IOException {
+		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Pravna lica')]")));
+	//	wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.elementToBeClickable(sekcijaBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(stranicaBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(preuzmiExcelBtnWE));

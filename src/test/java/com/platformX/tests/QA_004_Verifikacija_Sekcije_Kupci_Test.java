@@ -18,7 +18,6 @@ import com.platformX.page.UgovoreniPopustiPage;
 import com.platformX.page.UgovoriPage;
 import com.platformX.page.VrsteZahtjevaPage;
 import com.platformX.page.ZahtjeviZaDostavuPodatakaPage;
-import com.platformX.page.ZahtjeviZaUgovorePage;
 
 public class QA_004_Verifikacija_Sekcije_Kupci_Test extends BaseTest {
 
