@@ -6,7 +6,7 @@ import java.io.IOException;
 import com.platformX.base.BaseTest;
 import com.platformX.page.PocetnaStranica;
 import com.platformX.page.LogInPage;
-import com.platformX.page.PravnaLicaPage;
+import com.platformX.page.PravnaLica;
 
 public class QA_017_Dodavanje_Pravnog_Lica_Test extends BaseTest {
 
@@ -21,7 +21,7 @@ public class QA_017_Dodavanje_Pravnog_Lica_Test extends BaseTest {
 		logInPage.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
 		homePage.verifyHomePage();
-		PravnaLicaPage pravnaLicaPage = homePage.navigateToPravnaLica();
+		PravnaLica pravnaLicaPage = homePage.navigirajNaPravnaLica();
 		pravnaLicaPage.verifikujPravnaLica();
 		String pravnoLice = pravnaLicaPage.dodajPravnoLice();
 		pravnaLicaPage.verifikujPravnaLica();

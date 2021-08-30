@@ -6,7 +6,7 @@ import java.io.IOException;
 import com.platformX.base.BaseTest;
 import com.platformX.page.PocetnaStranica;
 import com.platformX.page.LogInPage;
-import com.platformX.page.UgovoriPage;
+import com.platformX.page.Ugovori;
 
 public class QA_029_Provjera_Validacija_Na_Izmjeni_Ugovora_Test extends BaseTest {
 
@@ -21,7 +21,7 @@ public class QA_029_Provjera_Validacija_Na_Izmjeni_Ugovora_Test extends BaseTest
 		logInPage.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
 		homePage.verifyHomePage();
-		UgovoriPage ugovoriPage = homePage.navigateToUgovori();
+		Ugovori ugovoriPage = homePage.navigirajNaUgovori();
 		ugovoriPage.verifikujUgovori();
 		ugovoriPage.pronadjiUgovorPoEic("36ZBLNG");
 		ugovoriPage.verifikujObaveznaPoljaIzmjenaUgovora();

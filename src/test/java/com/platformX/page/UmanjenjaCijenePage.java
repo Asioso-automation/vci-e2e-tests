@@ -85,6 +85,7 @@ public class UmanjenjaCijenePage extends PocetnaStranica {
 	}
 	
 	public void verifikujUmanjenjeCijene(String brojMjeseci) throws InterruptedException {
+		Thread.sleep(1000);
 		wait.until(ExpectedConditions.elementToBeClickable(filterBrojMjeseciWE));
 		Thread.sleep(500);
 		filterBrojMjeseciWE.click();

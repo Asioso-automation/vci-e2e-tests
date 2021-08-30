@@ -6,8 +6,8 @@ import java.io.IOException;
 import com.platformX.base.BaseTest;
 import com.platformX.page.PocetnaStranica;
 import com.platformX.page.LogInPage;
-import com.platformX.page.PravnaLicaPage;
-import com.platformX.page.UgovoriPage;
+import com.platformX.page.PravnaLica;
+import com.platformX.page.Ugovori;
 
 public class QA_024_Neuspjesno_Dodavanje_Ugovora_Test6 extends BaseTest {
 
@@ -24,13 +24,13 @@ public class QA_024_Neuspjesno_Dodavanje_Ugovora_Test6 extends BaseTest {
 		logInPage.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
 		homePage.verifyHomePage();
-		PravnaLicaPage pravnaLicaPage = homePage.navigateToPravnaLica();
+		PravnaLica pravnaLicaPage = homePage.navigirajNaPravnaLica();
 		pravnaLicaPage.verifikujPravnaLica();
 		String pravnoLice = pravnaLicaPage.dodajPravnoLice();
 		pravnaLicaPage.verifikujPravnaLica();
 		pravnaLicaPage.verifikujPravnoLice(pravnoLice);
 		String kupac = pravnaLicaPage.kreirajKupca();
-		UgovoriPage ugovoriPage = homePage.navigateToUgovori();
+		Ugovori ugovoriPage = homePage.navigirajNaUgovori();
 		ugovoriPage.verifikujUgovori();
 		ugovoriPage.dodajUgovor(kupac, "7 - Kategorija cijene 2", "15.07.2020.", "15.07.2020.", "36066699C", false);
 		ugovoriPage.verifikujPorukuForme("Reaktivno brojilo ne smije biti prazno za odabranu tarifnu grupu.");

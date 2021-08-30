@@ -464,40 +464,40 @@ public class PocetnaStranica extends PageBase {
 		return new Cjenovnik(driver);
 	}
 
-	public PravnaLicaPage navigateToPravnaLica() throws Exception {
+	public PravnaLica navigirajNaPravnaLica() throws Exception {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(kupciWE));
 		kupciWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(pravnaLicaWE));
 		pravnaLicaWE.click();
-		return new PravnaLicaPage(driver);
+		return new PravnaLica(driver);
 	}
 
-	public FizickaLicaPage navigateToFizickaLica() throws Exception {
+	public FizickaLica navigirajNaFizickaLica() throws Exception {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(kupciWE));
 		kupciWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(fizikaLicaWE));
 		fizikaLicaWE.click();
-		return new FizickaLicaPage(driver);
+		return new FizickaLica(driver);
 	}
 
-	public PovezanaPravnaLicaPage navigateToPovezanaPravnaLica() throws Exception {
+	public PovezanaPravnaLica navigirajNaPovezanaPravnaLica() throws Exception {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(kupciWE));
 		kupciWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(povezanaPravnaLicaWE));
 		povezanaPravnaLicaWE.click();
-		return new PovezanaPravnaLicaPage(driver);
+		return new PovezanaPravnaLica(driver);
 	}
 	
-	public ZahtjeviZaDostavuPodatakaPage navigateToZahtjeviZaDostavuPodataka() throws Exception {
+	public ZahtjeviZaDostavuPodataka navigirajNaZahtjeviZaDostavuPodataka() throws Exception {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(kupciWE));
 		kupciWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(zahtjeviZaDostavuPodatakaWE));
 		zahtjeviZaDostavuPodatakaWE.click();
-		return new ZahtjeviZaDostavuPodatakaPage(driver);
+		return new ZahtjeviZaDostavuPodataka(driver);
 	}
 	
 	public ZahtjeviZaUgovorePage navigateToZahtjeviZaUgovore() throws Exception {
@@ -509,76 +509,76 @@ public class PocetnaStranica extends PageBase {
 		return new ZahtjeviZaUgovorePage(driver);
 	}
 
-	public UgovoriPage navigateToUgovori() throws Exception {
+	public Ugovori navigirajNaUgovori() throws Exception {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(kupciWE));
 		kupciWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(ugovoriWE));
 		ugovoriWE.click();
-		return new UgovoriPage(driver);
+		return new Ugovori(driver);
 	}
 	
-	public ObavjestenjaOPromjeniSnabdjevacaPage navigateToObavjestenjaOPromjeniSnabdjevaca() throws Exception {
+	public ObavjestenjaOPromjeniSnabdjevaca navigirajNaObavjestenjaOPromjeniSnabdjevaca() throws Exception {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(kupciWE));
 		kupciWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(obavjestenjaOPromjeniSnabdjevacaWE));
 		obavjestenjaOPromjeniSnabdjevacaWE.click();
-		return new ObavjestenjaOPromjeniSnabdjevacaPage(driver);
+		return new ObavjestenjaOPromjeniSnabdjevaca(driver);
 	}
 	
-	public UgovoreniPopustiPage navigateToUgovoreniPopusti() throws Exception {
+	public UgovoreniPopusti navigirajNaUgovoreniPopusti() throws Exception {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(kupciWE));
 		kupciWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(ugovoreniPopustiWE));
 		ugovoreniPopustiWE.click();
-		return new UgovoreniPopustiPage(driver);
+		return new UgovoreniPopusti(driver);
 	}
 
-	public OdbaceniUgovoriPage navigateToOdbaceniUgovori() throws Exception {
+	public OdbaceniUgovori navigirajNaOdbaceniUgovori() throws Exception {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(kupciWE));
 		kupciWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(odbaceniUgovoriWE));
 		odbaceniUgovoriWE.click();
-		return new OdbaceniUgovoriPage(driver);
+		return new OdbaceniUgovori(driver);
 	}
 
-	public ReklamacijePage navigateToReklamacije() throws Exception {
+	public Reklamacije navigirajNaReklamacije() throws Exception {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(kupciWE));
 		kupciWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(reklamacijeWE));
 		reklamacijeWE.click();
-		return new ReklamacijePage(driver);
+		return new Reklamacije(driver);
 	}
 
-	public VrsteZahtjevaPage navigateToVrsteZahtjeva() throws Exception {
+	public VrsteZahtjeva navigirajNaVrsteZahtjeva() throws Exception {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(kupciWE));
 		kupciWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(vrsteZahtjevaWE));
 		vrsteZahtjevaWE.click();
-		return new VrsteZahtjevaPage(driver);
+		return new VrsteZahtjeva(driver);
 	}
 
-	public GrupeObrazacaBrojaUgovoraPage navigateToGrupeObrazacaBrojaUgovora() throws Exception {
+	public GrupeObrazacaBrojaUgovora navigirajNaGrupeObrazacaBrojaUgovora() throws Exception {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(kupciWE));
 		kupciWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(grupeObrazacaBrojaUgovoraWE));
 		grupeObrazacaBrojaUgovoraWE.click();
-		return new GrupeObrazacaBrojaUgovoraPage(driver);
+		return new GrupeObrazacaBrojaUgovora(driver);
 	}
 	
-	public MjenicePage navigateToMjenice() throws Exception {
+	public Mjenice navigirajNaMjenice() throws Exception {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(kupciWE));
 		kupciWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(mjeniceWE));
 		mjeniceWE.click();
-		return new MjenicePage(driver);
+		return new Mjenice(driver);
 	}
 	
 	public MjernaMjestaPage navigateToMjernaMjesta() throws Exception {

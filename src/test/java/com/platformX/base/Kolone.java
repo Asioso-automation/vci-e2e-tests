@@ -249,4 +249,83 @@ public class Kolone extends PageBase {
 	
 	@FindBy(xpath = "//*[contains(text(), 'Potpisan')]")
 	public WebElement kolonaPotpisanWE;
+	
+	@FindBy(xpath = "//*[contains(text(), 'Serijski broj')]")
+	public WebElement kolonaSerijskiBrojWE;
+	
+	@FindBy(xpath = "//*[contains(text(), 'Ugovor')]")
+	public WebElement kolonaUgovorWE;
+	
+	@FindBy(xpath = "//*[contains(text(), 'Kupac')]")
+	public WebElement kolonaKupacWE;
+	
+	@FindBy(xpath = "//*[contains(text(), 'Mjerno mjesto (EIC)')]")
+	public WebElement kolonaMjernoMjestoEicWE;
+	
+	@FindBy(xpath = "//*[contains(text(), 'Datum kreiranja')]")
+	public WebElement kolonaDatumKreiranjaWE;
+	
+	@FindBy(xpath = "//*[contains(text(), 'Očekivani datum završetka')]")
+	public WebElement kolonaOcekivaniDatumZavrsetkaWE;
+	
+	@FindBy(xpath = "//*[contains(text(), 'Datum završetka')]")
+	public WebElement kolonaDatumZavrsetkaWE;
+	
+	@FindBy(xpath = "//*[contains(text(), 'Realizovan')]")
+	public WebElement kolonaRealizovanWE;
+	
+	@FindBy(xpath = "//*[contains(text(), 'Period od')]")
+	public WebElement kolonaPeriodOdWE;
+	
+	@FindBy(xpath = "//*[contains(text(), 'Period do')]")
+	public WebElement kolonaPeriodDoWE;
+	
+	@FindBy(xpath = "//*[contains(text(), 'Procenat (%)')]")
+	public WebElement kolonaProcenat2WE;
+	
+	@FindBy(xpath = "//*[contains(text(), 'Napomena')]")
+	public WebElement kolonaNapomenaWE;
+	
+	@FindBy(xpath = "//*[contains(text(), 'Adresa dostave')]")
+	public WebElement kolonaAdresaDostaveWE;
+	
+	@FindBy(xpath = "//*[contains(text(), 'Odbačen')]")
+	public WebElement kolonaOdbacenWE;
+	
+	@FindBy(xpath = "//*[contains(text(), 'Vrsta zahtjeva')]")
+	public WebElement kolonaVrstaZahtjevaWE;
+	
+	@FindBy(xpath = "//*[contains(text(), 'Br. protokola')]")
+	public WebElement kolonaBrProtokolaWE;
+	
+	@FindBy(xpath = "//*[contains(text(), 'Datum prijave')]")
+	public WebElement kolonaDatumPrijaveWE;
+	
+	@FindBy(xpath = "//*[contains(text(), 'Datum rješenja')]")
+	public WebElement kolonaDatumRjesenjaWE;
+	
+	@FindBy(xpath = "//*[contains(text(), 'Opis zahtjeva')]")
+	public WebElement kolonaOpisZahtjevaWE;
+	
+	@FindBy(xpath = "//*[contains(text(), 'Zaključeno')]")
+	public WebElement kolonaZakljucenoWE;
+	
+	@FindBy(xpath = "//*[contains(text(), 'Opis')]")
+	public WebElement kolonaOpisWE;
+	
+	@FindBy(xpath = "//*[contains(text(), 'Tip mjenice')]")
+	public WebElement kolonaTipMjeniceWE;
+	
+	@FindBy(xpath = "//*[contains(text(), 'Datum aktiviranja')]")
+	public WebElement kolonaDatumAktiviranjaWE;
+	
+	@FindBy(xpath = "//*[contains(text(), 'U centrali')]")
+	public WebElement kolonaUCentraliWE;
+	
+	@FindBy(xpath = "//*[contains(text(), 'Vraćena kupcu')]")
+	public WebElement kolonaVracenaKupcuWE;
+	
+	@FindBy(xpath = "//*[contains(text(), 'Važeća')]")
+	public WebElement kolonaVazecaWE;
+	
 }

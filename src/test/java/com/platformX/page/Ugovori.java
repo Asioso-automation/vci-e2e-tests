@@ -16,7 +16,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.platformX.base.Kolone;
 
-public class UgovoriPage extends PocetnaStranica {
+public class Ugovori extends PocetnaStranica {
 
 	@FindBy(xpath = "//main/div/div/div[1]/div[3]/div/div/div") 
 	protected WebElement porukaUgovorWE;
@@ -436,7 +436,7 @@ public class UgovoriPage extends PocetnaStranica {
 	@FindBy(xpath = "//div[2]/div[1]/div/div/div[2]/div/div")
 	private WebElement kupacValidacijaWE;
 
-	public UgovoriPage(WebDriver driver) throws FileNotFoundException, IOException {
+	public Ugovori(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);
 	}
 

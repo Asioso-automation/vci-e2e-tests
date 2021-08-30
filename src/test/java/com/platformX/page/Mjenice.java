@@ -8,16 +8,27 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class MjenicePage extends PocetnaStranica {
+import com.platformX.base.Kolone;
 
-	public MjenicePage(WebDriver driver) throws FileNotFoundException, IOException {
+public class Mjenice extends PocetnaStranica {
+
+	public Mjenice(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);
 	}
 
-	public void verifikujMjenice() throws InterruptedException {
-		// wait.until(ExpectedConditions.visibilityOf(tableHeaderWE));
+	public void verifikujMjenice() throws InterruptedException, FileNotFoundException, IOException {
+		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Mjenice')]")));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaSerijskiBrojWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTipMjeniceWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKupacWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumKreiranjaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumAktiviranjaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaUCentraliWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaVracenaKupcuWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaVazecaWE));
 		wait.until(ExpectedConditions.elementToBeClickable(sekcijaBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(stranicaBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(preuzmiExcelBtnWE));

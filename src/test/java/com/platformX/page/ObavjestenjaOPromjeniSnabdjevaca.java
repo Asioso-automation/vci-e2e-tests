@@ -8,16 +8,28 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class ObavjestenjaOPromjeniSnabdjevacaPage extends PocetnaStranica {
+import com.platformX.base.Kolone;
 
-	public ObavjestenjaOPromjeniSnabdjevacaPage(WebDriver driver) throws FileNotFoundException, IOException {
+public class ObavjestenjaOPromjeniSnabdjevaca extends PocetnaStranica {
+
+	public ObavjestenjaOPromjeniSnabdjevaca(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);
 	}
 
-	public void verifikujObavjestenjaOPromjeniSnabdjevaca() throws InterruptedException {
-		// wait.until(ExpectedConditions.visibilityOf(tableHeaderWE));
+	public void verifikujObavjestenjaOPromjeniSnabdjevaca() throws InterruptedException, FileNotFoundException, IOException {
+		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Obavještenja')]")));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaSerijskiBrojWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaUgovorWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKupacWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMjernoMjestoEicWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumKreiranjaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaOcekivaniDatumZavrsetkaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumZavrsetkaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaRazlogOdbijanjaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaRealizovanWE));
 		wait.until(ExpectedConditions.elementToBeClickable(sekcijaBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(stranicaBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(preuzmiExcelBtnWE));

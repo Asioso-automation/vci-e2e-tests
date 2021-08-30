@@ -10,9 +10,9 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import com.platformX.base.Kolone;
 
-public class ZahtjeviZaDostavuPodatakaPage extends PocetnaStranica {
+public class ZahtjeviZaDostavuPodataka extends PocetnaStranica {
 
-	public ZahtjeviZaDostavuPodatakaPage(WebDriver driver) throws FileNotFoundException, IOException {
+	public ZahtjeviZaDostavuPodataka(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);
 	}
 

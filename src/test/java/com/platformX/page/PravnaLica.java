@@ -14,9 +14,9 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import com.platformX.base.Kolone;
 
-public class PravnaLicaPage extends PocetnaStranica {
+public class PravnaLica extends PocetnaStranica {
 
-	public PravnaLicaPage(WebDriver driver) throws FileNotFoundException, IOException {
+	public PravnaLica(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);
 	}
 

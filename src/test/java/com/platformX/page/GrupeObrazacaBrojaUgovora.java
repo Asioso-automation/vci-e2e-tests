@@ -8,16 +8,20 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class GrupeObrazacaBrojaUgovoraPage extends PocetnaStranica {
+import com.platformX.base.Kolone;
 
-	public GrupeObrazacaBrojaUgovoraPage(WebDriver driver) throws FileNotFoundException, IOException {
+public class GrupeObrazacaBrojaUgovora extends PocetnaStranica {
+
+	public GrupeObrazacaBrojaUgovora(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);
 	}
 
-	public void verifikujGrupeObrazaca() throws InterruptedException {
-		// wait.until(ExpectedConditions.visibilityOf(tableHeaderWE));
+	public void verifikujGrupeObrazaca() throws InterruptedException, FileNotFoundException, IOException {
+		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Grupe obrazaca')]")));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNazivWE));
 		wait.until(ExpectedConditions.elementToBeClickable(sekcijaBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(stranicaBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(preuzmiExcelBtnWE));

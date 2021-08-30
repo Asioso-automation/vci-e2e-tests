@@ -12,7 +12,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import com.platformX.base.Kolone;
 
-public class PovezanaPravnaLicaPage extends PocetnaStranica {
+public class PovezanaPravnaLica extends PocetnaStranica {
 	
 	@FindBy(xpath = "//header/div/button[1]")
 	protected WebElement dodajBtnWE;
@@ -26,7 +26,7 @@ public class PovezanaPravnaLicaPage extends PocetnaStranica {
 	@FindBy(xpath = "//header/div/button[4]")
 	protected WebElement osvjeziBtnWE;
 
-	public PovezanaPravnaLicaPage(WebDriver driver) throws FileNotFoundException, IOException {
+	public PovezanaPravnaLica(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);
 	}
 

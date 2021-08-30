@@ -10,9 +10,9 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import com.platformX.base.Kolone;
 
-public class FizickaLicaPage extends PocetnaStranica {
+public class FizickaLica extends PocetnaStranica {
 
-	public FizickaLicaPage(WebDriver driver) throws FileNotFoundException, IOException {
+	public FizickaLica(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);
 	}
 
