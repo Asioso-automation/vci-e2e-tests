@@ -328,4 +328,55 @@ public class Kolone extends PageBase {
 	@FindBy(xpath = "//*[contains(text(), 'Važeća')]")
 	public WebElement kolonaVazecaWE;
 	
+	@FindBy(xpath = "//*[contains(text(), 'Inicirao ODS')]")
+	public WebElement kolonaIniciraoOdsWE;
+	
+	@FindBy(xpath = "//*[contains(text(), 'Brojilo')]")
+	public WebElement kolonaBrojiloWE;
+	
+	@FindBy(xpath = "//*[contains(text(), 'Datum')]")
+	public WebElement kolonaDatumWE;
+	
+	@FindBy(xpath = "//*[contains(text(), 'AVT')]")
+	public WebElement kolonaAvtWE;
+	
+	@FindBy(xpath = "//*[contains(text(), 'AMT')]")
+	public WebElement kolonaAmtWE;
+	
+	@FindBy(xpath = "//*[contains(text(), 'RVT')]")
+	public WebElement kolonaRvtWE;
+	
+	@FindBy(xpath = "//*[contains(text(), 'RMT')]")
+	public WebElement kolonaRmtWE;
+	
+	@FindBy(xpath = "//*[contains(text(), 'Obrač. snaga')]")
+	public WebElement kolonaObracSnagaWE;
+	
+	@FindBy(xpath = "//*[contains(text(), 'A. konstanta')]")
+	public WebElement kolonaAKonstantaWE;
+	
+	@FindBy(xpath = "//*[contains(text(), 'R. konstanta')]")
+	public WebElement kolonaRKonstantaWE;
+	
+	@FindBy(xpath = "//*[contains(text(), 'Konst. snage')]")
+	public WebElement kolonaKonstSnageWE;
+	
+	@FindBy(xpath = "//*[contains(text(), 'Period')]")
+	public WebElement kolonaPeriodWE;
+	
+	@FindBy(xpath = "//*[contains(text(), 'Tip ugovora')]")
+	public WebElement kolonaTipUgovoraWE;
+	
+	@FindBy(xpath = "//*[contains(text(), 'Aktivna energija(kWh)')]")
+	public WebElement kolonaAktivnaEnergijaWE;
+	
+	@FindBy(xpath = "//*[contains(text(), 'Reaktvina energija(kWh)')]") // typo: reaktvina
+	public WebElement kolonaReaktivnaEnergijaWE;
+	
+	@FindBy(xpath = "//*[contains(text(), 'Snaga(kW)')]")
+	public WebElement kolonaSnagaWE;
+	
+	@FindBy(xpath = "//*[contains(text(), 'Mrežarina(KM)')]")
+	public WebElement kolonaMrezarinaWE;
+	
 }

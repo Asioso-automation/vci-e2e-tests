@@ -581,16 +581,16 @@ public class PocetnaStranica extends PageBase {
 		return new Mjenice(driver);
 	}
 	
-	public MjernaMjestaPage navigateToMjernaMjesta() throws Exception {
+	public MjernaMjesta navigirajNaMjernaMjesta() throws Exception {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(mjernaMjestaWE));
 		mjernaMjestaWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(mjernaMjestaStrWE));
 		mjernaMjestaStrWE.click();
-		return new MjernaMjestaPage(driver);
+		return new MjernaMjesta(driver);
 	}
 	
-	public ZahtjeviZaDostavuPodatakaOMjernimMjestima navigateToZahtjeviZaDostavuPodataka1() throws Exception {
+	public ZahtjeviZaDostavuPodatakaOMjernimMjestima navigirajNaZahtjeviZaDostavuPodataka1() throws Exception {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(mjernaMjestaWE));
 		mjernaMjestaWE.click();
@@ -599,22 +599,22 @@ public class PocetnaStranica extends PageBase {
 		return new ZahtjeviZaDostavuPodatakaOMjernimMjestima(driver);
 	}
 	
-	public OcitanjaBrojilaPage navigateToOcitanjaBrojila() throws Exception {
+	public OcitanjaBrojila navigirajNaOcitanjaBrojila() throws Exception {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(mjernaMjestaWE));
 		mjernaMjestaWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(ocitanjaBrojilaWE));
 		ocitanjaBrojilaWE.click();
-		return new OcitanjaBrojilaPage(driver);
+		return new OcitanjaBrojila(driver);
 	}
 	
-	public EnergetskiObracunPage navigateToEnergetskiObracun() throws Exception {
+	public EnergetskiObracun navigirajNaEnergetskiObracun() throws Exception {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(mjernaMjestaWE));
 		mjernaMjestaWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(energetskiObracunWE));
 		energetskiObracunWE.click();
-		return new EnergetskiObracunPage(driver);
+		return new EnergetskiObracun(driver);
 	}
 	
 	public MonitoringEnergetskogObracunaPage navigateToMonitoringEnergetskogObracuna() throws Exception {

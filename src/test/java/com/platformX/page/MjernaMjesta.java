@@ -10,18 +10,26 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class MjernaMjestaPage extends PocetnaStranica {
+import com.platformX.base.Kolone;
+
+public class MjernaMjesta extends PocetnaStranica {
 	
 	@FindBy(xpath = "//header/div/button[3]")
 	protected WebElement osvjeziDetaljeBtnWE;
 
-	public MjernaMjestaPage(WebDriver driver) throws FileNotFoundException, IOException {
+	public MjernaMjesta(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);
 	}
 
-	public void verifikujMjernaMjesta() throws InterruptedException {
+	public void verifikujMjernaMjesta() throws InterruptedException, FileNotFoundException, IOException {
+		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Mjerna mjesta')]")));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaOdsWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaEic2WE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAdresaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAktivanWE));
 		wait.until(ExpectedConditions.elementToBeClickable(sekcijaBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(stranicaBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(preuzmiExcelBtnWE));

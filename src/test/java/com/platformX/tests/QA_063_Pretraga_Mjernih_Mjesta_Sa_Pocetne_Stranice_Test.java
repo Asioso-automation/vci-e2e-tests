@@ -6,7 +6,7 @@ import java.io.IOException;
 import com.platformX.base.BaseTest;
 import com.platformX.page.PocetnaStranica;
 import com.platformX.page.LogInPage;
-import com.platformX.page.MjernaMjestaPage;
+import com.platformX.page.MjernaMjesta;
 
 public class QA_063_Pretraga_Mjernih_Mjesta_Sa_Pocetne_Stranice_Test extends BaseTest {
 
@@ -22,7 +22,7 @@ public class QA_063_Pretraga_Mjernih_Mjesta_Sa_Pocetne_Stranice_Test extends Bas
 		PocetnaStranica homePage = new PocetnaStranica(driver);
 		homePage.verifyHomePage();
 		homePage.pretraziMjernaMjesta("36Z03800001H");
-		MjernaMjestaPage mjernaMjesta = new MjernaMjestaPage(driver);
+		MjernaMjesta mjernaMjesta = new MjernaMjesta(driver);
 		mjernaMjesta.verifikujDetaljeMjernogMjesta();
 	}
 

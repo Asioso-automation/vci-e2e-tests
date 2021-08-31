@@ -4,12 +4,11 @@ import org.testng.annotations.Test;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import com.platformX.base.BaseTest;
-import com.platformX.page.EnergetskiObracunPage;
+import com.platformX.page.EnergetskiObracun;
 import com.platformX.page.PocetnaStranica;
 import com.platformX.page.LogInPage;
-import com.platformX.page.MjernaMjestaPage;
-import com.platformX.page.MonitoringEnergetskogObracunaPage;
-import com.platformX.page.OcitanjaBrojilaPage;
+import com.platformX.page.MjernaMjesta;
+import com.platformX.page.OcitanjaBrojila;
 import com.platformX.page.ZahtjeviZaDostavuPodatakaOMjernimMjestima;
 
 public class QA_005_Verifikacija_Sekcije_Mjerna_Mjesta_Test extends BaseTest {
@@ -27,14 +26,14 @@ public class QA_005_Verifikacija_Sekcije_Mjerna_Mjesta_Test extends BaseTest {
 		logInPage.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
 		homePage.verifyHomePage();
-		MjernaMjestaPage mjernaMjestaPage = homePage.navigateToMjernaMjesta();
-		mjernaMjestaPage.verifikujMjernaMjesta();
-		ZahtjeviZaDostavuPodatakaOMjernimMjestima zahtjeviZaDostavuPodataka = homePage.navigateToZahtjeviZaDostavuPodataka1();
+		MjernaMjesta mjernaMjesta = homePage.navigirajNaMjernaMjesta();
+		mjernaMjesta.verifikujMjernaMjesta();
+		ZahtjeviZaDostavuPodatakaOMjernimMjestima zahtjeviZaDostavuPodataka = homePage.navigirajNaZahtjeviZaDostavuPodataka1();
 		zahtjeviZaDostavuPodataka.verifikujZahtjeviZaDostavuPodataka();
-		OcitanjaBrojilaPage ocitanjaBrojilaPage = homePage.navigateToOcitanjaBrojila();
-		ocitanjaBrojilaPage.verifikujOcitanjaBrojila();
-		EnergetskiObracunPage energetskiObracunPage = homePage.navigateToEnergetskiObracun();
-		energetskiObracunPage.verifikujEnergetskiObracun();
+		OcitanjaBrojila ocitanjaBrojila = homePage.navigirajNaOcitanjaBrojila();
+		ocitanjaBrojila.verifikujOcitanjaBrojila();
+		EnergetskiObracun energetskiObracun = homePage.navigirajNaEnergetskiObracun();
+		energetskiObracun.verifikujEnergetskiObracun();
 //		MonitoringEnergetskogObracunaPage monitoringEnergetskogObracunaPage = homePage.navigateToMonitoringEnergetskogObracuna();
 //		monitoringEnergetskogObracunaPage.verifikujMonitoringEnergetskogObracuna();
 	}
