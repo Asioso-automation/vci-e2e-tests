@@ -8,15 +8,30 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class RacuniPage extends PocetnaStranica {
+import com.platformX.base.Kolone;
 
-	public RacuniPage(WebDriver driver) throws FileNotFoundException, IOException {
+public class Racuni extends PocetnaStranica {
+
+	public Racuni(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);
 	}
 
-	public void verifikujRacuni() throws InterruptedException {
+	public void verifikujRacuni() throws InterruptedException, FileNotFoundException, IOException {
+		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Računi')]")));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaSerijskiBrojWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPeriodWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKupacWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMjernoMjestoEicWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaUgovorWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPozivNaBrojWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIznosBezPdvWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPdvWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIznosSaPdvWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKamataWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaUkupnoWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPlacenWE));
 		wait.until(ExpectedConditions.elementToBeClickable(sekcijaBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(stranicaBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(preuzmiExcelBtnWE));

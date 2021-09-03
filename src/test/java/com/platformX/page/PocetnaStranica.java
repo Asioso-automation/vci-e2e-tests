@@ -626,13 +626,13 @@ public class PocetnaStranica extends PageBase {
 		return new MonitoringEnergetskogObracunaPage(driver);
 	}
 	
-	public NaloziZaObracunPage navigateToNaloziZaObracun() throws Exception {
+	public NaloziZaObracun navigirajNaNaloziZaObracun() throws Exception {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(obracunWE));
 		obracunWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(naloziZaObracunWE));
 		naloziZaObracunWE.click();
-		return new NaloziZaObracunPage(driver);
+		return new NaloziZaObracun(driver);
 	}
 	
 	public MonitoringObracunaPage navigateToMonitoringObracuna() throws Exception {
@@ -644,25 +644,25 @@ public class PocetnaStranica extends PageBase {
 		return new MonitoringObracunaPage(driver);
 	}
 	
-	public RacuniPage navigateToRacuni() throws Exception {
+	public Racuni navigirajNaRacuni() throws Exception {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(obracunWE));
 		obracunWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(racuniWE));
 		racuniWE.click();
-		return new RacuniPage(driver);
+		return new Racuni(driver);
 	}
 	
-	public KorekcijeRacunaPage navigateToKorekcijeRacuna() throws Exception {
+	public KorekcijeRacuna navigirajNaKorekcijeRacuna() throws Exception {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(obracunWE));
 		obracunWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(korekcijeRacunaWE));
 		korekcijeRacunaWE.click();
-		return new KorekcijeRacunaPage(driver);
+		return new KorekcijeRacuna(driver);
 	}
 	
-	public KamatePage navigateToKamate() throws Exception {
+	public KamatePage navigirajNaKamate() throws Exception {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(obracunWE));
 		obracunWE.click();
@@ -680,31 +680,31 @@ public class PocetnaStranica extends PageBase {
 		return new KorekcijeKamatePage(driver);
 	}
 	
-	public AvansneFakturePage navigateToAvansneFakture() throws Exception {
+	public AvansneFakture navigirajNaAvansneFakture() throws Exception {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(obracunWE));
 		obracunWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(avansneFaktureWE));
 		avansneFaktureWE.click();
-		return new AvansneFakturePage(driver);
+		return new AvansneFakture(driver);
 	}
 	
-	public UmanjenjaCijenePage navigateToUmanjenjaCijene() throws Exception {
+	public UmanjenjaCijene navigirajNaUmanjenjaCijene() throws Exception {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(obracunWE));
 		obracunWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(umanjenjaCijeneWE));
 		umanjenjaCijeneWE.click();
-		return new UmanjenjaCijenePage(driver);
+		return new UmanjenjaCijene(driver);
 	}
 	
-	public KupciZaTestneRacunePage navigateToKupciZaTestneRacune() throws Exception {
+	public KupciZaTestneRacune navigirajNaKupciZaTestneRacune() throws Exception {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(obracunWE));
 		obracunWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(kupciZaTestneRacuneWE));
 		kupciZaTestneRacuneWE.click();
-		return new KupciZaTestneRacunePage(driver);
+		return new KupciZaTestneRacune(driver);
 	}
 	
 	public FinansijskeKarticePage navigateToFinansijskeKartice() throws Exception {

@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="20475" started-at="2021-08-31T19:45:27Z" finished-at="2021-08-31T19:45:47Z">
+  <suite name="Default suite" duration-ms="26808" started-at="2021-09-03T19:28:51Z" finished-at="2021-09-03T19:29:18Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="20475" started-at="2021-08-31T19:45:27Z" finished-at="2021-08-31T19:45:47Z">
-      <class name="com.platformX.tests.QA_005_Verifikacija_Sekcije_Mjerna_Mjesta_Test">
-        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.platformX.tests.QA_005_Verifikacija_Sekcije_Mjerna_Mjesta_Test@3967e60c]" name="setUp" is-config="true" duration-ms="5328" started-at="2021-08-31T21:45:27Z" finished-at="2021-08-31T21:45:32Z">
+    <test name="Default test" duration-ms="26808" started-at="2021-09-03T19:28:51Z" finished-at="2021-09-03T19:29:18Z">
+      <class name="com.platformX.tests.QA_006_Verifikacija_Sekcije_Obracun_Test">
+        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.platformX.tests.QA_006_Verifikacija_Sekcije_Obracun_Test@4b5a5ed1]" name="setUp" is-config="true" duration-ms="5387" started-at="2021-09-03T21:28:51Z" finished-at="2021-09-03T21:28:57Z">
           <params>
             <param index="0">
               <value>
@@ -18,15 +18,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="qa_005_verifikacija_sekcije_mjerna_mjesta_test()[pri:0, instance:com.platformX.tests.QA_005_Verifikacija_Sekcije_Mjerna_Mjesta_Test@3967e60c]" name="qa_005_verifikacija_sekcije_mjerna_mjesta_test" duration-ms="14490" started-at="2021-08-31T21:45:32Z" finished-at="2021-08-31T21:45:47Z">
+        <test-method status="PASS" signature="qa_006_verifikacija_sekcije_obracun_test()[pri:0, instance:com.platformX.tests.QA_006_Verifikacija_Sekcije_Obracun_Test@4b5a5ed1]" name="qa_006_verifikacija_sekcije_obracun_test" duration-ms="20776" started-at="2021-09-03T21:28:57Z" finished-at="2021-09-03T21:29:18Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- qa_005_verifikacija_sekcije_mjerna_mjesta_test -->
-        <test-method status="PASS" signature="cleanUp()[pri:0, instance:com.platformX.tests.QA_005_Verifikacija_Sekcije_Mjerna_Mjesta_Test@3967e60c]" name="cleanUp" is-config="true" duration-ms="641" started-at="2021-08-31T21:45:47Z" finished-at="2021-08-31T21:45:47Z">
+        </test-method> <!-- qa_006_verifikacija_sekcije_obracun_test -->
+        <test-method status="PASS" signature="cleanUp()[pri:0, instance:com.platformX.tests.QA_006_Verifikacija_Sekcije_Obracun_Test@4b5a5ed1]" name="cleanUp" is-config="true" duration-ms="626" started-at="2021-09-03T21:29:18Z" finished-at="2021-09-03T21:29:18Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- cleanUp -->
-      </class> <!-- com.platformX.tests.QA_005_Verifikacija_Sekcije_Mjerna_Mjesta_Test -->
+      </class> <!-- com.platformX.tests.QA_006_Verifikacija_Sekcije_Obracun_Test -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

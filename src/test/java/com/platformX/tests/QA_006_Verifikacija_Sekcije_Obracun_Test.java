@@ -4,17 +4,15 @@ import org.testng.annotations.Test;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import com.platformX.base.BaseTest;
-import com.platformX.page.AvansneFakturePage;
+import com.platformX.page.AvansneFakture;
 import com.platformX.page.PocetnaStranica;
 import com.platformX.page.KamatePage;
-import com.platformX.page.KorekcijeKamatePage;
-import com.platformX.page.KorekcijeRacunaPage;
-import com.platformX.page.KupciZaTestneRacunePage;
+import com.platformX.page.KorekcijeRacuna;
+import com.platformX.page.KupciZaTestneRacune;
 import com.platformX.page.LogInPage;
-import com.platformX.page.MonitoringObracunaPage;
-import com.platformX.page.NaloziZaObracunPage;
-import com.platformX.page.RacuniPage;
-import com.platformX.page.UmanjenjaCijenePage;
+import com.platformX.page.NaloziZaObracun;
+import com.platformX.page.Racuni;
+import com.platformX.page.UmanjenjaCijene;
 
 public class QA_006_Verifikacija_Sekcije_Obracun_Test extends BaseTest {
 
@@ -31,23 +29,23 @@ public class QA_006_Verifikacija_Sekcije_Obracun_Test extends BaseTest {
 		logInPage.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
 		homePage.verifyHomePage();
-		NaloziZaObracunPage naloziZaObracunPage = homePage.navigateToNaloziZaObracun();
-		naloziZaObracunPage.verifikujNaloziZaObracun();
+		NaloziZaObracun naloziZaObracun = homePage.navigirajNaNaloziZaObracun();
+		naloziZaObracun.verifikujNaloziZaObracun();
 //		MonitoringObracunaPage monitoringObracunaPage = homePage.navigateToMonitoringObracuna();
 //		monitoringObracunaPage.verifikujMonitoringObracuna();
-		RacuniPage racuniPage = homePage.navigateToRacuni();
-		racuniPage.verifikujRacuni();
-		KorekcijeRacunaPage korekcijeRacunaPage = homePage.navigateToKorekcijeRacuna();
-		korekcijeRacunaPage.verifikujKorekcijeRacuna();
-		KamatePage kamatePage = homePage.navigateToKamate();
+		Racuni racuni = homePage.navigirajNaRacuni();
+		racuni.verifikujRacuni();
+		KorekcijeRacuna korekcijeRacuna = homePage.navigirajNaKorekcijeRacuna();
+		korekcijeRacuna.verifikujKorekcijeRacuna();
+		KamatePage kamatePage = homePage.navigirajNaKamate();
 		kamatePage.verifikujKamate();
 //		KorekcijeKamatePage korekcijeKamatePage = homePage.navigateToKorekcijeKamate();
 //		korekcijeKamatePage.verifikujKorekcijeKamate();
-		AvansneFakturePage avansneFakturePage = homePage.navigateToAvansneFakture();
-		avansneFakturePage.verifikujAvansneFakture();
-		UmanjenjaCijenePage umanjenjaCijenePage = homePage.navigateToUmanjenjaCijene();
-		umanjenjaCijenePage.verifikujUmanjenjaCijene();
-		KupciZaTestneRacunePage kupciZaTestneRacunePage = homePage.navigateToKupciZaTestneRacune();
-		kupciZaTestneRacunePage.verifikujKupciZaTestneRacune();
+		AvansneFakture avansneFakture = homePage.navigirajNaAvansneFakture();
+		avansneFakture.verifikujAvansneFakture();
+		UmanjenjaCijene umanjenjaCijene = homePage.navigirajNaUmanjenjaCijene();
+		umanjenjaCijene.verifikujUmanjenjaCijene();
+		KupciZaTestneRacune kupciZaTestneRacune = homePage.navigirajNaKupciZaTestneRacune();
+		kupciZaTestneRacune.verifikujKupciZaTestneRacune();
 	}
 }

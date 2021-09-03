@@ -13,9 +13,9 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import com.platformX.base.Kolone;
 
-public class UmanjenjaCijenePage extends PocetnaStranica {
+public class UmanjenjaCijene extends PocetnaStranica {
 
-	public UmanjenjaCijenePage(WebDriver driver) throws FileNotFoundException, IOException {
+	public UmanjenjaCijene(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);
 	}
 	
@@ -53,9 +53,9 @@ public class UmanjenjaCijenePage extends PocetnaStranica {
 	private WebElement praznaTabelaWE;
 
 	public void verifikujUmanjenjaCijene() throws InterruptedException, FileNotFoundException, IOException {
+		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Umanjenja cijene')]")));
-		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojMjeseciWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaProcenatWE));

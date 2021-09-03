@@ -8,16 +8,34 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class NaloziZaObracunPage extends PocetnaStranica {
+import com.platformX.base.Kolone;
 
-	public NaloziZaObracunPage(WebDriver driver) throws FileNotFoundException, IOException {
+public class NaloziZaObracun extends PocetnaStranica {
+
+	public NaloziZaObracun(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);
 	}
 
-	public void verifikujNaloziZaObracun() throws InterruptedException {
-		// wait.until(ExpectedConditions.visibilityOf(tableHeaderWE));
+	public void verifikujNaloziZaObracun() throws InterruptedException, FileNotFoundException, IOException {
+		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Nalozi')]")));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPeriodWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaOdsWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaUgovorWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTipUgovoraWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaSezonaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaRokPlacanjaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojKupacaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojMjMjestaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojRacunaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNapomenaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaUkupnoBezPdvWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPdvWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaUkupnoSaPdvWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaZakljucenWE));
 		wait.until(ExpectedConditions.elementToBeClickable(sekcijaBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(stranicaBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(preuzmiExcelBtnWE));
