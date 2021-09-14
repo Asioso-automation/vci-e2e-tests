@@ -459,4 +459,16 @@ public class Kolone extends PageBase {
 	
 	@FindBy(xpath = "//*[contains(text(), 'Broj telefona')]")
 	public WebElement kolonaBrojTelefonaWE;
+	
+	@FindBy(xpath = "//*[contains(text(), 'Datum knjiženja')]")
+	public WebElement kolonaDatumKnjizenjaWE;
+	
+	@FindBy(xpath = "//*[contains(text(), 'Duguje')]")
+	public WebElement kolonaDugujeWE;
+	
+	@FindBy(xpath = "//*[contains(text(), 'Potražuje')]")
+	public WebElement kolonaPotrazujeWE;
+	
+	@FindBy(xpath = "//*[contains(text(), 'Preostalo')]")
+	public WebElement kolonaPreostaloWE;
 }

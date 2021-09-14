@@ -707,13 +707,13 @@ public class PocetnaStranica extends PageBase {
 		return new KupciZaTestneRacune(driver);
 	}
 	
-	public FinansijskeKarticePage navigateToFinansijskeKartice() throws Exception {
+	public FinansijskeKartice navigirajNaFinansijskeKartice() throws Exception {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(finansijeWE));
 		finansijeWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(finansijskeKarticeWE));
 		finansijskeKarticeWE.click();
-		return new FinansijskeKarticePage(driver);
+		return new FinansijskeKartice(driver);
 	}
 	
 	public DnevniciUplataPage navigateToDnevniciUplata() throws Exception {

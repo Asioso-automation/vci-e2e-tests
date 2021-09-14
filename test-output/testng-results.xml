@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="26808" started-at="2021-09-03T19:28:51Z" finished-at="2021-09-03T19:29:18Z">
+  <suite name="Default suite" duration-ms="33339" started-at="2021-09-14T19:07:41Z" finished-at="2021-09-14T19:08:15Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="26808" started-at="2021-09-03T19:28:51Z" finished-at="2021-09-03T19:29:18Z">
-      <class name="com.platformX.tests.QA_006_Verifikacija_Sekcije_Obracun_Test">
-        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.platformX.tests.QA_006_Verifikacija_Sekcije_Obracun_Test@4b5a5ed1]" name="setUp" is-config="true" duration-ms="5387" started-at="2021-09-03T21:28:51Z" finished-at="2021-09-03T21:28:57Z">
+    <test name="Default test" duration-ms="33339" started-at="2021-09-14T19:07:41Z" finished-at="2021-09-14T19:08:15Z">
+      <class name="com.platformX.tests.QA_007_Verifikacija_Sekcije_Finansije_Test">
+        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.platformX.tests.QA_007_Verifikacija_Sekcije_Finansije_Test@4b5a5ed1]" name="setUp" is-config="true" duration-ms="5880" started-at="2021-09-14T21:07:41Z" finished-at="2021-09-14T21:07:47Z">
           <params>
             <param index="0">
               <value>
@@ -18,15 +18,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="qa_006_verifikacija_sekcije_obracun_test()[pri:0, instance:com.platformX.tests.QA_006_Verifikacija_Sekcije_Obracun_Test@4b5a5ed1]" name="qa_006_verifikacija_sekcije_obracun_test" duration-ms="20776" started-at="2021-09-03T21:28:57Z" finished-at="2021-09-03T21:29:18Z">
+        <test-method status="PASS" signature="qa_007_verifikacija_sekcije_finansije_test()[pri:0, instance:com.platformX.tests.QA_007_Verifikacija_Sekcije_Finansije_Test@4b5a5ed1]" name="qa_007_verifikacija_sekcije_finansije_test" duration-ms="26681" started-at="2021-09-14T21:07:47Z" finished-at="2021-09-14T21:08:14Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- qa_006_verifikacija_sekcije_obracun_test -->
-        <test-method status="PASS" signature="cleanUp()[pri:0, instance:com.platformX.tests.QA_006_Verifikacija_Sekcije_Obracun_Test@4b5a5ed1]" name="cleanUp" is-config="true" duration-ms="626" started-at="2021-09-03T21:29:18Z" finished-at="2021-09-03T21:29:18Z">
+        </test-method> <!-- qa_007_verifikacija_sekcije_finansije_test -->
+        <test-method status="PASS" signature="cleanUp()[pri:0, instance:com.platformX.tests.QA_007_Verifikacija_Sekcije_Finansije_Test@4b5a5ed1]" name="cleanUp" is-config="true" duration-ms="742" started-at="2021-09-14T21:08:14Z" finished-at="2021-09-14T21:08:15Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- cleanUp -->
-      </class> <!-- com.platformX.tests.QA_006_Verifikacija_Sekcije_Obracun_Test -->
+      </class> <!-- com.platformX.tests.QA_007_Verifikacija_Sekcije_Finansije_Test -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
