@@ -8,16 +8,26 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class AvansiPage extends PocetnaStranica {
+import com.platformX.base.Kolone;
 
-	public AvansiPage(WebDriver driver) throws FileNotFoundException, IOException {
+public class Avansi extends PocetnaStranica {
+
+	public Avansi(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);
 	}
 	
-	public void verifikujAvansi() {
-		// wait.until(ExpectedConditions.visibilityOf(tableHeaderWE));
+	public void verifikujAvansi() throws FileNotFoundException, IOException {
+		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Avansi')]")));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKupacWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMjernoMjestoEicWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaCjelokupanIznosWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNeiskoristeniIznosWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaZadnjaIzmjenaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKupacNeZeliWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaUDuguNaDrugaMjmWE));
 		wait.until(ExpectedConditions.elementToBeClickable(sekcijaBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(stranicaBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(preuzmiExcelBtnWE));

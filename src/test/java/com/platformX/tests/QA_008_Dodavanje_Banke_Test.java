@@ -4,7 +4,7 @@ import org.testng.annotations.Test;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import com.platformX.base.BaseTest;
-import com.platformX.page.BankePage;
+import com.platformX.page.Banke;
 import com.platformX.page.PocetnaStranica;
 import com.platformX.page.LogInPage;
 
@@ -21,10 +21,11 @@ public class QA_008_Dodavanje_Banke_Test extends BaseTest {
 		logInPage.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
 		homePage.verifyHomePage();
-		homePage.navigateToBanke();
-		BankePage bankePage = new BankePage(driver);
-		String banka = bankePage.dodajBanku();
-		bankePage.verifikujBanku(banka);
+		homePage.navigirajNaBanke();
+		Banke banke = new Banke(driver);
+		banke.verifikujBanke();
+		String banka = banke.dodajBanku();
+		banke.verifikujBanku(banka);
 	}
 
 }

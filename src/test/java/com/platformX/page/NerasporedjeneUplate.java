@@ -8,16 +8,26 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class NerasporedjeneUplatePage extends PocetnaStranica {
+import com.platformX.base.Kolone;
 
-	public NerasporedjeneUplatePage(WebDriver driver) throws FileNotFoundException, IOException {
+public class NerasporedjeneUplate extends PocetnaStranica {
+
+	public NerasporedjeneUplate(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);
 	}
 	
-	public void verifikujNerasporedjeneUplate() {
-		// wait.until(ExpectedConditions.visibilityOf(tableHeaderWE));
+	public void verifikujNerasporedjeneUplate() throws FileNotFoundException, IOException {
+		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Neraspore')]")));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojIzvodaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaZiroRacunWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumKnjizenjaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumIzvodaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaUplatioWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNapomenaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIznosWE));
 		wait.until(ExpectedConditions.elementToBeClickable(sekcijaBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(stranicaBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(preuzmiExcelBtnWE));

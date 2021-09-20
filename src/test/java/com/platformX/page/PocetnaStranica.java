@@ -716,25 +716,25 @@ public class PocetnaStranica extends PageBase {
 		return new FinansijskeKartice(driver);
 	}
 	
-	public DnevniciUplataPage navigateToDnevniciUplata() throws Exception {
+	public DnevniciUplata navigirajNaDnevniciUplata() throws Exception {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(finansijeWE));
 		finansijeWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(dnevniciUplataWE));
 		dnevniciUplataWE.click();
-		return new DnevniciUplataPage(driver);
+		return new DnevniciUplata(driver);
 	}
 	
-	public SveUplatePage navigateToSveUplate() throws Exception {
+	public SveUplate navigirajNaSveUplate() throws Exception {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(finansijeWE));
 		finansijeWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(sveUplateWE));
 		sveUplateWE.click();
-		return new SveUplatePage(driver);
+		return new SveUplate(driver);
 	}
 	
-	public PreknjizavanjaUplata navigateToPreknjizavanjaUplata() throws FileNotFoundException, IOException {
+	public PreknjizavanjaUplata navigirajNaPreknjizavanjaUplata() throws FileNotFoundException, IOException {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(finansijeWE));
 		finansijeWE.click();
@@ -743,25 +743,25 @@ public class PocetnaStranica extends PageBase {
 		return new PreknjizavanjaUplata(driver);	
 	}
 	
-	public NerasporedjeneUplatePage navigateToNerasporedjeneUplate() throws Exception {
+	public NerasporedjeneUplate navigirajNaNerasporedjeneUplate() throws Exception {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(finansijeWE));
 		finansijeWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(nerasporedjeneUplateWE));
 		nerasporedjeneUplateWE.click();
-		return new NerasporedjeneUplatePage(driver);
+		return new NerasporedjeneUplate(driver);
 	}
 	
-	public AvansiPage navigateToAvansi() throws Exception {
+	public Avansi navigirajNaAvansi() throws Exception {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(finansijeWE));
 		finansijeWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(avansiWE));
 		avansiWE.click();
-		return new AvansiPage(driver);
+		return new Avansi(driver);
 	}
 	
-	public Reprogrami navigateToReprogrami() throws Exception {
+	public Reprogrami navigirajNaReprogrami() throws Exception {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(finansijeWE));
 		finansijeWE.click();
@@ -770,39 +770,39 @@ public class PocetnaStranica extends PageBase {
 		return new Reprogrami(driver);
 	}
 
-	public BankePage navigateToBanke() throws Exception {
+	public Banke navigirajNaBanke() throws Exception {
 		wait.until(ExpectedConditions.elementToBeClickable(finansijeWE));
 		finansijeWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(bankeWE));
 		bankeWE.click();
-		return new BankePage(driver);
+		return new Banke(driver);
 	}
 
-	public ZiroRacuniPage navigateToZiroRacuni() throws Exception {
+	public ZiroRacuni navigirajNaZiroRacuni() throws Exception {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(finansijeWE));
 		finansijeWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(ziroRacuniWE));
 		ziroRacuniWE.click();
-		return new ZiroRacuniPage(driver);
+		return new ZiroRacuni(driver);
 	}
 	
-	public VrsteKnjizenjaPage navigateToVrsteKnjizenja() throws Exception {
+	public VrsteKnjizenja navigirajNaVrsteKnjizenja() throws Exception {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(finansijeWE));
 		finansijeWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(vrsteKnjizenjaWE));
 		vrsteKnjizenjaWE.click();
-		return new VrsteKnjizenjaPage(driver);
+		return new VrsteKnjizenja(driver);
 	}
 	
-	public VrsteStavkiFinansijskeKarticePage navigateToVrsteStavkiFinansijskeKartice() throws Exception {
+	public VrsteStavkiFinansijskeKartice navigirajNaVrsteStavkiFinansijskeKartice() throws Exception {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(finansijeWE));
 		finansijeWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(vrsteStavkiFinansijskeKarticeWE));
 		vrsteStavkiFinansijskeKarticeWE.click();
-		return new VrsteStavkiFinansijskeKarticePage(driver);
+		return new VrsteStavkiFinansijskeKartice(driver);
 	}
 	
 	public Opomene navigateToOpomene() throws Exception {

@@ -11,9 +11,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class DnevniciUplataPage extends PocetnaStranica {
+import com.platformX.base.Kolone;
 
-	public DnevniciUplataPage(WebDriver driver) throws FileNotFoundException, IOException {
+public class DnevniciUplata extends PocetnaStranica {
+
+	public DnevniciUplata(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);
 	}
 
@@ -67,10 +69,22 @@ public class DnevniciUplataPage extends PocetnaStranica {
 	@FindBy(xpath = "//div[2]/button[1]")
 	private WebElement submitDnevnikBtnWE;
 
-	public void verifikujDnevniciUplataPage() {
-		// wait.until(ExpectedConditions.visibilityOf(tableHeaderWE));
+	public void verifikujDnevniciUplata() throws FileNotFoundException, IOException {
+		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Dnevnici uplata')]")));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBankaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaZiroRacunWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojIzvodaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumKnjizenjaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumIzvodaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojUplataWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIznosUplataWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojNerasporedjenihUplataWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIznosNerasporedjenihUplataWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaZaZakljucenjeWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaZakljucenWE));
 		wait.until(ExpectedConditions.elementToBeClickable(sekcijaBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(stranicaBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(preuzmiExcelBtnWE));

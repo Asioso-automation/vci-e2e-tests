@@ -42,7 +42,6 @@ public class FinansijskeKartice extends PocetnaStranica {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaOpisWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPozivNaBrojWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojRacunaWE));
-		
 		wait.until(ExpectedConditions.elementToBeClickable(sekcijaBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(stranicaBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(preuzmiExcelBtnWE));

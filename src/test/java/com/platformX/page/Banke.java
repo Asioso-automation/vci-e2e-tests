@@ -11,9 +11,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class BankePage extends PocetnaStranica {
+import com.platformX.base.Kolone;
 
-	public BankePage(WebDriver driver) throws FileNotFoundException, IOException {
+public class Banke extends PocetnaStranica {
+
+	public Banke(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);
 	}
 	
@@ -37,10 +39,15 @@ public class BankePage extends PocetnaStranica {
 	@FindBy(xpath = "//div[2]/button[1]") 
 	private WebElement dodajBtnWE;
 	
-	public void verifikujBankeStranicu() {
-		// wait.until(ExpectedConditions.visibilityOf(tableHeaderWE));
+	public void verifikujBanke() throws FileNotFoundException, IOException {
+		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Banke')]")));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNazivWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPocetneCifreZiroRacunaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaEmailZaTrajniNalogWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAktivnaWE));
 		wait.until(ExpectedConditions.elementToBeClickable(sekcijaBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(stranicaBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(preuzmiExcelBtnWE));

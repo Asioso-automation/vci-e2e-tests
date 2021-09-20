@@ -4,10 +4,10 @@ import org.testng.annotations.Test;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import com.platformX.base.BaseTest;
-import com.platformX.page.BankePage;
+import com.platformX.page.Banke;
 import com.platformX.page.PocetnaStranica;
 import com.platformX.page.LogInPage;
-import com.platformX.page.ZiroRacuniPage;
+import com.platformX.page.ZiroRacuni;
 
 public class QA_056_Izmjena_Ziro_Racuna_Test extends BaseTest {
 
@@ -22,16 +22,18 @@ public class QA_056_Izmjena_Ziro_Racuna_Test extends BaseTest {
 		logInPage.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
 		homePage.verifyHomePage();
-		homePage.navigateToBanke();
-		BankePage bankePage = new BankePage(driver);
-		String banka = bankePage.dodajBanku();
-		bankePage.verifikujBanku(banka);
-		homePage.navigateToZiroRacuni();
-		ZiroRacuniPage ziroRacuniPage = new ZiroRacuniPage(driver);
-		String ziroRacun = ziroRacuniPage.dodajZiroRacun(banka);
-		ziroRacuniPage.verifikujZiroRacun(ziroRacun);
-		String noviZiroRacun = ziroRacuniPage.izmjeniZiroRacun();
-		ziroRacuniPage.verifikujZiroRacun(noviZiroRacun);
+		homePage.navigirajNaBanke();
+		Banke banke = new Banke(driver);
+		banke.verifikujBanke();
+		String banka = banke.dodajBanku();
+		banke.verifikujBanku(banka);
+		homePage.navigirajNaZiroRacuni();
+		ZiroRacuni ziroRacuni = new ZiroRacuni(driver);
+		ziroRacuni.verifikujZiroRacuni();
+		String ziroRacun = ziroRacuni.dodajZiroRacun(banka);
+		ziroRacuni.verifikujZiroRacun(ziroRacun);
+		String noviZiroRacun = ziroRacuni.izmjeniZiroRacun();
+		ziroRacuni.verifikujZiroRacun(noviZiroRacun);
 	}
 
 }
