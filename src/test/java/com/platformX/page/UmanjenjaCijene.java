@@ -19,7 +19,7 @@ public class UmanjenjaCijene extends PocetnaStranica {
 		super(driver);
 	}
 	
-	@FindBy(xpath = "//div[1]/div/div/div[1]/div/input")
+	@FindBy(xpath = "//div[1]/div/div/div[1]/div/input")    
 	private WebElement brojMjeseciWE;
 	
 	@FindBy(xpath = "//div[2]/div/div/div[1]/div/input")
