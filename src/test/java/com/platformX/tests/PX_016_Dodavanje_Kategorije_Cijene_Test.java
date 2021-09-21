@@ -8,14 +8,14 @@ import com.platformX.page.PocetnaStranica;
 import com.platformX.page.KategorijeCijena;
 import com.platformX.page.LogInPage;
 
-public class QA_050_Dodavanje_Kategorije_Cijene_Test extends BaseTest {
+public class PX_016_Dodavanje_Kategorije_Cijene_Test extends BaseTest {
 
-	public QA_050_Dodavanje_Kategorije_Cijene_Test() throws IOException, FileNotFoundException {
+	public PX_016_Dodavanje_Kategorije_Cijene_Test() throws IOException, FileNotFoundException {
 		super();
 	}
 
 	@Test
-	public void qa_050_dodavanje_kategorije_cijene_test() throws Exception {
+	public void px_016_dodavanje_kategorije_cijene_test() throws Exception {
 		LogInPage logInPage = new LogInPage(driver, PLATFORMX_PROPERTIES);
 		logInPage.verifyLogInPage();
 		logInPage.logIn();

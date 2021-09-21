@@ -19,16 +19,16 @@ import com.platformX.page.Ugovori;
 import com.platformX.page.VrsteZahtjeva;
 import com.platformX.page.ZahtjeviZaDostavuPodataka;
 
-public class QA_004_Verifikacija_Sekcije_Kupci_Test extends BaseTest {
+public class PX_005_Verifikacija_Sekcije_Kupci_Test extends BaseTest {
 
-	public QA_004_Verifikacija_Sekcije_Kupci_Test() throws IOException, FileNotFoundException {
+	public PX_005_Verifikacija_Sekcije_Kupci_Test() throws IOException, FileNotFoundException {
 		super();
 	}
 	
 	// Test prolazi kroz sve stranice iz sekcije KUPCI i verifikuje ih
 
 	@Test
-	public void qa_004_verifikacija_sekcije_kupci_test() throws Exception {
+	public void px_005_verifikacija_sekcije_kupci_test() throws Exception {
 		LogInPage logInPage = new LogInPage(driver, PLATFORMX_PROPERTIES);
 		logInPage.verifyLogInPage();
 		logInPage.logIn();

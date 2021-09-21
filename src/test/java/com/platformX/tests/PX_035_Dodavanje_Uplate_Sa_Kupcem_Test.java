@@ -11,9 +11,9 @@ import com.platformX.page.LogInPage;
 import com.platformX.page.UplatePage;
 import com.platformX.page.ZiroRacuni;
 
-public class QA_015_Dodavanje_Uplate_Sa_Kupcem_Test extends BaseTest {
+public class PX_035_Dodavanje_Uplate_Sa_Kupcem_Test extends BaseTest {
 
-	public QA_015_Dodavanje_Uplate_Sa_Kupcem_Test() throws IOException, FileNotFoundException {
+	public PX_035_Dodavanje_Uplate_Sa_Kupcem_Test() throws IOException, FileNotFoundException {
 		super();
 	}
 

@@ -19,6 +19,15 @@ public class Banke extends PocetnaStranica {
 		super(driver);
 	}
 	
+	@FindBy(xpath = "//td[6]/button")
+	private WebElement burgerBarWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Uredi')]")
+	private WebElement urediWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Briši')]")
+	private WebElement obrisiWE;
+	
 	@FindBy(xpath = "//a/span/i") 
 	private WebElement dodajBankuBtnWE;
 	
@@ -27,6 +36,12 @@ public class Banke extends PocetnaStranica {
 	
 	@FindBy(xpath = "//tr[2]/td[2]") 
 	private WebElement imeBankeTableWE;
+	
+	@FindBy(xpath = "//div/div/div[3]/button[2]")
+	private WebElement potvrdiBrisanjeWE;
+	
+	@FindBy(xpath = "//tr[2]/td")
+	private WebElement praznaTabelaWE;
 	
 	// Kreiraj banku elementi
 	
@@ -90,12 +105,53 @@ public class Banke extends PocetnaStranica {
 		wait.until(ExpectedConditions.elementToBeClickable(pretraziBankeWE));
 		Thread.sleep(1000);
 		pretraziBankeWE.click();
+		pretraziBankeWE.clear();
 		pretraziBankeWE.sendKeys(banka);
 		pretraziBankeWE.sendKeys(Keys.ENTER);
 		Thread.sleep(1000);
 		wait.until(ExpectedConditions.visibilityOf(imeBankeTableWE));
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
 		assertTrue(imeBankeTableWE.getText().equals(banka), "Banke: Ime banke nije dobro!");
+	}
+	
+	public String izmjeniBanku() throws InterruptedException {
+		String banka = "Banka " + getRandomName();
+		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
+		burgerBarWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(urediWE));
+		urediWE.click();
+		Thread.sleep(1000);
+		wait.until(ExpectedConditions.elementToBeClickable(nazivBankeWE));
+		nazivBankeWE.click();
+		nazivBankeWE.clear();
+		nazivBankeWE.sendKeys(banka);
+		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
+		dodajBtnWE.click();
+		return banka;
+	}
+	
+	public void obrisiBanku() throws InterruptedException {
+		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
+		burgerBarWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(obrisiWE));
+		obrisiWE.click();
+		Thread.sleep(1000);
+		wait.until(ExpectedConditions.elementToBeClickable(potvrdiBrisanjeWE));
+		potvrdiBrisanjeWE.click();
+	}
+	
+	public void verifikujBrisanjeBanke(String banka) throws InterruptedException {
+		wait.until(ExpectedConditions.visibilityOf(pretraziBankeWE));
+		Thread.sleep(1000);
+		wait.until(ExpectedConditions.elementToBeClickable(pretraziBankeWE));
+		pretraziBankeWE.click();
+		pretraziBankeWE.clear();
+		pretraziBankeWE.sendKeys(banka);
+		pretraziBankeWE.sendKeys(Keys.ENTER);
+		Thread.sleep(1000);
+		wait.until(ExpectedConditions.visibilityOf(praznaTabelaWE));
+		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
+		assertTrue(praznaTabelaWE.getText().equals("Nema podataka"), "Banke: Poruka prazne tabele nije dobra!");
 	}
 
 }

@@ -8,14 +8,14 @@ import com.platformX.page.PocetnaStranica;
 import com.platformX.page.LogInPage;
 import com.platformX.page.VrsteZahtjeva;
 
-public class QA_054_Brisanje_Vrste_Zahtjeva_Test extends BaseTest {
+public class PX_038_Brisanje_Vrste_Zahtjeva_Test extends BaseTest {
 
-	public QA_054_Brisanje_Vrste_Zahtjeva_Test() throws IOException, FileNotFoundException {
+	public PX_038_Brisanje_Vrste_Zahtjeva_Test() throws IOException, FileNotFoundException {
 		super();
 	}
 
 	@Test
-	public void qa_054_brisanje_vrste_zahtjeva_test() throws Exception {
+	public void px_038_brisanje_vrste_zahtjeva_test() throws Exception {
 		LogInPage logInPage = new LogInPage(driver, PLATFORMX_PROPERTIES);
 		logInPage.verifyLogInPage();
 		logInPage.logIn();

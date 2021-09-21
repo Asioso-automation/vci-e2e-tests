@@ -14,16 +14,16 @@ import com.platformX.page.TarifneGrupe;
 import com.platformX.page.KategorijePotrosnje;
 import com.platformX.page.TarifneNadgrupe;
 
-public class QA_003_Verifikacija_Sekcije_Tarifni_Sistem_Test extends BaseTest {
+public class PX_004_Verifikacija_Sekcije_Tarifni_Sistem_Test extends BaseTest {
 
-	public QA_003_Verifikacija_Sekcije_Tarifni_Sistem_Test() throws IOException, FileNotFoundException {
+	public PX_004_Verifikacija_Sekcije_Tarifni_Sistem_Test() throws IOException, FileNotFoundException {
 		super();
 	}
 	
 	// Test prolazi kroz sve stranice iz sekcije TARIFNI SISTEM i verifikuje ih
 
 	@Test
-	public void qa_003_verifikacije_sekcije_tarifni_sistem_test() throws Exception {
+	public void px_004_verifikacije_sekcije_tarifni_sistem_test() throws Exception {
 		LogInPage logInPage = new LogInPage(driver, PLATFORMX_PROPERTIES);
 		logInPage.verifyLogInPage();
 		logInPage.logIn();

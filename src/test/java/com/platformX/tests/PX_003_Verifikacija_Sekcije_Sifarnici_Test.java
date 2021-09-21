@@ -17,16 +17,16 @@ import com.platformX.page.Poste;
 import com.platformX.page.RadneJedinice;
 import com.platformX.page.Ulice;
 
-public class QA_002_Verifikacija_Sekcije_Sifarnici_Test extends BaseTest {
+public class PX_003_Verifikacija_Sekcije_Sifarnici_Test extends BaseTest {
 
-	public QA_002_Verifikacija_Sekcije_Sifarnici_Test() throws IOException, FileNotFoundException {
+	public PX_003_Verifikacija_Sekcije_Sifarnici_Test() throws IOException, FileNotFoundException {
 		super();
 	}
 	
 	// Test prolazi kroz stranice sekcije SIFARNICI i verifikuje ih
 
 	@Test
-	public void qa_002_verifikacije_sekcije_sifarnici_test() throws Exception {
+	public void px_003_verifikacije_sekcije_sifarnici_test() throws Exception {
 		LogInPage logInPage = new LogInPage(driver, PLATFORMX_PROPERTIES);
 		logInPage.verifyLogInPage();
 		logInPage.logIn();

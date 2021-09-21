@@ -85,8 +85,25 @@ public class ZiroRacuni extends PocetnaStranica {
 		Thread.sleep(2000);
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(@class, 'v-list-item__title') and contains(., '" + banka + "')]")));
 		driver.findElement(By.xpath("//div[contains(@class, 'v-list-item__title') and contains(., '" + banka + "')]")).click();
-		//div[contains(@class, 'measure-tab') and contains(., 'someText')]
-		// odaberiBankuWE.sendKeys(Keys.ENTER);
+		Thread.sleep(1000);
+		wait.until(ExpectedConditions.elementToBeClickable(ziroRacunWE));
+		ziroRacunWE.sendKeys(ziroRacun);
+		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
+		dodajBtnWE.click();
+		return ziroRacun;
+	}
+	
+	public String dodajZiroRacunSaBrojem(String banka, String ziroRacun) throws InterruptedException {
+		wait.until(ExpectedConditions.elementToBeClickable(dodajZiroRacunBtnWE));
+		Thread.sleep(1000);
+		dodajZiroRacunBtnWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(odaberiBankuWE));
+		Thread.sleep(1000);
+		odaberiBankuWE.click();
+		odaberiBankuWE.sendKeys(banka);
+		Thread.sleep(2000);
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(@class, 'v-list-item__title') and contains(., '" + banka + "')]")));
+		driver.findElement(By.xpath("//div[contains(@class, 'v-list-item__title') and contains(., '" + banka + "')]")).click();
 		Thread.sleep(1000);
 		wait.until(ExpectedConditions.elementToBeClickable(ziroRacunWE));
 		ziroRacunWE.sendKeys(ziroRacun);
@@ -146,7 +163,7 @@ public class ZiroRacuni extends PocetnaStranica {
 		Thread.sleep(1000);
 		wait.until(ExpectedConditions.visibilityOf(praznaTabelaWE));
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
-		assertTrue(praznaTabelaWE.getText().equals("Nema podataka"), "TarifneGrupe: Poruka prazne tabele nije dobra!");
+		assertTrue(praznaTabelaWE.getText().equals("Nema podataka"), "ZiroRacuni: Poruka prazne tabele nije dobra!");
 	}
 
 }

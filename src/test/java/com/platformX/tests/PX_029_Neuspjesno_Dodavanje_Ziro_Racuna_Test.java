@@ -5,20 +5,18 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import com.platformX.base.BaseTest;
 import com.platformX.page.Banke;
-import com.platformX.page.DnevniciUplata;
 import com.platformX.page.PocetnaStranica;
 import com.platformX.page.LogInPage;
-import com.platformX.page.UplatePage;
 import com.platformX.page.ZiroRacuni;
 
-public class PX_034_Preknjizavanje_Dnevnika_Uplata_Test extends BaseTest {
+public class PX_029_Neuspjesno_Dodavanje_Ziro_Racuna_Test extends BaseTest {
 
-	public PX_034_Preknjizavanje_Dnevnika_Uplata_Test() throws IOException, FileNotFoundException {
+	public PX_029_Neuspjesno_Dodavanje_Ziro_Racuna_Test() throws IOException, FileNotFoundException {
 		super();
 	}
 
-	@Test
-	public void px_034_preknjizavanje_dnevnika_uplata_test() throws Exception {
+	@Test (description = "pokusaj dodavanja ziro racuna sa postojecim brojem")
+	public void px_029_neuspjesno_dodavanje_ziro_racuna_test() throws Exception {
 		LogInPage logInPage = new LogInPage(driver, PLATFORMX_PROPERTIES);
 		logInPage.verifyLogInPage();
 		logInPage.logIn();
@@ -34,15 +32,8 @@ public class PX_034_Preknjizavanje_Dnevnika_Uplata_Test extends BaseTest {
 		ziroRacuni.verifikujZiroRacuni();
 		String ziroRacun = ziroRacuni.dodajZiroRacun(banka);
 		ziroRacuni.verifikujZiroRacun(ziroRacun);
-		homePage.navigirajNaDnevniciUplata();
-		DnevniciUplata dnevniciUplataPage = new DnevniciUplata(driver);
-		dnevniciUplataPage.verifikujDnevniciUplata();
-		dnevniciUplataPage.dodajDnevnikUplata(banka, ziroRacun);
-		dnevniciUplataPage.verifyDnevnikUplata(banka, ziroRacun);
-		dnevniciUplataPage.navigateToUplateSaSDetalja();
-		UplatePage uplatePage = new UplatePage(driver);
-		String uplatilac = uplatePage.dodajUplatuKupac();
-		uplatePage.verifikujUplatu(uplatilac);
+		ziroRacuni.dodajZiroRacunSaBrojem(banka, ziroRacun);
+		ziroRacuni.verifikujPoruku("Ovaj žiro račun je već u upotrebi.");
 	}
 
 }

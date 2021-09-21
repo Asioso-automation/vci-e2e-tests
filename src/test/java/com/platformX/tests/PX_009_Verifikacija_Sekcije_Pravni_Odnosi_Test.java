@@ -16,16 +16,16 @@ import com.platformX.page.Medijacije;
 import com.platformX.page.Opomene;
 import com.platformX.page.OtpisiPotrazivanja;
 
-public class QA_008_Verifikacija_Sekcije_Pravni_Odnosi_Test extends BaseTest {
+public class PX_009_Verifikacija_Sekcije_Pravni_Odnosi_Test extends BaseTest {
 
-	public QA_008_Verifikacija_Sekcije_Pravni_Odnosi_Test() throws IOException, FileNotFoundException {
+	public PX_009_Verifikacija_Sekcije_Pravni_Odnosi_Test() throws IOException, FileNotFoundException {
 		super();
 	}
 	
 	// Test prolazi kroz sve stranice iz sekcija PRAVNI ODNOSI i IZVJESTAJI i verifikuje ih
 
 	@Test
-	public void qa_008_verifikacija_sekcije_pravni_odnosi_test() throws Exception {
+	public void px_009_verifikacija_sekcije_pravni_odnosi_test() throws Exception {
 		LogInPage logInPage = new LogInPage(driver, PLATFORMX_PROPERTIES);
 		logInPage.verifyLogInPage();
 		logInPage.logIn();

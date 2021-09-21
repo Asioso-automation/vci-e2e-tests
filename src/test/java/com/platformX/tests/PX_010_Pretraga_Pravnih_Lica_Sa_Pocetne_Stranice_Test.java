@@ -8,14 +8,14 @@ import com.platformX.page.PocetnaStranica;
 import com.platformX.page.LogInPage;
 import com.platformX.page.PravnaLica;
 
-public class QA_062_Pretraga_Pravnih_Lica_Sa_Pocetne_Stranice_Test extends BaseTest {
+public class PX_010_Pretraga_Pravnih_Lica_Sa_Pocetne_Stranice_Test extends BaseTest {
 
-	public QA_062_Pretraga_Pravnih_Lica_Sa_Pocetne_Stranice_Test() throws IOException, FileNotFoundException {
+	public PX_010_Pretraga_Pravnih_Lica_Sa_Pocetne_Stranice_Test() throws IOException, FileNotFoundException {
 		super();
 	}
 
 	@Test
-	public void qa_062_pretraga_pravnih_lica_sa_pocetne_stranice_test() throws Exception {
+	public void px_010_pretraga_pravnih_lica_sa_pocetne_stranice_test() throws Exception {
 		LogInPage logInPage = new LogInPage(driver, PLATFORMX_PROPERTIES);
 		logInPage.verifyLogInPage();
 		logInPage.logIn();

@@ -8,14 +8,14 @@ import com.platformX.page.PocetnaStranica;
 import com.platformX.page.LogInPage;
 import com.platformX.page.UmanjenjaCijene;
 
-public class QA_061_Neuspjesno_Dodavanje_Umanjenja_Cijene_Test extends BaseTest {
+public class PX_015_Neuspjesno_Dodavanje_Umanjenja_Cijene_Test extends BaseTest {
 
-	public QA_061_Neuspjesno_Dodavanje_Umanjenja_Cijene_Test() throws IOException, FileNotFoundException {
+	public PX_015_Neuspjesno_Dodavanje_Umanjenja_Cijene_Test() throws IOException, FileNotFoundException {
 		super();
 	}
 	
-	@Test (description = "pokusaj dodavanja umanjenja cijene za vec dodan broj mjeseci")
-	public void qa_061_neuspjesno_dodavanje_umanjenja_cijene_test() throws Exception {
+	@Test (description = "pokusaj dodavanja umanjenja cijene za vec dodani broj mjeseci")
+	public void px_015_neuspjesno_dodavanje_umanjenja_cijene_test() throws Exception {
 		LogInPage logInPage = new LogInPage(driver, PLATFORMX_PROPERTIES);
 		logInPage.verifyLogInPage();
 		logInPage.logIn();

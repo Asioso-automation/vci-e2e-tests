@@ -9,14 +9,14 @@ import com.platformX.page.PocetnaStranica;
 import com.platformX.page.LogInPage;
 import com.platformX.page.ZiroRacuni;
 
-public class QA_009_Dodavanje_Ziro_Racuna_Test extends BaseTest {
+public class PX_026_Dodavanje_Ziro_Racuna_Test extends BaseTest {
 
-	public QA_009_Dodavanje_Ziro_Racuna_Test() throws IOException, FileNotFoundException {
+	public PX_026_Dodavanje_Ziro_Racuna_Test() throws IOException, FileNotFoundException {
 		super();
 	}
 
 	@Test
-	public void qa_009_dodavanje_ziro_racuna_test() throws Exception {
+	public void px_026_dodavanje_ziro_racuna_test() throws Exception {
 		LogInPage logInPage = new LogInPage(driver, PLATFORMX_PROPERTIES);
 		logInPage.verifyLogInPage();
 		logInPage.logIn();

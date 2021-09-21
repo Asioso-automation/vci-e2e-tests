@@ -8,14 +8,14 @@ import com.platformX.page.PocetnaStranica;
 import com.platformX.page.LogInPage;
 import com.platformX.page.UmanjenjaCijene;
 
-public class QA_060_Brisanje_Umanjenja_Cijene_Test extends BaseTest {
+public class PX_014_Brisanje_Umanjenja_Cijene_Test extends BaseTest {
 
-	public QA_060_Brisanje_Umanjenja_Cijene_Test() throws IOException, FileNotFoundException {
+	public PX_014_Brisanje_Umanjenja_Cijene_Test() throws IOException, FileNotFoundException {
 		super();
 	}
 
 	@Test
-	public void qa_060_brisanje_umanjenja_cijene_test() throws Exception {
+	public void px_014_brisanje_umanjenja_cijene_test() throws Exception {
 		LogInPage logInPage = new LogInPage(driver, PLATFORMX_PROPERTIES);
 		logInPage.verifyLogInPage();
 		logInPage.logIn();

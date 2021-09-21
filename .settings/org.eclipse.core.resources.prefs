@@ -65,6 +65,9 @@ encoding//src/test/java/com/platformX/page/ZahtjeviZaIskljucenje.java=UTF-8
 encoding//src/test/java/com/platformX/page/ZahtjeviZaUgovorePage.java=UTF-8
 encoding//src/test/java/com/platformX/page/ZahtjeviZaUkljucenje.java=UTF-8
 encoding//src/test/java/com/platformX/page/ZiroRacuni.java=UTF-8
+encoding//src/test/java/com/platformX/tests/PX_015_Neuspjesno_Dodavanje_Umanjenja_Cijene_Test.java=UTF-8
+encoding//src/test/java/com/platformX/tests/PX_025_Neuspjesno_Dodavanje_Banke.java=UTF-8
+encoding//src/test/java/com/platformX/tests/PX_029_Neuspjesno_Dodavanje_Ziro_Racuna_Test.java=UTF-8
 encoding//src/test/java/com/platformX/tests/QA_018_Dodavanje_Ugovora_Test.java=UTF-8
 encoding//src/test/java/com/platformX/tests/QA_019_Neuspjesno_Dodavanje_Ugovora_Test1.java=UTF-8
 encoding//src/test/java/com/platformX/tests/QA_021_Neuspjesno_Dodavanje_Ugovora_Test3.java=UTF-8
@@ -77,5 +80,3 @@ encoding//src/test/java/com/platformX/tests/QA_036_Neuspjesno_Ukljucivanje_Ugovo
 encoding//src/test/java/com/platformX/tests/QA_037_Iskljucivanje_Ugovora_Test.java=UTF-8
 encoding//src/test/java/com/platformX/tests/QA_038_Neuspjesno_Iskljucivanje_Ugovora_Test.java=UTF-8
 encoding//src/test/java/com/platformX/tests/QA_039_Neuspjesno_Odbacivanje_Ugovora_Test.java=UTF-8
-encoding//src/test/java/com/platformX/tests/QA_061_Neuspjesno_Dodavanje_Umanjenja_Cijene_Test.java=UTF-8
-encoding//src/test/java/com/platformX/tests/QA_064_Neuspjesno_Dodavanje_Banke.java=UTF-8

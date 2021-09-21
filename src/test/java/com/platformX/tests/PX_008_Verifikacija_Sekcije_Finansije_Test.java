@@ -18,16 +18,16 @@ import com.platformX.page.VrsteKnjizenja;
 import com.platformX.page.VrsteStavkiFinansijskeKartice;
 import com.platformX.page.ZiroRacuni;
 
-public class QA_007_Verifikacija_Sekcije_Finansije_Test extends BaseTest {
+public class PX_008_Verifikacija_Sekcije_Finansije_Test extends BaseTest {
 
-	public QA_007_Verifikacija_Sekcije_Finansije_Test() throws IOException, FileNotFoundException {
+	public PX_008_Verifikacija_Sekcije_Finansije_Test() throws IOException, FileNotFoundException {
 		super();
 	}
 	
 	// Test prolazi kroz sve stranice iz sekcije FINANSIJE i verifikuje ih
 
 	@Test
-	public void qa_007_verifikacija_sekcije_finansije_test() throws Exception {
+	public void px_008_verifikacija_sekcije_finansije_test() throws Exception {
 		LogInPage logInPage = new LogInPage(driver, PLATFORMX_PROPERTIES);
 		logInPage.verifyLogInPage();
 		logInPage.logIn();

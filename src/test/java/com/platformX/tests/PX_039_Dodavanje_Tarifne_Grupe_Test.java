@@ -8,14 +8,14 @@ import com.platformX.page.PocetnaStranica;
 import com.platformX.page.TarifneGrupe;
 import com.platformX.page.LogInPage;
 
-public class QA_047_Dodavanje_Tarifne_Grupe_Test extends BaseTest {
+public class PX_039_Dodavanje_Tarifne_Grupe_Test extends BaseTest {
 
-	public QA_047_Dodavanje_Tarifne_Grupe_Test() throws IOException, FileNotFoundException {
+	public PX_039_Dodavanje_Tarifne_Grupe_Test() throws IOException, FileNotFoundException {
 		super();
 	}
 
 	@Test
-	public void qa_047_dodavanje_tarifne_grupe_test() throws Exception {
+	public void px_039_dodavanje_tarifne_grupe_test() throws Exception {
 		LogInPage logInPage = new LogInPage(driver, PLATFORMX_PROPERTIES);
 		logInPage.verifyLogInPage();
 		logInPage.logIn();

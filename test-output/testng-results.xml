@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="26094" started-at="2021-09-21T08:58:07Z" finished-at="2021-09-21T08:58:33Z">
+  <suite name="Default suite" duration-ms="42620" started-at="2021-09-21T09:39:07Z" finished-at="2021-09-21T09:39:49Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="26094" started-at="2021-09-21T08:58:07Z" finished-at="2021-09-21T08:58:33Z">
-      <class name="com.platformX.tests.QA_064_Neuspjesno_Dodavanje_Banke">
-        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.platformX.tests.QA_064_Neuspjesno_Dodavanje_Banke@3967e60c]" name="setUp" is-config="true" duration-ms="5395" started-at="2021-09-21T10:58:07Z" finished-at="2021-09-21T10:58:13Z">
+    <test name="Default test" duration-ms="42620" started-at="2021-09-21T09:39:07Z" finished-at="2021-09-21T09:39:49Z">
+      <class name="com.platformX.tests.PX_029_Neuspjesno_Dodavanje_Ziro_Racuna_Test">
+        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.platformX.tests.PX_029_Neuspjesno_Dodavanje_Ziro_Racuna_Test@3967e60c]" name="setUp" is-config="true" duration-ms="5319" started-at="2021-09-21T11:39:07Z" finished-at="2021-09-21T11:39:12Z">
           <params>
             <param index="0">
               <value>
@@ -18,15 +18,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="qa_064_neuspjesno_dodavanje_banke_test()[pri:0, instance:com.platformX.tests.QA_064_Neuspjesno_Dodavanje_Banke@3967e60c]" name="qa_064_neuspjesno_dodavanje_banke_test" duration-ms="20042" started-at="2021-09-21T10:58:13Z" finished-at="2021-09-21T10:58:33Z">
+        <test-method status="PASS" signature="px_029_neuspjesno_dodavanje_ziro_racuna_test()[pri:0, instance:com.platformX.tests.PX_029_Neuspjesno_Dodavanje_Ziro_Racuna_Test@3967e60c]" name="px_029_neuspjesno_dodavanje_ziro_racuna_test" duration-ms="36645" started-at="2021-09-21T11:39:12Z" description="pokusaj dodavanja ziro racuna sa postojecim brojem" finished-at="2021-09-21T11:39:49Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- qa_064_neuspjesno_dodavanje_banke_test -->
-        <test-method status="PASS" signature="cleanUp()[pri:0, instance:com.platformX.tests.QA_064_Neuspjesno_Dodavanje_Banke@3967e60c]" name="cleanUp" is-config="true" duration-ms="638" started-at="2021-09-21T10:58:33Z" finished-at="2021-09-21T10:58:33Z">
+        </test-method> <!-- px_029_neuspjesno_dodavanje_ziro_racuna_test -->
+        <test-method status="PASS" signature="cleanUp()[pri:0, instance:com.platformX.tests.PX_029_Neuspjesno_Dodavanje_Ziro_Racuna_Test@3967e60c]" name="cleanUp" is-config="true" duration-ms="638" started-at="2021-09-21T11:39:49Z" finished-at="2021-09-21T11:39:49Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- cleanUp -->
-      </class> <!-- com.platformX.tests.QA_064_Neuspjesno_Dodavanje_Banke -->
+      </class> <!-- com.platformX.tests.PX_029_Neuspjesno_Dodavanje_Ziro_Racuna_Test -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

@@ -11,16 +11,16 @@ import com.platformX.page.MjernaMjesta;
 import com.platformX.page.OcitanjaBrojila;
 import com.platformX.page.ZahtjeviZaDostavuPodatakaOMjernimMjestima;
 
-public class QA_005_Verifikacija_Sekcije_Mjerna_Mjesta_Test extends BaseTest {
+public class PX_006_Verifikacija_Sekcije_Mjerna_Mjesta_Test extends BaseTest {
 
-	public QA_005_Verifikacija_Sekcije_Mjerna_Mjesta_Test() throws IOException, FileNotFoundException {
+	public PX_006_Verifikacija_Sekcije_Mjerna_Mjesta_Test() throws IOException, FileNotFoundException {
 		super();
 	}
 	
 	// Test prolazi kroz sve stranice iz sekcije MJERNA MJESTA i verifikuje ih
 
 	@Test
-	public void qa_005_verifikacija_sekcije_mjerna_mjesta_test() throws Exception {
+	public void qa_006_verifikacija_sekcije_mjerna_mjesta_test() throws Exception {
 		LogInPage logInPage = new LogInPage(driver, PLATFORMX_PROPERTIES);
 		logInPage.verifyLogInPage();
 		logInPage.logIn();

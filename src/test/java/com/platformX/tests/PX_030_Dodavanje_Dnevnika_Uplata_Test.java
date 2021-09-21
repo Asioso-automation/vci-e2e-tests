@@ -10,14 +10,14 @@ import com.platformX.page.PocetnaStranica;
 import com.platformX.page.LogInPage;
 import com.platformX.page.ZiroRacuni;
 
-public class QA_010_Dodavanje_Dnevnika_Uplata_Test extends BaseTest {
+public class PX_030_Dodavanje_Dnevnika_Uplata_Test extends BaseTest {
 
-	public QA_010_Dodavanje_Dnevnika_Uplata_Test() throws IOException, FileNotFoundException {
+	public PX_030_Dodavanje_Dnevnika_Uplata_Test() throws IOException, FileNotFoundException {
 		super();
 	}
 
 	@Test
-	public void qa_010_dodavanje_dnevnika_uplata_test() throws Exception {
+	public void px_030_dodavanje_dnevnika_uplata_test() throws Exception {
 		LogInPage logInPage = new LogInPage(driver, PLATFORMX_PROPERTIES);
 		logInPage.verifyLogInPage();
 		logInPage.logIn();

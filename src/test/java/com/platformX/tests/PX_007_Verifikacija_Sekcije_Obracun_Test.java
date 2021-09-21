@@ -14,16 +14,16 @@ import com.platformX.page.NaloziZaObracun;
 import com.platformX.page.Racuni;
 import com.platformX.page.UmanjenjaCijene;
 
-public class QA_006_Verifikacija_Sekcije_Obracun_Test extends BaseTest {
+public class PX_007_Verifikacija_Sekcije_Obracun_Test extends BaseTest {
 
-	public QA_006_Verifikacija_Sekcije_Obracun_Test() throws IOException, FileNotFoundException {
+	public PX_007_Verifikacija_Sekcije_Obracun_Test() throws IOException, FileNotFoundException {
 		super();
 	}
 	
 	// Test prolazi kroz sve stranice iz sekcije OBRACUN i verifikuje ih
 
 	@Test
-	public void qa_006_verifikacija_sekcije_obracun_test() throws Exception {
+	public void px_007_verifikacija_sekcije_obracun_test() throws Exception {
 		LogInPage logInPage = new LogInPage(driver, PLATFORMX_PROPERTIES);
 		logInPage.verifyLogInPage();
 		logInPage.logIn();

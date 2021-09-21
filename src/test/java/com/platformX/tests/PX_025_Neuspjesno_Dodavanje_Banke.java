@@ -8,14 +8,14 @@ import com.platformX.page.Banke;
 import com.platformX.page.PocetnaStranica;
 import com.platformX.page.LogInPage;
 
-public class QA_064_Neuspjesno_Dodavanje_Banke extends BaseTest {
+public class PX_025_Neuspjesno_Dodavanje_Banke extends BaseTest {
 
-	public QA_064_Neuspjesno_Dodavanje_Banke() throws IOException, FileNotFoundException {
+	public PX_025_Neuspjesno_Dodavanje_Banke() throws IOException, FileNotFoundException {
 		super();
 	}
 
-	@Test
-	public void qa_064_neuspjesno_dodavanje_banke_test() throws Exception {
+	@Test (description = "pokusaj dodavanja banke sa postojecim nazivom")
+	public void px_025_neuspjesno_dodavanje_banke_test() throws Exception {
 		LogInPage logInPage = new LogInPage(driver, PLATFORMX_PROPERTIES);
 		logInPage.verifyLogInPage();
 		logInPage.logIn();
@@ -26,8 +26,7 @@ public class QA_064_Neuspjesno_Dodavanje_Banke extends BaseTest {
 		String banka = banke.dodajBanku();
 		banke.verifikujBanku(banka);
 		banke.dodajBankuSaImenom(banka);
-		banke.verifikujPoruku("Ovaj naziv banke je već u upotrebi.");
-		
+		banke.verifikujPoruku("Ovaj naziv banke je već u upotrebi.");	
 	}
 
 }
