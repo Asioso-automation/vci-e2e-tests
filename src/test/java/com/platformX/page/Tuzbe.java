@@ -8,16 +8,29 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
+import com.platformX.base.Kolone;
+
 public class Tuzbe extends PocetnaStranica {
 
 	public Tuzbe(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);
 	}
 	
-	public void verifikujTuzbe() {
-		// wait.until(ExpectedConditions.visibilityOf(tableHeaderWE));
+	public void verifikujTuzbe() throws FileNotFoundException, IOException {
+		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Tužbe')]")));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKupacWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrProtokolaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumPrijaveWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumPocetkaObracunaKamateWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIznosTuzbenogZahtjevaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPresudbeniIznosWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaOstaloNeutuzenoWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaUTokuWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaZakljucenWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.elementToBeClickable(sekcijaBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(stranicaBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(preuzmiExcelBtnWE));

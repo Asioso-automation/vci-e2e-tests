@@ -8,16 +8,25 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
+import com.platformX.base.Kolone;
+
 public class ZahtjeviZaIskljucenje extends PocetnaStranica {
 
 	public ZahtjeviZaIskljucenje(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);
 	}
 	
-	public void verifikujZahtjeviZaIskljucenje() {
-	// 	wait.until(ExpectedConditions.visibilityOf(tableHeaderWE));
+	public void verifikujZahtjeviZaIskljucenje() throws FileNotFoundException, IOException {
+		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Zahtjevi za')]")));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPeriodOpominjanjaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojProtokolaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumKreiranjaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaZahtjevaniDatumIskljucenjaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojStavkiWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaSveStavkePoslaneWE));
 		wait.until(ExpectedConditions.elementToBeClickable(sekcijaBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(stranicaBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(preuzmiExcelBtnWE));

@@ -805,7 +805,7 @@ public class PocetnaStranica extends PageBase {
 		return new VrsteStavkiFinansijskeKartice(driver);
 	}
 	
-	public Opomene navigateToOpomene() throws Exception {
+	public Opomene navigirajNaOpomene() throws Exception {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(pravniOdnosiWE));
 		pravniOdnosiWE.click();
@@ -814,7 +814,7 @@ public class PocetnaStranica extends PageBase {
 		return new Opomene(driver);
 	}
 	
-	public ZahtjeviZaIskljucenje navigateToZahtjeviZaIskljucenje() throws Exception {
+	public ZahtjeviZaIskljucenje navigirajNaZahtjeviZaIskljucenje() throws Exception {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(pravniOdnosiWE));
 		pravniOdnosiWE.click();
@@ -823,7 +823,7 @@ public class PocetnaStranica extends PageBase {
 		return new ZahtjeviZaIskljucenje(driver);
 	}
 	
-	public IskljucenjaOdStraneODSa navigateToIskljucenjaOdStraneODSa() throws Exception {
+	public IskljucenjaOdStraneODSa navigirajNaIskljucenjaOdStraneODSa() throws Exception {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(pravniOdnosiWE));
 		pravniOdnosiWE.click();
@@ -832,7 +832,7 @@ public class PocetnaStranica extends PageBase {
 		return new IskljucenjaOdStraneODSa(driver);
 	}
 	
-	public ZahtjeviZaUkljucenje navigateToZahtjeviZaUkljucenje() throws Exception {
+	public ZahtjeviZaUkljucenje navigirajNaZahtjeviZaUkljucenje() throws Exception {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(pravniOdnosiWE));
 		pravniOdnosiWE.click();
@@ -841,7 +841,7 @@ public class PocetnaStranica extends PageBase {
 		return new ZahtjeviZaUkljucenje(driver);
 	}
 	
-	public Tuzbe navigateToTuzbe() throws Exception {
+	public Tuzbe navigirajNaTuzbe() throws Exception {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(pravniOdnosiWE));
 		pravniOdnosiWE.click();
@@ -850,7 +850,7 @@ public class PocetnaStranica extends PageBase {
 		return new Tuzbe(driver);
 	}
 	
-	public Bankroti navigateToBankroti() throws Exception {
+	public Bankroti navigirajNaBankroti() throws Exception {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(pravniOdnosiWE));
 		pravniOdnosiWE.click();
@@ -859,7 +859,7 @@ public class PocetnaStranica extends PageBase {
 		return new Bankroti(driver);
 	}
 	
-	public Medijacije navigateToMedijacije() throws Exception {
+	public Medijacije navigirajNaMedijacije() throws Exception {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(pravniOdnosiWE));
 		pravniOdnosiWE.click();
@@ -868,7 +868,7 @@ public class PocetnaStranica extends PageBase {
 		return new Medijacije(driver);
 	}
 	
-	public OtpisiPotrazivanja navigateToOtpisiPotrazivanja() throws Exception {
+	public OtpisiPotrazivanja navigirajNaOtpisiPotrazivanja() throws Exception {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(pravniOdnosiWE));
 		pravniOdnosiWE.click();
@@ -886,7 +886,7 @@ public class PocetnaStranica extends PageBase {
 		return new SapPage(driver);
 	}
 	
-	public IzvjestajiPage navigateToIzvjestaji() throws Exception {
+	public IzvjestajiPage navigirajNaIzvjestaji() throws Exception {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(izvjestajiWE));
 		izvjestajiWE.click();
@@ -896,7 +896,7 @@ public class PocetnaStranica extends PageBase {
 	public void verifikujPoruku(String poruka) throws InterruptedException {
 		Thread.sleep(1000);
 		wait.until(ExpectedConditions.visibilityOf(porukaWE));
-		assertTrue(porukaWE.getText().trim().equals(poruka), "Djelatnosti: Poruka upozorenja nije dobra!");
+		assertTrue(porukaWE.getText().trim().equals(poruka), "Poruka upozorenja nije dobra!");
 	}
 	
 	public PocetnaStranica navigateToPocetnaStranica() throws FileNotFoundException, IOException {

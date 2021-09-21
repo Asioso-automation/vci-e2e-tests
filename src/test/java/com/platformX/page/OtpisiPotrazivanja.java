@@ -8,16 +8,24 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
+import com.platformX.base.Kolone;
+
 public class OtpisiPotrazivanja extends PocetnaStranica {
 
 	public OtpisiPotrazivanja(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);
 	}
 	
-	public void verifikujOtpisiPotrazivanja() {
-		// wait.until(ExpectedConditions.visibilityOf(tableHeaderWE));
+	public void verifikujOtpisiPotrazivanja() throws FileNotFoundException, IOException {
+		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Otpisi')]")));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKupacWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaRazlogOtpisaPotrazivanjaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIznosWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaZakljucenoWE));
 		wait.until(ExpectedConditions.elementToBeClickable(sekcijaBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(stranicaBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(preuzmiExcelBtnWE));

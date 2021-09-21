@@ -31,23 +31,23 @@ public class QA_008_Verifikacija_Sekcije_Pravni_Odnosi_Test extends BaseTest {
 		logInPage.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
 		homePage.verifyHomePage();
-		Opomene opomene = homePage.navigateToOpomene();
+		Opomene opomene = homePage.navigirajNaOpomene();
 		opomene.verifikujOpomene();
-		ZahtjeviZaIskljucenje zahtjeviZaIskljucenje = homePage.navigateToZahtjeviZaIskljucenje();
+		ZahtjeviZaIskljucenje zahtjeviZaIskljucenje = homePage.navigirajNaZahtjeviZaIskljucenje();
 		zahtjeviZaIskljucenje.verifikujZahtjeviZaIskljucenje();
-		IskljucenjaOdStraneODSa iskljucenjaOdStraneODSa = homePage.navigateToIskljucenjaOdStraneODSa();
+		IskljucenjaOdStraneODSa iskljucenjaOdStraneODSa = homePage.navigirajNaIskljucenjaOdStraneODSa();
 		iskljucenjaOdStraneODSa.verifikujIskljucenjaOdStraneODSa();
-		ZahtjeviZaUkljucenje zahtjeviZaUkljucenje = homePage.navigateToZahtjeviZaUkljucenje();
+		ZahtjeviZaUkljucenje zahtjeviZaUkljucenje = homePage.navigirajNaZahtjeviZaUkljucenje();
 		zahtjeviZaUkljucenje.verifikujZahtjeviZaUkljucenje();
-		Tuzbe tuzbe = homePage.navigateToTuzbe();
+		Tuzbe tuzbe = homePage.navigirajNaTuzbe();
 		tuzbe.verifikujTuzbe();
-		Bankroti bankroti = homePage.navigateToBankroti();
+		Bankroti bankroti = homePage.navigirajNaBankroti();
 		bankroti.verifikujBankroti();
-		Medijacije medijacije = homePage.navigateToMedijacije();
+		Medijacije medijacije = homePage.navigirajNaMedijacije();
 		medijacije.verifikujMedijacije();
-		OtpisiPotrazivanja otpisiPotrazivanja = homePage.navigateToOtpisiPotrazivanja();
+		OtpisiPotrazivanja otpisiPotrazivanja = homePage.navigirajNaOtpisiPotrazivanja();
 		otpisiPotrazivanja.verifikujOtpisiPotrazivanja();
-		IzvjestajiPage izvjestajiPage = homePage.navigateToIzvjestaji();
+		IzvjestajiPage izvjestajiPage = homePage.navigirajNaIzvjestaji();
 		izvjestajiPage.verifikujIzvjestaji();
 	}
 }

@@ -63,7 +63,6 @@ public class Banke extends PocetnaStranica {
 		String banka = "Banka " + getRandomName();
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBankuBtnWE));
 		Thread.sleep(1000);
-		// TODO Dodati wait, naredni korak cesto pada
 		dodajBankuBtnWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(nazivBankeWE));
 		nazivBankeWE.sendKeys(banka);
@@ -72,6 +71,19 @@ public class Banke extends PocetnaStranica {
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
 		dodajBtnWE.click();
 		return banka;
+	}
+	
+	public String dodajBankuSaImenom(String ime) throws InterruptedException {
+		wait.until(ExpectedConditions.elementToBeClickable(dodajBankuBtnWE));
+		Thread.sleep(1000);
+		dodajBankuBtnWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(nazivBankeWE));
+		nazivBankeWE.sendKeys(ime);
+		wait.until(ExpectedConditions.elementToBeClickable(cifreZiroRacunaWE));
+		cifreZiroRacunaWE.sendKeys("111");
+		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
+		dodajBtnWE.click();
+		return ime;
 	}
 	
 	public void verifikujBanku(String banka) throws InterruptedException {
