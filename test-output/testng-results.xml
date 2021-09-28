@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="26857" started-at="2021-09-21T13:18:39Z" finished-at="2021-09-21T13:19:06Z">
+  <suite name="Default suite" duration-ms="20993" started-at="2021-09-28T11:05:33Z" finished-at="2021-09-28T11:05:54Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="26857" started-at="2021-09-21T13:18:39Z" finished-at="2021-09-21T13:19:06Z">
-      <class name="com.platformX.tests.PX_041_Brisanje_Tarifne_Grupe_Test">
-        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.platformX.tests.PX_041_Brisanje_Tarifne_Grupe_Test@3967e60c]" name="setUp" is-config="true" duration-ms="5396" started-at="2021-09-21T15:18:39Z" finished-at="2021-09-21T15:18:44Z">
+    <test name="Default test" duration-ms="20993" started-at="2021-09-28T11:05:33Z" finished-at="2021-09-28T11:05:54Z">
+      <class name="com.platformX.tests.PX_064_Brisanje_Operativnog_Podrucja_Test">
+        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.platformX.tests.PX_064_Brisanje_Operativnog_Podrucja_Test@3967e60c]" name="setUp" is-config="true" duration-ms="5315" started-at="2021-09-28T13:05:33Z" finished-at="2021-09-28T13:05:38Z">
           <params>
             <param index="0">
               <value>
@@ -18,15 +18,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="px_041_brisanje_tarifne_grupe_test()[pri:0, instance:com.platformX.tests.PX_041_Brisanje_Tarifne_Grupe_Test@3967e60c]" name="px_041_brisanje_tarifne_grupe_test" duration-ms="21441" started-at="2021-09-21T15:18:44Z" finished-at="2021-09-21T15:19:06Z">
+        <test-method status="PASS" signature="px_064_brisanje_operativnog_podrucja_test()[pri:0, instance:com.platformX.tests.PX_064_Brisanje_Operativnog_Podrucja_Test@3967e60c]" name="px_064_brisanje_operativnog_podrucja_test" duration-ms="15676" started-at="2021-09-28T13:05:38Z" finished-at="2021-09-28T13:05:54Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- px_041_brisanje_tarifne_grupe_test -->
-        <test-method status="PASS" signature="cleanUp()[pri:0, instance:com.platformX.tests.PX_041_Brisanje_Tarifne_Grupe_Test@3967e60c]" name="cleanUp" is-config="true" duration-ms="1" started-at="2021-09-21T15:19:06Z" finished-at="2021-09-21T15:19:06Z">
+        </test-method> <!-- px_064_brisanje_operativnog_podrucja_test -->
+        <test-method status="PASS" signature="cleanUp()[pri:0, instance:com.platformX.tests.PX_064_Brisanje_Operativnog_Podrucja_Test@3967e60c]" name="cleanUp" is-config="true" duration-ms="0" started-at="2021-09-28T13:05:54Z" finished-at="2021-09-28T13:05:54Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- cleanUp -->
-      </class> <!-- com.platformX.tests.PX_041_Brisanje_Tarifne_Grupe_Test -->
+      </class> <!-- com.platformX.tests.PX_064_Brisanje_Operativnog_Podrucja_Test -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

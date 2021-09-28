@@ -38,6 +38,21 @@ public class OperativnaPodrucja extends PocetnaStranica {
 	
 	@FindBy(xpath = "//tr[2]/td[2]")
 	private WebElement nazivOperativnogPodrucjaTableWE;
+	
+	@FindBy(xpath = "//td[6]/button")
+	private WebElement burgerBarWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Uredi')]")
+	private WebElement urediWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Briši')]")
+	private WebElement obrisiWE;
+	
+	@FindBy(xpath = "//div/div/div[3]/button[2]")
+	private WebElement potvrdiBrisanjeWE;
+	
+	@FindBy(xpath = "//tr[2]/td")
+	private WebElement praznaTabelaWE;
 
 	public void verifikujOperativnaPodrucja() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
@@ -79,11 +94,54 @@ public class OperativnaPodrucja extends PocetnaStranica {
 	
 	public void verifikujOperativnoPodrucje(String operativnoPodrucje) throws Exception {
 		wait.until(ExpectedConditions.elementToBeClickable(pretraziOperativnoPodrucjeWE));
+		Thread.sleep(500);
+		pretraziOperativnoPodrucjeWE.click();
+		pretraziOperativnoPodrucjeWE.clear();
 		pretraziOperativnoPodrucjeWE.sendKeys(operativnoPodrucje);
 		pretraziOperativnoPodrucjeWE.sendKeys(Keys.ENTER);
 		Thread.sleep(1000);
 		wait.until(ExpectedConditions.visibilityOf(nazivOperativnogPodrucjaTableWE));
 		assertTrue(nazivOperativnogPodrucjaTableWE.getText().equals(operativnoPodrucje), "Operativno podrucje: Ime radne jedinice nije dobro!");
+	}
+	
+	public String izmjeniOperativnoPodrucje() throws InterruptedException {
+		String novoPodrucje = "OP " + getRandomName();
+		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
+		burgerBarWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(urediWE));
+		urediWE.click();
+		Thread.sleep(1000);
+		wait.until(ExpectedConditions.elementToBeClickable(nazivOperativnogPodrucjaWE));
+		nazivOperativnogPodrucjaWE.click();
+		nazivOperativnogPodrucjaWE.clear();
+		nazivOperativnogPodrucjaWE.sendKeys(novoPodrucje);
+		wait.until(ExpectedConditions.elementToBeClickable(potvrdiBtnWE));
+		potvrdiBtnWE.click();
+		return novoPodrucje;
+	}
+	
+	public void obrisiOperativnoPodrucje() throws InterruptedException {
+		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
+		burgerBarWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(obrisiWE));
+		obrisiWE.click();
+		Thread.sleep(1000);
+		wait.until(ExpectedConditions.elementToBeClickable(potvrdiBrisanjeWE));
+		potvrdiBrisanjeWE.click();
+	}
+	
+	public void verifikujBrisanjeOperativnogPodrucja(String podrucje) throws InterruptedException {
+		wait.until(ExpectedConditions.visibilityOf(pretraziOperativnoPodrucjeWE));
+		Thread.sleep(1000);
+		wait.until(ExpectedConditions.elementToBeClickable(pretraziOperativnoPodrucjeWE));
+		pretraziOperativnoPodrucjeWE.click();
+		pretraziOperativnoPodrucjeWE.clear();
+		pretraziOperativnoPodrucjeWE.sendKeys(podrucje);
+		pretraziOperativnoPodrucjeWE.sendKeys(Keys.ENTER);
+		Thread.sleep(1000);
+		wait.until(ExpectedConditions.visibilityOf(praznaTabelaWE));
+		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
+		assertTrue(praznaTabelaWE.getText().equals("Nema podataka"), "OperativnaPodrucja: Poruka prazne tabele nije dobra!");
 	}
 
 }

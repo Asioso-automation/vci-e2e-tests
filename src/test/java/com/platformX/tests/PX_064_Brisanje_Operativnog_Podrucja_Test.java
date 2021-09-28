@@ -8,14 +8,14 @@ import com.platformX.page.PocetnaStranica;
 import com.platformX.page.LogInPage;
 import com.platformX.page.OperativnaPodrucja;
 
-public class PX_062_Dodavanje_Operativnog_Podrucja_Test extends BaseTest {
+public class PX_064_Brisanje_Operativnog_Podrucja_Test extends BaseTest {
 
-	public PX_062_Dodavanje_Operativnog_Podrucja_Test() throws IOException, FileNotFoundException {
+	public PX_064_Brisanje_Operativnog_Podrucja_Test() throws IOException, FileNotFoundException {
 		super();
 	}
 
 	@Test
-	public void px_062_dodavanje_operativnog_podrucja_test() throws Exception {
+	public void px_064_brisanje_operativnog_podrucja_test() throws Exception {
 		LogInPage logInPage = new LogInPage(driver, PLATFORMX_PROPERTIES);
 		logInPage.verifyLogInPage();
 		logInPage.logIn();
@@ -25,6 +25,8 @@ public class PX_062_Dodavanje_Operativnog_Podrucja_Test extends BaseTest {
 		operativnaPodrucja.verifikujOperativnaPodrucja();
 		String podrucje = operativnaPodrucja.dodajOperativnoPodrucje();
 		operativnaPodrucja.verifikujOperativnoPodrucje(podrucje);
+		operativnaPodrucja.obrisiOperativnoPodrucje();
+		operativnaPodrucja.verifikujBrisanjeOperativnogPodrucja(podrucje);
 	}
 
 }

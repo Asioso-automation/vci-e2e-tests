@@ -8,16 +8,16 @@ import com.platformX.page.PocetnaStranica;
 import com.platformX.page.LogInPage;
 import com.platformX.page.Ugovori;
 
-public class QA_027_Provjera_Validacija_Na_Ugovoru_Test2 extends BaseTest {
+public class PX_048_Provjera_Validacija_Na_Ugovoru_Test2 extends BaseTest {
 
-	public QA_027_Provjera_Validacija_Na_Ugovoru_Test2() throws IOException, FileNotFoundException {
+	public PX_048_Provjera_Validacija_Na_Ugovoru_Test2() throws IOException, FileNotFoundException {
 		super();
 	}
 
 	// Provjera klijentskih validacija polja na formi za dodavanje ugovora
 	
 	@Test
-	public void qa_027_provjera_validacija_na_ugovoru_test2() throws Exception {
+	public void px_048_provjera_validacija_na_ugovoru_test2() throws Exception {
 		LogInPage logInPage = new LogInPage(driver, PLATFORMX_PROPERTIES);
 		logInPage.verifyLogInPage();
 		logInPage.logIn();

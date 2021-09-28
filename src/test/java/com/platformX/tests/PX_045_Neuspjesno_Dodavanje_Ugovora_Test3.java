@@ -9,16 +9,16 @@ import com.platformX.page.LogInPage;
 import com.platformX.page.PravnaLica;
 import com.platformX.page.Ugovori;
 
-public class QA_023_Neuspjesno_Dodavanje_Ugovora_Test5 extends BaseTest {
+public class PX_045_Neuspjesno_Dodavanje_Ugovora_Test3 extends BaseTest {
 
-	public QA_023_Neuspjesno_Dodavanje_Ugovora_Test5() throws IOException, FileNotFoundException {
+	public PX_045_Neuspjesno_Dodavanje_Ugovora_Test3() throws IOException, FileNotFoundException {
 		super();
 	}
 
 	// Obrazac za broj protokola ne postoji
 	
 	@Test
-	public void qa_023_nesupjesno_dodavanje_ugovora_test5() throws Exception {
+	public void px_045_nesupjesno_dodavanje_ugovora_test3() throws Exception {
 		LogInPage logInPage = new LogInPage(driver, PLATFORMX_PROPERTIES);
 		logInPage.verifyLogInPage();
 		logInPage.logIn();

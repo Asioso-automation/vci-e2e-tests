@@ -8,14 +8,14 @@ import com.platformX.page.PocetnaStranica;
 import com.platformX.page.LogInPage;
 import com.platformX.page.RadneJedinice;
 
-public class QA_013_Dodavanje_Radne_Jedinice_Test extends BaseTest {
+public class PX_066_Dodavanje_Radne_Jedinice_Test extends BaseTest {
 
-	public QA_013_Dodavanje_Radne_Jedinice_Test() throws IOException, FileNotFoundException {
+	public PX_066_Dodavanje_Radne_Jedinice_Test() throws IOException, FileNotFoundException {
 		super();
 	}
 
 	@Test
-	public void qa_013_dodavanje_radne_jedinice_test() throws Exception {
+	public void px_066_dodavanje_radne_jedinice_test() throws Exception {
 		LogInPage logInPage = new LogInPage(driver, PLATFORMX_PROPERTIES);
 		logInPage.verifyLogInPage();
 		logInPage.logIn();

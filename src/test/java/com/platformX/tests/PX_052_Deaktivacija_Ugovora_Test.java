@@ -9,14 +9,14 @@ import com.platformX.page.LogInPage;
 import com.platformX.page.PravnaLica;
 import com.platformX.page.Ugovori;
 
-public class QA_032_Deaktivacija_Ugovora_Test extends BaseTest {
+public class PX_052_Deaktivacija_Ugovora_Test extends BaseTest {
 
-	public QA_032_Deaktivacija_Ugovora_Test() throws IOException, FileNotFoundException {
+	public PX_052_Deaktivacija_Ugovora_Test() throws IOException, FileNotFoundException {
 		super();
 	}
 
 	@Test
-	public void qa_032_deaktivacija_ugovora_test() throws Exception {
+	public void px_052_deaktivacija_ugovora_test() throws Exception {
 		LogInPage logInPage = new LogInPage(driver, PLATFORMX_PROPERTIES);
 		logInPage.verifyLogInPage();
 		logInPage.logIn();

@@ -9,9 +9,9 @@ import com.platformX.page.LogInPage;
 import com.platformX.page.Ugovori;
 import com.platformX.page.PravnaLica;
 
-public class QA_038_Neuspjesno_Iskljucivanje_Ugovora_Test extends BaseTest {
+public class PX_061_Neuspjesno_Iskljucivanje_Ugovora_Test extends BaseTest {
 
-	public QA_038_Neuspjesno_Iskljucivanje_Ugovora_Test() throws IOException, FileNotFoundException {
+	public PX_061_Neuspjesno_Iskljucivanje_Ugovora_Test() throws IOException, FileNotFoundException {
 		super();
 	}
 

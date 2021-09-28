@@ -9,9 +9,9 @@ import com.platformX.page.LogInPage;
 import com.platformX.page.PravnaLica;
 import com.platformX.page.Ugovori;
 
-public class QA_033_Neuspjesna_Deaktivacija_Ugovora_Test extends BaseTest {
+public class PX_053_Neuspjesna_Deaktivacija_Ugovora_Test extends BaseTest {
 
-	public QA_033_Neuspjesna_Deaktivacija_Ugovora_Test() throws IOException, FileNotFoundException {
+	public PX_053_Neuspjesna_Deaktivacija_Ugovora_Test() throws IOException, FileNotFoundException {
 		super();
 	}
 
@@ -19,7 +19,7 @@ public class QA_033_Neuspjesna_Deaktivacija_Ugovora_Test extends BaseTest {
 	 prosli datum za datum deaktivacije (01.01.2020.) i verifikuje validacionu poruku */
 	
 	@Test
-	public void qa_033_neuspjesna_deaktivacija_ugovora_test() throws Exception {
+	public void px_053_neuspjesna_deaktivacija_ugovora_test() throws Exception {
 		LogInPage logInPage = new LogInPage(driver, PLATFORMX_PROPERTIES);
 		logInPage.verifyLogInPage();
 		logInPage.logIn();

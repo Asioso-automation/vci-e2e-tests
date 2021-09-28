@@ -10,9 +10,9 @@ import com.platformX.page.LogInPage;
 import com.platformX.page.OdbaceniUgovori;
 import com.platformX.page.Ugovori;
 
-public class QA_034_Odbacivanje_Ugovora_Test extends BaseTest {
+public class PX_054_Odbacivanje_Ugovora_Test extends BaseTest {
 
-	public QA_034_Odbacivanje_Ugovora_Test() throws IOException, FileNotFoundException {
+	public PX_054_Odbacivanje_Ugovora_Test() throws IOException, FileNotFoundException {
 		super();
 	}
 	
@@ -20,7 +20,7 @@ public class QA_034_Odbacivanje_Ugovora_Test extends BaseTest {
 	 i provjerava da se ugovor vise ne pojavljuje na stranici Ugovori vec na stranici Odbaceni ugovori*/
 
 	@Test
-	public void qa_034_odbacivanje_ugovora_test() throws Exception {
+	public void px_054_odbacivanje_ugovora_test() throws Exception {
 		LogInPage logInPage = new LogInPage(driver, PLATFORMX_PROPERTIES);
 		logInPage.verifyLogInPage();
 		logInPage.logIn();

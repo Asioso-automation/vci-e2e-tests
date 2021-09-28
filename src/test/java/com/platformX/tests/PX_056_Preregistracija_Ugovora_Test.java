@@ -8,14 +8,14 @@ import com.platformX.page.PocetnaStranica;
 import com.platformX.page.LogInPage;
 import com.platformX.page.Ugovori;
 
-public class QA_041_Preregistracija_Ugovora_Test extends BaseTest {
+public class PX_056_Preregistracija_Ugovora_Test extends BaseTest {
 
-	public QA_041_Preregistracija_Ugovora_Test() throws IOException, FileNotFoundException {
+	public PX_056_Preregistracija_Ugovora_Test() throws IOException, FileNotFoundException {
 		super();
 	}
 
 	@Test
-	public void qa_041_preregistracija_ugovora_test() throws Exception {
+	public void px_056_preregistracija_ugovora_test() throws Exception {
 		LogInPage logInPage = new LogInPage(driver, PLATFORMX_PROPERTIES);
 		logInPage.verifyLogInPage();
 		logInPage.logIn();
