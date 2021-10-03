@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="14078" started-at="2021-09-28T11:55:16Z" finished-at="2021-09-28T11:55:30Z">
+  <suite name="Default suite" duration-ms="92679" started-at="2021-10-03T13:50:15Z" finished-at="2021-10-03T13:51:48Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="14078" started-at="2021-09-28T11:55:16Z" finished-at="2021-09-28T11:55:30Z">
-      <class name="com.platformX.tests.PX_036_Dodavanje_Vrste_Zahtjeva_Test">
-        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.platformX.tests.PX_036_Dodavanje_Vrste_Zahtjeva_Test@3967e60c]" name="setUp" is-config="true" duration-ms="5313" started-at="2021-09-28T13:55:16Z" finished-at="2021-09-28T13:55:21Z">
+    <test name="Default test" duration-ms="92679" started-at="2021-10-03T13:50:15Z" finished-at="2021-10-03T13:51:48Z">
+      <class name="com.platformX.tests.PX_067_Brisanje_Pravnog_Lica_Test">
+        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.platformX.tests.PX_067_Brisanje_Pravnog_Lica_Test@3967e60c]" name="setUp" is-config="true" duration-ms="5376" started-at="2021-10-03T15:50:15Z" finished-at="2021-10-03T15:50:20Z">
           <params>
             <param index="0">
               <value>
@@ -18,15 +18,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="px_036_dodavanje_vrste_zahtjeva_test()[pri:0, instance:com.platformX.tests.PX_036_Dodavanje_Vrste_Zahtjeva_Test@3967e60c]" name="px_036_dodavanje_vrste_zahtjeva_test" duration-ms="8751" started-at="2021-09-28T13:55:21Z" finished-at="2021-09-28T13:55:30Z">
+        <test-method status="PASS" signature="px_067_brisanje_pravnog_lica_test()[pri:0, instance:com.platformX.tests.PX_067_Brisanje_Pravnog_Lica_Test@3967e60c]" name="px_067_brisanje_pravnog_lica_test" duration-ms="87287" started-at="2021-10-03T15:50:20Z" finished-at="2021-10-03T15:51:48Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- px_036_dodavanje_vrste_zahtjeva_test -->
-        <test-method status="PASS" signature="cleanUp()[pri:0, instance:com.platformX.tests.PX_036_Dodavanje_Vrste_Zahtjeva_Test@3967e60c]" name="cleanUp" is-config="true" duration-ms="0" started-at="2021-09-28T13:55:30Z" finished-at="2021-09-28T13:55:30Z">
+        </test-method> <!-- px_067_brisanje_pravnog_lica_test -->
+        <test-method status="PASS" signature="cleanUp()[pri:0, instance:com.platformX.tests.PX_067_Brisanje_Pravnog_Lica_Test@3967e60c]" name="cleanUp" is-config="true" duration-ms="0" started-at="2021-10-03T15:51:48Z" finished-at="2021-10-03T15:51:48Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- cleanUp -->
-      </class> <!-- com.platformX.tests.PX_036_Dodavanje_Vrste_Zahtjeva_Test -->
+      </class> <!-- com.platformX.tests.PX_067_Brisanje_Pravnog_Lica_Test -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

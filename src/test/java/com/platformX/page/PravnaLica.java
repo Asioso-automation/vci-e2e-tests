@@ -66,6 +66,21 @@ public class PravnaLica extends PocetnaStranica {
 	
 	@FindBy(xpath = "//main/div/div/div/div[1]/header/div/button[1]")
 	private WebElement urediPravnoLiceBtnWE;
+	
+	@FindBy(xpath = "//td[12]/button")
+	private WebElement burgerBarWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Uredi')]")
+	private WebElement urediWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Briši')]")
+	private WebElement obrisiWE;
+	
+	@FindBy(xpath = "//div/div/div[3]/button[2]")
+	private WebElement potvrdiBrisanjeWE;
+	
+	@FindBy(xpath = "//tr[2]/td")
+	private WebElement praznaTabelaWE;
 
 	public void verifikujPravnaLica() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
@@ -130,6 +145,9 @@ public class PravnaLica extends PocetnaStranica {
 
 	public void verifikujPravnoLice(String nazivPravnogLica) throws InterruptedException {
 		wait.until(ExpectedConditions.elementToBeClickable(filterPoNazivuWE));
+		Thread.sleep(500);
+		filterPoNazivuWE.click();
+		filterPoNazivuWE.clear();
 		filterPoNazivuWE.sendKeys(nazivPravnogLica);
 		filterPoNazivuWE.sendKeys(Keys.ENTER);
 		Thread.sleep(1000);
@@ -146,6 +164,46 @@ public class PravnaLica extends PocetnaStranica {
 	public void verifikujDetaljePravnogLica() {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[contains(text(), 'Pravno lice')]")));
 		wait.until(ExpectedConditions.elementToBeClickable(urediPravnoLiceBtnWE));
+	}
+	
+	public String izmjeniPravnoLice() throws InterruptedException {
+		String nazivPravnogLica = "Pravno lice " + getRandomName();
+		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
+		burgerBarWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(urediWE));
+		urediWE.click();
+		Thread.sleep(1000);
+		wait.until(ExpectedConditions.elementToBeClickable(nazivPravnogLicaWE));
+		nazivPravnogLicaWE.click();
+		nazivPravnogLicaWE.clear();
+		nazivPravnogLicaWE.sendKeys(nazivPravnogLica);
+		wait.until(ExpectedConditions.elementToBeClickable(dodajPravnoLiceBtnWE));
+		dodajPravnoLiceBtnWE.click();
+		return nazivPravnogLica;
+	}
+	
+	public void obrisiPravnoLice() throws InterruptedException {
+		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
+		burgerBarWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(obrisiWE));
+		obrisiWE.click();
+		Thread.sleep(1000);
+		wait.until(ExpectedConditions.elementToBeClickable(potvrdiBrisanjeWE));
+		potvrdiBrisanjeWE.click();
+	}
+	
+	public void verifikujBrisanjePravnogLica(String pravnoLice) throws InterruptedException {
+		wait.until(ExpectedConditions.visibilityOf(filterPoNazivuWE));
+		Thread.sleep(1000);
+		wait.until(ExpectedConditions.elementToBeClickable(filterPoNazivuWE));
+		filterPoNazivuWE.click();
+		filterPoNazivuWE.clear();
+		filterPoNazivuWE.sendKeys(pravnoLice);
+		filterPoNazivuWE.sendKeys(Keys.ENTER);
+		Thread.sleep(1000);
+		wait.until(ExpectedConditions.visibilityOf(praznaTabelaWE));
+		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
+		assertTrue(praznaTabelaWE.getText().equals("Nema podataka"), "PravnaLica: Poruka prazne tabele nije dobra!");
 	}
 
 }
