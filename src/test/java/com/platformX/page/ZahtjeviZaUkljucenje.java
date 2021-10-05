@@ -33,7 +33,7 @@ public class ZahtjeviZaUkljucenje extends PocetnaStranica {
 		assertTrue(sekcijaBtnWE.getText().trim().equals("PRAVNI ODNOSI"), "ZahtjeviZaUkljucenje: Naziv sekcije nije dobar!");
 		assertTrue(stranicaBtnWE.getText().trim().equals("ZAHTJEVI ZA UKLJUČENJE"), "ZahtjeviZaUkljucenje: Naziv stranice nije dobar!");
 		assertTrue(naslovStraniceWE.getText().trim().equals("ZAHTJEVI ZA UKLJUČENJE"), "ZahtjeviZaUkljucenje: Naziv stranice nije dobar!");
-		assertTrue(brojKolona().size() == 6, "ZahtjeviZaUkljucenje: Broj kolona nije dobar! ");
+		assertTrue(brojKolona().size() == 7, "ZahtjeviZaUkljucenje: Broj kolona nije dobar! ");
 	}
 
 }
