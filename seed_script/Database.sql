@@ -416,9 +416,21 @@ INSERT [Customer].[RequestType] ([Id], [Description]) VALUES (2, N'Vrsta zahtjev
 SET IDENTITY_INSERT [Customer].[RequestType] OFF
 
 
-INSERT [Finance].[AccountingType] ([Id], [Name]) VALUES (1, N'Racun')
-INSERT [Finance].[AccountingType] ([Id], [Name]) VALUES (2, N'Uplata')
-INSERT [Finance].[AccountingType] ([Id], [Name]) VALUES (3, N'Korekcija')
+SET IDENTITY_INSERT [Finance].[BookingType] ON
+
+INSERT INTO [Finance].[BookingType]
+           ([Id], [Name])
+     VALUES
+           (1, N'Redovna potrošnja')
+           ,(2, N'Reprogram')
+           ,(3, N'Pravni odnosi')
+           ,(4, N'Nestandardne usluge')
+
+SET IDENTITY_INSERT [Finance].[BookingType] OFF
+
+INSERT [Finance].[AccountingType] ([Id], [Name], [BookingTypeId]) VALUES (1, N'Racun', 1)
+INSERT [Finance].[AccountingType] ([Id], [Name], [BookingTypeId]) VALUES (2, N'Uplata', 1)
+INSERT [Finance].[AccountingType] ([Id], [Name], [BookingTypeId]) VALUES (3, N'Korekcija', 1)
 
 SET IDENTITY_INSERT [Finance].[Bank] ON 
 
