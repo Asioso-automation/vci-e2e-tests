@@ -39,6 +39,12 @@ public class PravnaLica extends PocetnaStranica {
 
 	@FindBy(xpath = "//div[3]/div[6]/div/div/div[1]/div/input")
 	private WebElement jibWE;
+	
+	@FindBy(xpath = "//div[4]/div[1]/div/div/div[1]/div[1]/input[1]")
+	private WebElement nadlezniODSWE;
+	
+	@FindBy(xpath = "//*[contains(text(), '1 - New York')]")
+	private WebElement odaberiODSWE;
 
 	@FindBy(xpath = "//div[4]/div[2]/div/div/div[1]/div[1]/input[1]")
 	private WebElement postaWE;
@@ -120,6 +126,11 @@ public class PravnaLica extends PocetnaStranica {
 		stampaniNazivNaDokumentimaWE.sendKeys(getRandomName());
 		wait.until(ExpectedConditions.elementToBeClickable(jibWE));
 		jibWE.sendKeys(getRandomNumbers(13));
+		wait.until(ExpectedConditions.elementToBeClickable(nadlezniODSWE));
+		nadlezniODSWE.click();
+		Thread.sleep(1000);
+		wait.until(ExpectedConditions.elementToBeClickable(odaberiODSWE));
+		odaberiODSWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(postaWE));
 		postaWE.sendKeys("78000 - Banja Luka");
 		Thread.sleep(1000);
