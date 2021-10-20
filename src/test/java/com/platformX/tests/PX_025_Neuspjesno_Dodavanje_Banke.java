@@ -6,7 +6,7 @@ import java.io.IOException;
 import com.platformX.base.BaseTest;
 import com.platformX.page.Banke;
 import com.platformX.page.PocetnaStranica;
-import com.platformX.page.LogInPage;
+import com.platformX.page.LogIn;
 
 public class PX_025_Neuspjesno_Dodavanje_Banke extends BaseTest {
 
@@ -16,9 +16,9 @@ public class PX_025_Neuspjesno_Dodavanje_Banke extends BaseTest {
 
 	@Test (description = "pokusaj dodavanja banke sa postojecim nazivom")
 	public void px_025_neuspjesno_dodavanje_banke_test() throws Exception {
-		LogInPage logInPage = new LogInPage(driver, PLATFORMX_PROPERTIES);
-		logInPage.verifyLogInPage();
-		logInPage.logIn();
+		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
+		logIn.verifikujLogIn();
+		logIn.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
 		homePage.verifyHomePage();
 		Banke banke = homePage.navigirajNaBanke();

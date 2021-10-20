@@ -5,7 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import com.platformX.base.BaseTest;
 import com.platformX.page.PocetnaStranica;
-import com.platformX.page.LogInPage;
+import com.platformX.page.LogIn;
 import com.platformX.page.VrsteZahtjeva;
 
 public class PX_038_Brisanje_Vrste_Zahtjeva_Test extends BaseTest {
@@ -16,9 +16,9 @@ public class PX_038_Brisanje_Vrste_Zahtjeva_Test extends BaseTest {
 
 	@Test
 	public void px_038_brisanje_vrste_zahtjeva_test() throws Exception {
-		LogInPage logInPage = new LogInPage(driver, PLATFORMX_PROPERTIES);
-		logInPage.verifyLogInPage();
-		logInPage.logIn();
+		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
+		logIn.verifikujLogIn();
+		logIn.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
 		homePage.verifyHomePage();
 		VrsteZahtjeva vrsteZahtjeva = homePage.navigirajNaVrsteZahtjeva();

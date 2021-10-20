@@ -5,7 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import com.platformX.base.BaseTest;
 import com.platformX.page.PocetnaStranica;
-import com.platformX.page.LogInPage;
+import com.platformX.page.LogIn;
 import com.platformX.page.Ugovori;
 import com.platformX.page.PravnaLica;
 
@@ -17,9 +17,9 @@ public class PX_061_Neuspjesno_Iskljucivanje_Ugovora_Test extends BaseTest {
 
 	@Test
 	public void qa_038_neuspjesno_iskljucivanje_ugovora_test() throws Exception {
-		LogInPage logInPage = new LogInPage(driver, PLATFORMX_PROPERTIES);
-		logInPage.verifyLogInPage();
-		logInPage.logIn();
+		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
+		logIn.verifikujLogIn();
+		logIn.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
 		homePage.verifyHomePage();
 		PravnaLica pravnaLicaPage = homePage.navigirajNaPravnaLica();

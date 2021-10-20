@@ -6,7 +6,7 @@ import java.io.IOException;
 import com.platformX.base.BaseTest;
 import com.platformX.page.PocetnaStranica;
 import com.platformX.page.TarifneGrupe;
-import com.platformX.page.LogInPage;
+import com.platformX.page.LogIn;
 
 public class PX_040_Izmjena_Tarifne_Grupe_Test extends BaseTest {
 
@@ -16,9 +16,9 @@ public class PX_040_Izmjena_Tarifne_Grupe_Test extends BaseTest {
 
 	@Test
 	public void px_040_izmjena_tarifne_grupe_test() throws Exception {
-		LogInPage logInPage = new LogInPage(driver, PLATFORMX_PROPERTIES);
-		logInPage.verifyLogInPage();
-		logInPage.logIn();
+		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
+		logIn.verifikujLogIn();
+		logIn.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
 		homePage.verifyHomePage();
 		TarifneGrupe tarifneGrupe = homePage.navigirajNaTarifneGrupe();

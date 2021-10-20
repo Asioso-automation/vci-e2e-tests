@@ -10,7 +10,7 @@ import com.platformX.page.DnevniciUplata;
 import com.platformX.page.FinansijskeKartice;
 import com.platformX.page.PocetnaStranica;
 import com.platformX.page.PreknjizavanjaUplata;
-import com.platformX.page.LogInPage;
+import com.platformX.page.LogIn;
 import com.platformX.page.NerasporedjeneUplate;
 import com.platformX.page.Reprogrami;
 import com.platformX.page.SveUplate;
@@ -28,9 +28,9 @@ public class PX_008_Verifikacija_Sekcije_Finansije_Test extends BaseTest {
 
 	@Test
 	public void px_008_verifikacija_sekcije_finansije_test() throws Exception {
-		LogInPage logInPage = new LogInPage(driver, PLATFORMX_PROPERTIES);
-		logInPage.verifyLogInPage();
-		logInPage.logIn();
+		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
+		logIn.verifikujLogIn();
+		logIn.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
 		homePage.verifyHomePage();
 		FinansijskeKartice finansijskeKartice = homePage.navigirajNaFinansijskeKartice();

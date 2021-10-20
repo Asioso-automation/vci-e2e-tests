@@ -5,7 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import com.platformX.base.BaseTest;
 import com.platformX.page.PocetnaStranica;
-import com.platformX.page.LogInPage;
+import com.platformX.page.LogIn;
 import com.platformX.page.PravnaLica;
 
 public class PX_066_Izmjena_Pravnog_Lica_Test extends BaseTest {
@@ -16,9 +16,9 @@ public class PX_066_Izmjena_Pravnog_Lica_Test extends BaseTest {
 
 	@Test
 	public void px_066_izmjena_pravnog_lica_test() throws Exception {
-		LogInPage logInPage = new LogInPage(driver, PLATFORMX_PROPERTIES);
-		logInPage.verifyLogInPage();
-		logInPage.logIn();
+		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
+		logIn.verifikujLogIn();
+		logIn.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
 		homePage.verifyHomePage();
 		PravnaLica pravnaLica = homePage.navigirajNaPravnaLica();

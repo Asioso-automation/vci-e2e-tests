@@ -7,7 +7,7 @@ import com.platformX.base.BaseTest;
 import com.platformX.page.FizickaLica;
 import com.platformX.page.GrupeObrazacaBrojaUgovora;
 import com.platformX.page.PocetnaStranica;
-import com.platformX.page.LogInPage;
+import com.platformX.page.LogIn;
 import com.platformX.page.Mjenice;
 import com.platformX.page.ObavjestenjaOPromjeniSnabdjevaca;
 import com.platformX.page.OdbaceniUgovori;
@@ -29,9 +29,9 @@ public class PX_005_Verifikacija_Sekcije_Kupci_Test extends BaseTest {
 
 	@Test
 	public void px_005_verifikacija_sekcije_kupci_test() throws Exception {
-		LogInPage logInPage = new LogInPage(driver, PLATFORMX_PROPERTIES);
-		logInPage.verifyLogInPage();
-		logInPage.logIn();
+		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
+		logIn.verifikujLogIn();
+		logIn.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
 		homePage.verifyHomePage();
 		PravnaLica pravnaLica = homePage.navigirajNaPravnaLica();

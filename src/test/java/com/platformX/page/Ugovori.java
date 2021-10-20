@@ -42,7 +42,7 @@ public class Ugovori extends PocetnaStranica {
 	@FindBy(xpath = "//tr[2]/td[10]")
 	private WebElement zavrsavaTabelaWE;
 	
-	@FindBy(xpath = "//tr[2]/td[9]")
+	@FindBy(xpath = "//td[9]")
 	private WebElement pocinjeOdTabelaWE;
 
 	@FindBy(xpath = "//tr[2]/td[7]")
@@ -670,19 +670,14 @@ public class Ugovori extends PocetnaStranica {
 	public void verifikujPreregistrovanUgovor(String eic, String kupac) throws InterruptedException {
 		wait.until(ExpectedConditions.elementToBeClickable(pretraziMjernaMjestaWE));
 		Thread.sleep(1000);
-		pretraziEicWE.click();
-		pretraziEicWE.clear();
-		pretraziEicWE.sendKeys(eic);
-		pretraziEicWE.sendKeys(Keys.ENTER);
-		Thread.sleep(1000);
 		wait.until(ExpectedConditions.elementToBeClickable(pretraziKupcaWE));
 		pretraziKupcaWE.click();
 		pretraziKupcaWE.clear();
 		pretraziKupcaWE.sendKeys(kupac);
+		Thread.sleep(2000);
 		pretraziKupcaWE.sendKeys(Keys.ENTER);
 		Thread.sleep(1000);
 		wait.until(ExpectedConditions.visibilityOf(eicTabelaWE));
-		Thread.sleep(1000);
 		assertTrue(eicTabelaWE.getText().contains(eic), "Ugovori: Naziv EIC nije dobar!");
 		assertTrue(pocinjeOdTabelaWE.getText().contains("15.07.2020."), "Ugovori: Datum pocetka nije dobar!");
 	}

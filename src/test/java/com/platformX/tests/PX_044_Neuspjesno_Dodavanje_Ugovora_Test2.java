@@ -5,7 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import com.platformX.base.BaseTest;
 import com.platformX.page.PocetnaStranica;
-import com.platformX.page.LogInPage;
+import com.platformX.page.LogIn;
 import com.platformX.page.PravnaLica;
 import com.platformX.page.Ugovori;
 
@@ -19,9 +19,9 @@ public class PX_044_Neuspjesno_Dodavanje_Ugovora_Test2 extends BaseTest {
 	
 	@Test
 	public void px_044_nesupjesno_dodavanje_ugovora_test2() throws Exception {
-		LogInPage logInPage = new LogInPage(driver, PLATFORMX_PROPERTIES);
-		logInPage.verifyLogInPage();
-		logInPage.logIn();
+		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
+		logIn.verifikujLogIn();
+		logIn.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
 		homePage.verifyHomePage();
 		PravnaLica pravnaLicaPage = homePage.navigirajNaPravnaLica();

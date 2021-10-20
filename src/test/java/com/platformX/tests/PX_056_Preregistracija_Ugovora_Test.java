@@ -5,7 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import com.platformX.base.BaseTest;
 import com.platformX.page.PocetnaStranica;
-import com.platformX.page.LogInPage;
+import com.platformX.page.LogIn;
 import com.platformX.page.Ugovori;
 
 public class PX_056_Preregistracija_Ugovora_Test extends BaseTest {
@@ -16,9 +16,9 @@ public class PX_056_Preregistracija_Ugovora_Test extends BaseTest {
 
 	@Test
 	public void px_056_preregistracija_ugovora_test() throws Exception {
-		LogInPage logInPage = new LogInPage(driver, PLATFORMX_PROPERTIES);
-		logInPage.verifyLogInPage();
-		logInPage.logIn();
+		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
+		logIn.verifikujLogIn();
+		logIn.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
 		homePage.verifyHomePage();
 		Ugovori ugovoriPage = homePage.navigirajNaUgovori();
@@ -27,8 +27,7 @@ public class PX_056_Preregistracija_Ugovora_Test extends BaseTest {
 		ugovoriPage.otvoriPreregistraciju();
 		ugovoriPage.preregistrujUgovor();
 		ugovoriPage.verifikujUgovori();
-		// TODO Refaktorisati verifikaciju 
-		// ugovoriPage.verifikujPreregistrovanUgovor("36Z0SB00", "Firma 2");
+		ugovoriPage.verifikujPreregistrovanUgovor("36Z0SB00", "4100010 - Firma 2, Hajduk Veljkova 1, 78000 Banja Luka");
 	}
 	
 }

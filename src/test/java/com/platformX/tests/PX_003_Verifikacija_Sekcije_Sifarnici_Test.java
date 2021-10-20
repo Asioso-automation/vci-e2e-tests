@@ -7,7 +7,7 @@ import com.platformX.base.BaseTest;
 import com.platformX.page.Djelatnosti;
 import com.platformX.page.Entiteti;
 import com.platformX.page.PocetnaStranica;
-import com.platformX.page.LogInPage;
+import com.platformX.page.LogIn;
 import com.platformX.page.NaseljenaMjesta;
 import com.platformX.page.OperativnaPodrucja;
 import com.platformX.page.OperatoriSistema;
@@ -27,9 +27,9 @@ public class PX_003_Verifikacija_Sekcije_Sifarnici_Test extends BaseTest {
 
 	@Test
 	public void px_003_verifikacije_sekcije_sifarnici_test() throws Exception {
-		LogInPage logInPage = new LogInPage(driver, PLATFORMX_PROPERTIES);
-		logInPage.verifyLogInPage();
-		logInPage.logIn();
+		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
+		logIn.verifikujLogIn();
+		logIn.logIn();
 		PocetnaStranica pocetnaStranica = new PocetnaStranica(driver);
 		pocetnaStranica.verifyHomePage();
 		Organizacije organizacije = pocetnaStranica.navigirajNaOrganizacije();

@@ -6,7 +6,7 @@ import java.io.IOException;
 import com.platformX.base.BaseTest;
 import com.platformX.page.EnergetskiObracun;
 import com.platformX.page.PocetnaStranica;
-import com.platformX.page.LogInPage;
+import com.platformX.page.LogIn;
 import com.platformX.page.MjernaMjesta;
 import com.platformX.page.OcitanjaBrojila;
 import com.platformX.page.ZahtjeviZaDostavuPodatakaOMjernimMjestima;
@@ -21,9 +21,9 @@ public class PX_006_Verifikacija_Sekcije_Mjerna_Mjesta_Test extends BaseTest {
 
 	@Test
 	public void qa_006_verifikacija_sekcije_mjerna_mjesta_test() throws Exception {
-		LogInPage logInPage = new LogInPage(driver, PLATFORMX_PROPERTIES);
-		logInPage.verifyLogInPage();
-		logInPage.logIn();
+		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
+		logIn.verifikujLogIn();
+		logIn.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
 		homePage.verifyHomePage();
 		MjernaMjesta mjernaMjesta = homePage.navigirajNaMjernaMjesta();

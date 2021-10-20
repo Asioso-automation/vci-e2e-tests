@@ -11,7 +11,7 @@ import com.platformX.page.ZahtjeviZaUkljucenje;
 import com.platformX.page.Bankroti;
 import com.platformX.page.IskljucenjaOdStraneODSa;
 import com.platformX.page.IzvjestajiPage;
-import com.platformX.page.LogInPage;
+import com.platformX.page.LogIn;
 import com.platformX.page.Medijacije;
 import com.platformX.page.Opomene;
 import com.platformX.page.OtpisiPotrazivanja;
@@ -26,9 +26,9 @@ public class PX_009_Verifikacija_Sekcije_Pravni_Odnosi_Test extends BaseTest {
 
 	@Test
 	public void px_009_verifikacija_sekcije_pravni_odnosi_test() throws Exception {
-		LogInPage logInPage = new LogInPage(driver, PLATFORMX_PROPERTIES);
-		logInPage.verifyLogInPage();
-		logInPage.logIn();
+		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
+		logIn.verifikujLogIn();
+		logIn.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
 		homePage.verifyHomePage();
 		Opomene opomene = homePage.navigirajNaOpomene();

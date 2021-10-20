@@ -9,9 +9,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class LogInPage extends PocetnaStranica {
+public class LogIn extends PocetnaStranica {
 
-	public LogInPage(WebDriver driver, String URL) throws FileNotFoundException, IOException {
+	public LogIn(WebDriver driver, String URL) throws FileNotFoundException, IOException {
 		super(driver);
 		URL = platformx_properties.getValue("URL.LOGIN");
 		driver.get(URL);
@@ -29,7 +29,7 @@ public class LogInPage extends PocetnaStranica {
 	@FindBy(xpath = "//div[2]/div/div/div")
 	private WebElement porukaUpozorenjaWE;
 	
-	public void verifyLogInPage() {
+	public void verifikujLogIn() {
 		wait.until(ExpectedConditions.elementToBeClickable(korisnickoImeWE));
 		wait.until(ExpectedConditions.elementToBeClickable(lozinkaWE));
 	}

@@ -7,7 +7,7 @@ import com.platformX.base.BaseTest;
 import com.platformX.page.Banke;
 import com.platformX.page.DnevniciUplata;
 import com.platformX.page.PocetnaStranica;
-import com.platformX.page.LogInPage;
+import com.platformX.page.LogIn;
 import com.platformX.page.UplatePage;
 import com.platformX.page.ZiroRacuni;
 
@@ -19,9 +19,9 @@ public class PX_031_Dodavanje_Uplate_Test extends BaseTest {
 
 	@Test
 	public void px_031_dodavanje_uplate_test() throws Exception {
-		LogInPage logInPage = new LogInPage(driver, PLATFORMX_PROPERTIES);
-		logInPage.verifyLogInPage();
-		logInPage.logIn();
+		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
+		logIn.verifikujLogIn();
+		logIn.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
 		homePage.verifyHomePage();
 		homePage.navigirajNaBanke();

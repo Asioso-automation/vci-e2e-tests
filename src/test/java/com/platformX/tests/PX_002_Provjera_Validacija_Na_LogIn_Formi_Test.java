@@ -4,7 +4,7 @@ import org.testng.annotations.Test;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import com.platformX.base.BaseTest;
-import com.platformX.page.LogInPage;
+import com.platformX.page.LogIn;
 
 public class PX_002_Provjera_Validacija_Na_LogIn_Formi_Test extends BaseTest {
 
@@ -16,23 +16,23 @@ public class PX_002_Provjera_Validacija_Na_LogIn_Formi_Test extends BaseTest {
 
 	@Test
 	public void px_002_validno_korisnicko_ime_test() throws Exception {
-		LogInPage logInPage = new LogInPage(driver, PLATFORMX_PROPERTIES);
-		logInPage.verifyLogInPage();
-		logInPage.provjeraValidacija("nebojsa.milojevic", "Pa$$w0rd");
+		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
+		logIn.verifikujLogIn();
+		logIn.provjeraValidacija("nebojsa.milojevic", "Pa$$w0rd");
 	}
 	
 	@Test
 	public void px_002_validna_lozinka_test() throws Exception {
-		LogInPage logInPage = new LogInPage(driver, PLATFORMX_PROPERTIES);
-		logInPage.verifyLogInPage();
-		logInPage.provjeraValidacija("korisnickoime", "Q4NesoMil1");
+		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
+		logIn.verifikujLogIn();
+		logIn.provjeraValidacija("korisnickoime", "Q4NesoMil1");
 	}
 	
 	@Test
 	public void px_002_nevalidni_kredencijali_test() throws Exception {
-		LogInPage logInPage = new LogInPage(driver, PLATFORMX_PROPERTIES);
-		logInPage.verifyLogInPage();
-		logInPage.provjeraValidacija("korisnickoime", "Pa$$w0rd");
+		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
+		logIn.verifikujLogIn();
+		logIn.provjeraValidacija("korisnickoime", "Pa$$w0rd");
 	}
 
 }

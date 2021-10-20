@@ -9,7 +9,7 @@ import com.platformX.page.PocetnaStranica;
 import com.platformX.page.KamatePage;
 import com.platformX.page.KorekcijeRacuna;
 import com.platformX.page.KupciZaTestneRacune;
-import com.platformX.page.LogInPage;
+import com.platformX.page.LogIn;
 import com.platformX.page.NaloziZaObracun;
 import com.platformX.page.Racuni;
 import com.platformX.page.UmanjenjaCijene;
@@ -24,9 +24,9 @@ public class PX_007_Verifikacija_Sekcije_Obracun_Test extends BaseTest {
 
 	@Test
 	public void px_007_verifikacija_sekcije_obracun_test() throws Exception {
-		LogInPage logInPage = new LogInPage(driver, PLATFORMX_PROPERTIES);
-		logInPage.verifyLogInPage();
-		logInPage.logIn();
+		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
+		logIn.verifikujLogIn();
+		logIn.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
 		homePage.verifyHomePage();
 		NaloziZaObracun naloziZaObracun = homePage.navigirajNaNaloziZaObracun();

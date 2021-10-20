@@ -5,7 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import com.platformX.base.BaseTest;
 import com.platformX.page.PocetnaStranica;
-import com.platformX.page.LogInPage;
+import com.platformX.page.LogIn;
 
 public class PX_001_LogIn_LogOut_Test extends BaseTest {
 
@@ -17,13 +17,13 @@ public class PX_001_LogIn_LogOut_Test extends BaseTest {
 
 	@Test
 	public void px_001_logIn_logOut_test() throws Exception {
-		LogInPage logInPage = new LogInPage(driver, PLATFORMX_PROPERTIES);
-		logInPage.verifyLogInPage();
-		logInPage.logIn();
+		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
+		logIn.verifikujLogIn();
+		logIn.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
 		homePage.verifyHomePage();
 		homePage.logOut();
-		logInPage.verifyLogInPage();
+		logIn.verifikujLogIn();
 	}
 
 }

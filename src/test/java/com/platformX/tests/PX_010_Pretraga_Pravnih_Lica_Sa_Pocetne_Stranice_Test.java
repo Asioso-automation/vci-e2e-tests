@@ -5,7 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import com.platformX.base.BaseTest;
 import com.platformX.page.PocetnaStranica;
-import com.platformX.page.LogInPage;
+import com.platformX.page.LogIn;
 import com.platformX.page.PravnaLica;
 
 public class PX_010_Pretraga_Pravnih_Lica_Sa_Pocetne_Stranice_Test extends BaseTest {
@@ -16,9 +16,9 @@ public class PX_010_Pretraga_Pravnih_Lica_Sa_Pocetne_Stranice_Test extends BaseT
 
 	@Test
 	public void px_010_pretraga_pravnih_lica_sa_pocetne_stranice_test() throws Exception {
-		LogInPage logInPage = new LogInPage(driver, PLATFORMX_PROPERTIES);
-		logInPage.verifyLogInPage();
-		logInPage.logIn();
+		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
+		logIn.verifikujLogIn();
+		logIn.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
 		homePage.verifyHomePage();
 		PravnaLica pravnaLicaPage = homePage.navigirajNaPravnaLica();
