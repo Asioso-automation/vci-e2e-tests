@@ -18,7 +18,7 @@ public class PocetnaStranica extends PageBase {
 		super(driver);
 	}
 	
-	WebDriverWait wait = new WebDriverWait(driver, 20);
+	WebDriverWait wait = new WebDriverWait(driver, 30);
 	
 	@FindBy(xpath = "//a[@href='/']")
 	protected WebElement pocetnaStranicaWE;
