@@ -12,6 +12,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import com.platformX.base.Kolone;
+import com.platformX.util.Helper;
 
 public class VrsteZahtjeva extends PocetnaStranica {
 	
@@ -64,7 +65,7 @@ public class VrsteZahtjeva extends PocetnaStranica {
 	}
 	
 	public String dodajVrstuZahtjeva() {
-		String opis = "Opis " + getRandomName();
+		String opis = "Opis " + Helper.getRandomString(5);
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
 		dodajBtnWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(opisWE));
@@ -88,7 +89,7 @@ public class VrsteZahtjeva extends PocetnaStranica {
 	}
 	
 	public String urediVrstuZahtjeva() {
-		String opis = getRandomName();
+		String opis = Helper.getRandomString(5);
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		burgerBarWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(urediBtnWE));

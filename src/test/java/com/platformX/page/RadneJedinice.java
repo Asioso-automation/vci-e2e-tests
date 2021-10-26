@@ -12,6 +12,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import com.platformX.base.Kolone;
+import com.platformX.util.Helper;
 
 public class RadneJedinice extends PocetnaStranica {
 
@@ -39,6 +40,12 @@ public class RadneJedinice extends PocetnaStranica {
 	
 	@FindBy(xpath = "//tr[2]/td[2]")
 	private WebElement imeRadneJediniceTableWE;
+	
+	@FindBy(xpath = "//td[12]/button")
+	private WebElement burgerBarWE;
+	
+	@FindBy(xpath = "//div/div/div[3]/button[2]")
+	private WebElement potvrdiBrisanjeWE;
 
 	public void verifikujRadneJedinice() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
@@ -68,7 +75,7 @@ public class RadneJedinice extends PocetnaStranica {
 	}
 	
 	public String dodajRadnuJedinicu() throws InterruptedException {
-		String radnaJedinica = "RJ " + getRandomName();
+		String radnaJedinica = "RJ " + Helper.getRandomString(5);
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
 		dodajBtnWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(nazivRadneJediniceWE));
@@ -88,11 +95,53 @@ public class RadneJedinice extends PocetnaStranica {
 	
 	public void verifikujRadnuJedinicu(String radnaJedinica) throws Exception {
 		wait.until(ExpectedConditions.elementToBeClickable(pretraziRadneJediniceWE));
+		pretraziRadneJediniceWE.click();
+		pretraziRadneJediniceWE.clear();
 		pretraziRadneJediniceWE.sendKeys(radnaJedinica);
 		pretraziRadneJediniceWE.sendKeys(Keys.ENTER);
 		Thread.sleep(1000);
 		wait.until(ExpectedConditions.visibilityOf(imeRadneJediniceTableWE));
 		assertTrue(imeRadneJediniceTableWE.getText().equals(radnaJedinica), "Radne jedinice: Ime radne jedinice nije dobro!");
+	}
+	
+	public String izmjeniRadnuJedinicu() throws InterruptedException {
+		String radnaJedinica = "RJ " + Helper.getRandomString(5);
+		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
+		burgerBarWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(urediWE));
+		urediWE.click();
+		Thread.sleep(1000);
+		wait.until(ExpectedConditions.elementToBeClickable(nazivRadneJediniceWE));
+		nazivRadneJediniceWE.click();
+		nazivRadneJediniceWE.clear();
+		nazivRadneJediniceWE.sendKeys(radnaJedinica);
+		wait.until(ExpectedConditions.elementToBeClickable(potvrdiBtnWE));
+		potvrdiBtnWE.click();
+		return radnaJedinica;
+	}
+	
+	public void obrisiRadnuJedinicu() throws InterruptedException {
+		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
+		burgerBarWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(obrisiWE));
+		obrisiWE.click();
+		Thread.sleep(1000);
+		wait.until(ExpectedConditions.elementToBeClickable(potvrdiBrisanjeWE));
+		potvrdiBrisanjeWE.click();
+	}
+	
+	public void verifikujBrisanjeRadneJedinice(String jedinica) throws InterruptedException {
+		wait.until(ExpectedConditions.visibilityOf(pretraziRadneJediniceWE));
+		Thread.sleep(1000);
+		wait.until(ExpectedConditions.elementToBeClickable(pretraziRadneJediniceWE));
+		pretraziRadneJediniceWE.click();
+		pretraziRadneJediniceWE.clear();
+		pretraziRadneJediniceWE.sendKeys(jedinica);
+		pretraziRadneJediniceWE.sendKeys(Keys.ENTER);
+		Thread.sleep(1000);
+		wait.until(ExpectedConditions.visibilityOf(praznaTabelaWE));
+		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
+		assertTrue(praznaTabelaWE.getText().equals("Nema podataka"), "Radne jedinice: Poruka prazne tabele nije dobra!");
 	}
 
 }

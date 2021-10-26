@@ -8,14 +8,14 @@ import com.platformX.page.PocetnaStranica;
 import com.platformX.page.LogIn;
 import com.platformX.page.RadneJedinice;
 
-public class PX_068_Dodavanje_Radne_Jedinice_Test extends BaseTest {
+public class PX_069_Izmjena_Radne_Jedinice_Test extends BaseTest {
 
-	public PX_068_Dodavanje_Radne_Jedinice_Test() throws IOException, FileNotFoundException {
+	public PX_069_Izmjena_Radne_Jedinice_Test() throws IOException, FileNotFoundException {
 		super();
 	}
 
 	@Test
-	public void px_068_dodavanje_radne_jedinice_test() throws Exception {
+	public void px_069_izmjena_radne_jedinice_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
@@ -25,6 +25,8 @@ public class PX_068_Dodavanje_Radne_Jedinice_Test extends BaseTest {
 		radneJedinice.verifikujRadneJedinice();
 		String jedinica = radneJedinice.dodajRadnuJedinicu();
 		radneJedinice.verifikujRadnuJedinicu(jedinica);
+		String novaRadnaJedinica = radneJedinice.izmjeniRadnuJedinicu();
+		radneJedinice.verifikujRadnuJedinicu(novaRadnaJedinica);
 	}
 
 }

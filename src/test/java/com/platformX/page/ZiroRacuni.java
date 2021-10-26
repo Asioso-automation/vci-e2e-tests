@@ -11,6 +11,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import com.platformX.base.Kolone;
+import com.platformX.util.Helper;
 
 public class ZiroRacuni extends PocetnaStranica {
 
@@ -74,7 +75,7 @@ public class ZiroRacuni extends PocetnaStranica {
 	}
 
 	public String dodajZiroRacun(String banka) throws InterruptedException {
-		String ziroRacun = "111-" + getRandomNumbers(3) + "-" + getRandomNumbers(8) + "-" + getRandomNumbers(2);
+		String ziroRacun = "111-" + Helper.getRandomNumber(3) + "-" + Helper.getRandomNumber(8) + "-" + Helper.getRandomNumber(2);
 		wait.until(ExpectedConditions.elementToBeClickable(dodajZiroRacunBtnWE));
 		Thread.sleep(1000);
 		dodajZiroRacunBtnWE.click();
@@ -127,7 +128,7 @@ public class ZiroRacuni extends PocetnaStranica {
 	}
 	
 	public String izmjeniZiroRacun() throws InterruptedException {
-		String noviZiroRacun = "111-" + getRandomNumbers(3) + "-" + getRandomNumbers(8) + "-" + getRandomNumbers(2);
+		String noviZiroRacun = "111-" + Helper.getRandomNumber(3) + "-" + Helper.getRandomNumber(8) + "-" + Helper.getRandomNumber(2);
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		burgerBarWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(urediWE));

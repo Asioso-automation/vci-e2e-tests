@@ -13,15 +13,12 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
-
 import com.platformX.util.PropertiesUtil;
 
 public class BaseTest {
 
 	protected WebDriver driver;
-
 	protected PropertiesUtil platformx_properties = null;
-
 	protected final String PLATFORMX_PROPERTIES = "platformx.properties";
 
 	public BaseTest() throws IOException, FileNotFoundException {

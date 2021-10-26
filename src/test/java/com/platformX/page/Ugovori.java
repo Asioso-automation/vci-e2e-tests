@@ -15,6 +15,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.platformX.base.Kolone;
+import com.platformX.util.Helper;
 
 public class Ugovori extends PocetnaStranica {
 
@@ -474,8 +475,8 @@ public class Ugovori extends PocetnaStranica {
 	public String dodajUgovor(String kupac, String kategorijaCijene, String datumPocetka, String datumOd,
 			String mjernoMjesto, boolean reaktivnoBrojilo) throws InterruptedException {
 		WebDriverWait wait = new WebDriverWait(driver, 30);
-		String nazivMjernogMjesta = "Mjerno mjesto " + getRandomName();
-		String aktivnoBrojilo = getRandomName();
+		String nazivMjernogMjesta = "Mjerno mjesto " + Helper.getRandomString(5);
+		String aktivnoBrojilo = Helper.getRandomString(5);
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
 		dodajBtnWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(kupacWE));
@@ -575,7 +576,7 @@ public class Ugovori extends PocetnaStranica {
 		wait.until(ExpectedConditions.elementToBeClickable(nazivMjernogMjestaWE));
 		nazivMjernogMjestaWE.sendKeys(nazivMjernogMjesta);
 		wait.until(ExpectedConditions.elementToBeClickable(nazivNaStampanimDokumentimaWE));
-		nazivNaStampanimDokumentimaWE.sendKeys(getRandomName());
+		nazivNaStampanimDokumentimaWE.sendKeys(Helper.getRandomString(5));
 		wait.until(ExpectedConditions.elementToBeClickable(aktivnoBrojiloWE));
 		aktivnoBrojiloWE.sendKeys(aktivnoBrojilo);
 		// assertTrue(reaktivnoBrojiloWE.getText().contains(aktivnoBrojilo),
@@ -818,7 +819,7 @@ public class Ugovori extends PocetnaStranica {
 		odaberiDjelatnostWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(rekapitulacijaWE));
 		rekapitulacijaWE.click();
-		urediNazivNaStampanimDokumentimaWE.sendKeys(getRandomName());
+		urediNazivNaStampanimDokumentimaWE.sendKeys(Helper.getRandomString(5));
 		urediPostaWE.sendKeys("71420 - Pale");
 		Thread.sleep(500);
 		wait.until(ExpectedConditions.visibilityOf(odaberiPostu1WE));
@@ -833,11 +834,11 @@ public class Ugovori extends PocetnaStranica {
 		urediBrojUliceWE.clear();
 		urediBrojUliceWE.sendKeys("5");
 		wait.until(ExpectedConditions.elementToBeClickable(imeIPrezimeWE));
-		imeIPrezimeWE.sendKeys("Name " + getRandomName());
+		imeIPrezimeWE.sendKeys("Name " + Helper.getRandomString(5));
 		wait.until(ExpectedConditions.elementToBeClickable(urediEmailDostavaWE));
 		urediEmailDostavaWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(urediEmailWE));
-		urediEmailWE.sendKeys(getRandomName() + "@" + getRandomName() + ".com");
+		urediEmailWE.sendKeys(Helper.getRandomString(5) + "@" + Helper.getRandomString(5) + ".com");
 		wait.until(ExpectedConditions.elementToBeClickable(dodajFormaBtnWE));
 		dodajFormaBtnWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
@@ -854,8 +855,8 @@ public class Ugovori extends PocetnaStranica {
 
 	public String dodajPotpisanUgovor(String mjernoMjesto, String kupac) throws InterruptedException {
 		WebDriverWait wait = new WebDriverWait(driver, 30);
-		String nazivMjernogMjesta = "Mjerno mjesto " + getRandomName();
-		String aktivnoBrojilo = getRandomName();
+		String nazivMjernogMjesta = "Mjerno mjesto " + Helper.getRandomString(5);
+		String aktivnoBrojilo = Helper.getRandomString(5);
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
 		dodajBtnWE.click();
 		
@@ -959,7 +960,7 @@ public class Ugovori extends PocetnaStranica {
 		wait.until(ExpectedConditions.elementToBeClickable(nazivMjernogMjestaWE));
 		nazivMjernogMjestaWE.sendKeys(nazivMjernogMjesta);
 		wait.until(ExpectedConditions.elementToBeClickable(nazivNaStampanimDokumentimaWE));
-		nazivNaStampanimDokumentimaWE.sendKeys(getRandomName());
+		nazivNaStampanimDokumentimaWE.sendKeys(Helper.getRandomString(5));
 		wait.until(ExpectedConditions.elementToBeClickable(aktivnoBrojiloWE));
 		aktivnoBrojiloWE.sendKeys(aktivnoBrojilo);
 		wait.until(ExpectedConditions.elementToBeClickable(aktivnaKonstantaWE));
@@ -1153,13 +1154,13 @@ public class Ugovori extends PocetnaStranica {
 				.click();
 		Thread.sleep(1000);
 		wait.until(ExpectedConditions.elementToBeClickable(nazivMjMjestaWE));
-		nazivMjMjestaWE.sendKeys(getRandomName());
+		nazivMjMjestaWE.sendKeys(Helper.getRandomString(5));
 		wait.until(ExpectedConditions.elementToBeClickable(datumPreregistracijeWE));
 		datumPreregistracijeWE.sendKeys("15.07.2020.");
 		wait.until(ExpectedConditions.elementToBeClickable(datumVaziOdWE));
 		datumVaziOdWE.sendKeys("15.07.2020.");
 		wait.until(ExpectedConditions.elementToBeClickable(nazivMjMjestaNaDokWE));
-		nazivMjMjestaNaDokWE.sendKeys(getRandomName());
+		nazivMjMjestaNaDokWE.sendKeys(Helper.getRandomString(5));
 		wait.until(ExpectedConditions.elementToBeClickable(postaPreregistracijeWE));
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].scrollIntoView(true);", postaPreregistracijeWE);
@@ -1176,7 +1177,7 @@ public class Ugovori extends PocetnaStranica {
 		wait.until(ExpectedConditions.visibilityOf(odaberiUlicu1WE));
 		odaberiUlicu1WE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(brojUUliciWE));
-		brojUUliciWE.sendKeys(getRandomNumbers(2));
+		brojUUliciWE.sendKeys(Helper.getRandomNumber(2));
 		wait.until(ExpectedConditions.elementToBeClickable(potvrdiPreregistracijuBtnWE));
 		potvrdiPreregistracijuBtnWE.click();
 	}

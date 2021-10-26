@@ -1,9 +1,9 @@
 package com.platformX.page;
 
 import static org.testng.Assert.assertTrue;
+
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -18,11 +18,7 @@ public class PocetnaStranica extends PageBase {
 		super(driver);
 	}
 	
-	WebDriverWait wait = new WebDriverWait(driver, 40);
-
-	protected List<WebElement> brojKolona() {
-		return driver.findElements(By.xpath("//th"));
-	}
+	WebDriverWait wait = new WebDriverWait(driver, 20);
 	
 	@FindBy(xpath = "//a[@href='/']")
 	protected WebElement pocetnaStranicaWE;
@@ -893,12 +889,6 @@ public class PocetnaStranica extends PageBase {
 		return new IzvjestajiPage(driver);
 	}
 	
-	public void verifikujPoruku(String poruka) throws InterruptedException {
-		Thread.sleep(1000);
-		wait.until(ExpectedConditions.visibilityOf(porukaWE));
-		assertTrue(porukaWE.getText().trim().equals(poruka), "Poruka upozorenja nije dobra!");
-	}
-	
 	public PocetnaStranica navigateToPocetnaStranica() throws FileNotFoundException, IOException {
 		wait.until(ExpectedConditions.elementToBeClickable(pocetnaStranicaWE));
 		pocetnaStranicaWE.click();
@@ -919,5 +909,11 @@ public class PocetnaStranica extends PageBase {
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(@class, 'v-list-item__title') and contains(., '" + mjernoMjesto + "')]")));
 		driver.findElement(By.xpath("//div[contains(@class, 'v-list-item__title') and contains(., '" + mjernoMjesto + "')]")).click();
 		Thread.sleep(1000);
+	}
+	
+	public void verifikujPoruku(String poruka) throws InterruptedException {
+		Thread.sleep(1000);
+		wait.until(ExpectedConditions.visibilityOf(porukaWE));
+		assertTrue(porukaWE.getText().trim().equals(poruka), "Poruka upozorenja nije dobra!");
 	}
 }

@@ -11,6 +11,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import com.platformX.base.Kolone;
+import com.platformX.util.Helper;
 
 public class OperativnaPodrucja extends PocetnaStranica {
 
@@ -42,17 +43,8 @@ public class OperativnaPodrucja extends PocetnaStranica {
 	@FindBy(xpath = "//td[6]/button")
 	private WebElement burgerBarWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Uredi')]")
-	private WebElement urediWE;
-	
-	@FindBy(xpath = "//div[contains(text(), 'Briši')]")
-	private WebElement obrisiWE;
-	
 	@FindBy(xpath = "//div/div/div[3]/button[2]")
 	private WebElement potvrdiBrisanjeWE;
-	
-	@FindBy(xpath = "//tr[2]/td")
-	private WebElement praznaTabelaWE;
 
 	public void verifikujOperativnaPodrucja() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
@@ -76,7 +68,7 @@ public class OperativnaPodrucja extends PocetnaStranica {
 	}
 	
 	public String dodajOperativnoPodrucje() {
-		String operativnoPodrucje = "OP " + getRandomName();
+		String operativnoPodrucje = "OP " + Helper.getRandomString(5);
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
 		dodajBtnWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(nazivOperativnogPodrucjaWE));
@@ -105,7 +97,7 @@ public class OperativnaPodrucja extends PocetnaStranica {
 	}
 	
 	public String izmjeniOperativnoPodrucje() throws InterruptedException {
-		String novoPodrucje = "OP " + getRandomName();
+		String novoPodrucje = "OP " + Helper.getRandomString(5);
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		burgerBarWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(urediWE));

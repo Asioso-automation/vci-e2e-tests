@@ -12,6 +12,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import com.platformX.base.Kolone;
+import com.platformX.util.Helper;
 
 public class Djelatnosti extends PocetnaStranica {
 	
@@ -33,17 +34,8 @@ public class Djelatnosti extends PocetnaStranica {
 	@FindBy(xpath = "//td[4]/button")
 	private WebElement burgerBarWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Uredi')]")
-	private WebElement urediBtnWE;
-	
-	@FindBy(xpath = "//div[contains(text(), 'Briši')]")
-	private WebElement obrisiBtnWE;
-	
 	@FindBy(xpath = "//div[7]/div/div/div[3]/button[2]")
 	private WebElement potvrdiBrisanjeBtnWE;
-	
-	@FindBy(xpath = "//tr[2]/td")
-	private WebElement praznaTabelaWE;
 
 	public Djelatnosti(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);
@@ -69,11 +61,11 @@ public class Djelatnosti extends PocetnaStranica {
 	}
 	
 	public String dodajDjelatnost() throws InterruptedException {
-		String djelatnost = "Djelatnost " + getRandomName();
+		String djelatnost = "Djelatnost " + Helper.getRandomString(5);
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
 		dodajBtnWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(sifraDjelatnostiWE));
-		sifraDjelatnostiWE.sendKeys(getRandomName());
+		sifraDjelatnostiWE.sendKeys(Helper.getRandomString(5));
 		wait.until(ExpectedConditions.elementToBeClickable(nazivDjelatnostiWE));
 		nazivDjelatnostiWE.sendKeys(djelatnost);
 		wait.until(ExpectedConditions.elementToBeClickable(dodajDjelatnostBtnWE));
@@ -95,11 +87,11 @@ public class Djelatnosti extends PocetnaStranica {
 	}
 	
 	public String izmjeniDjelatnost() {
-		String djelatnost = "Djelatnost " + getRandomName();
+		String djelatnost = "Djelatnost " + Helper.getRandomString(5);
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		burgerBarWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(urediBtnWE));
-		urediBtnWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(urediWE));
+		urediWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(nazivDjelatnostiWE));
 		nazivDjelatnostiWE.click();
 		nazivDjelatnostiWE.clear();
@@ -112,8 +104,8 @@ public class Djelatnosti extends PocetnaStranica {
 	public void obrisiDjelatnost() {
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		burgerBarWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(obrisiBtnWE));
-		obrisiBtnWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(obrisiWE));
+		obrisiWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(potvrdiBrisanjeBtnWE));
 		potvrdiBrisanjeBtnWE.click();
 	}

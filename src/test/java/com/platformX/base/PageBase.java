@@ -2,8 +2,8 @@ package com.platformX.base;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.Random;
-import java.util.UUID;
+import java.util.List;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -19,15 +19,25 @@ public class PageBase {
 	protected PropertiesUtil properties;
 	protected PropertiesUtil platformx_properties = null;
 	protected final String PLATFORMX_PROPERTIES = "platformx.properties";
-
-	@FindBy(xpath = "//main/div/div/div/div[2]/div/div")
-	protected WebElement porukaWE;
 	
 	public PageBase(WebDriver driver) throws FileNotFoundException, IOException {
 		this.driver = driver;
 		PageFactory.initElements(this.driver, this);
 		platformx_properties = new PropertiesUtil(PLATFORMX_PROPERTIES);
 	}
+	
+	@FindBy(xpath = "//main/div/div/div/div[2]/div/div")
+	protected WebElement porukaWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Uredi')]")
+	protected WebElement urediWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Briši')]")
+	protected WebElement obrisiWE;
+	
+	@FindBy(xpath = "//tr[2]/td")
+	protected WebElement praznaTabelaWE;
+	
 
 	protected Select select(WebElement webElement, String name) {
 		Select selectedElement = new Select(webElement);
@@ -40,27 +50,14 @@ public class PageBase {
 		driver.switchTo().window(lastBrowserHandler.getLastBrowserHandle(driver));
 	}
 	
-	public static String getRandomName() {
-		return UUID.randomUUID().toString().substring(0, 4);
-	}
-	
-	protected String getRandomNumbers(int randomNumbersCount) {
-		String random = "";
-		int[] randomNumbers = new int[randomNumbersCount];
-		Random number = new Random();
-		for (int i = 0; i < randomNumbersCount; i++) {
-			randomNumbers[i] = number.nextInt(8) + 1;
-		}
-		for (int j =0; j < randomNumbers.length; j++){
-			random += randomNumbers[j];
-		}
-		return random;
-	}
-	
 	public void osvjeziStranicu() throws InterruptedException {
 		Thread.sleep(1000);
 		driver.navigate().refresh();
 		Thread.sleep(1000);
 		}
+	
+	public List<WebElement> brojKolona() {
+		return driver.findElements(By.xpath("//th"));
+	}
 
 }

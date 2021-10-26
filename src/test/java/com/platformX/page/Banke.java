@@ -3,15 +3,14 @@ package com.platformX.page;
 import static org.testng.Assert.assertTrue;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-
 import com.platformX.base.Kolone;
+import com.platformX.util.Helper;
 
 public class Banke extends PocetnaStranica {
 
@@ -75,7 +74,7 @@ public class Banke extends PocetnaStranica {
 	}
 	
 	public String dodajBanku() throws InterruptedException {
-		String banka = "Banka " + getRandomName();
+		String banka = "Banka " + Helper.getRandomString(5);
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBankuBtnWE));
 		Thread.sleep(1000);
 		dodajBankuBtnWE.click();
@@ -115,7 +114,7 @@ public class Banke extends PocetnaStranica {
 	}
 	
 	public String izmjeniBanku() throws InterruptedException {
-		String banka = "Banka " + getRandomName();
+		String banka = "Banka " + Helper.getRandomString(5);
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		burgerBarWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(urediWE));

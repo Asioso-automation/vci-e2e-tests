@@ -3,15 +3,14 @@ package com.platformX.page;
 import static org.testng.Assert.assertTrue;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-
 import com.platformX.base.Kolone;
+import com.platformX.util.Helper;
 
 public class UmanjenjaCijene extends PocetnaStranica {
 
@@ -40,17 +39,8 @@ public class UmanjenjaCijene extends PocetnaStranica {
 	@FindBy(xpath = "//td[4]/button")
 	private WebElement burgerBarWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Uredi')]")
-	private WebElement urediWE;
-	
-	@FindBy(xpath = "//div[contains(text(), 'Briši')]")
-	private WebElement obrisiWE;
-	
 	@FindBy(xpath = "//div/div/div[3]/button[2]")
 	private WebElement potvrdiBrisanjeWE;
-	
-	@FindBy(xpath = "//tr[2]/td")
-	private WebElement praznaTabelaWE;
 
 	public void verifikujUmanjenjaCijene() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
@@ -72,8 +62,8 @@ public class UmanjenjaCijene extends PocetnaStranica {
 	}
 	
 	public String dodajUmanjenjeCijene() {
-		String brojMjeseci = getRandomNumbers(2);
-		String procenat = getRandomNumbers(2);
+		String brojMjeseci = Helper.getRandomNumber(2);
+		String procenat = Helper.getRandomNumber(2);
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
 		dodajBtnWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(brojMjeseciWE));
@@ -102,8 +92,8 @@ public class UmanjenjaCijene extends PocetnaStranica {
 	}
 	
 	public String izmjeniUmanjenjeCijene() throws InterruptedException {
-		String brojMjeseci = getRandomNumbers(2);
-		String procenat = getRandomNumbers(2);
+		String brojMjeseci = Helper.getRandomNumber(2);
+		String procenat = Helper.getRandomNumber(2);
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		Thread.sleep(1000);
 		burgerBarWE.click();
@@ -146,7 +136,7 @@ public class UmanjenjaCijene extends PocetnaStranica {
 	}
 	
 	public void dodajPredefinisanoUmanjenjeCijene(String brojMjeseci) {
-		String procenat = getRandomNumbers(2);
+		String procenat = Helper.getRandomNumber(2);
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
 		dodajBtnWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(brojMjeseciWE));

@@ -12,6 +12,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import com.platformX.base.Kolone;
+import com.platformX.util.Helper;
 
 public class KategorijeCijena extends PocetnaStranica {
 	
@@ -68,7 +69,7 @@ public class KategorijeCijena extends PocetnaStranica {
 	}
 	
 	public String dodajKategoriju() {
-		String kategorija = getRandomName();
+		String kategorija = Helper.getRandomString(5);
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
 		dodajBtnWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(nazivKategorijeWE));
@@ -92,7 +93,7 @@ public class KategorijeCijena extends PocetnaStranica {
 	}
 	
 	public String izmjeniKategorijuCijene() {
-		String novaKategorija = getRandomName();
+		String novaKategorija = Helper.getRandomString(5);
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		burgerBarWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(urediWE));

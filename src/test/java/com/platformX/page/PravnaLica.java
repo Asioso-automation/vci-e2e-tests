@@ -13,6 +13,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import com.platformX.base.Kolone;
+import com.platformX.util.Helper;
 
 public class PravnaLica extends PocetnaStranica {
 
@@ -76,17 +77,8 @@ public class PravnaLica extends PocetnaStranica {
 	@FindBy(xpath = "//td[12]/button")
 	private WebElement burgerBarWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Uredi')]")
-	private WebElement urediWE;
-	
-	@FindBy(xpath = "//div[contains(text(), 'Briši')]")
-	private WebElement obrisiWE;
-	
 	@FindBy(xpath = "//div/div/div[3]/button[2]")
 	private WebElement potvrdiBrisanjeWE;
-	
-	@FindBy(xpath = "//tr[2]/td")
-	private WebElement praznaTabelaWE;
 
 	public void verifikujPravnaLica() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
@@ -116,16 +108,16 @@ public class PravnaLica extends PocetnaStranica {
 	}
 
 	public String dodajPravnoLice() throws InterruptedException {
-		String nazivPravnogLica = "Pravno lice " + getRandomName();
+		String nazivPravnogLica = "Pravno lice " + Helper.getRandomString(5);
 		Thread.sleep(1000);
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
 		dodajBtnWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(nazivPravnogLicaWE));
 		nazivPravnogLicaWE.sendKeys(nazivPravnogLica);
 		wait.until(ExpectedConditions.elementToBeClickable(stampaniNazivNaDokumentimaWE));
-		stampaniNazivNaDokumentimaWE.sendKeys(getRandomName());
+		stampaniNazivNaDokumentimaWE.sendKeys(Helper.getRandomString(5));
 		wait.until(ExpectedConditions.elementToBeClickable(jibWE));
-		jibWE.sendKeys(getRandomNumbers(13));
+		jibWE.sendKeys(Helper.getRandomNumber(13));
 		wait.until(ExpectedConditions.elementToBeClickable(nadlezniODSWE));
 		nadlezniODSWE.click();
 		Thread.sleep(1000);
@@ -147,7 +139,7 @@ public class PravnaLica extends PocetnaStranica {
 		wait.until(ExpectedConditions.visibilityOf(odaberiUlicuWE));
 		ulicaWE.sendKeys(Keys.ENTER);
 		wait.until(ExpectedConditions.elementToBeClickable(brojUliceWE));
-		brojUliceWE.sendKeys(getRandomNumbers(2));
+		brojUliceWE.sendKeys(Helper.getRandomNumber(2));
 		wait.until(ExpectedConditions.elementToBeClickable(dodajPravnoLiceBtnWE));
 		dodajPravnoLiceBtnWE.click();
 		Thread.sleep(1000);
@@ -178,7 +170,7 @@ public class PravnaLica extends PocetnaStranica {
 	}
 	
 	public String izmjeniPravnoLice() throws InterruptedException {
-		String nazivPravnogLica = "Pravno lice " + getRandomName();
+		String nazivPravnogLica = "Pravno lice " + Helper.getRandomString(5);
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		burgerBarWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(urediWE));

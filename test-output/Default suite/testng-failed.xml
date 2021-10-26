@@ -3,13 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.platformX.tests.PX_056_Preregistracija_Ugovora_Test">
+      <class name="com.platformX.tests.PX_070_Brisanje_Radne_Jedinice_Test">
         <methods>
           <include name="setUp"/>
           <include name="cleanUp"/>
-          <include name="px_056_preregistracija_ugovora_test"/>
+          <include name="px_070_brisanje_radne_jedinice_test"/>
         </methods>
-      </class> <!-- com.platformX.tests.PX_056_Preregistracija_Ugovora_Test -->
+      </class> <!-- com.platformX.tests.PX_070_Brisanje_Radne_Jedinice_Test -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

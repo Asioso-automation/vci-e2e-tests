@@ -12,6 +12,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import com.platformX.util.Helper;
+
 public class UplatePage extends PocetnaStranica {
 
 	public UplatePage(WebDriver driver) throws FileNotFoundException, IOException {
@@ -69,7 +71,7 @@ public class UplatePage extends PocetnaStranica {
 	private WebElement obrisiKupcaWE;
 	
 	public String dodajUplatu() throws InterruptedException {
-		String uplatilac = "Uplatilac " + getRandomName();
+		String uplatilac = "Uplatilac " + Helper.getRandomString(5);
 		Thread.sleep(1000);
 		try {
 		wait.until(ExpectedConditions.elementToBeClickable(dodajUplatuBtnWE));
@@ -104,7 +106,7 @@ public class UplatePage extends PocetnaStranica {
 	
 	
 	public String dodajUplatuPozivNaBroj() throws InterruptedException {
-		String uplatilac = "Uplatilac " + getRandomName();
+		String uplatilac = "Uplatilac " + Helper.getRandomString(5);
 //		wait.until(ExpectedConditions.elementToBeClickable(dodajUplatuBtnWE));
 //		dodajUplatuBtnWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(pozivNaBrojWE));
@@ -125,7 +127,7 @@ public class UplatePage extends PocetnaStranica {
 	}
 	
 	public String obrisiPozivNaBroj() throws InterruptedException {
-		String uplatilac = "Uplatilac " + getRandomName();
+		String uplatilac = "Uplatilac " + Helper.getRandomString(5);
 		wait.until(ExpectedConditions.elementToBeClickable(pozivNaBrojWE));
 		pozivNaBrojWE.sendKeys("1987");
 		Thread.sleep(2000);
@@ -150,7 +152,7 @@ public class UplatePage extends PocetnaStranica {
 	
 	public String dodajUplatuKupac() throws InterruptedException {
 		WebDriverWait wait = new WebDriverWait(driver, 20);
-		String uplatilac = "Uplatilac " + getRandomName();
+		String uplatilac = "Uplatilac " + Helper.getRandomString(5);
 		wait.until(ExpectedConditions.elementToBeClickable(kupacWE));
 		kupacWE.sendKeys("4100010 - Firma 2");
 		Thread.sleep(2000);
