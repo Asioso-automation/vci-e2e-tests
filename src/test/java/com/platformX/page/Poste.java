@@ -3,18 +3,44 @@ package com.platformX.page;
 import static org.testng.Assert.assertTrue;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-
 import com.platformX.base.Kolone;
+import com.platformX.util.Helper;
 
 public class Poste extends PocetnaStranica {
 
 	public Poste(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);
 	}
+	
+	@FindBy(xpath = "//div[1]/div/div/div[1]/div/input")
+	private WebElement idWE;
+	
+	@FindBy(xpath = "//div[2]/div/div/div[1]/div/input")
+	private WebElement nazivWE;
+	
+	@FindBy(xpath = "//div[3]/div/div/div[1]/div/input")
+	private WebElement nazivNaDokWE;
+	
+	@FindBy(xpath = "//div[2]/button[1]")
+	private WebElement dodajPostuWE;
+	
+	@FindBy(xpath = "//td[2]/div/div/div/div[1]/input")
+	private WebElement filterPoNazivuWE;
+	
+	@FindBy(xpath = "//tr[2]/td[2]")
+	private WebElement nazivPosteTabelaWE;
+	
+	@FindBy(xpath = "//tr[2]/td[3]")
+	private WebElement nazivPosteNaDokTabelaWE;
+	
+	@FindBy(xpath = "//tr[2]/td[1]")
+	private WebElement idTabelaWE;
 
 	public void verifikujPoste() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
@@ -33,6 +59,37 @@ public class Poste extends PocetnaStranica {
 		assertTrue(stranicaBtnWE.getText().trim().equals("POŠTE"), "Poste: Naziv stranice nije dobar!");
 		assertTrue(naslovStraniceWE.getText().trim().equals("POŠTE"), "Poste: Naziv stranice nije dobar!");
 		assertTrue(brojKolona().size() == 4, "Poste: Broj kolona nije dobar! ");
+	}
+	
+	public String[] dodajPostu() throws InterruptedException {
+		String[] podaci = new String[3];
+		podaci[0] = "Posta "+ Helper.getRandomString(5);
+		podaci[1] = Helper.getRandomNumber(2);
+		podaci[2] = Helper.getRandomString(5);
+		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
+		dodajBtnWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(idWE));
+		idWE.sendKeys(podaci[1]);
+		wait.until(ExpectedConditions.elementToBeClickable(nazivWE));
+		nazivWE.sendKeys(podaci[0]);
+		nazivNaDokWE.sendKeys(podaci[2]);
+		Thread.sleep(500);
+		dodajPostuWE.click();
+		return podaci;
+	}
+	
+	public void verifikujPostu(String naziv, String id, String nazivNaDok) throws Exception {
+		wait.until(ExpectedConditions.elementToBeClickable(filterPoNazivuWE));
+		Thread.sleep(1000);
+		filterPoNazivuWE.click();
+		filterPoNazivuWE.clear();
+		filterPoNazivuWE.sendKeys(naziv);
+		filterPoNazivuWE.sendKeys(Keys.ENTER);
+		Thread.sleep(1000);
+		wait.until(ExpectedConditions.visibilityOf(nazivPosteTabelaWE));
+		assertTrue(nazivPosteTabelaWE.getText().equals(naziv), "Poste: Posta nije pronadjena!");
+		assertTrue(nazivPosteNaDokTabelaWE.getText().equals(nazivNaDok), "Poste: Posta nije pronadjena!");
+		assertTrue(idTabelaWE.getText().equals(id), "Poste: Posta nije pronadjena!");
 	}
 
 }
