@@ -41,6 +41,18 @@ public class Poste extends PocetnaStranica {
 	
 	@FindBy(xpath = "//tr[2]/td[1]")
 	private WebElement idTabelaWE;
+	
+	@FindBy(xpath = "//td[4]/button")
+	private WebElement burgerBarWE;
+	
+	@FindBy(xpath = "//div[2]/button[1]")
+	private WebElement potvrdiBtnWE;
+	
+	@FindBy(xpath = "//div[1]/div/div/div[1]/div/input")
+	private WebElement urediNazivWE;
+	
+	@FindBy(xpath = "//div/div/div/div[3]/button[2]")
+	private WebElement potvrdiBrisanjeWE;
 
 	public void verifikujPoste() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
@@ -78,6 +90,18 @@ public class Poste extends PocetnaStranica {
 		return podaci;
 	}
 	
+	public void dodajPostuSaPodacima(String naziv, String id, String nazivNaDok) throws InterruptedException {
+		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
+		dodajBtnWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(idWE));
+		idWE.sendKeys(id);
+		wait.until(ExpectedConditions.elementToBeClickable(nazivWE));
+		nazivWE.sendKeys(naziv);
+		nazivNaDokWE.sendKeys(nazivNaDok);
+		Thread.sleep(500);
+		dodajPostuWE.click();
+	}
+	
 	public void verifikujPostu(String naziv, String id, String nazivNaDok) throws Exception {
 		wait.until(ExpectedConditions.elementToBeClickable(filterPoNazivuWE));
 		Thread.sleep(1000);
@@ -90,6 +114,46 @@ public class Poste extends PocetnaStranica {
 		assertTrue(nazivPosteTabelaWE.getText().equals(naziv), "Poste: Posta nije pronadjena!");
 		assertTrue(nazivPosteNaDokTabelaWE.getText().equals(nazivNaDok), "Poste: Posta nije pronadjena!");
 		assertTrue(idTabelaWE.getText().equals(id), "Poste: Posta nije pronadjena!");
+	}
+	
+	public String izmjeniPostu() throws InterruptedException {
+		String posta = "Posta " + Helper.getRandomString(5);
+		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
+		burgerBarWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(urediWE));
+		urediWE.click();
+		Thread.sleep(1000);
+		wait.until(ExpectedConditions.elementToBeClickable(urediNazivWE));
+		urediNazivWE.click();
+		urediNazivWE.clear();
+		urediNazivWE.sendKeys(posta);
+		wait.until(ExpectedConditions.elementToBeClickable(potvrdiBtnWE));
+		potvrdiBtnWE.click();
+		return posta;
+	}
+	
+	public void obrisiPostu() throws InterruptedException {
+		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
+		burgerBarWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(obrisiWE));
+		obrisiWE.click();
+		Thread.sleep(1000);
+		wait.until(ExpectedConditions.elementToBeClickable(potvrdiBrisanjeWE));
+		potvrdiBrisanjeWE.click();
+	}
+	
+	public void verifikujBrisanjePoste(String posta) throws InterruptedException {
+		wait.until(ExpectedConditions.visibilityOf(filterPoNazivuWE));
+		Thread.sleep(1000);
+		wait.until(ExpectedConditions.elementToBeClickable(filterPoNazivuWE));
+		filterPoNazivuWE.click();
+		filterPoNazivuWE.clear();
+		filterPoNazivuWE.sendKeys(posta);
+		filterPoNazivuWE.sendKeys(Keys.ENTER);
+		Thread.sleep(1000);
+		wait.until(ExpectedConditions.visibilityOf(praznaTabelaWE));
+		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
+		assertTrue(praznaTabelaWE.getText().equals("Nema podataka"), "Poste: Poruka prazne tabele nije dobra!");
 	}
 
 }
