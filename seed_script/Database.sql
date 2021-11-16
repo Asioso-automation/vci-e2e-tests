@@ -277,7 +277,20 @@ Values (1,N'Administration',N'Px.Application.Services.Administrations')
 ,(10,N'Promjena datuma važenja ugovora',N'Px.Application.Services.Customers.Contracts.Commands.ChangeValidityDateOnContract')
 ,(11,N'Pravni odnosi',N'Px.Application.Services.Legal')
 ,(12,N'Reporogrami',N'Px.Application.Services.Finances.DebtRestructure')
-,(14,N'Finansijski sifarnici',N'Px.Application.Services.FinancialCodebook')
+,(13,N'Finansijski šifarnici',N'Px.Application.Services.FinancialCodebook')
+,(14,N'Rješavanje zahtjeva za održavanjem',N'Px.Application.Services.Administrations.MaintenanceRequestResolving')
+,(15,N'Zajednička potrošnja',N'Px.Application.Services.Calculations.CommonConsumption')
+,(16,N'Zahtjevi za održavanje',N'Px.Application.Services.Administrations.MaintenanceRequests')
+,(17,N'Zahtjevi za ugovor',N'Px.Application.Services.Customers.ContractRequests')
+,(18,N'Zahtjevi za raskid ugovora',N'Px.Application.Services.Customers.EndOfSupplyRequests')
+,(19,N'Potpisivanje ugovora',N'Px.Application.Services.Customers.Contracts.Commands.SignContract')
+,(20,N'Eksterni interfejsi',N'Px.Application.Services.Finances.ExternalInterfaces')
+,(21,N'Sravnivanje mjernog mjesta avansom',N'Px.Application.Services.Finances.AdvancePayment.Commands.BalanceDebitWithAdvancePayment')
+,(22,N'Obnova ugovora',N'Px.Application.Services.Customers.Contracts.Commands.RenewContract')
+,(23,N'Korekcija kamate',N'Korekcija kamate')
+,(24,N'Zaključivanje dnevnika',N'Px.Application.Services.Finances.PaymentJournals.PaymentJournals.Commands.ClosePaymentJournal')
+,(25,N'Objedinjavanje kupaca',N'Px.Application.Services.Customers.Customers.Shared.Commands.UnifyCustomer')
+,(26,N'Isključenja-uključenja',N'Px.Application.Services.ContractOutageInclusions')
 
 
 SET IDENTITY_INSERT [Administration].Module OFF
@@ -322,7 +335,8 @@ Values (3,1,1,1,1)
 ,(106,2008,10,1,1)
 ,(107,2008,11,1,1)
 ,(108,2008,12,1,1)
-,(109,2008,14,1,1)
+,(109,2008,13,1,1)
+,(110,2008,26,1,1)
 
 
 SET IDENTITY_INSERT [Administration].UserModule OFF
