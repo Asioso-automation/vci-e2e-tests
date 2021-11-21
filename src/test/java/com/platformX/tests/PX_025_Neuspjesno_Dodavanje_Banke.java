@@ -20,7 +20,7 @@ public class PX_025_Neuspjesno_Dodavanje_Banke extends BaseTest {
 		logIn.verifikujLogIn();
 		logIn.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
-		homePage.verifyHomePage();
+		homePage.verifikujPocetnuStranicu();
 		Banke banke = homePage.navigirajNaBanke();
 		banke.verifikujBanke();
 		String banka = banke.dodajBanku();

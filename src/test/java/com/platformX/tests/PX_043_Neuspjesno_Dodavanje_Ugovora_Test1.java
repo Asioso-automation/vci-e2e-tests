@@ -23,7 +23,7 @@ public class PX_043_Neuspjesno_Dodavanje_Ugovora_Test1 extends BaseTest {
 		logIn.verifikujLogIn();
 		logIn.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
-		homePage.verifyHomePage();
+		homePage.verifikujPocetnuStranicu();
 		PravnaLica pravnaLicaPage = homePage.navigirajNaPravnaLica();
 		pravnaLicaPage.verifikujPravnaLica();
 		String pravnoLice = pravnaLicaPage.dodajPravnoLice();

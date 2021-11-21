@@ -20,7 +20,7 @@ public class PX_056_Preregistracija_Ugovora_Test extends BaseTest {
 		logIn.verifikujLogIn();
 		logIn.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
-		homePage.verifyHomePage();
+		homePage.verifikujPocetnuStranicu();
 		Ugovori ugovoriPage = homePage.navigirajNaUgovori();
 		ugovoriPage.verifikujUgovori();
 		ugovoriPage.pronadjiUgovorPoEic("36Z0SB00");

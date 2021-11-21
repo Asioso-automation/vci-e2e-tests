@@ -12,6 +12,8 @@ import com.platformX.page.KupciZaTestneRacune;
 import com.platformX.page.LogIn;
 import com.platformX.page.NaloziZaObracun;
 import com.platformX.page.Racuni;
+import com.platformX.page.RacuniZaNestandardneUsluge;
+import com.platformX.page.TefObrazac;
 import com.platformX.page.UmanjenjaCijene;
 
 public class PX_007_Verifikacija_Sekcije_Obracun_Test extends BaseTest {
@@ -19,33 +21,35 @@ public class PX_007_Verifikacija_Sekcije_Obracun_Test extends BaseTest {
 	public PX_007_Verifikacija_Sekcije_Obracun_Test() throws IOException, FileNotFoundException {
 		super();
 	}
-	
-	// Test prolazi kroz sve stranice iz sekcije OBRACUN i verifikuje ih
 
-	@Test
+	@Test (description="test prolazi kroz sve stranice iz sekcije OBRAČUN i verifikuje ih")
 	public void px_007_verifikacija_sekcije_obracun_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
-		PocetnaStranica homePage = new PocetnaStranica(driver);
-		homePage.verifyHomePage();
-		NaloziZaObracun naloziZaObracun = homePage.navigirajNaNaloziZaObracun();
+		PocetnaStranica pocetna = new PocetnaStranica(driver);
+		pocetna.verifikujPocetnuStranicu();
+		NaloziZaObracun naloziZaObracun = pocetna.navigirajNaNaloziZaObracun();
 		naloziZaObracun.verifikujNaloziZaObracun();
 //		MonitoringObracunaPage monitoringObracunaPage = homePage.navigateToMonitoringObracuna();
 //		monitoringObracunaPage.verifikujMonitoringObracuna();
-		Racuni racuni = homePage.navigirajNaRacuni();
+		Racuni racuni = pocetna.navigirajNaRacuni();
 		racuni.verifikujRacuni();
-		KorekcijeRacuna korekcijeRacuna = homePage.navigirajNaKorekcijeRacuna();
+		RacuniZaNestandardneUsluge racuniZaUsluge = pocetna.navigirajNaRacuniZaNestandardneUsluge();
+		racuniZaUsluge.verifikujRacuniZaNestandardneUsluge();
+		KorekcijeRacuna korekcijeRacuna = pocetna.navigirajNaKorekcijeRacuna();
 		korekcijeRacuna.verifikujKorekcijeRacuna();
-		KamatePage kamatePage = homePage.navigirajNaKamate();
+		KamatePage kamatePage = pocetna.navigirajNaKamate();
 		kamatePage.verifikujKamate();
 //		KorekcijeKamatePage korekcijeKamatePage = homePage.navigateToKorekcijeKamate();
 //		korekcijeKamatePage.verifikujKorekcijeKamate();
-		AvansneFakture avansneFakture = homePage.navigirajNaAvansneFakture();
+		AvansneFakture avansneFakture = pocetna.navigirajNaAvansneFakture();
 		avansneFakture.verifikujAvansneFakture();
-		UmanjenjaCijene umanjenjaCijene = homePage.navigirajNaUmanjenjaCijene();
+		UmanjenjaCijene umanjenjaCijene = pocetna.navigirajNaUmanjenjaCijene();
 		umanjenjaCijene.verifikujUmanjenjaCijene();
-		KupciZaTestneRacune kupciZaTestneRacune = homePage.navigirajNaKupciZaTestneRacune();
+		TefObrazac tef = pocetna.navigirajNaTefObrazac();
+		tef.verifikujTefObrazac();
+		KupciZaTestneRacune kupciZaTestneRacune = pocetna.navigirajNaKupciZaTestneRacune();
 		kupciZaTestneRacune.verifikujKupciZaTestneRacune();
 	}
 }

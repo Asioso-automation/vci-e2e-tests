@@ -22,7 +22,7 @@ public class PX_075_Neuspjesno_Dodavanje_Poste_Test extends BaseTest {
 		logIn.verifikujLogIn();
 		logIn.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
-		homePage.verifyHomePage();
+		homePage.verifikujPocetnuStranicu();
 		Poste poste = homePage.navigirajNaPoste();
 		poste.verifikujPoste();
 		podaci = poste.dodajPostu();

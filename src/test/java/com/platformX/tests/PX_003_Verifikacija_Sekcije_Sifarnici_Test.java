@@ -22,35 +22,33 @@ public class PX_003_Verifikacija_Sekcije_Sifarnici_Test extends BaseTest {
 	public PX_003_Verifikacija_Sekcije_Sifarnici_Test() throws IOException, FileNotFoundException {
 		super();
 	}
-	
-	// Test prolazi kroz stranice sekcije SIFARNICI i verifikuje ih
 
-	@Test
+	@Test (description="test prolazi kroz sve stranice iz sekcije ŠIFARNICI i verifikuje ih")
 	public void px_003_verifikacije_sekcije_sifarnici_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
-		PocetnaStranica pocetnaStranica = new PocetnaStranica(driver);
-		pocetnaStranica.verifyHomePage();
-		Organizacije organizacije = pocetnaStranica.navigirajNaOrganizacije();
+		PocetnaStranica pocetna = new PocetnaStranica(driver);
+		pocetna.verifikujPocetnuStranicu();
+		Organizacije organizacije = pocetna.navigirajNaOrganizacije();
 		organizacije.verifikujOrganizacije();
-		OperatoriSistema operatoriSistema = pocetnaStranica.navigirajNaOperatoreSistema();
+		OperatoriSistema operatoriSistema = pocetna.navigirajNaOperatoreSistema();
 		operatoriSistema.verifikujOperatoreSistema();
-		RadneJedinice radneJedinice = pocetnaStranica.navigirajNaRadneJedinice();
+		RadneJedinice radneJedinice = pocetna.navigirajNaRadneJedinice();
 		radneJedinice.verifikujRadneJedinice();
-		OperativnaPodrucja opertivnaPodrucja = pocetnaStranica.navigirajNaOperativnaPodrucja();
+		OperativnaPodrucja opertivnaPodrucja = pocetna.navigirajNaOperativnaPodrucja();
 		opertivnaPodrucja.verifikujOperativnaPodrucja();
-		Djelatnosti djelatnosti = pocetnaStranica.navigirajNaDjelatnosti();
+		Djelatnosti djelatnosti = pocetna.navigirajNaDjelatnosti();
 		djelatnosti.verifikujDjelatnosti();
-		Entiteti entiteti = pocetnaStranica.navigirajNaEntitete();
+		Entiteti entiteti = pocetna.navigirajNaEntitete();
 		entiteti.verifikujEntitete();
-		Opstine opstine = pocetnaStranica.navigirajNaOpstine();
+		Opstine opstine = pocetna.navigirajNaOpstine();
 		opstine.verifikujOpstine();
-		NaseljenaMjesta naseljenaMjesta = pocetnaStranica.navigirajNaNaseljenaMjesta();
+		NaseljenaMjesta naseljenaMjesta = pocetna.navigirajNaNaseljenaMjesta();
 		naseljenaMjesta.verifikujNaseljenaMjesta();
-		Poste poste = pocetnaStranica.navigirajNaPoste();
+		Poste poste = pocetna.navigirajNaPoste();
 		poste.verifikujPoste();
-		Ulice ulice = pocetnaStranica.navigirajNaUlice();
+		Ulice ulice = pocetna.navigirajNaUlice();
 		ulice.verifikujUlice();
 	}
 }

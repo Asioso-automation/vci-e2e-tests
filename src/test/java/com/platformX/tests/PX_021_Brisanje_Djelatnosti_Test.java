@@ -20,7 +20,7 @@ public class PX_021_Brisanje_Djelatnosti_Test extends BaseTest {
 		logIn.verifikujLogIn();
 		logIn.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
-		homePage.verifyHomePage();
+		homePage.verifikujPocetnuStranicu();
 		Djelatnosti  djelatnosti = homePage.navigirajNaDjelatnosti();
 		djelatnosti.verifikujDjelatnosti();
 		String djelatnost = djelatnosti.dodajDjelatnost();

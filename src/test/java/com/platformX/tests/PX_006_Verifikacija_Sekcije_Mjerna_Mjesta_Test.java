@@ -16,23 +16,21 @@ public class PX_006_Verifikacija_Sekcije_Mjerna_Mjesta_Test extends BaseTest {
 	public PX_006_Verifikacija_Sekcije_Mjerna_Mjesta_Test() throws IOException, FileNotFoundException {
 		super();
 	}
-	
-	// Test prolazi kroz sve stranice iz sekcije MJERNA MJESTA i verifikuje ih
 
-	@Test
+	@Test (description="test prolazi kroz sve stranice iz sekcije MJERNA MJESTA i verifikuje ih")
 	public void qa_006_verifikacija_sekcije_mjerna_mjesta_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
-		PocetnaStranica homePage = new PocetnaStranica(driver);
-		homePage.verifyHomePage();
-		MjernaMjesta mjernaMjesta = homePage.navigirajNaMjernaMjesta();
+		PocetnaStranica pocetna = new PocetnaStranica(driver);
+		pocetna.verifikujPocetnuStranicu();
+		MjernaMjesta mjernaMjesta = pocetna.navigirajNaMjernaMjesta();
 		mjernaMjesta.verifikujMjernaMjesta();
-		ZahtjeviZaDostavuPodatakaOMjernimMjestima zahtjeviZaDostavuPodataka = homePage.navigirajNaZahtjeviZaDostavuPodataka1();
+		ZahtjeviZaDostavuPodatakaOMjernimMjestima zahtjeviZaDostavuPodataka = pocetna.navigirajNaZahtjeviZaDostavuPodataka1();
 		zahtjeviZaDostavuPodataka.verifikujZahtjeviZaDostavuPodataka();
-		OcitanjaBrojila ocitanjaBrojila = homePage.navigirajNaOcitanjaBrojila();
+		OcitanjaBrojila ocitanjaBrojila = pocetna.navigirajNaOcitanjaBrojila();
 		ocitanjaBrojila.verifikujOcitanjaBrojila();
-		EnergetskiObracun energetskiObracun = homePage.navigirajNaEnergetskiObracun();
+		EnergetskiObracun energetskiObracun = pocetna.navigirajNaEnergetskiObracun();
 		energetskiObracun.verifikujEnergetskiObracun();
 //		MonitoringEnergetskogObracunaPage monitoringEnergetskogObracunaPage = homePage.navigateToMonitoringEnergetskogObracuna();
 //		monitoringEnergetskogObracunaPage.verifikujMonitoringEnergetskogObracuna();

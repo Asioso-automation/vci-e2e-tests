@@ -12,17 +12,15 @@ public class PX_001_LogIn_LogOut_Test extends BaseTest {
 	public PX_001_LogIn_LogOut_Test() throws IOException, FileNotFoundException {
 		super();
 	}
-	
-	// LogIn i logOut sa verifikacijama stranica
 
-	@Test
+	@Test (description="logIn i logOut sa verifikacijama stranica")
 	public void px_001_logIn_logOut_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
-		PocetnaStranica homePage = new PocetnaStranica(driver);
-		homePage.verifyHomePage();
-		homePage.logOut();
+		PocetnaStranica pocetna = new PocetnaStranica(driver);
+		pocetna.verifikujPocetnuStranicu();
+		pocetna.logOut();
 		logIn.verifikujLogIn();
 	}
 

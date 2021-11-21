@@ -20,7 +20,7 @@ public class PX_062_Dodavanje_Operativnog_Podrucja_Test extends BaseTest {
 		logIn.verifikujLogIn();
 		logIn.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
-		homePage.verifyHomePage();
+		homePage.verifikujPocetnuStranicu();
 		OperativnaPodrucja operativnaPodrucja = homePage.navigirajNaOperativnaPodrucja();
 		operativnaPodrucja.verifikujOperativnaPodrucja();
 		String podrucje = operativnaPodrucja.dodajOperativnoPodrucje();

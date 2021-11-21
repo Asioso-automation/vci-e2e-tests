@@ -636,4 +636,29 @@ public class Kolone extends PageBase {
 	
 	@FindBy(xpath = "//*[contains(text(), 'Razlog otpisa potraživanja')]")
 	public WebElement kolonaRazlogOtpisaPotrazivanjaWE;
+	
+	@FindBy(xpath = "//*[contains(text(), 'Broj obrasca')]")
+	public WebElement kolonaBrojObrascaWE;
+	
+	@FindBy(xpath = "//*[contains(text(), 'Planirani datum isključenja od')]")
+	public WebElement kolonaPlaniraniDatumIskljucenjaOdWE;
+	
+	@FindBy(xpath = "//*[contains(text(), 'Planirani datum isključenja do')]")
+	public WebElement kolonaPlaniraniDatumIskljucenjaDoWE;
+	
+	@FindBy(xpath = "//*[contains(text(), 'Razlog neizvršavanja')]")
+	public WebElement kolonaRazlogNeizvrsavanjaWE;
+	
+	@FindBy(xpath = "//*[contains(text(), 'Plaćeni dugovi')]")
+	public WebElement kolonaPlaceniDugoviWE;
+	
+	@FindBy(xpath = "//*[contains(text(), 'Poslano')]")
+	public WebElement kolonaPoslanoWE;
+	
+	@FindBy(xpath = "//*[contains(text(), 'Isključen')]")
+	public WebElement kolonaIskljucenWE;
+	
+	@FindBy(xpath = "//*[contains(text(), 'Mjerno mjesto')]")
+	public WebElement kolonaMjernoMjestoWE;
+	
 }

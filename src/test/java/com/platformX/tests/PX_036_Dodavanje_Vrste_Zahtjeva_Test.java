@@ -20,7 +20,7 @@ public class PX_036_Dodavanje_Vrste_Zahtjeva_Test extends BaseTest {
 		logIn.verifikujLogIn();
 		logIn.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
-		homePage.verifyHomePage();
+		homePage.verifikujPocetnuStranicu();
 		VrsteZahtjeva vrsteZahtjeva = homePage.navigirajNaVrsteZahtjeva();
 		vrsteZahtjeva.verifikujVrsteZahtjeva();
 		String opis = vrsteZahtjeva.dodajVrstuZahtjeva();

@@ -21,7 +21,7 @@ public class PX_027_Izmjena_Ziro_Racuna_Test extends BaseTest {
 		logIn.verifikujLogIn();
 		logIn.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
-		homePage.verifyHomePage();
+		homePage.verifikujPocetnuStranicu();
 		homePage.navigirajNaBanke();
 		Banke banke = new Banke(driver);
 		banke.verifikujBanke();

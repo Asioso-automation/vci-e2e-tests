@@ -20,14 +20,14 @@ public class PX_010_Pretraga_Pravnih_Lica_Sa_Pocetne_Stranice_Test extends BaseT
 		logIn.verifikujLogIn();
 		logIn.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
-		homePage.verifyHomePage();
+		homePage.verifikujPocetnuStranicu();
 		PravnaLica pravnaLicaPage = homePage.navigirajNaPravnaLica();
 		pravnaLicaPage.verifikujPravnaLica();
 		String pravnoLice = pravnaLicaPage.dodajPravnoLice();
 		pravnaLicaPage.verifikujPravnaLica();
 		pravnaLicaPage.verifikujPravnoLice(pravnoLice);
 		homePage.navigateToPocetnaStranica();
-		homePage.verifyHomePage();
+		homePage.verifikujPocetnuStranicu();
 		homePage.pretraziKupce(pravnoLice);
 		pravnaLicaPage.verifikujDetaljePravnogLica();
 	}

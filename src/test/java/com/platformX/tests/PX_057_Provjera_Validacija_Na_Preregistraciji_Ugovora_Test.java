@@ -20,7 +20,7 @@ public class PX_057_Provjera_Validacija_Na_Preregistraciji_Ugovora_Test extends 
 		logIn.verifikujLogIn();
 		logIn.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
-		homePage.verifyHomePage();
+		homePage.verifikujPocetnuStranicu();
 		Ugovori ugovoriPage = homePage.navigirajNaUgovori();
 		ugovoriPage.verifikujUgovori();
 		// ugovoriPage.pronadjiUgovor("Mjerno mjesto 2");

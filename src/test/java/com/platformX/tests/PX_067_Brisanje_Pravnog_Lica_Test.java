@@ -20,7 +20,7 @@ public class PX_067_Brisanje_Pravnog_Lica_Test extends BaseTest {
 		logIn.verifikujLogIn();
 		logIn.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
-		homePage.verifyHomePage();
+		homePage.verifikujPocetnuStranicu();
 		PravnaLica pravnaLica = homePage.navigirajNaPravnaLica();
 		pravnaLica.verifikujPravnaLica();
 		String pravnoLice = pravnaLica.dodajPravnoLice();

@@ -20,7 +20,7 @@ public class PX_068_Neuspjesno_Brisanje_Pravnog_Lica_Test extends BaseTest {
 		logIn.verifikujLogIn();
 		logIn.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
-		homePage.verifyHomePage();
+		homePage.verifikujPocetnuStranicu();
 		PravnaLica pravnaLicaPage = homePage.navigirajNaPravnaLica();
 		pravnaLicaPage.verifikujPravnaLica();
 		pravnaLicaPage.verifikujPravnoLice("Firma 2");

@@ -32,6 +32,7 @@ public class LogIn extends PocetnaStranica {
 	public void verifikujLogIn() {
 		wait.until(ExpectedConditions.elementToBeClickable(korisnickoImeWE));
 		wait.until(ExpectedConditions.elementToBeClickable(lozinkaWE));
+		wait.until(ExpectedConditions.visibilityOf(prijaviSeBtnWE));
 	}
 
 	public void logIn() throws InterruptedException {

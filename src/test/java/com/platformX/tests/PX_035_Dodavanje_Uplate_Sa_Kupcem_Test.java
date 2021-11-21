@@ -23,7 +23,7 @@ public class PX_035_Dodavanje_Uplate_Sa_Kupcem_Test extends BaseTest {
 		logIn.verifikujLogIn();
 		logIn.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
-		homePage.verifyHomePage();
+		homePage.verifikujPocetnuStranicu();
 		homePage.navigirajNaBanke();
 		Banke banke = new Banke(driver);
 		banke.verifikujBanke();

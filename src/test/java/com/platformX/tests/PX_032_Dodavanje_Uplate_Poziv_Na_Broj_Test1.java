@@ -23,7 +23,7 @@ public class PX_032_Dodavanje_Uplate_Poziv_Na_Broj_Test1 extends BaseTest {
 		logIn.verifikujLogIn();
 		logIn.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
-		homePage.verifyHomePage();
+		homePage.verifikujPocetnuStranicu();
 		homePage.navigirajNaBanke();
 		Banke banke = new Banke(driver);
 		banke.verifikujBanke();

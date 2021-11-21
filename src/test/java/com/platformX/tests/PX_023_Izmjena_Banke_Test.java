@@ -20,7 +20,7 @@ public class PX_023_Izmjena_Banke_Test extends BaseTest {
 		logIn.verifikujLogIn();
 		logIn.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
-		homePage.verifyHomePage();
+		homePage.verifikujPocetnuStranicu();
 		Banke banke = homePage.navigirajNaBanke();
 		banke.verifikujBanke();
 		String banka = banke.dodajBanku();

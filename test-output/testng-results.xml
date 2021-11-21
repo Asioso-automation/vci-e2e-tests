@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="20032" started-at="2021-11-16T08:52:19Z" finished-at="2021-11-16T08:52:39Z">
+  <suite name="Default suite" duration-ms="27028" started-at="2021-11-21T11:43:56Z" finished-at="2021-11-21T11:44:23Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="20032" started-at="2021-11-16T08:52:19Z" finished-at="2021-11-16T08:52:39Z">
-      <class name="com.platformX.tests.PX_075_Neuspjesno_Dodavanje_Poste_Test">
-        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.platformX.tests.PX_075_Neuspjesno_Dodavanje_Poste_Test@3967e60c]" name="setUp" is-config="true" duration-ms="5302" started-at="2021-11-16T09:52:19Z" finished-at="2021-11-16T09:52:24Z">
+    <test name="Default test" duration-ms="27028" started-at="2021-11-21T11:43:56Z" finished-at="2021-11-21T11:44:23Z">
+      <class name="com.platformX.tests.PX_002_Provjera_Validacija_Na_LogIn_Formi_Test">
+        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.platformX.tests.PX_002_Provjera_Validacija_Na_LogIn_Formi_Test@4b5a5ed1]" name="setUp" is-config="true" duration-ms="5436" started-at="2021-11-21T12:43:56Z" finished-at="2021-11-21T12:44:01Z">
           <params>
             <param index="0">
               <value>
@@ -18,15 +18,53 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="px_072_dodavanje_poste_test()[pri:0, instance:com.platformX.tests.PX_075_Neuspjesno_Dodavanje_Poste_Test@3967e60c]" name="px_072_dodavanje_poste_test" duration-ms="14715" started-at="2021-11-16T09:52:24Z" description="Pokušaj dodavanja poste sa istim ID-em" finished-at="2021-11-16T09:52:39Z">
+        <test-method status="PASS" signature="px_002_nevalidni_kredencijali_test()[pri:0, instance:com.platformX.tests.PX_002_Provjera_Validacija_Na_LogIn_Formi_Test@4b5a5ed1]" name="px_002_nevalidni_kredencijali_test" duration-ms="3364" started-at="2021-11-21T12:44:01Z" description="pogrešno korisničko ime i lozinka" finished-at="2021-11-21T12:44:04Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- px_072_dodavanje_poste_test -->
-        <test-method status="PASS" signature="cleanUp()[pri:0, instance:com.platformX.tests.PX_075_Neuspjesno_Dodavanje_Poste_Test@3967e60c]" name="cleanUp" is-config="true" duration-ms="0" started-at="2021-11-16T09:52:39Z" finished-at="2021-11-16T09:52:39Z">
+        </test-method> <!-- px_002_nevalidni_kredencijali_test -->
+        <test-method status="PASS" signature="cleanUp()[pri:0, instance:com.platformX.tests.PX_002_Provjera_Validacija_Na_LogIn_Formi_Test@4b5a5ed1]" name="cleanUp" is-config="true" duration-ms="631" started-at="2021-11-21T12:44:05Z" finished-at="2021-11-21T12:44:05Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- cleanUp -->
-      </class> <!-- com.platformX.tests.PX_075_Neuspjesno_Dodavanje_Poste_Test -->
+        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.platformX.tests.PX_002_Provjera_Validacija_Na_LogIn_Formi_Test@4b5a5ed1]" name="setUp" is-config="true" duration-ms="5119" started-at="2021-11-21T12:44:05Z" finished-at="2021-11-21T12:44:10Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="px_002_validna_lozinka_test()[pri:0, instance:com.platformX.tests.PX_002_Provjera_Validacija_Na_LogIn_Formi_Test@4b5a5ed1]" name="px_002_validna_lozinka_test" duration-ms="2928" started-at="2021-11-21T12:44:10Z" description="pogrešno korisničko ime" finished-at="2021-11-21T12:44:13Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- px_002_validna_lozinka_test -->
+        <test-method status="PASS" signature="cleanUp()[pri:0, instance:com.platformX.tests.PX_002_Provjera_Validacija_Na_LogIn_Formi_Test@4b5a5ed1]" name="cleanUp" is-config="true" duration-ms="622" started-at="2021-11-21T12:44:13Z" finished-at="2021-11-21T12:44:14Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- cleanUp -->
+        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.platformX.tests.PX_002_Provjera_Validacija_Na_LogIn_Formi_Test@4b5a5ed1]" name="setUp" is-config="true" duration-ms="5123" started-at="2021-11-21T12:44:14Z" finished-at="2021-11-21T12:44:19Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="px_002_validno_korisnicko_ime_test()[pri:0, instance:com.platformX.tests.PX_002_Provjera_Validacija_Na_LogIn_Formi_Test@4b5a5ed1]" name="px_002_validno_korisnicko_ime_test" duration-ms="3143" started-at="2021-11-21T12:44:19Z" description="pogresna lozinka" finished-at="2021-11-21T12:44:22Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- px_002_validno_korisnicko_ime_test -->
+        <test-method status="PASS" signature="cleanUp()[pri:0, instance:com.platformX.tests.PX_002_Provjera_Validacija_Na_LogIn_Formi_Test@4b5a5ed1]" name="cleanUp" is-config="true" duration-ms="641" started-at="2021-11-21T12:44:22Z" finished-at="2021-11-21T12:44:23Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- cleanUp -->
+      </class> <!-- com.platformX.tests.PX_002_Provjera_Validacija_Na_LogIn_Formi_Test -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

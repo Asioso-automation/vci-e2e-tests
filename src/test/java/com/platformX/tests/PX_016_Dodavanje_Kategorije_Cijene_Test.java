@@ -20,7 +20,7 @@ public class PX_016_Dodavanje_Kategorije_Cijene_Test extends BaseTest {
 		logIn.verifikujLogIn();
 		logIn.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
-		homePage.verifyHomePage();
+		homePage.verifikujPocetnuStranicu();
 		KategorijeCijena kategorijeCijena = homePage.navigirajNaKategorijeCijena();
 		kategorijeCijena.verifikujKategorijeCijena();
 		String kategorija = kategorijeCijena.dodajKategoriju();

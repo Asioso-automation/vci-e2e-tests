@@ -20,7 +20,7 @@ public class PX_012_Dodavanje_Umanjenja_Cijene_Test extends BaseTest {
 		logIn.verifikujLogIn();
 		logIn.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
-		homePage.verifyHomePage();
+		homePage.verifikujPocetnuStranicu();
 		UmanjenjaCijene umanjenjaCijene = homePage.navigirajNaUmanjenjaCijene();
 		umanjenjaCijene.verifikujUmanjenjaCijene();
 		String brojMjeseci = umanjenjaCijene.dodajUmanjenjeCijene();

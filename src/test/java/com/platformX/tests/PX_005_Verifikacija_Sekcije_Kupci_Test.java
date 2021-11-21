@@ -24,41 +24,39 @@ public class PX_005_Verifikacija_Sekcije_Kupci_Test extends BaseTest {
 	public PX_005_Verifikacija_Sekcije_Kupci_Test() throws IOException, FileNotFoundException {
 		super();
 	}
-	
-	// Test prolazi kroz sve stranice iz sekcije KUPCI i verifikuje ih
 
-	@Test
+	@Test (description="test prolazi kroz sve stranice iz sekcije KUPCI i verifikuje ih")
 	public void px_005_verifikacija_sekcije_kupci_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
-		PocetnaStranica homePage = new PocetnaStranica(driver);
-		homePage.verifyHomePage();
-		PravnaLica pravnaLica = homePage.navigirajNaPravnaLica();
+		PocetnaStranica pocetna = new PocetnaStranica(driver);
+		pocetna.verifikujPocetnuStranicu();
+		PravnaLica pravnaLica = pocetna.navigirajNaPravnaLica();
 		pravnaLica.verifikujPravnaLica();
-		FizickaLica fizickaLica = homePage.navigirajNaFizickaLica();
+		FizickaLica fizickaLica = pocetna.navigirajNaFizickaLica();
 		fizickaLica.verifikujFizickaLica();
-		PovezanaPravnaLica povezanaPravnaLica = homePage.navigirajNaPovezanaPravnaLica();
+		PovezanaPravnaLica povezanaPravnaLica = pocetna.navigirajNaPovezanaPravnaLica();
 		povezanaPravnaLica.verifikujPovezanaPravnaLica();
-		ZahtjeviZaDostavuPodataka zahtjeviZaDostavuPodataka = homePage.navigirajNaZahtjeviZaDostavuPodataka();
+		ZahtjeviZaDostavuPodataka zahtjeviZaDostavuPodataka = pocetna.navigirajNaZahtjeviZaDostavuPodataka();
 		zahtjeviZaDostavuPodataka.verifikujZahtjeveZaDostavuPodataka();
 //		ZahtjeviZaUgovorePage zahtjeviZaUgovorePage = homePage.navigateToZahtjeviZaUgovore();
 //		zahtjeviZaUgovorePage.verifikujZahtjeviZaUgovore();
-		Ugovori ugovori = homePage.navigirajNaUgovori();
+		Ugovori ugovori = pocetna.navigirajNaUgovori();
 		ugovori.verifikujUgovori();
-		ObavjestenjaOPromjeniSnabdjevaca obavjestenjaOPromjeniSnabdjevaca = homePage.navigirajNaObavjestenjaOPromjeniSnabdjevaca();
+		ObavjestenjaOPromjeniSnabdjevaca obavjestenjaOPromjeniSnabdjevaca = pocetna.navigirajNaObavjestenjaOPromjeniSnabdjevaca();
 		obavjestenjaOPromjeniSnabdjevaca.verifikujObavjestenjaOPromjeniSnabdjevaca();
-		UgovoreniPopusti ugovoreniPopusti = homePage.navigirajNaUgovoreniPopusti();
+		UgovoreniPopusti ugovoreniPopusti = pocetna.navigirajNaUgovoreniPopusti();
 		ugovoreniPopusti.verifikujUgovoreniPopusti();
-		OdbaceniUgovori odbaceniUgovori = homePage.navigirajNaOdbaceniUgovori();
+		OdbaceniUgovori odbaceniUgovori = pocetna.navigirajNaOdbaceniUgovori();
 		odbaceniUgovori.verifikujOdbaceniUgovori();
-		Reklamacije reklamacije = homePage.navigirajNaReklamacije();
+		Reklamacije reklamacije = pocetna.navigirajNaReklamacije();
 		reklamacije.verifikujReklamacije();
-		VrsteZahtjeva vrsteZahtjeva = homePage.navigirajNaVrsteZahtjeva();
+		VrsteZahtjeva vrsteZahtjeva = pocetna.navigirajNaVrsteZahtjeva();
 		vrsteZahtjeva.verifikujVrsteZahtjeva();
-		GrupeObrazacaBrojaUgovora grupeObrazacaBrojaUgovora = homePage.navigirajNaGrupeObrazacaBrojaUgovora();
+		GrupeObrazacaBrojaUgovora grupeObrazacaBrojaUgovora = pocetna.navigirajNaGrupeObrazacaBrojaUgovora();
 		grupeObrazacaBrojaUgovora.verifikujGrupeObrazaca();
-		Mjenice mjenice = homePage.navigirajNaMjenice();
+		Mjenice mjenice = pocetna.navigirajNaMjenice();
 		mjenice.verifikujMjenice();
 	}
 }

@@ -20,7 +20,7 @@ public class PX_011_Pretraga_Mjernih_Mjesta_Sa_Pocetne_Stranice_Test extends Bas
 		logIn.verifikujLogIn();
 		logIn.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
-		homePage.verifyHomePage();
+		homePage.verifikujPocetnuStranicu();
 		homePage.pretraziMjernaMjesta("36Z03800001H");
 		MjernaMjesta mjernaMjesta = new MjernaMjesta(driver);
 		mjernaMjesta.verifikujDetaljeMjernogMjesta();

@@ -20,7 +20,7 @@ public class PX_071_Brisanje_Radne_Jedinice_Test extends BaseTest {
 		logIn.verifikujLogIn();
 		logIn.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
-		homePage.verifyHomePage();
+		homePage.verifikujPocetnuStranicu();
 		RadneJedinice radneJedinice = homePage.navigirajNaRadneJedinice();
 		radneJedinice.verifikujRadneJedinice();
 		String jedinica = radneJedinice.dodajRadnuJedinicu();

@@ -19,29 +19,27 @@ public class PX_004_Verifikacija_Sekcije_Tarifni_Sistem_Test extends BaseTest {
 	public PX_004_Verifikacija_Sekcije_Tarifni_Sistem_Test() throws IOException, FileNotFoundException {
 		super();
 	}
-	
-	// Test prolazi kroz sve stranice iz sekcije TARIFNI SISTEM i verifikuje ih
 
-	@Test
+	@Test (description="test prolazi kroz sve stranice iz sekcije TARIFNI SISTEM i verifikuje ih")
 	public void px_004_verifikacije_sekcije_tarifni_sistem_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
-		PocetnaStranica homePage = new PocetnaStranica(driver);
-		homePage.verifyHomePage();
-		KategorijePotrosnje kategorijePotrosnje = homePage.navigirajNaKategorijePotrosnje();
+		PocetnaStranica pocetna = new PocetnaStranica(driver);
+		pocetna.verifikujPocetnuStranicu();
+		KategorijePotrosnje kategorijePotrosnje = pocetna.navigirajNaKategorijePotrosnje();
 		kategorijePotrosnje.verifikujKategorijePotrosnje();
-		TarifneNadgrupe tarifneNadgrupe = homePage.navigirajNaTarifneNadgrupe();
+		TarifneNadgrupe tarifneNadgrupe = pocetna.navigirajNaTarifneNadgrupe();
 		tarifneNadgrupe.verifikujTarifneNadgrupe();
-		TarifneGrupe tarifneGrupe = homePage.navigirajNaTarifneGrupe();
+		TarifneGrupe tarifneGrupe = pocetna.navigirajNaTarifneGrupe();
 		tarifneGrupe.verifikujTarifneGrupe();
-		Sezone sezone = homePage.navigirajNaSezone();
+		Sezone sezone = pocetna.navigirajNaSezone();
 		sezone.verifikujSezone();
-		ObracunskaSnaga obracunskaSnaga = homePage.navigirajNaObracunskaSnaga();
+		ObracunskaSnaga obracunskaSnaga = pocetna.navigirajNaObracunskaSnaga();
 		obracunskaSnaga.verifikujObracunskaSnaga();
-		KategorijeCijena kategorijeCijena = homePage.navigirajNaKategorijeCijena();
+		KategorijeCijena kategorijeCijena = pocetna.navigirajNaKategorijeCijena();
 		kategorijeCijena.verifikujKategorijeCijena();
-		Cjenovnik cjenovnik = homePage.navigirajNaCjenovnik();
+		Cjenovnik cjenovnik = pocetna.navigirajNaCjenovnik();
 		cjenovnik.verifikujCjenovnik();
 	}
 }

@@ -207,6 +207,9 @@ public class PocetnaStranica extends PageBase {
 	@FindBy(xpath = "//div[contains(text(), 'Računi')]")
 	protected WebElement racuniWE;
 	
+	@FindBy(xpath = "//div[contains(text(), 'Računi za nestandardne usluge')]")
+	protected WebElement racuniZaUslugeWE;
+	
 	@FindBy(xpath = "//div[contains(text(), 'Korekcije računa')]")
 	protected WebElement korekcijeRacunaWE;
 	
@@ -221,6 +224,9 @@ public class PocetnaStranica extends PageBase {
 	
 	@FindBy(xpath = "//div[contains(text(), 'Umanjenja cijene')]")
 	protected WebElement umanjenjaCijeneWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'TEF obrazac')]")
+	protected WebElement tefObrazacWE;
 	
 	@FindBy(xpath = "//div[contains(text(), 'Kupci za testne račune')]")
 	protected WebElement kupciZaTestneRacuneWE;
@@ -264,8 +270,17 @@ public class PocetnaStranica extends PageBase {
 	@FindBy(xpath = "//div[contains(text(), 'Zahtjevi za isključenje')]")
 	protected WebElement zahtjeviZaIskljucenjeWE;
 	
+	@FindBy(xpath = "//div[contains(text(), 'Stavke zahtjeva za isključenje')]")
+	protected WebElement stavkeZahtjevaZaIskljucenjeWE;
+	
 	@FindBy(xpath = "//div[contains(text(), 'Zahtjevi za uključenje')]")
 	protected WebElement zahtjeviZaUkljucenjeWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Stavke zahtjeva za uključenje')]")
+	protected WebElement stavkeZahtjevaZaUkljucenjeWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Aktivna isključenja')]")
+	protected WebElement aktivnaIskljucenjaWE;
 	
 	@FindBy(xpath = "//div[contains(text(), 'Isključenja od strane ODS-a')]")
 	protected WebElement iskljucenjaOdStraneODSaWE;
@@ -286,7 +301,7 @@ public class PocetnaStranica extends PageBase {
 	protected WebElement sapWE;
 	
 
-	public void verifyHomePage() throws InterruptedException {
+	public void verifikujPocetnuStranicu() throws InterruptedException {
 		wait.until(ExpectedConditions.elementToBeClickable(sifarniciWE));
 		wait.until(ExpectedConditions.elementToBeClickable(tarifniSistemWE));
 		wait.until(ExpectedConditions.elementToBeClickable(kupciWE));
@@ -295,6 +310,8 @@ public class PocetnaStranica extends PageBase {
 		wait.until(ExpectedConditions.elementToBeClickable(finansijeWE));
 		wait.until(ExpectedConditions.elementToBeClickable(izvjestajiWE));
 		wait.until(ExpectedConditions.elementToBeClickable(profilWE));
+		wait.until(ExpectedConditions.elementToBeClickable(filterKupacWE));
+		wait.until(ExpectedConditions.elementToBeClickable(filterMjernoMjestoWE));
 		Thread.sleep(1000);
 	}
 
@@ -649,6 +666,15 @@ public class PocetnaStranica extends PageBase {
 		return new Racuni(driver);
 	}
 	
+	public RacuniZaNestandardneUsluge navigirajNaRacuniZaNestandardneUsluge() throws Exception {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(obracunWE));
+		obracunWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(racuniZaUslugeWE));
+		racuniZaUslugeWE.click();
+		return new RacuniZaNestandardneUsluge(driver);
+	}
+	
 	public KorekcijeRacuna navigirajNaKorekcijeRacuna() throws Exception {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(obracunWE));
@@ -692,6 +718,15 @@ public class PocetnaStranica extends PageBase {
 		wait.until(ExpectedConditions.elementToBeClickable(umanjenjaCijeneWE));
 		umanjenjaCijeneWE.click();
 		return new UmanjenjaCijene(driver);
+	}
+	
+	public TefObrazac navigirajNaTefObrazac() throws Exception {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(obracunWE));
+		obracunWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(tefObrazacWE));
+		tefObrazacWE.click();
+		return new TefObrazac(driver);
 	}
 	
 	public KupciZaTestneRacune navigirajNaKupciZaTestneRacune() throws Exception {
@@ -819,6 +854,15 @@ public class PocetnaStranica extends PageBase {
 		return new ZahtjeviZaIskljucenje(driver);
 	}
 	
+	public StavkeZahtjevaZaIskljucenje navigirajNaStavkeZahtjevaZaIskljucenje() throws Exception {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(pravniOdnosiWE));
+		pravniOdnosiWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(stavkeZahtjevaZaIskljucenjeWE));
+		stavkeZahtjevaZaIskljucenjeWE.click();
+		return new StavkeZahtjevaZaIskljucenje(driver);
+	}
+	
 	public IskljucenjaOdStraneODSa navigirajNaIskljucenjaOdStraneODSa() throws Exception {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(pravniOdnosiWE));
@@ -835,6 +879,24 @@ public class PocetnaStranica extends PageBase {
 		wait.until(ExpectedConditions.elementToBeClickable(zahtjeviZaUkljucenjeWE));
 		zahtjeviZaUkljucenjeWE.click();
 		return new ZahtjeviZaUkljucenje(driver);
+	}
+	
+	public StavkeZahtjevaZaUkljucenje navigirajNaStavkeZahtjevaZaUkljucenje() throws Exception {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(pravniOdnosiWE));
+		pravniOdnosiWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(stavkeZahtjevaZaUkljucenjeWE));
+		stavkeZahtjevaZaUkljucenjeWE.click();
+		return new StavkeZahtjevaZaUkljucenje(driver);
+	}
+	
+	public AktivnaIskljucenja navigirajNaAktivnaIskljucenja() throws Exception {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(pravniOdnosiWE));
+		pravniOdnosiWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(aktivnaIskljucenjaWE));
+		aktivnaIskljucenjaWE.click();
+		return new AktivnaIskljucenja(driver);
 	}
 	
 	public Tuzbe navigirajNaTuzbe() throws Exception {

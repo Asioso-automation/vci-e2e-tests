@@ -22,7 +22,7 @@ public class PX_074_Brisanje_Poste_Test extends BaseTest {
 		logIn.verifikujLogIn();
 		logIn.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
-		homePage.verifyHomePage();
+		homePage.verifikujPocetnuStranicu();
 		Poste poste = homePage.navigirajNaPoste();
 		poste.verifikujPoste();
 		podaci = poste.dodajPostu();

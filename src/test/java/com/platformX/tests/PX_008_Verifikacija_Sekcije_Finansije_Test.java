@@ -23,37 +23,35 @@ public class PX_008_Verifikacija_Sekcije_Finansije_Test extends BaseTest {
 	public PX_008_Verifikacija_Sekcije_Finansije_Test() throws IOException, FileNotFoundException {
 		super();
 	}
-	
-	// Test prolazi kroz sve stranice iz sekcije FINANSIJE i verifikuje ih
 
-	@Test
+	@Test (description="test prolazi kroz sve stranice iz sekcije FINANSIJE i verifikuje ih")
 	public void px_008_verifikacija_sekcije_finansije_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
-		PocetnaStranica homePage = new PocetnaStranica(driver);
-		homePage.verifyHomePage();
-		FinansijskeKartice finansijskeKartice = homePage.navigirajNaFinansijskeKartice();
+		PocetnaStranica pocetna = new PocetnaStranica(driver);
+		pocetna.verifikujPocetnuStranicu();
+		FinansijskeKartice finansijskeKartice = pocetna.navigirajNaFinansijskeKartice();
 		finansijskeKartice.verifikujFinansijskeKartice();
-		DnevniciUplata dnevniciUplata = homePage.navigirajNaDnevniciUplata();
+		DnevniciUplata dnevniciUplata = pocetna.navigirajNaDnevniciUplata();
 		dnevniciUplata.verifikujDnevniciUplata();
-		PreknjizavanjaUplata preknjizavanja = homePage.navigirajNaPreknjizavanjaUplata();
+		PreknjizavanjaUplata preknjizavanja = pocetna.navigirajNaPreknjizavanjaUplata();
 		preknjizavanja.verifikujPreknjizavanjaUplata();
-		SveUplate sveUplate = homePage.navigirajNaSveUplate();
+		SveUplate sveUplate = pocetna.navigirajNaSveUplate();
 		sveUplate.verifikujSveUplate();
-		NerasporedjeneUplate nerasporedjeneUplate = homePage.navigirajNaNerasporedjeneUplate();
+		NerasporedjeneUplate nerasporedjeneUplate = pocetna.navigirajNaNerasporedjeneUplate();
 		nerasporedjeneUplate.verifikujNerasporedjeneUplate();
-		Avansi avansi = homePage.navigirajNaAvansi();
+		Avansi avansi = pocetna.navigirajNaAvansi();
 		avansi.verifikujAvansi();
-		Reprogrami reprogrami = homePage.navigirajNaReprogrami();
+		Reprogrami reprogrami = pocetna.navigirajNaReprogrami();
 		reprogrami.verifikujReprogrami();
-		Banke banke = homePage.navigirajNaBanke();
+		Banke banke = pocetna.navigirajNaBanke();
 		banke.verifikujBanke();
-		ZiroRacuni ziroRacuni = homePage.navigirajNaZiroRacuni();
+		ZiroRacuni ziroRacuni = pocetna.navigirajNaZiroRacuni();
 		ziroRacuni.verifikujZiroRacuni();
-		VrsteKnjizenja vrsteKnjizenja = homePage.navigirajNaVrsteKnjizenja();
+		VrsteKnjizenja vrsteKnjizenja = pocetna.navigirajNaVrsteKnjizenja();
 		vrsteKnjizenja.verifikujVrsteKnjizenja();
-		VrsteStavkiFinansijskeKartice vrsteStavkiFinansijskeKartice = homePage.navigirajNaVrsteStavkiFinansijskeKartice();
+		VrsteStavkiFinansijskeKartice vrsteStavkiFinansijskeKartice = pocetna.navigirajNaVrsteStavkiFinansijskeKartice();
 		vrsteStavkiFinansijskeKartice.verifikujVrsteStavkiFinansijskeKartice();
 	}
 }
