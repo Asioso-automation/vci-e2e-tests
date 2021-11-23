@@ -51,4 +51,5 @@ public class PX_003_Verifikacija_Sekcije_Sifarnici_Test extends BaseTest {
 		Ulice ulice = pocetna.navigirajNaUlice();
 		ulice.verifikujUlice();
 	}
+	
 }

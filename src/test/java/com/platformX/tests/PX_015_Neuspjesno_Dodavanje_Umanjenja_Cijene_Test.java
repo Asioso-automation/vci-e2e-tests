@@ -14,7 +14,7 @@ public class PX_015_Neuspjesno_Dodavanje_Umanjenja_Cijene_Test extends BaseTest 
 		super();
 	}
 	
-	@Test (description = "pokusaj dodavanja umanjenja cijene za vec dodani broj mjeseci")
+	@Test (description = "pokusaj dodavanja umanjenja cijene za postojeći broj mjeseci")
 	public void px_015_neuspjesno_dodavanje_umanjenja_cijene_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
