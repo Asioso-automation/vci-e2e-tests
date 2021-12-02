@@ -12,7 +12,6 @@ import com.platformX.page.KupciZaTestneRacune;
 import com.platformX.page.LogIn;
 import com.platformX.page.NaloziZaObracun;
 import com.platformX.page.Racuni;
-import com.platformX.page.RacuniZaNestandardneUsluge;
 import com.platformX.page.TefObrazac;
 import com.platformX.page.UmanjenjaCijene;
 
@@ -35,8 +34,8 @@ public class PX_007_Verifikacija_Sekcije_Obracun_Test extends BaseTest {
 //		monitoringObracunaPage.verifikujMonitoringObracuna();
 		Racuni racuni = pocetna.navigirajNaRacuni();
 		racuni.verifikujRacuni();
-		RacuniZaNestandardneUsluge racuniZaUsluge = pocetna.navigirajNaRacuniZaNestandardneUsluge();
-		racuniZaUsluge.verifikujRacuniZaNestandardneUsluge();
+//		RacuniZaNestandardneUsluge racuniZaUsluge = pocetna.navigirajNaRacuniZaNestandardneUsluge();
+//		racuniZaUsluge.verifikujRacuniZaNestandardneUsluge();
 		KorekcijeRacuna korekcijeRacuna = pocetna.navigirajNaKorekcijeRacuna();
 		korekcijeRacuna.verifikujKorekcijeRacuna();
 		KamatePage kamatePage = pocetna.navigirajNaKamate();
