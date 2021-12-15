@@ -534,10 +534,14 @@ INSERT [Finance].[Transaction] ([Id], [DebitId], [CreditId], [Date], [EntryDate]
 
 SET IDENTITY_INSERT [Finance].[Transaction] OFF
 
-INSERT [BasicCatalog].[TerritorialAffiliation] (Name)
+SET IDENTITY_INSERT [BasicCatalog].[TerritorialAffiliation] ON 
+
+INSERT [BasicCatalog].[TerritorialAffiliation] ([Id], [Name])
 VALUES
-( N'Republika Srpska')
-,(N'Federacija BiH')
+(1, N'Republika Srpska')
+,(2, N'Federacija BiH')
+
+SET IDENTITY_INSERT [BasicCatalog].[TerritorialAffiliation] OFF 
 
 SET IDENTITY_INSERT [Metering].[MeteringPoint] ON
 
