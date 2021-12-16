@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="19441" started-at="2021-12-02T19:17:30Z" finished-at="2021-12-02T19:17:50Z">
+  <suite name="Default suite" duration-ms="27361" started-at="2021-12-16T18:47:06Z" finished-at="2021-12-16T18:47:33Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="19441" started-at="2021-12-02T19:17:30Z" finished-at="2021-12-02T19:17:50Z">
-      <class name="com.platformX.tests.PX_075_Neuspjesno_Dodavanje_Poste_Test">
-        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.platformX.tests.PX_075_Neuspjesno_Dodavanje_Poste_Test@3967e60c]" name="setUp" is-config="true" duration-ms="5448" started-at="2021-12-02T20:17:30Z" finished-at="2021-12-02T20:17:36Z">
+    <test name="Default test" duration-ms="27361" started-at="2021-12-16T18:47:06Z" finished-at="2021-12-16T18:47:33Z">
+      <class name="com.platformX.tests.PX_051_Provjera_Validacija_Na_Izmjeni_Ugovora_Test">
+        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.platformX.tests.PX_051_Provjera_Validacija_Na_Izmjeni_Ugovora_Test@3967e60c]" name="setUp" is-config="true" duration-ms="5518" started-at="2021-12-16T19:47:06Z" finished-at="2021-12-16T19:47:11Z">
           <params>
             <param index="0">
               <value>
@@ -18,15 +18,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="px_075_neuspjesno_dodavanje_poste_test()[pri:0, instance:com.platformX.tests.PX_075_Neuspjesno_Dodavanje_Poste_Test@3967e60c]" name="px_075_neuspjesno_dodavanje_poste_test" duration-ms="13975" started-at="2021-12-02T20:17:36Z" description="Pokušaj dodavanja poste sa istim ID-em" finished-at="2021-12-02T20:17:50Z">
+        <test-method status="PASS" signature="px_051_provjera_validacija_na_izmjeni_ugovora_test()[pri:0, instance:com.platformX.tests.PX_051_Provjera_Validacija_Na_Izmjeni_Ugovora_Test@3967e60c]" name="px_051_provjera_validacija_na_izmjeni_ugovora_test" duration-ms="21825" started-at="2021-12-16T19:47:11Z" finished-at="2021-12-16T19:47:33Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- px_075_neuspjesno_dodavanje_poste_test -->
-        <test-method status="PASS" signature="cleanUp()[pri:0, instance:com.platformX.tests.PX_075_Neuspjesno_Dodavanje_Poste_Test@3967e60c]" name="cleanUp" is-config="true" duration-ms="0" started-at="2021-12-02T20:17:50Z" finished-at="2021-12-02T20:17:50Z">
+        </test-method> <!-- px_051_provjera_validacija_na_izmjeni_ugovora_test -->
+        <test-method status="PASS" signature="cleanUp()[pri:0, instance:com.platformX.tests.PX_051_Provjera_Validacija_Na_Izmjeni_Ugovora_Test@3967e60c]" name="cleanUp" is-config="true" duration-ms="0" started-at="2021-12-16T19:47:33Z" finished-at="2021-12-16T19:47:33Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- cleanUp -->
-      </class> <!-- com.platformX.tests.PX_075_Neuspjesno_Dodavanje_Poste_Test -->
+      </class> <!-- com.platformX.tests.PX_051_Provjera_Validacija_Na_Izmjeni_Ugovora_Test -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

@@ -1022,17 +1022,19 @@ public class Ugovori extends PocetnaStranica {
 		procenatUmanjenjaPDVaWE.sendKeys(Keys.SPACE, Keys.BACK_SPACE);
 		wait.until(ExpectedConditions.elementToBeClickable(urediBrojUliceWE));
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("arguments[0].scrollIntoView(true);", urediBrojUliceWE);
+		js.executeScript("arguments[0].scrollIntoView(true);", urediMjestoWE);
+		Thread.sleep(1000);
 		urediBrojUliceWE.click();
 		urediBrojUliceWE.clear();
 		urediBrojUliceWE.sendKeys(Keys.SPACE, Keys.BACK_SPACE);
 		wait.until(ExpectedConditions.elementToBeClickable(dodajFormaBtnWE));
 		dodajFormaBtnWE.click();
 		Thread.sleep(500);
-		assertTrue(procenatUmanjenjaPDVaPorukaWE.getText().trim().equals("Obavezno polje"),
-				"Izmjena ugovora: Validaciona poruka na polju Procenat umanjenja PDV-a nije dobra!");
+		// assertTrue(procenatUmanjenjaPDVaPorukaWE.getText().trim().equals("Obavezno polje"),
+		//		"Izmjena ugovora: Validaciona poruka na polju Procenat umanjenja PDV-a nije dobra!");
 		assertTrue(urediBrojUlicePorukaWE.getText().trim().equals("Obavezno polje"),
 				"Izmjena ugovora: Validaciona poruka na polju Broj u ulici nije dobra!");
+		//TODO Dodati verifikacije ostalih validacija
 		Thread.sleep(1000);
 	}
 
