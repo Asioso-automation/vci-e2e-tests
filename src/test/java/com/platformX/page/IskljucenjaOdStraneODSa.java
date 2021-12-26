@@ -21,7 +21,7 @@ public class IskljucenjaOdStraneODSa extends PocetnaStranica {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Isključenja od')]")));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaOdsWE));
+		// wait.until(ExpectedConditions.visibilityOf(kolone.kolonaOdsWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaEic2WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojProtokolaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumIskljucenjaWE));

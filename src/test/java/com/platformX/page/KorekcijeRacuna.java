@@ -43,7 +43,7 @@ public class KorekcijeRacuna extends PocetnaStranica {
 		assertTrue(sekcijaBtnWE.getText().trim().equals("OBRAČUN"), "KorekcijeRacuna: Naziv sekcije nije dobar!");
 		assertTrue(stranicaBtnWE.getText().trim().equals("KOREKCIJE RAČUNA"), "KorekcijeRacuna: Naziv stranice nije dobar!");
 		assertTrue(naslovStraniceWE.getText().trim().equals("KOREKCIJE RAČUNA"), "KorekcijeRacuna: Naziv stranice nije dobar!");
-		assertTrue(brojKolona().size() == 16, "KorekcijeRacuna: Broj kolona nije dobar! ");
+		assertTrue(brojKolona().size() == 17, "KorekcijeRacuna: Broj kolona nije dobar! ");
 	}
 
 }

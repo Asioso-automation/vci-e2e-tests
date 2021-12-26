@@ -38,7 +38,7 @@ public class OdbaceniUgovori extends PocetnaStranica {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKategorijaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaVaziOdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaVaziDoWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaOdbacenWE));
+		// wait.until(ExpectedConditions.visibilityOf(kolone.kolonaOdbacenWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNapomenaWE));
 		wait.until(ExpectedConditions.elementToBeClickable(sekcijaBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(stranicaBtnWE));
