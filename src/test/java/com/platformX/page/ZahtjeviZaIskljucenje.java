@@ -35,7 +35,7 @@ public class ZahtjeviZaIskljucenje extends PocetnaStranica {
 		assertTrue(sekcijaBtnWE.getText().trim().equals("PRAVNI ODNOSI"), "ZahtjeviZaIskljucenje: Naziv sekcije nije dobar!");
 		assertTrue(stranicaBtnWE.getText().trim().equals("ZAHTJEVI ZA ISKLJUČENJE"), "ZahtjeviZaIskljucenje: Naziv stranice nije dobar!");
 		assertTrue(naslovStraniceWE.getText().trim().equals("ZAHTJEVI ZA ISKLJUČENJE"), "ZahtjeviZaIskljucenje: Naziv stranice nije dobar!");
-		assertTrue(brojKolona().size() == 9, "ZahtjeviZaIskljucenje: Broj kolona nije dobar! ");
+		assertTrue(brojKolona().size() == 10, "ZahtjeviZaIskljucenje: Broj kolona nije dobar! ");
 	}
 
 }

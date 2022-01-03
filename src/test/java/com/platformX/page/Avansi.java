@@ -23,7 +23,7 @@ public class Avansi extends PocetnaStranica {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKupacWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMjernoMjestoEicWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaCjelokupanIznosWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaUkupanIznosWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNeiskoristeniIznosWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaZadnjaIzmjenaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKupacNeZeliWE));
