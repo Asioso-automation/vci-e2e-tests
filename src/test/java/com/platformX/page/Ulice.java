@@ -43,6 +43,9 @@ public class Ulice extends PocetnaStranica {
 	
 	@FindBy(xpath = "//div[2]/div[1]/div/div/div[1]/div/input")
 	private WebElement urediNazivWE;
+	
+	@FindBy(xpath = "//div/div/div[3]/button[2]")
+	private WebElement potvrdiBrisanjeWE;
 
 	public void verifikujUlice() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
@@ -102,6 +105,30 @@ public class Ulice extends PocetnaStranica {
 		wait.until(ExpectedConditions.elementToBeClickable(potvrdiBtnWE));
 		potvrdiBtnWE.click();
 		return ulica;
+	}
+	
+	public void obrisiUlicu() throws InterruptedException {
+		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
+		burgerBarWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(obrisiWE));
+		obrisiWE.click();
+		Thread.sleep(1000);
+		wait.until(ExpectedConditions.elementToBeClickable(potvrdiBrisanjeWE));
+		potvrdiBrisanjeWE.click();
+	}
+	
+	public void verifikujBrisanjeUlice(String ulica) throws InterruptedException {
+		wait.until(ExpectedConditions.visibilityOf(filterPoNazivuWE));
+		Thread.sleep(1000);
+		wait.until(ExpectedConditions.elementToBeClickable(filterPoNazivuWE));
+		filterPoNazivuWE.click();
+		filterPoNazivuWE.clear();
+		filterPoNazivuWE.sendKeys(ulica);
+		filterPoNazivuWE.sendKeys(Keys.ENTER);
+		Thread.sleep(1000);
+		wait.until(ExpectedConditions.visibilityOf(praznaTabelaWE));
+		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
+		assertTrue(praznaTabelaWE.getText().equals("Nema podataka"), "Ulice: Poruka prazne tabele nije dobra!");
 	}
 
 }

@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="38936" started-at="2022-01-03T11:09:43Z" finished-at="2022-01-03T11:10:22Z">
+  <suite name="Default suite" duration-ms="19299" started-at="2022-01-08T12:57:46Z" finished-at="2022-01-08T12:58:05Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="38936" started-at="2022-01-03T11:09:43Z" finished-at="2022-01-03T11:10:22Z">
-      <class name="com.platformX.tests.PX_009_Verifikacija_Sekcije_Pravni_Odnosi_Test">
-        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.platformX.tests.PX_009_Verifikacija_Sekcije_Pravni_Odnosi_Test@3967e60c]" name="setUp" is-config="true" duration-ms="5343" started-at="2022-01-03T12:09:43Z" finished-at="2022-01-03T12:09:48Z">
+    <test name="Default test" duration-ms="19299" started-at="2022-01-08T12:57:46Z" finished-at="2022-01-08T12:58:05Z">
+      <class name="com.platformX.tests.PX_072_Neuspjesno_Brisanje_Poste_Test">
+        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.platformX.tests.PX_072_Neuspjesno_Brisanje_Poste_Test@3967e60c]" name="setUp" is-config="true" duration-ms="5502" started-at="2022-01-08T13:57:46Z" finished-at="2022-01-08T13:57:51Z">
           <params>
             <param index="0">
               <value>
@@ -18,15 +18,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="px_009_verifikacija_sekcije_pravni_odnosi_test()[pri:0, instance:com.platformX.tests.PX_009_Verifikacija_Sekcije_Pravni_Odnosi_Test@3967e60c]" name="px_009_verifikacija_sekcije_pravni_odnosi_test" duration-ms="33576" started-at="2022-01-03T12:09:48Z" description="test prolazi kroz sve stranice iz sekcija PRAVNI ODNOSI i IZVJESTAJI i verifikuje ih" finished-at="2022-01-03T12:10:22Z">
+        <test-method status="PASS" signature="px_072_neuspjesno_brisanje_poste_test()[pri:0, instance:com.platformX.tests.PX_072_Neuspjesno_Brisanje_Poste_Test@3967e60c]" name="px_072_neuspjesno_brisanje_poste_test" duration-ms="13777" started-at="2022-01-08T13:57:51Z" finished-at="2022-01-08T13:58:05Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- px_009_verifikacija_sekcije_pravni_odnosi_test -->
-        <test-method status="PASS" signature="cleanUp()[pri:0, instance:com.platformX.tests.PX_009_Verifikacija_Sekcije_Pravni_Odnosi_Test@3967e60c]" name="cleanUp" is-config="true" duration-ms="0" started-at="2022-01-03T12:10:22Z" finished-at="2022-01-03T12:10:22Z">
+        </test-method> <!-- px_072_neuspjesno_brisanje_poste_test -->
+        <test-method status="PASS" signature="cleanUp()[pri:0, instance:com.platformX.tests.PX_072_Neuspjesno_Brisanje_Poste_Test@3967e60c]" name="cleanUp" is-config="true" duration-ms="1" started-at="2022-01-08T13:58:05Z" finished-at="2022-01-08T13:58:05Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- cleanUp -->
-      </class> <!-- com.platformX.tests.PX_009_Verifikacija_Sekcije_Pravni_Odnosi_Test -->
+      </class> <!-- com.platformX.tests.PX_072_Neuspjesno_Brisanje_Poste_Test -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

@@ -84,4 +84,6 @@ encoding//src/test/java/com/platformX/tests/PX_047_Provjera_Validacija_Na_Ugovor
 encoding//src/test/java/com/platformX/tests/PX_048_Provjera_Validacija_Na_Ugovoru_Test2.java=UTF-8
 encoding//src/test/java/com/platformX/tests/PX_055_Neuspjesno_Odbacivanje_Ugovora_Test.java=UTF-8
 encoding//src/test/java/com/platformX/tests/PX_068_Neuspjesno_Brisanje_Pravnog_Lica_Test.java=UTF-8
+encoding//src/test/java/com/platformX/tests/PX_072_Neuspjesno_Brisanje_Poste_Test.java=UTF-8
 encoding//src/test/java/com/platformX/tests/PX_075_Neuspjesno_Dodavanje_Poste_Test.java=UTF-8
+encoding//src/test/java/com/platformX/tests/PX_079_Neuspjesno_Brisanje_Ulice_Test.java=UTF-8
