@@ -14,10 +14,8 @@ public class PX_043_Neuspjesno_Dodavanje_Ugovora_Test1 extends BaseTest {
 	public PX_043_Neuspjesno_Dodavanje_Ugovora_Test1() throws IOException, FileNotFoundException {
 		super();
 	}
-
-	// Vec postoji ugovor za izabrano mjerno mjesto
 	
-	@Test
+	@Test (description= "Ugovor postoji za traženo mjerno mjesto")
 	public void px_043_neuspjesno_dodavanje_ugovora_test1() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();

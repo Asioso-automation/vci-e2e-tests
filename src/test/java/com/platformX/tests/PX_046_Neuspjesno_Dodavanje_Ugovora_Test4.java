@@ -14,10 +14,8 @@ public class PX_046_Neuspjesno_Dodavanje_Ugovora_Test4 extends BaseTest {
 	public PX_046_Neuspjesno_Dodavanje_Ugovora_Test4() throws IOException, FileNotFoundException {
 		super();
 	}
-
-	// Obavezno polje broj reaktivnog brojila
 	
-	@Test
+	@Test (description= "Pokušaj dodavanja ugovora bez reaktivnog brojila")
 	public void px_046_nesupjesno_dodavanje_ugovora_test4() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();

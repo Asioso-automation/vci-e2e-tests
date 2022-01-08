@@ -15,9 +15,7 @@ public class PX_044_Neuspjesno_Dodavanje_Ugovora_Test2 extends BaseTest {
 		super();
 	}
 
-	// Datum pocetka je prije pocetka obracunskog perioda
-	
-	@Test
+	@Test (description= "Datum početka je prije početka obračunskog perioda")
 	public void px_044_nesupjesno_dodavanje_ugovora_test2() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
