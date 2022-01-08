@@ -31,17 +31,8 @@ public class ZiroRacuni extends PocetnaStranica {
 	@FindBy(xpath = "//td[6]/button")
 	private WebElement burgerBarWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Uredi')]")
-	private WebElement urediWE;
-	
-	@FindBy(xpath = "//div[contains(text(), 'Briši')]")
-	private WebElement obrisiWE;
-	
 	@FindBy(xpath = "//div/div/div[3]/button[2]")
 	private WebElement potvrdiBrisanjeWE;
-	
-	@FindBy(xpath = "//tr[2]/td")
-	private WebElement praznaTabelaWE;
 
 	// Kreiraj ziro racun elementi
 

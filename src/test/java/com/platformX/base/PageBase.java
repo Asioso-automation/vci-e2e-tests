@@ -32,7 +32,7 @@ public class PageBase {
 	@FindBy(xpath = "//div[contains(text(), 'Uredi')]")
 	protected WebElement urediWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Bri')]")	//Briši
+	@FindBy(xpath = "//div[contains(text(), 'Briši')]")
 	protected WebElement obrisiWE;
 	
 	@FindBy(xpath = "//tr[2]/td")

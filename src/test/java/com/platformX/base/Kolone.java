@@ -13,6 +13,8 @@ public class Kolone extends PageBase {
 		super(driver);
 	}
 	
+	//*[contains(@class, 'v-data-table-header')]//*[text() = 'Entitet']
+	
 	@FindBy(xpath = "//*[contains(text(), 'ID')]")
 	public WebElement kolonaIdWE;
 	

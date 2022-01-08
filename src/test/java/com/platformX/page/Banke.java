@@ -21,12 +21,6 @@ public class Banke extends PocetnaStranica {
 	@FindBy(xpath = "//td[6]/button")
 	private WebElement burgerBarWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Uredi')]")
-	private WebElement urediWE;
-	
-	@FindBy(xpath = "//div[contains(text(), 'Briši')]")
-	private WebElement obrisiWE;
-	
 	@FindBy(xpath = "//a/span/i") 
 	private WebElement dodajBankuBtnWE;
 	
@@ -38,9 +32,6 @@ public class Banke extends PocetnaStranica {
 	
 	@FindBy(xpath = "//div/div/div[3]/button[2]")
 	private WebElement potvrdiBrisanjeWE;
-	
-	@FindBy(xpath = "//tr[2]/td")
-	private WebElement praznaTabelaWE;
 	
 	// Kreiraj banku elementi
 	
