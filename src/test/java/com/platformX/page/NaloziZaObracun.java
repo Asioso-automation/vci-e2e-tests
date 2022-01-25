@@ -33,7 +33,7 @@ public class NaloziZaObracun extends PocetnaStranica {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojRacunaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNapomenaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaUkupnoBezPdvWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPdvWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPdv1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaUkupnoSaPdvWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaZakljucenWE));
 		wait.until(ExpectedConditions.elementToBeClickable(sekcijaBtnWE));

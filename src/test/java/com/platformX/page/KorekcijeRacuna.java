@@ -32,7 +32,7 @@ public class KorekcijeRacuna extends PocetnaStranica {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMrezarina2WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaObnovljiviIzvoriWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNaknadaZaSnabdijevanjeWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPdvWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPdv1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaUkupanIznosWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaProknjizenoWE));
 		wait.until(ExpectedConditions.elementToBeClickable(sekcijaBtnWE));

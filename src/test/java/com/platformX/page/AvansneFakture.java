@@ -29,7 +29,7 @@ public class AvansneFakture extends PocetnaStranica {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPIBWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPdvStopaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIznosBezPdvWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPdvWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPdv1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIznosWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPoreskiObveznikWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaStornoWE));

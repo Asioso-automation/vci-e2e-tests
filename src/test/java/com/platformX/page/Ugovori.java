@@ -458,7 +458,7 @@ public class Ugovori extends PocetnaStranica {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaVaziDoWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPripremaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPotpisanWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAktivanWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAktWE));
 		wait.until(ExpectedConditions.elementToBeClickable(sekcijaBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(stranicaBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(preuzmiExcelBtnWE));
