@@ -183,6 +183,9 @@ public class PocetnaStranica extends PageBase {
 	@FindBy(xpath = "//div[contains(text(), 'Mjenice')]")
 	protected WebElement mjeniceWE;
 	
+	@FindBy(xpath = "//div[contains(text(), 'Tipovi mjenica')]")
+	protected WebElement tipoviMjenicaWE;
+	
 	@FindBy(xpath = "//div[contains(text(), 'Mjerna mjesta')]")
 	protected WebElement mjernaMjestaStrWE;
 	
@@ -592,6 +595,15 @@ public class PocetnaStranica extends PageBase {
 		wait.until(ExpectedConditions.elementToBeClickable(mjeniceWE));
 		mjeniceWE.click();
 		return new Mjenice(driver);
+	}
+	
+	public TipoviMjenica navigirajNaTipoveMjenica() throws Exception {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(kupciWE));
+		kupciWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(tipoviMjenicaWE));
+		tipoviMjenicaWE.click();
+		return new TipoviMjenica(driver);
 	}
 	
 	public MjernaMjesta navigirajNaMjernaMjesta() throws Exception {

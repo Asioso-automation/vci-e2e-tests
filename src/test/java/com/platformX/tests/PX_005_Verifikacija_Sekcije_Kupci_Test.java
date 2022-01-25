@@ -14,6 +14,7 @@ import com.platformX.page.OdbaceniUgovori;
 import com.platformX.page.PovezanaPravnaLica;
 import com.platformX.page.PravnaLica;
 import com.platformX.page.Reklamacije;
+import com.platformX.page.TipoviMjenica;
 import com.platformX.page.UgovoreniPopusti;
 import com.platformX.page.Ugovori;
 import com.platformX.page.VrsteZahtjeva;
@@ -25,7 +26,7 @@ public class PX_005_Verifikacija_Sekcije_Kupci_Test extends BaseTest {
 		super();
 	}
 
-	@Test (description="test prolazi kroz sve stranice iz sekcije KUPCI i verifikuje ih")
+	@Test(description = "test prolazi kroz sve stranice iz sekcije KUPCI i verifikuje ih")
 	public void px_005_verifikacija_sekcije_kupci_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
@@ -44,7 +45,8 @@ public class PX_005_Verifikacija_Sekcije_Kupci_Test extends BaseTest {
 //		zahtjeviZaUgovorePage.verifikujZahtjeviZaUgovore();
 		Ugovori ugovori = pocetna.navigirajNaUgovori();
 		ugovori.verifikujUgovori();
-		ObavjestenjaOPromjeniSnabdjevaca obavjestenjaOPromjeniSnabdjevaca = pocetna.navigirajNaObavjestenjaOPromjeniSnabdjevaca();
+		ObavjestenjaOPromjeniSnabdjevaca obavjestenjaOPromjeniSnabdjevaca = pocetna
+				.navigirajNaObavjestenjaOPromjeniSnabdjevaca();
 		obavjestenjaOPromjeniSnabdjevaca.verifikujObavjestenjaOPromjeniSnabdjevaca();
 		UgovoreniPopusti ugovoreniPopusti = pocetna.navigirajNaUgovoreniPopusti();
 		ugovoreniPopusti.verifikujUgovoreniPopusti();
@@ -58,5 +60,7 @@ public class PX_005_Verifikacija_Sekcije_Kupci_Test extends BaseTest {
 		grupeObrazacaBrojaUgovora.verifikujGrupeObrazaca();
 		Mjenice mjenice = pocetna.navigirajNaMjenice();
 		mjenice.verifikujMjenice();
+		TipoviMjenica tipovi = pocetna.navigirajNaTipoveMjenica();
+		tipovi.verifikujTipoveMjenica();
 	}
 }
