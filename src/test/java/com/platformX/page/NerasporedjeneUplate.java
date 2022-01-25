@@ -22,10 +22,10 @@ public class NerasporedjeneUplate extends PocetnaStranica {
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Neraspore')]")));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojIzvodaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaZiroRacunWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojZiroRacunaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumKnjizenjaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumIzvodaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaUplatioWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaUplatilacWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNapomenaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIznosWE));
 		wait.until(ExpectedConditions.elementToBeClickable(sekcijaBtnWE));

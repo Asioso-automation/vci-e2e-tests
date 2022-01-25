@@ -42,7 +42,6 @@ public class LogIn extends PocetnaStranica {
 		lozinkaWE.sendKeys(platformx_properties.getValue("PASSWORD"));
 		wait.until(ExpectedConditions.elementToBeClickable(prijaviSeBtnWE));
 		prijaviSeBtnWE.click();
-		Thread.sleep(1000);
 	}
 	
 	public void provjeraValidacija(String korisnickoIme, String lozinka) throws InterruptedException {

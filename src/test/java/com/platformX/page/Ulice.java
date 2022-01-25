@@ -53,7 +53,7 @@ public class Ulice extends PocetnaStranica {
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Ulice')]")));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNazivWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaValidnaSifraUliceWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaValidnaWE));
 		wait.until(ExpectedConditions.elementToBeClickable(sekcijaBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(stranicaBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(preuzmiExcelBtnWE));
