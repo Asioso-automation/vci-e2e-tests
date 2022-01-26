@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="22091" started-at="2022-01-26T06:06:26Z" finished-at="2022-01-26T06:06:48Z">
+  <suite name="Default suite" duration-ms="18614" started-at="2022-01-26T07:37:59Z" finished-at="2022-01-26T07:38:17Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="22091" started-at="2022-01-26T06:06:26Z" finished-at="2022-01-26T06:06:48Z">
-      <class name="com.platformX.tests.PX_021_Brisanje_Djelatnosti_Test">
-        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.platformX.tests.PX_021_Brisanje_Djelatnosti_Test@3967e60c]" name="setUp" is-config="true" duration-ms="5416" started-at="2022-01-26T07:06:26Z" finished-at="2022-01-26T07:06:32Z">
+    <test name="Default test" duration-ms="18614" started-at="2022-01-26T07:37:59Z" finished-at="2022-01-26T07:38:17Z">
+      <class name="com.platformX.tests.PX_047_Provjera_Validacija_Na_Ugovoru_Test1">
+        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.platformX.tests.PX_047_Provjera_Validacija_Na_Ugovoru_Test1@3967e60c]" name="setUp" is-config="true" duration-ms="5440" started-at="2022-01-26T08:37:59Z" finished-at="2022-01-26T08:38:04Z">
           <params>
             <param index="0">
               <value>
@@ -18,15 +18,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="px_021_brisanje_djelatnosti_test()[pri:0, instance:com.platformX.tests.PX_021_Brisanje_Djelatnosti_Test@3967e60c]" name="px_021_brisanje_djelatnosti_test" duration-ms="16001" started-at="2022-01-26T07:06:32Z" finished-at="2022-01-26T07:06:48Z">
+        <test-method status="PASS" signature="px_047_provjera_validacija_na_ugovoru_test1()[pri:0, instance:com.platformX.tests.PX_047_Provjera_Validacija_Na_Ugovoru_Test1@3967e60c]" name="px_047_provjera_validacija_na_ugovoru_test1" duration-ms="13158" started-at="2022-01-26T08:38:04Z" finished-at="2022-01-26T08:38:17Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- px_021_brisanje_djelatnosti_test -->
-        <test-method status="PASS" signature="cleanUp()[pri:0, instance:com.platformX.tests.PX_021_Brisanje_Djelatnosti_Test@3967e60c]" name="cleanUp" is-config="true" duration-ms="658" started-at="2022-01-26T07:06:48Z" finished-at="2022-01-26T07:06:48Z">
+        </test-method> <!-- px_047_provjera_validacija_na_ugovoru_test1 -->
+        <test-method status="PASS" signature="cleanUp()[pri:0, instance:com.platformX.tests.PX_047_Provjera_Validacija_Na_Ugovoru_Test1@3967e60c]" name="cleanUp" is-config="true" duration-ms="0" started-at="2022-01-26T08:38:17Z" finished-at="2022-01-26T08:38:17Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- cleanUp -->
-      </class> <!-- com.platformX.tests.PX_021_Brisanje_Djelatnosti_Test -->
+      </class> <!-- com.platformX.tests.PX_047_Provjera_Validacija_Na_Ugovoru_Test1 -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

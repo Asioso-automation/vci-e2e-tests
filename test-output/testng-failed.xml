@@ -3,13 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.platformX.tests.PX_007_Verifikacija_Sekcije_Obracun_Test">
+      <class name="com.platformX.tests.PX_037_Izmjena_Vrste_Zahtjeva_Test">
         <methods>
           <include name="setUp"/>
-          <include name="px_007_verifikacija_sekcije_obracun_test"/>
           <include name="cleanUp"/>
+          <include name="px_037_izmjena_vrste_zahtjeva_test"/>
         </methods>
-      </class> <!-- com.platformX.tests.PX_007_Verifikacija_Sekcije_Obracun_Test -->
+      </class> <!-- com.platformX.tests.PX_037_Izmjena_Vrste_Zahtjeva_Test -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
