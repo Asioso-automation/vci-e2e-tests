@@ -136,8 +136,11 @@ public class PravnaLica extends PocetnaStranica {
 		odaberiMjestoWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(ulicaWE));
 		ulicaWE.sendKeys("6 - Nikole Tesle");
-		wait.until(ExpectedConditions.visibilityOf(odaberiUlicuWE));
-		ulicaWE.sendKeys(Keys.ENTER);
+		Thread.sleep(1000);
+		wait.until(ExpectedConditions.elementToBeClickable(odaberiUlicuWE));
+		// wait.until(ExpectedConditions.visibilityOf(odaberiUlicuWE));
+		// ulicaWE.sendKeys(Keys.ENTER);
+		odaberiUlicuWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(brojUliceWE));
 		brojUliceWE.sendKeys(Helper.getRandomNumber(2));
 		wait.until(ExpectedConditions.elementToBeClickable(dodajPravnoLiceBtnWE));
