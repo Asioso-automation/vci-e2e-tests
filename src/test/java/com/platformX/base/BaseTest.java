@@ -2,6 +2,7 @@ package com.platformX.base;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.text.DecimalFormat;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -20,6 +21,12 @@ public class BaseTest {
 	protected WebDriver driver;
 	protected PropertiesUtil platformx_properties = null;
 	protected final String PLATFORMX_PROPERTIES = "platformx.properties";
+
+	static long startTime;		// variables for calculating test time execution
+	static long endTime;
+	static long duration;
+	static double seconds;
+	static float minutes;
 
 	public BaseTest() throws IOException, FileNotFoundException {
 		platformx_properties = new PropertiesUtil(PLATFORMX_PROPERTIES);
@@ -49,10 +56,23 @@ public class BaseTest {
 		} else {
 		}
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		startTime = System.currentTimeMillis();
 	}
 
 	@AfterMethod
 	public void cleanUp() {
 	driver.quit();
+	endTime = System.currentTimeMillis();
+	duration = endTime - startTime;		// calculating duration of a test
+	seconds = (double)duration/1000.0;	// converting ms to seconds
+	DecimalFormat df = new DecimalFormat();		// mechanism to cut decimals
+	df.setMaximumFractionDigits(2);		// set to 2 decimals
+	if (seconds>60) {
+		minutes = (float) (seconds/60);	// converting seconds to minutes
+		System.out.println("Time taken to execute test: " + df.format(minutes) + " minutes");
+	}
+	else
+		
+		System.out.println("Time taken to execute test: " + df.format(seconds) + " seconds");
 	}
 }

@@ -146,6 +146,9 @@ public class Ugovori extends PocetnaStranica {
 
 	@FindBy(xpath = "//div[2]/div[5]/div/div/div[1]/div[1]/input[1]")
 	private WebElement cjenovnaKategorijaZaMrezuWE;
+	
+	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '20 - Kategorija mrezarine')]")
+	private WebElement odaberiKategorijuMrezarineWE;
 
 	@FindBy(xpath = "//div[2]/div[6]/div/div/div[1]/div/input")
 	private WebElement procenatUmanjenjaPDVaWE;
@@ -507,7 +510,9 @@ public class Ugovori extends PocetnaStranica {
 		wait.until(ExpectedConditions.elementToBeClickable(cjenovnaKategorijaZaMrezuWE));
 		cjenovnaKategorijaZaMrezuWE.sendKeys("20 - Kategorija mrezarine");
 		Thread.sleep(1000);
-		cjenovnaKategorijaZaMrezuWE.sendKeys(Keys.ENTER);
+		wait.until(ExpectedConditions.elementToBeClickable(odaberiKategorijuMrezarineWE));
+		odaberiKategorijuMrezarineWE.click();
+		// cjenovnaKategorijaZaMrezuWE.sendKeys(Keys.ENTER);
 		wait.until(ExpectedConditions.elementToBeClickable(tipUgovoraWE));
 		tipUgovoraWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(tipUgovora1WE));
@@ -595,8 +600,10 @@ public class Ugovori extends PocetnaStranica {
 		odaberiMjestoWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(ulicaWE));
 		ulicaWE.sendKeys("6 - Nikole Tesle");
-		wait.until(ExpectedConditions.visibilityOf(odaberiUlicuWE));
-		ulicaWE.sendKeys(Keys.ENTER);
+		// wait.until(ExpectedConditions.visibilityOf(odaberiUlicuWE));
+		wait.until(ExpectedConditions.elementToBeClickable(odaberiUlicuWE));
+		odaberiUlicuWE.click();
+		// ulicaWE.sendKeys(Keys.ENTER);
 		wait.until(ExpectedConditions.elementToBeClickable(brojUliceWE));
 		brojUliceWE.sendKeys("7"); // random num
 		if (reaktivnoBrojilo == false) {
@@ -661,7 +668,10 @@ public class Ugovori extends PocetnaStranica {
 		pretraziKupcaWE.clear();
 		pretraziKupcaWE.sendKeys(pravnoLice);
 		Thread.sleep(2000);
+		pretraziKupcaWE.sendKeys(Keys.DOWN);
+		Thread.sleep(500);
 		pretraziKupcaWE.sendKeys(Keys.ENTER);
+		Thread.sleep(500);
 		wait.until(ExpectedConditions.visibilityOf(kupacTabelaWE));
 		Thread.sleep(1000);
 		assertTrue(kupacTabelaWE.getText().contains(pravnoLice), "Ugovori: Naziv pravnog lica nije dobar!");
@@ -840,6 +850,7 @@ public class Ugovori extends PocetnaStranica {
 		urediEmailWE.sendKeys(Helper.getRandomString(5) + "@" + Helper.getRandomString(5) + ".com");
 		wait.until(ExpectedConditions.elementToBeClickable(dodajFormaBtnWE));
 		dodajFormaBtnWE.click();
+		Thread.sleep(1000);
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		burgerBarWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(pogledajBtnWE));

@@ -52,6 +52,9 @@ public class UplatePage extends PocetnaStranica {
 	@FindBy(xpath = "//form/div[1]/div/div[2]/div[1]/div/div/div[1]/div[1]/input[1]") 
 	private WebElement kupacWE;
 	
+	@FindBy(xpath = "//div[contains(@class, 'v-list-item__content') and starts-with(., '4100010 - Firma 2')]") 
+	private WebElement odaberiKupca1WE;
+	
 	@FindBy(xpath = "//div[4]/div/div/div[1]/div/input") 
 	private WebElement iznosWE;
 	
@@ -155,8 +158,10 @@ public class UplatePage extends PocetnaStranica {
 		String uplatilac = "Uplatilac " + Helper.getRandomString(5);
 		wait.until(ExpectedConditions.elementToBeClickable(kupacWE));
 		kupacWE.sendKeys("4100010 - Firma 2");
-		Thread.sleep(2000);
-		kupacWE.sendKeys(Keys.ENTER);
+		Thread.sleep(1000);
+		wait.until(ExpectedConditions.elementToBeClickable(odaberiKupca1WE));
+		odaberiKupca1WE.click();
+		// kupacWE.sendKeys(Keys.ENTER);
 		Thread.sleep(1000);
 		wait.until(ExpectedConditions.elementToBeClickable(uplatilacWE));
 		uplatilacWE.sendKeys(uplatilac);
