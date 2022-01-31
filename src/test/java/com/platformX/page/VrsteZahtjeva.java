@@ -107,6 +107,7 @@ public class VrsteZahtjeva extends PocetnaStranica {
 		burgerBarWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(obrisiWE));
 		obrisiWE.click();
+		Thread.sleep(1000);
 		wait.until(ExpectedConditions.elementToBeClickable(potvrdiBrisanjeWE));
 		potvrdiBrisanjeWE.click();
 		Thread.sleep(1000);

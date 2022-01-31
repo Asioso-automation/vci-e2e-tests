@@ -22,7 +22,7 @@ public class BaseTest {
 	protected PropertiesUtil platformx_properties = null;
 	protected final String PLATFORMX_PROPERTIES = "platformx.properties";
 
-	static long startTime;		// variables for calculating test time execution
+	static long startTime;
 	static long endTime;
 	static long duration;
 	static double seconds;
@@ -63,12 +63,12 @@ public class BaseTest {
 	public void cleanUp() {
 	driver.quit();
 	endTime = System.currentTimeMillis();
-	duration = endTime - startTime;		// calculating duration of a test
-	seconds = (double)duration/1000.0;	// converting ms to seconds
-	DecimalFormat df = new DecimalFormat();		// mechanism to cut decimals
-	df.setMaximumFractionDigits(2);		// set to 2 decimals
+	duration = endTime - startTime;
+	seconds = (double)duration/1000.0;
+	DecimalFormat df = new DecimalFormat();
+	df.setMaximumFractionDigits(2);
 	if (seconds>60) {
-		minutes = (float) (seconds/60);	// converting seconds to minutes
+		minutes = (float) (seconds/60);
 		System.out.println("Time taken to execute test: " + df.format(minutes) + " minutes");
 	}
 	else

@@ -654,6 +654,7 @@ public class Ugovori extends PocetnaStranica {
 		pretraziMjernaMjestaWE.clear();
 		pretraziMjernaMjestaWE.sendKeys(eic);
 		Thread.sleep(2000);
+		pretraziMjernaMjestaWE.sendKeys(Keys.DOWN);
 		pretraziMjernaMjestaWE.sendKeys(Keys.ENTER);
 		wait.until(ExpectedConditions.visibilityOf(eicTabelaWE));
 		Thread.sleep(1000);
@@ -685,6 +686,7 @@ public class Ugovori extends PocetnaStranica {
 		pretraziKupcaWE.clear();
 		pretraziKupcaWE.sendKeys(kupac);
 		Thread.sleep(2000);
+		pretraziKupcaWE.sendKeys(Keys.DOWN);
 		pretraziKupcaWE.sendKeys(Keys.ENTER);
 		Thread.sleep(1000);
 		wait.until(ExpectedConditions.visibilityOf(eicTabelaWE));
@@ -897,6 +899,7 @@ public class Ugovori extends PocetnaStranica {
 		wait.until(ExpectedConditions.elementToBeClickable(cjenovnaKategorijaZaMrezuWE));
 		cjenovnaKategorijaZaMrezuWE.sendKeys("20 - Kategorija mrezarine");
 		Thread.sleep(1000);
+		cjenovnaKategorijaZaMrezuWE.sendKeys(Keys.DOWN);
 		cjenovnaKategorijaZaMrezuWE.sendKeys(Keys.ENTER);
 		wait.until(ExpectedConditions.elementToBeClickable(potpisanCBWE));
 		potpisanCBWE.click();
@@ -987,7 +990,9 @@ public class Ugovori extends PocetnaStranica {
 		odaberiMjestoWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(ulicaWE));
 		ulicaWE.sendKeys("6 - Nikole Tesle");
+		Thread.sleep(500);
 		wait.until(ExpectedConditions.visibilityOf(odaberiUlicuWE));
+		ulicaWE.sendKeys(Keys.DOWN);
 		ulicaWE.sendKeys(Keys.ENTER);
 		wait.until(ExpectedConditions.elementToBeClickable(brojUliceWE));
 		brojUliceWE.sendKeys("7");
