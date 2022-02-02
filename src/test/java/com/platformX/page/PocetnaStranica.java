@@ -26,7 +26,7 @@ public class PocetnaStranica extends PageBase {
 	@FindBy(xpath = "//div[1]/div/div/div/div/div/div[2]/input[1]")
 	protected WebElement filterKupacWE;
 	
-	@FindBy(xpath = "//div[2]/div/div/div/div/div/div[2]/input[1]")
+	@FindBy(xpath = "//div[2]/div/div/div/div[2]/input[1]")
 	protected WebElement filterMjernoMjestoWE;
 	
 	@FindBy(xpath = "//div[contains(text(), '1-1 of 1')]")
