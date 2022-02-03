@@ -35,7 +35,7 @@ public class PX_053_Neuspjesna_Deaktivacija_Ugovora_Test extends BaseTest {
 		ugovoriPage.verifikujUgovori();
 		ugovoriPage.dodajUgovor(kupac, "7 - Kategorija cijene 2", "15.07.2020.", "15.07.2020.", "3PD53B2W", true);
 		ugovoriPage.pronadjiUgovorPravnoLice(pravnoLice);
-		ugovoriPage.verifikujBrojNecekiranihKolona(2);
+		ugovoriPage.verifikujBrojNecekiranihKolona(1);
 		ugovoriPage.deaktivirajUgovor("01.01.2020.");
 	}
 

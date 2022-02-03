@@ -1,5 +1,7 @@
 eclipse.preferences.version=1
 encoding//src/test/java/com/platformX/base/Kolone.java=UTF-8
+encoding//src/test/java/com/platformX/distribution/page/LogIn.java=UTF-8
+encoding//src/test/java/com/platformX/distribution/page/PocetnaStranica.java=UTF-8
 encoding//src/test/java/com/platformX/page/AktivnaIskljucenja.java=UTF-8
 encoding//src/test/java/com/platformX/page/Avansi.java=UTF-8
 encoding//src/test/java/com/platformX/page/AvansneFakture.java=UTF-8

@@ -430,20 +430,38 @@ public class Kolone extends PageBase {
 	@FindBy(xpath = "//*[contains(text(), 'Energija')]")
 	public WebElement kolonaEnergijaWE;
 	
+	@FindBy(xpath = "//*[contains(text(), 'En')]")
+	public WebElement kolonaEnWE;
+	
 	@FindBy(xpath = "//*[contains(text(), 'Obnovljivi izvori')]")
 	public WebElement kolonaObnovljiviIzvoriWE;
+	
+	@FindBy(xpath = "//*[contains(text(), 'Obn. izvori')]")
+	public WebElement kolonaObnIzvoriWE;
 	
 	@FindBy(xpath = "//*[contains(text(), 'Naknada za snabdijevanje')]")
 	public WebElement kolonaNaknadaZaSnabdijevanjeWE;
 	
+	@FindBy(xpath = "//*[contains(text(), 'Naknada za snabd.')]")
+	public WebElement kolonaNaknadaZaSnabdWE;
+	
 	@FindBy(xpath = "//*[contains(text(), 'Ukupan iznos')]")
 	public WebElement kolonaUkupanIznosWE;
+	
+	@FindBy(xpath = "//*[contains(text(), 'Uk. iznos')]")
+	public WebElement kolonaUkIznosWE;
 	
 	@FindBy(xpath = "//*[contains(text(), 'Proknjiženo')]")
 	public WebElement kolonaProknjizenoWE;
 	
+	@FindBy(xpath = "//*[contains(text(), 'Proknj.')]")
+	public WebElement kolonaProknjWE;
+	
 	@FindBy(xpath = "//*[contains(text(), 'Mrežarina')]")
 	public WebElement kolonaMrezarina2WE;
+	
+	@FindBy(xpath = "//*[contains(text(), 'Mrež.')]")
+	public WebElement kolonaMrezWE;
 	
 	@FindBy(xpath = "//*[contains(text(), 'Osnovica')]")
 	public WebElement kolonaOsnovicaWE;

@@ -36,7 +36,7 @@ public class PX_054_Odbacivanje_Ugovora_Test extends BaseTest {
 		ugovoriPage.verifikujUgovori();
 		ugovoriPage.dodajPotpisanUgovor("SK009281150R", kupac);
 		ugovoriPage.pronadjiUgovorPravnoLice(pravnoLice);
-		ugovoriPage.verifikujBrojNecekiranihKolona(1);
+		ugovoriPage.verifikujBrojNecekiranihKolona(0);
 		ugovoriPage.odbaciUgovor();
 		ugovoriPage.verifikujOdbaceniUgovor(kupac);
 		homePage.navigirajNaOdbaceniUgovori();
