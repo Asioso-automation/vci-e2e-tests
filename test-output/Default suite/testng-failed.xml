@@ -3,13 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.platformX.tests.PX_065_Dodavanje_Pravnog_Lica_Test">
+      <class name="com.platformX.distribution.tests.PX_DIST_002_Provjera_Validacija_Na_LogIn_Formi_Test">
         <methods>
+          <include name="px_dist_002_nevalidni_kredencijali_test"/>
           <include name="setUp"/>
           <include name="cleanUp"/>
-          <include name="px_065_dodavanje_pravnog_lica_test"/>
         </methods>
-      </class> <!-- com.platformX.tests.PX_065_Dodavanje_Pravnog_Lica_Test -->
+      </class> <!-- com.platformX.distribution.tests.PX_DIST_002_Provjera_Validacija_Na_LogIn_Formi_Test -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
