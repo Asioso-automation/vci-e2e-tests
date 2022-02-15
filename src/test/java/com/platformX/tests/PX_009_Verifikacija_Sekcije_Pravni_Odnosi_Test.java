@@ -48,8 +48,9 @@ public class PX_009_Verifikacija_Sekcije_Pravni_Odnosi_Test extends BaseTest {
 		aktivnaIskljucenja.verifikujAktivnaIskljucenja();
 		Tuzbe tuzbe = pocetna.navigirajNaTuzbe();
 		tuzbe.verifikujTuzbe();
-		Bankroti bankroti = pocetna.navigirajNaBankroti();
-		bankroti.verifikujBankroti();
+//		Bankroti bankroti = pocetna.navigirajNaBankroti();
+//		bankroti.verifikujBankroti();
+		// TODO Nova stranica ovdje
 		Medijacije medijacije = pocetna.navigirajNaMedijacije();
 		medijacije.verifikujMedijacije();
 		OtpisiPotrazivanja otpisiPotrazivanja = pocetna.navigirajNaOtpisiPotrazivanja();

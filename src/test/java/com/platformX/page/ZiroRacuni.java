@@ -52,7 +52,7 @@ public class ZiroRacuni extends PocetnaStranica {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNazivBankeWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojZiroRacunaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaEmail2WE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaEmailWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAktivanWE));
 		wait.until(ExpectedConditions.elementToBeClickable(sekcijaBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(stranicaBtnWE));

@@ -31,7 +31,7 @@ public class AvansneFakture extends PocetnaStranica {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIznosBezPdvWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPdv1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIznosWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPoreskiObveznikWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPdvObveznikWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaStornoWE));
 		wait.until(ExpectedConditions.elementToBeClickable(sekcijaBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(stranicaBtnWE));

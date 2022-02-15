@@ -51,7 +51,7 @@ public class Banke extends PocetnaStranica {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNazivWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPocetneCifreZiroRacunaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaEmailZaTrajniNalogWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaEmailZaTrajniNalog1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAktivnaWE));
 		wait.until(ExpectedConditions.elementToBeClickable(sekcijaBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(stranicaBtnWE));
