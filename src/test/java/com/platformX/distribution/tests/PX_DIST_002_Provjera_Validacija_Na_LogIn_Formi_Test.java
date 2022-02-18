@@ -13,17 +13,17 @@ public class PX_DIST_002_Provjera_Validacija_Na_LogIn_Formi_Test extends BaseTes
 	}
 
 	@Test (description="pogresna lozinka")
-	public void px_dist_002_validno_korisnicko_ime_test() throws Exception {
+	public void px_dist_002_nevalidna_lozinka_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
-		logIn.provjeraValidacija("admin", "Pa$$w0rd");
+		logIn.provjeraValidacija(platformx_properties.getValue("DIST.USER.NAME"), "Pa$$w0rd");
 	}
 	
 	@Test (description="pogrešno korisničko ime")
-	public void px_dist_002_validna_lozinka_test() throws Exception {
+	public void px_dist_002_nevalidno_korisnicko_ime_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
-		logIn.provjeraValidacija("korisnickoime", "staging");
+		logIn.provjeraValidacija("korisnickoime", platformx_properties.getValue("DIST.PASSWORD"));
 	}
 	
 	@Test (description="pogrešno korisničko ime i lozinka")
