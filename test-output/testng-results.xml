@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="20126" started-at="2022-02-18T09:17:37Z" finished-at="2022-02-18T09:17:58Z">
+  <suite name="Default suite" duration-ms="33427" started-at="2022-02-18T09:57:42Z" finished-at="2022-02-18T09:58:15Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="20126" started-at="2022-02-18T09:17:37Z" finished-at="2022-02-18T09:17:58Z">
-      <class name="com.platformX.distribution.tests.PX_DIST_Neuspjesno_Dodavanje_Poste_Test">
-        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.platformX.distribution.tests.PX_DIST_Neuspjesno_Dodavanje_Poste_Test@3967e60c]" name="setUp" is-config="true" duration-ms="5371" started-at="2022-02-18T10:17:37Z" finished-at="2022-02-18T10:17:43Z">
+    <test name="Default test" duration-ms="33427" started-at="2022-02-18T09:57:42Z" finished-at="2022-02-18T09:58:15Z">
+      <class name="com.platformX.tests.PX_005_Verifikacija_Sekcije_Kupci_Test">
+        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.platformX.tests.PX_005_Verifikacija_Sekcije_Kupci_Test@3967e60c]" name="setUp" is-config="true" duration-ms="6656" started-at="2022-02-18T10:57:42Z" finished-at="2022-02-18T10:57:49Z">
           <params>
             <param index="0">
               <value>
@@ -18,15 +18,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="px_075_neuspjesno_dodavanje_poste_test()[pri:0, instance:com.platformX.distribution.tests.PX_DIST_Neuspjesno_Dodavanje_Poste_Test@3967e60c]" name="px_075_neuspjesno_dodavanje_poste_test" duration-ms="14032" started-at="2022-02-18T10:17:43Z" description="Pokušaj dodavanja poste sa istim ID-em" finished-at="2022-02-18T10:17:57Z">
+        <test-method status="PASS" signature="px_005_verifikacija_sekcije_kupci_test()[pri:0, instance:com.platformX.tests.PX_005_Verifikacija_Sekcije_Kupci_Test@3967e60c]" name="px_005_verifikacija_sekcije_kupci_test" duration-ms="26750" started-at="2022-02-18T10:57:49Z" description="test prolazi kroz sve stranice iz sekcije KUPCI i verifikuje ih" finished-at="2022-02-18T10:58:15Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- px_075_neuspjesno_dodavanje_poste_test -->
-        <test-method status="PASS" signature="cleanUp()[pri:0, instance:com.platformX.distribution.tests.PX_DIST_Neuspjesno_Dodavanje_Poste_Test@3967e60c]" name="cleanUp" is-config="true" duration-ms="706" started-at="2022-02-18T10:17:57Z" finished-at="2022-02-18T10:17:58Z">
+        </test-method> <!-- px_005_verifikacija_sekcije_kupci_test -->
+        <test-method status="PASS" signature="cleanUp()[pri:0, instance:com.platformX.tests.PX_005_Verifikacija_Sekcije_Kupci_Test@3967e60c]" name="cleanUp" is-config="true" duration-ms="2" started-at="2022-02-18T10:58:15Z" finished-at="2022-02-18T10:58:15Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- cleanUp -->
-      </class> <!-- com.platformX.distribution.tests.PX_DIST_Neuspjesno_Dodavanje_Poste_Test -->
+      </class> <!-- com.platformX.tests.PX_005_Verifikacija_Sekcije_Kupci_Test -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
