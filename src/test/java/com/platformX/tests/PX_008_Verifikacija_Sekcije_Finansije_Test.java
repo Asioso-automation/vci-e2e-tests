@@ -54,4 +54,5 @@ public class PX_008_Verifikacija_Sekcije_Finansije_Test extends BaseTest {
 		VrsteStavkiFinansijskeKartice vrsteStavkiFinansijskeKartice = pocetna.navigirajNaVrsteStavkiFinansijskeKartice();
 		vrsteStavkiFinansijskeKartice.verifikujVrsteStavkiFinansijskeKartice();
 	}
+	
 }

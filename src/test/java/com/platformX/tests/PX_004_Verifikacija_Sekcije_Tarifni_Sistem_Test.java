@@ -42,4 +42,5 @@ public class PX_004_Verifikacija_Sekcije_Tarifni_Sistem_Test extends BaseTest {
 		Cjenovnik cjenovnik = pocetna.navigirajNaCjenovnik();
 		cjenovnik.verifikujCjenovnik();
 	}
+	
 }

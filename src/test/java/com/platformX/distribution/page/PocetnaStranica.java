@@ -118,6 +118,18 @@ public class PocetnaStranica extends PageBase {
 
 	@FindBy(xpath = "//div[contains(text(), 'Ulice')]")
 	protected WebElement uliceWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Terenske jedinice')]")
+	protected WebElement terenskeJediniceWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Fizičke lokacije')]")
+	protected WebElement fizickeLokacijeWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Snabdjevači')]")
+	protected WebElement snabdjevaciWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Čitači')]")
+	protected WebElement citaciWE;
 
 //	@FindBy(xpath = "//div[contains(text(), 'Kategorije potrošnje')]")
 //	protected WebElement kategorijePotrosnjeWE;
@@ -332,6 +344,42 @@ public class PocetnaStranica extends PageBase {
 		wait.until(ExpectedConditions.elementToBeClickable(organizacijeWE));
 		organizacijeWE.click();
 		return new Organizacije(driver);
+	}
+	
+	public TerenskeJedinice navigirajNaTerenskeJedinice() throws Exception {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(sifarniciWE));
+		sifarniciWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(terenskeJediniceWE));
+		terenskeJediniceWE.click();
+		return new TerenskeJedinice(driver);
+	}
+	
+	public FizickeLokacije navigirajNaFizickeLokacije() throws Exception {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(sifarniciWE));
+		sifarniciWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(fizickeLokacijeWE));
+		fizickeLokacijeWE.click();
+		return new FizickeLokacije(driver);
+	}
+	
+	public Snabdjevaci navigirajNaSnabdjevaci() throws Exception {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(sifarniciWE));
+		sifarniciWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(snabdjevaciWE));
+		snabdjevaciWE.click();
+		return new Snabdjevaci(driver);
+	}
+	
+	public Citaci navigirajNaCitaci() throws Exception {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(sifarniciWE));
+		sifarniciWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(citaciWE));
+		citaciWE.click();
+		return new Citaci(driver);
 	}
 
 	public Djelatnosti navigirajNaDjelatnosti() throws Exception {

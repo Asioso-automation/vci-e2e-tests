@@ -45,9 +45,8 @@ public class PX_005_Verifikacija_Sekcije_Kupci_Test extends BaseTest {
 //		zahtjeviZaUgovorePage.verifikujZahtjeviZaUgovore();
 		Ugovori ugovori = pocetna.navigirajNaUgovori();
 		ugovori.verifikujUgovori();
-		ObavjestenjaOPromjeniSnabdjevaca obavjestenjaOPromjeniSnabdjevaca = pocetna
-				.navigirajNaObavjestenjaOPromjeniSnabdjevaca();
-		obavjestenjaOPromjeniSnabdjevaca.verifikujObavjestenjaOPromjeniSnabdjevaca();
+		ObavjestenjaOPromjeniSnabdjevaca obavjestenja = pocetna.navigirajNaObavjestenjaOPromjeniSnabdjevaca();
+		obavjestenja.verifikujObavjestenjaOPromjeniSnabdjevaca();
 		UgovoreniPopusti ugovoreniPopusti = pocetna.navigirajNaUgovoreniPopusti();
 		ugovoreniPopusti.verifikujUgovoreniPopusti();
 		OdbaceniUgovori odbaceniUgovori = pocetna.navigirajNaOdbaceniUgovori();
