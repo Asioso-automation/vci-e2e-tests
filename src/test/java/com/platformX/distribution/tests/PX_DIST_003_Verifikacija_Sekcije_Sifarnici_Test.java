@@ -6,10 +6,15 @@ import java.io.IOException;
 import com.platformX.base.BaseTest;
 import com.platformX.distribution.page.PocetnaStranica;
 import com.platformX.distribution.page.Poste;
+import com.platformX.distribution.page.SektorDjelatnosti;
 import com.platformX.distribution.page.Snabdjevaci;
 import com.platformX.distribution.page.TerenskeJedinice;
+import com.platformX.distribution.page.TrafoStanice;
 import com.platformX.distribution.page.Ulice;
+import com.platformX.distribution.page.Vlasnistva;
 import com.platformX.distribution.page.LogIn;
+import com.platformX.distribution.page.LokacijeMontera;
+import com.platformX.distribution.page.Monteri;
 import com.platformX.distribution.page.NaseljenaMjesta;
 import com.platformX.distribution.page.Opstine;
 import com.platformX.distribution.page.Organizacije;
@@ -41,6 +46,8 @@ public class PX_DIST_003_Verifikacija_Sekcije_Sifarnici_Test extends BaseTest {
 		snabdjevaci.verifikujSnabdjevaci();
 		Citaci citaci = pocetna.navigirajNaCitaci();
 		citaci.verifikujCitaci();
+		SektorDjelatnosti sektor = pocetna.navigirajNaSektorDjelatnosti();
+		sektor.verifikujSektorDjelatnosti();
 		Djelatnosti djelatnosti = pocetna.navigirajNaDjelatnosti();
 		djelatnosti.verifikujDjelatnosti();
 		Entiteti entiteti = pocetna.navigirajNaEntitete();
@@ -53,6 +60,14 @@ public class PX_DIST_003_Verifikacija_Sekcije_Sifarnici_Test extends BaseTest {
 		poste.verifikujPoste();
 		Ulice ulice = pocetna.navigirajNaUlice();
 		ulice.verifikujUlice();
+		Monteri monteri = pocetna.navigirajNaMonteri();
+		monteri.verifikujMonteri();
+		LokacijeMontera lokacije = pocetna.navigirajNaLokacijeMontera();
+		lokacije.verifikujLokacijeMontera();
+		TrafoStanice trafoStanice = pocetna.navigirajNaTrafoStanice();
+		trafoStanice.verifikujTrafoStanice();
+		Vlasnistva vlasnistva = pocetna.navigirajNaVlasnistva();
+		vlasnistva.verifikujVlasnistva();
 	}
 	
 }

@@ -103,6 +103,9 @@ public class PocetnaStranica extends PageBase {
 
 	@FindBy(xpath = "//div[contains(text(), 'Djelatnosti')]")
 	protected WebElement djelatnostiWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Sektor djelatnosti')]")
+	protected WebElement sektorDjelatnostiWE;
 
 	@FindBy(xpath = "//div[contains(text(), 'Entiteti')]")
 	protected WebElement entitetiWE;
@@ -130,6 +133,18 @@ public class PocetnaStranica extends PageBase {
 	
 	@FindBy(xpath = "//div[contains(text(), 'Čitači')]")
 	protected WebElement citaciWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Monteri')]")
+	protected WebElement monteriWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Lokacije montera')]")
+	protected WebElement lokacijeMonteraWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Trafo stanice')]")
+	protected WebElement trafoStaniceWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Vlasništva')]")
+	protected WebElement vlasnistvaWE;
 
 //	@FindBy(xpath = "//div[contains(text(), 'Kategorije potrošnje')]")
 //	protected WebElement kategorijePotrosnjeWE;
@@ -390,6 +405,15 @@ public class PocetnaStranica extends PageBase {
 		djelatnostiWE.click();
 		return new Djelatnosti(driver);
 	}
+	
+	public SektorDjelatnosti navigirajNaSektorDjelatnosti() throws Exception {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(sifarniciWE));
+		sifarniciWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(sektorDjelatnostiWE));
+		sektorDjelatnostiWE.click();
+		return new SektorDjelatnosti(driver);
+	}
 
 	public Entiteti navigirajNaEntitete() throws Exception {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
@@ -434,6 +458,42 @@ public class PocetnaStranica extends PageBase {
 		wait.until(ExpectedConditions.elementToBeClickable(uliceWE));
 		uliceWE.click();
 		return new Ulice(driver);
+	}
+	
+	public Monteri navigirajNaMonteri() throws Exception {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(sifarniciWE));
+		sifarniciWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(monteriWE));
+		monteriWE.click();
+		return new Monteri(driver);
+	}
+	
+	public LokacijeMontera navigirajNaLokacijeMontera() throws Exception {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(sifarniciWE));
+		sifarniciWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(lokacijeMonteraWE));
+		lokacijeMonteraWE.click();
+		return new LokacijeMontera(driver);
+	}
+	
+	public TrafoStanice navigirajNaTrafoStanice() throws Exception {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(sifarniciWE));
+		sifarniciWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(trafoStaniceWE));
+		trafoStaniceWE.click();
+		return new TrafoStanice(driver);
+	}
+	
+	public Vlasnistva navigirajNaVlasnistva() throws Exception {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(sifarniciWE));
+		sifarniciWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(vlasnistvaWE));
+		vlasnistvaWE.click();
+		return new Vlasnistva(driver);
 	}
 
 //	public KategorijePotrosnje navigirajNaKategorijePotrosnje() throws Exception {
