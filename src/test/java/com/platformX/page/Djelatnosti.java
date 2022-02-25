@@ -101,12 +101,13 @@ public class Djelatnosti extends PocetnaStranica {
 		return djelatnost;
 	}
 	
-	public void obrisiDjelatnost() {
+	public void obrisiDjelatnost() throws InterruptedException {
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		burgerBarWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(obrisiWE));
 		obrisiWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(potvrdiBrisanjeBtnWE));
+		Thread.sleep(500);
 		potvrdiBrisanjeBtnWE.click();
 	}
 	

@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="27267" started-at="2022-02-25T10:28:38Z" finished-at="2022-02-25T10:29:05Z">
+  <suite name="Default suite" duration-ms="23033" started-at="2022-02-25T11:13:53Z" finished-at="2022-02-25T11:14:16Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="27267" started-at="2022-02-25T10:28:38Z" finished-at="2022-02-25T10:29:05Z">
-      <class name="com.platformX.distribution.tests.PX_DIST_004_Verifikacija_Sekcije_Tarifni_Sistem_Test">
-        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.platformX.distribution.tests.PX_DIST_004_Verifikacija_Sekcije_Tarifni_Sistem_Test@3967e60c]" name="setUp" is-config="true" duration-ms="5555" started-at="2022-02-25T11:28:38Z" finished-at="2022-02-25T11:28:43Z">
+    <test name="Default test" duration-ms="23033" started-at="2022-02-25T11:13:53Z" finished-at="2022-02-25T11:14:16Z">
+      <class name="com.platformX.tests.PX_021_Brisanje_Djelatnosti_Test">
+        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.platformX.tests.PX_021_Brisanje_Djelatnosti_Test@3967e60c]" name="setUp" is-config="true" duration-ms="5491" started-at="2022-02-25T12:13:53Z" finished-at="2022-02-25T12:13:59Z">
           <params>
             <param index="0">
               <value>
@@ -18,15 +18,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="px_004_verifikacije_sekcije_tarifni_sistem_test()[pri:0, instance:com.platformX.distribution.tests.PX_DIST_004_Verifikacija_Sekcije_Tarifni_Sistem_Test@3967e60c]" name="px_004_verifikacije_sekcije_tarifni_sistem_test" duration-ms="21006" started-at="2022-02-25T11:28:43Z" description="test prolazi kroz sve stranice iz sekcije TARIFNI SISTEM i verifikuje ih" finished-at="2022-02-25T11:29:04Z">
+        <test-method status="PASS" signature="px_021_brisanje_djelatnosti_test()[pri:0, instance:com.platformX.tests.PX_021_Brisanje_Djelatnosti_Test@3967e60c]" name="px_021_brisanje_djelatnosti_test" duration-ms="17455" started-at="2022-02-25T12:13:59Z" finished-at="2022-02-25T12:14:16Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- px_004_verifikacije_sekcije_tarifni_sistem_test -->
-        <test-method status="PASS" signature="cleanUp()[pri:0, instance:com.platformX.distribution.tests.PX_DIST_004_Verifikacija_Sekcije_Tarifni_Sistem_Test@3967e60c]" name="cleanUp" is-config="true" duration-ms="687" started-at="2022-02-25T11:29:04Z" finished-at="2022-02-25T11:29:05Z">
+        </test-method> <!-- px_021_brisanje_djelatnosti_test -->
+        <test-method status="PASS" signature="cleanUp()[pri:0, instance:com.platformX.tests.PX_021_Brisanje_Djelatnosti_Test@3967e60c]" name="cleanUp" is-config="true" duration-ms="72" started-at="2022-02-25T12:14:16Z" finished-at="2022-02-25T12:14:16Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- cleanUp -->
-      </class> <!-- com.platformX.distribution.tests.PX_DIST_004_Verifikacija_Sekcije_Tarifni_Sistem_Test -->
+      </class> <!-- com.platformX.tests.PX_021_Brisanje_Djelatnosti_Test -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

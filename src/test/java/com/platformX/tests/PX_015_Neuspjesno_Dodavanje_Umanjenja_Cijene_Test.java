@@ -28,4 +28,5 @@ public class PX_015_Neuspjesno_Dodavanje_Umanjenja_Cijene_Test extends BaseTest 
 		umanjenjaCijene.dodajPredefinisanoUmanjenjeCijene(brojMjeseci);
 		umanjenjaCijene.verifikujPoruku("Popust za traženi broj mjeseci je već definisan.");
 	}
+	
 }

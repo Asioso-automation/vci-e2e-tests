@@ -30,4 +30,5 @@ public class PX_013_Izmjena_Umanjenja_Cijene_Test extends BaseTest {
 		umanjenjaCijene.osvjeziStranicu();
 		umanjenjaCijene.verifikujUmanjenjeCijene(noviBrojMjeseci);
 	}
+	
 }
