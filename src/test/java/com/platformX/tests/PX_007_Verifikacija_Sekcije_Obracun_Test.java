@@ -51,4 +51,5 @@ public class PX_007_Verifikacija_Sekcije_Obracun_Test extends BaseTest {
 		KupciZaTestneRacune kupciZaTestneRacune = pocetna.navigirajNaKupciZaTestneRacune();
 		kupciZaTestneRacune.verifikujKupciZaTestneRacune();
 	}
+	
 }

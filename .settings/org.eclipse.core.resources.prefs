@@ -26,6 +26,7 @@ encoding//src/test/java/com/platformX/distribution/page/Ulice.java=UTF-8
 encoding//src/test/java/com/platformX/distribution/page/Vlasnistva.java=UTF-8
 encoding//src/test/java/com/platformX/distribution/tests/PX_DIST_002_Provjera_Validacija_Na_LogIn_Formi_Test.java=UTF-8
 encoding//src/test/java/com/platformX/distribution/tests/PX_DIST_Neuspjesno_Brisanje_Poste_Test.java=UTF-8
+encoding//src/test/java/com/platformX/distribution/tests/PX_DIST_Neuspjesno_Brisanje_Ulice_Test.java=UTF-8
 encoding//src/test/java/com/platformX/distribution/tests/PX_DIST_Neuspjesno_Dodavanje_Poste_Test.java=UTF-8
 encoding//src/test/java/com/platformX/page/AktivnaIskljucenja.java=UTF-8
 encoding//src/test/java/com/platformX/page/Avansi.java=UTF-8

@@ -36,7 +36,7 @@ public class StavkeZahtjevaZaUkljucenje extends PocetnaStranica {
 		wait.until(ExpectedConditions.elementToBeClickable(ukloniFiltereBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(osvjeziBtnWE));
 		assertTrue(sekcijaBtnWE.getText().trim().equals("PRAVNI ODNOSI"), "StavkeZahtjevaZaUkljucenje: Naziv sekcije nije dobar!");
-		assertTrue(stranicaBtnWE.getText().trim().equals("STAVKE ZAHTJEVA ZA UKLJUČENJE"), "StavkeZahtjevaZaUkljucenje: Naziv stranice nije dobar!");
+		assertTrue(stranicaBtnWE.getText().trim().equals("STAVKE ZAHTJEVA ZA UKLJUČENJA"), "StavkeZahtjevaZaUkljucenje: Naziv stranice nije dobar!");
 		assertTrue(naslovStraniceWE.getText().trim().equals("STAVKE ZAHTJEVA ZA UKLJUČENJA"), "StavkeZahtjevaZaUkljucenje: Naziv stranice nije dobar!");
 		assertTrue(brojKolona().size() == 13, "StavkeZahtjevaZaUkljucenje: Broj kolona nije dobar! ");
 	}

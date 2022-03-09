@@ -38,7 +38,7 @@ public class Reklamacije extends PocetnaStranica {
 		assertTrue(sekcijaBtnWE.getText().trim().equals("KUPCI"), "Reklamacije: Naziv sekcije nije dobar!");
 		assertTrue(stranicaBtnWE.getText().trim().equals("REKLAMACIJE"), "Reklamacije: Naziv stranice nije dobar!");
 		assertTrue(naslovStraniceWE.getText().trim().equals("REKLAMACIJE"), "Reklamacije: Naziv stranice nije dobar!");
-		assertTrue(brojKolona().size() == 11, "Reklamacije: Broj kolona nije dobar! ");
+		assertTrue(brojKolona().size() == 12, "Reklamacije: Broj kolona nije dobar! ");
 	}
 
 }

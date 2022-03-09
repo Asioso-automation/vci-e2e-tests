@@ -273,13 +273,13 @@ public class PocetnaStranica extends PageBase {
 	@FindBy(xpath = "//div[contains(text(), 'Zahtjevi za isključenje')]")
 	protected WebElement zahtjeviZaIskljucenjeWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Stavke zahtjeva za isključenje')]")
+	@FindBy(xpath = "//div[contains(text(), 'Stavke zahtjeva za isključenja')]")
 	protected WebElement stavkeZahtjevaZaIskljucenjeWE;
 	
 	@FindBy(xpath = "//div[contains(text(), 'Zahtjevi za uključenje')]")
 	protected WebElement zahtjeviZaUkljucenjeWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Stavke zahtjeva za uključenje')]")
+	@FindBy(xpath = "//div[contains(text(), 'Stavke zahtjeva za uključenja')]")
 	protected WebElement stavkeZahtjevaZaUkljucenjeWE;
 	
 	@FindBy(xpath = "//div[contains(text(), 'Aktivna isključenja')]")

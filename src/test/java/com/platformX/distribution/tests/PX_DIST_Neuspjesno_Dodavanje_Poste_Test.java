@@ -17,7 +17,7 @@ public class PX_DIST_Neuspjesno_Dodavanje_Poste_Test extends BaseTest {
 	private String[] podaci;
 
 	@Test (description= "Pokušaj dodavanja poste sa istim ID-em")
-	public void px_075_neuspjesno_dodavanje_poste_test() throws Exception {
+	public void px_dist_neuspjesno_dodavanje_poste_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
@@ -28,7 +28,7 @@ public class PX_DIST_Neuspjesno_Dodavanje_Poste_Test extends BaseTest {
 		podaci = poste.dodajPostu();
 		poste.verifikujPostu(podaci[0], podaci[1], podaci[2]);
 		poste.dodajPostuSaPodacima(podaci[0], podaci[1], podaci[2]);
-		poste.verifikujPoruku("Post office with this ID already exists."); //  Pošta sa ovim brojem već postoji.
+		poste.verifikujPoruku("Pošta već postoji za dati ID.");
 	}
 
 }

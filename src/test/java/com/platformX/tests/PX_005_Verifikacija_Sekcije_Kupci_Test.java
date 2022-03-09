@@ -57,9 +57,9 @@ public class PX_005_Verifikacija_Sekcije_Kupci_Test extends BaseTest {
 		vrsteZahtjeva.verifikujVrsteZahtjeva();
 		GrupeObrazacaBrojaUgovora grupeObrazacaBrojaUgovora = pocetna.navigirajNaGrupeObrazacaBrojaUgovora();
 		grupeObrazacaBrojaUgovora.verifikujGrupeObrazaca();
-		Mjenice mjenice = pocetna.navigirajNaMjenice();
-		mjenice.verifikujMjenice();
-		TipoviMjenica tipovi = pocetna.navigirajNaTipoveMjenica();
-		tipovi.verifikujTipoveMjenica();
+//		Mjenice mjenice = pocetna.navigirajNaMjenice();
+//		mjenice.verifikujMjenice();
+//		TipoviMjenica tipovi = pocetna.navigirajNaTipoveMjenica();
+//		tipovi.verifikujTipoveMjenica();
 	}
 }

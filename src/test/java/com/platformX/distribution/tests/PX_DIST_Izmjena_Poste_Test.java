@@ -17,7 +17,7 @@ public class PX_DIST_Izmjena_Poste_Test extends BaseTest {
 	private String[] podaci;
 
 	@Test
-	public void px_073_izmjena_poste_test() throws Exception {
+	public void px_dist_izmjena_poste_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
