@@ -208,10 +208,10 @@ public class PocetnaStranica extends PageBase {
 //	
 //	@FindBy(xpath = "//div[contains(text(), 'Tipovi mjenica')]")
 //	protected WebElement tipoviMjenicaWE;
-//	
-//	@FindBy(xpath = "//div[contains(text(), 'Mjerna mjesta')]")
-//	protected WebElement mjernaMjestaStrWE;
-//	
+	
+	@FindBy(xpath = "//div[contains(text(), 'Mjerna mjesta')]")
+	protected WebElement mjernaMjestaStrWE;
+	
 //	@FindBy(xpath = "//a[@href='/metering/metering-points-data-requests']")
 //	protected WebElement zahtjeviZaDostavuPodataka1WE;
 //	
@@ -684,16 +684,16 @@ public class PocetnaStranica extends PageBase {
 //		tipoviMjenicaWE.click();
 //		return new TipoviMjenica(driver);
 //	}
-//	
-//	public MjernaMjesta navigirajNaMjernaMjesta() throws Exception {
-//		WebDriverWait wait = new WebDriverWait(driver, 10);
-//		wait.until(ExpectedConditions.elementToBeClickable(mjernaMjestaWE));
-//		mjernaMjestaWE.click();
-//		wait.until(ExpectedConditions.elementToBeClickable(mjernaMjestaStrWE));
-//		mjernaMjestaStrWE.click();
-//		return new MjernaMjesta(driver);
-//	}
-//	
+	
+	public MjernaMjesta navigirajNaMjernaMjesta() throws Exception {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(mjernaMjestaWE));
+		mjernaMjestaWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(mjernaMjestaStrWE));
+		mjernaMjestaStrWE.click();
+		return new MjernaMjesta(driver);
+	}
+	
 //	public ZahtjeviZaDostavuPodatakaOMjernimMjestima navigirajNaZahtjeviZaDostavuPodataka1() throws Exception {
 //		WebDriverWait wait = new WebDriverWait(driver, 10);
 //		wait.until(ExpectedConditions.elementToBeClickable(mjernaMjestaWE));

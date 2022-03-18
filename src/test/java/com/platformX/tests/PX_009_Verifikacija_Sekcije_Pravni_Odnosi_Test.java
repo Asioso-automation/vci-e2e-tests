@@ -7,6 +7,7 @@ import com.platformX.base.BaseTest;
 import com.platformX.page.PocetnaStranica;
 import com.platformX.page.StavkeZahtjevaZaIskljucenje;
 import com.platformX.page.StavkeZahtjevaZaUkljucenje;
+import com.platformX.page.StecajeviLikvidacije;
 import com.platformX.page.Tuzbe;
 import com.platformX.page.ZahtjeviZaIskljucenje;
 import com.platformX.page.ZahtjeviZaUkljucenje;
@@ -49,7 +50,8 @@ public class PX_009_Verifikacija_Sekcije_Pravni_Odnosi_Test extends BaseTest {
 		tuzbe.verifikujTuzbe();
 //		Bankroti bankroti = pocetna.navigirajNaBankroti();
 //		bankroti.verifikujBankroti();
-		// TODO Nova stranica ovdje
+		StecajeviLikvidacije stecajevi = pocetna.navigirajNaStecajeviLikvidacije();
+		stecajevi.verifikujStecajeviLikvidacije();
 		Medijacije medijacije = pocetna.navigirajNaMedijacije();
 		medijacije.verifikujMedijacije();
 		OtpisiPotrazivanja otpisiPotrazivanja = pocetna.navigirajNaOtpisiPotrazivanja();
