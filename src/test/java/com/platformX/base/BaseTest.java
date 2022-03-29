@@ -61,7 +61,7 @@ public class BaseTest {
 
 	@AfterMethod
 	public void cleanUp() {
- 	driver.quit();
+ 	// driver.quit();
 	endTime = System.currentTimeMillis();
 	duration = endTime - startTime;
 	seconds = (double)duration/1000.0;
