@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="16843" started-at="2022-03-29T08:47:35Z" finished-at="2022-03-29T08:47:52Z">
+  <suite name="Default suite" duration-ms="22883" started-at="2022-03-31T12:36:37Z" finished-at="2022-03-31T12:37:00Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="16843" started-at="2022-03-29T08:47:35Z" finished-at="2022-03-29T08:47:52Z">
-      <class name="com.platformX.tests.PX_012_Dodavanje_Umanjenja_Cijene_Test">
-        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.platformX.tests.PX_012_Dodavanje_Umanjenja_Cijene_Test@3967e60c]" name="setUp" is-config="true" duration-ms="5514" started-at="2022-03-29T10:47:35Z" finished-at="2022-03-29T10:47:40Z">
+    <test name="Default test" duration-ms="22883" started-at="2022-03-31T12:36:37Z" finished-at="2022-03-31T12:37:00Z">
+      <class name="com.platformX.tests.PX_007_Verifikacija_Sekcije_Obracun_Test">
+        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.platformX.tests.PX_007_Verifikacija_Sekcije_Obracun_Test@4b5a5ed1]" name="setUp" is-config="true" duration-ms="5420" started-at="2022-03-31T14:36:37Z" finished-at="2022-03-31T14:36:42Z">
           <params>
             <param index="0">
               <value>
@@ -18,15 +18,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="px_012_dodavanje_umanjenja_cijene_test()[pri:0, instance:com.platformX.tests.PX_012_Dodavanje_Umanjenja_Cijene_Test@3967e60c]" name="px_012_dodavanje_umanjenja_cijene_test" duration-ms="11278" started-at="2022-03-29T10:47:40Z" finished-at="2022-03-29T10:47:52Z">
+        <test-method status="PASS" signature="px_007_verifikacija_sekcije_obracun_test()[pri:0, instance:com.platformX.tests.PX_007_Verifikacija_Sekcije_Obracun_Test@4b5a5ed1]" name="px_007_verifikacija_sekcije_obracun_test" duration-ms="16803" started-at="2022-03-31T14:36:42Z" description="test prolazi kroz sve stranice iz sekcije OBRAČUN i verifikuje ih" finished-at="2022-03-31T14:36:59Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- px_012_dodavanje_umanjenja_cijene_test -->
-        <test-method status="PASS" signature="cleanUp()[pri:0, instance:com.platformX.tests.PX_012_Dodavanje_Umanjenja_Cijene_Test@3967e60c]" name="cleanUp" is-config="true" duration-ms="31" started-at="2022-03-29T10:47:52Z" finished-at="2022-03-29T10:47:52Z">
+        </test-method> <!-- px_007_verifikacija_sekcije_obracun_test -->
+        <test-method status="PASS" signature="cleanUp()[pri:0, instance:com.platformX.tests.PX_007_Verifikacija_Sekcije_Obracun_Test@4b5a5ed1]" name="cleanUp" is-config="true" duration-ms="641" started-at="2022-03-31T14:36:59Z" finished-at="2022-03-31T14:37:00Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- cleanUp -->
-      </class> <!-- com.platformX.tests.PX_012_Dodavanje_Umanjenja_Cijene_Test -->
+      </class> <!-- com.platformX.tests.PX_007_Verifikacija_Sekcije_Obracun_Test -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
