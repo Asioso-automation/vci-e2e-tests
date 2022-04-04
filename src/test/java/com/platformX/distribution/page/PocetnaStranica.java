@@ -212,6 +212,12 @@ public class PocetnaStranica extends PageBase {
 	@FindBy(xpath = "//div[contains(text(), 'Mjerna mjesta')]")
 	protected WebElement mjernaMjestaStrWE;
 	
+	@FindBy(xpath = "//div[contains(text(), 'Zbirna/kontrolna mjerna mjesta')]")
+	protected WebElement zbirnaMjernaMjestaWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Energetska kartica')]")
+	protected WebElement energetskaKarticaWE;
+	
 //	@FindBy(xpath = "//a[@href='/metering/metering-points-data-requests']")
 //	protected WebElement zahtjeviZaDostavuPodataka1WE;
 //	
@@ -558,6 +564,15 @@ public class PocetnaStranica extends PageBase {
 		cjenovnikMrezarineWE.click();
 		return new CjenovnikMrezarine(driver);
 	}
+	
+	public EnergetskaKartica navigirajNaEnergetskaKartica() throws Exception {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(mjernaMjestaWE));
+		mjernaMjestaWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(energetskaKarticaWE));
+		energetskaKarticaWE.click();
+		return new EnergetskaKartica(driver);
+	}
 
 //	public PravnaLica navigirajNaPravnaLica() throws Exception {
 //		WebDriverWait wait = new WebDriverWait(driver, 10);
@@ -692,6 +707,15 @@ public class PocetnaStranica extends PageBase {
 		wait.until(ExpectedConditions.elementToBeClickable(mjernaMjestaStrWE));
 		mjernaMjestaStrWE.click();
 		return new MjernaMjesta(driver);
+	}
+	
+	public ZbirnaKontrolnaMjernaMjesta navigirajNaZbirnaKontrolnaMjernaMjesta() throws Exception {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(mjernaMjestaWE));
+		mjernaMjestaWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(zbirnaMjernaMjestaWE));
+		zbirnaMjernaMjestaWE.click();
+		return new ZbirnaKontrolnaMjernaMjesta(driver);
 	}
 	
 //	public ZahtjeviZaDostavuPodatakaOMjernimMjestima navigirajNaZahtjeviZaDostavuPodataka1() throws Exception {

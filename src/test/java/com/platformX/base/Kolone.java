@@ -772,4 +772,55 @@ public class Kolone extends PageBase {
 	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Aktivan ugovor']")
 	public WebElement kolonaAktivanUgovorWE;
 	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Redni broj']")
+	public WebElement kolonaRedniBrojWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Redni broj izlaza na trafo stanici']")
+	public WebElement kolonaRedniBrojIzlazaWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Kontrolno mjerno mjesto']")
+	public WebElement kolonaKontrolnoMjernoMjestoWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Naziv mjernog mjesta']")
+	public WebElement kolonaNazivMjernogMjestaWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Obračunski ugovor']")
+	public WebElement kolonaObracunskiUgovorWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Vrsta zapisa']")
+	public WebElement kolonaVrstaZapisaWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Konstanta']")
+	public WebElement kolonaKonstantaWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Stanje AVT']")
+	public WebElement kolonaStanjeAVTWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Utrošak AVT']")
+	public WebElement kolonaUtrosakAVTWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Stanje AMT']")
+	public WebElement kolonaStanjeAMTWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Utrošak AMT']")
+	public WebElement kolonaUtrosakAMTWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Stanje RVT']")
+	public WebElement kolonaStanjeRVTWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Utrošak RVT']")
+	public WebElement kolonaUtrosakRVTWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Stanje RMT']")
+	public WebElement kolonaStanjeRMTWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Utrošak RMT']")
+	public WebElement kolonaUtrosakRMTWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Stanje snage']")
+	public WebElement kolonaStanjeSnageWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Utrošak snage']")
+	public WebElement kolonaUtrosakSnageWE;
+	
 }

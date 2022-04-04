@@ -5,12 +5,14 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import com.platformX.base.BaseTest;
 import com.platformX.distribution.page.PocetnaStranica;
+import com.platformX.distribution.page.ZbirnaKontrolnaMjernaMjesta;
+import com.platformX.distribution.page.EnergetskaKartica;
 import com.platformX.distribution.page.LogIn;
 import com.platformX.distribution.page.MjernaMjesta;
 
-public class PX_DIST_005_Verifikacija_Mjerna_Mjesta_Test extends BaseTest {
+public class PX_DIST_005_Verifikacija_Sekcije_Mjerna_Mjesta_Test extends BaseTest {
 
-	public PX_DIST_005_Verifikacija_Mjerna_Mjesta_Test() throws IOException, FileNotFoundException {
+	public PX_DIST_005_Verifikacija_Sekcije_Mjerna_Mjesta_Test() throws IOException, FileNotFoundException {
 		super();
 	}
 
@@ -23,6 +25,10 @@ public class PX_DIST_005_Verifikacija_Mjerna_Mjesta_Test extends BaseTest {
 		pocetna.verifikujPocetnuStranicu();
 		MjernaMjesta mjernaMjesta = pocetna.navigirajNaMjernaMjesta();
 		mjernaMjesta.verifikujMjernaMjesta();
+		ZbirnaKontrolnaMjernaMjesta zbirnaMjernaMjesta = pocetna.navigirajNaZbirnaKontrolnaMjernaMjesta();
+		zbirnaMjernaMjesta.verifikujZbirnaMjernaMjesta();
+		EnergetskaKartica kartica = pocetna.navigirajNaEnergetskaKartica();
+		kartica.verifikujEnergetskaKartica();
 	}
 	
 }
