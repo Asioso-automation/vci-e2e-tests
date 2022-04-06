@@ -43,7 +43,7 @@ public class EnergetskaKartica extends PocetnaStranica {
 		assertTrue(sekcijaBtnWE.getText().trim().equals("MJERNA MJESTA"), "EnergetskaKartica: Naziv sekcije nije dobar!");
 		assertTrue(stranicaBtnWE.getText().trim().equals("ENERGETSKA KARTICA"), "EnergetskaKartica: Naziv stranice nije dobar!");
 		// assertTrue(naslovStraniceWE.getText().trim().equals("ENERGETSKA KARTICA"), "EnergetskaKartica: Naziv stranice nije dobar!");
-		assertTrue(brojKolona().size() == 16, "EnergetskaKartica: Broj kolona nije dobar! ");
+		assertTrue(brojKolona().size() == 17, "EnergetskaKartica: Broj kolona nije dobar! ");
 	}
 
 }

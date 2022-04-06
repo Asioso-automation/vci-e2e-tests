@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="18264" started-at="2022-04-04T07:50:50Z" finished-at="2022-04-04T07:51:08Z">
+  <suite name="Default suite" duration-ms="39597" started-at="2022-04-06T18:35:43Z" finished-at="2022-04-06T18:36:23Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="18264" started-at="2022-04-04T07:50:50Z" finished-at="2022-04-04T07:51:08Z">
-      <class name="com.platformX.distribution.tests.PX_DIST_005_Verifikacija_Sekcije_Mjerna_Mjesta_Test">
-        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.platformX.distribution.tests.PX_DIST_005_Verifikacija_Sekcije_Mjerna_Mjesta_Test@3967e60c]" name="setUp" is-config="true" duration-ms="5331" started-at="2022-04-04T09:50:50Z" finished-at="2022-04-04T09:50:55Z">
+    <test name="Default test" duration-ms="39597" started-at="2022-04-06T18:35:43Z" finished-at="2022-04-06T18:36:23Z">
+      <class name="com.platformX.tests.PX_005_Verifikacija_Sekcije_Kupci_Test">
+        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.platformX.tests.PX_005_Verifikacija_Sekcije_Kupci_Test@3967e60c]" name="setUp" is-config="true" duration-ms="5356" started-at="2022-04-06T20:35:43Z" finished-at="2022-04-06T20:35:49Z">
           <params>
             <param index="0">
               <value>
@@ -18,15 +18,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="px_005_verifikacije_sekcije_mjerna_mjesta_test()[pri:0, instance:com.platformX.distribution.tests.PX_DIST_005_Verifikacija_Sekcije_Mjerna_Mjesta_Test@3967e60c]" name="px_005_verifikacije_sekcije_mjerna_mjesta_test" duration-ms="12254" started-at="2022-04-04T09:50:55Z" description="test prolazi kroz sve stranice iz sekcije MJERNA MJESTA i verifikuje ih" finished-at="2022-04-04T09:51:07Z">
+        <test-method status="PASS" signature="px_005_verifikacija_sekcije_kupci_test()[pri:0, instance:com.platformX.tests.PX_005_Verifikacija_Sekcije_Kupci_Test@3967e60c]" name="px_005_verifikacija_sekcije_kupci_test" duration-ms="33554" started-at="2022-04-06T20:35:49Z" description="test prolazi kroz sve stranice iz sekcije KUPCI i verifikuje ih" finished-at="2022-04-06T20:36:22Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- px_005_verifikacije_sekcije_mjerna_mjesta_test -->
-        <test-method status="PASS" signature="cleanUp()[pri:0, instance:com.platformX.distribution.tests.PX_DIST_005_Verifikacija_Sekcije_Mjerna_Mjesta_Test@3967e60c]" name="cleanUp" is-config="true" duration-ms="663" started-at="2022-04-04T09:51:07Z" finished-at="2022-04-04T09:51:08Z">
+        </test-method> <!-- px_005_verifikacija_sekcije_kupci_test -->
+        <test-method status="PASS" signature="cleanUp()[pri:0, instance:com.platformX.tests.PX_005_Verifikacija_Sekcije_Kupci_Test@3967e60c]" name="cleanUp" is-config="true" duration-ms="669" started-at="2022-04-06T20:36:22Z" finished-at="2022-04-06T20:36:23Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- cleanUp -->
-      </class> <!-- com.platformX.distribution.tests.PX_DIST_005_Verifikacija_Sekcije_Mjerna_Mjesta_Test -->
+      </class> <!-- com.platformX.tests.PX_005_Verifikacija_Sekcije_Kupci_Test -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

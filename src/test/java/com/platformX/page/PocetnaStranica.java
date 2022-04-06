@@ -88,7 +88,7 @@ public class PocetnaStranica extends PageBase {
 	@FindBy(xpath = "//div[3]/a")
 	protected WebElement izvjestajiWE;
 
-	@FindBy(xpath = "//button[8]")
+	@FindBy(xpath = "//button[9]")
 	protected WebElement profilWE;
 
 	// Stranice
@@ -525,13 +525,13 @@ public class PocetnaStranica extends PageBase {
 		return new ZahtjeviZaDostavuPodataka(driver);
 	}
 	
-	public ZahtjeviZaUgovorePage navigateToZahtjeviZaUgovore() throws Exception {
+	public ZahtjeviZaUgovore navigirajNaZahtjeviZaUgovore() throws Exception {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(kupciWE));
 		kupciWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(zahtjeviZaUgovoreWE));
 		zahtjeviZaUgovoreWE.click();
-		return new ZahtjeviZaUgovorePage(driver);
+		return new ZahtjeviZaUgovore(driver);
 	}
 
 	public Ugovori navigirajNaUgovori() throws Exception {

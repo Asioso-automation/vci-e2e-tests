@@ -19,6 +19,7 @@ import com.platformX.page.Ugovori;
 import com.platformX.page.VrsteIsporukeReklamacija;
 import com.platformX.page.VrsteZahtjeva;
 import com.platformX.page.ZahtjeviZaDostavuPodataka;
+import com.platformX.page.ZahtjeviZaUgovore;
 
 public class PX_005_Verifikacija_Sekcije_Kupci_Test extends BaseTest {
 
@@ -41,12 +42,15 @@ public class PX_005_Verifikacija_Sekcije_Kupci_Test extends BaseTest {
 		povezanaPravnaLica.verifikujPovezanaPravnaLica();
 		ZahtjeviZaDostavuPodataka zahtjeviZaDostavuPodataka = pocetna.navigirajNaZahtjeviZaDostavuPodataka();
 		zahtjeviZaDostavuPodataka.verifikujZahtjeveZaDostavuPodataka();
-//		ZahtjeviZaUgovorePage zahtjeviZaUgovorePage = homePage.navigateToZahtjeviZaUgovore();
-//		zahtjeviZaUgovorePage.verifikujZahtjeviZaUgovore();
+		ZahtjeviZaUgovore zahtjeviZaUgovore = pocetna.navigirajNaZahtjeviZaUgovore();
+		zahtjeviZaUgovore.verifikujZahtjeviZaUgovore();
 		Ugovori ugovori = pocetna.navigirajNaUgovori();
 		ugovori.verifikujUgovori();
+		// ZahtjeviZaRaskidUgovora
 		ObavjestenjaOPromjeniSnabdjevaca obavjestenja = pocetna.navigirajNaObavjestenjaOPromjeniSnabdjevaca();
 		obavjestenja.verifikujObavjestenjaOPromjeniSnabdjevaca();
+		// ZajednickaPotrosnja
+		// ClanoviZajednickePotrosnje
 		UgovoreniPopusti ugovoreniPopusti = pocetna.navigirajNaUgovoreniPopusti();
 		ugovoreniPopusti.verifikujUgovoreniPopusti();
 		OdbaceniUgovori odbaceniUgovori = pocetna.navigirajNaOdbaceniUgovori();
@@ -57,13 +61,15 @@ public class PX_005_Verifikacija_Sekcije_Kupci_Test extends BaseTest {
 		vrsteZahtjeva.verifikujVrsteZahtjeva();
 		VrsteIsporukeReklamacija vrsteIsporuke = pocetna.navigirajNaVrsteIsporukeReklamacija();
 		vrsteIsporuke.verifikujVrsteIsporukeReklamacija();
+		// ObrasciBrojaUgovora
 		GrupeObrazacaBrojaUgovora grupeObrazacaBrojaUgovora = pocetna.navigirajNaGrupeObrazacaBrojaUgovora();
 		grupeObrazacaBrojaUgovora.verifikujGrupeObrazaca();
-		IzvodiOtvorenihStavkiPoODSu izvodiOtvorenihStavki = pocetna.navigirajNaIzvodiOtvorenihStavki();
-		izvodiOtvorenihStavki.verifikujIzvodiOtvorenihStavki();
 //		Mjenice mjenice = pocetna.navigirajNaMjenice();
 //		mjenice.verifikujMjenice();
 //		TipoviMjenica tipovi = pocetna.navigirajNaTipoveMjenica();
 //		tipovi.verifikujTipoveMjenica();
+		IzvodiOtvorenihStavkiPoODSu izvodiOtvorenihStavki = pocetna.navigirajNaIzvodiOtvorenihStavki();
+		izvodiOtvorenihStavki.verifikujIzvodiOtvorenihStavki();
+
 	}
 }
