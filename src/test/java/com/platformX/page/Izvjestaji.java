@@ -6,9 +6,9 @@ import java.io.IOException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class IzvjestajiPage extends PocetnaStranica {
+public class Izvjestaji extends PocetnaStranica {
 
-	public IzvjestajiPage(WebDriver driver) throws FileNotFoundException, IOException {
+	public Izvjestaji(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);
 	}
 	

@@ -84,6 +84,9 @@ public class PocetnaStranica extends PageBase {
 	
 	@FindBy(xpath = "//button[7]")
 	protected WebElement pravniOdnosiWE;
+	
+	@FindBy(xpath = "//button[8]")
+	protected WebElement administracijaWE;
 
 	@FindBy(xpath = "//div[3]/a")
 	protected WebElement izvjestajiWE;
@@ -323,6 +326,15 @@ public class PocetnaStranica extends PageBase {
 	
 	@FindBy(xpath = "//div[contains(text(), 'SAP')]")
 	protected WebElement sapWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'UINO')]")
+	protected WebElement uinoWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Korisnici')]")
+	protected WebElement korisniciWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Email obavještenja')]")
+	protected WebElement emailObavjestenjaWE;
 	
 
 	public void verifikujPocetnuStranicu() throws InterruptedException {
@@ -780,13 +792,13 @@ public class PocetnaStranica extends PageBase {
 		return new KamatePage(driver);
 	}
 	
-	public KorekcijeKamatePage navigateToKorekcijeKamate() throws Exception {
+	public KorekcijeKamate navigateToKorekcijeKamate() throws Exception {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(obracunWE));
 		obracunWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(korekcijeKamateWE));
 		korekcijeKamateWE.click();
-		return new KorekcijeKamatePage(driver);
+		return new KorekcijeKamate(driver);
 	}
 	
 	public AvansneFakture navigirajNaAvansneFakture() throws Exception {
@@ -1031,20 +1043,47 @@ public class PocetnaStranica extends PageBase {
 		return new OtpisiPotrazivanja(driver);
 	}
 	
-	public SapPage navigateToSap() throws Exception {
+	public Sap navigirajNaSap() throws Exception {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(finansijeWE));
 		finansijeWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(sapWE));
 		sapWE.click();
-		return new SapPage(driver);
+		return new Sap(driver);
 	}
 	
-	public IzvjestajiPage navigirajNaIzvjestaji() throws Exception {
+	public Uino navigirajNaUino() throws Exception {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(finansijeWE));
+		finansijeWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(uinoWE));
+		uinoWE.click();
+		return new Uino(driver);
+	}
+	
+	public Korisnici navigirajNaKorisnici() throws Exception {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(administracijaWE));
+		administracijaWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(korisniciWE));
+		korisniciWE.click();
+		return new Korisnici(driver);
+	}
+	
+	public EmailObavjestenja navigirajNaEmailObavjestenja() throws Exception {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(administracijaWE));
+		administracijaWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(emailObavjestenjaWE));
+		emailObavjestenjaWE.click();
+		return new EmailObavjestenja(driver);
+	}
+	
+	public Izvjestaji navigirajNaIzvjestaji() throws Exception {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(izvjestajiWE));
 		izvjestajiWE.click();
-		return new IzvjestajiPage(driver);
+		return new Izvjestaji(driver);
 	}
 	
 	public PocetnaStranica navigateToPocetnaStranica() throws FileNotFoundException, IOException {

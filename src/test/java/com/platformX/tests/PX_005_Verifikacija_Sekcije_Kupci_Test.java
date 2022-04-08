@@ -80,6 +80,5 @@ public class PX_005_Verifikacija_Sekcije_Kupci_Test extends BaseTest {
 		tipovi.verifikujTipoveMjenica();
 		IzvodiOtvorenihStavkiPoODSu izvodiOtvorenihStavki = pocetna.navigirajNaIzvodiOtvorenihStavki();
 		izvodiOtvorenihStavki.verifikujIzvodiOtvorenihStavki();
-
 	}
 }

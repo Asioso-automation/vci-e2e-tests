@@ -6,18 +6,19 @@ import java.io.IOException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class SapPage extends PocetnaStranica {
+public class Sap extends PocetnaStranica {
 
-	public SapPage(WebDriver driver) throws FileNotFoundException, IOException {
+	public Sap(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);
 	}
 	
-	public void verifikujSap() {
+	public void verifikujSap() throws InterruptedException {
 		wait.until(ExpectedConditions.elementToBeClickable(sekcijaBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(stranicaBtnWE));
+		Thread.sleep(500);
 		assertTrue(sekcijaBtnWE.getText().trim().equals("FINANSIJE"), "SAP: Naziv sekcije nije dobar!");
-		assertTrue(stranicaBtnWE.getText().trim().equals("SAP INTERFEJS"), "SAP: Naziv stranice nije dobar!");
-		assertTrue(naslovStraniceWE.getText().trim().equals("SAP INTERFEJS"), "SAP: Naziv stranice nije dobar!");
+		assertTrue(stranicaBtnWE.getText().trim().equals("SAP"), "SAP: Naziv stranice nije dobar!");
+		assertTrue(naslovStraniceWE.getText().trim().equals("SAP"), "SAP: Naziv stranice nije dobar!");
 	}
 
 }

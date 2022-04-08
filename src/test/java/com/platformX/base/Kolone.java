@@ -736,6 +736,15 @@ public class Kolone extends PageBase {
 	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Ime']")
 	public WebElement kolonaImeWE;
 	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Korisničko ime']")
+	public WebElement kolonaKorisnickoImeWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'ODS ograničenje']")
+	public WebElement kolonaOdsOgranicenjeWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Prezime']")
+	public WebElement kolonaPrezimeWE;
+	
 	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Fizička lokacija']")
 	public WebElement kolonaFizickaLokacijaWE;
 	
@@ -867,5 +876,11 @@ public class Kolone extends PageBase {
 	
 	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Obrazac']")
 	public WebElement kolonaObrazacWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Primaoci']")
+	public WebElement kolonaPrimaociWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Vrijeme obavještenja']")
+	public WebElement kolonaVrijemeObavjestenjaWE;
 	
 }

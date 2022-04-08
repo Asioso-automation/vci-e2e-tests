@@ -13,7 +13,6 @@ import com.platformX.page.ZahtjeviZaIskljucenje;
 import com.platformX.page.ZahtjeviZaUkljucenje;
 import com.platformX.page.AktivnaIskljucenja;
 import com.platformX.page.IskljucenjaOdStraneODSa;
-import com.platformX.page.IzvjestajiPage;
 import com.platformX.page.LogIn;
 import com.platformX.page.Medijacije;
 import com.platformX.page.Opomene;
@@ -56,8 +55,6 @@ public class PX_009_Verifikacija_Sekcije_Pravni_Odnosi_Test extends BaseTest {
 		medijacije.verifikujMedijacije();
 		OtpisiPotrazivanja otpisiPotrazivanja = pocetna.navigirajNaOtpisiPotrazivanja();
 		otpisiPotrazivanja.verifikujOtpisiPotrazivanja();
-		IzvjestajiPage izvjestajiPage = pocetna.navigirajNaIzvjestaji();
-		izvjestajiPage.verifikujIzvjestaji();
 	}
 	
 }

@@ -13,7 +13,9 @@ import com.platformX.page.PreknjizavanjaUplata;
 import com.platformX.page.LogIn;
 import com.platformX.page.NerasporedjeneUplate;
 import com.platformX.page.Reprogrami;
+import com.platformX.page.Sap;
 import com.platformX.page.SveUplate;
+import com.platformX.page.Uino;
 import com.platformX.page.VrsteKnjizenja;
 import com.platformX.page.VrsteStavkiFinansijskeKartice;
 import com.platformX.page.ZiroRacuni;
@@ -53,6 +55,10 @@ public class PX_008_Verifikacija_Sekcije_Finansije_Test extends BaseTest {
 		vrsteKnjizenja.verifikujVrsteKnjizenja();
 		VrsteStavkiFinansijskeKartice vrsteStavkiFinansijskeKartice = pocetna.navigirajNaVrsteStavkiFinansijskeKartice();
 		vrsteStavkiFinansijskeKartice.verifikujVrsteStavkiFinansijskeKartice();
+		Sap sap = pocetna.navigirajNaSap();
+		sap.verifikujSap();
+		Uino uino = pocetna.navigirajNaUino();
+		uino.verifikujUino();
 	}
 	
 }
