@@ -841,4 +841,31 @@ public class Kolone extends PageBase {
 	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Poslan']")
 	public WebElement kolonaPoslanWE;
 	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Zahtjevani datum završetka']")
+	public WebElement kolonaZahtjevaniDatumZavrsetkaWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Razlog zahtjeva za raskid ugovora']")
+	public WebElement kolonaRazlogZahtjevaWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Odbijen']")
+	public WebElement kolonaOdbijenWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Nosilac - kupac']")
+	public WebElement kolonaNosilacKupacWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Nosilac - mjerno mjesto (EIC)']")
+	public WebElement kolonaNosilacMjernoMjestoWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Broj aktivnih članova']")
+	public WebElement kolonaBrojAktivnihClanovaWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Kupac - nosilac']")
+	public WebElement kolonaKupacNosilacWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Mjerno mjesto - nosilac']")
+	public WebElement kolonaMjernoMjestoNosilacWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Obrazac']")
+	public WebElement kolonaObrazacWE;
+	
 }

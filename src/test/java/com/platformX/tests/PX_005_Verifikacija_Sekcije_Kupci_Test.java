@@ -4,22 +4,28 @@ import org.testng.annotations.Test;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import com.platformX.base.BaseTest;
+import com.platformX.page.ClanoviZajednickePotrosnje;
 import com.platformX.page.FizickaLica;
 import com.platformX.page.GrupeObrazacaBrojaUgovora;
 import com.platformX.page.IzvodiOtvorenihStavkiPoODSu;
 import com.platformX.page.PocetnaStranica;
 import com.platformX.page.LogIn;
+import com.platformX.page.Mjenice;
 import com.platformX.page.ObavjestenjaOPromjeniSnabdjevaca;
+import com.platformX.page.ObrasciBrojaUgovora;
 import com.platformX.page.OdbaceniUgovori;
 import com.platformX.page.PovezanaPravnaLica;
 import com.platformX.page.PravnaLica;
 import com.platformX.page.Reklamacije;
+import com.platformX.page.TipoviMjenica;
 import com.platformX.page.UgovoreniPopusti;
 import com.platformX.page.Ugovori;
 import com.platformX.page.VrsteIsporukeReklamacija;
 import com.platformX.page.VrsteZahtjeva;
 import com.platformX.page.ZahtjeviZaDostavuPodataka;
+import com.platformX.page.ZahtjeviZaRaskidUgovora;
 import com.platformX.page.ZahtjeviZaUgovore;
+import com.platformX.page.ZajednickaPotrosnja;
 
 public class PX_005_Verifikacija_Sekcije_Kupci_Test extends BaseTest {
 
@@ -46,11 +52,14 @@ public class PX_005_Verifikacija_Sekcije_Kupci_Test extends BaseTest {
 		zahtjeviZaUgovore.verifikujZahtjeviZaUgovore();
 		Ugovori ugovori = pocetna.navigirajNaUgovori();
 		ugovori.verifikujUgovori();
-		// ZahtjeviZaRaskidUgovora
+		ZahtjeviZaRaskidUgovora zahtjeviZaRaskid = pocetna.navigirajNaZahtjeviZaRaskidUgovora();
+		zahtjeviZaRaskid.verifikujZahtjeviZaRaskidUgovora();
 		ObavjestenjaOPromjeniSnabdjevaca obavjestenja = pocetna.navigirajNaObavjestenjaOPromjeniSnabdjevaca();
 		obavjestenja.verifikujObavjestenjaOPromjeniSnabdjevaca();
-		// ZajednickaPotrosnja
-		// ClanoviZajednickePotrosnje
+		ZajednickaPotrosnja zajednickaPotrosnja = pocetna.navigirajNaZajednickaPotrosnja();
+		zajednickaPotrosnja.verifikujZajednickaPotrosnja();
+		ClanoviZajednickePotrosnje clanovi = pocetna.navigirajNaClanoviZajednickePotrosnje();
+		clanovi.verifikujClanoviZajednickePotrosnje();
 		UgovoreniPopusti ugovoreniPopusti = pocetna.navigirajNaUgovoreniPopusti();
 		ugovoreniPopusti.verifikujUgovoreniPopusti();
 		OdbaceniUgovori odbaceniUgovori = pocetna.navigirajNaOdbaceniUgovori();
@@ -61,13 +70,14 @@ public class PX_005_Verifikacija_Sekcije_Kupci_Test extends BaseTest {
 		vrsteZahtjeva.verifikujVrsteZahtjeva();
 		VrsteIsporukeReklamacija vrsteIsporuke = pocetna.navigirajNaVrsteIsporukeReklamacija();
 		vrsteIsporuke.verifikujVrsteIsporukeReklamacija();
-		// ObrasciBrojaUgovora
+		ObrasciBrojaUgovora obrasciBrojaUgovora = pocetna.navigirajNaObrasciBrojaUgovora();
+		obrasciBrojaUgovora.verifikujObrasciBrojaUgovora();
 		GrupeObrazacaBrojaUgovora grupeObrazacaBrojaUgovora = pocetna.navigirajNaGrupeObrazacaBrojaUgovora();
 		grupeObrazacaBrojaUgovora.verifikujGrupeObrazaca();
-//		Mjenice mjenice = pocetna.navigirajNaMjenice();
-//		mjenice.verifikujMjenice();
-//		TipoviMjenica tipovi = pocetna.navigirajNaTipoveMjenica();
-//		tipovi.verifikujTipoveMjenica();
+		Mjenice mjenice = pocetna.navigirajNaMjenice();
+		mjenice.verifikujMjenice();
+		TipoviMjenica tipovi = pocetna.navigirajNaTipoveMjenica();
+		tipovi.verifikujTipoveMjenica();
 		IzvodiOtvorenihStavkiPoODSu izvodiOtvorenihStavki = pocetna.navigirajNaIzvodiOtvorenihStavki();
 		izvodiOtvorenihStavki.verifikujIzvodiOtvorenihStavki();
 

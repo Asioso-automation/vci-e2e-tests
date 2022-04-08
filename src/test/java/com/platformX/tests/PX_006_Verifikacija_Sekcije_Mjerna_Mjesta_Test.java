@@ -18,7 +18,7 @@ public class PX_006_Verifikacija_Sekcije_Mjerna_Mjesta_Test extends BaseTest {
 	}
 
 	@Test (description="test prolazi kroz sve stranice iz sekcije MJERNA MJESTA i verifikuje ih")
-	public void qa_006_verifikacija_sekcije_mjerna_mjesta_test() throws Exception {
+	public void px_006_verifikacija_sekcije_mjerna_mjesta_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();

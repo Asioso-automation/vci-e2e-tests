@@ -35,7 +35,7 @@ public class Mjenice extends PocetnaStranica {
 		wait.until(ExpectedConditions.elementToBeClickable(ukloniFiltereBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(osvjeziBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
-		assertTrue(sekcijaBtnWE.getText().trim().equals("KUPCI"), "UgovoreniPopusti: Naziv sekcije nije dobar!");
+		assertTrue(sekcijaBtnWE.getText().trim().equals("KUPCI"), "Mjenice: Naziv sekcije nije dobar!");
 		assertTrue(stranicaBtnWE.getText().trim().equals("MJENICE"), "Mjenice: Naziv stranice nije dobar!");
 		assertTrue(naslovStraniceWE.getText().trim().equals("MJENICE"), "Mjenice: Naziv stranice nije dobar!");
 		assertTrue(brojKolona().size() == 10, "Mjenice: Broj kolona nije dobar! ");
