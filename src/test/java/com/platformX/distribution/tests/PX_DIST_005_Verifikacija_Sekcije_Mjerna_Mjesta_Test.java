@@ -5,6 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import com.platformX.base.BaseTest;
 import com.platformX.distribution.page.PocetnaStranica;
+import com.platformX.distribution.page.ZahtjeviZaDostavuPodataka;
 import com.platformX.distribution.page.ZbirnaKontrolnaMjernaMjesta;
 import com.platformX.distribution.page.EnergetskaKartica;
 import com.platformX.distribution.page.LogIn;
@@ -29,6 +30,8 @@ public class PX_DIST_005_Verifikacija_Sekcije_Mjerna_Mjesta_Test extends BaseTes
 		zbirnaMjernaMjesta.verifikujZbirnaMjernaMjesta();
 		EnergetskaKartica kartica = pocetna.navigirajNaEnergetskaKartica();
 		kartica.verifikujEnergetskaKartica();
+		ZahtjeviZaDostavuPodataka zahtjeviZaDostavu = pocetna.navigirajNaZahtjeviZaDostavuPodataka();
+		zahtjeviZaDostavu.verifikujZahtjeviZaDostavuPodataka();
 	}
 	
 }

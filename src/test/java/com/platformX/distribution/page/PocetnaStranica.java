@@ -166,7 +166,7 @@ public class PocetnaStranica extends PageBase {
 
 //	@FindBy(xpath = "//div[contains(text(), 'Kategorije cijena')]")
 //	protected WebElement kategorijeCijenaWE;
-//
+
 //	@FindBy(xpath = "//div[contains(text(), 'Pravna lica')]")
 //	protected WebElement pravnaLicaWE;
 //
@@ -218,9 +218,9 @@ public class PocetnaStranica extends PageBase {
 	@FindBy(xpath = "//div[contains(text(), 'Energetska kartica')]")
 	protected WebElement energetskaKarticaWE;
 	
-//	@FindBy(xpath = "//a[@href='/metering/metering-points-data-requests']")
-//	protected WebElement zahtjeviZaDostavuPodataka1WE;
-//	
+	@FindBy(xpath = "//div[contains(text(), 'Zahtjevi za dostavu podataka')]")
+	protected WebElement zahtjeviZaDostavuPodatakaWE;
+	
 //	@FindBy(xpath = "//div[contains(text(), 'Očitanja brojila')]")
 //	protected WebElement ocitanjaBrojilaWE;
 //	
@@ -573,6 +573,15 @@ public class PocetnaStranica extends PageBase {
 		energetskaKarticaWE.click();
 		return new EnergetskaKartica(driver);
 	}
+	
+	public ZahtjeviZaDostavuPodataka navigirajNaZahtjeviZaDostavuPodataka() throws Exception {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(mjernaMjestaWE));
+		mjernaMjestaWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(zahtjeviZaDostavuPodatakaWE));
+		zahtjeviZaDostavuPodatakaWE.click();
+		return new ZahtjeviZaDostavuPodataka(driver);
+	}
 
 //	public PravnaLica navigirajNaPravnaLica() throws Exception {
 //		WebDriverWait wait = new WebDriverWait(driver, 10);
@@ -600,16 +609,7 @@ public class PocetnaStranica extends PageBase {
 //		povezanaPravnaLicaWE.click();
 //		return new PovezanaPravnaLica(driver);
 //	}
-//	
-//	public ZahtjeviZaDostavuPodataka navigirajNaZahtjeviZaDostavuPodataka() throws Exception {
-//		WebDriverWait wait = new WebDriverWait(driver, 10);
-//		wait.until(ExpectedConditions.elementToBeClickable(kupciWE));
-//		kupciWE.click();
-//		wait.until(ExpectedConditions.elementToBeClickable(zahtjeviZaDostavuPodatakaWE));
-//		zahtjeviZaDostavuPodatakaWE.click();
-//		return new ZahtjeviZaDostavuPodataka(driver);
-//	}
-//	
+	
 //	public ZahtjeviZaUgovorePage navigateToZahtjeviZaUgovore() throws Exception {
 //		WebDriverWait wait = new WebDriverWait(driver, 10);
 //		wait.until(ExpectedConditions.elementToBeClickable(kupciWE));
