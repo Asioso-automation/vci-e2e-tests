@@ -140,7 +140,7 @@ public class PocetnaStranica extends PageBase {
 	@FindBy(xpath = "//div[contains(text(), 'Lokacije montera')]")
 	protected WebElement lokacijeMonteraWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Trafo stanice')]")
+	@FindBy(xpath = "//div[contains(text(), 'Trafostanice')]")
 	protected WebElement trafoStaniceWE;
 	
 	@FindBy(xpath = "//div[contains(text(), 'Vlasništva')]")

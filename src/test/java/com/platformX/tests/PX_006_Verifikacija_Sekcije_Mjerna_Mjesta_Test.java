@@ -32,7 +32,5 @@ public class PX_006_Verifikacija_Sekcije_Mjerna_Mjesta_Test extends BaseTest {
 		ocitanjaBrojila.verifikujOcitanjaBrojila();
 		EnergetskiObracun energetskiObracun = pocetna.navigirajNaEnergetskiObracun();
 		energetskiObracun.verifikujEnergetskiObracun();
-//		MonitoringEnergetskogObracunaPage monitoringEnergetskogObracunaPage = homePage.navigateToMonitoringEnergetskogObracuna();
-//		monitoringEnergetskogObracunaPage.verifikujMonitoringEnergetskogObracuna();
 	}
 }

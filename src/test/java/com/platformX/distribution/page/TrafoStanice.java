@@ -17,7 +17,7 @@ public class TrafoStanice extends PocetnaStranica {
 	public void verifikujTrafoStanice() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
-				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Trafo stanice')]")));
+				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Trafostanice')]")));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaSifraWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNazivWE));
@@ -36,8 +36,8 @@ public class TrafoStanice extends PocetnaStranica {
 		wait.until(ExpectedConditions.elementToBeClickable(osvjeziBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
 		assertTrue(sekcijaBtnWE.getText().trim().equals("ŠIFARNICI"), "TrafoStanice: Naziv sekcije nije dobar!");
-		assertTrue(stranicaBtnWE.getText().trim().equals("TRAFO STANICE"), "TrafoStanice: Naziv stranice nije dobar!");
-		assertTrue(naslovStraniceWE.getText().trim().equals("TRAFO STANICE"), "TrafoStanice: Naziv stranice nije dobar!");
+		assertTrue(stranicaBtnWE.getText().trim().equals("TRAFOSTANICE"), "TrafoStanice: Naziv stranice nije dobar!");
+		assertTrue(naslovStraniceWE.getText().trim().equals("TRAFOSTANICE"), "TrafoStanice: Naziv stranice nije dobar!");
 		assertTrue(brojKolona().size() == 12, "TrafoStanice: Broj kolona nije dobar! ");
 	}
 
