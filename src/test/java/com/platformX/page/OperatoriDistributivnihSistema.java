@@ -10,20 +10,20 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import com.platformX.base.Kolone;
 
-public class OperatoriSistema extends PocetnaStranica {
+public class OperatoriDistributivnihSistema extends PocetnaStranica {
 
-	public OperatoriSistema(WebDriver driver) throws FileNotFoundException, IOException {
+	public OperatoriDistributivnihSistema(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);
 	}
 
-	public void verifikujOperatoreSistema() throws FileNotFoundException, IOException {
+	public void verifikujOperatoriDistributivnihSistema() throws FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Operatori distributivnih sistema')]")));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNazivWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKodWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaEicWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaEic2WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAdresaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaEmailWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaSapMjestoTroskaWE));

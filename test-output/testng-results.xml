@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="21065" started-at="2022-04-18T08:20:29Z" finished-at="2022-04-18T08:20:50Z">
+  <suite name="Default suite" duration-ms="22104" started-at="2022-04-28T06:03:54Z" finished-at="2022-04-28T06:04:16Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="21065" started-at="2022-04-18T08:20:29Z" finished-at="2022-04-18T08:20:50Z">
-      <class name="com.platformX.distribution.tests.PX_DIST_Neuspjesno_Dodavanje_Poste_Test">
-        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.platformX.distribution.tests.PX_DIST_Neuspjesno_Dodavanje_Poste_Test@3967e60c]" name="setUp" is-config="true" duration-ms="5401" started-at="2022-04-18T10:20:29Z" finished-at="2022-04-18T10:20:34Z">
+    <test name="Default test" duration-ms="22104" started-at="2022-04-28T06:03:54Z" finished-at="2022-04-28T06:04:16Z">
+      <class name="com.platformX.tests.PX_069_Dodavanje_Radne_Jedinice_Test">
+        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.platformX.tests.PX_069_Dodavanje_Radne_Jedinice_Test@3967e60c]" name="setUp" is-config="true" duration-ms="5406" started-at="2022-04-28T08:03:54Z" finished-at="2022-04-28T08:03:59Z">
           <params>
             <param index="0">
               <value>
@@ -18,15 +18,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="px_dist_neuspjesno_dodavanje_poste_test()[pri:0, instance:com.platformX.distribution.tests.PX_DIST_Neuspjesno_Dodavanje_Poste_Test@3967e60c]" name="px_dist_neuspjesno_dodavanje_poste_test" duration-ms="14963" started-at="2022-04-18T10:20:34Z" description="Pokušaj dodavanja poste sa istim ID-em" finished-at="2022-04-18T10:20:49Z">
+        <test-method status="PASS" signature="px_069_dodavanje_radne_jedinice_test()[pri:0, instance:com.platformX.tests.PX_069_Dodavanje_Radne_Jedinice_Test@3967e60c]" name="px_069_dodavanje_radne_jedinice_test" duration-ms="16016" started-at="2022-04-28T08:03:59Z" finished-at="2022-04-28T08:04:15Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- px_dist_neuspjesno_dodavanje_poste_test -->
-        <test-method status="PASS" signature="cleanUp()[pri:0, instance:com.platformX.distribution.tests.PX_DIST_Neuspjesno_Dodavanje_Poste_Test@3967e60c]" name="cleanUp" is-config="true" duration-ms="682" started-at="2022-04-18T10:20:49Z" finished-at="2022-04-18T10:20:50Z">
+        </test-method> <!-- px_069_dodavanje_radne_jedinice_test -->
+        <test-method status="PASS" signature="cleanUp()[pri:0, instance:com.platformX.tests.PX_069_Dodavanje_Radne_Jedinice_Test@3967e60c]" name="cleanUp" is-config="true" duration-ms="666" started-at="2022-04-28T08:04:15Z" finished-at="2022-04-28T08:04:16Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- cleanUp -->
-      </class> <!-- com.platformX.distribution.tests.PX_DIST_Neuspjesno_Dodavanje_Poste_Test -->
+      </class> <!-- com.platformX.tests.PX_069_Dodavanje_Radne_Jedinice_Test -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

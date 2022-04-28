@@ -60,7 +60,7 @@ public class RadneJedinice extends PocetnaStranica {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaFaxWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaEmailWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaInternetAdresaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaCallCenterWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaCallCentarWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaZiroRacunWE));
 		wait.until(ExpectedConditions.elementToBeClickable(sekcijaBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(stranicaBtnWE));

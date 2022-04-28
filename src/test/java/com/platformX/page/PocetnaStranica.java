@@ -368,14 +368,14 @@ public class PocetnaStranica extends PageBase {
 		return new Organizacije(driver);
 	}
 
-	public OperatoriSistema navigirajNaOperatoreSistema() throws Exception {
+	public OperatoriDistributivnihSistema navigirajNaOperatoriDistributivnihSistema() throws Exception {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(sifarniciWE));
 		sifarniciWE.click();
 		Thread.sleep(500);
 		wait.until(ExpectedConditions.elementToBeClickable(operatoriSistemaWE));
 		operatoriSistemaWE.click();
-		return new OperatoriSistema(driver);
+		return new OperatoriDistributivnihSistema(driver);
 	}
 
 	public RadneJedinice navigirajNaRadneJedinice() throws Exception {
