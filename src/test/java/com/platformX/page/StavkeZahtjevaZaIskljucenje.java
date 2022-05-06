@@ -27,12 +27,11 @@ public class StavkeZahtjevaZaIskljucenje extends PocetnaStranica {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPlaniraniDatumIskljucenjaOdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPlaniraniDatumIskljucenjaDoWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumIskljucenjaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaRazlogNeizvrsavanjaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPlaceniDugoviWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaRealizovanoWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaOdbijenoWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaOtkazanoWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPoslanoWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaRealizWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaOdbWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaOtkWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPoslWE));
 		wait.until(ExpectedConditions.elementToBeClickable(sekcijaBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(stranicaBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(preuzmiExcelBtnWE));

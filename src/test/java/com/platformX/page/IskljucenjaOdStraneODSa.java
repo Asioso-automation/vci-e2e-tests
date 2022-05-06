@@ -21,11 +21,9 @@ public class IskljucenjaOdStraneODSa extends PocetnaStranica {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Isključenja od')]")));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
-		// wait.until(ExpectedConditions.visibilityOf(kolone.kolonaOdsWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaEic2WE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaOdsWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojProtokolaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumIskljucenjaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumUkljucenjaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaRazlogIskljucenjaWE));
 		wait.until(ExpectedConditions.elementToBeClickable(sekcijaBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(stranicaBtnWE));
@@ -35,7 +33,7 @@ public class IskljucenjaOdStraneODSa extends PocetnaStranica {
 		assertTrue(sekcijaBtnWE.getText().trim().equals("PRAVNI ODNOSI"), "IskljucenjaOdStraneODSa: Naziv sekcije nije dobar!");
 		assertTrue(stranicaBtnWE.getText().trim().equals("ISKLJUČENJA OD STRANE ODS-A"), "IskljucenjaOdStraneODSa: Naziv stranice nije dobar!");
 		assertTrue(naslovStraniceWE.getText().trim().equals("ISKLJUČENJA OD STRANE ODS-A"), "IskljucenjaOdStraneODSa: Naziv stranice nije dobar!");
-		assertTrue(brojKolona().size() == 7, "IskljucenjaOdStraneODSa: Broj kolona nije dobar!");
+		assertTrue(brojKolona().size() == 8, "IskljucenjaOdStraneODSa: Broj kolona nije dobar!");
 	}
 
 }

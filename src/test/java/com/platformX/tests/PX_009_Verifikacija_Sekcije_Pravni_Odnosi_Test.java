@@ -1,9 +1,12 @@
 package com.platformX.tests;
 
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import com.platformX.base.BaseTest;
 import com.platformX.page.PocetnaStranica;
 import com.platformX.page.StavkeZahtjevaZaIskljucenje;
 import com.platformX.page.StavkeZahtjevaZaUkljucenje;
@@ -18,14 +21,27 @@ import com.platformX.page.Medijacije;
 import com.platformX.page.Opomene;
 import com.platformX.page.OtpisiPotrazivanja;
 
-public class PX_009_Verifikacija_Sekcije_Pravni_Odnosi_Test extends BaseTest {
+public class PX_009_Verifikacija_Sekcije_Pravni_Odnosi_Test {
 
 	public PX_009_Verifikacija_Sekcije_Pravni_Odnosi_Test() throws IOException, FileNotFoundException {
 		super();
 	}
+	
+	private WebDriver driver;
+	// private PropertiesUtil platformx_properties = null;
+	private final String PLATFORMX_PROPERTIES = "platformx.properties";
 
 	@Test (description="test prolazi kroz sve stranice iz sekcija PRAVNI ODNOSI i IZVJESTAJI i verifikuje ih")
 	public void px_009_verifikacija_sekcije_pravni_odnosi_test() throws Exception {
+		
+		System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver.exe");
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("--start-maximized");
+		options.addArguments("incognito");
+		options.addArguments("chrome.switches", "--disable-extensions");
+		driver = new ChromeDriver(options);
+		// Test ne radi u prozoru odredjene velicine, zbog puno stavki u sekciji, zato je ovaj test maximized
+		
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
@@ -55,6 +71,11 @@ public class PX_009_Verifikacija_Sekcije_Pravni_Odnosi_Test extends BaseTest {
 		medijacije.verifikujMedijacije();
 		OtpisiPotrazivanja otpisiPotrazivanja = pocetna.navigirajNaOtpisiPotrazivanja();
 		otpisiPotrazivanja.verifikujOtpisiPotrazivanja();
+		
+	}
+	@AfterTest
+	public void terminateBrowser(){
+	driver.quit();
 	}
 	
 }

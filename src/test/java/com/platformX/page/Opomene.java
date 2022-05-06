@@ -16,7 +16,7 @@ public class Opomene extends PocetnaStranica {
 		super(driver);
 	}
 	
-	public void verifikujOpomene() throws FileNotFoundException, IOException {
+	public void verifikujOpomene() throws FileNotFoundException, IOException, InterruptedException {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Opomene')]")));
