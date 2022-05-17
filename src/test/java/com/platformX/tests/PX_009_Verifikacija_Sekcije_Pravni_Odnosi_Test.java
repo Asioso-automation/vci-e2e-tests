@@ -55,12 +55,14 @@ public class PX_009_Verifikacija_Sekcije_Pravni_Odnosi_Test {
 		stavke.verifikujStavkeZahtjevaZaIskljucenja();
 		IskljucenjaOdStraneODSa iskljucenjaOdStraneODSa = pocetna.navigirajNaIskljucenjaOdStraneODSa();
 		iskljucenjaOdStraneODSa.verifikujIskljucenjaOdStraneODSa();
+		// IskljucenjaPoZahtjevuKupca
+		AktivnaIskljucenja aktivnaIskljucenja = pocetna.navigirajNaAktivnaIskljucenja();
+		aktivnaIskljucenja.verifikujAktivnaIskljucenja();
 		ZahtjeviZaUkljucenje zahtjeviZaUkljucenje = pocetna.navigirajNaZahtjeviZaUkljucenje();
 		zahtjeviZaUkljucenje.verifikujZahtjeviZaUkljucenje();
 		StavkeZahtjevaZaUkljucenje stavkeUkljucenja = pocetna.navigirajNaStavkeZahtjevaZaUkljucenje();
 		stavkeUkljucenja.verifikujStavkeZahtjevaZaUkljucenja();
-		AktivnaIskljucenja aktivnaIskljucenja = pocetna.navigirajNaAktivnaIskljucenja();
-		aktivnaIskljucenja.verifikujAktivnaIskljucenja();
+		// UkljucenjaOdStraneODSa
 		Tuzbe tuzbe = pocetna.navigirajNaTuzbe();
 		tuzbe.verifikujTuzbe();
 //		Bankroti bankroti = pocetna.navigirajNaBankroti();

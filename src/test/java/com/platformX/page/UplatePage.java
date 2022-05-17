@@ -86,7 +86,7 @@ public class UplatePage extends PocetnaStranica {
 		dodajUplatuBtnWE.click();
 		} catch (Exception e) {
 		// wait.until(ExpectedConditions.invisibilityOf(porukaWE));
-		Thread.sleep(10000);
+		Thread.sleep(5000);
 		wait.until(ExpectedConditions.elementToBeClickable(dodajUplatuBtnWE));
 		dodajUplatuBtnWE.click();
 		}
@@ -103,7 +103,7 @@ public class UplatePage extends PocetnaStranica {
 		dodajBtnWE.click();
 		Thread.sleep(1000);
 		wait.until(ExpectedConditions.visibilityOf(porukaWE));
-		// assertTrue(porukaWE.getText().equals("Uspješno završeno"), "UplatePage: Title is not good!");
+		 assertTrue(porukaWE.getText().equals("Uspješno završeno."), "UplatePage: Title is not good!");
 		return uplatilac;
 	}
 	
@@ -125,7 +125,7 @@ public class UplatePage extends PocetnaStranica {
 		dodajBtnWE.click();
 		Thread.sleep(1000);
 		wait.until(ExpectedConditions.visibilityOf(porukaWE));
-		// assertTrue(porukaWE.getText().equals("Uspješno završeno"), "UplatePage: Title is not good!");
+		 assertTrue(porukaWE.getText().equals("Uspješno završeno."), "UplatePage: Title is not good!");
 		return uplatilac;
 	}
 	
@@ -149,7 +149,7 @@ public class UplatePage extends PocetnaStranica {
 		dodajBtnWE.click();
 		Thread.sleep(1000);
 		wait.until(ExpectedConditions.visibilityOf(porukaWE));
-		assertTrue(porukaWE.getText().equals("Uspješno završeno"), "UplatePage: Title is not good!");
+		assertTrue(porukaWE.getText().equals("Uspješno završeno."), "UplatePage: Title is not good!");
 		return uplatilac;
 	}
 	
