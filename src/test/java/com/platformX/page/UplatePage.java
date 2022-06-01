@@ -171,7 +171,7 @@ public class UplatePage extends PocetnaStranica {
 		dodaj2BtnWE.click();
 		Thread.sleep(1000);
 		wait.until(ExpectedConditions.visibilityOf(porukaWE));
-		assertTrue(porukaWE.getText().equals("Uspješno završeno"), "UplatePage: Title is not good!");
+		assertTrue(porukaWE.getText().equals("Uspješno završeno."), "UplatePage: Title is not good!");
 		return uplatilac;
 	}
 	

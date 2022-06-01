@@ -634,7 +634,7 @@ public class Kolone extends PageBase {
 	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Broj protokola']")
 	public WebElement kolonaBrojProtokolaWE;
 	
-	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Zahtjevani datum isključenja']")
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Zahtijevani datum isključenja']")
 	public WebElement kolonaZahtjevaniDatumIskljucenjaWE;
 	
 	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Broj stavki']")
@@ -661,7 +661,7 @@ public class Kolone extends PageBase {
 	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Razlog isključenja']")
 	public WebElement kolonaRazlogIskljucenjaWE;
 	
-	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Zahtjevani datum uključenja']")
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Zahtijevani datum uključenja']")
 	public WebElement kolonaZahtjevaniDatumUkljucenjaWE;
 	
 	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Datum početka obračuna kamate']")
@@ -847,10 +847,13 @@ public class Kolone extends PageBase {
 	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Otkazan']")
 	public WebElement kolonaOtkazanWE;
 	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Proknjižen']")
+	public WebElement kolonaProknjizenWE;
+	
 	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Poslan']")
 	public WebElement kolonaPoslanWE;
 	
-	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Zahtjevani datum završetka']")
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Zahtijevani datum završetka']")
 	public WebElement kolonaZahtjevaniDatumZavrsetkaWE;
 	
 	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Razlog zahtjeva za raskid ugovora']")

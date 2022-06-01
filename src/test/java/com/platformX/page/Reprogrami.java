@@ -31,8 +31,8 @@ public class Reprogrami extends PocetnaStranica {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojRataWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIznosRateWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIznosPrveRateWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaProknjizenoWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaOtkazanoWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaProknjizenWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaOtkazanWE));
 		wait.until(ExpectedConditions.elementToBeClickable(sekcijaBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(stranicaBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(preuzmiExcelBtnWE));
@@ -41,7 +41,7 @@ public class Reprogrami extends PocetnaStranica {
 		assertTrue(sekcijaBtnWE.getText().trim().equals("FINANSIJE"), "Reprogrami: Naziv sekcije nije dobar!");
 		assertTrue(stranicaBtnWE.getText().trim().equals("REPROGRAMI"), "Reprogrami: Naziv stranice nije dobar!");
 		assertTrue(naslovStraniceWE.getText().trim().equals("REPROGRAMI"), "Reprogrami: Naziv stranice nije dobar!");
-		assertTrue(brojKolona().size() == 14, "Reprogrami: Broj kolona nije dobar! ");
+		assertTrue(brojKolona().size() == 16, "Reprogrami: Broj kolona nije dobar! ");
 	}
 
 }
