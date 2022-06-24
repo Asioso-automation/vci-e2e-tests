@@ -21,7 +21,12 @@ Values (1,N'Republika Srpska')
 
 SET IDENTITY_INSERT BasicCatalog.Entity OFF
 
-
+ INSERT INTO Administration.Configuration  ( [Key], [Value])
+  VALUES
+  (N'UnknownStreetNumber',N'BB'),
+  (N'Currency',N'KM' ),
+  (N'VatRate', N'0.17')
+  
 SET IDENTITY_INSERT BasicCatalog.MeterType ON
 
 Insert Into BasicCatalog.MeterType ([Id],[Name])
