@@ -48,6 +48,7 @@ public class BaseTest {
 		} else if (browser.equalsIgnoreCase("chrome")) {
 			System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver.exe");
 			ChromeOptions options = new ChromeOptions();
+			// dodati komandu ovdje
 			options.addArguments("--start-maximized");
 			options.addArguments("--window-size=1366,768");
 			options.addArguments("incognito");

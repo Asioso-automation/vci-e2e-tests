@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="75137" started-at="2022-06-01T08:25:03Z" finished-at="2022-06-01T08:26:19Z">
+  <suite name="Default suite" duration-ms="58032" started-at="2022-06-24T12:40:19Z" finished-at="2022-06-24T12:41:17Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="75137" started-at="2022-06-01T08:25:03Z" finished-at="2022-06-01T08:26:19Z">
-      <class name="com.platformX.tests.PX_042_Dodavanje_Ugovora_Test">
-        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.platformX.tests.PX_042_Dodavanje_Ugovora_Test@3967e60c]" name="setUp" is-config="true" duration-ms="5413" started-at="2022-06-01T10:25:03Z" finished-at="2022-06-01T10:25:09Z">
+    <test name="Default test" duration-ms="58032" started-at="2022-06-24T12:40:19Z" finished-at="2022-06-24T12:41:17Z">
+      <class name="com.platformX.tests.PX_056_Preregistracija_Ugovora_Test">
+        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.platformX.tests.PX_056_Preregistracija_Ugovora_Test@3967e60c]" name="setUp" is-config="true" duration-ms="5473" started-at="2022-06-24T14:40:19Z" finished-at="2022-06-24T14:40:25Z">
           <params>
             <param index="0">
               <value>
@@ -18,7 +18,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="FAIL" signature="px_042_dodavanje_ugovora_test()[pri:0, instance:com.platformX.tests.PX_042_Dodavanje_Ugovora_Test@3967e60c]" name="px_042_dodavanje_ugovora_test" duration-ms="69071" started-at="2022-06-01T10:25:09Z" finished-at="2022-06-01T10:26:18Z">
+        <test-method status="FAIL" signature="px_056_preregistracija_ugovora_test()[pri:0, instance:com.platformX.tests.PX_056_Preregistracija_Ugovora_Test@3967e60c]" name="px_056_preregistracija_ugovora_test" duration-ms="52535" started-at="2022-06-24T14:40:25Z" finished-at="2022-06-24T14:41:17Z">
           <exception class="org.openqa.selenium.TimeoutException">
             <message>
               <![CDATA[Expected condition failed: waiting for visibility of element located by By.xpath: //div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Ugovori')] (tried for 30 second(s) with 500 milliseconds interval)]]>
@@ -28,7 +28,7 @@
 	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:113)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:283)
 	at com.platformX.page.Ugovori.verifikujUgovori(Ugovori.java:449)
-	at com.platformX.tests.PX_042_Dodavanje_Ugovora_Test.px_042_dodavanje_ugovora_test(PX_042_Dodavanje_Ugovora_Test.java:34)
+	at com.platformX.tests.PX_056_Preregistracija_Ugovora_Test.px_056_preregistracija_ugovora_test(PX_056_Preregistracija_Ugovora_Test.java:29)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -72,12 +72,12 @@ Driver info: driver.version: unknown
           </exception> <!-- org.openqa.selenium.TimeoutException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- px_042_dodavanje_ugovora_test -->
-        <test-method status="PASS" signature="cleanUp()[pri:0, instance:com.platformX.tests.PX_042_Dodavanje_Ugovora_Test@3967e60c]" name="cleanUp" is-config="true" duration-ms="623" started-at="2022-06-01T10:26:18Z" finished-at="2022-06-01T10:26:19Z">
+        </test-method> <!-- px_056_preregistracija_ugovora_test -->
+        <test-method status="PASS" signature="cleanUp()[pri:0, instance:com.platformX.tests.PX_056_Preregistracija_Ugovora_Test@3967e60c]" name="cleanUp" is-config="true" duration-ms="5" started-at="2022-06-24T14:41:17Z" finished-at="2022-06-24T14:41:17Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- cleanUp -->
-      </class> <!-- com.platformX.tests.PX_042_Dodavanje_Ugovora_Test -->
+      </class> <!-- com.platformX.tests.PX_056_Preregistracija_Ugovora_Test -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

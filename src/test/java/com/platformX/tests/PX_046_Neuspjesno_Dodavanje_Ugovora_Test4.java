@@ -31,7 +31,7 @@ public class PX_046_Neuspjesno_Dodavanje_Ugovora_Test4 extends BaseTest {
 		Ugovori ugovoriPage = homePage.navigirajNaUgovori();
 		ugovoriPage.verifikujUgovori();
 		ugovoriPage.dodajUgovor(kupac, "7 - Kategorija cijene 2", "15.07.2020.", "15.07.2020.", "36066699C", false);
-		ugovoriPage.verifikujPorukuForme("Reaktivno brojilo ne smije biti prazno za odabranu tarifnu grupu.");
+		ugovoriPage.verifikujPorukuForme("Reaktivna konstanta za odabranu tarifnu grupu ne smije biti prazna.");
 	}
 
 }
