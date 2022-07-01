@@ -38,7 +38,7 @@ public class PovezanaPravnaLica extends PocetnaStranica {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaJIBWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNazivWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPIBWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaUlicaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAdresaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaSAPSifraWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAktivanWE));
 		wait.until(ExpectedConditions.elementToBeClickable(sekcijaBtnWE));

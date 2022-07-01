@@ -46,14 +46,25 @@ public class BaseTest {
 			driver = new FirefoxDriver(options);
 			driver.manage().window().maximize();
 		} else if (browser.equalsIgnoreCase("chrome")) {
+			try {
 			System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver.exe");
 			ChromeOptions options = new ChromeOptions();
-			// dodati komandu ovdje
 			options.addArguments("--start-maximized");
 			options.addArguments("--window-size=1366,768");
 			options.addArguments("incognito");
 			options.addArguments("chrome.switches", "--disable-extensions");
 			driver = new ChromeDriver(options);
+			} catch (Exception e) {
+			System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver.exe");
+		    ChromeOptions options = new ChromeOptions();
+			options.setBinary("C://Program Files//Google//Chrome//Application//chrome.exe");
+		    options.addArguments("--start-maximized");
+			options.addArguments("--window-size=1366,768");
+			options.addArguments("incognito");
+			options.addArguments("chrome.switches", "--disable-extensions");
+			driver = new ChromeDriver(options);
+			driver.manage().window().maximize();
+			  }
 		} else {
 		}
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
