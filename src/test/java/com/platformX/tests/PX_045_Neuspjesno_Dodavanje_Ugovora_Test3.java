@@ -31,7 +31,7 @@ public class PX_045_Neuspjesno_Dodavanje_Ugovora_Test3 extends BaseTest {
 		Ugovori ugovoriPage = homePage.navigirajNaUgovori();
 		ugovoriPage.verifikujUgovori();
 		ugovoriPage.dodajUgovor(kupac, "7 - Kategorija cijene 2", "15.07.2020.", "15.07.2020.", "36K085053", true);
-		ugovoriPage.verifikujPorukuForme("Obrazac za traženi ods i tarifnu grupu u traženom periodu ne postoji.");
+		ugovoriPage.verifikujPorukuForme("Obrazac za traženi ODS i tarifnu grupu u traženom periodu ne postoji.");
 	}
 
 }

@@ -28,12 +28,13 @@ public class ZahtjeviZaUgovore extends PocetnaStranica {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaVaziOdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaVaziDoWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNapomenaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPreregistracijaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPreregWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDopunaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPotvrdjenWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaRealizovanWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaOtkazanWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPoslanWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPotvrWE));
+//		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaRealizovanWE));
+//		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaOtkazanWE));
+//		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPoslanWE));
+		// TODO Doraditi sve kolone
 		wait.until(ExpectedConditions.elementToBeClickable(sekcijaBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(stranicaBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(preuzmiExcelBtnWE));
@@ -43,7 +44,7 @@ public class ZahtjeviZaUgovore extends PocetnaStranica {
 		assertTrue(sekcijaBtnWE.getText().trim().equals("KUPCI"), "ZahtjeviZaUgovore: Naziv sekcije nije dobar!");
 		assertTrue(stranicaBtnWE.getText().trim().equals("ZAHTJEVI ZA UGOVORE"), "ZahtjeviZaUgovore: Naziv stranice nije dobar!");
 		assertTrue(naslovStraniceWE.getText().trim().equals("ZAHTJEVI ZA UGOVORE"), "ZahtjeviZaUgovore: Naziv stranice nije dobar!");
-		assertTrue(brojKolona().size() == 16, "ZahtjeviZaUgovore: Broj kolona nije dobar! ");
+		assertTrue(brojKolona().size() == 17, "ZahtjeviZaUgovore: Broj kolona nije dobar! ");
 	}
 
 }

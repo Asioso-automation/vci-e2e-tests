@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-07-01T09:18:07Z" name="Default suite" finished-at="2022-07-01T09:18:34Z" duration-ms="26845">
+  <suite name="Default suite" duration-ms="46384" started-at="2022-07-09T14:44:07Z" finished-at="2022-07-09T14:44:53Z">
     <groups>
     </groups>
-    <test started-at="2022-07-01T09:18:07Z" name="Default test" finished-at="2022-07-01T09:18:34Z" duration-ms="26845">
-      <class name="com.platformX.tests.PX_014_Brisanje_Umanjenja_Cijene_Test">
-        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:com.platformX.tests.PX_014_Brisanje_Umanjenja_Cijene_Test@6b88ca8c]" started-at="2022-07-01T11:18:07Z" name="setUp" finished-at="2022-07-01T11:18:17Z" duration-ms="9635" status="PASS">
+    <test name="Default test" duration-ms="46384" started-at="2022-07-09T14:44:07Z" finished-at="2022-07-09T14:44:53Z">
+      <class name="com.platformX.tests.PX_045_Neuspjesno_Dodavanje_Ugovora_Test3">
+        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.platformX.tests.PX_045_Neuspjesno_Dodavanje_Ugovora_Test3@3967e60c]" name="setUp" is-config="true" duration-ms="5501" started-at="2022-07-09T16:44:07Z" finished-at="2022-07-09T16:44:12Z">
           <params>
             <param index="0">
               <value>
@@ -18,15 +18,54 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="px_014_brisanje_umanjenja_cijene_test()[pri:0, instance:com.platformX.tests.PX_014_Brisanje_Umanjenja_Cijene_Test@6b88ca8c]" started-at="2022-07-01T11:18:17Z" name="px_014_brisanje_umanjenja_cijene_test" finished-at="2022-07-01T11:18:33Z" duration-ms="16381" status="PASS">
+        <test-method status="FAIL" signature="px_045_nesupjesno_dodavanje_ugovora_test3()[pri:0, instance:com.platformX.tests.PX_045_Neuspjesno_Dodavanje_Ugovora_Test3@3967e60c]" name="px_045_nesupjesno_dodavanje_ugovora_test3" duration-ms="40844" started-at="2022-07-09T16:44:12Z" description="Obrazac za broj protokola ne postoji" finished-at="2022-07-09T16:44:53Z">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Ugovori: Poruka upozorenja nije dobra! expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Ugovori: Poruka upozorenja nije dobra! expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:93)
+	at org.testng.Assert.failNotEquals(Assert.java:512)
+	at org.testng.Assert.assertTrue(Assert.java:41)
+	at com.platformX.page.Ugovori.verifikujPorukuForme(Ugovori.java:718)
+	at com.platformX.tests.PX_045_Neuspjesno_Dodavanje_Ugovora_Test3.px_045_nesupjesno_dodavanje_ugovora_test3(PX_045_Neuspjesno_Dodavanje_Ugovora_Test3.java:34)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:661)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
+	at org.testng.TestNG.runSuites(TestNG.java:1144)
+	at org.testng.TestNG.run(TestNG.java:1115)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- px_014_brisanje_umanjenja_cijene_test -->
-        <test-method is-config="true" signature="cleanUp()[pri:0, instance:com.platformX.tests.PX_014_Brisanje_Umanjenja_Cijene_Test@6b88ca8c]" started-at="2022-07-01T11:18:33Z" name="cleanUp" finished-at="2022-07-01T11:18:34Z" duration-ms="815" status="PASS">
+        </test-method> <!-- px_045_nesupjesno_dodavanje_ugovora_test3 -->
+        <test-method status="PASS" signature="cleanUp()[pri:0, instance:com.platformX.tests.PX_045_Neuspjesno_Dodavanje_Ugovora_Test3@3967e60c]" name="cleanUp" is-config="true" duration-ms="6" started-at="2022-07-09T16:44:53Z" finished-at="2022-07-09T16:44:53Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- cleanUp -->
-      </class> <!-- com.platformX.tests.PX_014_Brisanje_Umanjenja_Cijene_Test -->
+      </class> <!-- com.platformX.tests.PX_045_Neuspjesno_Dodavanje_Ugovora_Test3 -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
