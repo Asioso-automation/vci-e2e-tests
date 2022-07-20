@@ -4,9 +4,9 @@ import org.testng.annotations.Test;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import com.platformX.base.BaseTest;
-import com.platformX.page.PocetnaStranica;
-import com.platformX.page.Ulice;
-import com.platformX.page.LogIn;
+import com.platformX.distribution.page.PocetnaStranica;
+import com.platformX.distribution.page.Ulice;
+import com.platformX.distribution.page.LogIn;
 
 public class PX_DIST_Brisanje_Ulice_Test extends BaseTest {
 
