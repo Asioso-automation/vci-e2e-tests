@@ -455,8 +455,6 @@ INSERT [Customer].[RequestType] ([Id], [Description]) VALUES (2, N'Vrsta zahtjev
 SET IDENTITY_INSERT [Customer].[RequestType] OFF
 
 
-SET IDENTITY_INSERT [Finance].[BookingType] ON
-
 INSERT INTO [Finance].[BookingType]
            ([Id], [Name])
      VALUES
@@ -466,8 +464,6 @@ INSERT INTO [Finance].[BookingType]
            ,(4, N'Nestandardne usluge')
            ,(5, N'Stečaj')
            ,(6, N'Neraspoređene uplate')
-
-SET IDENTITY_INSERT [Finance].[BookingType] OFF
 
 INSERT [Finance].[AccountingType] ([Id], [Name]) VALUES (1, N'Racun')
 INSERT [Finance].[AccountingType] ([Id], [Name]) VALUES (2, N'Uplata')
