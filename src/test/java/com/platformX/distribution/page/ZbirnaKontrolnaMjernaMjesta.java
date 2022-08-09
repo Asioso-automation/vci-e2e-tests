@@ -36,7 +36,7 @@ public class ZbirnaKontrolnaMjernaMjesta extends PocetnaStranica {
 		assertTrue(sekcijaBtnWE.getText().trim().equals("MJERNA MJESTA"), "ZbirnaKontrolnaMjernaMjesta: Naziv sekcije nije dobar!");
 		assertTrue(stranicaBtnWE.getText().trim().equals("ZBIRNA/KONTROLNA MJERNA MJESTA"), "ZbirnaKontrolnaMjernaMjesta: Naziv stranice nije dobar!");
 		assertTrue(naslovStraniceWE.getText().trim().equals("ZBIRNA/KONTROLNA MJERNA MJESTA"), "ZbirnaKontrolnaMjernaMjesta: Naziv stranice nije dobar!");
-		assertTrue(brojKolona().size() == 11, "ZbirnaKontrolnaMjernaMjesta: Broj kolona nije dobar! ");
+		assertTrue(brojKolona().size() == 12, "ZbirnaKontrolnaMjernaMjesta: Broj kolona nije dobar! ");
 	}
 	
 }
