@@ -1,4 +1,4 @@
-﻿use [ElectricPowerSupply]
+﻿use [E2ETestElectricPowerSupply]
 
 --izbrisi sve podatke
 
