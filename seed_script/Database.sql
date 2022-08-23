@@ -456,14 +456,15 @@ SET IDENTITY_INSERT [Customer].[RequestType] OFF
 
 
 INSERT INTO [Finance].[BookingType]
-           ([Id], [Name])
+           ([Id], [Name],[PrintName])
      VALUES
-           (1, N'Redovna potrošnja')
-           ,(2, N'Reprogram')
-           ,(3, N'Presuđena potraživanja')
-           ,(4, N'Nestandardne usluge')
-           ,(5, N'Stečaj')
-           ,(6, N'Neraspoređene uplate')
+           (1,N'Finansijska kartica redovne potrošnje', N'Редовна потрошња')
+           ,(2, N'Finansijska kartica reprograma', N'Репрограми')
+           ,(3, N'Finansijska kartica presuđenih potraživanja', N'Пресуђена потраживања')
+           ,(4, N'Finansijska kartica nestandardnih usluga', N'Нестандардне услуге')
+           ,(5, N'Finansijska kartica potraživanja u stečajnom postupku', N'Потраживања у стечајном поступку')
+		   ,(6, N'Neraspoređene uplate', N'Нераспоређене уплате')
+           ,(7, N'Finansijska kartica medijacija', N'Медијације')
 
 INSERT [Finance].[AccountingType] ([Id], [Name]) VALUES (1, N'Racun')
 INSERT [Finance].[AccountingType] ([Id], [Name]) VALUES (2, N'Uplata')
