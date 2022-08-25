@@ -32,6 +32,7 @@ public class PX_DIST_005_Verifikacija_Sekcije_Mjerna_Mjesta_Test extends BaseTes
 		kartica.verifikujEnergetskaKartica();
 		ZahtjeviZaDostavuPodataka zahtjeviZaDostavu = pocetna.navigirajNaZahtjeviZaDostavuPodataka();
 		zahtjeviZaDostavu.verifikujZahtjeviZaDostavuPodataka();
+		
 	}
 	
 }
