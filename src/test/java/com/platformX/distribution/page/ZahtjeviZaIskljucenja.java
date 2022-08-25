@@ -33,13 +33,13 @@ public class ZahtjeviZaIskljucenja extends PocetnaStranica {
 		wait.until(ExpectedConditions.elementToBeClickable(ukloniFiltereBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(osvjeziBtnWE));
 		assertTrue(sekcijaBtnWE.getText().trim().equals("MJERNA MJESTA"),
-				"ZahtjeviZaDostavuPodataka: Naziv sekcije nije dobar!");
-		assertTrue(stranicaBtnWE.getText().trim().equals("ZAHTJEVI ZA DOSTAVU PODATAKA"),
-				"ZahtjeviZaDostavuPodataka: Naziv stranice nije dobar!");
+				"ZahtjeviZaIskljucenja: Naziv sekcije nije dobar!");
+		assertTrue(stranicaBtnWE.getText().trim().equals("ZAHTJEVI ZA ISKLJUČENJA"),
+				"ZahtjeviZaIskljucenja: Naziv stranice nije dobar!");
 		assertTrue(
-				naslovStraniceWE.getText().trim().equals("ZAHTJEVI ZA DOSTAVU PODATAKA O MJERNIM MJESTIMA (PROCES 15)"),
-				"ZahtjeviZaDostavuPodataka: Naziv stranice nije dobar!");
-		assertTrue(brojKolona().size() == 8, "ZahtjeviZaDostavuPodataka: Broj kolona nije dobar! ");
+				naslovStraniceWE.getText().trim().equals("ZAHTJEVI ZA ISKLJUČENJA (PROCES 16)"),
+				"ZahtjeviZaIskljucenja: Naziv stranice nije dobar!");
+		assertTrue(brojKolona().size() == 17, "ZahtjeviZaIskljucenja: Broj kolona nije dobar! ");
 	}
 
 }
