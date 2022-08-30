@@ -43,6 +43,9 @@ public class PocetnaStranica extends PageBase {
 	@FindBy(xpath = "//div/div[1]/div[1]/header/div/div[1]")
 	protected WebElement naslovStraniceWE;
 
+	@FindBy(xpath = "//main/div/div/header/div/div[1]")
+	protected WebElement naslovStranice1WE;
+	
 	@FindBy(xpath = "//ul/button[1]")
 	protected WebElement sekcijaBtnWE;
 
@@ -223,6 +226,15 @@ public class PocetnaStranica extends PageBase {
 	
 	@FindBy(xpath = "//div[contains(text(), 'Zahtjevi za isključenja')]")
 	protected WebElement zahtjeviZaIskljucenjaWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Zahtjevi za uključenja')]")
+	protected WebElement zahtjeviZaUkljucenjaWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Razlog neizvršavanja zahtjeva')]")
+	protected WebElement razlogNeizvrsavanjaZahtjevaWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Aktivna isključenja mjernih mjesta')]")
+	protected WebElement aktivnaIskljucenjaMjernihMjestaWE;
 	
 //	@FindBy(xpath = "//div[contains(text(), 'Očitanja brojila')]")
 //	protected WebElement ocitanjaBrojilaWE;
@@ -593,6 +605,33 @@ public class PocetnaStranica extends PageBase {
 		wait.until(ExpectedConditions.elementToBeClickable(zahtjeviZaIskljucenjaWE));
 		zahtjeviZaIskljucenjaWE.click();
 		return new ZahtjeviZaIskljucenja(driver);
+	}
+	
+	public ZahtjeviZaUkljucenja navigirajNaZahtjeviZaUkljucenja() throws Exception {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(mjernaMjestaWE));
+		mjernaMjestaWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(zahtjeviZaUkljucenjaWE));
+		zahtjeviZaUkljucenjaWE.click();
+		return new ZahtjeviZaUkljucenja(driver);
+	}
+	
+	public RazlogNeizvrsavanjaZahtjeva navigirajNaRazlogNeizvrsavanjaZahtjeva() throws Exception {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(mjernaMjestaWE));
+		mjernaMjestaWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(razlogNeizvrsavanjaZahtjevaWE));
+		razlogNeizvrsavanjaZahtjevaWE.click();
+		return new RazlogNeizvrsavanjaZahtjeva(driver);
+	}
+	
+	public AktivnaIskljucenjaMjernihMjesta navigirajNaAktivnaIskljucenjaMjernihMjesta() throws Exception {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(mjernaMjestaWE));
+		mjernaMjestaWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(aktivnaIskljucenjaMjernihMjestaWE));
+		aktivnaIskljucenjaMjernihMjestaWE.click();
+		return new AktivnaIskljucenjaMjernihMjesta(driver);
 	}
 
 //	public PravnaLica navigirajNaPravnaLica() throws Exception {

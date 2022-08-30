@@ -5,9 +5,12 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import com.platformX.base.BaseTest;
 import com.platformX.distribution.page.PocetnaStranica;
+import com.platformX.distribution.page.RazlogNeizvrsavanjaZahtjeva;
 import com.platformX.distribution.page.ZahtjeviZaDostavuPodataka;
 import com.platformX.distribution.page.ZahtjeviZaIskljucenja;
+import com.platformX.distribution.page.ZahtjeviZaUkljucenja;
 import com.platformX.distribution.page.ZbirnaKontrolnaMjernaMjesta;
+import com.platformX.distribution.page.AktivnaIskljucenjaMjernihMjesta;
 import com.platformX.distribution.page.EnergetskaKartica;
 import com.platformX.distribution.page.LogIn;
 import com.platformX.distribution.page.MjernaMjesta;
@@ -35,8 +38,12 @@ public class PX_DIST_005_Verifikacija_Sekcije_Mjerna_Mjesta_Test extends BaseTes
 		zahtjeviZaDostavu.verifikujZahtjeviZaDostavuPodataka();
 		ZahtjeviZaIskljucenja zahtjeviZaIskljucenja = pocetna.navigirajNaZahtjeviZaIskljucenja();
 		zahtjeviZaIskljucenja.verifikujZahtjeviZaIskljucenja();
-		
-		
+		ZahtjeviZaUkljucenja zahtjeviZaUkljucenja = pocetna.navigirajNaZahtjeviZaUkljucenja();
+		zahtjeviZaUkljucenja.verifikujZahtjeviZaUkljucenja();
+		RazlogNeizvrsavanjaZahtjeva razlogNeizvrsavanjaZahtjeva = pocetna.navigirajNaRazlogNeizvrsavanjaZahtjeva();
+		razlogNeizvrsavanjaZahtjeva.verifikujRazlogNeizvrsavanjaZahtjeva();
+		AktivnaIskljucenjaMjernihMjesta aktivnaIskljucenjaMjernihMjesta = pocetna.navigirajNaAktivnaIskljucenjaMjernihMjesta();
+		aktivnaIskljucenjaMjernihMjesta.verifikujAktivnaIskljucenjaMjernihMjesta();
 	}
 	
 }

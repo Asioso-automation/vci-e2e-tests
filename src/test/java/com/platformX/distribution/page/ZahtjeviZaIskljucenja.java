@@ -19,14 +19,22 @@ public class ZahtjeviZaIskljucenja extends PocetnaStranica {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Zahtjevi za isključenja')]")));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
-//		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaSnabdjevacWE));
-//		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaEic2WE));
-//		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumSlanjaWE));
-//		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaRazlogOdbijanjaWE));
-//		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIniciraoOdsWE));
-//		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaOdbijenoWE));
-//		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaRealizovanoWE));
 		// TODO Verify all columns from this page
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojProtokolaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKupacWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMjernoMjestoEicWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaSnabdjevacWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTipUgovoraWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaFizickaLokacijaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPlaniraniDatumIskljucenjaOdWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPlaniraniDatumIskljucenjaDoWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIniciraoSnabdjWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaOtkWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaOdbWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPotvrWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaObavjKupacWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaZavrWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIskljRealizWE));
 		wait.until(ExpectedConditions.elementToBeClickable(sekcijaBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(stranicaBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(preuzmiExcelBtnWE));

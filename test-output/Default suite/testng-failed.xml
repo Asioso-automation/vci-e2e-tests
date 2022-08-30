@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.platformX.tests.PX_001_LogIn_LogOut_Test">
+      <class name="com.platformX.distribution.tests.PX_DIST_005_Verifikacija_Sekcije_Mjerna_Mjesta_Test">
         <methods>
           <include name="setUp"/>
           <include name="cleanUp"/>
-          <include name="px_001_logIn_logOut_test"/>
+          <include name="px_dist_005_verifikacije_sekcije_mjerna_mjesta_test"/>
         </methods>
-      </class> <!-- com.platformX.tests.PX_001_LogIn_LogOut_Test -->
+      </class> <!-- com.platformX.distribution.tests.PX_DIST_005_Verifikacija_Sekcije_Mjerna_Mjesta_Test -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
