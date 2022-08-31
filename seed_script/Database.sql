@@ -25,7 +25,8 @@ SET IDENTITY_INSERT BasicCatalog.Entity OFF
   VALUES
   (N'UnknownStreetNumber',N'BB'),
   (N'Currency',N'KM' ),
-  (N'VatRate', N'0.17')
+  (N'VatRate', N'0.17'),
+  (N'MaxAmountForInterestCorrectionClosure', N'5')
   
 SET IDENTITY_INSERT BasicCatalog.MeterType ON
 
