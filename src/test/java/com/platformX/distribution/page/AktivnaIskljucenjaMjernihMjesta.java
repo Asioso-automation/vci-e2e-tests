@@ -17,7 +17,7 @@ public class AktivnaIskljucenjaMjernihMjesta extends PocetnaStranica {
 	public void verifikujAktivnaIskljucenjaMjernihMjesta() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
-				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Aktivna iskljuËenja mjernih mjesta')]")));
+				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Aktivna iskljuƒçenja mjernih mjesta')]")));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMjernoMjestoEicWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumIskljucenjaWE));
@@ -28,8 +28,8 @@ public class AktivnaIskljucenjaMjernihMjesta extends PocetnaStranica {
 		wait.until(ExpectedConditions.elementToBeClickable(ukloniFiltereBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(osvjeziBtnWE));
 		assertTrue(sekcijaBtnWE.getText().trim().equals("MJERNA MJESTA"), "AktivnaIskljucenjaMjernihMjesta: Naziv sekcije nije dobar!");
-		assertTrue(stranicaBtnWE.getText().trim().equals("AKTIVNA ISKLJU»ENJA MJERNIH MJESTA"), "AktivnaIskljucenjaMjernihMjesta: Naziv stranice nije dobar!");
-		assertTrue(naslovStranice1WE.getText().trim().equals("AKTIVNA ISKLJU»ENJA MJERNIH MJESTA"), "AktivnaIskljucenjaMjernihMjesta: Naziv stranice nije dobar!");
+		assertTrue(stranicaBtnWE.getText().trim().equals("AKTIVNA ISKLJUƒåENJA MJERNIH MJESTA"), "AktivnaIskljucenjaMjernihMjesta: Naziv stranice nije dobar!");
+		assertTrue(naslovStranice1WE.getText().trim().equals("AKTIVNA ISKLJUƒåENJA MJERNIH MJESTA"), "AktivnaIskljucenjaMjernihMjesta: Naziv stranice nije dobar!");
 		assertTrue(brojKolona().size() == 4, "AktivnaIskljucenjaMjernihMjesta: Broj kolona nije dobar! ");
 	}
 	

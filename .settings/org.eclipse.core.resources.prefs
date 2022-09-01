@@ -1,5 +1,6 @@
 eclipse.preferences.version=1
 encoding//src/test/java/com/platformX/base/Kolone.java=UTF-8
+encoding//src/test/java/com/platformX/distribution/page/AktivnaIskljucenjaMjernihMjesta.java=UTF-8
 encoding//src/test/java/com/platformX/distribution/page/Citaci.java=UTF-8
 encoding//src/test/java/com/platformX/distribution/page/CjenovnikMrezarine.java=UTF-8
 encoding//src/test/java/com/platformX/distribution/page/Djelatnosti.java=UTF-8
@@ -28,6 +29,7 @@ encoding//src/test/java/com/platformX/distribution/page/Ulice.java=UTF-8
 encoding//src/test/java/com/platformX/distribution/page/Vlasnistva.java=UTF-8
 encoding//src/test/java/com/platformX/distribution/page/ZahtjeviZaDostavuPodataka.java=UTF-8
 encoding//src/test/java/com/platformX/distribution/page/ZahtjeviZaIskljucenja.java=UTF-8
+encoding//src/test/java/com/platformX/distribution/page/ZahtjeviZaUkljucenja.java=UTF-8
 encoding//src/test/java/com/platformX/distribution/page/ZbirnaKontrolnaMjernaMjesta.java=UTF-8
 encoding//src/test/java/com/platformX/distribution/tests/PX_DIST_002_Provjera_Validacija_Na_LogIn_Formi_Test.java=UTF-8
 encoding//src/test/java/com/platformX/distribution/tests/PX_DIST_Neuspjesno_Brisanje_Poste_Test.java=UTF-8

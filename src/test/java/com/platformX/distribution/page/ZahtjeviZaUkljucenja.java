@@ -17,7 +17,7 @@ public class ZahtjeviZaUkljucenja extends PocetnaStranica {
 	public void verifikujZahtjeviZaUkljucenja() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
-				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Zahtjevi za ukljuËenja')]")));
+				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Zahtjevi za ukljuƒçenja')]")));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojProtokolaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKupacWE));
@@ -40,8 +40,8 @@ public class ZahtjeviZaUkljucenja extends PocetnaStranica {
 		wait.until(ExpectedConditions.elementToBeClickable(ukloniFiltereBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(osvjeziBtnWE));
 		assertTrue(sekcijaBtnWE.getText().trim().equals("MJERNA MJESTA"), "ZahtjeviZaUkljucenja: Naziv sekcije nije dobar!");
-		assertTrue(stranicaBtnWE.getText().trim().equals("ZAHTJEVI ZA UKLJU»ENJA"), "ZahtjeviZaUkljucenja: Naziv stranice nije dobar!");
-		assertTrue(naslovStraniceWE.getText().trim().equals("ZAHTJEVI ZA UKLJU»ENJA (PROCES 16)"), "ZahtjeviZaUkljucenja: Naziv stranice nije dobar!");
+		assertTrue(stranicaBtnWE.getText().trim().equals("ZAHTJEVI ZA UKLJUƒåENJA"), "ZahtjeviZaUkljucenja: Naziv stranice nije dobar!");
+		assertTrue(naslovStraniceWE.getText().trim().equals("ZAHTJEVI ZA UKLJUƒåENJA (PROCES 16)"), "ZahtjeviZaUkljucenja: Naziv stranice nije dobar!");
 		assertTrue(brojKolona().size() == 16, "ZahtjeviZaUkljucenja: Broj kolona nije dobar! ");
 	}
 	
