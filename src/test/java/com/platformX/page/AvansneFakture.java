@@ -41,7 +41,7 @@ public class AvansneFakture extends PocetnaStranica {
 		assertTrue(sekcijaBtnWE.getText().trim().equals("OBRAČUN"), "AvansneFakture: Naziv sekcije nije dobar!");
 		assertTrue(stranicaBtnWE.getText().trim().equals("AVANSNE FAKTURE"), "AvansneFakture: Naziv stranice nije dobar!");
 		assertTrue(naslovStraniceWE.getText().trim().equals("AVANSNE FAKTURE"), "AvansneFakture: Naziv stranice nije dobar!");
-		assertTrue(brojKolona().size() == 14, "AvansneFakture: Broj kolona nije dobar! ");
+		assertTrue(brojKolona().size() == 15, "AvansneFakture: Broj kolona nije dobar! ");
 	}
 
 }

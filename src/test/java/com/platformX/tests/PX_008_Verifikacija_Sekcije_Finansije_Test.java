@@ -57,8 +57,8 @@ public class PX_008_Verifikacija_Sekcije_Finansije_Test extends BaseTest {
 		vrsteStavkiFinansijskeKartice.verifikujVrsteStavkiFinansijskeKartice();
 		Sap sap = pocetna.navigirajNaSap();
 		sap.verifikujSap();
-		Uino uino = pocetna.navigirajNaUino();
-		uino.verifikujUino();
+//		Uino uino = pocetna.navigirajNaUino();
+//		uino.verifikujUino();
 	}
 	
 }

@@ -35,7 +35,7 @@ public class KorekcijeKamate extends PocetnaStranica {
 		assertTrue(sekcijaBtnWE.getText().trim().equals("OBRAČUN"), "KorekcijeKamate: Naziv sekcije nije dobar!");
 		assertTrue(stranicaBtnWE.getText().trim().equals("KOREKCIJE KAMATE"), "KorekcijeKamate: Naziv stranice nije dobar!");
 		assertTrue(naslovStraniceWE.getText().trim().equals("KOREKCIJE KAMATE"), "KorekcijeKamate: Naziv stranice nije dobar!");
-		assertTrue(brojKolona().size() == 8, "KorekcijeKamate: Broj kolona nije dobar! ");
+		assertTrue(brojKolona().size() == 9, "KorekcijeKamate: Broj kolona nije dobar! ");
 	}
 
 }

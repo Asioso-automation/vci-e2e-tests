@@ -41,7 +41,7 @@ public class SveUplate extends PocetnaStranica {
 		assertTrue(sekcijaBtnWE.getText().trim().equals("FINANSIJE"), "SveUplate: Naziv sekcije nije dobar!");
 		assertTrue(stranicaBtnWE.getText().trim().equals("SVE UPLATE"), "SveUplate: Naziv stranice nije dobar!");
 		assertTrue(naslovStraniceWE.getText().trim().equals("SVE UPLATE"), "SveUplate: Naziv stranice nije dobar!");
-		assertTrue(brojKolona().size() == 14, "SveUplate: Broj kolona nije dobar! ");
+		assertTrue(brojKolona().size() == 15, "SveUplate: Broj kolona nije dobar! ");
 	}
 
 }
