@@ -2,30 +2,19 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="27925" started-at="2022-09-07T07:48:26Z" finished-at="2022-09-07T07:48:54Z">
+  <suite name="Default suite" duration-ms="28025" started-at="2022-09-07T08:31:41Z" finished-at="2022-09-07T08:32:09Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="27925" started-at="2022-09-07T07:48:26Z" finished-at="2022-09-07T07:48:54Z">
+    <test name="Default test" duration-ms="28025" started-at="2022-09-07T08:31:41Z" finished-at="2022-09-07T08:32:09Z">
       <class name="com.platformX.distribution.tests.PX_DIST_005_Verifikacija_Sekcije_Mjerna_Mjesta_Test">
-        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.platformX.distribution.tests.PX_DIST_005_Verifikacija_Sekcije_Mjerna_Mjesta_Test@3967e60c]" name="setUp" is-config="true" duration-ms="5563" started-at="2022-09-07T09:48:26Z" finished-at="2022-09-07T09:48:31Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="px_dist_005_verifikacije_sekcije_mjerna_mjesta_test()[pri:0, instance:com.platformX.distribution.tests.PX_DIST_005_Verifikacija_Sekcije_Mjerna_Mjesta_Test@3967e60c]" name="px_dist_005_verifikacije_sekcije_mjerna_mjesta_test" duration-ms="21681" started-at="2022-09-07T09:48:31Z" description="test prolazi kroz sve stranice iz sekcije MJERNA MJESTA i verifikuje ih" finished-at="2022-09-07T09:48:53Z">
+        <test-method status="PASS" signature="px_dist_005_verifikacije_sekcije_mjerna_mjesta_test()[pri:0, instance:com.platformX.distribution.tests.PX_DIST_005_Verifikacija_Sekcije_Mjerna_Mjesta_Test@794cb805]" name="px_dist_005_verifikacije_sekcije_mjerna_mjesta_test" duration-ms="27357" started-at="2022-09-07T10:31:41Z" description="test prolazi kroz sve stranice iz sekcije MJERNA MJESTA i verifikuje ih" finished-at="2022-09-07T10:32:09Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- px_dist_005_verifikacije_sekcije_mjerna_mjesta_test -->
-        <test-method status="PASS" signature="cleanUp()[pri:0, instance:com.platformX.distribution.tests.PX_DIST_005_Verifikacija_Sekcije_Mjerna_Mjesta_Test@3967e60c]" name="cleanUp" is-config="true" duration-ms="661" started-at="2022-09-07T09:48:53Z" finished-at="2022-09-07T09:48:54Z">
+        <test-method status="PASS" signature="terminateBrowser()[pri:0, instance:com.platformX.distribution.tests.PX_DIST_005_Verifikacija_Sekcije_Mjerna_Mjesta_Test@794cb805]" name="terminateBrowser" is-config="true" duration-ms="650" started-at="2022-09-07T10:32:09Z" finished-at="2022-09-07T10:32:09Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- cleanUp -->
+        </test-method> <!-- terminateBrowser -->
       </class> <!-- com.platformX.distribution.tests.PX_DIST_005_Verifikacija_Sekcije_Mjerna_Mjesta_Test -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->

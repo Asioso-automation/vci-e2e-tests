@@ -3,12 +3,12 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.platformX.tests.PX_009_Verifikacija_Sekcije_Pravni_Odnosi_Test">
+      <class name="com.platformX.tests.PX_007_Verifikacija_Sekcije_Obracun_Test">
         <methods>
-          <include name="px_009_verifikacija_sekcije_pravni_odnosi_test"/>
           <include name="terminateBrowser"/>
+          <include name="px_007_verifikacija_sekcije_obracun_test"/>
         </methods>
-      </class> <!-- com.platformX.tests.PX_009_Verifikacija_Sekcije_Pravni_Odnosi_Test -->
+      </class> <!-- com.platformX.tests.PX_007_Verifikacija_Sekcije_Obracun_Test -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
