@@ -21,7 +21,6 @@ public class StecajeviLikvidacije extends PocetnaStranica {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKupacWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrProtokolaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumZahtjevaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIznosWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaZakljucenWE));
 		wait.until(ExpectedConditions.elementToBeClickable(sekcijaBtnWE));
