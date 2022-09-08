@@ -20,6 +20,27 @@ public class PocetnaStranica extends PageBase {
 
 	@FindBy(xpath = "//div[contains(text(), 'Izloguj se')]")
 	protected WebElement izlogujSeWE;
+	
+	@FindBy(xpath = "//ul/button[1]")
+	protected WebElement sekcijaBtnWE;
+
+	@FindBy(xpath = "//ul/button[2]")
+	protected WebElement stranicaBtnWE;
+
+//	@FindBy(xpath = "//header/div/button[1]")
+//	protected WebElement preuzmiExcelBtnWE;
+//
+//	@FindBy(xpath = "//header/div/button[2]")
+//	protected WebElement ukloniFiltereBtnWE;
+//
+//	@FindBy(xpath = "//header/div/button[3]")
+//	protected WebElement osvjeziBtnWE;
+//
+//	@FindBy(xpath = "//header/div/a")
+//	protected WebElement dodajBtnWE;
+
+	@FindBy(xpath = "//div[1]/nav/div/div[1]")
+	protected WebElement naslovStraniceWE;
 
 //	 Sekcije
 
@@ -47,6 +68,11 @@ public class PocetnaStranica extends PageBase {
 	@FindBy(xpath = "//button[7]")
 	protected WebElement profilWE;
 	
+	// Stranice
+	
+	@FindBy(xpath = "//div[contains(text(), 'Fizička lica')]")
+	protected WebElement fizikaLicaWE;
+	
 
 	public void verifikujPocetnuStranicu() throws InterruptedException {
 		wait.until(ExpectedConditions.elementToBeClickable(sifarniciWE));
@@ -71,6 +97,15 @@ public class PocetnaStranica extends PageBase {
 		Thread.sleep(1000);
 		wait.until(ExpectedConditions.visibilityOf(porukaWE));
 		assertTrue(porukaWE.getText().trim().equals(poruka), "Poruka upozorenja nije dobra!");
+	}
+	
+	public FizickaLica navigirajNaFizickaLica() throws Exception {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(kupciWE));
+		kupciWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(fizikaLicaWE));
+		fizikaLicaWE.click();
+		return new FizickaLica(driver);
 	}
 	
 }

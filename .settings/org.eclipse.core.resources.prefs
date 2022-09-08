@@ -133,5 +133,6 @@ encoding//src/test/java/com/platformX/tests/PX_068_Neuspjesno_Brisanje_Pravnog_L
 encoding//src/test/java/com/platformX/tests/PX_072_Neuspjesno_Brisanje_Poste_Test.java=UTF-8
 encoding//src/test/java/com/platformX/tests/PX_075_Neuspjesno_Dodavanje_Poste_Test.java=UTF-8
 encoding//src/test/java/com/platformX/tests/PX_079_Neuspjesno_Brisanje_Ulice_Test.java=UTF-8
+encoding//src/test/java/scp/page/FizickaLica.java=UTF-8
 encoding//src/test/java/scp/page/LogIn.java=UTF-8
 encoding//src/test/java/scp/page/PocetnaStranica.java=UTF-8
