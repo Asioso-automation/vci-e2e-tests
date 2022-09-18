@@ -40,7 +40,7 @@ public class Cjenovnik extends PocetnaStranica {
 		assertTrue(sekcijaBtnWE.getText().trim().equals("TARIFNI SISTEM"), "Cjenovnik: Naziv sekcije nije dobar!");
 		assertTrue(stranicaBtnWE.getText().trim().equals("CJENOVNIK"), "Cjenovnik: Naziv stranice nije dobar!");
 		assertTrue(naslovStraniceWE.getText().trim().equals("CJENOVNIK"), "Cjenovnik: Naziv stranice nije dobar!");
-		assertTrue(brojKolona().size() == 12, "Cjenovnik: Broj kolona nije dobar! ");
+		assertTrue(brojKolona().size() == 13, "Cjenovnik: Broj kolona nije dobar! ");
 	}
 
 }

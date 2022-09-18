@@ -56,10 +56,10 @@ public class PX_005_Verifikacija_Sekcije_Kupci_Test extends BaseTest {
 		zahtjeviZaRaskid.verifikujZahtjeviZaRaskidUgovora();
 		ObavjestenjaOPromjeniSnabdjevaca obavjestenja = pocetna.navigirajNaObavjestenjaOPromjeniSnabdjevaca();
 		obavjestenja.verifikujObavjestenjaOPromjeniSnabdjevaca();
-		ZajednickaPotrosnja zajednickaPotrosnja = pocetna.navigirajNaZajednickaPotrosnja();
-		zajednickaPotrosnja.verifikujZajednickaPotrosnja();
-		ClanoviZajednickePotrosnje clanovi = pocetna.navigirajNaClanoviZajednickePotrosnje();
-		clanovi.verifikujClanoviZajednickePotrosnje();
+//		ZajednickaPotrosnja zajednickaPotrosnja = pocetna.navigirajNaZajednickaPotrosnja();
+//		zajednickaPotrosnja.verifikujZajednickaPotrosnja();
+//		ClanoviZajednickePotrosnje clanovi = pocetna.navigirajNaClanoviZajednickePotrosnje();
+//		clanovi.verifikujClanoviZajednickePotrosnje();
 		UgovoreniPopusti ugovoreniPopusti = pocetna.navigirajNaUgovoreniPopusti();
 		ugovoreniPopusti.verifikujUgovoreniPopusti();
 		OdbaceniUgovori odbaceniUgovori = pocetna.navigirajNaOdbaceniUgovori();

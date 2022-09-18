@@ -36,10 +36,10 @@ public class PX_007_Verifikacija_Sekcije_Obracun_Test extends BaseTest {
 //		monitoringObracunaPage.verifikujMonitoringObracuna();
 		Racuni racuni = pocetna.navigirajNaRacuni();
 		racuni.verifikujRacuni();
-		RacuniZaNestandardneUsluge racuniZaUsluge = pocetna.navigirajNaRacuniZaNestandardneUsluge();
-		racuniZaUsluge.verifikujRacuniZaNestandardneUsluge();
-		KorekcijeRacuna korekcijeRacuna = pocetna.navigirajNaKorekcijeRacuna();
-		korekcijeRacuna.verifikujKorekcijeRacuna();
+//		RacuniZaNestandardneUsluge racuniZaUsluge = pocetna.navigirajNaRacuniZaNestandardneUsluge();
+//		racuniZaUsluge.verifikujRacuniZaNestandardneUsluge();
+//		KorekcijeRacuna korekcijeRacuna = pocetna.navigirajNaKorekcijeRacuna();
+//		korekcijeRacuna.verifikujKorekcijeRacuna();
 		KamatePage kamatePage = pocetna.navigirajNaKamate();
 		kamatePage.verifikujKamate();
 		KorekcijeKamate korekcijeKamatePage = pocetna.navigateToKorekcijeKamate();

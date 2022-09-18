@@ -2,31 +2,20 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="11944" started-at="2022-09-08T19:11:11Z" finished-at="2022-09-08T19:11:23Z">
+  <suite name="Default suite" duration-ms="35413" started-at="2022-09-18T18:01:24Z" finished-at="2022-09-18T18:01:59Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="11944" started-at="2022-09-08T19:11:11Z" finished-at="2022-09-08T19:11:23Z">
-      <class name="scp.test.SCP_002_Dodavanja_Ugovora_Test">
-        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:scp.test.SCP_002_Dodavanja_Ugovora_Test@3967e60c]" name="setUp" is-config="true" duration-ms="5346" started-at="2022-09-08T21:11:11Z" finished-at="2022-09-08T21:11:17Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
+    <test name="Default test" duration-ms="35413" started-at="2022-09-18T18:01:24Z" finished-at="2022-09-18T18:01:59Z">
+      <class name="com.platformX.distribution.tests.PX_DIST_005_Verifikacija_Sekcije_Mjerna_Mjesta_Test">
+        <test-method status="PASS" signature="px_dist_005_verifikacije_sekcije_mjerna_mjesta_test()[pri:0, instance:com.platformX.distribution.tests.PX_DIST_005_Verifikacija_Sekcije_Mjerna_Mjesta_Test@794cb805]" name="px_dist_005_verifikacije_sekcije_mjerna_mjesta_test" duration-ms="34734" started-at="2022-09-18T20:01:24Z" description="test prolazi kroz sve stranice iz sekcije MJERNA MJESTA i verifikuje ih" finished-at="2022-09-18T20:01:59Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="scp_002_dodavanje_ugovora_test()[pri:0, instance:scp.test.SCP_002_Dodavanja_Ugovora_Test@3967e60c]" name="scp_002_dodavanje_ugovora_test" duration-ms="6579" started-at="2022-09-08T21:11:17Z" finished-at="2022-09-08T21:11:23Z">
+        </test-method> <!-- px_dist_005_verifikacije_sekcije_mjerna_mjesta_test -->
+        <test-method status="PASS" signature="terminateBrowser()[pri:0, instance:com.platformX.distribution.tests.PX_DIST_005_Verifikacija_Sekcije_Mjerna_Mjesta_Test@794cb805]" name="terminateBrowser" is-config="true" duration-ms="660" started-at="2022-09-18T20:01:59Z" finished-at="2022-09-18T20:01:59Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- scp_002_dodavanje_ugovora_test -->
-        <test-method status="PASS" signature="cleanUp()[pri:0, instance:scp.test.SCP_002_Dodavanja_Ugovora_Test@3967e60c]" name="cleanUp" is-config="true" duration-ms="3" started-at="2022-09-08T21:11:23Z" finished-at="2022-09-08T21:11:23Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- cleanUp -->
-      </class> <!-- scp.test.SCP_002_Dodavanja_Ugovora_Test -->
+        </test-method> <!-- terminateBrowser -->
+      </class> <!-- com.platformX.distribution.tests.PX_DIST_005_Verifikacija_Sekcije_Mjerna_Mjesta_Test -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
