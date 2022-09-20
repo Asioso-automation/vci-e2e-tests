@@ -4,6 +4,7 @@ import static org.testng.Assert.assertTrue;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -26,10 +27,19 @@ public class FizickaLica extends PocetnaStranica {
 	@FindBy(xpath = "//*[contains(@href,'/kupci/fizicka-lica/dodaj')]")
 	public WebElement dodajBtnWE;
 	
-	// Elemnti forme za dodavanje fizckog lica
+	@FindBy(xpath = "//*[@id='v-fx-1']/div/div/div/div[1]/input")
+	public WebElement pretraziFizickaLicaWE;
+	
+	// Elemnti forme za dodavanje fizickog lica
 	
 	@FindBy(xpath = "//*[contains(@class, 'v-text-field__slot')]//*[@aria-label = 'Prezime (ime oca) ime']")
 	public WebElement imePrezimeWE;
+	
+	@FindBy(xpath = "//div[2]/button[1]")
+	public WebElement dodajUgovorWE;
+	
+	@FindBy(xpath = "//div[1]/table/tbody/tr/td[2]")
+	public WebElement imePrezimeTabelaWE;
 	
 	// TODO Custom dodaj dugme xpath
 
@@ -50,7 +60,7 @@ public class FizickaLica extends PocetnaStranica {
 		assertTrue(brojKolona().size() == 12, "FizickaLica: Broj kolona nije dobar! ");
 	}
 	
-	public void dodajFizickoLice() {
+	public String dodajFizickoLice() {
 		String ime = Helper.getRandomString(5) + " (" + Helper.getRandomString(5) + ") " + Helper.getRandomString(5);
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
 		dodajBtnWE.click();
@@ -58,6 +68,21 @@ public class FizickaLica extends PocetnaStranica {
 		imePrezimeWE.click();
 		imePrezimeWE.sendKeys(ime);
 		// TODO Napraviti kolekciju enuma za imena
+		wait.until(ExpectedConditions.elementToBeClickable(dodajUgovorWE));
+		dodajUgovorWE.click();
+		return ime;
+	}
+	
+	public void verifikujFizickoLice(String ime) throws InterruptedException {
+		wait.until(ExpectedConditions.elementToBeClickable(pretraziFizickaLicaWE));
+		pretraziFizickaLicaWE.click();
+		pretraziFizickaLicaWE.clear();
+		pretraziFizickaLicaWE.sendKeys(ime);
+		pretraziFizickaLicaWE.sendKeys(Keys.ENTER);
+		Thread.sleep(1000);
+		wait.until(ExpectedConditions.visibilityOf(imePrezimeTabelaWE));
+		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
+		assertTrue(imePrezimeTabelaWE.getText().equals(ime), "FizickaLica: Ime i prezime fizickog lica nije dobro!");
 	}
 
 }

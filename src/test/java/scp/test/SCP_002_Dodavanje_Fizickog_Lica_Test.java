@@ -7,16 +7,15 @@ import com.platformX.base.BaseTest;
 import scp.page.FizickaLica;
 import scp.page.PocetnaStranica;
 import scp.page.LogIn;
-import scp.page.Objekti;
 
-public class SCP_00X_Dodavanje_Ugovora_Test extends BaseTest {
+public class SCP_002_Dodavanje_Fizickog_Lica_Test extends BaseTest {
 
-	public SCP_00X_Dodavanje_Ugovora_Test() throws IOException, FileNotFoundException {
+	public SCP_002_Dodavanje_Fizickog_Lica_Test() throws IOException, FileNotFoundException {
 		super();
 	}
 
 	@Test (description="")
-	public void scp_002_dodavanje_ugovora_test() throws Exception {
+	public void scp_002_dodavanje_fizickog_lica_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
@@ -26,10 +25,6 @@ public class SCP_00X_Dodavanje_Ugovora_Test extends BaseTest {
 		fizickaLica.verifikujFizickaLica();
 		String ime = fizickaLica.dodajFizickoLice();
 		fizickaLica.verifikujFizickoLice(ime);
-		Objekti objekti = pocetna.navigirajNaObjekti();
-		objekti.verifikujObjekti();
-		String broj = objekti.dodajObjekat();
-		objekti.verifikujObjekat(broj);
 	}
 
 }

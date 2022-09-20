@@ -73,6 +73,9 @@ public class PocetnaStranica extends PageBase {
 	@FindBy(xpath = "//div[contains(text(), 'Fizička lica')]")
 	protected WebElement fizikaLicaWE;
 	
+	@FindBy(xpath = "//div[contains(text(), 'Objekti')]")
+	protected WebElement objektiWE;
+	
 
 	public void verifikujPocetnuStranicu() throws InterruptedException {
 		wait.until(ExpectedConditions.elementToBeClickable(sifarniciWE));
@@ -106,6 +109,15 @@ public class PocetnaStranica extends PageBase {
 		wait.until(ExpectedConditions.elementToBeClickable(fizikaLicaWE));
 		fizikaLicaWE.click();
 		return new FizickaLica(driver);
+	}
+	
+	public Objekti navigirajNaObjekti() throws Exception {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(kupciWE));
+		kupciWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(objektiWE));
+		objektiWE.click();
+		return new Objekti(driver);
 	}
 	
 }
