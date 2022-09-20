@@ -928,4 +928,7 @@ public class Kolone extends PageBase {
 	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Ebix kod']")
 	public WebElement kolonaEbixKodWE;
 	
+	// test comment
+	// test comment 2
+	
 }
