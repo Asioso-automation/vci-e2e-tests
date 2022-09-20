@@ -931,4 +931,6 @@ public class Kolone extends PageBase {
 	// test comment
 	// test comment 2
 	
+	// igor
+	
 }
