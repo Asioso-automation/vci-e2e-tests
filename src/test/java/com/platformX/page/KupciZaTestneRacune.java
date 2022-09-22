@@ -27,7 +27,7 @@ public class KupciZaTestneRacune extends PocetnaStranica {
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Kupci za testne')]")));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNazivWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaUlicaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAdresaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaEmailWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojTelefonaWE));
 		wait.until(ExpectedConditions.elementToBeClickable(sekcijaBtnWE));
