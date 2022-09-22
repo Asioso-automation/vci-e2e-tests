@@ -245,6 +245,14 @@ public class PocetnaStranica extends PageBase {
 	@FindBy(xpath = "//div[contains(text(), 'Aktivna isključenja mjernih mjesta')]")
 	protected WebElement aktivnaIskljucenjaMjernihMjestaWE;
 	
+	@FindBy(xpath = "//div[contains(text(), 'Korištena brojila')]")
+	protected WebElement koristenaBrojilaWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Tipovi brojila')]")
+	protected WebElement tipoviBrojilaWE;
+	
+	
+	
 //	@FindBy(xpath = "//div[contains(text(), 'Očitanja brojila')]")
 //	protected WebElement ocitanjaBrojilaWE;
 //	
@@ -1181,4 +1189,23 @@ public class PocetnaStranica extends PageBase {
 		assertTrue(porukaWE.getText().trim().equals(poruka), "Poruka upozorenja nije dobra!");
 	}
 	
-}
+	public KoristenaBrojila navigirajNaKoristenaBrojila() throws Exception {
+	WebDriverWait wait = new WebDriverWait(driver, 10);
+	wait.until(ExpectedConditions.elementToBeClickable(brojilaWE));
+	brojilaWE.click();
+	wait.until(ExpectedConditions.elementToBeClickable(koristenaBrojilaWE));
+	koristenaBrojilaWE.click();
+	return new KoristenaBrojila(driver);
+	}
+	
+	public TipoviBrojila navigirajNaTipoviBrojila() throws Exception {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(brojilaWE));
+		brojilaWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(tipoviBrojilaWE));
+		tipoviBrojilaWE.click();
+		return new TipoviBrojila(driver);
+	}
+	
+	
+	}
