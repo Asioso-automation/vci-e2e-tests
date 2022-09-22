@@ -66,8 +66,7 @@ public class PX_DIST_005_Verifikacija_Sekcije_Mjerna_Mjesta_Test {
 		zahtjeviZaUkljucenja.verifikujZahtjeviZaUkljucenja();
 		RazlogNeizvrsavanjaZahtjeva razlogNeizvrsavanjaZahtjeva = pocetna.navigirajNaRazlogNeizvrsavanjaZahtjeva();
 		razlogNeizvrsavanjaZahtjeva.verifikujRazlogNeizvrsavanjaZahtjeva();
-		AktivnaIskljucenjaMjernihMjesta aktivnaIskljucenjaMjernihMjesta = pocetna
-				.navigirajNaAktivnaIskljucenjaMjernihMjesta();
+		AktivnaIskljucenjaMjernihMjesta aktivnaIskljucenjaMjernihMjesta = pocetna.navigirajNaAktivnaIskljucenjaMjernihMjesta();
 		aktivnaIskljucenjaMjernihMjesta.verifikujAktivnaIskljucenjaMjernihMjesta();
 	}
 

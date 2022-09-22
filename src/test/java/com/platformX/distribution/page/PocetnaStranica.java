@@ -52,16 +52,16 @@ public class PocetnaStranica extends PageBase {
 	@FindBy(xpath = "//ul/button[2]")
 	protected WebElement stranicaBtnWE;
 
-	@FindBy(xpath = "//header/div/button[1]")
+	@FindBy(xpath = "//i[contains(@class, 'fa-file-download')]")
 	protected WebElement preuzmiExcelBtnWE;
 
-	@FindBy(xpath = "//header/div/button[2]")
+	@FindBy(xpath = "//i[contains(@class, 'fa-broom')]")
 	protected WebElement ukloniFiltereBtnWE;
 
-	@FindBy(xpath = "//header/div/button[3]")
+	@FindBy(xpath = "//i[contains(@class, 'fa-sync')]")
 	protected WebElement osvjeziBtnWE;
 
-	@FindBy(xpath = "//header/div/a")
+	@FindBy(xpath = "//i[contains(@class, 'fa-plus')]")
 	protected WebElement dodajBtnWE;
 
 //	 Sekcije
