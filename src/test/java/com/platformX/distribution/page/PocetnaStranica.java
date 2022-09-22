@@ -103,6 +103,15 @@ public class PocetnaStranica extends PageBase {
 
 	@FindBy(xpath = "//div[contains(text(), 'Organizacije')]")
 	protected WebElement organizacijeWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Zahtjevi za dostavu podataka')]")
+	protected WebElement zahtjeviZaDostavuPodatakaKupciWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Pravna lica')]")
+	protected WebElement pravnaLicaWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Fizička lica')]")
+	protected WebElement fizickaLicaWE;
 
 	@FindBy(xpath = "//div[contains(text(), 'Djelatnosti')]")
 	protected WebElement djelatnostiWE;
@@ -380,6 +389,33 @@ public class PocetnaStranica extends PageBase {
 		wait.until(ExpectedConditions.elementToBeClickable(organizacijeWE));
 		organizacijeWE.click();
 		return new Organizacije(driver);
+	}
+	
+	public ZahtjeviZaDostavuPodatakaKUPCI navigirajNaZahtjeviZaDostavuPodatakaKUPCI() throws Exception {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(kupciWE));
+		kupciWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(zahtjeviZaDostavuPodatakaKupciWE));
+		zahtjeviZaDostavuPodatakaKupciWE.click();
+		return new ZahtjeviZaDostavuPodatakaKUPCI(driver);
+	}
+	
+	public FizickaLica navigirajNaFizickaLica() throws Exception {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(kupciWE));
+		kupciWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(fizickaLicaWE));
+		fizickaLicaWE.click();
+		return new FizickaLica(driver);
+	}
+	
+	public PravnaLica navigirajNaPravnaLica() throws Exception {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(kupciWE));
+		kupciWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(pravnaLicaWE));
+		pravnaLicaWE.click();
+		return new PravnaLica(driver);
 	}
 	
 	public TerenskeJedinice navigirajNaTerenskeJedinice() throws Exception {
