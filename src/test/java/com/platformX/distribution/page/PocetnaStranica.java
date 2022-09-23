@@ -63,6 +63,9 @@ public class PocetnaStranica extends PageBase {
 
 	@FindBy(xpath = "//i[contains(@class, 'fa-plus')]")
 	protected WebElement dodajBtnWE;
+	
+	@FindBy(xpath = "//i[contains(@class, 'fa-file-upload')]")
+	protected WebElement importujBtnWE;
 
 //	 Sekcije
 
@@ -251,7 +254,35 @@ public class PocetnaStranica extends PageBase {
 	@FindBy(xpath = "//div[contains(text(), 'Tipovi brojila')]")
 	protected WebElement tipoviBrojilaWE;
 	
+	@FindBy(xpath = "//div[contains(text(), 'Registar brojila')]")
+	protected WebElement registarBrojilaWE;
 	
+	@FindBy(xpath = "//div[contains(text(), 'Izvor napajanja brojila')]")
+	protected WebElement izvorNapajanjaBrojilaWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Proivođači brojila')]")
+	protected WebElement proizvodjaciBrojilaWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Sposobnost priključenja brojila')]")
+	protected WebElement sposobnostPrikljucenjaBrojilaWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Mogućnost daljinskog pristupa')]")
+	protected WebElement mogucnostDaljinskogPristupaWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Lokacija brojila')]")
+	protected WebElement lokacijaBrojilaWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Relokacija brojila')]")
+	protected WebElement relokacijeBrojilaWE;
+
+	@FindBy(xpath = "//div[contains(text(), 'Razlog promjene lokacije')]")
+	protected WebElement razlogPromjeneLokacijeWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Naponski nivoi')]")
+	protected WebElement naponskiNivoiWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Strujni nivoi')]")
+	protected WebElement strujniNivoiWE;
 	
 //	@FindBy(xpath = "//div[contains(text(), 'Očitanja brojila')]")
 //	protected WebElement ocitanjaBrojilaWE;
@@ -1207,5 +1238,94 @@ public class PocetnaStranica extends PageBase {
 		return new TipoviBrojila(driver);
 	}
 	
+	public RegistarBrojila navigirajNaRegistarBrojila() throws Exception {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(brojilaWE));
+		brojilaWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(registarBrojilaWE));
+		registarBrojilaWE.click();
+		return new RegistarBrojila(driver);
+	}
+	
+	public IzvorNapajanjaBrojila navigirajNaIzvorNapajanjaBrojila() throws Exception {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(brojilaWE));
+		brojilaWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(izvorNapajanjaBrojilaWE));
+		izvorNapajanjaBrojilaWE.click();
+		return new IzvorNapajanjaBrojila(driver);
+	}
+	
+	public ProizvodjaciBrojila navigirajNaProizvodjaciBrojila() throws Exception {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(brojilaWE));
+		brojilaWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(proizvodjaciBrojilaWE));
+		proizvodjaciBrojilaWE.click();
+		return new ProizvodjaciBrojila(driver);
+	}
+	
+	public SposobnostPrikljucenjaBrojila navigirajNaSposobnostPrikljucenaBrojila() throws Exception {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(brojilaWE));
+		brojilaWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(sposobnostPrikljucenjaBrojilaWE));
+		sposobnostPrikljucenjaBrojilaWE.click();
+		return new SposobnostPrikljucenjaBrojila(driver);
+	}
+	
+	public MogucnostDaljinskogPristupa navigirajNaMogucnostDaljinskogPristupa() throws Exception {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(brojilaWE));
+		brojilaWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(mogucnostDaljinskogPristupaWE));
+		mogucnostDaljinskogPristupaWE.click();
+		return new MogucnostDaljinskogPristupa(driver);
+	}
+	
+	public LokacijaBrojila navigirajNaLokacijaBrojila() throws Exception {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(brojilaWE));
+		brojilaWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(lokacijaBrojilaWE));
+		lokacijaBrojilaWE.click();
+		return new LokacijaBrojila(driver);
+	}
+	
+	public RelokacijeBrojila navigirajNaRelokacijeBrojila() throws Exception {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(brojilaWE));
+		brojilaWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(relokacijeBrojilaWE));
+		relokacijeBrojilaWE.click();
+		return new RelokacijeBrojila(driver);
+	}
+	
+	public RazlogPromjeneLokacije navigirajNaRazlogPromjeneLokacije() throws Exception {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(brojilaWE));
+		brojilaWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(razlogPromjeneLokacijeWE));
+		razlogPromjeneLokacijeWE.click();
+		return new RazlogPromjeneLokacije(driver);
+	}
+	
+	public NaponskiNivoi navigirajNaNaponskiNivoi() throws Exception {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(brojilaWE));
+		brojilaWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(naponskiNivoiWE));
+		naponskiNivoiWE.click();
+		return new NaponskiNivoi(driver);
+	}
+	
+	public StrujniNivoi navigirajNaStrujniNivoi() throws Exception {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(brojilaWE));
+		brojilaWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(strujniNivoiWE));
+		strujniNivoiWE.click();
+		return new StrujniNivoi(driver);
+	}
 	
 	}

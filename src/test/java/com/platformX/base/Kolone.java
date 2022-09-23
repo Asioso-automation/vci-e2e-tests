@@ -994,6 +994,20 @@ public class Kolone extends PageBase {
 	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Validan']")
 	public WebElement kolonaValidanWE;
 	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'AMM integrisano']")
+	public WebElement kolonaAmmIntegrisanoWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'DLMS integrisano']")
+	public WebElement kolonaDlmsIntegrisanoWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Lokacija']")
+	public WebElement kolonaLokacijaWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Razlog promjene lokacije']")
+	public WebElement kolonaRazlogPromjeneLokacijeWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Validnost']")
+	public WebElement kolonaValidnostWE;
 	
 	// test comment
 	// test comment 2
