@@ -1,21 +1,16 @@
 package com.platformX.distribution.tests;
 
+import org.testng.annotations.Test;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.Test;
-
+import com.platformX.base.BaseTest;
+import com.platformX.distribution.page.PocetnaStranica;
 import com.platformX.distribution.page.IzvorNapajanjaBrojila;
 import com.platformX.distribution.page.KoristenaBrojila;
 import com.platformX.distribution.page.LogIn;
 import com.platformX.distribution.page.LokacijaBrojila;
 import com.platformX.distribution.page.MogucnostDaljinskogPristupa;
 import com.platformX.distribution.page.NaponskiNivoi;
-import com.platformX.distribution.page.PocetnaStranica;
 import com.platformX.distribution.page.ProizvodjaciBrojila;
 import com.platformX.distribution.page.RazlogPromjeneLokacije;
 import com.platformX.distribution.page.RegistarBrojila;
@@ -24,35 +19,14 @@ import com.platformX.distribution.page.SposobnostPrikljucenjaBrojila;
 import com.platformX.distribution.page.StrujniNivoi;
 import com.platformX.distribution.page.TipoviBrojila;
 
-public class PX_DIST_Verifikacija_Sekcije_Brojila_Test {
+public class PX_DIST_007_Verifikacija_Sekcije_Brojila_Test extends BaseTest {
 
-	public PX_DIST_Verifikacija_Sekcije_Brojila_Test() throws IOException, FileNotFoundException {
+	public PX_DIST_007_Verifikacija_Sekcije_Brojila_Test() throws IOException, FileNotFoundException {
 		super();
 	}
 
-	private WebDriver driver;
-	private final String PLATFORMX_PROPERTIES = "platformx.properties";
-
 	@Test(description = "test prolazi kroz sve stranice iz sekcije BROJILA i verifikuje ih")
-	public void px_dist_verifikacije_sekcije_brojila_test() throws Exception {
-
-		try {
-			System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver.exe");
-			ChromeOptions options = new ChromeOptions();
-			options.addArguments("--start-maximized");
-			options.addArguments("incognito");
-			options.addArguments("chrome.switches", "--disable-extensions");
-			driver = new ChromeDriver(options);
-		} catch (Exception e) {
-			System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver.exe");
-			ChromeOptions options = new ChromeOptions();
-			options.setBinary("C://Program Files//Google//Chrome//Application//chrome.exe");
-			options.addArguments("--start-maximized");
-			options.addArguments("incognito");
-			options.addArguments("chrome.switches", "--disable-extensions");
-			driver = new ChromeDriver(options);
-		}
-
+	public void px_dist_007_verifikacije_sekcije_brojila_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
@@ -82,10 +56,5 @@ public class PX_DIST_Verifikacija_Sekcije_Brojila_Test {
 	    naponskiNivoi.verifikujNaponskiNivoi();
 	    StrujniNivoi strujniNivoi = pocetna.navigirajNaStrujniNivoi();
 	    strujniNivoi.verifikujStrujniNivoi();
-	}
-	
-	@AfterTest
-	public void terminateBrowser() {
-		driver.quit();
 	}
 }
