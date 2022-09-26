@@ -29,7 +29,7 @@ public class SposobnostPrikljucenjaBrojila extends PocetnaStranica{
 		wait.until(ExpectedConditions.visibilityOf(osvjeziBtnWE));
 		assertTrue(sekcijaBtnWE.getText().trim().equals("BROJILA"), "SposobnostPrikljucenjaBrojila: Naziv sekcije nije dobar!");
 		assertTrue(stranicaBtnWE.getText().trim().equals("SPOSOBNOST PRIKLJUČENJA BROJILA"), "SposobnostPrikljucenjaBrojila: Naziv stranice nije dobar!");
-		assertTrue(naslovStranice1WE.getText().trim().equals("SPOSOBNOST PRIKLJUČENJA BROJILA"), "SposobnostPrikljucenjaBrojila: Naziv stranice nije dobar!");
+		assertTrue(naslovStraniceWE.getText().trim().equals("SPOSOBNOST PRIKLJUČENJA BROJILA"), "SposobnostPrikljucenjaBrojila: Naziv stranice nije dobar!");
 		assertTrue(brojKolona().size() == 3, "SposobnostPrikljucenjaBrojila: Broj kolona nije dobar! ");
 	}
 }

@@ -29,7 +29,7 @@ public class RazlogPromjeneLokacije extends PocetnaStranica{
 		wait.until(ExpectedConditions.visibilityOf(osvjeziBtnWE));
 		assertTrue(sekcijaBtnWE.getText().trim().equals("BROJILA"), "RazlogPromjeneLokacije: Naziv sekcije nije dobar!");
 		assertTrue(stranicaBtnWE.getText().trim().equals("RAZLOG PROMJENE LOKACIJE"), "RazlogPromjeneLokacije: Naziv stranice nije dobar!");
-		assertTrue(naslovStranice1WE.getText().trim().equals("RAZLOG PROMJENE LOKACIJE"), "RazlogPromjeneLokacije: Naziv stranice nije dobar!");
+		assertTrue(naslovStraniceWE.getText().trim().equals("RAZLOG PROMJENE LOKACIJE"), "RazlogPromjeneLokacije: Naziv stranice nije dobar!");
 		assertTrue(brojKolona().size() == 3, "RazlogPromjeneLokacije: Broj kolona nije dobar! ");
 	}
 }

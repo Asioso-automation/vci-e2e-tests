@@ -29,7 +29,7 @@ public class MogucnostDaljinskogPristupa extends PocetnaStranica{
 		wait.until(ExpectedConditions.visibilityOf(osvjeziBtnWE));
 		assertTrue(sekcijaBtnWE.getText().trim().equals("BROJILA"), "MogucnostDaljinskogPristupa: Naziv sekcije nije dobar!");
 		assertTrue(stranicaBtnWE.getText().trim().equals("MOGUĆNOST DALJINSKOG PRISTUPA"), "MogucnostDaljinskogPristupa: Naziv stranice nije dobar!");
-		assertTrue(naslovStranice1WE.getText().trim().equals("MOGUĆNOST DALJINSKOG PRISTUPA"), "MogucnostDaljinskogPristupa: Naziv stranice nije dobar!");
+		assertTrue(naslovStraniceWE.getText().trim().equals("MOGUĆNOST DALJINSKOG PRISTUPA"), "MogucnostDaljinskogPristupa: Naziv stranice nije dobar!");
 		assertTrue(brojKolona().size() == 3, "MogucnostDaljinskogPristupa: Broj kolona nije dobar! ");
 	}
 

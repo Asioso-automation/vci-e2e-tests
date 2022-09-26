@@ -34,7 +34,7 @@ public class RelokacijeBrojila extends PocetnaStranica{
 		wait.until(ExpectedConditions.visibilityOf(osvjeziBtnWE));
 		assertTrue(sekcijaBtnWE.getText().trim().equals("BROJILA"), "RelokacijeBrojila: Naziv sekcije nije dobar!");
 		assertTrue(stranicaBtnWE.getText().trim().equals("RELOKACIJE BROJILA"), "RelokacijeBrojila: Naziv stranice nije dobar!");
-		assertTrue(naslovStranice1WE.getText().trim().equals("RELOKACIJE BROJILA"), "RelokacijeBrojila: Naziv stranice nije dobar!");
+		assertTrue(naslovStraniceWE.getText().trim().equals("RELOKACIJE BROJILA"), "RelokacijeBrojila: Naziv stranice nije dobar!");
 		assertTrue(brojKolona().size() == 9, "RelokacijeBrojila: Broj kolona nije dobar! ");
 	}
 

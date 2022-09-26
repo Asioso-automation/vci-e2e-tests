@@ -23,14 +23,15 @@ public class NaponskiNivoi extends PocetnaStranica{
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Naponski nivoi')]")));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNazivWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNivoTrafostaniceWE));
 		wait.until(ExpectedConditions.visibilityOf(dodajBtnWE));
 		wait.until(ExpectedConditions.visibilityOf(preuzmiExcelBtnWE));
 		wait.until(ExpectedConditions.visibilityOf(ukloniFiltereBtnWE));
 		wait.until(ExpectedConditions.visibilityOf(osvjeziBtnWE));
 		assertTrue(sekcijaBtnWE.getText().trim().equals("BROJILA"), "NaponskiNivoi: Naziv sekcije nije dobar!");
 		assertTrue(stranicaBtnWE.getText().trim().equals("NAPONSKI NIVOI"), "NaponskiNivoi: Naziv stranice nije dobar!");
-		assertTrue(naslovStranice1WE.getText().trim().equals("NAPONSKI NIVOI"), "NaponskiNivoi: Naziv stranice nije dobar!");
-		assertTrue(brojKolona().size() == 3, "NaponskiNivoi: Broj kolona nije dobar! ");
+		assertTrue(naslovStraniceWE.getText().trim().equals("NAPONSKI NIVOI"), "NaponskiNivoi: Naziv stranice nije dobar!");
+		assertTrue(brojKolona().size() == 4, "NaponskiNivoi: Broj kolona nije dobar! ");
 	}
 
 }

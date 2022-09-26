@@ -29,7 +29,7 @@ public class IzvorNapajanjaBrojila extends PocetnaStranica {
 		wait.until(ExpectedConditions.visibilityOf(osvjeziBtnWE));
 		assertTrue(sekcijaBtnWE.getText().trim().equals("BROJILA"), "IzvorNapajanjaBrojila: Naziv sekcije nije dobar!");
 		assertTrue(stranicaBtnWE.getText().trim().equals("IZVOR NAPAJANJA BROJILA"), "IzvorNapajanjaBrojila: Naziv stranice nije dobar!");
-		assertTrue(naslovStranice1WE.getText().trim().equals("IZVOR NAPAJANJA BROJILA"), "IzvorNapajanjaBrojila: Naziv stranice nije dobar!");
+		assertTrue(naslovStraniceWE.getText().trim().equals("IZVOR NAPAJANJA BROJILA"), "IzvorNapajanjaBrojila: Naziv stranice nije dobar!");
 		assertTrue(brojKolona().size() == 3, "IzvorNapajanjaBrojila: Broj kolona nije dobar! ");
 	}
 }

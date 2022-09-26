@@ -29,7 +29,7 @@ public class ProizvodjaciBrojila extends PocetnaStranica {
 		wait.until(ExpectedConditions.visibilityOf(osvjeziBtnWE));
 		assertTrue(sekcijaBtnWE.getText().trim().equals("BROJILA"), "ProizvodjaciBrojila: Naziv sekcije nije dobar!");
 		assertTrue(stranicaBtnWE.getText().trim().equals("PROIZVOĐAČI BROJILA"), "ProizvodjaciBrojila: Naziv stranice nije dobar!");
-		assertTrue(naslovStranice1WE.getText().trim().equals("PROIZVOĐAČI BROJILA"), "ProizvodjaciBrojila: Naziv stranice nije dobar!");
+		assertTrue(naslovStraniceWE.getText().trim().equals("PROIZVOĐAČI BROJILA"), "ProizvodjaciBrojila: Naziv stranice nije dobar!");
 		assertTrue(brojKolona().size() == 3, "ProizvodjaciBrojila: Broj kolona nije dobar! ");
 	}
 }

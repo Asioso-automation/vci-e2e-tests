@@ -260,7 +260,7 @@ public class PocetnaStranica extends PageBase {
 	@FindBy(xpath = "//div[contains(text(), 'Izvor napajanja brojila')]")
 	protected WebElement izvorNapajanjaBrojilaWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Proivođači brojila')]")
+	@FindBy(xpath = "//div[contains(text(), 'Proizvođači brojila')]")
 	protected WebElement proizvodjaciBrojilaWE;
 	
 	@FindBy(xpath = "//div[contains(text(), 'Sposobnost priključenja brojila')]")
@@ -272,7 +272,7 @@ public class PocetnaStranica extends PageBase {
 	@FindBy(xpath = "//div[contains(text(), 'Lokacija brojila')]")
 	protected WebElement lokacijaBrojilaWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Relokacija brojila')]")
+	@FindBy(xpath = "//div[contains(text(), 'Relokacije brojila')]")
 	protected WebElement relokacijeBrojilaWE;
 
 	@FindBy(xpath = "//div[contains(text(), 'Razlog promjene lokacije')]")

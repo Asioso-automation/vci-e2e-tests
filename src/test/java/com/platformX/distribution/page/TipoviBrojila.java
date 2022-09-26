@@ -41,7 +41,7 @@ public class TipoviBrojila extends PocetnaStranica{
 		wait.until(ExpectedConditions.visibilityOf(osvjeziBtnWE));
 		assertTrue(sekcijaBtnWE.getText().trim().equals("BROJILA"), "TipoviBrojila: Naziv sekcije nije dobar!");
 		assertTrue(stranicaBtnWE.getText().trim().equals("TIPOVI BROJILA"), "TipoviBrojila: Naziv stranice nije dobar!");
-		assertTrue(naslovStranice1WE.getText().trim().equals("TIPOVI BROJILA"), "TipoviBrojila: Naziv stranice nije dobar!");
+		assertTrue(naslovStraniceWE.getText().trim().equals("TIPOVI BROJILA"), "TipoviBrojila: Naziv stranice nije dobar!");
 		assertTrue(brojKolona().size() == 16, "TipoviBrojila: Broj kolona nije dobar! ");
 	}
 	

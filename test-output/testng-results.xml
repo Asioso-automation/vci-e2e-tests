@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="14350" started-at="2022-09-22T12:37:47Z" finished-at="2022-09-22T12:38:01Z">
+  <suite started-at="2022-09-26T09:45:08Z" name="Default suite" finished-at="2022-09-26T09:45:32Z" duration-ms="23540">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="14350" started-at="2022-09-22T12:37:47Z" finished-at="2022-09-22T12:38:01Z">
-      <class name="com.platformX.distribution.tests.PX_DIST_006_Verifikacija_Sekcije_Kupci_Test">
-        <test-method status="PASS" signature="px_dist_005_verifikacije_sekcije_kupci_test()[pri:0, instance:com.platformX.distribution.tests.PX_DIST_006_Verifikacija_Sekcije_Kupci_Test@161479c6]" name="px_dist_005_verifikacije_sekcije_kupci_test" duration-ms="13732" started-at="2022-09-22T14:37:47Z" description="test prolazi kroz sve stranice iz sekcije KUPCI i verifikuje ih" finished-at="2022-09-22T14:38:00Z">
+    <test started-at="2022-09-26T09:45:08Z" name="Default test" finished-at="2022-09-26T09:45:32Z" duration-ms="23540">
+      <class name="com.platformX.distribution.tests.PX_DIST_Verifikacija_Sekcije_Brojila_Test">
+        <test-method signature="px_dist_verifikacije_sekcije_brojila_test()[pri:0, instance:com.platformX.distribution.tests.PX_DIST_Verifikacija_Sekcije_Brojila_Test@3ad2e17]" started-at="2022-09-26T11:45:08Z" name="px_dist_verifikacije_sekcije_brojila_test" description="test prolazi kroz sve stranice iz sekcije BROJILA i verifikuje ih" finished-at="2022-09-26T11:45:32Z" duration-ms="23377" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- px_dist_005_verifikacije_sekcije_kupci_test -->
-        <test-method status="PASS" signature="terminateBrowser()[pri:0, instance:com.platformX.distribution.tests.PX_DIST_006_Verifikacija_Sekcije_Kupci_Test@161479c6]" name="terminateBrowser" is-config="true" duration-ms="606" started-at="2022-09-22T14:38:00Z" finished-at="2022-09-22T14:38:01Z">
+        </test-method> <!-- px_dist_verifikacije_sekcije_brojila_test -->
+        <test-method is-config="true" signature="terminateBrowser()[pri:0, instance:com.platformX.distribution.tests.PX_DIST_Verifikacija_Sekcije_Brojila_Test@3ad2e17]" started-at="2022-09-26T11:45:32Z" name="terminateBrowser" finished-at="2022-09-26T11:45:32Z" duration-ms="148" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- terminateBrowser -->
-      </class> <!-- com.platformX.distribution.tests.PX_DIST_006_Verifikacija_Sekcije_Kupci_Test -->
+      </class> <!-- com.platformX.distribution.tests.PX_DIST_Verifikacija_Sekcije_Brojila_Test -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

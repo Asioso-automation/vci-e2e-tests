@@ -29,7 +29,7 @@ public class StrujniNivoi extends PocetnaStranica{
 		wait.until(ExpectedConditions.visibilityOf(osvjeziBtnWE));
 		assertTrue(sekcijaBtnWE.getText().trim().equals("BROJILA"), "StrujniNivoi: Naziv sekcije nije dobar!");
 		assertTrue(stranicaBtnWE.getText().trim().equals("STRUJNI NIVOI"), "StrujniNivoi: Naziv stranice nije dobar!");
-		assertTrue(naslovStranice1WE.getText().trim().equals("STRUJNI NIVOI"), "StrujniNivoi: Naziv stranice nije dobar!");
+		assertTrue(naslovStraniceWE.getText().trim().equals("STRUJNI NIVOI"), "StrujniNivoi: Naziv stranice nije dobar!");
 		assertTrue(brojKolona().size() == 3, "StrujniNivoi: Broj kolona nije dobar! ");
 	}
 }
