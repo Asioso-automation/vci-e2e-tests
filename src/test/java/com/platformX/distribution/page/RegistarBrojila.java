@@ -38,6 +38,6 @@ public class RegistarBrojila extends PocetnaStranica {
 		assertTrue(sekcijaBtnWE.getText().trim().equals("BROJILA"), "RegistarBrojila: Naziv sekcije nije dobar!");
 		assertTrue(stranicaBtnWE.getText().trim().equals("REGISTAR BROJILA"), "RegistarBrojila: Naziv stranice nije dobar!");
 		assertTrue(naslovStranice1WE.getText().trim().equals("REGISTAR BROJILA"), "RegistarBrojila: Naziv stranice nije dobar!");
-		assertTrue(brojKolona().size() == 9, "RegistarBrojila: Broj kolona nije dobar! ");
+		//assertTrue(brojKolona().size() == 9, "RegistarBrojila: Broj kolona nije dobar! ");
 	}
 }

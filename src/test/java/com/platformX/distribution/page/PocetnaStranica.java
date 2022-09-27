@@ -65,6 +65,12 @@ public class PocetnaStranica extends PageBase {
 	
 	@FindBy(xpath = "//i[contains(@class, 'fa-file-upload')]")
 	protected WebElement importujBtnWE;
+	
+	@FindBy(xpath = "//i[contains(@class, 'fa-info')]")
+	protected WebElement infoBtnWE;
+	
+	@FindBy(xpath = "//i[contains(@class, 'fa-angle-double-right')]")
+	protected WebElement dodajSveBtnWE;
 
 //	 Sekcije
 
@@ -283,8 +289,37 @@ public class PocetnaStranica extends PageBase {
 	@FindBy(xpath = "//div[contains(text(), 'Strujni nivoi')]")
 	protected WebElement strujniNivoiWE;
 	
-//	@FindBy(xpath = "//div[contains(text(), 'Očitanja brojila')]")
-//	protected WebElement ocitanjaBrojilaWE;
+	@FindBy(xpath = "//div[contains(text(), 'Očitanja brojila')]")
+    protected WebElement ocitanjaBrojilaWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Korekcije očitanja')]")
+    protected WebElement korekcijeOcitanjaWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Importi očitanja')]")
+    protected WebElement importiOcitanjaWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Izmijenjena očitanja')]")
+    protected WebElement izmijenjenaOcitanjaWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Nevalidna očitanja')]")
+    protected WebElement nevalidnaOcitanjaWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Čitački hodovi')]")
+    protected WebElement citackiHodoviWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Čitačke liste')]")
+    protected WebElement citackeListeWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Čitači po čitačkim hodovima')]")
+    protected WebElement citaciPoCitackimHodovimaWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Zbrina/kontrolna očitanja')]")
+    protected WebElement zbirnaKontrolnaOcitanjaWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Zbrina/kontrolna potrošnja')]")
+    protected WebElement zbirnaKontrolnaPotrosnjaWE;
+	
+	
 //	
 //	@FindBy(xpath = "//div[contains(text(), 'Energetski obračun')]")
 //	protected WebElement energetskiObracunWE;
@@ -1327,4 +1362,94 @@ public class PocetnaStranica extends PageBase {
 		return new StrujniNivoi(driver);
 	}
 	
+    public OcitanjaBrojila navigirajNaOcitanjaBrojila() throws Exception {
+    	WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(ocitanjaWE));
+		ocitanjaWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(ocitanjaBrojilaWE));
+		ocitanjaBrojilaWE.click();
+		return new OcitanjaBrojila(driver);
+    }
+	
+    public KorekcijeOcitanja navigirajNaKorekcijeOcitanja() throws Exception {
+    	WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(ocitanjaWE));
+		ocitanjaWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(korekcijeOcitanjaWE));
+		korekcijeOcitanjaWE.click();
+		return new KorekcijeOcitanja(driver);
+    }
+    
+    public ImportiOcitanja navigirajNaImportiOcitanja() throws Exception {
+    	WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(ocitanjaWE));
+		ocitanjaWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(importiOcitanjaWE));
+	    importiOcitanjaWE.click();
+		return new ImportiOcitanja(driver);
+    }
+    
+    public IzmijenjenaOcitanja navigirajNaIzmijenjenaOcitanja() throws Exception {
+    	WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(ocitanjaWE));
+		ocitanjaWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(izmijenjenaOcitanjaWE));
+		izmijenjenaOcitanjaWE.click();
+		return new IzmijenjenaOcitanja(driver);
+    }
+    
+    public NevalidnaOcitanja navigirajNaNevalidnaOcitanja() throws Exception {
+    	WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(ocitanjaWE));
+		ocitanjaWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(nevalidnaOcitanjaWE));
+		nevalidnaOcitanjaWE.click();
+		return new NevalidnaOcitanja(driver);
+    }
+    
+    public CitackiHodovi navigirajNaCitackiHodovi() throws Exception {
+    	WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(ocitanjaWE));
+		ocitanjaWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(citackiHodoviWE));
+		citackiHodoviWE.click();
+		return new CitackiHodovi(driver);
+    }
+    
+    public CitackeListe navigirajNaCitackeListe() throws Exception {
+    	WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(ocitanjaWE));
+		ocitanjaWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(citackeListeWE));
+		citackeListeWE.click();
+		return new CitackeListe(driver);
+    }
+    
+    public CitaciPoCitackimHodovima navigirajNaCitaciPoCitackimHodovima() throws Exception {
+    	WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(ocitanjaWE));
+		ocitanjaWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(citaciPoCitackimHodovimaWE));
+	    citaciPoCitackimHodovimaWE.click();
+		return new CitaciPoCitackimHodovima(driver);
+    }
+    
+    public ZbirnaKontrolnaOcitanja navigirajNaZbirnaKontrolnaOcitanja() throws Exception {
+    	WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(ocitanjaWE));
+		ocitanjaWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(zbirnaKontrolnaOcitanjaWE));
+	    zbirnaKontrolnaOcitanjaWE.click();
+		return new ZbirnaKontrolnaOcitanja(driver);
+    }
+    
+    public ZbirnaKontrolnaPotrosnja navigirajNaZbirnaKontrolnaPotrosnja() throws Exception {
+    	WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(ocitanjaWE));
+		ocitanjaWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(zbirnaKontrolnaPotrosnjaWE));
+	    zbirnaKontrolnaPotrosnjaWE.click();
+		return new ZbirnaKontrolnaPotrosnja(driver);
+    }
+    
 	}
