@@ -27,7 +27,6 @@ public class EmailObavjestenja extends PocetnaStranica {
 		wait.until(ExpectedConditions.elementToBeClickable(sekcijaBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(stranicaBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(ukloniFiltereBtnWE));
-		wait.until(ExpectedConditions.elementToBeClickable(preuzmiExcelBtnWE));
 		assertTrue(sekcijaBtnWE.getText().trim().equals("ADMINISTRACIJA"), "EmailObavjestenja: Naziv sekcije nije dobar!");
 		assertTrue(stranicaBtnWE.getText().trim().equals("EMAIL OBAVJEŠTENJA"), "EmailObavjestenja: Naziv stranice nije dobar!");
 		assertTrue(naslovStraniceWE.getText().trim().equals("EMAIL OBAVJEŠTENJA"), "EmailObavjestenja: Naziv stranice nije dobar!");
