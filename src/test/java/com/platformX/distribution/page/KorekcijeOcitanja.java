@@ -41,7 +41,7 @@ public class KorekcijeOcitanja extends PocetnaStranica {
 		wait.until(ExpectedConditions.visibilityOf(infoBtnWE));
 		assertTrue(sekcijaBtnWE.getText().trim().equals("OČITANJA"), "KorekcijeOcitanja: Naziv sekcije nije dobar!");
 		assertTrue(stranicaBtnWE.getText().trim().equals("KOREKCIJE OČITANJA"), "KorekcijeOcitanja: Naziv stranice nije dobar!");
-		assertTrue(naslovStraniceWE.getText().trim().equals("KOREKCIJE OČITANJA"), "KorekcijeOcitanja: Naziv stranice nije dobar!");
+		assertTrue(naslovStranice1WE.getText().trim().equals("KOREKCIJE OČITANJA"), "KorekcijeOcitanja: Naziv stranice nije dobar!");
 		assertTrue(brojKolona().size() == 14, "KorekcijeOcitanja: Broj kolona nije dobar! ");
 	}
 

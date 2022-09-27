@@ -40,7 +40,7 @@ public class IzmijenjenaOcitanja extends PocetnaStranica{
 		wait.until(ExpectedConditions.visibilityOf(infoBtnWE));
 		assertTrue(sekcijaBtnWE.getText().trim().equals("OČITANJA"), "IzmijenjenaOcitanja: Naziv sekcije nije dobar!");
 		assertTrue(stranicaBtnWE.getText().trim().equals("IZMIJENJENA OČITANJA"), "IzmijenjenaOcitanja: Naziv stranice nije dobar!");
-		assertTrue(naslovStraniceWE.getText().trim().equals("IZMIJENJENA OČITANJA"), "IzmijenjenaOcitanja: Naziv stranice nije dobar!");
+		assertTrue(naslovStranice1WE.getText().trim().equals("IZMIJENJENA OČITANJA"), "IzmijenjenaOcitanja: Naziv stranice nije dobar!");
 		assertTrue(brojKolona().size() == 13, "IzmijenjenaOcitanja: Broj kolona nije dobar! ");
 	}
 

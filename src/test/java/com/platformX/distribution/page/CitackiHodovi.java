@@ -33,7 +33,7 @@ public class CitackiHodovi extends PocetnaStranica {
 		wait.until(ExpectedConditions.visibilityOf(osvjeziBtnWE));
 		assertTrue(sekcijaBtnWE.getText().trim().equals("OČITANJA"), "CitackiHodovi: Naziv sekcije nije dobar!");
 		assertTrue(stranicaBtnWE.getText().trim().equals("ČITAČKI HODOVI"), "CitackiHodovi: Naziv stranice nije dobar!");
-		assertTrue(naslovStraniceWE.getText().trim().equals("ČITAČKI HODOV"), "CitackiHodovi: Naziv stranice nije dobar!");
+		assertTrue(naslovStraniceWE.getText().trim().equals("ČITAČKI HODOVI"), "CitackiHodovi: Naziv stranice nije dobar!");
 		assertTrue(brojKolona().size() == 6, "CitackiHodovi: Broj kolona nije dobar! ");
 	}
 }

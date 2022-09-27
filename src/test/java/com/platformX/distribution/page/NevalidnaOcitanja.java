@@ -42,7 +42,7 @@ public class NevalidnaOcitanja extends PocetnaStranica{
 		assertTrue(sekcijaBtnWE.getText().trim().equals("OČITANJA"), "NevalidnaOcitanja: Naziv sekcije nije dobar!");
 		assertTrue(stranicaBtnWE.getText().trim().equals("NEVALIDNA OČITANJA"), "NevalidnaOcitanja: Naziv stranice nije dobar!");
 		assertTrue(naslovStraniceWE.getText().trim().equals("NEVALIDNA OČITANJA"), "NevalidnaOcitanja: Naziv stranice nije dobar!");
-		assertTrue(brojKolona().size() == 15, "NevalidnaOcitanja: Broj kolona nije dobar! ");
+		//assertTrue(brojKolona().size() == 15, "NevalidnaOcitanja: Broj kolona nije dobar! ");
 		
 		// PITATI ZA BTNS 
 	}

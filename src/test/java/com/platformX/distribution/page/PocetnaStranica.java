@@ -313,10 +313,10 @@ public class PocetnaStranica extends PageBase {
 	@FindBy(xpath = "//div[contains(text(), 'Čitači po čitačkim hodovima')]")
     protected WebElement citaciPoCitackimHodovimaWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Zbrina/kontrolna očitanja')]")
+	@FindBy(xpath = "//div[contains(text(), 'Zbirna/kontrolna očitanja')]")
     protected WebElement zbirnaKontrolnaOcitanjaWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Zbrina/kontrolna potrošnja')]")
+	@FindBy(xpath = "//div[contains(text(), 'Zbirna/kontrolna potrošnja')]")
     protected WebElement zbirnaKontrolnaPotrosnjaWE;
 	
 	
@@ -1428,6 +1428,7 @@ public class PocetnaStranica extends PageBase {
     public CitaciPoCitackimHodovima navigirajNaCitaciPoCitackimHodovima() throws Exception {
     	WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(ocitanjaWE));
+		Thread.sleep(5000);
 		ocitanjaWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(citaciPoCitackimHodovimaWE));
 	    citaciPoCitackimHodovimaWE.click();
