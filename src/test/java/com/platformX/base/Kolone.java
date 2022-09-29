@@ -223,6 +223,9 @@ public class Kolone extends PageBase {
 	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Inicirao snabdjevač']")
 	public WebElement kolonaIniciraoSnabdjevacWE;
 	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Novi snabdjevač']")
+	public WebElement kolonaNoviSnabdjevacWE;
+	
 	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Odbijeno']")
 	public WebElement kolonaOdbijenoWE;
 	
@@ -450,6 +453,27 @@ public class Kolone extends PageBase {
 	
 	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Iznos sa PDV']")
 	public WebElement kolonaIznosSaPdvWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Očekivani datum početka ugovora']")
+	public WebElement kolonaOcekivaniDatumPocetkaUgovoraWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Očekivani datum završetka obračunskog ugovora']")
+	public WebElement kolonaOcekivaniDatumZavrsetkaUgovoraWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Datum završetka obračunskog ugovora']")
+	public WebElement kolonaDatumZavrsetkaUgovoraWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Prom. snabd.']")
+	public WebElement kolonaPromSnabdWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Preth. snabd. obav.']")
+	public WebElement kolonaPrethSnabObavWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Preth. snabd. potvr.']")
+	public WebElement kolonaPrethSnabPotvrWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Preth. snabd. odbio']")
+	public WebElement kolonaPrethSnabOdbioWE;
 	
 	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Kamata']")
 	public WebElement kolonaKamataWE;

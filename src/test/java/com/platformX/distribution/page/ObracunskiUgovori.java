@@ -5,8 +5,6 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import com.platformX.base.Kolone;
 
@@ -35,9 +33,9 @@ public class ObracunskiUgovori extends PocetnaStranica {
 		wait.until(ExpectedConditions.elementToBeClickable(preuzmiExcelBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(ukloniFiltereBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(osvjeziBtnWE));
-		assertTrue(sekcijaBtnWE.getText().trim().equals("OBRAČUNSKI UGOVORI"), "ObracunskiUgovori: Naziv sekcije nije dobar!");
+		assertTrue(sekcijaBtnWE.getText().trim().equals("UGOVORI"), "ObracunskiUgovori: Naziv sekcije nije dobar!");
 		assertTrue(stranicaBtnWE.getText().trim().equals("OBRAČUNSKI UGOVORI"), "ObracunskiUgovori: Naziv stranice nije dobar!");
-		assertTrue(naslovStraniceWE.getText().trim().equals("OBRAČUNSKI UGOVORI"), "ObracunskiUgovori: Naziv stranice nije dobar!");
+		assertTrue(naslovStranice1WE.getText().trim().equals("OBRAČUNSKI UGOVORI"), "ObracunskiUgovori: Naziv stranice nije dobar!");
 		assertTrue(brojKolona().size() == 12, "ObracunskiUgovori: Broj kolona nije dobar! ");
 	}
 	

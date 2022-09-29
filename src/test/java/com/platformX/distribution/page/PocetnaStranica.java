@@ -112,6 +112,12 @@ public class PocetnaStranica extends PageBase {
 	@FindBy(xpath = "//div[contains(text(), 'Organizacije')]")
 	protected WebElement organizacijeWE;
 	
+	@FindBy(xpath = "//div[contains(text(), 'Zahtjevi za raskid ugovora')]")
+	protected WebElement zahtjeviZaRaskidUgovoraWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Zahtjevi za obračunske ugovore')]")
+	protected WebElement zahtjeviZaObracunskeUgovoreWE;
+	
 	@FindBy(xpath = "//div[contains(text(), 'Obračunski ugovori')]")
 	protected WebElement obracunskiUgovoriStrWE;
 	
@@ -468,6 +474,24 @@ public class PocetnaStranica extends PageBase {
 		wait.until(ExpectedConditions.elementToBeClickable(organizacijeWE));
 		organizacijeWE.click();
 		return new Organizacije(driver);
+	}
+	
+	public ZahtjeviZaRaskidUgovora navigirajNaZahtjeviZaRaskidUgovora() throws Exception {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(obracunskiUgovoriWE));
+		obracunskiUgovoriWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(zahtjeviZaRaskidUgovoraWE));
+		zahtjeviZaRaskidUgovoraWE.click();
+		return new ZahtjeviZaRaskidUgovora(driver);
+	}
+	
+	public ZahtjeviZaObracunskeUgovore navigirajNaZahtjeviZaUgovore() throws Exception {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(obracunskiUgovoriWE));
+		obracunskiUgovoriWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(zahtjeviZaObracunskeUgovoreWE));
+		zahtjeviZaObracunskeUgovoreWE.click();
+		return new ZahtjeviZaObracunskeUgovore(driver);
 	}
 	
 	public ObracunskiUgovori navigirajNaObracunskiUgovori() throws Exception {
