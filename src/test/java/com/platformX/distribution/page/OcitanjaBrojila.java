@@ -44,8 +44,8 @@ public class OcitanjaBrojila extends PocetnaStranica {
 		assertTrue(sekcijaBtnWE.getText().trim().equals("OČITANJA"), "OcitanjaBrojila: Naziv sekcije nije dobar!");
 		assertTrue(stranicaBtnWE.getText().trim().equals("OČITANJA BROJILA"), "OcitanjaBrojila: Naziv stranice nije dobar!");
 		assertTrue(naslovStranice1WE.getText().trim().equals("OČITANJA BROJILA"), "OcitanjaBrojila: Naziv stranice nije dobar!");
-		//assertTrue(brojKolona().size() == 15, "OcitanjaBrojila: Broj kolona nije dobar! ");
+		assertTrue(brojKolona().size() == 17, "OcitanjaBrojila: Broj kolona nije dobar! ");
 	}
 	
-	// Pitati za lookupe Period, MM, Brojilo, Fizicka lokacija
+	
 }

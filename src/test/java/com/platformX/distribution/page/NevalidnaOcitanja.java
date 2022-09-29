@@ -36,14 +36,14 @@ public class NevalidnaOcitanja extends PocetnaStranica{
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPorukaCitacaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaZbirnoKontrolnoOcitanjeWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaRijesenoWE));
-		//wait.until(ExpectedConditions.visibilityOf(preuzmiExcelBtnWE));
-		//wait.until(ExpectedConditions.visibilityOf(ukloniFiltereBtnWE));
-		//wait.until(ExpectedConditions.visibilityOf(osvjeziBtnWE));
+		wait.until(ExpectedConditions.visibilityOf(preuzmiExcelBtnWE));
+		wait.until(ExpectedConditions.visibilityOf(ukloniFiltereBtnWE));
+		wait.until(ExpectedConditions.visibilityOf(osvjeziBtnWE));
 		assertTrue(sekcijaBtnWE.getText().trim().equals("OČITANJA"), "NevalidnaOcitanja: Naziv sekcije nije dobar!");
 		assertTrue(stranicaBtnWE.getText().trim().equals("NEVALIDNA OČITANJA"), "NevalidnaOcitanja: Naziv stranice nije dobar!");
 		assertTrue(naslovStraniceWE.getText().trim().equals("NEVALIDNA OČITANJA"), "NevalidnaOcitanja: Naziv stranice nije dobar!");
-		//assertTrue(brojKolona().size() == 15, "NevalidnaOcitanja: Broj kolona nije dobar! ");
+		assertTrue(brojKolona().size() == 17, "NevalidnaOcitanja: Broj kolona nije dobar! ");
 		
-		// PITATI ZA BTNS 
+		
 	}
 }

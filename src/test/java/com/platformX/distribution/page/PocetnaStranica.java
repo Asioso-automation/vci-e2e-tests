@@ -319,6 +319,9 @@ public class PocetnaStranica extends PageBase {
 	@FindBy(xpath = "//div[contains(text(), 'Zbirna/kontrolna potrošnja')]")
     protected WebElement zbirnaKontrolnaPotrosnjaWE;
 	
+	@FindBy(xpath = "//div[contains(text(), 'Monitoring očitanja')]")
+    protected WebElement monitoringOcitanjaWE;
+	
 	
 //	
 //	@FindBy(xpath = "//div[contains(text(), 'Energetski obračun')]")
@@ -1452,5 +1455,15 @@ public class PocetnaStranica extends PageBase {
 	    zbirnaKontrolnaPotrosnjaWE.click();
 		return new ZbirnaKontrolnaPotrosnja(driver);
     }
+    
+    public MonitoringOcitanja navigirajNaMonitoringOcitanja() throws Exception {
+    	WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(ocitanjaWE));
+		ocitanjaWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(monitoringOcitanjaWE));
+	    monitoringOcitanjaWE.click();
+		return new MonitoringOcitanja(driver);
+    }
+    
     
 	}

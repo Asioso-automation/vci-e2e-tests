@@ -45,5 +45,5 @@ public class KorekcijeOcitanja extends PocetnaStranica {
 		assertTrue(brojKolona().size() == 14, "KorekcijeOcitanja: Broj kolona nije dobar! ");
 	}
 
-	// Pitati da li se lookup sa napomenom racuna kao kolona
+	
 }

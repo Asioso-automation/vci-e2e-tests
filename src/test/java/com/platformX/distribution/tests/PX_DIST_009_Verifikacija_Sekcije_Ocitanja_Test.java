@@ -11,6 +11,7 @@ import com.platformX.distribution.page.ImportiOcitanja;
 import com.platformX.distribution.page.IzmijenjenaOcitanja;
 import com.platformX.distribution.page.KorekcijeOcitanja;
 import com.platformX.distribution.page.LogIn;
+import com.platformX.distribution.page.MonitoringOcitanja;
 import com.platformX.distribution.page.NevalidnaOcitanja;
 import com.platformX.distribution.page.OcitanjaBrojila;
 import com.platformX.distribution.page.PocetnaStranica;
@@ -19,15 +20,15 @@ import com.platformX.distribution.page.ZbirnaKontrolnaPotrosnja;
 
 
 
-public class PX_DIST_008_Verifikacija_Sekcije_Ocitanja_Test extends BaseTest{
+public class PX_DIST_009_Verifikacija_Sekcije_Ocitanja_Test extends BaseTest{
 
-	public PX_DIST_008_Verifikacija_Sekcije_Ocitanja_Test() throws IOException, FileNotFoundException {
+	public PX_DIST_009_Verifikacija_Sekcije_Ocitanja_Test() throws IOException, FileNotFoundException {
 		super();
 	}
 	
 	@Test (description = "test prolazi kroz sve stranice iz sekcije OCITANJA i verifikuje ih")
 	
-	public void px_dist_008_verifikacija_sekcija_ocitanja_test() throws Exception {
+	public void px_dist_009_verifikacija_sekcija_ocitanja_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
@@ -53,7 +54,8 @@ public class PX_DIST_008_Verifikacija_Sekcije_Ocitanja_Test extends BaseTest{
 		zbirnaKontrolnaOcitanja.verifikujZbirnaKontrolnaOcitanja();
 		ZbirnaKontrolnaPotrosnja zbirnaKontrolnaPotrosnja = pocetna.navigirajNaZbirnaKontrolnaPotrosnja();
 		zbirnaKontrolnaPotrosnja.verifikujZbirnaKontrolnaPotrosnja();
-		
+		MonitoringOcitanja monitoringOcitanja = pocetna.navigirajNaMonitoringOcitanja();
+		monitoringOcitanja.verifikujMonitoringOcitanja();
 		
 	}
 	
