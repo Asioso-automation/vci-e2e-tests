@@ -112,6 +112,9 @@ public class PocetnaStranica extends PageBase {
 	@FindBy(xpath = "//div[contains(text(), 'Organizacije')]")
 	protected WebElement organizacijeWE;
 	
+	@FindBy(xpath = "//div[contains(text(), 'Obračunski ugovori')]")
+	protected WebElement obracunskiUgovoriStrWE;
+	
 	@FindBy(xpath = "//div[contains(text(), 'Zahtjevi za dostavu podataka')]")
 	protected WebElement zahtjeviZaDostavuPodatakaKupciWE;
 	
@@ -465,6 +468,15 @@ public class PocetnaStranica extends PageBase {
 		wait.until(ExpectedConditions.elementToBeClickable(organizacijeWE));
 		organizacijeWE.click();
 		return new Organizacije(driver);
+	}
+	
+	public ObracunskiUgovori navigirajNaObracunskiUgovori() throws Exception {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(obracunskiUgovoriWE));
+		obracunskiUgovoriWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(obracunskiUgovoriStrWE));
+		obracunskiUgovoriStrWE.click();
+		return new ObracunskiUgovori(driver);
 	}
 	
 	public ZahtjeviZaDostavuPodatakaKUPCI navigirajNaZahtjeviZaDostavuPodatakaKUPCI() throws Exception {

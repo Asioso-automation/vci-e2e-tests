@@ -64,6 +64,9 @@ public class Kolone extends PageBase {
 	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Sap mjesto troška']")
 	public WebElement kolonaSapMjestoTroskaWE;
 	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Mj. mjesto (EIC)']")
+	public WebElement kolonaMjMjestoWE;
+	
 	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'ODS']")
 	public WebElement kolonaOdsWE;
 	
@@ -238,8 +241,23 @@ public class Kolone extends PageBase {
 	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Naziv mjm.']")
 	public WebElement kolonaNazivMjmWE;
 	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Naziv mj. mjesta']")
+	public WebElement kolonaNazivMjMjestaWE;
+	
 	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'T.G.']")
 	public WebElement kolonaTGWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Trenutna t.g.']")
+	public WebElement kolonaTrenutnaTGWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Trenutno brojilo']")
+	public WebElement kolonaTrenutnoBrojiloWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Trenutna konst.']")
+	public WebElement kolonaTrenutnaKonstWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Adresa mj. mjesta']")
+	public WebElement kolonaAdresaMjMjestaWE;
 	
 	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Tip']")
 	public WebElement kolonaTipWE;
@@ -459,6 +477,9 @@ public class Kolone extends PageBase {
 	
 	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Naknada za snabdijevanje']")
 	public WebElement kolonaNaknadaZaSnabdijevanjeWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Trenutni snabd.']")
+	public WebElement kolonaTrenutniSnabdWE;
 	
 	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Naknada za snabd.']")
 	public WebElement kolonaNaknadaZaSnabdWE;
