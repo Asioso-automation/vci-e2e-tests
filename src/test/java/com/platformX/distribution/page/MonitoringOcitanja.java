@@ -146,7 +146,7 @@ public class MonitoringOcitanja extends PocetnaStranica {
 		wait.until(ExpectedConditions.visibilityOf(kolonaBrojBrojilaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolonaTrafoStanicaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolonaCitacWE));
-		//assertTrue(brojKolona().size() == 9, "MonitoringOcitanja: Broj kolona nije dobar! ");
+		assertTrue(brojKolona().size() == 108, "MonitoringOcitanja: Broj kolona nije dobar! ");
 		wait.until(ExpectedConditions.visibilityOf(djelimicnoOcitanaBrojilaBtnWE));
 		djelimicnoOcitanaBrojilaBtnWE.click();
 		wait.until(ExpectedConditions.visibilityOf(kolonaObracunskiUgovorWE));
@@ -161,7 +161,7 @@ public class MonitoringOcitanja extends PocetnaStranica {
 		wait.until(ExpectedConditions.visibilityOf(kolonaRvtNeocitanoWE));
 		wait.until(ExpectedConditions.visibilityOf(kolonaRmtNeocitanoWE));
 		wait.until(ExpectedConditions.visibilityOf(kolonaSnagaNeocitanaWE));
-		//assertTrue(brojKolona().size() == 14, "MonitoringOcitanja: Broj kolona nije dobar! ");
+		assertTrue(brojKolona().size() == 108, "MonitoringOcitanja: Broj kolona nije dobar! ");
 		wait.until(ExpectedConditions.visibilityOf(podcitanaBrojilaBtnWE));
 		podcitanaBrojilaBtnWE.click();
 		wait.until(ExpectedConditions.visibilityOf(kolonaObracunskiUgovorWE));
@@ -177,7 +177,7 @@ public class MonitoringOcitanja extends PocetnaStranica {
 		wait.until(ExpectedConditions.visibilityOf(kolonaNovaMtWE));
 		wait.until(ExpectedConditions.visibilityOf(kolonaAktivnoBrojiloWE));
 		wait.until(ExpectedConditions.visibilityOf(kolonaReaktivnoBrojiloWE));
-		//assertTrue(brojKolona().size() == 15, "MonitoringOcitanja: Broj kolona nije dobar! ");
+		assertTrue(brojKolona().size() == 108, "MonitoringOcitanja: Broj kolona nije dobar! ");
 		wait.until(ExpectedConditions.visibilityOf(precitanaBrojilaBtnWE));
 		precitanaBrojilaBtnWE.click();
 		wait.until(ExpectedConditions.visibilityOf(kolonaObracunskiUgovorWE));
@@ -194,7 +194,7 @@ public class MonitoringOcitanja extends PocetnaStranica {
 		wait.until(ExpectedConditions.visibilityOf(kolonaReaktivnoBrojiloWE));
 		wait.until(ExpectedConditions.visibilityOf(kolonaVtResetovanaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolonaMtResetovanaWE));
-		//assertTrue(brojKolona().size() == 16, "MonitoringOcitanja: Broj kolona nije dobar! ");
+		assertTrue(brojKolona().size() == 108, "MonitoringOcitanja: Broj kolona nije dobar! ");
 		wait.until(ExpectedConditions.visibilityOf(natprosjecnaOcitanjaBtnWE));
 		natprosjecnaOcitanjaBtnWE.click();
 		wait.until(ExpectedConditions.visibilityOf(kolonaObracunskiUgovorWE));
@@ -208,7 +208,7 @@ public class MonitoringOcitanja extends PocetnaStranica {
 		wait.until(ExpectedConditions.visibilityOf(kolonaProsjecnaPotrosnjaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolonaAvtWE));
 		wait.until(ExpectedConditions.visibilityOf(kolonaAmtWE));
-		//assertTrue(brojKolona().size() == 13, "MonitoringOcitanja: Broj kolona nije dobar! ");
+		assertTrue(brojKolona().size() == 108, "MonitoringOcitanja: Broj kolona nije dobar! ");
 		wait.until(ExpectedConditions.visibilityOf(duplaOcitanjaBrojilaBtnWE));
 		duplaOcitanjaBrojilaBtnWE.click();
 		wait.until(ExpectedConditions.visibilityOf(kolonaObracunskiUgovorWE));
@@ -223,7 +223,7 @@ public class MonitoringOcitanja extends PocetnaStranica {
 		wait.until(ExpectedConditions.visibilityOf(kolonaRvtWE));
 		wait.until(ExpectedConditions.visibilityOf(kolonaRmtWE));
 		wait.until(ExpectedConditions.visibilityOf(kolonaSnaga1WE));
-		//assertTrue(brojKolona().size() == 14, "MonitoringOcitanja: Broj kolona nije dobar! ");
+		assertTrue(brojKolona().size() == 108, "MonitoringOcitanja: Broj kolona nije dobar! ");
 		wait.until(ExpectedConditions.visibilityOf(nemaPotrosnjeBtnWE));
 		nemaPotrosnjeBtnWE.click();
 		wait.until(ExpectedConditions.visibilityOf(kolonaObracunskiUgovorWE));
@@ -237,7 +237,7 @@ public class MonitoringOcitanja extends PocetnaStranica {
 		wait.until(ExpectedConditions.visibilityOf(kolonaAmtWE));
 		wait.until(ExpectedConditions.visibilityOf(kolonaRvtWE));
 		wait.until(ExpectedConditions.visibilityOf(kolonaRmtWE));
-		//assertTrue(brojKolona().size() == 13, "MonitoringOcitanja: Broj kolona nije dobar! ");
+		assertTrue(brojKolona().size() == 108, "MonitoringOcitanja: Broj kolona nije dobar! ");
 		wait.until(ExpectedConditions.visibilityOf(slideBtnWE));
 		slideBtnWE.click();
 		wait.until(ExpectedConditions.visibilityOf(iskljucenaBrojilaSaPotrosnjomBtnWE));
@@ -258,7 +258,7 @@ public class MonitoringOcitanja extends PocetnaStranica {
 		assertTrue(sekcijaBtnWE.getText().trim().equals("OČITANJA"), "MonitoringOcitanja: Naziv sekcije nije dobar!");
 		assertTrue(stranicaBtnWE.getText().trim().equals("MONITORING OČITANJA"), "MonitoringOcitanja: Naziv stranice nije dobar!");
 		assertTrue(naslovStraniceWE.getText().trim().equals("MONITORING OČITANJA"), "MonitoringOcitanja: Naziv stranice nije dobar!");
-		//assertTrue(brojKolona().size() == 14, "MonitoringOcitanja: Broj kolona nije dobar! ");
+		assertTrue(brojKolona().size() == 108, "MonitoringOcitanja: Broj kolona nije dobar! ");
 	}
 	
 }

@@ -47,6 +47,7 @@ public class PX_DIST_009_Verifikacija_Sekcije_Ocitanja_Test extends BaseTest{
 		CitackiHodovi citackihodovi = pocetna.navigirajNaCitackiHodovi();
 		citackihodovi.verifikujCitackiHodovi();
 		CitackeListe citackeliste = pocetna.navigirajNaCitackeListe();
+		Thread.sleep(3000);
 		citackeliste.verifikujCitackeListe();
 		CitaciPoCitackimHodovima citaciPoCitackimHodovima = pocetna.navigirajNaCitaciPoCitackimHodovima();
 		citaciPoCitackimHodovima.verifikujCitaciPoCitackimHodovima();

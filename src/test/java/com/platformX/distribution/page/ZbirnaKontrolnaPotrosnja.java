@@ -36,9 +36,6 @@ public class ZbirnaKontrolnaPotrosnja extends PocetnaStranica{
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaReaktivnaKorekcijeUPerioduWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAktivnaKorekcijeZaPeriodWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaReaktivnaKorekcijeZaPeriodWE));
-		//wait.until(ExpectedConditions.visibilityOf(preuzmiExcelBtnWE));
-		//wait.until(ExpectedConditions.visibilityOf(ukloniFiltereBtnWE));
-		//wait.until(ExpectedConditions.visibilityOf(osvjeziBtnWE));
 		assertTrue(sekcijaBtnWE.getText().trim().equals("OČITANJA"), "ZbirnaKontrolnaPotrosnja: Naziv sekcije nije dobar!");
 		assertTrue(stranicaBtnWE.getText().trim().equals("ZBIRNA/KONTROLNA POTROŠNJA"), "ZbirnaKontrolnaPotrosnja: Naziv stranice nije dobar!");
 		assertTrue(naslovStraniceWE.getText().trim().equals("ZBIRNA/KONTROLNA POTROŠNJA"), "ZbirnaKontrolnaPotrosnja: Naziv stranice nije dobar!");

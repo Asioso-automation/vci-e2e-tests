@@ -40,6 +40,6 @@ public class CitackeListe  extends PocetnaStranica{
 		assertTrue(sekcijaBtnWE.getText().trim().equals("OČITANJA"), "CitackeListe: Naziv sekcije nije dobar!");
 		assertTrue(stranicaBtnWE.getText().trim().equals("ČITAČKE LISTE"), "CitackeListe: Naziv stranice nije dobar!");
 		assertTrue(naslovStraniceWE.getText().trim().equals("ČITAČKE LISTE"), "CitackeListe: Naziv stranice nije dobar!");
-		//assertTrue(brojKolona().size() == 12, "CitackeListe: Broj kolona nije dobar! ");
+		assertTrue(brojKolona().size() == 12, "CitackeListe: Broj kolona nije dobar! ");
 	}
 }

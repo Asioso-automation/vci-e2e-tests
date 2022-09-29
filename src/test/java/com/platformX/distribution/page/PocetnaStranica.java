@@ -95,7 +95,7 @@ public class PocetnaStranica extends PageBase {
 	@FindBy(xpath = "//*[contains(text(),'Očitanja') and @class='v-btn__content']")
 	protected WebElement ocitanjaWE;
 
-	@FindBy(xpath = "//*[contains(text(),'Obračun') and @class='v-btn__content']")
+	@FindBy(xpath = "//*[text()='Obračun' and @class='v-btn__content']")
 	protected WebElement obracunWE;
 	
 	@FindBy(xpath = "//*[contains(text(),'Administracija') and @class='v-btn__content']")
@@ -331,6 +331,17 @@ public class PocetnaStranica extends PageBase {
 	@FindBy(xpath = "//div[contains(text(), 'Monitoring očitanja')]")
     protected WebElement monitoringOcitanjaWE;
 	
+	@FindBy(xpath = "//div[contains(text(), 'Nalozi za obračun')]")
+    protected WebElement naloziZaObracunWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Korekcije energetskih obračuna')]")
+    protected WebElement korekcijeEnergetskihObracunaWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Mjesečna odobrenja/zaduženja')]")
+    protected WebElement mjesecnaOdobrenjaZaduzenjaWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Korekciona odobrenja/zaduženja')]")
+    protected WebElement korekcionaOdobrenjaZaduzenjaWE;
 	
 //	
 //	@FindBy(xpath = "//div[contains(text(), 'Energetski obračun')]")
@@ -1467,7 +1478,7 @@ public class PocetnaStranica extends PageBase {
     public CitaciPoCitackimHodovima navigirajNaCitaciPoCitackimHodovima() throws Exception {
     	WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(ocitanjaWE));
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 		ocitanjaWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(citaciPoCitackimHodovimaWE));
 	    citaciPoCitackimHodovimaWE.click();
@@ -1501,5 +1512,40 @@ public class PocetnaStranica extends PageBase {
 		return new MonitoringOcitanja(driver);
     }
     
+    public NaloziZaObracun navigirajNaNaloziZaObracun () throws Exception {
+    	WebDriverWait wait = new WebDriverWait(driver, 10);
+    	wait.until(ExpectedConditions.elementToBeClickable(obracunWE));
+		obracunWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(naloziZaObracunWE));
+	    naloziZaObracunWE.click();
+		return new NaloziZaObracun(driver);
+    }
+    
+    public KorekcijeEnergetskihObracuna navigirajNaKorekcijeEnergetskihObracuna () throws Exception {
+    	WebDriverWait wait = new WebDriverWait(driver, 10);
+    	wait.until(ExpectedConditions.elementToBeClickable(obracunWE));
+		obracunWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(korekcijeEnergetskihObracunaWE));
+	    korekcijeEnergetskihObracunaWE.click();
+		return new KorekcijeEnergetskihObracuna(driver);
+    }
+    
+    public MjesecnaOdobrenjaZaduzenja navigirajNaMjesecnaOdobrenjaZaduzenja () throws Exception {
+    	WebDriverWait wait = new WebDriverWait(driver, 10);
+    	wait.until(ExpectedConditions.elementToBeClickable(obracunWE));
+		obracunWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(mjesecnaOdobrenjaZaduzenjaWE));
+	    mjesecnaOdobrenjaZaduzenjaWE.click();
+		return new MjesecnaOdobrenjaZaduzenja(driver);
+    }
+    
+    public KorekcionaOdobrenjaZaduzenja navigirajNaKorekcionaOdobrenjaZaduzenja () throws Exception {
+    	WebDriverWait wait = new WebDriverWait(driver, 10);
+    	wait.until(ExpectedConditions.elementToBeClickable(obracunWE));
+		obracunWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(korekcionaOdobrenjaZaduzenjaWE));
+	    korekcionaOdobrenjaZaduzenjaWE.click();
+		return new KorekcionaOdobrenjaZaduzenja(driver);
+    }
     
 	}

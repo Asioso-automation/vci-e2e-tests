@@ -20,7 +20,7 @@ public class KoristenaBrojila extends PocetnaStranica{
 		public void verifikujKoristenaBrojila()throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
-				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Korištena brojila')]")));
+				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' KoriÅ¡tena brojila')]")));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojBrojilaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojDrzavnePlombeWE));
@@ -35,11 +35,9 @@ public class KoristenaBrojila extends PocetnaStranica{
 		wait.until(ExpectedConditions.visibilityOf(ukloniFiltereBtnWE));
 		wait.until(ExpectedConditions.visibilityOf(osvjeziBtnWE));
 		assertTrue(sekcijaBtnWE.getText().trim().equals("BROJILA"), "KoristenaBrojila: Naziv sekcije nije dobar!");
-		assertTrue(stranicaBtnWE.getText().trim().equals("KORIŠTENA BROJILA"), "KoristenaBrojila: Naziv stranice nije dobar!");
-		assertTrue(naslovStraniceWE.getText().trim().equals("KORIŠTENA BROJILA"), "KoristenaBrojila: Naziv stranice nije dobar!");
-		assertTrue(brojKolona().size() == 11, "KoristenaBrojila: Broj kolona nije dobar! ");
-		
+		assertTrue(stranicaBtnWE.getText().trim().equals("KORIÅ TENA BROJILA"), "KoristenaBrojila: Naziv stranice nije dobar!");
+		assertTrue(naslovStraniceWE.getText().trim().equals("KORIÅ TENA BROJILA"), "KoristenaBrojila: Naziv stranice nije dobar!");
+		assertTrue(brojKolona().size() == 11, "KoristenaBrojila: Broj kolona nije dobar! ");	
 	}
-	
 	
 }

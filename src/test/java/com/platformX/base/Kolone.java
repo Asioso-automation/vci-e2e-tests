@@ -1234,7 +1234,20 @@ public class Kolone extends PageBase {
 	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Prosječna potrošnja']")
 	public WebElement kolonaProsjecnaPotrosnjaWE;
 	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Broj mjernih mjesta']")
+	public WebElement kolonaBrojMjernihMjestaWE;
 	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Broj obračunatih ugovora']")
+	public WebElement kolonaBrojObracunatihUgovoraWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Ukupna energija']")
+	public WebElement kolonaUkupnaEnergijaWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Korigovani period']")
+	public WebElement kolonaKorigovaniPeriodWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Energetski obračun']")
+	public WebElement kolonaEnergetskiObracunWE;
 	
 	// test comment
 	// test comment 2
