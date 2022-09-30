@@ -343,6 +343,15 @@ public class PocetnaStranica extends PageBase {
 	@FindBy(xpath = "//div[contains(text(), 'Korekciona odobrenja/zaduženja')]")
     protected WebElement korekcionaOdobrenjaZaduzenjaWE;
 	
+	@FindBy(xpath = "//div[contains(text(), 'Korisnici')]")
+    protected WebElement korisniciWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Poruke')]")
+    protected WebElement porukeWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Dnevnik izmjena')]")
+    protected WebElement dnevnikIzmjenaWE;
+	
 //	
 //	@FindBy(xpath = "//div[contains(text(), 'Energetski obračun')]")
 //	protected WebElement energetskiObracunWE;
@@ -1546,6 +1555,33 @@ public class PocetnaStranica extends PageBase {
 		wait.until(ExpectedConditions.elementToBeClickable(korekcionaOdobrenjaZaduzenjaWE));
 	    korekcionaOdobrenjaZaduzenjaWE.click();
 		return new KorekcionaOdobrenjaZaduzenja(driver);
+    }
+    
+    public Korisnici navigirajNaKorisnici ()throws Exception {
+    	WebDriverWait wait = new WebDriverWait(driver, 10);
+    	wait.until(ExpectedConditions.elementToBeClickable(administracijaWE));
+		administracijaWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(korisniciWE));
+	    korisniciWE.click();
+		return new Korisnici(driver);
+    }
+    
+    public Poruke navigirajNaPoruke ()throws Exception {
+    	WebDriverWait wait = new WebDriverWait(driver, 10);
+    	wait.until(ExpectedConditions.elementToBeClickable(administracijaWE));
+		administracijaWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(porukeWE));
+	    porukeWE.click();
+		return new Poruke(driver);
+    }
+    
+    public DnevnikIzmjena navigirajNaDnevnikIzmjena ()throws Exception {
+    	WebDriverWait wait = new WebDriverWait(driver, 10);
+    	wait.until(ExpectedConditions.elementToBeClickable(administracijaWE));
+		administracijaWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(dnevnikIzmjenaWE));
+	    dnevnikIzmjenaWE.click();
+		return new DnevnikIzmjena(driver);
     }
     
 	}

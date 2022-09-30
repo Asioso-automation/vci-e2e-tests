@@ -13,15 +13,15 @@ import com.platformX.distribution.page.MjesecnaOdobrenjaZaduzenja;
 import com.platformX.distribution.page.NaloziZaObracun;
 import com.platformX.distribution.page.PocetnaStranica;
 
-public class PX_DIST_010_Verifikacija_Sekcije_Obracun extends BaseTest {
+public class PX_DIST_010_Verifikacija_Sekcije_Obracun_Test extends BaseTest {
 	
-	public PX_DIST_010_Verifikacija_Sekcije_Obracun() throws IOException, FileNotFoundException {
+	public PX_DIST_010_Verifikacija_Sekcije_Obracun_Test() throws IOException, FileNotFoundException {
 		super();
 	}
 	
 	@Test (description = "test prolazi kroz sve stranice iz sekcije OBRACUN i verifikuje ih")
 	
-	public void px_dist_010_verifikacija_sekcija_obracuna_test() throws Exception {
+	public void px_dist_010_verifikacija_sekcija_obracun_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
