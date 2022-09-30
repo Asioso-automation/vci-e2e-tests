@@ -9,6 +9,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import com.platformX.distribution.page.PocetnaStranica;
 import com.platformX.distribution.page.RazlogNeizvrsavanjaZahtjeva;
+import com.platformX.distribution.page.UgovorOPrikljucenju;
 import com.platformX.distribution.page.ZahtjeviZaDostavuPodataka;
 import com.platformX.distribution.page.ZahtjeviZaIskljucenja;
 import com.platformX.distribution.page.ZahtjeviZaUkljucenja;
@@ -77,6 +78,8 @@ public class PX_DIST_005_Verifikacija_Sekcije_Mjerna_Mjesta_Test {
 		kontrolaMjernogMjesta.verifikujKontrolaMjernogMjesta();
 		ElektroenergetskeSaglasnosti elektroenergetskeSaglasnosti = pocetna.navigirajNaElektroenergetskeSaglasnosti();
 		elektroenergetskeSaglasnosti.verifikujElektroenergetskeSaglasnosti();
+		UgovorOPrikljucenju ugovorOPrikljucenju = pocetna.navigirajNaUgovorOPrikljucenju();
+		ugovorOPrikljucenju.verifikujUgovorOPrikljucenju();
 	}
 
 	@AfterTest
