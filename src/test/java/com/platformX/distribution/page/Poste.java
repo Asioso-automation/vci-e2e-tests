@@ -81,7 +81,7 @@ public class Poste extends PocetnaStranica {
 	public String[] dodajPostu() throws InterruptedException {
 		String[] podaci = new String[3];
 		podaci[0] = "Posta "+ Helper.getRandomString(5);
-		podaci[1] = "365";
+		podaci[1] = Helper.getRandomNumber(4);
 		podaci[2] = Helper.getRandomString(5);
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
 		dodajBtnWE.click();

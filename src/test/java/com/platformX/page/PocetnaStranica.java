@@ -64,7 +64,7 @@ public class PocetnaStranica extends PageBase {
 
 	// Sekcije
 
-	@FindBy(xpath = "//button[1]")
+	@FindBy(xpath = "//div[3]/button[1]")
 	protected WebElement sifarniciWE;
 
 	@FindBy(xpath = "//button[2]")
