@@ -268,6 +268,9 @@ public class PocetnaStranica extends PageBase {
 	@FindBy(xpath = "//div[contains(text(), 'Kontrola mjernog mjesta')]")
 	protected WebElement kontrolaMjernogMjestaWE;
 	
+	@FindBy(xpath = "//div[contains(text(), 'Elektroenergetske saglasnosti')]")
+	protected WebElement elektroenergetskeSaglasnostiWE;
+	
 	@FindBy(xpath = "//div[contains(text(), 'Korištena brojila')]")
 	protected WebElement koristenaBrojilaWE;
 	
@@ -826,6 +829,15 @@ public class PocetnaStranica extends PageBase {
 		return new KontrolaMjernogMjesta(driver);
 	}
 
+	public ElektroenergetskeSaglasnosti navigirajNaElektroenergetskeSaglasnosti() throws Exception {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(mjernaMjestaWE));
+		mjernaMjestaWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(elektroenergetskeSaglasnostiWE));
+		elektroenergetskeSaglasnostiWE.click();
+		return new ElektroenergetskeSaglasnosti(driver);
+	}
+	
 //	public PravnaLica navigirajNaPravnaLica() throws Exception {
 //		WebDriverWait wait = new WebDriverWait(driver, 10);
 //		wait.until(ExpectedConditions.elementToBeClickable(kupciWE));
