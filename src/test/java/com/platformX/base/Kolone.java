@@ -298,8 +298,14 @@ public class Kolone extends PageBase {
 	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Mjerno mjesto (EIC)']")
 	public WebElement kolonaMjernoMjestoEicWE;
 	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Nedostupno mjm.']")
+	public WebElement kolonaNedostupnoMjmWE;
+	
 	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Datum kreiranja']")
 	public WebElement kolonaDatumKreiranjaWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Datum završavanja']")
+	public WebElement kolonaDatumZavrsavanjaWE;
 	
 	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Datum IOS-a']")
 	public WebElement kolonaDatumIOSaWE;
@@ -682,6 +688,12 @@ public class Kolone extends PageBase {
 	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Broj protokola']")
 	public WebElement kolonaBrojProtokolaWE;
 	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Po radnom nalogu']")
+	public WebElement kolonaPoRadnomNaloguWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Tip kontrole']")
+	public WebElement kolonaTipKontroleWE;
+	
 	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Zahtijevani datum isključenja']")
 	public WebElement kolonaZahtjevaniDatumIskljucenjaWE;
 	
@@ -807,6 +819,12 @@ public class Kolone extends PageBase {
 	
 	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Fizička lokacija indirektnog mjm.']")
 	public WebElement kolonaFizickaLokacijaIndirektnogMjmWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Razlog kontrole']")
+	public WebElement kolonaRazlogKontroleWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Završena']")
+	public WebElement kolonaZavrsenaWE;
 	
 	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Aktivno']")
 	public WebElement kolonaAktivnoWE;

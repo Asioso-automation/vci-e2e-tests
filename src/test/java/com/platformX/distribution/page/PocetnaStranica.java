@@ -265,6 +265,9 @@ public class PocetnaStranica extends PageBase {
 	@FindBy(xpath = "//div[contains(text(), 'Indirektna mjerna mjesta')]")
 	protected WebElement indirektnaMjernaMjestaWE;
 	
+	@FindBy(xpath = "//div[contains(text(), 'Kontrola mjernog mjesta')]")
+	protected WebElement kontrolaMjernogMjestaWE;
+	
 	@FindBy(xpath = "//div[contains(text(), 'Korištena brojila')]")
 	protected WebElement koristenaBrojilaWE;
 	
@@ -812,6 +815,15 @@ public class PocetnaStranica extends PageBase {
 		wait.until(ExpectedConditions.elementToBeClickable(indirektnaMjernaMjestaWE));
 		indirektnaMjernaMjestaWE.click();
 		return new IndirektnaMjernaMjesta(driver);
+	}
+	
+	public KontrolaMjernogMjesta navigirajNaKontrolaMjernogMjesta() throws Exception {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(mjernaMjestaWE));
+		mjernaMjestaWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(kontrolaMjernogMjestaWE));
+		kontrolaMjernogMjestaWE.click();
+		return new KontrolaMjernogMjesta(driver);
 	}
 
 //	public PravnaLica navigirajNaPravnaLica() throws Exception {

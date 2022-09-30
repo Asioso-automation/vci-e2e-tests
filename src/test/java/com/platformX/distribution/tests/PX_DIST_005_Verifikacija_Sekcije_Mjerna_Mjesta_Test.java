@@ -16,6 +16,7 @@ import com.platformX.distribution.page.ZbirnaKontrolnaMjernaMjesta;
 import com.platformX.distribution.page.AktivnaIskljucenjaMjernihMjesta;
 import com.platformX.distribution.page.EnergetskaKartica;
 import com.platformX.distribution.page.IndirektnaMjernaMjesta;
+import com.platformX.distribution.page.KontrolaMjernogMjesta;
 import com.platformX.distribution.page.LogIn;
 import com.platformX.distribution.page.MjernaMjesta;
 
@@ -71,6 +72,8 @@ public class PX_DIST_005_Verifikacija_Sekcije_Mjerna_Mjesta_Test {
 		aktivnaIskljucenjaMjernihMjesta.verifikujAktivnaIskljucenjaMjernihMjesta();
 		IndirektnaMjernaMjesta indirektnaMjernaMjesta = pocetna.navigirajNaIndirektnaMjernaMjesta();
 		indirektnaMjernaMjesta.verifikujIndirektnaMjernaMjesta();
+		KontrolaMjernogMjesta kontrolaMjernogMjesta = pocetna.navigirajNaKontrolaMjernogMjesta();
+		kontrolaMjernogMjesta.verifikujKontrolaMjernogMjesta();
 	}
 
 	@AfterTest
