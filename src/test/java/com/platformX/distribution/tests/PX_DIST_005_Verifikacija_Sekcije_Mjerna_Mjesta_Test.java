@@ -15,6 +15,7 @@ import com.platformX.distribution.page.ZahtjeviZaIskljucenja;
 import com.platformX.distribution.page.ZahtjeviZaUkljucenja;
 import com.platformX.distribution.page.ZbirnaKontrolnaMjernaMjesta;
 import com.platformX.distribution.page.AktivnaIskljucenjaMjernihMjesta;
+import com.platformX.distribution.page.DeklaracijaOPrikljucku;
 import com.platformX.distribution.page.ElektroenergetskeSaglasnosti;
 import com.platformX.distribution.page.EnergetskaKartica;
 import com.platformX.distribution.page.IndirektnaMjernaMjesta;
@@ -80,6 +81,8 @@ public class PX_DIST_005_Verifikacija_Sekcije_Mjerna_Mjesta_Test {
 		elektroenergetskeSaglasnosti.verifikujElektroenergetskeSaglasnosti();
 		UgovorOPrikljucenju ugovorOPrikljucenju = pocetna.navigirajNaUgovorOPrikljucenju();
 		ugovorOPrikljucenju.verifikujUgovorOPrikljucenju();
+		DeklaracijaOPrikljucku deklaracijaOPrikljucku = pocetna.navigirajNaDeklaracijaOPrikljucku();
+		deklaracijaOPrikljucku.verifikujDeklaracijaOPrikljucku();
 	}
 
 	@AfterTest

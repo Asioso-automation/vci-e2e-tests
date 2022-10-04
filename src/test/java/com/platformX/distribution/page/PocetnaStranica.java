@@ -274,6 +274,9 @@ public class PocetnaStranica extends PageBase {
 	@FindBy(xpath = "//div[contains(text(), 'Ugovor o priključenju')]")
 	protected WebElement ugovorOPrikljucenjuWE;
 	
+	@FindBy(xpath = "//div[contains(text(), 'Deklaracija o priključku')]")
+	protected WebElement deklaracijaOPrikljuckuWE;
+	
 	@FindBy(xpath = "//div[contains(text(), 'Korištena brojila')]")
 	protected WebElement koristenaBrojilaWE;
 	
@@ -848,6 +851,15 @@ public class PocetnaStranica extends PageBase {
 		wait.until(ExpectedConditions.elementToBeClickable(ugovorOPrikljucenjuWE));
 		ugovorOPrikljucenjuWE.click();
 		return new UgovorOPrikljucenju(driver);
+	}
+	
+	public DeklaracijaOPrikljucku navigirajNaDeklaracijaOPrikljucku() throws Exception {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(mjernaMjestaWE));
+		mjernaMjestaWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(deklaracijaOPrikljuckuWE));
+		deklaracijaOPrikljuckuWE.click();
+		return new DeklaracijaOPrikljucku(driver);
 	}
 	
 //	public PravnaLica navigirajNaPravnaLica() throws Exception {
