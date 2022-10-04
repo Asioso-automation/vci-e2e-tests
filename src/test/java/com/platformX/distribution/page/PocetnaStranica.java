@@ -174,6 +174,33 @@ public class PocetnaStranica extends PageBase {
 	
 	@FindBy(xpath = "//div[contains(text(), 'Vlasništva')]")
 	protected WebElement vlasnistvaWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Načini polaganja instalacija')]")
+	protected WebElement naciniPolaganjaInstalacijaWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Nazivna struja')]")
+	protected WebElement nazivnaStrujaWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Materijali ormarića brojila')]")
+	protected WebElement materijaliOrmaricaBrojilaWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Lokacije mjernih mjesta')]")
+	protected WebElement lokacijeMjernihMjestaWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Tipovi mjernih mostova')]")
+	protected WebElement tipoviMjernihMostovaWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Tipovi izolacija')]")
+	protected WebElement tipoviIzolacijaWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Mjesta priključenja')]")
+	protected WebElement mjestaPrikljucenjaWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Presjeci voda')]")
+	protected WebElement presjeciVodaWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Materijali provodnika')]")
+	protected WebElement materijaliProvodnikaWE;
 
 	@FindBy(xpath = "//div[contains(text(), 'Kategorije potrošnje')]")
 	protected WebElement kategorijePotrosnjeWE;
@@ -699,7 +726,89 @@ public class PocetnaStranica extends PageBase {
 		vlasnistvaWE.click();
 		return new Vlasnistva(driver);
 	}
+	
+	public NaciniPolaganjaInstalacija navigirajNaNaciniPolaganjaInstalacija() throws Exception {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(sifarniciWE));
+		sifarniciWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(naciniPolaganjaInstalacijaWE));
+		naciniPolaganjaInstalacijaWE.click();
+		return new NaciniPolaganjaInstalacija(driver);
+	}
+	
+	public NazivnaStruja navigirajNaNazivnaStruja() throws Exception {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(sifarniciWE));
+		sifarniciWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(nazivnaStrujaWE));
+		nazivnaStrujaWE.click();
+		return new NazivnaStruja(driver);
+	}
+	
+	public MaterijaliOrmaricaBrojila navigirajNaMaterijaliOrmaricaBrojila() throws Exception {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(sifarniciWE));
+		sifarniciWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(materijaliOrmaricaBrojilaWE));
+		materijaliOrmaricaBrojilaWE.click();
+		return new MaterijaliOrmaricaBrojila(driver);
+	}
+	
+	public LokacijeMjernihMjesta navigirajNaLokacijeMjernihMjesta() throws Exception {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(sifarniciWE));
+		sifarniciWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(lokacijeMjernihMjestaWE));
+		lokacijeMjernihMjestaWE.click();
+		return new LokacijeMjernihMjesta(driver);
+	}
+	
+	public TipoviMjernihMostova navigirajNaTipoviMjernihMostova() throws Exception {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(sifarniciWE));
+		sifarniciWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(tipoviMjernihMostovaWE));
+		tipoviMjernihMostovaWE.click();
+		return new TipoviMjernihMostova(driver);
+	}
+	
+	public TipoviIzolacija navigirajNaTipoviIzolacija() throws Exception {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(sifarniciWE));
+		sifarniciWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(tipoviIzolacijaWE));
+		tipoviIzolacijaWE.click();
+		return new TipoviIzolacija(driver);
+	}
+	
+	public MjestaPrikljucenja navigirajNaMjestaPrikljucenja() throws Exception {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(sifarniciWE));
+		sifarniciWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(mjestaPrikljucenjaWE));
+		mjestaPrikljucenjaWE.click();
+		return new MjestaPrikljucenja(driver);
+	}
 
+	public PresjeciVoda navigirajNaPresjeciVoda() throws Exception {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(sifarniciWE));
+		sifarniciWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(presjeciVodaWE));
+		presjeciVodaWE.click();
+		return new PresjeciVoda(driver);
+	}
+	
+	public MaterijaliProvodnika navigirajNaMaterijaliProvodnika() throws Exception {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(sifarniciWE));
+		sifarniciWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(materijaliProvodnikaWE));
+		materijaliProvodnikaWE.click();
+		return new MaterijaliProvodnika(driver);
+	}
+	
+	
 	public KategorijePotrosnje navigirajNaKategorijePotrosnje() throws Exception {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(tarifniSistemWE));
@@ -1643,5 +1752,6 @@ public class PocetnaStranica extends PageBase {
 	    dnevnikIzmjenaWE.click();
 		return new DnevnikIzmjena(driver);
     }
+    
     
 	}
