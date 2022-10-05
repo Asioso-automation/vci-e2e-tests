@@ -653,19 +653,19 @@ INSERT [TariffSystem].[Season] ([Id], [Name], [DateFrom], [DateTo]) VALUES (N'W'
 
 SET IDENTITY_INSERT [TariffSystem].[TariffGroup] ON 
 
-INSERT [TariffSystem].[TariffGroup] ([Id], [CategoryOfConsumptionId], [TariffSuperGroupId], [ContractNumberTemplateGroupId], [Name], [Reactive], [Maxigraf], [MeterTypeId], [EbixCode],[CalculationTypeId]) VALUES (1, 1, 1, 1, N'Tarifna grupa 1', 1, 1, 4, '1',1)
-INSERT [TariffSystem].[TariffGroup] ([Id], [CategoryOfConsumptionId], [TariffSuperGroupId], [ContractNumberTemplateGroupId], [Name], [Reactive], [Maxigraf], [MeterTypeId], [EbixCode],[CalculationTypeId]) VALUES (19, 1, 1, 1, N'Tarifna grupa 2', 1, 0, 4, '2',1)
-INSERT [TariffSystem].[TariffGroup] ([Id], [CategoryOfConsumptionId], [TariffSuperGroupId], [ContractNumberTemplateGroupId], [Name], [Reactive], [Maxigraf], [MeterTypeId], [EbixCode],[CalculationTypeId]) VALUES (23, 21, 17, 1, N'Tarifna grupa 3', 0, 0, 4, '3',1)
+INSERT [TariffSystem].[TariffGroup] ([Id], [CategoryOfConsumptionId], [TariffSuperGroupId], [ContractNumberTemplateGroupId], [Name], [Reactive], [Maxigraf], [MeterTypeId], [EbixCode]) VALUES (1, 1, 1, 1, N'Tarifna grupa 1', 1, 1, 4, '1')
+INSERT [TariffSystem].[TariffGroup] ([Id], [CategoryOfConsumptionId], [TariffSuperGroupId], [ContractNumberTemplateGroupId], [Name], [Reactive], [Maxigraf], [MeterTypeId], [EbixCode]) VALUES (19, 1, 1, 1, N'Tarifna grupa 2', 1, 0, 4, '2')
+INSERT [TariffSystem].[TariffGroup] ([Id], [CategoryOfConsumptionId], [TariffSuperGroupId], [ContractNumberTemplateGroupId], [Name], [Reactive], [Maxigraf], [MeterTypeId], [EbixCode]) VALUES (23, 21, 17, 1, N'Tarifna grupa 3', 0, 0, 4, '3')
 
 SET IDENTITY_INSERT [TariffSystem].[TariffGroup] OFF
 
 
 SET IDENTITY_INSERT [TariffSystem].[TariffItem] ON 
 
-INSERT [TariffSystem].[TariffItem] ([Id], [Description], [MeasureUnit], [Valid]) VALUES (1, N'Aht', N'kW', 1)
-INSERT [TariffSystem].[TariffItem] ([Id], [Description], [MeasureUnit], [Valid]) VALUES (2, N'Alt', N'kW', 1)
-INSERT [TariffSystem].[TariffItem] ([Id], [Description], [MeasureUnit], [Valid]) VALUES (3, N'Rht', N'kW', 1)
-INSERT [TariffSystem].[TariffItem] ([Id], [Description], [MeasureUnit], [Valid]) VALUES (4, N'Rlt', N'kW', 1)
+INSERT [TariffSystem].[TariffItem] ([Id], [Description], [MeasureUnit], [Valid],[CalculationTypeId]) VALUES (1, N'Aht', N'kW', 1,1)
+INSERT [TariffSystem].[TariffItem] ([Id], [Description], [MeasureUnit], [Valid],[CalculationTypeId]) VALUES (2, N'Alt', N'kW', 1,1)
+INSERT [TariffSystem].[TariffItem] ([Id], [Description], [MeasureUnit], [Valid],[CalculationTypeId]) VALUES (3, N'Rht', N'kW', 1,1)
+INSERT [TariffSystem].[TariffItem] ([Id], [Description], [MeasureUnit], [Valid],[CalculationTypeId]) VALUES (4, N'Rlt', N'kW', 1,1)
 
 SET IDENTITY_INSERT [TariffSystem].[TariffItem] OFF
 
