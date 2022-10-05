@@ -29,7 +29,7 @@ public class PX_DIST_011_Verifikacija_Sekcije_Administracija_Test  extends BaseT
 		Korisnici korisnici = pocetna.navigirajNaKorisnici();
 		korisnici.verifikujKorisnici();
 		Poruke poruke = pocetna.navigirajNaPoruke();
-		poruke.navigirajNaPoruke();
+		poruke.verifikujPoruke();
 		DnevnikIzmjena dnevnikIzmjena = pocetna.navigirajNaDnevnikIzmjena();
 		dnevnikIzmjena.verifikujDnevnikIzmjena();
 	}
