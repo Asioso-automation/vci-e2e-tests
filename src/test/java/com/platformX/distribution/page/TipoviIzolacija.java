@@ -27,7 +27,7 @@ public class TipoviIzolacija extends PocetnaStranica{
 		wait.until(ExpectedConditions.elementToBeClickable(preuzmiExcelBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(ukloniFiltereBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(osvjeziBtnWE));
-		assertTrue(sekcijaBtnWE.getText().trim().equals("Å IFARNICI"), "TipoviIzolacija: Naziv sekcije nije dobar!");
+		assertTrue(sekcijaBtnWE.getText().trim().equals("ŠIFARNICI"), "TipoviIzolacija: Naziv sekcije nije dobar!");
 		assertTrue(stranicaBtnWE.getText().trim().equals("TIPOVI IZOLACIJA"), "TipoviIzolacija: Naziv stranice nije dobar!");
 		assertTrue(naslovStraniceWE.getText().trim().equals("TIPOVI IZOLACIJA"), "TipoviIzolacija: Naziv stranice nije dobar!");
 		assertTrue(brojKolona().size() == 3, "TipoviIzolacija: Broj kolona nije dobar! ");

@@ -530,11 +530,16 @@ public class PocetnaStranica extends PageBase {
 	}
 
 	public Organizacije navigirajNaOrganizacije() throws Exception {
+		try {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(sifarniciWE));
 		sifarniciWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(organizacijeWE));
 		organizacijeWE.click();
+		}
+		catch (Exception e) {
+			driver.get(platformx_properties.getValue("URL.DIST.LOGIN") + platformx_properties.getValue("ORGANIZACIJE"));
+		}
 		return new Organizacije(driver);
 	}
 	

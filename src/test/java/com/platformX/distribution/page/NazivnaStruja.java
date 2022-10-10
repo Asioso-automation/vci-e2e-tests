@@ -27,7 +27,7 @@ public class NazivnaStruja extends PocetnaStranica{
 		wait.until(ExpectedConditions.elementToBeClickable(preuzmiExcelBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(ukloniFiltereBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(osvjeziBtnWE));
-		assertTrue(sekcijaBtnWE.getText().trim().equals("Å IFARNICI"), "NazivnaStruja: Naziv sekcije nije dobar!");
+		assertTrue(sekcijaBtnWE.getText().trim().equals("ŠIFARNICI"), "NazivnaStruja: Naziv sekcije nije dobar!");
 		assertTrue(stranicaBtnWE.getText().trim().equals("NAZIVNA STRUJA"), "NazivnaStruja: Naziv stranice nije dobar!");
 		assertTrue(naslovStraniceWE.getText().trim().equals("NAZIVNA STRUJA"), "NazivnaStruja: Naziv stranice nije dobar!");
 		assertTrue(brojKolona().size() == 3, "NazivnaStruja: Broj kolona nije dobar! ");

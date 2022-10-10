@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-10-04T13:02:13Z" name="Default suite" finished-at="2022-10-04T13:03:04Z" duration-ms="51395">
+  <suite name="Default suite" duration-ms="19989" started-at="2022-10-10T07:04:05Z" finished-at="2022-10-10T07:04:25Z">
     <groups>
     </groups>
-    <test started-at="2022-10-04T13:02:13Z" name="Default test" finished-at="2022-10-04T13:03:04Z" duration-ms="51395">
-      <class name="com.platformX.distribution.tests.PX_DIST_003_Verifikacija_Sekcije_Sifarnici_Test">
-        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:com.platformX.distribution.tests.PX_DIST_003_Verifikacija_Sekcije_Sifarnici_Test@336f1079]" started-at="2022-10-04T15:02:13Z" name="setUp" finished-at="2022-10-04T15:02:23Z" duration-ms="10139" status="PASS">
+    <test name="Default test" duration-ms="19989" started-at="2022-10-10T07:04:05Z" finished-at="2022-10-10T07:04:25Z">
+      <class name="com.platformX.distribution.tests.PX_DIST_011_Verifikacija_Sekcije_Administracija_Test">
+        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.platformX.distribution.tests.PX_DIST_011_Verifikacija_Sekcije_Administracija_Test@3967e60c]" name="setUp" is-config="true" duration-ms="5349" started-at="2022-10-10T09:04:05Z" finished-at="2022-10-10T09:04:10Z">
           <params>
             <param index="0">
               <value>
@@ -18,15 +18,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="px_dist_003_verifikacije_sekcije_sifarnici_test()[pri:0, instance:com.platformX.distribution.tests.PX_DIST_003_Verifikacija_Sekcije_Sifarnici_Test@336f1079]" started-at="2022-10-04T15:02:23Z" name="px_dist_003_verifikacije_sekcije_sifarnici_test" description="test prolazi kroz sve stranice iz sekcije �IFARNICI i verifikuje ih" finished-at="2022-10-04T15:03:04Z" duration-ms="41014" status="PASS">
+        <test-method status="PASS" signature="px_dist_011_verifikacija_sekcija_administracija_test()[pri:0, instance:com.platformX.distribution.tests.PX_DIST_011_Verifikacija_Sekcije_Administracija_Test@3967e60c]" name="px_dist_011_verifikacija_sekcija_administracija_test" duration-ms="13923" started-at="2022-10-10T09:04:10Z" description="test prolazi kroz sve stranice iz sekcije ADMINISTRACIJA i verifikuje ih" finished-at="2022-10-10T09:04:24Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- px_dist_003_verifikacije_sekcije_sifarnici_test -->
-        <test-method is-config="true" signature="cleanUp()[pri:0, instance:com.platformX.distribution.tests.PX_DIST_003_Verifikacija_Sekcije_Sifarnici_Test@336f1079]" started-at="2022-10-04T15:03:04Z" name="cleanUp" finished-at="2022-10-04T15:03:04Z" duration-ms="202" status="PASS">
+        </test-method> <!-- px_dist_011_verifikacija_sekcija_administracija_test -->
+        <test-method status="PASS" signature="cleanUp()[pri:0, instance:com.platformX.distribution.tests.PX_DIST_011_Verifikacija_Sekcije_Administracija_Test@3967e60c]" name="cleanUp" is-config="true" duration-ms="703" started-at="2022-10-10T09:04:24Z" finished-at="2022-10-10T09:04:25Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- cleanUp -->
-      </class> <!-- com.platformX.distribution.tests.PX_DIST_003_Verifikacija_Sekcije_Sifarnici_Test -->
+      </class> <!-- com.platformX.distribution.tests.PX_DIST_011_Verifikacija_Sekcije_Administracija_Test -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

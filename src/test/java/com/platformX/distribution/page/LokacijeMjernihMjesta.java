@@ -27,7 +27,7 @@ public class LokacijeMjernihMjesta extends PocetnaStranica{
 		wait.until(ExpectedConditions.elementToBeClickable(preuzmiExcelBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(ukloniFiltereBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(osvjeziBtnWE));
-		assertTrue(sekcijaBtnWE.getText().trim().equals("Å IFARNICI"), "LokacijeMjernihMjesta: Naziv sekcije nije dobar!");
+		assertTrue(sekcijaBtnWE.getText().trim().equals("ŠIFARNICI"), "LokacijeMjernihMjesta: Naziv sekcije nije dobar!");
 		assertTrue(stranicaBtnWE.getText().trim().equals("LOKACIJE MJERNIH MJESTA"), "LokacijeMjernihMjesta: Naziv stranice nije dobar!");
 		assertTrue(naslovStraniceWE.getText().trim().equals("LOKACIJE MJERNIH MJESTA"), "LokacijeMjernihMjesta: Naziv stranice nije dobar!");
 		assertTrue(brojKolona().size() == 3, "LokacijeMjernihMjesta: Broj kolona nije dobar! ");

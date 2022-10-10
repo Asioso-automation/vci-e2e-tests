@@ -32,5 +32,6 @@ public class PX_DIST_011_Verifikacija_Sekcije_Administracija_Test  extends BaseT
 		poruke.verifikujPoruke();
 		DnevnikIzmjena dnevnikIzmjena = pocetna.navigirajNaDnevnikIzmjena();
 		dnevnikIzmjena.verifikujDnevnikIzmjena();
+		// TODO PozadinskiProcesi
 	}
 }

@@ -19,6 +19,7 @@ public class Korisnici extends PocetnaStranica{
 
 	public void verifikujKorisnici()throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Korisnici')]")));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));

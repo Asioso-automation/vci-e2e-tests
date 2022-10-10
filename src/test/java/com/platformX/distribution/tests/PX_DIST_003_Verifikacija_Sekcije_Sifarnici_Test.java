@@ -1,9 +1,12 @@
 package com.platformX.distribution.tests;
 
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import com.platformX.base.BaseTest;
 import com.platformX.distribution.page.PocetnaStranica;
 import com.platformX.distribution.page.Poste;
 import com.platformX.distribution.page.PresjeciVoda;
@@ -32,14 +35,35 @@ import com.platformX.distribution.page.Djelatnosti;
 import com.platformX.distribution.page.Entiteti;
 import com.platformX.distribution.page.FizickeLokacije;
 
-public class PX_DIST_003_Verifikacija_Sekcije_Sifarnici_Test extends BaseTest {
+public class PX_DIST_003_Verifikacija_Sekcije_Sifarnici_Test {
 
 	public PX_DIST_003_Verifikacija_Sekcije_Sifarnici_Test() throws IOException, FileNotFoundException {
 		super();
 	}
+	
+	private WebDriver driver;
+	private final String PLATFORMX_PROPERTIES = "platformx.properties";
 
-	@Test (description="test prolazi kroz sve stranice iz sekcije �IFARNICI i verifikuje ih")
+	@Test (description="test prolazi kroz sve stranice iz sekcije SIFARNICI i verifikuje ih")
 	public void px_dist_003_verifikacije_sekcije_sifarnici_test() throws Exception {
+		
+		try {
+			System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver.exe");
+			ChromeOptions options = new ChromeOptions();
+			options.addArguments("--start-maximized");
+			options.addArguments("incognito");
+			options.addArguments("chrome.switches", "--disable-extensions");
+			driver = new ChromeDriver(options);
+		} catch (Exception e) {
+			System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver.exe");
+			ChromeOptions options = new ChromeOptions();
+			options.setBinary("C://Program Files//Google//Chrome//Application//chrome.exe");
+			options.addArguments("--start-maximized");
+			options.addArguments("incognito");
+			options.addArguments("chrome.switches", "--disable-extensions");
+			driver = new ChromeDriver(options);
+		}
+		
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
@@ -95,6 +119,10 @@ public class PX_DIST_003_Verifikacija_Sekcije_Sifarnici_Test extends BaseTest {
 		presjeciVoda.verifikujPresjeciVoda();
 		MaterijaliProvodnika materijaliProvodnika = pocetna.navigirajNaMaterijaliProvodnika();
 		materijaliProvodnika.verifikujMaterijaliProvodnika();
+	}
+	@AfterTest
+	public void terminateBrowser() {
+		driver.quit();
 	}
 	
 }

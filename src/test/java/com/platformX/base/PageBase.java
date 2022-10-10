@@ -38,6 +38,9 @@ public class PageBase {
 	@FindBy(xpath = "//tr[2]/td")
 	protected WebElement praznaTabelaWE;
 	
+	@FindBy(xpath = "//*[contains(text(),'Obrada u toku...') and @class='title']")
+	protected WebElement obradaModalWE;
+	
 
 	protected Select select(WebElement webElement, String name) {
 		Select selectedElement = new Select(webElement);

@@ -27,7 +27,7 @@ public class MaterijaliProvodnika extends PocetnaStranica{
 		wait.until(ExpectedConditions.elementToBeClickable(preuzmiExcelBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(ukloniFiltereBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(osvjeziBtnWE));
-		assertTrue(sekcijaBtnWE.getText().trim().equals("Å IFARNICI"), "PMaterijaliProvodnika: Naziv sekcije nije dobar!");
+		assertTrue(sekcijaBtnWE.getText().trim().equals("ŠIFARNICI"), "PMaterijaliProvodnika: Naziv sekcije nije dobar!");
 		assertTrue(stranicaBtnWE.getText().trim().equals("MATERIJALI PROVODNIKA"), "MaterijaliProvodnika: Naziv stranice nije dobar!");
 		assertTrue(naslovStraniceWE.getText().trim().equals("MATERIJALI PROVODNIKA"), "MaterijaliProvodnika: Naziv stranice nije dobar!");
 		assertTrue(brojKolona().size() == 3, "MaterijaliProvodnika: Broj kolona nije dobar! ");

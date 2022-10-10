@@ -19,6 +19,7 @@ public class Poruke extends PocetnaStranica{
 
 	public void verifikujPoruke()throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Poruke')]")));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
@@ -33,6 +34,7 @@ public class Poruke extends PocetnaStranica{
 		assertTrue(sekcijaBtnWE.getText().trim().equals("ADMINISTRACIJA"), "Poruke: Naziv sekcije nije dobar!");
 		assertTrue(stranicaBtnWE.getText().trim().equals("PORUKE"), "Poruke: Naziv stranice nije dobar!");
 		assertTrue(naslovStraniceWE.getText().trim().equals("PORUKE"), "Poruke: Naziv stranice nije dobar!");
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		assertTrue(brojKolona().size() == 8, "Poruke: Broj kolona nije dobar! ");
 	}
 }
