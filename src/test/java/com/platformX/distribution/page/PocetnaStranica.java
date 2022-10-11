@@ -71,6 +71,9 @@ public class PocetnaStranica extends PageBase {
 	
 	@FindBy(xpath = "//i[contains(@class, 'fa-angle-double-right')]")
 	protected WebElement dodajSveBtnWE;
+	
+	@FindBy(xpath = "//button[@type='submit']")
+	protected WebElement dodajSifarniciBtnWE;			// dodaj button na formama za dodavanje sifarnika
 
 //	 Sekcije
 
