@@ -36,10 +36,10 @@ public class RacuniZaNestandardneUsluge extends PocetnaStranica {
 		wait.until(ExpectedConditions.elementToBeClickable(preuzmiExcelBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(ukloniFiltereBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(osvjeziBtnWE));
-		assertTrue(sekcijaBtnWE.getText().trim().equals("OBRAČUN"), "Racuni: Naziv sekcije nije dobar!");
+		assertTrue(sekcijaBtnWE.getText().trim().equals("NESTANDARDNE USLUGE"), "Racuni: Naziv sekcije nije dobar!");
 		assertTrue(stranicaBtnWE.getText().trim().equals("RAČUNI ZA NESTANDARDNE USLUGE"), "RacuniZaNestandardneUsluge: Naziv stranice nije dobar!");
 		assertTrue(naslovStraniceWE.getText().trim().equals("RAČUNI ZA NESTANDARDNE USLUGE"), "RacuniZaNestandardneUsluge: Naziv stranice nije dobar!");
-		assertTrue(brojKolona().size() == 12, "RacuniZaNestandardneUsluge: Broj kolona nije dobar! ");
+		assertTrue(brojKolona().size() == 14, "RacuniZaNestandardneUsluge: Broj kolona nije dobar! ");
 	}
 
 }

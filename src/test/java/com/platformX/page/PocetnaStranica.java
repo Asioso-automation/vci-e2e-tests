@@ -78,6 +78,9 @@ public class PocetnaStranica extends PageBase {
 
 	@FindBy(xpath = "//button[5]")
 	protected WebElement obracunWE;
+	
+	@FindBy(xpath = "//*[contains(text(),'Nestandardne usluge') and @class='v-btn__content']")
+	protected WebElement nestandardneUslugeWE;
 
 	@FindBy(xpath = "//button[6]")
 	protected WebElement finansijeWE;
@@ -335,6 +338,9 @@ public class PocetnaStranica extends PageBase {
 	
 	@FindBy(xpath = "//div[contains(text(), 'Email obavještenja')]")
 	protected WebElement emailObavjestenjaWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Predračuni')]")
+	protected WebElement predracuniWE;
 	
 
 	public void verifikujPocetnuStranicu() throws InterruptedException {
@@ -1077,6 +1083,33 @@ public class PocetnaStranica extends PageBase {
 		wait.until(ExpectedConditions.elementToBeClickable(emailObavjestenjaWE));
 		emailObavjestenjaWE.click();
 		return new EmailObavjestenja(driver);
+	}
+	
+	public NaloziZaObracunNestandardnihUsluga navigirajNaNaloziZaObracunNestandardnihUsluga() throws Exception {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(nestandardneUslugeWE));
+		nestandardneUslugeWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(naloziZaObracunWE));
+		naloziZaObracunWE.click();
+		return new NaloziZaObracunNestandardnihUsluga(driver);
+	}
+	
+	public KorekcijeRacunaZaNestandardneUsluge navigirajNaKorekcijeRacunaZaNestandardneUsluge() throws Exception {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(nestandardneUslugeWE));
+		nestandardneUslugeWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(korekcijeRacunaWE));
+		korekcijeRacunaWE.click();
+		return new KorekcijeRacunaZaNestandardneUsluge(driver);
+	}
+	
+	public Predracuni navigirajNaPredracuni() throws Exception{
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(nestandardneUslugeWE));
+		nestandardneUslugeWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(predracuniWE));
+		predracuniWE.click();
+		return new Predracuni(driver);
 	}
 	
 	public Izvjestaji navigirajNaIzvjestaji() throws Exception {
