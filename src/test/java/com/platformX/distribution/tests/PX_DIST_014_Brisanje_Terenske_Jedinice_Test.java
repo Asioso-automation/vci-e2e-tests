@@ -14,18 +14,18 @@ public class PX_DIST_014_Brisanje_Terenske_Jedinice_Test extends BaseTest {
 		super();
 	}
 	
-	@Test
-	public void px_dist_014_brisanje_terenske_jedinice_test() throws Exception {
-		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
-		logIn.logIn();
-		PocetnaStranica homePage = new PocetnaStranica(driver);
-		homePage.verifikujPocetnuStranicu();
-		TerenskeJedinice terenskeJedinice = homePage.navigirajNaTerenskeJedinice();
-		terenskeJedinice.verifikujTerenskeJedinice();
-		String naziv = terenskeJedinice.dodajTerenskuJedinicu();
-		terenskeJedinice.verifikujTerenskuJedinicu(naziv);
-		terenskeJedinice.obrisiTerenskuJedinicu();
-		terenskeJedinice.verifikujBrisanjeTerenskeJedinice(naziv);
+		@Test
+		public void px_dist_014_brisanje_terenske_jedinice_test() throws Exception {
+			LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
+			logIn.logIn();
+			PocetnaStranica homePage = new PocetnaStranica(driver);
+			homePage.verifikujPocetnuStranicu();
+			TerenskeJedinice terenskeJedinice = homePage.navigirajNaTerenskeJedinice();
+			terenskeJedinice.verifikujTerenskeJedinice();
+			String naziv = terenskeJedinice.dodajTerenskuJedinicu();
+			terenskeJedinice.verifikujTerenskuJedinicu(naziv);
+			terenskeJedinice.obrisiTerenskuJedinicu();
+			terenskeJedinice.verifikujBrisanjeTerenskeJedinice(naziv);
 	}
 	
 }
