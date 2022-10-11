@@ -71,9 +71,6 @@ public class PocetnaStranica extends PageBase {
 	
 	@FindBy(xpath = "//i[contains(@class, 'fa-angle-double-right')]")
 	protected WebElement dodajSveBtnWE;
-	
-	@FindBy(xpath = "//button[@type='submit']")
-	protected WebElement dodajSifarniciBtnWE;			// dodaj button na formama za dodavanje sifarnika
 
 //	 Sekcije
 
@@ -505,6 +502,18 @@ public class PocetnaStranica extends PageBase {
 //	
 //	@FindBy(xpath = "//div[contains(text(), 'SAP')]")
 //	protected WebElement sapWE;
+	
+	
+//	Sifarnici - elements
+	
+	@FindBy(xpath = "//button[@type='submit']")
+	protected WebElement submitBtnWE;													// submit - DODAJ/UREDI button na formama za dodavanje/uređivanje Šifarnika
+	
+	@FindBy(xpath = "(//i[contains(@class, 'fa-bars')])[1]")
+	protected WebElement burgerBar1stWE;												// burger bar u prvoj liniji liste
+	
+	@FindBy(xpath = "//*[contains(text(), 'Uredi') and @class='v-list-item__title']")
+	protected WebElement urediBurgerBarWE;												// opcija Uredi iz burger bara
 	
 
 	public void verifikujPocetnuStranicu() throws InterruptedException {

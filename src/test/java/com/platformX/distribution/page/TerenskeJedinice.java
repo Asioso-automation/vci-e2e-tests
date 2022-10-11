@@ -62,7 +62,7 @@ public class TerenskeJedinice extends PocetnaStranica {
 		dodajBtnWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(nazivWE));
 		nazivWE.sendKeys(podaci);
-		dodajSifarniciBtnWE.click();
+		submitBtnWE.click();
 		return podaci;
 	}
 	
@@ -75,6 +75,21 @@ public class TerenskeJedinice extends PocetnaStranica {
 		filterPoNazivuWE.sendKeys(Keys.ENTER);
 		wait.until(ExpectedConditions.visibilityOf(nazivTerenskeJediniceTabelaWE));
 		assertTrue(nazivTerenskeJediniceTabelaWE.getText().equals(naziv), "TerenskeJedinice: Terenska jedinica nije pronađena!");
+	}
+	
+	public String IzmjeniTerenskuJedinicu() throws InterruptedException {
+		String terenskaJedinica = "TerenskaJedinica " + Helper.getRandomString(5);
+		wait.until(ExpectedConditions.elementToBeClickable(burgerBar1stWE));
+		burgerBar1stWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(urediBurgerBarWE));
+		urediBurgerBarWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(nazivWE));
+		nazivWE.click();
+		nazivWE.clear();
+		nazivWE.sendKeys(terenskaJedinica);
+		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
+		submitBtnWE.click();
+		return terenskaJedinica;
 	}
 
 }
