@@ -29,6 +29,9 @@ public class TerenskeJedinice extends PocetnaStranica {
 	@FindBy(xpath = "//tr[2]/td[2]")
 	private WebElement nazivTerenskeJediniceTabelaWE;
 	
+	@FindBy(xpath = "//div/div/div[3]/button[2]")
+	private WebElement potvrdiBrisanjeWE;
+	
 	public void verifikujTerenskeJedinice() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
@@ -91,5 +94,25 @@ public class TerenskeJedinice extends PocetnaStranica {
 		submitBtnWE.click();
 		return terenskaJedinica;
 	}
-
+	
+	public void obrisiTerenskuJedinicu() throws InterruptedException {
+		wait.until(ExpectedConditions.elementToBeClickable(burgerBar1stWE));
+		burgerBar1stWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(brisiBurgerBarWE));
+		brisiBurgerBarWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(potvrdiBrisanjeWE));
+		potvrdiBrisanjeWE.click();
+	}
+	
+	public void verifikujBrisanjeTerenskeJedinice(String terenskaJedinica) throws InterruptedException {
+		wait.until(ExpectedConditions.visibilityOf(filterPoNazivuWE));
+		filterPoNazivuWE.click();
+		filterPoNazivuWE.clear();
+		filterPoNazivuWE.sendKeys(terenskaJedinica);
+		filterPoNazivuWE.sendKeys(Keys.ENTER);
+		wait.until(ExpectedConditions.visibilityOf(praznaTabelaWE));
+		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
+		assertTrue(praznaTabelaWE.getText().equals("Nema podataka"), "TerenskeJedinice: Poruka prazne tabele nije dobra!");
+	}
+	
 }

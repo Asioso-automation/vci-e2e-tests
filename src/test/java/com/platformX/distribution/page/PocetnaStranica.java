@@ -515,7 +515,11 @@ public class PocetnaStranica extends PageBase {
 	@FindBy(xpath = "//*[contains(text(), 'Uredi') and @class='v-list-item__title']")
 	protected WebElement urediBurgerBarWE;												// opcija Uredi iz burger bara
 	
-
+	@FindBy(xpath = "//*[contains(text(), 'Briši') and @class='v-list-item__title']")
+	protected WebElement brisiBurgerBarWE;												// opcija Briši iz burger bara
+	
+	
+	
 	public void verifikujPocetnuStranicu() throws InterruptedException {
 		wait.until(ExpectedConditions.elementToBeClickable(sifarniciWE));
 		wait.until(ExpectedConditions.elementToBeClickable(tarifniSistemWE));
