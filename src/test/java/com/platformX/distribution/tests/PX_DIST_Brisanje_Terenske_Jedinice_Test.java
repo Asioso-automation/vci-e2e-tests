@@ -15,7 +15,7 @@ public class PX_DIST_Brisanje_Terenske_Jedinice_Test extends BaseTest {
 	}
 	
 		@Test
-		public void px_dist_014_brisanje_terenske_jedinice_test() throws Exception {
+		public void px_dist_brisanje_terenske_jedinice_test() throws Exception {
 			LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 			logIn.logIn();
 			PocetnaStranica homePage = new PocetnaStranica(driver);

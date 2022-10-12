@@ -15,7 +15,7 @@ public class PX_DIST_Dodavanje_Terenske_Jedinice_Test extends BaseTest {
 	}
 	
 		@Test
-		public void px_dist_012_dodavanje_terenske_jedinice_test() throws Exception {
+		public void px_dist_dodavanje_terenske_jedinice_test() throws Exception {
 			LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 			logIn.verifikujLogIn();
 			logIn.logIn();

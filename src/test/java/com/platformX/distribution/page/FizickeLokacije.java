@@ -92,15 +92,4 @@ public class FizickeLokacije extends PocetnaStranica {
 		assertTrue(nazivFizickeLokacijeTabelaWE.getText().equals(naziv), "FizickeLokacije: Terenska jedinica nije pronađena!");
 	}
 	
-//	public void verifikujTerenskuJedinicu(String naziv) throws Exception {
-//		WebDriverWait wait = new WebDriverWait(driver, 5);
-//		wait.until(ExpectedConditions.elementToBeClickable(filterPoNazivuWE));
-//		filterPoNazivuWE.click();
-//		filterPoNazivuWE.clear();
-//		filterPoNazivuWE.sendKeys(naziv);
-//		filterPoNazivuWE.sendKeys(Keys.ENTER);
-//		wait.until(ExpectedConditions.visibilityOf(nazivTerenskeJediniceTabelaWE));
-//		assertTrue(nazivTerenskeJediniceTabelaWE.getText().equals(naziv), "TerenskeJedinice: Terenska jedinica nije pronađena!");
-//	}
-	
 }
