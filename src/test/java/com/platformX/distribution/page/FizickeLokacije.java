@@ -92,4 +92,19 @@ public class FizickeLokacije extends PocetnaStranica {
 		assertTrue(nazivFizickeLokacijeTabelaWE.getText().equals(naziv), "FizickeLokacije: Terenska jedinica nije pronađena!");
 	}
 	
+	public String IzmijeniFizickuLokaciju() throws InterruptedException {
+		String fizickaLokacija = "FizickaLokacija " + Helper.getRandomString(5);
+		wait.until(ExpectedConditions.elementToBeClickable(burgerBar1stWE));
+		burgerBar1stWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(urediBurgerBarWE));
+		urediBurgerBarWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(nazivWE));
+		nazivWE.click();
+		nazivWE.clear();
+		nazivWE.sendKeys(fizickaLokacija);
+		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
+		submitBtnWE.click();
+		return fizickaLokacija;
+	}
+	
 }
