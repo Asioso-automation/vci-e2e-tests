@@ -13,7 +13,7 @@ public class PX_DIST_Brisanje_Fizicke_Lokacije_Test extends BaseTest {
 
 	public PX_DIST_Brisanje_Fizicke_Lokacije_Test() throws IOException, FileNotFoundException {
 		super();
-}
+	}
 
 	@Test
 	public void px_dist_brisanje_fizicke_lokacije_test() throws Exception {
@@ -32,6 +32,6 @@ public class PX_DIST_Brisanje_Fizicke_Lokacije_Test extends BaseTest {
 		fizickeLokacije.verifikujFizickuLokaciju(nazivFizickeLokacije);
 		fizickeLokacije.obrisiFizickuLokaciju();
 		fizickeLokacije.verifikujBrisanjeFizickeLokacije(nazivFizickeLokacije);
-}
+	}
 	
 }

@@ -15,21 +15,21 @@ public class PX_DIST_Dodavanje_Fizicke_Lokacije_Test extends BaseTest {
 		super();
 	}
 	
-		@Test
-		public void px_dist_dodavanje_fizicke_lokacije_test() throws Exception {
-			LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
-			logIn.verifikujLogIn();
-			logIn.logIn();
-			PocetnaStranica homePage = new PocetnaStranica(driver);
-			homePage.verifikujPocetnuStranicu();
-			TerenskeJedinice terenskeJedinice = homePage.navigirajNaTerenskeJedinice();
-			terenskeJedinice.verifikujTerenskeJedinice();
-			String terenskaJedinica = terenskeJedinice.dodajTerenskuJedinicu();
-			terenskeJedinice.verifikujTerenskuJedinicu(terenskaJedinica);
-			FizickeLokacije fizickeLokacije = homePage.navigirajNaFizickeLokacije();
-			fizickeLokacije.verifikujFizickeLokacije();
-			String nazivFizickeLokacije = fizickeLokacije.dodajFizickuLokaciju(terenskaJedinica);
-			fizickeLokacije.verifikujFizickuLokaciju(nazivFizickeLokacije);
-		}
+	@Test
+	public void px_dist_dodavanje_fizicke_lokacije_test() throws Exception {
+		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
+		logIn.verifikujLogIn();
+		logIn.logIn();
+		PocetnaStranica homePage = new PocetnaStranica(driver);
+		homePage.verifikujPocetnuStranicu();
+		TerenskeJedinice terenskeJedinice = homePage.navigirajNaTerenskeJedinice();
+		terenskeJedinice.verifikujTerenskeJedinice();
+		String terenskaJedinica = terenskeJedinice.dodajTerenskuJedinicu();
+		terenskeJedinice.verifikujTerenskuJedinicu(terenskaJedinica);
+		FizickeLokacije fizickeLokacije = homePage.navigirajNaFizickeLokacije();
+		fizickeLokacije.verifikujFizickeLokacije();
+		String nazivFizickeLokacije = fizickeLokacije.dodajFizickuLokaciju(terenskaJedinica);
+		fizickeLokacije.verifikujFizickuLokaciju(nazivFizickeLokacije);
+	}
 
 }

@@ -13,7 +13,7 @@ public class PX_DIST_Izmjena_Fizicke_Lokacije_Test extends BaseTest {
 	
 	public PX_DIST_Izmjena_Fizicke_Lokacije_Test() throws IOException, FileNotFoundException {
 		super();
-}
+	}
 
 	@Test
 	public void px_dist_izmjena_fizicke_lokacije_test() throws Exception {

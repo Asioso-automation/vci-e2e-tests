@@ -59,14 +59,14 @@ public class TerenskeJedinice extends PocetnaStranica {
 	}
 
 	public String dodajTerenskuJedinicu() throws InterruptedException {
-		String podaci = new String();
-		podaci = "TerenskaJedinica " + Helper.getRandomString(5);
+		String naziv = new String();
+		naziv = "TerenskaJedinica " + Helper.getRandomString(5);
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
 		dodajBtnWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(nazivWE));
-		nazivWE.sendKeys(podaci);
+		nazivWE.sendKeys(naziv);
 		submitBtnWE.click();
-		return podaci;
+		return naziv;
 	}
 	
 	public void verifikujTerenskuJedinicu(String naziv) throws Exception {
@@ -81,7 +81,7 @@ public class TerenskeJedinice extends PocetnaStranica {
 	}
 	
 	public String IzmjeniTerenskuJedinicu() throws InterruptedException {
-		String terenskaJedinica = "TerenskaJedinica " + Helper.getRandomString(5);
+		String naziv = "TerenskaJedinica " + Helper.getRandomString(5);
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBar1stWE));
 		burgerBar1stWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(urediBurgerBarWE));
@@ -89,10 +89,10 @@ public class TerenskeJedinice extends PocetnaStranica {
 		wait.until(ExpectedConditions.elementToBeClickable(nazivWE));
 		nazivWE.click();
 		nazivWE.clear();
-		nazivWE.sendKeys(terenskaJedinica);
+		nazivWE.sendKeys(naziv);
 		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
 		submitBtnWE.click();
-		return terenskaJedinica;
+		return naziv;
 	}
 	
 	public void obrisiTerenskuJedinicu() throws InterruptedException {

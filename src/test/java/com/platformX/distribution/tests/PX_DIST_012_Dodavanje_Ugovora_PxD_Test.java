@@ -5,13 +5,11 @@ import java.io.IOException;
 import org.testng.annotations.Test;
 import com.platformX.base.BaseTest;
 import com.platformX.distribution.page.FizickaLica;
-import com.platformX.distribution.page.KoristenaBrojila;
 import com.platformX.distribution.page.LogIn;
 import com.platformX.distribution.page.MjernaMjesta;
 import com.platformX.distribution.page.ObracunskiUgovori;
 import com.platformX.distribution.page.PocetnaStranica;
 import com.platformX.distribution.page.RegistarBrojila;
-
 
 public class PX_DIST_012_Dodavanje_Ugovora_PxD_Test  extends BaseTest {
 
@@ -20,7 +18,6 @@ public class PX_DIST_012_Dodavanje_Ugovora_PxD_Test  extends BaseTest {
 	}
 	
 	@Test
-	
 	public void px_dist_012_dodavanje_ugovora_pxd_test() throws Exception {
 		
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
@@ -47,7 +44,5 @@ public class PX_DIST_012_Dodavanje_Ugovora_PxD_Test  extends BaseTest {
 		ObracunskiUgovori obracunskiUgovoriPage = pocetna.navigirajNaObracunskiUgovori();
 		obracunskiUgovoriPage.dodajObracunskiUgovor(kupac, mjernoMjesto, brBrojila);
 		obracunskiUgovoriPage.verifikujObracunskiUgovor(mjernoMjesto);
-		
-
 	}
 }

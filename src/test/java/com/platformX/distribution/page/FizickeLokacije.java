@@ -92,11 +92,11 @@ public class FizickeLokacije extends PocetnaStranica {
 		filterPoNazivuWE.sendKeys(naziv);
 		filterPoNazivuWE.sendKeys(Keys.ENTER);
 		wait.until(ExpectedConditions.visibilityOf(nazivFizickeLokacijeTabelaWE));
-		assertTrue(nazivFizickeLokacijeTabelaWE.getText().equals(naziv), "FizickeLokacije: Terenska jedinica nije pronađena!");
+		assertTrue(nazivFizickeLokacijeTabelaWE.getText().equals(naziv), "FizickeLokacije: Fizicka lokacija nije pronađena!");
 	}
 	
 	public String IzmijeniFizickuLokaciju() throws InterruptedException {
-		String fizickaLokacija = "FizickaLokacija " + Helper.getRandomString(5);
+		String naziv = "FizickaLokacija " + Helper.getRandomString(5);
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBar1stWE));
 		burgerBar1stWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(urediBurgerBarWE));
@@ -104,10 +104,10 @@ public class FizickeLokacije extends PocetnaStranica {
 		wait.until(ExpectedConditions.elementToBeClickable(nazivWE));
 		nazivWE.click();
 		nazivWE.clear();
-		nazivWE.sendKeys(fizickaLokacija);
+		nazivWE.sendKeys(naziv);
 		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
 		submitBtnWE.click();
-		return fizickaLokacija;
+		return naziv;
 	}
 	
 	public void obrisiFizickuLokaciju() throws InterruptedException {
