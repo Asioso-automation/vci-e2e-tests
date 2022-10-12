@@ -38,6 +38,9 @@ public class FizickeLokacije extends PocetnaStranica {
 	@FindBy(xpath = "//div[11]/div/div/div/div")
 	private WebElement terenskaJedinicaLookupWE;
 	
+	@FindBy(xpath = "//div/div/div[3]/button[2]")
+	private WebElement potvrdiBrisanjeWE;
+	
 	public void verifikujFizickeLokacije() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
@@ -105,6 +108,26 @@ public class FizickeLokacije extends PocetnaStranica {
 		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
 		submitBtnWE.click();
 		return fizickaLokacija;
+	}
+	
+	public void obrisiFizickuLokaciju() throws InterruptedException {
+		wait.until(ExpectedConditions.elementToBeClickable(burgerBar1stWE));
+		burgerBar1stWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(brisiBurgerBarWE));
+		brisiBurgerBarWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(potvrdiBrisanjeWE));
+		potvrdiBrisanjeWE.click();
+	}
+	
+	public void verifikujBrisanjeFizickeLokacije(String fizickaLokacija) throws InterruptedException {
+		wait.until(ExpectedConditions.visibilityOf(filterPoNazivuWE));
+		filterPoNazivuWE.click();
+		filterPoNazivuWE.clear();
+		filterPoNazivuWE.sendKeys(fizickaLokacija);
+		filterPoNazivuWE.sendKeys(Keys.ENTER);
+		wait.until(ExpectedConditions.visibilityOf(praznaTabelaWE));
+		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
+		assertTrue(praznaTabelaWE.getText().equals("Nema podataka"), "FizickeLokacije: Poruka prazne tabele nije dobra!");
 	}
 	
 }
