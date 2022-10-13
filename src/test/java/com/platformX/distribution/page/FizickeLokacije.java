@@ -66,7 +66,7 @@ public class FizickeLokacije extends PocetnaStranica {
 		assertTrue(brojKolona().size() == 10, "FizickeLokacije: Broj kolona nije dobar! ");
 	}
 	
-	public String dodajFizickuLokaciju(String terenskaJedinica) throws InterruptedException, FileNotFoundException, IOException {
+	public String dodajFizickuLokaciju(String terenskaJedinica) throws InterruptedException {
 		String naziv = new String();
 		naziv = "FizickaLokacija " + Helper.getRandomString(5);
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
@@ -119,11 +119,11 @@ public class FizickeLokacije extends PocetnaStranica {
 		potvrdiBrisanjeWE.click();
 	}
 	
-	public void verifikujBrisanjeFizickeLokacije(String fizickaLokacija) throws InterruptedException {
+	public void verifikujBrisanjeFizickeLokacije(String naziv) throws InterruptedException {
 		wait.until(ExpectedConditions.visibilityOf(filterPoNazivuWE));
 		filterPoNazivuWE.click();
 		filterPoNazivuWE.clear();
-		filterPoNazivuWE.sendKeys(fizickaLokacija);
+		filterPoNazivuWE.sendKeys(naziv);
 		filterPoNazivuWE.sendKeys(Keys.ENTER);
 		wait.until(ExpectedConditions.visibilityOf(praznaTabelaWE));
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));

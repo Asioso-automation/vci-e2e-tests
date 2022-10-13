@@ -32,6 +32,9 @@ public class Opstine extends PocetnaStranica {
 	@FindBy(xpath = "//tr[2]/td[2]")
 	private WebElement nazivOpstineTabelaWE;
 	
+	@FindBy(xpath = "//div/div/div[3]/button[2]")
+	private WebElement potvrdiBrisanjeWE;
+	
 	public void verifikujOpstine() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
@@ -80,7 +83,7 @@ public class Opstine extends PocetnaStranica {
 		assertTrue(nazivOpstineTabelaWE.getText().equals(naziv), "Opstine: Opstina nije pronađena!");
 	}
 	
-	public String IzmijeniOpstinu() throws InterruptedException {
+	public String izmijeniOpstinu() throws InterruptedException {
 		String naziv = "Opstina " + Helper.getRandomString(5);
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBar1stWE));
 		burgerBar1stWE.click();
@@ -93,6 +96,26 @@ public class Opstine extends PocetnaStranica {
 		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
 		submitBtnWE.click();
 		return naziv;
+	}
+	
+	public void obrisiOpstinu() throws InterruptedException {
+		wait.until(ExpectedConditions.elementToBeClickable(burgerBar1stWE));
+		burgerBar1stWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(brisiBurgerBarWE));
+		brisiBurgerBarWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(potvrdiBrisanjeWE));
+		potvrdiBrisanjeWE.click();
+	}
+	
+	public void verifikujBrisanjeOpstine(String naziv) throws InterruptedException {
+		wait.until(ExpectedConditions.elementToBeClickable(filterPoNazivuWE));
+		filterPoNazivuWE.click();
+		filterPoNazivuWE.clear();
+		filterPoNazivuWE.sendKeys(naziv);
+		filterPoNazivuWE.sendKeys(Keys.ENTER);
+		wait.until(ExpectedConditions.visibilityOf(praznaTabelaWE));
+		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
+		assertTrue(praznaTabelaWE.getText().equals("Nema podataka"), "Opstine: Poruka prazne tabele nije dobra!");
 	}
 	
 }
