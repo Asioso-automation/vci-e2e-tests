@@ -27,7 +27,7 @@ SET IDENTITY_INSERT BasicCatalog.Entity OFF
   (N'Currency',N'KM' ),
   (N'VatRate', N'0.17'),
   (N'MaxAmountForInterestCorrectionClosure', N'5'),
-  (N'MaxValidityDateForContractTypeChangeAllowed','2021-04-01')
+  (N'MaxValidtyDateForContractTypeChangeAllowed','2021-04-01')
   
 SET IDENTITY_INSERT BasicCatalog.MeterType ON
 
