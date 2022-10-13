@@ -25,7 +25,7 @@ public class PX_DIST_Izmjena_Terenske_Jedinice_Test extends BaseTest {
 			terenskeJedinice.verifikujTerenskeJedinice();
 			String naziv = terenskeJedinice.dodajTerenskuJedinicu();
 			terenskeJedinice.verifikujTerenskuJedinicu(naziv);
-			String novaTerenskaJedinica = terenskeJedinice.IzmjeniTerenskuJedinicu();
+			String novaTerenskaJedinica = terenskeJedinice.IzmijeniTerenskuJedinicu();
 			terenskeJedinice.verifikujTerenskuJedinicu(novaTerenskaJedinica);
 	}
 	

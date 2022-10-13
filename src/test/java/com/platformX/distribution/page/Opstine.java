@@ -80,4 +80,19 @@ public class Opstine extends PocetnaStranica {
 		assertTrue(nazivOpstineTabelaWE.getText().equals(naziv), "Opstine: Opstina nije pronađena!");
 	}
 	
+	public String IzmijeniOpstinu() throws InterruptedException {
+		String naziv = "Opstina " + Helper.getRandomString(5);
+		wait.until(ExpectedConditions.elementToBeClickable(burgerBar1stWE));
+		burgerBar1stWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(urediBurgerBarWE));
+		urediBurgerBarWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(nazivWE));
+		nazivWE.click();
+		nazivWE.clear();
+		nazivWE.sendKeys(naziv);
+		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
+		submitBtnWE.click();
+		return naziv;
+	}
+	
 }
