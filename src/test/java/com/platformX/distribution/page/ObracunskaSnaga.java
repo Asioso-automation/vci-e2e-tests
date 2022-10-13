@@ -4,16 +4,41 @@ import static org.testng.Assert.assertTrue;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import com.platformX.base.Kolone;
+import com.platformX.util.Helper;
 
 public class ObracunskaSnaga extends PocetnaStranica {
 
 	public ObracunskaSnaga(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);
 	}
+	
 
+	
+	
+	@FindBy(xpath = "//form/div/div[1]/div[1]/div[1]/div/div/div[1]/div[1]/div[1]") 
+	private WebElement grupaWE;
+	
+	
+	@FindBy(xpath = "//div[2]/div/div/div[1]/div/input") 
+	private WebElement kwWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'menuable__content__active')]//*[text() = '2209 - septembar 2022.']") 
+	private WebElement septWE;
+	
+	@FindBy(xpath = "//div[2]/div/div/div/div[1]/div[1]/input[1]") 
+	private WebElement periodOdWE;
+	
+	@FindBy(xpath = "//div[2]/button[1]") 
+	private WebElement dodajBtn1WE;
+	
+	
+	
 	public void verifikujObracunskaSnaga() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
@@ -35,4 +60,32 @@ public class ObracunskaSnaga extends PocetnaStranica {
 		assertTrue(brojKolona().size() == 7, "ObracunskaSnaga: Broj kolona nije dobar! ");
 	}
 
+//	public void dodajObracunskuSnagu(String tarifnaGrupa)throws InterruptedException{
+//		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
+//		dodajBtnWE.click();
+//		wait.until(ExpectedConditions.elementToBeClickable(grupaWE));
+//		grupaWE.click();
+//		JavascriptExecutor js = (JavascriptExecutor) driver;
+////		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(@class, 'v-list-item__title') and contains(., '" + tarifnaGrupa + "')]")));
+////		driver.findElement(By.xpath("//div[contains(@class, 'v-list-item__title') and contains(., '" + kupac + "')]")).click();
+//		js.executeScript("arguments[0].scrollIntoView(true);", (By.xpath("//div[contains(@class, 'v-list-item__title') and contains(., '" + tarifnaGrupa + "')]")));
+//		wait.until(ExpectedConditions.elementToBeClickable(tarifnaGrupa1WE));
+//		tarifnaGrupa1WE.click();
+//		wait.until(ExpectedConditions.elementToBeClickable(kwWE));
+//		kwWE.sendKeys(Helper.getRandomNumber(2));
+//		wait.until(ExpectedConditions.elementToBeClickable(periodOdWE));
+//		periodOdWE.sendKeys("2209 - septembar 2022.");
+//		wait.until(ExpectedConditions.elementToBeClickable(septWE));
+//		septWE.click();
+//		wait.until(ExpectedConditions.elementToBeClickable(dodajBtn1WE));
+//		dodajBtn1WE.click();
+//	}
+//	
+//	public void verifikuj(String naziv) throws InterruptedException{
+//		String naziv = "19 - TarfinaGrupa6c87, DT";
+//	}
+	
+	
+	
+	
 }

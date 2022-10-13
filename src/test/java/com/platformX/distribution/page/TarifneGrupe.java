@@ -4,15 +4,64 @@ import static org.testng.Assert.assertTrue;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import com.platformX.base.Kolone;
+import com.platformX.util.Helper;
 
 public class TarifneGrupe extends PocetnaStranica {
 
 	public TarifneGrupe(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);
 	}
+	
+	
+	@FindBy(xpath = "//div[1]/div[1]/div/div/div[1]/div/input") 
+	private WebElement nazivTarifneGrupeWE;
+	
+	@FindBy(xpath = "//div[1]/div[2]/div/div/div[1]/div/input") 
+	private WebElement ebixSifraWE;
+	
+	@FindBy(xpath = "//div[2]/div[1]/div/div/div[1]/div[1]/input[1]") 
+	private WebElement nadgrupaWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'menuable__content__active')]//*[text() = '4 - Domaćinstva']") 
+	private WebElement domacinstvaWE;
+	
+	@FindBy(xpath = "//div[2]/div[2]/div/div/div[1]/div[1]/input[1]") 
+	private WebElement kategorijaWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'menuable__content__active')]//*[text() = '30 - Niski napon 0.4 kV Ostala potrošnja']") 
+	private WebElement niskiNaponWE;
+	
+	@FindBy(xpath = "//div[3]/div/div/div[1]/div[1]/input[1]") 
+	private WebElement vrstaBrojilaWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'menuable__content__active')]//*[text() = '2 - DT']") 
+	private WebElement dtWE;
+	
+	@FindBy(xpath = "//div[2]/button[1]") 
+	private WebElement dodajBtn1WE;
+	
+	@FindBy(xpath = "//div[4]/div/div/div[1]/div/div") 
+	private WebElement maxigrafWE;
+	
+	@FindBy(xpath = "//td[2]/div/div/div/div[1]/input") 
+	private WebElement filterPoNazivuWE;
+	
+	@FindBy(xpath = "//tbody/tr[2]/td[2]") 
+	private WebElement nazivTarfineGrupeTabelaWE;
+	
+	@FindBy(xpath = "//tr[2]/td[9]/button/span/i") 
+	private WebElement burgerBarWE;
+	
+	@FindBy(xpath = "//div/div/div[3]/button[2]")
+	private WebElement potvrdiBrisanjeWE;
+	
+
 
 	public void verifikujTarifneGrupe() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
@@ -37,5 +86,79 @@ public class TarifneGrupe extends PocetnaStranica {
 		assertTrue(naslovStraniceWE.getText().trim().equals("TARIFNE GRUPE"), "TarifneGrupe: Naziv stranice nije dobar!");
 		assertTrue(brojKolona().size() == 9, "TarifneGrupe: Broj kolona nije dobar! ");
 	}
+	
+	public String dodajTarfinuGrupu()throws InterruptedException{
+		String naziv = "TarifnaGrupa" + Helper.getRandomString(4);
+		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
+		dodajBtnWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(nazivTarifneGrupeWE));
+		nazivTarifneGrupeWE.sendKeys(naziv);
+		wait.until(ExpectedConditions.elementToBeClickable(ebixSifraWE));
+		ebixSifraWE.sendKeys(Helper.getRandomNumber(4));
+		wait.until(ExpectedConditions.elementToBeClickable(nadgrupaWE));
+		nadgrupaWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(domacinstvaWE));
+		domacinstvaWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(kategorijaWE));
+		kategorijaWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(niskiNaponWE));
+		niskiNaponWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(vrstaBrojilaWE));
+		vrstaBrojilaWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(dtWE));
+		dtWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(maxigrafWE));
+		maxigrafWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(dodajBtn1WE));
+		dodajBtn1WE.click();
+		return naziv;
+	}
 
+	public void verifikujTarifnuGrupu(String naziv) throws Exception{
+		wait.until(ExpectedConditions.elementToBeClickable(filterPoNazivuWE));
+		filterPoNazivuWE.click();
+		filterPoNazivuWE.clear();
+		filterPoNazivuWE.sendKeys(naziv);
+		filterPoNazivuWE.sendKeys(Keys.ENTER);
+	    wait.until(ExpectedConditions.elementToBeClickable(nazivTarfineGrupeTabelaWE));
+	    assertTrue(nazivTarfineGrupeTabelaWE.getText().equals(naziv), "TarifnaGrupa: Tarfina grupa nije pronadjena!");
+	}
+	public String izmjeniTarifnuGrupu()throws Exception{
+		String tarifnaGrupa = "TarfinaGrupa" + Helper.getRandomString(4);
+		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
+		burgerBarWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(urediWE));
+		urediWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(nazivTarifneGrupeWE));
+		nazivTarifneGrupeWE.click();
+		nazivTarifneGrupeWE.clear();
+		nazivTarifneGrupeWE.sendKeys(tarifnaGrupa);
+		wait.until(ExpectedConditions.elementToBeClickable(dodajBtn1WE));
+		dodajBtn1WE.click();
+		return tarifnaGrupa;
+	}
+	
+	public void obrisiTarifnuGrupu()throws InterruptedException{
+		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
+		burgerBarWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(obrisiWE));
+		obrisiWE.click();
+		Thread.sleep(1000);
+		wait.until(ExpectedConditions.elementToBeClickable(potvrdiBrisanjeWE));
+		potvrdiBrisanjeWE.click();
+	}
+
+	public void verifikujBrisanjeTarifneGrupe(String tarifnaGrupa)throws InterruptedException{
+		wait.until(ExpectedConditions.visibilityOf(filterPoNazivuWE));
+		Thread.sleep(1000);
+		wait.until(ExpectedConditions.elementToBeClickable(filterPoNazivuWE));
+		filterPoNazivuWE.click();
+		filterPoNazivuWE.clear();
+		filterPoNazivuWE.sendKeys(tarifnaGrupa);
+		filterPoNazivuWE.sendKeys(Keys.ENTER);
+		Thread.sleep(1000);
+		wait.until(ExpectedConditions.visibilityOf(praznaTabelaWE));
+		assertTrue(praznaTabelaWE.getText().equals("Nema podataka"), "TarifnaGrupa: Poruka prazne tabele nije dobra!");
+	}
+	
 }
