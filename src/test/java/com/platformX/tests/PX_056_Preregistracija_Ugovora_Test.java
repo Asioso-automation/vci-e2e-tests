@@ -14,7 +14,7 @@ public class PX_056_Preregistracija_Ugovora_Test extends BaseTest {
 		super();
 	}
 
-	@Test
+	@Test (enabled = false)
 	public void px_056_preregistracija_ugovora_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();

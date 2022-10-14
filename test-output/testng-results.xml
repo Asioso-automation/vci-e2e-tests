@@ -1,32 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="1" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="63616" started-at="2022-10-14T06:34:54Z" finished-at="2022-10-14T06:35:58Z">
+  <suite name="Default suite" duration-ms="4" started-at="2022-10-14T08:18:53Z" finished-at="2022-10-14T08:18:53Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="63616" started-at="2022-10-14T06:34:54Z" finished-at="2022-10-14T06:35:58Z">
-      <class name="com.platformX.distribution.tests.PX_DIST_012_Dodavanje_Ugovora_PxD_Test">
-        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.platformX.distribution.tests.PX_DIST_012_Dodavanje_Ugovora_PxD_Test@778d1062]" name="setUp" is-config="true" duration-ms="10003" started-at="2022-10-14T08:34:54Z" finished-at="2022-10-14T08:35:04Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="px_dist_012_dodavanje_ugovora_pxd_test()[pri:0, instance:com.platformX.distribution.tests.PX_DIST_012_Dodavanje_Ugovora_PxD_Test@778d1062]" name="px_dist_012_dodavanje_ugovora_pxd_test" duration-ms="52952" started-at="2022-10-14T08:35:04Z" finished-at="2022-10-14T08:35:57Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- px_dist_012_dodavanje_ugovora_pxd_test -->
-        <test-method status="PASS" signature="cleanUp()[pri:0, instance:com.platformX.distribution.tests.PX_DIST_012_Dodavanje_Ugovora_PxD_Test@778d1062]" name="cleanUp" is-config="true" duration-ms="649" started-at="2022-10-14T08:35:57Z" finished-at="2022-10-14T08:35:58Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- cleanUp -->
-      </class> <!-- com.platformX.distribution.tests.PX_DIST_012_Dodavanje_Ugovora_PxD_Test -->
+    <test name="Default test" duration-ms="4" started-at="2022-10-14T08:18:53Z" finished-at="2022-10-14T08:18:53Z">
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
