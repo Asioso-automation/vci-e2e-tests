@@ -85,4 +85,18 @@ public class Citaci extends PocetnaStranica {
 		assertTrue(imeCitacaTabelaWE.getText().equals(ime), "Citaci: Citac nije pronađen!");
 	}
 	
+	public String izmijeniCitaca() throws InterruptedException {
+		String ime = "Citac " + Helper.getRandomString(5);
+		wait.until(ExpectedConditions.elementToBeClickable(burgerBar1stWE));
+		burgerBar1stWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(urediBurgerBarWE));
+		urediBurgerBarWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(imeWE));
+		imeWE.click();
+		imeWE.clear();
+		imeWE.sendKeys(ime);
+		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
+		submitBtnWE.click();
+		return ime;
+	}
 }
