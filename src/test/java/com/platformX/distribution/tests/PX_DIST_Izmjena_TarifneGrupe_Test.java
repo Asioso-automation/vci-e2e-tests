@@ -26,7 +26,7 @@ public class PX_DIST_Izmjena_TarifneGrupe_Test extends BaseTest {
 		homePage.verifikujPocetnuStranicu();
 		TarifneGrupe tarifneGrupe = homePage.navigirajNaTarifneGrupe();
 		tarifneGrupe.verifikujTarifneGrupe();
-		String tarifnaGrupa = tarifneGrupe.dodajTarfinuGrupu();
+		String tarifnaGrupa = tarifneGrupe.dodajTarifnuGrupu();
 		tarifneGrupe.verifikujTarifnuGrupu(tarifnaGrupa);
 		String novaTarifnaGrupa = tarifneGrupe.izmjeniTarifnuGrupu();
 		tarifneGrupe.verifikujTarifnuGrupu(novaTarifnaGrupa);

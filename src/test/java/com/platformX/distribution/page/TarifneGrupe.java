@@ -87,7 +87,7 @@ public class TarifneGrupe extends PocetnaStranica {
 		assertTrue(brojKolona().size() == 9, "TarifneGrupe: Broj kolona nije dobar! ");
 	}
 	
-	public String dodajTarfinuGrupu()throws InterruptedException{
+	public String dodajTarifnuGrupu()throws InterruptedException{
 		String naziv = "TarifnaGrupa" + Helper.getRandomString(4);
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
 		dodajBtnWE.click();

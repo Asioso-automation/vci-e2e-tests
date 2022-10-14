@@ -7,6 +7,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import com.platformX.base.Kolone;
@@ -66,8 +67,8 @@ public class ObracunskaSnaga extends PocetnaStranica {
 //		wait.until(ExpectedConditions.elementToBeClickable(grupaWE));
 //		grupaWE.click();
 //		JavascriptExecutor js = (JavascriptExecutor) driver;
-////		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(@class, 'v-list-item__title') and contains(., '" + tarifnaGrupa + "')]")));
-////		driver.findElement(By.xpath("//div[contains(@class, 'v-list-item__title') and contains(., '" + kupac + "')]")).click();
+//		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(@class, 'v-list-item__title') and contains(., '" + tarifnaGrupa + "')]")));
+//		driver.findElement(By.xpath("//div[contains(@class, 'v-list-item__title') and contains(., '" + kupac + "')]")).click();
 //		js.executeScript("arguments[0].scrollIntoView(true);", (By.xpath("//div[contains(@class, 'v-list-item__title') and contains(., '" + tarifnaGrupa + "')]")));
 //		wait.until(ExpectedConditions.elementToBeClickable(tarifnaGrupa1WE));
 //		tarifnaGrupa1WE.click();
@@ -80,6 +81,23 @@ public class ObracunskaSnaga extends PocetnaStranica {
 //		wait.until(ExpectedConditions.elementToBeClickable(dodajBtn1WE));
 //		dodajBtn1WE.click();
 //	}
+	public void dodajObracunskuSnagu(String tarifnaGrupa)throws InterruptedException{
+		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
+		dodajBtnWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(grupaWE));
+		grupaWE.click();
+		WebElement element = driver.findElement(By.xpath("//div[contains(@class, 'v-list-item__title') and contains(., '" + tarifnaGrupa + "')]"));
+        JavascriptExecutor executor = (JavascriptExecutor)driver;
+        executor.executeScript("arguments[0].click();", element);
+		wait.until(ExpectedConditions.elementToBeClickable(kwWE));
+		kwWE.sendKeys(Helper.getRandomNumber(2));
+		wait.until(ExpectedConditions.elementToBeClickable(periodOdWE));
+		periodOdWE.sendKeys("2209 - septembar 2022.");
+		wait.until(ExpectedConditions.elementToBeClickable(septWE));
+		septWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
+		submitBtnWE.click();
+	}
 //	
 //	public void verifikuj(String naziv) throws InterruptedException{
 //		String naziv = "19 - TarfinaGrupa6c87, DT";
