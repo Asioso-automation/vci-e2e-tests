@@ -34,6 +34,9 @@ public class Citaci extends PocetnaStranica {
 	
 	@FindBy(xpath = "//tr[2]/td[2]")
 	private WebElement imeCitacaTabelaWE;
+	
+	@FindBy(xpath = "//div/div/div[3]/button[2]")
+	private WebElement potvrdiBrisanjeWE;
 
 	public void verifikujCitaci() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
@@ -99,4 +102,25 @@ public class Citaci extends PocetnaStranica {
 		submitBtnWE.click();
 		return ime;
 	}
+	
+	public void obrisiCitaca() throws InterruptedException {
+		wait.until(ExpectedConditions.elementToBeClickable(burgerBar1stWE));
+		burgerBar1stWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(brisiBurgerBarWE));
+		brisiBurgerBarWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(potvrdiBrisanjeWE));
+		potvrdiBrisanjeWE.click();
+	}
+	
+	public void verifikujBrisanjeCitaca(String ime) throws InterruptedException {
+		wait.until(ExpectedConditions.elementToBeClickable(filterPoImenuWE));
+		filterPoImenuWE.click();
+		filterPoImenuWE.clear();
+		filterPoImenuWE.sendKeys(ime);
+		filterPoImenuWE.sendKeys(Keys.ENTER);
+		wait.until(ExpectedConditions.elementToBeClickable(praznaTabelaWE));
+		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
+		assertTrue(praznaTabelaWE.getText().equals("Nema podataka"), "Citaci: Poruka prazne tabele nije dobra!");
+	}
+	
 }
