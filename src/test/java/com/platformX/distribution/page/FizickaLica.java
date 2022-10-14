@@ -23,7 +23,7 @@ public class FizickaLica extends PocetnaStranica {
 	 @FindBy(xpath = "//div[2]/div[1]/div/div/div[1]/div/input")  
 	 private WebElement poljeImeIPrezimeWE;
 	 
-	 @FindBy(xpath = "//div[2]/div[2]/div/div/div[1]/div/input")
+	 @FindBy(xpath = "//div[2]/div[2]/div/div/div[1]/div/input") 
 	 private WebElement poljeStampaniNazivNaDokumentimaWE;
 	 
 	 @FindBy(xpath = "//div[3]/div[1]/div/div/div[1]/div[1]/input[1]")
@@ -55,6 +55,11 @@ public class FizickaLica extends PocetnaStranica {
 	 
 	 @FindBy(xpath = "//tr[2]/td[1]")
 	 private WebElement idTabelaWE;
+	 
+	 @FindBy(xpath = "//div/div/div[3]/button[2]/span")
+	 private WebElement potvrdiBrisanjeBtnWE;
+	 
+	 
 	 
 	
 	 
@@ -123,11 +128,63 @@ public class FizickaLica extends PocetnaStranica {
 		assertTrue(imeIPrezimeTabelaWE.getText().contains(nazivFizickogLica),"Fizicka Lica: Naziv fizickog lica nije dobar!");
     }
 	
-	 public String kreirajPravnoLice() {
-		 String kupac = idTabelaWE.getText() + " - " + imeIPrezimeTabelaWE.getText();
-			return kupac;
+	 public String kreirajFizickoLice() {
+		String kupac = idTabelaWE.getText() + " - " + imeIPrezimeTabelaWE.getText();
+		return kupac;
+	 }  
+	 
+	 public String urediFizickoLice() {
+		 String nazivFizickogLica = "Fizicko lice" + Helper.getRandomString(5);
+		 wait.until(ExpectedConditions.elementToBeClickable(burgerBar1stWE));
+		 burgerBar1stWE.click();
+		 wait.until(ExpectedConditions.elementToBeClickable(urediBurgerBarWE));
+		 urediBurgerBarWE.click();
+		 wait.until(ExpectedConditions.elementToBeClickable(poljeImeIPrezimeWE));
+		 poljeImeIPrezimeWE.click();
+		 poljeImeIPrezimeWE.clear();
+		 poljeImeIPrezimeWE.sendKeys(nazivFizickogLica);
+		 wait.until(ExpectedConditions.elementToBeClickable(dodajFizickoLiceBtnWE));
+		 dodajFizickoLiceBtnWE.click();
+		 return nazivFizickogLica;
+		 
 	 }
 	 
+	 public void verifikujUredjenoFizickoLice(String nazivFizickogLica) throws InterruptedException {
+		wait.until(ExpectedConditions.elementToBeClickable(filterPoImeIPrezimeWE));
+		filterPoImeIPrezimeWE.click();
+		filterPoImeIPrezimeWE.clear();
+		filterPoImeIPrezimeWE.sendKeys(nazivFizickogLica);
+		filterPoImeIPrezimeWE.sendKeys(Keys.ENTER);
+		Thread.sleep(1000);
+		wait.until(ExpectedConditions.visibilityOf(imeIPrezimeTabelaWE));
+		assertTrue(imeIPrezimeTabelaWE.getText().contains(nazivFizickogLica),"Fizicka Lica: Naziv uredjenog fizickog lica nije dobar!");
+		 
+	 }
+	 
+	 public void obrisiFizickoLice() throws InterruptedException {
+		 wait.until(ExpectedConditions.elementToBeClickable(burgerBar1stWE));
+		 burgerBar1stWE.click();
+		 wait.until(ExpectedConditions.elementToBeClickable(brisiBurgerBarWE));
+		 brisiBurgerBarWE.click();
+		 Thread.sleep(1000);
+		 wait.until(ExpectedConditions.elementToBeClickable(potvrdiBrisanjeBtnWE));
+		 potvrdiBrisanjeBtnWE.click();
+		 
+
+	 }
+	 
+	 public void verifikujBrisanjeFizickogLica(String fizickaLica) throws InterruptedException {
+		wait.until(ExpectedConditions.elementToBeClickable(filterPoImeIPrezimeWE));
+		Thread.sleep(1000);
+		filterPoImeIPrezimeWE.click();
+		filterPoImeIPrezimeWE.clear();
+		filterPoImeIPrezimeWE.sendKeys(fizickaLica);
+		filterPoImeIPrezimeWE.sendKeys(Keys.ENTER);
+		Thread.sleep(1000);
+		wait.until(ExpectedConditions.visibilityOf(praznaTabelaWE));
+		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
+		assertTrue(praznaTabelaWE.getText().equals("Nema podataka"), "Fizicka lica: Poruka prazne tabele nije dobra!");
+	 }
 }
 
 

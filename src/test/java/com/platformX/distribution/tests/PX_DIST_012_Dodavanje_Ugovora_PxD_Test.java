@@ -29,7 +29,7 @@ public class PX_DIST_012_Dodavanje_Ugovora_PxD_Test  extends BaseTest {
 		fizickaLicaPage.verifikujFizickaLica();
 		String fizickaLica = fizickaLicaPage.dodajFizickoLice();
 		fizickaLicaPage.verifikujFizickoLice(fizickaLica);
-		String kupac = fizickaLicaPage.kreirajPravnoLice();
+		String kupac = fizickaLicaPage.kreirajFizickoLice();
 		MjernaMjesta mjernaMjestaPage = pocetna.navigirajNaMjernaMjesta();
 		mjernaMjestaPage.verifikujMjernaMjesta();
 		String mjernaMjesta = mjernaMjestaPage.dodajMjernoMjesto();
