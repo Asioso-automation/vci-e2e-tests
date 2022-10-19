@@ -26,6 +26,7 @@ public class ZbirnaKontrolnaPotrosnja extends PocetnaStranica{
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaFizickaLokacijaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAktivnaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaReaktivnaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaSnaga1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAktivnaObracunWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaReaktivnaObracunWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaRazlikaAktivnaWE));
@@ -39,7 +40,7 @@ public class ZbirnaKontrolnaPotrosnja extends PocetnaStranica{
 		assertTrue(sekcijaBtnWE.getText().trim().equals("OČITANJA"), "ZbirnaKontrolnaPotrosnja: Naziv sekcije nije dobar!");
 		assertTrue(stranicaBtnWE.getText().trim().equals("ZBIRNA/KONTROLNA POTROŠNJA"), "ZbirnaKontrolnaPotrosnja: Naziv stranice nije dobar!");
 		assertTrue(naslovStraniceWE.getText().trim().equals("ZBIRNA/KONTROLNA POTROŠNJA"), "ZbirnaKontrolnaPotrosnja: Naziv stranice nije dobar!");
-		assertTrue(brojKolona().size() == 15, "ZbirnaKontrolnaPotrosnja: Broj kolona nije dobar! ");
+		assertTrue(brojKolona().size() == 16, "ZbirnaKontrolnaPotrosnja: Broj kolona nije dobar! ");
 	}
 
 }
