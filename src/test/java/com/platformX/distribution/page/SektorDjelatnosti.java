@@ -4,15 +4,29 @@ import static org.testng.Assert.assertTrue;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import com.platformX.base.Kolone;
+import com.platformX.util.Helper;
 
 public class SektorDjelatnosti extends PocetnaStranica {
 
 	public SektorDjelatnosti(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);
 	}
+	
+	@FindBy(xpath = "//input")
+	private WebElement nazivWE;
+	
+	@FindBy(xpath = "//td[2]/div/div/div/div[1]/input")
+	private WebElement filterPoImenuWE;
+	
+	@FindBy(xpath = "//tbody/tr[2]/td[2]")
+	private WebElement imeSektoraDjelatnostiTabelaWE;
 
 	public void verifikujSektorDjelatnosti() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
@@ -31,5 +45,28 @@ public class SektorDjelatnosti extends PocetnaStranica {
 		assertTrue(naslovStraniceWE.getText().trim().equals("SEKTOR DJELATNOSTI"), "SektorDjelatnosti: Naziv stranice nije dobar!");
 		assertTrue(brojKolona().size() == 3, "SektorDjelatnosti: Broj kolona nije dobar! ");
 	}
+	
+	public String dodajSektorDjelatnosti() throws InterruptedException {
+		String naziv = new String();
+		naziv = "SektorDjelatnosti " + Helper.getRandomString(5);
+		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
+		dodajBtnWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(nazivWE));
+		nazivWE.sendKeys(naziv);
+		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
+		submitBtnWE.click();
+		return naziv;
+	}
 
+	public void verifikujDodavanjeSektoraDjelatnosti(String ime) throws Exception {
+		WebDriverWait wait = new WebDriverWait(driver, 5);
+		wait.until(ExpectedConditions.elementToBeClickable(filterPoImenuWE));
+		filterPoImenuWE.click();
+		filterPoImenuWE.clear();
+		filterPoImenuWE.sendKeys(ime);
+		filterPoImenuWE.sendKeys(Keys.ENTER);
+		wait.until(ExpectedConditions.visibilityOf(imeSektoraDjelatnostiTabelaWE));
+		assertTrue(imeSektoraDjelatnostiTabelaWE.getText().equals(ime), "SektorDjelatnosti: Sektor djelatnosti nije pronađen!");
+	}
+	
 }

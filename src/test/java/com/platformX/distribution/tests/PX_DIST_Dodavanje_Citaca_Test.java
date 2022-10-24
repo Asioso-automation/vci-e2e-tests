@@ -8,7 +8,6 @@ import com.platformX.distribution.page.Citaci;
 import com.platformX.distribution.page.LogIn;
 import com.platformX.distribution.page.PocetnaStranica;
 
-
 public class PX_DIST_Dodavanje_Citaca_Test extends BaseTest {
 	
 	public PX_DIST_Dodavanje_Citaca_Test() throws IOException, FileNotFoundException {
