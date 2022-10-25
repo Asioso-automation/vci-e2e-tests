@@ -19,7 +19,7 @@ public class SektorDjelatnosti extends PocetnaStranica {
 		super(driver);
 	}
 	
-	@FindBy(xpath = "//input")
+	@FindBy(xpath = "//input[contains(@id, 'input')]")
 	private WebElement nazivWE;
 	
 	@FindBy(xpath = "//td[2]/div/div/div/div[1]/input")
@@ -27,6 +27,9 @@ public class SektorDjelatnosti extends PocetnaStranica {
 	
 	@FindBy(xpath = "//tbody/tr[2]/td[2]")
 	private WebElement imeSektoraDjelatnostiTabelaWE;
+	
+	@FindBy(xpath = "(//div[contains(@class, 'v-list-item--link')])[1]")
+	private WebElement urediBurgerBarWE;
 
 	public void verifikujSektorDjelatnosti() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
@@ -67,6 +70,21 @@ public class SektorDjelatnosti extends PocetnaStranica {
 		filterPoImenuWE.sendKeys(Keys.ENTER);
 		wait.until(ExpectedConditions.visibilityOf(imeSektoraDjelatnostiTabelaWE));
 		assertTrue(imeSektoraDjelatnostiTabelaWE.getText().equals(ime), "SektorDjelatnosti: Sektor djelatnosti nije pronađen!");
+	}
+	
+	public String izmijeniSektorDjelatnosti() throws InterruptedException {
+		String naziv = "SektorDjelatnosti " + Helper.getRandomString(5);
+		wait.until(ExpectedConditions.elementToBeClickable(burgerBar1stWE));
+		burgerBar1stWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(urediBurgerBarWE));
+		urediBurgerBarWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(nazivWE));
+		nazivWE.click();
+		nazivWE.clear();
+		nazivWE.sendKeys(naziv);
+		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
+		submitBtnWE.click();
+		return naziv;
 	}
 	
 }
