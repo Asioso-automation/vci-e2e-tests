@@ -87,4 +87,25 @@ public class SektorDjelatnosti extends PocetnaStranica {
 		return naziv;
 	}
 	
+	public void obrisiSektorDjelatnosti() throws InterruptedException {
+		wait.until(ExpectedConditions.elementToBeClickable(burgerBar1stWE));
+		burgerBar1stWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(brisiBurgerBarWE));
+		brisiBurgerBarWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(potvrdiBrisanjeWE));
+		potvrdiBrisanjeWE.click();
+	}
+	
+	public void verifikujBrisanjeSektoraDjelatnosti(String ime) throws InterruptedException {
+	wait.until(ExpectedConditions.elementToBeClickable(filterPoImenuWE));
+	Thread.sleep(1000);
+	filterPoImenuWE.click();
+	filterPoImenuWE.clear();
+	filterPoImenuWE.sendKeys(ime);
+	filterPoImenuWE.sendKeys(Keys.ENTER);
+	wait.until(ExpectedConditions.elementToBeClickable(praznaTabelaWE));
+	wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
+	assertTrue(praznaTabelaWE.getText().equals("Nema podataka"), "Citaci: Poruka prazne tabele nije dobra!");
+	}
+	
 }

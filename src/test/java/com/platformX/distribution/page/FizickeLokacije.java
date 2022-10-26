@@ -38,8 +38,8 @@ public class FizickeLokacije extends PocetnaStranica {
 	@FindBy(xpath = "//div[11]/div/div/div/div")
 	private WebElement terenskaJedinicaLookupWE;
 	
-	@FindBy(xpath = "//div/div/div[3]/button[2]")
-	private WebElement potvrdiBrisanjeWE;
+//	@FindBy(xpath = "//div/div/div[3]/button[2]")
+//	private WebElement potvrdiBrisanjeWE;
 	
 	public void verifikujFizickeLokacije() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
@@ -121,6 +121,7 @@ public class FizickeLokacije extends PocetnaStranica {
 	
 	public void verifikujBrisanjeFizickeLokacije(String naziv) throws InterruptedException {
 		wait.until(ExpectedConditions.visibilityOf(filterPoNazivuWE));
+		Thread.sleep(1000);
 		filterPoNazivuWE.click();
 		filterPoNazivuWE.clear();
 		filterPoNazivuWE.sendKeys(naziv);

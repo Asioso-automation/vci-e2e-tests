@@ -29,8 +29,8 @@ public class TerenskeJedinice extends PocetnaStranica {
 	@FindBy(xpath = "//tr[2]/td[2]")
 	private WebElement nazivTerenskeJediniceTabelaWE;
 	
-	@FindBy(xpath = "//div/div/div[3]/button[2]")
-	private WebElement potvrdiBrisanjeWE;
+//	@FindBy(xpath = "//div/div/div[3]/button[2]")
+//	private WebElement potvrdiBrisanjeWE;
 	
 	public void verifikujTerenskeJedinice() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
@@ -106,6 +106,7 @@ public class TerenskeJedinice extends PocetnaStranica {
 	
 	public void verifikujBrisanjeTerenskeJedinice(String terenskaJedinica) throws InterruptedException {
 		wait.until(ExpectedConditions.visibilityOf(filterPoNazivuWE));
+		Thread.sleep(1000);
 		filterPoNazivuWE.click();
 		filterPoNazivuWE.clear();
 		filterPoNazivuWE.sendKeys(terenskaJedinica);

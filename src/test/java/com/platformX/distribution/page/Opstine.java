@@ -32,8 +32,8 @@ public class Opstine extends PocetnaStranica {
 	@FindBy(xpath = "//tr[2]/td[2]")
 	private WebElement nazivOpstineTabelaWE;
 	
-	@FindBy(xpath = "//div/div/div[3]/button[2]")
-	private WebElement potvrdiBrisanjeWE;
+//	@FindBy(xpath = "//div/div/div[3]/button[2]")
+//	private WebElement potvrdiBrisanjeWE;
 	
 	public void verifikujOpstine() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
@@ -109,6 +109,7 @@ public class Opstine extends PocetnaStranica {
 	
 	public void verifikujBrisanjeOpstine(String naziv) throws InterruptedException {
 		wait.until(ExpectedConditions.elementToBeClickable(filterPoNazivuWE));
+		Thread.sleep(1000);
 		filterPoNazivuWE.click();
 		filterPoNazivuWE.clear();
 		filterPoNazivuWE.sendKeys(naziv);

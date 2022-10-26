@@ -518,6 +518,8 @@ public class PocetnaStranica extends PageBase {
 	@FindBy(xpath = "//*[contains(text(), 'Briši') and @class='v-list-item__title']")
 	protected WebElement brisiBurgerBarWE;												// opcija Briši iz burger bara
 	
+	@FindBy(xpath = "//div/div/div[3]/button[2]")
+	protected WebElement potvrdiBrisanjeWE;
 	
 	
 	public void verifikujPocetnuStranicu() throws InterruptedException {

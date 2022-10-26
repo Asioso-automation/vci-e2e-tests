@@ -34,8 +34,8 @@ public class Citaci extends PocetnaStranica {
 	@FindBy(xpath = "//tr[2]/td[2]")
 	private WebElement imeCitacaTabelaWE;
 	
-	@FindBy(xpath = "//div/div/div[3]/button[2]")
-	private WebElement potvrdiBrisanjeWE;
+//	@FindBy(xpath = "//div/div/div[3]/button[2]")
+//	private WebElement potvrdiBrisanjeWE;
 
 	public void verifikujCitaci() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
@@ -113,6 +113,7 @@ public class Citaci extends PocetnaStranica {
 	
 	public void verifikujBrisanjeCitaca(String ime) throws InterruptedException {
 		wait.until(ExpectedConditions.elementToBeClickable(filterPoImenuWE));
+		Thread.sleep(1000);
 		filterPoImenuWE.click();
 		filterPoImenuWE.clear();
 		filterPoImenuWE.sendKeys(ime);
