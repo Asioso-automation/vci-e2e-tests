@@ -97,15 +97,15 @@ public class SektorDjelatnosti extends PocetnaStranica {
 	}
 	
 	public void verifikujBrisanjeSektoraDjelatnosti(String ime) throws InterruptedException {
-	wait.until(ExpectedConditions.elementToBeClickable(filterPoImenuWE));
-	Thread.sleep(1000);
-	filterPoImenuWE.click();
-	filterPoImenuWE.clear();
-	filterPoImenuWE.sendKeys(ime);
-	filterPoImenuWE.sendKeys(Keys.ENTER);
-	wait.until(ExpectedConditions.elementToBeClickable(praznaTabelaWE));
-	wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
-	assertTrue(praznaTabelaWE.getText().equals("Nema podataka"), "Citaci: Poruka prazne tabele nije dobra!");
+		wait.until(ExpectedConditions.elementToBeClickable(filterPoImenuWE));
+		Thread.sleep(1000);
+		filterPoImenuWE.click();
+		filterPoImenuWE.clear();
+		filterPoImenuWE.sendKeys(ime);
+		filterPoImenuWE.sendKeys(Keys.ENTER);
+		wait.until(ExpectedConditions.elementToBeClickable(praznaTabelaWE));
+		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
+		assertTrue(praznaTabelaWE.getText().equals("Nema podataka"), "Citaci: Poruka prazne tabele nije dobra!");
 	}
 	
 }
