@@ -60,7 +60,7 @@ public class PX_DIST_005_Verifikacija_Sekcije_Mjerna_Mjesta_Test {
 		MjernaMjesta mjernaMjesta = pocetna.navigirajNaMjernaMjesta();
 		mjernaMjesta.verifikujMjernaMjesta();
 		ZbirnaKontrolnaMjernaMjesta zbirnaMjernaMjesta = pocetna.navigirajNaZbirnaKontrolnaMjernaMjesta();
-		zbirnaMjernaMjesta.verifikujZbirnaMjernaMjesta();
+		zbirnaMjernaMjesta.verifikujZbirnaKontrolnaMjernaMjesta();
 		EnergetskaKartica kartica = pocetna.navigirajNaEnergetskaKartica();
 		kartica.verifikujEnergetskaKartica();
 		ZahtjeviZaDostavuPodataka zahtjeviZaDostavu = pocetna.navigirajNaZahtjeviZaDostavuPodataka();
