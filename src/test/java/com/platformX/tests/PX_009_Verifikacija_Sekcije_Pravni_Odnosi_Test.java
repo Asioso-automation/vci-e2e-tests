@@ -12,13 +12,19 @@ import com.platformX.page.StavkeZahtjevaZaIskljucenje;
 import com.platformX.page.StavkeZahtjevaZaUkljucenje;
 import com.platformX.page.StecajeviLikvidacije;
 import com.platformX.page.Tuzbe;
+import com.platformX.page.UkljucenjaOdStraneODSa;
+import com.platformX.page.UkljucenjaPoZahtjevuKupca;
 import com.platformX.page.ZahtjeviZaIskljucenje;
 import com.platformX.page.ZahtjeviZaUkljucenje;
+import com.platformX.distribution.page.MjernaMjesta;
 import com.platformX.page.AktivnaIskljucenja;
 import com.platformX.page.IskljucenjaOdStraneODSa;
+import com.platformX.page.IskljucenjaPoZahtjevuKupca;
 import com.platformX.page.LogIn;
 import com.platformX.page.Medijacije;
+import com.platformX.page.ObrasciBrojaProtokolaOpomenaPredUtuzenje;
 import com.platformX.page.Opomene;
+import com.platformX.page.OpomenePredUtuzenje;
 import com.platformX.page.OtpisiPotrazivanja;
 
 public class PX_009_Verifikacija_Sekcije_Pravni_Odnosi_Test {
@@ -34,7 +40,7 @@ public class PX_009_Verifikacija_Sekcije_Pravni_Odnosi_Test {
 	@Test (description="test prolazi kroz sve stranice iz sekcija PRAVNI ODNOSI i IZVJESTAJI i verifikuje ih")
 	public void px_009_verifikacija_sekcije_pravni_odnosi_test() throws Exception {
 		
-		try {
+	try {
 			System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver.exe");
 			ChromeOptions options = new ChromeOptions();
 			options.addArguments("--window-size=1500,800");
@@ -67,22 +73,30 @@ public class PX_009_Verifikacija_Sekcije_Pravni_Odnosi_Test {
 		stavke.verifikujStavkeZahtjevaZaIskljucenja();
 		IskljucenjaOdStraneODSa iskljucenjaOdStraneODSa = pocetna.navigirajNaIskljucenjaOdStraneODSa();
 		iskljucenjaOdStraneODSa.verifikujIskljucenjaOdStraneODSa();
-		// TODO IskljucenjaPoZahtjevuKupca
+		IskljucenjaPoZahtjevuKupca iskljucenjaPoZahtjevuKupca = pocetna.navigirajNaIskljucenjaPoZahtjevuKupca();
+		iskljucenjaPoZahtjevuKupca.verifikujIskljucenjaPoZahtjevuKupca();
 		AktivnaIskljucenja aktivnaIskljucenja = pocetna.navigirajNaAktivnaIskljucenja();
 		aktivnaIskljucenja.verifikujAktivnaIskljucenja();
 		ZahtjeviZaUkljucenje zahtjeviZaUkljucenje = pocetna.navigirajNaZahtjeviZaUkljucenje();
 		zahtjeviZaUkljucenje.verifikujZahtjeviZaUkljucenje();
 		StavkeZahtjevaZaUkljucenje stavkeUkljucenja = pocetna.navigirajNaStavkeZahtjevaZaUkljucenje();
 		stavkeUkljucenja.verifikujStavkeZahtjevaZaUkljucenja();
-		// TODO UkljucenjaOdStraneODSa
+		UkljucenjaOdStraneODSa ukljucenjaOdStraneODSa = pocetna.navigirajNaUkljucenjaOdStraneODSa();
+		ukljucenjaOdStraneODSa.verifikujUkljucenaOdStraneODSa();
+		UkljucenjaPoZahtjevuKupca ukljucenjaPoZahtjevuKupca = pocetna.navigirajNaUkljucenjaPoZahtjevuKupca();
+		ukljucenjaPoZahtjevuKupca.verifikujUkljucenaPoZahtjevuKupca();
+		OpomenePredUtuzenje opomenePredUtuzenje = pocetna.navigirajNaOpomenePredUtuzenje();
+		opomenePredUtuzenje.verifikujOpomenePredUtuzenje();
+		ObrasciBrojaProtokolaOpomenaPredUtuzenje obrasciBrojaProtokolaOpomenaPredUtuzenje = pocetna.navigirajNaObrasciBrojaProtokolaOpomenaPredUtuzenje();
+		obrasciBrojaProtokolaOpomenaPredUtuzenje.verifikujObrasciBrojaProtokolaOpomenaPredUtuzenje();
 		Tuzbe tuzbe = pocetna.navigirajNaTuzbe();
 		tuzbe.verifikujTuzbe();
 		StecajeviLikvidacije stecajevi = pocetna.navigirajNaStecajeviLikvidacije();
 		stecajevi.verifikujStecajeviLikvidacije();
 		Medijacije medijacije = pocetna.navigirajNaMedijacije();
 		medijacije.verifikujMedijacije();
-		OtpisiPotrazivanja otpisiPotrazivanja = pocetna.navigirajNaOtpisiPotrazivanja();
-		otpisiPotrazivanja.verifikujOtpisiPotrazivanja();
+		//OtpisiPotrazivanja otpisiPotrazivanja = pocetna.navigirajNaOtpisiPotrazivanja();
+		//otpisiPotrazivanja.verifikujOtpisiPotrazivanja();
 		
 	}
 	@AfterTest

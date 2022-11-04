@@ -1324,6 +1324,30 @@ public class Kolone extends PageBase {
 	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'PDV na nestand. uslugu']")
 	public WebElement kolonaPdvNaNestandUsluguWE;
 	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Datum realizacije']")
+	public WebElement kolonaDatumRealizacijeWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Razlog uključenja']")
+	public WebElement kolonaRazlogUkljucenjaWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Datum potvrde']")
+	public WebElement kolonaDatumPotvrdeWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Period potvrde']")
+	public WebElement kolonaPeriodPotvrdeWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Poziv na plaćanje']")
+	public WebElement kolonaPozivNaPlacanjeWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Potvrđena']")
+	public WebElement kolonaPotvrdjenaWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Predložena za utuženje']")
+	public WebElement kolonaPredlozenaZaUtuzenjeWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Rok plaćanja (dana)']")
+	public WebElement kolonaRokPlacanjaDanaWE;
+	
 	// test comment
 	// test comment 2
 	

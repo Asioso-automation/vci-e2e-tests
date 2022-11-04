@@ -5,6 +5,7 @@ import static org.testng.Assert.assertTrue;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -61,6 +62,10 @@ public class PocetnaStranica extends PageBase {
 
 	@FindBy(xpath = "//i[contains(@class, 'fa-plus') and not(contains(@class, 'fa-plus-circle'))]")
 	protected WebElement dodajBtnWE;
+	
+	@FindBy(xpath = "//i[contains(@class, 'fa-angle-double-right')]")
+	protected WebElement masovniUnosBtnWE;
+	
 
 	// Sekcije
 
@@ -85,10 +90,10 @@ public class PocetnaStranica extends PageBase {
 	@FindBy(xpath = "//button[6]")
 	protected WebElement finansijeWE;
 	
-	@FindBy(xpath = "//button[7]")
+	@FindBy(xpath = "//*[contains(text(),'Pravni odnosi') and @class='v-btn__content']")
 	protected WebElement pravniOdnosiWE;
 	
-	@FindBy(xpath = "//button[8]")
+	@FindBy(xpath = "//*[contains(text(),'Administracija') and @class='v-btn__content']")
 	protected WebElement administracijaWE;
 
 	@FindBy(xpath = "//div[3]/a")
@@ -341,6 +346,24 @@ public class PocetnaStranica extends PageBase {
 	
 	@FindBy(xpath = "//div[contains(text(), 'Predračuni')]")
 	protected WebElement predracuniWE;
+	
+
+	@FindBy(xpath = "//html/body/div/div[3]/div/div/div/a[5]/div[2]/div")
+	protected WebElement iskljucenjaPoZahtjevuKupcaWE;
+	
+	//*[contains(@class,'v-window-item--active')]//*[contains(@class, 'v-list-item__title')]//*[text() = 'Mjerno mjesto (EIC)']")
+	
+	@FindBy(xpath = "//div[contains(text(), 'Uključenja od strane ODS-a')]")
+	protected WebElement ukljucenjaOdStraneODSaWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Uključenja po zahtjevu kupca')]")
+	protected WebElement ukljucenjaPoZahtjevuKupcaWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Opomene pred utuženje')]")
+	protected WebElement opomenePredUtuzenjeWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Obrasci broja protokola opomena pred utuženje')]")
+	protected WebElement obrasciBrojaProtokolaOpomenaPredUtuzenjeWE;
 	
 
 	public void verifikujPocetnuStranicu() throws InterruptedException {
@@ -1145,5 +1168,46 @@ public class PocetnaStranica extends PageBase {
 		Thread.sleep(1000);
 		wait.until(ExpectedConditions.visibilityOf(porukaWE));
 		assertTrue(porukaWE.getText().trim().equals(poruka), "Poruka upozorenja nije dobra!");
+	}
+	
+	public IskljucenjaPoZahtjevuKupca navigirajNaIskljucenjaPoZahtjevuKupca() throws Exception {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(pravniOdnosiWE));
+		pravniOdnosiWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(iskljucenjaPoZahtjevuKupcaWE));
+		iskljucenjaPoZahtjevuKupcaWE.click();
+		return new IskljucenjaPoZahtjevuKupca(driver);
+	}
+	public UkljucenjaOdStraneODSa navigirajNaUkljucenjaOdStraneODSa() throws Exception {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(pravniOdnosiWE));
+		pravniOdnosiWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(ukljucenjaOdStraneODSaWE));
+		ukljucenjaOdStraneODSaWE.click();
+		return new UkljucenjaOdStraneODSa(driver);
+	}
+	public UkljucenjaPoZahtjevuKupca navigirajNaUkljucenjaPoZahtjevuKupca() throws Exception {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(pravniOdnosiWE));
+		pravniOdnosiWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(ukljucenjaPoZahtjevuKupcaWE));
+		ukljucenjaPoZahtjevuKupcaWE.click();
+		return new UkljucenjaPoZahtjevuKupca(driver);
+	}
+	public OpomenePredUtuzenje navigirajNaOpomenePredUtuzenje() throws Exception{
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(pravniOdnosiWE));
+		pravniOdnosiWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(opomenePredUtuzenjeWE));
+		opomenePredUtuzenjeWE.click();
+		return new OpomenePredUtuzenje(driver);
+	}
+	public ObrasciBrojaProtokolaOpomenaPredUtuzenje navigirajNaObrasciBrojaProtokolaOpomenaPredUtuzenje() throws Exception{
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(pravniOdnosiWE));
+		pravniOdnosiWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(obrasciBrojaProtokolaOpomenaPredUtuzenjeWE));
+		obrasciBrojaProtokolaOpomenaPredUtuzenjeWE.click();
+		return new ObrasciBrojaProtokolaOpomenaPredUtuzenje(driver);
 	}
 }
