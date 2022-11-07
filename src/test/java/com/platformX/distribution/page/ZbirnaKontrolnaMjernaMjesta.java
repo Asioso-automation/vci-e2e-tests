@@ -53,6 +53,12 @@ public class ZbirnaKontrolnaMjernaMjesta extends PocetnaStranica {
 	
 	@FindBy(xpath = "//tr[2]/td[2]")
 	 private WebElement nazivTabelaWE;
+	
+	@FindBy(xpath = "//div/div/div[3]/button[2]/span")
+	 private WebElement potvrdiBrisanjeBtnWE;
+	
+	@FindBy(xpath = "/html/body/div/div[3]/div/div")
+	 private WebElement obradaUTokuBtnWE;
 
 	public void verifikujZbirnaKontrolnaMjernaMjesta() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
@@ -79,11 +85,11 @@ public class ZbirnaKontrolnaMjernaMjesta extends PocetnaStranica {
 		assertTrue(brojKolona().size() == 12, "ZbirnaKontrolnaMjernaMjesta: Broj kolona nije dobar! ");
 	}
 	public String dodajZbirnoKontrolnoMjernoMjesto(String brBrojila) throws InterruptedException, FileNotFoundException, IOException {
-		String nazivZbirnogMjesta = "Zbirno mjm " + Helper.getRandomString(5);
+		String nazivZbirnogKontrolnogMjesta = "Zbirno mjm " + Helper.getRandomString(5);
 	    wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
 	    dodajBtnWE.click();
 	    wait.until(ExpectedConditions.elementToBeClickable(poljeNazivWE));
-	    poljeNazivWE.sendKeys(nazivZbirnogMjesta);
+	    poljeNazivWE.sendKeys(nazivZbirnogKontrolnogMjesta);
 	    wait.until(ExpectedConditions.elementToBeClickable(poljeBrojiloWE));
 	    poljeBrojiloWE.click();
 	    poljeBrojiloWE.sendKeys(brBrojila);
@@ -111,7 +117,7 @@ public class ZbirnaKontrolnaMjernaMjesta extends PocetnaStranica {
 		izaberiDatumWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(dodajZbirnoMjestoBtnWE));
 		dodajZbirnoMjestoBtnWE.click();
-		return nazivZbirnogMjesta;
+		return nazivZbirnogKontrolnogMjesta;
 	}
 	
 	public void verifikujZbirnoKontrolnoMjernoMjesto(String nazivZbirnogMjesta) throws InterruptedException, FileNotFoundException, IOException {
@@ -123,5 +129,53 @@ public class ZbirnaKontrolnaMjernaMjesta extends PocetnaStranica {
 		Thread.sleep(1000);
 		wait.until(ExpectedConditions.visibilityOf(nazivTabelaWE));
 		assertTrue(nazivTabelaWE.getText().contains(nazivZbirnogMjesta),"Mjerna Mjesta: Zbirno/Kontrolno mjerno mjesto nije dobro!");
+	}
+	
+	public String urediZbirnoKontrolnoMjernoMjesto() throws InterruptedException, FileNotFoundException, IOException {
+		String nazivZbirnogKontrolnogMjesta = "Zbirno mjm " + Helper.getRandomString(5);
+		wait.until(ExpectedConditions.elementToBeClickable(burgerBar1stWE));
+		burgerBar1stWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(urediBurgerBarWE));
+		urediBurgerBarWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(poljeNazivWE));
+		poljeNazivWE.click();
+		poljeNazivWE.clear();
+		poljeNazivWE.sendKeys(nazivZbirnogKontrolnogMjesta);
+		wait.until(ExpectedConditions.elementToBeClickable(dodajZbirnoMjestoBtnWE));
+		dodajZbirnoMjestoBtnWE.click();
+		return nazivZbirnogKontrolnogMjesta;
+	}
+	
+	public void verifikujUredjenoZbirnoKontrolnoMjernoMjesto(String nazivZbirnogKontrolnogMjesta) throws InterruptedException, FileNotFoundException, IOException {
+		wait.until(ExpectedConditions.elementToBeClickable(filterPoNazivuWE));
+		filterPoNazivuWE.click();
+		filterPoNazivuWE.clear();
+		filterPoNazivuWE.sendKeys(nazivZbirnogKontrolnogMjesta);
+		filterPoNazivuWE.sendKeys(Keys.ENTER);
+		wait.until(ExpectedConditions.elementToBeClickable(nazivTabelaWE));
+		assertTrue(nazivTabelaWE.getText().contains(nazivZbirnogKontrolnogMjesta),"Zbirno kontrolno mjerno mjesto: Naziv zbirnog kontrolnog mjernog mjesta nije dobar!");
+	}
+	
+	public void obrisiZbirnoKontrolnoMjernoMjesto() throws InterruptedException, FileNotFoundException, IOException {
+		wait.until(ExpectedConditions.elementToBeClickable(burgerBar1stWE));
+		burgerBar1stWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(brisiBurgerBarWE));
+		brisiBurgerBarWE.click();
+		Thread.sleep(1000);
+		wait.until(ExpectedConditions.elementToBeClickable(potvrdiBrisanjeBtnWE));
+		potvrdiBrisanjeBtnWE.click();
+	}
+	
+	public void verifikujBrisanjeZbirnogKontrolnogMjernogMjesta(String zbirnaKontrolnaMjernaMjesta) throws InterruptedException, FileNotFoundException, IOException {
+		wait.until(ExpectedConditions.invisibilityOf(obradaUTokuBtnWE));
+		wait.until(ExpectedConditions.elementToBeClickable(filterPoNazivuWE));
+		filterPoNazivuWE.click();
+		filterPoNazivuWE.clear();
+		filterPoNazivuWE.sendKeys(zbirnaKontrolnaMjernaMjesta);
+		filterPoNazivuWE.sendKeys(Keys.ENTER);
+		wait.until(ExpectedConditions.visibilityOf(praznaTabelaWE));
+		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
+		assertTrue(praznaTabelaWE.getText().equals("Nema podataka"), "Zbirna kontrolna mjerna mjesta: Poruka prazne tabele nije dobra!");
+
 	}
 }

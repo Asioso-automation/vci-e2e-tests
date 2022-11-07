@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.platformX.distribution.tests.PX_DIST_Brisanje_Obracunskog_Ugovora_PxD_Test">
+      <class name="com.platformX.distribution.tests.PX_DIST_Brisanje_Zbirnog_Kontrolnog_Mjernog_Mjesta_Test">
         <methods>
-          <include name="px_dist_brisanje_obracunskog_ugovora_pxd_test"/>
           <include name="setUp"/>
+          <include name="px_dist_brisanje_zbirnog_kontrolnog_mjernog_mjesta_test"/>
           <include name="cleanUp"/>
         </methods>
-      </class> <!-- com.platformX.distribution.tests.PX_DIST_Brisanje_Obracunskog_Ugovora_PxD_Test -->
+      </class> <!-- com.platformX.distribution.tests.PX_DIST_Brisanje_Zbirnog_Kontrolnog_Mjernog_Mjesta_Test -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
