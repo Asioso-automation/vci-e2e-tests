@@ -25,13 +25,13 @@ public class RegistarBrojila extends PocetnaStranica {
 	@FindBy(xpath = "//div[1]/div[2]/div[1]/div/div/div[1]/div/input")
 	 private WebElement poljeBrojWE;
 	
-	@FindBy(xpath = "//div[10]/div/div/div[1]/div[1]/input[1]")
+	@FindBy(xpath = "//div[4]/div/div/div/div[1]/div[1]/input[1]")
 	 private WebElement poljeTipBrojilaWE;
 	
 	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '59712 - E5BD (A-D)')]")
 	 private WebElement odaberiTipBrojilaWE;
 	
-	@FindBy(xpath = "//div[9]/div/div/div[1]/div/input")
+	@FindBy(xpath = "//div[3]/div[4]/div/div/div[1]/div/input")
 	 private WebElement poljeRedniBrojURegistruWE;
 	
 	@FindBy(xpath = "//div[2]/button[1]/span")

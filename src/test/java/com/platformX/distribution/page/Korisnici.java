@@ -26,6 +26,7 @@ public class Korisnici extends PocetnaStranica{
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaImeWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPrezimeWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKorisnickoImeWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTitulaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAktivanWE));
 		wait.until(ExpectedConditions.visibilityOf(dodajBtnWE));
 		wait.until(ExpectedConditions.visibilityOf(preuzmiExcelBtnWE));
@@ -34,6 +35,6 @@ public class Korisnici extends PocetnaStranica{
 		assertTrue(sekcijaBtnWE.getText().trim().equals("ADMINISTRACIJA"), "Korisnici: Naziv sekcije nije dobar!");
 		assertTrue(stranicaBtnWE.getText().trim().equals("KORISNICI"), "Korisnici: Naziv stranice nije dobar!");
 		assertTrue(naslovStraniceWE.getText().trim().equals("KORISNICI"), "Korisnici: Naziv stranice nije dobar!");
-		assertTrue(brojKolona().size() == 6, "Korisnici: Broj kolona nije dobar! ");
+		assertTrue(brojKolona().size() == 7, "Korisnici: Broj kolona nije dobar! ");
 	}
 }

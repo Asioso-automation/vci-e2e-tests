@@ -21,6 +21,7 @@ public class UgovorOPrikljucenju extends PocetnaStranica {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaElektroenergetskaSaglasnostWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKupacWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojProtokolaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaVrstaPodrucjaWE));
 		wait.until(ExpectedConditions.elementToBeClickable(sekcijaBtnWE));
@@ -32,7 +33,7 @@ public class UgovorOPrikljucenju extends PocetnaStranica {
 		assertTrue(sekcijaBtnWE.getText().trim().equals("MJERNA MJESTA"), "UgovorOPrikljucenju: Naziv sekcije nije dobar!");
 		assertTrue(stranicaBtnWE.getText().trim().equals("UGOVOR O PRIKLJUČENJU"), "UgovorOPrikljucenju: Naziv stranice nije dobar!");
 		assertTrue(naslovStraniceWE.getText().trim().equals("UGOVOR O PRIKLJUČENJU"), "UgovorOPrikljucenju: Naziv stranice nije dobar!");
-		assertTrue(brojKolona().size() == 6, "UgovorOPrikljucenju: Broj kolona nije dobar! ");
+		assertTrue(brojKolona().size() == 7, "UgovorOPrikljucenju: Broj kolona nije dobar! ");
 	}
 
 }

@@ -83,6 +83,7 @@ public class MjernaMjesta extends PocetnaStranica {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaFizickaLokacijaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTrafoStanicaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaCitackiHodWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaImaNapomenuWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPodNaponomWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAktivanUgovorWE));
 		wait.until(ExpectedConditions.elementToBeClickable(sekcijaBtnWE));
@@ -93,7 +94,7 @@ public class MjernaMjesta extends PocetnaStranica {
 		assertTrue(sekcijaBtnWE.getText().trim().equals("MJERNA MJESTA"), "MjernaMjesta: Naziv sekcije nije dobar!");
 		assertTrue(stranicaBtnWE.getText().trim().equals("MJERNA MJESTA"), "MjernaMjesta: Naziv stranice nije dobar!");
 		assertTrue(naslovStraniceWE.getText().trim().equals("MJERNA MJESTA"), "MjernaMjesta: Naziv stranice nije dobar!");
-		assertTrue(brojKolona().size() == 13, "MjernaMjesta: Broj kolona nije dobar! ");
+		assertTrue(brojKolona().size() == 14, "MjernaMjesta: Broj kolona nije dobar! ");
 	}
 	
 	public String dodajMjernoMjesto() throws InterruptedException, FileNotFoundException, IOException {
