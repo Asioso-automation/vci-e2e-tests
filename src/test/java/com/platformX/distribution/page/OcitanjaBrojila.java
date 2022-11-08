@@ -35,6 +35,7 @@ public class OcitanjaBrojila extends PocetnaStranica {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaRvtWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaRmtWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaSnaga1WE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaImaKorekcijuWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaProcijenjenoWE));
 		wait.until(ExpectedConditions.visibilityOf(dodajBtnWE));
 		wait.until(ExpectedConditions.visibilityOf(ukloniFiltereBtnWE));
@@ -44,7 +45,7 @@ public class OcitanjaBrojila extends PocetnaStranica {
 		assertTrue(sekcijaBtnWE.getText().trim().equals("OČITANJA"), "OcitanjaBrojila: Naziv sekcije nije dobar!");
 		assertTrue(stranicaBtnWE.getText().trim().equals("OČITANJA BROJILA"), "OcitanjaBrojila: Naziv stranice nije dobar!");
 		assertTrue(naslovStranice1WE.getText().trim().equals("OČITANJA BROJILA"), "OcitanjaBrojila: Naziv stranice nije dobar!");
-		assertTrue(brojKolona().size() == 17, "OcitanjaBrojila: Broj kolona nije dobar! ");
+		assertTrue(brojKolona().size() == 18, "OcitanjaBrojila: Broj kolona nije dobar! ");
 	}
 	
 	

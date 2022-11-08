@@ -93,6 +93,7 @@ public class ObracunskiUgovori extends PocetnaStranica {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTrenutnaTGWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTrenutnoBrojiloWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTrenutnaKonstWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaImaNapomenuWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAktivanWE));
 		wait.until(ExpectedConditions.elementToBeClickable(sekcijaBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(stranicaBtnWE));
@@ -102,7 +103,7 @@ public class ObracunskiUgovori extends PocetnaStranica {
 		assertTrue(sekcijaBtnWE.getText().trim().equals("UGOVORI"), "ObracunskiUgovori: Naziv sekcije nije dobar!");
 		assertTrue(stranicaBtnWE.getText().trim().equals("OBRAČUNSKI UGOVORI"), "ObracunskiUgovori: Naziv stranice nije dobar!");
 		assertTrue(naslovStranice1WE.getText().trim().equals("OBRAČUNSKI UGOVORI"), "ObracunskiUgovori: Naziv stranice nije dobar!");
-		assertTrue(brojKolona().size() == 12, "ObracunskiUgovori: Broj kolona nije dobar! ");
+		assertTrue(brojKolona().size() == 13, "ObracunskiUgovori: Broj kolona nije dobar! ");
 	}
 	
 	public void dodajObracunskiUgovor(String kupac, String mjernoMjesto, String brBrojila) throws InterruptedException, FileNotFoundException, IOException {
