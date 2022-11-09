@@ -75,7 +75,7 @@ public class NaseljenaMjesta extends PocetnaStranica {
 		stampaniNazivWE.sendKeys(naziv);
 		wait.until(ExpectedConditions.elementToBeClickable(opstinaWE));
 		opstinaWE.click();
-		opstinaWE.sendKeys(Helper.getRandomNumber(2));
+		opstinaWE.sendKeys(Helper.getRandomNumber(1));
 		Thread.sleep(1000);
 		opstinaWE.sendKeys(Keys.ARROW_DOWN);
 		opstinaWE.sendKeys(Keys.ENTER);
@@ -113,7 +113,7 @@ public class NaseljenaMjesta extends PocetnaStranica {
 		dodajNaseljenoMjestoWE.click();
 		return naseljenoMjesto;
 	}
-	public void obrisNaseljenoMjesto()throws InterruptedException{
+	public void obrisiNaseljenoMjesto()throws InterruptedException{
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		burgerBarWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(obrisiWE));

@@ -20,7 +20,7 @@ public class PX_DIST_011_Verifikacija_Sekcije_Administracija_Test  extends BaseT
 	
 	@Test (description = "test prolazi kroz sve stranice iz sekcije ADMINISTRACIJA i verifikuje ih")
 	
-	public void px_dist_011_verifikacija_sekcija_administracija_test() throws Exception {
+	public void px_dist_011_verifikacija_sekcije_administracija_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
