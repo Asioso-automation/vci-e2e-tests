@@ -13,6 +13,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import com.platformX.base.Kolone;
 import com.platformX.util.Helper;
 
+import net.sourceforge.htmlunit.corejs.javascript.tools.shell.JSConsole;
+
 public class ElektroenergetskeSaglasnosti extends PocetnaStranica {
 	
 	public ElektroenergetskeSaglasnosti(WebDriver driver) throws FileNotFoundException, IOException {
@@ -49,7 +51,7 @@ public class ElektroenergetskeSaglasnosti extends PocetnaStranica {
 	@FindBy(xpath = "//div[5]/div[2]/div[1]/div/div[1]/div[1]/div/button")  
 	 private WebElement datumBtnWE;
 	
-	@FindBy(xpath = "(//div[@class = 'v-btn__content' and contains(text(), '10')])[1]")  
+	@FindBy(xpath = "(//*[contains(@class, 'v-date-picker-table__current')])[1]")  
 	 private WebElement datum1WE;
 	
 	@FindBy(xpath = "//div[7]/div[2]/div/div/div[1]/div[1]/input[1]")  
@@ -88,7 +90,7 @@ public class ElektroenergetskeSaglasnosti extends PocetnaStranica {
 	@FindBy(xpath = "//div[18]/div[3]/div[1]/div/div[1]/div[1]/div/button")  
 	 private WebElement datumBtn1WE;
 	
-	@FindBy(xpath = "(//div[@class = 'v-btn__content' and contains(text(), '10')])[2]")
+	@FindBy(xpath = "(//*[contains(@class, 'v-date-picker-table__current')])[2]")
 	 private WebElement datum2WE;
 	
 	@FindBy(xpath = "//div[2]/button[1]/span")  
@@ -99,6 +101,18 @@ public class ElektroenergetskeSaglasnosti extends PocetnaStranica {
 	
 	@FindBy(xpath = "//tr[2]/td[2]")
 	private WebElement nazivTabelaWE;
+	
+	@FindBy(xpath = "//tr[2]/td[10]/button/span/i")
+	private WebElement burgerBarWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Uspješno završeno.')]")
+	private WebElement porukaWE;
+	
+	@FindBy(xpath = "//td[2]/div/div/div/div[1]/input")
+	private WebElement filterPoNazivuWE;
+	
+	
+	
 	
 	
 	public void verifikujElektroenergetskeSaglasnosti() throws InterruptedException, FileNotFoundException, IOException {
@@ -268,5 +282,45 @@ public class ElektroenergetskeSaglasnosti extends PocetnaStranica {
 		
 	}
 	
+	public void izmjeniElektroenergetskuSaglasnost () throws InterruptedException{
+		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
+		burgerBarWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(urediWE));
+		urediWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(odobrenaPrikljucnaSnagaWE));
+		odobrenaPrikljucnaSnagaWE.click();
+		odobrenaPrikljucnaSnagaWE.clear();
+		odobrenaPrikljucnaSnagaWE.sendKeys(Helper.getRandomNumber(1));
+		odobrenaPrikljucnaSnagaWE.sendKeys(Keys.ARROW_DOWN);
+		odobrenaPrikljucnaSnagaWE.sendKeys(Keys.ENTER);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView(true);", dodajElSaglasnostWE);
+		dodajElSaglasnostWE.click();
+		Thread.sleep(1000);
+		assertTrue(porukaWE.getText().equals("Uspješno završeno."), "ElektroenergetskaSaglasnost: Uređivanje nije uspešno!");
+	}
+	
+	public void obrisiElektroenergetskuSaglasnost() throws InterruptedException {
+		wait.until(ExpectedConditions.elementToBeClickable(burgerBar1stWE));
+		burgerBar1stWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(brisiBurgerBarWE));
+		brisiBurgerBarWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(potvrdiBrisanjeWE));
+		potvrdiBrisanjeWE.click();
+	}
+	
 
+	public void verifikujBrisanjeElektroenergetskeSaglasnosti(String naziv) throws InterruptedException {
+		wait.until(ExpectedConditions.visibilityOf(filterPoNazivuWE));
+		Thread.sleep(1000);
+		filterPoNazivuWE.click();
+		filterPoNazivuWE.clear();
+		filterPoNazivuWE.sendKeys(naziv);
+		filterPoNazivuWE.sendKeys(Keys.ENTER);
+		Thread.sleep(1000);
+		wait.until(ExpectedConditions.visibilityOf(praznaTabelaWE));
+		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
+		assertTrue(praznaTabelaWE.getText().equals("Nema podataka"), "ElektroenergetskaSaglasnost: Poruka prazne tabele nije dobra!");
+	}
+	
 }

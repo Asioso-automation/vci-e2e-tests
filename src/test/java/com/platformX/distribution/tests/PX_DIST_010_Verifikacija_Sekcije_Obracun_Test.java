@@ -21,7 +21,7 @@ public class PX_DIST_010_Verifikacija_Sekcije_Obracun_Test extends BaseTest {
 	
 	@Test (description = "test prolazi kroz sve stranice iz sekcije OBRACUN i verifikuje ih")
 	
-	public void px_dist_010_verifikacija_sekcija_obracun_test() throws Exception {
+	public void px_dist_010_verifikacija_sekcije_obracun_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
