@@ -111,10 +111,6 @@ public class ElektroenergetskeSaglasnosti extends PocetnaStranica {
 	@FindBy(xpath = "//td[2]/div/div/div/div[1]/input")
 	private WebElement filterPoNazivuWE;
 	
-	
-	
-	
-	
 	public void verifikujElektroenergetskeSaglasnosti() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
@@ -279,7 +275,6 @@ public class ElektroenergetskeSaglasnosti extends PocetnaStranica {
 		Thread.sleep(1000);
 		wait.until(ExpectedConditions.visibilityOf(nazivTabelaWE));
 		assertTrue(nazivTabelaWE.getText().equals(naziv), "ElektroenergetskaSaglasnost: Broj protokola nije pronadjen!");
-		
 	}
 	
 	public void izmjeniElektroenergetskuSaglasnost () throws InterruptedException{
@@ -308,7 +303,6 @@ public class ElektroenergetskeSaglasnosti extends PocetnaStranica {
 		wait.until(ExpectedConditions.elementToBeClickable(potvrdiBrisanjeWE));
 		potvrdiBrisanjeWE.click();
 	}
-	
 
 	public void verifikujBrisanjeElektroenergetskeSaglasnosti(String naziv) throws InterruptedException {
 		wait.until(ExpectedConditions.visibilityOf(filterPoNazivuWE));
