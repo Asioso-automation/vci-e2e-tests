@@ -87,7 +87,7 @@ public class Citaci extends PocetnaStranica {
 		assertTrue(imeCitacaTabelaWE.getText().equals(ime), "Citaci: Citac nije pronađen!");
 	}
 	
-	public String izmijeniCitaca() throws InterruptedException {
+	public String urediCitaca() throws InterruptedException {
 		String ime = "Citac " + Helper.getRandomString(5);
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBar1stWE));
 		burgerBar1stWE.click();

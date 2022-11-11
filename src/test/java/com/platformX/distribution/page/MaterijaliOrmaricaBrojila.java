@@ -1,17 +1,14 @@
 package com.platformX.distribution.page;
 
 import static org.testng.Assert.assertTrue;
-
 import java.io.FileNotFoundException;
 import java.io.IOException;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-
 import com.platformX.base.Kolone;
 
-public class MaterijaliOrmaricaBrojila extends PocetnaStranica{
+public class MaterijaliOrmaricaBrojila extends PocetnaStranica {
 
 	public MaterijaliOrmaricaBrojila(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);
@@ -32,4 +29,5 @@ public class MaterijaliOrmaricaBrojila extends PocetnaStranica{
 		assertTrue(naslovStraniceWE.getText().trim().equals("MATERIJALI ORMARIĆA BROJILA"), "MaterijaliOrmaricaBrojila: Naziv stranice nije dobar!");
 		assertTrue(brojKolona().size() == 3, "MaterijaliOrmaricaBrojila: Broj kolona nije dobar! ");
 	}
+
 }

@@ -1,8 +1,6 @@
 package com.platformX.distribution.page;
 
 import static org.testng.Assert.assertTrue;
-import static org.testng.Assert.expectThrows;
-
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import org.openqa.selenium.By;
@@ -63,7 +61,7 @@ public class NaseljenaMjesta extends PocetnaStranica {
 		assertTrue(brojKolona().size() == 4, "NaseljenaMjesta: Broj kolona nije dobar! ");
 	}
 
-	public String dodajNaseljenoMjesto ()throws Exception {
+	public String dodajNaseljenoMjesto() throws Exception {
 		String naziv = "NaseljenoMjesto" + Helper.getRandomString(4);
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
 		dodajBtnWE.click();
@@ -83,7 +81,8 @@ public class NaseljenaMjesta extends PocetnaStranica {
 		dodajNaseljenoMjestoWE.click();
 		return naziv;
 	}
-	public void verifikujNaseljenoMjesto(String naziv)throws Exception{
+	
+	public void verifikujNaseljenoMjesto(String naziv) throws Exception{
 		wait.until(ExpectedConditions.elementToBeClickable(filterNazivWE));
 		Thread.sleep(1000);
 		filterNazivWE.click();
@@ -94,7 +93,8 @@ public class NaseljenaMjesta extends PocetnaStranica {
 		wait.until(ExpectedConditions.visibilityOf(nazivTabelaWE));
 		assertTrue(nazivTabelaWE.getText().equals(naziv), "NaseljenaMjesta: Naseljeno mjesto nije pronadjena!");
 	}
-	public String izmjeniNaseljenoMjesto()throws InterruptedException{
+	
+	public String urediNaseljenoMjesto() throws InterruptedException{
 		String naseljenoMjesto = "NaseljenoMjesto" + Helper.getRandomString(4);
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		burgerBarWE.click();
@@ -113,6 +113,7 @@ public class NaseljenaMjesta extends PocetnaStranica {
 		dodajNaseljenoMjestoWE.click();
 		return naseljenoMjesto;
 	}
+	
 	public void obrisiNaseljenoMjesto()throws InterruptedException{
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		burgerBarWE.click();
@@ -135,4 +136,5 @@ public class NaseljenaMjesta extends PocetnaStranica {
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
 		assertTrue(praznaTabelaWE.getText().equals("Nema podataka"), "NaseljenaMjesta: Poruka prazne tabele nije dobra!");
 	}
+
 }

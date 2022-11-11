@@ -15,7 +15,7 @@ import com.platformX.distribution.page.Snabdjevaci;
 import com.platformX.distribution.page.TerenskeJedinice;
 import com.platformX.distribution.page.TipoviIzolacija;
 import com.platformX.distribution.page.TipoviMjernihMostova;
-import com.platformX.distribution.page.TrafoStanice;
+import com.platformX.distribution.page.Trafostanice;
 import com.platformX.distribution.page.Ulice;
 import com.platformX.distribution.page.Vlasnistva;
 import com.platformX.distribution.page.LogIn;
@@ -97,8 +97,8 @@ public class PX_DIST_003_Verifikacija_Sekcije_Sifarnici_Test {
 		monteri.verifikujMonteri();
 		LokacijeMontera lokacije = pocetna.navigirajNaLokacijeMontera();
 		lokacije.verifikujLokacijeMontera();
-		TrafoStanice trafoStanice = pocetna.navigirajNaTrafoStanice();
-		trafoStanice.verifikujTrafoStanice();
+		Trafostanice trafostanice = pocetna.navigirajNaTrafostanice();
+		trafostanice.verifikujTrafostanice();
 		Vlasnistva vlasnistva = pocetna.navigirajNaVlasnistva();
 		vlasnistva.verifikujVlasnistva();
 		NaciniPolaganjaInstalacija naciniPolaganjaInstalacija = pocetna.navigirajNaNaciniPolaganjaInstalacija();
@@ -120,6 +120,7 @@ public class PX_DIST_003_Verifikacija_Sekcije_Sifarnici_Test {
 		MaterijaliProvodnika materijaliProvodnika = pocetna.navigirajNaMaterijaliProvodnika();
 		materijaliProvodnika.verifikujMaterijaliProvodnika();
 	}
+	
 	@AfterTest
 	public void terminateBrowser() {
 		driver.quit();

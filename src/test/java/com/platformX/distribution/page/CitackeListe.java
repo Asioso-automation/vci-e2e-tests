@@ -1,16 +1,13 @@
 package com.platformX.distribution.page;
 
 import static org.testng.Assert.assertTrue;
-
 import java.io.FileNotFoundException;
 import java.io.IOException;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-
 import com.platformX.base.Kolone;
 
 public class CitackeListe  extends PocetnaStranica{
@@ -48,4 +45,5 @@ public class CitackeListe  extends PocetnaStranica{
 		assertTrue(naslovStraniceWE.getText().trim().equals("ČITAČKE LISTE"), "CitackeListe: Naziv stranice nije dobar!");
 		assertTrue(brojKolona().size() == 12, "CitackeListe: Broj kolona nije dobar! ");
 	}
+
 }

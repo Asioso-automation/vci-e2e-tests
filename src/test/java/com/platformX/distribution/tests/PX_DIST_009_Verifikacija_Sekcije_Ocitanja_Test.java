@@ -18,8 +18,6 @@ import com.platformX.distribution.page.PocetnaStranica;
 import com.platformX.distribution.page.ZbirnaKontrolnaOcitanja;
 import com.platformX.distribution.page.ZbirnaKontrolnaPotrosnja;
 
-
-
 public class PX_DIST_009_Verifikacija_Sekcije_Ocitanja_Test extends BaseTest{
 
 	public PX_DIST_009_Verifikacija_Sekcije_Ocitanja_Test() throws IOException, FileNotFoundException {
@@ -27,7 +25,6 @@ public class PX_DIST_009_Verifikacija_Sekcije_Ocitanja_Test extends BaseTest{
 	}
 	
 	@Test (description = "test prolazi kroz sve stranice iz sekcije OCITANJA i verifikuje ih")
-	
 	public void px_dist_009_verifikacija_sekcije_ocitanja_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
@@ -56,7 +53,6 @@ public class PX_DIST_009_Verifikacija_Sekcije_Ocitanja_Test extends BaseTest{
 		zbirnaKontrolnaPotrosnja.verifikujZbirnaKontrolnaPotrosnja();
 		MonitoringOcitanja monitoringOcitanja = pocetna.navigirajNaMonitoringOcitanja();
 		monitoringOcitanja.verifikujMonitoringOcitanja();
-		
 	}
 	
 }

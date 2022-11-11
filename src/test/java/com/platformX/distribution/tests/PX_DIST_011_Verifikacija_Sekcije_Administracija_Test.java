@@ -2,9 +2,7 @@ package com.platformX.distribution.tests;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
-
 import org.testng.annotations.Test;
-
 import com.platformX.base.BaseTest;
 import com.platformX.distribution.page.DnevnikIzmjena;
 import com.platformX.distribution.page.Korisnici;
@@ -34,4 +32,5 @@ public class PX_DIST_011_Verifikacija_Sekcije_Administracija_Test  extends BaseT
 		dnevnikIzmjena.verifikujDnevnikIzmjena();
 		// TODO PozadinskiProcesi
 	}
+
 }

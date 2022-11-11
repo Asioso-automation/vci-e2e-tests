@@ -30,4 +30,5 @@ public class PX_DIST_006_Verifikacija_Sekcije_Kupci_Test extends BaseTest {
 		ZahtjeviZaDostavuPodatakaKUPCI zahtjeviZaDostavuPodatakaKupci = pocetna.navigirajNaZahtjeviZaDostavuPodatakaKUPCI();
 		zahtjeviZaDostavuPodatakaKupci.verifikujZahtjeviZaDostavuPodatakaKUPCI();
 	}
+
 }

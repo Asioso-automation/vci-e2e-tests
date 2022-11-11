@@ -1,18 +1,14 @@
 package com.platformX.distribution.page;
 
 import static org.testng.Assert.assertTrue;
-import static org.testng.Assert.expectThrows;
-
 import java.io.FileNotFoundException;
 import java.io.IOException;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-
 import com.platformX.base.Kolone;
 import com.platformX.util.Helper;
 
@@ -61,7 +57,6 @@ public class Sezone extends PocetnaStranica {
 	@FindBy(xpath = "//div/div/div[3]/button[2]")
 	private WebElement potvrdiBrisanjeWE;
 	
-	
 	public void verifikujSezone() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
@@ -108,7 +103,7 @@ public class Sezone extends PocetnaStranica {
 	    return naziv;
 	}
 	
-	public void verifikujSezonu(String naziv)throws Exception{
+	public void verifikujSezonu(String naziv) throws Exception {
 	    wait.until(ExpectedConditions.elementToBeClickable(filterPoNazivuWE));
 	    filterPoNazivuWE.click();
 	    filterPoNazivuWE.clear();
@@ -118,7 +113,7 @@ public class Sezone extends PocetnaStranica {
 	    assertTrue(nazivSezoneTabelaWE.getText().equals(naziv), "Sezona: Sezona nije pronadjena!");
 	}
 	
-	public String izmjeniSezonu () throws Exception{
+	public String urediSezonu() throws InterruptedException {
 		String sezona = "Sezona" + Helper.getRandomString(5);
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		burgerBarWE.click();
@@ -155,7 +150,5 @@ public class Sezone extends PocetnaStranica {
 		wait.until(ExpectedConditions.visibilityOf(praznaTabelaWE));
 		assertTrue(praznaTabelaWE.getText().equals("Nema podataka"), "Sezona: Poruka prazne tabele nije dobra!");
 	}
-	
 
-	
 }

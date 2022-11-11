@@ -1,14 +1,11 @@
 package com.platformX.distribution.page;
 
 import static org.testng.Assert.assertTrue;
-
 import java.io.FileNotFoundException;
 import java.io.IOException;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-
 import com.platformX.base.Kolone;
 
 public class CitackiHodovi extends PocetnaStranica {
@@ -17,7 +14,6 @@ public class CitackiHodovi extends PocetnaStranica {
 		super(driver);
 	}
 
-	
 	public void verifikujCitackiHodovi()throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
@@ -36,4 +32,5 @@ public class CitackiHodovi extends PocetnaStranica {
 		assertTrue(naslovStraniceWE.getText().trim().equals("ČITAČKI HODOVI"), "CitackiHodovi: Naziv stranice nije dobar!");
 		assertTrue(brojKolona().size() == 6, "CitackiHodovi: Broj kolona nije dobar! ");
 	}
+
 }

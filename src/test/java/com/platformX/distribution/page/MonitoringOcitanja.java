@@ -1,16 +1,13 @@
 package com.platformX.distribution.page;
 
 import static org.testng.Assert.assertTrue;
-
 import java.io.FileNotFoundException;
 import java.io.IOException;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-
 
 public class MonitoringOcitanja extends PocetnaStranica {
 	
@@ -133,8 +130,7 @@ public class MonitoringOcitanja extends PocetnaStranica {
 	
 	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Prosječna potrošnja']")
 	protected WebElement kolonaProsjecnaPotrosnjaWE;
-	
-	
+
 	public void verifikujMonitoringOcitanja()throws InterruptedException, FileNotFoundException, IOException {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Monitoring očitanja')]")));

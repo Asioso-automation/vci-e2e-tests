@@ -16,10 +16,8 @@ public class FizickaLica extends PocetnaStranica {
 	
 	public FizickaLica(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);
-		
 	}
-	
-	
+
 	 @FindBy(xpath = "//div[2]/div[1]/div/div/div[1]/div/input")  
 	 private WebElement poljeImeIPrezimeWE;
 	 
@@ -58,12 +56,6 @@ public class FizickaLica extends PocetnaStranica {
 	 
 	 @FindBy(xpath = "//div/div/div[3]/button[2]/span")
 	 private WebElement potvrdiBrisanjeBtnWE;
-	 
-	 
-	 
-	
-	 
-	 
 
 	public void verifikujFizickaLica() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
@@ -114,7 +106,6 @@ public class FizickaLica extends PocetnaStranica {
 		dodajFizickoLiceBtnWE.click();
 		Thread.sleep(1000);
 		return nazivFizickogLica;
-
 	}
 	
 	public void verifikujFizickoLice(String nazivFizickogLica) throws InterruptedException {
@@ -145,8 +136,7 @@ public class FizickaLica extends PocetnaStranica {
 		 poljeImeIPrezimeWE.sendKeys(nazivFizickogLica);
 		 wait.until(ExpectedConditions.elementToBeClickable(dodajFizickoLiceBtnWE));
 		 dodajFizickoLiceBtnWE.click();
-		 return nazivFizickogLica;
-		 
+		 return nazivFizickogLica; 
 	 }
 	 
 	 public void verifikujUredjenoFizickoLice(String nazivFizickogLica) throws InterruptedException {
@@ -157,8 +147,7 @@ public class FizickaLica extends PocetnaStranica {
 		filterPoImeIPrezimeWE.sendKeys(Keys.ENTER);
 		Thread.sleep(1000);
 		wait.until(ExpectedConditions.visibilityOf(imeIPrezimeTabelaWE));
-		assertTrue(imeIPrezimeTabelaWE.getText().contains(nazivFizickogLica),"Fizicka Lica: Naziv uredjenog fizickog lica nije dobar!");
-		 
+		assertTrue(imeIPrezimeTabelaWE.getText().contains(nazivFizickogLica),"Fizicka Lica: Naziv uredjenog fizickog lica nije dobar!");	 
 	 }
 	 
 	 public void obrisiFizickoLice() throws InterruptedException {
@@ -169,8 +158,6 @@ public class FizickaLica extends PocetnaStranica {
 		 Thread.sleep(1000);
 		 wait.until(ExpectedConditions.elementToBeClickable(potvrdiBrisanjeBtnWE));
 		 potvrdiBrisanjeBtnWE.click();
-		 
-
 	 }
 	 
 	 public void verifikujBrisanjeFizickogLica(String fizickaLica) throws InterruptedException {
@@ -185,6 +172,5 @@ public class FizickaLica extends PocetnaStranica {
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
 		assertTrue(praznaTabelaWE.getText().equals("Nema podataka"), "Fizicka lica: Poruka prazne tabele nije dobra!");
 	 }
+
 }
-
-

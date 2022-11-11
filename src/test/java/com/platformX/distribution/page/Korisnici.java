@@ -1,14 +1,11 @@
 package com.platformX.distribution.page;
 
 import static org.testng.Assert.assertTrue;
-
 import java.io.FileNotFoundException;
 import java.io.IOException;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-
 import com.platformX.base.Kolone;
 
 public class Korisnici extends PocetnaStranica{
@@ -37,4 +34,5 @@ public class Korisnici extends PocetnaStranica{
 		assertTrue(naslovStraniceWE.getText().trim().equals("KORISNICI"), "Korisnici: Naziv stranice nije dobar!");
 		assertTrue(brojKolona().size() == 7, "Korisnici: Broj kolona nije dobar! ");
 	}
+
 }

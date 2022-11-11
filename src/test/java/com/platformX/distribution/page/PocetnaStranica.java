@@ -570,7 +570,7 @@ public class PocetnaStranica extends PageBase {
 		return new ZahtjeviZaRaskidUgovora(driver);
 	}
 	
-	public ZahtjeviZaObracunskeUgovore navigirajNaZahtjeviZaUgovore() throws Exception {
+	public ZahtjeviZaObracunskeUgovore navigirajNaZahtjeviZaObracunskeUgovore() throws Exception {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(obracunskiUgovoriWE));
 		obracunskiUgovoriWE.click();
@@ -732,13 +732,13 @@ public class PocetnaStranica extends PageBase {
 		return new LokacijeMontera(driver);
 	}
 	
-	public TrafoStanice navigirajNaTrafoStanice() throws Exception {
+	public Trafostanice navigirajNaTrafostanice() throws Exception {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(sifarniciWE));
 		sifarniciWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(trafoStaniceWE));
 		trafoStaniceWE.click();
-		return new TrafoStanice(driver);
+		return new Trafostanice(driver);
 	}
 	
 	public Vlasnistva navigirajNaVlasnistva() throws Exception {

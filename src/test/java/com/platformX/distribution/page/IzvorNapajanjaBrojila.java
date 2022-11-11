@@ -1,14 +1,11 @@
 package com.platformX.distribution.page;
 
 import static org.testng.Assert.assertTrue;
-
 import java.io.FileNotFoundException;
 import java.io.IOException;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-
 import com.platformX.base.Kolone;
 
 public class IzvorNapajanjaBrojila extends PocetnaStranica {
@@ -32,4 +29,5 @@ public class IzvorNapajanjaBrojila extends PocetnaStranica {
 		assertTrue(naslovStraniceWE.getText().trim().equals("IZVOR NAPAJANJA BROJILA"), "IzvorNapajanjaBrojila: Naziv stranice nije dobar!");
 		assertTrue(brojKolona().size() == 3, "IzvorNapajanjaBrojila: Broj kolona nije dobar! ");
 	}
+
 }

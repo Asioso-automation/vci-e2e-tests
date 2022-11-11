@@ -18,7 +18,6 @@ public class MjernaMjesta extends PocetnaStranica {
 	public MjernaMjesta(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);
 	}
-	
 
 	@FindBy(xpath = "//div[2]/div[1]/div/div/div[1]/div/input")
 	 private WebElement poljeSifraWE;
@@ -67,8 +66,6 @@ public class MjernaMjesta extends PocetnaStranica {
 	 
 	 @FindBy(xpath = "//tr[2]/td[2]")
 	 private WebElement eicTabelaWE;
-	
-	
 
 	public void verifikujMjernaMjesta() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
@@ -150,8 +147,10 @@ public class MjernaMjesta extends PocetnaStranica {
 		assertTrue(sifraTabelaWE.getText().contains(sifraMjernogMjesta),"Mjerna mjesta: Sifra mjernog mjesta nije dobra!");
 		
 	 }
+	
 	public String kreirajMjernoMjesto() {
 	   String mjernoMjesto = eicTabelaWE.getText();
 	   return mjernoMjesto;
 	}
+
 }

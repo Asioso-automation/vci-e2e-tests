@@ -7,7 +7,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import com.platformX.base.Kolone;
@@ -18,13 +17,9 @@ public class ObracunskaSnaga extends PocetnaStranica {
 	public ObracunskaSnaga(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);
 	}
-	
 
-	
-	
 	@FindBy(xpath = "//form/div/div[1]/div[1]/div[1]/div/div/div[1]/div[1]/div[1]") 
 	private WebElement grupaWE;
-	
 	
 	@FindBy(xpath = "//div[2]/div/div/div[1]/div/input") 
 	private WebElement kwWE;
@@ -37,8 +32,6 @@ public class ObracunskaSnaga extends PocetnaStranica {
 	
 	@FindBy(xpath = "//div[2]/button[1]") 
 	private WebElement dodajBtn1WE;
-	
-	
 	
 	public void verifikujObracunskaSnaga() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
@@ -81,7 +74,8 @@ public class ObracunskaSnaga extends PocetnaStranica {
 //		wait.until(ExpectedConditions.elementToBeClickable(dodajBtn1WE));
 //		dodajBtn1WE.click();
 //	}
-	public void dodajObracunskuSnagu(String tarifnaGrupa)throws InterruptedException{
+	
+	public void dodajObracunskuSnagu(String tarifnaGrupa) throws InterruptedException {
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
 		dodajBtnWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(grupaWE));
@@ -98,12 +92,9 @@ public class ObracunskaSnaga extends PocetnaStranica {
 		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
 		submitBtnWE.click();
 	}
-//	
+
 //	public void verifikuj(String naziv) throws InterruptedException{
 //		String naziv = "19 - TarfinaGrupa6c87, DT";
 //	}
-	
-	
-	
-	
+
 }

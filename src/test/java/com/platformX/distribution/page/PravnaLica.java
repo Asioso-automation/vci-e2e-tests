@@ -60,9 +60,7 @@ public class PravnaLica extends PocetnaStranica {
 	
 	@FindBy(xpath = "//div/div/div[3]/button[2]/span")
 	 private WebElement potvrdiBrisanjeBtnWE;
-	
-	
-	
+
 	public void verifikujPravnaLica() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Pravna lica')]")));
@@ -118,14 +116,12 @@ public class PravnaLica extends PocetnaStranica {
 		js.executeScript("arguments[0].scrollIntoView(true);", dodajPravnoLiceBtnWE);
 		wait.until(ExpectedConditions.elementToBeClickable(dodajPravnoLiceBtnWE));
 		dodajPravnoLiceBtnWE.click();
-		return nazivPravnogLica;
-				
+		return nazivPravnogLica;		
 	}
 	
 	public String kreirajPravnoLice() {
 		String kupac = idTabelaWE.getText() + " - " + nazivTabelaWE.getText();
 		return kupac;
-		
 	}
 	
 	public void verifikujPravnoLice(String nazivPravnogLica) throws InterruptedException {
@@ -137,7 +133,6 @@ public class PravnaLica extends PocetnaStranica {
 		Thread.sleep(1000);
 		wait.until(ExpectedConditions.elementToBeClickable(nazivTabelaWE));
 		assertTrue(nazivTabelaWE.getText().contains(nazivPravnogLica),"Pravna lica: Naziv pravnog lica nije dobar!");
-
 	}
 	
 	public String urediPravnoLice() throws InterruptedException {
@@ -174,7 +169,6 @@ public class PravnaLica extends PocetnaStranica {
 		 Thread.sleep(1000);
 		 wait.until(ExpectedConditions.elementToBeClickable(potvrdiBrisanjeBtnWE));
 		 potvrdiBrisanjeBtnWE.click();
-	
     }
 	
 	public void verifikujBrisanjePravnogLica(String pravnaLica) throws InterruptedException {
@@ -189,4 +183,5 @@ public class PravnaLica extends PocetnaStranica {
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
 		assertTrue(praznaTabelaWE.getText().equals("Nema podataka"), "Pravna lica: Poruka prazne tabele nije dobra!");
 	}
+
 }

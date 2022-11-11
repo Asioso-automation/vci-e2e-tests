@@ -9,14 +9,14 @@ import com.platformX.distribution.page.LogIn;
 import com.platformX.distribution.page.PocetnaStranica;
 import com.platformX.distribution.page.TerenskeJedinice;
 
-public class PX_DIST_Izmjena_Fizicke_Lokacije_Test extends BaseTest {
+public class PX_DIST_Uredjivanje_Fizicke_Lokacije_Test extends BaseTest {
 	
-	public PX_DIST_Izmjena_Fizicke_Lokacije_Test() throws IOException, FileNotFoundException {
+	public PX_DIST_Uredjivanje_Fizicke_Lokacije_Test() throws IOException, FileNotFoundException {
 		super();
 	}
 
 	@Test
-	public void px_dist_izmjena_fizicke_lokacije_test() throws Exception {
+	public void px_dist_uredjivanje_fizicke_lokacije_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
@@ -30,7 +30,7 @@ public class PX_DIST_Izmjena_Fizicke_Lokacije_Test extends BaseTest {
 		fizickeLokacije.verifikujFizickeLokacije();
 		String nazivFizickeLokacije = fizickeLokacije.dodajFizickuLokaciju(terenskaJedinica);
 		fizickeLokacije.verifikujFizickuLokaciju(nazivFizickeLokacije);
-		String novaFizickaLokacija = fizickeLokacije.IzmijeniFizickuLokaciju();
+		String novaFizickaLokacija = fizickeLokacije.urediFizickuLokaciju();
 		fizickeLokacije.verifikujFizickuLokaciju(novaFizickaLokacija);
 	}
 

@@ -2,9 +2,7 @@ package com.platformX.distribution.tests;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
-
 import org.testng.annotations.Test;
-
 import com.platformX.base.BaseTest;
 import com.platformX.distribution.page.KorekcijeEnergetskihObracuna;
 import com.platformX.distribution.page.KorekcionaOdobrenjaZaduzenja;
@@ -20,7 +18,6 @@ public class PX_DIST_010_Verifikacija_Sekcije_Obracun_Test extends BaseTest {
 	}
 	
 	@Test (description = "test prolazi kroz sve stranice iz sekcije OBRACUN i verifikuje ih")
-	
 	public void px_dist_010_verifikacija_sekcije_obracun_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
@@ -36,4 +33,5 @@ public class PX_DIST_010_Verifikacija_Sekcije_Obracun_Test extends BaseTest {
 		KorekcionaOdobrenjaZaduzenja korekcionaOdobrenjaZaduzenja = pocetna.navigirajNaKorekcionaOdobrenjaZaduzenja();
 		korekcionaOdobrenjaZaduzenja.verifikujKorekcionaOdobrenjaZaduzenja();
 	}
+
 }

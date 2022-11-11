@@ -19,7 +19,6 @@ public class PX_DIST_Uredjivanje_Obracunskog_Ugovora_PxD_Test  extends BaseTest 
 	
 	@Test
 	public void px_dist_uredjivanje_obracunskog_ugovora_pxd_test() throws Exception {
-		
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
@@ -44,7 +43,8 @@ public class PX_DIST_Uredjivanje_Obracunskog_Ugovora_PxD_Test  extends BaseTest 
 		ObracunskiUgovori obracunskiUgovoriPage = pocetna.navigirajNaObracunskiUgovori();
 		obracunskiUgovoriPage.dodajObracunskiUgovor(kupac, mjernoMjesto, brBrojila);
 		obracunskiUgovoriPage.verifikujObracunskiUgovor(mjernoMjesto);
-		obracunskiUgovoriPage.izmjeniObracunskiUgovor();
-		obracunskiUgovoriPage.verifikujIzmjenjenUgovor(mjernoMjesto);
+		obracunskiUgovoriPage.urediObracunskiUgovor();
+		obracunskiUgovoriPage.verifikujObracunskiUgovor(mjernoMjesto);
 	}
+
 }

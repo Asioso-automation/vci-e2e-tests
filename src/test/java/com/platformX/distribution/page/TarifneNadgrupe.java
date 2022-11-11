@@ -3,14 +3,12 @@ package com.platformX.distribution.page;
 import static org.testng.Assert.assertTrue;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-
 import com.platformX.base.Kolone;
 import com.platformX.util.Helper;
 
@@ -66,7 +64,7 @@ public class TarifneNadgrupe extends PocetnaStranica {
 		return naziv;
 	}
 	
-	public void verifikujTarifnuNadgrupu(String naziv)throws Exception{
+	public void verifikujTarifnuNadgrupu(String naziv) throws Exception {
 		wait.until(ExpectedConditions.visibilityOf(filterPoNazivuWE));
 		filterPoNazivuWE.click();
 		filterPoNazivuWE.clear();
@@ -76,7 +74,7 @@ public class TarifneNadgrupe extends PocetnaStranica {
 		assertTrue(nazivTarifneNadgrupeTabelaWE.getText().equals(naziv), "TarfinaNadgrupa: Tarifna nadgrupa nije pronadjena!");
 	}
 	
-	public String izmjeniTarifnuNadgrupu()throws InterruptedException{
+	public String urediTarifnuNadgrupu()throws InterruptedException {
 		String tarifnaNadrgupa = "Tarifna nadrgupa" + Helper.getRandomString(4);
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		burgerBarWE.click();
@@ -91,7 +89,7 @@ public class TarifneNadgrupe extends PocetnaStranica {
 		return tarifnaNadrgupa;
 	}
 	
-	public void obrisiTarifnuNadgrupu()throws InterruptedException{
+	public void obrisiTarifnuNadgrupu()throws InterruptedException {
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		burgerBarWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(obrisiWE));
@@ -100,7 +98,7 @@ public class TarifneNadgrupe extends PocetnaStranica {
 		potvrdiBrisanjeWE.click();
 	}
 	
-	public void verifikujBrisanjeTarifneNadrgupe(String tarifnaNadgrupa)throws InterruptedException{
+	public void verifikujBrisanjeTarifneNadrgupe(String tarifnaNadgrupa)throws InterruptedException {
 		wait.until(ExpectedConditions.elementToBeClickable(filterPoNazivuWE));
 		filterPoNazivuWE.click();
 		filterPoNazivuWE.clear();
@@ -110,6 +108,5 @@ public class TarifneNadgrupe extends PocetnaStranica {
 		wait.until(ExpectedConditions.visibilityOf(praznaTabelaWE));
 		assertTrue(praznaTabelaWE.getText().equals("Nema podataka"), "TarifnaNadgrupa: Poruka prazne tabele nije dobra!");
 	}
-	
 	
 }

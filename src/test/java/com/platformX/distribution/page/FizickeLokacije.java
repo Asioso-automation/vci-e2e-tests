@@ -95,7 +95,7 @@ public class FizickeLokacije extends PocetnaStranica {
 		assertTrue(nazivFizickeLokacijeTabelaWE.getText().equals(naziv), "FizickeLokacije: Fizicka lokacija nije pronađena!");
 	}
 	
-	public String IzmijeniFizickuLokaciju() throws InterruptedException {
+	public String urediFizickuLokaciju() throws InterruptedException {
 		String naziv = "FizickaLokacija " + Helper.getRandomString(5);
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBar1stWE));
 		burgerBar1stWE.click();

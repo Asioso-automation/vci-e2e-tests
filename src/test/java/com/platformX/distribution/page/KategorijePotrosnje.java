@@ -55,7 +55,7 @@ public class KategorijePotrosnje extends PocetnaStranica {
 		assertTrue(brojKolona().size() == 3, "KategorijePotrosnje: Broj kolona nije dobar! ");
 	}
 
-	public String dodajKategorijuPotrosnju() throws InterruptedException {
+	public String dodajKategorijuPotrosnje() throws InterruptedException {
 		String naziv = "KategorijaPotrosnje" + Helper.getRandomString(5);
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
 		Thread.sleep(1000);
@@ -64,8 +64,7 @@ public class KategorijePotrosnje extends PocetnaStranica {
 		nazivKategorijePotrosnjeWE.sendKeys(naziv);
 		wait.until(ExpectedConditions.visibilityOf(dodajBtn1WE));
 		dodajBtn1WE.click();
-		return naziv;
-			
+		return naziv;	
 	}
 	
 	public void verifikujKategorijuPotrosnje(String naziv) throws Exception {
@@ -79,7 +78,7 @@ public class KategorijePotrosnje extends PocetnaStranica {
        assertTrue(nazivKategorijePotrosnjeTabelaWE.getText().equals(naziv), "KategorijaPotrosnje: KategorijaPotrosnje nije pronadjena!");
 	}
 	
-	public String izmjeniKategorijuPotrosnje() throws Exception {
+	public String urediKategorijuPotrosnje() throws InterruptedException {
 		String kategorijaPotrosnje = "KategorijaPotrosnje" + Helper.getRandomString(5);
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		burgerBarWE.click();
@@ -93,9 +92,9 @@ public class KategorijePotrosnje extends PocetnaStranica {
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtn1WE));
 		dodajBtn1WE.click();
 		return kategorijaPotrosnje;
-		}
+	}
 	
-	public void obrisiKategorijuPotrosnje() throws InterruptedException{ 
+	public void obrisiKategorijuPotrosnje() throws InterruptedException { 
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		burgerBarWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(obrisiWE));
@@ -105,7 +104,7 @@ public class KategorijePotrosnje extends PocetnaStranica {
 		potvrdiBrisanjeWE.click();
 	}
 	
-	public void verifikujBrisanjeKategorijePotrosnje (String kategorijaPotrosnje) throws InterruptedException{
+	public void verifikujBrisanjeKategorijePotrosnje (String kategorijaPotrosnje) throws InterruptedException {
 		wait.until(ExpectedConditions.visibilityOf(filterPoNazivuWE));
 		Thread.sleep(1000);
 		wait.until(ExpectedConditions.elementToBeClickable(filterPoNazivuWE));

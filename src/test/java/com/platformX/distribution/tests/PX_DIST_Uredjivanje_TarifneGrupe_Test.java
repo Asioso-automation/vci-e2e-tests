@@ -2,23 +2,20 @@ package com.platformX.distribution.tests;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
-
 import org.testng.annotations.Test;
-
 import com.platformX.base.BaseTest;
 import com.platformX.distribution.page.LogIn;
 import com.platformX.distribution.page.PocetnaStranica;
 import com.platformX.distribution.page.TarifneGrupe;
-import com.platformX.distribution.page.TarifneNadgrupe;
 
-public class PX_DIST_Izmjena_TarifneGrupe_Test extends BaseTest {
+public class PX_DIST_Uredjivanje_TarifneGrupe_Test extends BaseTest {
 
-	public PX_DIST_Izmjena_TarifneGrupe_Test() throws IOException, FileNotFoundException {
+	public PX_DIST_Uredjivanje_TarifneGrupe_Test() throws IOException, FileNotFoundException {
 		super();
 	}
 
 	@Test
-	public void px_dist_izmjena_tarifnegrupe_test() throws Exception {
+	public void px_dist_uredjivanje_tarifnegrupe_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
@@ -28,7 +25,8 @@ public class PX_DIST_Izmjena_TarifneGrupe_Test extends BaseTest {
 		tarifneGrupe.verifikujTarifneGrupe();
 		String tarifnaGrupa = tarifneGrupe.dodajTarifnuGrupu();
 		tarifneGrupe.verifikujTarifnuGrupu(tarifnaGrupa);
-		String novaTarifnaGrupa = tarifneGrupe.izmjeniTarifnuGrupu();
+		String novaTarifnaGrupa = tarifneGrupe.urediTarifnuGrupu();
 		tarifneGrupe.verifikujTarifnuGrupu(novaTarifnaGrupa);
 	}
+
 }

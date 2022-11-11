@@ -72,7 +72,7 @@ public class SektorDjelatnosti extends PocetnaStranica {
 		assertTrue(imeSektoraDjelatnostiTabelaWE.getText().equals(ime), "SektorDjelatnosti: Sektor djelatnosti nije pronađen!");
 	}
 	
-	public String izmijeniSektorDjelatnosti() throws InterruptedException {
+	public String urediSektorDjelatnosti() throws InterruptedException {
 		String naziv = "SektorDjelatnosti " + Helper.getRandomString(5);
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBar1stWE));
 		burgerBar1stWE.click();

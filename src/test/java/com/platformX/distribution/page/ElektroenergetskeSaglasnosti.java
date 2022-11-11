@@ -13,8 +13,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import com.platformX.base.Kolone;
 import com.platformX.util.Helper;
 
-import net.sourceforge.htmlunit.corejs.javascript.tools.shell.JSConsole;
-
 public class ElektroenergetskeSaglasnosti extends PocetnaStranica {
 	
 	public ElektroenergetskeSaglasnosti(WebDriver driver) throws FileNotFoundException, IOException {
@@ -136,7 +134,7 @@ public class ElektroenergetskeSaglasnosti extends PocetnaStranica {
 		assertTrue(brojKolona().size() == 10, "ElektroenergetskeSaglasnosti: Broj kolona nije dobar! ");
 	}
 	
-	public String dodajElektronergetskuSaglasnost() throws Exception{
+	public String dodajElektronergetskuSaglasnost() throws Exception {
 		String naziv = "ElSaglasnost" + Helper.getRandomNumber(3);
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
 		dodajBtnWE.click();
@@ -266,7 +264,8 @@ public class ElektroenergetskeSaglasnosti extends PocetnaStranica {
 		dodajElSaglasnostWE.click();
 		return naziv;
 	}
-	public void verifikujElektroenergetskuSaglasnost (String naziv)throws Exception{
+	
+	public void verifikujElektroenergetskuSaglasnost(String naziv)throws Exception {
 		wait.until(ExpectedConditions.elementToBeClickable(filterBrojProtokolaWE));
 		filterBrojProtokolaWE.click();
 		filterBrojProtokolaWE.clear();
@@ -277,7 +276,7 @@ public class ElektroenergetskeSaglasnosti extends PocetnaStranica {
 		assertTrue(nazivTabelaWE.getText().equals(naziv), "ElektroenergetskaSaglasnost: Broj protokola nije pronadjen!");
 	}
 	
-	public void izmjeniElektroenergetskuSaglasnost () throws InterruptedException{
+	public void urediElektroenergetskuSaglasnost() throws InterruptedException {
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		burgerBarWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(urediWE));

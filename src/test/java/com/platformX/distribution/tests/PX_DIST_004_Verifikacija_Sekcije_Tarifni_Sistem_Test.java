@@ -20,7 +20,7 @@ public class PX_DIST_004_Verifikacija_Sekcije_Tarifni_Sistem_Test extends BaseTe
 	}
 
 	@Test (description="test prolazi kroz sve stranice iz sekcije TARIFNI SISTEM i verifikuje ih")
-	public void px_004_verifikacije_sekcije_tarifni_sistem_test() throws Exception {
+	public void px_004_verifikacija_sekcije_tarifni_sistem_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();

@@ -17,8 +17,7 @@ public class TarifneGrupe extends PocetnaStranica {
 	public TarifneGrupe(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);
 	}
-	
-	
+
 	@FindBy(xpath = "//div[1]/div[1]/div/div/div[1]/div/input") 
 	private WebElement nazivTarifneGrupeWE;
 	
@@ -60,8 +59,6 @@ public class TarifneGrupe extends PocetnaStranica {
 	
 	@FindBy(xpath = "//div/div/div[3]/button[2]")
 	private WebElement potvrdiBrisanjeWE;
-	
-
 
 	public void verifikujTarifneGrupe() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
@@ -87,7 +84,7 @@ public class TarifneGrupe extends PocetnaStranica {
 		assertTrue(brojKolona().size() == 9, "TarifneGrupe: Broj kolona nije dobar! ");
 	}
 	
-	public String dodajTarifnuGrupu()throws InterruptedException{
+	public String dodajTarifnuGrupu() throws InterruptedException {
 		String naziv = "TarifnaGrupa" + Helper.getRandomString(4);
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
 		dodajBtnWE.click();
@@ -114,7 +111,7 @@ public class TarifneGrupe extends PocetnaStranica {
 		return naziv;
 	}
 
-	public void verifikujTarifnuGrupu(String naziv) throws Exception{
+	public void verifikujTarifnuGrupu(String naziv) throws Exception {
 		wait.until(ExpectedConditions.elementToBeClickable(filterPoNazivuWE));
 		filterPoNazivuWE.click();
 		filterPoNazivuWE.clear();
@@ -123,7 +120,8 @@ public class TarifneGrupe extends PocetnaStranica {
 	    wait.until(ExpectedConditions.elementToBeClickable(nazivTarfineGrupeTabelaWE));
 	    assertTrue(nazivTarfineGrupeTabelaWE.getText().equals(naziv), "TarifnaGrupa: Tarfina grupa nije pronadjena!");
 	}
-	public String izmjeniTarifnuGrupu()throws Exception{
+	
+	public String urediTarifnuGrupu()throws Exception {
 		String tarifnaGrupa = "TarfinaGrupa" + Helper.getRandomString(4);
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		burgerBarWE.click();
@@ -138,7 +136,7 @@ public class TarifneGrupe extends PocetnaStranica {
 		return tarifnaGrupa;
 	}
 	
-	public void obrisiTarifnuGrupu()throws InterruptedException{
+	public void obrisiTarifnuGrupu() throws InterruptedException {
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		burgerBarWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(obrisiWE));
@@ -148,7 +146,7 @@ public class TarifneGrupe extends PocetnaStranica {
 		potvrdiBrisanjeWE.click();
 	}
 
-	public void verifikujBrisanjeTarifneGrupe(String tarifnaGrupa)throws InterruptedException{
+	public void verifikujBrisanjeTarifneGrupe(String tarifnaGrupa) throws InterruptedException {
 		wait.until(ExpectedConditions.visibilityOf(filterPoNazivuWE));
 		Thread.sleep(1000);
 		wait.until(ExpectedConditions.elementToBeClickable(filterPoNazivuWE));

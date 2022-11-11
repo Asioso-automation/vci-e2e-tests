@@ -80,7 +80,7 @@ public class TerenskeJedinice extends PocetnaStranica {
 		assertTrue(nazivTerenskeJediniceTabelaWE.getText().equals(naziv), "TerenskeJedinice: Terenska jedinica nije pronađena!");
 	}
 	
-	public String IzmijeniTerenskuJedinicu() throws InterruptedException {
+	public String urediTerenskuJedinicu() throws InterruptedException {
 		String naziv = "TerenskaJedinica " + Helper.getRandomString(5);
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBar1stWE));
 		burgerBar1stWE.click();

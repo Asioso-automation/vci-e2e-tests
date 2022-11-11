@@ -3,14 +3,12 @@ package com.platformX.distribution.page;
 import static org.testng.Assert.assertTrue;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-
 import com.platformX.base.Kolone;
 import com.platformX.util.Helper;
 
@@ -75,7 +73,7 @@ public class Djelatnosti extends PocetnaStranica {
 		return djelatnost;
 	}
 	
-	public void verifikujDjelatnost(String djelatnost) throws InterruptedException {
+	public void verifikujDjelatnost(String djelatnost) throws Exception {
 		wait.until(ExpectedConditions.elementToBeClickable(nazivFilterWE));
 		nazivFilterWE.click();
 		nazivFilterWE.clear();
@@ -87,7 +85,7 @@ public class Djelatnosti extends PocetnaStranica {
 		assertTrue(nazivTabelaWE.getText().equals(djelatnost), "Djelatnosti: Ime djelatnosti nije dobro!");
 	}
 	
-	public String izmjeniDjelatnost() {
+	public String urediDjelatnost() throws InterruptedException {
 		String djelatnost = "Djelatnost " + Helper.getRandomString(5);
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		burgerBarWE.click();
@@ -102,7 +100,7 @@ public class Djelatnosti extends PocetnaStranica {
 		return djelatnost;
 	}
 	
-	public void obrisiDjelatnost() {
+	public void obrisiDjelatnost() throws InterruptedException {
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		burgerBarWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(obrisiWE));

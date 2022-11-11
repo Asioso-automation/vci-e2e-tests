@@ -8,14 +8,14 @@ import com.platformX.distribution.page.PocetnaStranica;
 import com.platformX.distribution.page.Ulice;
 import com.platformX.distribution.page.LogIn;
 
-public class PX_DIST_Izmjena_Ulice_Test extends BaseTest {
+public class PX_DIST_Uredjivanje_Ulice_Test extends BaseTest {
 
-	public PX_DIST_Izmjena_Ulice_Test() throws IOException, FileNotFoundException {
+	public PX_DIST_Uredjivanje_Ulice_Test() throws IOException, FileNotFoundException {
 		super();
 	}
 
 	@Test
-	public void px_dist_izmjena_ulice_test() throws Exception {
+	public void px_dist_uredjivanje_ulice_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
@@ -25,7 +25,7 @@ public class PX_DIST_Izmjena_Ulice_Test extends BaseTest {
 		ulice.verifikujUlice();
 		String ulica = ulice.dodajUlicu();
 		ulice.verifikujUlicu(ulica);
-		String novaUlica = ulice.izmjeniUlicu();
+		String novaUlica = ulice.urediUlicu();
 		ulice.verifikujUlicu(novaUlica);
 	}
 

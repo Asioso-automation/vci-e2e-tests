@@ -9,7 +9,6 @@ import com.platformX.distribution.page.PocetnaStranica;
 import com.platformX.distribution.page.RegistarBrojila;
 import com.platformX.distribution.page.ZbirnaKontrolnaMjernaMjesta;
 
-
 public class PX_DIST_Uredjivanje_Zbirnog_Kontrolnog_Mjernog_Mjesta_Test  extends BaseTest {
 
 	public PX_DIST_Uredjivanje_Zbirnog_Kontrolnog_Mjernog_Mjesta_Test() throws IOException, FileNotFoundException {
@@ -17,7 +16,6 @@ public class PX_DIST_Uredjivanje_Zbirnog_Kontrolnog_Mjernog_Mjesta_Test  extends
 	}
 	
 	@Test
-	
 	public void px_dist_uredjivanje_zbirnog_kontrolnog_mjernog_mjesta_test() throws Exception {
 		
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
@@ -36,7 +34,7 @@ public class PX_DIST_Uredjivanje_Zbirnog_Kontrolnog_Mjernog_Mjesta_Test  extends
 		String zbirnaKontrolnaMjernaMjesta = zbirnaKontrolnaMjernaMjestaPage.dodajZbirnoKontrolnoMjernoMjesto(brBrojila);
 		zbirnaKontrolnaMjernaMjestaPage.verifikujZbirnoKontrolnoMjernoMjesto(zbirnaKontrolnaMjernaMjesta);
 		String novoZbirnoKontrolnoMjernoMjesto = zbirnaKontrolnaMjernaMjestaPage.urediZbirnoKontrolnoMjernoMjesto();
-		zbirnaKontrolnaMjernaMjestaPage.verifikujUredjenoZbirnoKontrolnoMjernoMjesto(novoZbirnoKontrolnoMjernoMjesto);
-
+		zbirnaKontrolnaMjernaMjestaPage.verifikujZbirnoKontrolnoMjernoMjesto(novoZbirnoKontrolnoMjernoMjesto);
 	}
+
 }

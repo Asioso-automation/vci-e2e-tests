@@ -35,9 +35,7 @@ public class Monteri extends PocetnaStranica {
 	
 	@FindBy(xpath = "//div/div/div[3]/button[2]")
 	private WebElement potvrdiBrisanjeWE;
-	
-	
-	
+
 	public void verifikujMonteri() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
@@ -80,7 +78,7 @@ public class Monteri extends PocetnaStranica {
 		assertTrue(imePrezimeTabelaWE.getText().equals(naziv), "Ulice: Ulica nije pronadjena!");	
 	}
 	
-	public String izmeniMontera()throws InterruptedException{
+	public String urediMontera()throws InterruptedException{
 		String monter = "Monter" + Helper.getRandomString(4);
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		burgerBarWE.click();
@@ -94,7 +92,8 @@ public class Monteri extends PocetnaStranica {
 		wait.until(ExpectedConditions.elementToBeClickable(dodajMonteraWE));
 		dodajMonteraWE.click();
 		return monter;
-		}
+	}
+	
 	public void obrisiMontera()throws InterruptedException{
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		burgerBarWE.click();
@@ -102,7 +101,7 @@ public class Monteri extends PocetnaStranica {
 		obrisiWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(potvrdiBrisanjeWE));
 		potvrdiBrisanjeWE.click();
-		}
+	}
 	
 	public void verifikujBrisanjeMontera(String monter) throws InterruptedException{
 		wait.until(ExpectedConditions.visibilityOf(filterPoImePrezimeWE));

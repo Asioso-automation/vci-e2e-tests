@@ -19,7 +19,6 @@ public class PX_DIST_012_Dodavanje_Ugovora_PxD_Test  extends BaseTest {
 	
 	@Test
 	public void px_dist_012_dodavanje_ugovora_pxd_test() throws Exception {
-		
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
@@ -45,4 +44,5 @@ public class PX_DIST_012_Dodavanje_Ugovora_PxD_Test  extends BaseTest {
 		obracunskiUgovoriPage.dodajObracunskiUgovor(kupac, mjernoMjesto, brBrojila);
 		obracunskiUgovoriPage.verifikujObracunskiUgovor(mjernoMjesto);
 	}
+
 }

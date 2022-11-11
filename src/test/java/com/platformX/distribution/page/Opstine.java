@@ -10,7 +10,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import com.platformX.base.Kolone;
 import com.platformX.util.Helper;
 
@@ -83,7 +82,7 @@ public class Opstine extends PocetnaStranica {
 		assertTrue(nazivOpstineTabelaWE.getText().equals(naziv), "Opstine: Opstina nije pronađena!");
 	}
 	
-	public String izmijeniOpstinu() throws InterruptedException {
+	public String urediOpstinu() throws InterruptedException {
 		String naziv = "Opstina " + Helper.getRandomString(5);
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBar1stWE));
 		burgerBar1stWE.click();

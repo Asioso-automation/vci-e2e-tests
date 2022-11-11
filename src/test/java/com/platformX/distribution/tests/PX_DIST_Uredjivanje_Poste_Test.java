@@ -8,16 +8,16 @@ import com.platformX.distribution.page.PocetnaStranica;
 import com.platformX.distribution.page.Poste;
 import com.platformX.distribution.page.LogIn;
 
-public class PX_DIST_Izmjena_Poste_Test extends BaseTest {
+public class PX_DIST_Uredjivanje_Poste_Test extends BaseTest {
 
-	public PX_DIST_Izmjena_Poste_Test() throws IOException, FileNotFoundException {
+	public PX_DIST_Uredjivanje_Poste_Test() throws IOException, FileNotFoundException {
 		super();
 	}
 	
 	private String[] podaci;
 
 	@Test
-	public void px_dist_izmjena_poste_test() throws Exception {
+	public void px_dist_uredjivanje_poste_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
@@ -27,7 +27,7 @@ public class PX_DIST_Izmjena_Poste_Test extends BaseTest {
 		poste.verifikujPoste();
 		podaci = poste.dodajPostu();
 		poste.verifikujPostu(podaci[0], podaci[1], podaci[2]);
-		String novaPosta = poste.izmjeniPostu();
+		String novaPosta = poste.urediPostu();
 		poste.verifikujPostu(novaPosta, podaci[1], podaci[2]);
 	}
 

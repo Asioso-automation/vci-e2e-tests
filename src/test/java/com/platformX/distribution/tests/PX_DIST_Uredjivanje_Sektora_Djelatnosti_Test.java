@@ -2,22 +2,20 @@ package com.platformX.distribution.tests;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
-
 import org.testng.annotations.Test;
-
 import com.platformX.base.BaseTest;
 import com.platformX.distribution.page.LogIn;
 import com.platformX.distribution.page.PocetnaStranica;
 import com.platformX.distribution.page.SektorDjelatnosti;
 
-public class PX_DIST_Izmjena_Sektora_Djelatnosti_Test extends BaseTest {
+public class PX_DIST_Uredjivanje_Sektora_Djelatnosti_Test extends BaseTest {
 	
-	public PX_DIST_Izmjena_Sektora_Djelatnosti_Test() throws IOException, FileNotFoundException {
+	public PX_DIST_Uredjivanje_Sektora_Djelatnosti_Test() throws IOException, FileNotFoundException {
 		super();
 	}
 	
 	@Test
-	public void px_dist_izmjena_sektora_djelatnosti_test() throws Exception {
+	public void px_dist_uredjivanje_sektora_djelatnosti_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
@@ -27,7 +25,7 @@ public class PX_DIST_Izmjena_Sektora_Djelatnosti_Test extends BaseTest {
 		sektorDjelatnosti.verifikujSektorDjelatnosti();
 		String nazivSektoraDjelatnosti = sektorDjelatnosti.dodajSektorDjelatnosti();
 		sektorDjelatnosti.verifikujDodavanjeSektoraDjelatnosti(nazivSektoraDjelatnosti);
-		String noviNazivSektoraDjelatnosti = sektorDjelatnosti.izmijeniSektorDjelatnosti();
+		String noviNazivSektoraDjelatnosti = sektorDjelatnosti.urediSektorDjelatnosti();
 		sektorDjelatnosti.verifikujDodavanjeSektoraDjelatnosti(noviNazivSektoraDjelatnosti);
 	}
 

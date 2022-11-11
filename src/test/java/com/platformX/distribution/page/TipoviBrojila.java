@@ -1,14 +1,11 @@
 package com.platformX.distribution.page;
 
 import static org.testng.Assert.assertTrue;
-
 import java.io.FileNotFoundException;
 import java.io.IOException;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-
 import com.platformX.base.Kolone;
 
 public class TipoviBrojila extends PocetnaStranica{
@@ -16,6 +13,7 @@ public class TipoviBrojila extends PocetnaStranica{
 	public TipoviBrojila (WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);
 	}
+	
 	public void verifikujTipoviBrojila () throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
@@ -44,6 +42,5 @@ public class TipoviBrojila extends PocetnaStranica{
 		assertTrue(naslovStraniceWE.getText().trim().equals("TIPOVI BROJILA"), "TipoviBrojila: Naziv stranice nije dobar!");
 		assertTrue(brojKolona().size() == 16, "TipoviBrojila: Broj kolona nije dobar! ");
 	}
-	
 	
 }

@@ -1,14 +1,11 @@
 package com.platformX.distribution.page;
 
 import static org.testng.Assert.assertTrue;
-
 import java.io.FileNotFoundException;
 import java.io.IOException;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-
 import com.platformX.base.Kolone;
 
 public class ZbirnaKontrolnaOcitanja extends PocetnaStranica{
@@ -42,4 +39,5 @@ public class ZbirnaKontrolnaOcitanja extends PocetnaStranica{
 		assertTrue(naslovStraniceWE.getText().trim().equals("ZBIRNA/KONTROLNA OČITANJA"), "ZbirnaKontrolnaOcitanja: Naziv stranice nije dobar!");
 		assertTrue(brojKolona().size() == 13, "ZbirnaKontrolnaOcitanja: Broj kolona nije dobar! ");
 	}
+
 }

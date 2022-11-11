@@ -26,7 +26,7 @@ public class PX_DIST_007_Verifikacija_Sekcije_Brojila_Test extends BaseTest {
 	}
 
 	@Test(description = "test prolazi kroz sve stranice iz sekcije BROJILA i verifikuje ih")
-	public void px_dist_007_verifikacije_sekcije_brojila_test() throws Exception {
+	public void px_dist_007_verifikacija_sekcije_brojila_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
@@ -57,4 +57,5 @@ public class PX_DIST_007_Verifikacija_Sekcije_Brojila_Test extends BaseTest {
 	    StrujniNivoi strujniNivoi = pocetna.navigirajNaStrujniNivoi();
 	    strujniNivoi.verifikujStrujniNivoi();
 	}
+
 }

@@ -2,9 +2,7 @@ package com.platformX.distribution.tests;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
-
 import org.testng.annotations.Test;
-
 import com.platformX.base.BaseTest;
 import com.platformX.distribution.page.KategorijePotrosnje;
 import com.platformX.distribution.page.LogIn;
@@ -25,9 +23,10 @@ public class PX_DIST_Brisanje_KategorijePotrosnje_Test extends BaseTest{
 		homePage.verifikujPocetnuStranicu();
 		KategorijePotrosnje kategorijePotrosnje = homePage.navigirajNaKategorijePotrosnje();
 		kategorijePotrosnje.verifikujKategorijePotrosnje();
-		String kategorijaPotrosnje = kategorijePotrosnje.dodajKategorijuPotrosnju();
+		String kategorijaPotrosnje = kategorijePotrosnje.dodajKategorijuPotrosnje();
 		kategorijePotrosnje.verifikujKategorijuPotrosnje(kategorijaPotrosnje); 
 		kategorijePotrosnje.obrisiKategorijuPotrosnje();
 		kategorijePotrosnje.verifikujBrisanjeKategorijePotrosnje(kategorijaPotrosnje);
 	}
+
 }

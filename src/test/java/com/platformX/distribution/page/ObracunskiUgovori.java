@@ -18,8 +18,7 @@ public class ObracunskiUgovori extends PocetnaStranica {
 	public ObracunskiUgovori(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);
 	}
-	
-	
+
 	@FindBy(xpath = "//div[1]/div/div/div[1]/div[1]/input[1]")
 	 private WebElement poljeKupacWE;
 	
@@ -70,15 +69,6 @@ public class ObracunskiUgovori extends PocetnaStranica {
 	
 	@FindBy(xpath = "/html/body/div/div[3]/div/div")
 	 private WebElement obradaUTokuBtnWE;
-	
-	
-	
-	
-	
-	
-	
-	
-	
 
 	public void verifikujObracunskiUgovori() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
@@ -148,7 +138,6 @@ public class ObracunskiUgovori extends PocetnaStranica {
 		wait.until(ExpectedConditions.elementToBeClickable(dodajObracunskiUgovorBtnWE));
 		dodajObracunskiUgovorBtnWE.click();
 		Thread.sleep(1000);
-		
 	}
 	
 	public void verifikujObracunskiUgovor(String mjernoMjesto) throws InterruptedException, FileNotFoundException, IOException {
@@ -161,10 +150,9 @@ public class ObracunskiUgovori extends PocetnaStranica {
 		Thread.sleep(1000);
 		wait.until(ExpectedConditions.visibilityOf(mjernoMjestoTabelaWE));
 		assertTrue(mjernoMjestoTabelaWE.getText().contains(mjernoMjesto),"Obracunski ugovori: EIC ugovora nije dobar!");
-		
 	}
 	
-	public String izmjeniObracunskiUgovor() throws InterruptedException {
+	public String urediObracunskiUgovor() throws InterruptedException {
 		String nazivMjernogMjesta = "Naziv mjm " + Helper.getRandomString(7);
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBar1stWE));
 		Thread.sleep(1000);
@@ -180,22 +168,8 @@ public class ObracunskiUgovori extends PocetnaStranica {
 		wait.until(ExpectedConditions.elementToBeClickable(dodajObracunskiUgovorBtnWE));
 		dodajObracunskiUgovorBtnWE.click();
 		return nazivMjernogMjesta;
-		
 	}
-	
-	public void verifikujIzmjenjenUgovor(String nazivMjernogMjesta) throws InterruptedException {
-		wait.until(ExpectedConditions.elementToBeClickable(filterPoMjernomMjestuWE));
-		Thread.sleep(1000);
-		filterPoMjernomMjestuWE.click();
-		filterPoMjernomMjestuWE.clear();
-		filterPoMjernomMjestuWE.sendKeys(nazivMjernogMjesta);
-		filterPoMjernomMjestuWE.sendKeys(Keys.ENTER);
-		Thread.sleep(1000);
-		wait.until(ExpectedConditions.visibilityOf(mjernoMjestoTabelaWE));
-		assertTrue(mjernoMjestoTabelaWE.getText().contains(nazivMjernogMjesta),"Obracunski ugovori: Naziv mjernog mjesta nije dobar!");
-		
-	}
-	
+
 	public void obrisiObracunskiUgovor() throws InterruptedException {
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBar1stWE));
 		burgerBar1stWE.click();
@@ -206,7 +180,7 @@ public class ObracunskiUgovori extends PocetnaStranica {
 		potvrdiBrisanjeBtnWE.click();
 	}
 	
-	public void verifikujObrisanObracunskiUgovor(String mjernoMjesto) throws InterruptedException {
+	public void verifikujBrisanjeObracunskogUgovora(String mjernoMjesto) throws InterruptedException {
 		wait.until(ExpectedConditions.invisibilityOf(obradaUTokuBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(filterPoMjernomMjestuWE));
 		Thread.sleep(1000);
@@ -220,4 +194,5 @@ public class ObracunskiUgovori extends PocetnaStranica {
 		assertTrue(praznaTabelaWE.getText().equals("Nema podataka"), "Obracunski ugovori: Poruka prazne tabele nije dobra!");
 		//TODO istraziti zbog cega Nesin element "obrada u toku" ne radi na ovom testu 
 	}
+
 }

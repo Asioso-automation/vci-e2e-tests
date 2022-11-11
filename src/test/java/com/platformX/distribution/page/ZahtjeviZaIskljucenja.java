@@ -40,13 +40,9 @@ public class ZahtjeviZaIskljucenja extends PocetnaStranica {
 		wait.until(ExpectedConditions.elementToBeClickable(preuzmiExcelBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(ukloniFiltereBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(osvjeziBtnWE));
-		assertTrue(sekcijaBtnWE.getText().trim().equals("MJERNA MJESTA"),
-				"ZahtjeviZaIskljucenja: Naziv sekcije nije dobar!");
-		assertTrue(stranicaBtnWE.getText().trim().equals("ZAHTJEVI ZA ISKLJUČENJA"),
-				"ZahtjeviZaIskljucenja: Naziv stranice nije dobar!");
-		assertTrue(
-				naslovStraniceWE.getText().trim().equals("ZAHTJEVI ZA ISKLJUČENJA (PROCES 16)"),
-				"ZahtjeviZaIskljucenja: Naziv stranice nije dobar!");
+		assertTrue(sekcijaBtnWE.getText().trim().equals("MJERNA MJESTA"), "ZahtjeviZaIskljucenja: Naziv sekcije nije dobar!");
+		assertTrue(stranicaBtnWE.getText().trim().equals("ZAHTJEVI ZA ISKLJUČENJA"), "ZahtjeviZaIskljucenja: Naziv stranice nije dobar!");
+		assertTrue(naslovStraniceWE.getText().trim().equals("ZAHTJEVI ZA ISKLJUČENJA (PROCES 16)"), "ZahtjeviZaIskljucenja: Naziv stranice nije dobar!");
 		assertTrue(brojKolona().size() == 17, "ZahtjeviZaIskljucenja: Broj kolona nije dobar! ");
 	}
 

@@ -94,7 +94,7 @@ public class UgovorOPrikljucenju extends PocetnaStranica {
 		assertTrue(brojKolona().size() == 7, "UgovorOPrikljucenju: Broj kolona nije dobar! ");
 	}
 
-	public String dodajUgovorOPrikljucenju (String nazivEES)throws Exception{
+	public String dodajUgovorOPrikljucenju(String nazivEES)throws Exception {
 		String naziv = "BrProtkola" + Helper.getRandomNumber(4);
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
 		dodajBtnWE.click();
@@ -146,7 +146,7 @@ public class UgovorOPrikljucenju extends PocetnaStranica {
 		return naziv;
 	}
 	
-	public void verifikujUgovorOPrikljucenju(String naziv) throws Exception{
+	public void verifikujUgovorOPrikljucenju(String naziv) throws Exception {
 		wait.until(ExpectedConditions.elementToBeClickable(filterBrojProtokolaWE));
 		filterBrojProtokolaWE.click();
 		filterBrojProtokolaWE.clear();
@@ -156,7 +156,7 @@ public class UgovorOPrikljucenju extends PocetnaStranica {
 		assertTrue(nazivTabelaWE.getText().equals(naziv), "UgovorOPrikljucenju: Broj protokola nije pronadjen!");
 	}
 	
-	public void urediUgovorOPrikljucenju()throws InterruptedException{
+	public void urediUgovorOPrikljucenju() throws InterruptedException {
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		burgerBarWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(urediBurgerBarWE));
@@ -194,4 +194,5 @@ public class UgovorOPrikljucenju extends PocetnaStranica {
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
 		assertTrue(praznaTabelaWE.getText().equals("Nema podataka"), "UgovorOPrikljucenju: Poruka prazne tabele nije dobra!");
 	}
+
 }

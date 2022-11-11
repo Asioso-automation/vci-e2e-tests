@@ -1,17 +1,14 @@
 package com.platformX.distribution.page;
 
 import static org.testng.Assert.assertTrue;
-
 import java.io.FileNotFoundException;
 import java.io.IOException;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-
 import com.platformX.base.Kolone;
 import com.platformX.util.Helper;
 
@@ -20,8 +17,7 @@ public class RegistarBrojila extends PocetnaStranica {
 	public RegistarBrojila (WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);
 	}
-	
-	
+
 	@FindBy(xpath = "//div[1]/div[2]/div[1]/div/div/div[1]/div/input")
 	 private WebElement poljeBrojWE;
 	
@@ -45,8 +41,7 @@ public class RegistarBrojila extends PocetnaStranica {
 	
 	@FindBy(xpath = "//tr[2]/td[2]")
 	 private WebElement brojBrojilaTabelaWE;
-	
-	
+
 	public void verifikujRegistarBrojila()throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
@@ -89,7 +84,6 @@ public class RegistarBrojila extends PocetnaStranica {
 		dodajBrojiloBtnWE.click();
 		Thread.sleep(3000);
 		return brojBrojila;
-		
 	}
 	
 	public void verifikujBrojilo(String brojBrojila) throws InterruptedException, FileNotFoundException, IOException {
@@ -102,13 +96,11 @@ public class RegistarBrojila extends PocetnaStranica {
 		Thread.sleep(1000);
 		wait.until(ExpectedConditions.visibilityOf(brojBrojilaTabelaWE));
 		assertTrue(brojBrojilaTabelaWE.getText().contains(brojBrojila),"Registar brojila: Broj brojila nije dobar!");
-		
 	}
 	
 	public String kreirajBrojilo() {
 		String brBrojila = brojBrojilaTabelaWE.getText();
 		return brBrojila;
 	}
+
 }
-
-

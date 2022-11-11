@@ -8,14 +8,14 @@ import com.platformX.distribution.page.Citaci;
 import com.platformX.distribution.page.LogIn;
 import com.platformX.distribution.page.PocetnaStranica;
 
-public class PX_DIST_Izmjena_Citaca_Test extends BaseTest {
+public class PX_DIST_Uredjivanje_Citaca_Test extends BaseTest {
 	
-	public PX_DIST_Izmjena_Citaca_Test() throws IOException, FileNotFoundException {
+	public PX_DIST_Uredjivanje_Citaca_Test() throws IOException, FileNotFoundException {
 		super();
 	}
 
 	@Test
-	public void px_dist_izmjena_citaca_test() throws Exception {
+	public void px_dist_uredjivanje_citaca_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
@@ -25,7 +25,7 @@ public class PX_DIST_Izmjena_Citaca_Test extends BaseTest {
 		citaci.verifikujCitaci();
 		String imeCitaca = citaci.dodajCitaca();
 		citaci.verifikujCitaca(imeCitaca);
-		String novoImeCitaca = citaci.izmijeniCitaca();
+		String novoImeCitaca = citaci.urediCitaca();
 		citaci.verifikujCitaca(novoImeCitaca);
 	}
 	
