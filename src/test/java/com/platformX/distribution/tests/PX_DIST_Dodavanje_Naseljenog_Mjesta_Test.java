@@ -2,9 +2,7 @@ package com.platformX.distribution.tests;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
-
 import org.testng.annotations.Test;
-
 import com.platformX.base.BaseTest;
 import com.platformX.distribution.page.LogIn;
 import com.platformX.distribution.page.NaseljenaMjesta;
@@ -27,5 +25,6 @@ public class PX_DIST_Dodavanje_Naseljenog_Mjesta_Test extends BaseTest{
 		naseljenaMjesta.verifikujNaseljenaMjesta();
 		String naseljenoMjesto = naseljenaMjesta.dodajNaseljenoMjesto();
 		naseljenaMjesta.verifikujNaseljenoMjesto(naseljenoMjesto);
-		}
+	}
+
 }

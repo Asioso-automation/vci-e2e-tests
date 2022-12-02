@@ -28,6 +28,5 @@ public class PX_DIST_Brisanje_Sektora_Djelatnosti_Test extends BaseTest {
 		sektorDjelatnosti.obrisiSektorDjelatnosti();
 		sektorDjelatnosti.verifikujBrisanjeSektoraDjelatnosti(nazivSektoraDjelatnosti);
 	}
-	
-	
+
 }

@@ -21,7 +21,7 @@ public class CitackiHodovi extends PocetnaStranica {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaSifraWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaFizickaLokacijaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTrafoStanicaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTrafostanicaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPeriodOcitanjaWE));
 		wait.until(ExpectedConditions.visibilityOf(dodajBtnWE));
 		wait.until(ExpectedConditions.visibilityOf(preuzmiExcelBtnWE));

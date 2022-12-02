@@ -8,7 +8,6 @@ import com.platformX.distribution.page.LogIn;
 import com.platformX.distribution.page.PocetnaStranica;
 import com.platformX.distribution.page.PravnaLica;
 
-
 public class PX_DIST_Brisanje_Pravnog_Lica_Test  extends BaseTest {
 
 	public PX_DIST_Brisanje_Pravnog_Lica_Test() throws IOException, FileNotFoundException {
@@ -16,7 +15,6 @@ public class PX_DIST_Brisanje_Pravnog_Lica_Test  extends BaseTest {
 	}
 	
 	@Test
-	
 	public void px_dist_brisanje_pravnog_lica_test() throws Exception {
 		
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
@@ -30,8 +28,6 @@ public class PX_DIST_Brisanje_Pravnog_Lica_Test  extends BaseTest {
 		pravnaLicaPage.verifikujPravnoLice(pravnaLica);
 		pravnaLicaPage.obrisiPravnoLice();
 		pravnaLicaPage.verifikujBrisanjePravnogLica(pravnaLica);
-		
-		
-
 	}
+
 }

@@ -2,9 +2,7 @@ package com.platformX.distribution.tests;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
-
 import org.testng.annotations.Test;
-
 import com.platformX.base.BaseTest;
 import com.platformX.distribution.page.ElektroenergetskeSaglasnosti;
 import com.platformX.distribution.page.LogIn;
@@ -27,6 +25,6 @@ public class PX_DIST_Dodavanje_Elektroenergetske_Saglasnosti_Test extends BaseTe
 		elSaglasnosti.verifikujElektroenergetskeSaglasnosti();
 		String ElSaglasnost = elSaglasnosti.dodajElektronergetskuSaglasnost();
 		elSaglasnosti.verifikujElektroenergetskuSaglasnost(ElSaglasnost);
-}
-}
+	}
 
+}

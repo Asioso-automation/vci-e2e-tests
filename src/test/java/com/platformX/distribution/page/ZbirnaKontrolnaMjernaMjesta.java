@@ -68,14 +68,16 @@ public class ZbirnaKontrolnaMjernaMjesta extends PocetnaStranica {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNazivWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaCitackiHodWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaRedniBrojWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTrafoStanicaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaRedniBrojIzlazaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTrafostanicaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaFizickaLokacijaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPrenosniOdnosWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojiloWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumOdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumDoWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKontrolnoMjernoMjestoWE));
 		wait.until(ExpectedConditions.elementToBeClickable(sekcijaBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(stranicaBtnWE));
+		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(preuzmiExcelBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(ukloniFiltereBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(osvjeziBtnWE));

@@ -2,9 +2,7 @@ package com.platformX.distribution.tests;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
-
 import org.testng.annotations.Test;
-
 import com.platformX.base.BaseTest;
 import com.platformX.distribution.page.LogIn;
 import com.platformX.distribution.page.Monteri;
@@ -30,5 +28,5 @@ public class PX_DIST_Brisanje_Montera_Test extends BaseTest{
 		monteri.obrisiMontera();
 		monteri.verifikujBrisanjeMontera(monter);
 	}
-}
 
+}

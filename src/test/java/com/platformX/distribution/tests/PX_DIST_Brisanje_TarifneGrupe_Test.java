@@ -2,14 +2,11 @@ package com.platformX.distribution.tests;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
-
 import org.testng.annotations.Test;
-
 import com.platformX.base.BaseTest;
 import com.platformX.distribution.page.LogIn;
 import com.platformX.distribution.page.PocetnaStranica;
 import com.platformX.distribution.page.TarifneGrupe;
-import com.platformX.distribution.page.TarifneNadgrupe;
 
 public class PX_DIST_Brisanje_TarifneGrupe_Test extends BaseTest{
 
@@ -31,4 +28,5 @@ public class PX_DIST_Brisanje_TarifneGrupe_Test extends BaseTest{
         tarifneGrupe.obrisiTarifnuGrupu();
         tarifneGrupe.verifikujBrisanjeTarifneGrupe(tarifnGrupa);
 	}
+
 }

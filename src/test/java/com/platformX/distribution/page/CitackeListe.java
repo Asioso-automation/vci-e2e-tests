@@ -26,7 +26,7 @@ public class CitackeListe  extends PocetnaStranica{
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Čitačke liste')]")));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPeriodWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaCitacWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTrafoStanicaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTrafostanicaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaFizickaLokacijaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaCitackiHodWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaUkupanBrojStavkiWE));

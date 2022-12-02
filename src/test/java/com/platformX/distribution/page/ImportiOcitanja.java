@@ -22,7 +22,7 @@ public class ImportiOcitanja extends PocetnaStranica {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKorisnikWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaCitacWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTrafoStanicaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTrafostanicaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaFizickaLokacijaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumPrvogOcitanjaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumZadnjegOcitanjaWE));

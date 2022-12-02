@@ -24,6 +24,7 @@ public class DeklaracijaOPrikljucku extends PocetnaStranica {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMjernoMjestoEicWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojiloWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAdresaMjernogMjestaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojProtokolaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumWE));
 		wait.until(ExpectedConditions.elementToBeClickable(sekcijaBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(stranicaBtnWE));
@@ -34,7 +35,7 @@ public class DeklaracijaOPrikljucku extends PocetnaStranica {
 		assertTrue(sekcijaBtnWE.getText().trim().equals("MJERNA MJESTA"), "DeklaracijaOPrikljucku: Naziv sekcije nije dobar!");
 		assertTrue(stranicaBtnWE.getText().trim().equals("DEKLARACIJA O PRIKLJUČKU"), "DeklaracijaOPrikljucku: Naziv stranice nije dobar!");
 		assertTrue(naslovStraniceWE.getText().trim().equals("DEKLARACIJA O PRIKLJUČKU"), "DeklaracijaOPrikljucku: Naziv stranice nije dobar!");
-		assertTrue(brojKolona().size() == 8, "DeklaracijaOPrikljucku: Broj kolona nije dobar! ");
+		assertTrue(brojKolona().size() == 9, "DeklaracijaOPrikljucku: Broj kolona nije dobar! ");
 	}
 	
 }

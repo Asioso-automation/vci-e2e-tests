@@ -9,7 +9,6 @@ import com.platformX.distribution.page.PocetnaStranica;
 import com.platformX.distribution.page.RegistarBrojila;
 import com.platformX.distribution.page.ZbirnaKontrolnaMjernaMjesta;
 
-
 public class PX_DIST_Brisanje_Zbirnog_Kontrolnog_Mjernog_Mjesta_Test  extends BaseTest {
 
 	public PX_DIST_Brisanje_Zbirnog_Kontrolnog_Mjernog_Mjesta_Test() throws IOException, FileNotFoundException {
@@ -17,7 +16,6 @@ public class PX_DIST_Brisanje_Zbirnog_Kontrolnog_Mjernog_Mjesta_Test  extends Ba
 	}
 	
 	@Test
-	
 	public void px_dist_brisanje_zbirnog_kontrolnog_mjernog_mjesta_test() throws Exception {
 		
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
@@ -38,4 +36,5 @@ public class PX_DIST_Brisanje_Zbirnog_Kontrolnog_Mjernog_Mjesta_Test  extends Ba
 		zbirnaKontrolnaMjernaMjestaPage.obrisiZbirnoKontrolnoMjernoMjesto();
 		zbirnaKontrolnaMjernaMjestaPage.verifikujBrisanjeZbirnogKontrolnogMjernogMjesta(zbirnaKontrolnaMjernaMjesta);
 	}
+
 }

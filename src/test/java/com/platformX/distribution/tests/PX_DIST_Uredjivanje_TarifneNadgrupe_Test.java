@@ -2,11 +2,8 @@ package com.platformX.distribution.tests;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
-
 import org.testng.annotations.Test;
-
 import com.platformX.base.BaseTest;
-import com.platformX.distribution.page.KategorijePotrosnje;
 import com.platformX.distribution.page.LogIn;
 import com.platformX.distribution.page.PocetnaStranica;
 import com.platformX.distribution.page.TarifneNadgrupe;

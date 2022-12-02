@@ -19,7 +19,7 @@ public class ZbirnaKontrolnaPotrosnja extends PocetnaStranica{
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Zbirna/kontrolna potrošnja')]")));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaZbirnoKontrolnoMjernoMjestoWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTrafoStanicaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTrafostanicaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaFizickaLokacijaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAktivnaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaReaktivnaWE));

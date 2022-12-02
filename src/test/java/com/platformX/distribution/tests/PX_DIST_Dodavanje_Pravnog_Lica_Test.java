@@ -4,14 +4,9 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import org.testng.annotations.Test;
 import com.platformX.base.BaseTest;
-import com.platformX.distribution.page.FizickaLica;
-import com.platformX.distribution.page.KoristenaBrojila;
 import com.platformX.distribution.page.LogIn;
-import com.platformX.distribution.page.MjernaMjesta;
-import com.platformX.distribution.page.ObracunskiUgovori;
 import com.platformX.distribution.page.PocetnaStranica;
 import com.platformX.distribution.page.PravnaLica;
-import com.platformX.distribution.page.RegistarBrojila;
 
 
 public class PX_DIST_Dodavanje_Pravnog_Lica_Test  extends BaseTest {
@@ -33,8 +28,6 @@ public class PX_DIST_Dodavanje_Pravnog_Lica_Test  extends BaseTest {
 		pravnaLicaPage.verifikujPravnaLica();
 		String pravnaLica = pravnaLicaPage.dodajPravnoLice();
 		pravnaLicaPage.verifikujPravnoLice(pravnaLica);
-		
-		
-
 	}
+
 }

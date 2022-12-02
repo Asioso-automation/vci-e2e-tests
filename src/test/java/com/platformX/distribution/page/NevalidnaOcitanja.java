@@ -22,7 +22,7 @@ public class NevalidnaOcitanja extends PocetnaStranica{
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojiloWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNazivMjernogMjestaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMjernoMjestoEicWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTrafoStanicaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTrafostanicaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaCitacWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaRazlogWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAvtWE));

@@ -47,4 +47,5 @@ public class PX_DIST_Brisanje_Obracunskog_Ugovora_PxD_Test  extends BaseTest {
 		obracunskiUgovoriPage.obrisiObracunskiUgovor();
 		obracunskiUgovoriPage.verifikujBrisanjeObracunskogUgovora(mjernoMjesto);
 	}
+
 }
