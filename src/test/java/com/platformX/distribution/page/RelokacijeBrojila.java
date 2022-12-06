@@ -13,6 +13,7 @@ public class RelokacijeBrojila extends PocetnaStranica{
 	public RelokacijeBrojila (WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);
 	}
+	
 	public void verifikujRelokacijeBrojila() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(

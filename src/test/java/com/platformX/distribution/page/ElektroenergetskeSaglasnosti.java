@@ -19,73 +19,75 @@ public class ElektroenergetskeSaglasnosti extends PocetnaStranica {
 		super(driver);
 	}
 	
+//	ISPRAVITI SVE XPATH-OVE
+	
 	@FindBy(xpath = "//div[2]/div[1]/div/div/div[1]/div/input")  
 	 private WebElement brojProtokolaWE;
 	
-	@FindBy(xpath = "//div[2]/div[2]/div/div/div[1]/div[1]/input[1]")  
+	@FindBy(xpath = "//div[2]/div[3]/div/div/div[1]/div[1]/input[1]")  
 	 private WebElement razlogEESWE;
 	
-	@FindBy(xpath = "//div[3]/div[1]/div/div/div[1]/div[1]/input[1]")  
+	@FindBy(xpath = "//div[3]/div[2]/div/div/div[1]/div[1]/input[1]")  
 	 private WebElement kupacWE;
 	
-	@FindBy(xpath = "//div[3]/div[2]/div/div/div[1]/div[1]/input[1]")  
+	@FindBy(xpath = "//div[3]/div[3]/div/div/div[1]/div[1]/input[1]")  
 	 private WebElement fizickaLokacijaWE;
 	
-	@FindBy(xpath = "//div[3]/div[3]/div/div/div[1]/div[1]/input[1]")  
+	@FindBy(xpath = "//div[5]/div[1]/div/div/div[1]/div[1]/input[1]")  
 	 private WebElement mjestoWE;
 	
-	@FindBy(xpath = "//div[4]/div[1]/div/div/div[1]/div[1]/input[1]")  
+	@FindBy(xpath = "//div[5]/div[2]/div/div/div[1]/div[1]/input[1]")  
 	 private WebElement postaWE;
 	
-	@FindBy(xpath = "//div/div[1]/div[4]/div[2]/div/div/div[1]/div[1]/input[1]")  
+	@FindBy(xpath = "//div[5]/div[3]/div/div/div[1]/div[1]/input[1]")  
 	 private WebElement ulicaWE;
 
-	@FindBy(xpath = "//div[4]/div[3]/div/div/div[1]/div/input")  
+	@FindBy(xpath = "//div[6]/div[1]/div/div/div[1]/div/input")  
 	 private WebElement brojUuliciWE;
 	
-	@FindBy(xpath = "//div[5]/div[1]/div/div/div[1]/div[1]/input[1]")  
+	@FindBy(xpath = "//div[6]/div[2]/div/div/div[1]/div[1]/input[1]")  
 	 private WebElement vrstaObjektaWE;
 	
-	@FindBy(xpath = "//div[5]/div[2]/div[1]/div/div[1]/div[1]/div/button")  
+	@FindBy(xpath = "//div[2]/div[1]/div/div[1]/div[1]/div/button")  
 	 private WebElement datumBtnWE;
 	
 	@FindBy(xpath = "(//*[contains(@class, 'v-date-picker-table__current')])[1]")  
 	 private WebElement datum1WE;
 	
-	@FindBy(xpath = "//div[7]/div[2]/div/div/div[1]/div[1]/input[1]")  
+	@FindBy(xpath = "//div[8]/div[2]/div/div/div[1]/div[1]/input[1]")  
 	 private WebElement odobrenaPrikljucnaSnagaWE;
 	
-	@FindBy(xpath = "//div[10]/div[1]/div/div/div[1]/div[1]/input[1]")  
+	@FindBy(xpath = "//div[11]/div[1]/div/div/div[1]/div[1]/input[1]")  
 	 private WebElement naponskiNivoWE;
 	
-	@FindBy(xpath = "//div[10]/div[2]/div/div/div[1]/div[1]/input[1]")  
+	@FindBy(xpath = "//div[11]/div[2]/div/div/div[1]/div[1]/input[1]")  
 	 private WebElement mjestoPrikljucenjaWE;
 	
-	@FindBy(xpath = "//div[10]/div[3]/div/div/div[1]/div[1]/input[1]")  
+	@FindBy(xpath = "//div[11]/div[3]/div/div/div[1]/div[1]/input[1]")  
 	 private WebElement vrstaPrikljuckaWE;
 	
-	@FindBy(xpath = "//div[11]/div[1]/div/div/div[1]/div[1]/input[1]")  
+	@FindBy(xpath = "//div[12]/div[1]/div/div/div[1]/div[1]/input[1]")  
 	 private WebElement tipPrikljucnogVodaWE;
 	
-	@FindBy(xpath = "//div[11]/div[2]/div/div/div[1]/div[1]/input[1]")  
+	@FindBy(xpath = "//div[12]/div[2]/div/div/div[1]/div[1]/input[1]")  
 	 private WebElement presjekMm2WE;
 	
-	@FindBy(xpath = "//div[12]/div[1]/div/div/div[1]/div[1]/input[1]")  
+	@FindBy(xpath = "//div[13]/div[1]/div/div/div[1]/div[1]/input[1]")  
 	 private WebElement napojnaTransformatorskaStanicaWE;
 	
-	@FindBy(xpath = "//div[12]/div[4]/div/div/div[1]/div[1]/input[1]")  
+	@FindBy(xpath = "//div[13]/div[4]/div/div/div[1]/div[1]/input[1]")  
 	 private WebElement lokacijaMjernogMjestaWE;
 	
-	@FindBy(xpath = "//div[14]/div[2]/div/div/div/div[1]/div/div/div[1]/div/input")  
+	@FindBy(xpath = "//div[15]/div[2]/div/div/div/div[1]/div/div/div[1]/div/input")  
 	 private WebElement brojUgradjenihBrojilaWE;
 	
-	@FindBy(xpath = "//div[14]/div[2]/div/div/div/div[2]/div/div/div[1]/div[1]/input[1]")  
+	@FindBy(xpath = "//div[15]/div[2]/div/div/div/div[2]/div/div/div[1]/div[1]/input[1]")  
 	 private WebElement nazivnaStrujaGlavnogOsiguracaWE;
 	
-	@FindBy(xpath = "//div[18]/div[2]/div/div/div[1]/div[1]/input[1]")  
+	@FindBy(xpath = "//div[19]/div[2]/div/div/div[1]/div[1]/input[1]")  
 	 private WebElement rokVazenjaWE;
 	
-	@FindBy(xpath = "//div[18]/div[3]/div[1]/div/div[1]/div[1]/div/button")  
+	@FindBy(xpath = "//div[19]/div[3]/div[1]/div/div[1]/div[1]/div/button")  
 	 private WebElement datumBtn1WE;
 	
 	@FindBy(xpath = "(//*[contains(@class, 'v-date-picker-table__current')])[2]")
@@ -135,12 +137,16 @@ public class ElektroenergetskeSaglasnosti extends PocetnaStranica {
 	}
 	
 	public String dodajElektronergetskuSaglasnost() throws Exception {
-		String naziv = "ElSaglasnost" + Helper.getRandomNumber(3);
+		String naziv = Helper.getRandomNumber(4) + "-EES";
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
 		dodajBtnWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(brojProtokolaWE));
 		brojProtokolaWE.click();
 		brojProtokolaWE.sendKeys(naziv);
+		wait.until(ExpectedConditions.elementToBeClickable(datumBtnWE));
+		datumBtnWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(datum1WE));
+		datum1WE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(razlogEESWE));
 		razlogEESWE.click();
 		razlogEESWE.sendKeys(Helper.getRandomNumber(1));
@@ -187,10 +193,6 @@ public class ElektroenergetskeSaglasnosti extends PocetnaStranica {
 		Thread.sleep(1000);
 		vrstaObjektaWE.sendKeys(Keys.ARROW_DOWN);
 		vrstaObjektaWE.sendKeys(Keys.ENTER);
-		wait.until(ExpectedConditions.elementToBeClickable(datumBtnWE));
-		datumBtnWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(datum1WE));
-		datum1WE.click();
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].scrollIntoView(true);", odobrenaPrikljucnaSnagaWE);
 		wait.until(ExpectedConditions.elementToBeClickable(odobrenaPrikljucnaSnagaWE));

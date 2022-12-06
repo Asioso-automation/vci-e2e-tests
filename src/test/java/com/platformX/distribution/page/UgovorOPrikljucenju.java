@@ -122,13 +122,13 @@ public class UgovorOPrikljucenju extends PocetnaStranica {
 		brojPrikljucnihVodovaWE.sendKeys(Helper.getRandomNumber(1));
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].scrollIntoView(true);",odobrenaPrikljucnaSnagaKwWE);
-		wait.until(ExpectedConditions.elementToBeClickable(odobrenaPrikljucnaSnagaKwWE));
-		odobrenaPrikljucnaSnagaKwWE.sendKeys(Helper.getRandomNumber(1));
 		wait.until(ExpectedConditions.elementToBeClickable(kategorijaPotrosnjeIGrupaKupcaWE));
 		kategorijaPotrosnjeIGrupaKupcaWE.sendKeys("1");
 		Thread.sleep(1000);
 		kategorijaPotrosnjeIGrupaKupcaWE.sendKeys(Keys.ARROW_DOWN);
 		kategorijaPotrosnjeIGrupaKupcaWE.sendKeys(Keys.ENTER);
+		wait.until(ExpectedConditions.elementToBeClickable(odobrenaPrikljucnaSnagaKwWE));
+		odobrenaPrikljucnaSnagaKwWE.sendKeys(Helper.getRandomNumber(1));
 		wait.until(ExpectedConditions.elementToBeClickable(brojMjernihUredjajaWE));
 		brojMjernihUredjajaWE.sendKeys(Helper.getRandomNumber(1));
 		js.executeScript("arguments[0].scrollIntoView(true);",kategorijaPotrosnjeiGrupaKupacaWE);

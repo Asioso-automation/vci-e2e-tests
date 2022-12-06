@@ -2,9 +2,7 @@ package com.platformX.distribution.tests;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
-
 import org.testng.annotations.Test;
-
 import com.platformX.base.BaseTest;
 import com.platformX.distribution.page.ElektroenergetskeSaglasnosti;
 import com.platformX.distribution.page.LogIn;
@@ -33,4 +31,5 @@ public class PX_DIST_Dodavanje_Ugovora_O_Prikljucenju_Test extends BaseTest{
 		String BrojProtokola = ugovor.dodajUgovorOPrikljucenju(ElSaglasnost);
 		ugovor.verifikujUgovorOPrikljucenju(BrojProtokola);
 	}
+
 }
