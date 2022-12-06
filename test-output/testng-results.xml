@@ -1,32 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-11-10T11:12:35Z" name="Default suite" finished-at="2022-11-10T11:13:17Z" duration-ms="42019">
+  <suite name="Default suite" duration-ms="1015" started-at="2022-12-06T19:46:58Z" finished-at="2022-12-06T19:46:59Z">
     <groups>
     </groups>
-    <test started-at="2022-11-10T11:12:35Z" name="Default test" finished-at="2022-11-10T11:13:17Z" duration-ms="42019">
-      <class name="com.platformX.distribution.tests.PX_DIST_Dodavanje_Elektroenergetske_Saglasnosti_Test">
-        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:com.platformX.distribution.tests.PX_DIST_Dodavanje_Elektroenergetske_Saglasnosti_Test@336f1079]" started-at="2022-11-10T12:12:35Z" name="setUp" finished-at="2022-11-10T12:12:45Z" duration-ms="9306" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
+    <test name="Default test" duration-ms="1015" started-at="2022-12-06T19:46:58Z" finished-at="2022-12-06T19:46:59Z">
+      <class name="com.platformX.api.tests.GetAdministrationMessageScenario">
+        <test-method status="PASS" signature="get_administration_message_test()[pri:0, instance:com.platformX.api.tests.GetAdministrationMessageScenario@1534f01b]" name="get_administration_message_test" duration-ms="997" started-at="2022-12-06T20:46:58Z" finished-at="2022-12-06T20:46:59Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="px_dist_dodavanje_elektroenergetske_saglasnosti_test()[pri:0, instance:com.platformX.distribution.tests.PX_DIST_Dodavanje_Elektroenergetske_Saglasnosti_Test@336f1079]" started-at="2022-11-10T12:12:45Z" name="px_dist_dodavanje_elektroenergetske_saglasnosti_test" finished-at="2022-11-10T12:13:17Z" duration-ms="32507" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- px_dist_dodavanje_elektroenergetske_saglasnosti_test -->
-        <test-method is-config="true" signature="cleanUp()[pri:0, instance:com.platformX.distribution.tests.PX_DIST_Dodavanje_Elektroenergetske_Saglasnosti_Test@336f1079]" started-at="2022-11-10T12:13:17Z" name="cleanUp" finished-at="2022-11-10T12:13:17Z" duration-ms="191" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- cleanUp -->
-      </class> <!-- com.platformX.distribution.tests.PX_DIST_Dodavanje_Elektroenergetske_Saglasnosti_Test -->
+        </test-method> <!-- get_administration_message_test -->
+      </class> <!-- com.platformX.api.tests.GetAdministrationMessageScenario -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
