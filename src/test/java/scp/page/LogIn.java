@@ -34,7 +34,7 @@ public class LogIn extends PageBase {
 	@FindBy(xpath = "//form/div/div[2]/div[1]/div/div[1]")
 	private WebElement organizacijaWE;
 	
-	@FindBy(xpath = "//div[3]/a/div/div")
+	@FindBy(xpath = "//*[contains(@class, 'v-list__tile__title') and contains(text(), 'Vodovod')]")
 	private WebElement vodovodWE;
 	
 	@FindBy(xpath = "//div[2]/div/div/div")

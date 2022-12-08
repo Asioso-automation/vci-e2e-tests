@@ -57,7 +57,7 @@ public class FizickaLica extends PocetnaStranica {
 		assertTrue(sekcijaBtnWE.getText().trim().equals("KUPCI"), "FizickaLica: Naziv sekcije nije dobar!");
 		assertTrue(stranicaBtnWE.getText().trim().equals("FIZIČKA LICA"), "FizickaLica: Naziv stranice nije dobar!");
 		assertTrue(naslovStraniceWE.getText().trim().equals("Fizička Lica"), "FizickaLica: Naziv stranice nije dobar!");
-		assertTrue(brojKolona().size() == 12, "FizickaLica: Broj kolona nije dobar! ");
+		assertTrue(brojKolona().size() == 13, "FizickaLica: Broj kolona nije dobar! ");
 	}
 	
 	public String dodajFizickoLice() {

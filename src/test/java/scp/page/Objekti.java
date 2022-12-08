@@ -29,7 +29,7 @@ public class Objekti extends PocetnaStranica {
 	@FindBy(xpath = "//div[1]/div[1]/div/div/div[1]/div[1]/input")
 	public WebElement uliceWE;
 	
-	@FindBy(xpath = "//div[5]/div/div/div/a/div/div")
+	@FindBy(xpath = "//div[4]/div/div/div/a/div/div")
 	public WebElement odaberiUlicuWE;
 	
 	@FindBy(xpath = "//div[1]/div[2]/div/div/div[1]/div/input")
@@ -64,7 +64,7 @@ public class Objekti extends PocetnaStranica {
 		dodajBtnWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(uliceWE));
 		uliceWE.click();
-		uliceWE.sendKeys("7 - (78000 BANJA LUKA) - Aleja Svetog Save");
+		uliceWE.sendKeys("2264 - (78000 BANJA LUKA) - Jevrejska");
 		wait.until(ExpectedConditions.elementToBeClickable(odaberiUlicuWE));
 		odaberiUlicuWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(brojWE));
@@ -77,12 +77,12 @@ public class Objekti extends PocetnaStranica {
 		wait.until(ExpectedConditions.elementToBeClickable(pretraziObjekatWE));
 		pretraziObjekatWE.click();
 		pretraziObjekatWE.clear();
-		pretraziObjekatWE.sendKeys("Aleja Svetog Save " + broj);
+		pretraziObjekatWE.sendKeys("Jevrejska " + broj);
 		pretraziObjekatWE.sendKeys(Keys.ENTER);
 		Thread.sleep(1000);
 		wait.until(ExpectedConditions.visibilityOf(adresaTabelaWE));
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
-		assertTrue(adresaTabelaWE.getText().equals("Aleja Svetog Save " + broj), "Objekti: Adresa objekta nije dobra!");
+		assertTrue(adresaTabelaWE.getText().equals("Jevrejska " + broj), "Objekti: Adresa objekta nije dobra!");
 	}
 
 }
