@@ -15,22 +15,22 @@ public class PX_DIST_Brisanje_Ugovora_O_Prikljucenju_Test extends BaseTest{
 		super();
 	}
 
-	@Test
-	public void px_dist_brisanje_ugovora_o_prikljucenju_test() throws Exception {
-		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
-		logIn.verifikujLogIn();
-		logIn.logIn();
-		PocetnaStranica homePage = new PocetnaStranica(driver);
-		homePage.verifikujPocetnuStranicu();
-		ElektroenergetskeSaglasnosti elSaglasnosti = homePage.navigirajNaElektroenergetskeSaglasnosti();
-		elSaglasnosti.verifikujElektroenergetskeSaglasnosti();
-		String ElSaglasnost = elSaglasnosti.dodajElektronergetskuSaglasnost();
-		elSaglasnosti.verifikujElektroenergetskuSaglasnost(ElSaglasnost);
-		UgovorOPrikljucenju ugovor = homePage.navigirajNaUgovorOPrikljucenju();
-		ugovor.verifikujUgovorOPrikljucenju();
-		String BrojProtokola = ugovor.dodajUgovorOPrikljucenju(ElSaglasnost);
-		ugovor.obrisiUgovorOPrikljucenju();
-		ugovor.verifikujBrisanjeUgovoraOPrikljucenju(BrojProtokola);
-	}
+//	@Test
+//	public void px_dist_brisanje_ugovora_o_prikljucenju_test() throws Exception {
+//		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
+//		logIn.verifikujLogIn();
+//		logIn.logIn();
+//		PocetnaStranica homePage = new PocetnaStranica(driver);
+//		homePage.verifikujPocetnuStranicu();
+//		ElektroenergetskeSaglasnosti elSaglasnosti = homePage.navigirajNaElektroenergetskeSaglasnosti();
+//		elSaglasnosti.verifikujElektroenergetskeSaglasnosti();
+//		String ElSaglasnost = elSaglasnosti.dodajElektronergetskuSaglasnost();
+//		elSaglasnosti.verifikujElektroenergetskuSaglasnost(ElSaglasnost);
+//		UgovorOPrikljucenju ugovor = homePage.navigirajNaUgovorOPrikljucenju();
+//		ugovor.verifikujUgovorOPrikljucenju();
+//		String BrojProtokola = ugovor.dodajUgovorOPrikljucenju(ElSaglasnost);
+//		ugovor.obrisiUgovorOPrikljucenju();
+//		ugovor.verifikujBrisanjeUgovoraOPrikljucenju(BrojProtokola);
+//	}
 
 }

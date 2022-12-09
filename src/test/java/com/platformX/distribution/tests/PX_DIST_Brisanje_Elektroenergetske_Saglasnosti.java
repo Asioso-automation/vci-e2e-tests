@@ -15,19 +15,19 @@ public class PX_DIST_Brisanje_Elektroenergetske_Saglasnosti extends BaseTest{
 	
 	}
 
-	@Test
-	public void px_dist_brisanje_elektroenergetske_saglasnosti_test() throws Exception {
-		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
-		logIn.verifikujLogIn();
-		logIn.logIn();
-		PocetnaStranica homePage = new PocetnaStranica(driver);
-		homePage.verifikujPocetnuStranicu();
-		ElektroenergetskeSaglasnosti elSaglasnosti = homePage.navigirajNaElektroenergetskeSaglasnosti();
-		elSaglasnosti.verifikujElektroenergetskeSaglasnosti();
-		String ElSaglasnost = elSaglasnosti.dodajElektronergetskuSaglasnost();
-		elSaglasnosti.verifikujElektroenergetskuSaglasnost(ElSaglasnost);
-		elSaglasnosti.obrisiElektroenergetskuSaglasnost();
-		elSaglasnosti.verifikujBrisanjeElektroenergetskeSaglasnosti(ElSaglasnost);
-	}
+//	@Test
+//	public void px_dist_brisanje_elektroenergetske_saglasnosti_test() throws Exception {
+//		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
+//		logIn.verifikujLogIn();
+//		logIn.logIn();
+//		PocetnaStranica homePage = new PocetnaStranica(driver);
+//		homePage.verifikujPocetnuStranicu();
+//		ElektroenergetskeSaglasnosti elSaglasnosti = homePage.navigirajNaElektroenergetskeSaglasnosti();
+//		elSaglasnosti.verifikujElektroenergetskeSaglasnosti();
+//		String ElSaglasnost = elSaglasnosti.dodajElektronergetskuSaglasnost();
+//		elSaglasnosti.verifikujElektroenergetskuSaglasnost(ElSaglasnost);
+//		elSaglasnosti.obrisiElektroenergetskuSaglasnost();
+//		elSaglasnosti.verifikujBrisanjeElektroenergetskeSaglasnosti(ElSaglasnost);
+//	}
 
 }
