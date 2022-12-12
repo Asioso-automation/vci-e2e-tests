@@ -189,6 +189,12 @@ public class PocetnaStranica extends PageBase {
 	
 	@FindBy(xpath = "//div[contains(text(), 'Materijali provodnika')]")
 	protected WebElement materijaliProvodnikaWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Tipovi priključnog voda')]")
+	protected WebElement tipoviPrikljucnogVodaWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Priključne snage')]")
+	protected WebElement prikljucneSnageWE;
 
 	@FindBy(xpath = "//div[contains(text(), 'Kategorije potrošnje')]")
 	protected WebElement kategorijePotrosnjeWE;
@@ -201,7 +207,7 @@ public class PocetnaStranica extends PageBase {
 
 	@FindBy(xpath = "//div[contains(text(), 'Sezone')]")
 	protected WebElement sezoneWE;
-
+	
 	@FindBy(xpath = "//div[contains(text(), 'Obračunska snaga')]")
 	protected WebElement obracunskaSnagaWE;
 
@@ -662,6 +668,23 @@ public class PocetnaStranica extends PageBase {
 		return new MaterijaliProvodnika(driver);
 	}
 	
+	public TipoviPrikljucnogVoda navigirajNaTipoviPrikljucnogVoda() throws Exception {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(sifarniciWE));
+		sifarniciWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(tipoviPrikljucnogVodaWE));
+		tipoviPrikljucnogVodaWE.click();
+		return new TipoviPrikljucnogVoda(driver);
+	}
+	
+	public PrikljucneSnage navigirajNaPrikljucneSnage() throws Exception {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(sifarniciWE));
+		sifarniciWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(prikljucneSnageWE));
+		prikljucneSnageWE.click();
+		return new PrikljucneSnage(driver);
+	}
 	
 	public KategorijePotrosnje navigirajNaKategorijePotrosnje() throws Exception {
 		WebDriverWait wait = new WebDriverWait(driver, 10);

@@ -10,11 +10,13 @@ import java.io.IOException;
 import com.platformX.distribution.page.PocetnaStranica;
 import com.platformX.distribution.page.Poste;
 import com.platformX.distribution.page.PresjeciVoda;
+import com.platformX.distribution.page.PrikljucneSnage;
 import com.platformX.distribution.page.SektorDjelatnosti;
 import com.platformX.distribution.page.Snabdjevaci;
 import com.platformX.distribution.page.TerenskeJedinice;
 import com.platformX.distribution.page.TipoviIzolacija;
 import com.platformX.distribution.page.TipoviMjernihMostova;
+import com.platformX.distribution.page.TipoviPrikljucnogVoda;
 import com.platformX.distribution.page.Trafostanice;
 import com.platformX.distribution.page.Ulice;
 import com.platformX.distribution.page.Vlasnistva;
@@ -119,6 +121,10 @@ public class PX_DIST_003_Verifikacija_Sekcije_Sifarnici_Test {
 		presjeciVoda.verifikujPresjeciVoda();
 		MaterijaliProvodnika materijaliProvodnika = pocetna.navigirajNaMaterijaliProvodnika();
 		materijaliProvodnika.verifikujMaterijaliProvodnika();
+		TipoviPrikljucnogVoda tipoviPrikljucnogVoda = pocetna.navigirajNaTipoviPrikljucnogVoda();
+		tipoviPrikljucnogVoda.verifikujTipoviPrikljucnogVoda();
+		PrikljucneSnage prikljucneSnage = pocetna.navigirajNaPrikljucneSnage();
+		prikljucneSnage.verifikujPrikljucneSnage();
 	}
 	
 	@AfterTest

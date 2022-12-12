@@ -16,9 +16,12 @@ public class DnevnikIzmjena extends PocetnaStranica {
 		super(driver);
 	}
 	
-	@FindBy(xpath = "/html/body/div/div[3]/div/div")
-	private WebElement obradaUTokuBtnWE;
+//	@FindBy(xpath = "/html/body/div/div[3]/div/div")
+//	private WebElement obradaUTokuBtnWE;
 
+	@FindBy(xpath = "//*[contains(@class, 'title') and contains(text(), 'Obrada u toku')]")
+	private WebElement obradaUTokuBtnWE;
+	
 	public void verifikujDnevnikIzmjena()throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.invisibilityOf(obradaUTokuBtnWE));
