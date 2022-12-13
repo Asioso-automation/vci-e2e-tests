@@ -569,13 +569,13 @@ public class PocetnaStranica extends PageBase {
 		return new LokacijeMontera(driver);
 	}
 	
-	public Trafostanice navigirajNaTrafostanice() throws Exception {
+	public TrafoStanice navigirajNaTrafostanice() throws Exception {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(sifarniciWE));
 		sifarniciWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(trafoStaniceWE));
 		trafoStaniceWE.click();
-		return new Trafostanice(driver);
+		return new TrafoStanice(driver);
 	}
 	
 	public Vlasnistva navigirajNaVlasnistva() throws Exception {
