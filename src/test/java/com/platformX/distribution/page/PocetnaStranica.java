@@ -158,7 +158,7 @@ public class PocetnaStranica extends PageBase {
 	protected WebElement lokacijeMonteraWE;
 	
 	@FindBy(xpath = "//div[contains(text(), 'Trafostanice')]")
-	protected WebElement trafoStaniceWE;
+	protected WebElement trafostaniceWE;
 	
 	@FindBy(xpath = "//div[contains(text(), 'Vlasništva')]")
 	protected WebElement vlasnistvaWE;
@@ -569,13 +569,13 @@ public class PocetnaStranica extends PageBase {
 		return new LokacijeMontera(driver);
 	}
 	
-	public TrafoStanice navigirajNaTrafostanice() throws Exception {
+	public Trafostanice navigirajNaTrafostanice() throws Exception {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(sifarniciWE));
 		sifarniciWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(trafoStaniceWE));
-		trafoStaniceWE.click();
-		return new TrafoStanice(driver);
+		wait.until(ExpectedConditions.elementToBeClickable(trafostaniceWE));
+		trafostaniceWE.click();
+		return new Trafostanice(driver);
 	}
 	
 	public Vlasnistva navigirajNaVlasnistva() throws Exception {

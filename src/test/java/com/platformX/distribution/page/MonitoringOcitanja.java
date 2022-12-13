@@ -8,6 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import com.platformX.base.Kolone;
 
 public class MonitoringOcitanja extends PocetnaStranica {
 	
@@ -41,216 +42,128 @@ public class MonitoringOcitanja extends PocetnaStranica {
 	
 	@FindBy(xpath = "//div[2]/div[3]/div[1]/div/div[1]/div[3]")
     protected WebElement slideBtnWE;
-	
-	// Kolone
-	
-	@FindBy(xpath = "//*[contains(@class,'v-window-item--active')]//*[contains(@class, 'v-data-table-header')]//*[text() = 'Mjerno mjesto (EIC)']")
-	protected WebElement kolonaMjernoMjestoEicWE;
-	
-	@FindBy(xpath = "//*[contains(@class,'v-window-item--active')]//*[contains(@class, 'v-data-table-header')]//*[text() = 'AVT']")
-	protected WebElement kolonaAvtWE;
-	
-	@FindBy(xpath = "//*[contains(@class,'v-window-item--active')]//*[contains(@class, 'v-data-table-header')]//*[text() = 'AMT']")
-	protected WebElement kolonaAmtWE;
-	
-	@FindBy(xpath = "//*[contains(@class,'v-window-item--active')]//*[contains(@class, 'v-data-table-header')]//*[text() = 'RVT']")
-	protected WebElement kolonaRvtWE;
-	
-	@FindBy(xpath = "//*[contains(@class,'v-window-item--active')]//*[contains(@class, 'v-data-table-header')]//*[text() = 'RMT']")
-	protected WebElement kolonaRmtWE;
-	
-	@FindBy(xpath = "//*[contains(@class,'v-window-item--active')]//*[contains(@class, 'v-data-table-header')]//*[text() = 'Snaga']")
-	protected WebElement kolonaSnaga1WE;
-	
-	@FindBy(xpath = "//*[contains(@class,'v-window-item--active')]//*[contains(@class, 'v-data-table-header')]//*[text() = 'Trafostanica']")
-	protected WebElement kolonaTrafoStanicaWE;
-	
-	@FindBy(xpath = "//*[contains(@class,'v-window-item--active')]//*[contains(@class, 'v-data-table-header')]//*[text() = 'Naziv mjernog mjesta']")
-	protected WebElement kolonaNazivMjernogMjestaWE;
-	
-	@FindBy(xpath = "//*[contains(@class,'v-window-item--active')]//*[contains(@class, 'v-data-table-header')]//*[text() = 'Obračunski ugovor']")
-	protected WebElement kolonaObracunskiUgovorWE;
-	
-	@FindBy(xpath =  "//*[contains(@class,'v-window-item--active')]//*[contains(@class, 'v-data-table-header')]//*[text() = 'Broj brojila']")
-	protected WebElement kolonaBrojBrojilaWE;
-	
-	@FindBy(xpath = "//*[contains(@class,'v-window-item--active')]//*[contains(@class, 'v-data-table-header')]//*[text() = 'Čitač']")
-	protected WebElement kolonaCitacWE;
-	
-	@FindBy(xpath = "//*[contains(@class,'v-window-item--active')]//*[contains(@class, 'v-data-table-header')]//*[text() = 'Adresa mjernog mjesta']")
-	protected WebElement kolonaAdresaMjernogMjestaWE;
-	
-	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'AVT neočitano']")
-	protected WebElement kolonaAvtNeocitanoWE;
-	
-	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'AMT neočitano']")
-	protected WebElement kolonaAmtNeocitanoWE;
-	
-	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'RVT neočitano']")
-	protected WebElement kolonaRvtNeocitanoWE;
-	
-	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'RMT neočitano']")
-	protected WebElement kolonaRmtNeocitanoWE;
-	
-	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Snaga neočitana']")
-	protected WebElement kolonaSnagaNeocitanaWE;
-	
-	@FindBy(xpath = "//*[contains(@class,'v-window-item--active')]//*[contains(@class, 'v-data-table-header')]//*[text() = 'Stara VT']")
-	protected WebElement kolonaStaraVtWE;
-	
-	@FindBy(xpath = "//*[contains(@class,'v-window-item--active')]//*[contains(@class, 'v-data-table-header')]//*[text() = 'Nova VT']")
-	protected WebElement kolonaNovaVtWE;
-	
-	@FindBy(xpath = "//*[contains(@class,'v-window-item--active')]//*[contains(@class, 'v-data-table-header')]//*[text() = 'Stara MT']")
-	protected WebElement kolonaStaraMtWE;
-	
-	@FindBy(xpath = "//*[contains(@class,'v-window-item--active')]//*[contains(@class, 'v-data-table-header')]//*[text() = 'Nova MT']")
-	protected WebElement kolonaNovaMtWE;
-	
-	@FindBy(xpath = "//*[contains(@class,'v-window-item--active')]//*[contains(@class, 'v-data-table-header')]//*[text() = 'Aktivno brojilo']")
-	protected WebElement kolonaAktivnoBrojiloWE;
-	
-	@FindBy(xpath = "//*[contains(@class,'v-window-item--active')]//*[contains(@class, 'v-data-table-header')]//*[text() = 'Reaktivno brojilo']")
-	protected WebElement kolonaReaktivnoBrojiloWE;
-	
-	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'VT']")
-	protected WebElement kolonaVtWE;
-	
-	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'MT']")
-	protected WebElement kolonaMtWE;
-	
-	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'VT resetovana']")
-	protected WebElement kolonaVtResetovanaWE;
-	
-	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'MT resetovana']")
-	protected WebElement kolonaMtResetovanaWE;
-	
-	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Nova potrošnja']")
-	protected WebElement kolonaNovaPotrosnjaWE;
-	
-	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Prosječna potrošnja']")
-	protected WebElement kolonaProsjecnaPotrosnjaWE;
 
 	public void verifikujMonitoringOcitanja()throws InterruptedException, FileNotFoundException, IOException {
+		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Monitoring očitanja')]")));
 		wait.until(ExpectedConditions.visibilityOf(neocitanaBrojilaBtnWE));
-		wait.until(ExpectedConditions.visibilityOf(kolonaObracunskiUgovorWE));
-		wait.until(ExpectedConditions.visibilityOf(kolonaMjernoMjestoEicWE));
-		wait.until(ExpectedConditions.visibilityOf(kolonaNazivMjernogMjestaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolonaAdresaMjernogMjestaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolonaBrojBrojilaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolonaTrafoStanicaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolonaCitacWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonObracunskiUgovorWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonMjernoMjestoEicWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonNazivMjernogMjestaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonAdresaMjernogMjestaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonBrojBrojilaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonTrafostanicaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonCitacWE));
 		assertTrue(brojKolona().size() == 108, "MonitoringOcitanja: Broj kolona nije dobar! ");
 		wait.until(ExpectedConditions.visibilityOf(djelimicnoOcitanaBrojilaBtnWE));
 		djelimicnoOcitanaBrojilaBtnWE.click();
-		wait.until(ExpectedConditions.visibilityOf(kolonaObracunskiUgovorWE));
-		wait.until(ExpectedConditions.visibilityOf(kolonaMjernoMjestoEicWE));
-		wait.until(ExpectedConditions.visibilityOf(kolonaNazivMjernogMjestaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolonaAdresaMjernogMjestaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolonaBrojBrojilaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolonaTrafoStanicaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolonaCitacWE));
-		wait.until(ExpectedConditions.visibilityOf(kolonaAvtNeocitanoWE));
-		wait.until(ExpectedConditions.visibilityOf(kolonaAmtNeocitanoWE));
-		wait.until(ExpectedConditions.visibilityOf(kolonaRvtNeocitanoWE));
-		wait.until(ExpectedConditions.visibilityOf(kolonaRmtNeocitanoWE));
-		wait.until(ExpectedConditions.visibilityOf(kolonaSnagaNeocitanaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonObracunskiUgovorWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonMjernoMjestoEicWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonNazivMjernogMjestaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonAdresaMjernogMjestaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonBrojBrojilaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonTrafostanicaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonCitacWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonAvtNeocitanoWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonAmtNeocitanoWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonRvtNeocitanoWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonRmtNeocitanoWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonSnagaNeocitanaWE));
 		assertTrue(brojKolona().size() == 108, "MonitoringOcitanja: Broj kolona nije dobar! ");
 		wait.until(ExpectedConditions.visibilityOf(podcitanaBrojilaBtnWE));
 		podcitanaBrojilaBtnWE.click();
-		wait.until(ExpectedConditions.visibilityOf(kolonaObracunskiUgovorWE));
-		wait.until(ExpectedConditions.visibilityOf(kolonaMjernoMjestoEicWE));
-		wait.until(ExpectedConditions.visibilityOf(kolonaNazivMjernogMjestaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolonaAdresaMjernogMjestaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolonaBrojBrojilaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolonaTrafoStanicaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolonaCitacWE));
-		wait.until(ExpectedConditions.visibilityOf(kolonaStaraVtWE));
-		wait.until(ExpectedConditions.visibilityOf(kolonaNovaVtWE));
-		wait.until(ExpectedConditions.visibilityOf(kolonaStaraMtWE));
-		wait.until(ExpectedConditions.visibilityOf(kolonaNovaMtWE));
-		wait.until(ExpectedConditions.visibilityOf(kolonaAktivnoBrojiloWE));
-		wait.until(ExpectedConditions.visibilityOf(kolonaReaktivnoBrojiloWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonObracunskiUgovorWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonMjernoMjestoEicWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonNazivMjernogMjestaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonAdresaMjernogMjestaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonBrojBrojilaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonTrafostanicaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonCitacWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonStaraVtWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonNovaVtWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonStaraMtWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonNovaMtWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonAktivnoBrojiloWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonReaktivnoBrojiloWE));
 		assertTrue(brojKolona().size() == 108, "MonitoringOcitanja: Broj kolona nije dobar! ");
 		wait.until(ExpectedConditions.visibilityOf(precitanaBrojilaBtnWE));
 		precitanaBrojilaBtnWE.click();
-		wait.until(ExpectedConditions.visibilityOf(kolonaObracunskiUgovorWE));
-		wait.until(ExpectedConditions.visibilityOf(kolonaMjernoMjestoEicWE));
-		wait.until(ExpectedConditions.visibilityOf(kolonaNazivMjernogMjestaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolonaAdresaMjernogMjestaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolonaBrojBrojilaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolonaTrafoStanicaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolonaCitacWE));
-		wait.until(ExpectedConditions.visibilityOf(kolonaVtWE));
-		wait.until(ExpectedConditions.visibilityOf(kolonaMtWE));
-		wait.until(ExpectedConditions.visibilityOf(kolonaSnaga1WE));
-		wait.until(ExpectedConditions.visibilityOf(kolonaAktivnoBrojiloWE));
-		wait.until(ExpectedConditions.visibilityOf(kolonaReaktivnoBrojiloWE));
-		wait.until(ExpectedConditions.visibilityOf(kolonaVtResetovanaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolonaMtResetovanaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonObracunskiUgovorWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonMjernoMjestoEicWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonNazivMjernogMjestaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonAdresaMjernogMjestaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonBrojBrojilaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonTrafostanicaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonCitacWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonVtWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonMtWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonSnaga1WE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonAktivnoBrojiloWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonReaktivnoBrojiloWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonVtResetovanaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonMtResetovanaWE));
 		assertTrue(brojKolona().size() == 108, "MonitoringOcitanja: Broj kolona nije dobar! ");
 		wait.until(ExpectedConditions.visibilityOf(natprosjecnaOcitanjaBtnWE));
 		natprosjecnaOcitanjaBtnWE.click();
-		wait.until(ExpectedConditions.visibilityOf(kolonaObracunskiUgovorWE));
-		wait.until(ExpectedConditions.visibilityOf(kolonaMjernoMjestoEicWE));
-		wait.until(ExpectedConditions.visibilityOf(kolonaNazivMjernogMjestaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolonaAdresaMjernogMjestaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolonaBrojBrojilaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolonaTrafoStanicaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolonaCitacWE));
-		wait.until(ExpectedConditions.visibilityOf(kolonaNovaPotrosnjaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolonaProsjecnaPotrosnjaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolonaAvtWE));
-		wait.until(ExpectedConditions.visibilityOf(kolonaAmtWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonObracunskiUgovorWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonMjernoMjestoEicWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonNazivMjernogMjestaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonAdresaMjernogMjestaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonBrojBrojilaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonTrafostanicaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonCitacWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonNovaPotrosnjaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonProsjecnaPotrosnjaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonAvtWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonAmtWE));
 		assertTrue(brojKolona().size() == 108, "MonitoringOcitanja: Broj kolona nije dobar! ");
 		wait.until(ExpectedConditions.visibilityOf(duplaOcitanjaBrojilaBtnWE));
 		duplaOcitanjaBrojilaBtnWE.click();
-		wait.until(ExpectedConditions.visibilityOf(kolonaObracunskiUgovorWE));
-		wait.until(ExpectedConditions.visibilityOf(kolonaMjernoMjestoEicWE));
-		wait.until(ExpectedConditions.visibilityOf(kolonaNazivMjernogMjestaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolonaAdresaMjernogMjestaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolonaBrojBrojilaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolonaTrafoStanicaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolonaCitacWE));
-		wait.until(ExpectedConditions.visibilityOf(kolonaAvtWE));
-		wait.until(ExpectedConditions.visibilityOf(kolonaAmtWE));
-		wait.until(ExpectedConditions.visibilityOf(kolonaRvtWE));
-		wait.until(ExpectedConditions.visibilityOf(kolonaRmtWE));
-		wait.until(ExpectedConditions.visibilityOf(kolonaSnaga1WE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonObracunskiUgovorWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonMjernoMjestoEicWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonNazivMjernogMjestaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonAdresaMjernogMjestaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonBrojBrojilaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonTrafostanicaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonCitacWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonAvtWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonAmtWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonRvtWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonRmtWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonSnaga1WE));
 		assertTrue(brojKolona().size() == 108, "MonitoringOcitanja: Broj kolona nije dobar! ");
 		wait.until(ExpectedConditions.visibilityOf(nemaPotrosnjeBtnWE));
 		nemaPotrosnjeBtnWE.click();
-		wait.until(ExpectedConditions.visibilityOf(kolonaObracunskiUgovorWE));
-		wait.until(ExpectedConditions.visibilityOf(kolonaMjernoMjestoEicWE));
-		wait.until(ExpectedConditions.visibilityOf(kolonaNazivMjernogMjestaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolonaAdresaMjernogMjestaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolonaBrojBrojilaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolonaTrafoStanicaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolonaCitacWE));
-		wait.until(ExpectedConditions.visibilityOf(kolonaAvtWE));
-		wait.until(ExpectedConditions.visibilityOf(kolonaAmtWE));
-		wait.until(ExpectedConditions.visibilityOf(kolonaRvtWE));
-		wait.until(ExpectedConditions.visibilityOf(kolonaRmtWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonObracunskiUgovorWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonMjernoMjestoEicWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonNazivMjernogMjestaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonAdresaMjernogMjestaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonBrojBrojilaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonTrafostanicaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonCitacWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonAvtWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonAmtWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonRvtWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonRmtWE));
 		assertTrue(brojKolona().size() == 108, "MonitoringOcitanja: Broj kolona nije dobar! ");
 		wait.until(ExpectedConditions.visibilityOf(slideBtnWE));
 		slideBtnWE.click();
 		wait.until(ExpectedConditions.visibilityOf(iskljucenaBrojilaSaPotrosnjomBtnWE));
 		iskljucenaBrojilaSaPotrosnjomBtnWE.click();
-		wait.until(ExpectedConditions.visibilityOf(kolonaObracunskiUgovorWE));
-		wait.until(ExpectedConditions.visibilityOf(kolonaMjernoMjestoEicWE));
-		wait.until(ExpectedConditions.visibilityOf(kolonaNazivMjernogMjestaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolonaAdresaMjernogMjestaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolonaBrojBrojilaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolonaTrafoStanicaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolonaCitacWE));
-		wait.until(ExpectedConditions.visibilityOf(kolonaStaraVtWE));
-		wait.until(ExpectedConditions.visibilityOf(kolonaNovaVtWE));
-		wait.until(ExpectedConditions.visibilityOf(kolonaStaraMtWE));
-		wait.until(ExpectedConditions.visibilityOf(kolonaNovaMtWE));
-		wait.until(ExpectedConditions.visibilityOf(kolonaAktivnoBrojiloWE));
-		wait.until(ExpectedConditions.visibilityOf(kolonaReaktivnoBrojiloWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonObracunskiUgovorWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonMjernoMjestoEicWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonNazivMjernogMjestaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonAdresaMjernogMjestaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonBrojBrojilaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonTrafostanicaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonCitacWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonStaraVtWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonNovaVtWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonStaraMtWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonNovaMtWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonAktivnoBrojiloWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonReaktivnoBrojiloWE));
 		assertTrue(sekcijaBtnWE.getText().trim().equals("OČITANJA"), "MonitoringOcitanja: Naziv sekcije nije dobar!");
 		assertTrue(stranicaBtnWE.getText().trim().equals("MONITORING OČITANJA"), "MonitoringOcitanja: Naziv stranice nije dobar!");
 		assertTrue(naslovStraniceWE.getText().trim().equals("MONITORING OČITANJA"), "MonitoringOcitanja: Naziv stranice nije dobar!");

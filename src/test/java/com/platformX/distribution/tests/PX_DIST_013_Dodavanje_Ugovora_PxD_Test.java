@@ -11,14 +11,14 @@ import com.platformX.distribution.page.ObracunskiUgovori;
 import com.platformX.distribution.page.PocetnaStranica;
 import com.platformX.distribution.page.RegistarBrojila;
 
-public class PX_DIST_012_Dodavanje_Ugovora_PxD_Test  extends BaseTest {
+public class PX_DIST_013_Dodavanje_Ugovora_PxD_Test  extends BaseTest {
 
-	public PX_DIST_012_Dodavanje_Ugovora_PxD_Test() throws IOException, FileNotFoundException {
+	public PX_DIST_013_Dodavanje_Ugovora_PxD_Test() throws IOException, FileNotFoundException {
 		super();
 	}
 	
 	@Test
-	public void px_dist_012_dodavanje_ugovora_pxd_test() throws Exception {
+	public void px_dist_013_dodavanje_ugovora_pxd_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();

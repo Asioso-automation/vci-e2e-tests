@@ -19,14 +19,14 @@ import com.platformX.distribution.page.SposobnostPrikljucenjaBrojila;
 import com.platformX.distribution.page.StrujniNivoi;
 import com.platformX.distribution.page.TipoviBrojila;
 
-public class PX_DIST_007_Verifikacija_Sekcije_Brojila_Test extends BaseTest {
+public class PX_DIST_008_Verifikacija_Sekcije_Brojila_Test extends BaseTest {
 
-	public PX_DIST_007_Verifikacija_Sekcije_Brojila_Test() throws IOException, FileNotFoundException {
+	public PX_DIST_008_Verifikacija_Sekcije_Brojila_Test() throws IOException, FileNotFoundException {
 		super();
 	}
 
 	@Test(description = "test prolazi kroz sve stranice iz sekcije BROJILA i verifikuje ih")
-	public void px_dist_007_verifikacija_sekcije_brojila_test() throws Exception {
+	public void px_dist_008_verifikacija_sekcije_brojila_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();

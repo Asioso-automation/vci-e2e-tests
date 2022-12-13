@@ -23,9 +23,9 @@ import com.platformX.distribution.page.KontrolaMjernogMjesta;
 import com.platformX.distribution.page.LogIn;
 import com.platformX.distribution.page.MjernaMjesta;
 
-public class PX_DIST_005_Verifikacija_Sekcije_Mjerna_Mjesta_Test {
+public class PX_DIST_006_Verifikacija_Sekcije_Mjerna_Mjesta_Test {
 
-	public PX_DIST_005_Verifikacija_Sekcije_Mjerna_Mjesta_Test() throws IOException, FileNotFoundException {
+	public PX_DIST_006_Verifikacija_Sekcije_Mjerna_Mjesta_Test() throws IOException, FileNotFoundException {
 		super();
 	}
 
@@ -33,7 +33,7 @@ public class PX_DIST_005_Verifikacija_Sekcije_Mjerna_Mjesta_Test {
 	private final String PLATFORMX_PROPERTIES = "platformx.properties";
 
 	@Test(description = "test prolazi kroz sve stranice iz sekcije MJERNA MJESTA i verifikuje ih")
-	public void px_dist_005_verifikacije_sekcije_mjerna_mjesta_test() throws Exception {
+	public void px_dist_006_verifikacije_sekcije_mjerna_mjesta_test() throws Exception {
 
 		try {
 			System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver.exe");

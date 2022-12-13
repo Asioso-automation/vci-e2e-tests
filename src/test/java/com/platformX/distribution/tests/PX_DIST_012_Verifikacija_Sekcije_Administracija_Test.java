@@ -10,15 +10,15 @@ import com.platformX.distribution.page.LogIn;
 import com.platformX.distribution.page.PocetnaStranica;
 import com.platformX.distribution.page.Poruke;
 
-public class PX_DIST_011_Verifikacija_Sekcije_Administracija_Test  extends BaseTest {
+public class PX_DIST_012_Verifikacija_Sekcije_Administracija_Test  extends BaseTest {
 
-	public PX_DIST_011_Verifikacija_Sekcije_Administracija_Test() throws IOException, FileNotFoundException {
+	public PX_DIST_012_Verifikacija_Sekcije_Administracija_Test() throws IOException, FileNotFoundException {
 		super();
 	}
 	
 	@Test (description = "test prolazi kroz sve stranice iz sekcije ADMINISTRACIJA i verifikuje ih")
 	
-	public void px_dist_011_verifikacija_sekcije_administracija_test() throws Exception {
+	public void px_dist_012_verifikacija_sekcije_administracija_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();

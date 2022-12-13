@@ -17,7 +17,7 @@ import com.platformX.distribution.page.TerenskeJedinice;
 import com.platformX.distribution.page.TipoviIzolacija;
 import com.platformX.distribution.page.TipoviMjernihMostova;
 import com.platformX.distribution.page.TipoviPrikljucnogVoda;
-import com.platformX.distribution.page.TrafoStanice;
+import com.platformX.distribution.page.Trafostanice;
 import com.platformX.distribution.page.Ulice;
 import com.platformX.distribution.page.Vlasnistva;
 import com.platformX.distribution.page.LogIn;
@@ -99,32 +99,11 @@ public class PX_DIST_003_Verifikacija_Sekcije_Sifarnici_Test {
 		monteri.verifikujMonteri();
 		LokacijeMontera lokacije = pocetna.navigirajNaLokacijeMontera();
 		lokacije.verifikujLokacijeMontera();
-		TrafoStanice trafostanice = pocetna.navigirajNaTrafostanice();
-		trafostanice.verifikujTrafoStanice();
+		Trafostanice trafostanice = pocetna.navigirajNaTrafostanice();
+		trafostanice.verifikujTrafostanice();
 		Vlasnistva vlasnistva = pocetna.navigirajNaVlasnistva();
 		vlasnistva.verifikujVlasnistva();
-		NaciniPolaganjaInstalacija naciniPolaganjaInstalacija = pocetna.navigirajNaNaciniPolaganjaInstalacija();
-		naciniPolaganjaInstalacija.verifikujNaciniPolaganjaInstalacija();
-		NazivnaStruja nazivnaStruja = pocetna.navigirajNaNazivnaStruja();
-		nazivnaStruja.verifikujNazivnaStruja();
-		MaterijaliOrmaricaBrojila materijaliOrmaricaBrojila = pocetna.navigirajNaMaterijaliOrmaricaBrojila();
-		materijaliOrmaricaBrojila.verifikujMaterijaliOrmaricaBrojila();
-		LokacijeMjernihMjesta lokacijeMjernihMjesta = pocetna.navigirajNaLokacijeMjernihMjesta();
-		lokacijeMjernihMjesta.verifikujLokacijeMjernihMjesta();
-		TipoviMjernihMostova tipoviMjernihMostova = pocetna.navigirajNaTipoviMjernihMostova();
-		tipoviMjernihMostova.verifikujTipoviMjernihMostova();
-		TipoviIzolacija tipoviIzolacija = pocetna.navigirajNaTipoviIzolacija();
-		tipoviIzolacija.verifikujTipoviIzolacija();
-		MjestaPrikljucenja mjestaPrikljucenja = pocetna.navigirajNaMjestaPrikljucenja();
-		mjestaPrikljucenja.verifikujMjestaPrikljucenja();
-		PresjeciVoda presjeciVoda = pocetna.navigirajNaPresjeciVoda();
-		presjeciVoda.verifikujPresjeciVoda();
-		MaterijaliProvodnika materijaliProvodnika = pocetna.navigirajNaMaterijaliProvodnika();
-		materijaliProvodnika.verifikujMaterijaliProvodnika();
-		TipoviPrikljucnogVoda tipoviPrikljucnogVoda = pocetna.navigirajNaTipoviPrikljucnogVoda();
-		tipoviPrikljucnogVoda.verifikujTipoviPrikljucnogVoda();
-		PrikljucneSnage prikljucneSnage = pocetna.navigirajNaPrikljucneSnage();
-		prikljucneSnage.verifikujPrikljucneSnage();
+//		dodati Vrste podrucja
 	}
 	
 	@AfterTest

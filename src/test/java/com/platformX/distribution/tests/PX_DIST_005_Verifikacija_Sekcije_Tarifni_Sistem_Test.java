@@ -13,14 +13,14 @@ import com.platformX.distribution.page.TarifneGrupe;
 import com.platformX.distribution.page.KategorijePotrosnje;
 import com.platformX.distribution.page.TarifneNadgrupe;
 
-public class PX_DIST_004_Verifikacija_Sekcije_Tarifni_Sistem_Test extends BaseTest {
+public class PX_DIST_005_Verifikacija_Sekcije_Tarifni_Sistem_Test extends BaseTest {
 
-	public PX_DIST_004_Verifikacija_Sekcije_Tarifni_Sistem_Test() throws IOException, FileNotFoundException {
+	public PX_DIST_005_Verifikacija_Sekcije_Tarifni_Sistem_Test() throws IOException, FileNotFoundException {
 		super();
 	}
 
 	@Test (description="test prolazi kroz sve stranice iz sekcije TARIFNI SISTEM i verifikuje ih")
-	public void px_004_verifikacija_sekcije_tarifni_sistem_test() throws Exception {
+	public void px_005_verifikacija_sekcije_tarifni_sistem_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();

@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 import com.platformX.base.BaseTest;
 import com.platformX.distribution.page.LogIn;
 import com.platformX.distribution.page.PocetnaStranica;
-import com.platformX.distribution.page.TrafoStanice;
+import com.platformX.distribution.page.Trafostanice;
 
 public class PX_DIST_Uredjivanje_Trafostanice_Test extends BaseTest{
 
@@ -21,12 +21,12 @@ public class PX_DIST_Uredjivanje_Trafostanice_Test extends BaseTest{
 		logIn.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
 		homePage.verifikujPocetnuStranicu();
-		TrafoStanice trafostanice = homePage.navigirajNaTrafostanice();
-		trafostanice.verifikujTrafoStanice();
-		String trafostanica = trafostanice.dodajTrafoStanicu();
-		trafostanice.verifikujTrafoStanicu(trafostanica);
-		String novaTrafostanica = trafostanice.urediTrafoStanicu(trafostanica);
-		trafostanice.verifikujTrafoStanicu(novaTrafostanica);
+		Trafostanice trafostanice = homePage.navigirajNaTrafostanice();
+		trafostanice.verifikujTrafostanice();
+		String trafostanica = trafostanice.dodajTrafostanicu();
+		trafostanice.verifikujTrafostanicu(trafostanica);
+		String novaTrafostanica = trafostanice.urediTrafostanicu(trafostanica);
+		trafostanice.verifikujTrafostanicu(novaTrafostanica);
 	}
 
 }

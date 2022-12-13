@@ -1363,6 +1363,95 @@ public class Kolone extends PageBase {
 	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Titula']")
 	public WebElement kolonaTitulaWE;
 	
+	// Kolone MONITORING
+	
+	@FindBy(xpath = "//*[contains(@class,'v-window-item--active')]//*[contains(@class, 'v-data-table-header')]//*[text() = 'Mjerno mjesto (EIC)']")
+	public WebElement kolonaMonMjernoMjestoEicWE;
+		
+	@FindBy(xpath = "//*[contains(@class,'v-window-item--active')]//*[contains(@class, 'v-data-table-header')]//*[text() = 'AVT']")
+	public WebElement kolonaMonAvtWE;
+		
+	@FindBy(xpath = "//*[contains(@class,'v-window-item--active')]//*[contains(@class, 'v-data-table-header')]//*[text() = 'AMT']")
+	public WebElement kolonaMonAmtWE;
+		
+	@FindBy(xpath = "//*[contains(@class,'v-window-item--active')]//*[contains(@class, 'v-data-table-header')]//*[text() = 'RVT']")
+	public WebElement kolonaMonRvtWE;
+	
+	@FindBy(xpath = "//*[contains(@class,'v-window-item--active')]//*[contains(@class, 'v-data-table-header')]//*[text() = 'RMT']")
+	public WebElement kolonaMonRmtWE;
+		
+	@FindBy(xpath = "//*[contains(@class,'v-window-item--active')]//*[contains(@class, 'v-data-table-header')]//*[text() = 'Snaga']")
+	public WebElement kolonaMonSnaga1WE;
+		
+	@FindBy(xpath = "//*[contains(@class,'v-window-item--active')]//*[contains(@class, 'v-data-table-header')]//*[text() = 'Trafostanica']")
+	public WebElement kolonaMonTrafostanicaWE;
+		
+	@FindBy(xpath = "//*[contains(@class,'v-window-item--active')]//*[contains(@class, 'v-data-table-header')]//*[text() = 'Naziv mjernog mjesta']")
+	public WebElement kolonaMonNazivMjernogMjestaWE;
+		
+	@FindBy(xpath = "//*[contains(@class,'v-window-item--active')]//*[contains(@class, 'v-data-table-header')]//*[text() = 'Obračunski ugovor']")
+	public WebElement kolonaMonObracunskiUgovorWE;
+		
+	@FindBy(xpath =  "//*[contains(@class,'v-window-item--active')]//*[contains(@class, 'v-data-table-header')]//*[text() = 'Broj brojila']")
+	public WebElement kolonaMonBrojBrojilaWE;
+		
+	@FindBy(xpath = "//*[contains(@class,'v-window-item--active')]//*[contains(@class, 'v-data-table-header')]//*[text() = 'Čitač']")
+	public WebElement kolonaMonCitacWE;
+		
+	@FindBy(xpath = "//*[contains(@class,'v-window-item--active')]//*[contains(@class, 'v-data-table-header')]//*[text() = 'Adresa mjernog mjesta']")
+	public WebElement kolonaMonAdresaMjernogMjestaWE;
+		
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'AVT neočitano']")
+	public WebElement kolonaMonAvtNeocitanoWE;
+		
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'AMT neočitano']")
+	public WebElement kolonaMonAmtNeocitanoWE;
+		
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'RVT neočitano']")
+	public WebElement kolonaMonRvtNeocitanoWE;
+		
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'RMT neočitano']")
+	public WebElement kolonaMonRmtNeocitanoWE;
+		
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Snaga neočitana']")
+	public WebElement kolonaMonSnagaNeocitanaWE;
+		
+	@FindBy(xpath = "//*[contains(@class,'v-window-item--active')]//*[contains(@class, 'v-data-table-header')]//*[text() = 'Stara VT']")
+	public WebElement kolonaMonStaraVtWE;
+		
+	@FindBy(xpath = "//*[contains(@class,'v-window-item--active')]//*[contains(@class, 'v-data-table-header')]//*[text() = 'Nova VT']")
+	public WebElement kolonaMonNovaVtWE;
+		
+	@FindBy(xpath = "//*[contains(@class,'v-window-item--active')]//*[contains(@class, 'v-data-table-header')]//*[text() = 'Stara MT']")
+	public WebElement kolonaMonStaraMtWE;
+		
+	@FindBy(xpath = "//*[contains(@class,'v-window-item--active')]//*[contains(@class, 'v-data-table-header')]//*[text() = 'Nova MT']")
+	public WebElement kolonaMonNovaMtWE;
+		
+	@FindBy(xpath = "//*[contains(@class,'v-window-item--active')]//*[contains(@class, 'v-data-table-header')]//*[text() = 'Aktivno brojilo']")
+	public WebElement kolonaMonAktivnoBrojiloWE;
+		
+	@FindBy(xpath = "//*[contains(@class,'v-window-item--active')]//*[contains(@class, 'v-data-table-header')]//*[text() = 'Reaktivno brojilo']")
+	public WebElement kolonaMonReaktivnoBrojiloWE;
+		
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'VT']")
+	public WebElement kolonaMonVtWE;
+		
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'MT']")
+	public WebElement kolonaMonMtWE;
+		
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'VT resetovana']")
+	public WebElement kolonaMonVtResetovanaWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'MT resetovana']")
+	public WebElement kolonaMonMtResetovanaWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Nova potrošnja']")
+	public WebElement kolonaMonNovaPotrosnjaWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Prosječna potrošnja']")
+	public WebElement kolonaMonProsjecnaPotrosnjaWE;
+	
 
 	
 	// test comment
