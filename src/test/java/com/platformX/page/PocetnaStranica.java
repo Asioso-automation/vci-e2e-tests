@@ -1178,6 +1178,7 @@ public class PocetnaStranica extends PageBase {
 		iskljucenjaPoZahtjevuKupcaWE.click();
 		return new IskljucenjaPoZahtjevuKupca(driver);
 	}
+	
 	public UkljucenjaOdStraneODSa navigirajNaUkljucenjaOdStraneODSa() throws Exception {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(pravniOdnosiWE));
@@ -1186,6 +1187,7 @@ public class PocetnaStranica extends PageBase {
 		ukljucenjaOdStraneODSaWE.click();
 		return new UkljucenjaOdStraneODSa(driver);
 	}
+	
 	public UkljucenjaPoZahtjevuKupca navigirajNaUkljucenjaPoZahtjevuKupca() throws Exception {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(pravniOdnosiWE));
@@ -1194,6 +1196,7 @@ public class PocetnaStranica extends PageBase {
 		ukljucenjaPoZahtjevuKupcaWE.click();
 		return new UkljucenjaPoZahtjevuKupca(driver);
 	}
+	
 	public OpomenePredUtuzenje navigirajNaOpomenePredUtuzenje() throws Exception{
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(pravniOdnosiWE));
@@ -1202,6 +1205,7 @@ public class PocetnaStranica extends PageBase {
 		opomenePredUtuzenjeWE.click();
 		return new OpomenePredUtuzenje(driver);
 	}
+	
 	public ObrasciBrojaProtokolaOpomenaPredUtuzenje navigirajNaObrasciBrojaProtokolaOpomenaPredUtuzenje() throws Exception{
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(pravniOdnosiWE));
@@ -1210,4 +1214,5 @@ public class PocetnaStranica extends PageBase {
 		obrasciBrojaProtokolaOpomenaPredUtuzenjeWE.click();
 		return new ObrasciBrojaProtokolaOpomenaPredUtuzenje(driver);
 	}
+	
 }

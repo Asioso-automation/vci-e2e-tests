@@ -20,6 +20,7 @@ import com.platformX.distribution.page.TipoviPrikljucnogVoda;
 import com.platformX.distribution.page.Trafostanice;
 import com.platformX.distribution.page.Ulice;
 import com.platformX.distribution.page.Vlasnistva;
+import com.platformX.distribution.page.VrstePodrucja;
 import com.platformX.distribution.page.LogIn;
 import com.platformX.distribution.page.LokacijeMjernihMjesta;
 import com.platformX.distribution.page.LokacijeMontera;
@@ -103,7 +104,8 @@ public class PX_DIST_003_Verifikacija_Sekcije_Sifarnici_Test {
 		trafostanice.verifikujTrafostanice();
 		Vlasnistva vlasnistva = pocetna.navigirajNaVlasnistva();
 		vlasnistva.verifikujVlasnistva();
-//		dodati Vrste podrucja
+		VrstePodrucja vrstePodrucja = pocetna.navigirajNaVrstePodrucja();
+		vrstePodrucja.verifikujVrstePodrucja();
 	}
 	
 	@AfterTest

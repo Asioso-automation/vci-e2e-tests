@@ -13,6 +13,7 @@ import com.platformX.distribution.page.MaterijaliOrmaricaBrojila;
 import com.platformX.distribution.page.MaterijaliProvodnika;
 import com.platformX.distribution.page.MjestaPrikljucenja;
 import com.platformX.distribution.page.NaciniPolaganjaInstalacija;
+import com.platformX.distribution.page.NaciniUpravljanjaPotrosnjom;
 import com.platformX.distribution.page.NazivnaStruja;
 import com.platformX.distribution.page.PocetnaStranica;
 import com.platformX.distribution.page.PresjeciVoda;
@@ -20,6 +21,8 @@ import com.platformX.distribution.page.PrikljucneSnage;
 import com.platformX.distribution.page.TipoviIzolacija;
 import com.platformX.distribution.page.TipoviMjernihMostova;
 import com.platformX.distribution.page.TipoviPrikljucnogVoda;
+import com.platformX.distribution.page.VrsteImpulsnihUredjaja;
+import com.platformX.distribution.page.VrsteUpravljackihUredjaja;
 
 public class PX_DIST_004_Verifikacija_Sekcije_Sifarnici_Za_Zapisnike_Test {
 	
@@ -77,7 +80,13 @@ public class PX_DIST_004_Verifikacija_Sekcije_Sifarnici_Za_Zapisnike_Test {
 		tipoviPrikljucnogVoda.verifikujTipoviPrikljucnogVoda();
 		PrikljucneSnage prikljucneSnage = pocetna.navigirajNaPrikljucneSnage();
 		prikljucneSnage.verifikujPrikljucneSnage();
-//		dodati od Nacini upravljanja potrosnjom
+		NaciniUpravljanjaPotrosnjom naciniUpravljanjaPotrosnjom = pocetna.navigirajNaNaciniUpravljanjaPotrosnjom();
+		naciniUpravljanjaPotrosnjom.verifikujNaciniUpravljanjaPotrosnjom();
+		VrsteUpravljackihUredjaja vrsteUpravljackihUredjaja = pocetna.navigirajNaVrsteUpravljackihUredjaja();
+		vrsteUpravljackihUredjaja.verifikujVrsteUpravljackihUredjaja();
+		VrsteImpulsnihUredjaja vrsteImpulsnihUredjaja = pocetna.navigirajNaVrsteImpulsnihUredjaja();
+		vrsteImpulsnihUredjaja.verifikujVrsteImpulsnihUredjaja();
+		//		dodati od Nacini upravljanja potrosnjom
 	}
 	
 	@AfterTest

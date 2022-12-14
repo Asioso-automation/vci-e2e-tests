@@ -16,7 +16,6 @@ import com.platformX.page.UkljucenjaOdStraneODSa;
 import com.platformX.page.UkljucenjaPoZahtjevuKupca;
 import com.platformX.page.ZahtjeviZaIskljucenje;
 import com.platformX.page.ZahtjeviZaUkljucenje;
-import com.platformX.distribution.page.MjernaMjesta;
 import com.platformX.page.AktivnaIskljucenja;
 import com.platformX.page.IskljucenjaOdStraneODSa;
 import com.platformX.page.IskljucenjaPoZahtjevuKupca;
@@ -99,6 +98,7 @@ public class PX_009_Verifikacija_Sekcije_Pravni_Odnosi_Test {
 		//otpisiPotrazivanja.verifikujOtpisiPotrazivanja();
 		
 	}
+	
 	@AfterTest
 	public void terminateBrowser(){
 	driver.quit();
