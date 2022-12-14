@@ -393,17 +393,40 @@ public class PocetnaStranica extends PageBase {
 		organizacijeWE.click();
 		}
 		catch (Exception e) {
-			driver.get(platformx_properties.getValue("URL.DIST.LOGIN") + platformx_properties.getValue("ORGANIZACIJE"));
+			driver.get(platformx_distribution_properties.getValue("URL.DIST.LOGIN") + platformx_distribution_properties.getValue("ORGANIZACIJE"));
 		}
 		return new Organizacije(driver);
 	}
 	
+	public TerenskeJedinice navigirajNaTerenskeJedinice() throws Exception {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(sifarniciWE));
+		sifarniciWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(terenskeJediniceWE));
+		terenskeJediniceWE.click();
+		return new TerenskeJedinice(driver);
+	}
+	
+	public FizickeLokacije navigirajNaFizickeLokacije() throws Exception {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(sifarniciWE));
+		sifarniciWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(fizickeLokacijeWE));
+		fizickeLokacijeWE.click();
+		return new FizickeLokacije(driver);
+	}
+	
 	public ZahtjeviZaRaskidUgovora navigirajNaZahtjeviZaRaskidUgovora() throws Exception {
+		try {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(obracunskiUgovoriWE));
 		obracunskiUgovoriWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(zahtjeviZaRaskidUgovoraWE));
 		zahtjeviZaRaskidUgovoraWE.click();
+		}
+		catch (Exception e) {
+			driver.get(platformx_distribution_properties.getValue("URL.DIST.LOGIN") + platformx_distribution_properties.getValue("ZAHTJEVI.ZA.RASKID.UGOVORA"));
+		}
 		return new ZahtjeviZaRaskidUgovora(driver);
 	}
 	
@@ -450,24 +473,6 @@ public class PocetnaStranica extends PageBase {
 		wait.until(ExpectedConditions.elementToBeClickable(pravnaLicaWE));
 		pravnaLicaWE.click();
 		return new PravnaLica(driver);
-	}
-	
-	public TerenskeJedinice navigirajNaTerenskeJedinice() throws Exception {
-		WebDriverWait wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.elementToBeClickable(sifarniciWE));
-		sifarniciWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(terenskeJediniceWE));
-		terenskeJediniceWE.click();
-		return new TerenskeJedinice(driver);
-	}
-	
-	public FizickeLokacije navigirajNaFizickeLokacije() throws Exception {
-		WebDriverWait wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.elementToBeClickable(sifarniciWE));
-		sifarniciWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(fizickeLokacijeWE));
-		fizickeLokacijeWE.click();
-		return new FizickeLokacije(driver);
 	}
 	
 	public Snabdjevaci navigirajNaSnabdjevaci() throws Exception {

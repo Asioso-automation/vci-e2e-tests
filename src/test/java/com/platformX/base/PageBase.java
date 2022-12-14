@@ -19,11 +19,14 @@ public class PageBase {
 	protected PropertiesUtil properties;
 	protected PropertiesUtil platformx_properties = null;
 	protected final String PLATFORMX_PROPERTIES = "platformx.properties";
+	protected PropertiesUtil platformx_distribution_properties = null;
+	protected final String PLATFORMX_DISTRIBUTION_PROPERTIES = "platformx.distribution.properties";
 	
 	public PageBase(WebDriver driver) throws FileNotFoundException, IOException {
 		this.driver = driver;
 		PageFactory.initElements(this.driver, this);
 		platformx_properties = new PropertiesUtil(PLATFORMX_PROPERTIES);
+		platformx_distribution_properties = new PropertiesUtil(PLATFORMX_DISTRIBUTION_PROPERTIES);
 	}
 	
 	@FindBy(xpath = "//main/div/div/div/div[2]/div/div")
