@@ -207,6 +207,18 @@ public class PocetnaStranica extends PageBase {
 	
 	@FindBy(xpath = "//div[contains(text(), 'Vrste impulsnih uređaja')]")
 	protected WebElement vrsteImpulsnihUredjajaWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Sistemi zaštite od ind. dodira')]")
+	protected WebElement sistemiZastiteOdIndDodiraWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Klase tačnosti brojila')]")
+	protected WebElement klaseTacnostiBrojilaWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Nazivne struje brojila')]")
+	protected WebElement nazivneStrujeBrojilaWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Sistemi zaštite od prenapona')]")
+	protected WebElement sistemiZastiteOdPrenaponaWE;
 
 	@FindBy(xpath = "//div[contains(text(), 'Kategorije potrošnje')]")
 	protected WebElement kategorijePotrosnjeWE;
@@ -912,6 +924,62 @@ public class PocetnaStranica extends PageBase {
 			driver.get(platformx_distribution_properties.getValue("URL.DIST.LOGIN") + platformx_distribution_properties.getValue("VRSTE.IMPULSNIH.UREDJAJA"));
 		}
 		return new VrsteImpulsnihUredjaja(driver);
+	}
+	
+	public SistemiZastiteOdIndDodira navigirajNaSistemiZastiteOdIndDodira() throws Exception {
+		try {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(sifarniciWE));
+		sifarniciWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(sistemiZastiteOdIndDodiraWE));
+		sistemiZastiteOdIndDodiraWE.click();
+		}
+		catch (Exception e) {
+			driver.get(platformx_distribution_properties.getValue("URL.DIST.LOGIN") + platformx_distribution_properties.getValue("SISTEMI.ZASTITE.OD.INDIREKTNOG.DODIRA"));
+		}
+		return new SistemiZastiteOdIndDodira(driver);
+	}
+	
+	public KlaseTacnostiBrojila navigirajNaKlaseTacnostiBrojila() throws Exception {
+		try {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(sifarniciWE));
+		sifarniciWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(klaseTacnostiBrojilaWE));
+		klaseTacnostiBrojilaWE.click();
+		}
+		catch (Exception e) {
+			driver.get(platformx_distribution_properties.getValue("URL.DIST.LOGIN") + platformx_distribution_properties.getValue("KLASE.TACNOSTI.BROJILA"));
+		}
+		return new KlaseTacnostiBrojila(driver);
+	}
+	
+	public NazivneStrujeBrojila navigirajNaNazivneStrujeBrojila() throws Exception {
+		try {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(sifarniciWE));
+		sifarniciWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(nazivneStrujeBrojilaWE));
+		nazivneStrujeBrojilaWE.click();
+		}
+		catch (Exception e) {
+			driver.get(platformx_distribution_properties.getValue("URL.DIST.LOGIN") + platformx_distribution_properties.getValue("NAZIVNE.STRUJE.BROJILA"));
+		}
+		return new NazivneStrujeBrojila(driver);
+	}
+	
+	public SistemiZastiteOdPrenapona navigirajNaSistemiZastiteOdPrenapona() throws Exception {
+		try {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(sifarniciWE));
+		sifarniciWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(sistemiZastiteOdPrenaponaWE));
+		sistemiZastiteOdPrenaponaWE.click();
+		}
+		catch (Exception e) {
+			driver.get(platformx_distribution_properties.getValue("URL.DIST.LOGIN") + platformx_distribution_properties.getValue("SISTEMI.ZASTITE.OD.PRENAPONA"));
+		}
+		return new SistemiZastiteOdPrenapona(driver);
 	}
 	
 	public KategorijePotrosnje navigirajNaKategorijePotrosnje() throws Exception {

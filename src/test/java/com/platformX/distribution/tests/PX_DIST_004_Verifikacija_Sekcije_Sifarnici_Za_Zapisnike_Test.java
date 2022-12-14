@@ -7,6 +7,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
+
+import com.platformX.distribution.page.KlaseTacnostiBrojila;
 import com.platformX.distribution.page.LogIn;
 import com.platformX.distribution.page.LokacijeMjernihMjesta;
 import com.platformX.distribution.page.MaterijaliOrmaricaBrojila;
@@ -15,9 +17,12 @@ import com.platformX.distribution.page.MjestaPrikljucenja;
 import com.platformX.distribution.page.NaciniPolaganjaInstalacija;
 import com.platformX.distribution.page.NaciniUpravljanjaPotrosnjom;
 import com.platformX.distribution.page.NazivnaStruja;
+import com.platformX.distribution.page.NazivneStrujeBrojila;
 import com.platformX.distribution.page.PocetnaStranica;
 import com.platformX.distribution.page.PresjeciVoda;
 import com.platformX.distribution.page.PrikljucneSnage;
+import com.platformX.distribution.page.SistemiZastiteOdIndDodira;
+import com.platformX.distribution.page.SistemiZastiteOdPrenapona;
 import com.platformX.distribution.page.TipoviIzolacija;
 import com.platformX.distribution.page.TipoviMjernihMostova;
 import com.platformX.distribution.page.TipoviPrikljucnogVoda;
@@ -86,7 +91,15 @@ public class PX_DIST_004_Verifikacija_Sekcije_Sifarnici_Za_Zapisnike_Test {
 		vrsteUpravljackihUredjaja.verifikujVrsteUpravljackihUredjaja();
 		VrsteImpulsnihUredjaja vrsteImpulsnihUredjaja = pocetna.navigirajNaVrsteImpulsnihUredjaja();
 		vrsteImpulsnihUredjaja.verifikujVrsteImpulsnihUredjaja();
-//		dodati od Sistemi zastite od ind. dodira
+		SistemiZastiteOdIndDodira sistemiZastiteOdIndDodira = pocetna.navigirajNaSistemiZastiteOdIndDodira();
+		sistemiZastiteOdIndDodira.verifikujSistemiZastiteOdIndDodira();
+		KlaseTacnostiBrojila klaseTacnostiBrojila = pocetna.navigirajNaKlaseTacnostiBrojila();
+		klaseTacnostiBrojila.verifikujKlaseTacnostiBrojila();
+		NazivneStrujeBrojila nazivneStrujeBrojila = pocetna.navigirajNaNazivneStrujeBrojila();
+		nazivneStrujeBrojila.verifikujNazivneStrujeBrojila();
+		SistemiZastiteOdPrenapona sistemiZastiteOdPrenapona = pocetna.navigirajNaSistemiZastiteOdPrenapona();
+		sistemiZastiteOdPrenapona.verifikujSistemiZastiteOdPrenapona();
+//		dodati od Vrste zastitnih uredjaja
 	}
 	
 	@AfterTest
