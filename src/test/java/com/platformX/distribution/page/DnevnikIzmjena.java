@@ -33,6 +33,7 @@ public class DnevnikIzmjena extends PocetnaStranica {
 		assertTrue(sekcijaBtnWE.getText().trim().equals("ADMINISTRACIJA"), "DnevnikIzmjena: Naziv sekcije nije dobar!");
 		assertTrue(stranicaBtnWE.getText().trim().equals("DNEVNIK IZMJENA"), "DnevnikIzmjena: Naziv stranice nije dobar!");
 		assertTrue(naslovStraniceWE.getText().trim().equals("DNEVNIK IZMJENA"), "DnevnikIzmjena: Naziv stranice nije dobar!");
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		assertTrue(brojKolona().size() == 6, "DnevnikIzmjena: Broj kolona nije dobar! ");
 	}
 

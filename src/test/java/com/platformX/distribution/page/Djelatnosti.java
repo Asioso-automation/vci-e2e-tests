@@ -41,6 +41,7 @@ public class Djelatnosti extends PocetnaStranica {
 
 	public void verifikujDjelatnosti() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Djelatnosti')]")));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
@@ -56,6 +57,7 @@ public class Djelatnosti extends PocetnaStranica {
 		assertTrue(sekcijaBtnWE.getText().trim().equals("ŠIFARNICI"), "Djelatnosti: Naziv sekcije nije dobar!");
 		assertTrue(stranicaBtnWE.getText().trim().equals("DJELATNOSTI"), "Djelatnosti: Naziv stranice nije dobar!");
 		assertTrue(naslovStraniceWE.getText().trim().equals("DJELATNOSTI"), "Djelatnosti: Naziv stranice nije dobar!");
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		assertTrue(brojKolona().size() == 5, "Djelatnosti: Broj kolona nije dobar! ");
 	}
 	

@@ -86,7 +86,7 @@ public class PX_DIST_004_Verifikacija_Sekcije_Sifarnici_Za_Zapisnike_Test {
 		vrsteUpravljackihUredjaja.verifikujVrsteUpravljackihUredjaja();
 		VrsteImpulsnihUredjaja vrsteImpulsnihUredjaja = pocetna.navigirajNaVrsteImpulsnihUredjaja();
 		vrsteImpulsnihUredjaja.verifikujVrsteImpulsnihUredjaja();
-		//		dodati od Nacini upravljanja potrosnjom
+//		dodati od Sistemi zastite od ind. dodira
 	}
 	
 	@AfterTest
