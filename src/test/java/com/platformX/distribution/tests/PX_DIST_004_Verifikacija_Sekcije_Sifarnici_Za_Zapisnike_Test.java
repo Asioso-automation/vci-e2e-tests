@@ -45,7 +45,7 @@ public class PX_DIST_004_Verifikacija_Sekcije_Sifarnici_Za_Zapisnike_Test {
 	}
 	
 	private WebDriver driver;
-	private final String PLATFORMX_PROPERTIES = "platformx.properties";
+	private final String PLATFORMX_DISTRIBUTION_PROPERTIES = "platformx.distribution.properties";
 
 	@Test (description="test prolazi kroz sve stranice iz sekcije SIFARNICI ZA ZAPISNIKE i verifikuje ih")
 	public void px_dist_004_verifikacije_sekcije_sifarnici_za_zapisnike_test() throws Exception {
@@ -67,7 +67,7 @@ public class PX_DIST_004_Verifikacija_Sekcije_Sifarnici_Za_Zapisnike_Test {
 			driver = new ChromeDriver(options);
 		}
 		
-		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
+		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
 		PocetnaStranica pocetna = new PocetnaStranica(driver);

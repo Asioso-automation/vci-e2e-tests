@@ -17,8 +17,7 @@ public class PX_DIST_Brisanje_Zbirnog_Kontrolnog_Mjernog_Mjesta_Test  extends Ba
 	
 	@Test
 	public void px_dist_brisanje_zbirnog_kontrolnog_mjernog_mjesta_test() throws Exception {
-		
-		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
+		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
 		PocetnaStranica pocetna = new PocetnaStranica(driver);

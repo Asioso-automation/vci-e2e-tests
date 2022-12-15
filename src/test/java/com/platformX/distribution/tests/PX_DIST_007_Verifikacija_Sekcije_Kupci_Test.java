@@ -18,7 +18,7 @@ public class PX_DIST_007_Verifikacija_Sekcije_Kupci_Test extends BaseTest {
 
 	@Test(description = "test prolazi kroz sve stranice iz sekcije KUPCI i verifikuje ih")
 	public void px_dist_007_verifikacije_sekcije_kupci_test() throws Exception {
-		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
+		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
 		PocetnaStranica pocetna = new PocetnaStranica(driver);

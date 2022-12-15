@@ -16,7 +16,7 @@ public class PX_DIST_Dodavanje_Uredjivanje_Brisanje_Sezone_Test extends BaseTest
 
 	@Test
 	public void px_dist_dodavanje_uredjivanje_brisanje_sezone_test() throws Exception {
-		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
+		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);

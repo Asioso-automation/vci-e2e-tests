@@ -16,7 +16,7 @@ public class PX_DIST_Brisanje_Ulice_Test extends BaseTest {
 
 	@Test
 	public void px_dist_brisanje_ulice_test() throws Exception {
-		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
+		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);

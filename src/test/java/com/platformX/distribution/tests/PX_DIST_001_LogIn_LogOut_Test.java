@@ -15,7 +15,7 @@ public class PX_DIST_001_LogIn_LogOut_Test extends BaseTest {
 
 	@Test (description="logIn i logOut sa verifikacijama stranica")
 	public void px_dist_001_logIn_logOut_test() throws Exception {
-		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
+		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
 		PocetnaStranica pocetna = new PocetnaStranica(driver);

@@ -27,7 +27,7 @@ public class PX_DIST_008_Verifikacija_Sekcije_Brojila_Test extends BaseTest {
 
 	@Test(description = "test prolazi kroz sve stranice iz sekcije BROJILA i verifikuje ih")
 	public void px_dist_008_verifikacija_sekcije_brojila_test() throws Exception {
-		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
+		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
 		PocetnaStranica pocetna = new PocetnaStranica(driver);

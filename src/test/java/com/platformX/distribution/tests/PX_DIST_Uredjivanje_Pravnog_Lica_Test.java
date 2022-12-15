@@ -16,7 +16,7 @@ public class PX_DIST_Uredjivanje_Pravnog_Lica_Test  extends BaseTest {
 	
 	@Test
 	public void px_dist_dodavanje_pravnog_lica_test() throws Exception {
-		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
+		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
 		PocetnaStranica pocetna = new PocetnaStranica(driver);

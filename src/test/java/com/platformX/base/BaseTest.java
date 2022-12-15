@@ -21,6 +21,8 @@ public class BaseTest {
 	protected WebDriver driver;
 	protected PropertiesUtil platformx_properties = null;
 	protected final String PLATFORMX_PROPERTIES = "platformx.properties";
+	protected PropertiesUtil platformx_distribution_properties = null;
+	protected final String PLATFORMX_DISTRIBUTION_PROPERTIES = "platformx.distribution.properties";
 
 	static long startTime;
 	static long endTime;
@@ -30,6 +32,7 @@ public class BaseTest {
 
 	public BaseTest() throws IOException, FileNotFoundException {
 		platformx_properties = new PropertiesUtil(PLATFORMX_PROPERTIES);
+		platformx_distribution_properties = new PropertiesUtil(PLATFORMX_DISTRIBUTION_PROPERTIES);
 	}
 
 	@BeforeMethod

@@ -16,7 +16,7 @@ public class LogIn extends PageBase {
 
 	public LogIn(WebDriver driver, String URL) throws FileNotFoundException, IOException {
 		super(driver);
-		URL = platformx_properties.getValue("URL.DIST.LOGIN");
+		URL = platformx_distribution_properties.getValue("URL.DIST.LOGIN");
 		driver.get(URL);
 	}
 	
@@ -43,8 +43,8 @@ public class LogIn extends PageBase {
 		WebDriverWait wait = new WebDriverWait(driver, 30);
 		wait.until(ExpectedConditions.visibilityOf(korisnickoImeWE));
 		wait.until(ExpectedConditions.visibilityOf(lozinkaWE));
-		korisnickoImeWE.sendKeys(platformx_properties.getValue("DIST.USER.NAME"));
-		lozinkaWE.sendKeys(platformx_properties.getValue("DIST.PASSWORD"));
+		korisnickoImeWE.sendKeys(platformx_distribution_properties.getValue("DIST.USER.NAME"));
+		lozinkaWE.sendKeys(platformx_distribution_properties.getValue("DIST.PASSWORD"));
 		wait.until(ExpectedConditions.elementToBeClickable(prijaviSeBtnWE));
 		prijaviSeBtnWE.click();
 	}

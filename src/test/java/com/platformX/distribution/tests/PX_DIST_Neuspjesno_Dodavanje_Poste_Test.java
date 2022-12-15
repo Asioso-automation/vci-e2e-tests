@@ -18,7 +18,7 @@ public class PX_DIST_Neuspjesno_Dodavanje_Poste_Test extends BaseTest {
 
 	@Test (description= "Pokušaj dodavanja poste sa istim ID-em")
 	public void px_dist_neuspjesno_dodavanje_poste_test() throws Exception {
-		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
+		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);

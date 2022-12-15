@@ -23,10 +23,13 @@ public class FizickeLokacije extends PocetnaStranica {
 	@FindBy(xpath = "//div[1]/div/div/div/div[1]/div/input")
 	private WebElement nazivWE;
 	
-	@FindBy(xpath = "//div[2]/div[1]/div/div/div[1]/div/input")
+	@FindBy(xpath = "//div[1]/div[2]/div/div/div[1]/div/input")
 	private WebElement sifraWE;
 	
-	@FindBy(xpath = "//div[2]/div[2]/div/div/div[1]/div[1]/input[1]")
+	@FindBy(xpath = "//div[1]/div[3]/div/div/div[1]/div/input")
+	private WebElement sifraBrProtokolaWE;
+	
+	@FindBy(xpath = "//div[2]/div[1]/div/div/div[1]/div[1]/input[1]")
 	private WebElement terenskaJedinicaWE;
 	
 	@FindBy(xpath = "//td[2]/div/div/div/div[1]/input")
@@ -75,6 +78,8 @@ public class FizickeLokacije extends PocetnaStranica {
 		nazivWE.sendKeys(naziv);
 		wait.until(ExpectedConditions.elementToBeClickable(sifraWE));
 		sifraWE.sendKeys(Helper.getRandomNumber(2));
+		wait.until(ExpectedConditions.elementToBeClickable(sifraBrProtokolaWE));
+		sifraBrProtokolaWE.sendKeys(Helper.getRandomNumber(3));
 		wait.until(ExpectedConditions.elementToBeClickable(terenskaJedinicaWE));
 		terenskaJedinicaWE.sendKeys(terenskaJedinica);
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(@class, 'v-list-item__title') and contains(., '" + terenskaJedinica + "')]")));

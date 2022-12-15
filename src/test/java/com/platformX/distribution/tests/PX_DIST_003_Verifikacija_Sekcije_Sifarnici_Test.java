@@ -9,28 +9,17 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import com.platformX.distribution.page.PocetnaStranica;
 import com.platformX.distribution.page.Poste;
-import com.platformX.distribution.page.PresjeciVoda;
-import com.platformX.distribution.page.PrikljucneSnage;
 import com.platformX.distribution.page.SektorDjelatnosti;
 import com.platformX.distribution.page.Snabdjevaci;
 import com.platformX.distribution.page.TerenskeJedinice;
-import com.platformX.distribution.page.TipoviIzolacija;
-import com.platformX.distribution.page.TipoviMjernihMostova;
-import com.platformX.distribution.page.TipoviPrikljucnogVoda;
 import com.platformX.distribution.page.Trafostanice;
 import com.platformX.distribution.page.Ulice;
 import com.platformX.distribution.page.Vlasnistva;
 import com.platformX.distribution.page.VrstePodrucja;
 import com.platformX.distribution.page.LogIn;
-import com.platformX.distribution.page.LokacijeMjernihMjesta;
 import com.platformX.distribution.page.LokacijeMontera;
-import com.platformX.distribution.page.MaterijaliOrmaricaBrojila;
-import com.platformX.distribution.page.MaterijaliProvodnika;
-import com.platformX.distribution.page.MjestaPrikljucenja;
 import com.platformX.distribution.page.Monteri;
-import com.platformX.distribution.page.NaciniPolaganjaInstalacija;
 import com.platformX.distribution.page.NaseljenaMjesta;
-import com.platformX.distribution.page.NazivnaStruja;
 import com.platformX.distribution.page.Opstine;
 import com.platformX.distribution.page.Organizacije;
 import com.platformX.distribution.page.Citaci;
@@ -45,7 +34,7 @@ public class PX_DIST_003_Verifikacija_Sekcije_Sifarnici_Test {
 	}
 	
 	private WebDriver driver;
-	private final String PLATFORMX_PROPERTIES = "platformx.properties";
+	private final String PLATFORMX_DISTRIBUTION_PROPERTIES = "platformx.distribution.properties";
 
 	@Test (description="test prolazi kroz sve stranice iz sekcije SIFARNICI i verifikuje ih")
 	public void px_dist_003_verifikacije_sekcije_sifarnici_test() throws Exception {
@@ -67,7 +56,7 @@ public class PX_DIST_003_Verifikacija_Sekcije_Sifarnici_Test {
 			driver = new ChromeDriver(options);
 		}
 		
-		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
+		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
 		PocetnaStranica pocetna = new PocetnaStranica(driver);

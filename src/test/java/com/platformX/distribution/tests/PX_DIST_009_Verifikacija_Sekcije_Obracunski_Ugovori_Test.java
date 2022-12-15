@@ -18,7 +18,7 @@ public class PX_DIST_009_Verifikacija_Sekcije_Obracunski_Ugovori_Test extends Ba
 
 	@Test(description = "test prolazi kroz sve stranice iz sekcije OBRACUNSKI UGOVORI i verifikuje ih")
 	public void px_dist_009_verifikacija_sekcije_obracunski_ugovori_test() throws Exception {
-		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
+		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
 		PocetnaStranica pocetna = new PocetnaStranica(driver);

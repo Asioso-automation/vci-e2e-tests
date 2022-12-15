@@ -19,7 +19,7 @@ public class PX_DIST_Uredjivanje_Obracunskog_Ugovora_PxD_Test  extends BaseTest 
 	
 	@Test
 	public void px_dist_uredjivanje_obracunskog_ugovora_pxd_test() throws Exception {
-		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
+		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
 		PocetnaStranica pocetna = new PocetnaStranica(driver);
