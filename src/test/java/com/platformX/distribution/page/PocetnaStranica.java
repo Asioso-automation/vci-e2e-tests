@@ -219,6 +219,33 @@ public class PocetnaStranica extends PageBase {
 	
 	@FindBy(xpath = "//div[contains(text(), 'Sistemi zaštite od prenapona')]")
 	protected WebElement sistemiZastiteOdPrenaponaWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Vrste zaštitnih uređaja')]")
+	protected WebElement vrsteZastitnihUredjajaWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Rokovi važenja')]")
+	protected WebElement rokoviVazenjaWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Razlozi pribavljanja EES')]")
+	protected WebElement razloziPribavljanjaEESWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Vrste objekata')]")
+	protected WebElement vrsteObjekataWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Tipovi standardnog priključka')]")
+	protected WebElement tipoviStandardnogPrikljuckaWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Načini plaćanja')]")
+	protected WebElement naciniPlacanjaWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Klase tačnosti strujnog tran.')]")
+	protected WebElement klaseTacnostiStrujnogTranWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Nazivne struje osigurača')]")
+	protected WebElement nazivneStrujeOsiguracaWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Klase tačnosti naponskog tran.')]")
+	protected WebElement klaseTacnostiNaponskogTranWE;
 
 	@FindBy(xpath = "//div[contains(text(), 'Kategorije potrošnje')]")
 	protected WebElement kategorijePotrosnjeWE;
@@ -980,6 +1007,132 @@ public class PocetnaStranica extends PageBase {
 			driver.get(platformx_distribution_properties.getValue("URL.DIST.LOGIN") + platformx_distribution_properties.getValue("SISTEMI.ZASTITE.OD.PRENAPONA"));
 		}
 		return new SistemiZastiteOdPrenapona(driver);
+	}
+	
+	public VrsteZastitnihUredjaja navigirajNaVrsteZastitnihUredjaja() throws Exception {
+		try {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(sifarniciWE));
+		sifarniciWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(vrsteZastitnihUredjajaWE));
+		vrsteZastitnihUredjajaWE.click();
+		}
+		catch (Exception e) {
+			driver.get(platformx_distribution_properties.getValue("URL.DIST.LOGIN") + platformx_distribution_properties.getValue("VRSTE.ZASTITNIH.UREDJAJA"));
+		}
+		return new VrsteZastitnihUredjaja(driver);
+	}
+	
+	public RokoviVazenja navigirajNaRokoviVazenja() throws Exception {
+		try {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(sifarniciWE));
+		sifarniciWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(rokoviVazenjaWE));
+		rokoviVazenjaWE.click();
+		}
+		catch (Exception e) {
+			driver.get(platformx_distribution_properties.getValue("URL.DIST.LOGIN") + platformx_distribution_properties.getValue("ROKOVI.VAZENJA"));
+		}
+		return new RokoviVazenja(driver);
+	}
+	
+	public RazloziPribavljanjaEES navigirajNaRazloziPribavljanjaEES() throws Exception {
+		try {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(sifarniciWE));
+		sifarniciWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(razloziPribavljanjaEESWE));
+		razloziPribavljanjaEESWE.click();
+		}
+		catch (Exception e) {
+			driver.get(platformx_distribution_properties.getValue("URL.DIST.LOGIN") + platformx_distribution_properties.getValue("RAZLOZI.PRIBAVLJANJA.EES"));
+		}
+		return new RazloziPribavljanjaEES(driver);
+	}
+	
+	public VrsteObjekata navigirajNaVrsteObjekata() throws Exception {
+		try {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(sifarniciWE));
+		sifarniciWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(vrsteObjekataWE));
+		vrsteObjekataWE.click();
+		}
+		catch (Exception e) {
+			driver.get(platformx_distribution_properties.getValue("URL.DIST.LOGIN") + platformx_distribution_properties.getValue("VRSTE.OBJEKATA"));
+		}
+		return new VrsteObjekata(driver);
+	}
+	
+	public TipoviStandardnogPrikljucka navigirajNaTipoviStandardnogPrikljucka() throws Exception {
+		try {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(sifarniciWE));
+		sifarniciWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(tipoviStandardnogPrikljuckaWE));
+		tipoviStandardnogPrikljuckaWE.click();
+		}
+		catch (Exception e) {
+			driver.get(platformx_distribution_properties.getValue("URL.DIST.LOGIN") + platformx_distribution_properties.getValue("TIPOVI.STANDARDNOG.PRIKLJUCKA"));
+		}
+		return new TipoviStandardnogPrikljucka(driver);
+	}
+	
+	public NaciniPlacanja navigirajNaNaciniPlacanja() throws Exception {
+		try {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(sifarniciWE));
+		sifarniciWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(naciniPlacanjaWE));
+		naciniPlacanjaWE.click();
+		}
+		catch (Exception e) {
+			driver.get(platformx_distribution_properties.getValue("URL.DIST.LOGIN") + platformx_distribution_properties.getValue("NACINI.PLACANJA"));
+		}
+		return new NaciniPlacanja(driver);
+	}
+	
+	public KlaseTacnostiStrujnogTransformatora navigirajNaKlaseTacnostiStrujnogTransformatora() throws Exception {
+		try {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(sifarniciWE));
+		sifarniciWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(klaseTacnostiStrujnogTranWE));
+		klaseTacnostiStrujnogTranWE.click();
+		}
+		catch (Exception e) {
+			driver.get(platformx_distribution_properties.getValue("URL.DIST.LOGIN") + platformx_distribution_properties.getValue("KLASE.TACNOSTI.STRUJNOG.TRANSFORMATORA"));
+		}
+		return new KlaseTacnostiStrujnogTransformatora(driver);
+	}
+	
+	public NazivneStrujeOsiguraca navigirajNaNazivneStrujeOsiguraca() throws Exception {
+		try {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(sifarniciWE));
+		sifarniciWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(nazivneStrujeOsiguracaWE));
+		nazivneStrujeOsiguracaWE.click();
+		}
+		catch (Exception e) {
+			driver.get(platformx_distribution_properties.getValue("URL.DIST.LOGIN") + platformx_distribution_properties.getValue("NAZIVNE.STRUJE.OSIGURACA"));
+		}
+		return new NazivneStrujeOsiguraca(driver);
+	}
+	
+	public KlaseTacnostiNaponskogTransformatora navigirajNaKlaseTacnostiNaponskogTransformatora() throws Exception {
+		try {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(sifarniciWE));
+		sifarniciWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(klaseTacnostiNaponskogTranWE));
+		klaseTacnostiNaponskogTranWE.click();
+		}
+		catch (Exception e) {
+			driver.get(platformx_distribution_properties.getValue("URL.DIST.LOGIN") + platformx_distribution_properties.getValue("KLASE.TACNOSTI.NAPONSKOG.TRANSFORMATORA"));
+		}
+		return new KlaseTacnostiNaponskogTransformatora(driver);
 	}
 	
 	public KategorijePotrosnje navigirajNaKategorijePotrosnje() throws Exception {
