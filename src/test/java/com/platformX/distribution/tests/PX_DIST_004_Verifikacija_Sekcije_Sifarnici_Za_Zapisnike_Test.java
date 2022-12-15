@@ -9,25 +9,34 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
 
 import com.platformX.distribution.page.KlaseTacnostiBrojila;
+import com.platformX.distribution.page.KlaseTacnostiNaponskogTransformatora;
+import com.platformX.distribution.page.KlaseTacnostiStrujnogTransformatora;
 import com.platformX.distribution.page.LogIn;
 import com.platformX.distribution.page.LokacijeMjernihMjesta;
 import com.platformX.distribution.page.MaterijaliOrmaricaBrojila;
 import com.platformX.distribution.page.MaterijaliProvodnika;
 import com.platformX.distribution.page.MjestaPrikljucenja;
+import com.platformX.distribution.page.NaciniPlacanja;
 import com.platformX.distribution.page.NaciniPolaganjaInstalacija;
 import com.platformX.distribution.page.NaciniUpravljanjaPotrosnjom;
 import com.platformX.distribution.page.NazivnaStruja;
 import com.platformX.distribution.page.NazivneStrujeBrojila;
+import com.platformX.distribution.page.NazivneStrujeOsiguraca;
 import com.platformX.distribution.page.PocetnaStranica;
 import com.platformX.distribution.page.PresjeciVoda;
 import com.platformX.distribution.page.PrikljucneSnage;
+import com.platformX.distribution.page.RazloziPribavljanjaEES;
+import com.platformX.distribution.page.RokoviVazenja;
 import com.platformX.distribution.page.SistemiZastiteOdIndDodira;
 import com.platformX.distribution.page.SistemiZastiteOdPrenapona;
 import com.platformX.distribution.page.TipoviIzolacija;
 import com.platformX.distribution.page.TipoviMjernihMostova;
 import com.platformX.distribution.page.TipoviPrikljucnogVoda;
+import com.platformX.distribution.page.TipoviStandardnogPrikljucka;
 import com.platformX.distribution.page.VrsteImpulsnihUredjaja;
+import com.platformX.distribution.page.VrsteObjekata;
 import com.platformX.distribution.page.VrsteUpravljackihUredjaja;
+import com.platformX.distribution.page.VrsteZastitnihUredjaja;
 
 public class PX_DIST_004_Verifikacija_Sekcije_Sifarnici_Za_Zapisnike_Test {
 	
@@ -99,7 +108,24 @@ public class PX_DIST_004_Verifikacija_Sekcije_Sifarnici_Za_Zapisnike_Test {
 		nazivneStrujeBrojila.verifikujNazivneStrujeBrojila();
 		SistemiZastiteOdPrenapona sistemiZastiteOdPrenapona = pocetna.navigirajNaSistemiZastiteOdPrenapona();
 		sistemiZastiteOdPrenapona.verifikujSistemiZastiteOdPrenapona();
-//		dodati od Vrste zastitnih uredjaja
+		VrsteZastitnihUredjaja vrsteZastitnihUredjaja = pocetna.navigirajNaVrsteZastitnihUredjaja();
+		vrsteZastitnihUredjaja.verifikujVrsteZastitnihUredjaja();
+		RokoviVazenja rokoviVazenja = pocetna.navigirajNaRokoviVazenja();
+		rokoviVazenja.verifikujRokoveVazenja();
+		RazloziPribavljanjaEES razloziPribavljanjaEES = pocetna.navigirajNaRazloziPribavljanjaEES();
+		razloziPribavljanjaEES.verifikujRazlogePribavljanjaEES();
+		VrsteObjekata vrsteObjekata = pocetna.navigirajNaVrsteObjekata();
+		vrsteObjekata.verifikujVrsteObjekata();
+		TipoviStandardnogPrikljucka tipoviStandardnogPrikljucka = pocetna.navigirajNaTipoviStandardnogPrikljucka();
+		tipoviStandardnogPrikljucka.verifikujTipoveStandardnogPrikljucka();
+		NaciniPlacanja naciniPlacanja = pocetna.navigirajNaNaciniPlacanja();
+		naciniPlacanja.verifikujNacinePlacanja();
+		KlaseTacnostiStrujnogTransformatora klaseTacnostiStrujnogTransformatora = pocetna.navigirajNaKlaseTacnostiStrujnogTransformatora();
+		klaseTacnostiStrujnogTransformatora.verifikujKlaseTacnostiStrujnogTransformatora();
+		NazivneStrujeOsiguraca nazivneStrujeOsiguraca = pocetna.navigirajNaNazivneStrujeOsiguraca();
+		nazivneStrujeOsiguraca.verifikujNazivneStrujeOsiguraca();
+		KlaseTacnostiNaponskogTransformatora klaseTacnostiNaponskogTransformatora = pocetna.navigirajNaKlaseTacnostiNaponskogTransformatora();
+		klaseTacnostiNaponskogTransformatora.verifikujKlaseTacnostiNaponskogTransformatora();
 	}
 	
 	@AfterTest
