@@ -15,10 +15,12 @@ import com.platformX.page.PocetnaStranica;
 import com.platformX.page.PreknjizavanjaUplata;
 import com.platformX.page.LogIn;
 import com.platformX.page.NerasporedjeneUplate;
+import com.platformX.page.ObrasciBrojaUgovoraReprograma;
 import com.platformX.page.Reprogrami;
 import com.platformX.page.Sap;
 import com.platformX.page.SveUplate;
 import com.platformX.page.Uino;
+import com.platformX.page.VrsteFinansijskihKartica;
 import com.platformX.page.VrsteKnjizenja;
 import com.platformX.page.VrsteStavkiFinansijskeKartice;
 import com.platformX.page.ZiroRacuni;
@@ -71,20 +73,17 @@ public class PX_008_Verifikacija_Sekcije_Finansije_Test {
 		avansi.verifikujAvansi();
 		Reprogrami reprogrami = pocetna.navigirajNaReprogrami();
 		reprogrami.verifikujReprogrami();
-
-		// TODO OBRASCI BROJA UGOVORA REPROGRAMA
-
+		ObrasciBrojaUgovoraReprograma obrasciBrojaUgovoraReprograma = pocetna.navigirajNaObrasciBrojaUgovoraReprograma();
+		obrasciBrojaUgovoraReprograma.verifikujObrasciBrojaUgovoraReprograma();
 		Banke banke = pocetna.navigirajNaBanke();
 		banke.verifikujBanke();
 		ZiroRacuni ziroRacuni = pocetna.navigirajNaZiroRacuni();
 		ziroRacuni.verifikujZiroRacuni();
 		VrsteKnjizenja vrsteKnjizenja = pocetna.navigirajNaVrsteKnjizenja();
 		vrsteKnjizenja.verifikujVrsteKnjizenja();
-
-		// TODO VRSTE FINANSIJSKIH KARTICA
-
-		VrsteStavkiFinansijskeKartice vrsteStavkiFinansijskeKartice = pocetna
-				.navigirajNaVrsteStavkiFinansijskeKartice();
+		VrsteFinansijskihKartica vrsteFinansijskihKartica = pocetna.navigirajNaVrsteFinansijskihKartica();
+		vrsteFinansijskihKartica.verifikujVrsteFinansijskihKartica();
+		VrsteStavkiFinansijskeKartice vrsteStavkiFinansijskeKartice = pocetna.navigirajNaVrsteStavkiFinansijskeKartice();
 		vrsteStavkiFinansijskeKartice.verifikujVrsteStavkiFinansijskeKartice();
 		Sap sap = pocetna.navigirajNaSap();
 		sap.verifikujSap();
