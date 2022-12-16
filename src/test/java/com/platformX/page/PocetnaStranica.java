@@ -480,245 +480,380 @@ public class PocetnaStranica extends PageBase {
 	}
 
 	public KategorijePotrosnje navigirajNaKategorijePotrosnje() throws Exception {
+		try {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(tarifniSistemWE));
 		tarifniSistemWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(kategorijePotrosnjeWE));
 		kategorijePotrosnjeWE.click();
+		}
+		catch (Exception e) {
+			driver.get(platformx_properties.getValue("URL.LOGIN") + platformx_properties.getValue("KATEGORIJE.POTROSNJE"));
+		}
 		return new KategorijePotrosnje(driver);
 	}
 
 	public TarifneNadgrupe navigirajNaTarifneNadgrupe() throws Exception {
+		try {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(tarifniSistemWE));
 		tarifniSistemWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(tarifneNadgrupeWE));
 		tarifneNadgrupeWE.click();
+		}
+		catch (Exception e) {
+			driver.get(platformx_properties.getValue("URL.LOGIN") + platformx_properties.getValue("TARIFNE.NADGRUPE"));
+		}
 		return new TarifneNadgrupe(driver);
 	}
 
 	public TarifneGrupe navigirajNaTarifneGrupe() throws Exception {
+		try {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(tarifniSistemWE));
 		tarifniSistemWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(tarifneGrupeWE));
 		tarifneGrupeWE.click();
+		}
+		catch (Exception e) {
+			driver.get(platformx_properties.getValue("URL.LOGIN") + platformx_properties.getValue("TARIFNE.GRUPE"));
+		}
 		return new TarifneGrupe(driver);
 	}
 
 	public Sezone navigirajNaSezone() throws Exception {
+		try {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(tarifniSistemWE));
 		tarifniSistemWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(sezoneWE));
 		sezoneWE.click();
+		}
+		catch (Exception e) {
+			driver.get(platformx_properties.getValue("URL.LOGIN") + platformx_properties.getValue("SEZONE"));
+		}
 		return new Sezone(driver);
 	}
 
 	public ObracunskaSnaga navigirajNaObracunskaSnaga() throws Exception {
+		try {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(tarifniSistemWE));
 		tarifniSistemWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(obracunskaSnagaWE));
 		obracunskaSnagaWE.click();
+		}
+		catch (Exception e) {
+			driver.get(platformx_properties.getValue("URL.LOGIN") + platformx_properties.getValue("OBRACUNSKA.SNAGA"));
+		}
 		return new ObracunskaSnaga(driver);
 	}
 
 	public KategorijeCijena navigirajNaKategorijeCijena() throws Exception {
+		try {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(tarifniSistemWE));
 		tarifniSistemWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(kategorijeCijenaWE));
 		kategorijeCijenaWE.click();
+		}
+		catch (Exception e) {
+			driver.get(platformx_properties.getValue("URL.LOGIN") + platformx_properties.getValue("KATEGORIJE.CIJENA"));
+		}
 		return new KategorijeCijena(driver);
 	}
 
 	public Cjenovnik navigirajNaCjenovnik() throws Exception {
+		try {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(tarifniSistemWE));
 		tarifniSistemWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(cjenovnikWE));
 		cjenovnikWE.click();
+		}
+		catch (Exception e) {
+			driver.get(platformx_properties.getValue("URL.LOGIN") + platformx_properties.getValue("CJENOVNIK"));
+		}
 		return new Cjenovnik(driver);
 	}
 
 	public PravnaLica navigirajNaPravnaLica() throws Exception {
+		try {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(kupciWE));
 		kupciWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(pravnaLicaWE));
 		pravnaLicaWE.click();
+		}
+		catch (Exception e) {
+			driver.get(platformx_properties.getValue("URL.LOGIN") + platformx_properties.getValue("PRAVNA.LICA"));
+		}
 		return new PravnaLica(driver);
 	}
 
 	public FizickaLica navigirajNaFizickaLica() throws Exception {
+		try {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(kupciWE));
 		kupciWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(fizikaLicaWE));
 		fizikaLicaWE.click();
+		}
+		catch (Exception e) {
+			driver.get(platformx_properties.getValue("URL.LOGIN") + platformx_properties.getValue("FIZICKA.LICA"));
+		}
 		return new FizickaLica(driver);
 	}
 
 	public PovezanaPravnaLica navigirajNaPovezanaPravnaLica() throws Exception {
+		try {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(kupciWE));
 		kupciWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(povezanaPravnaLicaWE));
 		povezanaPravnaLicaWE.click();
+		}
+		catch (Exception e) {
+			driver.get(platformx_properties.getValue("URL.LOGIN") + platformx_properties.getValue("POVEZANA.PRAVNA.LICA"));
+		}
 		return new PovezanaPravnaLica(driver);
 	}
 	
 	public ZahtjeviZaDostavuPodataka navigirajNaZahtjeviZaDostavuPodataka() throws Exception {
+		try {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(kupciWE));
 		kupciWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(zahtjeviZaDostavuPodatakaWE));
 		zahtjeviZaDostavuPodatakaWE.click();
+		}
+		catch (Exception e) {
+			driver.get(platformx_properties.getValue("URL.LOGIN") + platformx_properties.getValue("ZAHTJEVI.ZA.DOSTAVU.PODATAKA"));
+		}
 		return new ZahtjeviZaDostavuPodataka(driver);
 	}
 	
 	public ZahtjeviZaUgovore navigirajNaZahtjeviZaUgovore() throws Exception {
+		try {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(kupciWE));
 		kupciWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(zahtjeviZaUgovoreWE));
 		zahtjeviZaUgovoreWE.click();
+		}
+		catch (Exception e) {
+			driver.get(platformx_properties.getValue("URL.LOGIN") + platformx_properties.getValue("ZAHTJEVI.ZA.UGOVORE"));
+		}
 		return new ZahtjeviZaUgovore(driver);
 	}
 
 	public Ugovori navigirajNaUgovori() throws Exception {
+		try {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(kupciWE));
 		kupciWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(ugovoriWE));
 		ugovoriWE.click();
+		}
+		catch (Exception e) {
+			driver.get(platformx_properties.getValue("URL.LOGIN") + platformx_properties.getValue("UGOVORI"));
+		}
 		return new Ugovori(driver);
 	}
 	
 	public ZahtjeviZaRaskidUgovora navigirajNaZahtjeviZaRaskidUgovora() throws Exception {
+		try {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(kupciWE));
 		kupciWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(zahtjeviZaRaskidUgovoraWE));
 		zahtjeviZaRaskidUgovoraWE.click();
+		}
+		catch (Exception e) {
+			driver.get(platformx_properties.getValue("URL.LOGIN") + platformx_properties.getValue("ZAHTJEVI.ZA.RASKID.UGOVORA"));
+		}
 		return new ZahtjeviZaRaskidUgovora(driver);
 	}
 	
 	public ObavjestenjaOPromjeniSnabdjevaca navigirajNaObavjestenjaOPromjeniSnabdjevaca() throws Exception {
+		try {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(kupciWE));
 		kupciWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(obavjestenjaOPromjeniSnabdjevacaWE));
 		obavjestenjaOPromjeniSnabdjevacaWE.click();
+		}
+		catch (Exception e) {
+			driver.get(platformx_properties.getValue("URL.LOGIN") + platformx_properties.getValue("OBAVJESTENJA.O.PROMJENI.SNABDJEVACA"));
+		}
 		return new ObavjestenjaOPromjeniSnabdjevaca(driver);
 	}
 	
 	public ZajednickaPotrosnja navigirajNaZajednickaPotrosnja() throws Exception {
+		try {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(kupciWE));
 		kupciWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(zajednickaPotrosnjaWE));
 		zajednickaPotrosnjaWE.click();
+		}
+		catch (Exception e) {
+			driver.get(platformx_properties.getValue("URL.LOGIN") + platformx_properties.getValue("ZAJEDNICKA.POTROSNJA"));
+		}
 		return new ZajednickaPotrosnja(driver);
 	}
 	
 	public ClanoviZajednickePotrosnje navigirajNaClanoviZajednickePotrosnje() throws Exception {
+		try {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(kupciWE));
 		kupciWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(clanoviZajednickePotrosnjeWE));
 		clanoviZajednickePotrosnjeWE.click();
+		}
+		catch (Exception e) {
+			driver.get(platformx_properties.getValue("URL.LOGIN") + platformx_properties.getValue("CLANOVI.ZAJEDNICKE.POTROSNJE"));
+		}
 		return new ClanoviZajednickePotrosnje(driver);
 	}
 	
 	public UgovoreniPopusti navigirajNaUgovoreniPopusti() throws Exception {
+		try {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(kupciWE));
 		kupciWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(ugovoreniPopustiWE));
 		ugovoreniPopustiWE.click();
+		}
+		catch (Exception e) {
+			driver.get(platformx_properties.getValue("URL.LOGIN") + platformx_properties.getValue("UGOVORENI.POPUSTI"));
+		}
 		return new UgovoreniPopusti(driver);
 	}
 
 	public OdbaceniUgovori navigirajNaOdbaceniUgovori() throws Exception {
+		try {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(kupciWE));
 		kupciWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(odbaceniUgovoriWE));
 		odbaceniUgovoriWE.click();
+		}
+		catch (Exception e) {
+			driver.get(platformx_properties.getValue("URL.LOGIN") + platformx_properties.getValue("ODBACENI.UGOVORI"));
+		}
 		return new OdbaceniUgovori(driver);
 	}
 
 	public Reklamacije navigirajNaReklamacije() throws Exception {
+		try {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(kupciWE));
 		kupciWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(reklamacijeWE));
 		reklamacijeWE.click();
+		}
+		catch (Exception e) {
+			driver.get(platformx_properties.getValue("URL.LOGIN") + platformx_properties.getValue("REKLAMACIJE"));
+		}
 		return new Reklamacije(driver);
 	}
 
 	public VrsteZahtjeva navigirajNaVrsteZahtjeva() throws Exception {
+		try {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(kupciWE));
 		kupciWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(vrsteZahtjevaWE));
 		vrsteZahtjevaWE.click();
+		}
+		catch (Exception e) {
+			driver.get(platformx_properties.getValue("URL.LOGIN") + platformx_properties.getValue("VRSTE.ZAHTJEVA"));
+		}
 		return new VrsteZahtjeva(driver);
 	}
 	
 	public VrsteIsporukeReklamacija navigirajNaVrsteIsporukeReklamacija() throws Exception {
+		try {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(kupciWE));
 		kupciWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(vrsteIsporukeReklamacijaWE));
 		vrsteIsporukeReklamacijaWE.click();
+		}
+		catch (Exception e) {
+			driver.get(platformx_properties.getValue("URL.LOGIN") + platformx_properties.getValue("VRSTE.ISPORUKE.REKLAMACIJA"));
+		}
 		return new VrsteIsporukeReklamacija(driver);
 	}
 	
 	public ObrasciBrojaUgovora navigirajNaObrasciBrojaUgovora() throws Exception {
+		try {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(kupciWE));
 		kupciWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(obrasciBrojaUgovoraWE));
 		obrasciBrojaUgovoraWE.click();
+		}
+		catch (Exception e) {
+			driver.get(platformx_properties.getValue("URL.LOGIN") + platformx_properties.getValue("OBRASCI.BROJA.UGOVORA"));
+		}
 		return new ObrasciBrojaUgovora(driver);
 	}
 
 	public GrupeObrazacaBrojaUgovora navigirajNaGrupeObrazacaBrojaUgovora() throws Exception {
+		try {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(kupciWE));
 		kupciWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(grupeObrazacaBrojaUgovoraWE));
 		grupeObrazacaBrojaUgovoraWE.click();
+		}
+		catch (Exception e) {
+			driver.get(platformx_properties.getValue("URL.LOGIN") + platformx_properties.getValue("GRUPE.OBRAZACA.BROJA.UGOVORA"));
+		}
 		return new GrupeObrazacaBrojaUgovora(driver);
 	}
 	
 	public IzvodiOtvorenihStavkiPoODSu navigirajNaIzvodiOtvorenihStavki() throws Exception {
+		try {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(kupciWE));
 		kupciWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(izvodiOtvorenihStavkiWE));
 		izvodiOtvorenihStavkiWE.click();
+		}
+		catch (Exception e) {
+			driver.get(platformx_properties.getValue("URL.LOGIN") + platformx_properties.getValue("IZVODI.OTVORENIH.STAVKI"));
+		}
 		return new IzvodiOtvorenihStavkiPoODSu(driver);
 	}
 	
 	public Mjenice navigirajNaMjenice() throws Exception {
+		try {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(kupciWE));
 		kupciWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(mjeniceWE));
 		mjeniceWE.click();
+		}
+		catch (Exception e) {
+			driver.get(platformx_properties.getValue("URL.LOGIN") + platformx_properties.getValue("MJENICE"));
+		}
 		return new Mjenice(driver);
 	}
 	
 	public TipoviMjenica navigirajNaTipoveMjenica() throws Exception {
+		try {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(kupciWE));
 		kupciWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(tipoviMjenicaWE));
 		tipoviMjenicaWE.click();
+		}
+		catch (Exception e) {
+			driver.get(platformx_properties.getValue("URL.LOGIN") + platformx_properties.getValue("TIPOVI.MJENICA"));
+		}
 		return new TipoviMjenica(driver);
 	}
 	
