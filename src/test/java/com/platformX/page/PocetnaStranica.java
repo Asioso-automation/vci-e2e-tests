@@ -930,7 +930,7 @@ public class PocetnaStranica extends PageBase {
 		zahtjeviZaDostavuPodataka1WE.click();
 		}
 		catch (Exception e) {
-			driver.get(platformx_properties.getValue("URL.LOGIN") + platformx_properties.getValue("ZAHTJEVI.ZA.DOSTAVU.PODATAKA"));
+			driver.get(platformx_properties.getValue("URL.LOGIN") + platformx_properties.getValue("ZAHTJEVI.ZA.DOSTAVU.PODATAKA.O.MJM"));
 		}
 		return new ZahtjeviZaDostavuPodatakaOMjernimMjestima(driver);
 	}
