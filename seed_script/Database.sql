@@ -270,45 +270,88 @@ SET IDENTITY_INSERT [Administration].ContractNumberTemplate OFF
 
 
 
-SET IDENTITY_INSERT [Administration].Module ON
-
-Insert Into Administration.Module ([Id],[Name],[Namespace])
-Values (1,N'Administracija',N'Px.Application.Services.Administrations')
-,(2,N'Analitika',N'Px.Application.Services.Analytics')
-,(3,N'Šifarnici',N'Px.Application.Services.BasicCatalogs')
-,(4,N'Obračun',N'Px.Application.Services.Calculations')
-,(5,N'Kupci',N'Px.Application.Services.Customers')
-,(6,N'Finansije',N'Px.Application.Services.Finances')
-,(7,N'Mjerna mjesta',N'Px.Application.Services.Metering')
-,(9,N'Tarifni sistem',N'Px.Application.Services.TariffSystem')
-,(10,N'Promjena datuma važenja ugovora',N'Px.Application.Services.Customers.Contracts.Commands.ChangeValidityDateOnContract')
-,(11,N'Pravni odnosi',N'Px.Application.Services.Legal')
-,(12,N'Reporogrami',N'Px.Application.Services.Finances.DebtRestructure')
-,(13,N'Finansijski šifarnici',N'Px.Application.Services.FinancialCodebook')
-,(14,N'Rješavanje zahtjeva za održavanjem',N'Px.Application.Services.Administrations.MaintenanceRequestResolving')
-,(15,N'Zajednička potrošnja',N'Px.Application.Services.Calculations.CommonConsumption')
-,(16,N'Zahtjevi za održavanje',N'Px.Application.Services.Administrations.MaintenanceRequests')
-,(17,N'Zahtjevi za ugovor',N'Px.Application.Services.Customers.ContractRequests')
-,(18,N'Zahtjevi za raskid ugovora',N'Px.Application.Services.Customers.EndOfSupplyRequests')
-,(19,N'Potpisivanje ugovora',N'Px.Application.Services.Customers.Contracts.Commands.SignContract')
-,(20,N'Eksterni interfejsi',N'Px.Application.Services.Finances.ExternalInterfaces')
-,(21,N'Sravnivanje mjernog mjesta avansom',N'Px.Application.Services.Finances.AdvancePayment.Commands.BalanceDebitWithAdvancePayment')
-,(22,N'Obnova ugovora',N'Px.Application.Services.Customers.Contracts.Commands.RenewContract')
-,(23,N'Korekcija kamate',N'Px.Application.Services.Finances.InterestCorrections')
-,(24,N'Zaključivanje dnevnika',N'Px.Application.Services.Finances.PaymentJournals.PaymentJournals.Commands.ClosePaymentJournal')
-,(25,N'Objedinjavanje kupaca',N'Px.Application.Services.Customers.Customers.Shared.Commands.UnifyCustomer')
-,(26,N'Nestandardne usluge',N'Px.Application.Services.Calculations.NonStandardBills')
-,(27,N'Isključenja-uključenja',N'Px.Application.Services.ContractOutageInclusions')
-,(28,N'Mjenice',N'Px.Application.Services.Customers.BillOfExchanges')
-,(29,N'Promjena teritorijalne pripadnosti',N'Px.Application.Services.Metering.MeteringPoints.Commands.ChangeTerritorialAffiliation')
-,(30,N'Obnovi ugovor uz obavještenje ODS-a',N'Px.Application.Services.Customers.Contracts.Commands.RenewContractAndNotifyDso')
-,(31,N'Zahtjev za uključenje na zahtjev kupca',N'Px.Application.Services.ContractOutageInclusions.ContractInclusionRequests.Commands.CreateCustomerInitiatedContractInclusionRequest')
-,(32,N'Zahtjev za isključenje na zahtjev kupca',N'Px.Application.Services.ContractOutageInclusions.ContractOutageRequests.Commands.CreateCustomerInitiatedContractOutageRequest')
-,(33,N'Korekcija računa',N'Px.Application.Services.Calculations.BillCorrections')
-,(34,N'Otključavanje reklamacije',N'Px.Application.Services.Customers.Complaints.Commands.OpenComplaint')
-
-
-SET IDENTITY_INSERT [Administration].Module OFF
+SET IDENTITY_INSERT [Administration].[Module] ON 
+GO
+INSERT [Administration].[Module] ([Id], [Name], [Namespace]) VALUES (1, N'Administracija', N'Px.Application.Services.Administrations')
+GO
+INSERT [Administration].[Module] ([Id], [Name], [Namespace]) VALUES (2, N'Analitika', N'Px.Application.Services.Analytics')
+GO
+INSERT [Administration].[Module] ([Id], [Name], [Namespace]) VALUES (3, N'Šifarnici', N'Px.Application.Services.BasicCatalogs')
+GO
+INSERT [Administration].[Module] ([Id], [Name], [Namespace]) VALUES (4, N'Obračun', N'Px.Application.Services.Calculations')
+GO
+INSERT [Administration].[Module] ([Id], [Name], [Namespace]) VALUES (5, N'Kupci', N'Px.Application.Services.Customers')
+GO
+INSERT [Administration].[Module] ([Id], [Name], [Namespace]) VALUES (6, N'Finansije', N'Px.Application.Services.Finances')
+GO
+INSERT [Administration].[Module] ([Id], [Name], [Namespace]) VALUES (7, N'Mjerna mjesta', N'Px.Application.Services.Metering')
+GO
+INSERT [Administration].[Module] ([Id], [Name], [Namespace]) VALUES (9, N'Tarifni sistem', N'Px.Application.Services.TariffSystem')
+GO
+INSERT [Administration].[Module] ([Id], [Name], [Namespace]) VALUES (10, N'Promjena datuma važenja ugovora', N'Px.Application.Services.Customers.Contracts.Commands.ChangeValidityDateOnContract')
+GO
+INSERT [Administration].[Module] ([Id], [Name], [Namespace]) VALUES (11, N'Pravni odnosi', N'Px.Application.Services.Legal')
+GO
+INSERT [Administration].[Module] ([Id], [Name], [Namespace]) VALUES (12, N'Reprogrami', N'Px.Application.Services.Finances.DebtRestructure')
+GO
+INSERT [Administration].[Module] ([Id], [Name], [Namespace]) VALUES (13, N'Finansijski šifarnici', N'Px.Application.Services.FinancialCodebook')
+GO
+INSERT [Administration].[Module] ([Id], [Name], [Namespace]) VALUES (14, N'Rješavanje zahtjeva za održavanjem', N'Px.Application.Services.Administrations.MaintenanceRequestResolving')
+GO
+INSERT [Administration].[Module] ([Id], [Name], [Namespace]) VALUES (15, N'Zajednička potrošnja', N'Px.Application.Services.Calculations.RegularConsumption.CommonConsumption')
+GO
+INSERT [Administration].[Module] ([Id], [Name], [Namespace]) VALUES (16, N'Zahtjevi za održavanje', N'Px.Application.Services.Administrations.MaintenanceRequests')
+GO
+INSERT [Administration].[Module] ([Id], [Name], [Namespace]) VALUES (17, N'Zahtjevi za ugovor', N'Px.Application.Services.Customers.ContractRequests')
+GO
+INSERT [Administration].[Module] ([Id], [Name], [Namespace]) VALUES (18, N'Zahtjevi za raskid ugovora', N'Px.Application.Services.Customers.EndOfSupplyRequests')
+GO
+INSERT [Administration].[Module] ([Id], [Name], [Namespace]) VALUES (19, N'Potpisivanje ugovora', N'Px.Application.Services.Customers.Contracts.Commands.SignContract')
+GO
+INSERT [Administration].[Module] ([Id], [Name], [Namespace]) VALUES (20, N'Eksterni interfejsi', N'Px.Application.Services.Finances.ExternalInterfaces')
+GO
+INSERT [Administration].[Module] ([Id], [Name], [Namespace]) VALUES (21, N'Sravnivanje mjernog mjesta avansom', N'Px.Application.Services.Finances.AdvancePayment.Commands.BalanceDebitWithAdvancePayment')
+GO
+INSERT [Administration].[Module] ([Id], [Name], [Namespace]) VALUES (22, N'Obnova ugovora', N'Px.Application.Services.Customers.Contracts.Commands.RenewContract')
+GO
+INSERT [Administration].[Module] ([Id], [Name], [Namespace]) VALUES (23, N'Korekcija kamate', N'Px.Application.Services.Finances.InterestCorrections')
+GO
+INSERT [Administration].[Module] ([Id], [Name], [Namespace]) VALUES (24, N'Zaključivanje dnevnika', N'Px.Application.Services.Finances.PaymentJournals.PaymentJournals.Commands.ClosePaymentJournal')
+GO
+INSERT [Administration].[Module] ([Id], [Name], [Namespace]) VALUES (25, N'Objedinjavanje kupaca', N'Px.Application.Services.Customers.Customers.Shared.Commands.UnifyCustomer')
+GO
+INSERT [Administration].[Module] ([Id], [Name], [Namespace]) VALUES (26, N'Nestandardne usluge', N'Px.Application.Services.Calculations.NonStandardServices')
+GO
+INSERT [Administration].[Module] ([Id], [Name], [Namespace]) VALUES (27, N'Isključenja-uključenja', N'Px.Application.Services.ContractOutageInclusions')
+GO
+INSERT [Administration].[Module] ([Id], [Name], [Namespace]) VALUES (28, N'Mjenice', N'Px.Application.Services.Customers.BillOfExchanges')
+GO
+INSERT [Administration].[Module] ([Id], [Name], [Namespace]) VALUES (29, N'Promjena teritorijalne pripadnosti', N'Px.Application.Services.Metering.MeteringPoints.Commands.ChangeTerritorialAffiliation')
+GO
+INSERT [Administration].[Module] ([Id], [Name], [Namespace]) VALUES (30, N'Obnovi ugovor uz obavještenje ODS-a', N'Px.Application.Services.Customers.Contracts.Commands.RenewContractAndNotifyDso')
+GO
+INSERT [Administration].[Module] ([Id], [Name], [Namespace]) VALUES (31, N'Korekcija računa', N'Px.Application.Services.Calculations.RegularConsumption.BillCorrections')
+GO
+INSERT [Administration].[Module] ([Id], [Name], [Namespace]) VALUES (32, N'Otključavanje reklamacije', N'Px.Application.Services.Customers.Complaints.Commands.OpenComplaint')
+GO
+INSERT [Administration].[Module] ([Id], [Name], [Namespace]) VALUES (33, N'Zahtjev za uključenje na zahtjev kupca', N'Px.Application.Services.ContractOutageInclusions.ContractInclusionRequests.Commands.CreateCustomerInitiatedContractInclusionRequest')
+GO
+INSERT [Administration].[Module] ([Id], [Name], [Namespace]) VALUES (34, N'Zahtjev za isključenje na zahtjev kupca', N'Px.Application.Services.ContractOutageInclusions.ContractOutageRequests.Commands.CreateCustomerInitiatedContractOutageRequest')
+GO
+INSERT [Administration].[Module] ([Id], [Name], [Namespace]) VALUES (35, N'Potvrđivanje tužbe', N'Px.Application.Services.Legal.Accusations.Commands.ConfirmAccusation')
+GO
+INSERT [Administration].[Module] ([Id], [Name], [Namespace]) VALUES (36, N'Masovno knjiženje korekcija kamate', N'Px.Application.Services.Finances.InterestCorrections.Commands.MassCloseInterestCorrection')
+GO
+INSERT [Administration].[Module] ([Id], [Name], [Namespace]) VALUES (37, N'Kupci - proizvođači', N'Px.Application.Services.Prosumers')
+GO
+INSERT [Administration].[Module] ([Id], [Name], [Namespace]) VALUES (38, N'Promjena pravnog lica na fizičko', N'Px.Application.Services.Customers.Customers.Shared.Commands.ChangeCustomerLegalityStatusFromLegal')
+GO
+INSERT [Administration].[Module] ([Id], [Name], [Namespace]) VALUES (39, N'Promjena fizičkog lica na pravno', N'Px.Application.Services.Customers.Customers.Shared.Commands.ChangeCustomerLegalityStatusToLegal')
+GO
+INSERT [Administration].[Module] ([Id], [Name], [Namespace]) VALUES (40, N'Anketari', N'Px.Application.Services.Prosumers.Interviewers')
+GO
+SET IDENTITY_INSERT [Administration].[Module] OFF
+GO
 
 
 
@@ -362,6 +405,12 @@ Values (3,1,1,1,1)
 ,(118,2008,23,1,1)
 ,(119,2008,33,1,1)
 ,(120,2008,20,1,1)
+,(121,2008,35,1,1)
+,(122,2008,36,1,1)
+,(123,2008,37,1,1)
+,(124,2008,38,1,1)
+,(125,2008,39,1,1)
+,(126,2008,40,1,1)
 
 SET IDENTITY_INSERT [Administration].UserModule OFF
 
