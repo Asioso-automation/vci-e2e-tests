@@ -34,6 +34,8 @@ public class NaloziZaObracunNestandardnihUsluga extends PocetnaStranica{
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPdv1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaUkupnoSaPdvWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaZakljucenWE));
+		wait.until(ExpectedConditions.elementToBeClickable(sekcijaBtnWE));
+		wait.until(ExpectedConditions.elementToBeClickable(stranicaBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(preuzmiExcelBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(ukloniFiltereBtnWE));

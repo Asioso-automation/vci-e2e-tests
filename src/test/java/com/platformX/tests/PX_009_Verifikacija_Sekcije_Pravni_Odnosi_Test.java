@@ -8,9 +8,10 @@ import org.testng.annotations.Test;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import com.platformX.page.PocetnaStranica;
-import com.platformX.page.StavkeZahtjevaZaIskljucenje;
-import com.platformX.page.StavkeZahtjevaZaUkljucenje;
+import com.platformX.page.StavkeZahtjevaZaIskljucenja;
+import com.platformX.page.StavkeZahtjevaZaUkljucenja;
 import com.platformX.page.StecajeviLikvidacije;
+import com.platformX.page.Sudovi;
 import com.platformX.page.Tuzbe;
 import com.platformX.page.UkljucenjaOdStraneODSa;
 import com.platformX.page.UkljucenjaPoZahtjevuKupca;
@@ -68,7 +69,7 @@ public class PX_009_Verifikacija_Sekcije_Pravni_Odnosi_Test {
 		opomene.verifikujOpomene();
 		ZahtjeviZaIskljucenje zahtjeviZaIskljucenje = pocetna.navigirajNaZahtjeviZaIskljucenje();
 		zahtjeviZaIskljucenje.verifikujZahtjeviZaIskljucenje();
-		StavkeZahtjevaZaIskljucenje stavke = pocetna.navigirajNaStavkeZahtjevaZaIskljucenje();
+		StavkeZahtjevaZaIskljucenja stavke = pocetna.navigirajNaStavkeZahtjevaZaIskljucenja();
 		stavke.verifikujStavkeZahtjevaZaIskljucenja();
 		IskljucenjaOdStraneODSa iskljucenjaOdStraneODSa = pocetna.navigirajNaIskljucenjaOdStraneODSa();
 		iskljucenjaOdStraneODSa.verifikujIskljucenjaOdStraneODSa();
@@ -78,7 +79,7 @@ public class PX_009_Verifikacija_Sekcije_Pravni_Odnosi_Test {
 		aktivnaIskljucenja.verifikujAktivnaIskljucenja();
 		ZahtjeviZaUkljucenje zahtjeviZaUkljucenje = pocetna.navigirajNaZahtjeviZaUkljucenje();
 		zahtjeviZaUkljucenje.verifikujZahtjeviZaUkljucenje();
-		StavkeZahtjevaZaUkljucenje stavkeUkljucenja = pocetna.navigirajNaStavkeZahtjevaZaUkljucenje();
+		StavkeZahtjevaZaUkljucenja stavkeUkljucenja = pocetna.navigirajNaStavkeZahtjevaZaUkljucenja();
 		stavkeUkljucenja.verifikujStavkeZahtjevaZaUkljucenja();
 		UkljucenjaOdStraneODSa ukljucenjaOdStraneODSa = pocetna.navigirajNaUkljucenjaOdStraneODSa();
 		ukljucenjaOdStraneODSa.verifikujUkljucenaOdStraneODSa();
@@ -94,9 +95,10 @@ public class PX_009_Verifikacija_Sekcije_Pravni_Odnosi_Test {
 		stecajevi.verifikujStecajeviLikvidacije();
 		Medijacije medijacije = pocetna.navigirajNaMedijacije();
 		medijacije.verifikujMedijacije();
-		//OtpisiPotrazivanja otpisiPotrazivanja = pocetna.navigirajNaOtpisiPotrazivanja();
-		//otpisiPotrazivanja.verifikujOtpisiPotrazivanja();
-		
+		OtpisiPotrazivanja otpisiPotrazivanja = pocetna.navigirajNaOtpisiPotrazivanja();
+		otpisiPotrazivanja.verifikujOtpisiPotrazivanja();
+		Sudovi sudovi = pocetna.navigirajNaSudovi();
+		sudovi.verifikujSudovi();
 	}
 	
 	@AfterTest

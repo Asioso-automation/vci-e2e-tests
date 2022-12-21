@@ -8,9 +8,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import com.platformX.base.Kolone;
 
-public class StavkeZahtjevaZaUkljucenje extends PocetnaStranica {
+public class StavkeZahtjevaZaUkljucenja extends PocetnaStranica {
 
-	public StavkeZahtjevaZaUkljucenje(WebDriver driver) throws FileNotFoundException, IOException {
+	public StavkeZahtjevaZaUkljucenja(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);
 	}
 	
@@ -35,10 +35,10 @@ public class StavkeZahtjevaZaUkljucenje extends PocetnaStranica {
 		wait.until(ExpectedConditions.elementToBeClickable(preuzmiExcelBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(ukloniFiltereBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(osvjeziBtnWE));
-		assertTrue(sekcijaBtnWE.getText().trim().equals("PRAVNI ODNOSI"), "StavkeZahtjevaZaUkljucenje: Naziv sekcije nije dobar!");
-		assertTrue(stranicaBtnWE.getText().trim().equals("STAVKE ZAHTJEVA ZA UKLJUČENJA"), "StavkeZahtjevaZaUkljucenje: Naziv stranice nije dobar!");
-		assertTrue(naslovStraniceWE.getText().trim().equals("STAVKE ZAHTJEVA ZA UKLJUČENJA"), "StavkeZahtjevaZaUkljucenje: Naziv stranice nije dobar!");
-		assertTrue(brojKolona().size() == 13, "StavkeZahtjevaZaUkljucenje: Broj kolona nije dobar! ");
+		assertTrue(sekcijaBtnWE.getText().trim().equals("PRAVNI ODNOSI"), "StavkeZahtjevaZaUkljucenja: Naziv sekcije nije dobar!");
+		assertTrue(stranicaBtnWE.getText().trim().equals("STAVKE ZAHTJEVA ZA UKLJUČENJA"), "StavkeZahtjevaZaUkljucenja: Naziv stranice nije dobar!");
+		assertTrue(naslovStraniceWE.getText().trim().equals("STAVKE ZAHTJEVA ZA UKLJUČENJA"), "StavkeZahtjevaZaUkljucenja: Naziv stranice nije dobar!");
+		assertTrue(brojKolona().size() == 13, "StavkeZahtjevaZaUkljucenja: Broj kolona nije dobar! ");
 	}
 
 }

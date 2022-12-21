@@ -1,15 +1,11 @@
 package com.platformX.page;
 
 import static org.testng.Assert.assertTrue;
-import static org.testng.Assert.expectThrows;
-
 import java.io.FileNotFoundException;
 import java.io.IOException;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-
 import com.platformX.base.Kolone;
 
 public class Predracuni extends PocetnaStranica {
@@ -31,7 +27,7 @@ public class Predracuni extends PocetnaStranica {
         wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIznosBezPdvWE));
         wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPdv1WE));
         wait.until(ExpectedConditions.visibilityOf(kolone.kolonaUkupnoWE));
-        wait.until(ExpectedConditions.visibilityOf(kolone.kolonaZakljucenoWE));
+        wait.until(ExpectedConditions.visibilityOf(kolone.kolonaZakljucenWE));
         wait.until(ExpectedConditions.elementToBeClickable(preuzmiExcelBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(ukloniFiltereBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(osvjeziBtnWE));
@@ -39,6 +35,6 @@ public class Predracuni extends PocetnaStranica {
 		assertTrue(stranicaBtnWE.getText().trim().equals("PREDRAČUNI"), "Predracuni: Naziv stranice nije dobar!");
 		assertTrue(naslovStraniceWE.getText().trim().equals("PREDRAČUNI"), "Predracuni: Naziv stranice nije dobar!");
 		assertTrue(brojKolona().size() == 12, "Predracuni: Broj kolona nije dobar! ");
-        
 	}
+	
 }

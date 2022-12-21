@@ -388,6 +388,9 @@ public class Kolone extends PageBase {
 	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Datum']")
 	public WebElement kolonaDatumWE;
 	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Datum apliciranja']")
+	public WebElement kolonaDatumApliciranjaWE;
+	
 	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'AVT']")
 	public WebElement kolonaAvtWE;
 	
@@ -418,6 +421,12 @@ public class Kolone extends PageBase {
 	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Tip ugovora']")
 	public WebElement kolonaTipUgovoraWE;
 	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Tip ugovora - domaćinstvo']")
+	public WebElement kolonaTipUgovoraDomacinstvoWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Tip ugovora - privreda']")
+	public WebElement kolonaTipUgovoraPrivredaWE;
+	
 	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Aktivna energija (kWh)']")
 	public WebElement kolonaAktivnaEnergijaWE;
 	
@@ -429,6 +438,9 @@ public class Kolone extends PageBase {
 	
 	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Snaga']")
 	public WebElement kolonaSnaga1WE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Snaga pretvarača']")
+	public WebElement kolonaSnagaPretvaracaWE;
 	
 	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Mrežarina (KM)']")
 	public WebElement kolonaMrezarinaWE;
@@ -1297,6 +1309,9 @@ public class Kolone extends PageBase {
 	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Prosječna potrošnja']")
 	public WebElement kolonaProsjecnaPotrosnjaWE;
 	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Godišnja potrošnja (kWh)']")
+	public WebElement kolonaGodisnjaPotrosnjaWE;
+	
 	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Broj mjernih mjesta']")
 	public WebElement kolonaBrojMjernihMjestaWE;
 	
@@ -1368,6 +1383,21 @@ public class Kolone extends PageBase {
 	
 	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Titula']")
 	public WebElement kolonaTitulaWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Uslužni centar']")
+	public WebElement kolonaUsluzniCentarWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Poeni']")
+	public WebElement kolonaPoeniWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Anketar']")
+	public WebElement kolonaAnketarWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Servisni centar']")
+	public WebElement kolonaServisniCentarWE;
+
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Prijava podnijeta']")
+	public WebElement kolonaPrijavaPodnijetaWE;
 	
 	// Kolone MONITORING
 	

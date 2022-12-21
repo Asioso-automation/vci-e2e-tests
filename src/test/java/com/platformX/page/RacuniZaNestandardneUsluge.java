@@ -3,11 +3,9 @@ package com.platformX.page;
 import static org.testng.Assert.assertTrue;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-
 import com.platformX.base.Kolone;
 
 public class RacuniZaNestandardneUsluge extends PocetnaStranica {
@@ -37,9 +35,9 @@ public class RacuniZaNestandardneUsluge extends PocetnaStranica {
 		wait.until(ExpectedConditions.elementToBeClickable(ukloniFiltereBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(osvjeziBtnWE));
 		assertTrue(sekcijaBtnWE.getText().trim().equals("NESTANDARDNE USLUGE"), "Racuni: Naziv sekcije nije dobar!");
-		assertTrue(stranicaBtnWE.getText().trim().equals("RAČUNI ZA NESTANDARDNE USLUGE"), "RacuniZaNestandardneUsluge: Naziv stranice nije dobar!");
+		assertTrue(stranicaBtnWE.getText().trim().equals("RAČUNI"), "RacuniZaNestandardneUsluge: Naziv stranice nije dobar!");
 		assertTrue(naslovStraniceWE.getText().trim().equals("RAČUNI ZA NESTANDARDNE USLUGE"), "RacuniZaNestandardneUsluge: Naziv stranice nije dobar!");
-		assertTrue(brojKolona().size() == 14, "RacuniZaNestandardneUsluge: Broj kolona nije dobar! ");
+		assertTrue(brojKolona().size() == 12, "RacuniZaNestandardneUsluge: Broj kolona nije dobar! ");
 	}
 
 }

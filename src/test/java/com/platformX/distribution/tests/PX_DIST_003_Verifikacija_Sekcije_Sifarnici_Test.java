@@ -75,7 +75,7 @@ public class PX_DIST_003_Verifikacija_Sekcije_Sifarnici_Test {
 		sektor.verifikujSektorDjelatnosti();
 		Djelatnosti djelatnosti = pocetna.navigirajNaDjelatnosti();
 		djelatnosti.verifikujDjelatnosti();
-		Entiteti entiteti = pocetna.navigirajNaEntitete();
+		Entiteti entiteti = pocetna.navigirajNaEntiteti();
 		entiteti.verifikujEntitete();
 		Opstine opstine = pocetna.navigirajNaOpstine();
 		opstine.verifikujOpstine();
