@@ -69,28 +69,28 @@ public class PocetnaStranica extends PageBase {
 
 	// Sekcije
 
-	@FindBy(xpath = "//div[3]/button[1]")
+	@FindBy(xpath = "//*[contains(text(),'Šifarnici') and @class='v-btn__content']")
 	protected WebElement sifarniciWE;
 
-	@FindBy(xpath = "//button[2]")
+	@FindBy(xpath = "//*[contains(text(),'Tarifni sistem') and @class='v-btn__content']")
 	protected WebElement tarifniSistemWE;
 
-	@FindBy(xpath = "//button[3]")
+	@FindBy(xpath = "(//*[contains(text(),'Kupci') and @class='v-btn__content'])[1]")
 	protected WebElement kupciWE;
 	
 	@FindBy(xpath = "//*[contains(text(),'Kupci-proizvođači') and @class='v-btn__content']")
 	protected WebElement kupciProizvodjaciWE;
 
-	@FindBy(xpath = "//button[4]")
+	@FindBy(xpath = "//*[contains(text(),'Mjerna mjesta') and @class='v-btn__content']")
 	protected WebElement mjernaMjestaWE;
 
-	@FindBy(xpath = "//button[5]")
+	@FindBy(xpath = "//*[contains(text(),'Obračun') and @class='v-btn__content']")
 	protected WebElement obracunWE;
 	
 	@FindBy(xpath = "//*[contains(text(),'Nestandardne usluge') and @class='v-btn__content']")
 	protected WebElement nestandardneUslugeWE;
 
-	@FindBy(xpath = "//button[6]")
+	@FindBy(xpath = "//*[contains(text(),'Finansije') and @class='v-btn__content']")
 	protected WebElement finansijeWE;
 	
 	@FindBy(xpath = "//*[contains(text(),'Pravni odnosi') and @class='v-btn__content']")
@@ -99,10 +99,10 @@ public class PocetnaStranica extends PageBase {
 	@FindBy(xpath = "//*[contains(text(),'Administracija') and @class='v-btn__content']")
 	protected WebElement administracijaWE;
 
-	@FindBy(xpath = "//div[3]/a")
+	@FindBy(xpath = "//*[contains(text(),'Izvještaji') and @class='v-btn__content']")
 	protected WebElement izvjestajiWE;
 
-	@FindBy(xpath = "//button[9]")
+	@FindBy(xpath = "//span/div/i")
 	protected WebElement profilWE;
 
 	// Stranice

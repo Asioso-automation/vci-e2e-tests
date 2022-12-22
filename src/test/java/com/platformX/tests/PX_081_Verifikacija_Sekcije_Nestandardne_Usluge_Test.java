@@ -17,7 +17,7 @@ public class PX_081_Verifikacija_Sekcije_Nestandardne_Usluge_Test extends BaseTe
 		super();
 	}
 
-	@Test
+	@Test (description="test prolazi kroz sve stranice iz sekcije NESTANDARDNE USLUGE i verifikuje ih")
 	public void px_081_verifikacija_sekcije_nestandardne_usluge_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();

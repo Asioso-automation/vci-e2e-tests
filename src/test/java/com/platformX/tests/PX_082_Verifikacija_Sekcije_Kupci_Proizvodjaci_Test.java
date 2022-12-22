@@ -17,7 +17,7 @@ public class PX_082_Verifikacija_Sekcije_Kupci_Proizvodjaci_Test extends BaseTes
 		super();
 	}
 
-	@Test
+	@Test (description="test prolazi kroz sve stranice iz sekcije KUPCI-PROIZVOĐAČI i verifikuje ih")
 	public void px_082_verifikacija_sekcije_kupci_proizvodjaci_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
