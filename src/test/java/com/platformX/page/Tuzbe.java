@@ -22,6 +22,7 @@ public class Tuzbe extends PocetnaStranica {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKupacWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrProtokolaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumPrijaveWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumPotvrdeWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumPresudeWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumPocetkaObracunaKamateWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIznosTuzbenogZahtjevaWE));
@@ -37,7 +38,7 @@ public class Tuzbe extends PocetnaStranica {
 		assertTrue(sekcijaBtnWE.getText().trim().equals("PRAVNI ODNOSI"), "Tuzbe: Naziv sekcije nije dobar!");
 		assertTrue(stranicaBtnWE.getText().trim().equals("TUŽBE"), "Tuzbe: Naziv stranice nije dobar!");
 		assertTrue(naslovStraniceWE.getText().trim().equals("TUŽBE"), "Tuzbe: Naziv stranice nije dobar!");
-		assertTrue(brojKolona().size() == 11, "Tuzbe: Broj kolona nije dobar! ");
+		assertTrue(brojKolona().size() == 12, "Tuzbe: Broj kolona nije dobar! ");
 	}
 
 }
