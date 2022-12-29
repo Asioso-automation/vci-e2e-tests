@@ -8,6 +8,7 @@ public class PropertiesUtil {
 
 
 	public Properties properties = null;
+	public static final String API_PROPERTIES = "api.properties";
 
 	public PropertiesUtil(String file) throws IOException, FileNotFoundException {
 		properties = new Properties();

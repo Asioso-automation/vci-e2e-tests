@@ -3,12 +3,11 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.platformX.distribution.tests.PX_DIST_003_Verifikacija_Sekcije_Sifarnici_Test">
+      <class name="com.platformX.api.tests.GetAdministrationMessageScenario">
         <methods>
-          <include name="px_dist_003_verifikacije_sekcije_sifarnici_test"/>
-          <include name="terminateBrowser"/>
+          <include name="get_administration_message_test"/>
         </methods>
-      </class> <!-- com.platformX.distribution.tests.PX_DIST_003_Verifikacija_Sekcije_Sifarnici_Test -->
+      </class> <!-- com.platformX.api.tests.GetAdministrationMessageScenario -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
