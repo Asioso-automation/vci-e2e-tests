@@ -1,6 +1,5 @@
 package com.platformX.distribution.page;
 
-import static org.testng.Assert.assertTrue;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import org.openqa.selenium.By;
@@ -15,6 +14,7 @@ public class NevalidnaOcitanja extends PocetnaStranica{
 	}
 	
 	public void verifikujNevalidnaOcitanja()throws InterruptedException, FileNotFoundException, IOException {
+		verifyCommonElements("OČITANJA", "NEVALIDNA OČITANJA", "NEVALIDNA OČITANJA", 17, false, false, false, true, true, true, false);
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Nevalidna očitanja')]")));
@@ -33,13 +33,6 @@ public class NevalidnaOcitanja extends PocetnaStranica{
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPorukaCitacaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaZbirnoKontrolnoOcitanjeWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaRijesenoWE));
-		wait.until(ExpectedConditions.visibilityOf(preuzmiExcelBtnWE));
-		wait.until(ExpectedConditions.visibilityOf(ukloniFiltereBtnWE));
-		wait.until(ExpectedConditions.visibilityOf(osvjeziBtnWE));
-		assertTrue(sekcijaBtnWE.getText().trim().equals("OČITANJA"), "NevalidnaOcitanja: Naziv sekcije nije dobar!");
-		assertTrue(stranicaBtnWE.getText().trim().equals("NEVALIDNA OČITANJA"), "NevalidnaOcitanja: Naziv stranice nije dobar!");
-		assertTrue(naslovStraniceWE.getText().trim().equals("NEVALIDNA OČITANJA"), "NevalidnaOcitanja: Naziv stranice nije dobar!");
-		assertTrue(brojKolona().size() == 17, "NevalidnaOcitanja: Broj kolona nije dobar! ");
 	}
 
 }

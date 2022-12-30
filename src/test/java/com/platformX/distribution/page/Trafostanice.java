@@ -55,6 +55,7 @@ public class Trafostanice extends PocetnaStranica {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Trafostanice')]")));
+		verifyCommonElements("ŠIFARNICI", "TRAFOSTANICE", "TRAFOSTANICE", 12, false, false, true, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaSifraWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNazivWE));
@@ -66,16 +67,6 @@ public class Trafostanice extends PocetnaStranica {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaOmjerPrenosaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaSnaga1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAktivnaWE));
-		wait.until(ExpectedConditions.elementToBeClickable(sekcijaBtnWE));
-		wait.until(ExpectedConditions.elementToBeClickable(stranicaBtnWE));
-		wait.until(ExpectedConditions.elementToBeClickable(preuzmiExcelBtnWE));
-		wait.until(ExpectedConditions.elementToBeClickable(ukloniFiltereBtnWE));
-		wait.until(ExpectedConditions.elementToBeClickable(osvjeziBtnWE));
-		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
-		assertTrue(sekcijaBtnWE.getText().trim().equals("ŠIFARNICI"), "Trafostanice: Naziv sekcije nije dobar!");
-		assertTrue(stranicaBtnWE.getText().trim().equals("TRAFOSTANICE"), "Trafostanice: Naziv stranice nije dobar!");
-		assertTrue(naslovStraniceWE.getText().trim().equals("TRAFOSTANICE"), "Trafostanice: Naziv stranice nije dobar!");
-		assertTrue(brojKolona().size() == 12, "Trafostanice: Broj kolona nije dobar! ");
 	}
 	
 	public String dodajTrafostanicu() throws Exception{

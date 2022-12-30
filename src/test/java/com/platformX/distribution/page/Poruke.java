@@ -16,22 +16,18 @@ public class Poruke extends PocetnaStranica{
 
 	public void verifikujPoruke()throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
-		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Poruke')]")));
+		verifyCommonElements("ADMINISTRACIJA", "PORUKE", "PORUKE", 8, false, false, true, false, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKorisnikWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNaslovWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumOdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumDoWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPrioritetWE));
-		wait.until(ExpectedConditions.visibilityOf(dodajBtnWE));
-		wait.until(ExpectedConditions.visibilityOf(ukloniFiltereBtnWE));
-		wait.until(ExpectedConditions.visibilityOf(osvjeziBtnWE));
 		assertTrue(sekcijaBtnWE.getText().trim().equals("ADMINISTRACIJA"), "Poruke: Naziv sekcije nije dobar!");
 		assertTrue(stranicaBtnWE.getText().trim().equals("PORUKE"), "Poruke: Naziv stranice nije dobar!");
 		assertTrue(naslovStraniceWE.getText().trim().equals("PORUKE"), "Poruke: Naziv stranice nije dobar!");
-		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		assertTrue(brojKolona().size() == 8, "Poruke: Broj kolona nije dobar! ");
 	}
 

@@ -40,19 +40,10 @@ public class Monteri extends PocetnaStranica {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Monteri')]")));
+		verifyCommonElements("ŠIFARNICI", "MONTERI", "MONTERI", 4, false, false, true, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaImeIprezimeWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojTelefonaWE));
-		wait.until(ExpectedConditions.elementToBeClickable(sekcijaBtnWE));
-		wait.until(ExpectedConditions.elementToBeClickable(stranicaBtnWE));
-		wait.until(ExpectedConditions.elementToBeClickable(preuzmiExcelBtnWE));
-		wait.until(ExpectedConditions.elementToBeClickable(ukloniFiltereBtnWE));
-		wait.until(ExpectedConditions.elementToBeClickable(osvjeziBtnWE));
-		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
-		assertTrue(sekcijaBtnWE.getText().trim().equals("ŠIFARNICI"), "Monteri: Naziv sekcije nije dobar!");
-		assertTrue(stranicaBtnWE.getText().trim().equals("MONTERI"), "Monteri: Naziv stranice nije dobar!");
-		assertTrue(naslovStraniceWE.getText().trim().equals("MONTERI"), "Monteri: Naziv stranice nije dobar!");
-		assertTrue(brojKolona().size() == 4, "Monteri: Broj kolona nije dobar! ");
 	}
 	
 	public String dodajMontera()throws InterruptedException{

@@ -23,7 +23,7 @@ public class PX_003_Verifikacija_Sekcije_Sifarnici_Test extends BaseTest {
 		super();
 	}
 
-	@Test (description="test prolazi kroz sve stranice iz sekcije ŠIFARNICI i verifikuje ih")
+	@Test (description="test prolazi kroz sve stranice iz sekcije Å IFARNICI i verifikuje ih")
 	public void px_003_verifikacije_sekcije_sifarnici_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
