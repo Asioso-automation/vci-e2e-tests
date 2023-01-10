@@ -53,9 +53,6 @@ public class FizickaLica extends PocetnaStranica {
 	 
 	 @FindBy(xpath = "//tr[2]/td[1]")
 	 private WebElement idTabelaWE;
-	 
-	 @FindBy(xpath = "//div/div/div[3]/button[2]/span")
-	 private WebElement potvrdiBrisanjeBtnWE;
 
 	public void verifikujFizickaLica() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
@@ -126,10 +123,10 @@ public class FizickaLica extends PocetnaStranica {
 	 
 	 public String urediFizickoLice() {
 		 String nazivFizickogLica = "Fizicko lice" + Helper.getRandomString(5);
-		 wait.until(ExpectedConditions.elementToBeClickable(burgerBar1stWE));
-		 burgerBar1stWE.click();
-		 wait.until(ExpectedConditions.elementToBeClickable(urediBurgerBarWE));
-		 urediBurgerBarWE.click();
+		 wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
+		 burgerBarWE.click();
+		 wait.until(ExpectedConditions.elementToBeClickable(urediWE));
+		 urediWE.click();
 		 wait.until(ExpectedConditions.elementToBeClickable(poljeImeIPrezimeWE));
 		 poljeImeIPrezimeWE.click();
 		 poljeImeIPrezimeWE.clear();
@@ -151,10 +148,10 @@ public class FizickaLica extends PocetnaStranica {
 	 }
 	 
 	 public void obrisiFizickoLice() throws InterruptedException {
-		 wait.until(ExpectedConditions.elementToBeClickable(burgerBar1stWE));
-		 burgerBar1stWE.click();
-		 wait.until(ExpectedConditions.elementToBeClickable(brisiBurgerBarWE));
-		 brisiBurgerBarWE.click();
+		 wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
+		 burgerBarWE.click();
+		 wait.until(ExpectedConditions.elementToBeClickable(obrisiWE));
+		 obrisiWE.click();
 		 Thread.sleep(1000);
 		 wait.until(ExpectedConditions.elementToBeClickable(potvrdiBrisanjeBtnWE));
 		 potvrdiBrisanjeBtnWE.click();

@@ -67,9 +67,6 @@ public class UgovorOPrikljucenju extends PocetnaStranica {
 	@FindBy(xpath = "//div[contains(text(), 'Uspješno završeno.')]")
 	private WebElement porukaWE;
 	
-	@FindBy(xpath = "//tr[2]/td[7]/button/span/i")  
-	 private WebElement burgerBarWE;
-	
 	@FindBy(xpath = "//div[4]/div[1]/div/div/div[1]/div[1]/input[1]")  
 	 private WebElement vrstaPodrucjaWE;
 	
@@ -159,8 +156,8 @@ public class UgovorOPrikljucenju extends PocetnaStranica {
 	public void urediUgovorOPrikljucenju() throws InterruptedException {
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		burgerBarWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(urediBurgerBarWE));
-		urediBurgerBarWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(urediWE));
+		urediWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(vrstaPodrucjaWE));
 		vrstaPodrucjaWE.click();
 		vrstaPodrucjaWE.sendKeys("2");
@@ -174,12 +171,12 @@ public class UgovorOPrikljucenju extends PocetnaStranica {
 	}
 	  
 	public void obrisiUgovorOPrikljucenju() throws InterruptedException {
-		wait.until(ExpectedConditions.elementToBeClickable(burgerBar1stWE));
-		burgerBar1stWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(brisiBurgerBarWE));
-		brisiBurgerBarWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(potvrdiBrisanjeWE));
-		potvrdiBrisanjeWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
+		burgerBarWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(obrisiWE));
+		obrisiWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(potvrdiBrisanjeBtnWE));
+		potvrdiBrisanjeBtnWE.click();
 	}
 	
 	public void verifikujBrisanjeUgovoraOPrikljucenju(String naziv) throws InterruptedException {

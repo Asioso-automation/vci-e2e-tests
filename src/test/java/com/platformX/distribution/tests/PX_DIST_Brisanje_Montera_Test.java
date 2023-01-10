@@ -15,7 +15,7 @@ public class PX_DIST_Brisanje_Montera_Test extends BaseTest{
 	}
 	
 	@Test
-	public void px_dist_izmjena_montera_test() throws Exception {
+	public void px_dist_brisanje_montera_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();

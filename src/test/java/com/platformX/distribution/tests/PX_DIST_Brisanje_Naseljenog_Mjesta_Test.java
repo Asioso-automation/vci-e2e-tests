@@ -13,6 +13,7 @@ public class PX_DIST_Brisanje_Naseljenog_Mjesta_Test extends BaseTest {
 	public PX_DIST_Brisanje_Naseljenog_Mjesta_Test() throws IOException, FileNotFoundException {
 		super();
 	}
+	
 	@Test
 	public void px_dist_brisanje_naseljenog_mjesta_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);

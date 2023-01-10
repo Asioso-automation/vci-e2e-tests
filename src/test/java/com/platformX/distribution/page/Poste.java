@@ -43,17 +43,11 @@ public class Poste extends PocetnaStranica {
 	@FindBy(xpath = "//tr[2]/td[1]")
 	private WebElement idTabelaWE;
 	
-	@FindBy(xpath = "//td[4]/button")
-	private WebElement burgerBarWE;
-	
 	@FindBy(xpath = "//div[2]/button[1]")
 	private WebElement potvrdiBtnWE;
 	
 	@FindBy(xpath = "//div[1]/div/div/div[1]/div/input")
 	private WebElement urediNazivWE;
-	
-	@FindBy(xpath = "//div/div/div/div[3]/button[2]")
-	private WebElement potvrdiBrisanjeWE;
 	
 	@FindBy(xpath = "//div[contains(text(), 'Pošta već postoji za dati ID.')]")
 	private WebElement validacionaPoruka;
@@ -155,8 +149,8 @@ public class Poste extends PocetnaStranica {
 		wait.until(ExpectedConditions.elementToBeClickable(obrisiWE));
 		obrisiWE.click();
 		Thread.sleep(1000);
-		wait.until(ExpectedConditions.elementToBeClickable(potvrdiBrisanjeWE));
-		potvrdiBrisanjeWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(potvrdiBrisanjeBtnWE));
+		potvrdiBrisanjeBtnWE.click();
 	}
 	
 	public void verifikujBrisanjePoste(String posta) throws InterruptedException {

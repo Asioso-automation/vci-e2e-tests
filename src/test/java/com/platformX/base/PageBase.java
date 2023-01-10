@@ -45,6 +45,9 @@ public class PageBase {
 	@FindBy(xpath = "//tr[2]/td")
 	protected WebElement praznaTabelaWE;
 	
+	@FindBy(xpath = "(//i[contains(@class, 'fa-bars')])[1]")
+	protected WebElement burgerBarWE;												// burger bar u prvoj liniji liste
+	
 	@FindBy(xpath = "//*[contains(text(),'Obrada u toku...') and contains(@class, 'title')]")
 	protected WebElement obradaModalWE;
 	

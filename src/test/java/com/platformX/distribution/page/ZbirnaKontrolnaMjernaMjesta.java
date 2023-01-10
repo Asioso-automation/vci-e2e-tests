@@ -54,9 +54,6 @@ public class ZbirnaKontrolnaMjernaMjesta extends PocetnaStranica {
 	@FindBy(xpath = "//tr[2]/td[2]")
 	 private WebElement nazivTabelaWE;
 	
-	@FindBy(xpath = "//div/div/div[3]/button[2]/span")
-	 private WebElement potvrdiBrisanjeBtnWE;
-	
 	@FindBy(xpath = "/html/body/div/div[3]/div/div")
 	 private WebElement obradaUTokuBtnWE;
 
@@ -136,10 +133,10 @@ public class ZbirnaKontrolnaMjernaMjesta extends PocetnaStranica {
 	
 	public String urediZbirnoKontrolnoMjernoMjesto() throws InterruptedException, FileNotFoundException, IOException {
 		String nazivZbirnogKontrolnogMjesta = "Zbirno mjm " + Helper.getRandomString(5);
-		wait.until(ExpectedConditions.elementToBeClickable(burgerBar1stWE));
-		burgerBar1stWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(urediBurgerBarWE));
-		urediBurgerBarWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
+		burgerBarWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(urediWE));
+		urediWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(poljeNazivWE));
 		poljeNazivWE.click();
 		poljeNazivWE.clear();
@@ -150,10 +147,10 @@ public class ZbirnaKontrolnaMjernaMjesta extends PocetnaStranica {
 	}
 	
 	public void obrisiZbirnoKontrolnoMjernoMjesto() throws InterruptedException, FileNotFoundException, IOException {
-		wait.until(ExpectedConditions.elementToBeClickable(burgerBar1stWE));
-		burgerBar1stWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(brisiBurgerBarWE));
-		brisiBurgerBarWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
+		burgerBarWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(obrisiWE));
+		obrisiWE.click();
 		Thread.sleep(1000);
 		wait.until(ExpectedConditions.elementToBeClickable(potvrdiBrisanjeBtnWE));
 		potvrdiBrisanjeBtnWE.click();

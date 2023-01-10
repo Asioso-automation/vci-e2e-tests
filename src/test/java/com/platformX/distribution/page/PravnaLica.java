@@ -137,10 +137,10 @@ public class PravnaLica extends PocetnaStranica {
 	
 	public String urediPravnoLice() throws InterruptedException {
 		String nazivPravnogLica = "Pravno lice" + Helper.getRandomString(5);
-		wait.until(ExpectedConditions.elementToBeClickable(burgerBar1stWE));
-		burgerBar1stWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(urediBurgerBarWE));
-		urediBurgerBarWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
+		burgerBarWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(urediWE));
+		urediWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(poljeNazivWE));
 		poljeNazivWE.click();
 		poljeNazivWE.clear();
@@ -162,10 +162,10 @@ public class PravnaLica extends PocetnaStranica {
 	}
 	
 	public void obrisiPravnoLice() throws InterruptedException {
-		 wait.until(ExpectedConditions.elementToBeClickable(burgerBar1stWE));
-		 burgerBar1stWE.click();
-		 wait.until(ExpectedConditions.elementToBeClickable(brisiBurgerBarWE));
-		 brisiBurgerBarWE.click();
+		 wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
+		 burgerBarWE.click();
+		 wait.until(ExpectedConditions.elementToBeClickable(obrisiWE));
+		 obrisiWE.click();
 		 Thread.sleep(1000);
 		 wait.until(ExpectedConditions.elementToBeClickable(potvrdiBrisanjeBtnWE));
 		 potvrdiBrisanjeBtnWE.click();

@@ -102,9 +102,6 @@ public class ElektroenergetskeSaglasnosti extends PocetnaStranica {
 	@FindBy(xpath = "//tr[2]/td[2]")
 	private WebElement nazivTabelaWE;
 	
-	@FindBy(xpath = "//tr[2]/td[10]/button/span/i")
-	private WebElement burgerBarWE;
-	
 	@FindBy(xpath = "//div[contains(text(), 'Uspješno završeno.')]")
 	private WebElement porukaWE;
 	
@@ -297,12 +294,12 @@ public class ElektroenergetskeSaglasnosti extends PocetnaStranica {
 	}
 	
 	public void obrisiElektroenergetskuSaglasnost() throws InterruptedException {
-		wait.until(ExpectedConditions.elementToBeClickable(burgerBar1stWE));
-		burgerBar1stWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(brisiBurgerBarWE));
-		brisiBurgerBarWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(potvrdiBrisanjeWE));
-		potvrdiBrisanjeWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
+		burgerBarWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(obrisiWE));
+		obrisiWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(potvrdiBrisanjeBtnWE));
+		potvrdiBrisanjeBtnWE.click();
 	}
 
 	public void verifikujBrisanjeElektroenergetskeSaglasnosti(String naziv) throws InterruptedException {

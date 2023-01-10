@@ -31,12 +31,6 @@ public class KategorijePotrosnje extends PocetnaStranica {
 	
 	@FindBy(xpath = "//tr[2]/td[2]")
 	private WebElement nazivKategorijePotrosnjeTabelaWE;
-	
-	@FindBy(xpath = "//tr[2]/td[3]/button/span/i")
-	private WebElement burgerBarWE;
-	
-	@FindBy(xpath = "//div/div/div[3]/button[2]")
-	private WebElement potvrdiBrisanjeWE;
 
 	public void verifikujKategorijePotrosnje() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
@@ -100,8 +94,8 @@ public class KategorijePotrosnje extends PocetnaStranica {
 		wait.until(ExpectedConditions.elementToBeClickable(obrisiWE));
 		obrisiWE.click();
 		Thread.sleep(1000);
-		wait.until(ExpectedConditions.elementToBeClickable(potvrdiBrisanjeWE));
-		potvrdiBrisanjeWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(potvrdiBrisanjeBtnWE));
+		potvrdiBrisanjeBtnWE.click();
 	}
 	
 	public void verifikujBrisanjeKategorijePotrosnje (String kategorijaPotrosnje) throws InterruptedException {
@@ -115,7 +109,7 @@ public class KategorijePotrosnje extends PocetnaStranica {
 		Thread.sleep(1000);
 		wait.until(ExpectedConditions.visibilityOf(praznaTabelaWE));
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
-		assertTrue(praznaTabelaWE.getText().equals("Nema podataka"), "KategorijePotros: Poruka prazne tabele nije dobra!");
+		assertTrue(praznaTabelaWE.getText().equals("Nema podataka"), "KategorijePotrosnje: Poruka prazne tabele nije dobra!");
 	}
 
 }

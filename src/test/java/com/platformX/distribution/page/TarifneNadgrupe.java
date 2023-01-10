@@ -32,9 +32,6 @@ public class TarifneNadgrupe extends PocetnaStranica {
 	
 	@FindBy(xpath = "//td[3]/button/span/i")
 	private WebElement burgerBarWE;
-	
-	@FindBy(xpath = "//div/div/div[3]/button[2]")
-	private WebElement potvrdiBrisanjeWE;
 
 	public void verifikujTarifneNadgrupe() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
@@ -94,8 +91,8 @@ public class TarifneNadgrupe extends PocetnaStranica {
 		burgerBarWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(obrisiWE));
 		obrisiWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(potvrdiBrisanjeWE));
-		potvrdiBrisanjeWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(potvrdiBrisanjeBtnWE));
+		potvrdiBrisanjeBtnWE.click();
 	}
 	
 	public void verifikujBrisanjeTarifneNadrgupe(String tarifnaNadgrupa)throws InterruptedException {

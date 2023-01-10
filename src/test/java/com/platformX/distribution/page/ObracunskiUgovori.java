@@ -63,12 +63,6 @@ public class ObracunskiUgovori extends PocetnaStranica {
 	
 	@FindBy(xpath = "//tr[2]/td[3]")
 	 private WebElement mjernoMjestoTabelaWE;
-	
-	@FindBy(xpath = "//div/div/div[3]/button[2]/span")
-	 private WebElement potvrdiBrisanjeBtnWE;
-	
-	@FindBy(xpath = "/html/body/div/div[3]/div/div")
-	 private WebElement obradaUTokuBtnWE;
 
 	public void verifikujObracunskiUgovori() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
@@ -154,11 +148,11 @@ public class ObracunskiUgovori extends PocetnaStranica {
 	
 	public String urediObracunskiUgovor() throws InterruptedException {
 		String nazivMjernogMjesta = "Naziv mjm " + Helper.getRandomString(7);
-		wait.until(ExpectedConditions.elementToBeClickable(burgerBar1stWE));
+		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		Thread.sleep(1000);
-		burgerBar1stWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(urediBurgerBarWE));
-		urediBurgerBarWE.click();
+		burgerBarWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(urediWE));
+		urediWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(poljeNazivMjernogMjestaWE));
 		poljeNazivMjernogMjestaWE.click();
 		poljeNazivMjernogMjestaWE.clear();
@@ -171,26 +165,26 @@ public class ObracunskiUgovori extends PocetnaStranica {
 	}
 
 	public void obrisiObracunskiUgovor() throws InterruptedException {
-		wait.until(ExpectedConditions.elementToBeClickable(burgerBar1stWE));
-		burgerBar1stWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(brisiBurgerBarWE));
-		brisiBurgerBarWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
+		burgerBarWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(obrisiWE));
+		obrisiWE.click();
 		Thread.sleep(1000);
 		wait.until(ExpectedConditions.elementToBeClickable(potvrdiBrisanjeBtnWE));
 		potvrdiBrisanjeBtnWE.click();
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 	}
 	
 	public void verifikujBrisanjeObracunskogUgovora(String mjernoMjesto) throws InterruptedException {
-		wait.until(ExpectedConditions.invisibilityOf(obradaUTokuBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(filterPoMjernomMjestuWE));
-		Thread.sleep(1000);
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		filterPoMjernomMjestuWE.click();
 		filterPoMjernomMjestuWE.clear();
 		filterPoMjernomMjestuWE.sendKeys(mjernoMjesto);
 		filterPoMjernomMjestuWE.sendKeys(Keys.ENTER);
-		Thread.sleep(1000);
 		wait.until(ExpectedConditions.visibilityOf(praznaTabelaWE));
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		assertTrue(praznaTabelaWE.getText().equals("Nema podataka"), "Obracunski ugovori: Poruka prazne tabele nije dobra!");
 		//TODO istraziti zbog cega Nesin element "obrada u toku" ne radi na ovom testu 
 	}

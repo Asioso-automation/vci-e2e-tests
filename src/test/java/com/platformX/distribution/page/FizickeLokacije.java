@@ -41,9 +41,6 @@ public class FizickeLokacije extends PocetnaStranica {
 	@FindBy(xpath = "//div[11]/div/div/div/div")
 	private WebElement terenskaJedinicaLookupWE;
 	
-//	@FindBy(xpath = "//div/div/div[3]/button[2]")
-//	private WebElement potvrdiBrisanjeWE;
-	
 	public void verifikujFizickeLokacije() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
@@ -93,10 +90,10 @@ public class FizickeLokacije extends PocetnaStranica {
 	
 	public String urediFizickuLokaciju() throws InterruptedException {
 		String naziv = "FizickaLokacija " + Helper.getRandomString(5);
-		wait.until(ExpectedConditions.elementToBeClickable(burgerBar1stWE));
-		burgerBar1stWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(urediBurgerBarWE));
-		urediBurgerBarWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
+		burgerBarWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(urediWE));
+		urediWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(nazivWE));
 		nazivWE.click();
 		nazivWE.clear();
@@ -107,12 +104,12 @@ public class FizickeLokacije extends PocetnaStranica {
 	}
 	
 	public void obrisiFizickuLokaciju() throws InterruptedException {
-		wait.until(ExpectedConditions.elementToBeClickable(burgerBar1stWE));
-		burgerBar1stWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(brisiBurgerBarWE));
-		brisiBurgerBarWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(potvrdiBrisanjeWE));
-		potvrdiBrisanjeWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
+		burgerBarWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(obrisiWE));
+		obrisiWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(potvrdiBrisanjeBtnWE));
+		potvrdiBrisanjeBtnWE.click();
 	}
 	
 	public void verifikujBrisanjeFizickeLokacije(String naziv) throws InterruptedException {

@@ -397,17 +397,14 @@ public class PocetnaStranica extends PageBase {
 	@FindBy(xpath = "//button[@type='submit']")
 	protected WebElement submitBtnWE;													// submit - DODAJ/UREDI button na formama za dodavanje/uređivanje Šifarnika
 	
-	@FindBy(xpath = "(//i[contains(@class, 'fa-bars')])[1]")
-	protected WebElement burgerBar1stWE;												// burger bar u prvoj liniji liste
+//	@FindBy(xpath = "//*[contains(text(), 'Uredi') and @class='v-list-item__title']")
+//	protected WebElement urediBurgerBarWE;												// opcija Uredi iz burger bara
+//	
+//	@FindBy(xpath = "//*[contains(text(), 'Briši') and @class='v-list-item__title']")
+//	protected WebElement brisiBurgerBarWE;												// opcija Briši iz burger bara
 	
-	@FindBy(xpath = "//*[contains(text(), 'Uredi') and @class='v-list-item__title']")
-	protected WebElement urediBurgerBarWE;												// opcija Uredi iz burger bara
-	
-	@FindBy(xpath = "//*[contains(text(), 'Briši') and @class='v-list-item__title']")
-	protected WebElement brisiBurgerBarWE;												// opcija Briši iz burger bara
-	
-	@FindBy(xpath = "//div/div/div[3]/button[2]")
-	protected WebElement potvrdiBrisanjeWE;
+	@FindBy(xpath = "//*[contains(@class, 'v-btn__content') and contains(text(), 'Briši')]")
+	protected WebElement potvrdiBrisanjeBtnWE;
 	
 	
 	public void verifikujPocetnuStranicu() throws InterruptedException {

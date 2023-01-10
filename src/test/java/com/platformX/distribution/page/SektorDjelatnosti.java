@@ -27,9 +27,6 @@ public class SektorDjelatnosti extends PocetnaStranica {
 	
 	@FindBy(xpath = "//tbody/tr[2]/td[2]")
 	private WebElement imeSektoraDjelatnostiTabelaWE;
-	
-	@FindBy(xpath = "(//div[contains(@class, 'v-list-item--link')])[1]")
-	private WebElement urediBurgerBarWE;
 
 	public void verifikujSektorDjelatnosti() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
@@ -65,10 +62,10 @@ public class SektorDjelatnosti extends PocetnaStranica {
 	
 	public String urediSektorDjelatnosti() throws InterruptedException {
 		String naziv = "SektorDjelatnosti " + Helper.getRandomString(5);
-		wait.until(ExpectedConditions.elementToBeClickable(burgerBar1stWE));
-		burgerBar1stWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(urediBurgerBarWE));
-		urediBurgerBarWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
+		burgerBarWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(urediWE));
+		urediWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(nazivWE));
 		nazivWE.click();
 		nazivWE.clear();
@@ -79,12 +76,12 @@ public class SektorDjelatnosti extends PocetnaStranica {
 	}
 	
 	public void obrisiSektorDjelatnosti() throws InterruptedException {
-		wait.until(ExpectedConditions.elementToBeClickable(burgerBar1stWE));
-		burgerBar1stWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(brisiBurgerBarWE));
-		brisiBurgerBarWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(potvrdiBrisanjeWE));
-		potvrdiBrisanjeWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
+		burgerBarWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(obrisiWE));
+		obrisiWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(potvrdiBrisanjeBtnWE));
+		potvrdiBrisanjeBtnWE.click();
 	}
 	
 	public void verifikujBrisanjeSektoraDjelatnosti(String ime) throws InterruptedException {
