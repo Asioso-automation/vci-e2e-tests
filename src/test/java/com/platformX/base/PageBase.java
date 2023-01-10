@@ -15,7 +15,6 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import com.platformX.util.HandlerUtil;
 import com.platformX.util.PropertiesUtil;
-import com.platformX.distribution.page.PocetnaStranica;
 
 public class PageBase {
 
