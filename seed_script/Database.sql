@@ -507,15 +507,19 @@ SET IDENTITY_INSERT [Customer].[RequestType] OFF
 
 
 INSERT INTO [Finance].[BookingType]
-           ([Id], [Name],[PrintName])
-     VALUES
-           (1,N'Finansijska kartica redovne potrošnje', N'Редовна потрошња')
-           ,(2, N'Finansijska kartica reprograma', N'Репрограми')
-           ,(3, N'Finansijska kartica presuđenih potraživanja', N'Пресуђена потраживања')
-           ,(4, N'Finansijska kartica nestandardnih usluga', N'Нестандардне услуге')
-           ,(5, N'Finansijska kartica potraživanja u stečajnom postupku', N'Потраживања у стечајном поступку')
-		   ,(6, N'Neraspoređene uplate', N'Нераспоређене уплате')
-           ,(7, N'Finansijska kartica medijacija', N'Медијације')
+	([Id], [Name], [PrintName], [IsInterestCalculated])
+ VALUES
+    (1, N'Redovna potrošnja', N'Редовна потрошња', 1)
+    ,(2, N'Reprogram', N'Репрограми', 0)
+    ,(3, N'Pravni odnosi', N'Пресуђена потраживања', 1)
+    ,(4, N'Nestandardne usluge', N'Нестандардне услуге', 1)
+    ,(5, N'Potraživanja u stečajnom postupku', N'Потраживања у стечајном поступку', 1)
+    ,(6, N'Neraspoređene uplate', N'Нераспоређене уплате', 0)
+    ,(7, N'Medijacije', N'Медијације', 1)
+    ,(8, N'Tužbe u pripremi', N'Тужбе у припреми', 0)
+    ,(9, N'Utužena potraživanja', N'Утужена потраживања', 0)
+    ,(10, N'Potraživanja u izvršnom postupku', N'Потраживања у извршном поступку', 1)
+    ,(11, N'Troškova sudskih postupaka', N'Трошкови судских поступака', 1)
 
 INSERT [Finance].[AccountingType] ([Id], [Name]) VALUES (1, N'Racun')
 INSERT [Finance].[AccountingType] ([Id], [Name]) VALUES (2, N'Uplata')
