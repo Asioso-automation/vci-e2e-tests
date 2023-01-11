@@ -1,6 +1,5 @@
 package com.platformX.distribution.page;
 
-import static org.testng.Assert.assertTrue;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import org.openqa.selenium.By;
@@ -18,6 +17,7 @@ public class ZahtjeviZaIskljucenja extends PocetnaStranica {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Zahtjevi za isključenja')]")));
+		verifyCommonElements("MJERNA MJESTA", "ZAHTJEVI ZA ISKLJUČENJA", "ZAHTJEVI ZA ISKLJUČENJA (PROCES 16)", 17, false, false, true, true, true, true, true);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		// TODO Verify all columns from this page
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojProtokolaWE));
@@ -35,15 +35,6 @@ public class ZahtjeviZaIskljucenja extends PocetnaStranica {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaObavjKupacWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaZavrWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIskljRealizWE));
-		wait.until(ExpectedConditions.elementToBeClickable(sekcijaBtnWE));
-		wait.until(ExpectedConditions.elementToBeClickable(stranicaBtnWE));
-		wait.until(ExpectedConditions.elementToBeClickable(preuzmiExcelBtnWE));
-		wait.until(ExpectedConditions.elementToBeClickable(ukloniFiltereBtnWE));
-		wait.until(ExpectedConditions.elementToBeClickable(osvjeziBtnWE));
-		assertTrue(sekcijaBtnWE.getText().trim().equals("MJERNA MJESTA"), "ZahtjeviZaIskljucenja: Naziv sekcije nije dobar!");
-		assertTrue(stranicaBtnWE.getText().trim().equals("ZAHTJEVI ZA ISKLJUČENJA"), "ZahtjeviZaIskljucenja: Naziv stranice nije dobar!");
-		assertTrue(naslovStraniceWE.getText().trim().equals("ZAHTJEVI ZA ISKLJUČENJA (PROCES 16)"), "ZahtjeviZaIskljucenja: Naziv stranice nije dobar!");
-		assertTrue(brojKolona().size() == 17, "ZahtjeviZaIskljucenja: Broj kolona nije dobar! ");
 	}
 
 }

@@ -1,6 +1,5 @@
 package com.platformX.distribution.page;
 
-import static org.testng.Assert.assertTrue;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import org.openqa.selenium.By;
@@ -18,16 +17,9 @@ public class MogucnostDaljinskogPristupa extends PocetnaStranica{
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Mogućnost daljinskog pristupa')]")));
+		verifyCommonElements("BROJILA", "MOGUĆNOST DALJINSKOG PRISTUPA", "MOGUĆNOST DALJINSKOG PRISTUPA", 3, false, false, true, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaOpisWE));
-		wait.until(ExpectedConditions.visibilityOf(dodajBtnWE));
-		wait.until(ExpectedConditions.visibilityOf(preuzmiExcelBtnWE));
-		wait.until(ExpectedConditions.visibilityOf(ukloniFiltereBtnWE));
-		wait.until(ExpectedConditions.visibilityOf(osvjeziBtnWE));
-		assertTrue(sekcijaBtnWE.getText().trim().equals("BROJILA"), "MogucnostDaljinskogPristupa: Naziv sekcije nije dobar!");
-		assertTrue(stranicaBtnWE.getText().trim().equals("MOGUĆNOST DALJINSKOG PRISTUPA"), "MogucnostDaljinskogPristupa: Naziv stranice nije dobar!");
-		assertTrue(naslovStraniceWE.getText().trim().equals("MOGUĆNOST DALJINSKOG PRISTUPA"), "MogucnostDaljinskogPristupa: Naziv stranice nije dobar!");
-		assertTrue(brojKolona().size() == 3, "MogucnostDaljinskogPristupa: Broj kolona nije dobar! ");
 	}
 
 }

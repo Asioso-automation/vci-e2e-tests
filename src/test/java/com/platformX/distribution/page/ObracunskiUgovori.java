@@ -66,7 +66,9 @@ public class ObracunskiUgovori extends PocetnaStranica {
 
 	public void verifikujObracunskiUgovori() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Obračunski ugovori')]")));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
+				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Obračunski ugovori')]")));
+		verifyCommonElements("UGOVORI", "OBRAČUNSKI UGOVORI", "OBRAČUNSKI UGOVORI", 13, false, false, true, true, true, true, true);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKupacWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMjMjestoWE));
@@ -79,15 +81,6 @@ public class ObracunskiUgovori extends PocetnaStranica {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTrenutnaKonstWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaImaNapomenuWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAktivanWE));
-		wait.until(ExpectedConditions.elementToBeClickable(sekcijaBtnWE));
-		wait.until(ExpectedConditions.elementToBeClickable(stranicaBtnWE));
-		wait.until(ExpectedConditions.elementToBeClickable(preuzmiExcelBtnWE));
-		wait.until(ExpectedConditions.elementToBeClickable(ukloniFiltereBtnWE));
-		wait.until(ExpectedConditions.elementToBeClickable(osvjeziBtnWE));
-		assertTrue(sekcijaBtnWE.getText().trim().equals("UGOVORI"), "ObracunskiUgovori: Naziv sekcije nije dobar!");
-		assertTrue(stranicaBtnWE.getText().trim().equals("OBRAČUNSKI UGOVORI"), "ObracunskiUgovori: Naziv stranice nije dobar!");
-		assertTrue(naslovStranice1WE.getText().trim().equals("OBRAČUNSKI UGOVORI"), "ObracunskiUgovori: Naziv stranice nije dobar!");
-		assertTrue(brojKolona().size() == 13, "ObracunskiUgovori: Broj kolona nije dobar! ");
 	}
 	
 	public void dodajObracunskiUgovor(String kupac, String mjernoMjesto, String brBrojila) throws InterruptedException, FileNotFoundException, IOException {

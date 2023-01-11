@@ -60,6 +60,9 @@ public class PageBase {
 	@FindBy(xpath = "//div/div[1]/div[1]/header/div/div[1]")
 	protected WebElement naslovStraniceWE;
 	
+	@FindBy(xpath = "//main/div/div/header/div/div[1]")
+	protected WebElement naslovStranice1WE;
+	
 	@FindBy(xpath = "//i[contains(@class, 'fa-file-upload')]")
 	protected WebElement importujBtnWE;
 	
@@ -110,7 +113,12 @@ public class PageBase {
 		wait.until(ExpectedConditions.elementToBeClickable(stranicaBtnWE));
 		assertTrue(sekcijaBtnWE.getText().trim().equals(sekcija), stranica + ": Naziv sekcije nije dobar!");
 		assertTrue(stranicaBtnWE.getText().trim().equals(stranica), stranica + ": Naziv stranice nije dobar!");
-		assertTrue(naslovStraniceWE.getText().trim().equals(naslovStranice), stranica + ": Naziv stranice nije dobar!");
+		try {
+			assertTrue(naslovStraniceWE.getText().trim().equals(naslovStranice), stranica + ": Naziv stranice nije dobar!");
+		}
+		catch (Exception e) {
+			assertTrue(naslovStranice1WE.getText().trim().equals(naslovStranice), stranica + ": Naziv stranice nije dobar!");
+		}
 		assertTrue(brojKolona().size() == brKolona, stranica + ": Broj kolona nije dobar!");
 		if (importBtn==true) {
 			wait.until(ExpectedConditions.elementToBeClickable(importujBtnWE));

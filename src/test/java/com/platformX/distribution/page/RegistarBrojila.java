@@ -46,6 +46,7 @@ public class RegistarBrojila extends PocetnaStranica {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Registar brojila')]")));
+		verifyCommonElements("BROJILA", "REGISTAR BROJILA", "REGISTAR BROJILA", 9, true, false, true, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaRedniBrojWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojBrojilaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaSerijskiBrojWE));
@@ -55,15 +56,6 @@ public class RegistarBrojila extends PocetnaStranica {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaGodinaProizvodnjeWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAmmIntegrisanoWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDlmsIntegrisanoWE));
-		wait.until(ExpectedConditions.visibilityOf(importujBtnWE));
-		wait.until(ExpectedConditions.visibilityOf(dodajBtnWE));
-		wait.until(ExpectedConditions.visibilityOf(preuzmiExcelBtnWE));
-		wait.until(ExpectedConditions.visibilityOf(ukloniFiltereBtnWE));
-		wait.until(ExpectedConditions.visibilityOf(osvjeziBtnWE));
-		assertTrue(sekcijaBtnWE.getText().trim().equals("BROJILA"), "RegistarBrojila: Naziv sekcije nije dobar!");
-		assertTrue(stranicaBtnWE.getText().trim().equals("REGISTAR BROJILA"), "RegistarBrojila: Naziv stranice nije dobar!");
-		assertTrue(naslovStranice1WE.getText().trim().equals("REGISTAR BROJILA"), "RegistarBrojila: Naziv stranice nije dobar!");
-		//assertTrue(brojKolona().size() == 9, "RegistarBrojila: Broj kolona nije dobar! ");
 	}
 	
 	public String dodajBrojilo() throws InterruptedException, FileNotFoundException, IOException {

@@ -56,7 +56,9 @@ public class FizickaLica extends PocetnaStranica {
 
 	public void verifikujFizickaLica() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Fizička lica')]")));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
+				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Fizička lica')]")));
+		verifyCommonElements("KUPCI", "FIZIČKA LICA", "FIZIČKA LICA", 8, false, false, true, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaImeIprezimeWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojLicneKarteWE));
@@ -64,15 +66,6 @@ public class FizickaLica extends PocetnaStranica {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaEmailWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojTelefonaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAktivanWE));
-		wait.until(ExpectedConditions.elementToBeClickable(sekcijaBtnWE));
-		wait.until(ExpectedConditions.elementToBeClickable(stranicaBtnWE));
-		wait.until(ExpectedConditions.elementToBeClickable(preuzmiExcelBtnWE));
-		wait.until(ExpectedConditions.elementToBeClickable(ukloniFiltereBtnWE));
-		wait.until(ExpectedConditions.elementToBeClickable(osvjeziBtnWE));
-		assertTrue(sekcijaBtnWE.getText().trim().equals("KUPCI"), "FizickaLica: Naziv sekcije nije dobar!");
-		assertTrue(stranicaBtnWE.getText().trim().equals("FIZIČKA LICA"), "FizickaLica: Naziv stranice nije dobar!");
-		assertTrue(naslovStraniceWE.getText().trim().equals("FIZIČKA LICA"), "FizickaLica: Naziv stranice nije dobar!");
-		assertTrue(brojKolona().size() == 8, "FizickaLica: Broj kolona nije dobar! ");
 	}
 	
 	public String dodajFizickoLice() throws InterruptedException, FileNotFoundException, IOException {
