@@ -48,9 +48,10 @@ public class RadneJedinice extends PocetnaStranica {
 	private WebElement potvrdiBrisanjeWE;
 
 	public void verifikujRadneJedinice() throws InterruptedException, FileNotFoundException, IOException {
-		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Radne jedinice')]")));
+		verifyCommonElements("ŠIFARNICI", "RADNE JEDINICE", "RADNE JEDINICE", 12, false, false, true, true, true, true, false);
+		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNazivWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaOdsWE));
@@ -62,16 +63,6 @@ public class RadneJedinice extends PocetnaStranica {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaInternetAdresaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaCallCentarWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaZiroRacunWE));
-		wait.until(ExpectedConditions.elementToBeClickable(sekcijaBtnWE));
-		wait.until(ExpectedConditions.elementToBeClickable(stranicaBtnWE));
-		wait.until(ExpectedConditions.elementToBeClickable(preuzmiExcelBtnWE));
-		wait.until(ExpectedConditions.elementToBeClickable(ukloniFiltereBtnWE));
-		wait.until(ExpectedConditions.elementToBeClickable(osvjeziBtnWE));
-		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
-		assertTrue(sekcijaBtnWE.getText().trim().equals("ŠIFARNICI"), "RadneJedinice: Naziv sekcije nije dobar!");
-		assertTrue(stranicaBtnWE.getText().trim().equals("RADNE JEDINICE"), "RadneJedinice: Naziv stranice nije dobar!");
-		assertTrue(naslovStraniceWE.getText().trim().equals("RADNE JEDINICE"), "RadneJedinice: Naziv stranice nije dobar!");
-		assertTrue(brojKolona().size() == 12, "RadneJedinice: Broj kolona nije dobar! ");
 	}
 	
 	public String dodajRadnuJedinicu() throws InterruptedException {

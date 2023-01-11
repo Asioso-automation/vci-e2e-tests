@@ -48,22 +48,13 @@ public class Ulice extends PocetnaStranica {
 	private WebElement potvrdiBrisanjeWE;
 
 	public void verifikujUlice() throws InterruptedException, FileNotFoundException, IOException {
-		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Ulice')]")));
+		verifyCommonElements("ŠIFARNICI", "ULICE", "ULICE", 4, false, false, true, true, true, true, false);
+		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNazivWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaValidnaWE));
-		wait.until(ExpectedConditions.elementToBeClickable(sekcijaBtnWE));
-		wait.until(ExpectedConditions.elementToBeClickable(stranicaBtnWE));
-		wait.until(ExpectedConditions.elementToBeClickable(preuzmiExcelBtnWE));
-		wait.until(ExpectedConditions.elementToBeClickable(ukloniFiltereBtnWE));
-		wait.until(ExpectedConditions.elementToBeClickable(osvjeziBtnWE));
-		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
-		assertTrue(sekcijaBtnWE.getText().trim().equals("ŠIFARNICI"), "Ulice: Naziv sekcije nije dobar!");
-		assertTrue(stranicaBtnWE.getText().trim().equals("ULICE"), "Ulice: Naziv stranice nije dobar!");
-		assertTrue(naslovStraniceWE.getText().trim().equals("ULICE"), "Ulice: Naziv stranice nije dobar!");
-		assertTrue(brojKolona().size() == 4, "Ulice: Broj kolona nije dobar! ");
 	}
 	
 	public String dodajUlicu() throws InterruptedException {

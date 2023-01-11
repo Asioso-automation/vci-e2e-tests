@@ -47,24 +47,15 @@ public class OperativnaPodrucja extends PocetnaStranica {
 	private WebElement potvrdiBrisanjeWE;
 
 	public void verifikujOperativnaPodrucja() throws InterruptedException, FileNotFoundException, IOException {
-		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Operativna podru')]")));
+		verifyCommonElements("ŠIFARNICI", "OPERATIVNA PODRUČJA", "OPERATIVNA PODRUČJA", 6, false, false, true, true, true, true, false);
+		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNazivWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTelefonZaPrijavuKvaraWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTelefonZaInformacijeWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTelefonZaPrigovoreWE));
-		wait.until(ExpectedConditions.elementToBeClickable(sekcijaBtnWE));
-		wait.until(ExpectedConditions.elementToBeClickable(stranicaBtnWE));
-		wait.until(ExpectedConditions.elementToBeClickable(preuzmiExcelBtnWE));
-		wait.until(ExpectedConditions.elementToBeClickable(ukloniFiltereBtnWE));
-		wait.until(ExpectedConditions.elementToBeClickable(osvjeziBtnWE));
-		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
-		assertTrue(sekcijaBtnWE.getText().trim().equals("ŠIFARNICI"), "OperativnaPodrucja: Naziv sekcije nije dobar!");
-		assertTrue(stranicaBtnWE.getText().trim().equals("OPERATIVNA PODRUČJA"), "OperativnaPodrucja: Naziv stranice nije dobar!");
-		assertTrue(naslovStraniceWE.getText().trim().equals("OPERATIVNA PODRUČJA"), "OperativnaPodrucja: Naziv stranice nije dobar!");
-		assertTrue(brojKolona().size() == 6, "OperativnaPodrucja: Broj kolona nije dobar! ");
 	}
 	
 	public String dodajOperativnoPodrucje() {
