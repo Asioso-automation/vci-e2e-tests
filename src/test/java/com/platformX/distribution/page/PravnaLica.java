@@ -153,28 +153,6 @@ public class PravnaLica extends PocetnaStranica {
 		wait.until(ExpectedConditions.visibilityOf(nazivTabelaWE));
 		assertTrue(nazivTabelaWE.getText().contains(nazivPravnogLica),"Pravna lica: Naziv uredjenog pravnog lica nije dobar!");
 	}
-	
-	public void obrisiPravnoLice() throws InterruptedException {
-		 wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
-		 burgerBarWE.click();
-		 wait.until(ExpectedConditions.elementToBeClickable(obrisiWE));
-		 obrisiWE.click();
-		 Thread.sleep(1000);
-		 wait.until(ExpectedConditions.elementToBeClickable(potvrdiBrisanjeBtnWE));
-		 potvrdiBrisanjeBtnWE.click();
-    }
-	
-	public void verifikujBrisanjePravnogLica(String pravnaLica) throws InterruptedException {
-		wait.until(ExpectedConditions.elementToBeClickable(filterPoNazivuTabelaWE));
-		Thread.sleep(1000);
-		filterPoNazivuTabelaWE.click();
-		filterPoNazivuTabelaWE.clear();
-		filterPoNazivuTabelaWE.sendKeys(pravnaLica);
-		filterPoNazivuTabelaWE.sendKeys(Keys.ENTER);
-		Thread.sleep(1000);
-		wait.until(ExpectedConditions.visibilityOf(praznaTabelaWE));
-		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
-		assertTrue(praznaTabelaWE.getText().equals("Nema podataka"), "Pravna lica: Poruka prazne tabele nije dobra!");
-	}
+
 
 }

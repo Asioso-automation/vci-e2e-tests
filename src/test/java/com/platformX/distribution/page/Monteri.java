@@ -78,28 +78,6 @@ public class Monteri extends PocetnaStranica {
 		dodajMonteraWE.click();
 		return monter;
 	}
-	
-	public void obrisiMontera()throws InterruptedException{
-		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
-		burgerBarWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(obrisiWE));
-		obrisiWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(potvrdiBrisanjeBtnWE));
-		potvrdiBrisanjeBtnWE.click();
-	}
-	
-	public void verifikujBrisanjeMontera(String monter) throws InterruptedException{
-		wait.until(ExpectedConditions.visibilityOf(filterPoImePrezimeWE));
-		Thread.sleep(1000);
-		wait.until(ExpectedConditions.elementToBeClickable(filterPoImePrezimeWE));
-		filterPoImePrezimeWE.click();
-		filterPoImePrezimeWE.clear();
-		filterPoImePrezimeWE.sendKeys(monter);
-		filterPoImePrezimeWE.sendKeys(Keys.ENTER);
-		Thread.sleep(1000);
-		wait.until(ExpectedConditions.visibilityOf(praznaTabelaWE));
-		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
-		assertTrue(praznaTabelaWE.getText().equals("Nema podataka"), "Monteri: Poruka prazne tabele nije dobra!");
-	}
+
 	
 }

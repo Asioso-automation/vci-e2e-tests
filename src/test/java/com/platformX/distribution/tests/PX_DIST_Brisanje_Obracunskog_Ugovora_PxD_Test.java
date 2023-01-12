@@ -22,29 +22,29 @@ public class PX_DIST_Brisanje_Obracunskog_Ugovora_PxD_Test  extends BaseTest {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
-		PocetnaStranica pocetna = new PocetnaStranica(driver);
-		pocetna.verifikujPocetnuStranicu();
-		FizickaLica fizickaLicaPage = pocetna.navigirajNaFizickaLica();
+		PocetnaStranica homePage = new PocetnaStranica(driver);
+		homePage.verifikujPocetnuStranicu();
+		FizickaLica fizickaLicaPage = homePage.navigirajNaFizickaLica();
 		fizickaLicaPage.verifikujFizickaLica();
 		String fizickaLica = fizickaLicaPage.dodajFizickoLice();
 		fizickaLicaPage.verifikujFizickoLice(fizickaLica);
 		String kupac = fizickaLicaPage.kreirajFizickoLice();
-		MjernaMjesta mjernaMjestaPage = pocetna.navigirajNaMjernaMjesta();
+		MjernaMjesta mjernaMjestaPage = homePage.navigirajNaMjernaMjesta();
 		mjernaMjestaPage.verifikujMjernaMjesta();
 		String mjernaMjesta = mjernaMjestaPage.dodajMjernoMjesto();
 		mjernaMjestaPage.verifikujMjernoMjesto(mjernaMjesta);
 		String mjernoMjesto = mjernaMjestaPage.kreirajMjernoMjesto();
-		RegistarBrojila registarBrojilaPage = pocetna.navigirajNaRegistarBrojila();
+		RegistarBrojila registarBrojilaPage = homePage.navigirajNaRegistarBrojila();
 		registarBrojilaPage.verifikujRegistarBrojila();
 		String registarBrojila = registarBrojilaPage.dodajBrojilo();
 		registarBrojilaPage.navigirajNaRegistarBrojila();
 		registarBrojilaPage.verifikujBrojilo(registarBrojila);
 		String brBrojila = registarBrojilaPage.kreirajBrojilo();
-		ObracunskiUgovori obracunskiUgovoriPage = pocetna.navigirajNaObracunskiUgovori();
+		ObracunskiUgovori obracunskiUgovoriPage = homePage.navigirajNaObracunskiUgovori();
 		obracunskiUgovoriPage.dodajObracunskiUgovor(kupac, mjernoMjesto, brBrojila);
 		obracunskiUgovoriPage.verifikujObracunskiUgovor(mjernoMjesto);
-		obracunskiUgovoriPage.obrisiObracunskiUgovor();
-		obracunskiUgovoriPage.verifikujBrisanjeObracunskogUgovora(mjernoMjesto);
+		homePage.deleteItem();
+		homePage.verifyDeletedItem(false, mjernoMjesto);
 	}
 
 }

@@ -84,6 +84,9 @@ public class PageBase {
 	@FindBy(xpath = "//i[contains(@class, 'fa-info')]")
 	protected WebElement infoBtnWE;
 	
+	@FindBy(xpath = "//*[contains(@class, 'v-btn__content') and contains(text(), 'Briši')]")
+	protected WebElement potvrdiBrisanjeBtnWE;
+	
 
 	protected Select select(WebElement webElement, String name) {
 		Select selectedElement = new Select(webElement);
@@ -105,6 +108,7 @@ public class PageBase {
 	public List<WebElement> brojKolona() {
 		return driver.findElements(By.xpath("//th"));
 	}
+
 	
 	public void verifyCommonElements(String sekcija, String stranica, String naslovStranice, int brKolona, boolean importBtn, boolean addAll, boolean add, boolean downloadExcel, boolean removeFilters, boolean refresh, boolean info) {
 		WebDriverWait wait = new WebDriverWait(driver, 30);
@@ -143,5 +147,6 @@ public class PageBase {
 		}
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 	}
+	
 
 }

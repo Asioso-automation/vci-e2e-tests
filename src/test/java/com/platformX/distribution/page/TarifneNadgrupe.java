@@ -77,25 +77,6 @@ public class TarifneNadgrupe extends PocetnaStranica {
 		dodajBtn1WE.click();
 		return tarifnaNadrgupa;
 	}
-	
-	public void obrisiTarifnuNadgrupu()throws InterruptedException {
-		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
-		burgerBarWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(obrisiWE));
-		obrisiWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(potvrdiBrisanjeBtnWE));
-		potvrdiBrisanjeBtnWE.click();
-	}
-	
-	public void verifikujBrisanjeTarifneNadrgupe(String tarifnaNadgrupa)throws InterruptedException {
-		wait.until(ExpectedConditions.elementToBeClickable(filterPoNazivuWE));
-		filterPoNazivuWE.click();
-		filterPoNazivuWE.clear();
-		filterPoNazivuWE.sendKeys(tarifnaNadgrupa);
-		filterPoNazivuWE.sendKeys(Keys.ENTER);
-		Thread.sleep(1000);
-		wait.until(ExpectedConditions.visibilityOf(praznaTabelaWE));
-		assertTrue(praznaTabelaWE.getText().equals("Nema podataka"), "TarifnaNadgrupa: Poruka prazne tabele nije dobra!");
-	}
+
 	
 }

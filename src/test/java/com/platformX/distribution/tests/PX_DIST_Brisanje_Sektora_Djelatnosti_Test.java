@@ -25,8 +25,8 @@ public class PX_DIST_Brisanje_Sektora_Djelatnosti_Test extends BaseTest {
 		sektorDjelatnosti.verifikujSektorDjelatnosti();
 		String nazivSektoraDjelatnosti = sektorDjelatnosti.dodajSektorDjelatnosti();
 		sektorDjelatnosti.verifikujDodavanjeSektoraDjelatnosti(nazivSektoraDjelatnosti);
-		sektorDjelatnosti.obrisiSektorDjelatnosti();
-		sektorDjelatnosti.verifikujBrisanjeSektoraDjelatnosti(nazivSektoraDjelatnosti);
+		homePage.deleteItem();
+		homePage.verifyDeletedItem(true, nazivSektoraDjelatnosti);
 	}
 
 }

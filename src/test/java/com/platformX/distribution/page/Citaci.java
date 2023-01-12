@@ -89,26 +89,6 @@ public class Citaci extends PocetnaStranica {
 		submitBtnWE.click();
 		return ime;
 	}
-	
-	public void obrisiCitaca() throws InterruptedException {
-		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
-		burgerBarWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(obrisiWE));
-		obrisiWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(potvrdiBrisanjeBtnWE));
-		potvrdiBrisanjeBtnWE.click();
-	}
-	
-	public void verifikujBrisanjeCitaca(String ime) throws InterruptedException {
-		wait.until(ExpectedConditions.elementToBeClickable(filterPoImenuWE));
-		Thread.sleep(1000);
-		filterPoImenuWE.click();
-		filterPoImenuWE.clear();
-		filterPoImenuWE.sendKeys(ime);
-		filterPoImenuWE.sendKeys(Keys.ENTER);
-		wait.until(ExpectedConditions.elementToBeClickable(praznaTabelaWE));
-		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
-		assertTrue(praznaTabelaWE.getText().equals("Nema podataka"), "Citaci: Poruka prazne tabele nije dobra!");
-	}
+
 	
 }

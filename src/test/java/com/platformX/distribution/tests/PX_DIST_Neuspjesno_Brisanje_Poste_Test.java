@@ -24,7 +24,7 @@ public class PX_DIST_Neuspjesno_Brisanje_Poste_Test extends BaseTest {
 		Poste poste = homePage.navigirajNaPoste();
 		poste.verifikujPoste();
 		poste.verifikujPostu("Beograd", "11000", "Београд");
-		poste.obrisiPostu();
+		homePage.deleteItem();
 		poste.verifikujPoruku("Brisanje ovog zapisa nije moguće.");
 	}
 

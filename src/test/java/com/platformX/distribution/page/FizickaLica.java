@@ -140,27 +140,5 @@ public class FizickaLica extends PocetnaStranica {
 		assertTrue(imeIPrezimeTabelaWE.getText().contains(nazivFizickogLica),"Fizicka Lica: Naziv uredjenog fizickog lica nije dobar!");	 
 	 }
 	 
-	 public void obrisiFizickoLice() throws InterruptedException {
-		 wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
-		 burgerBarWE.click();
-		 wait.until(ExpectedConditions.elementToBeClickable(obrisiWE));
-		 obrisiWE.click();
-		 Thread.sleep(1000);
-		 wait.until(ExpectedConditions.elementToBeClickable(potvrdiBrisanjeBtnWE));
-		 potvrdiBrisanjeBtnWE.click();
-	 }
-	 
-	 public void verifikujBrisanjeFizickogLica(String fizickaLica) throws InterruptedException {
-		wait.until(ExpectedConditions.elementToBeClickable(filterPoImeIPrezimeWE));
-		Thread.sleep(1000);
-		filterPoImeIPrezimeWE.click();
-		filterPoImeIPrezimeWE.clear();
-		filterPoImeIPrezimeWE.sendKeys(fizickaLica);
-		filterPoImeIPrezimeWE.sendKeys(Keys.ENTER);
-		Thread.sleep(1000);
-		wait.until(ExpectedConditions.visibilityOf(praznaTabelaWE));
-		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
-		assertTrue(praznaTabelaWE.getText().equals("Nema podataka"), "Fizicka lica: Poruka prazne tabele nije dobra!");
-	 }
 
 }

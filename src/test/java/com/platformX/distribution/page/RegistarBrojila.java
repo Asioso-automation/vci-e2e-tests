@@ -60,7 +60,7 @@ public class RegistarBrojila extends PocetnaStranica {
 	
 	public String dodajBrojilo() throws InterruptedException, FileNotFoundException, IOException {
 		String brojBrojila = Helper.getRandomNumber(6);
-		Thread.sleep(1000);
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
 		dodajBtnWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(poljeBrojWE));

@@ -98,28 +98,6 @@ public class NaseljenaMjesta extends PocetnaStranica {
 		dodajNaseljenoMjestoWE.click();
 		return naseljenoMjesto;
 	}
-	
-	public void obrisiNaseljenoMjesto()throws InterruptedException{
-		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
-		burgerBarWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(obrisiWE));
-		obrisiWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(potvrdiBrisanjeBtnWE));
-		potvrdiBrisanjeBtnWE.click();
-	}
-	
-	public void verifikujBrisanjeNaseljenogMjesta(String naseljenoMjesto)throws InterruptedException{
-		wait.until(ExpectedConditions.visibilityOf(filterNazivWE));
-		Thread.sleep(1000);
-		wait.until(ExpectedConditions.elementToBeClickable(filterNazivWE));
-		filterNazivWE.click();
-		filterNazivWE.clear();
-		filterNazivWE.sendKeys(naseljenoMjesto);
-		filterNazivWE.sendKeys(Keys.ENTER);
-		Thread.sleep(1000);
-		wait.until(ExpectedConditions.visibilityOf(praznaTabelaWE));
-		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
-		assertTrue(praznaTabelaWE.getText().equals("Nema podataka"), "NaseljenaMjesta: Poruka prazne tabele nije dobra!");
-	}
+
 
 }

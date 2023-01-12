@@ -84,26 +84,6 @@ public class Opstine extends PocetnaStranica {
 		submitBtnWE.click();
 		return naziv;
 	}
-	
-	public void obrisiOpstinu() throws InterruptedException {
-		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
-		burgerBarWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(obrisiWE));
-		obrisiWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(potvrdiBrisanjeBtnWE));
-		potvrdiBrisanjeBtnWE.click();
-	}
-	
-	public void verifikujBrisanjeOpstine(String naziv) throws InterruptedException {
-		wait.until(ExpectedConditions.elementToBeClickable(filterPoNazivuWE));
-		Thread.sleep(1000);
-		filterPoNazivuWE.click();
-		filterPoNazivuWE.clear();
-		filterPoNazivuWE.sendKeys(naziv);
-		filterPoNazivuWE.sendKeys(Keys.ENTER);
-		wait.until(ExpectedConditions.visibilityOf(praznaTabelaWE));
-		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
-		assertTrue(praznaTabelaWE.getText().equals("Nema podataka"), "Opstine: Poruka prazne tabele nije dobra!");
-	}
+
 	
 }

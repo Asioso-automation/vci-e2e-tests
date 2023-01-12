@@ -136,27 +136,6 @@ public class ZbirnaKontrolnaMjernaMjesta extends PocetnaStranica {
 		dodajZbirnoMjestoBtnWE.click();
 		return nazivZbirnogKontrolnogMjesta;
 	}
-	
-	public void obrisiZbirnoKontrolnoMjernoMjesto() throws InterruptedException, FileNotFoundException, IOException {
-		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
-		burgerBarWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(obrisiWE));
-		obrisiWE.click();
-		Thread.sleep(1000);
-		wait.until(ExpectedConditions.elementToBeClickable(potvrdiBrisanjeBtnWE));
-		potvrdiBrisanjeBtnWE.click();
-	}
-	
-	public void verifikujBrisanjeZbirnogKontrolnogMjernogMjesta(String zbirnaKontrolnaMjernaMjesta) throws InterruptedException, FileNotFoundException, IOException {
-		wait.until(ExpectedConditions.invisibilityOf(obradaUTokuBtnWE));
-		wait.until(ExpectedConditions.elementToBeClickable(filterPoNazivuWE));
-		filterPoNazivuWE.click();
-		filterPoNazivuWE.clear();
-		filterPoNazivuWE.sendKeys(zbirnaKontrolnaMjernaMjesta);
-		filterPoNazivuWE.sendKeys(Keys.ENTER);
-		wait.until(ExpectedConditions.visibilityOf(praznaTabelaWE));
-		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
-		assertTrue(praznaTabelaWE.getText().equals("Nema podataka"), "Zbirna kontrolna mjerna mjesta: Poruka prazne tabele nije dobra!");
-	}
+
 
 }

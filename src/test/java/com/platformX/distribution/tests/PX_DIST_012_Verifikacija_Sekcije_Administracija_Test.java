@@ -9,6 +9,7 @@ import com.platformX.distribution.page.Korisnici;
 import com.platformX.distribution.page.LogIn;
 import com.platformX.distribution.page.PocetnaStranica;
 import com.platformX.distribution.page.Poruke;
+import com.platformX.distribution.page.PozadinskiProcesi;
 
 public class PX_DIST_012_Verifikacija_Sekcije_Administracija_Test  extends BaseTest {
 
@@ -21,15 +22,16 @@ public class PX_DIST_012_Verifikacija_Sekcije_Administracija_Test  extends BaseT
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
-		PocetnaStranica pocetna = new PocetnaStranica(driver);
-		pocetna.verifikujPocetnuStranicu();
-		Korisnici korisnici = pocetna.navigirajNaKorisnici();
+		PocetnaStranica homePage = new PocetnaStranica(driver);
+		homePage.verifikujPocetnuStranicu();
+		Korisnici korisnici = homePage.navigirajNaKorisnici();
 		korisnici.verifikujKorisnici();
-		Poruke poruke = pocetna.navigirajNaPoruke();
+		Poruke poruke = homePage.navigirajNaPoruke();
 		poruke.verifikujPoruke();
-		DnevnikIzmjena dnevnikIzmjena = pocetna.navigirajNaDnevnikIzmjena();
+		DnevnikIzmjena dnevnikIzmjena = homePage.navigirajNaDnevnikIzmjena();
 		dnevnikIzmjena.verifikujDnevnikIzmjena();
-		// TODO PozadinskiProcesi
+//		PozadinskiProcesi pozadinskiProcesi = homePage.navigirajNaPozadinskiProecsi();
+//		pozadinskiProcesi.verifikujPozadinskiProcesi();
 	}
 
 }

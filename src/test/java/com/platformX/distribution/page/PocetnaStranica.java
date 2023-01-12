@@ -3,6 +3,8 @@ package com.platformX.distribution.page;
 import static org.testng.Assert.assertTrue;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -394,6 +396,9 @@ public class PocetnaStranica extends PageBase {
 	@FindBy(xpath = "//div[contains(text(), 'Dnevnik izmjena')]")
     protected WebElement dnevnikIzmjenaWE;
 	
+	@FindBy(xpath = "//div[contains(text(), 'Pozadinski procesi')]")
+    protected WebElement pozadinskiProcesiWE;
+	
 	@FindBy(xpath = "//button[@type='submit']")
 	protected WebElement submitBtnWE;													// submit - DODAJ/UREDI button na formama za dodavanje/uređivanje Šifarnika
 	
@@ -406,6 +411,50 @@ public class PocetnaStranica extends PageBase {
 	@FindBy(xpath = "//*[contains(@class, 'v-btn__content') and contains(text(), 'Briši')]")
 	protected WebElement potvrdiBrisanjeBtnWE;
 	
+	@FindBy(xpath = "//td[2]/div/div/div/div[1]/input")
+	private WebElement filterKolona2WE;
+	
+	@FindBy(xpath = "//td[3]/div/div/div/div[1]/input")
+	private WebElement filterKolona3WE;
+	
+	
+// POZADINSKI PROCESI PAGE
+	
+//	@FindBy(xpath = "//*[@class='page-header' and contains(text(), 'Overview')]")
+//	protected WebElement overviewWE;
+	
+	
+	public void deleteItem() {
+		WebDriverWait wait = new WebDriverWait(driver, 30);
+		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
+		burgerBarWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(obrisiWE));
+		obrisiWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(potvrdiBrisanjeBtnWE));
+		potvrdiBrisanjeBtnWE.click();
+	}
+	
+	public void verifyDeletedItem (boolean kolona, String item) throws InterruptedException {
+		if (kolona==true) {
+			wait.until(ExpectedConditions.elementToBeClickable(filterKolona2WE));
+			wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
+			filterKolona2WE.clear();
+			filterKolona2WE.sendKeys(item);
+			filterKolona2WE.sendKeys(Keys.ENTER);
+		}
+		else {
+			wait.until(ExpectedConditions.elementToBeClickable(filterKolona3WE));
+			wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
+			filterKolona3WE.clear();
+			filterKolona3WE.sendKeys(item);
+			filterKolona3WE.sendKeys(Keys.ENTER);
+		}
+			wait.until(ExpectedConditions.visibilityOf(praznaTabelaWE));
+			wait.until(ExpectedConditions.elementToBeClickable(osvjeziBtnWE));
+			wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
+			Thread.sleep(500);
+			assertTrue(praznaTabelaWE.getText().equals("Nema podataka"), "DeletedItem: Poruka prazne tabele nije dobra!");
+	}
 	
 	public void verifikujPocetnuStranicu() throws InterruptedException {
 		wait.until(ExpectedConditions.elementToBeClickable(sifarniciWE));
@@ -1783,7 +1832,7 @@ public class PocetnaStranica extends PageBase {
 		return new KorekcionaOdobrenjaZaduzenja(driver);
     }
     
-    public Korisnici navigirajNaKorisnici ()throws Exception {
+    public Korisnici navigirajNaKorisnici () throws Exception {
     	try {
     	WebDriverWait wait = new WebDriverWait(driver, 10);
     	wait.until(ExpectedConditions.elementToBeClickable(administracijaWE));
@@ -1797,7 +1846,7 @@ public class PocetnaStranica extends PageBase {
 		return new Korisnici(driver);
     }
     
-    public Poruke navigirajNaPoruke ()throws Exception {
+    public Poruke navigirajNaPoruke () throws Exception {
     	try {
     	WebDriverWait wait = new WebDriverWait(driver, 10);
     	wait.until(ExpectedConditions.elementToBeClickable(administracijaWE));
@@ -1811,7 +1860,7 @@ public class PocetnaStranica extends PageBase {
 		return new Poruke(driver);
     }
     
-    public DnevnikIzmjena navigirajNaDnevnikIzmjena ()throws Exception {
+    public DnevnikIzmjena navigirajNaDnevnikIzmjena () throws Exception {
     	try {
     	WebDriverWait wait = new WebDriverWait(driver, 10);
     	wait.until(ExpectedConditions.elementToBeClickable(administracijaWE));
@@ -1823,6 +1872,20 @@ public class PocetnaStranica extends PageBase {
 			driver.get(platformx_distribution_properties.getValue("URL.DIST.LOGIN") + platformx_distribution_properties.getValue("DNEVNIK.IZMJENA"));
 		}
 		return new DnevnikIzmjena(driver);
+    }
+    
+    public PozadinskiProcesi navigirajNaPozadinskiProecsi() throws FileNotFoundException, IOException {
+    	try {
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(administracijaWE));
+    	administracijaWE.click();
+    	wait.until(ExpectedConditions.elementToBeClickable(pozadinskiProcesiWE));
+    	pozadinskiProcesiWE.click();
+        }
+        catch (Exception e) {
+    		driver.get(platformx_distribution_properties.getValue("URL.DIST.LOGIN") + platformx_distribution_properties.getValue("POZADINSKI.PROCESI"));
+    	}
+    	return new PozadinskiProcesi(driver);
     }
         
 }

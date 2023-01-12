@@ -1,6 +1,5 @@
 package com.platformX.distribution.page;
 
-import static org.testng.Assert.assertTrue;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import org.openqa.selenium.By;
@@ -47,6 +46,7 @@ public class MonitoringOcitanja extends PocetnaStranica {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Monitoring očitanja')]")));
+		verifyCommonElements("OČITANJA", "MONITORING OČITANJA", "MONITORING OČITANJA", 108, false, false, false, false, false, false, false);
 		wait.until(ExpectedConditions.visibilityOf(neocitanaBrojilaBtnWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonObracunskiUgovorWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonMjernoMjestoEicWE));
@@ -55,7 +55,6 @@ public class MonitoringOcitanja extends PocetnaStranica {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonBrojBrojilaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonTrafostanicaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonCitacWE));
-		assertTrue(brojKolona().size() == 108, "MonitoringOcitanja: Broj kolona nije dobar! ");
 		wait.until(ExpectedConditions.visibilityOf(djelimicnoOcitanaBrojilaBtnWE));
 		djelimicnoOcitanaBrojilaBtnWE.click();
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonObracunskiUgovorWE));
@@ -70,7 +69,6 @@ public class MonitoringOcitanja extends PocetnaStranica {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonRvtNeocitanoWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonRmtNeocitanoWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonSnagaNeocitanaWE));
-		assertTrue(brojKolona().size() == 108, "MonitoringOcitanja: Broj kolona nije dobar! ");
 		wait.until(ExpectedConditions.visibilityOf(podcitanaBrojilaBtnWE));
 		podcitanaBrojilaBtnWE.click();
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonObracunskiUgovorWE));
@@ -86,7 +84,6 @@ public class MonitoringOcitanja extends PocetnaStranica {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonNovaMtWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonAktivnoBrojiloWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonReaktivnoBrojiloWE));
-		assertTrue(brojKolona().size() == 108, "MonitoringOcitanja: Broj kolona nije dobar! ");
 		wait.until(ExpectedConditions.visibilityOf(precitanaBrojilaBtnWE));
 		precitanaBrojilaBtnWE.click();
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonObracunskiUgovorWE));
@@ -103,7 +100,6 @@ public class MonitoringOcitanja extends PocetnaStranica {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonReaktivnoBrojiloWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonVtResetovanaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonMtResetovanaWE));
-		assertTrue(brojKolona().size() == 108, "MonitoringOcitanja: Broj kolona nije dobar! ");
 		wait.until(ExpectedConditions.visibilityOf(natprosjecnaOcitanjaBtnWE));
 		natprosjecnaOcitanjaBtnWE.click();
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonObracunskiUgovorWE));
@@ -117,7 +113,6 @@ public class MonitoringOcitanja extends PocetnaStranica {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonProsjecnaPotrosnjaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonAvtWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonAmtWE));
-		assertTrue(brojKolona().size() == 108, "MonitoringOcitanja: Broj kolona nije dobar! ");
 		wait.until(ExpectedConditions.visibilityOf(duplaOcitanjaBrojilaBtnWE));
 		duplaOcitanjaBrojilaBtnWE.click();
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonObracunskiUgovorWE));
@@ -132,7 +127,6 @@ public class MonitoringOcitanja extends PocetnaStranica {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonRvtWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonRmtWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonSnaga1WE));
-		assertTrue(brojKolona().size() == 108, "MonitoringOcitanja: Broj kolona nije dobar! ");
 		wait.until(ExpectedConditions.visibilityOf(nemaPotrosnjeBtnWE));
 		nemaPotrosnjeBtnWE.click();
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonObracunskiUgovorWE));
@@ -146,7 +140,6 @@ public class MonitoringOcitanja extends PocetnaStranica {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonAmtWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonRvtWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonRmtWE));
-		assertTrue(brojKolona().size() == 108, "MonitoringOcitanja: Broj kolona nije dobar! ");
 		wait.until(ExpectedConditions.visibilityOf(slideBtnWE));
 		slideBtnWE.click();
 		wait.until(ExpectedConditions.visibilityOf(iskljucenaBrojilaSaPotrosnjomBtnWE));
@@ -164,10 +157,6 @@ public class MonitoringOcitanja extends PocetnaStranica {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonNovaMtWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonAktivnoBrojiloWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonReaktivnoBrojiloWE));
-		assertTrue(sekcijaBtnWE.getText().trim().equals("OČITANJA"), "MonitoringOcitanja: Naziv sekcije nije dobar!");
-		assertTrue(stranicaBtnWE.getText().trim().equals("MONITORING OČITANJA"), "MonitoringOcitanja: Naziv stranice nije dobar!");
-		assertTrue(naslovStraniceWE.getText().trim().equals("MONITORING OČITANJA"), "MonitoringOcitanja: Naziv stranice nije dobar!");
-		assertTrue(brojKolona().size() == 108, "MonitoringOcitanja: Broj kolona nije dobar! ");
 	}
 	
 }

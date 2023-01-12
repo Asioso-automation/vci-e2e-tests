@@ -28,6 +28,8 @@ public class PX_DIST_Brisanje_Elektroenergetske_Saglasnosti extends BaseTest{
 //		elSaglasnosti.verifikujElektroenergetskuSaglasnost(ElSaglasnost);
 //		elSaglasnosti.obrisiElektroenergetskuSaglasnost();
 //		elSaglasnosti.verifikujBrisanjeElektroenergetskeSaglasnosti(ElSaglasnost);
+//		homePage.deleteItem();
+//		homePage.verifyDeletedItem(true, ElSaglasnost);
 //	}
 
 }

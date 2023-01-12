@@ -142,29 +142,6 @@ public class Poste extends PocetnaStranica {
 		potvrdiBtnWE.click();
 		return posta;
 	}
-	
-	public void obrisiPostu() throws InterruptedException {
-		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
-		burgerBarWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(obrisiWE));
-		obrisiWE.click();
-		Thread.sleep(1000);
-		wait.until(ExpectedConditions.elementToBeClickable(potvrdiBrisanjeBtnWE));
-		potvrdiBrisanjeBtnWE.click();
-	}
-	
-	public void verifikujBrisanjePoste(String posta) throws InterruptedException {
-		wait.until(ExpectedConditions.visibilityOf(filterPoNazivuWE));
-		Thread.sleep(1000);
-		wait.until(ExpectedConditions.elementToBeClickable(filterPoNazivuWE));
-		filterPoNazivuWE.click();
-		filterPoNazivuWE.clear();
-		filterPoNazivuWE.sendKeys(posta);
-		filterPoNazivuWE.sendKeys(Keys.ENTER);
-		Thread.sleep(1000);
-		wait.until(ExpectedConditions.visibilityOf(praznaTabelaWE));
-		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
-		assertTrue(praznaTabelaWE.getText().equals("Nema podataka"), "Poste: Poruka prazne tabele nije dobra!");
-	}
+
 
 }

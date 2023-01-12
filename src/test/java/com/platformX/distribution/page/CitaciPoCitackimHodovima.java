@@ -1,6 +1,5 @@
 package com.platformX.distribution.page;
 
-import static org.testng.Assert.assertTrue;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import org.openqa.selenium.By;
@@ -18,6 +17,7 @@ public class CitaciPoCitackimHodovima extends PocetnaStranica{
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Čitači po čitačkim hodovima')]")));
+		verifyCommonElements("OČITANJA", "ČITAČI PO ČITAČKIM HODOVIMA", "ČITAČI PO ČITAČKIM HODOVIMA", 11, false, false, true, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKvalifikovaniCitacWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaCitacWE));
@@ -28,14 +28,6 @@ public class CitaciPoCitackimHodovima extends PocetnaStranica{
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPeriodOdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPeriodDoWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAktivanWE));
-		wait.until(ExpectedConditions.visibilityOf(dodajBtnWE));
-		wait.until(ExpectedConditions.visibilityOf(preuzmiExcelBtnWE));
-		wait.until(ExpectedConditions.visibilityOf(ukloniFiltereBtnWE));
-		wait.until(ExpectedConditions.visibilityOf(osvjeziBtnWE));
-		assertTrue(sekcijaBtnWE.getText().trim().equals("OČITANJA"), "CitaciPoCitackimHodovima: Naziv sekcije nije dobar!");
-		assertTrue(stranicaBtnWE.getText().trim().equals("ČITAČI PO ČITAČKIM HODOVIMA"), "CitaciPoCitackimHodovima: Naziv stranice nije dobar!");
-		assertTrue(naslovStraniceWE.getText().trim().equals("ČITAČI PO ČITAČKIM HODOVIMA"), "CitaciPoCitackimHodovima: Naziv stranice nije dobar!");
-		assertTrue(brojKolona().size() == 11, "CitaciPoCitackimHodovima: Broj kolona nije dobar! ");
 	}
 
 }

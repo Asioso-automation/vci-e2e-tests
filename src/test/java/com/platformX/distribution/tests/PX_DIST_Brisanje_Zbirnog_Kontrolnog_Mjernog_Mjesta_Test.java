@@ -20,20 +20,20 @@ public class PX_DIST_Brisanje_Zbirnog_Kontrolnog_Mjernog_Mjesta_Test  extends Ba
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
-		PocetnaStranica pocetna = new PocetnaStranica(driver);
-		pocetna.verifikujPocetnuStranicu();
-		RegistarBrojila registarBrojilaPage = pocetna.navigirajNaRegistarBrojila();
+		PocetnaStranica homePage = new PocetnaStranica(driver);
+		homePage.verifikujPocetnuStranicu();
+		RegistarBrojila registarBrojilaPage = homePage.navigirajNaRegistarBrojila();
 		registarBrojilaPage.verifikujRegistarBrojila();
 		String registarBrojila = registarBrojilaPage.dodajBrojilo();
 		registarBrojilaPage.navigirajNaRegistarBrojila();
 		registarBrojilaPage.verifikujBrojilo(registarBrojila);
 		String brBrojila = registarBrojilaPage.kreirajBrojilo();
-		ZbirnaKontrolnaMjernaMjesta zbirnaKontrolnaMjernaMjestaPage = pocetna.navigirajNaZbirnaKontrolnaMjernaMjesta();
+		ZbirnaKontrolnaMjernaMjesta zbirnaKontrolnaMjernaMjestaPage = homePage.navigirajNaZbirnaKontrolnaMjernaMjesta();
 		zbirnaKontrolnaMjernaMjestaPage.verifikujZbirnaKontrolnaMjernaMjesta();
 		String zbirnaKontrolnaMjernaMjesta = zbirnaKontrolnaMjernaMjestaPage.dodajZbirnoKontrolnoMjernoMjesto(brBrojila);
 		zbirnaKontrolnaMjernaMjestaPage.verifikujZbirnoKontrolnoMjernoMjesto(zbirnaKontrolnaMjernaMjesta);
-		zbirnaKontrolnaMjernaMjestaPage.obrisiZbirnoKontrolnoMjernoMjesto();
-		zbirnaKontrolnaMjernaMjestaPage.verifikujBrisanjeZbirnogKontrolnogMjernogMjesta(zbirnaKontrolnaMjernaMjesta);
+		homePage.deleteItem();
+		homePage.verifyDeletedItem(true, zbirnaKontrolnaMjernaMjesta);
 	}
 
 }

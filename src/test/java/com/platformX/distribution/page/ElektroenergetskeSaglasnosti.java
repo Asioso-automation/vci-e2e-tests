@@ -283,27 +283,6 @@ public class ElektroenergetskeSaglasnosti extends PocetnaStranica {
 		Thread.sleep(1000);
 		assertTrue(porukaWE.getText().equals("Uspješno završeno."), "ElektroenergetskaSaglasnost: Uređivanje nije uspešno!");
 	}
-	
-	public void obrisiElektroenergetskuSaglasnost() throws InterruptedException {
-		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
-		burgerBarWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(obrisiWE));
-		obrisiWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(potvrdiBrisanjeBtnWE));
-		potvrdiBrisanjeBtnWE.click();
-	}
 
-	public void verifikujBrisanjeElektroenergetskeSaglasnosti(String naziv) throws InterruptedException {
-		wait.until(ExpectedConditions.visibilityOf(filterPoNazivuWE));
-		Thread.sleep(1000);
-		filterPoNazivuWE.click();
-		filterPoNazivuWE.clear();
-		filterPoNazivuWE.sendKeys(naziv);
-		filterPoNazivuWE.sendKeys(Keys.ENTER);
-		Thread.sleep(1000);
-		wait.until(ExpectedConditions.visibilityOf(praznaTabelaWE));
-		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
-		assertTrue(praznaTabelaWE.getText().equals("Nema podataka"), "ElektroenergetskaSaglasnost: Poruka prazne tabele nije dobra!");
-	}
 	
 }
