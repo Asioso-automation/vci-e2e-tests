@@ -57,9 +57,9 @@ encoding//src/test/java/com/platformX/distribution/page/ZbirnaKontrolnaMjernaMje
 encoding//src/test/java/com/platformX/distribution/page/ZbirnaKontrolnaOcitanja.java=UTF-8
 encoding//src/test/java/com/platformX/distribution/page/ZbirnaKontrolnaPotrosnja.java=UTF-8
 encoding//src/test/java/com/platformX/distribution/tests/PX_DIST_002_Provjera_Validacija_Na_LogIn_Formi_Test.java=UTF-8
-encoding//src/test/java/com/platformX/distribution/tests/PX_DIST_Neuspjesno_Brisanje_Poste_Test.java=UTF-8
-encoding//src/test/java/com/platformX/distribution/tests/PX_DIST_Neuspjesno_Brisanje_Ulice_Test.java=UTF-8
-encoding//src/test/java/com/platformX/distribution/tests/PX_DIST_Neuspjesno_Dodavanje_Poste_Test.java=UTF-8
+encoding//src/test/java/com/platformX/distribution/tests/PX_DIST_033_Neuspjesno_Dodavanje_Poste_Test.java=UTF-8
+encoding//src/test/java/com/platformX/distribution/tests/PX_DIST_036_Neuspjesno_Brisanje_Poste_Test.java=UTF-8
+encoding//src/test/java/com/platformX/distribution/tests/PX_DIST_040_Neuspjesno_Brisanje_Ulice_Test.java=UTF-8
 encoding//src/test/java/com/platformX/page/AktivnaIskljucenja.java=UTF-8
 encoding//src/test/java/com/platformX/page/Avansi.java=UTF-8
 encoding//src/test/java/com/platformX/page/AvansneFakture.java=UTF-8

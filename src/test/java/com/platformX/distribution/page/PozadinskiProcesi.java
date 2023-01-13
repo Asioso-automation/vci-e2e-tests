@@ -11,8 +11,9 @@ public class PozadinskiProcesi extends PocetnaStranica {
 		super(driver);
 	}
 	
-//	public void verifikujPozadinskiProcesi() throws InterruptedException, FileNotFoundException, IOException {
+	public void verifikujPozadinskiProcesi() throws InterruptedException, FileNotFoundException, IOException {
 //		wait.until(ExpectedConditions.visibilityOf(overviewWE));
-//	}
+//		wait.until(ExpectedConditions.visibilityOf(logOutBtnWE));
+	}
 
 }

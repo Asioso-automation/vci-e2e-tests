@@ -421,7 +421,10 @@ public class PocetnaStranica extends PageBase {
 // POZADINSKI PROCESI PAGE
 	
 //	@FindBy(xpath = "//*[@class='page-header' and contains(text(), 'Overview')]")
-//	protected WebElement overviewWE;
+//	public WebElement overviewWE;
+//	
+//	@FindBy(xpath = "//*[contains(@class, 'log-out')]")
+//	public WebElement logOutBtnWE;
 	
 	
 	public void deleteItem() {
