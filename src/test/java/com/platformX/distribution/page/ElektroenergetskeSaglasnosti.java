@@ -21,16 +21,19 @@ public class ElektroenergetskeSaglasnosti extends PocetnaStranica {
 	
 //	ISPRAVITI SVE XPATH-OVE
 	
-	@FindBy(xpath = "//div[2]/div[1]/div/div/div[1]/div/input")  
-	 private WebElement brojProtokolaWE;
+	@FindBy(xpath = "//div[1]/div[1]/div/div[1]/div[1]/div/button")  
+	 private WebElement datumBtnWE;
 	
-	@FindBy(xpath = "//div[2]/div[3]/div/div/div[1]/div[1]/input[1]")  
+	@FindBy(xpath = "(//*[contains(@class, 'v-date-picker-table__current')])[1]")  
+	 private WebElement datum1WE;
+	
+	@FindBy(xpath = "//div[2]/div[2]/div/div/div[1]/div[1]/input[1]")  
 	 private WebElement razlogEESWE;
 	
-	@FindBy(xpath = "//div[3]/div[2]/div/div/div[1]/div[1]/input[1]")  
+	@FindBy(xpath = "//div[3]/div[1]/div/div/div[1]/div[1]/input[1]")  
 	 private WebElement kupacWE;
 	
-	@FindBy(xpath = "//div[3]/div[3]/div/div/div[1]/div[1]/input[1]")  
+	@FindBy(xpath = "//div[3]/div[2]/div/div/div[1]/div[1]/input[1]")  
 	 private WebElement fizickaLokacijaWE;
 	
 	@FindBy(xpath = "//div[5]/div[1]/div/div/div[1]/div[1]/input[1]")  
@@ -47,12 +50,6 @@ public class ElektroenergetskeSaglasnosti extends PocetnaStranica {
 	
 	@FindBy(xpath = "//div[6]/div[2]/div/div/div[1]/div[1]/input[1]")  
 	 private WebElement vrstaObjektaWE;
-	
-	@FindBy(xpath = "//div[2]/div[1]/div/div[1]/div[1]/div/button")  
-	 private WebElement datumBtnWE;
-	
-	@FindBy(xpath = "(//*[contains(@class, 'v-date-picker-table__current')])[1]")  
-	 private WebElement datum1WE;
 	
 	@FindBy(xpath = "//div[8]/div[2]/div/div/div[1]/div[1]/input[1]")  
 	 private WebElement odobrenaPrikljucnaSnagaWE;
@@ -78,10 +75,10 @@ public class ElektroenergetskeSaglasnosti extends PocetnaStranica {
 	@FindBy(xpath = "//div[13]/div[4]/div/div/div[1]/div[1]/input[1]")  
 	 private WebElement lokacijaMjernogMjestaWE;
 	
-	@FindBy(xpath = "//div[15]/div[2]/div/div/div/div[1]/div/div/div[1]/div/input")  
+	@FindBy(xpath = "//div[2]/div/div/div/div[1]/div/div/div[1]/div/input")  
 	 private WebElement brojUgradjenihBrojilaWE;
 	
-	@FindBy(xpath = "//div[15]/div[2]/div/div/div/div[2]/div/div/div[1]/div[1]/input[1]")  
+	@FindBy(xpath = "//div[2]/div/div/div/div[2]/div/div/div[1]/div[1]/input[1]")  
 	 private WebElement nazivnaStrujaGlavnogOsiguracaWE;
 	
 	@FindBy(xpath = "//div[19]/div[2]/div/div/div[1]/div[1]/input[1]")  
@@ -90,7 +87,7 @@ public class ElektroenergetskeSaglasnosti extends PocetnaStranica {
 	@FindBy(xpath = "//div[19]/div[3]/div[1]/div/div[1]/div[1]/div/button")  
 	 private WebElement datumBtn1WE;
 	
-	@FindBy(xpath = "(//*[contains(@class, 'v-date-picker-table__current')])[2]")
+	@FindBy(xpath = "(//*[contains(@class, 'v-date-picker-table__current')])[2]")  
 	 private WebElement datum2WE;
 	
 	@FindBy(xpath = "//div[2]/button[1]/span")  
@@ -125,12 +122,9 @@ public class ElektroenergetskeSaglasnosti extends PocetnaStranica {
 	}
 	
 	public String dodajElektronergetskuSaglasnost() throws Exception {
-		String naziv = Helper.getRandomNumber(4) + "-EES";
+		String naziv = "/23-51-EES";
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
 		dodajBtnWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(brojProtokolaWE));
-		brojProtokolaWE.click();
-		brojProtokolaWE.sendKeys(naziv);
 		wait.until(ExpectedConditions.elementToBeClickable(datumBtnWE));
 		datumBtnWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(datum1WE));
@@ -149,7 +143,7 @@ public class ElektroenergetskeSaglasnosti extends PocetnaStranica {
 		kupacWE.sendKeys(Keys.ENTER);
 		wait.until(ExpectedConditions.elementToBeClickable(fizickaLokacijaWE));
 		fizickaLokacijaWE.click();
-		fizickaLokacijaWE.sendKeys(Helper.getRandomNumber(1));
+		fizickaLokacijaWE.sendKeys("308 - 01 - Pale");
 		Thread.sleep(1000);
 		fizickaLokacijaWE.sendKeys(Keys.ARROW_DOWN);
 		fizickaLokacijaWE.sendKeys(Keys.ENTER);
@@ -250,8 +244,9 @@ public class ElektroenergetskeSaglasnosti extends PocetnaStranica {
 		datumBtn1WE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(datum2WE));
 		datum2WE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(dodajElSaglasnostWE));
-		dodajElSaglasnostWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
+		submitBtnWE.click();
+		verifikujPoruku("Uspješno završeno.");
 		return naziv;
 	}
 	
@@ -263,7 +258,7 @@ public class ElektroenergetskeSaglasnosti extends PocetnaStranica {
 		filterBrojProtokolaWE.sendKeys(Keys.ENTER);
 		Thread.sleep(1000);
 		wait.until(ExpectedConditions.visibilityOf(nazivTabelaWE));
-		assertTrue(nazivTabelaWE.getText().equals(naziv), "ElektroenergetskaSaglasnost: Broj protokola nije pronadjen!");
+		assertTrue(nazivTabelaWE.getText().contains(naziv), "ElektroenergetskaSaglasnost: Broj protokola nije pronadjen!");
 	}
 	
 	public void urediElektroenergetskuSaglasnost() throws InterruptedException {
@@ -271,6 +266,7 @@ public class ElektroenergetskeSaglasnosti extends PocetnaStranica {
 		burgerBarWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(urediWE));
 		urediWE.click();
+		wait.until(ExpectedConditions.visibilityOf(stranicaBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(odobrenaPrikljucnaSnagaWE));
 		odobrenaPrikljucnaSnagaWE.click();
 		odobrenaPrikljucnaSnagaWE.clear();
@@ -283,6 +279,5 @@ public class ElektroenergetskeSaglasnosti extends PocetnaStranica {
 		Thread.sleep(1000);
 		assertTrue(porukaWE.getText().equals("Uspješno završeno."), "ElektroenergetskaSaglasnost: Uređivanje nije uspešno!");
 	}
-
 	
 }
