@@ -42,9 +42,6 @@ public class FizickaLica extends PocetnaStranica {
 	 @FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '78000 - Banja Luka')]")
 	 private WebElement odaberiPostuWE;
 	 
-	 @FindBy(xpath = "//div[2]/button[1]/span")
-	 private WebElement dodajFizickoLiceBtnWE;
-	 
 	 @FindBy(xpath = "//td[2]/div/div/div/div[1]/input")
 	 private WebElement filterPoImeIPrezimeWE;
 	 
@@ -92,9 +89,9 @@ public class FizickaLica extends PocetnaStranica {
 		Thread.sleep(1000);
 		wait.until(ExpectedConditions.elementToBeClickable(odaberiPostuWE));
 		odaberiPostuWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(dodajFizickoLiceBtnWE));
-		dodajFizickoLiceBtnWE.click();
-		Thread.sleep(1000);
+		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
+		submitBtnWE.click();
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		return nazivFizickogLica;
 	}
 	
@@ -124,21 +121,9 @@ public class FizickaLica extends PocetnaStranica {
 		 poljeImeIPrezimeWE.click();
 		 poljeImeIPrezimeWE.clear();
 		 poljeImeIPrezimeWE.sendKeys(nazivFizickogLica);
-		 wait.until(ExpectedConditions.elementToBeClickable(dodajFizickoLiceBtnWE));
-		 dodajFizickoLiceBtnWE.click();
+		 wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
+		 submitBtnWE.click();
 		 return nazivFizickogLica; 
 	 }
 	 
-	 public void verifikujUredjenoFizickoLice(String nazivFizickogLica) throws InterruptedException {
-		wait.until(ExpectedConditions.elementToBeClickable(filterPoImeIPrezimeWE));
-		filterPoImeIPrezimeWE.click();
-		filterPoImeIPrezimeWE.clear();
-		filterPoImeIPrezimeWE.sendKeys(nazivFizickogLica);
-		filterPoImeIPrezimeWE.sendKeys(Keys.ENTER);
-		Thread.sleep(1000);
-		wait.until(ExpectedConditions.visibilityOf(imeIPrezimeTabelaWE));
-		assertTrue(imeIPrezimeTabelaWE.getText().contains(nazivFizickogLica),"Fizicka Lica: Naziv uredjenog fizickog lica nije dobar!");	 
-	 }
-	 
-
 }

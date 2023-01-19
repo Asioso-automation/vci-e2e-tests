@@ -55,7 +55,7 @@ public class ObracunskiUgovori extends PocetnaStranica {
 	@FindBy(xpath = "//div[1]/div[1]/div/button")
 	 private WebElement datumPocetkaWE;
 	
-	@FindBy(xpath = "//tr[3]/td[4]/button/div")
+	@FindBy(xpath = "//*[contains(@class, 'v-date-picker-table__current')]")
 	 private WebElement odaberiDatumWE;
 	
 	@FindBy(xpath = "//td[3]/div/div/div/div[1]/input")
@@ -121,9 +121,9 @@ public class ObracunskiUgovori extends PocetnaStranica {
 		wait.until(ExpectedConditions.elementToBeClickable(poljeAktivnaKonstantaWE));
 		poljeAktivnaKonstantaWE.sendKeys(Helper.getRandomNumber(1));
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("arguments[0].scrollIntoView(true);", dodajObracunskiUgovorBtnWE);
-		wait.until(ExpectedConditions.elementToBeClickable(dodajObracunskiUgovorBtnWE));
-		dodajObracunskiUgovorBtnWE.click();
+		js.executeScript("arguments[0].scrollIntoView(true);", submitBtnWE);
+		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
+		submitBtnWE.click();
 		Thread.sleep(1000);
 	}
 	
@@ -151,11 +151,10 @@ public class ObracunskiUgovori extends PocetnaStranica {
 		poljeNazivMjernogMjestaWE.clear();
 		poljeNazivMjernogMjestaWE.sendKeys(nazivMjernogMjesta);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("arguments[0].scrollIntoView(true);", dodajObracunskiUgovorBtnWE);
-		wait.until(ExpectedConditions.elementToBeClickable(dodajObracunskiUgovorBtnWE));
-		dodajObracunskiUgovorBtnWE.click();
+		js.executeScript("arguments[0].scrollIntoView(true);", submitBtnWE);
+		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
+		submitBtnWE.click();
 		return nazivMjernogMjesta;
 	}
 	
-
 }

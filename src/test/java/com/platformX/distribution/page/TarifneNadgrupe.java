@@ -21,17 +21,11 @@ public class TarifneNadgrupe extends PocetnaStranica {
 	@FindBy(xpath = "//input") 
 	private WebElement nazivTarifneNadrupeWE;
 	
-	@FindBy(xpath = "//div[2]/button[1]") 
-	private WebElement dodajBtn1WE;
-	
 	@FindBy(xpath = "//td[2]/div/div/div/div[1]/input")
 	private WebElement filterPoNazivuWE;
 	
 	@FindBy(xpath = "//tr[2]/td[2]")
 	private WebElement nazivTarifneNadgrupeTabelaWE;
-	
-	@FindBy(xpath = "//td[3]/button/span/i")
-	private WebElement burgerBarWE;
 
 	public void verifikujTarifneNadgrupe() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
@@ -48,8 +42,8 @@ public class TarifneNadgrupe extends PocetnaStranica {
 		dodajBtnWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(nazivTarifneNadrupeWE));
 		nazivTarifneNadrupeWE.sendKeys(naziv);
-		wait.until(ExpectedConditions.elementToBeClickable(dodajBtn1WE));
-		dodajBtn1WE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
+		submitBtnWE.click();
 		return naziv;
 	}
 	
@@ -73,10 +67,9 @@ public class TarifneNadgrupe extends PocetnaStranica {
 		nazivTarifneNadrupeWE.click();
 		nazivTarifneNadrupeWE.clear();
 		nazivTarifneNadrupeWE.sendKeys(tarifnaNadrgupa);
-		wait.until(ExpectedConditions.elementToBeClickable(dodajBtn1WE));
-		dodajBtn1WE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
+		submitBtnWE.click();
 		return tarifnaNadrgupa;
 	}
 
-	
 }

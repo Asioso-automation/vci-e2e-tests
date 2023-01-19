@@ -42,9 +42,6 @@ public class TarifneGrupe extends PocetnaStranica {
 	@FindBy(xpath = "//*[contains(@class, 'menuable__content__active')]//*[text() = '2 - DT']") 
 	private WebElement dtWE;
 	
-	@FindBy(xpath = "//div[2]/button[1]") 
-	private WebElement dodajBtn1WE;
-	
 	@FindBy(xpath = "//div[4]/div/div/div[1]/div/div") 
 	private WebElement maxigrafWE;
 	
@@ -53,12 +50,6 @@ public class TarifneGrupe extends PocetnaStranica {
 	
 	@FindBy(xpath = "//tbody/tr[2]/td[2]") 
 	private WebElement nazivTarfineGrupeTabelaWE;
-	
-	@FindBy(xpath = "//tr[2]/td[9]/button/span/i") 
-	private WebElement burgerBarWE;
-	
-	@FindBy(xpath = "//div/div/div[3]/button[2]")
-	private WebElement potvrdiBrisanjeWE;
 
 	public void verifikujTarifneGrupe() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
@@ -97,8 +88,8 @@ public class TarifneGrupe extends PocetnaStranica {
 		dtWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(maxigrafWE));
 		maxigrafWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(dodajBtn1WE));
-		dodajBtn1WE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
+		submitBtnWE.click();
 		return naziv;
 	}
 
@@ -122,10 +113,9 @@ public class TarifneGrupe extends PocetnaStranica {
 		nazivTarifneGrupeWE.click();
 		nazivTarifneGrupeWE.clear();
 		nazivTarifneGrupeWE.sendKeys(tarifnaGrupa);
-		wait.until(ExpectedConditions.elementToBeClickable(dodajBtn1WE));
-		dodajBtn1WE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
+		submitBtnWE.click();
 		return tarifnaGrupa;
 	}
 
-	
 }

@@ -90,5 +90,4 @@ public class Citaci extends PocetnaStranica {
 		return ime;
 	}
 
-	
 }

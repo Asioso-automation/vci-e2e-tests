@@ -43,7 +43,7 @@ public class PX_DIST_073_Brisanje_Obracunskog_Ugovora_PxD_Test  extends BaseTest
 		ObracunskiUgovori obracunskiUgovoriPage = homePage.navigirajNaObracunskiUgovori();
 		obracunskiUgovoriPage.dodajObracunskiUgovor(kupac, mjernoMjesto, brBrojila);
 		obracunskiUgovoriPage.verifikujObracunskiUgovor(mjernoMjesto);
-		homePage.deleteItem();
+		homePage.deleteItem(true);
 		homePage.verifyDeletedItem(false, mjernoMjesto);
 	}
 

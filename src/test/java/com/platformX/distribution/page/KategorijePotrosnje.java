@@ -18,13 +18,8 @@ public class KategorijePotrosnje extends PocetnaStranica {
 		super(driver);
 	}
 	
-	// Dodaj kategoriju potrosnje elementi 
-	
 	@FindBy(xpath = "//input") 
 	private WebElement nazivKategorijePotrosnjeWE;
-	
-	@FindBy(xpath = "//div[2]/button[1]") 
-	private WebElement dodajBtn1WE;
 	
 	@FindBy(xpath = "//td[2]/div/div/div/div[1]/input")
 	private WebElement filterPoNazivuWE;
@@ -44,12 +39,12 @@ public class KategorijePotrosnje extends PocetnaStranica {
 	public String dodajKategorijuPotrosnje() throws InterruptedException {
 		String naziv = "KategorijaPotrosnje" + Helper.getRandomString(5);
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
-		Thread.sleep(1000);
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		dodajBtnWE.click();
 		wait.until(ExpectedConditions.visibilityOf(nazivKategorijePotrosnjeWE));
 		nazivKategorijePotrosnjeWE.sendKeys(naziv);
-		wait.until(ExpectedConditions.visibilityOf(dodajBtn1WE));
-		dodajBtn1WE.click();
+		wait.until(ExpectedConditions.visibilityOf(submitBtnWE));
+		submitBtnWE.click();
 		return naziv;	
 	}
 	
@@ -59,7 +54,7 @@ public class KategorijePotrosnje extends PocetnaStranica {
        filterPoNazivuWE.clear();
        filterPoNazivuWE.sendKeys(naziv);
        filterPoNazivuWE.sendKeys(Keys.ENTER);
-       Thread.sleep(1000);
+       wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
        wait.until(ExpectedConditions.visibilityOf(nazivKategorijePotrosnjeTabelaWE));
        assertTrue(nazivKategorijePotrosnjeTabelaWE.getText().equals(naziv), "KategorijaPotrosnje: KategorijaPotrosnje nije pronadjena!");
 	}
@@ -70,15 +65,14 @@ public class KategorijePotrosnje extends PocetnaStranica {
 		burgerBarWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(urediWE));
 		urediWE.click();
-		Thread.sleep(1000);
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		wait.until(ExpectedConditions.elementToBeClickable(nazivKategorijePotrosnjeWE));
 		nazivKategorijePotrosnjeWE.click();
 		nazivKategorijePotrosnjeWE.clear();
 		nazivKategorijePotrosnjeWE.sendKeys(kategorijaPotrosnje);
-		wait.until(ExpectedConditions.elementToBeClickable(dodajBtn1WE));
-		dodajBtn1WE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
+		submitBtnWE.click();
 		return kategorijaPotrosnje;
 	}
-
 
 }

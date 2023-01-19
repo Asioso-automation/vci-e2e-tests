@@ -23,8 +23,8 @@ public class PX_DIST_061_Uredjivanje_Elektroenergetske_Saglasnosti_Test extends 
 		homePage.verifikujPocetnuStranicu();
 		ElektroenergetskeSaglasnosti elSaglasnosti = homePage.navigirajNaElektroenergetskeSaglasnosti();
 		elSaglasnosti.verifikujElektroenergetskeSaglasnosti();
-		String ElSaglasnost = elSaglasnosti.dodajElektronergetskuSaglasnost();
-		elSaglasnosti.verifikujElektroenergetskuSaglasnost(ElSaglasnost);
+		String eeSaglasnost = elSaglasnosti.dodajElektronergetskuSaglasnost();
+		elSaglasnosti.verifikujElektroenergetskuSaglasnost(eeSaglasnost);
 		elSaglasnosti.urediElektroenergetskuSaglasnost();
 	}
 

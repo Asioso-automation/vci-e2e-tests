@@ -28,9 +28,6 @@ public class Poste extends PocetnaStranica {
 	@FindBy(xpath = "//div[3]/div/div/div[1]/div/input")
 	private WebElement nazivNaDokWE;
 	
-	@FindBy(xpath = "//div[2]/button[1]")
-	private WebElement dodajPostuWE;
-	
 	@FindBy(xpath = "//td[2]/div/div/div/div[1]/input")
 	private WebElement filterPoNazivuWE;
 	
@@ -42,9 +39,6 @@ public class Poste extends PocetnaStranica {
 	
 	@FindBy(xpath = "//tr[2]/td[1]")
 	private WebElement idTabelaWE;
-	
-	@FindBy(xpath = "//div[2]/button[1]")
-	private WebElement potvrdiBtnWE;
 	
 	@FindBy(xpath = "//div[1]/div/div/div[1]/div/input")
 	private WebElement urediNazivWE;
@@ -75,7 +69,7 @@ public class Poste extends PocetnaStranica {
 		nazivWE.sendKeys(podaci[0]);
 		nazivNaDokWE.sendKeys(podaci[2]);
 		Thread.sleep(500);
-		dodajPostuWE.click();
+		submitBtnWE.click();
 		return podaci;
 	}
 	
@@ -88,19 +82,17 @@ public class Poste extends PocetnaStranica {
 		nazivWE.sendKeys(naziv);
 		nazivNaDokWE.sendKeys(nazivNaDok);
 		Thread.sleep(500);
-		dodajPostuWE.click();
+		submitBtnWE.click();
 	}
 	
 	public void verifikujPostu(String naziv, String id, String nazivNaDok) throws Exception {
 		WebDriverWait wait = new WebDriverWait(driver, 5);
 		try {
 		wait.until(ExpectedConditions.elementToBeClickable(filterPoNazivuWE));
-		Thread.sleep(1000);
 		filterPoNazivuWE.click();
 		filterPoNazivuWE.clear();
 		filterPoNazivuWE.sendKeys(naziv);
 		filterPoNazivuWE.sendKeys(Keys.ENTER);
-		Thread.sleep(1000);
 		wait.until(ExpectedConditions.visibilityOf(nazivPosteTabelaWE));
 		assertTrue(nazivPosteTabelaWE.getText().equals(naziv), "Poste: Posta nije pronadjena!");
 		assertTrue(nazivPosteNaDokTabelaWE.getText().equals(nazivNaDok), "Poste: Posta nije pronadjena!");
@@ -108,22 +100,20 @@ public class Poste extends PocetnaStranica {
 		}
 		catch (Exception e) {
 			wait.until(ExpectedConditions.visibilityOf(validacionaPoruka));
-			
 			wait.until(ExpectedConditions.elementToBeClickable(idWE));
-			idWE.sendKeys(Helper.getRandomNumber(1));
-			dodajPostuWE.click();
-			
+			idWE.click();
+			idWE.clear();
+			idWE.sendKeys(Helper.getRandomNumber(4));
+			submitBtnWE.click();
+			wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 			wait.until(ExpectedConditions.elementToBeClickable(filterPoNazivuWE));
-			Thread.sleep(1000);
 			filterPoNazivuWE.click();
 			filterPoNazivuWE.clear();
 			filterPoNazivuWE.sendKeys(naziv);
 			filterPoNazivuWE.sendKeys(Keys.ENTER);
-			Thread.sleep(1000);
 			wait.until(ExpectedConditions.visibilityOf(nazivPosteTabelaWE));
 			assertTrue(nazivPosteTabelaWE.getText().equals(naziv), "Poste: Posta nije pronadjena!");
 			assertTrue(nazivPosteNaDokTabelaWE.getText().equals(nazivNaDok), "Poste: Posta nije pronadjena!");
-			// assertTrue(idTabelaWE.getText().equals(id), "Poste: Posta nije pronadjena!");
 		}
 	}
 	
@@ -138,10 +128,9 @@ public class Poste extends PocetnaStranica {
 		urediNazivWE.click();
 		urediNazivWE.clear();
 		urediNazivWE.sendKeys(posta);
-		wait.until(ExpectedConditions.elementToBeClickable(potvrdiBtnWE));
-		potvrdiBtnWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
+		submitBtnWE.click();
 		return posta;
 	}
-
 
 }

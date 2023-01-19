@@ -27,7 +27,7 @@ public class PX_DIST_035_Brisanje_Poste_Test extends BaseTest {
 		poste.verifikujPoste();
 		podaci = poste.dodajPostu();
 		poste.verifikujPostu(podaci[0], podaci[1], podaci[2]);
-		homePage.deleteItem();
+		homePage.deleteItem(true);
 		homePage.verifyDeletedItem(true, podaci[0]);
 	}
 

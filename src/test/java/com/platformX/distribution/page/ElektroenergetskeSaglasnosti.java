@@ -90,20 +90,17 @@ public class ElektroenergetskeSaglasnosti extends PocetnaStranica {
 	@FindBy(xpath = "(//*[contains(@class, 'v-date-picker-table__current')])[2]")  
 	 private WebElement datum2WE;
 	
-	@FindBy(xpath = "//div[2]/button[1]/span")  
-	 private WebElement dodajElSaglasnostWE;
-	
 	@FindBy(xpath = "//td[2]/div/div/div/div[1]/input")  
 	 private WebElement filterBrojProtokolaWE;
-	
-	@FindBy(xpath = "//tr[2]/td[2]")
-	private WebElement nazivTabelaWE;
 	
 	@FindBy(xpath = "//div[contains(text(), 'Uspješno završeno.')]")
 	private WebElement porukaWE;
 	
 	@FindBy(xpath = "//td[2]/div/div/div/div[1]/input")
 	private WebElement filterPoNazivuWE;
+	
+	@FindBy(xpath = "//tr[2]/td[2]")
+	private WebElement brojProtokolaWE;
 	
 	public void verifikujElektroenergetskeSaglasnosti() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
@@ -122,7 +119,6 @@ public class ElektroenergetskeSaglasnosti extends PocetnaStranica {
 	}
 	
 	public String dodajElektronergetskuSaglasnost() throws Exception {
-		String naziv = "/23-51-EES";
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
 		dodajBtnWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(datumBtnWE));
@@ -247,18 +243,19 @@ public class ElektroenergetskeSaglasnosti extends PocetnaStranica {
 		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
 		submitBtnWE.click();
 		verifikujPoruku("Uspješno završeno.");
-		return naziv;
+		String brProtokola = brojProtokolaWE.getText();
+		return brProtokola;
 	}
 	
-	public void verifikujElektroenergetskuSaglasnost(String naziv)throws Exception {
+	public void verifikujElektroenergetskuSaglasnost(String brProtokola)throws Exception {
 		wait.until(ExpectedConditions.elementToBeClickable(filterBrojProtokolaWE));
 		filterBrojProtokolaWE.click();
 		filterBrojProtokolaWE.clear();
-		filterBrojProtokolaWE.sendKeys(naziv);
+		filterBrojProtokolaWE.sendKeys(brProtokola);
 		filterBrojProtokolaWE.sendKeys(Keys.ENTER);
-		Thread.sleep(1000);
-		wait.until(ExpectedConditions.visibilityOf(nazivTabelaWE));
-		assertTrue(nazivTabelaWE.getText().contains(naziv), "ElektroenergetskaSaglasnost: Broj protokola nije pronadjen!");
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
+		wait.until(ExpectedConditions.visibilityOf(brojProtokolaWE));
+		assertTrue(brojProtokolaWE.getText().equals(brProtokola), "ElektroenergetskaSaglasnost: Broj protokola nije pronadjen!");
 	}
 	
 	public void urediElektroenergetskuSaglasnost() throws InterruptedException {
@@ -274,9 +271,9 @@ public class ElektroenergetskeSaglasnosti extends PocetnaStranica {
 		odobrenaPrikljucnaSnagaWE.sendKeys(Keys.ARROW_DOWN);
 		odobrenaPrikljucnaSnagaWE.sendKeys(Keys.ENTER);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("arguments[0].scrollIntoView(true);", dodajElSaglasnostWE);
-		dodajElSaglasnostWE.click();
-		Thread.sleep(1000);
+		js.executeScript("arguments[0].scrollIntoView(true);", submitBtnWE);
+		submitBtnWE.click();
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		assertTrue(porukaWE.getText().equals("Uspješno završeno."), "ElektroenergetskaSaglasnost: Uređivanje nije uspešno!");
 	}
 	

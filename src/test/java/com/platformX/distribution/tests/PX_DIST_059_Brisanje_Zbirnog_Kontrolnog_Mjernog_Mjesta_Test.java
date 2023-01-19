@@ -32,7 +32,7 @@ public class PX_DIST_059_Brisanje_Zbirnog_Kontrolnog_Mjernog_Mjesta_Test  extend
 		zbirnaKontrolnaMjernaMjestaPage.verifikujZbirnaKontrolnaMjernaMjesta();
 		String zbirnaKontrolnaMjernaMjesta = zbirnaKontrolnaMjernaMjestaPage.dodajZbirnoKontrolnoMjernoMjesto(brBrojila);
 		zbirnaKontrolnaMjernaMjestaPage.verifikujZbirnoKontrolnoMjernoMjesto(zbirnaKontrolnaMjernaMjesta);
-		homePage.deleteItem();
+		homePage.deleteItem(true);
 		homePage.verifyDeletedItem(true, zbirnaKontrolnaMjernaMjesta);
 	}
 

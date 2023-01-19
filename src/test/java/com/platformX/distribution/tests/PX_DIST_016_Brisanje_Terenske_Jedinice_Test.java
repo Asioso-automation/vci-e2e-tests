@@ -24,7 +24,7 @@ public class PX_DIST_016_Brisanje_Terenske_Jedinice_Test extends BaseTest {
 		terenskeJedinice.verifikujTerenskeJedinice();
 		String naziv = terenskeJedinice.dodajTerenskuJedinicu();
 		terenskeJedinice.verifikujTerenskuJedinicu(naziv);
-		homePage.deleteItem();
+		homePage.deleteItem(true);
 		homePage.verifyDeletedItem(true, naziv);
 	}
 	

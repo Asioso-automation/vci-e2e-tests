@@ -25,7 +25,7 @@ public class PX_DIST_049_Brisanje_KategorijePotrosnje_Test extends BaseTest{
 		kategorijePotrosnje.verifikujKategorijePotrosnje();
 		String kategorijaPotrosnje = kategorijePotrosnje.dodajKategorijuPotrosnje();
 		kategorijePotrosnje.verifikujKategorijuPotrosnje(kategorijaPotrosnje); 
-		homePage.deleteItem();
+		homePage.deleteItem(true);
 		homePage.verifyDeletedItem(true, kategorijaPotrosnje);
 	}
 

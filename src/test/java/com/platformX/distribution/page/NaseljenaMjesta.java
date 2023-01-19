@@ -27,9 +27,6 @@ public class NaseljenaMjesta extends PocetnaStranica {
 	@FindBy(xpath = "//div[3]/div/div/div[1]/div[1]/input[1]")
 	private WebElement opstinaWE;
 	
-	@FindBy(xpath = "//div[2]/button[1]")
-	private WebElement dodajNaseljenoMjestoWE;
-	
 	@FindBy(xpath = "//td[2]/div/div/div/div[1]/input")
 	private WebElement filterNazivWE;
 	
@@ -62,8 +59,8 @@ public class NaseljenaMjesta extends PocetnaStranica {
 		Thread.sleep(1000);
 		opstinaWE.sendKeys(Keys.ARROW_DOWN);
 		opstinaWE.sendKeys(Keys.ENTER);
-		wait.until(ExpectedConditions.elementToBeClickable(dodajNaseljenoMjestoWE));
-		dodajNaseljenoMjestoWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
+		submitBtnWE.click();
 		return naziv;
 	}
 	
@@ -94,10 +91,9 @@ public class NaseljenaMjesta extends PocetnaStranica {
 		stampaniNazivWE.click();
 		stampaniNazivWE.clear();
 		stampaniNazivWE.sendKeys(naseljenoMjesto);
-		wait.until(ExpectedConditions.elementToBeClickable(dodajNaseljenoMjestoWE));
-		dodajNaseljenoMjestoWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
+		submitBtnWE.click();
 		return naseljenoMjesto;
 	}
-
-
+	
 }

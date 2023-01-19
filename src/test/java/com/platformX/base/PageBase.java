@@ -33,7 +33,7 @@ public class PageBase {
 		platformx_distribution_properties = new PropertiesUtil(PLATFORMX_DISTRIBUTION_PROPERTIES);
 	}
 	
-	@FindBy(xpath = "//main/div/div/div/div[2]/div/div")
+	@FindBy(xpath = "//div[@class='v-alert__content']")					// //main/div/div/div/div[2]/div/div/div
 	protected WebElement porukaWE;
 	
 	@FindBy(xpath = "//div[contains(text(), 'Uredi')]")

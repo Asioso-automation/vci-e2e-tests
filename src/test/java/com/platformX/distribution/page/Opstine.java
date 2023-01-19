@@ -85,5 +85,4 @@ public class Opstine extends PocetnaStranica {
 		return naziv;
 	}
 
-	
 }

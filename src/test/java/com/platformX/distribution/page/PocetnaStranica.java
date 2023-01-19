@@ -7,6 +7,7 @@ import java.io.IOException;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.remote.server.handler.SendKeys;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -417,6 +418,9 @@ public class PocetnaStranica extends PageBase {
 	@FindBy(xpath = "//td[3]/div/div/div/div[1]/input")
 	private WebElement filterKolona3WE;
 	
+	@FindBy(xpath = "//div[@class='v-card__title title mb-0 word-break']")
+	private WebElement deleteCardWE;
+	
 	
 // POZADINSKI PROCESI PAGE
 	
@@ -426,38 +430,6 @@ public class PocetnaStranica extends PageBase {
 //	@FindBy(xpath = "//*[contains(@class, 'log-out')]")
 //	public WebElement logOutBtnWE;
 	
-	
-	public void deleteItem() {
-		WebDriverWait wait = new WebDriverWait(driver, 30);
-		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
-		burgerBarWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(obrisiWE));
-		obrisiWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(potvrdiBrisanjeBtnWE));
-		potvrdiBrisanjeBtnWE.click();
-	}
-	
-	public void verifyDeletedItem (boolean kolona, String item) throws InterruptedException {
-		if (kolona==true) {
-			wait.until(ExpectedConditions.elementToBeClickable(filterKolona2WE));
-			wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
-			filterKolona2WE.clear();
-			filterKolona2WE.sendKeys(item);
-			filterKolona2WE.sendKeys(Keys.ENTER);
-		}
-		else {
-			wait.until(ExpectedConditions.elementToBeClickable(filterKolona3WE));
-			wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
-			filterKolona3WE.clear();
-			filterKolona3WE.sendKeys(item);
-			filterKolona3WE.sendKeys(Keys.ENTER);
-		}
-			wait.until(ExpectedConditions.visibilityOf(praznaTabelaWE));
-			wait.until(ExpectedConditions.elementToBeClickable(osvjeziBtnWE));
-			wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
-			Thread.sleep(500);
-			assertTrue(praznaTabelaWE.getText().equals("Nema podataka"), "DeletedItem: Poruka prazne tabele nije dobra!");
-	}
 	
 	public void verifikujPocetnuStranicu() throws InterruptedException {
 		wait.until(ExpectedConditions.elementToBeClickable(sifarniciWE));
@@ -482,6 +454,58 @@ public class PocetnaStranica extends PageBase {
 		profilWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(izlogujSeWE));
 		izlogujSeWE.click();
+	}
+	
+	public void verifikujPoruku(String poruka) throws InterruptedException {
+		wait.until(ExpectedConditions.visibilityOf(porukaWE));
+		assertTrue(porukaWE.getText().trim().equals(poruka), "Poruka upozorenja nije dobra!");
+	}
+	
+	public void deleteItem(boolean rezultat) throws InterruptedException {
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
+		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
+		burgerBarWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(obrisiWE));
+		obrisiWE.click();
+		Thread.sleep(500);
+		wait.until(ExpectedConditions.visibilityOf(deleteCardWE));
+		wait.until(ExpectedConditions.elementToBeClickable(potvrdiBrisanjeBtnWE));
+		potvrdiBrisanjeBtnWE.click();
+		Thread.sleep(500);
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
+		if (rezultat==true) {
+			try {
+				verifikujPoruku("Brisanje je uspješno završeno");
+			}
+			catch (Exception e) {
+				wait.until(ExpectedConditions.visibilityOf(sekcijaBtnWE));
+			}
+		}
+		else {
+			verifikujPoruku("Brisanje ovog zapisa nije moguće.");
+		}
+	}
+	
+	public void verifyDeletedItem (boolean kolona, String item) throws InterruptedException {
+		if (kolona==true) {
+			wait.until(ExpectedConditions.elementToBeClickable(filterKolona2WE));
+			wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
+			filterKolona2WE.clear();
+			filterKolona2WE.sendKeys(item);
+			filterKolona2WE.sendKeys(Keys.ENTER);
+		}
+		else {
+			wait.until(ExpectedConditions.elementToBeClickable(filterKolona3WE));
+			wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
+			filterKolona3WE.clear();
+			filterKolona3WE.sendKeys(item);
+			filterKolona3WE.sendKeys(Keys.ENTER);
+		}
+			wait.until(ExpectedConditions.visibilityOf(praznaTabelaWE));
+			wait.until(ExpectedConditions.elementToBeClickable(osvjeziBtnWE));
+			wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
+			Thread.sleep(700);
+			assertTrue(praznaTabelaWE.getText().equals("Nema podataka"), "DeletedItem: Poruka prazne tabele nije dobra!");
 	}
 
 	public Organizacije navigirajNaOrganizacije() throws Exception {
@@ -1616,12 +1640,6 @@ public class PocetnaStranica extends PageBase {
 			driver.get(platformx_distribution_properties.getValue("URL.DIST.LOGIN") + platformx_distribution_properties.getValue("ZAHTJEVI.ZA.RASKID.UGOVORA"));
 		}
 		return new ZahtjeviZaRaskidUgovora(driver);
-	}
-	
-	public void verifikujPoruku(String poruka) throws InterruptedException {
-		Thread.sleep(1000);
-		wait.until(ExpectedConditions.visibilityOf(porukaWE));
-		assertTrue(porukaWE.getText().trim().equals(poruka), "Poruka upozorenja nije dobra!");
 	}
 	
     public OcitanjaBrojila navigirajNaOcitanjaBrojila() throws Exception {

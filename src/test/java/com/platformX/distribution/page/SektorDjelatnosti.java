@@ -75,5 +75,4 @@ public class SektorDjelatnosti extends PocetnaStranica {
 		return naziv;
 	}
 
-	
 }

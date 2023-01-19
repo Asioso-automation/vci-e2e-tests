@@ -39,17 +39,11 @@ public class Trafostanice extends PocetnaStranica {
 	@FindBy(xpath = "//div[3]/div[4]/div/div/div[1]/div[1]/input[1]")
 	private WebElement postaWE;
 	
-	@FindBy(xpath = "//div[2]/button[1]")
-	private WebElement dodajTrafostanicuWE;
-	
 	@FindBy(xpath = "//td[3]/div/div/div/div[1]/input")
 	private WebElement filterNazivWE;
 	
 	@FindBy(xpath = "//tr[2]/td[3]")
 	private WebElement nazivTabelaWE;
-	
-	@FindBy(xpath = "//td[12]/button")
-	private WebElement burgerBarWE;
 
 	public void verifikujTrafostanice() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
@@ -106,19 +100,19 @@ public class Trafostanice extends PocetnaStranica {
 		Thread.sleep(1000);
 		postaWE.sendKeys(Keys.ARROW_DOWN);
 		postaWE.sendKeys(Keys.ENTER);
-		wait.until(ExpectedConditions.elementToBeClickable(dodajTrafostanicuWE));
-		dodajTrafostanicuWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
+		submitBtnWE.click();
 		return naziv;
 	}
 	
 	public void verifikujTrafostanicu(String naziv) throws Exception{
 		wait.until(ExpectedConditions.elementToBeClickable(filterNazivWE));
-		Thread.sleep(1000);
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		filterNazivWE.click();
 		filterNazivWE.clear();
 		filterNazivWE.sendKeys(naziv);
 		filterNazivWE.sendKeys(Keys.ENTER);
-		Thread.sleep(1000);
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		wait.until(ExpectedConditions.visibilityOf(nazivTabelaWE));
 		assertTrue(nazivTabelaWE.getText().equals(naziv), "TrafoStanice: Trafostanica nije pronadjena!");
 	}
@@ -139,8 +133,8 @@ public class Trafostanice extends PocetnaStranica {
 		nazivWE.click();
 		nazivWE.clear();
 		nazivWE.sendKeys(trafostanica);
-		wait.until(ExpectedConditions.elementToBeClickable(dodajTrafostanicuWE));
-		dodajTrafostanicuWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
+		submitBtnWE.click();
 		return trafostanica;
 	}
 

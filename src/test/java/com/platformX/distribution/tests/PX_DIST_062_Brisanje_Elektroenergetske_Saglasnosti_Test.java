@@ -24,10 +24,10 @@ public class PX_DIST_062_Brisanje_Elektroenergetske_Saglasnosti_Test extends Bas
 		homePage.verifikujPocetnuStranicu();
 		ElektroenergetskeSaglasnosti elSaglasnosti = homePage.navigirajNaElektroenergetskeSaglasnosti();
 		elSaglasnosti.verifikujElektroenergetskeSaglasnosti();
-		String ElSaglasnost = elSaglasnosti.dodajElektronergetskuSaglasnost();
-		elSaglasnosti.verifikujElektroenergetskuSaglasnost(ElSaglasnost);
-		homePage.deleteItem();
-		homePage.verifikujPoruku("Brisanje je uspješno završeno");
+		String eeSaglasnost = elSaglasnosti.dodajElektronergetskuSaglasnost();
+		elSaglasnosti.verifikujElektroenergetskuSaglasnost(eeSaglasnost);
+		homePage.deleteItem(true);
+		homePage.verifyDeletedItem(true, eeSaglasnost);
 	}
 
 }

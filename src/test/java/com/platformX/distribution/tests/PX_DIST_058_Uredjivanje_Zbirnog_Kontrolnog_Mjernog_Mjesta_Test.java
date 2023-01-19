@@ -17,7 +17,6 @@ public class PX_DIST_058_Uredjivanje_Zbirnog_Kontrolnog_Mjernog_Mjesta_Test  ext
 	
 	@Test
 	public void px_dist_058_uredjivanje_zbirnog_kontrolnog_mjernog_mjesta_test() throws Exception {
-		
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();

@@ -72,9 +72,9 @@ public class RegistarBrojila extends PocetnaStranica {
 		odaberiTipBrojilaWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(poljeRedniBrojURegistruWE));
 		poljeRedniBrojURegistruWE.sendKeys(Helper.getRandomNumber(7));
-		wait.until(ExpectedConditions.elementToBeClickable(dodajBrojiloBtnWE));
-		dodajBrojiloBtnWE.click();
-		Thread.sleep(3000);
+		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
+		submitBtnWE.click();
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		return brojBrojila;
 	}
 	

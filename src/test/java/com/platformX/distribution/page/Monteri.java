@@ -21,9 +21,6 @@ public class Monteri extends PocetnaStranica {
 	@FindBy(xpath = "//div[1]/div/div/div[1]/div/input")
 	private WebElement imePrezimeWE;
 	
-	@FindBy(xpath = "//div[2]/button[1]")
-	private WebElement dodajMonteraWE;
-	
 	@FindBy(xpath = "//td[2]/div/div/div/div[1]/input")
 	private WebElement filterPoImePrezimeWE;
 	
@@ -46,19 +43,19 @@ public class Monteri extends PocetnaStranica {
 		dodajBtnWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(imePrezimeWE));
 		imePrezimeWE.sendKeys(naziv);
-		wait.until(ExpectedConditions.elementToBeClickable(dodajMonteraWE));
-		dodajMonteraWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
+		submitBtnWE.click();
 		return naziv;
 	}
 	
 	public void verifikujMontera(String naziv)throws Exception{
 		wait.until(ExpectedConditions.elementToBeClickable(filterPoImePrezimeWE));
-		Thread.sleep(1000);
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		filterPoImePrezimeWE.click();
 		filterPoImePrezimeWE.clear();
 		filterPoImePrezimeWE.sendKeys(naziv);
 		filterPoImePrezimeWE.sendKeys(Keys.ENTER);
-		Thread.sleep(1000);
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		wait.until(ExpectedConditions.visibilityOf(imePrezimeTabelaWE));
 		assertTrue(imePrezimeTabelaWE.getText().equals(naziv), "Ulice: Ulica nije pronadjena!");	
 	}
@@ -74,10 +71,9 @@ public class Monteri extends PocetnaStranica {
 		imePrezimeWE.click();
 		imePrezimeWE.clear();
 		imePrezimeWE.sendKeys(monter);
-		wait.until(ExpectedConditions.elementToBeClickable(dodajMonteraWE));
-		dodajMonteraWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
+		submitBtnWE.click();
 		return monter;
 	}
 
-	
 }

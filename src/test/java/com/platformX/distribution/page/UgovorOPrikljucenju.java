@@ -22,10 +22,7 @@ public class UgovorOPrikljucenju extends PocetnaStranica {
 	@FindBy(xpath = "//div[3]/div[1]/div/div/div[1]/div[1]/input[1]")  
 	 private WebElement ElektroenergetskaSaglasnostWE;
 	
-	@FindBy(xpath = "//div[3]/div[3]/div/div/div[1]/div/input")  
-	 private WebElement brojProtokolaWE;
-	
-	@FindBy(xpath = "//div[4]/div[1]/div/div[1]/div[1]/div/button")  
+	@FindBy(xpath = "//div[1]/div[1]/div/button")  
 	 private WebElement datumBtnWE;
 	
 	@FindBy(xpath = "(//*[contains(@class, 'v-date-picker-table__current')])")  
@@ -53,10 +50,7 @@ public class UgovorOPrikljucenju extends PocetnaStranica {
 	 private WebElement kategorijaPotrosnjeiGrupaKupacaWE;
 	
 	@FindBy(xpath = "//div[5]/div/div/div[2]/div/div[1]/div/div[2]/div/div/div[1]/div[1]/input[1]")  
-	 private WebElement PrikljucnaSnagaKwWE;
-	
-	@FindBy(xpath = "//div[2]/form/div/div[2]/button[1]")  
-	 private WebElement dodajUgovorOPrikljucenjuWE;
+	 private WebElement prikljucnaSnagaKwWE;
 	
 	@FindBy(xpath = "//tr[2]/td[4]")
 	private WebElement nazivTabelaWE;
@@ -69,6 +63,9 @@ public class UgovorOPrikljucenju extends PocetnaStranica {
 	
 	@FindBy(xpath = "//div[4]/div[1]/div/div/div[1]/div[1]/input[1]")  
 	 private WebElement vrstaPodrucjaWE;
+	
+	@FindBy(xpath = "//tr[2]/td[4]")  
+	 private WebElement brojProtokolaWE;
 	
 	public void verifikujUgovorOPrikljucenju() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
@@ -84,7 +81,6 @@ public class UgovorOPrikljucenju extends PocetnaStranica {
 	}
 
 	public String dodajUgovorOPrikljucenju(String nazivEES)throws Exception {
-		String naziv = "BrProtkola" + Helper.getRandomNumber(4);
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
 		dodajBtnWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(ElektroenergetskaSaglasnostWE));
@@ -93,9 +89,6 @@ public class UgovorOPrikljucenju extends PocetnaStranica {
 		Thread.sleep(1000);
 		ElektroenergetskaSaglasnostWE.sendKeys(Keys.ARROW_DOWN);
 		ElektroenergetskaSaglasnostWE.sendKeys(Keys.ENTER);
-		wait.until(ExpectedConditions.elementToBeClickable(brojProtokolaWE));
-		brojProtokolaWE.click();
-		brojProtokolaWE.sendKeys(naziv);
 		wait.until(ExpectedConditions.elementToBeClickable(datumBtnWE));
 		datumBtnWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(datumWE));
@@ -125,24 +118,26 @@ public class UgovorOPrikljucenju extends PocetnaStranica {
 		Thread.sleep(1000);
 		kategorijaPotrosnjeiGrupaKupacaWE.sendKeys(Keys.ARROW_DOWN);
 		kategorijaPotrosnjeiGrupaKupacaWE.sendKeys(Keys.ENTER);
-		wait.until(ExpectedConditions.elementToBeClickable(PrikljucnaSnagaKwWE));
-		PrikljucnaSnagaKwWE.sendKeys(Helper.getRandomNumber(1));
+		wait.until(ExpectedConditions.elementToBeClickable(prikljucnaSnagaKwWE));
+		prikljucnaSnagaKwWE.sendKeys(Helper.getRandomNumber(1));
 		Thread.sleep(1000);
-		PrikljucnaSnagaKwWE.sendKeys(Keys.ARROW_DOWN);
-		PrikljucnaSnagaKwWE.sendKeys(Keys.ENTER);
-		wait.until(ExpectedConditions.elementToBeClickable(dodajUgovorOPrikljucenjuWE));
-		dodajUgovorOPrikljucenjuWE.click();
-		return naziv;
+		prikljucnaSnagaKwWE.sendKeys(Keys.ARROW_DOWN);
+		prikljucnaSnagaKwWE.sendKeys(Keys.ENTER);
+		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
+		submitBtnWE.click();
+		verifikujPoruku("Uspješno završeno.");
+		String brProtokola = brojProtokolaWE.getText();
+		return brProtokola;
 	}
 	
-	public void verifikujUgovorOPrikljucenju(String naziv) throws Exception {
+	public void verifikujUgovorOPrikljucenju(String brProtokola) throws Exception {
 		wait.until(ExpectedConditions.elementToBeClickable(filterBrojProtokolaWE));
 		filterBrojProtokolaWE.click();
 		filterBrojProtokolaWE.clear();
-		filterBrojProtokolaWE.sendKeys(naziv);
+		filterBrojProtokolaWE.sendKeys(brProtokola);
 		filterBrojProtokolaWE.sendKeys(Keys.ENTER);
-		wait.until(ExpectedConditions.visibilityOf(nazivTabelaWE));
-		assertTrue(nazivTabelaWE.getText().equals(naziv), "UgovorOPrikljucenju: Broj protokola nije pronadjen!");
+		wait.until(ExpectedConditions.visibilityOf(brojProtokolaWE));
+		assertTrue(brojProtokolaWE.getText().equals(brProtokola), "UgovorOPrikljucenju: Broj protokola nije pronadjen!");
 	}
 	
 	public void urediUgovorOPrikljucenju() throws InterruptedException {
@@ -156,9 +151,9 @@ public class UgovorOPrikljucenju extends PocetnaStranica {
 		vrstaPodrucjaWE.sendKeys(Keys.ARROW_DOWN);
 		vrstaPodrucjaWE.sendKeys(Keys.ENTER);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("arguments[0].scrollIntoView(true);",dodajUgovorOPrikljucenjuWE);
-		dodajUgovorOPrikljucenjuWE.click();
-		Thread.sleep(1000);
+		js.executeScript("arguments[0].scrollIntoView(true);",submitBtnWE);
+		submitBtnWE.click();
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		assertTrue(porukaWE.getText().equals("Uspješno završeno."), "ElektroenergetskaSaglasnost: Uređivanje nije uspešno!");
 	}
 	  
@@ -173,12 +168,12 @@ public class UgovorOPrikljucenju extends PocetnaStranica {
 	
 	public void verifikujBrisanjeUgovoraOPrikljucenju(String naziv) throws InterruptedException {
 		wait.until(ExpectedConditions.visibilityOf(filterBrojProtokolaWE));
-		Thread.sleep(1000);
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		filterBrojProtokolaWE.click();
 		filterBrojProtokolaWE.clear();
 		filterBrojProtokolaWE.sendKeys(naziv);
 		filterBrojProtokolaWE.sendKeys(Keys.ENTER);
-		Thread.sleep(1000);
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		wait.until(ExpectedConditions.visibilityOf(praznaTabelaWE));
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
 		assertTrue(praznaTabelaWE.getText().equals("Nema podataka"), "UgovorOPrikljucenju: Poruka prazne tabele nije dobra!");

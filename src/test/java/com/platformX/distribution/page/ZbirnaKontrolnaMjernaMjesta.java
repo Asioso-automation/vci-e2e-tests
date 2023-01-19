@@ -45,17 +45,14 @@ public class ZbirnaKontrolnaMjernaMjesta extends PocetnaStranica {
 	@FindBy(xpath = "//tr[2]/td[4]/button/div")
 	 private WebElement izaberiDatumWE;
 	
-	@FindBy(xpath = "//div[2]/button[1]/span")
-	 private WebElement dodajZbirnoMjestoBtnWE;
+//	@FindBy(xpath = "//div[2]/button[1]/span")
+//	 private WebElement dodajZbirnoMjestoBtnWE;
 	
 	@FindBy(xpath = "//td[2]/div/div/div/div[1]/input")
 	 private WebElement filterPoNazivuWE;
 	
 	@FindBy(xpath = "//tr[2]/td[2]")
 	 private WebElement nazivTabelaWE;
-	
-	@FindBy(xpath = "/html/body/div/div[3]/div/div")
-	 private WebElement obradaUTokuBtnWE;
 
 	public void verifikujZbirnaKontrolnaMjernaMjesta() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
@@ -106,8 +103,8 @@ public class ZbirnaKontrolnaMjernaMjesta extends PocetnaStranica {
 		datumIkonicaWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(izaberiDatumWE));
 		izaberiDatumWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(dodajZbirnoMjestoBtnWE));
-		dodajZbirnoMjestoBtnWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
+		submitBtnWE.click();
 		return nazivZbirnogKontrolnogMjesta;
 	}
 	
@@ -117,7 +114,7 @@ public class ZbirnaKontrolnaMjernaMjesta extends PocetnaStranica {
 		filterPoNazivuWE.clear();
 		filterPoNazivuWE.sendKeys(nazivZbirnogMjesta);
 		filterPoNazivuWE.sendKeys(Keys.ENTER);
-		Thread.sleep(1000);
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		wait.until(ExpectedConditions.visibilityOf(nazivTabelaWE));
 		assertTrue(nazivTabelaWE.getText().contains(nazivZbirnogMjesta),"Mjerna Mjesta: Zbirno/Kontrolno mjerno mjesto nije dobro!");
 	}
@@ -132,10 +129,9 @@ public class ZbirnaKontrolnaMjernaMjesta extends PocetnaStranica {
 		poljeNazivWE.click();
 		poljeNazivWE.clear();
 		poljeNazivWE.sendKeys(nazivZbirnogKontrolnogMjesta);
-		wait.until(ExpectedConditions.elementToBeClickable(dodajZbirnoMjestoBtnWE));
-		dodajZbirnoMjestoBtnWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
+		submitBtnWE.click();
 		return nazivZbirnogKontrolnogMjesta;
 	}
-
 
 }

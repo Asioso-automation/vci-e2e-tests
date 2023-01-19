@@ -46,9 +46,6 @@ public class PravnaLica extends PocetnaStranica {
 	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '78000 - Banja Luka')]")
 	 private WebElement odaberiPostuWE;
 	
-	@FindBy(xpath = "//div[2]/button[1]/span")
-	 private WebElement dodajPravnoLiceBtnWE;
-	
 	@FindBy(xpath = "//tr[2]/td[1]")
 	 private WebElement idTabelaWE;
 	
@@ -57,9 +54,6 @@ public class PravnaLica extends PocetnaStranica {
 	
 	@FindBy(xpath = "//td[2]/div/div/div/div[1]/input")
 	 private WebElement filterPoNazivuTabelaWE;
-	
-	@FindBy(xpath = "//div/div/div[3]/button[2]/span")
-	 private WebElement potvrdiBrisanjeBtnWE;
 
 	public void verifikujPravnaLica() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
@@ -106,9 +100,9 @@ public class PravnaLica extends PocetnaStranica {
 		wait.until(ExpectedConditions.elementToBeClickable(odaberiPostuWE));
 		odaberiPostuWE.click();
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("arguments[0].scrollIntoView(true);", dodajPravnoLiceBtnWE);
-		wait.until(ExpectedConditions.elementToBeClickable(dodajPravnoLiceBtnWE));
-		dodajPravnoLiceBtnWE.click();
+		js.executeScript("arguments[0].scrollIntoView(true);", submitBtnWE);
+		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
+		submitBtnWE.click();
 		return nazivPravnogLica;		
 	}
 	
@@ -138,8 +132,8 @@ public class PravnaLica extends PocetnaStranica {
 		poljeNazivWE.click();
 		poljeNazivWE.clear();
 		poljeNazivWE.sendKeys(nazivPravnogLica);
-		wait.until(ExpectedConditions.elementToBeClickable(dodajPravnoLiceBtnWE));
-		dodajPravnoLiceBtnWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
+		submitBtnWE.click();
 		return nazivPravnogLica;
 	}
 	
@@ -153,6 +147,5 @@ public class PravnaLica extends PocetnaStranica {
 		wait.until(ExpectedConditions.visibilityOf(nazivTabelaWE));
 		assertTrue(nazivTabelaWE.getText().contains(nazivPravnogLica),"Pravna lica: Naziv uredjenog pravnog lica nije dobar!");
 	}
-
 
 }

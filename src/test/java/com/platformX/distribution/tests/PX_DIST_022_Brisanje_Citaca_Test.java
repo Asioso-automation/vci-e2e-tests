@@ -25,7 +25,7 @@ public class PX_DIST_022_Brisanje_Citaca_Test extends BaseTest {
 		citaci.verifikujCitaci();
 		String imeCitaca = citaci.dodajCitaca();
 		citaci.verifikujCitaca(imeCitaca);
-		homePage.deleteItem();
+		homePage.deleteItem(true);
 		homePage.verifyDeletedItem(true, imeCitaca);
 	}
 
