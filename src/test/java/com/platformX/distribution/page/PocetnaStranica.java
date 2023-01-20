@@ -3,11 +3,9 @@ package com.platformX.distribution.page;
 import static org.testng.Assert.assertTrue;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.remote.server.handler.SendKeys;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -29,39 +27,21 @@ public class PocetnaStranica extends PageBase {
 
 	@FindBy(xpath = "//div[contains(text(), 'Odjavi se')]")
 	protected WebElement izlogujSeWE;
-
-	@FindBy(xpath = "//div/div[1]/div[1]/header/div/div[1]")
-	protected WebElement naslovStraniceWE;
-
-	@FindBy(xpath = "//main/div/div/header/div/div[1]")
-	protected WebElement naslovStranice1WE;
 	
-	@FindBy(xpath = "//ul/button[1]")
-	protected WebElement sekcijaBtnWE;
-
-	@FindBy(xpath = "//ul/button[2]")
-	protected WebElement stranicaBtnWE;
-
-	@FindBy(xpath = "//i[contains(@class, 'fa-file-download')]")
-	protected WebElement preuzmiExcelBtnWE;
-
-	@FindBy(xpath = "//i[contains(@class, 'fa-broom')]")
-	protected WebElement ukloniFiltereBtnWE;
-
-	@FindBy(xpath = "//i[contains(@class, 'fa-sync')]")
-	protected WebElement osvjeziBtnWE;
-
-	@FindBy(xpath = "//i[contains(@class, 'fa-plus')]")
-	protected WebElement dodajBtnWE;
+	@FindBy(xpath = "//*[contains(@class, 'v-btn__content') and contains(text(), 'Briši')]")
+	protected WebElement potvrdiBrisanjeBtnWE;
 	
-	@FindBy(xpath = "//i[contains(@class, 'fa-file-upload')]")
-	protected WebElement importujBtnWE;
+	@FindBy(xpath = "//td[2]/div/div/div/div[1]/input")
+	private WebElement filterKolona2WE;
 	
-	@FindBy(xpath = "//i[contains(@class, 'fa-info')]")
-	protected WebElement infoBtnWE;
+	@FindBy(xpath = "//td[3]/div/div/div/div[1]/input")
+	private WebElement filterKolona3WE;
 	
-	@FindBy(xpath = "//i[contains(@class, 'fa-angle-double-right')]")
-	protected WebElement dodajSveBtnWE;
+	@FindBy(xpath = "//div[@class='v-card__title title mb-0 word-break']")
+	private WebElement deleteCardWE;
+	
+	@FindBy(xpath = "//button[@type='submit']")
+	protected WebElement submitBtnWE;													// submit - DODAJ/UREDI button na formama za dodavanje/uređivanje Šifarnika
 
 //	 Sekcije
 
@@ -400,27 +380,6 @@ public class PocetnaStranica extends PageBase {
 	@FindBy(xpath = "//div[contains(text(), 'Pozadinski procesi')]")
     protected WebElement pozadinskiProcesiWE;
 	
-	@FindBy(xpath = "//button[@type='submit']")
-	protected WebElement submitBtnWE;													// submit - DODAJ/UREDI button na formama za dodavanje/uređivanje Šifarnika
-	
-//	@FindBy(xpath = "//*[contains(text(), 'Uredi') and @class='v-list-item__title']")
-//	protected WebElement urediBurgerBarWE;												// opcija Uredi iz burger bara
-//	
-//	@FindBy(xpath = "//*[contains(text(), 'Briši') and @class='v-list-item__title']")
-//	protected WebElement brisiBurgerBarWE;												// opcija Briši iz burger bara
-	
-	@FindBy(xpath = "//*[contains(@class, 'v-btn__content') and contains(text(), 'Briši')]")
-	protected WebElement potvrdiBrisanjeBtnWE;
-	
-	@FindBy(xpath = "//td[2]/div/div/div/div[1]/input")
-	private WebElement filterKolona2WE;
-	
-	@FindBy(xpath = "//td[3]/div/div/div/div[1]/input")
-	private WebElement filterKolona3WE;
-	
-	@FindBy(xpath = "//div[@class='v-card__title title mb-0 word-break']")
-	private WebElement deleteCardWE;
-	
 	
 // POZADINSKI PROCESI PAGE
 	
@@ -501,8 +460,8 @@ public class PocetnaStranica extends PageBase {
 			filterKolona3WE.sendKeys(item);
 			filterKolona3WE.sendKeys(Keys.ENTER);
 		}
-			wait.until(ExpectedConditions.visibilityOf(praznaTabelaWE));
 			wait.until(ExpectedConditions.elementToBeClickable(osvjeziBtnWE));
+			wait.until(ExpectedConditions.visibilityOf(praznaTabelaWE));
 			wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 			Thread.sleep(700);
 			assertTrue(praznaTabelaWE.getText().equals("Nema podataka"), "DeletedItem: Poruka prazne tabele nije dobra!");
