@@ -381,15 +381,6 @@ public class PocetnaStranica extends PageBase {
     protected WebElement pozadinskiProcesiWE;
 	
 	
-// POZADINSKI PROCESI PAGE
-	
-//	@FindBy(xpath = "//*[@class='page-header' and contains(text(), 'Overview')]")
-//	public WebElement overviewWE;
-//	
-//	@FindBy(xpath = "//*[contains(@class, 'log-out')]")
-//	public WebElement logOutBtnWE;
-	
-	
 	public void verifikujPocetnuStranicu() throws InterruptedException {
 		wait.until(ExpectedConditions.elementToBeClickable(sifarniciWE));
 		wait.until(ExpectedConditions.elementToBeClickable(tarifniSistemWE));
@@ -420,7 +411,7 @@ public class PocetnaStranica extends PageBase {
 		assertTrue(porukaWE.getText().trim().equals(poruka), "Poruka upozorenja nije dobra!");
 	}
 	
-	public void deleteItem(boolean rezultat) throws InterruptedException {
+	public void obrisiStavku(boolean rezultat) throws InterruptedException {
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		burgerBarWE.click();
@@ -445,7 +436,7 @@ public class PocetnaStranica extends PageBase {
 		}
 	}
 	
-	public void verifyDeletedItem (boolean kolona, String item) throws InterruptedException {
+	public void verifikujBrisanjeStavke(boolean kolona, String item) throws InterruptedException {
 		if (kolona==true) {
 			wait.until(ExpectedConditions.elementToBeClickable(filterKolona2WE));
 			wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));

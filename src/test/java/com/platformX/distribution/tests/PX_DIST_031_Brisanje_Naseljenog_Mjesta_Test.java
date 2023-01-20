@@ -25,8 +25,8 @@ public class PX_DIST_031_Brisanje_Naseljenog_Mjesta_Test extends BaseTest {
 		naseljenaMjesta.verifikujNaseljenaMjesta();
 		String naseljenoMjesto = naseljenaMjesta.dodajNaseljenoMjesto();
 		naseljenaMjesta.verifikujNaseljenoMjesto(naseljenoMjesto);
-		homePage.deleteItem(true);
-		homePage.verifyDeletedItem(true, naseljenoMjesto);
+		homePage.obrisiStavku(true);
+		homePage.verifikujBrisanjeStavke(true, naseljenoMjesto);
 	}
 
 }

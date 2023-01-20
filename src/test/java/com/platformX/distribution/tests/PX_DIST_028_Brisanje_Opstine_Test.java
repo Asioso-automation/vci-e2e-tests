@@ -25,8 +25,8 @@ public class PX_DIST_028_Brisanje_Opstine_Test extends BaseTest {
 		opstine.verifikujOpstine();
 		String opstina = opstine.dodajOpstinu();
 		opstine.verifikujOpstinu(opstina);
-		homePage.deleteItem(true);
-		homePage.verifyDeletedItem(true, opstina);
+		homePage.obrisiStavku(true);
+		homePage.verifikujBrisanjeStavke(true, opstina);
 	}
 	
 }

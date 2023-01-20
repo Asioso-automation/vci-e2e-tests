@@ -29,8 +29,8 @@ public class PX_DIST_065_Brisanje_Ugovora_O_Prikljucenju_Test extends BaseTest{
 		UgovorOPrikljucenju ugovor = homePage.navigirajNaUgovorOPrikljucenju();
 		ugovor.verifikujUgovorOPrikljucenju();
 		ugovor.dodajUgovorOPrikljucenju(ElSaglasnost);
-		homePage.deleteItem(true);
-		homePage.verifyDeletedItem(true, ElSaglasnost);
+		homePage.obrisiStavku(true);
+		homePage.verifikujBrisanjeStavke(true, ElSaglasnost);
 	}
 
 }

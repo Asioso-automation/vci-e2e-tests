@@ -19,7 +19,6 @@ public class ZahtjeviZaIskljucenja extends PocetnaStranica {
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Zahtjevi za isključenja')]")));
 		verifyCommonElements("MJERNA MJESTA", "ZAHTJEVI ZA ISKLJUČENJA", "ZAHTJEVI ZA ISKLJUČENJA (PROCES 16)", 17, false, false, true, true, true, true, true);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
-		// TODO Verify all columns from this page
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojProtokolaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKupacWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMjernoMjestoEicWE));

@@ -30,8 +30,8 @@ public class PX_DIST_019_Brisanje_Fizicke_Lokacije_Test extends BaseTest {
 		fizickeLokacije.verifikujFizickeLokacije();
 		String nazivFizickeLokacije = fizickeLokacije.dodajFizickuLokaciju(terenskaJedinica);
 		fizickeLokacije.verifikujFizickuLokaciju(nazivFizickeLokacije);
-		homePage.deleteItem(true);
-		homePage.verifyDeletedItem(true, nazivFizickeLokacije);
+		homePage.obrisiStavku(true);
+		homePage.verifikujBrisanjeStavke(true, nazivFizickeLokacije);
 	}
 	
 }

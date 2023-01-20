@@ -19,8 +19,6 @@ public class ElektroenergetskeSaglasnosti extends PocetnaStranica {
 		super(driver);
 	}
 	
-//	ISPRAVITI SVE XPATH-OVE
-	
 	@FindBy(xpath = "//div[1]/div[1]/div/div[1]/div[1]/div/button")  
 	 private WebElement datumBtnWE;
 	

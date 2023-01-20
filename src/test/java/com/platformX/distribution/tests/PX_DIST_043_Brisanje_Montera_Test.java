@@ -25,8 +25,8 @@ public class PX_DIST_043_Brisanje_Montera_Test extends BaseTest{
 		monteri.verifikujMonteri();
 		String monter = monteri.dodajMontera();
 		monteri.verifikujMontera(monter);
-		homePage.deleteItem(true);
-		homePage.verifyDeletedItem(true, monter);
+		homePage.obrisiStavku(true);
+		homePage.verifikujBrisanjeStavke(true, monter);
 	}
 
 }

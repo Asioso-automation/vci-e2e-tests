@@ -23,4 +23,5 @@ public class TipoviStandardnogPrikljucka extends PocetnaStranica{
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaSifraWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaCijenaWE));
 	}
+
 }

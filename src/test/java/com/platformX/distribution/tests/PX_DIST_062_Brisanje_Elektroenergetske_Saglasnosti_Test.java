@@ -26,8 +26,8 @@ public class PX_DIST_062_Brisanje_Elektroenergetske_Saglasnosti_Test extends Bas
 		elSaglasnosti.verifikujElektroenergetskeSaglasnosti();
 		String eeSaglasnost = elSaglasnosti.dodajElektronergetskuSaglasnost();
 		elSaglasnosti.verifikujElektroenergetskuSaglasnost(eeSaglasnost);
-		homePage.deleteItem(true);
-		homePage.verifyDeletedItem(true, eeSaglasnost);
+		homePage.obrisiStavku(true);
+		homePage.verifikujBrisanjeStavke(true, eeSaglasnost);
 	}
 
 }

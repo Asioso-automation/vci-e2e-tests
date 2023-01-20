@@ -30,9 +30,6 @@ public class RegistarBrojila extends PocetnaStranica {
 	@FindBy(xpath = "//div[3]/div[4]/div/div/div[1]/div/input")
 	 private WebElement poljeRedniBrojURegistruWE;
 	
-	@FindBy(xpath = "//div[2]/button[1]/span")
-	 private WebElement dodajBrojiloBtnWE;
-	
 	@FindBy(xpath = "//td[2]/div/div[1]/div/div/div/div[1]/input")
 	 private WebElement filterBrojBrojilaWE;
 	

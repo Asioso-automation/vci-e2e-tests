@@ -46,9 +46,6 @@ public class ObracunskiUgovori extends PocetnaStranica {
 	@FindBy(xpath = "//div[11]/div/div/div[1]/div/input")
 	 private WebElement poljeAktivnaKonstantaWE;
 	
-	@FindBy(xpath = "//div[2]/button[1]/span")
-	 private WebElement dodajObracunskiUgovorBtnWE;
-	
 	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '4 - TG-1 (Domaćinstva 0,4 kV JT), JT')]")
 	 private WebElement odaberiTarifnuGrupuWE;
 	

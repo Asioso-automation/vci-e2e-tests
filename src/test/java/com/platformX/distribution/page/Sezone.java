@@ -42,20 +42,11 @@ public class Sezone extends PocetnaStranica {
 	@FindBy(xpath = "//div[4]/div/div/div[1]/div/input") 
 	private WebElement doDanWE;
 	
-	@FindBy(xpath = "//div[2]/button[1]") 
-	private WebElement dodajBtn1WE;
-	
 	@FindBy(xpath = "//td[2]/div/div/div/div[1]/input")
 	private WebElement filterPoNazivuWE;
 	
 	@FindBy(xpath = "//tr[2]/td[2]")
 	private WebElement nazivSezoneTabelaWE;
-	
-	@FindBy(xpath = "//tr[2]/td[5]/button/span/i")
-	private WebElement burgerBarWE;
-	
-	@FindBy(xpath = "//div/div/div[3]/button[2]")
-	private WebElement potvrdiBrisanjeWE;
 	
 	public void verifikujSezone() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
@@ -89,8 +80,8 @@ public class Sezone extends PocetnaStranica {
 	    MajWE.click();
 	    wait.until(ExpectedConditions.elementToBeClickable(doDanWE));
 	    doDanWE.sendKeys("30");
-	    wait.until(ExpectedConditions.elementToBeClickable(dodajBtn1WE));
-	    dodajBtn1WE.click();
+	    wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
+	    submitBtnWE.click();
 	    return naziv;
 	}
 	
@@ -114,32 +105,9 @@ public class Sezone extends PocetnaStranica {
 		nazivSezoneWE.click();
 		nazivSezoneWE.clear();
 		nazivSezoneWE.sendKeys(sezona);
-		wait.until(ExpectedConditions.elementToBeClickable(dodajBtn1WE));
-		dodajBtn1WE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
+		submitBtnWE.click();
 		return sezona;
-	}
-	
-	public void obrisiSezonu()throws InterruptedException{
-		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
-		burgerBarWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(obrisiWE));
-		obrisiWE.click();
-		Thread.sleep(1000);
-		wait.until(ExpectedConditions.elementToBeClickable(potvrdiBrisanjeWE));
-		potvrdiBrisanjeWE.click();
-	}
-	
-	public void verifikujBrisanjeSezone(String sezona) throws InterruptedException{
-		wait.until(ExpectedConditions.visibilityOf(filterPoNazivuWE));
-		Thread.sleep(1000);
-		wait.until(ExpectedConditions.elementToBeClickable(filterPoNazivuWE));
-		filterPoNazivuWE.click();
-		filterPoNazivuWE.clear();
-		filterPoNazivuWE.sendKeys(sezona);
-		filterPoNazivuWE.sendKeys(Keys.ENTER);
-		Thread.sleep(1000);
-		wait.until(ExpectedConditions.visibilityOf(praznaTabelaWE));
-		assertTrue(praznaTabelaWE.getText().equals("Nema podataka"), "Sezona: Poruka prazne tabele nije dobra!");
 	}
 
 }

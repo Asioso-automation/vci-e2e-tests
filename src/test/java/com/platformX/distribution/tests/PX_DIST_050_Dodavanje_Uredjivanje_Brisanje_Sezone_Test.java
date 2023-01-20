@@ -27,8 +27,8 @@ public class PX_DIST_050_Dodavanje_Uredjivanje_Brisanje_Sezone_Test extends Base
 		sezone.verifikujSezonu(sezona);
 		String novaSezona = sezone.urediSezonu();
 		sezone.verifikujSezonu(novaSezona);
-		sezone.obrisiSezonu();
-		sezone.verifikujBrisanjeSezone(novaSezona);	
+		homePage.obrisiStavku(true);
+		homePage.verifikujBrisanjeStavke(true, novaSezona);
 	}
 
 }

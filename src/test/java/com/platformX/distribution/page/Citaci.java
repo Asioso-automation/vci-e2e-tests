@@ -23,7 +23,7 @@ public class Citaci extends PocetnaStranica {
 	private WebElement imeWE;
 	
 	@FindBy(xpath = "(//button[@aria-label = 'prepend icon'])[1]")
-	private WebElement dateIconWE;
+	private WebElement datumBtnWE;
 	
 	@FindBy(xpath = "//div[(@class = 'v-btn__content') and contains(text(), '13')]")
 	private WebElement datum13WE;
@@ -55,8 +55,8 @@ public class Citaci extends PocetnaStranica {
 		dodajBtnWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(imeWE));
 		imeWE.sendKeys(ime);
-		wait.until(ExpectedConditions.elementToBeClickable(dateIconWE));
-		dateIconWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(datumBtnWE));
+		datumBtnWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(datum13WE));
 		datum13WE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));

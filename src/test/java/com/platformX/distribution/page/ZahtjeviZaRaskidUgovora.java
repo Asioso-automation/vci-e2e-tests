@@ -29,7 +29,6 @@ public class ZahtjeviZaRaskidUgovora extends PocetnaStranica {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumZavrsetkaUgovoraWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPotvrdjenWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaOdbijenWE));
-		wait.until(ExpectedConditions.elementToBeClickable(sekcijaBtnWE));
 	}
 	
 }

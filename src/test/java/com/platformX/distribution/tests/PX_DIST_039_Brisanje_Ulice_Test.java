@@ -25,8 +25,8 @@ public class PX_DIST_039_Brisanje_Ulice_Test extends BaseTest {
 		ulice.verifikujUlice();
 		String ulica = ulice.dodajUlicu();
 		ulice.verifikujUlicu(ulica);
-		homePage.deleteItem(true);
-		homePage.verifyDeletedItem(true, ulica);
+		homePage.obrisiStavku(true);
+		homePage.verifikujBrisanjeStavke(true, ulica);
 	}
 
 }

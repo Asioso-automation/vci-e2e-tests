@@ -45,9 +45,6 @@ public class ZbirnaKontrolnaMjernaMjesta extends PocetnaStranica {
 	@FindBy(xpath = "//tr[2]/td[4]/button/div")
 	 private WebElement izaberiDatumWE;
 	
-//	@FindBy(xpath = "//div[2]/button[1]/span")
-//	 private WebElement dodajZbirnoMjestoBtnWE;
-	
 	@FindBy(xpath = "//td[2]/div/div/div/div[1]/input")
 	 private WebElement filterPoNazivuWE;
 	

@@ -55,9 +55,6 @@ public class MjernaMjesta extends PocetnaStranica {
 	 @FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '78000 - Banja Luka')]")
 	 private WebElement odaberiPostuWE;
 	 
-	 @FindBy(xpath = "//div[2]/button[1]/span")
-	 private WebElement dodajMjernoMjestoBtnWE;
-	 
 	 @FindBy(xpath = "//td[3]/div/div/div/div[1]/input")
 	 private WebElement filterPoSifriTabelaWE;
 	 
@@ -120,9 +117,9 @@ public class MjernaMjesta extends PocetnaStranica {
 		wait.until(ExpectedConditions.elementToBeClickable(odaberiPostuWE));
 		odaberiPostuWE.click();
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("arguments[0].scrollIntoView(true);", dodajMjernoMjestoBtnWE);
-		wait.until(ExpectedConditions.elementToBeClickable(dodajMjernoMjestoBtnWE));
-		dodajMjernoMjestoBtnWE.click();
+		js.executeScript("arguments[0].scrollIntoView(true);", submitBtnWE);
+		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
+		submitBtnWE.click();
 		Thread.sleep(1000);
 		return sifraMjernogMjesta;
 		

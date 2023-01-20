@@ -156,27 +156,5 @@ public class UgovorOPrikljucenju extends PocetnaStranica {
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		assertTrue(porukaWE.getText().equals("Uspješno završeno."), "ElektroenergetskaSaglasnost: Uređivanje nije uspešno!");
 	}
-	  
-	public void obrisiUgovorOPrikljucenju() throws InterruptedException {
-		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
-		burgerBarWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(obrisiWE));
-		obrisiWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(potvrdiBrisanjeBtnWE));
-		potvrdiBrisanjeBtnWE.click();
-	}
-	
-	public void verifikujBrisanjeUgovoraOPrikljucenju(String naziv) throws InterruptedException {
-		wait.until(ExpectedConditions.visibilityOf(filterBrojProtokolaWE));
-		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
-		filterBrojProtokolaWE.click();
-		filterBrojProtokolaWE.clear();
-		filterBrojProtokolaWE.sendKeys(naziv);
-		filterBrojProtokolaWE.sendKeys(Keys.ENTER);
-		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
-		wait.until(ExpectedConditions.visibilityOf(praznaTabelaWE));
-		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
-		assertTrue(praznaTabelaWE.getText().equals("Nema podataka"), "UgovorOPrikljucenju: Poruka prazne tabele nije dobra!");
-	}
 
 }
