@@ -1,7 +1,5 @@
 package com.platformX.page;
 
-import static org.testng.Assert.assertTrue;
-
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
@@ -20,6 +18,7 @@ public class IskljucenjaPoZahtjevuKupca extends PocetnaStranica {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Isključenja po')]")));
+		verifyCommonElements("PRAVNI ODNOSI", "ISKLJUČENJA PO ZAHTJEVU KUPCA", "ISKLJUČENJA PO ZAHTJEVU KUPCA", 8, false, false, false, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojProtokolaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaOdsWE));
@@ -27,15 +26,6 @@ public class IskljucenjaPoZahtjevuKupca extends PocetnaStranica {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMjernoMjestoEicWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumKreiranjaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaZahtjevaniDatumIskljucenjaWE));
-		wait.until(ExpectedConditions.elementToBeClickable(sekcijaBtnWE));
-		wait.until(ExpectedConditions.elementToBeClickable(stranicaBtnWE));
-		wait.until(ExpectedConditions.elementToBeClickable(preuzmiExcelBtnWE));
-		wait.until(ExpectedConditions.elementToBeClickable(ukloniFiltereBtnWE));
-		wait.until(ExpectedConditions.elementToBeClickable(osvjeziBtnWE));
-		assertTrue(sekcijaBtnWE.getText().trim().equals("PRAVNI ODNOSI"), "IskljucenjaPoZahtjevuKupca: Naziv sekcije nije dobar!");
-		assertTrue(stranicaBtnWE.getText().trim().equals("ISKLJUČENJA PO ZAHTJEVU KUPCA"), "IskljucenjaPoZahtjevuKupca: Naziv stranice nije dobar!");
-		assertTrue(naslovStraniceWE.getText().trim().equals("ISKLJUČENJA PO ZAHTJEVU KUPCA"), "IskljucenjaPoZahtjevuKupca: Naziv stranice nije dobar!");
-		assertTrue(brojKolona().size() == 8, "IskljucenjaPoZahtjevuKupca: Broj kolona nije dobar!");
 	}
 	
 }

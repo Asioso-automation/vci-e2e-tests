@@ -48,20 +48,12 @@ public class Banke extends PocetnaStranica {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Banke')]")));
+		verifyCommonElements("FINANSIJE", "BANKE", "BANKE", 6, false, false, true, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNazivWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPocetneCifreZiroRacunaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaEmailZaTrajniNalog1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAktivnaWE));
-		wait.until(ExpectedConditions.elementToBeClickable(sekcijaBtnWE));
-		wait.until(ExpectedConditions.elementToBeClickable(stranicaBtnWE));
-		wait.until(ExpectedConditions.elementToBeClickable(preuzmiExcelBtnWE));
-		wait.until(ExpectedConditions.elementToBeClickable(ukloniFiltereBtnWE));
-		wait.until(ExpectedConditions.elementToBeClickable(osvjeziBtnWE));
-		assertTrue(sekcijaBtnWE.getText().trim().equals("FINANSIJE"), "Banke: Naziv sekcije nije dobar!");
-		assertTrue(stranicaBtnWE.getText().trim().equals("BANKE"), "Banke: Naziv stranice nije dobar!");
-		assertTrue(naslovStraniceWE.getText().trim().equals("BANKE"), "Banke: Naziv stranice nije dobar!");
-		assertTrue(brojKolona().size() == 6, "Banke: Broj kolona nije dobar! ");
 	}
 	
 	public String dodajBanku() throws InterruptedException {

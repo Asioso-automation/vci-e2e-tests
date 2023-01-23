@@ -1,6 +1,5 @@
 package com.platformX.page;
 
-import static org.testng.Assert.assertTrue;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import org.openqa.selenium.By;
@@ -18,17 +17,9 @@ public class VrsteFinansijskihKartica extends PocetnaStranica {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Vrste finansijskih kartica')]")));
+		verifyCommonElements("FINANSIJE", "VRSTE FINANSIJSKIH KARTICA", "VRSTE FINANSIJSKIH KARTICA", 2, false, false, false, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNazivWE));
-		wait.until(ExpectedConditions.elementToBeClickable(sekcijaBtnWE));
-		wait.until(ExpectedConditions.elementToBeClickable(stranicaBtnWE));
-		wait.until(ExpectedConditions.elementToBeClickable(preuzmiExcelBtnWE));
-		wait.until(ExpectedConditions.elementToBeClickable(ukloniFiltereBtnWE));
-		wait.until(ExpectedConditions.elementToBeClickable(osvjeziBtnWE));
-		assertTrue(sekcijaBtnWE.getText().trim().equals("FINANSIJE"), "VrsteFinansijskihKartica: Naziv sekcije nije dobar!");
-		assertTrue(stranicaBtnWE.getText().trim().equals("VRSTE FINANSIJSKIH KARTICA"), "VrsteFinansijskihKartica: Naziv stranice nije dobar!");
-		assertTrue(naslovStraniceWE.getText().trim().equals("VRSTE FINANSIJSKIH KARTICA"), "VrsteFinansijskihKartica: Naziv stranice nije dobar!");
-		assertTrue(brojKolona().size() == 2, "VrsteFinansijskihKartica: Broj kolona nije dobar!");
 	}
 	
 }

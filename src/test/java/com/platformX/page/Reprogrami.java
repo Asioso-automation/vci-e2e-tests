@@ -1,6 +1,5 @@
 package com.platformX.page;
 
-import static org.testng.Assert.assertTrue;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
@@ -20,6 +19,7 @@ public class Reprogrami extends PocetnaStranica {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Reprogrami')]")));
+		verifyCommonElements("FINANSIJE", "REPROGRAMI", "REPROGRAMI", 16, false, false, true, true, true, true, true);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKupacWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojUgovoraWE));
@@ -33,15 +33,6 @@ public class Reprogrami extends PocetnaStranica {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIznosPrveRateWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaProknjizenWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaOtkazanWE));
-		wait.until(ExpectedConditions.elementToBeClickable(sekcijaBtnWE));
-		wait.until(ExpectedConditions.elementToBeClickable(stranicaBtnWE));
-		wait.until(ExpectedConditions.elementToBeClickable(preuzmiExcelBtnWE));
-		wait.until(ExpectedConditions.elementToBeClickable(ukloniFiltereBtnWE));
-		wait.until(ExpectedConditions.elementToBeClickable(osvjeziBtnWE));
-		assertTrue(sekcijaBtnWE.getText().trim().equals("FINANSIJE"), "Reprogrami: Naziv sekcije nije dobar!");
-		assertTrue(stranicaBtnWE.getText().trim().equals("REPROGRAMI"), "Reprogrami: Naziv stranice nije dobar!");
-		assertTrue(naslovStraniceWE.getText().trim().equals("REPROGRAMI"), "Reprogrami: Naziv stranice nije dobar!");
-		assertTrue(brojKolona().size() == 16, "Reprogrami: Broj kolona nije dobar! ");
 	}
 
 }

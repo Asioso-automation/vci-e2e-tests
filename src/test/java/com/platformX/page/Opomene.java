@@ -1,6 +1,5 @@
 package com.platformX.page;
 
-import static org.testng.Assert.assertTrue;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
@@ -20,6 +19,7 @@ public class Opomene extends PocetnaStranica {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Opomene')]")));
+		verifyCommonElements("PRAVNI ODNOSI", "OPOMENE", "OPOMENE", 12, false, true, true, true, true, true, true);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPeriodGenerisanjaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPeriodDugaOdWE));
@@ -31,15 +31,6 @@ public class Opomene extends PocetnaStranica {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIznosWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDugPlacenWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaStampaUzRacunWE));
-		wait.until(ExpectedConditions.elementToBeClickable(sekcijaBtnWE));
-		wait.until(ExpectedConditions.elementToBeClickable(stranicaBtnWE));
-		wait.until(ExpectedConditions.elementToBeClickable(preuzmiExcelBtnWE));
-		wait.until(ExpectedConditions.elementToBeClickable(ukloniFiltereBtnWE));
-		wait.until(ExpectedConditions.elementToBeClickable(osvjeziBtnWE));
-		assertTrue(sekcijaBtnWE.getText().trim().equals("PRAVNI ODNOSI"), "Opomene: Naziv sekcije nije dobar!");
-		assertTrue(stranicaBtnWE.getText().trim().equals("OPOMENE"), "Opomene: Naziv stranice nije dobar!");
-		assertTrue(naslovStraniceWE.getText().trim().equals("OPOMENE"), "Opomene: Naziv stranice nije dobar!");
-		assertTrue(brojKolona().size() == 12, "Opomene: Broj kolona nije dobar! ");
 	}
 
 }
