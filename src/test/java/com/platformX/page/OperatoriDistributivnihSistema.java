@@ -18,7 +18,7 @@ public class OperatoriDistributivnihSistema extends PocetnaStranica {
 	public void verifikujOperatoriDistributivnihSistema() throws FileNotFoundException, IOException {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Operatori distributivnih sistema')]")));
-		verifyCommonElements("ŠIFARNICI", "OPERATORI DISTRIBUTIVNIH SISTEMA", "OPERATORI DISTRIBUTIVNIH SISTEMA", 8, false, false, false, true, true, true, false);
+		verifikacijaZajednickihElemenata("ŠIFARNICI", "OPERATORI DISTRIBUTIVNIH SISTEMA", "OPERATORI DISTRIBUTIVNIH SISTEMA", 8, false, false, false, true, true, true, false);
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNazivWE));

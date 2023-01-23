@@ -24,7 +24,7 @@ public class PX_019_Dodavanje_Djelatnosti_Test extends BaseTest {
 		Djelatnosti  djelatnosti = homePage.navigirajNaDjelatnosti();
 		djelatnosti.verifikujDjelatnosti();
 		String djelatnost = djelatnosti.dodajDjelatnost();
-		// djelatnosti.verifikujPoruku("Uspjeöno zavröeno.");
+		djelatnosti.verifikujPoruku("Uspje≈°no zavr≈°eno.");
 		djelatnosti.verifikujDjelatnost(djelatnost);
 	}
 

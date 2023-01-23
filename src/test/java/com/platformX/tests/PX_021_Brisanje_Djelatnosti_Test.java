@@ -24,10 +24,10 @@ public class PX_021_Brisanje_Djelatnosti_Test extends BaseTest {
 		Djelatnosti  djelatnosti = homePage.navigirajNaDjelatnosti();
 		djelatnosti.verifikujDjelatnosti();
 		String djelatnost = djelatnosti.dodajDjelatnost();
-		// djelatnosti.verifikujPoruku("Uspješno završeno.");
+		djelatnosti.verifikujPoruku("UspjeÅ¡no zavrÅ¡eno.");
 		djelatnosti.verifikujDjelatnost(djelatnost);
 		djelatnosti.obrisiDjelatnost();
-		// djelatnosti.verifikujPoruku("Brisanje je uspješno završeno");
+		djelatnosti.verifikujPoruku("Brisanje je uspjeÅ¡no zavrÅ¡eno");
 		djelatnosti.verifikujBrisanjeDjelatnosti(djelatnost);
 	}
 

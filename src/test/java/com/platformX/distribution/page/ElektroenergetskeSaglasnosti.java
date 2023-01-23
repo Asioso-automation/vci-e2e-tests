@@ -104,7 +104,7 @@ public class ElektroenergetskeSaglasnosti extends PocetnaStranica {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Elektroenergetske saglasnosti')]")));
-		verifyCommonElements("MJERNA MJESTA", "ELEKTROENERGETSKE SAGLASNOSTI", "ELEKTROENERGETSKE SAGLASNOSTI", 10, false, false, true, true, true, true, false);
+		verifikacijaZajednickihElemenata("MJERNA MJESTA", "ELEKTROENERGETSKE SAGLASNOSTI", "ELEKTROENERGETSKE SAGLASNOSTI", 10, false, false, true, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojProtokolaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKupacWE));
@@ -272,6 +272,7 @@ public class ElektroenergetskeSaglasnosti extends PocetnaStranica {
 		js.executeScript("arguments[0].scrollIntoView(true);", submitBtnWE);
 		submitBtnWE.click();
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
+		Thread.sleep(700);
 		assertTrue(porukaWE.getText().equals("Uspješno završeno."), "ElektroenergetskaSaglasnost: Uređivanje nije uspešno!");
 	}
 	

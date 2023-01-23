@@ -11,7 +11,7 @@ public class Sap extends PocetnaStranica {
 	}
 	
 	public void verifikujSap() throws InterruptedException {
-		verifyCommonElements("FINANSIJE", "SAP", "SAP", 0, false, false, false, false, false, false, false);
+		verifikacijaZajednickihElemenata("FINANSIJE", "SAP", "SAP", 0, false, false, false, false, false, false, false);
 	}
 
 }

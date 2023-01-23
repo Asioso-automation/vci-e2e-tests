@@ -5,7 +5,6 @@ import static org.testng.Assert.assertTrue;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -105,6 +104,7 @@ public class PocetnaStranica extends PageBase {
 	@FindBy(xpath = "//span/div/i")
 	protected WebElement profilWE;
 
+	
 	// Stranice
 
 	@FindBy(xpath = "//div[contains(text(), 'Organizacije')]")
@@ -341,9 +341,6 @@ public class PocetnaStranica extends PageBase {
 	@FindBy(xpath = "//div[contains(text(), 'Tužbe')]")
 	protected WebElement tuzbeWE;
 	
-//	@FindBy(xpath = "//div[contains(text(), 'Bankroti')]")
-//	protected WebElement bankrotiWE;
-	
 	@FindBy(xpath = "//div[contains(text(), 'Medijacije')]")
 	protected WebElement medijacijeWE;
 	
@@ -370,12 +367,9 @@ public class PocetnaStranica extends PageBase {
 	
 	@FindBy(xpath = "//div[contains(text(), 'Predračuni')]")
 	protected WebElement predracuniWE;
-	
 
-	@FindBy(xpath = "//html/body/div/div[3]/div/div/div/a[5]/div[2]/div")
+	@FindBy(xpath = "//div[contains(text(), 'Isključenja po zahtjevu kupca')]")
 	protected WebElement iskljucenjaPoZahtjevuKupcaWE;
-	
-	//*[contains(@class,'v-window-item--active')]//*[contains(@class, 'v-list-item__title')]//*[text() = 'Mjerno mjesto (EIC)']")
 	
 	@FindBy(xpath = "//div[contains(text(), 'Uključenja od strane ODS-a')]")
 	protected WebElement ukljucenjaOdStraneODSaWE;
@@ -1043,15 +1037,6 @@ public class PocetnaStranica extends PageBase {
 		return new EnergetskiObracun(driver);
 	}
 	
-//	public MonitoringEnergetskogObracunaPage navigateToMonitoringEnergetskogObracuna() throws Exception {
-//		WebDriverWait wait = new WebDriverWait(driver, 10);
-//		wait.until(ExpectedConditions.elementToBeClickable(mjernaMjestaWE));
-//		mjernaMjestaWE.click();
-//		wait.until(ExpectedConditions.elementToBeClickable(monitoringEnergetskogObracunaWE));
-//		monitoringEnergetskogObracunaWE.click();
-//		return new MonitoringEnergetskogObracunaPage(driver);
-//	}
-	
 	public NaloziZaObracun navigirajNaNaloziZaObracun() throws Exception {
 		try {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
@@ -1065,15 +1050,6 @@ public class PocetnaStranica extends PageBase {
 		}
 		return new NaloziZaObracun(driver);
 	}
-	
-//	public MonitoringObracunaPage navigateToMonitoringObracuna() throws Exception {
-//		WebDriverWait wait = new WebDriverWait(driver, 10);
-//		wait.until(ExpectedConditions.elementToBeClickable(obracunWE));
-//		obracunWE.click();
-//		wait.until(ExpectedConditions.elementToBeClickable(monitoringObracunaWE));
-//		monitoringObracunaWE.click();
-//		return new MonitoringObracunaPage(driver);
-//	}
 	
 	public Racuni navigirajNaRacuni() throws Exception {
 		try {
@@ -1736,7 +1712,8 @@ public class PocetnaStranica extends PageBase {
 		filterKupacWE.sendKeys(kupac);
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(@class, 'v-list-item__title') and contains(., '" + kupac + "')]")));
 		driver.findElement(By.xpath("//div[contains(@class, 'v-list-item__title') and contains(., '" + kupac + "')]")).click();
-		Thread.sleep(2000);
+//		Thread.sleep(2000);
+//		pregledati metodu
 	}
 	
 	public void pretraziMjernaMjesta(String mjernoMjesto) throws InterruptedException {

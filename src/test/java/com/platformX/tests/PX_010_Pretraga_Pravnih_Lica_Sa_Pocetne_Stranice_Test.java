@@ -1,5 +1,7 @@
 package com.platformX.tests;
 
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.Test;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -16,6 +18,24 @@ public class PX_010_Pretraga_Pravnih_Lica_Sa_Pocetne_Stranice_Test extends BaseT
 
 	@Test
 	public void px_010_pretraga_pravnih_lica_sa_pocetne_stranice_test() throws Exception {
+		
+		try {
+			System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver.exe");
+			ChromeOptions options = new ChromeOptions();
+			 options.addArguments("--start-maximized");
+			options.addArguments("incognito");
+			options.addArguments("chrome.switches", "--disable-extensions");
+			driver = new ChromeDriver(options);
+		} catch (Exception e) {
+			System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver.exe");
+		    ChromeOptions options = new ChromeOptions();
+			options.setBinary("C://Program Files//Google//Chrome//Application//chrome.exe");
+			 options.addArguments("--start-maximized");
+			options.addArguments("incognito");
+			options.addArguments("chrome.switches", "--disable-extensions");
+			driver = new ChromeDriver(options);
+		}
+		
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();

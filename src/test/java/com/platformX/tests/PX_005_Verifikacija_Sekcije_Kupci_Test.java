@@ -4,6 +4,7 @@ import org.testng.annotations.Test;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import com.platformX.base.BaseTest;
+import com.platformX.page.ClanoviZajednickePotrosnje;
 import com.platformX.page.FizickaLica;
 import com.platformX.page.GrupeObrazacaBrojaUgovora;
 import com.platformX.page.IzvodiOtvorenihStavkiPoODSu;
@@ -24,6 +25,7 @@ import com.platformX.page.VrsteZahtjeva;
 import com.platformX.page.ZahtjeviZaDostavuPodataka;
 import com.platformX.page.ZahtjeviZaRaskidUgovora;
 import com.platformX.page.ZahtjeviZaUgovore;
+import com.platformX.page.ZajednickaPotrosnja;
 
 public class PX_005_Verifikacija_Sekcije_Kupci_Test extends BaseTest {
 
@@ -54,10 +56,10 @@ public class PX_005_Verifikacija_Sekcije_Kupci_Test extends BaseTest {
 		zahtjeviZaRaskid.verifikujZahtjeviZaRaskidUgovora();
 		ObavjestenjaOPromjeniSnabdjevaca obavjestenja = pocetna.navigirajNaObavjestenjaOPromjeniSnabdjevaca();
 		obavjestenja.verifikujObavjestenjaOPromjeniSnabdjevaca();
-//		ZajednickaPotrosnja zajednickaPotrosnja = pocetna.navigirajNaZajednickaPotrosnja();
-//		zajednickaPotrosnja.verifikujZajednickaPotrosnja();
-//		ClanoviZajednickePotrosnje clanovi = pocetna.navigirajNaClanoviZajednickePotrosnje();
-//		clanovi.verifikujClanoviZajednickePotrosnje();
+		ZajednickaPotrosnja zajednickaPotrosnja = pocetna.navigirajNaZajednickaPotrosnja();
+		zajednickaPotrosnja.verifikujZajednickaPotrosnja();
+		ClanoviZajednickePotrosnje clanovi = pocetna.navigirajNaClanoviZajednickePotrosnje();
+		clanovi.verifikujClanoviZajednickePotrosnje();
 		UgovoreniPopusti ugovoreniPopusti = pocetna.navigirajNaUgovoreniPopusti();
 		ugovoreniPopusti.verifikujUgovoreniPopusti();
 		OdbaceniUgovori odbaceniUgovori = pocetna.navigirajNaOdbaceniUgovori();

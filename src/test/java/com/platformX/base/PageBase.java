@@ -110,9 +110,13 @@ public class PageBase {
 	}
 
 	
-	public void verifyCommonElements(String sekcija, String stranica, String naslovStranice, int brKolona, boolean importBtn, boolean addAll, boolean add, boolean downloadExcel, boolean removeFilters, boolean refresh, boolean info) {
-		WebDriverWait wait = new WebDriverWait(driver, 30);
+	public void verifikacijaZajednickihElemenata(String sekcija, String stranica, String naslovStranice, int brKolona, boolean importBtn, boolean addAll, boolean add, boolean downloadExcel, boolean removeFilters, boolean refresh, boolean info) {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		try {
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
+		}
+		catch (Exception e) {
+		}
 		wait.until(ExpectedConditions.elementToBeClickable(sekcijaBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(stranicaBtnWE));
 		assertTrue(sekcijaBtnWE.getText().trim().equals(sekcija), stranica + ": Naziv sekcije nije dobar!");
@@ -145,7 +149,11 @@ public class PageBase {
 		if (info==true) {
 			wait.until(ExpectedConditions.elementToBeClickable(infoBtnWE));
 		}
+		try {
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
+		}
+		catch (Exception e) {
+		}
 	}
 	
 

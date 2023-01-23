@@ -18,7 +18,7 @@ public class NaseljenaMjesta extends PocetnaStranica {
 	public void verifikujNaseljenaMjesta() throws InterruptedException, FileNotFoundException, IOException {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Naseljena mjesta')]")));
-		verifyCommonElements("ŠIFARNICI", "NASELJENA MJESTA", "NASELJENA MJESTA", 5, false, false, true, true, true, true, false);
+		verifikacijaZajednickihElemenata("ŠIFARNICI", "NASELJENA MJESTA", "NASELJENA MJESTA", 5, false, false, true, true, true, true, false);
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNazivWE));

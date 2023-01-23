@@ -40,24 +40,22 @@ public class PX_009_Verifikacija_Sekcije_Pravni_Odnosi_Test {
 	@Test (description="test prolazi kroz sve stranice iz sekcija PRAVNI ODNOSI i IZVJESTAJI i verifikuje ih")
 	public void px_009_verifikacija_sekcije_pravni_odnosi_test() throws Exception {
 		
-	try {
+		try {
 			System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver.exe");
 			ChromeOptions options = new ChromeOptions();
-			options.addArguments("--window-size=1500,800");
+			options.addArguments("--start-maximized");
 			options.addArguments("incognito");
 			options.addArguments("chrome.switches", "--disable-extensions");
 			driver = new ChromeDriver(options);
-			} catch (Exception e) {
+		} catch (Exception e) {
 			System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver.exe");
 		    ChromeOptions options = new ChromeOptions();
 			options.setBinary("C://Program Files//Google//Chrome//Application//chrome.exe");
 		    options.addArguments("--start-maximized");
-//			options.addArguments("--window-size=1366,768");
 			options.addArguments("incognito");
 			options.addArguments("chrome.switches", "--disable-extensions");
 			driver = new ChromeDriver(options);
-//			driver.manage().window().maximize();
-			  }
+		}
 		// Test ne radi u prozoru odredjene velicine, zbog puno stavki u sekciji, zato je ovaj test maximized
 		
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);

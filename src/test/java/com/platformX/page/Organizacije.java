@@ -16,7 +16,7 @@ public class Organizacije extends PocetnaStranica {
 	public void verifikujOrganizacije() throws InterruptedException, FileNotFoundException, IOException {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Organizacije ')]")));
-		verifyCommonElements("ŠIFARNICI", "ORGANIZACIJE", "ORGANIZACIJE", 12, false, false, false, true, true, true, false);
+		verifikacijaZajednickihElemenata("ŠIFARNICI", "ORGANIZACIJE", "ORGANIZACIJE", 12, false, false, false, true, true, true, false);
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNazivWE));

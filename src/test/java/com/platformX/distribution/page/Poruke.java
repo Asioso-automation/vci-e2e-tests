@@ -18,7 +18,7 @@ public class Poruke extends PocetnaStranica{
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Poruke')]")));
-		verifyCommonElements("ADMINISTRACIJA", "PORUKE", "PORUKE", 8, false, false, true, false, true, true, false);
+		verifikacijaZajednickihElemenata("ADMINISTRACIJA", "PORUKE", "PORUKE", 8, false, false, true, false, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKorisnikWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNaslovWE));

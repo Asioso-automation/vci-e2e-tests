@@ -46,7 +46,7 @@ public class MonitoringOcitanja extends PocetnaStranica {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Monitoring očitanja')]")));
-		verifyCommonElements("OČITANJA", "MONITORING OČITANJA", "MONITORING OČITANJA", 108, false, false, false, false, false, false, false);
+		verifikacijaZajednickihElemenata("OČITANJA", "MONITORING OČITANJA", "MONITORING OČITANJA", 108, false, false, false, false, false, false, false);
 		wait.until(ExpectedConditions.visibilityOf(neocitanaBrojilaBtnWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonObracunskiUgovorWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonMjernoMjestoEicWE));

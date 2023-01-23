@@ -17,7 +17,7 @@ public class ZbirnaKontrolnaOcitanja extends PocetnaStranica{
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Zbirna/kontrolna očitanja')]")));
-		verifyCommonElements("OČITANJA", "ZBIRNA/KONTROLNA OČITANJA", "ZBIRNA/KONTROLNA OČITANJA", 13, false, false, true, true, true, true, true);
+		verifikacijaZajednickihElemenata("OČITANJA", "ZBIRNA/KONTROLNA OČITANJA", "ZBIRNA/KONTROLNA OČITANJA", 13, false, false, true, true, true, true, true);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPeriodWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumWE));

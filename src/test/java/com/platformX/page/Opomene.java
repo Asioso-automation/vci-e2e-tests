@@ -19,7 +19,7 @@ public class Opomene extends PocetnaStranica {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Opomene')]")));
-		verifyCommonElements("PRAVNI ODNOSI", "OPOMENE", "OPOMENE", 12, false, true, true, true, true, true, true);
+		verifikacijaZajednickihElemenata("PRAVNI ODNOSI", "OPOMENE", "OPOMENE", 12, false, true, true, true, true, true, true);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPeriodGenerisanjaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPeriodDugaOdWE));
