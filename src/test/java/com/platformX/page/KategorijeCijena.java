@@ -39,24 +39,15 @@ public class KategorijeCijena extends PocetnaStranica {
 	}
 
 	public void verifikujKategorijeCijena() throws InterruptedException, FileNotFoundException, IOException {
-		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Kategorije cijena')]")));
+		verifyCommonElements("TARIFNI SISTEM", "KATEGORIJE CIJENA", "KATEGORIJE CIJENA", 6, false, false, true, true, true, true, false);
+		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNazivWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKategorijaMrezarineWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTenderskaCijenaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaVremenskiOgranicenaWE));
-		wait.until(ExpectedConditions.elementToBeClickable(sekcijaBtnWE));
-		wait.until(ExpectedConditions.elementToBeClickable(stranicaBtnWE));
-		wait.until(ExpectedConditions.elementToBeClickable(preuzmiExcelBtnWE));
-		wait.until(ExpectedConditions.elementToBeClickable(ukloniFiltereBtnWE));
-		wait.until(ExpectedConditions.elementToBeClickable(osvjeziBtnWE));
-		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
-		assertTrue(sekcijaBtnWE.getText().trim().equals("TARIFNI SISTEM"), "KategorijeCijena: Naziv sekcije nije dobar!");
-		assertTrue(stranicaBtnWE.getText().trim().equals("KATEGORIJE CIJENA"), "KategorijeCijena: Naziv stranice nije dobar!");
-		assertTrue(naslovStraniceWE.getText().trim().equals("KATEGORIJE CIJENA"), "KategorijeCijena: Naziv stranice nije dobar!");
-		assertTrue(brojKolona().size() == 6, "KategorijeCijena: Broj kolona nije dobar! ");
 	}
 	
 	public String dodajKategoriju() {
