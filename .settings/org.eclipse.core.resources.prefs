@@ -6,7 +6,6 @@ encoding//src/test/java/com/platformX/distribution/page/CitaciPoCitackimHodovima
 encoding//src/test/java/com/platformX/distribution/page/CitackeListe.java=UTF-8
 encoding//src/test/java/com/platformX/distribution/page/CitackiHodovi.java=UTF-8
 encoding//src/test/java/com/platformX/distribution/page/CjenovnikMrezarine.java=UTF-8
-encoding//src/test/java/com/platformX/distribution/page/Djelatnosti.java=UTF-8
 encoding//src/test/java/com/platformX/distribution/page/EnergetskaKartica.java=UTF-8
 encoding//src/test/java/com/platformX/distribution/page/Entiteti.java=UTF-8
 encoding//src/test/java/com/platformX/distribution/page/FizickaLica.java=UTF-8
@@ -36,7 +35,6 @@ encoding//src/test/java/com/platformX/distribution/page/Poste.java=UTF-8
 encoding//src/test/java/com/platformX/distribution/page/PravnaLica.java=UTF-8
 encoding//src/test/java/com/platformX/distribution/page/PrikljucneSnage.java=UTF-8
 encoding//src/test/java/com/platformX/distribution/page/ProizvodjaciBrojila.java=UTF-8
-encoding//src/test/java/com/platformX/distribution/page/SektorDjelatnosti.java=UTF-8
 encoding//src/test/java/com/platformX/distribution/page/Sezone.java=UTF-8
 encoding//src/test/java/com/platformX/distribution/page/Snabdjevaci.java=UTF-8
 encoding//src/test/java/com/platformX/distribution/page/SposobnostPrikljucenjaBrojila.java=UTF-8

@@ -9,7 +9,6 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import com.platformX.distribution.page.PocetnaStranica;
 import com.platformX.distribution.page.Poste;
-import com.platformX.distribution.page.SektorDjelatnosti;
 import com.platformX.distribution.page.Snabdjevaci;
 import com.platformX.distribution.page.TerenskeJedinice;
 import com.platformX.distribution.page.Trafostanice;
@@ -23,7 +22,6 @@ import com.platformX.distribution.page.NaseljenaMjesta;
 import com.platformX.distribution.page.Opstine;
 import com.platformX.distribution.page.Organizacije;
 import com.platformX.distribution.page.Citaci;
-import com.platformX.distribution.page.Djelatnosti;
 import com.platformX.distribution.page.Entiteti;
 import com.platformX.distribution.page.FizickeLokacije;
 
@@ -71,10 +69,6 @@ public class PX_DIST_003_Verifikacija_Sekcije_Sifarnici_Test {
 		snabdjevaci.verifikujSnabdjevaci();
 		Citaci citaci = pocetna.navigirajNaCitaci();
 		citaci.verifikujCitaci();
-		SektorDjelatnosti sektor = pocetna.navigirajNaSektorDjelatnosti();
-		sektor.verifikujSektorDjelatnosti();
-		Djelatnosti djelatnosti = pocetna.navigirajNaDjelatnosti();
-		djelatnosti.verifikujDjelatnosti();
 		Entiteti entiteti = pocetna.navigirajNaEntiteti();
 		entiteti.verifikujEntitete();
 		Opstine opstine = pocetna.navigirajNaOpstine();
