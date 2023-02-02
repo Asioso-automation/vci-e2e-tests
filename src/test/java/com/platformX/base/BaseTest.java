@@ -66,7 +66,6 @@ public class BaseTest {
 			options.addArguments("incognito");
 			options.addArguments("chrome.switches", "--disable-extensions");
 			driver = new ChromeDriver(options);
-			driver.manage().window().maximize();
 			  }
 		} else {
 		}

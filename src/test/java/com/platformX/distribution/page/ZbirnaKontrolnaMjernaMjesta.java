@@ -122,6 +122,7 @@ public class ZbirnaKontrolnaMjernaMjesta extends PocetnaStranica {
 		burgerBarWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(urediWE));
 		urediWE.click();
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		wait.until(ExpectedConditions.elementToBeClickable(poljeNazivWE));
 		poljeNazivWE.click();
 		poljeNazivWE.clear();

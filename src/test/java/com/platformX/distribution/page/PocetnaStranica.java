@@ -528,34 +528,6 @@ public class PocetnaStranica extends PageBase {
 		return new Citaci(driver);
 	}
 	
-	public SektorDjelatnosti navigirajNaSektorDjelatnosti() throws Exception {
-		try {
-		WebDriverWait wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.elementToBeClickable(sifarniciWE));
-		sifarniciWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(sektorDjelatnostiWE));
-		sektorDjelatnostiWE.click();
-		}
-		catch (Exception e) {
-			driver.get(platformx_distribution_properties.getValue("URL.DIST.LOGIN") + platformx_distribution_properties.getValue("SEKTOR.DJELATNOSTI"));
-		}
-		return new SektorDjelatnosti(driver);
-	}
-	
-	public Djelatnosti navigirajNaDjelatnosti() throws Exception {
-		try {
-		WebDriverWait wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.elementToBeClickable(sifarniciWE));
-		sifarniciWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(djelatnostiWE));
-		djelatnostiWE.click();
-		}
-		catch (Exception e) {
-			driver.get(platformx_distribution_properties.getValue("URL.DIST.LOGIN") + platformx_distribution_properties.getValue("DJELATNOSTI"));
-		}
-		return new Djelatnosti(driver);
-	}
-	
 	public Entiteti navigirajNaEntiteti() throws Exception {
 		try {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
