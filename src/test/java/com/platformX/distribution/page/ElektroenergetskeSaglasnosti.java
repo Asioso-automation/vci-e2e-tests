@@ -263,14 +263,10 @@ public class ElektroenergetskeSaglasnosti extends PocetnaStranica {
 		urediWE.click();
 		wait.until(ExpectedConditions.visibilityOf(stranicaBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(odobrenaPrikljucnaSnagaWE));
-		odobrenaPrikljucnaSnagaWE.click();
 		odobrenaPrikljucnaSnagaWE.clear();
 		odobrenaPrikljucnaSnagaWE.sendKeys(Helper.getRandomNumber(1));
 		odobrenaPrikljucnaSnagaWE.sendKeys(Keys.ARROW_DOWN);
 		odobrenaPrikljucnaSnagaWE.sendKeys(Keys.ENTER);
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("arguments[0].scrollIntoView(true);", submitBtnWE);
-		submitBtnWE.click();
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		Thread.sleep(700);
 		assertTrue(porukaWE.getText().equals("Uspješno završeno."), "ElektroenergetskaSaglasnost: Uređivanje nije uspešno!");

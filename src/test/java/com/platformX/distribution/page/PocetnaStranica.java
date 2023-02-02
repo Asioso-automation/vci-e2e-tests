@@ -17,7 +17,7 @@ public class PocetnaStranica extends PageBase {
 		super(driver);
 	}
 	
-	WebDriverWait wait = new WebDriverWait(driver, 30);
+	WebDriverWait wait = new WebDriverWait(driver, 20);
 	
 	@FindBy(xpath = "//div[1]/div/div/div/div/div/div[1]/input[1]")
 	protected WebElement filterKupacWE;

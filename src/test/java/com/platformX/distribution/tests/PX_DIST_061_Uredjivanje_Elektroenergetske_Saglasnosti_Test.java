@@ -15,7 +15,7 @@ public class PX_DIST_061_Uredjivanje_Elektroenergetske_Saglasnosti_Test extends 
 	}
 	
 	@Test
-	public void px_dist_061_uredjivanje_elektroenergetske_saglasnosti_test() throws Exception {
+	public void px_dist_061_uredjivanje_elektroenergetske_saglasnosti_test() throws Exception {		
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
@@ -27,5 +27,5 @@ public class PX_DIST_061_Uredjivanje_Elektroenergetske_Saglasnosti_Test extends 
 		elSaglasnosti.verifikujElektroenergetskuSaglasnost(eeSaglasnost);
 		elSaglasnosti.urediElektroenergetskuSaglasnost();
 	}
-
+	
 }
