@@ -37,7 +37,6 @@ public class PX_DIST_072_Uredjivanje_Obracunskog_Ugovora_PxD_Test  extends BaseT
 		RegistarBrojila registarBrojilaPage = pocetna.navigirajNaRegistarBrojila();
 		registarBrojilaPage.verifikujRegistarBrojila();
 		String registarBrojila = registarBrojilaPage.dodajBrojilo();
-		registarBrojilaPage.navigirajNaRegistarBrojila();
 		registarBrojilaPage.verifikujBrojilo(registarBrojila);
 		String brBrojila = registarBrojilaPage.kreirajBrojilo();
 		ObracunskiUgovori obracunskiUgovoriPage = pocetna.navigirajNaObracunskiUgovori();

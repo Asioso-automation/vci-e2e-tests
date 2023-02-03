@@ -76,10 +76,9 @@ public class RegistarBrojila extends PocetnaStranica {
 	}
 	
 	public void verifikujBrojilo(String brojBrojila) throws InterruptedException, FileNotFoundException, IOException {
-		Thread.sleep(1000);
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		wait.until(ExpectedConditions.elementToBeClickable(filterBrojBrojilaWE));
 		filterBrojBrojilaWE.click();
-		Thread.sleep(1000);
 		napredniFilterJednakoWE.sendKeys(brojBrojila);
 		napredniFilterJednakoWE.sendKeys(Keys.ENTER);
 		Thread.sleep(1000);
