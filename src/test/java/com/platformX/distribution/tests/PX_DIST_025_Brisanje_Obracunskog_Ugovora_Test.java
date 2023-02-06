@@ -11,14 +11,14 @@ import com.platformX.distribution.page.ObracunskiUgovori;
 import com.platformX.distribution.page.PocetnaStranica;
 import com.platformX.distribution.page.RegistarBrojila;
 
-public class PX_DIST_073_Brisanje_Obracunskog_Ugovora_Test  extends BaseTest {
+public class PX_DIST_025_Brisanje_Obracunskog_Ugovora_Test  extends BaseTest {
 
-	public PX_DIST_073_Brisanje_Obracunskog_Ugovora_Test() throws IOException, FileNotFoundException {
+	public PX_DIST_025_Brisanje_Obracunskog_Ugovora_Test() throws IOException, FileNotFoundException {
 		super();
 	}
 	
 	@Test
-	public void px_dist_073_brisanje_obracunskog_ugovora_test() throws Exception {
+	public void px_dist_025_brisanje_obracunskog_ugovora_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
