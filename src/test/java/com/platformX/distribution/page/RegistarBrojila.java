@@ -57,7 +57,6 @@ public class RegistarBrojila extends PocetnaStranica {
 	
 	public String dodajBrojilo() throws InterruptedException, FileNotFoundException, IOException {
 		String brojBrojila = Helper.getRandomNumber(6);
-		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
 		dodajBtnWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(poljeBrojWE));
@@ -76,13 +75,14 @@ public class RegistarBrojila extends PocetnaStranica {
 	}
 	
 	public void verifikujBrojilo(String brojBrojila) throws InterruptedException, FileNotFoundException, IOException {
-		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		wait.until(ExpectedConditions.elementToBeClickable(filterBrojBrojilaWE));
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		filterBrojBrojilaWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(napredniFilterJednakoWE));
 		napredniFilterJednakoWE.sendKeys(brojBrojila);
 		napredniFilterJednakoWE.sendKeys(Keys.ENTER);
-		Thread.sleep(1000);
 		wait.until(ExpectedConditions.visibilityOf(brojBrojilaTabelaWE));
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		assertTrue(brojBrojilaTabelaWE.getText().contains(brojBrojila),"Registar brojila: Broj brojila nije dobar!");
 	}
 	

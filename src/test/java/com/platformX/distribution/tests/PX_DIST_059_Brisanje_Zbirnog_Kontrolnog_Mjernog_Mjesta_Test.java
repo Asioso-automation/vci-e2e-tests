@@ -25,7 +25,6 @@ public class PX_DIST_059_Brisanje_Zbirnog_Kontrolnog_Mjernog_Mjesta_Test  extend
 		RegistarBrojila registarBrojilaPage = homePage.navigirajNaRegistarBrojila();
 		registarBrojilaPage.verifikujRegistarBrojila();
 		String registarBrojila = registarBrojilaPage.dodajBrojilo();
-		registarBrojilaPage.navigirajNaRegistarBrojila();
 		registarBrojilaPage.verifikujBrojilo(registarBrojila);
 		String brBrojila = registarBrojilaPage.kreirajBrojilo();
 		ZbirnaKontrolnaMjernaMjesta zbirnaKontrolnaMjernaMjestaPage = homePage.navigirajNaZbirnaKontrolnaMjernaMjesta();

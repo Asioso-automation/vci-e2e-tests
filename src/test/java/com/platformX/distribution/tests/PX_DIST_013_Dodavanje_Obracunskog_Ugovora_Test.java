@@ -11,14 +11,14 @@ import com.platformX.distribution.page.ObracunskiUgovori;
 import com.platformX.distribution.page.PocetnaStranica;
 import com.platformX.distribution.page.RegistarBrojila;
 
-public class PX_DIST_072_Uredjivanje_Obracunskog_Ugovora_PxD_Test  extends BaseTest {
+public class PX_DIST_013_Dodavanje_Obracunskog_Ugovora_Test  extends BaseTest {
 
-	public PX_DIST_072_Uredjivanje_Obracunskog_Ugovora_PxD_Test() throws IOException, FileNotFoundException {
+	public PX_DIST_013_Dodavanje_Obracunskog_Ugovora_Test() throws IOException, FileNotFoundException {
 		super();
 	}
 	
 	@Test
-	public void px_dist_072_uredjivanje_obracunskog_ugovora_pxd_test() throws Exception {
+	public void px_dist_013_dodavanje_obracunskog_ugovora_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
@@ -41,8 +41,6 @@ public class PX_DIST_072_Uredjivanje_Obracunskog_Ugovora_PxD_Test  extends BaseT
 		String brBrojila = registarBrojilaPage.kreirajBrojilo();
 		ObracunskiUgovori obracunskiUgovoriPage = pocetna.navigirajNaObracunskiUgovori();
 		obracunskiUgovoriPage.dodajObracunskiUgovor(kupac, mjernoMjesto, brBrojila);
-		obracunskiUgovoriPage.verifikujObracunskiUgovor(mjernoMjesto);
-		obracunskiUgovoriPage.urediObracunskiUgovor();
 		obracunskiUgovoriPage.verifikujObracunskiUgovor(mjernoMjesto);
 	}
 
