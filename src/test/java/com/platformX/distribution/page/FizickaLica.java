@@ -67,7 +67,6 @@ public class FizickaLica extends PocetnaStranica {
 	
 	public String dodajFizickoLice() throws InterruptedException, FileNotFoundException, IOException {
 		String nazivFizickogLica = "Fizicko lice " + Helper.getRandomString(5);
-		Thread.sleep(1000);
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
 		dodajBtnWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(poljeImeIPrezimeWE));
@@ -76,17 +75,14 @@ public class FizickaLica extends PocetnaStranica {
 		poljeStampaniNazivNaDokumentimaWE.sendKeys(Helper.getRandomString(10));
 		wait.until(ExpectedConditions.elementToBeClickable(poljeMjestoWE));
 		poljeMjestoWE.sendKeys("6 - Banja Luka");
-		Thread.sleep(1000);
 		wait.until(ExpectedConditions.elementToBeClickable(odaberiMjestoWE));
 		odaberiMjestoWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(poljeUlicaWE));
 		poljeUlicaWE.sendKeys("10950 - Svetog Save");
-		Thread.sleep(1000);
 		wait.until(ExpectedConditions.elementToBeClickable(odaberiUlicuWE));
 		odaberiUlicuWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(poljePostaWE));
 		poljePostaWE.sendKeys("78000 - Banja Luka");
-		Thread.sleep(1000);
 		wait.until(ExpectedConditions.elementToBeClickable(odaberiPostuWE));
 		odaberiPostuWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
@@ -101,7 +97,6 @@ public class FizickaLica extends PocetnaStranica {
 		filterPoImeIPrezimeWE.clear();
 		filterPoImeIPrezimeWE.sendKeys(nazivFizickogLica);
 		filterPoImeIPrezimeWE.sendKeys(Keys.ENTER);
-		Thread.sleep(1000);
 		wait.until(ExpectedConditions.visibilityOf(imeIPrezimeTabelaWE));
 		assertTrue(imeIPrezimeTabelaWE.getText().contains(nazivFizickogLica),"Fizicka Lica: Naziv fizickog lica nije dobar!");
     }
@@ -111,9 +106,10 @@ public class FizickaLica extends PocetnaStranica {
 		return kupac;
 	 }  
 	 
-	 public String urediFizickoLice() {
+	 public String urediFizickoLice() throws InterruptedException {
 		 String nazivFizickogLica = "Fizicko lice" + Helper.getRandomString(5);
 		 wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
+		 Thread.sleep(800);																// trenutno ne radi burgerBarWE.click() bez Thread.sleep
 		 burgerBarWE.click();
 		 wait.until(ExpectedConditions.elementToBeClickable(urediWE));
 		 urediWE.click();
