@@ -85,13 +85,13 @@ public class ZbirnaKontrolnaMjernaMjesta extends PocetnaStranica {
 		poljeKonstantaWE.sendKeys(Helper.getRandomNumber(1));
 		wait.until(ExpectedConditions.elementToBeClickable(poljeTrafoStanicaWE));
 		poljeTrafoStanicaWE.sendKeys("11120 - 120-Didas");
-		Thread.sleep(1000);
+		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
 		wait.until(ExpectedConditions.elementToBeClickable(odaberiTrafoStanicuWE));
 		odaberiTrafoStanicuWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(poljeCitackiHodWE));
 		poljeCitackiHodWE.click();
 		poljeCitackiHodWE.sendKeys("01 01 00 011120");
-		Thread.sleep(1000);
+		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
 		poljeCitackiHodWE.sendKeys(Keys.ARROW_DOWN);
 		poljeCitackiHodWE.sendKeys(Keys.ENTER);
 		wait.until(ExpectedConditions.elementToBeClickable(poljeBrojCitackogHodaWE));   
@@ -102,6 +102,7 @@ public class ZbirnaKontrolnaMjernaMjesta extends PocetnaStranica {
 		izaberiDatumWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
 		submitBtnWE.click();
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		return nazivZbirnogKontrolnogMjesta;
 	}
 	
@@ -111,7 +112,7 @@ public class ZbirnaKontrolnaMjernaMjesta extends PocetnaStranica {
 		filterPoNazivuWE.clear();
 		filterPoNazivuWE.sendKeys(nazivZbirnogMjesta);
 		filterPoNazivuWE.sendKeys(Keys.ENTER);
-		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
+		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		wait.until(ExpectedConditions.visibilityOf(nazivTabelaWE));
 		assertTrue(nazivTabelaWE.getText().contains(nazivZbirnogMjesta),"Mjerna Mjesta: Zbirno/Kontrolno mjerno mjesto nije dobro!");
 	}
@@ -129,6 +130,7 @@ public class ZbirnaKontrolnaMjernaMjesta extends PocetnaStranica {
 		poljeNazivWE.sendKeys(nazivZbirnogKontrolnogMjesta);
 		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
 		submitBtnWE.click();
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		return nazivZbirnogKontrolnogMjesta;
 	}
 

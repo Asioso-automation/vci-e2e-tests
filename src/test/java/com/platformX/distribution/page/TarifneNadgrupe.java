@@ -44,6 +44,7 @@ public class TarifneNadgrupe extends PocetnaStranica {
 		nazivTarifneNadrupeWE.sendKeys(naziv);
 		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
 		submitBtnWE.click();
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		return naziv;
 	}
 	
@@ -53,6 +54,7 @@ public class TarifneNadgrupe extends PocetnaStranica {
 		filterPoNazivuWE.clear();
 		filterPoNazivuWE.sendKeys(naziv);
 		filterPoNazivuWE.sendKeys(Keys.ENTER);
+		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		wait.until(ExpectedConditions.elementToBeClickable(nazivTarifneNadgrupeTabelaWE));
 		assertTrue(nazivTarifneNadgrupeTabelaWE.getText().equals(naziv), "TarfinaNadgrupa: Tarifna nadgrupa nije pronadjena!");
 	}
@@ -69,6 +71,7 @@ public class TarifneNadgrupe extends PocetnaStranica {
 		nazivTarifneNadrupeWE.sendKeys(tarifnaNadrgupa);
 		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
 		submitBtnWE.click();
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		return tarifnaNadrgupa;
 	}
 

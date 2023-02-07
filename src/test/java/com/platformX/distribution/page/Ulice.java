@@ -54,8 +54,8 @@ public class Ulice extends PocetnaStranica {
 		nazivWE.sendKeys(naziv);
 		wait.until(ExpectedConditions.elementToBeClickable(nazivNaDokumentimaWE));
 		nazivNaDokumentimaWE.sendKeys("Ulica na dok " + Helper.getRandomString(5));
-		Thread.sleep(500);
 		submitBtnWE.click();
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		return naziv;
 	}
 	
@@ -66,7 +66,7 @@ public class Ulice extends PocetnaStranica {
 		filterPoNazivuWE.clear();
 		filterPoNazivuWE.sendKeys(naziv);
 		filterPoNazivuWE.sendKeys(Keys.ENTER);
-		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
+		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		wait.until(ExpectedConditions.visibilityOf(nazivUliceTabelaWE));
 		assertTrue(nazivUliceTabelaWE.getText().equals(naziv), "Ulice: Ulica nije pronadjena!");
 	}
@@ -77,13 +77,13 @@ public class Ulice extends PocetnaStranica {
 		burgerBarWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(urediWE));
 		urediWE.click();
-		Thread.sleep(1000);
 		wait.until(ExpectedConditions.elementToBeClickable(urediNazivWE));
 		urediNazivWE.click();
 		urediNazivWE.clear();
 		urediNazivWE.sendKeys(ulica);
 		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
 		submitBtnWE.click();
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		return ulica;
 	}
 

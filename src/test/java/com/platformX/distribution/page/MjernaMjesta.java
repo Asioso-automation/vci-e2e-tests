@@ -91,36 +91,36 @@ public class MjernaMjesta extends PocetnaStranica {
 		poljeSifraWE.sendKeys(sifraMjernogMjesta);
 		wait.until(ExpectedConditions.elementToBeClickable(poljeTerenskaJedinicaWE));
 		poljeTerenskaJedinicaWE.click();
-		Thread.sleep(1000);
+		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
 		wait.until(ExpectedConditions.elementToBeClickable(odaberiTerenskuJedinicuWE));
 		odaberiTerenskuJedinicuWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(poljeFizickaLokacijaWE));
 		poljeFizickaLokacijaWE.click();
-		Thread.sleep(1000);
+		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
 		wait.until(ExpectedConditions.elementToBeClickable(odaberiFizickuLokacijuWE));
 		odaberiFizickuLokacijuWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(poljeTrafoStanicaWE));
 		poljeTrafoStanicaWE.sendKeys("11120 - 120-Didas");
-		Thread.sleep(1000);
+		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
 		wait.until(ExpectedConditions.elementToBeClickable(odaberiTrafoStanicuWE));
 		odaberiTrafoStanicuWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(poljeBrojCitackogHodaWE));
 		poljeBrojCitackogHodaWE.sendKeys(Helper.getRandomNumber(4));
 		wait.until(ExpectedConditions.elementToBeClickable(poljeUlicaWE));
 		poljeUlicaWE.sendKeys("10950 - Svetog Save");
-		Thread.sleep(1000);
+		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
 		wait.until(ExpectedConditions.elementToBeClickable(odaberiUlicuWE));
 		odaberiUlicuWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(poljePostaWE));
 		poljePostaWE.sendKeys("78000 - Banja Luka");
-		Thread.sleep(1000);
+		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
 		wait.until(ExpectedConditions.elementToBeClickable(odaberiPostuWE));
 		odaberiPostuWE.click();
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].scrollIntoView(true);", submitBtnWE);
 		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
 		submitBtnWE.click();
-		Thread.sleep(1000);
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		return sifraMjernogMjesta;
 		
 	 }
@@ -131,7 +131,7 @@ public class MjernaMjesta extends PocetnaStranica {
 		filterPoSifriTabelaWE.clear();
 		filterPoSifriTabelaWE.sendKeys(sifraMjernogMjesta);
 		filterPoSifriTabelaWE.sendKeys(Keys.ENTER);
-		Thread.sleep(1000);
+		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		wait.until(ExpectedConditions.visibilityOf(sifraTabelaWE));
 		assertTrue(sifraTabelaWE.getText().contains(sifraMjernogMjesta),"Mjerna mjesta: Sifra mjernog mjesta nije dobra!");
 		

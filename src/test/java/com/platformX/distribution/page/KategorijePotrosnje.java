@@ -45,6 +45,7 @@ public class KategorijePotrosnje extends PocetnaStranica {
 		nazivKategorijePotrosnjeWE.sendKeys(naziv);
 		wait.until(ExpectedConditions.visibilityOf(submitBtnWE));
 		submitBtnWE.click();
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		return naziv;	
 	}
 	
@@ -54,7 +55,7 @@ public class KategorijePotrosnje extends PocetnaStranica {
        filterPoNazivuWE.clear();
        filterPoNazivuWE.sendKeys(naziv);
        filterPoNazivuWE.sendKeys(Keys.ENTER);
-       wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
+       wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
        wait.until(ExpectedConditions.visibilityOf(nazivKategorijePotrosnjeTabelaWE));
        assertTrue(nazivKategorijePotrosnjeTabelaWE.getText().equals(naziv), "KategorijaPotrosnje: KategorijaPotrosnje nije pronadjena!");
 	}
@@ -72,6 +73,7 @@ public class KategorijePotrosnje extends PocetnaStranica {
 		nazivKategorijePotrosnjeWE.sendKeys(kategorijaPotrosnje);
 		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
 		submitBtnWE.click();
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		return kategorijaPotrosnje;
 	}
 

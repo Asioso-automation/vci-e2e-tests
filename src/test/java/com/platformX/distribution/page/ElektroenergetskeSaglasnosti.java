@@ -268,6 +268,7 @@ public class ElektroenergetskeSaglasnosti extends PocetnaStranica {
 		wait.until(ExpectedConditions.elementToBeClickable(odobrenaPrikljucnaSnagaWE));
 		odobrenaPrikljucnaSnagaWE.clear();
 		odobrenaPrikljucnaSnagaWE.sendKeys(Helper.getRandomNumber(1));
+//		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
 		odobrenaPrikljucnaSnagaWE.sendKeys(Keys.ARROW_DOWN);
 		odobrenaPrikljucnaSnagaWE.sendKeys(Keys.ENTER);
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));

@@ -63,7 +63,7 @@ public class RegistarBrojila extends PocetnaStranica {
 		poljeBrojWE.sendKeys(brojBrojila);
 		wait.until(ExpectedConditions.elementToBeClickable(poljeTipBrojilaWE));
 		poljeTipBrojilaWE.sendKeys("59712 - E5BD (A-D)");
-		Thread.sleep(1000);
+		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
 		wait.until(ExpectedConditions.elementToBeClickable(odaberiTipBrojilaWE));
 		odaberiTipBrojilaWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(poljeRedniBrojURegistruWE));

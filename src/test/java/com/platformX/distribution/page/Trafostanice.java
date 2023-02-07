@@ -76,7 +76,7 @@ public class Trafostanice extends PocetnaStranica {
 		wait.until(ExpectedConditions.elementToBeClickable(fizickaLokacijaWE));
 		fizickaLokacijaWE.click();
 		fizickaLokacijaWE.sendKeys(Helper.getRandomNumber(1));
-		Thread.sleep(1000);
+		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
 		fizickaLokacijaWE.sendKeys(Keys.ARROW_DOWN);
 		fizickaLokacijaWE.sendKeys(Keys.ENTER);
 		wait.until(ExpectedConditions.elementToBeClickable(tipWE));
@@ -85,34 +85,34 @@ public class Trafostanice extends PocetnaStranica {
 		wait.until(ExpectedConditions.elementToBeClickable(mjestoWE));
 		mjestoWE.click();
 		mjestoWE.sendKeys(Helper.getRandomNumber(1));
-		Thread.sleep(1000);
+		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
 		mjestoWE.sendKeys(Keys.ARROW_DOWN);
 		mjestoWE.sendKeys(Keys.ENTER);
 		wait.until(ExpectedConditions.elementToBeClickable(ulicaWE));
 		ulicaWE.click();
 		ulicaWE.sendKeys(Helper.getRandomNumber(1));
-		Thread.sleep(1000);
+		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
 		ulicaWE.sendKeys(Keys.ARROW_DOWN);
 		ulicaWE.sendKeys(Keys.ENTER);
 		wait.until(ExpectedConditions.elementToBeClickable(postaWE));
 		postaWE.click();
 		postaWE.sendKeys(Helper.getRandomNumber(1));
-		Thread.sleep(1000);
+		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
 		postaWE.sendKeys(Keys.ARROW_DOWN);
 		postaWE.sendKeys(Keys.ENTER);
 		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
 		submitBtnWE.click();
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		return naziv;
 	}
 	
 	public void verifikujTrafostanicu(String naziv) throws Exception{
 		wait.until(ExpectedConditions.elementToBeClickable(filterNazivWE));
-		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		filterNazivWE.click();
 		filterNazivWE.clear();
 		filterNazivWE.sendKeys(naziv);
 		filterNazivWE.sendKeys(Keys.ENTER);
-		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
+		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		wait.until(ExpectedConditions.visibilityOf(nazivTabelaWE));
 		assertTrue(nazivTabelaWE.getText().equals(naziv), "TrafoStanice: Trafostanica nije pronadjena!");
 	}
@@ -128,13 +128,14 @@ public class Trafostanice extends PocetnaStranica {
 		burgerBarWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(urediWE));
 		urediWE.click();
-		Thread.sleep(1000);
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		wait.until(ExpectedConditions.elementToBeClickable(nazivWE));
 		nazivWE.click();
 		nazivWE.clear();
 		nazivWE.sendKeys(trafostanica);
 		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
 		submitBtnWE.click();
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		return trafostanica;
 	}
 

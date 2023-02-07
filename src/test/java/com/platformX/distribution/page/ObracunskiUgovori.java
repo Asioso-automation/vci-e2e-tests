@@ -81,22 +81,29 @@ public class ObracunskiUgovori extends PocetnaStranica {
 	}
 	
 	public void dodajObracunskiUgovor(String kupac, String mjernoMjesto, String brBrojila) throws InterruptedException, FileNotFoundException, IOException {
-		Thread.sleep(1000);
-		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
-		dodajBtnWE.click();
+		try {
+			wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
+			wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
+			dodajBtnWE.click();
+		}
+		catch (Exception e) {
+			wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
+			wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
+			dodajBtnWE.click();
+		}
 		wait.until(ExpectedConditions.elementToBeClickable(poljeKupacWE));
 		poljeKupacWE.sendKeys(kupac);
+		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(@class, 'v-list-item__title') and contains(., '" + kupac + "')]")));
 		driver.findElement(By.xpath("//div[contains(@class, 'v-list-item__title') and contains(., '" + kupac + "')]")).click();
-		Thread.sleep(1000);
 		wait.until(ExpectedConditions.elementToBeClickable(poljeTipUgovoraWE));
 		poljeTipUgovoraWE.sendKeys("3 - Domaćinstva");
-		Thread.sleep(1000);
+		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
 		wait.until(ExpectedConditions.elementToBeClickable(odaberiTipUgovoraWE));
 		odaberiTipUgovoraWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(poljeTarifnaGrupaWE));
 		poljeTarifnaGrupaWE.sendKeys("4 - TG-1 (Domaćinstva 0,4 kV JT), JT");
-		Thread.sleep(1000);
+		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
 		wait.until(ExpectedConditions.elementToBeClickable(odaberiTarifnuGrupuWE));
 		odaberiTarifnuGrupuWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(datumPocetkaWE));
@@ -121,25 +128,25 @@ public class ObracunskiUgovori extends PocetnaStranica {
 		js.executeScript("arguments[0].scrollIntoView(true);", submitBtnWE);
 		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
 		submitBtnWE.click();
-		Thread.sleep(1000);
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 	}
 	
 	public void verifikujObracunskiUgovor(String mjernoMjesto) throws InterruptedException, FileNotFoundException, IOException {
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		wait.until(ExpectedConditions.elementToBeClickable(filterPoMjernomMjestuWE));
-		Thread.sleep(1000);
 		filterPoMjernomMjestuWE.click();
 		filterPoMjernomMjestuWE.clear();
 		filterPoMjernomMjestuWE.sendKeys(mjernoMjesto);
 		filterPoMjernomMjestuWE.sendKeys(Keys.ENTER);
-		Thread.sleep(1000);
+		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		wait.until(ExpectedConditions.visibilityOf(mjernoMjestoTabelaWE));
 		assertTrue(mjernoMjestoTabelaWE.getText().contains(mjernoMjesto),"Obracunski ugovori: EIC ugovora nije dobar!");
 	}
 	
 	public String urediObracunskiUgovor() throws InterruptedException {
 		String nazivMjernogMjesta = "Naziv mjm " + Helper.getRandomString(7);
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
-		Thread.sleep(1000);
 		burgerBarWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(urediWE));
 		urediWE.click();
@@ -151,6 +158,7 @@ public class ObracunskiUgovori extends PocetnaStranica {
 		js.executeScript("arguments[0].scrollIntoView(true);", submitBtnWE);
 		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
 		submitBtnWE.click();
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		return nazivMjernogMjesta;
 	}
 	

@@ -45,6 +45,7 @@ public class Monteri extends PocetnaStranica {
 		imePrezimeWE.sendKeys(naziv);
 		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
 		submitBtnWE.click();
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		return naziv;
 	}
 	
@@ -55,7 +56,7 @@ public class Monteri extends PocetnaStranica {
 		filterPoImePrezimeWE.clear();
 		filterPoImePrezimeWE.sendKeys(naziv);
 		filterPoImePrezimeWE.sendKeys(Keys.ENTER);
-		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
+		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		wait.until(ExpectedConditions.visibilityOf(imePrezimeTabelaWE));
 		assertTrue(imePrezimeTabelaWE.getText().equals(naziv), "Ulice: Ulica nije pronadjena!");	
 	}
@@ -66,13 +67,13 @@ public class Monteri extends PocetnaStranica {
 		burgerBarWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(urediWE));
 		urediWE.click();
-		Thread.sleep(1000);
 		wait.until(ExpectedConditions.elementToBeClickable(imePrezimeWE));
 		imePrezimeWE.click();
 		imePrezimeWE.clear();
 		imePrezimeWE.sendKeys(monter);
 		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
 		submitBtnWE.click();
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		return monter;
 	}
 

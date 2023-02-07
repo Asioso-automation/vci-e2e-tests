@@ -73,7 +73,6 @@ public class PravnaLica extends PocetnaStranica {
 	
 	public String dodajPravnoLice() throws InterruptedException, FileNotFoundException, IOException {
 		String nazivPravnogLica = "Pravno lice " + Helper.getRandomString(5);
-		Thread.sleep(1000);
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
 		dodajBtnWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(poljeNazivWE));
@@ -85,24 +84,25 @@ public class PravnaLica extends PocetnaStranica {
 		wait.until(ExpectedConditions.elementToBeClickable(poljeMjestoWE));
 		poljeMjestoWE.click();
 		poljeMjestoWE.sendKeys("6 - Banja Luka");
-		Thread.sleep(1000);
+		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
 		wait.until(ExpectedConditions.elementToBeClickable(odaberiMjestoWE));
 		odaberiMjestoWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(poljeUlicaWE));
 		poljeUlicaWE.sendKeys("10950 - Svetog Save");
-		Thread.sleep(1000);
+		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
 		wait.until(ExpectedConditions.elementToBeClickable(odaberiUlicuWE));
 		odaberiUlicuWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(poljePostaWE));
 		poljePostaWE.click();
 		poljePostaWE.sendKeys("78000 - Banja Luka");
-		Thread.sleep(1000);
+		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
 		wait.until(ExpectedConditions.elementToBeClickable(odaberiPostuWE));
 		odaberiPostuWE.click();
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].scrollIntoView(true);", submitBtnWE);
 		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
 		submitBtnWE.click();
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		return nazivPravnogLica;		
 	}
 	
@@ -117,15 +117,21 @@ public class PravnaLica extends PocetnaStranica {
 		filterPoNazivuTabelaWE.clear();
 		filterPoNazivuTabelaWE.sendKeys(nazivPravnogLica);
 		filterPoNazivuTabelaWE.sendKeys(Keys.ENTER);
-		Thread.sleep(1000);
+		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		wait.until(ExpectedConditions.elementToBeClickable(nazivTabelaWE));
 		assertTrue(nazivTabelaWE.getText().contains(nazivPravnogLica),"Pravna lica: Naziv pravnog lica nije dobar!");
 	}
 	
 	public String urediPravnoLice() throws InterruptedException {
 		String nazivPravnogLica = "Pravno lice" + Helper.getRandomString(5);
-		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
-		burgerBarWE.click();
+		try {
+			wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
+			burgerBarWE.click();
+		}
+		catch (Exception e) {
+			wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
+			burgerBarWE.click();
+		}
 		wait.until(ExpectedConditions.elementToBeClickable(urediWE));
 		urediWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(poljeNazivWE));
@@ -134,18 +140,8 @@ public class PravnaLica extends PocetnaStranica {
 		poljeNazivWE.sendKeys(nazivPravnogLica);
 		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
 		submitBtnWE.click();
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		return nazivPravnogLica;
-	}
-	
-	public void verifikujUredjenoPravnoLice(String nazivPravnogLica) throws InterruptedException {
-		wait.until(ExpectedConditions.elementToBeClickable(filterPoNazivuTabelaWE));
-		filterPoNazivuTabelaWE.click();
-		filterPoNazivuTabelaWE.clear();
-		filterPoNazivuTabelaWE.sendKeys(nazivPravnogLica);
-		filterPoNazivuTabelaWE.sendKeys(Keys.ENTER);
-		Thread.sleep(1000);
-		wait.until(ExpectedConditions.visibilityOf(nazivTabelaWE));
-		assertTrue(nazivTabelaWE.getText().contains(nazivPravnogLica),"Pravna lica: Naziv uredjenog pravnog lica nije dobar!");
 	}
 
 }

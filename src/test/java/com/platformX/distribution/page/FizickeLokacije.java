@@ -73,6 +73,7 @@ public class FizickeLokacije extends PocetnaStranica {
 		driver.findElement(By.xpath("//div[contains(@class, 'v-list-item__title') and contains(., '" + terenskaJedinica + "')]")).click();
 		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
 		submitBtnWE.click();
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		return naziv;
 	}
 	
@@ -83,6 +84,7 @@ public class FizickeLokacije extends PocetnaStranica {
 		filterPoNazivuWE.clear();
 		filterPoNazivuWE.sendKeys(naziv);
 		filterPoNazivuWE.sendKeys(Keys.ENTER);
+		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		wait.until(ExpectedConditions.visibilityOf(nazivFizickeLokacijeTabelaWE));
 		assertTrue(nazivFizickeLokacijeTabelaWE.getText().equals(naziv), "FizickeLokacije: Fizicka lokacija nije pronađena!");
 	}
@@ -99,6 +101,7 @@ public class FizickeLokacije extends PocetnaStranica {
 		nazivWE.sendKeys(naziv);
 		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
 		submitBtnWE.click();
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		return naziv;
 	}
 	

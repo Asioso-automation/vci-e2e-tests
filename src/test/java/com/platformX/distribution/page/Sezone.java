@@ -69,19 +69,21 @@ public class Sezone extends PocetnaStranica {
 		nazivSezoneWE.sendKeys(naziv);
 		wait.until(ExpectedConditions.elementToBeClickable(odMjesecWE));
 		odMjesecWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
 		wait.until(ExpectedConditions.elementToBeClickable(januarWE));
 		januarWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(odDanWE));
 	    odDanWE.sendKeys(Helper.getRandomNumber(1));
 	    wait.until(ExpectedConditions.elementToBeClickable(doMjesecWE));
 	    doMjesecWE.click();
-	    Thread.sleep(1000);
+		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
 	    wait.until(ExpectedConditions.elementToBeClickable(MajWE));
 	    MajWE.click();
 	    wait.until(ExpectedConditions.elementToBeClickable(doDanWE));
 	    doDanWE.sendKeys("30");
 	    wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
 	    submitBtnWE.click();
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 	    return naziv;
 	}
 	
@@ -91,6 +93,7 @@ public class Sezone extends PocetnaStranica {
 	    filterPoNazivuWE.clear();
 	    filterPoNazivuWE.sendKeys(naziv);
 	    filterPoNazivuWE.sendKeys(Keys.ENTER);
+		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 	    wait.until(ExpectedConditions.elementToBeClickable(nazivSezoneTabelaWE));
 	    assertTrue(nazivSezoneTabelaWE.getText().equals(naziv), "Sezona: Sezona nije pronadjena!");
 	}
@@ -107,6 +110,7 @@ public class Sezone extends PocetnaStranica {
 		nazivSezoneWE.sendKeys(sezona);
 		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
 		submitBtnWE.click();
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		return sezona;
 	}
 

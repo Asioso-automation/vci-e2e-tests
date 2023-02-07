@@ -68,8 +68,8 @@ public class Poste extends PocetnaStranica {
 		wait.until(ExpectedConditions.elementToBeClickable(nazivWE));
 		nazivWE.sendKeys(podaci[0]);
 		nazivNaDokWE.sendKeys(podaci[2]);
-		Thread.sleep(500);
 		submitBtnWE.click();
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		return podaci;
 	}
 	
@@ -81,8 +81,8 @@ public class Poste extends PocetnaStranica {
 		wait.until(ExpectedConditions.elementToBeClickable(nazivWE));
 		nazivWE.sendKeys(naziv);
 		nazivNaDokWE.sendKeys(nazivNaDok);
-		Thread.sleep(500);
 		submitBtnWE.click();
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 	}
 	
 	public void verifikujPostu(String naziv, String id, String nazivNaDok) throws Exception {
@@ -93,6 +93,7 @@ public class Poste extends PocetnaStranica {
 		filterPoNazivuWE.clear();
 		filterPoNazivuWE.sendKeys(naziv);
 		filterPoNazivuWE.sendKeys(Keys.ENTER);
+		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		wait.until(ExpectedConditions.visibilityOf(nazivPosteTabelaWE));
 		assertTrue(nazivPosteTabelaWE.getText().equals(naziv), "Poste: Posta nije pronadjena!");
 		assertTrue(nazivPosteNaDokTabelaWE.getText().equals(nazivNaDok), "Poste: Posta nije pronadjena!");
@@ -123,13 +124,13 @@ public class Poste extends PocetnaStranica {
 		burgerBarWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(urediWE));
 		urediWE.click();
-		Thread.sleep(1000);
 		wait.until(ExpectedConditions.elementToBeClickable(urediNazivWE));
 		urediNazivWE.click();
 		urediNazivWE.clear();
 		urediNazivWE.sendKeys(posta);
 		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
 		submitBtnWE.click();
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		return posta;
 	}
 

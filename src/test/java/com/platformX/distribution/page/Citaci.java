@@ -61,6 +61,7 @@ public class Citaci extends PocetnaStranica {
 		datum13WE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
 		submitBtnWE.click();
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		return ime;
 	}
 	
@@ -71,6 +72,7 @@ public class Citaci extends PocetnaStranica {
 		filterPoImenuWE.clear();
 		filterPoImenuWE.sendKeys(ime);
 		filterPoImenuWE.sendKeys(Keys.ENTER);
+		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		wait.until(ExpectedConditions.visibilityOf(imeCitacaTabelaWE));
 		assertTrue(imeCitacaTabelaWE.getText().equals(ime), "Citaci: Citac nije pronađen!");
 	}
@@ -87,6 +89,7 @@ public class Citaci extends PocetnaStranica {
 		imeWE.sendKeys(ime);
 		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
 		submitBtnWE.click();
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		return ime;
 	}
 

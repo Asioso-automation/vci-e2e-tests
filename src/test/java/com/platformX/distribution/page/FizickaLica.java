@@ -97,6 +97,7 @@ public class FizickaLica extends PocetnaStranica {
 		filterPoImeIPrezimeWE.clear();
 		filterPoImeIPrezimeWE.sendKeys(nazivFizickogLica);
 		filterPoImeIPrezimeWE.sendKeys(Keys.ENTER);
+		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		wait.until(ExpectedConditions.visibilityOf(imeIPrezimeTabelaWE));
 		assertTrue(imeIPrezimeTabelaWE.getText().contains(nazivFizickogLica),"Fizicka Lica: Naziv fizickog lica nije dobar!");
     }
@@ -109,7 +110,7 @@ public class FizickaLica extends PocetnaStranica {
 	 public String urediFizickoLice() throws InterruptedException {
 		 String nazivFizickogLica = "Fizicko lice" + Helper.getRandomString(5);
 		 wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
-		 Thread.sleep(800);																// trenutno ne radi burgerBarWE.click() bez Thread.sleep
+		 Thread.sleep(800);																// trenutno ne radi burgerBarWE.click() bez Thread.sleep - ne radi ni sa try/catch
 		 burgerBarWE.click();
 		 wait.until(ExpectedConditions.elementToBeClickable(urediWE));
 		 urediWE.click();
@@ -119,6 +120,7 @@ public class FizickaLica extends PocetnaStranica {
 		 poljeImeIPrezimeWE.sendKeys(nazivFizickogLica);
 		 wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
 		 submitBtnWE.click();
+		 wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		 return nazivFizickogLica; 
 	 }
 	 

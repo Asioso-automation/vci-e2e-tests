@@ -42,6 +42,9 @@ public class PocetnaStranica extends PageBase {
 	
 	@FindBy(xpath = "//button[@type='submit']")
 	protected WebElement submitBtnWE;													// submit - DODAJ/UREDI button na formama za dodavanje/uređivanje Šifarnika
+	
+	@FindBy(xpath = "//div[contains(@class, 'menuable__content__active')]")
+	protected WebElement aktivniLookupWE;
 
 //	 Sekcije
 
@@ -412,9 +415,16 @@ public class PocetnaStranica extends PageBase {
 	}
 	
 	public void obrisiStavku(boolean rezultat) throws InterruptedException {
-		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
-		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
-		burgerBarWE.click();
+		try {
+			wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
+			wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
+			burgerBarWE.click();
+		}
+		catch (Exception e) {
+			wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
+			wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
+			burgerBarWE.click();
+		}
 		wait.until(ExpectedConditions.elementToBeClickable(obrisiWE));
 		obrisiWE.click();
 		Thread.sleep(500);

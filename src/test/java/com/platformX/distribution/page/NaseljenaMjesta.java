@@ -56,22 +56,22 @@ public class NaseljenaMjesta extends PocetnaStranica {
 		wait.until(ExpectedConditions.elementToBeClickable(opstinaWE));
 		opstinaWE.click();
 		opstinaWE.sendKeys(Helper.getRandomNumber(1));
-		Thread.sleep(1000);
+		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
 		opstinaWE.sendKeys(Keys.ARROW_DOWN);
 		opstinaWE.sendKeys(Keys.ENTER);
 		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
 		submitBtnWE.click();
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		return naziv;
 	}
 	
 	public void verifikujNaseljenoMjesto(String naziv) throws Exception{
 		wait.until(ExpectedConditions.elementToBeClickable(filterNazivWE));
-		Thread.sleep(1000);
 		filterNazivWE.click();
 		filterNazivWE.clear();
 		filterNazivWE.sendKeys(naziv);
 		filterNazivWE.sendKeys(Keys.ENTER);
-		Thread.sleep(1000);
+		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		wait.until(ExpectedConditions.visibilityOf(nazivTabelaWE));
 		assertTrue(nazivTabelaWE.getText().equals(naziv), "NaseljenaMjesta: Naseljeno mjesto nije pronadjena!");
 	}
@@ -93,6 +93,7 @@ public class NaseljenaMjesta extends PocetnaStranica {
 		stampaniNazivWE.sendKeys(naseljenoMjesto);
 		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
 		submitBtnWE.click();
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		return naseljenoMjesto;
 	}
 	

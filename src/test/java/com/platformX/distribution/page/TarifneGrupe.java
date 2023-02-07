@@ -90,6 +90,7 @@ public class TarifneGrupe extends PocetnaStranica {
 		maxigrafWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
 		submitBtnWE.click();
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		return naziv;
 	}
 
@@ -99,6 +100,7 @@ public class TarifneGrupe extends PocetnaStranica {
 		filterPoNazivuWE.clear();
 		filterPoNazivuWE.sendKeys(naziv);
 		filterPoNazivuWE.sendKeys(Keys.ENTER);
+		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 	    wait.until(ExpectedConditions.elementToBeClickable(nazivTarfineGrupeTabelaWE));
 	    assertTrue(nazivTarfineGrupeTabelaWE.getText().equals(naziv), "TarifnaGrupa: Tarfina grupa nije pronadjena!");
 	}
@@ -115,6 +117,7 @@ public class TarifneGrupe extends PocetnaStranica {
 		nazivTarifneGrupeWE.sendKeys(tarifnaGrupa);
 		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
 		submitBtnWE.click();
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		return tarifnaGrupa;
 	}
 
