@@ -81,6 +81,7 @@ public class RegistarBrojila extends PocetnaStranica {
 		wait.until(ExpectedConditions.elementToBeClickable(napredniFilterJednakoWE));
 		napredniFilterJednakoWE.sendKeys(brojBrojila);
 		napredniFilterJednakoWE.sendKeys(Keys.ENTER);
+		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
 		wait.until(ExpectedConditions.visibilityOf(brojBrojilaTabelaWE));
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		assertTrue(brojBrojilaTabelaWE.getText().contains(brojBrojila),"Registar brojila: Broj brojila nije dobar!");

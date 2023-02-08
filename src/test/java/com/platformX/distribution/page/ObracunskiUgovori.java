@@ -133,6 +133,7 @@ public class ObracunskiUgovori extends PocetnaStranica {
 	
 	public void verifikujObracunskiUgovor(String mjernoMjesto) throws InterruptedException, FileNotFoundException, IOException {
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
+		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		wait.until(ExpectedConditions.elementToBeClickable(filterPoMjernomMjestuWE));
 		filterPoMjernomMjestuWE.click();
 		filterPoMjernomMjestuWE.clear();

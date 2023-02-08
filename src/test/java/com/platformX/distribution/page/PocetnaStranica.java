@@ -385,6 +385,7 @@ public class PocetnaStranica extends PageBase {
 	
 	
 	public void verifikujPocetnuStranicu() throws InterruptedException {
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		wait.until(ExpectedConditions.elementToBeClickable(sifarniciWE));
 		wait.until(ExpectedConditions.elementToBeClickable(tarifniSistemWE));
 		wait.until(ExpectedConditions.elementToBeClickable(mjernaMjestaWE));
@@ -398,7 +399,7 @@ public class PocetnaStranica extends PageBase {
 		wait.until(ExpectedConditions.elementToBeClickable(profilWE));
 		wait.until(ExpectedConditions.elementToBeClickable(filterMjernoMjestoWE));
 		wait.until(ExpectedConditions.elementToBeClickable(filterKupacWE));
-		Thread.sleep(1000);
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 	}
 
 	public void logOut() {
@@ -422,6 +423,7 @@ public class PocetnaStranica extends PageBase {
 		}
 		catch (Exception e) {
 			wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
+			Thread.sleep(500);
 			wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 			burgerBarWE.click();
 		}
@@ -1676,7 +1678,6 @@ public class PocetnaStranica extends PageBase {
     	try {
     	WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(ocitanjaWE));
-		Thread.sleep(3000);
 		ocitanjaWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(citaciPoCitackimHodovimaWE));
 	    citaciPoCitackimHodovimaWE.click();
