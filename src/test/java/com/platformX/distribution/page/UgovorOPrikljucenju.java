@@ -86,7 +86,7 @@ public class UgovorOPrikljucenju extends PocetnaStranica {
 		wait.until(ExpectedConditions.elementToBeClickable(ElektroenergetskaSaglasnostWE));
 		ElektroenergetskaSaglasnostWE.click();
 		ElektroenergetskaSaglasnostWE.sendKeys(nazivEES);
-		Thread.sleep(1000);
+		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
 		ElektroenergetskaSaglasnostWE.sendKeys(Keys.ARROW_DOWN);
 		ElektroenergetskaSaglasnostWE.sendKeys(Keys.ENTER);
 		wait.until(ExpectedConditions.elementToBeClickable(datumBtnWE));
@@ -96,7 +96,7 @@ public class UgovorOPrikljucenju extends PocetnaStranica {
 		wait.until(ExpectedConditions.elementToBeClickable(tipStandardnogPrikljuckaWE));
 		tipStandardnogPrikljuckaWE.click();
 		tipStandardnogPrikljuckaWE.sendKeys(Helper.getRandomNumber(1));
-		Thread.sleep(1000);
+		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
 		tipStandardnogPrikljuckaWE.sendKeys(Keys.ARROW_DOWN);
 		tipStandardnogPrikljuckaWE.sendKeys(Keys.ENTER);
 		wait.until(ExpectedConditions.elementToBeClickable(brojPrikljucnihVodovaWE));
@@ -106,7 +106,8 @@ public class UgovorOPrikljucenju extends PocetnaStranica {
 		js.executeScript("arguments[0].scrollIntoView(true);",odobrenaPrikljucnaSnagaKwWE);
 		wait.until(ExpectedConditions.elementToBeClickable(kategorijaPotrosnjeIGrupaKupcaWE));
 		kategorijaPotrosnjeIGrupaKupcaWE.sendKeys("1");
-		Thread.sleep(1000);
+		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
+		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
 		kategorijaPotrosnjeIGrupaKupcaWE.sendKeys(Keys.ARROW_DOWN);
 		kategorijaPotrosnjeIGrupaKupcaWE.sendKeys(Keys.ENTER);
 		wait.until(ExpectedConditions.elementToBeClickable(odobrenaPrikljucnaSnagaKwWE));
@@ -115,16 +116,17 @@ public class UgovorOPrikljucenju extends PocetnaStranica {
 		brojMjernihUredjajaWE.sendKeys(Helper.getRandomNumber(1));
 		js.executeScript("arguments[0].scrollIntoView(true);",kategorijaPotrosnjeiGrupaKupacaWE);
 		kategorijaPotrosnjeiGrupaKupacaWE.sendKeys("1");
-		Thread.sleep(1000);
+		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
 		kategorijaPotrosnjeiGrupaKupacaWE.sendKeys(Keys.ARROW_DOWN);
 		kategorijaPotrosnjeiGrupaKupacaWE.sendKeys(Keys.ENTER);
 		wait.until(ExpectedConditions.elementToBeClickable(prikljucnaSnagaKwWE));
 		prikljucnaSnagaKwWE.sendKeys(Helper.getRandomNumber(1));
-		Thread.sleep(1000);
+		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
 		prikljucnaSnagaKwWE.sendKeys(Keys.ARROW_DOWN);
 		prikljucnaSnagaKwWE.sendKeys(Keys.ENTER);
 		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
 		submitBtnWE.click();
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		verifikujPoruku("Uspješno završeno.");
 		String brProtokola = brojProtokolaWE.getText();
 		return brProtokola;
@@ -145,16 +147,18 @@ public class UgovorOPrikljucenju extends PocetnaStranica {
 		burgerBarWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(urediWE));
 		urediWE.click();
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		wait.until(ExpectedConditions.elementToBeClickable(vrstaPodrucjaWE));
 		vrstaPodrucjaWE.click();
 		vrstaPodrucjaWE.sendKeys("2");
+		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
 		vrstaPodrucjaWE.sendKeys(Keys.ARROW_DOWN);
 		vrstaPodrucjaWE.sendKeys(Keys.ENTER);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].scrollIntoView(true);",submitBtnWE);
 		submitBtnWE.click();
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
-		Thread.sleep(700);
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		assertTrue(porukaWE.getText().equals("Uspješno završeno."), "ElektroenergetskaSaglasnost: Uređivanje nije uspešno!");
 	}
 

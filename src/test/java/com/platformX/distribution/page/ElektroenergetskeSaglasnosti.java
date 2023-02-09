@@ -52,6 +52,9 @@ public class ElektroenergetskeSaglasnosti extends PocetnaStranica {
 	@FindBy(xpath = "//div[8]/div[2]/div/div/div[1]/div[1]/input[1]")  
 	 private WebElement odobrenaPrikljucnaSnagaWE;
 	
+	@FindBy(xpath = "//div[8]/div[2]/div/div/div[1]/div[1]/div/div/i")
+	private WebElement odobrenaPrikljucnaSnaga1WE;
+	
 	@FindBy(xpath = "//div[11]/div[1]/div/div/div[1]/div[1]/input[1]")  
 	 private WebElement naponskiNivoWE;
 	
@@ -99,9 +102,6 @@ public class ElektroenergetskeSaglasnosti extends PocetnaStranica {
 	
 	@FindBy(xpath = "//tr[2]/td[2]")
 	private WebElement brojProtokolaWE;
-	
-	@FindBy(xpath = "(//span[@class=\"v-list-item__mask\"])[1]")
-	private WebElement lookupIdStavkeWE;
 		
 	
 	public void verifikujElektroenergetskeSaglasnosti() throws InterruptedException, FileNotFoundException, IOException {
@@ -130,37 +130,37 @@ public class ElektroenergetskeSaglasnosti extends PocetnaStranica {
 		wait.until(ExpectedConditions.elementToBeClickable(razlogEESWE));
 		razlogEESWE.click();
 		razlogEESWE.sendKeys(Helper.getRandomNumber(1));
-		wait.until(ExpectedConditions.elementToBeClickable(lookupIdStavkeWE));
+		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
 		razlogEESWE.sendKeys(Keys.ARROW_DOWN);
 		razlogEESWE.sendKeys(Keys.ENTER);
 		wait.until(ExpectedConditions.elementToBeClickable(kupacWE));
 		kupacWE.click();
 		kupacWE.sendKeys(Helper.getRandomNumber(3));
-		wait.until(ExpectedConditions.elementToBeClickable(lookupIdStavkeWE));
+		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
 		kupacWE.sendKeys(Keys.ARROW_DOWN);
 		kupacWE.sendKeys(Keys.ENTER);
 		wait.until(ExpectedConditions.elementToBeClickable(fizickaLokacijaWE));
 		fizickaLokacijaWE.click();
 		fizickaLokacijaWE.sendKeys("308 - 01 - Pale");
-		wait.until(ExpectedConditions.elementToBeClickable(lookupIdStavkeWE));
+		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
 		fizickaLokacijaWE.sendKeys(Keys.ARROW_DOWN);
 		fizickaLokacijaWE.sendKeys(Keys.ENTER);
 		wait.until(ExpectedConditions.elementToBeClickable(mjestoWE));
 		mjestoWE.click();
 		mjestoWE.sendKeys(Helper.getRandomNumber(1));
-		wait.until(ExpectedConditions.elementToBeClickable(lookupIdStavkeWE));
+		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
 		mjestoWE.sendKeys(Keys.ARROW_DOWN);
 		mjestoWE.sendKeys(Keys.ENTER);
 		wait.until(ExpectedConditions.elementToBeClickable(postaWE));
 		postaWE.click();
 		postaWE.sendKeys(Helper.getRandomNumber(1));
-		wait.until(ExpectedConditions.elementToBeClickable(lookupIdStavkeWE));
+		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
 		postaWE.sendKeys(Keys.ARROW_DOWN);
 		postaWE.sendKeys(Keys.ENTER);
 		wait.until(ExpectedConditions.elementToBeClickable(ulicaWE));
 		ulicaWE.click();
 		ulicaWE.sendKeys(Helper.getRandomNumber(1));
-		wait.until(ExpectedConditions.elementToBeClickable(lookupIdStavkeWE));
+		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
 		ulicaWE.sendKeys(Keys.ARROW_DOWN);
 		ulicaWE.sendKeys(Keys.ENTER);
 		wait.until(ExpectedConditions.elementToBeClickable(brojUuliciWE));
@@ -169,56 +169,56 @@ public class ElektroenergetskeSaglasnosti extends PocetnaStranica {
 		wait.until(ExpectedConditions.elementToBeClickable(vrstaObjektaWE));
 		vrstaObjektaWE.click();
 		vrstaObjektaWE.sendKeys("1");
-		wait.until(ExpectedConditions.elementToBeClickable(lookupIdStavkeWE));
+		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
 		vrstaObjektaWE.sendKeys(Keys.ARROW_DOWN);
 		vrstaObjektaWE.sendKeys(Keys.ENTER);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].scrollIntoView(true);", odobrenaPrikljucnaSnagaWE);
 		wait.until(ExpectedConditions.elementToBeClickable(odobrenaPrikljucnaSnagaWE));
 		odobrenaPrikljucnaSnagaWE.sendKeys(Helper.getRandomNumber(1));
-		wait.until(ExpectedConditions.elementToBeClickable(lookupIdStavkeWE));
+		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
 		odobrenaPrikljucnaSnagaWE.sendKeys(Keys.ARROW_DOWN);
 		odobrenaPrikljucnaSnagaWE.sendKeys(Keys.ENTER);
 		wait.until(ExpectedConditions.elementToBeClickable(naponskiNivoWE));
 		naponskiNivoWE.click();
 		naponskiNivoWE.sendKeys(Helper.getRandomNumber(1));
-		wait.until(ExpectedConditions.elementToBeClickable(lookupIdStavkeWE));
+		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
 		naponskiNivoWE.sendKeys(Keys.ARROW_DOWN);
 		naponskiNivoWE.sendKeys(Keys.ENTER);
 		wait.until(ExpectedConditions.elementToBeClickable(mjestoPrikljucenjaWE));
 		mjestoPrikljucenjaWE.click();
 		mjestoPrikljucenjaWE.sendKeys("1");
-		wait.until(ExpectedConditions.elementToBeClickable(lookupIdStavkeWE));
+		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
 		mjestoPrikljucenjaWE.sendKeys(Keys.ARROW_DOWN);
 		mjestoPrikljucenjaWE.sendKeys(Keys.ENTER);
 		wait.until(ExpectedConditions.elementToBeClickable(vrstaPrikljuckaWE));
 		vrstaPrikljuckaWE.click();
 		vrstaPrikljuckaWE.sendKeys("1");
-		wait.until(ExpectedConditions.elementToBeClickable(lookupIdStavkeWE));
+		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
 		vrstaPrikljuckaWE.sendKeys(Keys.ARROW_DOWN);
 		vrstaPrikljuckaWE.sendKeys(Keys.ENTER);
 		wait.until(ExpectedConditions.elementToBeClickable(tipPrikljucnogVodaWE));
 		tipPrikljucnogVodaWE.click();
 		tipPrikljucnogVodaWE.sendKeys(Helper.getRandomNumber(1));
-		wait.until(ExpectedConditions.elementToBeClickable(lookupIdStavkeWE));
+		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
 		tipPrikljucnogVodaWE.sendKeys(Keys.ARROW_DOWN);
 		tipPrikljucnogVodaWE.sendKeys(Keys.ENTER);
 		wait.until(ExpectedConditions.elementToBeClickable(presjekMm2WE));
 		presjekMm2WE.click();
 		presjekMm2WE.sendKeys(Helper.getRandomNumber(1));
-		wait.until(ExpectedConditions.elementToBeClickable(lookupIdStavkeWE));
+		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
 		presjekMm2WE.sendKeys(Keys.ARROW_DOWN);
 		presjekMm2WE.sendKeys(Keys.ENTER);
 		wait.until(ExpectedConditions.elementToBeClickable(napojnaTransformatorskaStanicaWE));
 		napojnaTransformatorskaStanicaWE.click();
 		napojnaTransformatorskaStanicaWE.sendKeys(Helper.getRandomNumber(1));
-		wait.until(ExpectedConditions.elementToBeClickable(lookupIdStavkeWE));
+		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
 		napojnaTransformatorskaStanicaWE.sendKeys(Keys.ARROW_DOWN);
 		napojnaTransformatorskaStanicaWE.sendKeys(Keys.ENTER);
 		wait.until(ExpectedConditions.elementToBeClickable(lokacijaMjernogMjestaWE));
 		lokacijaMjernogMjestaWE.click();
 		lokacijaMjernogMjestaWE.sendKeys("1");
-		wait.until(ExpectedConditions.elementToBeClickable(lookupIdStavkeWE));
+		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
 		lokacijaMjernogMjestaWE.sendKeys(Keys.ARROW_DOWN);
 		lokacijaMjernogMjestaWE.sendKeys(Keys.ENTER);
 		wait.until(ExpectedConditions.elementToBeClickable(brojUgradjenihBrojilaWE));
@@ -227,14 +227,14 @@ public class ElektroenergetskeSaglasnosti extends PocetnaStranica {
 		wait.until(ExpectedConditions.elementToBeClickable(nazivnaStrujaGlavnogOsiguracaWE));
 		nazivnaStrujaGlavnogOsiguracaWE.click();
 		nazivnaStrujaGlavnogOsiguracaWE.sendKeys("1");
-		wait.until(ExpectedConditions.elementToBeClickable(lookupIdStavkeWE));
+		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
 		nazivnaStrujaGlavnogOsiguracaWE.sendKeys(Keys.ARROW_DOWN);
 		nazivnaStrujaGlavnogOsiguracaWE.sendKeys(Keys.ENTER);
 		js.executeScript("arguments[0].scrollIntoView(true);", rokVazenjaWE);
 		wait.until(ExpectedConditions.elementToBeClickable(rokVazenjaWE));
 		rokVazenjaWE.click();
 		rokVazenjaWE.sendKeys("1");
-		wait.until(ExpectedConditions.elementToBeClickable(lookupIdStavkeWE));
+		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
 		rokVazenjaWE.sendKeys(Keys.ARROW_DOWN);
 		rokVazenjaWE.sendKeys(Keys.ENTER);
 		wait.until(ExpectedConditions.elementToBeClickable(datumBtn1WE));
@@ -243,6 +243,7 @@ public class ElektroenergetskeSaglasnosti extends PocetnaStranica {
 		datum2WE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
 		submitBtnWE.click();
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		verifikujPoruku("Uspješno završeno.");
 		String brProtokola = brojProtokolaWE.getText();
 		return brProtokola;
@@ -264,13 +265,14 @@ public class ElektroenergetskeSaglasnosti extends PocetnaStranica {
 		burgerBarWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(urediWE));
 		urediWE.click();
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		wait.until(ExpectedConditions.visibilityOf(stranicaBtnWE));
-		wait.until(ExpectedConditions.elementToBeClickable(odobrenaPrikljucnaSnagaWE));
-		odobrenaPrikljucnaSnagaWE.clear();
-		odobrenaPrikljucnaSnagaWE.sendKeys(Helper.getRandomNumber(1));
-//		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
+		wait.until(ExpectedConditions.elementToBeClickable(odobrenaPrikljucnaSnaga1WE));
+		odobrenaPrikljucnaSnaga1WE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
 		odobrenaPrikljucnaSnagaWE.sendKeys(Keys.ARROW_DOWN);
 		odobrenaPrikljucnaSnagaWE.sendKeys(Keys.ENTER);
+		submitBtnWE.click();
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		assertTrue(porukaWE.getText().equals("Uspješno završeno."), "ElektroenergetskaSaglasnost: Uređivanje nije uspešno!");
