@@ -24,7 +24,7 @@ public class PX_DIST_046_Neuspjesno_Brisanje_Trafostanice_Test extends BaseTest 
 		Trafostanice trafostanice = homePage.navigirajNaTrafostanice();
 		trafostanice.verifikujTrafostanice();
 		trafostanice.verifikujTrafostanicu("001-Gradac");;
-		homePage.obrisiStavku(false);
+		trafostanice.obrisiStavku(false);
 	}
 		
 }

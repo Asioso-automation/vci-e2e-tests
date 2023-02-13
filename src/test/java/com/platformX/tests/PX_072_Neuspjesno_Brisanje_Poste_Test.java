@@ -24,7 +24,7 @@ public class PX_072_Neuspjesno_Brisanje_Poste_Test extends BaseTest {
 		Poste poste = homePage.navigirajNaPoste();
 		poste.verifikujPoste();
 		poste.verifikujPostu("Banja Luka", "78000", "");
-		poste.obrisiPostu();
+		homePage.obrisiStavku(false);
 		poste.verifikujPoruku("Brisanje ovog zapisa nije moguće.");
 	}
 

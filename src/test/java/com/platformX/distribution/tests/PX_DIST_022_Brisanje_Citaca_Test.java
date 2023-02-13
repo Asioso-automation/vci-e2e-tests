@@ -24,9 +24,10 @@ public class PX_DIST_022_Brisanje_Citaca_Test extends BaseTest {
 		Citaci citaci = homePage.navigirajNaCitaci();
 		citaci.verifikujCitaci();
 		String imeCitaca = citaci.dodajCitaca();
+		citaci.verifikujPoruku("Uspješno završeno.");
 		citaci.verifikujCitaca(imeCitaca);
-		homePage.obrisiStavku(true);
-		homePage.verifikujBrisanjeStavke(true, imeCitaca);
+		citaci.obrisiStavku(true);
+		citaci.verifikujBrisanjeStavke(true, imeCitaca);
 	}
 
 }

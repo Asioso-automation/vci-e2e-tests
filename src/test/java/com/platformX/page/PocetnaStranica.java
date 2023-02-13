@@ -65,6 +65,9 @@ public class PocetnaStranica extends PageBase {
 	@FindBy(xpath = "//i[contains(@class, 'fa-angle-double-right')]")
 	protected WebElement masovniUnosBtnWE;
 	
+	@FindBy(xpath = "//div[@class='v-card__title title mb-0 word-break']")
+	private WebElement brisanjePopUpWE;
+	
 
 	// Sekcije
 
@@ -404,6 +407,39 @@ public class PocetnaStranica extends PageBase {
 		profilWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(izlogujSeWE));
 		izlogujSeWE.click();
+	}
+	
+	public void obrisiStavku(boolean rezultat) throws InterruptedException {
+		try {
+			wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
+			wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
+			burgerBarWE.click();
+		}
+		catch (Exception e) {
+			wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
+			Thread.sleep(500);
+			wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
+			burgerBarWE.click();
+		}
+		wait.until(ExpectedConditions.elementToBeClickable(obrisiWE));
+		obrisiWE.click();
+		Thread.sleep(500);
+		wait.until(ExpectedConditions.visibilityOf(brisanjePopUpWE));
+		wait.until(ExpectedConditions.elementToBeClickable(potvrdiBrisanjeBtnWE));
+		potvrdiBrisanjeBtnWE.click();
+		Thread.sleep(500);
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
+		if (rezultat==true) {
+			try {
+				verifikujPoruku("Brisanje je uspješno završeno");
+			}
+			catch (Exception e) {
+				wait.until(ExpectedConditions.visibilityOf(sekcijaBtnWE));
+			}
+		}
+		else {
+			verifikujPoruku("Brisanje ovog zapisa nije moguće.");
+		}
 	}
 
 	public Organizacije navigirajNaOrganizacije() throws Exception {

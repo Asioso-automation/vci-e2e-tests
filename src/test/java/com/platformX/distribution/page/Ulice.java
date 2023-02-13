@@ -67,6 +67,7 @@ public class Ulice extends PocetnaStranica {
 		filterPoNazivuWE.sendKeys(naziv);
 		filterPoNazivuWE.sendKeys(Keys.ENTER);
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
+		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
 		wait.until(ExpectedConditions.visibilityOf(nazivUliceTabelaWE));
 		assertTrue(nazivUliceTabelaWE.getText().equals(naziv), "Ulice: Ulica nije pronadjena!");
 	}

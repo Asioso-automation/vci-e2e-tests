@@ -19,11 +19,12 @@ public class PX_DIST_069_Dodavanje_Fizickog_Lica_Test  extends BaseTest {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
-		PocetnaStranica pocetna = new PocetnaStranica(driver);
-		pocetna.verifikujPocetnuStranicu();
-		FizickaLica fizickaLicaPage = pocetna.navigirajNaFizickaLica();
+		PocetnaStranica homePage = new PocetnaStranica(driver);
+		homePage.verifikujPocetnuStranicu();
+		FizickaLica fizickaLicaPage = homePage.navigirajNaFizickaLica();
 		fizickaLicaPage.verifikujFizickaLica();
 		String fizickaLica = fizickaLicaPage.dodajFizickoLice();
+		fizickaLicaPage.verifikujPoruku("Uspješno završeno.");
 		fizickaLicaPage.verifikujFizickoLice(fizickaLica);
 	}
 

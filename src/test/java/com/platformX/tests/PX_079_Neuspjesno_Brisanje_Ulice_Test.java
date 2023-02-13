@@ -24,7 +24,7 @@ public class PX_079_Neuspjesno_Brisanje_Ulice_Test extends BaseTest {
 		Ulice ulice = homePage.navigirajNaUlice();
 		ulice.verifikujUlice();
 		ulice.verifikujUlicu("Hajduk Veljkova");
-		ulice.obrisiUlicu();
+		homePage.obrisiStavku(false);
 		ulice.verifikujPoruku("Brisanje ovog zapisa nije moguće.");
 	}
 

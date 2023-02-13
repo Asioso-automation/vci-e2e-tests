@@ -25,12 +25,15 @@ public class PX_DIST_018_Uredjivanje_Fizicke_Lokacije_Test extends BaseTest {
 		TerenskeJedinice terenskeJedinice = homePage.navigirajNaTerenskeJedinice();
 		terenskeJedinice.verifikujTerenskeJedinice();
 		String terenskaJedinica = terenskeJedinice.dodajTerenskuJedinicu();
+		terenskeJedinice.verifikujPoruku("Uspješno završeno.");
 		terenskeJedinice.verifikujTerenskuJedinicu(terenskaJedinica);
 		FizickeLokacije fizickeLokacije = homePage.navigirajNaFizickeLokacije();
 		fizickeLokacije.verifikujFizickeLokacije();
 		String nazivFizickeLokacije = fizickeLokacije.dodajFizickuLokaciju(terenskaJedinica);
+		fizickeLokacije.verifikujPoruku("Uspješno završeno.");
 		fizickeLokacije.verifikujFizickuLokaciju(nazivFizickeLokacije);
 		String novaFizickaLokacija = fizickeLokacije.urediFizickuLokaciju();
+		fizickeLokacije.verifikujPoruku("Uspješno završeno.");
 		fizickeLokacije.verifikujFizickuLokaciju(novaFizickaLokacija);
 	}
 

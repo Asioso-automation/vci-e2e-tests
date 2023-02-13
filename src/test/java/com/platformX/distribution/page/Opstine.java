@@ -25,9 +25,6 @@ public class Opstine extends PocetnaStranica {
 	@FindBy(xpath = "//div[3]/div/div/div[1]/div[1]/input[1]")
 	private WebElement drzavaWE;
 	
-	@FindBy(xpath = "//td[2]/div/div/div/div[1]/input")
-	private WebElement filterPoNazivuWE;
-	
 	@FindBy(xpath = "//tr[2]/td[2]")
 	private WebElement nazivOpstineTabelaWE;
 	
@@ -62,11 +59,11 @@ public class Opstine extends PocetnaStranica {
 	
 	public void verifikujOpstinu(String naziv) throws Exception {
 		WebDriverWait wait = new WebDriverWait(driver, 5);
-		wait.until(ExpectedConditions.elementToBeClickable(filterPoNazivuWE));
-		filterPoNazivuWE.click();
-		filterPoNazivuWE.clear();
-		filterPoNazivuWE.sendKeys(naziv);
-		filterPoNazivuWE.sendKeys(Keys.ENTER);
+		wait.until(ExpectedConditions.elementToBeClickable(filterKolona2WE));
+		filterKolona2WE.click();
+		filterKolona2WE.clear();
+		filterKolona2WE.sendKeys(naziv);
+		filterKolona2WE.sendKeys(Keys.ENTER);
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		wait.until(ExpectedConditions.visibilityOf(nazivOpstineTabelaWE));
 		assertTrue(nazivOpstineTabelaWE.getText().equals(naziv), "Opstine: Opstina nije pronađena!");

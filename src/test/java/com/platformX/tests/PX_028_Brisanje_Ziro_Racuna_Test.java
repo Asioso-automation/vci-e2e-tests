@@ -32,7 +32,7 @@ public class PX_028_Brisanje_Ziro_Racuna_Test extends BaseTest {
 		ziroRacuni.verifikujZiroRacuni();
 		String ziroRacun = ziroRacuni.dodajZiroRacun(banka);
 		ziroRacuni.verifikujZiroRacun(ziroRacun);
-		ziroRacuni.obrisiZiroRacun();
+		homePage.obrisiStavku(true);
 		ziroRacuni.verifikujBrisanjeZiroRacuna(ziroRacun);
 	}
 

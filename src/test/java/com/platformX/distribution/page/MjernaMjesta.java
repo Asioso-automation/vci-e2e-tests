@@ -55,9 +55,6 @@ public class MjernaMjesta extends PocetnaStranica {
 	 @FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '78000 - Banja Luka')]")
 	 private WebElement odaberiPostuWE;
 	 
-	 @FindBy(xpath = "//td[3]/div/div/div/div[1]/input")
-	 private WebElement filterPoSifriTabelaWE;
-	 
 	 @FindBy(xpath = "//tr[2]/td[3]")
 	 private WebElement sifraTabelaWE;
 	 
@@ -126,11 +123,11 @@ public class MjernaMjesta extends PocetnaStranica {
 	 }
 	
 	public void verifikujMjernoMjesto(String sifraMjernogMjesta) throws InterruptedException, FileNotFoundException, IOException {
-		wait.until(ExpectedConditions.elementToBeClickable(filterPoSifriTabelaWE));
-		filterPoSifriTabelaWE.click();
-		filterPoSifriTabelaWE.clear();
-		filterPoSifriTabelaWE.sendKeys(sifraMjernogMjesta);
-		filterPoSifriTabelaWE.sendKeys(Keys.ENTER);
+		wait.until(ExpectedConditions.elementToBeClickable(filterKolona3WE));
+		filterKolona3WE.click();
+		filterKolona3WE.clear();
+		filterKolona3WE.sendKeys(sifraMjernogMjesta);
+		filterKolona3WE.sendKeys(Keys.ENTER);
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		wait.until(ExpectedConditions.visibilityOf(sifraTabelaWE));
 		assertTrue(sifraTabelaWE.getText().contains(sifraMjernogMjesta),"Mjerna mjesta: Sifra mjernog mjesta nije dobra!");

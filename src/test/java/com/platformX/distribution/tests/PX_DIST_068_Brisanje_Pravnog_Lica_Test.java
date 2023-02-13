@@ -24,9 +24,10 @@ public class PX_DIST_068_Brisanje_Pravnog_Lica_Test  extends BaseTest {
 		PravnaLica pravnaLicaPage = homePage.navigirajNaPravnaLica();
 		pravnaLicaPage.verifikujPravnaLica();
 		String pravnaLica = pravnaLicaPage.dodajPravnoLice();
+		pravnaLicaPage.verifikujPoruku("Uspješno završeno.");
 		pravnaLicaPage.verifikujPravnoLice(pravnaLica);
-		homePage.obrisiStavku(true);
-		homePage.verifikujBrisanjeStavke(true, pravnaLica);
+		pravnaLicaPage.obrisiStavku(true);
+		pravnaLicaPage.verifikujBrisanjeStavke(true, pravnaLica);
 	}
 
 }

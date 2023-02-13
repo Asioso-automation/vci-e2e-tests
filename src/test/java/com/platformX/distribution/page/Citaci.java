@@ -22,15 +22,6 @@ public class Citaci extends PocetnaStranica {
 	@FindBy(xpath = "//div[1]/div[1]/div/div/div[1]/div/input")
 	private WebElement imeWE;
 	
-	@FindBy(xpath = "(//button[@aria-label = 'prepend icon'])[1]")
-	private WebElement datumBtnWE;
-	
-	@FindBy(xpath = "//div[(@class = 'v-btn__content') and contains(text(), '13')]")
-	private WebElement datum13WE;
-	
-	@FindBy(xpath = "//td[2]/div/div/div/div[1]/input")
-	private WebElement filterPoImenuWE;
-	
 	@FindBy(xpath = "//tr[2]/td[2]")
 	private WebElement imeCitacaTabelaWE;
 
@@ -55,10 +46,11 @@ public class Citaci extends PocetnaStranica {
 		dodajBtnWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(imeWE));
 		imeWE.sendKeys(ime);
-		wait.until(ExpectedConditions.elementToBeClickable(datumBtnWE));
-		datumBtnWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(datum13WE));
-		datum13WE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(datumBtn1WE));
+		datumBtn1WE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(datumKalendar1WE));
+		wait.until(ExpectedConditions.elementToBeClickable(trenutniDatum1WE));
+		trenutniDatum1WE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
 		submitBtnWE.click();
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
@@ -67,11 +59,11 @@ public class Citaci extends PocetnaStranica {
 	
 	public void verifikujCitaca(String ime) throws Exception {
 		WebDriverWait wait = new WebDriverWait(driver, 5);
-		wait.until(ExpectedConditions.elementToBeClickable(filterPoImenuWE));
-		filterPoImenuWE.click();
-		filterPoImenuWE.clear();
-		filterPoImenuWE.sendKeys(ime);
-		filterPoImenuWE.sendKeys(Keys.ENTER);
+		wait.until(ExpectedConditions.elementToBeClickable(filterKolona2WE));
+		filterKolona2WE.click();
+		filterKolona2WE.clear();
+		filterKolona2WE.sendKeys(ime);
+		filterKolona2WE.sendKeys(Keys.ENTER);
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		wait.until(ExpectedConditions.visibilityOf(imeCitacaTabelaWE));
 		assertTrue(imeCitacaTabelaWE.getText().equals(ime), "Citaci: Citac nije pronađen!");

@@ -25,9 +25,10 @@ public class PX_DIST_071_Brisanje_Fizickog_Lica_Test  extends BaseTest {
 		FizickaLica fizickaLicaPage = homePage.navigirajNaFizickaLica();
 		fizickaLicaPage.verifikujFizickaLica();
 		String fizickaLica = fizickaLicaPage.dodajFizickoLice();
+		fizickaLicaPage.verifikujPoruku("Uspješno završeno.");
 		fizickaLicaPage.verifikujFizickoLice(fizickaLica);
-		homePage.obrisiStavku(true);
-		homePage.verifikujBrisanjeStavke(true, fizickaLica);
+		fizickaLicaPage.obrisiStavku(true);
+		fizickaLicaPage.verifikujBrisanjeStavke(true, fizickaLica);
 	}
 
 }

@@ -19,12 +19,6 @@ public class ElektroenergetskeSaglasnosti extends PocetnaStranica {
 		super(driver);
 	}
 	
-	@FindBy(xpath = "//div[1]/div[1]/div/div[1]/div[1]/div/button")  
-	 private WebElement datumBtnWE;
-	
-	@FindBy(xpath = "(//*[contains(@class, 'v-date-picker-table__current')])[1]")  
-	 private WebElement datum1WE;
-	
 	@FindBy(xpath = "//div[2]/div[2]/div/div/div[1]/div[1]/input[1]")  
 	 private WebElement razlogEESWE;
 	
@@ -85,20 +79,8 @@ public class ElektroenergetskeSaglasnosti extends PocetnaStranica {
 	@FindBy(xpath = "//div[19]/div[2]/div/div/div[1]/div[1]/input[1]")  
 	 private WebElement rokVazenjaWE;
 	
-	@FindBy(xpath = "//div[19]/div[3]/div[1]/div/div[1]/div[1]/div/button")  
-	 private WebElement datumBtn1WE;
-	
-	@FindBy(xpath = "(//*[contains(@class, 'v-date-picker-table__current')])[2]")  
-	 private WebElement datum2WE;
-	
-	@FindBy(xpath = "//td[2]/div/div/div/div[1]/input")  
-	 private WebElement filterBrojProtokolaWE;
-	
 	@FindBy(xpath = "//div[contains(text(), 'Uspješno završeno.')]")
 	private WebElement porukaWE;
-	
-	@FindBy(xpath = "//td[2]/div/div/div/div[1]/input")
-	private WebElement filterPoNazivuWE;
 	
 	@FindBy(xpath = "//tr[2]/td[2]")
 	private WebElement brojProtokolaWE;
@@ -123,10 +105,11 @@ public class ElektroenergetskeSaglasnosti extends PocetnaStranica {
 	public String dodajElektronergetskuSaglasnost() throws Exception {
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
 		dodajBtnWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(datumBtnWE));
-		datumBtnWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(datum1WE));
-		datum1WE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(datumBtn1WE));
+		datumBtn1WE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(datumKalendar1WE));
+		wait.until(ExpectedConditions.elementToBeClickable(trenutniDatum1WE));
+		trenutniDatum1WE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(razlogEESWE));
 		razlogEESWE.click();
 		razlogEESWE.sendKeys(Helper.getRandomNumber(1));
@@ -237,24 +220,25 @@ public class ElektroenergetskeSaglasnosti extends PocetnaStranica {
 		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
 		rokVazenjaWE.sendKeys(Keys.ARROW_DOWN);
 		rokVazenjaWE.sendKeys(Keys.ENTER);
-		wait.until(ExpectedConditions.elementToBeClickable(datumBtn1WE));
-		datumBtn1WE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(datum2WE));
-		datum2WE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(datumBtn3WE));
+		datumBtn3WE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(datumKalendar2WE));
+		wait.until(ExpectedConditions.elementToBeClickable(trenutniDatum2WE));
+		trenutniDatum2WE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
 		submitBtnWE.click();
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
-		verifikujPoruku("Uspješno završeno.");
+		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		String brProtokola = brojProtokolaWE.getText();
 		return brProtokola;
 	}
 	
 	public void verifikujElektroenergetskuSaglasnost(String brProtokola)throws Exception {
-		wait.until(ExpectedConditions.elementToBeClickable(filterBrojProtokolaWE));
-		filterBrojProtokolaWE.click();
-		filterBrojProtokolaWE.clear();
-		filterBrojProtokolaWE.sendKeys(brProtokola);
-		filterBrojProtokolaWE.sendKeys(Keys.ENTER);
+		wait.until(ExpectedConditions.elementToBeClickable(filterKolona2WE));
+		filterKolona2WE.click();
+		filterKolona2WE.clear();
+		filterKolona2WE.sendKeys(brProtokola);
+		filterKolona2WE.sendKeys(Keys.ENTER);
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		wait.until(ExpectedConditions.visibilityOf(brojProtokolaWE));
 		assertTrue(brojProtokolaWE.getText().equals(brProtokola), "ElektroenergetskaSaglasnost: Broj protokola nije pronadjen!");
@@ -275,7 +259,6 @@ public class ElektroenergetskeSaglasnosti extends PocetnaStranica {
 		submitBtnWE.click();
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
-		assertTrue(porukaWE.getText().equals("Uspješno završeno."), "ElektroenergetskaSaglasnost: Uređivanje nije uspešno!");
 	}
 	
 }

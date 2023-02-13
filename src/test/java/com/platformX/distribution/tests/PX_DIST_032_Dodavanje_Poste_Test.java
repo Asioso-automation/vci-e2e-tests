@@ -26,6 +26,7 @@ public class PX_DIST_032_Dodavanje_Poste_Test extends BaseTest {
 		Poste poste = homePage.navigirajNaPoste();
 		poste.verifikujPoste();
 		podaci = poste.dodajPostu();
+		poste.verifikujPoruku("Uspješno završeno.");
 		poste.verifikujPostu(podaci[0], podaci[1], podaci[2]);
 	}
 

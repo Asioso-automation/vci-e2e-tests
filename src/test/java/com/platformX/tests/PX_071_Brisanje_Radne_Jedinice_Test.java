@@ -25,7 +25,7 @@ public class PX_071_Brisanje_Radne_Jedinice_Test extends BaseTest {
 		radneJedinice.verifikujRadneJedinice();
 		String jedinica = radneJedinice.dodajRadnuJedinicu();
 		radneJedinice.verifikujRadnuJedinicu(jedinica);
-		radneJedinice.obrisiRadnuJedinicu();
+		homePage.obrisiStavku(true);
 		radneJedinice.verifikujBrisanjeRadneJedinice(jedinica);
 	}
 

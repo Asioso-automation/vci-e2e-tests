@@ -21,9 +21,6 @@ public class KategorijePotrosnje extends PocetnaStranica {
 	@FindBy(xpath = "//input") 
 	private WebElement nazivKategorijePotrosnjeWE;
 	
-	@FindBy(xpath = "//td[2]/div/div/div/div[1]/input")
-	private WebElement filterPoNazivuWE;
-	
 	@FindBy(xpath = "//tr[2]/td[2]")
 	private WebElement nazivKategorijePotrosnjeTabelaWE;
 
@@ -50,11 +47,11 @@ public class KategorijePotrosnje extends PocetnaStranica {
 	}
 	
 	public void verifikujKategorijuPotrosnje(String naziv) throws Exception {
-       wait.until(ExpectedConditions.elementToBeClickable(filterPoNazivuWE));
-       filterPoNazivuWE.click();
-       filterPoNazivuWE.clear();
-       filterPoNazivuWE.sendKeys(naziv);
-       filterPoNazivuWE.sendKeys(Keys.ENTER);
+       wait.until(ExpectedConditions.elementToBeClickable(filterKolona2WE));
+       filterKolona2WE.click();
+       filterKolona2WE.clear();
+       filterKolona2WE.sendKeys(naziv);
+       filterKolona2WE.sendKeys(Keys.ENTER);
        wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
        wait.until(ExpectedConditions.visibilityOf(nazivKategorijePotrosnjeTabelaWE));
        assertTrue(nazivKategorijePotrosnjeTabelaWE.getText().equals(naziv), "KategorijaPotrosnje: KategorijaPotrosnje nije pronadjena!");

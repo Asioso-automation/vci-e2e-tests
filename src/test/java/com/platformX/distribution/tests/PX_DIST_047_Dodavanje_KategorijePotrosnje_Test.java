@@ -24,6 +24,7 @@ public class PX_DIST_047_Dodavanje_KategorijePotrosnje_Test extends BaseTest {
 		KategorijePotrosnje kategorijePotrosnje = homePage.navigirajNaKategorijePotrosnje();
 		kategorijePotrosnje.verifikujKategorijePotrosnje();
 		String kategorijaPotrosnje = kategorijePotrosnje.dodajKategorijuPotrosnje();
+		kategorijePotrosnje.verifikujPoruku("Uspješno završeno.");
 		kategorijePotrosnje.verifikujKategorijuPotrosnje(kategorijaPotrosnje); 
 	}
 	

@@ -24,7 +24,7 @@ public class PX_068_Neuspjesno_Brisanje_Pravnog_Lica_Test extends BaseTest {
 		PravnaLica pravnaLicaPage = homePage.navigirajNaPravnaLica();
 		pravnaLicaPage.verifikujPravnaLica();
 		pravnaLicaPage.verifikujPravnoLice("Firma 2");
-		pravnaLicaPage.obrisiPravnoLice();
+		homePage.obrisiStavku(false);
 		pravnaLicaPage.verifikujPoruku("Brisanje ovog zapisa nije moguće.");
 	}
 

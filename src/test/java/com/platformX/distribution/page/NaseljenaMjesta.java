@@ -27,9 +27,6 @@ public class NaseljenaMjesta extends PocetnaStranica {
 	@FindBy(xpath = "//div[3]/div/div/div[1]/div[1]/input[1]")
 	private WebElement opstinaWE;
 	
-	@FindBy(xpath = "//td[2]/div/div/div/div[1]/input")
-	private WebElement filterNazivWE;
-	
 	@FindBy(xpath = "//tr[2]/td[2]")
 	private WebElement nazivTabelaWE;
 
@@ -66,11 +63,11 @@ public class NaseljenaMjesta extends PocetnaStranica {
 	}
 	
 	public void verifikujNaseljenoMjesto(String naziv) throws Exception{
-		wait.until(ExpectedConditions.elementToBeClickable(filterNazivWE));
-		filterNazivWE.click();
-		filterNazivWE.clear();
-		filterNazivWE.sendKeys(naziv);
-		filterNazivWE.sendKeys(Keys.ENTER);
+		wait.until(ExpectedConditions.elementToBeClickable(filterKolona2WE));
+		filterKolona2WE.click();
+		filterKolona2WE.clear();
+		filterKolona2WE.sendKeys(naziv);
+		filterKolona2WE.sendKeys(Keys.ENTER);
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		wait.until(ExpectedConditions.visibilityOf(nazivTabelaWE));
 		assertTrue(nazivTabelaWE.getText().equals(naziv), "NaseljenaMjesta: Naseljeno mjesto nije pronadjena!");

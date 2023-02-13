@@ -21,10 +21,11 @@ public class PX_DIST_051_Dodavanje_TarifneNadgrupe_Test extends BaseTest{
 		logIn.logIn();
 	    PocetnaStranica homePage = new PocetnaStranica(driver);
 	    homePage.verifikujPocetnuStranicu();
-	    TarifneNadgrupe tarifneNadrgupe = homePage.navigirajNaTarifneNadgrupe();
-	    tarifneNadrgupe.verifikujTarifneNadgrupe();
-	    String tarifnaNadrgupa = tarifneNadrgupe.dodajTarifnuNadrgupu();
-	    tarifneNadrgupe.verifikujTarifnuNadgrupu(tarifnaNadrgupa);
+	    TarifneNadgrupe tarifneNadgrupe = homePage.navigirajNaTarifneNadgrupe();
+	    tarifneNadgrupe.verifikujTarifneNadgrupe();
+	    String tarifnaNadrgupa = tarifneNadgrupe.dodajTarifnuNadrgupu();
+	    tarifneNadgrupe.verifikujPoruku("Uspješno završeno.");
+	    tarifneNadgrupe.verifikujTarifnuNadgrupu(tarifnaNadrgupa);
 	  }	
 
 }

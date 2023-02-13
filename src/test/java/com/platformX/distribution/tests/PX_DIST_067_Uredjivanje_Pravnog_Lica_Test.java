@@ -19,13 +19,15 @@ public class PX_DIST_067_Uredjivanje_Pravnog_Lica_Test  extends BaseTest {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
-		PocetnaStranica pocetna = new PocetnaStranica(driver);
-		pocetna.verifikujPocetnuStranicu();
-		PravnaLica pravnaLicaPage = pocetna.navigirajNaPravnaLica();
+		PocetnaStranica homePage = new PocetnaStranica(driver);
+		homePage.verifikujPocetnuStranicu();
+		PravnaLica pravnaLicaPage = homePage.navigirajNaPravnaLica();
 		pravnaLicaPage.verifikujPravnaLica();
 		String pravnaLica = pravnaLicaPage.dodajPravnoLice();
+		pravnaLicaPage.verifikujPoruku("Uspješno završeno.");
 		pravnaLicaPage.verifikujPravnoLice(pravnaLica);
 		String novoPravnoLice = pravnaLicaPage.urediPravnoLice();
+		pravnaLicaPage.verifikujPoruku("Uspješno završeno.");
 		pravnaLicaPage.verifikujPravnoLice(novoPravnoLice);
 	}
 

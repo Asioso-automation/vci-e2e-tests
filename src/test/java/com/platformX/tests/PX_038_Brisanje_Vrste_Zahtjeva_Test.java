@@ -25,7 +25,7 @@ public class PX_038_Brisanje_Vrste_Zahtjeva_Test extends BaseTest {
 		vrsteZahtjeva.verifikujVrsteZahtjeva();
 		String opis = vrsteZahtjeva.dodajVrstuZahtjeva();
 		vrsteZahtjeva.verifikujVrstuZahtjeva(opis);
-		vrsteZahtjeva.obrisiVrstuZahtjeva();
+		homePage.obrisiStavku(true);
 		vrsteZahtjeva.verifikujBrisanjeVrsteZahtjeva(opis);
 	}
 }

@@ -24,6 +24,7 @@ public class PX_DIST_014_Dodavanje_Terenske_Jedinice_Test extends BaseTest {
 		TerenskeJedinice terenskeJedinice = homePage.navigirajNaTerenskeJedinice();
 		terenskeJedinice.verifikujTerenskeJedinice();
 		String naziv = terenskeJedinice.dodajTerenskuJedinicu();
+		terenskeJedinice.verifikujPoruku("Uspješno završeno.");
 		terenskeJedinice.verifikujTerenskuJedinicu(naziv);
 	}
 		

@@ -24,8 +24,10 @@ public class PX_DIST_052_Uredjivanje_TarifneNadgrupe_Test extends BaseTest {
 		TarifneNadgrupe tarifneNadgrupe = homePage.navigirajNaTarifneNadgrupe();
 		tarifneNadgrupe.verifikujTarifneNadgrupe();
 		String tarifnaNadgrupa = tarifneNadgrupe.dodajTarifnuNadrgupu();
+		tarifneNadgrupe.verifikujPoruku("Uspješno završeno.");
 		tarifneNadgrupe.verifikujTarifnuNadgrupu(tarifnaNadgrupa);
 		String novaTarifnaNadgrupa = tarifneNadgrupe.urediTarifnuNadgrupu();
+		tarifneNadgrupe.verifikujPoruku("Uspješno završeno.");
 		tarifneNadgrupe.verifikujTarifnuNadgrupu(novaTarifnaNadgrupa);
 	}
 

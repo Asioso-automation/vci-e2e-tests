@@ -24,8 +24,10 @@ public class PX_DIST_045_Uredjivanje_Trafostanice_Test extends BaseTest{
 		Trafostanice trafostanice = homePage.navigirajNaTrafostanice();
 		trafostanice.verifikujTrafostanice();
 		String trafostanica = trafostanice.dodajTrafostanicu();
+		trafostanice.verifikujPoruku("Uspješno završeno.");
 		trafostanice.verifikujTrafostanicu(trafostanica);
 		String novaTrafostanica = trafostanice.urediTrafostanicu(trafostanica);
+		trafostanice.verifikujPoruku("Uspješno završeno.");
 		trafostanice.verifikujTrafostanicu(novaTrafostanica);
 	}
 

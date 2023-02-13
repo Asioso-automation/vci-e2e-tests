@@ -55,9 +55,6 @@ public class ObracunskiUgovori extends PocetnaStranica {
 	@FindBy(xpath = "//*[contains(@class, 'v-date-picker-table__current')]")
 	 private WebElement odaberiDatumWE;
 	
-	@FindBy(xpath = "//td[3]/div/div/div/div[1]/input")
-	 private WebElement filterPoMjernomMjestuWE;
-	
 	@FindBy(xpath = "//tr[2]/td[3]")
 	 private WebElement mjernoMjestoTabelaWE;
 
@@ -134,11 +131,11 @@ public class ObracunskiUgovori extends PocetnaStranica {
 	public void verifikujObracunskiUgovor(String mjernoMjesto) throws InterruptedException, FileNotFoundException, IOException {
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
-		wait.until(ExpectedConditions.elementToBeClickable(filterPoMjernomMjestuWE));
-		filterPoMjernomMjestuWE.click();
-		filterPoMjernomMjestuWE.clear();
-		filterPoMjernomMjestuWE.sendKeys(mjernoMjesto);
-		filterPoMjernomMjestuWE.sendKeys(Keys.ENTER);
+		wait.until(ExpectedConditions.elementToBeClickable(filterKolona3WE));
+		filterKolona3WE.click();
+		filterKolona3WE.clear();
+		filterKolona3WE.sendKeys(mjernoMjesto);
+		filterKolona3WE.sendKeys(Keys.ENTER);
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		wait.until(ExpectedConditions.visibilityOf(mjernoMjestoTabelaWE));
 		assertTrue(mjernoMjestoTabelaWE.getText().contains(mjernoMjesto),"Obracunski ugovori: EIC ugovora nije dobar!");

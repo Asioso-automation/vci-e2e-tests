@@ -25,7 +25,7 @@ public class PX_064_Brisanje_Operativnog_Podrucja_Test extends BaseTest {
 		operativnaPodrucja.verifikujOperativnaPodrucja();
 		String podrucje = operativnaPodrucja.dodajOperativnoPodrucje();
 		operativnaPodrucja.verifikujOperativnoPodrucje(podrucje);
-		operativnaPodrucja.obrisiOperativnoPodrucje();
+		homePage.obrisiStavku(true);
 		operativnaPodrucja.verifikujBrisanjeOperativnogPodrucja(podrucje);
 	}
 

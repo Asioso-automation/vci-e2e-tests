@@ -28,9 +28,6 @@ public class Poste extends PocetnaStranica {
 	@FindBy(xpath = "//div[3]/div/div/div[1]/div/input")
 	private WebElement nazivNaDokWE;
 	
-	@FindBy(xpath = "//td[2]/div/div/div/div[1]/input")
-	private WebElement filterPoNazivuWE;
-	
 	@FindBy(xpath = "//tr[2]/td[2]")
 	private WebElement nazivPosteTabelaWE;
 	
@@ -42,9 +39,6 @@ public class Poste extends PocetnaStranica {
 	
 	@FindBy(xpath = "//div[1]/div/div/div[1]/div/input")
 	private WebElement urediNazivWE;
-	
-	@FindBy(xpath = "//div[contains(text(), 'Pošta već postoji za dati ID.')]")
-	private WebElement validacionaPoruka;
 
 	public void verifikujPoste() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
@@ -88,11 +82,11 @@ public class Poste extends PocetnaStranica {
 	public void verifikujPostu(String naziv, String id, String nazivNaDok) throws Exception {
 		WebDriverWait wait = new WebDriverWait(driver, 5);
 		try {
-		wait.until(ExpectedConditions.elementToBeClickable(filterPoNazivuWE));
-		filterPoNazivuWE.click();
-		filterPoNazivuWE.clear();
-		filterPoNazivuWE.sendKeys(naziv);
-		filterPoNazivuWE.sendKeys(Keys.ENTER);
+		wait.until(ExpectedConditions.elementToBeClickable(filterKolona2WE));
+		filterKolona2WE.click();
+		filterKolona2WE.clear();
+		filterKolona2WE.sendKeys(naziv);
+		filterKolona2WE.sendKeys(Keys.ENTER);
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		wait.until(ExpectedConditions.visibilityOf(nazivPosteTabelaWE));
 		assertTrue(nazivPosteTabelaWE.getText().equals(naziv), "Poste: Posta nije pronadjena!");
@@ -100,18 +94,18 @@ public class Poste extends PocetnaStranica {
 		assertTrue(idTabelaWE.getText().equals(id), "Poste: Posta nije pronadjena!");
 		}
 		catch (Exception e) {
-			wait.until(ExpectedConditions.visibilityOf(validacionaPoruka));
+			verifikujPoruku("Pošta već postoji za dati ID.");
 			wait.until(ExpectedConditions.elementToBeClickable(idWE));
 			idWE.click();
 			idWE.clear();
 			idWE.sendKeys(Helper.getRandomNumber(4));
 			submitBtnWE.click();
 			wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
-			wait.until(ExpectedConditions.elementToBeClickable(filterPoNazivuWE));
-			filterPoNazivuWE.click();
-			filterPoNazivuWE.clear();
-			filterPoNazivuWE.sendKeys(naziv);
-			filterPoNazivuWE.sendKeys(Keys.ENTER);
+			wait.until(ExpectedConditions.elementToBeClickable(filterKolona2WE));
+			filterKolona2WE.click();
+			filterKolona2WE.clear();
+			filterKolona2WE.sendKeys(naziv);
+			filterKolona2WE.sendKeys(Keys.ENTER);
 			wait.until(ExpectedConditions.visibilityOf(nazivPosteTabelaWE));
 			assertTrue(nazivPosteTabelaWE.getText().equals(naziv), "Poste: Posta nije pronadjena!");
 			assertTrue(nazivPosteNaDokTabelaWE.getText().equals(nazivNaDok), "Poste: Posta nije pronadjena!");

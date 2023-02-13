@@ -24,8 +24,10 @@ public class PX_DIST_027_Uredjivanje_Opstine_Test extends BaseTest {
 		Opstine opstine = homePage.navigirajNaOpstine();
 		opstine.verifikujOpstine();
 		String opstina = opstine.dodajOpstinu();
+		opstine.verifikujPoruku("Uspješno završeno.");
 		opstine.verifikujOpstinu(opstina);
 		String novaOpstina = opstine.urediOpstinu();
+		opstine.verifikujPoruku("Uspješno završeno.");
 		opstine.verifikujOpstinu(novaOpstina);
 	}
 

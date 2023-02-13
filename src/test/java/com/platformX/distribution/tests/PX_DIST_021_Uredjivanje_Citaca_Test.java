@@ -24,8 +24,10 @@ public class PX_DIST_021_Uredjivanje_Citaca_Test extends BaseTest {
 		Citaci citaci = homePage.navigirajNaCitaci();
 		citaci.verifikujCitaci();
 		String imeCitaca = citaci.dodajCitaca();
+		citaci.verifikujPoruku("Uspješno završeno.");
 		citaci.verifikujCitaca(imeCitaca);
 		String novoImeCitaca = citaci.urediCitaca();
+		citaci.verifikujPoruku("Uspješno završeno.");
 		citaci.verifikujCitaca(novoImeCitaca);
 	}
 	

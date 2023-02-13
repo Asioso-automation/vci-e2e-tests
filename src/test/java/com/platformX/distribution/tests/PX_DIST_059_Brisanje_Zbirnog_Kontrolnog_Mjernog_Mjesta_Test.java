@@ -30,9 +30,10 @@ public class PX_DIST_059_Brisanje_Zbirnog_Kontrolnog_Mjernog_Mjesta_Test  extend
 		ZbirnaKontrolnaMjernaMjesta zbirnaKontrolnaMjernaMjestaPage = homePage.navigirajNaZbirnaKontrolnaMjernaMjesta();
 		zbirnaKontrolnaMjernaMjestaPage.verifikujZbirnaKontrolnaMjernaMjesta();
 		String zbirnaKontrolnaMjernaMjesta = zbirnaKontrolnaMjernaMjestaPage.dodajZbirnoKontrolnoMjernoMjesto(brBrojila);
+		zbirnaKontrolnaMjernaMjestaPage.verifikujPoruku("Uspješno završeno.");
 		zbirnaKontrolnaMjernaMjestaPage.verifikujZbirnoKontrolnoMjernoMjesto(zbirnaKontrolnaMjernaMjesta);
-		homePage.obrisiStavku(true);
-		homePage.verifikujBrisanjeStavke(true, zbirnaKontrolnaMjernaMjesta);
+		zbirnaKontrolnaMjernaMjestaPage.obrisiStavku(true);
+		zbirnaKontrolnaMjernaMjestaPage.verifikujBrisanjeStavke(true, zbirnaKontrolnaMjernaMjesta);
 	}
 
 }

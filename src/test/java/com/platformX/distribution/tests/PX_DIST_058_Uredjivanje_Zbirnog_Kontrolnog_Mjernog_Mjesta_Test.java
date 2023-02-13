@@ -20,18 +20,20 @@ public class PX_DIST_058_Uredjivanje_Zbirnog_Kontrolnog_Mjernog_Mjesta_Test  ext
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
-		PocetnaStranica pocetna = new PocetnaStranica(driver);
-		pocetna.verifikujPocetnuStranicu();
-		RegistarBrojila registarBrojilaPage = pocetna.navigirajNaRegistarBrojila();
+		PocetnaStranica homePage = new PocetnaStranica(driver);
+		homePage.verifikujPocetnuStranicu();
+		RegistarBrojila registarBrojilaPage = homePage.navigirajNaRegistarBrojila();
 		registarBrojilaPage.verifikujRegistarBrojila();
 		String registarBrojila = registarBrojilaPage.dodajBrojilo();
 		registarBrojilaPage.verifikujBrojilo(registarBrojila);
 		String brBrojila = registarBrojilaPage.kreirajBrojilo();
-		ZbirnaKontrolnaMjernaMjesta zbirnaKontrolnaMjernaMjestaPage = pocetna.navigirajNaZbirnaKontrolnaMjernaMjesta();
+		ZbirnaKontrolnaMjernaMjesta zbirnaKontrolnaMjernaMjestaPage = homePage.navigirajNaZbirnaKontrolnaMjernaMjesta();
 		zbirnaKontrolnaMjernaMjestaPage.verifikujZbirnaKontrolnaMjernaMjesta();
 		String zbirnaKontrolnaMjernaMjesta = zbirnaKontrolnaMjernaMjestaPage.dodajZbirnoKontrolnoMjernoMjesto(brBrojila);
+		zbirnaKontrolnaMjernaMjestaPage.verifikujPoruku("Uspješno završeno.");
 		zbirnaKontrolnaMjernaMjestaPage.verifikujZbirnoKontrolnoMjernoMjesto(zbirnaKontrolnaMjernaMjesta);
 		String novoZbirnoKontrolnoMjernoMjesto = zbirnaKontrolnaMjernaMjestaPage.urediZbirnoKontrolnoMjernoMjesto();
+		zbirnaKontrolnaMjernaMjestaPage.verifikujPoruku("Uspješno završeno.");
 		zbirnaKontrolnaMjernaMjestaPage.verifikujZbirnoKontrolnoMjernoMjesto(novoZbirnoKontrolnoMjernoMjesto);
 	}
 

@@ -24,6 +24,7 @@ public class PX_DIST_026_Dodavanje_Opstine_Test extends BaseTest {
 		Opstine opstine = homePage.navigirajNaOpstine();
 		opstine.verifikujOpstine();
 		String opstina = opstine.dodajOpstinu();
+		opstine.verifikujPoruku("Uspješno završeno.");
 		opstine.verifikujOpstinu(opstina);
 	}
 

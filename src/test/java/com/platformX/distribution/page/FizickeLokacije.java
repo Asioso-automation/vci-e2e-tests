@@ -31,9 +31,6 @@ public class FizickeLokacije extends PocetnaStranica {
 	@FindBy(xpath = "//div[2]/div[1]/div/div/div[1]/div[1]/input[1]")
 	private WebElement terenskaJedinicaWE;
 	
-	@FindBy(xpath = "//td[2]/div/div/div/div[1]/input")
-	private WebElement filterPoNazivuWE;
-	
 	@FindBy(xpath = "//tr[2]/td[2]")
 	private WebElement nazivFizickeLokacijeTabelaWE;
 	
@@ -79,11 +76,11 @@ public class FizickeLokacije extends PocetnaStranica {
 	
 	public void verifikujFizickuLokaciju(String naziv) throws Exception {
 		WebDriverWait wait = new WebDriverWait(driver, 5);
-		wait.until(ExpectedConditions.elementToBeClickable(filterPoNazivuWE));
-		filterPoNazivuWE.click();
-		filterPoNazivuWE.clear();
-		filterPoNazivuWE.sendKeys(naziv);
-		filterPoNazivuWE.sendKeys(Keys.ENTER);
+		wait.until(ExpectedConditions.elementToBeClickable(filterKolona2WE));
+		filterKolona2WE.click();
+		filterKolona2WE.clear();
+		filterKolona2WE.sendKeys(naziv);
+		filterKolona2WE.sendKeys(Keys.ENTER);
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		wait.until(ExpectedConditions.visibilityOf(nazivFizickeLokacijeTabelaWE));
 		assertTrue(nazivFizickeLokacijeTabelaWE.getText().equals(naziv), "FizickeLokacije: Fizicka lokacija nije pronađena!");
@@ -104,6 +101,5 @@ public class FizickeLokacije extends PocetnaStranica {
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		return naziv;
 	}
-	
 	
 }

@@ -24,6 +24,7 @@ public class PX_DIST_037_Dodavanje_Ulice_Test extends BaseTest {
 		Ulice ulice = homePage.navigirajNaUlice();
 		ulice.verifikujUlice();
 		String ulica = ulice.dodajUlicu();
+		ulice.verifikujPoruku("Uspješno završeno.");
 		ulice.verifikujUlicu(ulica);
 	}
 

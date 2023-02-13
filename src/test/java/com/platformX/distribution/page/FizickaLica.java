@@ -42,9 +42,6 @@ public class FizickaLica extends PocetnaStranica {
 	 @FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '78000 - Banja Luka')]")
 	 private WebElement odaberiPostuWE;
 	 
-	 @FindBy(xpath = "//td[2]/div/div/div/div[1]/input")
-	 private WebElement filterPoImeIPrezimeWE;
-	 
 	 @FindBy(xpath = "//tr[2]/td[2]")
 	 private WebElement imeIPrezimeTabelaWE;
 	 
@@ -92,11 +89,11 @@ public class FizickaLica extends PocetnaStranica {
 	}
 	
 	public void verifikujFizickoLice(String nazivFizickogLica) throws InterruptedException {
-		wait.until(ExpectedConditions.elementToBeClickable(filterPoImeIPrezimeWE));
-		filterPoImeIPrezimeWE.click();
-		filterPoImeIPrezimeWE.clear();
-		filterPoImeIPrezimeWE.sendKeys(nazivFizickogLica);
-		filterPoImeIPrezimeWE.sendKeys(Keys.ENTER);
+		wait.until(ExpectedConditions.elementToBeClickable(filterKolona2WE));
+		filterKolona2WE.click();
+		filterKolona2WE.clear();
+		filterKolona2WE.sendKeys(nazivFizickogLica);
+		filterKolona2WE.sendKeys(Keys.ENTER);
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		wait.until(ExpectedConditions.visibilityOf(imeIPrezimeTabelaWE));
 		assertTrue(imeIPrezimeTabelaWE.getText().contains(nazivFizickogLica),"Fizicka Lica: Naziv fizickog lica nije dobar!");

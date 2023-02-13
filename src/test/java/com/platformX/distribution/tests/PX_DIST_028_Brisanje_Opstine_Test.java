@@ -24,9 +24,10 @@ public class PX_DIST_028_Brisanje_Opstine_Test extends BaseTest {
 		Opstine opstine = homePage.navigirajNaOpstine();
 		opstine.verifikujOpstine();
 		String opstina = opstine.dodajOpstinu();
+		opstine.verifikujPoruku("Uspješno završeno.");
 		opstine.verifikujOpstinu(opstina);
-		homePage.obrisiStavku(true);
-		homePage.verifikujBrisanjeStavke(true, opstina);
+		opstine.obrisiStavku(true);
+		opstine.verifikujBrisanjeStavke(true, opstina);
 	}
 	
 }

@@ -24,6 +24,7 @@ public class PX_DIST_029_Dodavanje_Naseljenog_Mjesta_Test extends BaseTest{
 		NaseljenaMjesta naseljenaMjesta = homePage.navigirajNaNaseljenaMjesta();
 		naseljenaMjesta.verifikujNaseljenaMjesta();
 		String naseljenoMjesto = naseljenaMjesta.dodajNaseljenoMjesto();
+		naseljenaMjesta.verifikujPoruku("Uspješno završeno.");
 		naseljenaMjesta.verifikujNaseljenoMjesto(naseljenoMjesto);
 	}
 

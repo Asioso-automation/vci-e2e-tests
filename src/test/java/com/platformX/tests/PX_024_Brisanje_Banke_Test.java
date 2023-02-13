@@ -25,7 +25,7 @@ public class PX_024_Brisanje_Banke_Test extends BaseTest {
 		banke.verifikujBanke();
 		String banka = banke.dodajBanku();
 		banke.verifikujBanku(banka);
-		banke.obrisiBanku();
+		homePage.obrisiStavku(true);
 		banke.verifikujBrisanjeBanke(banka);
 	}
 

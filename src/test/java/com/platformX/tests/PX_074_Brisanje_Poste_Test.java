@@ -27,7 +27,7 @@ public class PX_074_Brisanje_Poste_Test extends BaseTest {
 		poste.verifikujPoste();
 		podaci = poste.dodajPostu();
 		poste.verifikujPostu(podaci[0], podaci[1], podaci[2]);
-		poste.obrisiPostu();
+		homePage.obrisiStavku(true);
 		poste.verifikujBrisanjePoste(podaci[0]);
 	}
 

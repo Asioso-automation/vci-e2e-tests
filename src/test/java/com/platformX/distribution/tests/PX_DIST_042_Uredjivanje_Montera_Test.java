@@ -24,8 +24,10 @@ public class PX_DIST_042_Uredjivanje_Montera_Test extends BaseTest{
 		Monteri monteri = homePage.navigirajNaMonteri();
 		monteri.verifikujMonteri();
 		String monter = monteri.dodajMontera();
+		monteri.verifikujPoruku("Uspješno završeno.");
 		monteri.verifikujMontera(monter);
 		String noviMonter = monteri.urediMontera();
+		monteri.verifikujPoruku("Uspješno završeno.");
 		monteri.verifikujMontera(noviMonter);
 	}
 

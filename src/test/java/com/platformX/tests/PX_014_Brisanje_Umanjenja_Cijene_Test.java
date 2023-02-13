@@ -25,7 +25,7 @@ public class PX_014_Brisanje_Umanjenja_Cijene_Test extends BaseTest {
 		umanjenjaCijene.verifikujUmanjenjaCijene();
 		String brojMjeseci = umanjenjaCijene.dodajUmanjenjeCijene();
 		umanjenjaCijene.verifikujUmanjenjeCijene(brojMjeseci);
-		umanjenjaCijene.obrisiUmanjenjeCijene();
+		homePage.obrisiStavku(true);
 		umanjenjaCijene.verifikujUmanjenjaCijene();
 		umanjenjaCijene.osvjeziStranicu();
 		umanjenjaCijene.verifikujBrisanjeUmanjenjaCijene(brojMjeseci);

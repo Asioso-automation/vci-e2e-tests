@@ -25,7 +25,7 @@ public class PX_041_Brisanje_Tarifne_Grupe_Test extends BaseTest {
 		tarifneGrupe.verifikujTarifneGrupe();
 		String tarifnaGrupa = tarifneGrupe.dodajTarifnuGrupu();
 		tarifneGrupe.verifikujTarifnuGrupu(tarifnaGrupa);
-		tarifneGrupe.obrisiTarifnuGrupu();
+		homePage.obrisiStavku(true);
 		tarifneGrupe.verifikujTarifneGrupe();
 		tarifneGrupe.verifikujBrisanjeTarifneGrupe(tarifnaGrupa);
 	}

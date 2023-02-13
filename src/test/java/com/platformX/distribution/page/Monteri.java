@@ -21,9 +21,6 @@ public class Monteri extends PocetnaStranica {
 	@FindBy(xpath = "//div[1]/div/div/div[1]/div/input")
 	private WebElement imePrezimeWE;
 	
-	@FindBy(xpath = "//td[2]/div/div/div/div[1]/input")
-	private WebElement filterPoImePrezimeWE;
-	
 	@FindBy(xpath = "//tr[2]/td[2]")
 	private WebElement imePrezimeTabelaWE;
 
@@ -50,12 +47,12 @@ public class Monteri extends PocetnaStranica {
 	}
 	
 	public void verifikujMontera(String naziv)throws Exception{
-		wait.until(ExpectedConditions.elementToBeClickable(filterPoImePrezimeWE));
+		wait.until(ExpectedConditions.elementToBeClickable(filterKolona2WE));
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
-		filterPoImePrezimeWE.click();
-		filterPoImePrezimeWE.clear();
-		filterPoImePrezimeWE.sendKeys(naziv);
-		filterPoImePrezimeWE.sendKeys(Keys.ENTER);
+		filterKolona2WE.click();
+		filterKolona2WE.clear();
+		filterKolona2WE.sendKeys(naziv);
+		filterKolona2WE.sendKeys(Keys.ENTER);
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		wait.until(ExpectedConditions.visibilityOf(imePrezimeTabelaWE));
 		assertTrue(imePrezimeTabelaWE.getText().equals(naziv), "Ulice: Ulica nije pronadjena!");	

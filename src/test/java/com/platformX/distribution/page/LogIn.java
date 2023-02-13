@@ -57,7 +57,7 @@ public class LogIn extends PageBase {
 		lozinkaWE.sendKeys(lozinka);
 		wait.until(ExpectedConditions.elementToBeClickable(prijaviSeBtnWE));
 		prijaviSeBtnWE.click();
-		Thread.sleep(1000);
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		wait.until(ExpectedConditions.visibilityOf(porukaUpozorenjaWE));
 		assertTrue(porukaUpozorenjaWE.getText().equals("Pogrešno korisničko ime i/ili lozinka!"), "LogIn: Poruka upozorenja nije dobra!");
 	}

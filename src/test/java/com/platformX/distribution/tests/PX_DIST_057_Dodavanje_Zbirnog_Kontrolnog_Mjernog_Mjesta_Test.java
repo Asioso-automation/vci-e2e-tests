@@ -30,6 +30,7 @@ public class PX_DIST_057_Dodavanje_Zbirnog_Kontrolnog_Mjernog_Mjesta_Test extend
 		ZbirnaKontrolnaMjernaMjesta zbirnaKontrolnaMjernaMjestaPage = homePage.navigirajNaZbirnaKontrolnaMjernaMjesta();
 		zbirnaKontrolnaMjernaMjestaPage.verifikujZbirnaKontrolnaMjernaMjesta();
 		String zbirnaKontrolnaMjernaMjesta = zbirnaKontrolnaMjernaMjestaPage.dodajZbirnoKontrolnoMjernoMjesto(brBrojila);
+		zbirnaKontrolnaMjernaMjestaPage.verifikujPoruku("Uspješno završeno.");
 		zbirnaKontrolnaMjernaMjestaPage.verifikujZbirnoKontrolnoMjernoMjesto(zbirnaKontrolnaMjernaMjesta);
 	}
 	

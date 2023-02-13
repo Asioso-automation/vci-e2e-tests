@@ -24,6 +24,7 @@ public class PX_DIST_020_Dodavanje_Citaca_Test extends BaseTest {
 		Citaci citaci = homePage.navigirajNaCitaci();
 		citaci.verifikujCitaci();
 		String imeCitaca = citaci.dodajCitaca();
+		citaci.verifikujPoruku("Uspješno završeno.");
 		citaci.verifikujCitaca(imeCitaca);
 	}
 	

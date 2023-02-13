@@ -26,7 +26,7 @@ public class PX_067_Brisanje_Pravnog_Lica_Test extends BaseTest {
 		String pravnoLice = pravnaLica.dodajPravnoLice();
 		pravnaLica.verifikujPravnaLica();
 		pravnaLica.verifikujPravnoLice(pravnoLice);
-		pravnaLica.obrisiPravnoLice();
+		homePage.obrisiStavku(true);
 		pravnaLica.verifikujBrisanjePravnogLica(pravnoLice);
 	}
 

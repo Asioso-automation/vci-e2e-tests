@@ -32,19 +32,48 @@ public class PocetnaStranica extends PageBase {
 	protected WebElement potvrdiBrisanjeBtnWE;
 	
 	@FindBy(xpath = "//td[2]/div/div/div/div[1]/input")
-	private WebElement filterKolona2WE;
+	protected WebElement filterKolona2WE;
 	
 	@FindBy(xpath = "//td[3]/div/div/div/div[1]/input")
-	private WebElement filterKolona3WE;
+	protected WebElement filterKolona3WE;
 	
 	@FindBy(xpath = "//div[@class='v-card__title title mb-0 word-break']")
-	private WebElement deleteCardWE;
+	private WebElement brisanjePopUpWE;
 	
 	@FindBy(xpath = "//button[@type='submit']")
 	protected WebElement submitBtnWE;													// submit - DODAJ/UREDI button na formama za dodavanje/uređivanje Šifarnika
 	
 	@FindBy(xpath = "//div[contains(@class, 'menuable__content__active')]")
 	protected WebElement aktivniLookupWE;
+	
+	@FindBy(xpath = "(//button[@aria-label = 'prepend icon'])[1]")
+	protected WebElement datumBtn1WE;
+	
+	@FindBy(xpath = "(//button[@aria-label = 'prepend icon'])[2]")
+	protected WebElement datumBtn2WE;
+	
+	@FindBy(xpath = "(//button[@aria-label = 'prepend icon'])[3]")
+	protected WebElement datumBtn3WE;
+	
+	@FindBy(xpath = "(//*[contains(@class, 'v-date-picker-table--date')])[1]")  
+	protected WebElement datumKalendar1WE;
+	
+	@FindBy(xpath = "(//*[contains(@class, 'v-date-picker-table--date')])[2]")  
+	protected WebElement datumKalendar2WE;
+	
+//	@FindBy(xpath = "(//*[contains(@class, 'v-date-picker-table--date')])[3]")  
+//	protected WebElement datumKalendar3WE;
+	
+	@FindBy(xpath = "(//*[contains(@class, 'v-date-picker-table__current')])[1]")  
+	protected WebElement trenutniDatum1WE;
+	
+	@FindBy(xpath = "(//*[contains(@class, 'v-date-picker-table__current')])[2]")  
+	protected WebElement trenutniDatum2WE;
+	
+//	@FindBy(xpath = "(//*[contains(@class, 'v-date-picker-table__current')])[3]")  
+//	protected WebElement trenutniDatum3WE;
+
+	
 
 //	 Sekcije
 
@@ -430,7 +459,7 @@ public class PocetnaStranica extends PageBase {
 		wait.until(ExpectedConditions.elementToBeClickable(obrisiWE));
 		obrisiWE.click();
 		Thread.sleep(500);
-		wait.until(ExpectedConditions.visibilityOf(deleteCardWE));
+		wait.until(ExpectedConditions.visibilityOf(brisanjePopUpWE));
 		wait.until(ExpectedConditions.elementToBeClickable(potvrdiBrisanjeBtnWE));
 		potvrdiBrisanjeBtnWE.click();
 		Thread.sleep(500);

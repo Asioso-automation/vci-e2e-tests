@@ -27,11 +27,13 @@ public class PX_DIST_025_Brisanje_Obracunskog_Ugovora_Test  extends BaseTest {
 		FizickaLica fizickaLicaPage = homePage.navigirajNaFizickaLica();
 		fizickaLicaPage.verifikujFizickaLica();
 		String fizickaLica = fizickaLicaPage.dodajFizickoLice();
+		fizickaLicaPage.verifikujPoruku("Uspješno završeno.");
 		fizickaLicaPage.verifikujFizickoLice(fizickaLica);
 		String kupac = fizickaLicaPage.kreirajFizickoLice();
 		MjernaMjesta mjernaMjestaPage = homePage.navigirajNaMjernaMjesta();
 		mjernaMjestaPage.verifikujMjernaMjesta();
 		String mjernaMjesta = mjernaMjestaPage.dodajMjernoMjesto();
+		mjernaMjestaPage.verifikujPoruku("Uspješno završeno.");
 		mjernaMjestaPage.verifikujMjernoMjesto(mjernaMjesta);
 		String mjernoMjesto = mjernaMjestaPage.kreirajMjernoMjesto();
 		RegistarBrojila registarBrojilaPage = homePage.navigirajNaRegistarBrojila();
@@ -41,9 +43,10 @@ public class PX_DIST_025_Brisanje_Obracunskog_Ugovora_Test  extends BaseTest {
 		String brBrojila = registarBrojilaPage.kreirajBrojilo();
 		ObracunskiUgovori obracunskiUgovoriPage = homePage.navigirajNaObracunskiUgovori();
 		obracunskiUgovoriPage.dodajObracunskiUgovor(kupac, mjernoMjesto, brBrojila);
+		obracunskiUgovoriPage.verifikujPoruku("Uspješno završeno.");
 		obracunskiUgovoriPage.verifikujObracunskiUgovor(mjernoMjesto);
-		homePage.obrisiStavku(true);
-		homePage.verifikujBrisanjeStavke(false, mjernoMjesto);
+		obracunskiUgovoriPage.obrisiStavku(true);
+		obracunskiUgovoriPage.verifikujBrisanjeStavke(false, mjernoMjesto);
 	}
 
 }

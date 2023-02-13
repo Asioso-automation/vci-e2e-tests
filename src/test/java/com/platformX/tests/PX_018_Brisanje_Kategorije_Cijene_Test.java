@@ -25,7 +25,7 @@ public class PX_018_Brisanje_Kategorije_Cijene_Test extends BaseTest {
 		kategorijeCijena.verifikujKategorijeCijena();
 		String kategorija = kategorijeCijena.dodajKategoriju();
 		kategorijeCijena.verifikujKategoriju(kategorija);
-		kategorijeCijena.obrisiKategorijuCijene();
+		homePage.obrisiStavku(true);
 		kategorijeCijena.verifikujBrisanjeKategorije(kategorija);
 	}
 
