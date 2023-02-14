@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="2" total="3" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="940" started-at="2022-12-29T12:40:28Z" finished-at="2022-12-29T12:40:29Z">
+  <suite name="Default suite" duration-ms="574" started-at="2023-02-14T11:54:45Z" finished-at="2023-02-14T11:54:46Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="940" started-at="2022-12-29T12:40:28Z" finished-at="2022-12-29T12:40:29Z">
-      <class name="com.platformX.api.tests.GetAdministrationMessageScenario">
-        <test-method status="PASS" signature="get_administration_message_test()[pri:0, instance:com.platformX.api.tests.GetAdministrationMessageScenario@1534f01b]" name="get_administration_message_test" duration-ms="925" started-at="2022-12-29T13:40:28Z" finished-at="2022-12-29T13:40:29Z">
+    <test name="Default test" duration-ms="574" started-at="2023-02-14T11:54:45Z" finished-at="2023-02-14T11:54:46Z">
+      <class name="com.platformX.api.tests.PXD_002_Get_User_Data_Test">
+        <test-method status="PASS" signature="pxd_get_user_data_test3()[pri:0, instance:com.platformX.api.tests.PXD_002_Get_User_Data_Test@1f53a5dc]" name="pxd_get_user_data_test3" duration-ms="562" started-at="2023-02-14T12:54:45Z" description="negative test case: missing bearer token" finished-at="2023-02-14T12:54:46Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- get_administration_message_test -->
-      </class> <!-- com.platformX.api.tests.GetAdministrationMessageScenario -->
+        </test-method> <!-- pxd_get_user_data_test3 -->
+      </class> <!-- com.platformX.api.tests.PXD_002_Get_User_Data_Test -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
