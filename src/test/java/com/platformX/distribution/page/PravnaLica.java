@@ -51,9 +51,6 @@ public class PravnaLica extends PocetnaStranica {
 	
 	@FindBy(xpath = "//tr[2]/td[2]")
 	 private WebElement nazivTabelaWE;
-	
-	@FindBy(xpath = "//td[2]/div/div/div/div[1]/input")
-	 private WebElement filterPoNazivuTabelaWE;
 
 	public void verifikujPravnaLica() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
@@ -112,11 +109,11 @@ public class PravnaLica extends PocetnaStranica {
 	}
 	
 	public void verifikujPravnoLice(String nazivPravnogLica) throws InterruptedException {
-		wait.until(ExpectedConditions.elementToBeClickable(filterPoNazivuTabelaWE));
-		filterPoNazivuTabelaWE.click();
-		filterPoNazivuTabelaWE.clear();
-		filterPoNazivuTabelaWE.sendKeys(nazivPravnogLica);
-		filterPoNazivuTabelaWE.sendKeys(Keys.ENTER);
+		wait.until(ExpectedConditions.elementToBeClickable(filterKolona2WE));
+		filterKolona2WE.click();
+		filterKolona2WE.clear();
+		filterKolona2WE.sendKeys(nazivPravnogLica);
+		filterKolona2WE.sendKeys(Keys.ENTER);
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		wait.until(ExpectedConditions.elementToBeClickable(nazivTabelaWE));
 		assertTrue(nazivTabelaWE.getText().contains(nazivPravnogLica),"Pravna lica: Naziv pravnog lica nije dobar!");
@@ -130,6 +127,7 @@ public class PravnaLica extends PocetnaStranica {
 		}
 		catch (Exception e) {
 			wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
+			Thread.sleep(500);
 			burgerBarWE.click();
 		}
 		wait.until(ExpectedConditions.elementToBeClickable(urediWE));

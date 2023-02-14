@@ -110,7 +110,7 @@ public class PageBase {
 	}
 
 	
-	public void verifikacijaZajednickihElemenata(String sekcija, String stranica, String naslovStranice, int brKolona, boolean importBtn, boolean addAll, boolean add, boolean downloadExcel, boolean removeFilters, boolean refresh, boolean info) {
+	public void verifikacijaZajednickihElemenata(String sekcija, String stranica, String naslovStranice, int brKolona, boolean importBtn, boolean dodajSve, boolean dodaj, boolean preuzmiExcel, boolean ukloniFiltere, boolean osvjezi, boolean info) {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		try {
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
@@ -131,19 +131,19 @@ public class PageBase {
 		if (importBtn==true) {
 			wait.until(ExpectedConditions.elementToBeClickable(importujBtnWE));
 		}
-		if (addAll==true) {
+		if (dodajSve==true) {
 			wait.until(ExpectedConditions.elementToBeClickable(dodajSveBtnWE));
 		}
-		if (add==true) {
+		if (dodaj==true) {
 			wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
 		}
-		if (downloadExcel==true) {
+		if (preuzmiExcel==true) {
 			wait.until(ExpectedConditions.elementToBeClickable(preuzmiExcelBtnWE));
 		}
-		if (removeFilters==true) {
+		if (ukloniFiltere==true) {
 			wait.until(ExpectedConditions.elementToBeClickable(ukloniFiltereBtnWE));
 		}
-		if (refresh==true) {
+		if (osvjezi==true) {
 			wait.until(ExpectedConditions.elementToBeClickable(osvjeziBtnWE));
 		}
 		if (info==true) {

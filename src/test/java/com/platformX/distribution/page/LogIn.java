@@ -29,7 +29,7 @@ public class LogIn extends PageBase {
 	@FindBy(xpath = "//div[3]/div/div/div/div[2]/input")
 	private WebElement lozinkaWE;
 	
-	@FindBy(xpath = "//div[2]/div/div/div")
+	@FindBy(xpath = "//div[@class='v-alert__content']")
 	private WebElement porukaUpozorenjaWE;
 	
 	public void verifikujLogIn() {
@@ -57,7 +57,6 @@ public class LogIn extends PageBase {
 		lozinkaWE.sendKeys(lozinka);
 		wait.until(ExpectedConditions.elementToBeClickable(prijaviSeBtnWE));
 		prijaviSeBtnWE.click();
-		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		wait.until(ExpectedConditions.visibilityOf(porukaUpozorenjaWE));
 		assertTrue(porukaUpozorenjaWE.getText().equals("Pogrešno korisničko ime i/ili lozinka!"), "LogIn: Poruka upozorenja nije dobra!");
 	}

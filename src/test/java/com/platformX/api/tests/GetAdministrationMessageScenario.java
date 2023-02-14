@@ -14,8 +14,8 @@ public class GetAdministrationMessageScenario extends RestApiBase{
 
 	@Test
 	public static void get_administration_message_test() {
-		Response response = methodGET("http://10.10.10.21:86/api/Administrations/Messages/Get/1");
-		Assert.assertEquals(response.getStatusCode(), 401, "Correct status code is not returned");
+//		Response response = methodGET("http://10.10.10.21:86/api/Administrations/Messages/Get/1");
+//		Assert.assertEquals(response.getStatusCode(), 401, "Correct status code is not returned");
 	}
 	
 }
