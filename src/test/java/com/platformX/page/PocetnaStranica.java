@@ -64,9 +64,45 @@ public class PocetnaStranica extends PageBase {
 	
 	@FindBy(xpath = "//i[contains(@class, 'fa-angle-double-right')]")
 	protected WebElement masovniUnosBtnWE;
-	
+
 	@FindBy(xpath = "//div[@class='v-card__title title mb-0 word-break']")
 	private WebElement brisanjePopUpWE;
+  
+	@FindBy(xpath = "//td[1]/div/div/div/div[1]/input")
+	protected WebElement filterKolona1WE;
+	
+	@FindBy(xpath = "//td[2]/div/div/div/div[1]/input")
+	protected WebElement filterKolona2WE;
+	
+	@FindBy(xpath = "//td[3]/div/div/div/div[1]/input")
+	protected WebElement filterKolona3WE;
+	
+	@FindBy(xpath = "//td[4]/div/div/div/div[1]/input") 
+	protected WebElement filterKolona4WE;
+	
+	@FindBy(xpath = "//tr[2]/td")
+	protected WebElement podatakTabela0WE;
+	
+	@FindBy(xpath = "//tr[2]/td[1]")
+	protected WebElement podatakTabela1WE;
+	
+	@FindBy(xpath = "//tr[2]/td[2]")
+	protected WebElement podatakTabela2WE;
+	
+	@FindBy(xpath = "//tr[2]/td[3]")
+	protected WebElement podatakTabela3WE;
+	
+	@FindBy(xpath = "//tr[2]/td[4]")
+	protected WebElement podatakTabela4WE;
+	
+	@FindBy(xpath = "//tr[2]/td[5]")
+	protected WebElement podatakTabela5WE;
+	
+	@FindBy(xpath = "//tr[2]/td[7]")
+	protected WebElement podatakTabela7WE;
+	
+	@FindBy(xpath = "//tr[2]/td[9]")
+	protected WebElement podatakTabela9WE;
 	
 
 	// Sekcije

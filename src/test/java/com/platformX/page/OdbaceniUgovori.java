@@ -6,8 +6,6 @@ import java.io.IOException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import com.platformX.base.Kolone;
 
@@ -16,12 +14,6 @@ public class OdbaceniUgovori extends PocetnaStranica {
 	public OdbaceniUgovori(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);
 	}
-	
-	@FindBy(xpath = "//td[4]/div/div/div/div/input")
-	private WebElement pretraziMjernaMjestaWE;
-	
-	@FindBy(xpath = "//tr[2]/td[4]/a")
-	private WebElement mjernoMjestoTabelaWE;
 
 	public void verifikujOdbaceniUgovori() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
@@ -50,14 +42,14 @@ public class OdbaceniUgovori extends PocetnaStranica {
 	}
 	
 	public void verifikujOdbaceniUgovor(String mjernoMjesto) throws InterruptedException {
-		wait.until(ExpectedConditions.elementToBeClickable(pretraziMjernaMjestaWE));
+		wait.until(ExpectedConditions.elementToBeClickable(filterKolona4WE));
 		Thread.sleep(1000);
-		pretraziMjernaMjestaWE.click();
-		pretraziMjernaMjestaWE.clear();
-		pretraziMjernaMjestaWE.sendKeys(mjernoMjesto);
-		pretraziMjernaMjestaWE.sendKeys(Keys.ENTER);
-		wait.until(ExpectedConditions.visibilityOf(mjernoMjestoTabelaWE));
-		assertTrue(mjernoMjestoTabelaWE.getText().contains(mjernoMjesto), "Ugovori: Naziv mjernog mjesta nije dobar!");
+		filterKolona4WE.click();
+		filterKolona4WE.clear();
+		filterKolona4WE.sendKeys(mjernoMjesto);
+		filterKolona4WE.sendKeys(Keys.ENTER);
+		wait.until(ExpectedConditions.visibilityOf(podatakTabela4WE));
+		assertTrue(podatakTabela4WE.getText().contains(mjernoMjesto), "Ugovori: Naziv mjernog mjesta nije dobar!");
 	}
 
 }

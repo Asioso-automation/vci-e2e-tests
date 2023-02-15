@@ -33,12 +33,6 @@ public class RadneJedinice extends PocetnaStranica {
 	@FindBy(xpath = "//div[2]/button[1]")
 	private WebElement potvrdiBtnWE;
 	
-	@FindBy(xpath = "//td[2]/div/div/div/div/input")
-	private WebElement pretraziRadneJediniceWE;
-	
-	@FindBy(xpath = "//tr[2]/td[2]")
-	private WebElement imeRadneJediniceTableWE;
-	
 	@FindBy(xpath = "//td[12]/button")
 	private WebElement burgerBarWE;
 	
@@ -83,14 +77,14 @@ public class RadneJedinice extends PocetnaStranica {
 	}
 	
 	public void verifikujRadnuJedinicu(String radnaJedinica) throws Exception {
-		wait.until(ExpectedConditions.elementToBeClickable(pretraziRadneJediniceWE));
-		pretraziRadneJediniceWE.click();
-		pretraziRadneJediniceWE.clear();
-		pretraziRadneJediniceWE.sendKeys(radnaJedinica);
-		pretraziRadneJediniceWE.sendKeys(Keys.ENTER);
+		wait.until(ExpectedConditions.elementToBeClickable(filterKolona2WE));
+		filterKolona2WE.click();
+		filterKolona2WE.clear();
+		filterKolona2WE.sendKeys(radnaJedinica);
+		filterKolona2WE.sendKeys(Keys.ENTER);
 		Thread.sleep(1000);
-		wait.until(ExpectedConditions.visibilityOf(imeRadneJediniceTableWE));
-		assertTrue(imeRadneJediniceTableWE.getText().equals(radnaJedinica), "Radne jedinice: Ime radne jedinice nije dobro!");
+		wait.until(ExpectedConditions.visibilityOf(podatakTabela2WE));
+		assertTrue(podatakTabela2WE.getText().equals(radnaJedinica), "Radne jedinice: Ime radne jedinice nije dobro!");
 	}
 	
 	public String izmjeniRadnuJedinicu() throws InterruptedException {
@@ -120,17 +114,17 @@ public class RadneJedinice extends PocetnaStranica {
 	}
 	
 	public void verifikujBrisanjeRadneJedinice(String jedinica) throws InterruptedException {
-		wait.until(ExpectedConditions.visibilityOf(pretraziRadneJediniceWE));
+		wait.until(ExpectedConditions.visibilityOf(filterKolona2WE));
 		Thread.sleep(1000);
-		wait.until(ExpectedConditions.elementToBeClickable(pretraziRadneJediniceWE));
-		pretraziRadneJediniceWE.click();
-		pretraziRadneJediniceWE.clear();
-		pretraziRadneJediniceWE.sendKeys(jedinica);
-		pretraziRadneJediniceWE.sendKeys(Keys.ENTER);
+		wait.until(ExpectedConditions.elementToBeClickable(filterKolona2WE));
+		filterKolona2WE.click();
+		filterKolona2WE.clear();
+		filterKolona2WE.sendKeys(jedinica);
+		filterKolona2WE.sendKeys(Keys.ENTER);
 		Thread.sleep(1000);
-		wait.until(ExpectedConditions.visibilityOf(praznaTabelaWE));
+		wait.until(ExpectedConditions.visibilityOf(podatakTabela0WE));
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
-		assertTrue(praznaTabelaWE.getText().equals("Nema podataka"), "Radne jedinice: Poruka prazne tabele nije dobra!");
+		assertTrue(podatakTabela0WE.getText().equals("Nema podataka"), "Radne jedinice: Poruka prazne tabele nije dobra!");
 	}
 
 }

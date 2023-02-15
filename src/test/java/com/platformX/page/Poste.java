@@ -30,18 +30,6 @@ public class Poste extends PocetnaStranica {
 	@FindBy(xpath = "//div[2]/button[1]")
 	private WebElement dodajPostuWE;
 	
-	@FindBy(xpath = "//td[2]/div/div/div/div[1]/input")
-	private WebElement filterPoNazivuWE;
-	
-	@FindBy(xpath = "//tr[2]/td[2]")
-	private WebElement nazivPosteTabelaWE;
-	
-	@FindBy(xpath = "//tr[2]/td[3]")
-	private WebElement nazivPosteNaDokTabelaWE;
-	
-	@FindBy(xpath = "//tr[2]/td[1]")
-	private WebElement idTabelaWE;
-	
 	@FindBy(xpath = "//td[4]/button")
 	private WebElement burgerBarWE;
 	
@@ -94,17 +82,17 @@ public class Poste extends PocetnaStranica {
 	}
 	
 	public void verifikujPostu(String naziv, String id, String nazivNaDok) throws Exception {
-		wait.until(ExpectedConditions.elementToBeClickable(filterPoNazivuWE));
+		wait.until(ExpectedConditions.elementToBeClickable(filterKolona2WE));
 		Thread.sleep(1000);
-		filterPoNazivuWE.click();
-		filterPoNazivuWE.clear();
-		filterPoNazivuWE.sendKeys(naziv);
-		filterPoNazivuWE.sendKeys(Keys.ENTER);
+		filterKolona2WE.click();
+		filterKolona2WE.clear();
+		filterKolona2WE.sendKeys(naziv);
+		filterKolona2WE.sendKeys(Keys.ENTER);
 		Thread.sleep(1000);
-		wait.until(ExpectedConditions.visibilityOf(nazivPosteTabelaWE));
-		assertTrue(nazivPosteTabelaWE.getText().equals(naziv), "Poste: Posta nije pronadjena!");
-		assertTrue(nazivPosteNaDokTabelaWE.getText().equals(nazivNaDok), "Poste: Posta nije pronadjena!");
-		assertTrue(idTabelaWE.getText().equals(id), "Poste: Posta nije pronadjena!");
+		wait.until(ExpectedConditions.visibilityOf(podatakTabela2WE));
+		assertTrue(podatakTabela2WE.getText().equals(naziv), "Poste: Posta nije pronadjena!");
+		assertTrue(podatakTabela3WE.getText().equals(nazivNaDok), "Poste: Posta nije pronadjena!");
+		assertTrue(podatakTabela1WE.getText().equals(id), "Poste: Posta nije pronadjena!");
 	}
 	
 	public String izmjeniPostu() throws InterruptedException {
@@ -134,17 +122,17 @@ public class Poste extends PocetnaStranica {
 	}
 	
 	public void verifikujBrisanjePoste(String posta) throws InterruptedException {
-		wait.until(ExpectedConditions.visibilityOf(filterPoNazivuWE));
+		wait.until(ExpectedConditions.visibilityOf(filterKolona2WE));
 		Thread.sleep(1000);
-		wait.until(ExpectedConditions.elementToBeClickable(filterPoNazivuWE));
-		filterPoNazivuWE.click();
-		filterPoNazivuWE.clear();
-		filterPoNazivuWE.sendKeys(posta);
-		filterPoNazivuWE.sendKeys(Keys.ENTER);
+		wait.until(ExpectedConditions.elementToBeClickable(filterKolona2WE));
+		filterKolona2WE.click();
+		filterKolona2WE.clear();
+		filterKolona2WE.sendKeys(posta);
+		filterKolona2WE.sendKeys(Keys.ENTER);
 		Thread.sleep(1000);
-		wait.until(ExpectedConditions.visibilityOf(praznaTabelaWE));
+		wait.until(ExpectedConditions.visibilityOf(podatakTabela0WE));
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
-		assertTrue(praznaTabelaWE.getText().equals("Nema podataka"), "Poste: Poruka prazne tabele nije dobra!");
+		assertTrue(podatakTabela0WE.getText().equals("Nema podataka"), "Poste: Poruka prazne tabele nije dobra!");
 	}
 
 }

@@ -23,12 +23,6 @@ public class Djelatnosti extends PocetnaStranica {
 	@FindBy(xpath = "//div[2]/button[1]")
 	private WebElement dodajDjelatnostBtnWE;
 	
-	@FindBy(xpath = "//td[3]/div/div/div/div[1]/input")
-	private WebElement nazivFilterWE;
-	
-	@FindBy(xpath = "//tr[2]/td[3]")
-	private WebElement nazivTabelaWE;
-	
 	@FindBy(xpath = "//td[4]/button")
 	private WebElement burgerBarWE;
 	
@@ -64,15 +58,15 @@ public class Djelatnosti extends PocetnaStranica {
 	}
 	
 	public void verifikujDjelatnost(String djelatnost) throws InterruptedException {
-		wait.until(ExpectedConditions.elementToBeClickable(nazivFilterWE));
-		nazivFilterWE.click();
-		nazivFilterWE.clear();
-		nazivFilterWE.sendKeys(djelatnost);
-		nazivFilterWE.sendKeys(Keys.ENTER);
+		wait.until(ExpectedConditions.elementToBeClickable(filterKolona3WE));
+		filterKolona3WE.click();
+		filterKolona3WE.clear();
+		filterKolona3WE.sendKeys(djelatnost);
+		filterKolona3WE.sendKeys(Keys.ENTER);
 		Thread.sleep(1000);
-		wait.until(ExpectedConditions.visibilityOf(nazivTabelaWE));
+		wait.until(ExpectedConditions.visibilityOf(podatakTabela3WE));
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
-		assertTrue(nazivTabelaWE.getText().equals(djelatnost), "Djelatnosti: Ime djelatnosti nije dobro!");
+		assertTrue(podatakTabela3WE.getText().equals(djelatnost), "Djelatnosti: Ime djelatnosti nije dobro!");
 	}
 	
 	public String izmjeniDjelatnost() {
@@ -101,16 +95,16 @@ public class Djelatnosti extends PocetnaStranica {
 	}
 	
 	public void verifikujBrisanjeDjelatnosti(String djelatnost) throws InterruptedException {
-		wait.until(ExpectedConditions.elementToBeClickable(nazivFilterWE));
+		wait.until(ExpectedConditions.elementToBeClickable(filterKolona3WE));
 		Thread.sleep(1000);
-		nazivFilterWE.click();
-		nazivFilterWE.clear();
-		nazivFilterWE.sendKeys(djelatnost);
-		nazivFilterWE.sendKeys(Keys.ENTER);
+		filterKolona3WE.click();
+		filterKolona3WE.clear();
+		filterKolona3WE.sendKeys(djelatnost);
+		filterKolona3WE.sendKeys(Keys.ENTER);
 		Thread.sleep(1000);
-		wait.until(ExpectedConditions.visibilityOf(praznaTabelaWE));
+		wait.until(ExpectedConditions.visibilityOf(podatakTabela0WE));
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
-		assertTrue(praznaTabelaWE.getText().equals("Nema podataka"), "Djelatnosti: Poruka prazne tabele nije dobra!");
+		assertTrue(podatakTabela0WE.getText().equals("Nema podataka"), "Djelatnosti: Poruka prazne tabele nije dobra!");
 	}
 
 }

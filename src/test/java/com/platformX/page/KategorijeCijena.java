@@ -20,12 +20,6 @@ public class KategorijeCijena extends PocetnaStranica {
 	@FindBy(xpath = "//div[2]/button[1]")
 	private WebElement dodajKategorijuWE;
 	
-	@FindBy(xpath = "//td[2]/div/div/div/div[1]/input")
-	private WebElement filterNazivWE;
-	
-	@FindBy(xpath = "//tr[2]/td[2]")
-	private WebElement nazivTabelaWE;
-	
 	@FindBy(xpath = "//td[6]/button")
 	private WebElement burgerBarWE;
 	
@@ -60,16 +54,16 @@ public class KategorijeCijena extends PocetnaStranica {
 	}
 	
 	public void verifikujKategoriju(String kategorija) throws InterruptedException {
-		wait.until(ExpectedConditions.elementToBeClickable(filterNazivWE));
-		filterNazivWE.click();
-		filterNazivWE.clear();
-		filterNazivWE.sendKeys(kategorija);
-		filterNazivWE.sendKeys(Keys.ENTER);
+		wait.until(ExpectedConditions.elementToBeClickable(filterKolona2WE));
+		filterKolona2WE.click();
+		filterKolona2WE.clear();
+		filterKolona2WE.sendKeys(kategorija);
+		filterKolona2WE.sendKeys(Keys.ENTER);
 		Thread.sleep(1000);
 		wait.until(ExpectedConditions.visibilityOf(jedinstvenElementWE));
-		wait.until(ExpectedConditions.visibilityOf(nazivTabelaWE));
+		wait.until(ExpectedConditions.visibilityOf(podatakTabela2WE));
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
-		assertTrue(nazivTabelaWE.getText().equals(kategorija), "KtegorijeCijena: Ime kategorije nije dobro!");
+		assertTrue(podatakTabela2WE.getText().equals(kategorija), "KtegorijeCijena: Ime kategorije nije dobro!");
 	}
 	
 	public String izmjeniKategorijuCijene() {
@@ -97,15 +91,15 @@ public class KategorijeCijena extends PocetnaStranica {
 	}
 	
 	public void verifikujBrisanjeKategorije(String kategorija) throws InterruptedException {
-		wait.until(ExpectedConditions.elementToBeClickable(filterNazivWE));
-		filterNazivWE.click();
-		filterNazivWE.clear();
-		filterNazivWE.sendKeys(kategorija);
-		filterNazivWE.sendKeys(Keys.ENTER);
+		wait.until(ExpectedConditions.elementToBeClickable(filterKolona2WE));
+		filterKolona2WE.click();
+		filterKolona2WE.clear();
+		filterKolona2WE.sendKeys(kategorija);
+		filterKolona2WE.sendKeys(Keys.ENTER);
 		Thread.sleep(1000);
-		wait.until(ExpectedConditions.visibilityOf(praznaTabelaWE));
+		wait.until(ExpectedConditions.visibilityOf(podatakTabela0WE));
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
-		assertTrue(praznaTabelaWE.getText().equals("Nema podataka"), "TarifneGrupe: Poruka prazne tabele nije dobra!");
+		assertTrue(podatakTabela0WE.getText().equals("Nema podataka"), "TarifneGrupe: Poruka prazne tabele nije dobra!");
 	}
 
 }

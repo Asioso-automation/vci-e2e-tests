@@ -27,12 +27,6 @@ public class Ulice extends PocetnaStranica {
 	@FindBy(xpath = "//div[2]/button[1]")
 	private WebElement dodajUlicuWE;
 	
-	@FindBy(xpath = "//td[2]/div/div/div/div[1]/input")
-	private WebElement filterPoNazivuWE;
-	
-	@FindBy(xpath = "//tr[2]/td[2]")
-	private WebElement nazivUliceTabelaWE;
-	
 	@FindBy(xpath = "//td[4]/button")
 	private WebElement burgerBarWE;
 	
@@ -69,15 +63,15 @@ public class Ulice extends PocetnaStranica {
 	}
 	
 	public void verifikujUlicu(String naziv) throws Exception {
-		wait.until(ExpectedConditions.elementToBeClickable(filterPoNazivuWE));
+		wait.until(ExpectedConditions.elementToBeClickable(filterKolona2WE));
 		Thread.sleep(1000);
-		filterPoNazivuWE.click();
-		filterPoNazivuWE.clear();
-		filterPoNazivuWE.sendKeys(naziv);
-		filterPoNazivuWE.sendKeys(Keys.ENTER);
+		filterKolona2WE.click();
+		filterKolona2WE.clear();
+		filterKolona2WE.sendKeys(naziv);
+		filterKolona2WE.sendKeys(Keys.ENTER);
 		Thread.sleep(1000);
-		wait.until(ExpectedConditions.visibilityOf(nazivUliceTabelaWE));
-		assertTrue(nazivUliceTabelaWE.getText().equals(naziv), "Ulice: Ulica nije pronadjena!");
+		wait.until(ExpectedConditions.visibilityOf(podatakTabela2WE));
+		assertTrue(podatakTabela2WE.getText().equals(naziv), "Ulice: Ulica nije pronadjena!");
 	}
 	
 	public String izmjeniUlicu() throws InterruptedException {
@@ -107,17 +101,17 @@ public class Ulice extends PocetnaStranica {
 	}
 	
 	public void verifikujBrisanjeUlice(String ulica) throws InterruptedException {
-		wait.until(ExpectedConditions.visibilityOf(filterPoNazivuWE));
+		wait.until(ExpectedConditions.visibilityOf(filterKolona2WE));
 		Thread.sleep(1000);
-		wait.until(ExpectedConditions.elementToBeClickable(filterPoNazivuWE));
-		filterPoNazivuWE.click();
-		filterPoNazivuWE.clear();
-		filterPoNazivuWE.sendKeys(ulica);
-		filterPoNazivuWE.sendKeys(Keys.ENTER);
+		wait.until(ExpectedConditions.elementToBeClickable(filterKolona2WE));
+		filterKolona2WE.click();
+		filterKolona2WE.clear();
+		filterKolona2WE.sendKeys(ulica);
+		filterKolona2WE.sendKeys(Keys.ENTER);
 		Thread.sleep(1000);
-		wait.until(ExpectedConditions.visibilityOf(praznaTabelaWE));
+		wait.until(ExpectedConditions.visibilityOf(podatakTabela0WE));
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
-		assertTrue(praznaTabelaWE.getText().equals("Nema podataka"), "Ulice: Poruka prazne tabele nije dobra!");
+		assertTrue(podatakTabela0WE.getText().equals("Nema podataka"), "Ulice: Poruka prazne tabele nije dobra!");
 	}
 
 }

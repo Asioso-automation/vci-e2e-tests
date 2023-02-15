@@ -27,15 +27,6 @@ public class UmanjenjaCijene extends PocetnaStranica {
 	@FindBy(xpath = "//div[2]/button[1]")
 	private WebElement dodajUmanjenjeCijeneWE;
 	
-	@FindBy(xpath = "//td[2]/div/div[1]/div/div/div/div[1]/input")
-	private WebElement filterBrojMjeseciWE;
-	
-	@FindBy(xpath = "//div[4]/div/div[2]/div/div/input")
-	private WebElement drugiFilterBrojMjeseciWE;
-	
-	@FindBy(xpath = "//tr[2]/td[2]")
-	private WebElement brojMjeseciTabelaWE;
-	
 	@FindBy(xpath = "//td[4]/button")
 	private WebElement burgerBarWE;
 	
@@ -67,19 +58,19 @@ public class UmanjenjaCijene extends PocetnaStranica {
 	
 	public void verifikujUmanjenjeCijene(String brojMjeseci) throws InterruptedException {
 		Thread.sleep(1000);
-		wait.until(ExpectedConditions.elementToBeClickable(filterBrojMjeseciWE));
+		wait.until(ExpectedConditions.elementToBeClickable(filterKolona2WE));
 		Thread.sleep(500);
-		filterBrojMjeseciWE.click();
+		filterKolona2WE.click();
 		Thread.sleep(1000);
-		filterBrojMjeseciWE.click();
-		filterBrojMjeseciWE.clear();
-		filterBrojMjeseciWE.sendKeys(brojMjeseci);
-		filterBrojMjeseciWE.sendKeys(Keys.ENTER);
+		filterKolona2WE.click();
+		filterKolona2WE.clear();
+		filterKolona2WE.sendKeys(brojMjeseci);
+		filterKolona2WE.sendKeys(Keys.ENTER);
 		Thread.sleep(1000);
 		wait.until(ExpectedConditions.visibilityOf(jedinstvenElementWE));
-		wait.until(ExpectedConditions.visibilityOf(brojMjeseciTabelaWE));
+		wait.until(ExpectedConditions.visibilityOf(podatakTabela2WE));
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
-		assertTrue(brojMjeseciTabelaWE.getText().equals(brojMjeseci), "UmanjenjaCijena: Broj mjeseci nije dobar!");
+		assertTrue(podatakTabela2WE.getText().equals(brojMjeseci), "UmanjenjaCijena: Broj mjeseci nije dobar!");
 	}
 	
 	public String izmjeniUmanjenjeCijene() throws InterruptedException {
@@ -113,17 +104,17 @@ public class UmanjenjaCijene extends PocetnaStranica {
 	}
 	
 	public void verifikujBrisanjeUmanjenjaCijene(String brojMjeseci) throws InterruptedException {
-		wait.until(ExpectedConditions.elementToBeClickable(filterBrojMjeseciWE));
-		filterBrojMjeseciWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(filterKolona2WE));
+		filterKolona2WE.click();
 		Thread.sleep(1000);
-		filterBrojMjeseciWE.click();
-		filterBrojMjeseciWE.clear();
-		filterBrojMjeseciWE.sendKeys(brojMjeseci);
-		filterBrojMjeseciWE.sendKeys(Keys.ENTER);
+		filterKolona2WE.click();
+		filterKolona2WE.clear();
+		filterKolona2WE.sendKeys(brojMjeseci);
+		filterKolona2WE.sendKeys(Keys.ENTER);
 		Thread.sleep(1000);
-		wait.until(ExpectedConditions.visibilityOf(praznaTabelaWE));
+		wait.until(ExpectedConditions.visibilityOf(podatakTabela0WE));
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
-		assertTrue(praznaTabelaWE.getText().equals("Nema podataka"), "TarifneGrupe: Poruka prazne tabele nije dobra!");
+		assertTrue(podatakTabela0WE.getText().equals("Nema podataka"), "TarifneGrupe: Poruka prazne tabele nije dobra!");
 	}
 	
 	public void dodajPredefinisanoUmanjenjeCijene(String brojMjeseci) {

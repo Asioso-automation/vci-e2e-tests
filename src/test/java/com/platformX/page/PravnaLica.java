@@ -19,15 +19,6 @@ public class PravnaLica extends PocetnaStranica {
 		super(driver);
 	}
 
-	@FindBy(xpath = "//td[2]/div/div/div/div[1]/input")
-	private WebElement filterPoNazivuWE;
-
-	@FindBy(xpath = "//tr[2]/td[2]")
-	private WebElement nazivPravnogLicaTabelaWE;
-
-	@FindBy(xpath = "//tr[2]/td[1]")
-	private WebElement idTabelaWE;
-
 	// Elementi sa forme za dodavanje pravnog lica
 
 	@FindBy(xpath = "//div[2]/div[1]/div/div/div[1]/div/input")
@@ -148,20 +139,20 @@ public class PravnaLica extends PocetnaStranica {
 	}
 
 	public void verifikujPravnoLice(String nazivPravnogLica) throws InterruptedException {
-		wait.until(ExpectedConditions.elementToBeClickable(filterPoNazivuWE));
+		wait.until(ExpectedConditions.elementToBeClickable(filterKolona2WE));
 		Thread.sleep(500);
-		filterPoNazivuWE.click();
-		filterPoNazivuWE.clear();
-		filterPoNazivuWE.sendKeys(nazivPravnogLica);
-		filterPoNazivuWE.sendKeys(Keys.ENTER);
+		filterKolona2WE.click();
+		filterKolona2WE.clear();
+		filterKolona2WE.sendKeys(nazivPravnogLica);
+		filterKolona2WE.sendKeys(Keys.ENTER);
 		Thread.sleep(1000);
-		wait.until(ExpectedConditions.visibilityOf(nazivPravnogLicaTabelaWE));
-		assertTrue(nazivPravnogLicaTabelaWE.getText().contains(nazivPravnogLica),
+		wait.until(ExpectedConditions.visibilityOf(podatakTabela2WE));
+		assertTrue(podatakTabela2WE.getText().contains(nazivPravnogLica),
 				"Pravna lica: Naziv pravnog lica nije dobar!");
 	}
 
 	public String kreirajKupca() {
-		String kupac = idTabelaWE.getText() + " - " + nazivPravnogLicaTabelaWE.getText();
+		String kupac = podatakTabela1WE.getText() + " - " + podatakTabela2WE.getText();
 		return kupac;
 	}
 
@@ -197,17 +188,17 @@ public class PravnaLica extends PocetnaStranica {
 	}
 	
 	public void verifikujBrisanjePravnogLica(String pravnoLice) throws InterruptedException {
-		wait.until(ExpectedConditions.visibilityOf(filterPoNazivuWE));
+		wait.until(ExpectedConditions.visibilityOf(filterKolona2WE));
 		Thread.sleep(1000);
-		wait.until(ExpectedConditions.elementToBeClickable(filterPoNazivuWE));
-		filterPoNazivuWE.click();
-		filterPoNazivuWE.clear();
-		filterPoNazivuWE.sendKeys(pravnoLice);
-		filterPoNazivuWE.sendKeys(Keys.ENTER);
+		wait.until(ExpectedConditions.elementToBeClickable(filterKolona2WE));
+		filterKolona2WE.click();
+		filterKolona2WE.clear();
+		filterKolona2WE.sendKeys(pravnoLice);
+		filterKolona2WE.sendKeys(Keys.ENTER);
 		Thread.sleep(1000);
-		wait.until(ExpectedConditions.visibilityOf(praznaTabelaWE));
+		wait.until(ExpectedConditions.visibilityOf(podatakTabela0WE));
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
-		assertTrue(praznaTabelaWE.getText().equals("Nema podataka"), "PravnaLica: Poruka prazne tabele nije dobra!");
+		assertTrue(podatakTabela0WE.getText().equals("Nema podataka"), "PravnaLica: Poruka prazne tabele nije dobra!");
 	}
 
 }

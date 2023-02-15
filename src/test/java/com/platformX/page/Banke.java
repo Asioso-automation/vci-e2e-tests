@@ -24,12 +24,6 @@ public class Banke extends PocetnaStranica {
 	@FindBy(xpath = "//a/span/i") 
 	private WebElement dodajBankuBtnWE;
 	
-	@FindBy(xpath = "//td[2]/div/div/div/div/input") 
-	private WebElement pretraziBankeWE;
-	
-	@FindBy(xpath = "//tr[2]/td[2]") 
-	private WebElement imeBankeTableWE;
-	
 	@FindBy(xpath = "//div/div/div[3]/button[2]")
 	private WebElement potvrdiBrisanjeWE;
 	
@@ -84,16 +78,16 @@ public class Banke extends PocetnaStranica {
 	}
 	
 	public void verifikujBanku(String banka) throws InterruptedException {
-		wait.until(ExpectedConditions.elementToBeClickable(pretraziBankeWE));
+		wait.until(ExpectedConditions.elementToBeClickable(filterKolona2WE));
 		Thread.sleep(1000);
-		pretraziBankeWE.click();
-		pretraziBankeWE.clear();
-		pretraziBankeWE.sendKeys(banka);
-		pretraziBankeWE.sendKeys(Keys.ENTER);
+		filterKolona2WE.click();
+		filterKolona2WE.clear();
+		filterKolona2WE.sendKeys(banka);
+		filterKolona2WE.sendKeys(Keys.ENTER);
 		Thread.sleep(1000);
-		wait.until(ExpectedConditions.visibilityOf(imeBankeTableWE));
+		wait.until(ExpectedConditions.visibilityOf(podatakTabela2WE));
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
-		assertTrue(imeBankeTableWE.getText().equals(banka), "Banke: Ime banke nije dobro!");
+		assertTrue(podatakTabela2WE.getText().equals(banka), "Banke: Ime banke nije dobro!");
 	}
 	
 	public String izmjeniBanku() throws InterruptedException {
@@ -123,17 +117,17 @@ public class Banke extends PocetnaStranica {
 	}
 	
 	public void verifikujBrisanjeBanke(String banka) throws InterruptedException {
-		wait.until(ExpectedConditions.visibilityOf(pretraziBankeWE));
+		wait.until(ExpectedConditions.visibilityOf(filterKolona2WE));
 		Thread.sleep(1000);
-		wait.until(ExpectedConditions.elementToBeClickable(pretraziBankeWE));
-		pretraziBankeWE.click();
-		pretraziBankeWE.clear();
-		pretraziBankeWE.sendKeys(banka);
-		pretraziBankeWE.sendKeys(Keys.ENTER);
+		wait.until(ExpectedConditions.elementToBeClickable(filterKolona2WE));
+		filterKolona2WE.click();
+		filterKolona2WE.clear();
+		filterKolona2WE.sendKeys(banka);
+		filterKolona2WE.sendKeys(Keys.ENTER);
 		Thread.sleep(1000);
-		wait.until(ExpectedConditions.visibilityOf(praznaTabelaWE));
+		wait.until(ExpectedConditions.visibilityOf(podatakTabela0WE));
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
-		assertTrue(praznaTabelaWE.getText().equals("Nema podataka"), "Banke: Poruka prazne tabele nije dobra!");
+		assertTrue(podatakTabela0WE.getText().equals("Nema podataka"), "Banke: Poruka prazne tabele nije dobra!");
 	}
 
 }

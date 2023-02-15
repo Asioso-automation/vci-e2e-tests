@@ -627,9 +627,9 @@ public class Ugovori extends PocetnaStranica {
 		pretraziMjernaMjestaWE.clear();
 		pretraziMjernaMjestaWE.sendKeys(mjernoMjesto);
 		pretraziMjernaMjestaWE.sendKeys(Keys.ENTER);
-		wait.until(ExpectedConditions.visibilityOf(mjernoMjestoTabelaWE));
-		assertTrue(mjernoMjestoTabelaWE.getText().contains(mjernoMjesto), "Ugovori: Naziv mjernog mjesta nije dobar!");
-		assertTrue(kategorijaTabelaWE.getText().contains("7 - Kategorija cijene 2"),
+		wait.until(ExpectedConditions.visibilityOf(podatakTabela5WE));
+		assertTrue(podatakTabela5WE.getText().contains(mjernoMjesto), "Ugovori: Naziv mjernog mjesta nije dobar!");
+		assertTrue(podatakTabela7WE.getText().contains("7 - Kategorija cijene 2"),
 				"Ugovori: Naziv kategorije nije dobar!");
 	}
 	
@@ -640,9 +640,9 @@ public class Ugovori extends PocetnaStranica {
 		pretraziMjernaMjestaWE.clear();
 		pretraziMjernaMjestaWE.sendKeys(mjernoMjesto);
 		pretraziMjernaMjestaWE.sendKeys(Keys.ENTER);
-		wait.until(ExpectedConditions.visibilityOf(mjernoMjestoTabelaWE));
+		wait.until(ExpectedConditions.visibilityOf(podatakTabela5WE));
 		Thread.sleep(1000);
-		assertTrue(mjernoMjestoTabelaWE.getText().contains(mjernoMjesto), "Ugovori: Naziv mjernog mjesta nije dobar!");
+		assertTrue(podatakTabela5WE.getText().contains(mjernoMjesto), "Ugovori: Naziv mjernog mjesta nije dobar!");
 	}
 	
 	public void pronadjiUgovorPoEic(String eic) throws InterruptedException {
@@ -654,9 +654,9 @@ public class Ugovori extends PocetnaStranica {
 		Thread.sleep(2000);
 		pretraziMjernaMjestaWE.sendKeys(Keys.DOWN);
 		pretraziMjernaMjestaWE.sendKeys(Keys.ENTER);
-		wait.until(ExpectedConditions.visibilityOf(eicTabelaWE));
+		wait.until(ExpectedConditions.visibilityOf(podatakTabela4WE));
 		Thread.sleep(1000);
-		assertTrue(eicTabelaWE.getText().contains(eic), "Ugovori: Naziv EIC nije dobar!");
+		assertTrue(podatakTabela4WE.getText().contains(eic), "Ugovori: Naziv EIC nije dobar!");
 	}
 	
 	public void pronadjiUgovorPravnoLice(String pravnoLice) throws InterruptedException {
@@ -671,9 +671,9 @@ public class Ugovori extends PocetnaStranica {
 		Thread.sleep(500);
 		pretraziKupcaWE.sendKeys(Keys.ENTER);
 		Thread.sleep(500);
-		wait.until(ExpectedConditions.visibilityOf(kupacTabelaWE));
+		wait.until(ExpectedConditions.visibilityOf(podatakTabela3WE));
 		Thread.sleep(1000);
-		assertTrue(kupacTabelaWE.getText().contains(pravnoLice), "Ugovori: Naziv pravnog lica nije dobar!");
+		assertTrue(podatakTabela3WE.getText().contains(pravnoLice), "Ugovori: Naziv pravnog lica nije dobar!");
 	}
 	
 	public void verifikujPreregistrovanUgovor(String eic, String kupac) throws InterruptedException {
@@ -687,9 +687,9 @@ public class Ugovori extends PocetnaStranica {
 		pretraziKupcaWE.sendKeys(Keys.DOWN);
 		pretraziKupcaWE.sendKeys(Keys.ENTER);
 		Thread.sleep(1000);
-		wait.until(ExpectedConditions.visibilityOf(eicTabelaWE));
-		assertTrue(eicTabelaWE.getText().contains(eic), "Ugovori: Naziv EIC nije dobar!");
-		assertTrue(pocinjeOdTabelaWE.getText().contains("15.07.2020."), "Ugovori: Datum pocetka nije dobar!");
+		wait.until(ExpectedConditions.visibilityOf(podatakTabela4WE));
+		assertTrue(podatakTabela4WE.getText().contains(eic), "Ugovori: Naziv EIC nije dobar!");
+		assertTrue(podatakTabela9WE.getText().contains("15.07.2020."), "Ugovori: Datum pocetka nije dobar!");
 	}
 
 	public void verifikujOdbaceniUgovor(String kupac) throws InterruptedException {
