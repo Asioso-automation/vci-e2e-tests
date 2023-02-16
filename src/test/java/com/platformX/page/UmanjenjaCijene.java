@@ -32,6 +32,10 @@ public class UmanjenjaCijene extends PocetnaStranica {
 	
 	@FindBy(xpath = "//div/div/div[3]/button[2]")
 	private WebElement potvrdiBrisanjeWE;
+	
+	@FindBy(xpath = "//td[2]/div/div[1]/div/div/div/div[1]/input")
+	private WebElement filterKolonaWE;
+	
 
 	public void verifikujUmanjenjaCijene() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
@@ -58,14 +62,14 @@ public class UmanjenjaCijene extends PocetnaStranica {
 	
 	public void verifikujUmanjenjeCijene(String brojMjeseci) throws InterruptedException {
 		Thread.sleep(1000);
-		wait.until(ExpectedConditions.elementToBeClickable(filterKolona2WE));
+		wait.until(ExpectedConditions.elementToBeClickable(filterKolonaWE));
 		Thread.sleep(500);
-		filterKolona2WE.click();
+		filterKolonaWE.click();
 		Thread.sleep(1000);
-		filterKolona2WE.click();
-		filterKolona2WE.clear();
-		filterKolona2WE.sendKeys(brojMjeseci);
-		filterKolona2WE.sendKeys(Keys.ENTER);
+		filterKolonaWE.click();
+		filterKolonaWE.clear();
+		filterKolonaWE.sendKeys(brojMjeseci);
+		filterKolonaWE.sendKeys(Keys.ENTER);
 		Thread.sleep(1000);
 		wait.until(ExpectedConditions.visibilityOf(jedinstvenElementWE));
 		wait.until(ExpectedConditions.visibilityOf(podatakTabela2WE));
@@ -104,13 +108,13 @@ public class UmanjenjaCijene extends PocetnaStranica {
 	}
 	
 	public void verifikujBrisanjeUmanjenjaCijene(String brojMjeseci) throws InterruptedException {
-		wait.until(ExpectedConditions.elementToBeClickable(filterKolona2WE));
-		filterKolona2WE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(filterKolonaWE));
+		filterKolonaWE.click();
 		Thread.sleep(1000);
-		filterKolona2WE.click();
-		filterKolona2WE.clear();
-		filterKolona2WE.sendKeys(brojMjeseci);
-		filterKolona2WE.sendKeys(Keys.ENTER);
+		filterKolonaWE.click();
+		filterKolonaWE.clear();
+		filterKolonaWE.sendKeys(brojMjeseci);
+		filterKolonaWE.sendKeys(Keys.ENTER);
 		Thread.sleep(1000);
 		wait.until(ExpectedConditions.visibilityOf(podatakTabela0WE));
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
