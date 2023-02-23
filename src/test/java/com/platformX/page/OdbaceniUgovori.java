@@ -19,6 +19,7 @@ public class OdbaceniUgovori extends PocetnaStranica {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Odbačeni ugovori')]")));
+		verifikacijaZajednickihElemenata("KUPCI", "ODBAČENI UGOVORI", "ODBAČENI UGOVORI", 11, false, false, false, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKupacWE));
@@ -30,15 +31,6 @@ public class OdbaceniUgovori extends PocetnaStranica {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaVaziDoWE));
 		// wait.until(ExpectedConditions.visibilityOf(kolone.kolonaOdbacenWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNapomenaWE));
-		wait.until(ExpectedConditions.elementToBeClickable(sekcijaBtnWE));
-		wait.until(ExpectedConditions.elementToBeClickable(stranicaBtnWE));
-		wait.until(ExpectedConditions.elementToBeClickable(preuzmiExcelBtnWE));
-		wait.until(ExpectedConditions.elementToBeClickable(ukloniFiltereBtnWE));
-		wait.until(ExpectedConditions.elementToBeClickable(osvjeziBtnWE));
-		assertTrue(sekcijaBtnWE.getText().trim().equals("KUPCI"), "OdbaceniUgovori: Naziv sekcije nije dobar!");
-		assertTrue(stranicaBtnWE.getText().trim().equals("ODBAČENI UGOVORI"), "OdbaceniUgovori: Naziv stranice nije dobar!");
-		assertTrue(naslovStraniceWE.getText().trim().equals("ODBAČENI UGOVORI"), "OdbaceniUgovori: Naziv stranice nije dobar!");
-		assertTrue(brojKolona().size() == 11, "OdbaceniUgovori: Broj kolona nije dobar! ");
 	}
 	
 	public void verifikujOdbaceniUgovor(String mjernoMjesto) throws InterruptedException {
