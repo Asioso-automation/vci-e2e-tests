@@ -24,7 +24,7 @@ public class PX_DIST_063_Dodavanje_Ugovora_O_Prikljucenju_Test extends BaseTest{
 		homePage.verifikujPocetnuStranicu();
 		ElektroenergetskeSaglasnosti elSaglasnosti = homePage.navigirajNaElektroenergetskeSaglasnosti();
 		elSaglasnosti.verifikujElektroenergetskeSaglasnosti();
-		String ElSaglasnost = elSaglasnosti.dodajElektronergetskuSaglasnost();
+		String ElSaglasnost = elSaglasnosti.dodajElektronergetskuSaglasnost("Domaćinstva");
 		elSaglasnosti.verifikujPoruku("Uspješno završeno.");
 		elSaglasnosti.verifikujElektroenergetskuSaglasnost(ElSaglasnost);
 		UgovorOPrikljucenju ugovor = homePage.navigirajNaUgovorOPrikljucenju();

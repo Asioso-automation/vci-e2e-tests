@@ -15,7 +15,7 @@ public class PX_DIST_061_Uredjivanje_Elektroenergetske_Saglasnosti_Test extends 
 	}
 	
 	@Test
-	public void px_dist_061_uredjivanje_elektroenergetske_saglasnosti_test() throws Exception {		
+	public void px_dist_061_uredjivanje_elektroenergetske_saglasnosti_domacinstva_test() throws Exception {		
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
@@ -23,7 +23,7 @@ public class PX_DIST_061_Uredjivanje_Elektroenergetske_Saglasnosti_Test extends 
 		homePage.verifikujPocetnuStranicu();
 		ElektroenergetskeSaglasnosti elSaglasnosti = homePage.navigirajNaElektroenergetskeSaglasnosti();
 		elSaglasnosti.verifikujElektroenergetskeSaglasnosti();
-		String eeSaglasnost = elSaglasnosti.dodajElektronergetskuSaglasnost();
+		String eeSaglasnost = elSaglasnosti.dodajElektronergetskuSaglasnost("Domaćinstva");
 		elSaglasnosti.verifikujPoruku("Uspješno završeno.");
 		elSaglasnosti.verifikujElektroenergetskuSaglasnost(eeSaglasnost);
 		elSaglasnosti.urediElektroenergetskuSaglasnost();

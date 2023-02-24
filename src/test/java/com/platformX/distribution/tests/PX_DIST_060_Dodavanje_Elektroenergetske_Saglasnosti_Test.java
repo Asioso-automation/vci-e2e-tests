@@ -15,7 +15,7 @@ public class PX_DIST_060_Dodavanje_Elektroenergetske_Saglasnosti_Test extends Ba
 	}
 
 	@Test
-	public void px_dist_060_dodavanje_elektroenergetske_saglasnosti_test() throws Exception {
+	public void px_dist_060_dodavanje_elektroenergetske_saglasnosti_domacinstva_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
@@ -23,7 +23,21 @@ public class PX_DIST_060_Dodavanje_Elektroenergetske_Saglasnosti_Test extends Ba
 		homePage.verifikujPocetnuStranicu();
 		ElektroenergetskeSaglasnosti elSaglasnosti = homePage.navigirajNaElektroenergetskeSaglasnosti();
 		elSaglasnosti.verifikujElektroenergetskeSaglasnosti();
-		String eeSaglasnost = elSaglasnosti.dodajElektronergetskuSaglasnost();
+		String eeSaglasnost = elSaglasnosti.dodajElektronergetskuSaglasnost("Domaćinstva");
+		elSaglasnosti.verifikujPoruku("Uspješno završeno.");
+		elSaglasnosti.verifikujElektroenergetskuSaglasnost(eeSaglasnost);
+	}
+	
+	@Test
+	public void px_dist_060_dodavanje_elektroenergetske_saglasnosti_niski_napon_test() throws Exception {
+		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
+		logIn.verifikujLogIn();
+		logIn.logIn();
+		PocetnaStranica homePage = new PocetnaStranica(driver);
+		homePage.verifikujPocetnuStranicu();
+		ElektroenergetskeSaglasnosti elSaglasnosti = homePage.navigirajNaElektroenergetskeSaglasnosti();
+		elSaglasnosti.verifikujElektroenergetskeSaglasnosti();
+		String eeSaglasnost = elSaglasnosti.dodajElektronergetskuSaglasnost("Niski napon");
 		elSaglasnosti.verifikujPoruku("Uspješno završeno.");
 		elSaglasnosti.verifikujElektroenergetskuSaglasnost(eeSaglasnost);
 	}
