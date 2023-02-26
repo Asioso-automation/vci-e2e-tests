@@ -5,7 +5,6 @@ import org.testng.annotations.Test;
 import com.platformX.base.Payloads;
 import com.platformX.base.RestApiBase;
 import com.platformX.util.Helper;
-
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import static org.testng.Assert.assertEquals;

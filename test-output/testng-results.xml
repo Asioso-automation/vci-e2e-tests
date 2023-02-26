@@ -1,17 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="2" total="3" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="10" passed="10">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="574" started-at="2023-02-14T11:54:45Z" finished-at="2023-02-14T11:54:46Z">
+  <suite name="api" duration-ms="4015" started-at="2023-02-26T15:27:47Z" finished-at="2023-02-26T15:27:51Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="574" started-at="2023-02-14T11:54:45Z" finished-at="2023-02-14T11:54:46Z">
+    <test name="api" duration-ms="4015" started-at="2023-02-26T15:27:47Z" finished-at="2023-02-26T15:27:51Z">
+      <class name="com.platformX.api.tests.GetAdministrationMessageScenario">
+        <test-method status="PASS" signature="get_administration_message_test()[pri:0, instance:com.platformX.api.tests.GetAdministrationMessageScenario@7a35b0f5]" name="get_administration_message_test" duration-ms="1014" started-at="2023-02-26T16:27:47Z" finished-at="2023-02-26T16:27:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- get_administration_message_test -->
+      </class> <!-- com.platformX.api.tests.GetAdministrationMessageScenario -->
       <class name="com.platformX.api.tests.PXD_002_Get_User_Data_Test">
-        <test-method status="PASS" signature="pxd_get_user_data_test3()[pri:0, instance:com.platformX.api.tests.PXD_002_Get_User_Data_Test@1f53a5dc]" name="pxd_get_user_data_test3" duration-ms="562" started-at="2023-02-14T12:54:45Z" description="negative test case: missing bearer token" finished-at="2023-02-14T12:54:46Z">
+        <test-method status="PASS" signature="pxd_get_user_data_test1()[pri:0, instance:com.platformX.api.tests.PXD_002_Get_User_Data_Test@5b218417]" name="pxd_get_user_data_test1" duration-ms="645" started-at="2023-02-26T16:27:50Z" description="positive test case" finished-at="2023-02-26T16:27:51Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- pxd_get_user_data_test1 -->
+        <test-method status="PASS" signature="pxd_get_user_data_test2()[pri:0, instance:com.platformX.api.tests.PXD_002_Get_User_Data_Test@5b218417]" name="pxd_get_user_data_test2" duration-ms="191" started-at="2023-02-26T16:27:51Z" description="negative test case: wrong bearer token" finished-at="2023-02-26T16:27:51Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- pxd_get_user_data_test2 -->
+        <test-method status="PASS" signature="pxd_get_user_data_test3()[pri:0, instance:com.platformX.api.tests.PXD_002_Get_User_Data_Test@5b218417]" name="pxd_get_user_data_test3" duration-ms="174" started-at="2023-02-26T16:27:51Z" description="negative test case: missing bearer token" finished-at="2023-02-26T16:27:51Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- pxd_get_user_data_test3 -->
       </class> <!-- com.platformX.api.tests.PXD_002_Get_User_Data_Test -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+      <class name="com.platformX.api.tests.PXD_001_Authentication_Test">
+        <test-method status="PASS" signature="pxd_authentication_test1()[pri:0, instance:com.platformX.api.tests.PXD_001_Authentication_Test@cc43f62]" name="pxd_authentication_test1" duration-ms="853" started-at="2023-02-26T16:27:48Z" description="positive test case" finished-at="2023-02-26T16:27:49Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- pxd_authentication_test1 -->
+        <test-method status="PASS" signature="pxd_authentication_test2()[pri:0, instance:com.platformX.api.tests.PXD_001_Authentication_Test@cc43f62]" name="pxd_authentication_test2" duration-ms="126" started-at="2023-02-26T16:27:49Z" description="negative test case: wrong username" finished-at="2023-02-26T16:27:49Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- pxd_authentication_test2 -->
+        <test-method status="PASS" signature="pxd_authentication_test3()[pri:0, instance:com.platformX.api.tests.PXD_001_Authentication_Test@cc43f62]" name="pxd_authentication_test3" duration-ms="216" started-at="2023-02-26T16:27:49Z" description="negative test case: wrong password" finished-at="2023-02-26T16:27:49Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- pxd_authentication_test3 -->
+        <test-method status="PASS" signature="pxd_authentication_test4()[pri:0, instance:com.platformX.api.tests.PXD_001_Authentication_Test@cc43f62]" name="pxd_authentication_test4" duration-ms="259" started-at="2023-02-26T16:27:49Z" description="negative test case: username missing" finished-at="2023-02-26T16:27:49Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- pxd_authentication_test4 -->
+        <test-method status="PASS" signature="pxd_authentication_test5()[pri:0, instance:com.platformX.api.tests.PXD_001_Authentication_Test@cc43f62]" name="pxd_authentication_test5" duration-ms="241" started-at="2023-02-26T16:27:49Z" description="negative test case: password missing" finished-at="2023-02-26T16:27:50Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- pxd_authentication_test5 -->
+        <test-method status="PASS" signature="pxd_authentication_test6()[pri:0, instance:com.platformX.api.tests.PXD_001_Authentication_Test@cc43f62]" name="pxd_authentication_test6" duration-ms="269" started-at="2023-02-26T16:27:50Z" description="negative test case: username and password missing" finished-at="2023-02-26T16:27:50Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- pxd_authentication_test6 -->
+      </class> <!-- com.platformX.api.tests.PXD_001_Authentication_Test -->
+    </test> <!-- api -->
+  </suite> <!-- api -->
 </testng-results>

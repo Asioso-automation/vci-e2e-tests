@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="api">
+	<test name="api">
+	<!--Duration of suite execution: ~2 minutes-->
+	<packages>
+		<!--API-->
+		<package
+				name="com.platformX.api.tests" />															
+		</packages>
+	</test>
+</suite>

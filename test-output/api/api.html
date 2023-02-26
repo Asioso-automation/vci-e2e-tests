@@ -1,0 +1,129 @@
+<html>
+<head>
+<title>TestNG:  api</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>api</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>10/0/0</td>
+</tr><tr>
+<td>Started on:</td><td>Sun Feb 26 16:27:47 CET 2023</td>
+</tr>
+<tr><td>Total time:</td><td>4 seconds (4015 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.platformX.api.tests.GetAdministrationMessageScenario.get_administration_message_test()'><b>get_administration_message_test</b><br>Test class: com.platformX.api.tests.GetAdministrationMessageScenario</td>
+<td></td>
+<td>1</td>
+<td>com.platformX.api.tests.GetAdministrationMessageScenario@7a35b0f5</td></tr>
+<tr>
+<td title='com.platformX.api.tests.PXD_001_Authentication_Test.pxd_authentication_test1()'><b>pxd_authentication_test1</b><br>Test class: com.platformX.api.tests.PXD_001_Authentication_Test<br>Test method: positive test case</td>
+<td></td>
+<td>0</td>
+<td>com.platformX.api.tests.PXD_001_Authentication_Test@cc43f62</td></tr>
+<tr>
+<td title='com.platformX.api.tests.PXD_001_Authentication_Test.pxd_authentication_test2()'><b>pxd_authentication_test2</b><br>Test class: com.platformX.api.tests.PXD_001_Authentication_Test<br>Test method: negative test case: wrong username</td>
+<td></td>
+<td>0</td>
+<td>com.platformX.api.tests.PXD_001_Authentication_Test@cc43f62</td></tr>
+<tr>
+<td title='com.platformX.api.tests.PXD_001_Authentication_Test.pxd_authentication_test3()'><b>pxd_authentication_test3</b><br>Test class: com.platformX.api.tests.PXD_001_Authentication_Test<br>Test method: negative test case: wrong password</td>
+<td></td>
+<td>0</td>
+<td>com.platformX.api.tests.PXD_001_Authentication_Test@cc43f62</td></tr>
+<tr>
+<td title='com.platformX.api.tests.PXD_001_Authentication_Test.pxd_authentication_test4()'><b>pxd_authentication_test4</b><br>Test class: com.platformX.api.tests.PXD_001_Authentication_Test<br>Test method: negative test case: username missing</td>
+<td></td>
+<td>0</td>
+<td>com.platformX.api.tests.PXD_001_Authentication_Test@cc43f62</td></tr>
+<tr>
+<td title='com.platformX.api.tests.PXD_001_Authentication_Test.pxd_authentication_test5()'><b>pxd_authentication_test5</b><br>Test class: com.platformX.api.tests.PXD_001_Authentication_Test<br>Test method: negative test case: password missing</td>
+<td></td>
+<td>0</td>
+<td>com.platformX.api.tests.PXD_001_Authentication_Test@cc43f62</td></tr>
+<tr>
+<td title='com.platformX.api.tests.PXD_001_Authentication_Test.pxd_authentication_test6()'><b>pxd_authentication_test6</b><br>Test class: com.platformX.api.tests.PXD_001_Authentication_Test<br>Test method: negative test case: username and password missing</td>
+<td></td>
+<td>0</td>
+<td>com.platformX.api.tests.PXD_001_Authentication_Test@cc43f62</td></tr>
+<tr>
+<td title='com.platformX.api.tests.PXD_002_Get_User_Data_Test.pxd_get_user_data_test1()'><b>pxd_get_user_data_test1</b><br>Test class: com.platformX.api.tests.PXD_002_Get_User_Data_Test<br>Test method: positive test case</td>
+<td></td>
+<td>0</td>
+<td>com.platformX.api.tests.PXD_002_Get_User_Data_Test@5b218417</td></tr>
+<tr>
+<td title='com.platformX.api.tests.PXD_002_Get_User_Data_Test.pxd_get_user_data_test2()'><b>pxd_get_user_data_test2</b><br>Test class: com.platformX.api.tests.PXD_002_Get_User_Data_Test<br>Test method: negative test case: wrong bearer token</td>
+<td></td>
+<td>0</td>
+<td>com.platformX.api.tests.PXD_002_Get_User_Data_Test@5b218417</td></tr>
+<tr>
+<td title='com.platformX.api.tests.PXD_002_Get_User_Data_Test.pxd_get_user_data_test3()'><b>pxd_get_user_data_test3</b><br>Test class: com.platformX.api.tests.PXD_002_Get_User_Data_Test<br>Test method: negative test case: missing bearer token</td>
+<td></td>
+<td>0</td>
+<td>com.platformX.api.tests.PXD_002_Get_User_Data_Test@5b218417</td></tr>
+</table><p>
+</body>
+</html>
