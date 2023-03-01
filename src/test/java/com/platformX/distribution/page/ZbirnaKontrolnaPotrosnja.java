@@ -17,23 +17,21 @@ public class ZbirnaKontrolnaPotrosnja extends PocetnaStranica{
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Zbirna/kontrolna potrošnja')]")));
-		verifikacijaZajednickihElemenata("OČITANJA", "ZBIRNA/KONTROLNA POTROŠNJA", "ZBIRNA/KONTROLNA POTROŠNJA", 16, false, false, false, true, true, true, false);
+		verifikacijaZajednickihElemenata("OČITANJA", "ZBIRNA/KONTROLNA POTROŠNJA", "ZBIRNA/KONTROLNA POTROŠNJA", 14, false, false, false, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaZbirnoKontrolnoMjernoMjestoWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTrafostanicaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaFizickaLokacijaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAktivnaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaReaktivnaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaSnaga1WE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAktivnaObracunWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaReaktivnaObracunWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAktivnaPreuzetaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaReaktivnaPreuzetaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaSnagaPreuzetaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAktivnaObracunZaPeriodWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaReaktivnaObracunZaPeriodWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaRazlikaAktivnaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaRazlikaAktivna1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaRazlikaReaktivnaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaRazlikaReaktivna1WE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAktivnaKorekcijeUPerioduWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaReaktivnaKorekcijeUPerioduWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAktivnaKorekcijeZaPeriodWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaReaktivnaKorekcijeZaPeriodWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAktivnaSaKorekcijamaZaPeriodWE));
 	}
 
 }

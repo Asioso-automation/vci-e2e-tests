@@ -39,6 +39,9 @@ public class MonitoringOcitanja extends PocetnaStranica {
 	@FindBy(xpath = "//div[3]/div[1]/div/div[1]/div[2]/div/div[9]")
     protected WebElement iskljucenaBrojilaSaPotrosnjomBtnWE;
 	
+	@FindBy(xpath = "//div[2]/div/div[10]")
+    protected WebElement neocitanaZbirnaKontrolnaMjernaMjestaBtnWE;
+	
 	@FindBy(xpath = "//div[2]/div[3]/div[1]/div/div[1]/div[3]")
     protected WebElement slideBtnWE;
 
@@ -46,7 +49,7 @@ public class MonitoringOcitanja extends PocetnaStranica {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Monitoring očitanja')]")));
-		verifikacijaZajednickihElemenata("OČITANJA", "MONITORING OČITANJA", "MONITORING OČITANJA", 108, false, false, false, false, false, false, false);
+		verifikacijaZajednickihElemenata("OČITANJA", "MONITORING OČITANJA", "MONITORING OČITANJA", 116, false, false, false, false, false, false, false);
 		wait.until(ExpectedConditions.visibilityOf(neocitanaBrojilaBtnWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonObracunskiUgovorWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonMjernoMjestoEicWE));
@@ -157,6 +160,14 @@ public class MonitoringOcitanja extends PocetnaStranica {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonNovaMtWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonAktivnoBrojiloWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonReaktivnoBrojiloWE));
+		wait.until(ExpectedConditions.visibilityOf(neocitanaZbirnaKontrolnaMjernaMjestaBtnWE));
+		neocitanaZbirnaKontrolnaMjernaMjestaBtnWE.click();
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonZbirnoMjernoMjestoEicWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonBrojiloWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonTrafostanicaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonTerenskaJedinicaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonFizickaLokacijaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonCitacWE));
 	}
 	
 }
