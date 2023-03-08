@@ -34,12 +34,15 @@ public class MonitoringOcitanja extends PocetnaStranica {
     protected WebElement duplaOcitanjaBrojilaBtnWE;
 	
 	@FindBy(xpath = "//div[3]/div[1]/div/div[1]/div[2]/div/div[8]")
-    protected WebElement nemaPotrosnjeBtnWE;
+    protected WebElement duplaNevalidnaOcitanjaBrojilaBtnWE;
 	
 	@FindBy(xpath = "//div[3]/div[1]/div/div[1]/div[2]/div/div[9]")
+    protected WebElement nemaPotrosnjeBtnWE;
+	
+	@FindBy(xpath = "//div[3]/div[1]/div/div[1]/div[2]/div/div[10]")
     protected WebElement iskljucenaBrojilaSaPotrosnjomBtnWE;
 	
-	@FindBy(xpath = "//div[2]/div/div[10]")
+	@FindBy(xpath = "//div[3]/div[1]/div/div[1]/div[2]/div/div[11]")
     protected WebElement neocitanaZbirnaKontrolnaMjernaMjestaBtnWE;
 	
 	@FindBy(xpath = "//div[2]/div[3]/div[1]/div/div[1]/div[3]")
@@ -49,7 +52,7 @@ public class MonitoringOcitanja extends PocetnaStranica {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Monitoring očitanja')]")));
-		verifikacijaZajednickihElemenata("OČITANJA", "MONITORING OČITANJA", "MONITORING OČITANJA", 116, false, false, false, false, false, false, false);
+		verifikacijaZajednickihElemenata("OČITANJA", "MONITORING OČITANJA", "MONITORING OČITANJA", 128, false, false, false, false, false, false, false);
 		wait.until(ExpectedConditions.visibilityOf(neocitanaBrojilaBtnWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonObracunskiUgovorWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonMjernoMjestoEicWE));
@@ -130,6 +133,23 @@ public class MonitoringOcitanja extends PocetnaStranica {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonRvtWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonRmtWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonSnaga1WE));
+		wait.until(ExpectedConditions.visibilityOf(slideBtnWE));
+		slideBtnWE.click();
+		wait.until(ExpectedConditions.visibilityOf(duplaNevalidnaOcitanjaBrojilaBtnWE));
+		duplaNevalidnaOcitanjaBrojilaBtnWE.click();
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonBrojiloWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonNazivMjernogMjestaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonMjernoMjestoEicWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonTrafostanicaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonCitacWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonAvtWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonAmtWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonRvtWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonRmtWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonSnaga1WE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonPorukaCitacaWE));
+		wait.until(ExpectedConditions.visibilityOf(slideBtnWE));
+		slideBtnWE.click();
 		wait.until(ExpectedConditions.visibilityOf(nemaPotrosnjeBtnWE));
 		nemaPotrosnjeBtnWE.click();
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonObracunskiUgovorWE));

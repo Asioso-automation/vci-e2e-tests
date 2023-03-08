@@ -1518,6 +1518,9 @@ public class Kolone extends PageBase {
 	@FindBy(xpath = "//*[contains(@class,'v-window-item--active')]//*[contains(@class, 'v-data-table-header')]//*[text() = 'Fizička lokacija']")
 	public WebElement kolonaMonFizickaLokacijaWE;
 	
+	@FindBy(xpath = "//*[contains(@class,'v-window-item--active')]//*[contains(@class, 'v-data-table-header')]//*[text() = 'Poruka čitača']")
+	public WebElement kolonaMonPorukaCitacaWE;
+	
 
 	
 	// test comment
