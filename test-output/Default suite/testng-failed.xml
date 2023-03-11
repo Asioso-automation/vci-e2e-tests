@@ -3,11 +3,11 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.platformX.api.tests.PXD_001_Authentication_Test">
+      <class name="com.platformX.api.tests.PXD_003_Get_Administration_Message_Test">
         <methods>
-          <include name="pxd_authentication_test4"/>
+          <include name="get_administration_message_test2"/>
         </methods>
-      </class> <!-- com.platformX.api.tests.PXD_001_Authentication_Test -->
+      </class> <!-- com.platformX.api.tests.PXD_003_Get_Administration_Message_Test -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

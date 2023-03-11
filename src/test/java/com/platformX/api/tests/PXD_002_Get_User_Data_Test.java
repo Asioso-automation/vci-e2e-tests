@@ -1,6 +1,5 @@
 package com.platformX.api.tests;
 
-import org.testng.Assert;
 import org.testng.annotations.Test;
 import com.platformX.base.Payloads;
 import com.platformX.base.RestApiBase;
@@ -21,7 +20,6 @@ public class PXD_002_Get_User_Data_Test extends RestApiBase{
 	public void pxd_get_user_data_test1() {
 		// Authorization
 		Response response1 = methodPOST("http://10.10.10.21:8086/api/Auth/Authenticate", Payloads.pxdAuth("admin", "staging"));
-		Assert.assertEquals(response1.getStatusCode(), 200, "Correct status code is not returned");
 		assertEquals(response1.getStatusCode(), 200);
 		JsonPath jp1 = new JsonPath(response1.asString());
 		assertNotNull(jp1.getString("token"), "Token not forwarded");
