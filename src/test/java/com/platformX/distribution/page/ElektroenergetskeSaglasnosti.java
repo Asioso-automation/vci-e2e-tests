@@ -174,6 +174,7 @@ public class ElektroenergetskeSaglasnosti extends PocetnaStranica {
 		driver.findElement(By.xpath("//div[contains(@class, 'v-list-item__title') and contains(., '" + tipEES + "')]")).click();
 		wait.until(ExpectedConditions.elementToBeClickable(daljeBtnWE));
 		daljeBtnWE.click();
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//i[@class='v-icon notranslate mdi mdi-pencil theme--light']")));
 		wait.until(ExpectedConditions.elementToBeClickable(datumBtn1WE));
 		datumBtn1WE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(datumKalendar1WE));
