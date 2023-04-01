@@ -17,9 +17,6 @@ public class RestApiBase {
 	protected static final String API_PROPERTIES = "api.properties";
     protected PropertiesUtil properties = new PropertiesUtil(API_PROPERTIES);
     private RestAssuredConfig restAssuredConfig;
-
-//	public RestApiBase() {
-//	}
 	
 	public RestApiBase() throws IOException {
         RestAssured.urlEncodingEnabled = false;
