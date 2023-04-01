@@ -16,7 +16,7 @@ import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import com.platformX.util.PropertiesUtil;
 
-public class BaseTest {
+public abstract class BaseTest {
 
 	protected WebDriver driver;
 	protected PropertiesUtil platformx_properties = null;
@@ -75,7 +75,7 @@ public class BaseTest {
 
 	@AfterMethod
 	public void cleanUp() {
- 	driver.quit();
+ 	// driver.quit();
 	endTime = System.currentTimeMillis();
 	duration = endTime - startTime;
 	seconds = (double)duration/1000.0;

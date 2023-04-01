@@ -65,7 +65,7 @@ public class PocetnaStranica extends PageBase {
 	@FindBy(xpath = "//*[contains(text(),'Izvještaji') and @class='v-btn__content']")
 	protected WebElement izvjestajiWE;
 
-	@FindBy(xpath = "//button[7]")
+	@FindBy(xpath = "//button[8]")
 	protected WebElement profilWE;
 	
 	// Stranice

@@ -50,11 +50,15 @@ public class LogIn extends PageBase {
 		wait.until(ExpectedConditions.visibilityOf(korisnickoImeWE));
 		wait.until(ExpectedConditions.visibilityOf(lozinkaWE));
 		wait.until(ExpectedConditions.elementToBeClickable(organizacijaWE));
+		wait.until(ExpectedConditions.elementToBeClickable(korisnickoImeWE));
+		wait.until(ExpectedConditions.elementToBeClickable(organizacijaWE));
 		organizacijaWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(vodovodWE));
 		vodovodWE.click();
-		korisnickoImeWE.sendKeys(platformx_properties.getValue("DIST.USER.NAME"));
-		lozinkaWE.sendKeys(platformx_properties.getValue("DIST.PASSWORD"));
+		wait.until(ExpectedConditions.elementToBeClickable(korisnickoImeWE));
+		korisnickoImeWE.sendKeys(platformx_distribution_properties.getValue("DIST.USER.NAME"));
+		wait.until(ExpectedConditions.elementToBeClickable(lozinkaWE));
+		lozinkaWE.sendKeys(platformx_distribution_properties.getValue("DIST.PASSWORD"));
 		wait.until(ExpectedConditions.elementToBeClickable(prijaviSeBtnWE));
 		prijaviSeBtnWE.click();
 	}

@@ -13,12 +13,10 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import com.platformX.util.HandlerUtil;
 import com.platformX.util.PropertiesUtil;
 
-public class PageBase {
+public abstract class PageBase {
 
-	protected HandlerUtil lastBrowserHandler;
 	protected WebDriver driver;
 	protected PropertiesUtil properties;
 	protected PropertiesUtil platformx_properties = null;
@@ -92,11 +90,6 @@ public class PageBase {
 		Select selectedElement = new Select(webElement);
 		selectedElement.selectByVisibleText(name);
 		return selectedElement;
-	}
-
-	public void activateHandler() {
-		lastBrowserHandler = new HandlerUtil();
-		driver.switchTo().window(lastBrowserHandler.getLastBrowserHandle(driver));
 	}
 	
 	public void osvjeziStranicu() throws InterruptedException {
