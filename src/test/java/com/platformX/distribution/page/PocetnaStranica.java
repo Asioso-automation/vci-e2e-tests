@@ -46,13 +46,13 @@ public class PocetnaStranica extends PageBase {
 	@FindBy(xpath = "//div[contains(@class, 'menuable__content__active')]")
 	protected WebElement aktivniLookupWE;
 	
-	@FindBy(xpath = "(//button[@aria-label = 'prepend icon'])[1]")
+	@FindBy(xpath = "(//button[@aria-label = 'prepend icon' and contains(@class, 'fa-calendar-alt')])[1]")
 	protected WebElement datumBtn1WE;
 	
-	@FindBy(xpath = "(//button[@aria-label = 'prepend icon'])[2]")
+	@FindBy(xpath = "(//button[@aria-label = 'prepend icon' and contains(@class, 'fa-calendar-alt')])[2]")
 	protected WebElement datumBtn2WE;
 	
-	@FindBy(xpath = "(//button[@aria-label = 'prepend icon'])[3]")
+	@FindBy(xpath = "(//button[@aria-label = 'prepend icon' and contains(@class, 'fa-calendar-alt')])[3]")
 	protected WebElement datumBtn3WE;
 	
 	@FindBy(xpath = "(//*[contains(@class, 'v-date-picker-table--date')])[1]")  
@@ -493,6 +493,7 @@ public class PocetnaStranica extends PageBase {
 			filterKolona3WE.sendKeys(Keys.ENTER);
 		}
 			wait.until(ExpectedConditions.elementToBeClickable(osvjeziBtnWE));
+			osvjeziBtnWE.click();
 			wait.until(ExpectedConditions.visibilityOf(praznaTabelaWE));
 			wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 			Thread.sleep(700);

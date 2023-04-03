@@ -147,6 +147,9 @@ public class ElektroenergetskeSaglasnosti extends PocetnaStranica {
 	@FindBy(xpath = "//div[28]/div[2]/div/div/div[1]/div[1]/input[1]")  
 	 private WebElement rokVazenjaNWE;
 	
+	@FindBy(xpath = "//div[@class='v-card__title subtitle-2 title-border text-uppercase mb-5']")  
+	 private WebElement naslovWE;
+	
 	public void verifikujElektroenergetskeSaglasnosti() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
@@ -174,7 +177,9 @@ public class ElektroenergetskeSaglasnosti extends PocetnaStranica {
 		driver.findElement(By.xpath("//div[contains(@class, 'v-list-item__title') and contains(., '" + tipEES + "')]")).click();
 		wait.until(ExpectedConditions.elementToBeClickable(daljeBtnWE));
 		daljeBtnWE.click();
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//i[@class='v-icon notranslate mdi mdi-pencil theme--light']")));
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//i[@class='v-icon notranslate mdi mdi-pencil theme--light']")));
+		wait.until(ExpectedConditions.visibilityOf(naslovWE));
+		naslovWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(datumBtn1WE));
 		datumBtn1WE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(datumKalendar1WE));

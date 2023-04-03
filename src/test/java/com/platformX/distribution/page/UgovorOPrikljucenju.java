@@ -100,7 +100,7 @@ public class UgovorOPrikljucenju extends PocetnaStranica {
 		tipStandardnogPrikljuckaWE.sendKeys(Keys.ARROW_DOWN);
 		tipStandardnogPrikljuckaWE.sendKeys(Keys.ENTER);
 		wait.until(ExpectedConditions.elementToBeClickable(brojPrikljucnihVodovaWE));
-		brojPrikljucnihVodovaWE.click();
+//		brojPrikljucnihVodovaWE.click();
 		brojPrikljucnihVodovaWE.sendKeys(Helper.getRandomNumber(1));
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].scrollIntoView(true);",odobrenaPrikljucnaSnagaKwWE);
