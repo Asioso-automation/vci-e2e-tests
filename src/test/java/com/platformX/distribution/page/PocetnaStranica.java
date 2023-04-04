@@ -493,7 +493,12 @@ public class PocetnaStranica extends PageBase {
 			filterKolona3WE.sendKeys(Keys.ENTER);
 		}
 			wait.until(ExpectedConditions.elementToBeClickable(osvjeziBtnWE));
-			osvjeziBtnWE.click();
+			try {
+				osvjeziBtnWE.click();
+			}
+			catch (Exception e) {
+				wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
+			}
 			wait.until(ExpectedConditions.visibilityOf(praznaTabelaWE));
 			wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 			Thread.sleep(700);
