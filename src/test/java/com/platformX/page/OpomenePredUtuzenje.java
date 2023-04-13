@@ -16,8 +16,8 @@ public class OpomenePredUtuzenje extends PocetnaStranica{
 	public void verifikujOpomenePredUtuzenje() throws FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
-				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Opomene pred utuženje')]")));
-		verifikacijaZajednickihElemenata("PRAVNI ODNOSI", "OPOMENE PRED UTUŽENJE", "OPOMENE PRED UTUŽENJE", 13, false, false, false, true, true, true, false);
+				"//div[contains(@class, 'v-toolbar__title body-1 ml-0 pl-0 text-default') and starts-with(., ' Opomene pred utuženje')]")));
+		verifikacijaZajednickihElemenata("Pravni Odnosi", "Opomene Pred Utuženje", "Opomene pred utuženje", 13, false, false, false, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKupacWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMjernoMjestoEicWE));

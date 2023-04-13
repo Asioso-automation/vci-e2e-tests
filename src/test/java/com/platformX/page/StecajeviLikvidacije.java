@@ -16,8 +16,8 @@ public class StecajeviLikvidacije extends PocetnaStranica {
 	public void verifikujStecajeviLikvidacije() throws FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
-				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Stečajevi')]")));
-		verifikacijaZajednickihElemenata("PRAVNI ODNOSI", "STEČAJEVI/LIKVIDACIJE", "STEČAJEVI/LIKVIDACIJE", 7, false, false, false, true, true, true, false);
+				"//div[contains(@class, 'v-toolbar__title body-1 ml-0 pl-0 text-default') and starts-with(., ' Stečajevi')]")));
+		verifikacijaZajednickihElemenata("Pravni Odnosi", "Stečajevi/Likvidacije", "Stečajevi/Likvidacije", 7, false, false, false, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKupacWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrProtokolaWE));

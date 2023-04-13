@@ -16,8 +16,8 @@ public class Tuzbe extends PocetnaStranica {
 	public void verifikujTuzbe() throws FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
-				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Tužbe')]")));
-		verifikacijaZajednickihElemenata("PRAVNI ODNOSI", "TUŽBE", "TUŽBE", 12, false, false, true, true, true, true, false);
+				"//div[contains(@class, 'v-toolbar__title body-1 ml-0 pl-0 text-default') and starts-with(., ' Tužbe')]")));
+		verifikacijaZajednickihElemenata("Pravni Odnosi", "Tužbe", "Tužbe", 12, false, false, true, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKupacWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrProtokolaWE));

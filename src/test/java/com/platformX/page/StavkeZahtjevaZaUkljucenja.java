@@ -16,8 +16,8 @@ public class StavkeZahtjevaZaUkljucenja extends PocetnaStranica {
 	public void verifikujStavkeZahtjevaZaUkljucenja() throws FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
-				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Stavke')]")));
-		verifikacijaZajednickihElemenata("PRAVNI ODNOSI", "STAVKE ZAHTJEVA ZA UKLJUČENJA", "STAVKE ZAHTJEVA ZA UKLJUČENJA", 13, false, false, false, true, true, true, false);
+				"//div[contains(@class, 'v-toolbar__title body-1 ml-0 pl-0 text-default') and starts-with(., ' Stavke')]")));
+		verifikacijaZajednickihElemenata("Pravni Odnosi", "Stavke Zahtjeva Za Uključenja", "Stavke zahtjeva za uključenja", 13, false, false, false, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKupacWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaSerijskiBrojWE));

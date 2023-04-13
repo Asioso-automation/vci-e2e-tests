@@ -16,8 +16,8 @@ public class ZahtjeviZaUgovore extends PocetnaStranica {
 	public void verifikujZahtjeviZaUgovore() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
-				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Zahtjevi za ugovore')]")));
-		verifikacijaZajednickihElemenata("KUPCI", "ZAHTJEVI ZA UGOVORE", "ZAHTJEVI ZA UGOVORE", 17, false, false, true,	true, true, true, false);
+				"//div[contains(@class, 'v-toolbar__title body-1 ml-0 pl-0 text-default') and starts-with(., ' Zahtjevi za ugovore')]")));
+		verifikacijaZajednickihElemenata("Kupci", "Zahtjevi Za Ugovore", "Zahtjevi za ugovore", 17, false, false, true,	true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrProtokolaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKupacWE));

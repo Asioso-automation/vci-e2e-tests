@@ -16,8 +16,8 @@ public class Medijacije extends PocetnaStranica {
 	public void verifikujMedijacije() throws FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
-				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Medijacije')]")));
-		verifikacijaZajednickihElemenata("PRAVNI ODNOSI", "MEDIJACIJE", "MEDIJACIJE", 12, false, false, true, true, true, true, false);
+				"//div[contains(@class, 'v-toolbar__title body-1 ml-0 pl-0 text-default') and starts-with(., ' Medijacije')]")));
+		verifikacijaZajednickihElemenata("Pravni Odnosi", "Medijacije", "Medijacije", 12, false, false, true, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKupacWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrProtokolaWE));

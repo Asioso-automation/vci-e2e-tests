@@ -16,8 +16,8 @@ public class IzvodiOtvorenihStavkiPoODSu extends PocetnaStranica {
 	public void verifikujIzvodiOtvorenihStavki() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
-				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Izvodi otvorenih stavki')]")));
-		verifikacijaZajednickihElemenata("KUPCI", "IZVODI OTVORENIH STAVKI PO ODS-U", "IZVODI OTVORENIH STAVKI PO ODS-U", 9, false, false, false, true, true, true, false);
+				"//div[contains(@class, 'v-toolbar__title body-1 ml-0 pl-0 text-default') and starts-with(., ' Izvodi otvorenih stavki')]")));
+		verifikacijaZajednickihElemenata("Kupci", "Izvodi Otvorenih Stavki Po ODS-u", "Izvodi otvorenih stavki po ODS-u", 9, false, false, false, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaOdsWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumKreiranjaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumIOSaWE));
