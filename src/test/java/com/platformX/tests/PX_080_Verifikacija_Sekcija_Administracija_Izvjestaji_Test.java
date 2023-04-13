@@ -5,6 +5,8 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import com.platformX.base.BaseTest;
 import com.platformX.page.PocetnaStranica;
+import com.platformX.page.Poruke;
+import com.platformX.page.DnevnikIzmjena;
 import com.platformX.page.EmailObavjestenja;
 import com.platformX.page.Izvjestaji;
 import com.platformX.page.Korisnici;
@@ -25,8 +27,12 @@ public class PX_080_Verifikacija_Sekcija_Administracija_Izvjestaji_Test extends 
 		pocetna.verifikujPocetnuStranicu();
 		Korisnici korisnici = pocetna.navigirajNaKorisnici();
 		korisnici.verifikujKorisnici();
+		Poruke poruke = pocetna.navigirajNaPoruke();
+		poruke.verifikujPoruke();
 		EmailObavjestenja emailObavjestenja = pocetna.navigirajNaEmailObavjestenja();
 		emailObavjestenja.verifikujEmailObavjestenja();
+	    DnevnikIzmjena dnevnikIzmjena = pocetna.navigirajNaDnevnikIzmjena();
+		dnevnikIzmjena.verifikujDnevnikIzmjena();
 		Izvjestaji izvjestaji = pocetna.navigirajNaIzvjestaji();
 		izvjestaji.verifikujIzvjestaji();
 	}

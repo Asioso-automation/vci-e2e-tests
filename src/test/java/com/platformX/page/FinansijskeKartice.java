@@ -16,8 +16,8 @@ public class FinansijskeKartice extends PocetnaStranica {
 	public void verifikujFinansijskeKartice() throws FileNotFoundException, IOException, InterruptedException {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
-				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Finansijske kartice')]")));
-		verifikacijaZajednickihElemenata("FINANSIJE", "FINANSIJSKE KARTICE", "FINANSIJSKE KARTICE", 12, false, false, false, false, true, true, true);
+				"//div[contains(@class, 'v-toolbar__title body-1 ml-0 pl-0 text-default') and starts-with(., ' Finansijske kartice')]")));
+		verifikacijaZajednickihElemenata("Finansije", "Finansijske Kartice", "Finansijske kartice", 12, false, false, false, false, true, true, true);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMjernoMjestoEicWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPeriodWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumWE));

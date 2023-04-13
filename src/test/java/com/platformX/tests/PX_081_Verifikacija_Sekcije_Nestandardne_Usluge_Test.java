@@ -7,6 +7,7 @@ import com.platformX.base.BaseTest;
 import com.platformX.page.KorekcijeRacunaZaNestandardneUsluge;
 import com.platformX.page.LogIn;
 import com.platformX.page.NaloziZaObracunNestandardnihUsluga;
+import com.platformX.page.ObrasciBrojaProtokolaPredracuna;
 import com.platformX.page.PocetnaStranica;
 import com.platformX.page.Predracuni;
 import com.platformX.page.RacuniZaNestandardneUsluge;
@@ -32,6 +33,8 @@ public class PX_081_Verifikacija_Sekcije_Nestandardne_Usluge_Test extends BaseTe
 		korekcijeRacunaZaNSU.verifikujKorekcijeRacunaZaNestandardneUsluge();
 		Predracuni predracuni = pocetna.navigirajNaPredracuni();
 		predracuni.verifikujPredracuni();
+		ObrasciBrojaProtokolaPredracuna obrasciBrojaProtokolaPredracuna = pocetna.navigirajNaObrasciBrojaProtokola();
+		obrasciBrojaProtokolaPredracuna.verifikujObrasciBrojaProtokolaPredracuna();
 	}
 	
 }

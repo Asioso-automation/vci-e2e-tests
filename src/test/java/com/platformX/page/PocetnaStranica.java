@@ -140,7 +140,7 @@ public class PocetnaStranica extends PageBase {
 	@FindBy(xpath = "//*[contains(text(),'Izvještaji') and @class='v-btn__content']")
 	protected WebElement izvjestajiWE;
 
-	@FindBy(xpath = "//span/div/i")
+	@FindBy(xpath = "//span/span/i")
 	protected WebElement profilWE;
 
 	
@@ -299,6 +299,12 @@ public class PocetnaStranica extends PageBase {
 	@FindBy(xpath = "//div[contains(text(), 'Korekcije računa')]")
 	protected WebElement korekcijeRacunaWE;
 	
+	@FindBy(xpath = "//div[contains(text(), 'Masovno generisanje računa')]")
+	protected WebElement masovnoGenerisanjeRacunaWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Importi korekcija')]")
+	protected WebElement importiKorekcijaWE;
+	
 	@FindBy(xpath = "//div[contains(text(), 'Kamate')]")
 	protected WebElement kamateWE;
 	
@@ -401,11 +407,20 @@ public class PocetnaStranica extends PageBase {
 	@FindBy(xpath = "//div[contains(text(), 'Korisnici')]")
 	protected WebElement korisniciWE;
 	
+	@FindBy(xpath = "//div[contains(text(), 'Poruke')]")
+	protected WebElement porukeWE;
+	
 	@FindBy(xpath = "//div[contains(text(), 'Email obavještenja')]")
 	protected WebElement emailObavjestenjaWE;
 	
+	@FindBy(xpath = "//div[contains(text(), 'Dnevnik izmjena')]")
+	protected WebElement dnevnikIzmjenaWE;
+	
 	@FindBy(xpath = "//div[contains(text(), 'Predračuni')]")
 	protected WebElement predracuniWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Obrasci broja protokola predračuna')]")
+	protected WebElement obrasciBrojaProtokolaPredracunaWE;
 
 	@FindBy(xpath = "//div[contains(text(), 'Isključenja po zahtjevu kupca')]")
 	protected WebElement iskljucenjaPoZahtjevuKupcaWE;
@@ -1151,6 +1166,34 @@ public class PocetnaStranica extends PageBase {
 		return new KorekcijeRacuna(driver);
 	}
 	
+	public MasovnoGenerisanjeRacuna navigirajNaMasovnoGenerisanjeRacuna() throws Exception {
+		try {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(obracunWE));
+		obracunWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(masovnoGenerisanjeRacunaWE));
+		masovnoGenerisanjeRacunaWE.click();
+		}
+		catch (Exception e) {
+			driver.get(platformx_properties.getValue("URL.LOGIN") + platformx_properties.getValue("MASOVNO.GENERISANJE.RACUNA"));
+		}
+		return new MasovnoGenerisanjeRacuna(driver);
+	}
+	
+	public ImportiKorekcija navigirajNaImporteKorekcija() throws Exception {
+		try {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(obracunWE));
+		obracunWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(importiKorekcijaWE));
+		importiKorekcijaWE.click();
+		}
+		catch (Exception e) {
+			driver.get(platformx_properties.getValue("URL.LOGIN") + platformx_properties.getValue("IMPORTI.KOREKCIJA"));
+		}
+		return new ImportiKorekcija(driver);
+	}
+	
 	public KamatePage navigirajNaKamate() throws Exception {
 		try {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
@@ -1284,6 +1327,20 @@ public class PocetnaStranica extends PageBase {
 			driver.get(platformx_properties.getValue("URL.LOGIN") + platformx_properties.getValue("PREDRACUNI"));
 		}
 		return new Predracuni(driver);
+	}
+	
+	public ObrasciBrojaProtokolaPredracuna navigirajNaObrasciBrojaProtokola() throws Exception{
+		try {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(nestandardneUslugeWE));
+		nestandardneUslugeWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(obrasciBrojaProtokolaPredracunaWE));
+		obrasciBrojaProtokolaPredracunaWE.click();
+		}
+		catch (Exception e) {
+			driver.get(platformx_properties.getValue("URL.LOGIN") + platformx_properties.getValue("OBRASCI.BROJA.PROTOKOLA.PREDRACUNA"));
+		}
+		return new ObrasciBrojaProtokolaPredracuna(driver);
 	}
 	
 	public FinansijskeKartice navigirajNaFinansijskeKartice() throws Exception {
@@ -1747,6 +1804,20 @@ public class PocetnaStranica extends PageBase {
 		return new Korisnici(driver);
 	}
 	
+	public Poruke navigirajNaPoruke() throws Exception {
+		try {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(administracijaWE));
+		administracijaWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(porukeWE));
+		porukeWE.click();
+		}
+		catch (Exception e) {
+			driver.get(platformx_properties.getValue("URL.LOGIN") + platformx_properties.getValue("PORUKE"));
+		}
+		return new Poruke(driver);
+	}
+	
 	public EmailObavjestenja navigirajNaEmailObavjestenja() throws Exception {
 		try {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
@@ -1759,6 +1830,20 @@ public class PocetnaStranica extends PageBase {
 			driver.get(platformx_properties.getValue("URL.LOGIN") + platformx_properties.getValue("EMAIL.OBAVJESTENJA"));
 		}
 		return new EmailObavjestenja(driver);
+	}
+	
+	public DnevnikIzmjena navigirajNaDnevnikIzmjena() throws Exception {
+		try {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(administracijaWE));
+		administracijaWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(dnevnikIzmjenaWE));
+		dnevnikIzmjenaWE.click();
+		}
+		catch (Exception e) {
+			driver.get(platformx_properties.getValue("URL.LOGIN") + platformx_properties.getValue("DNEVNIK.IZMJENA"));
+		}
+		return new DnevnikIzmjena(driver);
 	}
 	
 	public Izvjestaji navigirajNaIzvjestaji() throws Exception {

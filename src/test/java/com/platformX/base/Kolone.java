@@ -70,6 +70,12 @@ public class Kolone extends PageBase {
 	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'ODS']")
 	public WebElement kolonaOdsWE;
 	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Datum importa']")
+	public WebElement kolonaDatumImportaWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Naziv fajla']")
+	public WebElement kolonaNazivFajlaWE;
+	
 	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Telefon za prijavu kvara']")
 	public WebElement kolonaTelefonZaPrijavuKvaraWE;
 	
@@ -424,6 +430,15 @@ public class Kolone extends PageBase {
 	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Tip ugovora']")
 	public WebElement kolonaTipUgovoraWE;
 	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Način slanja']")
+	public WebElement kolonaNacinSlanjaWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Kreirao']")
+	public WebElement kolonaKreiraoWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Obrisan']")
+	public WebElement kolonaObrisanWE;
+	
 	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Tip ugovora - domaćinstvo']")
 	public WebElement kolonaTipUgovoraDomacinstvoWE;
 	
@@ -546,6 +561,12 @@ public class Kolone extends PageBase {
 	
 	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Proknj.']")
 	public WebElement kolonaProknjWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Prouzrokovana']")
+	public WebElement kolonaProuzrokovanaWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Sporna']")
+	public WebElement kolonaSpornaWE;
 	
 	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Mrežarina']")
 	public WebElement kolonaMrezarina2WE;
@@ -1212,6 +1233,24 @@ public class Kolone extends PageBase {
 	
 	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Ukupan broj stavki']")
 	public WebElement kolonaUkupanBrojStavkiWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Ukupan broj redova']")
+	public WebElement kolonaUkupanBrojRedovaWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Redova sa greškom']")
+	public WebElement kolonaRedovaSaGreskomWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Fajl grešaka']")
+	public WebElement kolonaFajlGresakaWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Fajl neproknjiženih korekcija']")
+	public WebElement kolonaFajlNeproknjizenihKorekcijaWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Obrađena']")
+	public WebElement kolonaObradjenaWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Postoje korekcije sa nepoznatim računom']")
+	public WebElement kolonaPostojeKorekcijeSaNepoznatimRacunomWE;
 	
 	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Broj očitanih stavki']")
 	public WebElement kolonaBrojOcitanihStavkiWE;

@@ -16,8 +16,8 @@ public class RacuniZaNestandardneUsluge extends PocetnaStranica {
 	public void verifikujRacuniZaNestandardneUsluge() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
-				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Računi za')]")));
-		verifikacijaZajednickihElemenata("NESTANDARDNE USLUGE", "RAČUNI", "RAČUNI ZA NESTANDARDNE USLUGE", 12, false, false, false, true, true, true, false);
+				"//div[contains(@class, 'v-toolbar__title body-1 ml-0 pl-0 text-default') and starts-with(., ' Računi za')]")));
+		verifikacijaZajednickihElemenata("Nestandardne Usluge", "Računi", "Računi za nestandardne usluge", 12, false, false, false, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaSerijskiBrojWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPeriodWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKupacWE));

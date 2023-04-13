@@ -16,8 +16,8 @@ public class KamatePage extends PocetnaStranica {
 	public void verifikujKamate() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
-				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Kamate')]")));
-		verifikacijaZajednickihElemenata("OBRAČUN", "KAMATE", "KAMATE", 7, false, false, false, true, true, true, false);
+				"//div[contains(@class, 'v-toolbar__title body-1 ml-0 pl-0 text-default') and starts-with(., ' Kamate')]")));
+		verifikacijaZajednickihElemenata("Obračun", "Kamate", "Kamate", 7, false, false, false, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPeriodWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMjernoMjestoEicWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumOdWE));

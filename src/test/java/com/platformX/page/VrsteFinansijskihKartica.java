@@ -16,8 +16,8 @@ public class VrsteFinansijskihKartica extends PocetnaStranica {
 	public void verifikujVrsteFinansijskihKartica() throws FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
-				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Vrste finansijskih kartica')]")));
-		verifikacijaZajednickihElemenata("FINANSIJE", "VRSTE FINANSIJSKIH KARTICA", "VRSTE FINANSIJSKIH KARTICA", 2, false, false, false, true, true, true, false);
+				"//div[contains(@class, 'v-toolbar__title body-1 ml-0 pl-0 text-default') and starts-with(., ' Vrste finansijskih kartica')]")));
+		verifikacijaZajednickihElemenata("Finansije", "Vrste Finansijskih Kartica", "Vrste finansijskih kartica", 2, false, false, false, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNazivWE));
 	}

@@ -16,8 +16,8 @@ public class KorekcijeRacuna extends PocetnaStranica {
 	public void verifikujKorekcijeRacuna() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
-				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Korekcije')]")));
-		verifikacijaZajednickihElemenata("OBRAČUN", "KOREKCIJE RAČUNA", "KOREKCIJE RAČUNA", 18, false, false, false, false, true, true, false);
+				"//div[contains(@class, 'v-toolbar__title body-1 ml-0 pl-0 text-default') and starts-with(., ' Korekcije')]")));
+		verifikacijaZajednickihElemenata("Obračun", "Korekcije Računa", "Korekcije računa", 20, false, false, false, false, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaSerijskiBrojWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPeriodWE));
@@ -33,6 +33,8 @@ public class KorekcijeRacuna extends PocetnaStranica {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPdv1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaUkIznosWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaProknjWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaProuzrokovanaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaSpornaWE));
 	}
 
 }

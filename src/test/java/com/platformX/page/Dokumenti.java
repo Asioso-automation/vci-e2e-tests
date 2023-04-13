@@ -16,8 +16,8 @@ public class Dokumenti extends PocetnaStranica {
 	public void verifikujDokumenti()throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
-				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Dokumenti')]")));
-		verifikacijaZajednickihElemenata("KUPCI-PROIZVOĐAČI", "DOKUMENTI", "DOKUMENTI", 5, false, false, true, true, true, true, false);
+				"//div[contains(@class, 'v-toolbar__title body-1 ml-0 pl-0 text-default') and starts-with(., ' Dokumenti')]")));
+		verifikacijaZajednickihElemenata("Kupci-Proizvođači", "Dokumenti", "Dokumenti", 5, false, false, true, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNazivWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTipUgovoraDomacinstvoWE));

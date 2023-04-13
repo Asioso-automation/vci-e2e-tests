@@ -11,7 +11,7 @@ public class Uino extends PocetnaStranica {
 	}
 	
 	public void verifikujUino() {
-		verifikacijaZajednickihElemenata("FINANSIJE", "UINO", "UINO", 0, false, false, false, false, false, false, false);
+		verifikacijaZajednickihElemenata("Finansije", "UINO", "UINO", 0, false, false, false, false, false, false, false);
 	}
 
 }

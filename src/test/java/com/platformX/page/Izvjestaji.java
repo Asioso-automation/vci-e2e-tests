@@ -15,7 +15,7 @@ public class Izvjestaji extends PocetnaStranica {
 	public void verifikujIzvjestaji() throws InterruptedException {
 		Thread.sleep(1000);
 		wait.until(ExpectedConditions.visibilityOf(naslovStraniceWE));
-		assertTrue(naslovStraniceWE.getText().trim().equals("IZVJEŠTAJI"), "Izvjestaji: Naziv stranice nije dobar!");
+		assertTrue(naslovStraniceWE.getText().trim().equals("Izvještaji"), "Izvjestaji: Naziv stranice nije dobar!");
 	}
 
 }
