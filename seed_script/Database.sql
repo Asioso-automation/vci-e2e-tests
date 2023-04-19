@@ -21,13 +21,18 @@ Values (1,N'Republika Srpska')
 
 SET IDENTITY_INSERT BasicCatalog.Entity OFF
 
- INSERT INTO Administration.Configuration  ( [Key], [Value])
-  VALUES
-  (N'UnknownStreetNumber',N'BB'),
-  (N'Currency',N'KM' ),
-  (N'VatRate', N'0.17'),
-  (N'MaxAmountForInterestCorrectionClosure', N'5'),
-  (N'MaxValidtyDateForContractTypeChangeAllowed','2021-04-01')
+
+INSERT [Administration].[Configuration] ([Key], [Value]) VALUES (N'UnknownStreetNumber', N'BB' )
+GO
+INSERT [Administration].[Configuration] ([Key], [Value]) VALUES (N'Currency', N'KM' )
+GO
+INSERT [Administration].[Configuration] ([Key], [Value]) VALUES (N'VatRate', N'0.17' )
+GO
+INSERT [Administration].[Configuration] ([Key], [Value]) VALUES (N'MaxAmountForInterestCorrectionClosure', N'5' )
+GO
+INSERT [Administration].[Configuration] ([Key], [Value]) VALUES (N'MaxValidtyDateForContractTypeChangeAllowed', N'2021-04-01' )
+GO
+
   
 SET IDENTITY_INSERT BasicCatalog.MeterType ON
 
