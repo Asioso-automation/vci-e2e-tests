@@ -2,12 +2,20 @@
 
 --izbrisi sve podatke
 
+--because of delete data from Administration.Configuration
+DROP INDEX [CAK_ActiveBillGeneratorSummary] ON [Calculation].[ActiveBillGeneratorSummary]
+DROP INDEX [CAK_ActiveBillGeneratorSummary] ON [Generate].[ActiveBillGeneratorSummary]
+GO
+
 EXEC sp_MSForEachTable 'ALTER TABLE ? NOCHECK CONSTRAINT ALL' 
 GO 
 
 EXEC sp_MSForEachTable 'SET QUOTED_IDENTIFIER ON; DELETE FROM ?' 
 GO 
 
+CREATE UNIQUE CLUSTERED INDEX [CAK_ActiveBillGeneratorSummary] ON [Calculation].[ActiveBillGeneratorSummary] ([Id] ASC)
+CREATE UNIQUE CLUSTERED INDEX [CAK_ActiveBillGeneratorSummary] ON [Generate].[ActiveBillGeneratorSummary] ([Id] ASC)
+GO
 
 --insesrtuj podatke
 
@@ -22,23 +30,15 @@ Values (1,N'Republika Srpska')
 SET IDENTITY_INSERT BasicCatalog.Entity OFF
 
 
-DROP INDEX [CAK_ActiveBillGeneratorSummary] ON [Calculation].[ActiveBillGeneratorSummary]
-DROP INDEX [CAK_ActiveBillGeneratorSummary] ON [Generate].[ActiveBillGeneratorSummary]
+INSERT [Administration].[Configuration] ([Key], [Value]) VALUES (N'UnknownStreetNumber', N'BB')
 GO
-
-INSERT [Administration].[Configuration] ([Key], [Value]) VALUES (N'UnknownStreetNumber', N'BB' )
+INSERT [Administration].[Configuration] ([Key], [Value]) VALUES (N'Currency', N'KM')
 GO
-INSERT [Administration].[Configuration] ([Key], [Value]) VALUES (N'Currency', N'KM' )
+INSERT [Administration].[Configuration] ([Key], [Value]) VALUES (N'VatRate', N'0.17')
 GO
-INSERT [Administration].[Configuration] ([Key], [Value]) VALUES (N'VatRate', N'0.17' )
+INSERT [Administration].[Configuration] ([Key], [Value]) VALUES (N'MaxAmountForInterestCorrectionClosure', N'5')
 GO
-INSERT [Administration].[Configuration] ([Key], [Value]) VALUES (N'MaxAmountForInterestCorrectionClosure', N'5' )
-GO
-INSERT [Administration].[Configuration] ([Key], [Value]) VALUES (N'MaxValidtyDateForContractTypeChangeAllowed', N'2021-04-01' )
-GO
-
-CREATE UNIQUE CLUSTERED INDEX [CAK_ActiveBillGeneratorSummary] ON [Calculation].[ActiveBillGeneratorSummary] ([Id] ASC)
-CREATE UNIQUE CLUSTERED INDEX [CAK_ActiveBillGeneratorSummary] ON [Generate].[ActiveBillGeneratorSummary] ([Id] ASC)
+INSERT [Administration].[Configuration] ([Key], [Value]) VALUES (N'MaxValidtyDateForContractTypeChangeAllowed', N'2021-04-01')
 GO
 
 
