@@ -89,11 +89,14 @@ public class PocetnaStranica extends PageBase {
 	@FindBy(xpath = "//tr[2]/td[2]")
 	protected WebElement podatakTabela2WE;
 	
-	@FindBy(xpath = "//tr[2]/td[3]")
+	@FindBy(xpath = "//tr[1]/td[3]")
 	protected WebElement podatakTabela3WE;
 	
-	@FindBy(xpath = "//tr[2]/td[4]")
+	@FindBy(xpath = "//tr/td[4]")
 	protected WebElement podatakTabela4WE;
+	
+	@FindBy(xpath = "//tr[2]/td[4]")
+	protected WebElement podatak1Tabela4WE;
 	
 	@FindBy(xpath = "//tr[2]/td[5]")
 	protected WebElement podatakTabela5WE;
@@ -103,6 +106,12 @@ public class PocetnaStranica extends PageBase {
 	
 	@FindBy(xpath = "//tr[2]/td[9]")
 	protected WebElement podatakTabela9WE;
+	
+	@FindBy(xpath = "//div[contains(@class, 'menuable__content__active')]")
+	protected WebElement aktivniLookupWE;
+	
+	@FindBy(xpath = "//button[@type='submit']")
+	protected WebElement submitBtnWE;
 	
 
 	// Sekcije

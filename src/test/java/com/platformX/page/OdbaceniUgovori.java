@@ -40,8 +40,8 @@ public class OdbaceniUgovori extends PocetnaStranica {
 		filterKolona4WE.clear();
 		filterKolona4WE.sendKeys(mjernoMjesto);
 		filterKolona4WE.sendKeys(Keys.ENTER);
-		wait.until(ExpectedConditions.visibilityOf(podatakTabela4WE));
-		assertTrue(podatakTabela4WE.getText().contains(mjernoMjesto), "Ugovori: Naziv mjernog mjesta nije dobar!");
+		wait.until(ExpectedConditions.visibilityOf(podatak1Tabela4WE));
+		assertTrue(podatak1Tabela4WE.getText().contains(mjernoMjesto), "Ugovori: Naziv mjernog mjesta nije dobar!");
 	}
 
 }

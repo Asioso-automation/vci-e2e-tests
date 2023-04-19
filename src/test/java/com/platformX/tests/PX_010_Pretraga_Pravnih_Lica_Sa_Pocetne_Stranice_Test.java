@@ -1,7 +1,9 @@
 package com.platformX.tests;
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -15,6 +17,9 @@ public class PX_010_Pretraga_Pravnih_Lica_Sa_Pocetne_Stranice_Test extends BaseT
 	public PX_010_Pretraga_Pravnih_Lica_Sa_Pocetne_Stranice_Test() throws IOException, FileNotFoundException {
 		super();
 	}
+	
+	private WebDriver driver;
+	private final String PLATFORMX_PROPERTIES = "platformx.properties";
 
 	@Test
 	public void px_010_pretraga_pravnih_lica_sa_pocetne_stranice_test() throws Exception {
@@ -50,6 +55,11 @@ public class PX_010_Pretraga_Pravnih_Lica_Sa_Pocetne_Stranice_Test extends BaseT
 		homePage.verifikujPocetnuStranicu();
 		homePage.pretraziKupce(pravnoLice);
 		pravnaLicaPage.verifikujDetaljePravnogLica();
+	}
+	
+	@AfterTest
+	public void terminateBrowser() {
+		driver.quit();
 	}
 
 }

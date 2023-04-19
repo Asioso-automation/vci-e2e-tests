@@ -170,73 +170,78 @@ public class Ugovori extends PocetnaStranica {
 	@FindBy(xpath = "//div[3]/div[1]/div/div[1]/div[2]/input")
 	private WebElement vaziOdWE;
 
-	@FindBy(xpath = "//div[7]/div[1]/div/div/div[1]/div[1]/input[1]")
+	@FindBy(xpath = "//div[7]/div/div/div[1]/div/div[1]/div/div/div[1]/div[1]/input[1]")
 	private WebElement mjernoMjestoWE;
+	
+	@FindBy(xpath = "//div[contains(@class, 'v-input--has-state v-input--is-focused v-input--dense')]")
+	private WebElement odaberiMjernoMjestoWE;
 
-	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '1514BASD99')]")
-	private WebElement odaberiMjernoMjesto1WE;
+//	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '1514BASD99')]")
+//	private WebElement odaberiMjernoMjesto1WE;
+//
+//	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '36Z03800001H')]")
+//	private WebElement odaberiMjernoMjesto2WE;
+//
+//	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., 'AMOSA542A')]")
+//	private WebElement odaberiMjernoMjesto3WE;
+//
+//	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '151414')]")
+//	private WebElement odaberiMjernoMjesto4WE;
+//
+//	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '36K085053')]")
+//	private WebElement odaberiMjernoMjesto5WE;
+//
+//	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '36Z1SB1200027N')]")
+//	private WebElement odaberiMjernoMjesto6WE;
+//
+//	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '36Z0100154X')]")
+//	private WebElement odaberiMjernoMjesto7WE;
+//
+//	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., 'dfsf56456')]")
+//	private WebElement odaberiMjernoMjesto8WE;
+//
+//	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '3PD53B2W')]")
+//	private WebElement odaberiMjernoMjesto9WE;
+//
+//	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., 'SK009281150R')]")
+//	private WebElement odaberiMjernoMjesto10WE;
+//
+//	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '36Z0SK009')]")
+//	private WebElement odaberiMjernoMjesto11WE;
+//
+//	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '36066699C')]")
+//	private WebElement odaberiMjernoMjesto12WE;
+//
+//	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '36Z0SK085O')]")
+//	private WebElement odaberiMjernoMjesto13WE;
+//
+//	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '36Z0S501070Z')]")
+//	private WebElement odaberiMjernoMjesto14WE;
+//
+//	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '36SK08501E')]")
+//	private WebElement odaberiMjernoMjesto15WE;
+//
+//	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., 'K009151661R')]")
+//	private WebElement odaberiMjernoMjesto16WE;
 
-	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '36Z03800001H')]")
-	private WebElement odaberiMjernoMjesto2WE;
-
-	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., 'AMOSA542A')]")
-	private WebElement odaberiMjernoMjesto3WE;
-
-	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '151414')]")
-	private WebElement odaberiMjernoMjesto4WE;
-
-	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '36K085053')]")
-	private WebElement odaberiMjernoMjesto5WE;
-
-	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '36Z1SB1200027N')]")
-	private WebElement odaberiMjernoMjesto6WE;
-
-	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '36Z0100154X')]")
-	private WebElement odaberiMjernoMjesto7WE;
-
-	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., 'dfsf56456')]")
-	private WebElement odaberiMjernoMjesto8WE;
-
-	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '3PD53B2W')]")
-	private WebElement odaberiMjernoMjesto9WE;
-
-	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., 'SK009281150R')]")
-	private WebElement odaberiMjernoMjesto10WE;
-
-	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '36Z0SK009')]")
-	private WebElement odaberiMjernoMjesto11WE;
-
-	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '36066699C')]")
-	private WebElement odaberiMjernoMjesto12WE;
-
-	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '36Z0SK085O')]")
-	private WebElement odaberiMjernoMjesto13WE;
-
-	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '36Z0S501070Z')]")
-	private WebElement odaberiMjernoMjesto14WE;
-
-	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '36SK08501E')]")
-	private WebElement odaberiMjernoMjesto15WE;
-
-	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., 'K009151661R')]")
-	private WebElement odaberiMjernoMjesto16WE;
-
-	@FindBy(xpath = "//div[1]/div[7]/div[2]/div/div/div[1]/div/input")
+	@FindBy(xpath = "//div/div/div[1]/div/div[2]/div/div/div[1]/div/input")
 	private WebElement nazivMjernogMjestaWE;
 
-	@FindBy(xpath = "//div[7]/div[3]/div/div/div[1]/div/input")
+	@FindBy(xpath = "//div/div/div[1]/div/div[3]/div/div/div[1]/div/input")
 	private WebElement nazivNaStampanimDokumentimaWE;
 
-	@FindBy(xpath = "//div[7]/div[4]/div/div/div[1]/div/input")
+	@FindBy(xpath = "//div/div/div[1]/div/div[4]/div/div/div[1]/div/input")
 	private WebElement aktivnoBrojiloWE;
 
-	@FindBy(xpath = "//div[7]/div[5]/div/div/div[1]/div/input")
+	@FindBy(xpath = "//div/div/div[1]/div/div[5]/div/div/div[1]/div/input")
 	private WebElement reaktivnoBrojiloWE;
+	
+	@FindBy(xpath = "//div/div/div[1]/div/div[6]/div/div/div[1]/div/input")
+	private WebElement ugovorenaPrikljucnaSnagaWE;
 
-	@FindBy(xpath = "//div[7]/div[7]/div/div/div[1]/div/input")
+	@FindBy(xpath = "//div/div/div[1]/div/div[7]/div/div/div[1]/div/input")
 	private WebElement aktivnaKonstantaWE;
-
-	@FindBy(xpath = "//div[9]/div[1]/div/div/div[1]/div[1]/input[1]")
+	@FindBy(xpath = "//div[11]/div/div/div[1]/div[1]/input[1]")
 	private WebElement postaWE;
 
 	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '78000 - Banja Luka')]")
@@ -245,7 +250,7 @@ public class Ugovori extends PocetnaStranica {
 	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '71420')]")
 	private WebElement odaberiPostu1WE;
 
-	@FindBy(xpath = "//div[9]/div[2]/div/div/div[1]/div[1]/input[1]")
+	@FindBy(xpath = "//div[12]/div/div/div[1]/div[1]/input[1]")
 	private WebElement mjestoWE;
 
 	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '1 - Ba')]")
@@ -254,7 +259,7 @@ public class Ugovori extends PocetnaStranica {
 	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '3 - Pale')]")
 	private WebElement odaberiMjesto1WE;
 
-	@FindBy(xpath = "//div[9]/div[3]/div/div/div[1]/div[1]/input[1]")
+	@FindBy(xpath = "//div[13]/div/div/div[1]/div[1]/input[1]")
 	private WebElement ulicaWE;
 
 	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '6 - Nikole Tesle')]")
@@ -263,26 +268,26 @@ public class Ugovori extends PocetnaStranica {
 	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '2 - Dr')]")
 	private WebElement odaberiUlicu1WE;
 
-	@FindBy(xpath = "//div[9]/div[4]/div/div/div[1]/div/input")
+	@FindBy(xpath = "//div[14]/div/div/div[1]/div/input")
 	private WebElement brojUliceWE;
 
-	@FindBy(xpath = "//div[9]/div[7]/div/div/div[1]/div/div")
+	@FindBy(xpath = "//div[17]/div/div/div[1]/div/input")
 	private WebElement eMailDostavaWE;
 
-	@FindBy(xpath = "//div[9]/div[8]/div/div/div[1]/div/input")
+	@FindBy(xpath = "//div[18]/div/div/div[1]/div/input")
 	private WebElement eMailWE;
 
-	@FindBy(xpath = "//div[10]/div[1]/div/div/div[1]/div/input")
+	@FindBy(xpath = "//div[9]/div[1]/div/div/div[1]/div/input")
 	private WebElement imeIPrezimeWE;
 
-	@FindBy(xpath = "//div[11]/div[2]/div/div/div[1]/div/input")
+	@FindBy(xpath = "//div[9]/div[2]/div/div/div[1]/div/input")
 	private WebElement telefonWE;
 
-	@FindBy(xpath = "//div[11]/div[3]/div/div/div[1]/div/input")
+	@FindBy(xpath = "//div[9]/div[3]/div/div/div[1]/div/input")
 	private WebElement eMailOsobeWE;
 
-	@FindBy(xpath = "//div[2]/button[1]")
-	private WebElement dodajFormaBtnWE;
+//	@FindBy(xpath = "//div[2]/button[1]")
+//	private WebElement dodajFormaBtnWE;
 
 	// Validacione poruke na poljima za dodavanje ugovora
 
@@ -378,6 +383,9 @@ public class Ugovori extends PocetnaStranica {
 	@FindBy(xpath = "//div[8]/div[8]/div/div/div[1]/div/input")
 	private WebElement urediEmailWE;
 	
+	@FindBy(xpath = "//div[10]/div[1]/div/div/div[1]/div/input")
+	private WebElement urediImeIPrezimeWE;
+	
 	@FindBy(xpath = "//div[8]/div[4]/div/div/div[2]/div/div/div")
 	private WebElement urediBrojUlicePorukaWE;
 
@@ -472,23 +480,18 @@ public class Ugovori extends PocetnaStranica {
 		dodajBtnWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(kupacWE));
 		kupacWE.sendKeys(kupac);
-		Thread.sleep(1000);
-		wait.until(ExpectedConditions.elementToBeClickable(
-				By.xpath("//div[contains(@class, 'v-list-item__title') and contains(., '" + kupac + "')]")));
-		driver.findElement(By.xpath("//div[contains(@class, 'v-list-item__title') and contains(., '" + kupac + "')]"))
-				.click();
-		// wait.until(ExpectedConditions.visibilityOf(odaberiKupcaWE));
-		// odaberiKupcaWE.click();
-		// kupacWE.sendKeys(Keys.ENTER);
+		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(@class, 'v-list-item__title') and contains(., '" + kupac + "')]")));
+		driver.findElement(By.xpath("//div[contains(@class, 'v-list-item__title') and contains(., '" + kupac + "')]")).click();
 		Thread.sleep(1000);
 		wait.until(ExpectedConditions.elementToBeClickable(tarifnaGrupaWE));
 		tarifnaGrupaWE.sendKeys("19 - Tarifna grupa 2, T1");
-		Thread.sleep(1000);
+		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
 		wait.until(ExpectedConditions.elementToBeClickable(odaberiTarifnuGrupuWE));
 		odaberiTarifnuGrupuWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(cjenovnaKategorijaWE));
 		cjenovnaKategorijaWE.sendKeys(kategorijaCijene);
-		Thread.sleep(1000);
+		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
 		if (kategorijaCijene == "1 - Kategorija cijene 1") {
 			wait.until(ExpectedConditions.elementToBeClickable(odaberiCjenovnuKategoriju2WE));
 			odaberiCjenovnuKategoriju2WE.click();
@@ -498,10 +501,9 @@ public class Ugovori extends PocetnaStranica {
 		}
 		wait.until(ExpectedConditions.elementToBeClickable(cjenovnaKategorijaZaMrezuWE));
 		cjenovnaKategorijaZaMrezuWE.sendKeys("20 - Kategorija mrezarine");
-		Thread.sleep(1000);
+		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
 		wait.until(ExpectedConditions.elementToBeClickable(odaberiKategorijuMrezarineWE));
 		odaberiKategorijuMrezarineWE.click();
-		// cjenovnaKategorijaZaMrezuWE.sendKeys(Keys.ENTER);
 		wait.until(ExpectedConditions.elementToBeClickable(tipUgovoraWE));
 		tipUgovoraWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(tipUgovora1WE));
@@ -515,72 +517,26 @@ public class Ugovori extends PocetnaStranica {
 		js.executeScript("arguments[0].scrollIntoView(true);", datumPocetkaWE);
 		wait.until(ExpectedConditions.elementToBeClickable(mjernoMjestoWE));
 		mjernoMjestoWE.sendKeys(mjernoMjesto);
-		Thread.sleep(1000);
+		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(@class, 'v-list-item__title') and contains(., '" + mjernoMjesto + "')]")));
+		driver.findElement(By.xpath("//div[contains(@class, 'v-list-item__title') and contains(., '" + mjernoMjesto + "')]")).click();
 		// TODO: Ovaj dio mozda refaktorisati da prima 'ID - EIC' a da dinamicki uzima mjm
-		if (mjernoMjesto == "1514BASD99") {
-			wait.until(ExpectedConditions.visibilityOf(odaberiMjernoMjesto1WE));
-			odaberiMjernoMjesto1WE.click();
-		} else if (mjernoMjesto == "36Z03800001H") {
-			wait.until(ExpectedConditions.visibilityOf(odaberiMjernoMjesto2WE));
-			odaberiMjernoMjesto2WE.click();
-		} else if (mjernoMjesto == "AMOSA542A") {
-			wait.until(ExpectedConditions.visibilityOf(odaberiMjernoMjesto3WE));
-			odaberiMjernoMjesto3WE.click();
-		} else if (mjernoMjesto == "151414") {
-			wait.until(ExpectedConditions.visibilityOf(odaberiMjernoMjesto4WE));
-			odaberiMjernoMjesto4WE.click();
-		} else if (mjernoMjesto == "36K085053") {
-			wait.until(ExpectedConditions.visibilityOf(odaberiMjernoMjesto5WE));
-			odaberiMjernoMjesto5WE.click();
-		} else if (mjernoMjesto == "36Z1SB1200027N") {
-			wait.until(ExpectedConditions.visibilityOf(odaberiMjernoMjesto6WE));
-			odaberiMjernoMjesto6WE.click();
-		} else if (mjernoMjesto == "36Z0100154X") {
-			wait.until(ExpectedConditions.visibilityOf(odaberiMjernoMjesto7WE));
-			odaberiMjernoMjesto7WE.click();
-		} else if (mjernoMjesto == "dfsf56456") {
-			wait.until(ExpectedConditions.visibilityOf(odaberiMjernoMjesto8WE));
-			odaberiMjernoMjesto8WE.click();
-		} else if (mjernoMjesto == "3PD53B2W") {
-			wait.until(ExpectedConditions.visibilityOf(odaberiMjernoMjesto9WE));
-			odaberiMjernoMjesto9WE.click();
-		} else if (mjernoMjesto == "SK009281150R") {
-			wait.until(ExpectedConditions.visibilityOf(odaberiMjernoMjesto10WE));
-			odaberiMjernoMjesto10WE.click();
-		} else if (mjernoMjesto == "36Z0SK009") {
-			wait.until(ExpectedConditions.visibilityOf(odaberiMjernoMjesto11WE));
-			odaberiMjernoMjesto11WE.click();
-		} else if (mjernoMjesto == "36066699C") {
-			wait.until(ExpectedConditions.visibilityOf(odaberiMjernoMjesto12WE));
-			odaberiMjernoMjesto12WE.click();
-		} else if (mjernoMjesto == "36Z0SK085O") {
-			wait.until(ExpectedConditions.visibilityOf(odaberiMjernoMjesto13WE));
-			odaberiMjernoMjesto13WE.click();
-		} else if (mjernoMjesto == "36Z0S501070Z") {
-			wait.until(ExpectedConditions.visibilityOf(odaberiMjernoMjesto14WE));
-			odaberiMjernoMjesto14WE.click();
-		} else if (mjernoMjesto == "36SK08501E") {
-			wait.until(ExpectedConditions.visibilityOf(odaberiMjernoMjesto15WE));
-			odaberiMjernoMjesto15WE.click();
-		} else if (mjernoMjesto == "K009151661R") {
-			wait.until(ExpectedConditions.visibilityOf(odaberiMjernoMjesto16WE));
-			odaberiMjernoMjesto16WE.click();
-		}
 		wait.until(ExpectedConditions.elementToBeClickable(nazivMjernogMjestaWE));
 		nazivMjernogMjestaWE.sendKeys(nazivMjernogMjesta);
 		wait.until(ExpectedConditions.elementToBeClickable(nazivNaStampanimDokumentimaWE));
 		nazivNaStampanimDokumentimaWE.sendKeys(Helper.getRandomString(5));
 		wait.until(ExpectedConditions.elementToBeClickable(aktivnoBrojiloWE));
 		aktivnoBrojiloWE.sendKeys(aktivnoBrojilo);
-		// assertTrue(reaktivnoBrojiloWE.getText().contains(aktivnoBrojilo),
-		// "Ugovori: Naziv reaktivnog brojila se ne podudara sa unesenim aktivnim
-		// brojilom");
+		wait.until(ExpectedConditions.elementToBeClickable(reaktivnoBrojiloWE));
+		reaktivnoBrojiloWE.sendKeys(aktivnoBrojilo);
+		wait.until(ExpectedConditions.elementToBeClickable(ugovorenaPrikljucnaSnagaWE));
+		ugovorenaPrikljucnaSnagaWE.sendKeys(aktivnoBrojilo);
 		wait.until(ExpectedConditions.elementToBeClickable(aktivnaKonstantaWE));
-		aktivnaKonstantaWE.sendKeys("3"); // random num
+		aktivnaKonstantaWE.sendKeys(Helper.getRandomNumber(1)); // random num
 		js.executeScript("arguments[0].scrollIntoView(true);", postaWE);
 		wait.until(ExpectedConditions.elementToBeClickable(postaWE));
 		postaWE.sendKeys("78000 - Banja Luka");
-		Thread.sleep(1000);
+		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
 		wait.until(ExpectedConditions.visibilityOf(odaberiPostuWE));
 		odaberiPostuWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(mjestoWE));
@@ -605,9 +561,9 @@ public class Ugovori extends PocetnaStranica {
 			reaktivnoBrojiloWE.sendKeys(Keys.SPACE, Keys.BACK_SPACE);
 			Thread.sleep(500);
 		}
-		wait.until(ExpectedConditions.elementToBeClickable(dodajFormaBtnWE));
-		dodajFormaBtnWE.click();
-		Thread.sleep(500);
+		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
+		submitBtnWE.click();
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		return nazivMjernogMjesta;
 	}
 
@@ -705,7 +661,7 @@ public class Ugovori extends PocetnaStranica {
 	public void verifikujPorukuForme(String poruka) throws InterruptedException {
 		Thread.sleep(1000);
 		wait.until(ExpectedConditions.visibilityOf(porukaWE));
-		assertTrue(porukaWE.getText().trim().equals(poruka), "Ugovori: Poruka upozorenja nije dobra!");
+		assertTrue(porukaWE.getText().trim().contains(poruka), "Ugovori: Poruka upozorenja nije dobra!");
 	}
 
 	public void obrisiReaktivnoBrojilo() {
@@ -722,13 +678,13 @@ public class Ugovori extends PocetnaStranica {
 		Thread.sleep(500);
 		procenatUmanjenjaPDVaWE.clear();
 		procenatUmanjenjaPDVaWE.sendKeys(Keys.SPACE, Keys.BACK_SPACE);
-		wait.until(ExpectedConditions.elementToBeClickable(eMailDostavaWE));
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("arguments[0].scrollIntoView(true);", eMailDostavaWE);
+		js.executeScript("arguments[0].scrollIntoView(true);", postaWE);
 		Thread.sleep(500);
+		wait.until(ExpectedConditions.elementToBeClickable(eMailDostavaWE));
 		eMailDostavaWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(dodajFormaBtnWE));
-		dodajFormaBtnWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
+		submitBtnWE.click();
 		Thread.sleep(500);
 		assertTrue(kupacPorukaWE.getText().trim().equals("Obavezno polje"),
 				"Dodavanje ugovora: Validaciona poruka na polju Kupac nije dobra!");
@@ -770,8 +726,8 @@ public class Ugovori extends PocetnaStranica {
 		aktivnoBrojiloWE.sendKeys(
 				UUID.randomUUID().toString().substring(0, 30) + UUID.randomUUID().toString().substring(0, 21));
 		Thread.sleep(500);
-		wait.until(ExpectedConditions.elementToBeClickable(dodajFormaBtnWE));
-		dodajFormaBtnWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
+		submitBtnWE.click();
 		Thread.sleep(500);
 		assertTrue(aktivnoBrojiloPorukaWE.getText().trim().equals("Maksimalno 50 karaktera"),
 				"Dodavanje ugovora: Validaciona poruka na polju Aktivno brojilo nije dobra!");
@@ -791,8 +747,8 @@ public class Ugovori extends PocetnaStranica {
 		datumPocetkaWE.sendKeys("15.06.2020.");
 		wait.until(ExpectedConditions.elementToBeClickable(vaziOdWE));
 		vaziOdWE.sendKeys("15.07.2020.");
-		wait.until(ExpectedConditions.elementToBeClickable(dodajFormaBtnWE));
-		dodajFormaBtnWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
+		submitBtnWE.click();
 		Thread.sleep(500);
 		assertTrue(nazivMjernogMjestaPorukaWE.getText().trim().equals("Maksimalno 100 karaktera"),
 				"Dodavanje ugovora: Validaciona poruka na polju Naziv mjernog mjesta nije dobra!");
@@ -821,7 +777,7 @@ public class Ugovori extends PocetnaStranica {
 		rekapitulacijaWE.click();
 		urediNazivNaStampanimDokumentimaWE.sendKeys(Helper.getRandomString(5));
 		urediPostaWE.sendKeys("71420 - Pale");
-		Thread.sleep(500);
+		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
 		wait.until(ExpectedConditions.visibilityOf(odaberiPostu1WE));
 		odaberiPostu1WE.click();
 		urediMjestoWE.sendKeys("3 - Pale");
@@ -833,20 +789,20 @@ public class Ugovori extends PocetnaStranica {
 		urediBrojUliceWE.click();
 		urediBrojUliceWE.clear();
 		urediBrojUliceWE.sendKeys("5");
-		wait.until(ExpectedConditions.elementToBeClickable(imeIPrezimeWE));
-		imeIPrezimeWE.sendKeys("Name " + Helper.getRandomString(5));
+		wait.until(ExpectedConditions.elementToBeClickable(urediImeIPrezimeWE));
+		urediImeIPrezimeWE.sendKeys("Name " + Helper.getRandomString(5));
 		wait.until(ExpectedConditions.elementToBeClickable(urediEmailDostavaWE));
 		urediEmailDostavaWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(urediEmailWE));
 		urediEmailWE.sendKeys(Helper.getRandomString(5) + "@" + Helper.getRandomString(5) + ".com");
-		wait.until(ExpectedConditions.elementToBeClickable(dodajFormaBtnWE));
-		dodajFormaBtnWE.click();
-		Thread.sleep(1000);
+		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
+		submitBtnWE.click();
+//		wait.until(ExpectedConditions.elementToBeClickable(obradaModalWE));
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		burgerBarWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(pogledajBtnWE));
 		pogledajBtnWE.click();
-		Thread.sleep(1000);
+//		wait.until(ExpectedConditions.elementToBeClickable(obradaModalWE));
 		wait.until(ExpectedConditions.visibilityOf(pogledajDjelatnostWE));
 		// System.out.println(pogledajDjelatnostWE.getText());
 		// assertTrue(pogledajDjelatnostWE.getText().trim().equals("1 - D1 - Djelatnost
@@ -863,7 +819,7 @@ public class Ugovori extends PocetnaStranica {
 		
 		wait.until(ExpectedConditions.elementToBeClickable(kupacWE));
 		kupacWE.sendKeys(kupac);
-		Thread.sleep(1000);
+		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
 		wait.until(ExpectedConditions.elementToBeClickable(
 				By.xpath("//div[contains(@class, 'v-list-item__title') and contains(., '" + kupac + "')]")));
 		driver.findElement(By.xpath("//div[contains(@class, 'v-list-item__title') and contains(., '" + kupac + "')]"))
@@ -877,17 +833,17 @@ public class Ugovori extends PocetnaStranica {
 		Thread.sleep(1000);
 		wait.until(ExpectedConditions.elementToBeClickable(tarifnaGrupaWE));
 		tarifnaGrupaWE.sendKeys("19 - Tarifna grupa 2, T1");
-		Thread.sleep(1000);
+		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
 		wait.until(ExpectedConditions.elementToBeClickable(odaberiTarifnuGrupuWE));
 		odaberiTarifnuGrupuWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(cjenovnaKategorijaWE));
 		cjenovnaKategorijaWE.sendKeys("7 - Kategorija cijene 2");
-		Thread.sleep(1000);
+		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
 		wait.until(ExpectedConditions.elementToBeClickable(odaberiCjenovnuKategoriju1WE));
 		odaberiCjenovnuKategoriju1WE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(cjenovnaKategorijaZaMrezuWE));
 		cjenovnaKategorijaZaMrezuWE.sendKeys("20 - Kategorija mrezarine");
-		Thread.sleep(1000);
+		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
 		cjenovnaKategorijaZaMrezuWE.sendKeys(Keys.DOWN);
 		cjenovnaKategorijaZaMrezuWE.sendKeys(Keys.ENTER);
 		wait.until(ExpectedConditions.elementToBeClickable(potpisanCBWE));
@@ -908,69 +864,26 @@ public class Ugovori extends PocetnaStranica {
 		js.executeScript("arguments[0].scrollIntoView(true);", datumPocetkaWE);
 		wait.until(ExpectedConditions.elementToBeClickable(mjernoMjestoWE));
 		mjernoMjestoWE.sendKeys(mjernoMjesto);
-		Thread.sleep(1000);
+		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(@class, 'v-list-item__title') and contains(., '" + mjernoMjesto + "')]")));
+		driver.findElement(By.xpath("//div[contains(@class, 'v-list-item__title') and contains(., '" + mjernoMjesto + "')]")).click();
 		// TODO: Ovaj dio mozda refaktorisati da prima 'ID - EIC' a da dinamicki uzima mjm
-		if (mjernoMjesto == "1514BASD99") {
-			wait.until(ExpectedConditions.visibilityOf(odaberiMjernoMjesto1WE));
-			odaberiMjernoMjesto1WE.click();
-		} else if (mjernoMjesto == "36Z03800001H") {
-			wait.until(ExpectedConditions.visibilityOf(odaberiMjernoMjesto2WE));
-			odaberiMjernoMjesto2WE.click();
-		} else if (mjernoMjesto == "AMOSA542A") {
-			wait.until(ExpectedConditions.visibilityOf(odaberiMjernoMjesto3WE));
-			odaberiMjernoMjesto3WE.click();
-		} else if (mjernoMjesto == "151414") {
-			wait.until(ExpectedConditions.visibilityOf(odaberiMjernoMjesto4WE));
-			odaberiMjernoMjesto4WE.click();
-		} else if (mjernoMjesto == "36K085053") {
-			wait.until(ExpectedConditions.visibilityOf(odaberiMjernoMjesto5WE));
-			odaberiMjernoMjesto5WE.click();
-		} else if (mjernoMjesto == "36Z1SB1200027N") {
-			wait.until(ExpectedConditions.visibilityOf(odaberiMjernoMjesto6WE));
-			odaberiMjernoMjesto6WE.click();
-		} else if (mjernoMjesto == "36Z0100154X") {
-			wait.until(ExpectedConditions.visibilityOf(odaberiMjernoMjesto7WE));
-			odaberiMjernoMjesto7WE.click();
-		} else if (mjernoMjesto == "dfsf56456") {
-			wait.until(ExpectedConditions.visibilityOf(odaberiMjernoMjesto8WE));
-			odaberiMjernoMjesto8WE.click();
-		} else if (mjernoMjesto == "3PD53B2W") {
-			wait.until(ExpectedConditions.visibilityOf(odaberiMjernoMjesto9WE));
-			odaberiMjernoMjesto9WE.click();
-		} else if (mjernoMjesto == "SK009281150R") {
-			wait.until(ExpectedConditions.visibilityOf(odaberiMjernoMjesto10WE));
-			odaberiMjernoMjesto10WE.click();
-		} else if (mjernoMjesto == "36Z0SK009") {
-			wait.until(ExpectedConditions.visibilityOf(odaberiMjernoMjesto11WE));
-			odaberiMjernoMjesto11WE.click();
-		} else if (mjernoMjesto == "36066699C") {
-			wait.until(ExpectedConditions.visibilityOf(odaberiMjernoMjesto12WE));
-			odaberiMjernoMjesto12WE.click();
-		} else if (mjernoMjesto == "36Z0SK085O") {
-			wait.until(ExpectedConditions.visibilityOf(odaberiMjernoMjesto13WE));
-			odaberiMjernoMjesto13WE.click();
-		} else if (mjernoMjesto == "36Z0S501070Z") {
-			wait.until(ExpectedConditions.visibilityOf(odaberiMjernoMjesto14WE));
-			odaberiMjernoMjesto14WE.click();
-		} else if (mjernoMjesto == "36SK08501E") {
-			wait.until(ExpectedConditions.visibilityOf(odaberiMjernoMjesto15WE));
-			odaberiMjernoMjesto15WE.click();
-		} else if (mjernoMjesto == "K009151661R") {
-			wait.until(ExpectedConditions.visibilityOf(odaberiMjernoMjesto16WE));
-			odaberiMjernoMjesto16WE.click();
-		}
 		wait.until(ExpectedConditions.elementToBeClickable(nazivMjernogMjestaWE));
 		nazivMjernogMjestaWE.sendKeys(nazivMjernogMjesta);
 		wait.until(ExpectedConditions.elementToBeClickable(nazivNaStampanimDokumentimaWE));
 		nazivNaStampanimDokumentimaWE.sendKeys(Helper.getRandomString(5));
 		wait.until(ExpectedConditions.elementToBeClickable(aktivnoBrojiloWE));
 		aktivnoBrojiloWE.sendKeys(aktivnoBrojilo);
+		wait.until(ExpectedConditions.elementToBeClickable(reaktivnoBrojiloWE));
+		reaktivnoBrojiloWE.sendKeys(aktivnoBrojilo);
+		wait.until(ExpectedConditions.elementToBeClickable(ugovorenaPrikljucnaSnagaWE));
+		ugovorenaPrikljucnaSnagaWE.sendKeys(aktivnoBrojilo);
 		wait.until(ExpectedConditions.elementToBeClickable(aktivnaKonstantaWE));
-		aktivnaKonstantaWE.sendKeys("3");
+		aktivnaKonstantaWE.sendKeys(Helper.getRandomNumber(1));
 		js.executeScript("arguments[0].scrollIntoView(true);", postaWE);
 		wait.until(ExpectedConditions.elementToBeClickable(postaWE));
 		postaWE.sendKeys("78000 - Banja Luka");
-		Thread.sleep(1000);
+		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
 		wait.until(ExpectedConditions.visibilityOf(odaberiPostuWE));
 		odaberiPostuWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(mjestoWE));
@@ -979,15 +892,15 @@ public class Ugovori extends PocetnaStranica {
 		odaberiMjestoWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(ulicaWE));
 		ulicaWE.sendKeys("6 - Nikole Tesle");
-		Thread.sleep(500);
+		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
 		wait.until(ExpectedConditions.visibilityOf(odaberiUlicuWE));
 		ulicaWE.sendKeys(Keys.DOWN);
 		ulicaWE.sendKeys(Keys.ENTER);
 		wait.until(ExpectedConditions.elementToBeClickable(brojUliceWE));
 		brojUliceWE.sendKeys("7");
-		wait.until(ExpectedConditions.elementToBeClickable(dodajFormaBtnWE));
-		dodajFormaBtnWE.click();
-		Thread.sleep(500);
+		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
+		submitBtnWE.click();
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		return nazivMjernogMjesta;
 	}
 
@@ -999,8 +912,8 @@ public class Ugovori extends PocetnaStranica {
 		wait.until(ExpectedConditions.elementToBeClickable(potpisanCBWE));
 		Thread.sleep(2000);
 		potpisanCBWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(dodajFormaBtnWE));
-		dodajFormaBtnWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
+		submitBtnWE.click();
 		Thread.sleep(1000);
 	}
 
@@ -1031,8 +944,8 @@ public class Ugovori extends PocetnaStranica {
 		urediBrojUliceWE.click();
 		urediBrojUliceWE.clear();
 		urediBrojUliceWE.sendKeys(Keys.SPACE, Keys.BACK_SPACE);
-		wait.until(ExpectedConditions.elementToBeClickable(dodajFormaBtnWE));
-		dodajFormaBtnWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
+		submitBtnWE.click();
 		Thread.sleep(500);
 		// assertTrue(procenatUmanjenjaPDVaPorukaWE.getText().trim().equals("Obavezno polje"),
 		//		"Izmjena ugovora: Validaciona poruka na polju Procenat umanjenja PDV-a nije dobra!");

@@ -18,7 +18,7 @@ public class PX_035_Dodavanje_Uplate_Sa_Kupcem_Test extends BaseTest {
 	}
 
 	@Test
-	public void qa_035_dodavanje_uplate_sa_kupcem_test() throws Exception {
+	public void px_035_dodavanje_uplate_sa_kupcem_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();

@@ -23,8 +23,8 @@ public class IzmijenjenaOcitanja extends PocetnaStranica{
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMjernoMjestoEicWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNazivMjernogMjestaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaFizickaLokacijaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaCitacWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKorisnikWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaInicijalniUnosWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIzmjenaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaStariNoviAvtWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaStariNoviAmtWE));
