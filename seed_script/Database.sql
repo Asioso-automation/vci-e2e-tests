@@ -22,6 +22,10 @@ Values (1,N'Republika Srpska')
 SET IDENTITY_INSERT BasicCatalog.Entity OFF
 
 
+DROP INDEX [CAK_ActiveBillGeneratorSummary] ON [Calculation].[ActiveBillGeneratorSummary]
+DROP INDEX [CAK_ActiveBillGeneratorSummary] ON [Generate].[ActiveBillGeneratorSummary]
+GO
+
 INSERT [Administration].[Configuration] ([Key], [Value]) VALUES (N'UnknownStreetNumber', N'BB' )
 GO
 INSERT [Administration].[Configuration] ([Key], [Value]) VALUES (N'Currency', N'KM' )
@@ -33,7 +37,11 @@ GO
 INSERT [Administration].[Configuration] ([Key], [Value]) VALUES (N'MaxValidtyDateForContractTypeChangeAllowed', N'2021-04-01' )
 GO
 
-  
+CREATE UNIQUE CLUSTERED INDEX [CAK_ActiveBillGeneratorSummary] ON [Calculation].[ActiveBillGeneratorSummary] ([Id] ASC)
+CREATE UNIQUE CLUSTERED INDEX [CAK_ActiveBillGeneratorSummary] ON [Generate].[ActiveBillGeneratorSummary] ([Id] ASC)
+GO
+
+
 SET IDENTITY_INSERT BasicCatalog.MeterType ON
 
 Insert Into BasicCatalog.MeterType ([Id],[Name])
