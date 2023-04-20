@@ -64,9 +64,9 @@ public class Djelatnosti extends PocetnaStranica {
 		filterKolona3WE.sendKeys(djelatnost);
 		filterKolona3WE.sendKeys(Keys.ENTER);
 		Thread.sleep(1000);
-		wait.until(ExpectedConditions.visibilityOf(podatakTabela3WE));
+		wait.until(ExpectedConditions.visibilityOf(podatak2Tabela3WE));
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
-		assertTrue(podatakTabela3WE.getText().equals(djelatnost), "Djelatnosti: Ime djelatnosti nije dobro!");
+		assertTrue(podatak2Tabela3WE.getText().equals(djelatnost), "Djelatnosti: Ime djelatnosti nije dobro!");
 	}
 	
 	public String izmjeniDjelatnost() {

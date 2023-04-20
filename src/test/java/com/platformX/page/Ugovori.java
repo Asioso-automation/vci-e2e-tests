@@ -312,16 +312,16 @@ public class Ugovori extends PocetnaStranica {
 	@FindBy(xpath = "//div[7]/div[1]/div/div/div[2]/div/div/div")
 	private WebElement mjernoMjestoPorukaWE;
 
-	@FindBy(xpath = "//div[7]/div[4]/div/div/div[2]/div/div/div")
+	@FindBy(xpath = "//div[4]/div/div/div[2]/div/div/div")
 	private WebElement aktivnoBrojiloPorukaWE;
 
-	@FindBy(xpath = "//div[7]/div[5]/div/div/div[2]/div/div/div")
+	@FindBy(xpath = "//div[5]/div/div/div[2]/div/div/div")
 	private WebElement reaktivnoBrojiloPorukaWE;
 
-	@FindBy(xpath = "//div[7]/div[2]/div/div/div[2]/div/div/div")
+	@FindBy(xpath = "//div/div/div[1]/div/div[2]/div/div/div[2]/div/div/div")
 	private WebElement nazivMjernogMjestaPorukaWE;
 
-	@FindBy(xpath = "//div[7]/div[3]/div/div/div[2]/div/div/div")
+	@FindBy(xpath = "//div/div/div[1]/div/div[3]/div/div/div[2]/div/div/div")
 	private WebElement nazivNaStampanimDokumentimaPorukaWE;
 
 	@FindBy(xpath = "//div[9]/div[1]/div/div/div[2]/div/div/div")
@@ -333,16 +333,16 @@ public class Ugovori extends PocetnaStranica {
 	@FindBy(xpath = "//div[9]/div[3]/div/div/div[2]/div/div/div")
 	private WebElement ulicaPorukaWE;
 
-	@FindBy(xpath = "//div[9]/div[4]/div/div/div[2]/div/div/div")
+	@FindBy(xpath = "//div[14]/div/div/div[2]/div/div/div")
 	private WebElement brojUlicePorukaWE;
 
 	@FindBy(xpath = "//div[8]/div/div/div[2]/div/div/div")
 	private WebElement eMailPorukaWE;
 
-	@FindBy(xpath = "//div[11]/div[2]/div/div/div[2]/div/div/div")
+	@FindBy(xpath = "//div[9]/div[2]/div/div/div[2]/div/div/div")
 	private WebElement telefonPorukaWE;
 
-	@FindBy(xpath = "//div[11]/div[3]/div/div/div[2]/div/div/div")
+	@FindBy(xpath = "//div[9]/div[3]/div/div/div[2]/div/div/div")
 	private WebElement eMailOsobePorukaWE;
 
 	@FindBy(xpath = "//div[5]/div[3]/div[1]/div/div[2]/div/div/div")
@@ -722,46 +722,63 @@ public class Ugovori extends PocetnaStranica {
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
 		dodajBtnWE.click();
 		Thread.sleep(1000);
-		wait.until(ExpectedConditions.elementToBeClickable(aktivnoBrojiloWE));
-		aktivnoBrojiloWE.sendKeys(
-				UUID.randomUUID().toString().substring(0, 30) + UUID.randomUUID().toString().substring(0, 21));
-		Thread.sleep(500);
-		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
-		submitBtnWE.click();
-		Thread.sleep(500);
-		assertTrue(aktivnoBrojiloPorukaWE.getText().trim().equals("Maksimalno 50 karaktera"),
-				"Dodavanje ugovora: Validaciona poruka na polju Aktivno brojilo nije dobra!");
-		assertTrue(reaktivnoBrojiloPorukaWE.getText().trim().equals("Maksimalno 50 karaktera"),
-				"Dodavanje ugovora: Validaciona poruka na polju Reaktivno brojilo nije dobra!");
-		wait.until(ExpectedConditions.elementToBeClickable(nazivMjernogMjestaWE));
-		nazivMjernogMjestaWE.sendKeys(UUID.randomUUID().toString().substring(0, 35)
-				+ UUID.randomUUID().toString().substring(0, 35) + UUID.randomUUID().toString().substring(0, 31));
-		nazivNaStampanimDokumentimaWE.sendKeys(UUID.randomUUID().toString().substring(0, 35)
-				+ UUID.randomUUID().toString().substring(0, 35) + UUID.randomUUID().toString().substring(0, 31));
-		brojUliceWE.sendKeys(
-				UUID.randomUUID().toString().substring(0, 30) + UUID.randomUUID().toString().substring(0, 21));
-		telefonWE.sendKeys(UUID.randomUUID().toString().substring(0, 31));
-		eMailOsobeWE.sendKeys(UUID.randomUUID().toString().substring(0, 4));
 		wait.until(ExpectedConditions.elementToBeClickable(datumPocetkaWE));
 		datumPocetkaWE.clear();
 		datumPocetkaWE.sendKeys("15.06.2020.");
 		wait.until(ExpectedConditions.elementToBeClickable(vaziOdWE));
 		vaziOdWE.sendKeys("15.07.2020.");
-		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
-		submitBtnWE.click();
-		Thread.sleep(500);
+		driver.findElement(By.xpath("//form/div/div[1]/div[6]/div/div[1]")).click();
+		wait.until(ExpectedConditions.visibilityOf(vaziOdPorukaWE));
+		assertTrue(vaziOdPorukaWE.getText().trim().equals("Datum početka mora biti veći ili jednak datumu Važi od."),
+				"Dodavanje ugovora: Validaciona poruka na polju Vazi od nije dobra!");
+		wait.until(ExpectedConditions.elementToBeClickable(aktivnoBrojiloWE));
+		aktivnoBrojiloWE.sendKeys(
+				UUID.randomUUID().toString().substring(0, 30) + UUID.randomUUID().toString().substring(0, 21));
+		wait.until(ExpectedConditions.visibilityOf(aktivnoBrojiloPorukaWE));
+		assertTrue(aktivnoBrojiloPorukaWE.getText().trim().equals("Maksimalno 50 karaktera"),
+				"Dodavanje ugovora: Validaciona poruka na polju Aktivno brojilo nije dobra!");
+		reaktivnoBrojiloWE.sendKeys(
+				UUID.randomUUID().toString().substring(0, 30) + UUID.randomUUID().toString().substring(0, 21));
+		wait.until(ExpectedConditions.visibilityOf(reaktivnoBrojiloPorukaWE));
+		assertTrue(reaktivnoBrojiloPorukaWE.getText().trim().equals("Maksimalno 50 karaktera"),
+				"Dodavanje ugovora: Validaciona poruka na polju Reaktivno brojilo nije dobra!");
+		wait.until(ExpectedConditions.elementToBeClickable(nazivMjernogMjestaWE));
+		nazivMjernogMjestaWE.sendKeys(UUID.randomUUID().toString().substring(0, 35)
+				+ UUID.randomUUID().toString().substring(0, 35) + UUID.randomUUID().toString().substring(0, 31));
+		wait.until(ExpectedConditions.visibilityOf(nazivMjernogMjestaPorukaWE));
 		assertTrue(nazivMjernogMjestaPorukaWE.getText().trim().equals("Maksimalno 100 karaktera"),
 				"Dodavanje ugovora: Validaciona poruka na polju Naziv mjernog mjesta nije dobra!");
+		nazivNaStampanimDokumentimaWE.sendKeys(UUID.randomUUID().toString().substring(0, 35)
+				+ UUID.randomUUID().toString().substring(0, 35) + UUID.randomUUID().toString().substring(0, 31));
+		wait.until(ExpectedConditions.visibilityOf(nazivNaStampanimDokumentimaPorukaWE));
 		assertTrue(nazivNaStampanimDokumentimaPorukaWE.getText().trim().equals("Maksimalno 100 karaktera"),
 				"Dodavanje ugovora: Validaciona poruka na polju Naziv mjernog mjesta na stampanim dokumentima nije dobra!");
+		wait.until(ExpectedConditions.elementToBeClickable(brojUliceWE));
+		brojUliceWE.sendKeys(
+				UUID.randomUUID().toString().substring(0, 30) + UUID.randomUUID().toString().substring(0, 21));
+		wait.until(ExpectedConditions.visibilityOf(brojUlicePorukaWE));
 		assertTrue(brojUlicePorukaWE.getText().trim().equals("Maksimalno 50 karaktera"),
 				"Dodavanje ugovora: Validaciona poruka na polju Broj u ulici nije dobra!");
+		telefonWE.sendKeys(UUID.randomUUID().toString().substring(0, 31));
+		wait.until(ExpectedConditions.visibilityOf(telefonPorukaWE));
 		assertTrue(telefonPorukaWE.getText().trim().equals("Maksimalno 30 karaktera"),
 				"Dodavanje ugovora: Validaciona poruka na polju Telefon nije dobra!");
+		eMailOsobeWE.sendKeys(UUID.randomUUID().toString().substring(0, 4));
+		wait.until(ExpectedConditions.visibilityOf(eMailOsobePorukaWE));
 		assertTrue(eMailOsobePorukaWE.getText().trim().equals("Email nije validan"),
 				"Dodavanje ugovora: Validaciona poruka na polju E-mail osobe nije dobra!");
-//		assertTrue(vaziOdPorukaWE.getText().trim().equals("Važi od mora biti manji ili jednak datumu početka"),
+//		wait.until(ExpectedConditions.elementToBeClickable(datumPocetkaWE));
+//		datumPocetkaWE.clear();
+//		datumPocetkaWE.sendKeys("15.06.2020.");
+//		wait.until(ExpectedConditions.elementToBeClickable(vaziOdWE));
+//		vaziOdWE.sendKeys("15.07.2020.");
+//		wait.until(ExpectedConditions.visibilityOf(vaziOdPorukaWE));
+//		assertTrue(vaziOdPorukaWE.getText().trim().equals("Datum početka mora biti veći ili jednak datumu Važi od."),
 //				"Dodavanje ugovora: Validaciona poruka na polju Vazi od nije dobra!");
+		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
+		submitBtnWE.click();
+//		Thread.sleep(500);
+		
 	}
 
 	public void izmjeniUgovor() throws InterruptedException {

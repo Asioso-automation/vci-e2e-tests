@@ -64,7 +64,7 @@ public class Sezone extends PocetnaStranica {
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
 		dodajBtnWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(IdWE));
-		IdWE.sendKeys("S");
+		IdWE.sendKeys("T");
 		wait.until(ExpectedConditions.elementToBeClickable(nazivSezoneWE));
 		nazivSezoneWE.sendKeys(naziv);
 		wait.until(ExpectedConditions.elementToBeClickable(odMjesecWE));

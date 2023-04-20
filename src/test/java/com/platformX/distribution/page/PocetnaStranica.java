@@ -452,7 +452,7 @@ public class PocetnaStranica extends PageBase {
 		}
 		catch (Exception e) {
 			wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
-			Thread.sleep(500);
+			Thread.sleep(900);
 			wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 			burgerBarWE.click();
 		}

@@ -92,6 +92,9 @@ public class PocetnaStranica extends PageBase {
 	@FindBy(xpath = "//tr[1]/td[3]")
 	protected WebElement podatakTabela3WE;
 	
+	@FindBy(xpath = "//tr[2]/td[3]")
+	protected WebElement podatak2Tabela3WE;
+	
 	@FindBy(xpath = "//tr/td[4]")
 	protected WebElement podatakTabela4WE;
 	
