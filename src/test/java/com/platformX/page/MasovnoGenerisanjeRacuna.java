@@ -20,7 +20,6 @@ public class MasovnoGenerisanjeRacuna extends PocetnaStranica{
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title body-1 ml-0 pl-0 text-default') and starts-with(., ' Masovno generisanje računa')]")));
 		verifikacijaZajednickihElemenata("Obračun", "Masovno Generisanje", "Masovno generisanje računa", 15, false, false, true, true, true, true, false);
-		// TODO dodati verifikacije novih kolona
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPeriodWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaOdsWE));
@@ -28,6 +27,10 @@ public class MasovnoGenerisanjeRacuna extends PocetnaStranica{
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNacinSlanjaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKreiraoWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaStatusWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaUkupanBrojRacunaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojGenerisanihRacunaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaStampanjeIzvodaOtvorenihStavkiWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaStampanjeObavjestenjaOPrestankuVazenjaUgovoraWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaZakljucenWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaOtkazanWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaObrisanWE));

@@ -91,7 +91,7 @@ public class Poste extends PocetnaStranica {
 		Thread.sleep(1000);
 		wait.until(ExpectedConditions.visibilityOf(podatakTabela2WE));
 		assertTrue(podatakTabela2WE.getText().equals(naziv), "Poste: Posta nije pronadjena!");
-		assertTrue(podatakTabela3WE.getText().equals(nazivNaDok), "Poste: Posta nije pronadjena!");
+		assertTrue(podatak2Tabela3WE.getText().equals(nazivNaDok), "Poste: Posta nije pronadjena!");
 		assertTrue(podatakTabela1WE.getText().equals(id), "Poste: Posta nije pronadjena!");
 	}
 	

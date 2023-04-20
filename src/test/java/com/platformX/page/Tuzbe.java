@@ -22,6 +22,7 @@ public class Tuzbe extends PocetnaStranica {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKupacWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrProtokolaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaReferentWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumPrijaveWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumPotvrdeWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumPresudeWE));
@@ -29,6 +30,7 @@ public class Tuzbe extends PocetnaStranica {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIznosTuzbenogZahtjevaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPresudbeniIznosWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaOstaloNeutuzenoWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaFinasijskeIzmjeneWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaStatusWE));
 	}
 

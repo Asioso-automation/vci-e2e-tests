@@ -69,7 +69,7 @@ public class ObracunskiUgovori extends PocetnaStranica {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNazivMjMjestaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAdresaMjMjestaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTrenutniSnabdWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTipUgovoraWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTrenutniTipUgovoraWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTrenutnaTGWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTrenutnoBrojiloWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTrenutnaKonstWE));

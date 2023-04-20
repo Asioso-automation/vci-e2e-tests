@@ -355,6 +355,12 @@ public class Kolone extends PageBase {
 	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Br. protokola']")
 	public WebElement kolonaBrProtokolaWE;
 	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Referent']")
+	public WebElement kolonaReferentWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Finansijske izmjene']")
+	public WebElement kolonaFinasijskeIzmjeneWE;
+	
 	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Datum prijave']")
 	public WebElement kolonaDatumPrijaveWE;
 	
@@ -429,6 +435,9 @@ public class Kolone extends PageBase {
 	
 	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Tip ugovora']")
 	public WebElement kolonaTipUgovoraWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Trenutni tip ugovora']")
+	public WebElement kolonaTrenutniTipUgovoraWE;
 	
 	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Način slanja']")
 	public WebElement kolonaNacinSlanjaWE;
@@ -804,6 +813,18 @@ public class Kolone extends PageBase {
 	
 	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Status']")
 	public WebElement kolonaStatusWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Ukupan broj računa']")
+	public WebElement kolonaUkupanBrojRacunaWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Broj generisanih računa']")
+	public WebElement kolonaBrojGenerisanihRacunaWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Štampanje izvoda otvorenih stavki']")
+	public WebElement kolonaStampanjeIzvodaOtvorenihStavkiWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Štampanje obavještenja o prestanku važenja ugovora']")
+	public WebElement kolonaStampanjeObavjestenjaOPrestankuVazenjaUgovoraWE;
 	
 	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Datum zahtjeva']")
 	public WebElement kolonaDatumZahtjevaWE;
