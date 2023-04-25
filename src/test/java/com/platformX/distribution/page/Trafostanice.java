@@ -58,7 +58,7 @@ public class Trafostanice extends PocetnaStranica {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAdresaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTipWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPrenosniOdnosWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaOmjerPrenosaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojTransformatoraWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaSnaga1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAktivnaWE));
 	}
