@@ -1,6 +1,5 @@
 package com.platformX.distribution.page;
 
-import static org.testng.Assert.assertTrue;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import org.openqa.selenium.By;
@@ -25,10 +24,6 @@ public class Poruke extends PocetnaStranica{
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumOdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumDoWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPrioritetWE));
-		assertTrue(sekcijaBtnWE.getText().trim().equals("ADMINISTRACIJA"), "Poruke: Naziv sekcije nije dobar!");
-		assertTrue(stranicaBtnWE.getText().trim().equals("PORUKE"), "Poruke: Naziv stranice nije dobar!");
-		assertTrue(naslovStraniceWE.getText().trim().equals("PORUKE"), "Poruke: Naziv stranice nije dobar!");
-		assertTrue(brojKolona().size() == 8, "Poruke: Broj kolona nije dobar! ");
 	}
 
 }

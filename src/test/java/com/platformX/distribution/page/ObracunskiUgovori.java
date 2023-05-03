@@ -109,6 +109,7 @@ public class ObracunskiUgovori extends PocetnaStranica {
 		odaberiDatumWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(poljeMjernoMjestoWE));
 		poljeMjernoMjestoWE.sendKeys(mjernoMjesto);
+		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(@class, 'v-list-item__title') and contains(., '" + mjernoMjesto + "')]")));
 		driver.findElement(By.xpath("//div[contains(@class, 'v-list-item__title') and contains(., '" + mjernoMjesto + "')]")).click();
 		wait.until(ExpectedConditions.elementToBeClickable(poljeNazivMjernogMjestaWE));
@@ -117,6 +118,7 @@ public class ObracunskiUgovori extends PocetnaStranica {
 		poljeNazivMjMjestaNaStampanimDokumentimaWE.sendKeys(Helper.getRandomString(7));
 		wait.until(ExpectedConditions.elementToBeClickable(poljeAktivnoBrojiloWE));
 		poljeAktivnoBrojiloWE.sendKeys(brBrojila);
+		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(@class, 'v-list-item__title') and contains(., '" + brBrojila + "')]")));
 		driver.findElement(By.xpath("//div[contains(@class, 'v-list-item__title') and contains(., '" + brBrojila + "')]")).click();
 		wait.until(ExpectedConditions.elementToBeClickable(poljeAktivnaKonstantaWE));

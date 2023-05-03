@@ -26,6 +26,7 @@ import com.platformX.page.ObrasciBrojaProtokolaOpomenaPredUtuzenje;
 import com.platformX.page.Opomene;
 import com.platformX.page.OpomenePredUtuzenje;
 import com.platformX.page.OtpisiPotrazivanja;
+import com.platformX.page.VanbilansnaEvidencijaTroskovaSudskihPostupaka;
 
 public class PX_009_Verifikacija_Sekcije_Pravni_Odnosi_Test {
 
@@ -97,6 +98,8 @@ public class PX_009_Verifikacija_Sekcije_Pravni_Odnosi_Test {
 		otpisiPotrazivanja.verifikujOtpisiPotrazivanja();
 		Sudovi sudovi = pocetna.navigirajNaSudovi();
 		sudovi.verifikujSudovi();
+		VanbilansnaEvidencijaTroskovaSudskihPostupaka vanbilansnaEvidencija = pocetna.navigirajNaVanbilansnaEvidencijaTroskovaSudskihPostupaka();
+		vanbilansnaEvidencija.verifikujVanbilansnaEvidencijaTroskovaSudskihPostupaka();
 	}
 	
 	@AfterTest

@@ -1489,6 +1489,13 @@ public class Kolone extends PageBase {
 	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Prijava podnijeta']")
 	public WebElement kolonaPrijavaPodnijetaWE;
 	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Tužba']")
+	public WebElement tuzbaWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Datum unosa']")
+	public WebElement datumUnosaWE;
+	
+	
 	// Kolone MONITORING
 	
 	@FindBy(xpath = "//*[contains(@class,'v-window-item--active')]//*[contains(@class, 'v-data-table-header')]//*[text() = 'Mjerno mjesto (EIC)']")

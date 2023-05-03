@@ -9,7 +9,6 @@ import com.platformX.distribution.page.Korisnici;
 import com.platformX.distribution.page.LogIn;
 import com.platformX.distribution.page.PocetnaStranica;
 import com.platformX.distribution.page.Poruke;
-import com.platformX.distribution.page.PozadinskiProcesi;
 
 public class PX_DIST_012_Verifikacija_Sekcije_Administracija_Test  extends BaseTest {
 

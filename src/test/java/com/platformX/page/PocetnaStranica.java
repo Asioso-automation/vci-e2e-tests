@@ -410,6 +410,9 @@ public class PocetnaStranica extends PageBase {
 	@FindBy(xpath = "//div[contains(text(), 'Sudovi')]")
 	protected WebElement sudoviWE;
 	
+	@FindBy(xpath = "//div[contains(text(), 'Vanbilansna evidencija troškova sudskih postupaka')]")
+	protected WebElement vanbilansnaEvidencijaWE;
+	
 	@FindBy(xpath = "//div[contains(text(), 'SAP')]")
 	protected WebElement sapWE;
 	
@@ -1800,6 +1803,20 @@ public class PocetnaStranica extends PageBase {
 			driver.get(platformx_properties.getValue("URL.LOGIN") + platformx_properties.getValue("SUDOVI"));
 		}
 		return new Sudovi(driver);
+	}
+	
+	public VanbilansnaEvidencijaTroskovaSudskihPostupaka navigirajNaVanbilansnaEvidencijaTroskovaSudskihPostupaka() throws Exception {
+		try {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(pravniOdnosiWE));
+		pravniOdnosiWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(vanbilansnaEvidencijaWE));
+		vanbilansnaEvidencijaWE.click();
+		}
+		catch (Exception e) {
+			driver.get(platformx_properties.getValue("URL.LOGIN") + platformx_properties.getValue("VANBILANSNA.EVIDENCIJA.TROSKOVA.SUDSKIH.POSTUPAKA"));
+		}
+		return new VanbilansnaEvidencijaTroskovaSudskihPostupaka(driver);
 	}
 	
 	public Korisnici navigirajNaKorisnici() throws Exception {
