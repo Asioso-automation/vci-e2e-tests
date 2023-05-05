@@ -7,7 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import com.platformX.base.Kolone;
 
-public class MaterijaliOrmaricaBrojila extends PocetnaStranica {
+public class MaterijaliOrmaricaBrojila extends PocetnaStranicaPXD {
 
 	public MaterijaliOrmaricaBrojila(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);

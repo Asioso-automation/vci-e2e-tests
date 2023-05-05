@@ -12,7 +12,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import com.platformX.base.Kolone;
 import com.platformX.util.Helper;
 
-public class ZbirnaKontrolnaMjernaMjesta extends PocetnaStranica {
+public class ZbirnaKontrolnaMjernaMjesta extends PocetnaStranicaPXD {
 
 	public ZbirnaKontrolnaMjernaMjesta(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);

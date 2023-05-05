@@ -7,7 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import com.platformX.base.Kolone;
 
-public class NaloziZaObracun extends PocetnaStranica{
+public class NaloziZaObracun extends PocetnaStranicaPXD{
 	
 	public NaloziZaObracun(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);

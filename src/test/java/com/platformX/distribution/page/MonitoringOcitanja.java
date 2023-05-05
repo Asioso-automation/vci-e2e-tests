@@ -9,7 +9,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import com.platformX.base.Kolone;
 
-public class MonitoringOcitanja extends PocetnaStranica {
+public class MonitoringOcitanja extends PocetnaStranicaPXD {
 	
 	public MonitoringOcitanja (WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);

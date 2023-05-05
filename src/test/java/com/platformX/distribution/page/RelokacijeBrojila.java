@@ -7,7 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import com.platformX.base.Kolone;
 
-public class RelokacijeBrojila extends PocetnaStranica{
+public class RelokacijeBrojila extends PocetnaStranicaPXD{
 	
 	public RelokacijeBrojila (WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);

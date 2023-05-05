@@ -5,7 +5,7 @@ import java.io.IOException;
 import org.testng.annotations.Test;
 import com.platformX.base.BaseTest;
 import com.platformX.distribution.page.LogIn;
-import com.platformX.distribution.page.PocetnaStranica;
+import com.platformX.distribution.page.PocetnaStranicaPXD;
 import com.platformX.distribution.page.Sezone;
 
 public class PX_DIST_050_Dodavanje_Uredjivanje_Brisanje_Sezone_Test extends BaseTest {
@@ -19,7 +19,7 @@ public class PX_DIST_050_Dodavanje_Uredjivanje_Brisanje_Sezone_Test extends Base
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
-		PocetnaStranica homePage = new PocetnaStranica(driver);
+		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
 		Sezone sezone = homePage.navigirajNaSezone();
 		sezone.verifikujSezone();

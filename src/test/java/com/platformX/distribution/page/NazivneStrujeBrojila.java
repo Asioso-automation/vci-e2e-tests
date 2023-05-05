@@ -7,7 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import com.platformX.base.Kolone;
 
-public class NazivneStrujeBrojila extends PocetnaStranica {
+public class NazivneStrujeBrojila extends PocetnaStranicaPXD {
 
 	public NazivneStrujeBrojila(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);

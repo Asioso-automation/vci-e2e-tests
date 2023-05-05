@@ -7,7 +7,7 @@ import com.platformX.base.BaseTest;
 import com.platformX.distribution.page.DnevnikIzmjena;
 import com.platformX.distribution.page.Korisnici;
 import com.platformX.distribution.page.LogIn;
-import com.platformX.distribution.page.PocetnaStranica;
+import com.platformX.distribution.page.PocetnaStranicaPXD;
 import com.platformX.distribution.page.Poruke;
 
 public class PX_DIST_012_Verifikacija_Sekcije_Administracija_Test  extends BaseTest {
@@ -21,7 +21,7 @@ public class PX_DIST_012_Verifikacija_Sekcije_Administracija_Test  extends BaseT
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
-		PocetnaStranica homePage = new PocetnaStranica(driver);
+		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
 		Korisnici korisnici = homePage.navigirajNaKorisnici();
 		korisnici.verifikujKorisnici();

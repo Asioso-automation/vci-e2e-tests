@@ -7,7 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import com.platformX.base.Kolone;
 
-public class EnergetskaKartica extends PocetnaStranica {
+public class EnergetskaKartica extends PocetnaStranicaPXD {
 
 	public EnergetskaKartica(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);

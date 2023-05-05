@@ -7,7 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import com.platformX.base.Kolone;
 
-public class TipoviBrojila extends PocetnaStranica{
+public class TipoviBrojila extends PocetnaStranicaPXD{
 	
 	public TipoviBrojila (WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);

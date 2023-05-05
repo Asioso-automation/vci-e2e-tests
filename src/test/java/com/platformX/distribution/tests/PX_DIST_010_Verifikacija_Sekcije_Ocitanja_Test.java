@@ -14,7 +14,7 @@ import com.platformX.distribution.page.LogIn;
 import com.platformX.distribution.page.MonitoringOcitanja;
 import com.platformX.distribution.page.NevalidnaOcitanja;
 import com.platformX.distribution.page.OcitanjaBrojila;
-import com.platformX.distribution.page.PocetnaStranica;
+import com.platformX.distribution.page.PocetnaStranicaPXD;
 import com.platformX.distribution.page.ZbirnaKontrolnaOcitanja;
 import com.platformX.distribution.page.ZbirnaKontrolnaPotrosnja;
 
@@ -29,7 +29,7 @@ public class PX_DIST_010_Verifikacija_Sekcije_Ocitanja_Test extends BaseTest{
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
-		PocetnaStranica pocetna = new PocetnaStranica(driver);
+		PocetnaStranicaPXD pocetna = new PocetnaStranicaPXD(driver);
 		pocetna.verifikujPocetnuStranicu();
 		OcitanjaBrojila ocitanjabrojila = pocetna.navigirajNaOcitanjaBrojila();
 		ocitanjabrojila.verifikujOcitanjaBrojila();

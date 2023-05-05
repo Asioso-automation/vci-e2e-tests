@@ -13,7 +13,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import com.platformX.base.Kolone;
 import com.platformX.util.Helper;
 
-public class ElektroenergetskeSaglasnosti extends PocetnaStranica {
+public class ElektroenergetskeSaglasnosti extends PocetnaStranicaPXD {
 	
 	public ElektroenergetskeSaglasnosti(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);

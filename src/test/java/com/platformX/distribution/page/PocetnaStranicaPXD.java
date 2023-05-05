@@ -11,9 +11,9 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import com.platformX.base.PageBase;
 
-public class PocetnaStranica extends PageBase {
+public class PocetnaStranicaPXD extends PageBase {
 
-	public PocetnaStranica(WebDriver driver) throws FileNotFoundException, IOException {
+	public PocetnaStranicaPXD(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);
 	}
 	
@@ -112,304 +112,304 @@ public class PocetnaStranica extends PageBase {
 
 //	 Stranice
 
-	@FindBy(xpath = "//div[contains(text(), 'Organizacije')]")
+	@FindBy(xpath = "//div[contains(text(), 'Organizacije') and @class='v-list-item__title'")
 	protected WebElement organizacijeWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Zahtjevi za raskid ugovora')]")
-	protected WebElement zahtjeviZaRaskidUgovoraWE;
-	
-	@FindBy(xpath = "//div[contains(text(), 'Zahtjevi za obračunske ugovore')]")
-	protected WebElement zahtjeviZaObracunskeUgovoreWE;
-	
-	@FindBy(xpath = "//div[contains(text(), 'Obračunski ugovori')]")
-	protected WebElement obracunskiUgovoriStrWE;
-	
-	@FindBy(xpath = "//div[contains(text(), 'Zahtjevi za dostavu podataka')]")
-	protected WebElement zahtjeviZaDostavuPodatakaKupciWE;
-	
-	@FindBy(xpath = "//div[contains(text(), 'Pravna lica')]")
-	protected WebElement pravnaLicaWE;
-	
-	@FindBy(xpath = "//div[contains(text(), 'Fizička lica')]")
-	protected WebElement fizickaLicaWE;
-
-	@FindBy(xpath = "//div[contains(text(), 'Djelatnosti')]")
-	protected WebElement djelatnostiWE;
-	
-	@FindBy(xpath = "//div[contains(text(), 'Sektor djelatnosti')]")
-	protected WebElement sektorDjelatnostiWE;
-
-	@FindBy(xpath = "//div[contains(text(), 'Entiteti')]")
-	protected WebElement entitetiWE;
-
-	@FindBy(xpath = "//div[contains(text(), 'Opštine')]")
-	protected WebElement opstineWE;
-
-	@FindBy(xpath = "//div[contains(text(), 'Naseljena mjesta')]")
-	protected WebElement naseljenaMjestaWE;
-
-	@FindBy(xpath = "//div[contains(text(), 'Pošte')]")
-	protected WebElement posteWE;
-
-	@FindBy(xpath = "//div[contains(text(), 'Ulice')]")
-	protected WebElement uliceWE;
-	
-	@FindBy(xpath = "//div[contains(text(), 'Terenske jedinice')]")
+	@FindBy(xpath = "//div[contains(text(), 'Terenske jedinice') and @class='v-list-item__title']")
 	protected WebElement terenskeJediniceWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Fizičke lokacije')]")
+	@FindBy(xpath = "//div[contains(text(), 'Fizičke lokacije') and @class='v-list-item__title']")
 	protected WebElement fizickeLokacijeWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Snabdjevači')]")
+	@FindBy(xpath = "//div[contains(text(), 'Snabdjevači') and @class='v-list-item__title']")
 	protected WebElement snabdjevaciWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Čitači')]")
+	@FindBy(xpath = "//div[contains(text(), 'Čitači') and @class='v-list-item__title']")
 	protected WebElement citaciWE;
+
+	@FindBy(xpath = "//div[contains(text(), 'Entiteti') and @class='v-list-item__title']")
+	protected WebElement entitetiWE;
+
+	@FindBy(xpath = "//div[contains(text(), 'Opštine') and @class='v-list-item__title']")
+	protected WebElement opstineWE;
+
+	@FindBy(xpath = "//div[contains(text(), 'Naseljena mjesta') and @class='v-list-item__title']")
+	protected WebElement naseljenaMjestaWE;
+
+	@FindBy(xpath = "//div[contains(text(), 'Pošte') and @class='v-list-item__title']")
+	protected WebElement posteWE;
+
+	@FindBy(xpath = "//div[contains(text(), 'Ulice') and @class='v-list-item__title']")
+	protected WebElement uliceWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Monteri')]")
+	@FindBy(xpath = "//div[contains(text(), 'Monteri') and @class='v-list-item__title']")
 	protected WebElement monteriWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Lokacije montera')]")
+	@FindBy(xpath = "//div[contains(text(), 'Lokacije montera') and @class='v-list-item__title']")
 	protected WebElement lokacijeMonteraWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Trafostanice')]")
+	@FindBy(xpath = "//div[contains(text(), 'Trafostanice') and @class='v-list-item__title']")
 	protected WebElement trafostaniceWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Vlasništva')]")
+	@FindBy(xpath = "//div[contains(text(), 'Vlasništva') and @class='v-list-item__title']")
 	protected WebElement vlasnistvaWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Vrste područja')]")
+	@FindBy(xpath = "//div[contains(text(), 'Vrste područja') and @class='v-list-item__title']")
 	protected WebElement vrstePodrucjaWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Načini polaganja instalacija')]")
+	@FindBy(xpath = "//div[contains(text(), 'Načini polaganja instalacija') and @class='v-list-item__title']")
 	protected WebElement naciniPolaganjaInstalacijaWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Nazivna struja')]")
+	@FindBy(xpath = "//div[contains(text(), 'Nazivna struja') and @class='v-list-item__title']")
 	protected WebElement nazivnaStrujaWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Materijali ormarića brojila')]")
+	@FindBy(xpath = "//div[contains(text(), 'Materijali ormarića brojila') and @class='v-list-item__title']")
 	protected WebElement materijaliOrmaricaBrojilaWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Lokacije mjernih mjesta')]")
+	@FindBy(xpath = "//div[contains(text(), 'Lokacije mjernih mjesta') and @class='v-list-item__title']")
 	protected WebElement lokacijeMjernihMjestaWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Tipovi mjernih mostova')]")
+	@FindBy(xpath = "//div[contains(text(), 'Tipovi mjernih mostova') and @class='v-list-item__title']")
 	protected WebElement tipoviMjernihMostovaWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Tipovi izolacija')]")
+	@FindBy(xpath = "//div[contains(text(), 'Tipovi izolacija') and @class='v-list-item__title']")
 	protected WebElement tipoviIzolacijaWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Mjesta priključenja')]")
+	@FindBy(xpath = "//div[contains(text(), 'Mjesta priključenja') and @class='v-list-item__title']")
 	protected WebElement mjestaPrikljucenjaWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Presjeci voda')]")
+	@FindBy(xpath = "//div[contains(text(), 'Presjeci voda') and @class='v-list-item__title']")
 	protected WebElement presjeciVodaWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Materijali provodnika')]")
+	@FindBy(xpath = "//div[contains(text(), 'Materijali provodnika') and @class='v-list-item__title']")
 	protected WebElement materijaliProvodnikaWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Tipovi priključnog voda')]")
+	@FindBy(xpath = "//div[contains(text(), 'Tipovi priključnog voda') and @class='v-list-item__title']")
 	protected WebElement tipoviPrikljucnogVodaWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Priključne snage')]")
+	@FindBy(xpath = "//div[contains(text(), 'Priključne snage') and @class='v-list-item__title']")
 	protected WebElement prikljucneSnageWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Načini upravljanja potrošnjom')]")
+	@FindBy(xpath = "//div[contains(text(), 'Načini upravljanja potrošnjom') and @class='v-list-item__title']")
 	protected WebElement naciniUpravljanjaPotrosnjomWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Vrste upravljačkih uređaja')]")
+	@FindBy(xpath = "//div[contains(text(), 'Vrste upravljačkih uređaja') and @class='v-list-item__title']")
 	protected WebElement vrsteUpravljackihUredjajaWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Vrste impulsnih uređaja')]")
+	@FindBy(xpath = "//div[contains(text(), 'Vrste impulsnih uređaja') and @class='v-list-item__title']")
 	protected WebElement vrsteImpulsnihUredjajaWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Sistemi zaštite od ind. dodira')]")
+	@FindBy(xpath = "//div[contains(text(), 'Sistemi zaštite od ind. dodira') and @class='v-list-item__title']")
 	protected WebElement sistemiZastiteOdIndDodiraWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Klase tačnosti brojila')]")
+	@FindBy(xpath = "//div[contains(text(), 'Klase tačnosti brojila') and @class='v-list-item__title']")
 	protected WebElement klaseTacnostiBrojilaWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Nazivne struje brojila')]")
+	@FindBy(xpath = "//div[contains(text(), 'Nazivne struje brojila') and @class='v-list-item__title']")
 	protected WebElement nazivneStrujeBrojilaWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Sistemi zaštite od prenapona')]")
+	@FindBy(xpath = "//div[contains(text(), 'Sistemi zaštite od prenapona') and @class='v-list-item__title']")
 	protected WebElement sistemiZastiteOdPrenaponaWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Vrste zaštitnih uređaja')]")
+	@FindBy(xpath = "//div[contains(text(), 'Vrste zaštitnih uređaja') and @class='v-list-item__title']")
 	protected WebElement vrsteZastitnihUredjajaWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Rokovi važenja')]")
+	@FindBy(xpath = "//div[contains(text(), 'Rokovi važenja') and @class='v-list-item__title']")
 	protected WebElement rokoviVazenjaWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Razlozi pribavljanja EES')]")
+	@FindBy(xpath = "//div[contains(text(), 'Razlozi pribavljanja EES') and @class='v-list-item__title']")
 	protected WebElement razloziPribavljanjaEESWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Vrste objekata')]")
+	@FindBy(xpath = "//div[contains(text(), 'Vrste objekata') and @class='v-list-item__title']")
 	protected WebElement vrsteObjekataWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Tipovi standardnog priključka')]")
+	@FindBy(xpath = "//div[contains(text(), 'Tipovi standardnog priključka') and @class='v-list-item__title']")
 	protected WebElement tipoviStandardnogPrikljuckaWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Načini plaćanja')]")
+	@FindBy(xpath = "//div[contains(text(), 'Načini plaćanja') and @class='v-list-item__title']")
 	protected WebElement naciniPlacanjaWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Klase tačnosti strujnog tran.')]")
+	@FindBy(xpath = "//div[contains(text(), 'Klase tačnosti strujnog tran.') and @class='v-list-item__title']")
 	protected WebElement klaseTacnostiStrujnogTranWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Nazivne struje osigurača')]")
+	@FindBy(xpath = "//div[contains(text(), 'Nazivne struje osigurača') and @class='v-list-item__title']")
 	protected WebElement nazivneStrujeOsiguracaWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Klase tačnosti naponskog tran.')]")
+	@FindBy(xpath = "//div[contains(text(), 'Klase tačnosti naponskog tran.') and @class='v-list-item__title']")
 	protected WebElement klaseTacnostiNaponskogTranWE;
 
-	@FindBy(xpath = "//div[contains(text(), 'Kategorije potrošnje')]")
-	protected WebElement kategorijePotrosnjeWE;
+//	@FindBy(xpath = "//div[contains(text(), 'Djelatnosti') and @class='v-list-item__title']")
+//	protected WebElement djelatnostiWE;
+//	
+//	@FindBy(xpath = "//div[contains(text(), 'Sektor djelatnosti') and @class='v-list-item__title']")
+//	protected WebElement sektorDjelatnostiWE;
 
-	@FindBy(xpath = "//div[contains(text(), 'Tarifne nadgrupe')]")
+	@FindBy(xpath = "//div[contains(text(), 'Kategorije potrošnje') and @class='v-list-item__title']")
+	protected WebElement kategorijePotrosnjeWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Sezone') and @class='v-list-item__title']")
+	protected WebElement sezoneWE;
+
+	@FindBy(xpath = "//div[contains(text(), 'Tarifne nadgrupe') and @class='v-list-item__title']")
 	protected WebElement tarifneNadgrupeWE;
 
-	@FindBy(xpath = "//div[contains(text(), 'Tarifne grupe')]")
+	@FindBy(xpath = "//div[contains(text(), 'Tarifne grupe') and @class='v-list-item__title']")
 	protected WebElement tarifneGrupeWE;
-
-	@FindBy(xpath = "//div[contains(text(), 'Sezone')]")
-	protected WebElement sezoneWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Obračunska snaga')]")
+	@FindBy(xpath = "//div[contains(text(), 'Obračunska snaga') and @class='v-list-item__title']")
 	protected WebElement obracunskaSnagaWE;
 
-	@FindBy(xpath = "//div[contains(text(), 'Cjenovnik mrežarine')]")
+	@FindBy(xpath = "//div[contains(text(), 'Cjenovnik mrežarine') and @class='v-list-item__title']")
 	protected WebElement cjenovnikMrezarineWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Mjerna mjesta')]")
+	@FindBy(xpath = "//div[contains(text(), 'Mjerna mjesta') and @class='v-list-item__title']")
 	protected WebElement mjernaMjestaStrWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Zbirna/kontrolna mjerna mjesta')]")
+	@FindBy(xpath = "//div[contains(text(), 'Zbirna/kontrolna mjerna mjesta') and @class='v-list-item__title']")
 	protected WebElement zbirnaMjernaMjestaWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Energetska kartica')]")
+	@FindBy(xpath = "//div[contains(text(), 'Energetska kartica') and @class='v-list-item__title']")
 	protected WebElement energetskaKarticaWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Zahtjevi za dostavu podataka')]")
+	@FindBy(xpath = "//div[contains(text(), 'Zahtjevi za dostavu podataka') and @class='v-list-item__title']")
 	protected WebElement zahtjeviZaDostavuPodatakaWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Zahtjevi za isključenja')]")
+	@FindBy(xpath = "//div[contains(text(), 'Zahtjevi za isključenja') and @class='v-list-item__title']")
 	protected WebElement zahtjeviZaIskljucenjaWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Zahtjevi za uključenja')]")
+	@FindBy(xpath = "//div[contains(text(), 'Zahtjevi za uključenja') and @class='v-list-item__title']")
 	protected WebElement zahtjeviZaUkljucenjaWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Razlog neizvršavanja zahtjeva')]")
+	@FindBy(xpath = "//div[contains(text(), 'Razlog neizvršavanja zahtjeva') and @class='v-list-item__title']")
 	protected WebElement razlogNeizvrsavanjaZahtjevaWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Aktivna isključenja mjernih mjesta')]")
+	@FindBy(xpath = "//div[contains(text(), 'Aktivna isključenja mjernih mjesta') and @class='v-list-item__title']")
 	protected WebElement aktivnaIskljucenjaMjernihMjestaWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Indirektna mjerna mjesta')]")
+	@FindBy(xpath = "//div[contains(text(), 'Indirektna mjerna mjesta') and @class='v-list-item__title']")
 	protected WebElement indirektnaMjernaMjestaWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Kontrola mjernog mjesta')]")
+	@FindBy(xpath = "//div[contains(text(), 'Kontrola mjernog mjesta') and @class='v-list-item__title']")
 	protected WebElement kontrolaMjernogMjestaWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Elektroenergetske saglasnosti')]")
+	@FindBy(xpath = "//div[contains(text(), 'Elektroenergetske saglasnosti') and @class='v-list-item__title']")
 	protected WebElement elektroenergetskeSaglasnostiWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Ugovor o priključenju')]")
+	@FindBy(xpath = "//div[contains(text(), 'Ugovor o priključenju') and @class='v-list-item__title']")
 	protected WebElement ugovorOPrikljucenjuWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Deklaracija o priključku')]")
+	@FindBy(xpath = "//div[contains(text(), 'Deklaracija o priključku') and @class='v-list-item__title']")
 	protected WebElement deklaracijaOPrikljuckuWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Korištena brojila')]")
+	@FindBy(xpath = "//div[contains(text(), 'Pravna lica') and @class='v-list-item__title']")
+	protected WebElement pravnaLicaWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Fizička lica') and @class='v-list-item__title']")
+	protected WebElement fizickaLicaWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Zahtjevi za dostavu podataka') and @class='v-list-item__title']")
+	protected WebElement zahtjeviZaDostavuPodatakaKupciWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Korištena brojila') and @class='v-list-item__title']")
 	protected WebElement koristenaBrojilaWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Tipovi brojila')]")
+	@FindBy(xpath = "//div[contains(text(), 'Tipovi brojila') and @class='v-list-item__title']")
 	protected WebElement tipoviBrojilaWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Registar brojila')]")
+	@FindBy(xpath = "//div[contains(text(), 'Registar brojila') and @class='v-list-item__title']")
 	protected WebElement registarBrojilaWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Izvor napajanja brojila')]")
+	@FindBy(xpath = "//div[contains(text(), 'Izvor napajanja brojila') and @class='v-list-item__title']")
 	protected WebElement izvorNapajanjaBrojilaWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Proizvođači brojila')]")
+	@FindBy(xpath = "//div[contains(text(), 'Proizvođači brojila') and @class='v-list-item__title']")
 	protected WebElement proizvodjaciBrojilaWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Sposobnost priključenja brojila')]")
+	@FindBy(xpath = "//div[contains(text(), 'Sposobnost priključenja brojila') and @class='v-list-item__title']")
 	protected WebElement sposobnostPrikljucenjaBrojilaWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Mogućnost daljinskog pristupa')]")
+	@FindBy(xpath = "//div[contains(text(), 'Mogućnost daljinskog pristupa') and @class='v-list-item__title']")
 	protected WebElement mogucnostDaljinskogPristupaWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Lokacija brojila')]")
+	@FindBy(xpath = "//div[contains(text(), 'Lokacija brojila') and @class='v-list-item__title']")
 	protected WebElement lokacijaBrojilaWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Relokacije brojila')]")
+	@FindBy(xpath = "//div[contains(text(), 'Relokacije brojila') and @class='v-list-item__title']")
 	protected WebElement relokacijeBrojilaWE;
 
-	@FindBy(xpath = "//div[contains(text(), 'Razlog promjene lokacije')]")
+	@FindBy(xpath = "//div[contains(text(), 'Razlog promjene lokacije') and @class='v-list-item__title']")
 	protected WebElement razlogPromjeneLokacijeWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Naponski nivoi')]")
+	@FindBy(xpath = "//div[contains(text(), 'Naponski nivoi') and @class='v-list-item__title']")
 	protected WebElement naponskiNivoiWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Strujni nivoi')]")
+	@FindBy(xpath = "//div[contains(text(), 'Strujni nivoi') and @class='v-list-item__title']")
 	protected WebElement strujniNivoiWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Očitanja brojila')]")
+	@FindBy(xpath = "//div[contains(text(), 'Obračunski ugovori') and @class='v-list-item__title']")
+	protected WebElement obracunskiUgovoriStrWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Zahtjevi za obračunske ugovore') and @class='v-list-item__title']")
+	protected WebElement zahtjeviZaObracunskeUgovoreWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Zahtjevi za raskid ugovora') and @class='v-list-item__title']")
+	protected WebElement zahtjeviZaRaskidUgovoraWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Očitanja brojila') and @class='v-list-item__title']")
     protected WebElement ocitanjaBrojilaWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Korekcije očitanja')]")
+	@FindBy(xpath = "//div[contains(text(), 'Korekcije očitanja') and @class='v-list-item__title']")
     protected WebElement korekcijeOcitanjaWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Importi očitanja')]")
+	@FindBy(xpath = "//div[contains(text(), 'Importi očitanja') and @class='v-list-item__title']")
     protected WebElement importiOcitanjaWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Izmijenjena očitanja')]")
+	@FindBy(xpath = "//div[contains(text(), 'Izmijenjena očitanja') and @class='v-list-item__title']")
     protected WebElement izmijenjenaOcitanjaWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Nevalidna očitanja')]")
+	@FindBy(xpath = "//div[contains(text(), 'Nevalidna očitanja') and @class='v-list-item__title']")
     protected WebElement nevalidnaOcitanjaWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Čitački hodovi')]")
+	@FindBy(xpath = "//div[contains(text(), 'Čitački hodovi') and @class='v-list-item__title']")
     protected WebElement citackiHodoviWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Čitačke liste')]")
+	@FindBy(xpath = "//div[contains(text(), 'Čitačke liste') and @class='v-list-item__title']")
     protected WebElement citackeListeWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Čitači po čitačkim hodovima')]")
+	@FindBy(xpath = "//div[contains(text(), 'Čitači po čitačkim hodovima') and @class='v-list-item__title']")
     protected WebElement citaciPoCitackimHodovimaWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Zbirna/kontrolna očitanja')]")
+	@FindBy(xpath = "//div[contains(text(), 'Zbirna/kontrolna očitanja') and @class='v-list-item__title']")
     protected WebElement zbirnaKontrolnaOcitanjaWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Zbirna/kontrolna potrošnja')]")
+	@FindBy(xpath = "//div[contains(text(), 'Zbirna/kontrolna potrošnja') and @class='v-list-item__title']")
     protected WebElement zbirnaKontrolnaPotrosnjaWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Monitoring očitanja')]")
+	@FindBy(xpath = "//div[contains(text(), 'Monitoring očitanja') and @class='v-list-item__title']")
     protected WebElement monitoringOcitanjaWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Nalozi za obračun')]")
+	@FindBy(xpath = "//div[contains(text(), 'Nalozi za obračun') and @class='v-list-item__title']")
     protected WebElement naloziZaObracunWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Korekcije energetskih obračuna')]")
+	@FindBy(xpath = "//div[contains(text(), 'Korekcije energetskih obračuna') and @class='v-list-item__title']")
     protected WebElement korekcijeEnergetskihObracunaWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Mjesečna odobrenja/zaduženja')]")
+	@FindBy(xpath = "//div[contains(text(), 'Mjesečna odobrenja/zaduženja') and @class='v-list-item__title']")
     protected WebElement mjesecnaOdobrenjaZaduzenjaWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Korekciona odobrenja/zaduženja')]")
+	@FindBy(xpath = "//div[contains(text(), 'Korekciona odobrenja/zaduženja') and @class='v-list-item__title']")
     protected WebElement korekcionaOdobrenjaZaduzenjaWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Korisnici')]")
+	@FindBy(xpath = "//div[contains(text(), 'Korisnici') and @class='v-list-item__title']")
     protected WebElement korisniciWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Poruke')]")
+	@FindBy(xpath = "//div[contains(text(), 'Poruke') and @class='v-list-item__title']")
     protected WebElement porukeWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Dnevnik izmjena')]")
+	@FindBy(xpath = "//div[contains(text(), 'Dnevnik izmjena') and @class='v-list-item__title']")
     protected WebElement dnevnikIzmjenaWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Pozadinski procesi')]")
+	@FindBy(xpath = "//div[contains(text(), 'Pozadinski procesi') and @class='v-list-item__title']")
     protected WebElement pozadinskiProcesiWE;
 	
 	

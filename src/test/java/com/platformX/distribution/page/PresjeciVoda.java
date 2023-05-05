@@ -7,7 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import com.platformX.base.Kolone;
 
-public class PresjeciVoda extends PocetnaStranica{
+public class PresjeciVoda extends PocetnaStranicaPXD{
 
 	public PresjeciVoda(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);

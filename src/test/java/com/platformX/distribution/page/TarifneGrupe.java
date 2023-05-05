@@ -12,7 +12,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import com.platformX.base.Kolone;
 import com.platformX.util.Helper;
 
-public class TarifneGrupe extends PocetnaStranica {
+public class TarifneGrupe extends PocetnaStranicaPXD {
 
 	public TarifneGrupe(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);

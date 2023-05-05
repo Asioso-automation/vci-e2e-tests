@@ -12,7 +12,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import com.platformX.base.Kolone;
 import com.platformX.util.Helper;
 
-public class Monteri extends PocetnaStranica {
+public class Monteri extends PocetnaStranicaPXD {
 
 	public Monteri(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);

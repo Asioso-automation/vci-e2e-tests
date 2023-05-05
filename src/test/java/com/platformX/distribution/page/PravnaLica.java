@@ -13,7 +13,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import com.platformX.base.Kolone;
 import com.platformX.util.Helper;
 
-public class PravnaLica extends PocetnaStranica {
+public class PravnaLica extends PocetnaStranicaPXD {
 	
 	public PravnaLica(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);

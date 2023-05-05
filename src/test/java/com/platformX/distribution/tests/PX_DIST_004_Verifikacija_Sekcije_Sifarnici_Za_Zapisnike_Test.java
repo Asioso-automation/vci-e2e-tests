@@ -22,7 +22,7 @@ import com.platformX.distribution.page.NaciniUpravljanjaPotrosnjom;
 import com.platformX.distribution.page.NazivnaStruja;
 import com.platformX.distribution.page.NazivneStrujeBrojila;
 import com.platformX.distribution.page.NazivneStrujeOsiguraca;
-import com.platformX.distribution.page.PocetnaStranica;
+import com.platformX.distribution.page.PocetnaStranicaPXD;
 import com.platformX.distribution.page.PresjeciVoda;
 import com.platformX.distribution.page.PrikljucneSnage;
 import com.platformX.distribution.page.RazloziPribavljanjaEES;
@@ -70,7 +70,7 @@ public class PX_DIST_004_Verifikacija_Sekcije_Sifarnici_Za_Zapisnike_Test {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
-		PocetnaStranica pocetna = new PocetnaStranica(driver);
+		PocetnaStranicaPXD pocetna = new PocetnaStranicaPXD(driver);
 		pocetna.verifikujPocetnuStranicu();
 		NaciniPolaganjaInstalacija naciniPolaganjaInstalacija = pocetna.navigirajNaNaciniPolaganjaInstalacija();
 		naciniPolaganjaInstalacija.verifikujNaciniPolaganjaInstalacija();

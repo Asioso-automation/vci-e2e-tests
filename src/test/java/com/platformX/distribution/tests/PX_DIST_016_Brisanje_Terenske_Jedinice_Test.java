@@ -5,7 +5,7 @@ import java.io.IOException;
 import org.testng.annotations.Test;
 import com.platformX.base.BaseTest;
 import com.platformX.distribution.page.LogIn;
-import com.platformX.distribution.page.PocetnaStranica;
+import com.platformX.distribution.page.PocetnaStranicaPXD;
 import com.platformX.distribution.page.TerenskeJedinice;
 
 public class PX_DIST_016_Brisanje_Terenske_Jedinice_Test extends BaseTest {
@@ -18,7 +18,7 @@ public class PX_DIST_016_Brisanje_Terenske_Jedinice_Test extends BaseTest {
 	public void px_dist_016_brisanje_terenske_jedinice_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.logIn();
-		PocetnaStranica homePage = new PocetnaStranica(driver);
+		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
 		TerenskeJedinice terenskeJedinice = homePage.navigirajNaTerenskeJedinice();
 		terenskeJedinice.verifikujTerenskeJedinice();

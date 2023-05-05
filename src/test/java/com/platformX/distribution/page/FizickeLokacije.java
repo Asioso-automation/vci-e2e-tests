@@ -13,7 +13,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import com.platformX.base.Kolone;
 import com.platformX.util.Helper;
 
-public class FizickeLokacije extends PocetnaStranica {
+public class FizickeLokacije extends PocetnaStranicaPXD {
 
 	public FizickeLokacije(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);

@@ -7,7 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import com.platformX.base.Kolone;
 
-public class RokoviVazenja extends PocetnaStranica{
+public class RokoviVazenja extends PocetnaStranicaPXD{
 
 	public RokoviVazenja(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);

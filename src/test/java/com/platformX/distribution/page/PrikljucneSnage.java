@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import com.platformX.base.Kolone;
 
-public class PrikljucneSnage extends PocetnaStranica {
+public class PrikljucneSnage extends PocetnaStranicaPXD {
 	
 	public PrikljucneSnage(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);

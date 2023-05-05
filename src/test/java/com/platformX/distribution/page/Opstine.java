@@ -13,7 +13,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import com.platformX.base.Kolone;
 import com.platformX.util.Helper;
 
-public class Opstine extends PocetnaStranica {
+public class Opstine extends PocetnaStranicaPXD {
 
 	public Opstine(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);

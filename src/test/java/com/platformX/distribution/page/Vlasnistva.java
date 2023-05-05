@@ -7,7 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import com.platformX.base.Kolone;
 
-public class Vlasnistva extends PocetnaStranica {
+public class Vlasnistva extends PocetnaStranicaPXD {
 
 	public Vlasnistva(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);

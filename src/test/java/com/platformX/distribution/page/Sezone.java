@@ -12,7 +12,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import com.platformX.base.Kolone;
 import com.platformX.util.Helper;
 
-public class Sezone extends PocetnaStranica {
+public class Sezone extends PocetnaStranicaPXD {
 
 	public Sezone(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);

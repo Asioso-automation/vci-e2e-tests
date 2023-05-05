@@ -13,7 +13,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import com.platformX.base.Kolone;
 import com.platformX.util.Helper;
 
-public class TerenskeJedinice extends PocetnaStranica {
+public class TerenskeJedinice extends PocetnaStranicaPXD {
 
 	public TerenskeJedinice(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);

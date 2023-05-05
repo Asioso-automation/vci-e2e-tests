@@ -4,7 +4,7 @@ import org.testng.annotations.Test;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import com.platformX.base.BaseTest;
-import com.platformX.distribution.page.PocetnaStranica;
+import com.platformX.distribution.page.PocetnaStranicaPXD;
 import com.platformX.distribution.page.IzvorNapajanjaBrojila;
 import com.platformX.distribution.page.KoristenaBrojila;
 import com.platformX.distribution.page.LogIn;
@@ -30,7 +30,7 @@ public class PX_DIST_008_Verifikacija_Sekcije_Brojila_Test extends BaseTest {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
-		PocetnaStranica pocetna = new PocetnaStranica(driver);
+		PocetnaStranicaPXD pocetna = new PocetnaStranicaPXD(driver);
 		pocetna.verifikujPocetnuStranicu();
 		KoristenaBrojila koristenaBrojila = pocetna.navigirajNaKoristenaBrojila();
 	    koristenaBrojila.verifikujKoristenaBrojila();

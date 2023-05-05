@@ -7,7 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import com.platformX.base.Kolone;
 
-public class Poruke extends PocetnaStranica{
+public class Poruke extends PocetnaStranicaPXD{
 
 	public Poruke(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);

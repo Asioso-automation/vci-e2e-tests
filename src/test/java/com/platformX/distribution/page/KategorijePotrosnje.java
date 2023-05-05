@@ -12,7 +12,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import com.platformX.base.Kolone;
 import com.platformX.util.Helper;
 
-public class KategorijePotrosnje extends PocetnaStranica {
+public class KategorijePotrosnje extends PocetnaStranicaPXD {
 
 	public KategorijePotrosnje(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);

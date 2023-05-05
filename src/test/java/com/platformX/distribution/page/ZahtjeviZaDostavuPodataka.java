@@ -7,7 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import com.platformX.base.Kolone;
 
-public class ZahtjeviZaDostavuPodataka extends PocetnaStranica {
+public class ZahtjeviZaDostavuPodataka extends PocetnaStranicaPXD {
 
 	public ZahtjeviZaDostavuPodataka(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);

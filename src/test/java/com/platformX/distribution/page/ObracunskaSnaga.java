@@ -11,7 +11,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import com.platformX.base.Kolone;
 import com.platformX.util.Helper;
 
-public class ObracunskaSnaga extends PocetnaStranica {
+public class ObracunskaSnaga extends PocetnaStranicaPXD {
 
 	public ObracunskaSnaga(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);

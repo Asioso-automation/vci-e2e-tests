@@ -7,7 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import com.platformX.base.Kolone;
 
-public class MjesecnaOdobrenjaZaduzenja extends PocetnaStranica{
+public class MjesecnaOdobrenjaZaduzenja extends PocetnaStranicaPXD{
 
 	public MjesecnaOdobrenjaZaduzenja(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);

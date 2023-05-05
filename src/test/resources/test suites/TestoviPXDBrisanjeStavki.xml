@@ -1,0 +1,53 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="TestoviPXDBrisanjeStavki">
+	<test name="TestoviPXDBrisanjeStavki">
+	<!--Duration of suite execution: ~6 minutes-->
+		<classes>
+		
+		<!--PlatformXDistribution-->
+				
+			<class	
+				name="com.platformX.distribution.tests.PX_DIST_016_Brisanje_Terenske_Jedinice_Test" />
+			<class
+				name="com.platformX.distribution.tests.PX_DIST_019_Brisanje_Fizicke_Lokacije_Test" />
+			<class
+				name="com.platformX.distribution.tests.PX_DIST_022_Brisanje_Citaca_Test" />
+			<class
+				name="com.platformX.distribution.tests.PX_DIST_025_Brisanje_Obracunskog_Ugovora_Test" />
+			<class
+				name="com.platformX.distribution.tests.PX_DIST_028_Brisanje_Opstine_Test" />
+			<class
+				name="com.platformX.distribution.tests.PX_DIST_031_Brisanje_Naseljenog_Mjesta_Test" />
+			<class
+				name="com.platformX.distribution.tests.PX_DIST_035_Brisanje_Poste_Test" />
+			<class
+				name="com.platformX.distribution.tests.PX_DIST_036_Neuspjesno_Brisanje_Poste_Test" />
+			<class
+				name="com.platformX.distribution.tests.PX_DIST_039_Brisanje_Ulice_Test" />
+			<class
+				name="com.platformX.distribution.tests.PX_DIST_040_Neuspjesno_Brisanje_Ulice_Test" />
+			<class
+				name="com.platformX.distribution.tests.PX_DIST_043_Brisanje_Montera_Test" />
+			<class
+				name="com.platformX.distribution.tests.PX_DIST_046_Neuspjesno_Brisanje_Trafostanice_Test" />
+			<class
+				name="com.platformX.distribution.tests.PX_DIST_049_Brisanje_KategorijePotrosnje_Test" />
+			<class
+				name="com.platformX.distribution.tests.PX_DIST_050_Dodavanje_Uredjivanje_Brisanje_Sezone_Test" />
+			<class
+				name="com.platformX.distribution.tests.PX_DIST_053_Brisanje_TarifneNadgrupe_Test" />
+			<class
+				name="com.platformX.distribution.tests.PX_DIST_056_Brisanje_TarifneGrupe_Test" />
+			<class
+				name="com.platformX.distribution.tests.PX_DIST_059_Brisanje_Zbirnog_Kontrolnog_Mjernog_Mjesta_Test" />
+			<class
+				name="com.platformX.distribution.tests.PX_DIST_062_Brisanje_Elektroenergetske_Saglasnosti_Test" />
+			<class
+				name="com.platformX.distribution.tests.PX_DIST_065_Brisanje_Ugovora_O_Prikljucenju_Test" />
+			<class
+				name="com.platformX.distribution.tests.PX_DIST_068_Brisanje_Pravnog_Lica_Test" />
+			<class
+				name="com.platformX.distribution.tests.PX_DIST_071_Brisanje_Fizickog_Lica_Test" />
+		</classes>
+	</test>
+</suite>

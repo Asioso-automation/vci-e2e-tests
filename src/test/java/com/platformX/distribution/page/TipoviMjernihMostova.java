@@ -7,7 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import com.platformX.base.Kolone;
 
-public class TipoviMjernihMostova extends PocetnaStranica {
+public class TipoviMjernihMostova extends PocetnaStranicaPXD {
 
 	public TipoviMjernihMostova(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);

@@ -7,7 +7,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class Organizacije extends PocetnaStranica {
+public class Organizacije extends PocetnaStranicaPXD {
 
 	public Organizacije(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);

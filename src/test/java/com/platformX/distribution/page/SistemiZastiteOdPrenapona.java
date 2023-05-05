@@ -7,7 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import com.platformX.base.Kolone;
 
-public class SistemiZastiteOdPrenapona extends PocetnaStranica {
+public class SistemiZastiteOdPrenapona extends PocetnaStranicaPXD {
 
 	public SistemiZastiteOdPrenapona(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);

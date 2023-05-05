@@ -7,7 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import com.platformX.base.Kolone;
 
-public class ZahtjeviZaRaskidUgovora extends PocetnaStranica {
+public class ZahtjeviZaRaskidUgovora extends PocetnaStranicaPXD {
 	
 	public ZahtjeviZaRaskidUgovora(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);

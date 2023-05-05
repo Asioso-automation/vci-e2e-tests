@@ -12,7 +12,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import com.platformX.base.Kolone;
 import com.platformX.util.Helper;
 
-public class RegistarBrojila extends PocetnaStranica {
+public class RegistarBrojila extends PocetnaStranicaPXD {
 
 	public RegistarBrojila (WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);

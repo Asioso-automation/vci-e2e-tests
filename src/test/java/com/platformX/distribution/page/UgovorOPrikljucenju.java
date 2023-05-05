@@ -13,7 +13,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import com.platformX.base.Kolone;
 import com.platformX.util.Helper;
 
-public class UgovorOPrikljucenju extends PocetnaStranica {
+public class UgovorOPrikljucenju extends PocetnaStranicaPXD {
 	
 	public UgovorOPrikljucenju(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);

@@ -7,7 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import com.platformX.base.Kolone;
 
-public class AktivnaIskljucenjaMjernihMjesta extends PocetnaStranica {
+public class AktivnaIskljucenjaMjernihMjesta extends PocetnaStranicaPXD {
 	
 	public AktivnaIskljucenjaMjernihMjesta(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);

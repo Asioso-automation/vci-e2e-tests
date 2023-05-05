@@ -5,7 +5,7 @@ import java.io.IOException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class PozadinskiProcesi extends PocetnaStranica {
+public class PozadinskiProcesi extends PocetnaStranicaPXD {
 
 	public PozadinskiProcesi(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);

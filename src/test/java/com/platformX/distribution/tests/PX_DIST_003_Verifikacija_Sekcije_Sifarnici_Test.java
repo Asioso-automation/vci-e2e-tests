@@ -7,7 +7,7 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import com.platformX.distribution.page.PocetnaStranica;
+import com.platformX.distribution.page.PocetnaStranicaPXD;
 import com.platformX.distribution.page.Poste;
 import com.platformX.distribution.page.Snabdjevaci;
 import com.platformX.distribution.page.TerenskeJedinice;
@@ -57,7 +57,7 @@ public class PX_DIST_003_Verifikacija_Sekcije_Sifarnici_Test {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
-		PocetnaStranica pocetna = new PocetnaStranica(driver);
+		PocetnaStranicaPXD pocetna = new PocetnaStranicaPXD(driver);
 		pocetna.verifikujPocetnuStranicu();
 		Organizacije organizacije = pocetna.navigirajNaOrganizacije();
 		organizacije.verifikujOrganizacije();

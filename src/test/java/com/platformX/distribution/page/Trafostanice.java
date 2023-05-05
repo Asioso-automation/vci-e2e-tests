@@ -12,7 +12,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import com.platformX.base.Kolone;
 import com.platformX.util.Helper;
 
-public class Trafostanice extends PocetnaStranica {
+public class Trafostanice extends PocetnaStranicaPXD {
 
 	public Trafostanice(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);

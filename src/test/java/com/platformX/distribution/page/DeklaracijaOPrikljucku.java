@@ -7,7 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import com.platformX.base.Kolone;
 
-public class DeklaracijaOPrikljucku extends PocetnaStranica {
+public class DeklaracijaOPrikljucku extends PocetnaStranicaPXD {
 
 	public DeklaracijaOPrikljucku(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);

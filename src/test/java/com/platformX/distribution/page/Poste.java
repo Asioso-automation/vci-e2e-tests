@@ -13,7 +13,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import com.platformX.base.Kolone;
 import com.platformX.util.Helper;
 
-public class Poste extends PocetnaStranica {
+public class Poste extends PocetnaStranicaPXD {
 
 	public Poste(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);

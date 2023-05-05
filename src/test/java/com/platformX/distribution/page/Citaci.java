@@ -13,7 +13,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import com.platformX.base.Kolone;
 import com.platformX.util.Helper;
 
-public class Citaci extends PocetnaStranica {
+public class Citaci extends PocetnaStranicaPXD {
 
 	public Citaci(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);

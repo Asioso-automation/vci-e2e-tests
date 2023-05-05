@@ -7,7 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import com.platformX.base.Kolone;
 
-public class ImportiOcitanja extends PocetnaStranica {
+public class ImportiOcitanja extends PocetnaStranicaPXD {
 	
 	public ImportiOcitanja (WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);

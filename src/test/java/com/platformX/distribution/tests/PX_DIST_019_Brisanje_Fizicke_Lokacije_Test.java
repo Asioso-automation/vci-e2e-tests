@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 import com.platformX.base.BaseTest;
 import com.platformX.distribution.page.FizickeLokacije;
 import com.platformX.distribution.page.LogIn;
-import com.platformX.distribution.page.PocetnaStranica;
+import com.platformX.distribution.page.PocetnaStranicaPXD;
 import com.platformX.distribution.page.TerenskeJedinice;
 
 public class PX_DIST_019_Brisanje_Fizicke_Lokacije_Test extends BaseTest {
@@ -20,7 +20,7 @@ public class PX_DIST_019_Brisanje_Fizicke_Lokacije_Test extends BaseTest {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
-		PocetnaStranica homePage = new PocetnaStranica(driver);
+		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
 		TerenskeJedinice terenskeJedinice = homePage.navigirajNaTerenskeJedinice();
 		terenskeJedinice.verifikujTerenskeJedinice();

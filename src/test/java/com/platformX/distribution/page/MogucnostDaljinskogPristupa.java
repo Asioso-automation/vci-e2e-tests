@@ -7,7 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import com.platformX.base.Kolone;
 
-public class MogucnostDaljinskogPristupa extends PocetnaStranica{
+public class MogucnostDaljinskogPristupa extends PocetnaStranicaPXD{
 	
 	public MogucnostDaljinskogPristupa (WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);

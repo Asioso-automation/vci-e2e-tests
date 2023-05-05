@@ -7,7 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import com.platformX.base.Kolone;
 
-public class TipoviStandardnogPrikljucka extends PocetnaStranica{
+public class TipoviStandardnogPrikljucka extends PocetnaStranicaPXD{
 
 	public TipoviStandardnogPrikljucka(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);

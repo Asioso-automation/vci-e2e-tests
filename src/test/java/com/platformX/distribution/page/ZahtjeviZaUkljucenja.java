@@ -7,7 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import com.platformX.base.Kolone;
 
-public class ZahtjeviZaUkljucenja extends PocetnaStranica {
+public class ZahtjeviZaUkljucenja extends PocetnaStranicaPXD {
 	
 	public ZahtjeviZaUkljucenja(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);

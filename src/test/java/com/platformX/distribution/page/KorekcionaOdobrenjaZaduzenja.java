@@ -7,7 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import com.platformX.base.Kolone;
 
-public class KorekcionaOdobrenjaZaduzenja extends PocetnaStranica{
+public class KorekcionaOdobrenjaZaduzenja extends PocetnaStranicaPXD{
 
 	public KorekcionaOdobrenjaZaduzenja(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);

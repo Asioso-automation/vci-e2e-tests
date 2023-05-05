@@ -7,7 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import com.platformX.base.Kolone;
 
-public class IndirektnaMjernaMjesta extends PocetnaStranica {
+public class IndirektnaMjernaMjesta extends PocetnaStranicaPXD {
 	
 	public IndirektnaMjernaMjesta(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);

@@ -7,7 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import com.platformX.base.Kolone;
 
-public class KoristenaBrojila extends PocetnaStranica{
+public class KoristenaBrojila extends PocetnaStranicaPXD{
 	
 	public KoristenaBrojila (WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);
