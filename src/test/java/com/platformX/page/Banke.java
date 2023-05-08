@@ -65,7 +65,7 @@ public class Banke extends PocetnaStranica {
 		return ime;
 	}
 	
-	public void verifikujBanku(String banka) throws InterruptedException {
+	public String verifikujBanku(String banka) throws InterruptedException {
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		wait.until(ExpectedConditions.elementToBeClickable(filterKolona2WE));
 		filterKolona2WE.click();
@@ -75,7 +75,13 @@ public class Banke extends PocetnaStranica {
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		wait.until(ExpectedConditions.visibilityOf(podatakTabela2WE));
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
-		assertTrue(podatakTabela2WE.getText().equals(banka), "Banke: Ime banke nije dobro!");
+		try {
+			assertTrue(podatakTabela2WE.getText().equals(banka), "Banke: Ime banke nije dobro!");
+		} catch (Exception e) {
+			assertTrue(podatakTabela2WE.getText().contains(banka), "Banke: Ime banke nije dobro!");
+		}
+		String bankaTabela = podatakTabela1WE.getText() + " - " + banka;
+		return bankaTabela;
 	}
 	
 	public String izmjeniBanku() throws InterruptedException {

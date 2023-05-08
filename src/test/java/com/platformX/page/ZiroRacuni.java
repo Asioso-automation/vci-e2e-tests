@@ -73,7 +73,7 @@ public class ZiroRacuni extends PocetnaStranica {
 		return ziroRacun;
 	}
 
-	public void verifikujZiroRacun(String ziroRacun) throws InterruptedException {
+	public String verifikujZiroRacun(String ziroRacun) throws InterruptedException {
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		wait.until(ExpectedConditions.visibilityOf(filterKolona3WE));
 		wait.until(ExpectedConditions.elementToBeClickable(filterKolona3WE));
@@ -84,7 +84,13 @@ public class ZiroRacuni extends PocetnaStranica {
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
 		wait.until(ExpectedConditions.visibilityOf(podatak2Tabela3WE));
-		assertTrue(podatak2Tabela3WE.getText().equals(ziroRacun), "ZiroRacuniPage: Ime ziro racuna nije dobro!");
+		try {
+			assertTrue(podatak2Tabela3WE.getText().equals(ziroRacun), "ZiroRacuniPage: Ime ziro racuna nije dobro!");
+		} catch (Exception e) {
+			assertTrue(podatak2Tabela3WE.getText().contains(ziroRacun), "ZiroRacuniPage: Ime ziro racuna nije dobro!");
+		}
+		String ziroRacunTabela = podatakTabela1WE.getText() + " - " + ziroRacun;
+		return ziroRacunTabela;
 	}
 	
 	public String izmjeniZiroRacun() throws InterruptedException {

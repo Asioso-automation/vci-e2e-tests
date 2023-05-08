@@ -28,17 +28,17 @@ public class PX_032_Dodavanje_Uplate_Poziv_Na_Broj_Test1 extends BaseTest {
 		Banke banke = new Banke(driver);
 		banke.verifikujBanke();
 		String banka = banke.dodajBanku();
-		banke.verifikujBanku(banka);
+		String bankaTabela = banke.verifikujBanku(banka);
 		homePage.navigirajNaZiroRacuni();
 		ZiroRacuni ziroRacuni = new ZiroRacuni(driver);
 		ziroRacuni.verifikujZiroRacuni();
 		String ziroRacun = ziroRacuni.dodajZiroRacun(banka);
-		ziroRacuni.verifikujZiroRacun(ziroRacun);
+		String ziroRacunTabela = ziroRacuni.verifikujZiroRacun(ziroRacun);
 		homePage.navigirajNaDnevniciUplata();
 		DnevniciUplata dnevniciUplataPage = new DnevniciUplata(driver);
 		dnevniciUplataPage.verifikujDnevniciUplata();
 		dnevniciUplataPage.dodajDnevnikUplata(banka, ziroRacun);
-		dnevniciUplataPage.verifyDnevnikUplata(banka, ziroRacun);
+		dnevniciUplataPage.verifyDnevnikUplata(bankaTabela, ziroRacunTabela);
 		// TODO doraditi verifikaciju DnevnikUplata // DONE
 		dnevniciUplataPage.navigateToUplateSaStranice();
 		dnevniciUplataPage.navigateToDodajUplatuSaSDetalja();

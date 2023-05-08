@@ -19,18 +19,6 @@ public class DnevniciUplata extends PocetnaStranica {
 		super(driver);
 	}
 
-//	@FindBy(xpath = "//a/span/i")
-//	private WebElement dodajDnevnikBtnWE;
-
-	@FindBy(xpath = "//tr[2]/td[12]/button/span/i")
-	private WebElement barWE;
-
-	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., 'Uplate')]")
-	private WebElement uplateWE;
-	
-	@FindBy(xpath = "//header/div/a")
-	private WebElement dodajUplatuBtnWE;
-
 	// Dodaj dnevnik uplata form
 
 	@FindBy(xpath = "//form/div/div[1]/div[1]/div[1]/div/div/div[1]")
@@ -65,9 +53,6 @@ public class DnevniciUplata extends PocetnaStranica {
 	
 	@FindBy(xpath = "//div[2]/div[1]/div/div[1]/div[2]/input")
 	private WebElement datumIzvodaWE;
-	
-	@FindBy(xpath = "//div[2]/button[1]")
-	private WebElement submitDnevnikBtnWE;
 
 	public void verifikujDnevniciUplata() throws FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
@@ -124,20 +109,20 @@ public class DnevniciUplata extends PocetnaStranica {
 		datumIzvodaWE.click();
 		datumIzvodaWE.clear();
 		datumIzvodaWE.sendKeys("04.06.2020.");
-		submitDnevnikBtnWE.click();
+		submitBtnWE.click();
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 	}
 	
-	public void verifyDnevnikUplata(String banka, String ziroRacun) throws Exception {
+	public void verifyDnevnikUplata(String bankaTabela, String ziroRacunTabela) throws Exception {
 		navigirajNaDnevniciUplata();
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		wait.until(ExpectedConditions.elementToBeClickable(filterKolona2WE));
-		filterKolona2WE.sendKeys(banka);
+		filterKolona2WE.sendKeys(bankaTabela);
 		wait.until(ExpectedConditions.elementToBeClickable(filterKolona3WE));
-		filterKolona3WE.sendKeys(banka);
+		filterKolona3WE.sendKeys(bankaTabela);
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
-		assertTrue(podatakTabela2WE.getText().contains(banka), "Dnevnici uplata: Dnevnik uplata nije pronađena!");
-		assertTrue(podatak2Tabela3WE.getText().contains(ziroRacun), "Dnevnici uplata: Dnevnik uplata nije pronađena!");
+		assertTrue(podatakTabela2WE.getText().equals(bankaTabela), "Dnevnici uplata: Dnevnik uplata nije pronađena!");
+		assertTrue(podatak2Tabela3WE.getText().equals(ziroRacunTabela), "Dnevnici uplata: Dnevnik uplata nije pronađena!");
 		// TODO ova dva polja vise nisu vidljiva u DOMu, dodati nove verifikacije // DONE
 	}
 

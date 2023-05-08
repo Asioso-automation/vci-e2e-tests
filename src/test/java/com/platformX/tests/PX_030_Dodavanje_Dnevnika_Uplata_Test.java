@@ -27,17 +27,17 @@ public class PX_030_Dodavanje_Dnevnika_Uplata_Test extends BaseTest {
 		Banke banke = new Banke(driver);
 		banke.verifikujBanke();
 		String banka = banke.dodajBanku();
-		banke.verifikujBanku(banka);
+		String bankaTabela = banke.verifikujBanku(banka);
 		homePage.navigirajNaZiroRacuni();
 		ZiroRacuni ziroRacuni = new ZiroRacuni(driver);
 		ziroRacuni.verifikujZiroRacuni();
 		String ziroRacun = ziroRacuni.dodajZiroRacun(banka);
-		ziroRacuni.verifikujZiroRacun(ziroRacun);
+		String ziroRacunTabela = ziroRacuni.verifikujZiroRacun(ziroRacun);
 		homePage.navigirajNaDnevniciUplata();
 		DnevniciUplata dnevniciUplataPage = new DnevniciUplata(driver);
 		dnevniciUplataPage.verifikujDnevniciUplata();
 		dnevniciUplataPage.dodajDnevnikUplata(banka, ziroRacun);
-		dnevniciUplataPage.verifyDnevnikUplata(banka, ziroRacun);
+		dnevniciUplataPage.verifyDnevnikUplata(bankaTabela, ziroRacunTabela);
 	}
 
 }
