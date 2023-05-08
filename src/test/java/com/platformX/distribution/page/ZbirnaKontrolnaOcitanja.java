@@ -7,7 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import com.platformX.base.Kolone;
 
-public class ZbirnaKontrolnaOcitanja extends PocetnaStranicaPXD{
+public class ZbirnaKontrolnaOcitanja extends PocetnaStranicaPXD {
 
 	public ZbirnaKontrolnaOcitanja (WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);

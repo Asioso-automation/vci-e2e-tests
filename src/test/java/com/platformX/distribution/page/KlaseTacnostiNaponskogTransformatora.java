@@ -7,7 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import com.platformX.base.Kolone;
 
-public class KlaseTacnostiNaponskogTransformatora extends PocetnaStranicaPXD{
+public class KlaseTacnostiNaponskogTransformatora extends PocetnaStranicaPXD {
 
 	public KlaseTacnostiNaponskogTransformatora(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);

@@ -7,7 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import com.platformX.base.Kolone;
 
-public class CitackeListe  extends PocetnaStranicaPXD{
+public class CitackeListe  extends PocetnaStranicaPXD {
 
 	public CitackeListe (WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);

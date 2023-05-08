@@ -7,7 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import com.platformX.base.Kolone;
 
-public class NevalidnaOcitanja extends PocetnaStranicaPXD{
+public class NevalidnaOcitanja extends PocetnaStranicaPXD {
 
 	public NevalidnaOcitanja (WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);

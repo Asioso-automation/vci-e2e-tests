@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import com.platformX.base.Kolone;
 
-public class VrsteObjekata extends PocetnaStranicaPXD{
+public class VrsteObjekata extends PocetnaStranicaPXD {
 
 	public VrsteObjekata(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);

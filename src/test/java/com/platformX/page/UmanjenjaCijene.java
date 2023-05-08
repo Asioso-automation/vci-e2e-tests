@@ -97,16 +97,6 @@ public class UmanjenjaCijene extends PocetnaStranica {
 		return brojMjeseci;
 	}
 	
-	public void obrisiUmanjenjeCijene() throws InterruptedException {
-		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
-		burgerBarWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(obrisiWE));
-		obrisiWE.click();
-		Thread.sleep(1000);
-		wait.until(ExpectedConditions.elementToBeClickable(potvrdiBrisanjeWE));
-		potvrdiBrisanjeWE.click();
-	}
-	
 	public void verifikujBrisanjeUmanjenjaCijene(String brojMjeseci) throws InterruptedException {
 		wait.until(ExpectedConditions.elementToBeClickable(filterKolonaWE));
 		filterKolonaWE.click();

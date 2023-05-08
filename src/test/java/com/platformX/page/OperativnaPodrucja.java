@@ -96,16 +96,6 @@ public class OperativnaPodrucja extends PocetnaStranica {
 		return novoPodrucje;
 	}
 	
-	public void obrisiOperativnoPodrucje() throws InterruptedException {
-		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
-		burgerBarWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(obrisiWE));
-		obrisiWE.click();
-		Thread.sleep(1000);
-		wait.until(ExpectedConditions.elementToBeClickable(potvrdiBrisanjeWE));
-		potvrdiBrisanjeWE.click();
-	}
-	
 	public void verifikujBrisanjeOperativnogPodrucja(String podrucje) throws InterruptedException {
 		wait.until(ExpectedConditions.visibilityOf(filterKolona2WE));
 		Thread.sleep(1000);

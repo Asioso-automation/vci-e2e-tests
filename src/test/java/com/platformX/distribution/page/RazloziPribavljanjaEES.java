@@ -7,7 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import com.platformX.base.Kolone;
 
-public class RazloziPribavljanjaEES extends PocetnaStranicaPXD{
+public class RazloziPribavljanjaEES extends PocetnaStranicaPXD {
 
 	public RazloziPribavljanjaEES(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);

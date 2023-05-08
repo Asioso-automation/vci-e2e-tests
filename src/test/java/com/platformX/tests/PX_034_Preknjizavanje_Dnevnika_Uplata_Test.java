@@ -39,7 +39,8 @@ public class PX_034_Preknjizavanje_Dnevnika_Uplata_Test extends BaseTest {
 		dnevniciUplataPage.verifikujDnevniciUplata();
 		dnevniciUplataPage.dodajDnevnikUplata(banka, ziroRacun);
 		dnevniciUplataPage.verifyDnevnikUplata(banka, ziroRacun);
-		dnevniciUplataPage.navigateToUplateSaSDetalja();
+		dnevniciUplataPage.navigateToUplateSaStranice();
+		dnevniciUplataPage.navigateToDodajUplatuSaSDetalja();
 		UplatePage uplatePage = new UplatePage(driver);
 		String uplatilac = uplatePage.dodajUplatuKupac();
 		uplatePage.verifikujUplatu(uplatilac);

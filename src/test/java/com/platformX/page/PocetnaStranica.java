@@ -80,6 +80,9 @@ public class PocetnaStranica extends PageBase {
 	@FindBy(xpath = "//td[4]/div/div/div/div[1]/input") 
 	protected WebElement filterKolona4WE;
 	
+	@FindBy(xpath = "//td[6]/div/div/div/div[1]/input") 
+	protected WebElement filterKolona6WE;
+	
 	@FindBy(xpath = "//tr[2]/td")
 	protected WebElement podatakTabela0WE;
 	
@@ -113,8 +116,14 @@ public class PocetnaStranica extends PageBase {
 	@FindBy(xpath = "//div[contains(@class, 'menuable__content__active')]")
 	protected WebElement aktivniLookupWE;
 	
+	@FindBy(xpath = "//div[@class='v-list-item__title' and text()='Uplate']")
+	protected WebElement uplateBurgerBarWE;
+	
 	@FindBy(xpath = "//button[@type='submit']")
 	protected WebElement submitBtnWE;
+	
+	@FindBy(xpath = "//span[@class='v-btn__content' and text()='Odustani']") 
+	private WebElement odustaniBtnWE;
 	
 
 	// Sekcije

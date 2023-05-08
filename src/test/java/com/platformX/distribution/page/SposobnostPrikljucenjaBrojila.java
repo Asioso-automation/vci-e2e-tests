@@ -7,7 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import com.platformX.base.Kolone;
 
-public class SposobnostPrikljucenjaBrojila extends PocetnaStranicaPXD{
+public class SposobnostPrikljucenjaBrojila extends PocetnaStranicaPXD {
 
 	public SposobnostPrikljucenjaBrojila (WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);

@@ -7,7 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import com.platformX.base.Kolone;
 
-public class VrsteZastitnihUredjaja extends PocetnaStranicaPXD{
+public class VrsteZastitnihUredjaja extends PocetnaStranicaPXD {
 
 	public VrsteZastitnihUredjaja(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);

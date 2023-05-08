@@ -39,7 +39,8 @@ public class PX_033_Dodavanje_Uplate_Poziv_Na_Broj_Test2 extends BaseTest {
 		dnevniciUplataPage.verifikujDnevniciUplata();
 		dnevniciUplataPage.dodajDnevnikUplata(banka, ziroRacun);
 		dnevniciUplataPage.verifyDnevnikUplata(banka, ziroRacun);
-		dnevniciUplataPage.navigateToUplateSaSDetalja();
+		dnevniciUplataPage.navigateToUplateSaStranice();
+		dnevniciUplataPage.navigateToDodajUplatuSaSDetalja();
 		UplatePage uplatePage = new UplatePage(driver);
 		String uplatilac = uplatePage.obrisiPozivNaBroj();
 		uplatePage.verifikujUplatu(uplatilac);

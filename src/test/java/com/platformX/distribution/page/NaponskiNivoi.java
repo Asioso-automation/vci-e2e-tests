@@ -7,7 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import com.platformX.base.Kolone;
 
-public class NaponskiNivoi extends PocetnaStranicaPXD{
+public class NaponskiNivoi extends PocetnaStranicaPXD {
 	
 	public NaponskiNivoi (WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);

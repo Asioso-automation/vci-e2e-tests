@@ -1,5 +1,7 @@
 package com.platformX.page;
 
+import static org.testng.Assert.assertTrue;
+
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.List;
@@ -17,8 +19,8 @@ public class DnevniciUplata extends PocetnaStranica {
 		super(driver);
 	}
 
-	@FindBy(xpath = "//a/span/i")
-	private WebElement dodajDnevnikBtnWE;
+//	@FindBy(xpath = "//a/span/i")
+//	private WebElement dodajDnevnikBtnWE;
 
 	@FindBy(xpath = "//tr[2]/td[12]/button/span/i")
 	private WebElement barWE;
@@ -87,13 +89,13 @@ public class DnevniciUplata extends PocetnaStranica {
 	}
 
 	public void dodajDnevnikUplata(String banka, String ziroRacun) throws InterruptedException {
-		wait.until(ExpectedConditions.elementToBeClickable(dodajDnevnikBtnWE));
-		Thread.sleep(1000);
-		dodajDnevnikBtnWE.click();
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
+		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
+		dodajBtnWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(bankaWE));
 		Thread.sleep(1000);
 		bankaWE.click();
-		Thread.sleep(2000);
+		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
 		List<WebElement> list;
 		int lastElement;
 		//ako je manja od 20, nemoj ici na skrol
@@ -109,11 +111,10 @@ public class DnevniciUplata extends PocetnaStranica {
 			Thread.sleep(2000);
 		}
 		driver.findElement(By.xpath("//div[contains(text(),'" + banka + "')]")).click();
-		Thread.sleep(1000);
 		ziroRacunWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(text(),'" + ziroRacun + "')]")));
 		driver.findElement(By.xpath("//div[contains(text(),'" + ziroRacun + "')]")).click();
-		Thread.sleep(1000);
 		brojIzvodaWE.sendKeys("34325");
 		brojUplataNaIzvoduWE.sendKeys("1");
 		iznosUplataNaIzvoduWE.sendKeys("100");
@@ -124,29 +125,36 @@ public class DnevniciUplata extends PocetnaStranica {
 		datumIzvodaWE.clear();
 		datumIzvodaWE.sendKeys("04.06.2020.");
 		submitDnevnikBtnWE.click();
-		Thread.sleep(1000);
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 	}
 	
-	public void verifyDnevnikUplata(String banka, String ziroRacun) throws InterruptedException {
-		Thread.sleep(3000);
-//		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(text(),'" + banka + "')]")));
-//		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(text(),'" + ziroRacun + "')]")));
-		// TODO ova dva polja vise nisu vidljiva u DOMu, dodati nove verifikacije
+	public void verifyDnevnikUplata(String banka, String ziroRacun) throws Exception {
+		navigirajNaDnevniciUplata();
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
+		wait.until(ExpectedConditions.elementToBeClickable(filterKolona2WE));
+		filterKolona2WE.sendKeys(banka);
+		wait.until(ExpectedConditions.elementToBeClickable(filterKolona3WE));
+		filterKolona3WE.sendKeys(banka);
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
+		assertTrue(podatakTabela2WE.getText().contains(banka), "Dnevnici uplata: Dnevnik uplata nije pronađena!");
+		assertTrue(podatak2Tabela3WE.getText().contains(ziroRacun), "Dnevnici uplata: Dnevnik uplata nije pronađena!");
+		// TODO ova dva polja vise nisu vidljiva u DOMu, dodati nove verifikacije // DONE
 	}
 
 	public void navigateToUplateSaStranice() {
-		wait.until(ExpectedConditions.elementToBeClickable(barWE));
-		barWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(uplateWE));
-		uplateWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
+		burgerBarWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(uplateBurgerBarWE));
+		uplateBurgerBarWE.click();
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 	}
 	
-	public void navigateToUplateSaSDetalja() throws InterruptedException {
+	public void navigateToDodajUplatuSaSDetalja() throws InterruptedException {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,-250)");
-		wait.until(ExpectedConditions.elementToBeClickable(dodajUplatuBtnWE));
-		dodajUplatuBtnWE.click();
-		Thread.sleep(1000);
+		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
+		dodajBtnWE.click();
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 	}
 
 }

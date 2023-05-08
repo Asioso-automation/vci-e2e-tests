@@ -17,20 +17,11 @@ public class UplatePage extends PocetnaStranica {
 	public UplatePage(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);
 	}
-
-	@FindBy(xpath = "//header/div/a") //a[@href='/finances/payment-journals/65/payments/add']  //a/span/i
-	private WebElement dodajUplatuBtnWE;
-	
-	@FindBy(xpath = "//ul/a[2]") 
-	private WebElement uplateBtnWE;
-	
-	@FindBy(xpath = "//td[6]/div/div/div/div/input") 
-	private WebElement uplatilacFilterWE;
 	
 	@FindBy(xpath = "//tr[2]/td[6]") 
 	private WebElement uplatilacImeWE;
 	
-	@FindBy(xpath = "//form/div[2]/div/a") 
+	@FindBy(xpath = "//span[@class='v-btn__content' and text()='Odustani']") 
 	private WebElement odustaniWE;
 	
 	// Kreiraj uplatu elementi
@@ -56,15 +47,6 @@ public class UplatePage extends PocetnaStranica {
 	@FindBy(xpath = "//div[4]/div/div/div[1]/div/input") 
 	private WebElement iznosWE;
 	
-	@FindBy(xpath = "//div[3]/div/button")
-	private WebElement dodajBtnWE;
-	
-	@FindBy(xpath = "//div[3]/div/button")
-	private WebElement dodaj2BtnWE;
-	
-	@FindBy(xpath = "//main/div/div/div/div[2]/div/div[1]") 
-	private WebElement porukaWE;
-	
 	@FindBy(xpath = "//div[1]/div[1]/div/button") 
 	private WebElement obrisiBrojWE;
 	
@@ -73,33 +55,18 @@ public class UplatePage extends PocetnaStranica {
 	
 	public String dodajUplatu() throws InterruptedException {
 		String uplatilac = "Uplatilac " + Helper.getRandomString(5);
-		Thread.sleep(1000);
-		try {
-		wait.until(ExpectedConditions.elementToBeClickable(dodajUplatuBtnWE));
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-//		js.executeScript("arguments[0].scrollIntoView(true);", dodajUplatuBtnWE);
-//		js.executeScript("arguments[0].scrollIntoView();", dodajUplatuBtnWE);
-		js.executeScript("window.scrollBy(0,-250)");
-		Thread.sleep(2000);
-		dodajUplatuBtnWE.click();
-		} catch (Exception e) {
-		// wait.until(ExpectedConditions.invisibilityOf(porukaWE));
-		Thread.sleep(5000);
-		wait.until(ExpectedConditions.elementToBeClickable(dodajUplatuBtnWE));
-		dodajUplatuBtnWE.click();
-		}
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		wait.until(ExpectedConditions.elementToBeClickable(pozivNaBrojWE));
 		pozivNaBrojWE.sendKeys("1987");
-		Thread.sleep(2000);
+		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
 		wait.until(ExpectedConditions.elementToBeClickable(odaberiBrojWE));
 		odaberiBrojWE.click();
-		Thread.sleep(1000);
-		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
+		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(uplatilacWE));
 		uplatilacWE.sendKeys(uplatilac);
-		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
-		dodajBtnWE.click();
-		Thread.sleep(1000);
+		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
+		submitBtnWE.click();
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		wait.until(ExpectedConditions.visibilityOf(porukaWE));
 		 assertTrue(porukaWE.getText().equals("Uspješno završeno."), "UplatePage: Title is not good!");
 		return uplatilac;
@@ -108,20 +75,18 @@ public class UplatePage extends PocetnaStranica {
 	
 	public String dodajUplatuPozivNaBroj() throws InterruptedException {
 		String uplatilac = "Uplatilac " + Helper.getRandomString(5);
-//		wait.until(ExpectedConditions.elementToBeClickable(dodajUplatuBtnWE));
-//		dodajUplatuBtnWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(pozivNaBrojWE));
 		pozivNaBrojWE.sendKeys("1987");
-		Thread.sleep(2000);
+		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
 		wait.until(ExpectedConditions.elementToBeClickable(odaberiBrojWE));
 		odaberiBrojWE.click();
-		Thread.sleep(1000);
-		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
+		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(uplatilacWE));
 		uplatilacWE.sendKeys(uplatilac);
-		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
-		dodajBtnWE.click();
-		Thread.sleep(1000);
+		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
+		submitBtnWE.click();
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		wait.until(ExpectedConditions.visibilityOf(porukaWE));
 		 assertTrue(porukaWE.getText().equals("Uspješno završeno."), "UplatePage: Title is not good!");
 		return uplatilac;
@@ -131,21 +96,18 @@ public class UplatePage extends PocetnaStranica {
 		String uplatilac = "Uplatilac " + Helper.getRandomString(5);
 		wait.until(ExpectedConditions.elementToBeClickable(pozivNaBrojWE));
 		pozivNaBrojWE.sendKeys("1987");
-		Thread.sleep(2000);
+		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
 		wait.until(ExpectedConditions.elementToBeClickable(odaberiBrojWE));
 		odaberiBrojWE.click();
-		Thread.sleep(1000);
-		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
+		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(uplatilacWE));
 		uplatilacWE.sendKeys(uplatilac);
 		wait.until(ExpectedConditions.elementToBeClickable(obrisiBrojWE));
 		obrisiBrojWE.click();
-//		wait.until(ExpectedConditions.elementToBeClickable(obrisiKupcaWE));
-//		obrisiKupcaWE.click();
-//		assertTrue(dodajBtnWE.isEnabled());
-		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
-		dodajBtnWE.click();
-		Thread.sleep(1000);
+		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
+		submitBtnWE.click();
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		wait.until(ExpectedConditions.visibilityOf(porukaWE));
 		assertTrue(porukaWE.getText().equals("Uspješno završeno."), "UplatePage: Title is not good!");
 		return uplatilac;
@@ -156,18 +118,17 @@ public class UplatePage extends PocetnaStranica {
 		String uplatilac = "Uplatilac " + Helper.getRandomString(5);
 		wait.until(ExpectedConditions.elementToBeClickable(kupacWE));
 		kupacWE.sendKeys("4100010 - Firma 2");
-		Thread.sleep(1000);
+		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
 		wait.until(ExpectedConditions.elementToBeClickable(odaberiKupca1WE));
 		odaberiKupca1WE.click();
-		// kupacWE.sendKeys(Keys.ENTER);
-		Thread.sleep(1000);
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		wait.until(ExpectedConditions.elementToBeClickable(uplatilacWE));
 		uplatilacWE.sendKeys(uplatilac);
 		wait.until(ExpectedConditions.elementToBeClickable(iznosWE));
 		iznosWE.sendKeys("100");
-		wait.until(ExpectedConditions.elementToBeClickable(dodaj2BtnWE));
-		dodaj2BtnWE.click();
-		Thread.sleep(1000);
+		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
+		submitBtnWE.click();
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		wait.until(ExpectedConditions.visibilityOf(porukaWE));
 		assertTrue(porukaWE.getText().equals("Uspješno završeno."), "UplatePage: Title is not good!");
 		return uplatilac;
@@ -175,17 +136,17 @@ public class UplatePage extends PocetnaStranica {
 	
 	public void verifikujUplatu(String uplatilac) throws InterruptedException {
 		WebDriverWait wait = new WebDriverWait(driver, 20);
-		Thread.sleep(2000);
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		wait.until(ExpectedConditions.elementToBeClickable(odustaniWE));
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].scrollIntoView(true);", odustaniWE);
 		odustaniWE.click();
-		Thread.sleep(1000);
-		wait.until(ExpectedConditions.elementToBeClickable(uplatilacFilterWE));
-		uplatilacFilterWE.click();
-		uplatilacFilterWE.sendKeys(uplatilac);
-		uplatilacFilterWE.sendKeys(Keys.ENTER);
-		Thread.sleep(1000);
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
+		wait.until(ExpectedConditions.elementToBeClickable(filterKolona6WE));
+		filterKolona6WE.click();
+		filterKolona6WE.sendKeys(uplatilac);
+		filterKolona6WE.sendKeys(Keys.ENTER);
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		wait.until(ExpectedConditions.visibilityOf(uplatilacImeWE));
 		assertTrue(uplatilacImeWE.getText().equals(uplatilac), "UplatePage: Ime uplatioca nije dobro!");
 	}

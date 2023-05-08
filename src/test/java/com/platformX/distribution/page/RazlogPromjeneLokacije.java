@@ -7,7 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import com.platformX.base.Kolone;
 
-public class RazlogPromjeneLokacije extends PocetnaStranicaPXD{
+public class RazlogPromjeneLokacije extends PocetnaStranicaPXD {
 	
 	public RazlogPromjeneLokacije (WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);

@@ -39,6 +39,8 @@ public class PX_031_Dodavanje_Uplate_Test extends BaseTest {
 		dnevniciUplataPage.verifikujDnevniciUplata();
 		dnevniciUplataPage.dodajDnevnikUplata(banka, ziroRacun);
 		dnevniciUplataPage.verifyDnevnikUplata(banka, ziroRacun);
+		dnevniciUplataPage.navigateToUplateSaStranice();
+		dnevniciUplataPage.navigateToDodajUplatuSaSDetalja();
 		UplatePage uplatePage = new UplatePage(driver);
 		String uplatilac = uplatePage.dodajUplatu();
 		uplatePage.verifikujUplatu(uplatilac);

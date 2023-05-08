@@ -124,17 +124,6 @@ public class TarifneGrupe extends PocetnaStranica {
 		return tarifnaGrupa;
 	}
 	
-	public void obrisiTarifnuGrupu() throws InterruptedException {
-		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
-		burgerBarWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(obrisiWE));
-		obrisiWE.click();
-		Thread.sleep(500);
-		wait.until(ExpectedConditions.elementToBeClickable(potvrdiBrisanjeWE));
-		potvrdiBrisanjeWE.click();
-		Thread.sleep(1000);
-	}
-	
 	public void verifikujBrisanjeTarifneGrupe(String tarifnaGrupa) throws InterruptedException {
 		wait.until(ExpectedConditions.elementToBeClickable(filterKolona2WE));
 		filterKolona2WE.click();

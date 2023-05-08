@@ -84,16 +84,6 @@ public class Djelatnosti extends PocetnaStranica {
 		return djelatnost;
 	}
 	
-	public void obrisiDjelatnost() throws InterruptedException {
-		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
-		burgerBarWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(obrisiWE));
-		obrisiWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(potvrdiBrisanjeBtnWE));
-		Thread.sleep(500);
-		potvrdiBrisanjeBtnWE.click();
-	}
-	
 	public void verifikujBrisanjeDjelatnosti(String djelatnost) throws InterruptedException {
 		wait.until(ExpectedConditions.elementToBeClickable(filterKolona3WE));
 		Thread.sleep(1000);

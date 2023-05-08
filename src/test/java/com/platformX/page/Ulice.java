@@ -90,16 +90,6 @@ public class Ulice extends PocetnaStranica {
 		return ulica;
 	}
 	
-	public void obrisiUlicu() throws InterruptedException {
-		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
-		burgerBarWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(obrisiWE));
-		obrisiWE.click();
-		Thread.sleep(1000);
-		wait.until(ExpectedConditions.elementToBeClickable(potvrdiBrisanjeWE));
-		potvrdiBrisanjeWE.click();
-	}
-	
 	public void verifikujBrisanjeUlice(String ulica) throws InterruptedException {
 		wait.until(ExpectedConditions.visibilityOf(filterKolona2WE));
 		Thread.sleep(1000);
