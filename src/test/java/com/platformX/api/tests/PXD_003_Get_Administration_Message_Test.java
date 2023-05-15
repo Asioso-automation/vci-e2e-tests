@@ -26,7 +26,7 @@ public class PXD_003_Get_Administration_Message_Test extends RestApiBase {
 		String token = jp1.getString("token");
 		// Get Administration Message
 		addHeader("Authorization", "Bearer " + token);
-		Response response2 = methodGET("http://10.10.10.21:8086/api/Administrations/Messages/Get/158");
+		Response response2 = methodGET("http://10.10.10.21:8086/api/Administrations/Messages/Get/135");
 		assertEquals(200, response2.getStatusCode());
 		JsonPath jp2 = new JsonPath(response2.asString());
 		assertNotNull(jp2.getString("id"), "Id not forwarded");
