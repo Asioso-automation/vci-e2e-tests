@@ -709,7 +709,10 @@ INSERT [TariffSystem].[PriceList] ([Id], [TariffGroupId], [SeasonId], [PriceCate
 INSERT [TariffSystem].[PriceList] ([Id], [TariffGroupId], [SeasonId], [PriceCategoryId], [TariffItemId], [Price], [VatRate], [DateFrom], [DateTo], [CalculationTypeId]) VALUES (15, 1, N'S', 1, 1, CAST(0.120000 AS Decimal(14, 6)), CAST(17 AS Numeric(18, 0)), CAST(N'2029-01-02' AS Date), CAST(N'2039-01-01' AS Date), 1)
 INSERT [TariffSystem].[PriceList] ([Id], [TariffGroupId], [SeasonId], [PriceCategoryId], [TariffItemId], [Price], [VatRate], [DateFrom], [DateTo], [CalculationTypeId]) VALUES (16, 1, N'S', 1, 1, CAST(0.135000 AS Decimal(14, 6)), CAST(17 AS Numeric(18, 0)), CAST(N'2039-01-02' AS Date), CAST(N'2049-01-01' AS Date), 1)
 INSERT [TariffSystem].[PriceList] ([Id], [TariffGroupId], [SeasonId], [PriceCategoryId], [TariffItemId], [Price], [VatRate], [DateFrom], [DateTo], [CalculationTypeId]) VALUES (17, 1, N'S', 1, 1, CAST(0.010000 AS Decimal(14, 6)), CAST(17 AS Numeric(18, 0)), CAST(N'2049-01-02' AS Date), CAST(N'2099-01-01' AS Date), 1)
-
+INSERT [TariffSystem].[PriceList] ([Id], [TariffGroupId], [SeasonId], [PriceCategoryId], [TariffItemId], [Price], [VatRate], [DateFrom], [DateTo], [CalculationTypeId]) VALUES (18, 24, N'S', 1, 1, CAST(0.110000 AS Decimal(14, 6)), CAST(17 AS Numeric(18, 0)), CAST(N'2020-10-01' AS Date), CAST(N'2029-01-01' AS Date), 1)
+INSERT [TariffSystem].[PriceList] ([Id], [TariffGroupId], [SeasonId], [PriceCategoryId], [TariffItemId], [Price], [VatRate], [DateFrom], [DateTo], [CalculationTypeId]) VALUES (19, 24, N'S', 1, 1, CAST(0.120000 AS Decimal(14, 6)), CAST(17 AS Numeric(18, 0)), CAST(N'2029-01-02' AS Date), CAST(N'2039-01-01' AS Date), 1)
+INSERT [TariffSystem].[PriceList] ([Id], [TariffGroupId], [SeasonId], [PriceCategoryId], [TariffItemId], [Price], [VatRate], [DateFrom], [DateTo], [CalculationTypeId]) VALUES (20, 24, N'S', 1, 1, CAST(0.135000 AS Decimal(14, 6)), CAST(17 AS Numeric(18, 0)), CAST(N'2039-01-02' AS Date), CAST(N'2049-01-01' AS Date), 1)
+INSERT [TariffSystem].[PriceList] ([Id], [TariffGroupId], [SeasonId], [PriceCategoryId], [TariffItemId], [Price], [VatRate], [DateFrom], [DateTo], [CalculationTypeId]) VALUES (21, 24, N'S', 1, 1, CAST(0.010000 AS Decimal(14, 6)), CAST(17 AS Numeric(18, 0)), CAST(N'2049-01-02' AS Date), CAST(N'2099-01-01' AS Date), 1)
 SET IDENTITY_INSERT [TariffSystem].[PriceList] OFF
 
 
