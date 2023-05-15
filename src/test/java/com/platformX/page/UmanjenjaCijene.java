@@ -48,7 +48,7 @@ public class UmanjenjaCijene extends PocetnaStranica {
 	}
 	
 	public String dodajUmanjenjeCijene() {
-		String brojMjeseci = Helper.getRandomNumber(2);
+		String brojMjeseci = Helper.getRandomNumberInRange(1, 9999);
 		String procenat = Helper.getRandomNumber(2);
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
 		dodajBtnWE.click();
@@ -78,7 +78,7 @@ public class UmanjenjaCijene extends PocetnaStranica {
 	}
 	
 	public String izmjeniUmanjenjeCijene() throws InterruptedException {
-		String brojMjeseci = Helper.getRandomNumber(2);
+		String brojMjeseci = Helper.getRandomNumberInRange(1, 9999);
 		String procenat = Helper.getRandomNumber(2);
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		Thread.sleep(1000);
