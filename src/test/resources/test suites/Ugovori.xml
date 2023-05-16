@@ -1,29 +1,39 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="Ugovori validacije">
-	<test name="Ugovori validacije">
+<suite name="Ugovori PX">
+	<test name="Ugovori PX">
 	<!--Duration of suite execution: ~10 minutes-->
 		<classes>
 		
 		<!--PlatformX-->
 			
 			<class
-				name="com.platformX.tests.QA_014_Neuspjesno_Dodavanje_Ugovora_Test1" />		
+				name="com.platformX.tests.PX_042_Dodavanje_Ugovora_Test" />		
 			<class
-				name="com.platformX.tests.QA_015_Neuspjesno_Dodavanje_Ugovora_Test2" />
+				name="com.platformX.tests.PX_043_Neuspjesno_Dodavanje_Ugovora_Test1" />
 			<class
-				name="com.platformX.tests.QA_016_Neuspjesno_Dodavanje_Ugovora_Test3" />
+				name="com.platformX.tests.PX_044_Neuspjesno_Dodavanje_Ugovora_Test2" />
 			<class
-				name="com.platformX.tests.QA_017_Neuspjesno_Dodavanje_Ugovora_Test4" />
+				name="com.platformX.tests.PX_045_Neuspjesno_Dodavanje_Ugovora_Test3" />
 			<class
-				name="com.platformX.tests.QA_018_Neuspjesno_Dodavanje_Ugovora_Test5" />
+				name="com.platformX.tests.PX_046_Neuspjesno_Dodavanje_Ugovora_Test4" />
 			<class
-				name="com.platformX.tests.QA_019_Neuspjesno_Dodavanje_Ugovora_Test6" />
+				name="com.platformX.tests.PX_047_Provjera_Validacija_Na_Ugovoru_Test1" />
 			<class
-				name="com.platformX.tests.QA_020_Neuspjesno_Dodavanje_Ugovora_Test7" />
+				name="com.platformX.tests.PX_048_Provjera_Validacija_Na_Ugovoru_Test2" />
 			<class
-				name="com.platformX.tests.QA_021_Provjera_Validacija_Na_Ugovoru_Test1" />
+				name="com.platformX.tests.PX_049_Dodavanje_Potpisanog_Ugovora_Test" />
 			<class
-				name="com.platformX.tests.QA_022_Provjera_Validacija_Na_Ugovoru_Test2" />												
+				name="com.platformX.tests.PX_050_Izmjena_Ugovora_Test" />
+			<class
+				name="com.platformX.tests.PX_051_Provjera_Validacija_Na_Izmjeni_Ugovora_Test" />
+			<class
+				name="com.platformX.tests.PX_052_Deaktivacija_Ugovora_Test" />
+			<class
+				name="com.platformX.tests.PX_053_Neuspjesna_Deaktivacija_Ugovora_Test" />
+			<class
+				name="com.platformX.tests.PX_054_Odbacivanje_Ugovora_Test" />
+			<class
+				name="com.platformX.tests.PX_057_Provjera_Validacija_Na_Preregistraciji_Ugovora_Test" />
 		</classes>
 	</test>
 </suite>

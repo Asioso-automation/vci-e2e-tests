@@ -16,7 +16,7 @@ public class PX_047_Provjera_Validacija_Na_Ugovoru_Test1 extends BaseTest {
 
 	// Provjera klijentskih validacija obaveznih polja na formi za dodavanje ugovora
 	
-	@Test (enabled = false)
+	@Test
 	public void px_047_provjera_validacija_na_ugovoru_test1() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
@@ -29,5 +29,3 @@ public class PX_047_Provjera_Validacija_Na_Ugovoru_Test1 extends BaseTest {
 	}
 
 }
-
-// TEST JE disabled JER TRENUTNO NE PROLAZI ZBOG MANJKA PODATAKA NA APLIKACIJI (POTREBNA TARIFNA GRUPA KOJA NE PODRZAVA REAKTIVNO MJERENJE ZA METODU ZA DODAVANJE UGOVORA - NAKON TOGA IZBACITI LINIJU ZA POPUNJAVANJE POLJA REAKTIVNO BROJILO/REAKTIVNA KONSTANTA)
