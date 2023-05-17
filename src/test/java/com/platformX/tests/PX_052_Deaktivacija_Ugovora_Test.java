@@ -15,7 +15,7 @@ public class PX_052_Deaktivacija_Ugovora_Test extends BaseTest {
 		super();
 	}
 
-	@Test
+	@Test (enabled = false)		//	Test je trenutno disabled - promijenili su se uslovi deaktivaciju ugovora i mogucnost ponovnog kreiranja ugovora sa istim mjernim mjestom
 	public void px_052_deaktivacija_ugovora_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();

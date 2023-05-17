@@ -979,6 +979,14 @@ public class Ugovori extends PocetnaStranica {
 							.equals("Datum deaktivacije mora biti u aktivnom obračunskom periodu ili u budućnosti."),
 					"Deaktivcija ugovora: Validaciona poruka nije dobra!");
 		}
+//		try {
+//			wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
+//		}
+//		catch (Exception e) {
+//			wait.until(ExpectedConditions.visibilityOf(deaktivacijaPorukaWE));
+//			assertTrue(deaktivacijaPorukaWE.getText().equals("Datum deaktivacije mora biti u aktivnom obračunskom periodu ili u budućnosti."),
+//					"Deaktivcija ugovora: Validaciona poruka nije dobra!");
+//		}
 	}
 
 	public void iskljuciUgovor(String datumIskljucenja) throws InterruptedException {

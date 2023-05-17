@@ -15,7 +15,7 @@ public class PX_045_Neuspjesno_Dodavanje_Ugovora_Test3 extends BaseTest {
 		super();
 	}
 	
-	@Test (description= "Obrazac za broj protokola ne postoji")
+	@Test (description = "Obrazac za broj protokola ne postoji")
 	public void px_045_nesupjesno_dodavanje_ugovora_test3() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
