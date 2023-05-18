@@ -139,5 +139,22 @@ public class MjernaMjesta extends PocetnaStranicaPXD {
 	   String mjernoMjesto = eicTabelaWE.getText();
 	   return mjernoMjesto;
 	}
+	
+	 public String urediMjernoMjesto() throws InterruptedException {
+		 String sifraMjernogMjesta = Helper.getRandomNumber(6);
+		 wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
+		 Thread.sleep(800);																// ne radi burgerBarWE.click() bez Thread.sleep
+		 burgerBarWE.click();
+		 wait.until(ExpectedConditions.elementToBeClickable(urediWE));
+		 urediWE.click();
+		 wait.until(ExpectedConditions.elementToBeClickable(poljeSifraWE));
+		 poljeSifraWE.click();
+		 poljeSifraWE.clear();
+		 poljeSifraWE.sendKeys(sifraMjernogMjesta);
+		 wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
+		 submitBtnWE.click();
+		 wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
+		 return sifraMjernogMjesta; 
+	 }
 
 }
