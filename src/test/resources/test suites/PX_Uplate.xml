@@ -1,0 +1,39 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Uplate PX">
+	<test name="Uplate PX">
+	<!--Duration of suite execution: ~10 minutes-->
+		<classes>
+		
+		<!--PlatformX-->
+			
+			<class
+				name="com.platformX.tests.PX_022_Dodavanje_Banke_Test" />		
+			<class
+				name="com.platformX.tests.PX_023_Izmjena_Banke_Test" />
+			<class
+				name="com.platformX.tests.PX_024_Brisanje_Banke_Test" />
+			<class
+				name="com.platformX.tests.PX_025_Neuspjesno_Dodavanje_Banke" />
+			<class
+				name="com.platformX.tests.PX_026_Dodavanje_Ziro_Racuna_Test" />
+			<class
+				name="com.platformX.tests.PX_027_Izmjena_Ziro_Racuna_Test" />
+			<class
+				name="com.platformX.tests.PX_028_Brisanje_Ziro_Racuna_Test" />
+			<class
+				name="com.platformX.tests.PX_029_Neuspjesno_Dodavanje_Ziro_Racuna_Test" />
+			<class
+				name="com.platformX.tests.PX_030_Dodavanje_Dnevnika_Uplata_Test" />
+			<class
+				name="com.platformX.tests.PX_031_Dodavanje_Uplate_Test" />
+			<class
+				name="com.platformX.tests.PX_032_Dodavanje_Uplate_Poziv_Na_Broj_Test1" />
+			<class
+				name="com.platformX.tests.PX_033_Dodavanje_Uplate_Poziv_Na_Broj_Test2" />
+			<class
+				name="com.platformX.tests.PX_034_Preknjizavanje_Dnevnika_Uplata_Test" />
+			<class
+				name="com.platformX.tests.PX_035_Dodavanje_Uplate_Sa_Kupcem_Test" />
+		</classes>
+	</test>
+</suite>

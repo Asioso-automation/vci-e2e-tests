@@ -1,6 +1,6 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="TestoviPXDVerifikacijeSekcija">
-	<test name="TestoviPXDVerifikacijeSekcija">
+<suite name="Verifikacije sekcija PXD">
+	<test name="Verifikacije sekcija PXD">
 	<!--Duration of suite execution: ~5 minutes-->
 		<classes>
 		
@@ -26,7 +26,6 @@
 				name="com.platformX.distribution.tests.PX_DIST_011_Verifikacija_Sekcije_Obracun_Test" />
 			<class
 				name="com.platformX.distribution.tests.PX_DIST_012_Verifikacija_Sekcije_Administracija_Test" />
-			
 		</classes>
 	</test>
 </suite>

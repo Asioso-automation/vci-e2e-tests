@@ -75,11 +75,11 @@ public class Banke extends PocetnaStranica {
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		wait.until(ExpectedConditions.visibilityOf(podatakTabela2WE));
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
-//		try {
-//			assertTrue(podatakTabela2WE.getText().equals(banka), "Banke: Ime banke nije dobro!");
-//		} catch (Exception e) {
-		assertTrue(podatakTabela2WE.getText().contains(banka), "Banke: Ime banke nije dobro!");
-//		}
+		try {
+			assertTrue(podatakTabela2WE.getText().equals(banka), "Banke: Ime banke nije dobro!");
+		} catch (Exception e) {
+			assertTrue(podatakTabela2WE.getText().contains(banka), "Banke: Ime banke nije dobro!");
+		}
 		String bankaTabela = podatakTabela1WE.getText() + " - " + banka;
 		return bankaTabela;
 	}

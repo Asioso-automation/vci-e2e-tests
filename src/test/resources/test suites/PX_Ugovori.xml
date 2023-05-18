@@ -33,6 +33,10 @@
 			<class
 				name="com.platformX.tests.PX_054_Odbacivanje_Ugovora_Test" />
 			<class
+				name="com.platformX.tests.PX_055_Neuspjesno_Odbacivanje_Ugovora_Test" />
+			<class
+				name="com.platformX.tests.PX_056_Preregistracija_Ugovora_Test" />		
+			<class
 				name="com.platformX.tests.PX_057_Provjera_Validacija_Na_Preregistraciji_Ugovora_Test" />
 		</classes>
 	</test>

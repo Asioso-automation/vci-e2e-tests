@@ -1,6 +1,6 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="UgovoriPXD">
-	<test name="UgovoriPXD">
+<suite name="Ugovori PXD">
+	<test name="Ugovori PXD">
 	<!--Duration of suite execution: ~10 minutes-->
 		<classes>
 		

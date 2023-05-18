@@ -21,9 +21,6 @@ public class UplatePage extends PocetnaStranica {
 	@FindBy(xpath = "//tr[2]/td[6]") 
 	private WebElement uplatilacImeWE;
 	
-	@FindBy(xpath = "//span[@class='v-btn__content' and text()='Odustani']") 
-	private WebElement odustaniWE;
-	
 	// Kreiraj uplatu elementi
 	
 	@FindBy(xpath = "//div[1]/div/div/div/div[1]/div[1]/input[1]") 
@@ -137,10 +134,10 @@ public class UplatePage extends PocetnaStranica {
 	public void verifikujUplatu(String uplatilac) throws InterruptedException {
 		WebDriverWait wait = new WebDriverWait(driver, 20);
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
-		wait.until(ExpectedConditions.elementToBeClickable(odustaniWE));
+		wait.until(ExpectedConditions.elementToBeClickable(odustaniBtnWE));
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("arguments[0].scrollIntoView(true);", odustaniWE);
-		odustaniWE.click();
+		js.executeScript("arguments[0].scrollIntoView(true);", odustaniBtnWE);
+		odustaniBtnWE.click();
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		wait.until(ExpectedConditions.elementToBeClickable(filterKolona6WE));
 		filterKolona6WE.click();

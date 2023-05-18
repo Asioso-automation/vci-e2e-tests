@@ -122,8 +122,8 @@ public class PocetnaStranica extends PageBase {
 	@FindBy(xpath = "//button[@type='submit']")
 	protected WebElement submitBtnWE;
 	
-	@FindBy(xpath = "//span[@class='v-btn__content' and text()='Odustani']") 
-	private WebElement odustaniBtnWE;
+	@FindBy(xpath = "//div[@class='backText' and text()='Odustani']")
+	protected WebElement odustaniBtnWE;
 	
 
 	// Sekcije

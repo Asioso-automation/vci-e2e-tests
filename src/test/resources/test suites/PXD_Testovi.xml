@@ -1,6 +1,6 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="TestoviPXD">
-	<test name="TestoviPXD">
+<suite name="Testovi PXD">
+	<test name="Testovi PXD">
 	<!--Duration of suite execution: ~25 minutes-->
 		<classes>
 		

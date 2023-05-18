@@ -408,6 +408,7 @@ public class ElektroenergetskeSaglasnosti extends PocetnaStranicaPXD {
 	}
 	
 	public void urediElektroenergetskuSaglasnost() throws InterruptedException {
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		burgerBarWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(urediWE));

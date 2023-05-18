@@ -1,6 +1,6 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="TestoviPXDBrisanjeStavki">
-	<test name="TestoviPXDBrisanjeStavki">
+<suite name="Brisanje stavki PXD">
+	<test name="Brisanje stavki PXD">
 	<!--Duration of suite execution: ~6 minutes-->
 		<classes>
 		
