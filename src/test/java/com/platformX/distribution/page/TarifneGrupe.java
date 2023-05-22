@@ -55,7 +55,7 @@ public class TarifneGrupe extends PocetnaStranicaPXD {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Tarifne grupe')]")));
-		verifikacijaZajednickihElemenata("TARIFNI SISTEM", "TARIFNE GRUPE", "TARIFNE GRUPE", 9, false, false, true, true, true, true, false);
+		verifikacijaZajednickihElemenata("Tarifni Sistem", "Tarifne Grupe", "TARIFNE GRUPE", 9, false, false, true, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNazivWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaEbixSifraWE));

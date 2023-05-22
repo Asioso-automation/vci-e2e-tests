@@ -17,7 +17,7 @@ public class SistemiZastiteOdIndDodira extends PocetnaStranicaPXD {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Sistemi zaštite od indirektnog dodira')]")));
-		verifikacijaZajednickihElemenata("ŠIFARNICI", "SISTEMI ZAŠTITE OD INDIREKTNOG DODIRA", "SISTEMI ZAŠTITE OD INDIREKTNOG DODIRA", 3, false, false, true, true, true, true, false);
+		verifikacijaZajednickihElemenata("Šifarnici", "Sistemi Zaštite Od Indirektnog Dodira", "SISTEMI ZAŠTITE OD INDIREKTNOG DODIRA", 3, false, false, true, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNazivWE));
 	}

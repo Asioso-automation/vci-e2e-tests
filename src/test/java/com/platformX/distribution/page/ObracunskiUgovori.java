@@ -62,7 +62,7 @@ public class ObracunskiUgovori extends PocetnaStranicaPXD {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Obračunski ugovori')]")));
-		verifikacijaZajednickihElemenata("UGOVORI", "OBRAČUNSKI UGOVORI", "OBRAČUNSKI UGOVORI", 13, false, false, true, true, true, true, true);
+		verifikacijaZajednickihElemenata("Ugovori", "Obračunski Ugovori", "OBRAČUNSKI UGOVORI", 13, false, false, true, true, true, true, true);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKupacWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMjMjestoWE));

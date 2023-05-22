@@ -17,7 +17,7 @@ public class DnevnikIzmjena extends PocetnaStranicaPXD {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Dnevnik izmjena')]")));
-		verifikacijaZajednickihElemenata("ADMINISTRACIJA", "DNEVNIK IZMJENA", "DNEVNIK IZMJENA", 6, false, false, false, false, true, true, false);
+		verifikacijaZajednickihElemenata("Administracija", "Dnevnik Izmjena", "DNEVNIK IZMJENA", 6, false, false, false, false, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTabelaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumWE));
