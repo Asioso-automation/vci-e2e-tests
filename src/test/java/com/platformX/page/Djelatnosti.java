@@ -19,15 +19,6 @@ public class Djelatnosti extends PocetnaStranica {
 	
 	@FindBy(xpath = "//div[2]/div/div/div[1]/div/input")
 	private WebElement nazivDjelatnostiWE;
-	
-	@FindBy(xpath = "//div[2]/button[1]")
-	private WebElement dodajDjelatnostBtnWE;
-	
-	@FindBy(xpath = "//td[4]/button")
-	private WebElement burgerBarWE;
-	
-	@FindBy(xpath = "//div[7]/div/div/div[3]/button[2]")
-	private WebElement potvrdiBrisanjeBtnWE;
 
 	public Djelatnosti(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);
@@ -47,13 +38,14 @@ public class Djelatnosti extends PocetnaStranica {
 		String djelatnost = "Djelatnost " + Helper.getRandomString(5);
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
 		dodajBtnWE.click();
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		wait.until(ExpectedConditions.elementToBeClickable(sifraDjelatnostiWE));
 		sifraDjelatnostiWE.sendKeys(Helper.getRandomString(5));
 		wait.until(ExpectedConditions.elementToBeClickable(nazivDjelatnostiWE));
 		nazivDjelatnostiWE.sendKeys(djelatnost);
-		wait.until(ExpectedConditions.elementToBeClickable(dodajDjelatnostBtnWE));
-		dodajDjelatnostBtnWE.click();
-		Thread.sleep(1000);
+		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
+		submitBtnWE.click();
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		return djelatnost;
 	}
 	
@@ -75,12 +67,14 @@ public class Djelatnosti extends PocetnaStranica {
 		burgerBarWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(urediWE));
 		urediWE.click();
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		wait.until(ExpectedConditions.elementToBeClickable(nazivDjelatnostiWE));
 		nazivDjelatnostiWE.click();
 		nazivDjelatnostiWE.clear();
 		nazivDjelatnostiWE.sendKeys(djelatnost);
-		wait.until(ExpectedConditions.elementToBeClickable(dodajDjelatnostBtnWE));
-		dodajDjelatnostBtnWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
+		submitBtnWE.click();
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		return djelatnost;
 	}
 	
