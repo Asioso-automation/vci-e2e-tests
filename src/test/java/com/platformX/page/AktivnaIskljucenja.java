@@ -13,8 +13,6 @@ public class AktivnaIskljucenja extends PocetnaStranica {
 		super(driver);
 	}
 	
-	// test
-	
 	public void verifikujAktivnaIskljucenja() throws FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(

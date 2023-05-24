@@ -1,17 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="5" total="6" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="1259" started-at="2023-04-01T21:46:38Z" finished-at="2023-04-01T21:46:39Z">
+  <suite name="Default suite" duration-ms="27922" started-at="2023-05-24T11:25:56Z" finished-at="2023-05-24T11:26:23Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="1259" started-at="2023-04-01T21:46:38Z" finished-at="2023-04-01T21:46:39Z">
-      <class name="com.platformX.api.tests.PXD_001_Authentication_Test">
-        <test-method status="PASS" signature="pxd_authentication_test1()[pri:0, instance:com.platformX.api.tests.PXD_001_Authentication_Test@1f53a5dc]" name="pxd_authentication_test1" duration-ms="1246" started-at="2023-04-01T23:46:38Z" description="positive test case" finished-at="2023-04-01T23:46:39Z">
+    <test name="Default test" duration-ms="27922" started-at="2023-05-24T11:25:56Z" finished-at="2023-05-24T11:26:23Z">
+      <class name="com.platformX.tests.PX_015_Neuspjesno_Dodavanje_Umanjenja_Cijene_Test">
+        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.platformX.tests.PX_015_Neuspjesno_Dodavanje_Umanjenja_Cijene_Test@7f552bd3]" name="setUp" is-config="true" duration-ms="5566" started-at="2023-05-24T13:25:56Z" finished-at="2023-05-24T13:26:01Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- pxd_authentication_test1 -->
-      </class> <!-- com.platformX.api.tests.PXD_001_Authentication_Test -->
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="px_015_neuspjesno_dodavanje_umanjenja_cijene_test()[pri:0, instance:com.platformX.tests.PX_015_Neuspjesno_Dodavanje_Umanjenja_Cijene_Test@7f552bd3]" name="px_015_neuspjesno_dodavanje_umanjenja_cijene_test" duration-ms="21654" started-at="2023-05-24T13:26:01Z" description="pokusaj dodavanja umanjenja cijene za postojeći broj mjeseci" finished-at="2023-05-24T13:26:23Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- px_015_neuspjesno_dodavanje_umanjenja_cijene_test -->
+        <test-method status="PASS" signature="cleanUp()[pri:0, instance:com.platformX.tests.PX_015_Neuspjesno_Dodavanje_Umanjenja_Cijene_Test@7f552bd3]" name="cleanUp" is-config="true" duration-ms="682" started-at="2023-05-24T13:26:23Z" finished-at="2023-05-24T13:26:23Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- cleanUp -->
+      </class> <!-- com.platformX.tests.PX_015_Neuspjesno_Dodavanje_Umanjenja_Cijene_Test -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
