@@ -3,13 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="scp.test.SCP_001_LogIn_LogOut_Test">
+      <class name="com.platformX.distribution.tests.PX_DIST_063_Dodavanje_Ugovora_O_Prikljucenju_Test">
         <methods>
           <include name="setUp"/>
           <include name="cleanUp"/>
-          <include name="scp_001_logIn_logOut_test"/>
+          <include name="px_dist_063_dodavanje_ugovora_o_prikljucenju_test"/>
         </methods>
-      </class> <!-- scp.test.SCP_001_LogIn_LogOut_Test -->
+      </class> <!-- com.platformX.distribution.tests.PX_DIST_063_Dodavanje_Ugovora_O_Prikljucenju_Test -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

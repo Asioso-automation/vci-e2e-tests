@@ -119,7 +119,7 @@ public class DnevniciUplata extends PocetnaStranica {
 		wait.until(ExpectedConditions.elementToBeClickable(filterKolona2WE));
 		filterKolona2WE.sendKeys(bankaTabela);
 		wait.until(ExpectedConditions.elementToBeClickable(filterKolona3WE));
-		filterKolona3WE.sendKeys(bankaTabela);
+		filterKolona3WE.sendKeys(ziroRacunTabela);
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		assertTrue(podatakTabela2WE.getText().equals(bankaTabela), "Dnevnici uplata: Dnevnik uplata nije pronađena!");
 		assertTrue(podatak2Tabela3WE.getText().equals(ziroRacunTabela), "Dnevnici uplata: Dnevnik uplata nije pronađena!");

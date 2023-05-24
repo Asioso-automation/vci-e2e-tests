@@ -28,7 +28,7 @@ public class PocetnaStranicaPXD extends PageBase {
 	@FindBy(xpath = "//div[contains(text(), 'Odjavi se')]")
 	protected WebElement izlogujSeWE;
 	
-	@FindBy(xpath = "//*[contains(@class, 'v-btn__content') and contains(text(), 'Briši')]")
+	@FindBy(xpath = "//*[contains(@class, 'v-btn__content') and contains(text(), 'BriÅ¡i')]")
 	protected WebElement potvrdiBrisanjeBtnWE;
 	
 	@FindBy(xpath = "//td[2]/div/div/div/div[1]/input")
@@ -41,7 +41,7 @@ public class PocetnaStranicaPXD extends PageBase {
 	private WebElement brisanjePopUpWE;
 	
 	@FindBy(xpath = "//button[@type='submit']")
-	protected WebElement submitBtnWE;													// submit - DODAJ/UREDI button na formama za dodavanje/uređivanje Šifarnika
+	protected WebElement submitBtnWE;													// submit - DODAJ/UREDI button na formama za dodavanje/ureÄ‘ivanje Å ifarnika
 	
 	@FindBy(xpath = "//div[contains(@class, 'menuable__content__active')]")
 	protected WebElement aktivniLookupWE;
@@ -283,7 +283,7 @@ public class PocetnaStranicaPXD extends PageBase {
 	@FindBy(xpath = "//div[contains(text(), 'Razlog neizvršavanja zahtjeva') and @class='v-list-item__title']")
 	protected WebElement razlogNeizvrsavanjaZahtjevaWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Aktivna isključenja mjernih mjesta') and @class='v-list-item__title']")
+	@FindBy(xpath = "//div[contains(text(), 'Aktivna iskljušenja mjernih mjesta') and @class='v-list-item__title']")
 	protected WebElement aktivnaIskljucenjaMjernihMjestaWE;
 	
 	@FindBy(xpath = "//div[contains(text(), 'Indirektna mjerna mjesta') and @class='v-list-item__title']")
@@ -466,14 +466,14 @@ public class PocetnaStranicaPXD extends PageBase {
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		if (rezultat==true) {
 			try {
-				verifikujPoruku("Brisanje je uspješno završeno");
+				verifikujPoruku("Brisanje je uspjeÅ¡no zavrÅ¡eno");
 			}
 			catch (Exception e) {
 				wait.until(ExpectedConditions.visibilityOf(sekcijaBtnWE));
 			}
 		}
 		else {
-			verifikujPoruku("Brisanje ovog zapisa nije moguće.");
+			verifikujPoruku("Brisanje ovog zapisa nije moguÄ‡e.");
 		}
 	}
 	
