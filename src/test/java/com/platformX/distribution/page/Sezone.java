@@ -60,11 +60,12 @@ public class Sezone extends PocetnaStranicaPXD {
 	}
 	
 	public String dodajSezonu() throws InterruptedException {
-		String naziv = "Sezona" + Helper.getRandomString(4);
+		String naziv = "Sezona " + Helper.getRandomString(4);
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
 		dodajBtnWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(IdWE));
-		IdWE.sendKeys("T");
+		// IdWE.sendKeys("T");
+		IdWE.sendKeys(Helper.getRandomString(1));
 		wait.until(ExpectedConditions.elementToBeClickable(nazivSezoneWE));
 		nazivSezoneWE.sendKeys(naziv);
 		wait.until(ExpectedConditions.elementToBeClickable(odMjesecWE));

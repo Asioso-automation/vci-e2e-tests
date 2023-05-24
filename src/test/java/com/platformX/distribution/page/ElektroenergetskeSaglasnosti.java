@@ -82,7 +82,7 @@ public class ElektroenergetskeSaglasnosti extends PocetnaStranicaPXD {
 	@FindBy(xpath = "//div[19]/div[2]/div/div/div[1]/div[1]/input[1]")  
 	 private WebElement rokVazenjaWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Uspješno završeno.')]")
+	@FindBy(xpath = "//div[contains(text(), 'UspjeÅ¡no zavrÅ¡eno.')]")
 	private WebElement porukaWE;
 	
 	@FindBy(xpath = "//tr[2]/td[2]")
@@ -145,10 +145,10 @@ public class ElektroenergetskeSaglasnosti extends PocetnaStranicaPXD {
 	private WebElement stambenioDioWE;
 	
 	@FindBy(xpath = "//div[28]/div[2]/div/div/div[1]/div[1]/input[1]")  
-	 private WebElement rokVazenjaNWE;
+	private WebElement rokVazenjaNWE;
 	
 	@FindBy(xpath = "//div[@class='v-card__title subtitle-2 title-border text-uppercase mb-5']")  
-	 private WebElement naslovWE;
+	private WebElement naslovWE;
 	
 	public void verifikujElektroenergetskeSaglasnosti() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
@@ -232,7 +232,7 @@ public class ElektroenergetskeSaglasnosti extends PocetnaStranicaPXD {
 		vrstaObjektaInputWE.sendKeys(Keys.ENTER);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 //	tip EES 1 - Domacinstva
-		if (tipEES=="Domaćinstva") {
+		if (tipEES=="DomaÄ‡instva") {
 		js.executeScript("arguments[0].scrollIntoView(true);", odobrenaPrikljucnaSnagaWE);
 		wait.until(ExpectedConditions.elementToBeClickable(odobrenaPrikljucnaSnagaWE));
 		odobrenaPrikljucnaSnagaWE.sendKeys(Helper.getRandomNumber(1));
@@ -383,6 +383,7 @@ public class ElektroenergetskeSaglasnosti extends PocetnaStranicaPXD {
 			rokVazenjaNWE.sendKeys(Keys.ARROW_DOWN);
 			rokVazenjaNWE.sendKeys(Keys.ENTER);
 		}
+		js.executeScript("arguments[0].scrollIntoView(true);", datumBtn3WE);
 		wait.until(ExpectedConditions.elementToBeClickable(datumBtn3WE));
 		datumBtn3WE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(datumKalendar2WE));

@@ -16,6 +16,7 @@ public class PX_DIST_050_Dodavanje_Uredjivanje_Brisanje_Sezone_Test extends Base
 
 	@Test
 	public void px_dist_050_dodavanje_uredjivanje_brisanje_sezone_test() throws Exception {
+		// TODO Razbiti test u 3 dijela: kreiranje, uredjivanje i brisanje
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
@@ -24,10 +25,10 @@ public class PX_DIST_050_Dodavanje_Uredjivanje_Brisanje_Sezone_Test extends Base
 		Sezone sezone = homePage.navigirajNaSezone();
 		sezone.verifikujSezone();
 		String sezona = sezone.dodajSezonu();
-		sezone.verifikujPoruku("UspjeÅ¡no zavrÅ¡eno.");
+		sezone.verifikujPoruku("Uspješno završeno.");
 		sezone.verifikujSezonu(sezona);
 		String novaSezona = sezone.urediSezonu();
-		sezone.verifikujPoruku("UspjeÅ¡no zavrÅ¡eno.");
+		sezone.verifikujPoruku("Uspješno završeno.");
 		sezone.verifikujSezonu(novaSezona);
 		sezone.obrisiStavku(true);
 		sezone.verifikujBrisanjeStavke(true, novaSezona);
