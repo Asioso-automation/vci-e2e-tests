@@ -28,9 +28,6 @@ public class PocetnaStranicaPXD extends PageBase {
 	@FindBy(xpath = "//div[contains(text(), 'Odjavi se')]")
 	protected WebElement izlogujSeWE;
 	
-	@FindBy(xpath = "//*[contains(@class, 'v-btn__content') and contains(text(), 'BriÅ¡i')]")
-	protected WebElement potvrdiBrisanjeBtnWE;
-	
 	@FindBy(xpath = "//td[2]/div/div/div/div[1]/input")
 	protected WebElement filterKolona2WE;
 	
@@ -237,12 +234,6 @@ public class PocetnaStranicaPXD extends PageBase {
 	
 	@FindBy(xpath = "//div[contains(text(), 'Klase tačnosti naponskog tran.') and @class='v-list-item__title']")
 	protected WebElement klaseTacnostiNaponskogTranWE;
-
-//	@FindBy(xpath = "//div[contains(text(), 'Djelatnosti') and @class='v-list-item__title']")
-//	protected WebElement djelatnostiWE;
-//	
-//	@FindBy(xpath = "//div[contains(text(), 'Sektor djelatnosti') and @class='v-list-item__title']")
-//	protected WebElement sektorDjelatnostiWE;
 
 	@FindBy(xpath = "//div[contains(text(), 'Kategorije potrošnje') and @class='v-list-item__title']")
 	protected WebElement kategorijePotrosnjeWE;
@@ -466,14 +457,14 @@ public class PocetnaStranicaPXD extends PageBase {
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		if (rezultat==true) {
 			try {
-				verifikujPoruku("Brisanje je uspjeÅ¡no zavrÅ¡eno");
+				verifikujPoruku("Brisanje je uspješno završeno");
 			}
 			catch (Exception e) {
 				wait.until(ExpectedConditions.visibilityOf(sekcijaBtnWE));
 			}
 		}
 		else {
-			verifikujPoruku("Brisanje ovog zapisa nije moguÄ‡e.");
+			verifikujPoruku("Brisanje ovog zapisa nije moguće.");
 		}
 	}
 	

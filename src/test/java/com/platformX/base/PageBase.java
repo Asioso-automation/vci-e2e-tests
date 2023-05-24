@@ -82,7 +82,7 @@ public abstract class PageBase {
 	@FindBy(xpath = "//i[contains(@class, 'fa-info')]")
 	protected WebElement infoBtnWE;
 	
-	@FindBy(xpath = "//*[contains(@class, 'v-btn__content') and contains(text(), 'Briöi')]")
+	@FindBy(xpath = "//*[contains(@class, 'v-btn__content') and contains(text(), 'Bri≈°i')]")
 	protected WebElement potvrdiBrisanjeBtnWE;
 	
 
