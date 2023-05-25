@@ -1907,8 +1907,6 @@ public class PocetnaStranica extends PageBase {
 		filterKupacWE.sendKeys(kupac);
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(@class, 'v-list-item__title') and contains(., '" + kupac + "')]")));
 		driver.findElement(By.xpath("//div[contains(@class, 'v-list-item__title') and contains(., '" + kupac + "')]")).click();
-//		Thread.sleep(2000);
-//		pregledati metodu
 	}
 	
 	public void pretraziMjernaMjesta(String mjernoMjesto) throws InterruptedException {
