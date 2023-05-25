@@ -44,6 +44,8 @@
 				name="com.platformX.distribution.tests.PX_DIST_067_Uredjivanje_Pravnog_Lica_Test" />
 			<class
 				name="com.platformX.distribution.tests.PX_DIST_070_Uredjivanje_Fizickog_Lica_Test" />
+			<class
+				name="com.platformX.distribution.tests.PX_DIST_074_Uredjivanje_Mjernog_Mjesta_Test" />
 		</classes>
 	</test>
 </suite>

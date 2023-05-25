@@ -25,10 +25,10 @@ public class PX_DIST_050_Dodavanje_Uredjivanje_Brisanje_Sezone_Test extends Base
 		Sezone sezone = homePage.navigirajNaSezone();
 		sezone.verifikujSezone();
 		String sezona = sezone.dodajSezonu();
-		sezone.verifikujPoruku("Uspješno završeno.");
+		sezone.verifikujPoruku("UspjeÅ¡no zavrÅ¡eno.");
 		sezone.verifikujSezonu(sezona);
 		String novaSezona = sezone.urediSezonu();
-		sezone.verifikujPoruku("Uspješno završeno.");
+		sezone.verifikujPoruku("UspjeÅ¡no zavrÅ¡eno.");
 		sezone.verifikujSezonu(novaSezona);
 		sezone.obrisiStavku(true);
 		sezone.verifikujBrisanjeStavke(true, novaSezona);

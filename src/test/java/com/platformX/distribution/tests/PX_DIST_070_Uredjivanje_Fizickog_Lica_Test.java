@@ -24,10 +24,10 @@ public class PX_DIST_070_Uredjivanje_Fizickog_Lica_Test  extends BaseTest {
 		FizickaLica fizickaLicaPage = homePage.navigirajNaFizickaLica();
 		fizickaLicaPage.verifikujFizickaLica();
 		String fizickaLica = fizickaLicaPage.dodajFizickoLice();
-		fizickaLicaPage.verifikujPoruku("Uspješno završeno.");
+		fizickaLicaPage.verifikujPoruku("UspjeÅ¡no zavrÅ¡eno.");
 		fizickaLicaPage.verifikujFizickoLice(fizickaLica);
 		String novoFizickoLice = fizickaLicaPage.urediFizickoLice();
-		fizickaLicaPage.verifikujPoruku("Uspješno završeno.");
+		fizickaLicaPage.verifikujPoruku("UspjeÅ¡no zavrÅ¡eno.");
 		fizickaLicaPage.verifikujFizickoLice(novoFizickoLice);
 	}
 

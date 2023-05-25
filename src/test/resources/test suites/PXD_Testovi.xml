@@ -108,6 +108,14 @@
 				name="com.platformX.distribution.tests.PX_DIST_070_Uredjivanje_Fizickog_Lica_Test" />
 			<class
 				name="com.platformX.distribution.tests.PX_DIST_071_Brisanje_Fizickog_Lica_Test" />
+			<class
+				name="com.platformX.distribution.tests.PX_DIST_072_Dodavanje_Brojila_Test" />
+			<class
+				name="com.platformX.distribution.tests.PX_DIST_073_Dodavanje_Mjernog_Mjesta_Test" />
+			<class
+				name="com.platformX.distribution.tests.PX_DIST_074_Uredjivanje_Mjernog_Mjesta_Test" />
+			<class
+				name="com.platformX.distribution.tests.PX_DIST_075_Brisanje_Mjernog_Mjesta_Test" />
 		</classes>
 	</test>
 </suite>

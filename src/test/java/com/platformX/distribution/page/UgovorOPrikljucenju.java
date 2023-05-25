@@ -37,7 +37,7 @@ public class UgovorOPrikljucenju extends PocetnaStranicaPXD {
 	@FindBy(xpath = "//div[2]/div/div[1]/div[2]/div/div[1]/div[2]/div[1]/div/div/div[1]/div/input")  
 	 private WebElement jedinicnaCijenaWE;
 	
-	@FindBy(xpath = "/html/body/div/div[2]/main/div/div/div/div[2]/form/div/div[1]/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[1]/div/div/div[1]/div[1]/input[1]")  
+	@FindBy(xpath = "//div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[1]/div/div/div[1]/div[1]/input[1]")  
 	 private WebElement kategorijaPotrosnjeIGrupaKupcaWE;
 	
 	@FindBy(xpath = "//div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[2]/div/div/div[1]/div/input")  
@@ -115,11 +115,13 @@ public class UgovorOPrikljucenju extends PocetnaStranicaPXD {
 		wait.until(ExpectedConditions.elementToBeClickable(brojMjernihUredjajaWE));
 		brojMjernihUredjajaWE.sendKeys(Helper.getRandomNumber(1));
 		js.executeScript("arguments[0].scrollIntoView(true);",kategorijaPotrosnjeiGrupaKupacaWE);
+		kategorijaPotrosnjeiGrupaKupacaWE.click();
 		kategorijaPotrosnjeiGrupaKupacaWE.sendKeys("1");
 		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
 		kategorijaPotrosnjeiGrupaKupacaWE.sendKeys(Keys.ARROW_DOWN);
 		kategorijaPotrosnjeiGrupaKupacaWE.sendKeys(Keys.ENTER);
 		wait.until(ExpectedConditions.elementToBeClickable(prikljucnaSnagaKwWE));
+		prikljucnaSnagaKwWE.click();
 		prikljucnaSnagaKwWE.sendKeys(Helper.getRandomNumber(1));
 		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
 		prikljucnaSnagaKwWE.sendKeys(Keys.ARROW_DOWN);

@@ -48,6 +48,8 @@
 				name="com.platformX.distribution.tests.PX_DIST_068_Brisanje_Pravnog_Lica_Test" />
 			<class
 				name="com.platformX.distribution.tests.PX_DIST_071_Brisanje_Fizickog_Lica_Test" />
+			<class
+				name="com.platformX.distribution.tests.PX_DIST_075_Brisanje_Mjernog_Mjesta_Test" />
 		</classes>
 	</test>
 </suite>
