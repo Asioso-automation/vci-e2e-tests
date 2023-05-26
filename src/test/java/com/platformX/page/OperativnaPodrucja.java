@@ -29,15 +29,6 @@ public class OperativnaPodrucja extends PocetnaStranica {
 	
 	@FindBy(xpath = "//div[2]/div[2]/div/div/div[1]/div/input")
 	private WebElement telZaPrigovoreWE;
-	
-	@FindBy(xpath = "//div[2]/button[1]")
-	private WebElement potvrdiBtnWE;
-	
-	@FindBy(xpath = "//td[6]/button")
-	private WebElement burgerBarWE;
-	
-	@FindBy(xpath = "//div/div/div[3]/button[2]")
-	private WebElement potvrdiBrisanjeWE;
 
 	public void verifikujOperativnaPodrucja() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
@@ -63,8 +54,8 @@ public class OperativnaPodrucja extends PocetnaStranica {
 		telZaInfoOUslugamaWE.sendKeys("111");
 		wait.until(ExpectedConditions.elementToBeClickable(telZaPrigovoreWE));
 		telZaPrigovoreWE.sendKeys("111");
-		wait.until(ExpectedConditions.elementToBeClickable(potvrdiBtnWE));
-		potvrdiBtnWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
+		submitBtnWE.click();
 		return operativnoPodrucje;
 	}
 	
@@ -91,8 +82,8 @@ public class OperativnaPodrucja extends PocetnaStranica {
 		nazivOperativnogPodrucjaWE.click();
 		nazivOperativnogPodrucjaWE.clear();
 		nazivOperativnogPodrucjaWE.sendKeys(novoPodrucje);
-		wait.until(ExpectedConditions.elementToBeClickable(potvrdiBtnWE));
-		potvrdiBtnWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
+		submitBtnWE.click();
 		return novoPodrucje;
 	}
 	

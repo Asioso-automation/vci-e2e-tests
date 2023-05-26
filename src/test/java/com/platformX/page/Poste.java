@@ -27,20 +27,8 @@ public class Poste extends PocetnaStranica {
 	@FindBy(xpath = "//div[3]/div/div/div[1]/div/input")
 	private WebElement nazivNaDokWE;
 	
-	@FindBy(xpath = "//div[2]/button[1]")
-	private WebElement dodajPostuWE;
-	
-	@FindBy(xpath = "//td[4]/button")
-	private WebElement burgerBarWE;
-	
-	@FindBy(xpath = "//div[2]/button[1]")
-	private WebElement potvrdiBtnWE;
-	
 	@FindBy(xpath = "//div[1]/div/div/div[1]/div/input")
 	private WebElement urediNazivWE;
-	
-	@FindBy(xpath = "//div/div/div/div[3]/button[2]")
-	private WebElement potvrdiBrisanjeWE;
 
 	public void verifikujPoste() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
@@ -65,7 +53,7 @@ public class Poste extends PocetnaStranica {
 		nazivWE.sendKeys(podaci[0]);
 		nazivNaDokWE.sendKeys(podaci[2]);
 		Thread.sleep(500);
-		dodajPostuWE.click();
+		submitBtnWE.click();
 		return podaci;
 	}
 	
@@ -78,7 +66,7 @@ public class Poste extends PocetnaStranica {
 		nazivWE.sendKeys(naziv);
 		nazivNaDokWE.sendKeys(nazivNaDok);
 		Thread.sleep(500);
-		dodajPostuWE.click();
+		submitBtnWE.click();
 	}
 	
 	public void verifikujPostu(String naziv, String id, String nazivNaDok) throws Exception {
@@ -106,8 +94,8 @@ public class Poste extends PocetnaStranica {
 		urediNazivWE.click();
 		urediNazivWE.clear();
 		urediNazivWE.sendKeys(posta);
-		wait.until(ExpectedConditions.elementToBeClickable(potvrdiBtnWE));
-		potvrdiBtnWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
+		submitBtnWE.click();
 		return posta;
 	}
 	

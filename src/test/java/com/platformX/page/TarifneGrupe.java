@@ -14,11 +14,9 @@ import com.platformX.util.Helper;
 
 public class TarifneGrupe extends PocetnaStranica {
 	
-	@FindBy(xpath = "//td[9]/button")
-	private WebElement burgerBarWE;
-	
-	@FindBy(xpath = "//div[7]/div/div/div[3]/button[2]")
-	private WebElement potvrdiBrisanjeWE;
+	public TarifneGrupe(WebDriver driver) throws FileNotFoundException, IOException {
+		super(driver);
+	}
 	
 	// Elementi sa forme za dodavanje tarifne grupe
 	
@@ -51,13 +49,6 @@ public class TarifneGrupe extends PocetnaStranica {
 	
 	@FindBy(xpath = "//div[contains(@class, 'v-list-item__content') and starts-with(., '4 - T1')]")
 	private WebElement odaberiBrojiloWE;
-	
-	@FindBy(xpath = "//div[2]/button[1]")
-	private WebElement dodajTarifnuGrupuWE;
-
-	public TarifneGrupe(WebDriver driver) throws FileNotFoundException, IOException {
-		super(driver);
-	}
 
 	public void verifikujTarifneGrupe() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
@@ -93,7 +84,7 @@ public class TarifneGrupe extends PocetnaStranica {
 		vrstaBrojilaWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(odaberiBrojiloWE));
 		odaberiBrojiloWE.click();
-		dodajTarifnuGrupuWE.click();
+		submitBtnWE.click();
 		return tarifnaGrupa;
 	}
 	
@@ -120,7 +111,7 @@ public class TarifneGrupe extends PocetnaStranica {
 		nazivTarifneGrupeWE.click();
 		nazivTarifneGrupeWE.clear();
 		nazivTarifneGrupeWE.sendKeys(tarifnaGrupa);
-		dodajTarifnuGrupuWE.click();
+		submitBtnWE.click();
 		return tarifnaGrupa;
 	}
 	

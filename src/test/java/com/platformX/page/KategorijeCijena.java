@@ -16,15 +16,6 @@ public class KategorijeCijena extends PocetnaStranica {
 	
 	@FindBy(xpath = "//div[1]/div/div/div/div[1]/div/input")
 	private WebElement nazivKategorijeWE;
-	
-	@FindBy(xpath = "//div[2]/button[1]")
-	private WebElement dodajKategorijuWE;
-	
-	@FindBy(xpath = "//td[6]/button")
-	private WebElement burgerBarWE;
-	
-	@FindBy(xpath = "//div/div/div[3]/button[2]")
-	private WebElement potvrdiBrisanjeWE;
 
 	public KategorijeCijena(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);
@@ -48,8 +39,8 @@ public class KategorijeCijena extends PocetnaStranica {
 		dodajBtnWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(nazivKategorijeWE));
 		nazivKategorijeWE.sendKeys(kategorija);
-		wait.until(ExpectedConditions.elementToBeClickable(dodajKategorijuWE));
-		dodajKategorijuWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
+		submitBtnWE.click();
 		return kategorija;
 	}
 	
@@ -74,8 +65,8 @@ public class KategorijeCijena extends PocetnaStranica {
 		urediWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(nazivKategorijeWE));
 		nazivKategorijeWE.sendKeys(novaKategorija);
-		wait.until(ExpectedConditions.elementToBeClickable(dodajKategorijuWE));
-		dodajKategorijuWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
+		submitBtnWE.click();
 		return novaKategorija;
 	}
 	

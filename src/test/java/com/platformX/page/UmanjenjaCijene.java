@@ -24,18 +24,8 @@ public class UmanjenjaCijene extends PocetnaStranica {
 	@FindBy(xpath = "//div[2]/div/div/div[1]/div/input")
 	private WebElement procenatWE;
 	
-	@FindBy(xpath = "//div[2]/button[1]")
-	private WebElement dodajUmanjenjeCijeneWE;
-	
-	@FindBy(xpath = "//td[4]/button")
-	private WebElement burgerBarWE;
-	
-	@FindBy(xpath = "//div/div/div[3]/button[2]")
-	private WebElement potvrdiBrisanjeWE;
-	
 	@FindBy(xpath = "//td[2]/div/div[1]/div/div/div/div[1]/input")
 	private WebElement filterKolonaWE;
-	
 
 	public void verifikujUmanjenjaCijene() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
@@ -55,8 +45,8 @@ public class UmanjenjaCijene extends PocetnaStranica {
 		wait.until(ExpectedConditions.elementToBeClickable(brojMjeseciWE));
 		brojMjeseciWE.sendKeys(brojMjeseci);
 		procenatWE.sendKeys(procenat);
-		wait.until(ExpectedConditions.elementToBeClickable(dodajUmanjenjeCijeneWE));
-		dodajUmanjenjeCijeneWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
+		submitBtnWE.click();
 		return brojMjeseci;
 	}
 	
@@ -92,8 +82,8 @@ public class UmanjenjaCijene extends PocetnaStranica {
 		procenatWE.click();
 		procenatWE.clear();
 		procenatWE.sendKeys(procenat);
-		wait.until(ExpectedConditions.elementToBeClickable(dodajUmanjenjeCijeneWE));
-		dodajUmanjenjeCijeneWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
+		submitBtnWE.click();
 		return brojMjeseci;
 	}
 	
@@ -118,8 +108,8 @@ public class UmanjenjaCijene extends PocetnaStranica {
 		wait.until(ExpectedConditions.elementToBeClickable(brojMjeseciWE));
 		brojMjeseciWE.sendKeys(brojMjeseci);
 		procenatWE.sendKeys(procenat);
-		wait.until(ExpectedConditions.elementToBeClickable(dodajUmanjenjeCijeneWE));
-		dodajUmanjenjeCijeneWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
+		submitBtnWE.click();
 	}
 	
 }

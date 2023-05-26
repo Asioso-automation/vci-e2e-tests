@@ -56,18 +56,9 @@ public class PravnaLica extends PocetnaStranica {
 
 	@FindBy(xpath = "//div[6]/div[3]/div/div/div[1]/div/input")
 	private WebElement brojUliceWE;
-
-	@FindBy(xpath = "//div[2]/button[1]")
-	private WebElement dodajPravnoLiceBtnWE;
 	
 	@FindBy(xpath = "//main/div/div/div/div[1]/header/div/button[1]")
 	private WebElement urediPravnoLiceBtnWE;
-	
-	@FindBy(xpath = "//td[12]/button")
-	private WebElement burgerBarWE;
-	
-	@FindBy(xpath = "//div/div/div[3]/button[2]")
-	private WebElement potvrdiBrisanjeWE;
 
 	public void verifikujPravnaLica() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
@@ -118,13 +109,11 @@ public class PravnaLica extends PocetnaStranica {
 		ulicaWE.sendKeys("6 - Nikole Tesle");
 		Thread.sleep(1000);
 		wait.until(ExpectedConditions.elementToBeClickable(odaberiUlicuWE));
-		// wait.until(ExpectedConditions.visibilityOf(odaberiUlicuWE));
-		// ulicaWE.sendKeys(Keys.ENTER);
 		odaberiUlicuWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(brojUliceWE));
 		brojUliceWE.sendKeys(Helper.getRandomNumber(2));
-		wait.until(ExpectedConditions.elementToBeClickable(dodajPravnoLiceBtnWE));
-		dodajPravnoLiceBtnWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
+		submitBtnWE.click();
 		Thread.sleep(1000);
 		return nazivPravnogLica;
 	}
@@ -163,8 +152,8 @@ public class PravnaLica extends PocetnaStranica {
 		nazivPravnogLicaWE.click();
 		nazivPravnogLicaWE.clear();
 		nazivPravnogLicaWE.sendKeys(nazivPravnogLica);
-		wait.until(ExpectedConditions.elementToBeClickable(dodajPravnoLiceBtnWE));
-		dodajPravnoLiceBtnWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
+		submitBtnWE.click();
 		return nazivPravnogLica;
 	}
 	

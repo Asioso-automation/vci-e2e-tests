@@ -24,6 +24,6 @@ public class DnevnikIzmjena extends PocetnaStranica{
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTabelaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdEntitetaWE));
-		//wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIzmijenioWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIzmijenioWE));
 	}
 }

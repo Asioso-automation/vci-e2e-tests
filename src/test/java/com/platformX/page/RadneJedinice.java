@@ -29,15 +29,6 @@ public class RadneJedinice extends PocetnaStranica {
 	
 	@FindBy(xpath = "//div[2]/div[2]/div/div/div[1]/div/input")
 	private WebElement jibWE;
-	
-	@FindBy(xpath = "//div[2]/button[1]")
-	private WebElement potvrdiBtnWE;
-	
-	@FindBy(xpath = "//td[12]/button")
-	private WebElement burgerBarWE;
-	
-	@FindBy(xpath = "//div/div/div[3]/button[2]")
-	private WebElement potvrdiBrisanjeWE;
 
 	public void verifikujRadneJedinice() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
@@ -70,8 +61,8 @@ public class RadneJedinice extends PocetnaStranica {
 		odaberiOdsWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(jibWE));
 		jibWE.sendKeys("111");
-		wait.until(ExpectedConditions.elementToBeClickable(potvrdiBtnWE));
-		potvrdiBtnWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
+		submitBtnWE.click();
 		Thread.sleep(500);
 		return radnaJedinica;
 	}
@@ -98,8 +89,8 @@ public class RadneJedinice extends PocetnaStranica {
 		nazivRadneJediniceWE.click();
 		nazivRadneJediniceWE.clear();
 		nazivRadneJediniceWE.sendKeys(radnaJedinica);
-		wait.until(ExpectedConditions.elementToBeClickable(potvrdiBtnWE));
-		potvrdiBtnWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
+		submitBtnWE.click();
 		return radnaJedinica;
 	}
 	

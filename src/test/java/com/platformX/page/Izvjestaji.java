@@ -13,7 +13,7 @@ public class Izvjestaji extends PocetnaStranica {
 	}
 	
 	public void verifikujIzvjestaji() throws InterruptedException {
-		Thread.sleep(1000);
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		wait.until(ExpectedConditions.visibilityOf(naslovStraniceWE));
 		assertTrue(naslovStraniceWE.getText().trim().equals("Izvještaji"), "Izvjestaji: Naziv stranice nije dobar!");
 	}

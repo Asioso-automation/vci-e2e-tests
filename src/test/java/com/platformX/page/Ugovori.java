@@ -48,9 +48,6 @@ public class Ugovori extends PocetnaStranica {
 	@FindBy(xpath = "//tr[2]/td[7]")
 	private WebElement kategorijaTabelaWE;
 
-	@FindBy(xpath = "//td[16]/button")
-	private WebElement burgerBarWE;
-
 	@FindBy(xpath = "//div[contains(text(), 'Uredi')]")
 	private WebElement urediBtnWE;
 
@@ -127,9 +124,6 @@ public class Ugovori extends PocetnaStranica {
 
 	@FindBy(xpath = "//div[2]/div[2]/div/div/div[1]/div[1]/input[1]")
 	private WebElement tarifnaGrupaWE;
-
-	@FindBy(xpath = "//div[2]/div[2]/div/div/div[1]/div[1]/div[1]/div/button")
-	private WebElement obrisiTarifnuGrupuWE;
 
 	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '19 ')] ")
 	private WebElement odaberiTarifnuGrupuWE;
@@ -285,9 +279,6 @@ public class Ugovori extends PocetnaStranica {
 
 	@FindBy(xpath = "//div[9]/div[3]/div/div/div[1]/div/input")
 	private WebElement eMailOsobeWE;
-
-//	@FindBy(xpath = "//div[2]/button[1]")
-//	private WebElement dodajFormaBtnWE;
 
 	// Validacione poruke na poljima za dodavanje ugovora
 
@@ -1104,8 +1095,8 @@ public class Ugovori extends PocetnaStranica {
 		odaberiUlicu1WE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(brojUUliciWE));
 		brojUUliciWE.sendKeys(Helper.getRandomNumber(2));
-		wait.until(ExpectedConditions.elementToBeClickable(potvrdiPreregistracijuBtnWE));
-		potvrdiPreregistracijuBtnWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
+		submitBtnWE.click();
 	}
 
 }

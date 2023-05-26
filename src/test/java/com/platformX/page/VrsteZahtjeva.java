@@ -17,29 +17,14 @@ public class VrsteZahtjeva extends PocetnaStranica {
 	@FindBy(xpath = "//textarea")
 	private WebElement opisWE;
 	
-	@FindBy(xpath = "//div[2]/button[1]")
-	private WebElement dodajVrstuWE;
-	
 	@FindBy(xpath = "//tr[2]/td[2]")
 	private WebElement opisTabelaWE;
 	
 	@FindBy(xpath = "//td[2]/div/div/div/div[1]/input")
 	private WebElement opisFilterWE;
 	
-	@FindBy(xpath = "//td[3]/button")
-	private WebElement burgerBarWE;
-	
 	@FindBy(xpath = "//div[contains(text(), 'Uredi')]")
 	private WebElement urediBtnWE;
-	
-	@FindBy(xpath = "//div[contains(text(), 'Briši')]")
-	private WebElement obrisiWE;
-	
-	@FindBy(xpath = "//div[7]/div/div/div[3]/button[2]")
-	private WebElement potvrdiBrisanjeWE;
-	
-	@FindBy(xpath = "//tr[2]/td")
-	private WebElement praznaTabelaWE;
 
 	public VrsteZahtjeva(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);
@@ -60,8 +45,8 @@ public class VrsteZahtjeva extends PocetnaStranica {
 		dodajBtnWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(opisWE));
 		opisWE.sendKeys(opis);
-		wait.until(ExpectedConditions.elementToBeClickable(dodajVrstuWE));
-		dodajVrstuWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
+		submitBtnWE.click();
 		return opis;
 	}
 	
@@ -88,7 +73,7 @@ public class VrsteZahtjeva extends PocetnaStranica {
 		opisWE.click();
 		opisWE.clear();
 		opisWE.sendKeys(opis);
-		dodajVrstuWE.click();
+		submitBtnWE.click();
 		return opis;
 	}
 	
