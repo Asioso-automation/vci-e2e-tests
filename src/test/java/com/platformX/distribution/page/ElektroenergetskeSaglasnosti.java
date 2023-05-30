@@ -49,9 +49,6 @@ public class ElektroenergetskeSaglasnosti extends PocetnaStranicaPXD {
 	@FindBy(xpath = "//div[8]/div[2]/div/div/div[1]/div[1]/input[1]")  
 	 private WebElement odobrenaPrikljucnaSnagaWE;
 	
-	@FindBy(xpath = "//div[8]/div[2]/div/div/div[1]/div[1]/div/div/i")
-	private WebElement odobrenaPrikljucnaSnaga1WE;
-	
 	@FindBy(xpath = "//div[11]/div[1]/div/div/div[1]/div[1]/input[1]")
 	 private WebElement naponskiNivoWE;
 	
@@ -416,8 +413,10 @@ public class ElektroenergetskeSaglasnosti extends PocetnaStranicaPXD {
 		urediWE.click();
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		wait.until(ExpectedConditions.visibilityOf(stranicaBtnWE));
-		wait.until(ExpectedConditions.elementToBeClickable(odobrenaPrikljucnaSnaga1WE));
-		odobrenaPrikljucnaSnaga1WE.click();
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView(true);", vrstaObjektaWE);
+		wait.until(ExpectedConditions.elementToBeClickable(odobrenaPrikljucnaSnagaWE));
+		odobrenaPrikljucnaSnagaWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
 		odobrenaPrikljucnaSnagaWE.sendKeys(Keys.ARROW_DOWN);
 		odobrenaPrikljucnaSnagaWE.sendKeys(Keys.ENTER);

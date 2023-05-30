@@ -10,6 +10,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import com.platformX.base.PageBase;
+import com.platformX.page.PocetnaStranica;
 
 public class PocetnaStranicaPXD extends PageBase {
 
@@ -18,6 +19,9 @@ public class PocetnaStranicaPXD extends PageBase {
 	}
 	
 	WebDriverWait wait = new WebDriverWait(driver, 20);
+	
+	@FindBy(xpath = "//a[@href='/']")
+	protected WebElement pocetnaStranicaWE;
 	
 	@FindBy(xpath = "//div[1]/div/div/div/div/div/div[1]/input[1]")
 	protected WebElement filterKupacWE;
@@ -494,6 +498,12 @@ public class PocetnaStranicaPXD extends PageBase {
 			wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 			Thread.sleep(700);
 			assertTrue(praznaTabelaWE.getText().equals("Nema podataka"), "DeletedItem: Poruka prazne tabele nije dobra!");
+	}
+	
+	public PocetnaStranica navigirajNaPocetnaStranica() throws FileNotFoundException, IOException {
+		wait.until(ExpectedConditions.elementToBeClickable(pocetnaStranicaWE));
+		pocetnaStranicaWE.click();
+		return new PocetnaStranica(driver);
 	}
 
 	public Organizacije navigirajNaOrganizacije() throws Exception {

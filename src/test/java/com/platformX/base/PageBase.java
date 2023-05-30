@@ -85,6 +85,12 @@ public abstract class PageBase {
 	@FindBy(xpath = "//*[contains(@class, 'v-btn__content') and contains(text(), 'Briši')]")
 	protected WebElement potvrdiBrisanjeBtnWE;
 	
+	@FindBy(xpath = "//tr[2]/td[3]")
+	protected WebElement podatak2Tabela3WE;
+	
+	@FindBy(xpath = "//tr[2]/td[4]")
+	protected WebElement podatak2Tabela4WE;
+	
 
 	protected Select select(WebElement webElement, String name) {
 		Select selectedElement = new Select(webElement);

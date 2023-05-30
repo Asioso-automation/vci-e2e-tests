@@ -14,7 +14,9 @@ public class PX_DIST_013_Dodavanje_Administracijske_Poruke_Test  extends BaseTes
 		super();
 	}
 	
-	@Test (description = "test prolazi kroz sve stranice iz sekcije ADMINISTRACIJA i verifikuje ih")
+	private String[] podaci;
+	
+	@Test (description="test kreira, verifikuje i brise ADMINISTRACIJSKU PORUKU")
 	public void px_dist_013_dodavanje_administracijske_poruke_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
@@ -25,6 +27,15 @@ public class PX_DIST_013_Dodavanje_Administracijske_Poruke_Test  extends BaseTes
 		poruke.verifikujPoruke();
 		poruke.pokupiIdPoruke();
 		// TODO Napraviti metodu za dodavanje i verifikaciju poruke 
+		podaci = poruke.dodajPoruku();
+		poruke.verifikujPorukuLista(podaci[0]);
+		pocetna.navigirajNaPocetnaStranica();
+		pocetna.osvjeziStranicu();
+		pocetna.verifikujPocetnuStranicu();
+		poruke.verifikujPorukuPocetna(podaci[0], podaci[1]);
+		pocetna.navigirajNaPoruke();
+		poruke.obrisiStavku(true);
+		poruke.verifikujBrisanjeStavke(false, podaci[0]);
 	}
 
 }
