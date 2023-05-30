@@ -1,5 +1,6 @@
 package com.platformX.tests;
 
+import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -24,14 +25,25 @@ public class PX_026_Dodavanje_Ziro_Racuna_Test extends BaseTest {
 		homePage.verifikujPocetnuStranicu();
 		homePage.navigirajNaBanke();
 		Banke banke = new Banke(driver);
-		banke.verifikujBanke();
+		WebElement[] elementiBanke = banke.verifikujBanke();
 		String banka = banke.dodajBanku();
-		banke.verifikujBanku(banka);
+		banke.verifikujPoruku("Uspješno završeno.");
+		
+		//banke.verifikujBanku(banka);
+		banke.pretraziElement(elementiBanke[0], banka);
+		banke.verifikujBanke();
+		banke.verifikujElement(banka, elementiBanke[1]);
+		
 		homePage.navigirajNaZiroRacuni();
 		ZiroRacuni ziroRacuni = new ZiroRacuni(driver);
-		ziroRacuni.verifikujZiroRacuni();
+		WebElement[] elementiZiroRacuna = ziroRacuni.verifikujZiroRacuni();
 		String ziroRacun = ziroRacuni.dodajZiroRacun(banka);
-		ziroRacuni.verifikujZiroRacun(ziroRacun);
+		ziroRacuni.verifikujPoruku("Uspješno završeno.");
+		
+		//ziroRacuni.verifikujZiroRacun(ziroRacun);
+		ziroRacuni.pretraziElement(elementiZiroRacuna[0], ziroRacun);
+		ziroRacuni.verifikujZiroRacuni();
+		ziroRacuni.verifikujElement(ziroRacun, elementiZiroRacuna[1]);
 	}
 
 }

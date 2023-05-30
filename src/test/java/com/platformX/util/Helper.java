@@ -33,13 +33,13 @@ public class Helper {
 //		return random;
 //	}
 
-	public static String getRandomNumberInRange(int min,int max) {
+	public static String getRandomNumberInRange(int min, int max) {
 //		Random random = new Random();
 //		int number = random.nextInt((max - min) + 1) + min;
 		int range = (max - min) + 1;
-		int number = (int)(Math.random() * range) + min;
+		int number = (int) (Math.random() * range) + min;
 		String random = String.valueOf(number);
 		return random;
 	}
-	
+
 }

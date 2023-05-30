@@ -3,13 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.platformX.api.tests.PXD_003_Get_Administration_Message_Test">
+      <class name="com.platformX.tests.PX_026_Dodavanje_Ziro_Racuna_Test">
         <methods>
-          <include name="get_administration_message_test1"/>
           <include name="setUp"/>
+          <include name="px_026_dodavanje_ziro_racuna_test"/>
           <include name="cleanUp"/>
         </methods>
-      </class> <!-- com.platformX.api.tests.PXD_003_Get_Administration_Message_Test -->
+      </class> <!-- com.platformX.tests.PX_026_Dodavanje_Ziro_Racuna_Test -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
