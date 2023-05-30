@@ -4,6 +4,8 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import com.platformX.base.Kolone;
 
@@ -12,6 +14,9 @@ public class Poruke extends PocetnaStranicaPXD {
 	public Poruke(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);
 	}
+	
+	@FindBy(xpath = "//tr[2]/td[1]")
+	private WebElement idWE;
 
 	public void verifikujPoruke()throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
@@ -24,6 +29,12 @@ public class Poruke extends PocetnaStranicaPXD {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumOdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumDoWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPrioritetWE));
+	}
+	
+	public int pokupiIdPoruke() {
+	wait.until(ExpectedConditions.visibilityOf(idWE));
+	int id = Integer.parseInt(idWE.getText());
+	return id;
 	}
 
 }

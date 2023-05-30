@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="25733" started-at="2023-05-24T18:45:51Z" finished-at="2023-05-24T18:46:16Z">
+  <suite name="Default suite" duration-ms="24390" started-at="2023-05-30T07:02:00Z" finished-at="2023-05-30T07:02:24Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="25733" started-at="2023-05-24T18:45:51Z" finished-at="2023-05-24T18:46:16Z">
-      <class name="com.platformX.distribution.tests.PX_DIST_071_Brisanje_Fizickog_Lica_Test">
-        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.platformX.distribution.tests.PX_DIST_071_Brisanje_Fizickog_Lica_Test@7f552bd3]" name="setUp" is-config="true" duration-ms="5468" started-at="2023-05-24T20:45:51Z" finished-at="2023-05-24T20:45:56Z">
+    <test name="Default test" duration-ms="24390" started-at="2023-05-30T07:02:00Z" finished-at="2023-05-30T07:02:24Z">
+      <class name="com.platformX.api.tests.PXD_003_Get_Administration_Message_Positive_Test">
+        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.platformX.api.tests.PXD_003_Get_Administration_Message_Positive_Test@7164ca4c]" name="setUp" is-config="true" duration-ms="5575" started-at="2023-05-30T09:02:00Z" finished-at="2023-05-30T09:02:06Z">
           <params>
             <param index="0">
               <value>
@@ -18,15 +18,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="px_dist_071_brisanje_fizickog_lica_test()[pri:0, instance:com.platformX.distribution.tests.PX_DIST_071_Brisanje_Fizickog_Lica_Test@7f552bd3]" name="px_dist_071_brisanje_fizickog_lica_test" duration-ms="19607" started-at="2023-05-24T20:45:56Z" finished-at="2023-05-24T20:46:16Z">
+        <test-method status="PASS" signature="get_administration_message_positive_test()[pri:0, instance:com.platformX.api.tests.PXD_003_Get_Administration_Message_Positive_Test@7164ca4c]" name="get_administration_message_positive_test" duration-ms="18056" started-at="2023-05-30T09:02:06Z" description="positive test case" finished-at="2023-05-30T09:02:24Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- px_dist_071_brisanje_fizickog_lica_test -->
-        <test-method status="PASS" signature="cleanUp()[pri:0, instance:com.platformX.distribution.tests.PX_DIST_071_Brisanje_Fizickog_Lica_Test@7f552bd3]" name="cleanUp" is-config="true" duration-ms="642" started-at="2023-05-24T20:46:16Z" finished-at="2023-05-24T20:46:16Z">
+        </test-method> <!-- get_administration_message_positive_test -->
+        <test-method status="PASS" signature="cleanUp()[pri:0, instance:com.platformX.api.tests.PXD_003_Get_Administration_Message_Positive_Test@7164ca4c]" name="cleanUp" is-config="true" duration-ms="744" started-at="2023-05-30T09:02:24Z" finished-at="2023-05-30T09:02:24Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- cleanUp -->
-      </class> <!-- com.platformX.distribution.tests.PX_DIST_071_Brisanje_Fizickog_Lica_Test -->
+      </class> <!-- com.platformX.api.tests.PXD_003_Get_Administration_Message_Positive_Test -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
