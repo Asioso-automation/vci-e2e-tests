@@ -447,7 +447,7 @@ INSERT [Calculation].[Bill] ([Id], [BillOrderId], [ContractId], [TariffGroupId],
 
 SET IDENTITY_INSERT [Calculation].[BillCorrectionType] ON 
 
-INSERT [Calculation].[BillCorrectionType] ([Id], [Name]) VALUES (1, N'test')
+INSERT [Calculation].[BillCorrectionType] ([Id], [Name], [CalculationTypeId]) VALUES (1, N'test', 1)
 
 SET IDENTITY_INSERT [Calculation].[BillCorrectionType] OFF
 
@@ -611,7 +611,7 @@ SET IDENTITY_INSERT [Finance].[PaymentDebitCredit] OFF
 
 SET IDENTITY_INSERT [Finance].[PaymentJournal] ON 
 
-INSERT [Finance].[PaymentJournal] ([Id], [BankAccountId], [JournalNumber], [EntryDate], [DueDate], [NumberOfPayments], [Amount], [Note], [MarkedForClosure], [Closed], [PaymentForTransferId], [Refund]) VALUES (46, 117, 1, CAST(N'2020-10-15T00:00:00.000' AS DateTime), CAST(N'2020-10-15' AS Date), 2, CAST(25.00 AS Decimal(12, 2)), NULL, 0, 1, NULL, 0)
+INSERT [Finance].[PaymentJournal] ([Id], [BankAccountId], [JournalNumber], [BookingDate], [DueDate], [NumberOfPayments], [Amount], [Note], [MarkedForClosure], [Closed], [PaymentForTransferId], [Refund]) VALUES (46, 117, 1, CAST(N'2020-10-15T00:00:00.000' AS DateTime), CAST(N'2020-10-15' AS Date), 2, CAST(25.00 AS Decimal(12, 2)), NULL, 0, 1, NULL, 0)
 
 SET IDENTITY_INSERT [Finance].[PaymentJournal] OFF
 
