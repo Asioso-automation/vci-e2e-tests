@@ -72,7 +72,7 @@ public class PocetnaStranica extends PageBase {
 	protected WebElement filterKolona1WE;
 	
 	@FindBy(xpath = "//td[2]/div/div/div/div[1]/input")
-	protected WebElement filterKolona2WE;
+	public WebElement filterKolona2WE;
 	
 	@FindBy(xpath = "//td[3]/div/div/div/div[1]/input")
 	protected WebElement filterKolona3WE;
@@ -90,7 +90,7 @@ public class PocetnaStranica extends PageBase {
 	protected WebElement podatakTabela1WE;
 	
 	@FindBy(xpath = "//tr[2]/td[2]")
-	protected WebElement podatakTabela2WE;
+	public WebElement podatakTabela2WE;
 	
 	@FindBy(xpath = "//tr[1]/td[3]")
 	protected WebElement podatakTabela3WE;

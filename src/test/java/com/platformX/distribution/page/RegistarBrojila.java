@@ -31,13 +31,10 @@ public class RegistarBrojila extends PocetnaStranicaPXD {
 	 private WebElement poljeRedniBrojURegistruWE;
 	
 	@FindBy(xpath = "//td[2]/div/div[1]/div/div/div/div[1]/input")
-	 private WebElement filterBrojBrojilaWE;
+	 public WebElement filterBrojBrojilaWE;
 	
 	@FindBy(xpath = "//div[1]/div/div[2]/div/div/input")
 	 private WebElement napredniFilterJednakoWE;
-	
-	@FindBy(xpath = "//tr[2]/td[2]")
-	 private WebElement brojBrojilaTabelaWE;
 
 	public void verifikujRegistarBrojila()throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
@@ -82,13 +79,13 @@ public class RegistarBrojila extends PocetnaStranicaPXD {
 		napredniFilterJednakoWE.sendKeys(brojBrojila);
 		napredniFilterJednakoWE.sendKeys(Keys.ENTER);
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
-		wait.until(ExpectedConditions.visibilityOf(brojBrojilaTabelaWE));
+		wait.until(ExpectedConditions.visibilityOf(podatak2Tabela2WE));
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
-		assertTrue(brojBrojilaTabelaWE.getText().contains(brojBrojila),"Registar brojila: Broj brojila nije dobar!");
+		assertTrue(podatak2Tabela2WE.getText().contains(brojBrojila),"Registar brojila: Broj brojila nije dobar!");
 	}
 	
 	public String kreirajBrojilo() {
-		String brBrojila = brojBrojilaTabelaWE.getText();
+		String brBrojila = podatak2Tabela2WE.getText();
 		return brBrojila;
 	}
 

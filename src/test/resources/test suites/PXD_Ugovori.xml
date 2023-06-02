@@ -27,25 +27,19 @@
 			<class
 				name="com.platformX.distribution.tests.PX_DIST_012_Verifikacija_Sekcije_Administracija_Test" />
 			<class
-				name="com.platformX.distribution.tests.PX_DIST_045_Uredjivanje_Trafostanice_Test" />
+				name="com.platformX.distribution.tests.PX_DIST_022_Trafostanice_CRUD_Test" />
 			<class
-				name="com.platformX.distribution.tests.PX_DIST_046_Neuspjesno_Brisanje_Trafostanice_Test" />
+				name="com.platformX.distribution.tests.PX_DIST_027_Mjerna_Mjesta_CRUD_Test" />
 			<class
-				name="com.platformX.distribution.tests.PX_DIST_058_Uredjivanje_Zbirnog_Kontrolnog_Mjernog_Mjesta_Test" />
+				name="com.platformX.distribution.tests.PX_DIST_028_Zbirna_Kontrolna_Mjerna_Mjesta_CRUD_Test" />
 			<class
-				name="com.platformX.distribution.tests.PX_DIST_059_Brisanje_Zbirnog_Kontrolnog_Mjernog_Mjesta_Test" />
+				name="com.platformX.distribution.tests.PX_DIST_031_Pravna_Lica_CRUD_Test" />
 			<class
-				name="com.platformX.distribution.tests.PX_DIST_067_Uredjivanje_Pravnog_Lica_Test" />
+				name="com.platformX.distribution.tests.PX_DIST_032_Fizicka_Lica_CRUD_Test" />
 			<class
-				name="com.platformX.distribution.tests.PX_DIST_068_Brisanje_Pravnog_Lica_Test" />
+				name="com.platformX.distribution.tests.PX_DIST_033_Brojila_CRUD_Test" />
 			<class
-				name="com.platformX.distribution.tests.PX_DIST_070_Uredjivanje_Fizickog_Lica_Test" />
-			<class
-				name="com.platformX.distribution.tests.PX_DIST_071_Brisanje_Fizickog_Lica_Test" />
-			<class
-				name="com.platformX.distribution.tests.PX_DIST_024_Uredjivanje_Obracunskog_Ugovora_Test" />
-			<class
-				name="com.platformX.distribution.tests.PX_DIST_025_Brisanje_Obracunskog_Ugovora_Test" />
+				name="com.platformX.distribution.tests.PX_DIST_034_Obracunski_Ugovori_CRUD_Test" />
 		</classes>
 	</test>
 </suite>

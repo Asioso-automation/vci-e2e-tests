@@ -1,6 +1,5 @@
 package com.platformX.distribution.page;
 
-import static org.testng.Assert.assertTrue;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import org.openqa.selenium.By;
@@ -394,17 +393,6 @@ public class ElektroenergetskeSaglasnosti extends PocetnaStranicaPXD {
 		return brProtokola;
 	}
 	
-	public void verifikujElektroenergetskuSaglasnost(String brProtokola)throws Exception {
-		wait.until(ExpectedConditions.elementToBeClickable(filterKolona2WE));
-		filterKolona2WE.click();
-		filterKolona2WE.clear();
-		filterKolona2WE.sendKeys(brProtokola);
-		filterKolona2WE.sendKeys(Keys.ENTER);
-		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
-		wait.until(ExpectedConditions.visibilityOf(brojProtokolaWE));
-		assertTrue(brojProtokolaWE.getText().equals(brProtokola), "ElektroenergetskaSaglasnost: Broj protokola nije pronadjen!");
-	}
-	
 	public void urediElektroenergetskuSaglasnost() throws InterruptedException {
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
@@ -424,6 +412,5 @@ public class ElektroenergetskeSaglasnosti extends PocetnaStranicaPXD {
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 	}
-	
 	
 }

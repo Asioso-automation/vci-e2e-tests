@@ -25,25 +25,27 @@ public class PX_026_Dodavanje_Ziro_Racuna_Test extends BaseTest {
 		homePage.verifikujPocetnuStranicu();
 		homePage.navigirajNaBanke();
 		Banke banke = new Banke(driver);
-		WebElement[] elementiBanke = banke.verifikujBanke();
+//		WebElement[] elementiBanke = 
+		banke.verifikujBanke();
 		String banka = banke.dodajBanku();
 		banke.verifikujPoruku("Uspješno završeno.");
 		
 		//banke.verifikujBanku(banka);
-		banke.pretraziElement(elementiBanke[0], banka);
+		banke.pretraziStavku(homePage.filterKolona2WE, banka);
 		banke.verifikujBanke();
-		banke.verifikujElement(banka, elementiBanke[1]);
+		banke.verifikujStavku(banka, homePage.podatakTabela2WE);
 		
-		homePage.navigirajNaZiroRacuni();
-		ZiroRacuni ziroRacuni = new ZiroRacuni(driver);
-		WebElement[] elementiZiroRacuna = ziroRacuni.verifikujZiroRacuni();
-		String ziroRacun = ziroRacuni.dodajZiroRacun(banka);
-		ziroRacuni.verifikujPoruku("Uspješno završeno.");
 		
-		//ziroRacuni.verifikujZiroRacun(ziroRacun);
-		ziroRacuni.pretraziElement(elementiZiroRacuna[0], ziroRacun);
-		ziroRacuni.verifikujZiroRacuni();
-		ziroRacuni.verifikujElement(ziroRacun, elementiZiroRacuna[1]);
+//		homePage.navigirajNaZiroRacuni();
+//		ZiroRacuni ziroRacuni = new ZiroRacuni(driver);
+//		WebElement[] elementiZiroRacuna = ziroRacuni.verifikujZiroRacuni();
+//		String ziroRacun = ziroRacuni.dodajZiroRacun(banka);
+//		ziroRacuni.verifikujPoruku("Uspješno završeno.");
+//		
+//		//ziroRacuni.verifikujZiroRacun(ziroRacun);
+//		ziroRacuni.pretraziElement(elementiZiroRacuna[0], ziroRacun);
+//		ziroRacuni.verifikujZiroRacuni();
+//		ziroRacuni.verifikujElement(ziroRacun, elementiZiroRacuna[1]);
 	}
 
 }

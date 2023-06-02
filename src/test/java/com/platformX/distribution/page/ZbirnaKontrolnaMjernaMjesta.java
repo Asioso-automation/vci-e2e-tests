@@ -1,6 +1,5 @@
 package com.platformX.distribution.page;
 
-import static org.testng.Assert.assertTrue;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import org.openqa.selenium.By;
@@ -38,18 +37,6 @@ public class ZbirnaKontrolnaMjernaMjesta extends PocetnaStranicaPXD {
 	
 	@FindBy(xpath = "//div[7]/div/div/div[1]/div/input")
 	 private WebElement poljeBrojCitackogHodaWE;
-	
-	@FindBy(xpath = "//div[8]/div[1]/div/div[1]/div[1]/div/button")
-	 private WebElement datumIkonicaWE;
-	
-	@FindBy(xpath = "//tr[2]/td[4]/button/div")
-	 private WebElement izaberiDatumWE;
-	
-	@FindBy(xpath = "//td[2]/div/div/div/div[1]/input")
-	 private WebElement filterPoNazivuWE;
-	
-	@FindBy(xpath = "//tr[2]/td[2]")
-	 private WebElement nazivTabelaWE;
 
 	public void verifikujZbirnaKontrolnaMjernaMjesta() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
@@ -96,25 +83,14 @@ public class ZbirnaKontrolnaMjernaMjesta extends PocetnaStranicaPXD {
 		poljeCitackiHodWE.sendKeys(Keys.ENTER);
 		wait.until(ExpectedConditions.elementToBeClickable(poljeBrojCitackogHodaWE));   
 		poljeBrojCitackogHodaWE.sendKeys(Helper.getRandomNumber(4));
-		wait.until(ExpectedConditions.elementToBeClickable(datumIkonicaWE));
-		datumIkonicaWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(izaberiDatumWE));
-		izaberiDatumWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(datumBtn1WE));
+		datumBtn1WE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(trenutniDatum1WE));
+		trenutniDatum1WE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
 		submitBtnWE.click();
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		return nazivZbirnogKontrolnogMjesta;
-	}
-	
-	public void verifikujZbirnoKontrolnoMjernoMjesto(String nazivZbirnogMjesta) throws InterruptedException, FileNotFoundException, IOException {
-		wait.until(ExpectedConditions.elementToBeClickable(filterPoNazivuWE));
-		filterPoNazivuWE.click();
-		filterPoNazivuWE.clear();
-		filterPoNazivuWE.sendKeys(nazivZbirnogMjesta);
-		filterPoNazivuWE.sendKeys(Keys.ENTER);
-		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
-		wait.until(ExpectedConditions.visibilityOf(nazivTabelaWE));
-		assertTrue(nazivTabelaWE.getText().contains(nazivZbirnogMjesta),"Mjerna Mjesta: Zbirno/Kontrolno mjerno mjesto nije dobro!");
 	}
 	
 	public String urediZbirnoKontrolnoMjernoMjesto() throws InterruptedException, FileNotFoundException, IOException {

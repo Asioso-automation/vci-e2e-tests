@@ -1,11 +1,9 @@
 package com.platformX.distribution.page;
 
-import static org.testng.Assert.assertTrue;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -54,12 +52,6 @@ public class MjernaMjesta extends PocetnaStranicaPXD {
 	
 	 @FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '78000 - Banja Luka')]")
 	 private WebElement odaberiPostuWE;
-	 
-	 @FindBy(xpath = "//tr[2]/td[3]")
-	 private WebElement sifraTabelaWE;
-	 
-	 @FindBy(xpath = "//tr[2]/td[2]")
-	 private WebElement eicTabelaWE;
 
 	public void verifikujMjernaMjesta() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
@@ -126,21 +118,8 @@ public class MjernaMjesta extends PocetnaStranicaPXD {
 		
 	 }
 	
-	public void verifikujMjernoMjesto(String sifraMjernogMjesta) throws InterruptedException, FileNotFoundException, IOException {
-		wait.until(ExpectedConditions.elementToBeClickable(filterKolona3WE));
-		filterKolona3WE.click();
-		filterKolona3WE.clear();
-		filterKolona3WE.sendKeys(sifraMjernogMjesta);
-		filterKolona3WE.sendKeys(Keys.ENTER);
-		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
-		wait.until(ExpectedConditions.visibilityOf(sifraTabelaWE));
-		Thread.sleep(500);
-		assertTrue(sifraTabelaWE.getText().contains(sifraMjernogMjesta),"Mjerna mjesta: Sifra mjernog mjesta nije dobra!");
-		
-	 }
-	
 	public String kreirajMjernoMjesto() {
-	   String mjernoMjesto = eicTabelaWE.getText();
+	   String mjernoMjesto = podatak2Tabela2WE.getText();
 	   return mjernoMjesto;
 	}
 	

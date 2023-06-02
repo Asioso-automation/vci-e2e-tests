@@ -32,12 +32,6 @@ public class PocetnaStranicaPXD extends PageBase {
 	@FindBy(xpath = "//div[contains(text(), 'Odjavi se')]")
 	protected WebElement izlogujSeWE;
 	
-	@FindBy(xpath = "//td[2]/div/div/div/div[1]/input")
-	protected WebElement filterKolona2WE;
-	
-	@FindBy(xpath = "//td[3]/div/div/div/div[1]/input")
-	protected WebElement filterKolona3WE;
-	
 	@FindBy(xpath = "//div[@class='v-card__title title mb-0 word-break']")
 	private WebElement brisanjePopUpWE;
 	

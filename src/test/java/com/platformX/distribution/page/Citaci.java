@@ -1,15 +1,12 @@
 package com.platformX.distribution.page;
 
-import static org.testng.Assert.assertTrue;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import com.platformX.base.Kolone;
 import com.platformX.util.Helper;
 
@@ -21,9 +18,6 @@ public class Citaci extends PocetnaStranicaPXD {
 	
 	@FindBy(xpath = "//div[1]/div[1]/div/div/div[1]/div/input")
 	private WebElement imeWE;
-	
-	@FindBy(xpath = "//tr[2]/td[2]")
-	private WebElement imeCitacaTabelaWE;
 
 	public void verifikujCitaci() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
@@ -55,18 +49,6 @@ public class Citaci extends PocetnaStranicaPXD {
 		submitBtnWE.click();
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		return ime;
-	}
-	
-	public void verifikujCitaca(String ime) throws Exception {
-		WebDriverWait wait = new WebDriverWait(driver, 5);
-		wait.until(ExpectedConditions.elementToBeClickable(filterKolona2WE));
-		filterKolona2WE.click();
-		filterKolona2WE.clear();
-		filterKolona2WE.sendKeys(ime);
-		filterKolona2WE.sendKeys(Keys.ENTER);
-		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
-		wait.until(ExpectedConditions.visibilityOf(imeCitacaTabelaWE));
-		assertTrue(imeCitacaTabelaWE.getText().equals(ime), "Citaci: Citac nije pronađen!");
 	}
 	
 	public String urediCitaca() throws InterruptedException {

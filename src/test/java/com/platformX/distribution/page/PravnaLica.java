@@ -1,11 +1,9 @@
 package com.platformX.distribution.page;
 
-import static org.testng.Assert.assertTrue;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -45,12 +43,6 @@ public class PravnaLica extends PocetnaStranicaPXD {
 
 	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '78000 - Banja Luka')]")
 	 private WebElement odaberiPostuWE;
-	
-	@FindBy(xpath = "//tr[2]/td[1]")
-	 private WebElement idTabelaWE;
-	
-	@FindBy(xpath = "//tr[2]/td[2]")
-	 private WebElement nazivTabelaWE;
 
 	public void verifikujPravnaLica() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
@@ -104,19 +96,8 @@ public class PravnaLica extends PocetnaStranicaPXD {
 	}
 	
 	public String kreirajPravnoLice() {
-		String kupac = idTabelaWE.getText() + " - " + nazivTabelaWE.getText();
+		String kupac = podatak2Tabela1WE.getText() + " - " + podatak2Tabela2WE.getText();
 		return kupac;
-	}
-	
-	public void verifikujPravnoLice(String nazivPravnogLica) throws InterruptedException {
-		wait.until(ExpectedConditions.elementToBeClickable(filterKolona2WE));
-		filterKolona2WE.click();
-		filterKolona2WE.clear();
-		filterKolona2WE.sendKeys(nazivPravnogLica);
-		filterKolona2WE.sendKeys(Keys.ENTER);
-		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
-		wait.until(ExpectedConditions.elementToBeClickable(nazivTabelaWE));
-		assertTrue(nazivTabelaWE.getText().contains(nazivPravnogLica),"Pravna lica: Naziv pravnog lica nije dobar!");
 	}
 	
 	public String urediPravnoLice() throws InterruptedException {

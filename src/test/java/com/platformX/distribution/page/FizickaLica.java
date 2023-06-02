@@ -1,10 +1,8 @@
 package com.platformX.distribution.page;
 
-import static org.testng.Assert.assertTrue;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -41,12 +39,6 @@ public class FizickaLica extends PocetnaStranicaPXD {
 	 
 	 @FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '78000 - Banja Luka')]")
 	 private WebElement odaberiPostuWE;
-	 
-	 @FindBy(xpath = "//tr[2]/td[2]")
-	 private WebElement imeIPrezimeTabelaWE;
-	 
-	 @FindBy(xpath = "//tr[2]/td[1]")
-	 private WebElement idTabelaWE;
 
 	public void verifikujFizickaLica() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
@@ -88,19 +80,8 @@ public class FizickaLica extends PocetnaStranicaPXD {
 		return nazivFizickogLica;
 	}
 	
-	public void verifikujFizickoLice(String nazivFizickogLica) throws InterruptedException {
-		wait.until(ExpectedConditions.elementToBeClickable(filterKolona2WE));
-		filterKolona2WE.click();
-		filterKolona2WE.clear();
-		filterKolona2WE.sendKeys(nazivFizickogLica);
-		filterKolona2WE.sendKeys(Keys.ENTER);
-		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
-		wait.until(ExpectedConditions.visibilityOf(imeIPrezimeTabelaWE));
-		assertTrue(imeIPrezimeTabelaWE.getText().contains(nazivFizickogLica),"Fizicka Lica: Naziv fizickog lica nije dobar!");
-    }
-	
 	 public String kreirajFizickoLice() {
-		String kupac = idTabelaWE.getText() + " - " + imeIPrezimeTabelaWE.getText();
+		String kupac = podatak2Tabela1WE.getText() + " - " + podatak2Tabela2WE.getText();
 		return kupac;
 	 }  
 	 

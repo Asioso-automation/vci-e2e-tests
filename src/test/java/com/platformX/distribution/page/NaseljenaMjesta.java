@@ -1,6 +1,5 @@
 package com.platformX.distribution.page;
 
-import static org.testng.Assert.assertTrue;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import org.openqa.selenium.By;
@@ -26,9 +25,6 @@ public class NaseljenaMjesta extends PocetnaStranicaPXD {
 	
 	@FindBy(xpath = "//div[3]/div/div/div[1]/div[1]/input[1]")
 	private WebElement opstinaWE;
-	
-	@FindBy(xpath = "//tr[2]/td[2]")
-	private WebElement nazivTabelaWE;
 
 	public void verifikujNaseljenaMjesta() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
@@ -60,17 +56,6 @@ public class NaseljenaMjesta extends PocetnaStranicaPXD {
 		submitBtnWE.click();
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		return naziv;
-	}
-	
-	public void verifikujNaseljenoMjesto(String naziv) throws Exception{
-		wait.until(ExpectedConditions.elementToBeClickable(filterKolona2WE));
-		filterKolona2WE.click();
-		filterKolona2WE.clear();
-		filterKolona2WE.sendKeys(naziv);
-		filterKolona2WE.sendKeys(Keys.ENTER);
-		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
-		wait.until(ExpectedConditions.visibilityOf(nazivTabelaWE));
-		assertTrue(nazivTabelaWE.getText().equals(naziv), "NaseljenaMjesta: Naseljeno mjesto nije pronadjena!");
 	}
 	
 	public String urediNaseljenoMjesto() throws InterruptedException{

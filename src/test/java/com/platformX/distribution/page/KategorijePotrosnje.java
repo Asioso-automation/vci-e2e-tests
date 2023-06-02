@@ -1,10 +1,8 @@
 package com.platformX.distribution.page;
 
-import static org.testng.Assert.assertTrue;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -20,9 +18,6 @@ public class KategorijePotrosnje extends PocetnaStranicaPXD {
 	
 	@FindBy(xpath = "//input") 
 	private WebElement nazivKategorijePotrosnjeWE;
-	
-	@FindBy(xpath = "//tr[2]/td[2]")
-	private WebElement nazivKategorijePotrosnjeTabelaWE;
 
 	public void verifikujKategorijePotrosnje() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
@@ -44,17 +39,6 @@ public class KategorijePotrosnje extends PocetnaStranicaPXD {
 		submitBtnWE.click();
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		return naziv;	
-	}
-	
-	public void verifikujKategorijuPotrosnje(String naziv) throws Exception {
-       wait.until(ExpectedConditions.elementToBeClickable(filterKolona2WE));
-       filterKolona2WE.click();
-       filterKolona2WE.clear();
-       filterKolona2WE.sendKeys(naziv);
-       filterKolona2WE.sendKeys(Keys.ENTER);
-       wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
-       wait.until(ExpectedConditions.visibilityOf(nazivKategorijePotrosnjeTabelaWE));
-       assertTrue(nazivKategorijePotrosnjeTabelaWE.getText().equals(naziv), "KategorijaPotrosnje: KategorijaPotrosnje nije pronadjena!");
 	}
 	
 	public String urediKategorijuPotrosnje() throws InterruptedException {

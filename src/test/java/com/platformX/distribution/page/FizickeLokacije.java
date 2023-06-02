@@ -1,15 +1,12 @@
 package com.platformX.distribution.page;
 
-import static org.testng.Assert.assertTrue;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import com.platformX.base.Kolone;
 import com.platformX.util.Helper;
 
@@ -30,9 +27,6 @@ public class FizickeLokacije extends PocetnaStranicaPXD {
 	
 	@FindBy(xpath = "//div[2]/div[1]/div/div/div[1]/div[1]/input[1]")
 	private WebElement terenskaJedinicaWE;
-	
-	@FindBy(xpath = "//tr[2]/td[2]")
-	private WebElement nazivFizickeLokacijeTabelaWE;
 	
 	@FindBy(xpath = "//div[11]/div/div/div/div")
 	private WebElement terenskaJedinicaLookupWE;
@@ -72,18 +66,6 @@ public class FizickeLokacije extends PocetnaStranicaPXD {
 		submitBtnWE.click();
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		return naziv;
-	}
-	
-	public void verifikujFizickuLokaciju(String naziv) throws Exception {
-		WebDriverWait wait = new WebDriverWait(driver, 5);
-		wait.until(ExpectedConditions.elementToBeClickable(filterKolona2WE));
-		filterKolona2WE.click();
-		filterKolona2WE.clear();
-		filterKolona2WE.sendKeys(naziv);
-		filterKolona2WE.sendKeys(Keys.ENTER);
-		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
-		wait.until(ExpectedConditions.visibilityOf(nazivFizickeLokacijeTabelaWE));
-		assertTrue(nazivFizickeLokacijeTabelaWE.getText().equals(naziv), "FizickeLokacije: Fizicka lokacija nije pronađena!");
 	}
 	
 	public String urediFizickuLokaciju() throws InterruptedException {

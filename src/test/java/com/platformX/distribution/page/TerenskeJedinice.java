@@ -1,15 +1,12 @@
 package com.platformX.distribution.page;
 
-import static org.testng.Assert.assertTrue;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import com.platformX.base.Kolone;
 import com.platformX.util.Helper;
 
@@ -21,12 +18,6 @@ public class TerenskeJedinice extends PocetnaStranicaPXD {
 	
 	@FindBy(xpath = "//div[1]/div/div/div/div[1]/div/input")
 	private WebElement nazivWE;
-	
-	@FindBy(xpath = "//td[2]/div/div/div/div[1]/input")
-	private WebElement filterPoNazivuWE;
-	
-	@FindBy(xpath = "//tr[2]/td[2]")
-	private WebElement nazivTerenskeJediniceTabelaWE;
 	
 	public void verifikujTerenskeJedinice() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
@@ -57,18 +48,6 @@ public class TerenskeJedinice extends PocetnaStranicaPXD {
 		return naziv;
 	}
 	
-	public void verifikujTerenskuJedinicu(String naziv) throws Exception {
-		WebDriverWait wait = new WebDriverWait(driver, 5);
-		wait.until(ExpectedConditions.elementToBeClickable(filterPoNazivuWE));
-		filterPoNazivuWE.click();
-		filterPoNazivuWE.clear();
-		filterPoNazivuWE.sendKeys(naziv);
-		filterPoNazivuWE.sendKeys(Keys.ENTER);
-		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
-		wait.until(ExpectedConditions.visibilityOf(nazivTerenskeJediniceTabelaWE));
-		assertTrue(nazivTerenskeJediniceTabelaWE.getText().equals(naziv), "TerenskeJedinice: Terenska jedinica nije pronađena!");
-	}
-	
 	public String urediTerenskuJedinicu() throws InterruptedException {
 		String naziv = "TerenskaJedinica " + Helper.getRandomString(5);
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
@@ -85,5 +64,4 @@ public class TerenskeJedinice extends PocetnaStranicaPXD {
 		return naziv;
 	}
 
-	
 }

@@ -22,12 +22,6 @@ public class UgovorOPrikljucenju extends PocetnaStranicaPXD {
 	@FindBy(xpath = "//div[3]/div[1]/div/div/div[1]/div[1]/input[1]")  
 	 private WebElement ElektroenergetskaSaglasnostWE;
 	
-	@FindBy(xpath = "//div[1]/div[1]/div/button")  
-	 private WebElement datumBtnWE;
-	
-	@FindBy(xpath = "(//*[contains(@class, 'v-date-picker-table__current')])")  
-	 private WebElement datumWE;
-	
 	@FindBy(xpath = "//div[2]/div/div[1]/div[2]/div/div[1]/div[1]/div[1]/div/div/div[1]/div[1]/input[1]")  
 	 private WebElement tipStandardnogPrikljuckaWE;
 	
@@ -52,20 +46,8 @@ public class UgovorOPrikljucenju extends PocetnaStranicaPXD {
 	@FindBy(xpath = "//div[5]/div/div/div[2]/div/div[1]/div/div[2]/div/div/div[1]/div[1]/input[1]")  
 	 private WebElement prikljucnaSnagaKwWE;
 	
-	@FindBy(xpath = "//tr[2]/td[4]")
-	private WebElement nazivTabelaWE;
-	
-	@FindBy(xpath = "//td[4]/div/div/div/div[1]/input")  
-	 private WebElement filterBrojProtokolaWE;
-	
-	@FindBy(xpath = "//div[contains(text(), 'Uspješno završeno.')]")
-	private WebElement porukaWE;
-	
 	@FindBy(xpath = "//div[4]/div[1]/div/div/div[1]/div[1]/input[1]")  
 	 private WebElement vrstaPodrucjaWE;
-	
-	@FindBy(xpath = "//tr[2]/td[4]")  
-	 private WebElement brojProtokolaWE;
 	
 	public void verifikujUgovorOPrikljucenju() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
@@ -89,10 +71,10 @@ public class UgovorOPrikljucenju extends PocetnaStranicaPXD {
 		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
 		ElektroenergetskaSaglasnostWE.sendKeys(Keys.ARROW_DOWN);
 		ElektroenergetskaSaglasnostWE.sendKeys(Keys.ENTER);
-		wait.until(ExpectedConditions.elementToBeClickable(datumBtnWE));
-		datumBtnWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(datumWE));
-		datumWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(datumBtn1WE));
+		datumBtn1WE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(trenutniDatum1WE));
+		trenutniDatum1WE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(tipStandardnogPrikljuckaWE));
 		tipStandardnogPrikljuckaWE.click();
 		tipStandardnogPrikljuckaWE.sendKeys(Helper.getRandomNumber(1));
@@ -130,18 +112,8 @@ public class UgovorOPrikljucenju extends PocetnaStranicaPXD {
 		submitBtnWE.click();
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		verifikujPoruku("Uspješno završeno.");
-		String brProtokola = brojProtokolaWE.getText();
+		String brProtokola = podatak2Tabela4WE.getText();
 		return brProtokola;
-	}
-	
-	public void verifikujUgovorOPrikljucenju(String brProtokola) throws Exception {
-		wait.until(ExpectedConditions.elementToBeClickable(filterBrojProtokolaWE));
-		filterBrojProtokolaWE.click();
-		filterBrojProtokolaWE.clear();
-		filterBrojProtokolaWE.sendKeys(brProtokola);
-		filterBrojProtokolaWE.sendKeys(Keys.ENTER);
-		wait.until(ExpectedConditions.visibilityOf(brojProtokolaWE));
-		assertTrue(brojProtokolaWE.getText().equals(brProtokola), "UgovorOPrikljucenju: Broj protokola nije pronadjen!");
 	}
 	
 	public void urediUgovorOPrikljucenju() throws InterruptedException {

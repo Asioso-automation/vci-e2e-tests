@@ -1,0 +1,69 @@
+package com.platformX.distribution.tests;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import org.testng.annotations.Test;
+import com.platformX.base.BaseTest;
+import com.platformX.distribution.page.LogIn;
+import com.platformX.distribution.page.PocetnaStranicaPXD;
+import com.platformX.distribution.page.Trafostanice;
+
+public class PX_DIST_022_Trafostanice_CRUD_Test extends BaseTest {
+
+	public PX_DIST_022_Trafostanice_CRUD_Test() throws IOException, FileNotFoundException {
+		super();
+	}
+
+	@Test
+	public void px_dist_022_1_dodavanje_trafostanice_test() throws Exception {
+		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
+		logIn.verifikujLogIn();
+		logIn.logIn();
+		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
+		homePage.verifikujPocetnuStranicu();
+		Trafostanice trafostanice = homePage.navigirajNaTrafostanice();
+		trafostanice.verifikujTrafostanice();
+		String trafostanica = trafostanice.dodajTrafostanicu();
+		trafostanice.verifikujPoruku("Uspješno završeno.");
+		trafostanice.pretraziStavku(homePage.filterKolona3WE, trafostanica);
+		trafostanice.verifikujTrafostanice();
+		trafostanice.verifikujStavku(trafostanica, homePage.podatak2Tabela3WE);
+	}
+	
+	@Test
+	public void px_dist_022_2_uredjivanje_trafostanice_test() throws Exception {
+		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
+		logIn.verifikujLogIn();
+		logIn.logIn();
+		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
+		homePage.verifikujPocetnuStranicu();
+		Trafostanice trafostanice = homePage.navigirajNaTrafostanice();
+		trafostanice.verifikujTrafostanice();
+		String trafostanica = trafostanice.dodajTrafostanicu();
+		trafostanice.verifikujPoruku("Uspješno završeno.");
+		trafostanice.pretraziStavku(homePage.filterKolona3WE, trafostanica);
+		trafostanice.verifikujTrafostanice();
+		trafostanice.verifikujStavku(trafostanica, homePage.podatak2Tabela3WE);
+		String novaTrafostanica = trafostanice.urediTrafostanicu(trafostanica);
+		trafostanice.verifikujPoruku("Uspješno završeno.");
+		trafostanice.pretraziStavku(homePage.filterKolona3WE, novaTrafostanica);
+		trafostanice.verifikujTrafostanice();
+		trafostanice.verifikujStavku(novaTrafostanica, homePage.podatak2Tabela3WE);
+	}
+	
+	@Test
+	public void px_dist_022_3_neuspjesno_brisanje_trafostanice_test() throws Exception {
+		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
+		logIn.verifikujLogIn();
+		logIn.logIn();
+		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
+		homePage.verifikujPocetnuStranicu();
+		Trafostanice trafostanice = homePage.navigirajNaTrafostanice();
+		trafostanice.verifikujTrafostanice();
+		trafostanice.pretraziStavku(homePage.filterKolona3WE, "001-Gradac");
+		trafostanice.verifikujTrafostanice();
+		trafostanice.verifikujStavku("001-Gradac", homePage.podatak2Tabela3WE);
+		trafostanice.obrisiStavku(false);
+	}
+
+}

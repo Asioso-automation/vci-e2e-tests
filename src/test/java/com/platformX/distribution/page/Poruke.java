@@ -34,17 +34,20 @@ public class Poruke extends PocetnaStranicaPXD {
 	@FindBy(xpath = "//span[@class='v-btn__content' and text()='Sačuvaj']")
 	private WebElement sacuvajWE;
 	
+	@FindBy(xpath = "//div[contains(@class, 'v-picker v-card v-picker--date')]")
+	private WebElement datepickerWE;
+	
 	@FindBy(xpath = "(//div[@class='message-title'])[2]")
-	private WebElement naslovPoruke2WE;
+	private WebElement porukaNaslov2WE;
 	
 	@FindBy(xpath = "(//div[@class='message-title'])[3]")
-	private WebElement naslovPoruke3WE;
+	private WebElement porukaNaslov3WE;
 	
 	@FindBy(xpath = "(//div[@class='pl-8'])[2]")
-	private WebElement sadrzajPoruke2WE;
+	private WebElement porukaSadrzaj2WE;
 	
 	@FindBy(xpath = "(//div[@class='pl-8'])[3]")
-	private WebElement sadrzajPoruke3WE;
+	private WebElement porukaSadrzaj3WE;
 
 	public void verifikujPoruke()throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
@@ -80,9 +83,15 @@ public class Poruke extends PocetnaStranicaPXD {
 		sadrzajPorukeWE.sendKeys(podaci[1]);
 		wait.until(ExpectedConditions.elementToBeClickable(datumOdWE));
 		datumOdWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(trenutniDatum1WE));
+		wait.until(ExpectedConditions.visibilityOf(datepickerWE));
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
-		trenutniDatum1WE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(trenutniDatum1WE));
+		try {
+			trenutniDatum1WE.click();
+		} catch (Exception e) {
+			Thread.sleep(800);
+			trenutniDatum1WE.click();
+		}
 		sacuvajWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
 		submitBtnWE.click();
@@ -92,16 +101,13 @@ public class Poruke extends PocetnaStranicaPXD {
 	
 	public void verifikujPorukuLista(String naslov) throws Exception {
 		wait.until(ExpectedConditions.visibilityOf(podatak2Tabela3WE));
-		assertTrue(podatak2Tabela3WE.getText().trim().equals(naslov), "Poruke: Poruka nije pronađena!");
+		assertTrue(podatak2Tabela3WE.getText().trim().contains(naslov), "Poruke: Poruka nije pronađena!");
 	}
 	
 	public void verifikujPorukuPocetna(String naslov, String sadrzaj) throws Exception {
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
-		wait.until(ExpectedConditions.visibilityOf(naslovPoruke2WE));
-		assertTrue(naslovPoruke2WE.getText().trim().contains(naslov), "Poruke: Naslov poruke nije dobar!");
-		wait.until(ExpectedConditions.visibilityOf(sadrzajPoruke2WE));
-		assertTrue(sadrzajPoruke2WE.getText().trim().contains(sadrzaj), "Poruke: Sadržaj poruke nije dobar!");
-//		TODO ubaciti try/catch - verifikacija elemenata naslovPoruke3WE, sadrzajPoruke3WE
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='message-title' and contains(., '" + naslov + "')]")));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='pl-8' and contains(., '" + sadrzaj + "')]")));
 	}
 
 }

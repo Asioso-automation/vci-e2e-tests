@@ -1,11 +1,9 @@
 package com.platformX.distribution.page;
 
-import static org.testng.Assert.assertTrue;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -48,15 +46,6 @@ public class ObracunskiUgovori extends PocetnaStranicaPXD {
 	
 	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '4 - TG-1 (Domaćinstva 0,4 kV JT), JT')]")
 	 private WebElement odaberiTarifnuGrupuWE;
-	
-	@FindBy(xpath = "//div[1]/div[1]/div/button")
-	 private WebElement datumPocetkaWE;
-	
-	@FindBy(xpath = "//*[contains(@class, 'v-date-picker-table__current')]")
-	 private WebElement odaberiDatumWE;
-	
-	@FindBy(xpath = "//tr[2]/td[3]")
-	 private WebElement mjernoMjestoTabelaWE;
 
 	public void verifikujObracunskiUgovori() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
@@ -103,10 +92,10 @@ public class ObracunskiUgovori extends PocetnaStranicaPXD {
 		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
 		wait.until(ExpectedConditions.elementToBeClickable(odaberiTarifnuGrupuWE));
 		odaberiTarifnuGrupuWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(datumPocetkaWE));
-		datumPocetkaWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(odaberiDatumWE));
-		odaberiDatumWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(datumBtn1WE));
+		datumBtn1WE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(trenutniDatum1WE));
+		trenutniDatum1WE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(poljeMjernoMjestoWE));
 		poljeMjernoMjestoWE.sendKeys(mjernoMjesto);
 		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
@@ -128,19 +117,6 @@ public class ObracunskiUgovori extends PocetnaStranicaPXD {
 		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
 		submitBtnWE.click();
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
-	}
-	
-	public void verifikujObracunskiUgovor(String mjernoMjesto) throws InterruptedException, FileNotFoundException, IOException {
-		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
-		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
-		wait.until(ExpectedConditions.elementToBeClickable(filterKolona3WE));
-		filterKolona3WE.click();
-		filterKolona3WE.clear();
-		filterKolona3WE.sendKeys(mjernoMjesto);
-		filterKolona3WE.sendKeys(Keys.ENTER);
-		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
-		wait.until(ExpectedConditions.visibilityOf(mjernoMjestoTabelaWE));
-		assertTrue(mjernoMjestoTabelaWE.getText().contains(mjernoMjesto),"Obracunski ugovori: EIC ugovora nije dobar!");
 	}
 	
 	public String urediObracunskiUgovor() throws InterruptedException {

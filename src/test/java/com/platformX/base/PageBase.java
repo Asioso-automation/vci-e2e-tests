@@ -85,12 +85,31 @@ public abstract class PageBase {
 
 	@FindBy(xpath = "//*[contains(@class, 'v-btn__content') and contains(text(), 'Briši')]")
 	protected WebElement potvrdiBrisanjeBtnWE;
-
+	
+//	VERIFIKACIJE - ELEMENTI
+	
+	@FindBy(xpath = "//td[2]/div/div/div/div[1]/input")
+	public WebElement filterKolona2WE;
+	
+	@FindBy(xpath = "//td[3]/div/div/div/div[1]/input")
+	public WebElement filterKolona3WE;
+	
+	@FindBy(xpath = "//td[4]/div/div/div/div[1]/input")
+	public WebElement filterKolona4WE;
+	
+	@FindBy(xpath = "//tr[2]/td[1]")
+	public WebElement podatak2Tabela1WE;
+	
+	@FindBy(xpath = "//tr[2]/td[2]")
+	public WebElement podatak2Tabela2WE;
+	
 	@FindBy(xpath = "//tr[2]/td[3]")
-	protected WebElement podatak2Tabela3WE;
+	public WebElement podatak2Tabela3WE;
 
 	@FindBy(xpath = "//tr[2]/td[4]")
-	protected WebElement podatak2Tabela4WE;
+	public WebElement podatak2Tabela4WE;
+	
+	
 
 	protected Select select(WebElement webElement, String name) {
 		Select selectedElement = new Select(webElement);
@@ -153,7 +172,7 @@ public abstract class PageBase {
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 	}
 
-	public void pretraziElement(WebElement element, String value) {
+	public void pretraziStavku(WebElement element, String value) throws InterruptedException {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		wait.until(ExpectedConditions.visibilityOf(element));
@@ -162,11 +181,13 @@ public abstract class PageBase {
 		element.clear();
 		element.sendKeys(value);
 		element.sendKeys(Keys.ENTER);
+		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
+		Thread.sleep(1000);
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		// TODO doraditi metodu
 	}
 
-	public void verifikujElement(String value, WebElement tableValue) {
+	public void verifikujStavku(String value, WebElement tableValue) {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		wait.until(ExpectedConditions.visibilityOf(tableValue));

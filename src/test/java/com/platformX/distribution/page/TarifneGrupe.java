@@ -1,10 +1,8 @@
 package com.platformX.distribution.page;
 
-import static org.testng.Assert.assertTrue;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -44,12 +42,6 @@ public class TarifneGrupe extends PocetnaStranicaPXD {
 	
 	@FindBy(xpath = "//div[4]/div/div/div[1]/div/div") 
 	private WebElement maxigrafWE;
-	
-	@FindBy(xpath = "//td[2]/div/div/div/div[1]/input") 
-	private WebElement filterPoNazivuWE;
-	
-	@FindBy(xpath = "//tbody/tr[2]/td[2]") 
-	private WebElement nazivTarfineGrupeTabelaWE;
 
 	public void verifikujTarifneGrupe() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
@@ -92,17 +84,6 @@ public class TarifneGrupe extends PocetnaStranicaPXD {
 		submitBtnWE.click();
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		return naziv;
-	}
-
-	public void verifikujTarifnuGrupu(String naziv) throws Exception {
-		wait.until(ExpectedConditions.elementToBeClickable(filterPoNazivuWE));
-		filterPoNazivuWE.click();
-		filterPoNazivuWE.clear();
-		filterPoNazivuWE.sendKeys(naziv);
-		filterPoNazivuWE.sendKeys(Keys.ENTER);
-		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
-	    wait.until(ExpectedConditions.elementToBeClickable(nazivTarfineGrupeTabelaWE));
-	    assertTrue(nazivTarfineGrupeTabelaWE.getText().equals(naziv), "TarifnaGrupa: Tarfina grupa nije pronadjena!");
 	}
 	
 	public String urediTarifnuGrupu()throws Exception {

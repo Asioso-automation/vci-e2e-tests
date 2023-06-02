@@ -1,10 +1,8 @@
 package com.platformX.distribution.page;
 
-import static org.testng.Assert.assertTrue;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -20,12 +18,6 @@ public class TarifneNadgrupe extends PocetnaStranicaPXD {
 	
 	@FindBy(xpath = "//input") 
 	private WebElement nazivTarifneNadrupeWE;
-	
-	@FindBy(xpath = "//td[2]/div/div/div/div[1]/input")
-	private WebElement filterPoNazivuWE;
-	
-	@FindBy(xpath = "//tr[2]/td[2]")
-	private WebElement nazivTarifneNadgrupeTabelaWE;
 
 	public void verifikujTarifneNadgrupe() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
@@ -46,17 +38,6 @@ public class TarifneNadgrupe extends PocetnaStranicaPXD {
 		submitBtnWE.click();
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		return naziv;
-	}
-	
-	public void verifikujTarifnuNadgrupu(String naziv) throws Exception {
-		wait.until(ExpectedConditions.visibilityOf(filterPoNazivuWE));
-		filterPoNazivuWE.click();
-		filterPoNazivuWE.clear();
-		filterPoNazivuWE.sendKeys(naziv);
-		filterPoNazivuWE.sendKeys(Keys.ENTER);
-		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
-		wait.until(ExpectedConditions.elementToBeClickable(nazivTarifneNadgrupeTabelaWE));
-		assertTrue(nazivTarifneNadgrupeTabelaWE.getText().equals(naziv), "TarfinaNadgrupa: Tarifna nadgrupa nije pronadjena!");
 	}
 	
 	public String urediTarifnuNadgrupu()throws InterruptedException {

@@ -29,93 +29,49 @@
 			<class
 				name="com.platformX.distribution.tests.PX_DIST_012_Verifikacija_Sekcije_Administracija_Test" />
 			<class
-				name="com.platformX.distribution.tests.PX_DIST_015_Uredjivanje_Terenske_Jedinice_Test" />
-			<class	
-				name="com.platformX.distribution.tests.PX_DIST_016_Brisanje_Terenske_Jedinice_Test" />	
+				name="com.platformX.distribution.tests.PX_DIST_013_Administracijske_Poruke_CRUD_Test" />
 			<class
-				name="com.platformX.distribution.tests.PX_DIST_018_Uredjivanje_Fizicke_Lokacije_Test" />
+				name="com.platformX.distribution.tests.PX_DIST_014_Terenske_Jedinice_CRUD_Test" />
 			<class
-				name="com.platformX.distribution.tests.PX_DIST_019_Brisanje_Fizicke_Lokacije_Test" />
+				name="com.platformX.distribution.tests.PX_DIST_015_Fizicke_Lokacije_CRUD_Test" />
 			<class
-				name="com.platformX.distribution.tests.PX_DIST_021_Uredjivanje_Citaca_Test" />
+				name="com.platformX.distribution.tests.PX_DIST_016_Citaci_CRUD_Test" />
 			<class
-				name="com.platformX.distribution.tests.PX_DIST_022_Brisanje_Citaca_Test" />
+				name="com.platformX.distribution.tests.PX_DIST_017_Opstine_CRUD_Test" />
 			<class
-				name="com.platformX.distribution.tests.PX_DIST_024_Uredjivanje_Obracunskog_Ugovora_Test" />
+				name="com.platformX.distribution.tests.PX_DIST_018_Naseljena_Mjesta_CRUD_Test" />
 			<class
-				name="com.platformX.distribution.tests.PX_DIST_025_Brisanje_Obracunskog_Ugovora_Test" />
+				name="com.platformX.distribution.tests.PX_DIST_019_Poste_CRUD_Test" />
 			<class
-				name="com.platformX.distribution.tests.PX_DIST_027_Uredjivanje_Opstine_Test" />
+				name="com.platformX.distribution.tests.PX_DIST_020_Ulice_CRUD_Test" />
 			<class
-				name="com.platformX.distribution.tests.PX_DIST_028_Brisanje_Opstine_Test" />
+				name="com.platformX.distribution.tests.PX_DIST_021_Monteri_CRUD_Test" />
 			<class
-				name="com.platformX.distribution.tests.PX_DIST_030_Uredjivanje_Naseljenog_Mjesta_Test" />
+				name="com.platformX.distribution.tests.PX_DIST_022_Trafostanice_CRUD_Test" />
 			<class
-				name="com.platformX.distribution.tests.PX_DIST_031_Brisanje_Naseljenog_Mjesta_Test" />
+				name="com.platformX.distribution.tests.PX_DIST_023_Kategorije_Potrosnje_CRUD_Test" />
 			<class
-				name="com.platformX.distribution.tests.PX_DIST_033_Neuspjesno_Dodavanje_Poste_Test" />
+				name="com.platformX.distribution.tests.PX_DIST_024_Sezone_CRUD_Test" />
 			<class
-				name="com.platformX.distribution.tests.PX_DIST_034_Uredjivanje_Poste_Test" />
+				name="com.platformX.distribution.tests.PX_DIST_025_Tarifne_Nadgrupe_CRUD_Test" />
 			<class
-				name="com.platformX.distribution.tests.PX_DIST_035_Brisanje_Poste_Test" />
+				name="com.platformX.distribution.tests.PX_DIST_026_Tarifne_Grupe_CRUD_Test" />
 			<class
-				name="com.platformX.distribution.tests.PX_DIST_036_Neuspjesno_Brisanje_Poste_Test" />
+				name="com.platformX.distribution.tests.PX_DIST_027_Mjerna_Mjesta_CRUD_Test" />
 			<class
-				name="com.platformX.distribution.tests.PX_DIST_038_Uredjivanje_Ulice_Test" />
+				name="com.platformX.distribution.tests.PX_DIST_028_Zbirna_Kontrolna_Mjerna_Mjesta_CRUD_Test" />
 			<class
-				name="com.platformX.distribution.tests.PX_DIST_039_Brisanje_Ulice_Test" />
+				name="com.platformX.distribution.tests.PX_DIST_029_Elektroenergetske_Saglasnosti_CRUD_Test" />
 			<class
-				name="com.platformX.distribution.tests.PX_DIST_040_Neuspjesno_Brisanje_Ulice_Test" />
+				name="com.platformX.distribution.tests.PX_DIST_030_Ugovor_O_Prikljucenju_CRUD_Test" />
 			<class
-				name="com.platformX.distribution.tests.PX_DIST_042_Uredjivanje_Montera_Test" />
+				name="com.platformX.distribution.tests.PX_DIST_031_Pravna_Lica_CRUD_Test" />
 			<class
-				name="com.platformX.distribution.tests.PX_DIST_043_Brisanje_Montera_Test" />
+				name="com.platformX.distribution.tests.PX_DIST_032_Fizicka_Lica_CRUD_Test" />
 			<class
-				name="com.platformX.distribution.tests.PX_DIST_045_Uredjivanje_Trafostanice_Test" />
+				name="com.platformX.distribution.tests.PX_DIST_033_Brojila_CRUD_Test" />
 			<class
-				name="com.platformX.distribution.tests.PX_DIST_046_Neuspjesno_Brisanje_Trafostanice_Test" />
-			<class
-				name="com.platformX.distribution.tests.PX_DIST_048_Uredjivanje_KategorijePotrosnje_Test" />
-			<class
-				name="com.platformX.distribution.tests.PX_DIST_049_Brisanje_KategorijePotrosnje_Test" />
-			<class
-				name="com.platformX.distribution.tests.PX_DIST_050_Dodavanje_Uredjivanje_Brisanje_Sezone_Test" />
-			<class
-				name="com.platformX.distribution.tests.PX_DIST_052_Uredjivanje_TarifneNadgrupe_Test" />
-			<class
-				name="com.platformX.distribution.tests.PX_DIST_053_Brisanje_TarifneNadgrupe_Test" />
-			<class
-				name="com.platformX.distribution.tests.PX_DIST_055_Uredjivanje_TarifneGrupe_Test" />
-			<class
-				name="com.platformX.distribution.tests.PX_DIST_056_Brisanje_TarifneGrupe_Test" />
-			<class
-				name="com.platformX.distribution.tests.PX_DIST_058_Uredjivanje_Zbirnog_Kontrolnog_Mjernog_Mjesta_Test" />
-			<class
-				name="com.platformX.distribution.tests.PX_DIST_059_Brisanje_Zbirnog_Kontrolnog_Mjernog_Mjesta_Test" />
-			<class
-				name="com.platformX.distribution.tests.PX_DIST_061_Uredjivanje_Elektroenergetske_Saglasnosti_Test" />
-			<class
-				name="com.platformX.distribution.tests.PX_DIST_062_Brisanje_Elektroenergetske_Saglasnosti_Test" />
-			<class
-				name="com.platformX.distribution.tests.PX_DIST_064_Uredjivanje_Ugovora_O_Prikljucenju_Test" />
-			<class
-				name="com.platformX.distribution.tests.PX_DIST_065_Brisanje_Ugovora_O_Prikljucenju_Test" />
-			<class
-				name="com.platformX.distribution.tests.PX_DIST_067_Uredjivanje_Pravnog_Lica_Test" />
-			<class
-				name="com.platformX.distribution.tests.PX_DIST_068_Brisanje_Pravnog_Lica_Test" />
-			<class
-				name="com.platformX.distribution.tests.PX_DIST_070_Uredjivanje_Fizickog_Lica_Test" />
-			<class
-				name="com.platformX.distribution.tests.PX_DIST_071_Brisanje_Fizickog_Lica_Test" />
-			<class
-				name="com.platformX.distribution.tests.PX_DIST_072_Dodavanje_Brojila_Test" />
-			<class
-				name="com.platformX.distribution.tests.PX_DIST_073_Dodavanje_Mjernog_Mjesta_Test" />
-			<class
-				name="com.platformX.distribution.tests.PX_DIST_074_Uredjivanje_Mjernog_Mjesta_Test" />
-			<class
-				name="com.platformX.distribution.tests.PX_DIST_075_Brisanje_Mjernog_Mjesta_Test" />
+				name="com.platformX.distribution.tests.PX_DIST_034_Obracunski_Ugovori_CRUD_Test" />
 		</classes>
 	</test>
 </suite>

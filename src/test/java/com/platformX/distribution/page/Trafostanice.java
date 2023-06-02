@@ -1,6 +1,5 @@
 package com.platformX.distribution.page;
 
-import static org.testng.Assert.assertTrue;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import org.openqa.selenium.By;
@@ -38,12 +37,6 @@ public class Trafostanice extends PocetnaStranicaPXD {
 	
 	@FindBy(xpath = "//div[3]/div[4]/div/div/div[1]/div[1]/input[1]")
 	private WebElement postaWE;
-	
-	@FindBy(xpath = "//td[3]/div/div/div/div[1]/input")
-	private WebElement filterNazivWE;
-	
-	@FindBy(xpath = "//tr[2]/td[3]")
-	private WebElement nazivTabelaWE;
 
 	public void verifikujTrafostanice() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
@@ -106,24 +99,13 @@ public class Trafostanice extends PocetnaStranicaPXD {
 		return naziv;
 	}
 	
-	public void verifikujTrafostanicu(String naziv) throws Exception{
-		wait.until(ExpectedConditions.elementToBeClickable(filterNazivWE));
-		filterNazivWE.click();
-		filterNazivWE.clear();
-		filterNazivWE.sendKeys(naziv);
-		filterNazivWE.sendKeys(Keys.ENTER);
-		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
-		wait.until(ExpectedConditions.visibilityOf(nazivTabelaWE));
-		assertTrue(nazivTabelaWE.getText().equals(naziv), "TrafoStanice: Trafostanica nije pronadjena!");
-	}
-	
 	public String urediTrafostanicu(String naziv) throws InterruptedException{
 		String trafostanica = "Trafostanica" + Helper.getRandomString(4);
-		wait.until(ExpectedConditions.elementToBeClickable(filterNazivWE));
-		filterNazivWE.click();
-		filterNazivWE.clear();
-		filterNazivWE.sendKeys(naziv);
-		filterNazivWE.sendKeys(Keys.ENTER);
+		wait.until(ExpectedConditions.elementToBeClickable(filterKolona3WE));
+		filterKolona3WE.click();
+		filterKolona3WE.clear();
+		filterKolona3WE.sendKeys(naziv);
+		filterKolona3WE.sendKeys(Keys.ENTER);
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		burgerBarWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(urediWE));

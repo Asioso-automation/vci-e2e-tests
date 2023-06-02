@@ -1,10 +1,8 @@
 package com.platformX.distribution.page;
 
-import static org.testng.Assert.assertTrue;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -23,15 +21,6 @@ public class Ulice extends PocetnaStranicaPXD {
 	
 	@FindBy(xpath = "//div[2]/div/div/div[1]/div/input")
 	private WebElement nazivNaDokumentimaWE;
-	
-	@FindBy(xpath = "//div[2]/button[1]")
-	private WebElement dodajUlicuWE;
-	
-	@FindBy(xpath = "//td[2]/div/div/div/div[1]/input")
-	private WebElement filterPoNazivuWE;
-	
-	@FindBy(xpath = "//tr[2]/td[2]")
-	private WebElement nazivUliceTabelaWE;
 	
 	@FindBy(xpath = "//form/div/div[1]/div/div[2]/div/div/div[1]/div/input")
 	private WebElement urediNazivWE;
@@ -57,19 +46,6 @@ public class Ulice extends PocetnaStranicaPXD {
 		submitBtnWE.click();
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		return naziv;
-	}
-	
-	public void verifikujUlicu(String naziv) throws Exception {
-		wait.until(ExpectedConditions.elementToBeClickable(filterPoNazivuWE));
-		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
-		filterPoNazivuWE.click();
-		filterPoNazivuWE.clear();
-		filterPoNazivuWE.sendKeys(naziv);
-		filterPoNazivuWE.sendKeys(Keys.ENTER);
-		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
-		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
-		wait.until(ExpectedConditions.visibilityOf(nazivUliceTabelaWE));
-		assertTrue(nazivUliceTabelaWE.getText().equals(naziv), "Ulice: Ulica nije pronadjena!");
 	}
 	
 	public String urediUlicu() throws InterruptedException {
