@@ -15,8 +15,7 @@ public class PX_DIST_024_Sezone_CRUD_Test extends BaseTest {
 	}
 
 	@Test
-	public void px_dist_024_1_dodavanje_uredjivanje_brisanje_sezone_test() throws Exception {
-		// TODO Razbiti test u 3 dijela: kreiranje, uredjivanje i brisanje
+	public void px_dist_024_1_dodavanje_sezone_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
@@ -28,14 +27,46 @@ public class PX_DIST_024_Sezone_CRUD_Test extends BaseTest {
 		sezone.verifikujPoruku("Uspješno završeno.");
 		sezone.pretraziStavku(homePage.filterKolona2WE, sezona);
 		sezone.verifikujSezone();
-		sezone.verifikujStavku(sezona, homePage.podatak2Tabela2WE); 
+		sezone.verifikujStavku(sezona, homePage.podatak2Tabela2WE);
+	}
+	
+	@Test
+	public void px_dist_024_2_uredjivanje_sezone_test() throws Exception {
+		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
+		logIn.verifikujLogIn();
+		logIn.logIn();
+		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
+		homePage.verifikujPocetnuStranicu();
+		Sezone sezone = homePage.navigirajNaSezone();
+		sezone.verifikujSezone();
+		String sezona = sezone.dodajSezonu();
+		sezone.verifikujPoruku("Uspješno završeno.");
+		sezone.pretraziStavku(homePage.filterKolona2WE, sezona);
+		sezone.verifikujSezone();
+		sezone.verifikujStavku(sezona, homePage.podatak2Tabela2WE);
 		String novaSezona = sezone.urediSezonu();
 		sezone.verifikujPoruku("Uspješno završeno.");
 		sezone.pretraziStavku(homePage.filterKolona2WE, novaSezona);
 		sezone.verifikujSezone();
-		sezone.verifikujStavku(novaSezona, homePage.podatak2Tabela2WE); 
+		sezone.verifikujStavku(novaSezona, homePage.podatak2Tabela2WE);
+	}
+	
+	@Test
+	public void px_dist_024_3_brisanje_sezone_test() throws Exception {
+		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
+		logIn.verifikujLogIn();
+		logIn.logIn();
+		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
+		homePage.verifikujPocetnuStranicu();
+		Sezone sezone = homePage.navigirajNaSezone();
+		sezone.verifikujSezone();
+		String sezona = sezone.dodajSezonu();
+		sezone.verifikujPoruku("Uspješno završeno.");
+		sezone.pretraziStavku(homePage.filterKolona2WE, sezona);
+		sezone.verifikujSezone();
+		sezone.verifikujStavku(sezona, homePage.podatak2Tabela2WE);
 		sezone.obrisiStavku(true);
-		sezone.verifikujBrisanjeStavke(true, novaSezona);
+		sezone.verifikujBrisanjeStavke(true, sezona);
 	}
 
 }

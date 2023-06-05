@@ -26,11 +26,8 @@ public class Banke extends PocetnaStranica {
 	@FindBy(xpath = "//div[2]/div/div/div[1]/div/input") 
 	private WebElement cifreZiroRacunaWE;
 	
-	public WebElement[] verifikujBanke() throws FileNotFoundException, IOException {
+	public void verifikujBanke() throws FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
-		WebElement[] elementi = new WebElement[2];
-		elementi[0] = filterKolona2WE;
-		elementi[1] = podatakTabela2WE;
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title body-1 ml-0 pl-0 text-default') and starts-with(., ' Banke')]")));
 		verifikacijaZajednickihElemenata("Finansije", "Banke", "Banke", 6, false, false, true, true, true, true, false);
@@ -39,7 +36,6 @@ public class Banke extends PocetnaStranica {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPocetneCifreZiroRacunaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaEmailZaTrajniNalog1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAktivnaWE));
-		return elementi;
 	}
 	
 	public String dodajBanku() throws InterruptedException {
@@ -77,19 +73,19 @@ public class Banke extends PocetnaStranica {
 		filterKolona2WE.sendKeys(banka);
 		filterKolona2WE.sendKeys(Keys.ENTER);
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
-		wait.until(ExpectedConditions.visibilityOf(podatakTabela2WE));
+		wait.until(ExpectedConditions.visibilityOf(podatak2Tabela2WE));
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
 		try {
-			assertTrue(podatakTabela2WE.getText().equals(banka), "Banke: Ime banke nije dobro!");
+			assertTrue(podatak2Tabela2WE.getText().equals(banka), "Banke: Ime banke nije dobro!");
 		} catch (Exception e) {
 			Thread.sleep(2000);
-			assertTrue(podatakTabela2WE.getText().contains(banka), "Banke: Ime banke nije dobro!");
+			assertTrue(podatak2Tabela2WE.getText().contains(banka), "Banke: Ime banke nije dobro!");
 		}
-		String bankaTabela = podatakTabela1WE.getText() + " - " + banka;
+		String bankaTabela = podatak2Tabela1WE.getText() + " - " + banka;
 		return bankaTabela;
 	}
 	
-	public String izmjeniBanku() throws InterruptedException {
+	public String urediBanku() throws InterruptedException {
 		String banka = "Banka " + Helper.getRandomString(5);
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		burgerBarWE.click();
@@ -114,9 +110,9 @@ public class Banke extends PocetnaStranica {
 		filterKolona2WE.sendKeys(banka);
 		filterKolona2WE.sendKeys(Keys.ENTER);
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
-		wait.until(ExpectedConditions.visibilityOf(podatakTabela0WE));
+		wait.until(ExpectedConditions.visibilityOf(podatak2TabelaWE));
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
-		assertTrue(podatakTabela0WE.getText().equals("Nema podataka"), "Banke: Poruka prazne tabele nije dobra!");
+		assertTrue(podatak2TabelaWE.getText().equals("Nema podataka"), "Banke: Poruka prazne tabele nije dobra!");
 	}
 
 }

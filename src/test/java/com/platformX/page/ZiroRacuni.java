@@ -24,11 +24,8 @@ public class ZiroRacuni extends PocetnaStranica {
 	@FindBy(xpath = "//div[2]/div/div/div[1]/div/input")
 	private WebElement ziroRacunWE;
 
-	public WebElement[] verifikujZiroRacuni() throws InterruptedException, FileNotFoundException, IOException {
+	public void verifikujZiroRacuni() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
-		WebElement[] elementi = new WebElement[2];
-		elementi[0] = filterKolona3WE;
-		elementi[1] = podatak2Tabela3WE;
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title body-1 ml-0 pl-0 text-default') and starts-with(., ' Žiro računi')]")));
 		verifikacijaZajednickihElemenata("Finansije", "Žiro Računi", "Žiro računi", 6, false, false, true, true, true, true, false);
@@ -37,7 +34,6 @@ public class ZiroRacuni extends PocetnaStranica {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojZiroRacunaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaEmailWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAktivanWE));
-		return elementi;
 	}
 
 	public String dodajZiroRacun(String banka) throws InterruptedException {
@@ -94,11 +90,11 @@ public class ZiroRacuni extends PocetnaStranica {
 			Thread.sleep(2000);
 			assertTrue(podatak2Tabela3WE.getText().contains(ziroRacun), "ZiroRacuniPage: Ime ziro racuna nije dobro!");
 		}
-		String ziroRacunTabela = podatakTabela1WE.getText() + " - " + ziroRacun;
+		String ziroRacunTabela = podatak2Tabela1WE.getText() + " - " + ziroRacun;
 		return ziroRacunTabela;
 	}
 	
-	public String izmjeniZiroRacun() throws InterruptedException {
+	public String urediZiroRacun() throws InterruptedException {
 		String noviZiroRacun = "111-" + Helper.getRandomNumber(3) + "-" + Helper.getRandomNumber(8) + "-" + Helper.getRandomNumber(2);
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		burgerBarWE.click();

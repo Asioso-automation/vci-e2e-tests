@@ -7,37 +7,11 @@
 		<!--PlatformX-->
 			
 			<class
-				name="com.platformX.tests.PX_042_Dodavanje_Ugovora_Test" />		
+				name="com.platformX.tests.PX_023_Ugovori_CRUD_PositiveTestCases" />		
 			<class
-				name="com.platformX.tests.PX_043_Neuspjesno_Dodavanje_Ugovora_Test1" />
+				name="com.platformX.tests.PX_024_Ugovori_CRUD_NegativeTestCases" />
 			<class
-				name="com.platformX.tests.PX_044_Neuspjesno_Dodavanje_Ugovora_Test2" />
-			<class
-				name="com.platformX.tests.PX_045_Neuspjesno_Dodavanje_Ugovora_Test3" />
-			<class
-				name="com.platformX.tests.PX_046_Neuspjesno_Dodavanje_Ugovora_Test4" />
-			<class
-				name="com.platformX.tests.PX_047_Provjera_Validacija_Na_Ugovoru_Test1" />
-			<class
-				name="com.platformX.tests.PX_048_Provjera_Validacija_Na_Ugovoru_Test2" />
-			<class
-				name="com.platformX.tests.PX_049_Dodavanje_Potpisanog_Ugovora_Test" />
-			<class
-				name="com.platformX.tests.PX_050_Izmjena_Ugovora_Test" />
-			<class
-				name="com.platformX.tests.PX_051_Provjera_Validacija_Na_Izmjeni_Ugovora_Test" />
-			<class
-				name="com.platformX.tests.PX_052_Deaktivacija_Ugovora_Test" />
-			<class
-				name="com.platformX.tests.PX_053_Neuspjesna_Deaktivacija_Ugovora_Test" />
-			<class
-				name="com.platformX.tests.PX_054_Odbacivanje_Ugovora_Test" />
-			<class
-				name="com.platformX.tests.PX_055_Neuspjesno_Odbacivanje_Ugovora_Test" />
-			<class
-				name="com.platformX.tests.PX_056_Preregistracija_Ugovora_Test" />		
-			<class
-				name="com.platformX.tests.PX_057_Provjera_Validacija_Na_Preregistraciji_Ugovora_Test" />
+				name="com.platformX.tests.PX_025_Ugovori_Validacije_Test" />
 		</classes>
 	</test>
 </suite>

@@ -126,13 +126,13 @@ public class PravnaLica extends PocetnaStranica {
 		filterKolona2WE.sendKeys(nazivPravnogLica);
 		filterKolona2WE.sendKeys(Keys.ENTER);
 		Thread.sleep(1000);
-		wait.until(ExpectedConditions.visibilityOf(podatakTabela2WE));
-		assertTrue(podatakTabela2WE.getText().contains(nazivPravnogLica),
+		wait.until(ExpectedConditions.visibilityOf(podatak2Tabela2WE));
+		assertTrue(podatak2Tabela2WE.getText().contains(nazivPravnogLica),
 				"Pravna lica: Naziv pravnog lica nije dobar!");
 	}
 
 	public String kreirajKupca() {
-		String kupac = podatakTabela1WE.getText() + " - " + podatakTabela2WE.getText();
+		String kupac = podatak2Tabela1WE.getText() + " - " + podatak2Tabela2WE.getText();
 		return kupac;
 	}
 
@@ -141,7 +141,7 @@ public class PravnaLica extends PocetnaStranica {
 		wait.until(ExpectedConditions.elementToBeClickable(urediPravnoLiceBtnWE));
 	}
 	
-	public String izmjeniPravnoLice() throws InterruptedException {
+	public String urediPravnoLice() throws InterruptedException {
 		String nazivPravnogLica = "Pravno lice " + Helper.getRandomString(5);
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		burgerBarWE.click();
@@ -166,9 +166,9 @@ public class PravnaLica extends PocetnaStranica {
 		filterKolona2WE.sendKeys(pravnoLice);
 		filterKolona2WE.sendKeys(Keys.ENTER);
 		Thread.sleep(1000);
-		wait.until(ExpectedConditions.visibilityOf(podatakTabela0WE));
+		wait.until(ExpectedConditions.visibilityOf(podatak2TabelaWE));
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
-		assertTrue(podatakTabela0WE.getText().equals("Nema podataka"), "PravnaLica: Poruka prazne tabele nije dobra!");
+		assertTrue(podatak2TabelaWE.getText().equals("Nema podataka"), "PravnaLica: Poruka prazne tabele nije dobra!");
 	}
 
 }

@@ -61,7 +61,7 @@ public class Djelatnosti extends PocetnaStranica {
 		assertTrue(podatak2Tabela3WE.getText().equals(djelatnost), "Djelatnosti: Ime djelatnosti nije dobro!");
 	}
 	
-	public String izmjeniDjelatnost() {
+	public String urediDjelatnost() {
 		String djelatnost = "Djelatnost " + Helper.getRandomString(5);
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		burgerBarWE.click();
@@ -86,9 +86,9 @@ public class Djelatnosti extends PocetnaStranica {
 		filterKolona3WE.sendKeys(djelatnost);
 		filterKolona3WE.sendKeys(Keys.ENTER);
 		Thread.sleep(1000);
-		wait.until(ExpectedConditions.visibilityOf(podatakTabela0WE));
+		wait.until(ExpectedConditions.visibilityOf(podatak2TabelaWE));
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
-		assertTrue(podatakTabela0WE.getText().equals("Nema podataka"), "Djelatnosti: Poruka prazne tabele nije dobra!");
+		assertTrue(podatak2TabelaWE.getText().equals("Nema podataka"), "Djelatnosti: Poruka prazne tabele nije dobra!");
 	}
 
 }

@@ -96,12 +96,12 @@ public class TarifneGrupe extends PocetnaStranica {
 		filterKolona2WE.sendKeys(Keys.ENTER);
 		Thread.sleep(1000);
 		wait.until(ExpectedConditions.visibilityOf(jedinstvenElementWE));
-		wait.until(ExpectedConditions.visibilityOf(podatakTabela2WE));
+		wait.until(ExpectedConditions.visibilityOf(podatak2Tabela2WE));
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
-		assertTrue(podatakTabela2WE.getText().equals(tarifnaGrupa), "TarifneGrupe: Ime grupe nije dobro!");
+		assertTrue(podatak2Tabela2WE.getText().equals(tarifnaGrupa), "TarifneGrupe: Ime grupe nije dobro!");
 	}
 	
-	public String izmjeniTarifnuGrupu() {
+	public String urediTarifnuGrupu() {
 		String tarifnaGrupa = "TG " + Helper.getRandomString(5);
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		burgerBarWE.click();
@@ -122,9 +122,9 @@ public class TarifneGrupe extends PocetnaStranica {
 		filterKolona2WE.sendKeys(tarifnaGrupa);
 		filterKolona2WE.sendKeys(Keys.ENTER);
 		Thread.sleep(1000);
-		wait.until(ExpectedConditions.visibilityOf(podatakTabela0WE));
+		wait.until(ExpectedConditions.visibilityOf(podatak2TabelaWE));
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
-		assertTrue(podatakTabela0WE.getText().equals("Nema podataka"), "TarifneGrupe: Poruka prazne tabele nije dobra!");
+		assertTrue(podatak2TabelaWE.getText().equals("Nema podataka"), "TarifneGrupe: Poruka prazne tabele nije dobra!");
 	}
 
 }

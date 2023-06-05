@@ -74,11 +74,11 @@ public class RadneJedinice extends PocetnaStranica {
 		filterKolona2WE.sendKeys(radnaJedinica);
 		filterKolona2WE.sendKeys(Keys.ENTER);
 		Thread.sleep(1000);
-		wait.until(ExpectedConditions.visibilityOf(podatakTabela2WE));
-		assertTrue(podatakTabela2WE.getText().equals(radnaJedinica), "Radne jedinice: Ime radne jedinice nije dobro!");
+		wait.until(ExpectedConditions.visibilityOf(podatak2Tabela2WE));
+		assertTrue(podatak2Tabela2WE.getText().equals(radnaJedinica), "Radne jedinice: Ime radne jedinice nije dobro!");
 	}
 	
-	public String izmjeniRadnuJedinicu() throws InterruptedException {
+	public String urediRadnuJedinicu() throws InterruptedException {
 		String radnaJedinica = "RJ " + Helper.getRandomString(5);
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		burgerBarWE.click();
@@ -103,9 +103,9 @@ public class RadneJedinice extends PocetnaStranica {
 		filterKolona2WE.sendKeys(jedinica);
 		filterKolona2WE.sendKeys(Keys.ENTER);
 		Thread.sleep(1000);
-		wait.until(ExpectedConditions.visibilityOf(podatakTabela0WE));
+		wait.until(ExpectedConditions.visibilityOf(podatak2TabelaWE));
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
-		assertTrue(podatakTabela0WE.getText().equals("Nema podataka"), "Radne jedinice: Poruka prazne tabele nije dobra!");
+		assertTrue(podatak2TabelaWE.getText().equals("Nema podataka"), "Radne jedinice: Poruka prazne tabele nije dobra!");
 	}
 
 }

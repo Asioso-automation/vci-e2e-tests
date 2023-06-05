@@ -77,13 +77,13 @@ public class Poste extends PocetnaStranica {
 		filterKolona2WE.sendKeys(naziv);
 		filterKolona2WE.sendKeys(Keys.ENTER);
 		Thread.sleep(1000);
-		wait.until(ExpectedConditions.visibilityOf(podatakTabela2WE));
-		assertTrue(podatakTabela2WE.getText().equals(naziv), "Poste: Posta nije pronadjena!");
+		wait.until(ExpectedConditions.visibilityOf(podatak2Tabela2WE));
+		assertTrue(podatak2Tabela2WE.getText().equals(naziv), "Poste: Posta nije pronadjena!");
 		assertTrue(podatak2Tabela3WE.getText().equals(nazivNaDok), "Poste: Posta nije pronadjena!");
-		assertTrue(podatakTabela1WE.getText().equals(id), "Poste: Posta nije pronadjena!");
+		assertTrue(podatak2Tabela1WE.getText().equals(id), "Poste: Posta nije pronadjena!");
 	}
 	
-	public String izmjeniPostu() throws InterruptedException {
+	public String urediPostu() throws InterruptedException {
 		String posta = "Posta " + Helper.getRandomString(5);
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		burgerBarWE.click();
@@ -108,9 +108,9 @@ public class Poste extends PocetnaStranica {
 		filterKolona2WE.sendKeys(posta);
 		filterKolona2WE.sendKeys(Keys.ENTER);
 		Thread.sleep(1000);
-		wait.until(ExpectedConditions.visibilityOf(podatakTabela0WE));
+		wait.until(ExpectedConditions.visibilityOf(podatak2TabelaWE));
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
-		assertTrue(podatakTabela0WE.getText().equals("Nema podataka"), "Poste: Poruka prazne tabele nije dobra!");
+		assertTrue(podatak2TabelaWE.getText().equals("Nema podataka"), "Poste: Poruka prazne tabele nije dobra!");
 	}
 
 }

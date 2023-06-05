@@ -71,47 +71,26 @@ public class PocetnaStranica extends PageBase {
 	@FindBy(xpath = "//td[1]/div/div/div/div[1]/input")
 	protected WebElement filterKolona1WE;
 	
-	@FindBy(xpath = "//td[2]/div/div/div/div[1]/input")
-	public WebElement filterKolona2WE;
-	
-	@FindBy(xpath = "//td[3]/div/div/div/div[1]/input")
-	protected WebElement filterKolona3WE;
-	
-	@FindBy(xpath = "//td[4]/div/div/div/div[1]/input") 
-	protected WebElement filterKolona4WE;
-	
 	@FindBy(xpath = "//td[6]/div/div/div/div[1]/input") 
 	protected WebElement filterKolona6WE;
 	
 	@FindBy(xpath = "//tr[2]/td")
-	protected WebElement podatakTabela0WE;
-	
-	@FindBy(xpath = "//tr[2]/td[1]")
-	protected WebElement podatakTabela1WE;
-	
-	@FindBy(xpath = "//tr[2]/td[2]")
-	public WebElement podatakTabela2WE;
+	protected WebElement podatak2TabelaWE;
 	
 	@FindBy(xpath = "//tr[1]/td[3]")
-	protected WebElement podatakTabela3WE;
-	
-	@FindBy(xpath = "//tr[2]/td[3]")
-	protected WebElement podatak2Tabela3WE;
+	protected WebElement podatak1Tabela3WE;
 	
 	@FindBy(xpath = "//tr/td[4]")
 	protected WebElement podatakTabela4WE;
 	
-	@FindBy(xpath = "//tr[2]/td[4]")
-	protected WebElement podatak1Tabela4WE;
-	
 	@FindBy(xpath = "//tr[2]/td[5]")
-	protected WebElement podatakTabela5WE;
+	protected WebElement podatak2Tabela5WE;
 	
 	@FindBy(xpath = "//tr[2]/td[7]")
-	protected WebElement podatakTabela7WE;
+	protected WebElement podatak2Tabela7WE;
 	
 	@FindBy(xpath = "//tr[2]/td[9]")
-	protected WebElement podatakTabela9WE;
+	protected WebElement podatak2Tabela9WE;
 	
 	@FindBy(xpath = "//div[contains(@class, 'menuable__content__active')]")
 	protected WebElement aktivniLookupWE;

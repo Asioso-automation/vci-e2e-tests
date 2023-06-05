@@ -62,12 +62,12 @@ public class UmanjenjaCijene extends PocetnaStranica {
 		filterKolonaWE.sendKeys(Keys.ENTER);
 		Thread.sleep(1000);
 		wait.until(ExpectedConditions.visibilityOf(jedinstvenElementWE));
-		wait.until(ExpectedConditions.visibilityOf(podatakTabela2WE));
+		wait.until(ExpectedConditions.visibilityOf(podatak2Tabela2WE));
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
-		assertTrue(podatakTabela2WE.getText().equals(brojMjeseci), "UmanjenjaCijena: Broj mjeseci nije dobar!");
+		assertTrue(podatak2Tabela2WE.getText().equals(brojMjeseci), "UmanjenjaCijena: Broj mjeseci nije dobar!");
 	}
 	
-	public String izmjeniUmanjenjeCijene() throws InterruptedException {
+	public String urediUmanjenjeCijene() throws InterruptedException {
 		String brojMjeseci = Helper.getRandomNumberInRange(1, 9999);
 		String procenat = Helper.getRandomNumber(2);
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
@@ -96,9 +96,9 @@ public class UmanjenjaCijene extends PocetnaStranica {
 		filterKolonaWE.sendKeys(brojMjeseci);
 		filterKolonaWE.sendKeys(Keys.ENTER);
 		Thread.sleep(1000);
-		wait.until(ExpectedConditions.visibilityOf(podatakTabela0WE));
+		wait.until(ExpectedConditions.visibilityOf(podatak2TabelaWE));
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
-		assertTrue(podatakTabela0WE.getText().equals("Nema podataka"), "TarifneGrupe: Poruka prazne tabele nije dobra!");
+		assertTrue(podatak2TabelaWE.getText().equals("Nema podataka"), "TarifneGrupe: Poruka prazne tabele nije dobra!");
 	}
 	
 	public void dodajPredefinisanoUmanjenjeCijene(String brojMjeseci) {

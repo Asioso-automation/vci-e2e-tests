@@ -58,11 +58,11 @@ public class Ulice extends PocetnaStranica {
 		filterKolona2WE.sendKeys(naziv);
 		filterKolona2WE.sendKeys(Keys.ENTER);
 		Thread.sleep(1000);
-		wait.until(ExpectedConditions.visibilityOf(podatakTabela2WE));
-		assertTrue(podatakTabela2WE.getText().equals(naziv), "Ulice: Ulica nije pronadjena!");
+		wait.until(ExpectedConditions.visibilityOf(podatak2Tabela2WE));
+		assertTrue(podatak2Tabela2WE.getText().equals(naziv), "Ulice: Ulica nije pronadjena!");
 	}
 	
-	public String izmjeniUlicu() throws InterruptedException {
+	public String urediUlicu() throws InterruptedException {
 		String ulica = "Ulica " + Helper.getRandomString(5);
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		burgerBarWE.click();
@@ -87,9 +87,9 @@ public class Ulice extends PocetnaStranica {
 		filterKolona2WE.sendKeys(ulica);
 		filterKolona2WE.sendKeys(Keys.ENTER);
 		Thread.sleep(1000);
-		wait.until(ExpectedConditions.visibilityOf(podatakTabela0WE));
+		wait.until(ExpectedConditions.visibilityOf(podatak2TabelaWE));
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
-		assertTrue(podatakTabela0WE.getText().equals("Nema podataka"), "Ulice: Poruka prazne tabele nije dobra!");
+		assertTrue(podatak2TabelaWE.getText().equals("Nema podataka"), "Ulice: Poruka prazne tabele nije dobra!");
 	}
 
 }

@@ -67,11 +67,11 @@ public class OperativnaPodrucja extends PocetnaStranica {
 		filterKolona2WE.sendKeys(operativnoPodrucje);
 		filterKolona2WE.sendKeys(Keys.ENTER);
 		Thread.sleep(1000);
-		wait.until(ExpectedConditions.visibilityOf(podatakTabela2WE));
-		assertTrue(podatakTabela2WE.getText().equals(operativnoPodrucje), "Operativno podrucje: Ime radne jedinice nije dobro!");
+		wait.until(ExpectedConditions.visibilityOf(podatak2Tabela2WE));
+		assertTrue(podatak2Tabela2WE.getText().equals(operativnoPodrucje), "Operativno podrucje: Ime radne jedinice nije dobro!");
 	}
 	
-	public String izmjeniOperativnoPodrucje() throws InterruptedException {
+	public String urediOperativnoPodrucje() throws InterruptedException {
 		String novoPodrucje = "OP " + Helper.getRandomString(5);
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		burgerBarWE.click();
@@ -96,9 +96,9 @@ public class OperativnaPodrucja extends PocetnaStranica {
 		filterKolona2WE.sendKeys(podrucje);
 		filterKolona2WE.sendKeys(Keys.ENTER);
 		Thread.sleep(1000);
-		wait.until(ExpectedConditions.visibilityOf(podatakTabela0WE));
+		wait.until(ExpectedConditions.visibilityOf(podatak2TabelaWE));
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
-		assertTrue(podatakTabela0WE.getText().equals("Nema podataka"), "OperativnaPodrucja: Poruka prazne tabele nije dobra!");
+		assertTrue(podatak2TabelaWE.getText().equals("Nema podataka"), "OperativnaPodrucja: Poruka prazne tabele nije dobra!");
 	}
 
 }

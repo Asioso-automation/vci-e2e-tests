@@ -560,9 +560,9 @@ public class Ugovori extends PocetnaStranica {
 		pretraziMjernaMjestaWE.clear();
 		pretraziMjernaMjestaWE.sendKeys(mjernoMjesto);
 		pretraziMjernaMjestaWE.sendKeys(Keys.ENTER);
-		wait.until(ExpectedConditions.visibilityOf(podatakTabela5WE));
-		assertTrue(podatakTabela5WE.getText().contains(mjernoMjesto), "Ugovori: Naziv mjernog mjesta nije dobar!");
-		assertTrue(podatakTabela7WE.getText().contains("7 - Kategorija cijene 2"),
+		wait.until(ExpectedConditions.visibilityOf(podatak2Tabela5WE));
+		assertTrue(podatak2Tabela5WE.getText().contains(mjernoMjesto), "Ugovori: Naziv mjernog mjesta nije dobar!");
+		assertTrue(podatak2Tabela7WE.getText().contains("7 - Kategorija cijene 2"),
 				"Ugovori: Naziv kategorije nije dobar!");
 	}
 	
@@ -573,9 +573,9 @@ public class Ugovori extends PocetnaStranica {
 		pretraziMjernaMjestaWE.clear();
 		pretraziMjernaMjestaWE.sendKeys(mjernoMjesto);
 		pretraziMjernaMjestaWE.sendKeys(Keys.ENTER);
-		wait.until(ExpectedConditions.visibilityOf(podatakTabela5WE));
+		wait.until(ExpectedConditions.visibilityOf(podatak2Tabela5WE));
 		Thread.sleep(1000);
-		assertTrue(podatakTabela5WE.getText().contains(mjernoMjesto), "Ugovori: Naziv mjernog mjesta nije dobar!");
+		assertTrue(podatak2Tabela5WE.getText().contains(mjernoMjesto), "Ugovori: Naziv mjernog mjesta nije dobar!");
 	}
 	
 	public void pronadjiUgovorPoEic(String eic) throws InterruptedException {
@@ -600,8 +600,8 @@ public class Ugovori extends PocetnaStranica {
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(@class, 'v-list v-select-list v-sheet theme--light v-list--dense theme--light') and contains(., '" + pravnoLice + "')]")));
 		pretraziKupcaWE.sendKeys(Keys.DOWN);
 		pretraziKupcaWE.sendKeys(Keys.ENTER);
-		wait.until(ExpectedConditions.visibilityOf(podatakTabela3WE));
-		assertTrue(podatakTabela3WE.getText().contains(pravnoLice), "Ugovori: Naziv pravnog lica nije dobar!");
+		wait.until(ExpectedConditions.visibilityOf(podatak1Tabela3WE));
+		assertTrue(podatak1Tabela3WE.getText().contains(pravnoLice), "Ugovori: Naziv pravnog lica nije dobar!");
 	}
 	
 	public void verifikujPreregistrovanUgovor(String eic, String kupac) throws InterruptedException {
@@ -617,7 +617,7 @@ public class Ugovori extends PocetnaStranica {
 		Thread.sleep(1000);
 		wait.until(ExpectedConditions.visibilityOf(podatakTabela4WE));
 		assertTrue(podatakTabela4WE.getText().contains(eic), "Ugovori: Naziv EIC nije dobar!");
-		assertTrue(podatakTabela9WE.getText().contains("15.07.2020."), "Ugovori: Datum pocetka nije dobar!");
+		assertTrue(podatak2Tabela9WE.getText().contains("15.07.2020."), "Ugovori: Datum pocetka nije dobar!");
 	}
 
 	public void verifikujOdbaceniUgovor(String kupac) throws InterruptedException {
@@ -754,7 +754,7 @@ public class Ugovori extends PocetnaStranica {
 		submitBtnWE.click();		
 	}
 
-	public void izmjeniUgovor() throws InterruptedException {
+	public void urediUgovor() throws InterruptedException {
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		burgerBarWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(urediBtnWE));
@@ -894,7 +894,7 @@ public class Ugovori extends PocetnaStranica {
 		return nazivMjernogMjesta;
 	}
 
-	public void izmjeniPotpisanUgovor() throws InterruptedException {
+	public void urediPotpisanUgovor() throws InterruptedException {
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		burgerBarWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(urediBtnWE));
@@ -917,7 +917,7 @@ public class Ugovori extends PocetnaStranica {
 		assertTrue(brojNecekiranihKolona().size() == n, "Broj necekiranih kolona nije dobar! ");
 	}
 
-	public void verifikujObaveznaPoljaIzmjenaUgovora() throws Exception {
+	public void verifikujObaveznaPoljaUredjivanjeUgovora() throws Exception {
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		burgerBarWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(urediBtnWE));

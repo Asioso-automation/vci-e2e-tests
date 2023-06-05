@@ -52,18 +52,20 @@ public class KategorijeCijena extends PocetnaStranica {
 		filterKolona2WE.sendKeys(Keys.ENTER);
 		Thread.sleep(1000);
 		wait.until(ExpectedConditions.visibilityOf(jedinstvenElementWE));
-		wait.until(ExpectedConditions.visibilityOf(podatakTabela2WE));
+		wait.until(ExpectedConditions.visibilityOf(podatak2Tabela2WE));
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
-		assertTrue(podatakTabela2WE.getText().equals(kategorija), "KtegorijeCijena: Ime kategorije nije dobro!");
+		assertTrue(podatak2Tabela2WE.getText().equals(kategorija), "KtegorijeCijena: Ime kategorije nije dobro!");
 	}
 	
-	public String izmjeniKategorijuCijene() {
+	public String urediKategorijuCijena() {
 		String novaKategorija = Helper.getRandomString(5);
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		burgerBarWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(urediWE));
 		urediWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(nazivKategorijeWE));
+		nazivKategorijeWE.click();
+		nazivKategorijeWE.clear();
 		nazivKategorijeWE.sendKeys(novaKategorija);
 		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
 		submitBtnWE.click();
@@ -77,9 +79,9 @@ public class KategorijeCijena extends PocetnaStranica {
 		filterKolona2WE.sendKeys(kategorija);
 		filterKolona2WE.sendKeys(Keys.ENTER);
 		Thread.sleep(1000);
-		wait.until(ExpectedConditions.visibilityOf(podatakTabela0WE));
+		wait.until(ExpectedConditions.visibilityOf(podatak2TabelaWE));
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
-		assertTrue(podatakTabela0WE.getText().equals("Nema podataka"), "TarifneGrupe: Poruka prazne tabele nije dobra!");
+		assertTrue(podatak2TabelaWE.getText().equals("Nema podataka"), "TarifneGrupe: Poruka prazne tabele nije dobra!");
 	}
 
 }
