@@ -10,7 +10,7 @@ public class Uino extends PocetnaStranica {
 		super(driver);
 	}
 	
-	public void verifikujUino() {
+	public void verifikujUino() throws InterruptedException {
 		verifikacijaZajednickihElemenata("Finansije", "UINO", "UINO", 0, false, false, false, false, false, false, false);
 	}
 

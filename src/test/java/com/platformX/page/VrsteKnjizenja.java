@@ -13,7 +13,7 @@ public class VrsteKnjizenja extends PocetnaStranica {
 		super(driver);
 	}
 	
-	public void verifikujVrsteKnjizenja() throws FileNotFoundException, IOException {
+	public void verifikujVrsteKnjizenja() throws FileNotFoundException, IOException, InterruptedException {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title body-1 ml-0 pl-0 text-default') and starts-with(., ' Vrste knji')]")));

@@ -129,9 +129,13 @@ public abstract class PageBase {
 
 	public void verifikacijaZajednickihElemenata(String sekcija, String stranica, String naslovStranice, int brKolona,
 			boolean importBtn, boolean dodajSve, boolean dodaj, boolean preuzmiExcel, boolean ukloniFiltere,
-			boolean osvjezi, boolean info) {
+			boolean osvjezi, boolean info) throws InterruptedException {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
+		try {
 			wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
+		} catch (Exception e) {
+			Thread.sleep(500);
+		}
 		wait.until(ExpectedConditions.elementToBeClickable(sekcijaBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(stranicaBtnWE));
 		assertTrue(sekcijaBtnWE.getText().trim().equals(sekcija), stranica + ": Naziv sekcije nije dobar!");
@@ -165,11 +169,11 @@ public abstract class PageBase {
 		if (info == true) {
 			wait.until(ExpectedConditions.elementToBeClickable(infoBtnWE));
 		}
-//		try {
-//			wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
-//		} catch (Exception e) {
-//		}
-		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
+		try {
+			wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
+		} catch (Exception e) {
+			Thread.sleep(500);
+		}
 	}
 
 	public void pretraziStavku(WebElement element, String value) throws InterruptedException {

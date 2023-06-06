@@ -13,7 +13,7 @@ public class StavkeZahtjevaZaUkljucenja extends PocetnaStranica {
 		super(driver);
 	}
 	
-	public void verifikujStavkeZahtjevaZaUkljucenja() throws FileNotFoundException, IOException {
+	public void verifikujStavkeZahtjevaZaUkljucenja() throws FileNotFoundException, IOException, InterruptedException {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title body-1 ml-0 pl-0 text-default') and starts-with(., ' Stavke')]")));

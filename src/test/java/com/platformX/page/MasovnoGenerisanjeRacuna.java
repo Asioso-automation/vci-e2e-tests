@@ -27,8 +27,8 @@ public class MasovnoGenerisanjeRacuna extends PocetnaStranica{
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNacinSlanjaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKreiraoWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaStatusWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaUkupanBrojRacunaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojGenerisanihRacunaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaUkupanBrojFajlovaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojGenerisanihFajlovaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaStampanjeIzvodaOtvorenihStavkiWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaStampanjeObavjestenjaOPrestankuVazenjaUgovoraWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAnaliziranWE));

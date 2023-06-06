@@ -54,7 +54,7 @@ public class DnevniciUplata extends PocetnaStranica {
 	@FindBy(xpath = "//div[2]/div[1]/div/div[1]/div[2]/input")
 	private WebElement datumIzvodaWE;
 
-	public void verifikujDnevniciUplata() throws FileNotFoundException, IOException {
+	public void verifikujDnevniciUplata() throws FileNotFoundException, IOException, InterruptedException {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title body-1 ml-0 pl-0 text-default') and starts-with(., ' Dnevnici uplata')]")));

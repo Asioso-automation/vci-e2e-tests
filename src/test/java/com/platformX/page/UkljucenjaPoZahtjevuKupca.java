@@ -12,7 +12,7 @@ public class UkljucenjaPoZahtjevuKupca extends PocetnaStranica{
 	public UkljucenjaPoZahtjevuKupca(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);
 	}
-	public void verifikujUkljucenaPoZahtjevuKupca() throws FileNotFoundException, IOException {
+	public void verifikujUkljucenaPoZahtjevuKupca() throws FileNotFoundException, IOException, InterruptedException {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title body-1 ml-0 pl-0 text-default') and starts-with(., ' Uključenja po')]")));
