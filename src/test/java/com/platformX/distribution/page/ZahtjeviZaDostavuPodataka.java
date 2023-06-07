@@ -20,7 +20,7 @@ public class ZahtjeviZaDostavuPodataka extends PocetnaStranicaPXD {
 		verifikacijaZajednickihElemenata("Mjerna Mjesta", "Zahtjevi Za Dostavu Podataka", "ZAHTJEVI ZA DOSTAVU PODATAKA O MJERNIM MJESTIMA (PROCES 15)", 8, false, false, false, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaSnabdjevacWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaEic2WE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaEicWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumSlanjaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaRazlogOdbijanjaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIniciraoOdsWE));

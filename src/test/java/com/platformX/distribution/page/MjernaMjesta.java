@@ -59,7 +59,7 @@ public class MjernaMjesta extends PocetnaStranicaPXD {
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Mjerna mjesta')]")));
 		verifikacijaZajednickihElemenata("Mjerna Mjesta", "Mjerna Mjesta", "MJERNA MJESTA", 14, false, false, true, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaEic2WE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaEicWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaSifraWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaUgovoreniNazivWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAktivniUgovorWE));

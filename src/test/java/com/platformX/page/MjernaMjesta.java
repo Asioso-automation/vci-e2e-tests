@@ -29,7 +29,7 @@ public class MjernaMjesta extends PocetnaStranica {
 		wait.until(ExpectedConditions.elementToBeClickable(posaljiZahtjevZaDostavuPodatakaBtnWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaOdsWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaEic2WE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaEicWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAdresaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAktivanWE));
 	}

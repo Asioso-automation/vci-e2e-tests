@@ -21,7 +21,7 @@ public class ZahtjeviZaRaskidUgovora extends PocetnaStranica {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojProtokolaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaUgovorWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaEic2WE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaEicWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaZahtjevaniDatumZavrsetkaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumZavrsetkaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaRazlogZahtjevaWE));

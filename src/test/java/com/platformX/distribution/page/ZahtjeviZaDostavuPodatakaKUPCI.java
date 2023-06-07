@@ -20,7 +20,7 @@ public class ZahtjeviZaDostavuPodatakaKUPCI extends PocetnaStranicaPXD {
 		verifikacijaZajednickihElemenata("Kupci", "Zahtjevi Za Dostavu Podataka", "ZAHTJEVI ZA DOSTAVU PODATAKA (PROCES 14)", 8, false, false, false, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaSnabdjevacWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaEic2WE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaEicWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaRazlogOdbijanjaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumKreiranjaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaRealizovanWE));

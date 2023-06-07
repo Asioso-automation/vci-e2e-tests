@@ -20,7 +20,7 @@ public class ZahtjeviZaDostavuPodataka extends PocetnaStranica {
 		verifikacijaZajednickihElemenata("Kupci", "Zahtjevi Za Dostavu Podataka", "Zahtjevi za dostavu podataka o kupcima", 8, false, false, false, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaOdsWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaEic2WE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaEicWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumSlanjaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaRazlogOdbijanjaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIniciraoSnabdjevacWE));

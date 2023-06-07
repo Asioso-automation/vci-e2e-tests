@@ -24,7 +24,7 @@ public class OcitanjaBrojila extends PocetnaStranicaPXD {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaVrstaOcitanjaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaCitacWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKorisnikWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaEic2WE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaEicWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNazivMjernogMjestaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojiloWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaVrijemeUnosaWE));

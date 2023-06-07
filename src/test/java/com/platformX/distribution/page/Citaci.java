@@ -3,6 +3,7 @@ package com.platformX.distribution.page;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -18,6 +19,12 @@ public class Citaci extends PocetnaStranicaPXD {
 	
 	@FindBy(xpath = "//div[1]/div[1]/div/div/div[1]/div/input")
 	private WebElement imeWE;
+	
+	@FindBy(xpath = "//div[2]/div[1]/div/div/div[1]/div[1]/input[1]")
+	private WebElement terenskaJedinicaWE;
+	
+	@FindBy(xpath = "//div[2]/div[2]/div/div/div[1]/div[1]/input[1]")
+	private WebElement fizickaLokacijaWE;
 
 	public void verifikujCitaci() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
@@ -40,6 +47,16 @@ public class Citaci extends PocetnaStranicaPXD {
 		dodajBtnWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(imeWE));
 		imeWE.sendKeys(ime);
+		wait.until(ExpectedConditions.elementToBeClickable(terenskaJedinicaWE));
+		terenskaJedinicaWE.sendKeys("5");
+		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
+		terenskaJedinicaWE.sendKeys(Keys.ARROW_DOWN);
+		terenskaJedinicaWE.sendKeys(Keys.ENTER);
+		wait.until(ExpectedConditions.elementToBeClickable(fizickaLokacijaWE));
+		fizickaLokacijaWE.sendKeys("308");
+		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
+		fizickaLokacijaWE.sendKeys(Keys.ARROW_DOWN);
+		fizickaLokacijaWE.sendKeys(Keys.ENTER);
 		wait.until(ExpectedConditions.elementToBeClickable(datumBtn1WE));
 		datumBtn1WE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(datumKalendar1WE));
