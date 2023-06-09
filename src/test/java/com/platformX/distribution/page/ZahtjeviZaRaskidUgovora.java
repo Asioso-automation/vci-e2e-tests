@@ -16,8 +16,8 @@ public class ZahtjeviZaRaskidUgovora extends PocetnaStranicaPXD {
 	public void verifikujZahtjeviZaRaskidUgovora() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
-				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Zahtjevi za raskid ugovora')]")));
-		verifikacijaZajednickihElemenata("Ugovori", "Zahtjevi Za Raskid Ugovora", "ZAHTJEVI ZA RASKID UGOVORA (PROCES 7)", 12, false, false, false, true, true, true, true);
+				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Zahtjevi za raskid ugovora')]")));
+		verifikacijaZajednickihElemenata("Ugovori", "Zahtjevi Za Raskid Ugovora", "Zahtjevi za raskid ugovora (proces 7)", 12, false, false, false, true, true, true, true);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojProtokolaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaObracunskiUgovorWE));

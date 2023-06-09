@@ -16,8 +16,8 @@ public class ZbirnaKontrolnaPotrosnja extends PocetnaStranicaPXD {
 	public void verifikujZbirnaKontrolnaPotrosnja()throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
-				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Zbirna/kontrolna potrošnja')]")));
-		verifikacijaZajednickihElemenata("Očitanja", "Zbirna/kontrolna Potrošnja", "ZBIRNA/KONTROLNA POTROŠNJA", 14, false, false, false, true, true, true, false);
+				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Zbirna/kontrolna potrošnja')]")));
+		verifikacijaZajednickihElemenata("Očitanja", "Zbirna/kontrolna Potrošnja", "Zbirna/kontrolna potrošnja", 14, false, false, false, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaZbirnoKontrolnoMjernoMjestoWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTrafostanicaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaFizickaLokacijaWE));

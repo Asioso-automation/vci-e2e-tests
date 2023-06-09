@@ -51,8 +51,8 @@ public class MonitoringOcitanja extends PocetnaStranicaPXD {
 	public void verifikujMonitoringOcitanja()throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
-				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Monitoring očitanja')]")));
-		verifikacijaZajednickihElemenata("Očitanja", "Monitoring Očitanja", "MONITORING OČITANJA", 128, false, false, false, false, false, false, false);
+				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Monitoring očitanja')]")));
+		verifikacijaZajednickihElemenata("Očitanja", "Monitoring Očitanja", "Monitoring očitanja", 128, false, false, false, false, false, false, false);
 		wait.until(ExpectedConditions.visibilityOf(neocitanaBrojilaBtnWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonObracunskiUgovorWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonMjernoMjestoEicWE));

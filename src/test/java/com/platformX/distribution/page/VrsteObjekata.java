@@ -18,8 +18,8 @@ public class VrsteObjekata extends PocetnaStranicaPXD {
 	public void verifikujVrsteObjekata() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
-				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Vrste objekata')]")));
-		verifikacijaZajednickihElemenata("Šifarnici", "Vrste Objekata", "VRSTE OBJEKATA", 3, false, false, true, true, true, true, false);
+				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Vrste objekata')]")));
+		verifikacijaZajednickihElemenata("Šifarnici", "Vrste Objekata", "Vrste objekata", 3, false, false, true, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNazivWE));
 	}

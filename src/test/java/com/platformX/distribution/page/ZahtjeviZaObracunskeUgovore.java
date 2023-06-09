@@ -16,8 +16,8 @@ public class ZahtjeviZaObracunskeUgovore extends PocetnaStranicaPXD {
 	public void verifikujZahtjeviZaObracunskeUgovore() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
-				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Zahtjevi za obračunske ugovore')]")));
-		verifikacijaZajednickihElemenata("Ugovori", "Zahtjevi Za Obračunske Ugovore", "ZAHTJEVI ZA OBRAČUNSKE UGOVORE (PROCES 1)", 20, false, false, false, true, true, true, true);
+				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Zahtjevi za obračunske ugovore')]")));
+		verifikacijaZajednickihElemenata("Ugovori", "Zahtjevi Za Obračunske Ugovore", "Zahtjevi za obračunske ugovore (proces 1)", 20, false, false, false, true, true, true, true);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojProtokolaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaObracunskiUgovorWE));

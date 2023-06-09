@@ -16,8 +16,8 @@ public class NaciniPlacanja extends PocetnaStranicaPXD {
 	public void verifikujNacinePlacanja() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
-				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Načini plaćanja')]")));
-		verifikacijaZajednickihElemenata("Šifarnici", "Načini Plaćanja", "NAČINI PLAĆANJA", 3, false, false, true, true, true, true, false);
+				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Načini plaćanja')]")));
+		verifikacijaZajednickihElemenata("Šifarnici", "Načini Plaćanja", "Načini plaćanja", 3, false, false, true, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNazivWE));
 	}

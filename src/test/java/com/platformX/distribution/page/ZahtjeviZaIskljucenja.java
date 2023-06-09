@@ -16,8 +16,8 @@ public class ZahtjeviZaIskljucenja extends PocetnaStranicaPXD {
 	public void verifikujZahtjeviZaIskljucenja() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
-				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Zahtjevi za isključenja')]")));
-		verifikacijaZajednickihElemenata("Mjerna Mjesta", "Zahtjevi Za Isključenja", "ZAHTJEVI ZA ISKLJUČENJA (PROCES 16)", 17, false, false, true, true, true, true, true);
+				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Zahtjevi za isključenja')]")));
+		verifikacijaZajednickihElemenata("Mjerna Mjesta", "Zahtjevi Za Isključenja", "Zahtjevi za isključenja (proces 16)", 17, false, false, true, true, true, true, true);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojProtokolaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKupacWE));

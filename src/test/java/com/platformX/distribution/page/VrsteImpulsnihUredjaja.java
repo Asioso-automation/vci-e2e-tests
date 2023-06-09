@@ -16,8 +16,8 @@ public class VrsteImpulsnihUredjaja extends PocetnaStranicaPXD {
 	public void verifikujVrsteImpulsnihUredjaja() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
-				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Vrste impulsnih uređaja')]")));
-		verifikacijaZajednickihElemenata("Šifarnici", "Vrste Impulsnih Uređaja", "VRSTE IMPULSNIH UREĐAJA", 3, false, false, true, true, true, true, false);
+				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Vrste impulsnih uređaja')]")));
+		verifikacijaZajednickihElemenata("Šifarnici", "Vrste Impulsnih Uređaja", "Vrste impulsnih uređaja", 3, false, false, true, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNazivWE));
 	}

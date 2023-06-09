@@ -16,8 +16,8 @@ public class KontrolaMjernogMjesta extends PocetnaStranicaPXD {
 	public void verifikujKontrolaMjernogMjesta() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
-				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Kontrola mjernog mjesta')]")));
-		verifikacijaZajednickihElemenata("Mjerna Mjesta", "Kontrola Mjernog Mjesta", "KONTROLA MJERNOG MJESTA", 14, false, false, true, true, true, true, false);
+				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Kontrola mjernog mjesta')]")));
+		verifikacijaZajednickihElemenata("Mjerna Mjesta", "Kontrola Mjernog Mjesta", "Kontrola mjernog mjesta", 14, false, false, true, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojProtokolaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPoRadnomNaloguWE));		

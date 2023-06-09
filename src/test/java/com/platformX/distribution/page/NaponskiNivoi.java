@@ -16,8 +16,8 @@ public class NaponskiNivoi extends PocetnaStranicaPXD {
 	public void verifikujNaponskiNivoi() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
-				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Naponski nivoi')]")));
-		verifikacijaZajednickihElemenata("Brojila", "Naponski Nivoi", "NAPONSKI NIVOI", 4, false, false, true, true, true, true, false);
+				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Naponski nivoi')]")));
+		verifikacijaZajednickihElemenata("Brojila", "Naponski Nivoi", "Naponski nivoi", 4, false, false, true, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNazivWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNivoTrafostaniceWE));

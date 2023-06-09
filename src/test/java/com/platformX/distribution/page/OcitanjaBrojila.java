@@ -16,8 +16,8 @@ public class OcitanjaBrojila extends PocetnaStranicaPXD {
 	public void verifikujOcitanjaBrojila()throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
-				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Očitanja brojila')]")));
-		verifikacijaZajednickihElemenata("Očitanja", "Očitanja Brojila", "OČITANJA BROJILA", 19, false, false, true, true, true, true, true);
+				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Očitanja brojila')]")));
+		verifikacijaZajednickihElemenata("Očitanja", "Očitanja Brojila", "Očitanja brojila", 19, false, false, true, true, true, true, true);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPeriodWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumWE));

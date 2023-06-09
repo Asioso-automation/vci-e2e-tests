@@ -16,8 +16,8 @@ public class VrsteUpravljackihUredjaja extends PocetnaStranicaPXD {
 	public void verifikujVrsteUpravljackihUredjaja() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
-				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Vrste upravljačkih uređaja')]")));
-		verifikacijaZajednickihElemenata("Šifarnici", "Vrste Upravljačkih Uređaja", "VRSTE UPRAVLJAČKIH UREĐAJA", 3, false, false, true, true, true, true, false);
+				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Vrste upravljačkih uređaja')]")));
+		verifikacijaZajednickihElemenata("Šifarnici", "Vrste Upravljačkih Uređaja", "Vrste upravljačkih uređaja", 3, false, false, true, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNazivWE));
 	}

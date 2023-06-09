@@ -16,8 +16,8 @@ public class KlaseTacnostiNaponskogTransformatora extends PocetnaStranicaPXD {
 	public void verifikujKlaseTacnostiNaponskogTransformatora() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
-				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Klase tačnosti naponskog transformatora')]")));
-		verifikacijaZajednickihElemenata("Šifarnici", "Klase Tačnosti Naponskog Transformatora", "KLASE TAČNOSTI NAPONSKOG TRANSFORMATORA", 3, false, false, true, true, true, true, false);
+				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Klase tačnosti naponskog transformatora')]")));
+		verifikacijaZajednickihElemenata("Šifarnici", "Klase Tačnosti Naponskog Transformatora", "Klase tačnosti naponskog transformatora", 3, false, false, true, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNazivWE));
 	}

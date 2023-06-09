@@ -16,8 +16,8 @@ public class CitackeListe  extends PocetnaStranicaPXD {
 	public void verifikujCitackeListe()throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
-				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-uppercase') and starts-with(., ' Čitačke liste')]")));
-		verifikacijaZajednickihElemenata("Očitanja", "Čitačke Liste", "ČITAČKE LISTE", 11, false, true, true, true, true, true, false);
+				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Čitačke liste')]")));
+		verifikacijaZajednickihElemenata("Očitanja", "Čitačke Liste", "Čitačke liste", 11, false, true, true, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaCitacWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTrafostanicaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaFizickaLokacijaWE));
