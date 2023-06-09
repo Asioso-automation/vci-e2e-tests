@@ -8,14 +8,14 @@ import com.platformX.distribution.page.LogIn;
 import com.platformX.distribution.page.PocetnaStranicaPXD;
 import com.platformX.distribution.page.Sezone;
 
-public class PX_DIST_024_Sezone_CRUD_Test extends BaseTest {
+public class PX_DIST_014_Sezone_CRUD_Test extends BaseTest {
 
-	public PX_DIST_024_Sezone_CRUD_Test() throws IOException, FileNotFoundException {
+	public PX_DIST_014_Sezone_CRUD_Test() throws IOException, FileNotFoundException {
 		super();
 	}
 
 	@Test
-	public void px_dist_024_1_dodavanje_sezone_test() throws Exception {
+	public void px_dist_014_1_dodavanje_sezone_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
@@ -31,7 +31,7 @@ public class PX_DIST_024_Sezone_CRUD_Test extends BaseTest {
 	}
 	
 	@Test
-	public void px_dist_024_2_uredjivanje_sezone_test() throws Exception {
+	public void px_dist_014_2_uredjivanje_sezone_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
@@ -52,7 +52,7 @@ public class PX_DIST_024_Sezone_CRUD_Test extends BaseTest {
 	}
 	
 	@Test
-	public void px_dist_024_3_brisanje_sezone_test() throws Exception {
+	public void px_dist_014_3_brisanje_sezone_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();

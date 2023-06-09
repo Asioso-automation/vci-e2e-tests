@@ -9,14 +9,14 @@ import com.platformX.distribution.page.LogIn;
 import com.platformX.distribution.page.PocetnaStranicaPXD;
 import com.platformX.distribution.page.TerenskeJedinice;
 
-public class PX_DIST_015_Fizicke_Lokacije_CRUD_Test extends BaseTest {
+public class PX_DIST_005_Fizicke_Lokacije_CRUD_Test extends BaseTest {
 	
-	public PX_DIST_015_Fizicke_Lokacije_CRUD_Test() throws IOException, FileNotFoundException {
+	public PX_DIST_005_Fizicke_Lokacije_CRUD_Test() throws IOException, FileNotFoundException {
 		super();
 	}
 	
 	@Test
-	public void px_dist_015_1_dodavanje_fizicke_lokacije_test() throws Exception {
+	public void px_dist_005_1_dodavanje_fizicke_lokacije_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
@@ -39,7 +39,7 @@ public class PX_DIST_015_Fizicke_Lokacije_CRUD_Test extends BaseTest {
 	}
 
 	@Test
-	public void px_dist_015_2_uredjivanje_fizicke_lokacije_test() throws Exception {
+	public void px_dist_005_2_uredjivanje_fizicke_lokacije_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
@@ -67,7 +67,7 @@ public class PX_DIST_015_Fizicke_Lokacije_CRUD_Test extends BaseTest {
 	}
 	
 	@Test
-	public void px_dist_015_3_brisanje_fizicke_lokacije_test() throws Exception {
+	public void px_dist_005_3_brisanje_fizicke_lokacije_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();

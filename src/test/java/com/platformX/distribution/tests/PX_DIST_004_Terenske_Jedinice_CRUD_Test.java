@@ -8,14 +8,14 @@ import com.platformX.distribution.page.LogIn;
 import com.platformX.distribution.page.PocetnaStranicaPXD;
 import com.platformX.distribution.page.TerenskeJedinice;
 
-public class PX_DIST_014_Terenske_Jedinice_CRUD_Test extends BaseTest {
+public class PX_DIST_004_Terenske_Jedinice_CRUD_Test extends BaseTest {
 	
-	public PX_DIST_014_Terenske_Jedinice_CRUD_Test() throws IOException, FileNotFoundException {
+	public PX_DIST_004_Terenske_Jedinice_CRUD_Test() throws IOException, FileNotFoundException {
 		super();
 	}
 	
 	@Test
-	public void px_dist_014_1_dodavanje_terenske_jedinice_test() throws Exception {
+	public void px_dist_004_1_dodavanje_terenske_jedinice_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
@@ -31,7 +31,7 @@ public class PX_DIST_014_Terenske_Jedinice_CRUD_Test extends BaseTest {
 	}
 		
 	@Test
-	public void px_dist_014_2_uredjivanje_terenske_jedinice_test() throws Exception {
+	public void px_dist_004_2_uredjivanje_terenske_jedinice_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
@@ -52,7 +52,7 @@ public class PX_DIST_014_Terenske_Jedinice_CRUD_Test extends BaseTest {
 	}
 	
 	@Test
-	public void px_dist_014_3_brisanje_terenske_jedinice_test() throws Exception {
+	public void px_dist_004_3_brisanje_terenske_jedinice_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);

@@ -272,7 +272,7 @@ public class PocetnaStranicaPXD extends PageBase {
 	@FindBy(xpath = "//div[contains(text(), 'Razlog neizvršavanja zahtjeva') and @class='v-list-item__title']")
 	protected WebElement razlogNeizvrsavanjaZahtjevaWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Aktivna iskljušenja mjernih mjesta') and @class='v-list-item__title']")
+	@FindBy(xpath = "//div[contains(text(), 'Aktivna isključenja mjernih mjesta') and @class='v-list-item__title']")
 	protected WebElement aktivnaIskljucenjaMjernihMjestaWE;
 	
 	@FindBy(xpath = "//div[contains(text(), 'Indirektna mjerna mjesta') and @class='v-list-item__title']")
@@ -845,7 +845,7 @@ public class PocetnaStranicaPXD extends PageBase {
 		tipoviPrikljucnogVodaWE.click();
 		}
 		catch (Exception e) {
-			driver.get(platformx_distribution_properties.getValue("URL.DIST.LOGIN") + platformx_distribution_properties.getValue("TIPOVI.PRIKLJUCNIH.VODOVA"));
+			driver.get(platformx_distribution_properties.getValue("URL.DIST.LOGIN") + platformx_distribution_properties.getValue("TIPOVI.PRIKLJUCNOG.VODA"));
 		}
 		return new TipoviPrikljucnogVoda(driver);
 	}

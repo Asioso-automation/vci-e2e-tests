@@ -8,14 +8,14 @@ import com.platformX.distribution.page.ElektroenergetskeSaglasnosti;
 import com.platformX.distribution.page.LogIn;
 import com.platformX.distribution.page.PocetnaStranicaPXD;
 
-public class PX_DIST_029_Elektroenergetske_Saglasnosti_CRUD_Test extends BaseTest{
+public class PX_DIST_019_Elektroenergetske_Saglasnosti_CRUD_Test extends BaseTest{
 
-	public PX_DIST_029_Elektroenergetske_Saglasnosti_CRUD_Test() throws IOException, FileNotFoundException {
+	public PX_DIST_019_Elektroenergetske_Saglasnosti_CRUD_Test() throws IOException, FileNotFoundException {
 		super();
 	}
 
 	@Test
-	public void px_dist_029_1_dodavanje_elektroenergetske_saglasnosti_domacinstva_test() throws Exception {
+	public void px_dist_019_1_dodavanje_elektroenergetske_saglasnosti_domacinstva_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
@@ -31,7 +31,7 @@ public class PX_DIST_029_Elektroenergetske_Saglasnosti_CRUD_Test extends BaseTes
 	}
 	
 	@Test
-	public void px_dist_029_2_dodavanje_elektroenergetske_saglasnosti_niski_napon_test() throws Exception {
+	public void px_dist_019_2_dodavanje_elektroenergetske_saglasnosti_niski_napon_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
@@ -47,7 +47,7 @@ public class PX_DIST_029_Elektroenergetske_Saglasnosti_CRUD_Test extends BaseTes
 	}
 	
 	@Test
-	public void px_dist_029_3_uredjivanje_elektroenergetske_saglasnosti_domacinstva_test() throws Exception {		
+	public void px_dist_019_3_uredjivanje_elektroenergetske_saglasnosti_domacinstva_test() throws Exception {		
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
@@ -65,7 +65,7 @@ public class PX_DIST_029_Elektroenergetske_Saglasnosti_CRUD_Test extends BaseTes
 	}
 	
 	@Test
-	public void px_dist_029_4_brisanje_elektroenergetske_saglasnosti_domacinstva_test() throws Exception {
+	public void px_dist_019_4_brisanje_elektroenergetske_saglasnosti_domacinstva_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();

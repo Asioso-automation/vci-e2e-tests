@@ -8,14 +8,14 @@ import com.platformX.distribution.page.FizickaLica;
 import com.platformX.distribution.page.LogIn;
 import com.platformX.distribution.page.PocetnaStranicaPXD;
 
-public class PX_DIST_032_Fizicka_Lica_CRUD_Test  extends BaseTest {
+public class PX_DIST_022_Fizicka_Lica_CRUD_Test  extends BaseTest {
 
-	public PX_DIST_032_Fizicka_Lica_CRUD_Test() throws IOException, FileNotFoundException {
+	public PX_DIST_022_Fizicka_Lica_CRUD_Test() throws IOException, FileNotFoundException {
 		super();
 	}
 	
 	@Test
-	public void px_dist_032_1_dodavanje_fizickog_lica_test() throws Exception {
+	public void px_dist_022_1_dodavanje_fizickog_lica_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
@@ -31,7 +31,7 @@ public class PX_DIST_032_Fizicka_Lica_CRUD_Test  extends BaseTest {
 	}
 	
 	@Test
-	public void px_dist_032_2_uredjivanje_fizickog_lica_test() throws Exception {
+	public void px_dist_022_2_uredjivanje_fizickog_lica_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
@@ -52,7 +52,7 @@ public class PX_DIST_032_Fizicka_Lica_CRUD_Test  extends BaseTest {
 	}
 	
 	@Test
-	public void px_dist_032_3_brisanje_fizickog_lica_test() throws Exception {
+	public void px_dist_022_3_brisanje_fizickog_lica_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();

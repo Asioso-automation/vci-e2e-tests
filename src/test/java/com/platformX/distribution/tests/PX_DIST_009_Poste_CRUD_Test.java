@@ -8,16 +8,16 @@ import com.platformX.distribution.page.PocetnaStranicaPXD;
 import com.platformX.distribution.page.Poste;
 import com.platformX.distribution.page.LogIn;
 
-public class PX_DIST_019_Poste_CRUD_Test extends BaseTest {
+public class PX_DIST_009_Poste_CRUD_Test extends BaseTest {
 
-	public PX_DIST_019_Poste_CRUD_Test() throws IOException, FileNotFoundException {
+	public PX_DIST_009_Poste_CRUD_Test() throws IOException, FileNotFoundException {
 		super();
 	}
 	
 	private String[] podaci;
 
 	@Test
-	public void px_dist_019_1_dodavanje_poste_test() throws Exception {
+	public void px_dist_009_1_dodavanje_poste_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
@@ -31,7 +31,7 @@ public class PX_DIST_019_Poste_CRUD_Test extends BaseTest {
 	}
 	
 	@Test (description= "Pokušaj dodavanja poste sa istim ID-em")
-	public void px_dist_019_2_neuspjesno_dodavanje_poste_test() throws Exception {
+	public void px_dist_009_2_neuspjesno_dodavanje_poste_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
@@ -47,7 +47,7 @@ public class PX_DIST_019_Poste_CRUD_Test extends BaseTest {
 	}
 
 	@Test
-	public void px_dist_019_3_uredjivanje_poste_test() throws Exception {
+	public void px_dist_009_3_uredjivanje_poste_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
@@ -64,7 +64,7 @@ public class PX_DIST_019_Poste_CRUD_Test extends BaseTest {
 	}
 	
 	@Test
-	public void px_dist_019_4_brisanje_poste_test() throws Exception {
+	public void px_dist_009_4_brisanje_poste_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
@@ -80,7 +80,7 @@ public class PX_DIST_019_Poste_CRUD_Test extends BaseTest {
 	}
 
 	@Test
-	public void px_dist_019_5_neuspjesno_brisanje_poste_test() throws Exception {
+	public void px_dist_009_5_neuspjesno_brisanje_poste_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();

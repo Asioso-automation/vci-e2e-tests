@@ -9,14 +9,14 @@ import com.platformX.distribution.page.PocetnaStranicaPXD;
 import com.platformX.distribution.page.RegistarBrojila;
 import com.platformX.distribution.page.ZbirnaKontrolnaMjernaMjesta;
 
-public class PX_DIST_028_Zbirna_Kontrolna_Mjerna_Mjesta_CRUD_Test extends BaseTest {
+public class PX_DIST_018_Zbirna_Kontrolna_Mjerna_Mjesta_CRUD_Test extends BaseTest {
 	
-	public PX_DIST_028_Zbirna_Kontrolna_Mjerna_Mjesta_CRUD_Test() throws IOException, FileNotFoundException {
+	public PX_DIST_018_Zbirna_Kontrolna_Mjerna_Mjesta_CRUD_Test() throws IOException, FileNotFoundException {
 		super();
 	}
 
 	@Test
-	public void px_dist_028_1_dodavanje_zbirnog_kontrolnog_mjernog_mjesta_test() throws Exception {
+	public void px_dist_018_1_dodavanje_zbirnog_kontrolnog_mjernog_mjesta_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
@@ -37,7 +37,7 @@ public class PX_DIST_028_Zbirna_Kontrolna_Mjerna_Mjesta_CRUD_Test extends BaseTe
 	}
 	
 	@Test
-	public void px_dist_028_2_uredjivanje_zbirnog_kontrolnog_mjernog_mjesta_test() throws Exception {
+	public void px_dist_018_2_uredjivanje_zbirnog_kontrolnog_mjernog_mjesta_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
@@ -63,7 +63,7 @@ public class PX_DIST_028_Zbirna_Kontrolna_Mjerna_Mjesta_CRUD_Test extends BaseTe
 	}
 	
 	@Test
-	public void px_dist_028_3_brisanje_zbirnog_kontrolnog_mjernog_mjesta_test() throws Exception {
+	public void px_dist_018_3_brisanje_zbirnog_kontrolnog_mjernog_mjesta_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();

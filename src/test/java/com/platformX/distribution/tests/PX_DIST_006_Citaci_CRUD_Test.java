@@ -8,14 +8,14 @@ import com.platformX.distribution.page.Citaci;
 import com.platformX.distribution.page.LogIn;
 import com.platformX.distribution.page.PocetnaStranicaPXD;
 
-public class PX_DIST_016_Citaci_CRUD_Test extends BaseTest {
+public class PX_DIST_006_Citaci_CRUD_Test extends BaseTest {
 	
-	public PX_DIST_016_Citaci_CRUD_Test() throws IOException, FileNotFoundException {
+	public PX_DIST_006_Citaci_CRUD_Test() throws IOException, FileNotFoundException {
 		super();
 	}
 
 	@Test
-	public void px_dist_016_1_dodavanje_citaca_test() throws Exception {
+	public void px_dist_006_1_dodavanje_citaca_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
@@ -31,7 +31,7 @@ public class PX_DIST_016_Citaci_CRUD_Test extends BaseTest {
 	}
 	
 	@Test
-	public void px_dist_016_2_uredjivanje_citaca_test() throws Exception {
+	public void px_dist_006_2_uredjivanje_citaca_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
@@ -52,7 +52,7 @@ public class PX_DIST_016_Citaci_CRUD_Test extends BaseTest {
 	}
 	
 	@Test
-	public void px_dist_016_3_brisanje_citaca_test() throws Exception {
+	public void px_dist_006_3_brisanje_citaca_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();

@@ -8,14 +8,14 @@ import com.platformX.distribution.page.LogIn;
 import com.platformX.distribution.page.PocetnaStranicaPXD;
 import com.platformX.distribution.page.Trafostanice;
 
-public class PX_DIST_022_Trafostanice_CRUD_Test extends BaseTest {
+public class PX_DIST_012_Trafostanice_CRUD_Test extends BaseTest {
 
-	public PX_DIST_022_Trafostanice_CRUD_Test() throws IOException, FileNotFoundException {
+	public PX_DIST_012_Trafostanice_CRUD_Test() throws IOException, FileNotFoundException {
 		super();
 	}
 
 	@Test
-	public void px_dist_022_1_dodavanje_trafostanice_test() throws Exception {
+	public void px_dist_012_1_dodavanje_trafostanice_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
@@ -31,7 +31,7 @@ public class PX_DIST_022_Trafostanice_CRUD_Test extends BaseTest {
 	}
 	
 	@Test
-	public void px_dist_022_2_uredjivanje_trafostanice_test() throws Exception {
+	public void px_dist_012_2_uredjivanje_trafostanice_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
@@ -52,7 +52,7 @@ public class PX_DIST_022_Trafostanice_CRUD_Test extends BaseTest {
 	}
 	
 	@Test
-	public void px_dist_022_3_neuspjesno_brisanje_trafostanice_test() throws Exception {
+	public void px_dist_012_3_neuspjesno_brisanje_trafostanice_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();

@@ -75,7 +75,7 @@ public class ElektroenergetskeSaglasnosti extends PocetnaStranicaPXD {
 	@FindBy(xpath = "//div[2]/div/div/div/div[2]/div/div/div[1]/div[1]/input[1]")  
 	 private WebElement nazivnaStrujaGlavnogOsiguracaWE;
 	
-	@FindBy(xpath = "//div[19]/div[2]/div/div/div[1]/div[1]/input[1]")  
+	@FindBy(xpath = "//div[21]/div[2]/div/div/div[1]/div[1]/input[1]")
 	 private WebElement rokVazenjaWE;
 	
 	@FindBy(xpath = "//div[contains(text(), 'Uspješno završeno.')]")
@@ -140,7 +140,7 @@ public class ElektroenergetskeSaglasnosti extends PocetnaStranicaPXD {
 	@FindBy(xpath = "//*[contains(text(), 'Stambeni dio')]")
 	private WebElement stambenioDioWE;
 	
-	@FindBy(xpath = "//div[28]/div[2]/div/div/div[1]/div[1]/input[1]")  
+	@FindBy(xpath = "//div[30]/div[2]/div/div/div[1]/div[1]/input[1]")  
 	private WebElement rokVazenjaNWE;
 	
 	@FindBy(xpath = "//div[@class='v-card__title subtitle-2 title-border text-uppercase mb-5']")  

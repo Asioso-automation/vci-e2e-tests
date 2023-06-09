@@ -8,14 +8,14 @@ import com.platformX.distribution.page.PocetnaStranicaPXD;
 import com.platformX.distribution.page.Ulice;
 import com.platformX.distribution.page.LogIn;
 
-public class PX_DIST_020_Ulice_CRUD_Test extends BaseTest {
+public class PX_DIST_010_Ulice_CRUD_Test extends BaseTest {
 
-	public PX_DIST_020_Ulice_CRUD_Test() throws IOException, FileNotFoundException {
+	public PX_DIST_010_Ulice_CRUD_Test() throws IOException, FileNotFoundException {
 		super();
 	}
 
 	@Test
-	public void px_dist_020_1_dodavanje_ulice_test() throws Exception {
+	public void px_dist_010_1_dodavanje_ulice_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
@@ -31,7 +31,7 @@ public class PX_DIST_020_Ulice_CRUD_Test extends BaseTest {
 	}
 	
 	@Test
-	public void px_dist_020_2_uredjivanje_ulice_test() throws Exception {
+	public void px_dist_010_2_uredjivanje_ulice_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
@@ -52,7 +52,7 @@ public class PX_DIST_020_Ulice_CRUD_Test extends BaseTest {
 	}
 	
 	@Test
-	public void px_dist_020_3_brisanje_ulice_test() throws Exception {
+	public void px_dist_010_3_brisanje_ulice_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
@@ -70,7 +70,7 @@ public class PX_DIST_020_Ulice_CRUD_Test extends BaseTest {
 	}
 	
 	@Test
-	public void px_dist_020_4_neuspjesno_brisanje_ulice_test() throws Exception {
+	public void px_dist_010_4_neuspjesno_brisanje_ulice_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
