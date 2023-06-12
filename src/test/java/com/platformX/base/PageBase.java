@@ -169,19 +169,13 @@ public abstract class PageBase {
 		if (info == true) {
 			wait.until(ExpectedConditions.elementToBeClickable(infoBtnWE));
 		}
-<<<<<<< HEAD
 		try {
 			wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		} catch (Exception e) {
-			Thread.sleep(500);
+			Thread.sleep(1000);
+			wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		}
-=======
-//		try {
-//			wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
-//		} catch (Exception e) {
-//		}
-		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
->>>>>>> parent of d9b2668 (minor changes)
+
 	}
 
 	public void pretraziStavku(WebElement element, String value) throws InterruptedException {
@@ -196,7 +190,6 @@ public abstract class PageBase {
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
 		Thread.sleep(1000);
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
-		// TODO doraditi metodu
 	}
 
 	public void verifikujStavku(String value, WebElement tableValue) {
@@ -205,7 +198,6 @@ public abstract class PageBase {
 		wait.until(ExpectedConditions.visibilityOf(tableValue));
 		wait.until(ExpectedConditions.elementToBeClickable(tableValue));
 		assertTrue(tableValue.getText().equals(value), "Verifikacija nije uspješna!");
-		// TODO doraditi metodu
 	}
 
 }

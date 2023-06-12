@@ -13,7 +13,7 @@ public class PX_DIST_003_Verifikacije_Sekcija_Test extends BaseTest {
 		super();
 	}
 
-	@Test (description="test prolazi kroz sve stranice iz sekcije SIFARNICI i verifikuje ih")	// maximized
+	@Test (description="test prolazi kroz sve stranice iz sekcije SIFARNICI i verifikuje ih")
 	public void px_dist_003_01_verifikacije_sekcije_sifarnici_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
@@ -52,7 +52,7 @@ public class PX_DIST_003_Verifikacije_Sekcija_Test extends BaseTest {
 		vrstePodrucja.verifikujVrstePodrucja();
 	}
 	
-	@Test (description="test prolazi kroz sve stranice iz sekcije SIFARNICI ZA ZAPISNIKE i verifikuje ih")	// maximized
+	@Test (description="test prolazi kroz sve stranice iz sekcije SIFARNICI ZA ZAPISNIKE i verifikuje ih")
 	public void px_dist_003_02_verifikacije_sekcije_sifarnici_za_zapisnike_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
@@ -136,7 +136,7 @@ public class PX_DIST_003_Verifikacije_Sekcija_Test extends BaseTest {
 		cjenovnik.verifikujCjenovnikMrezarine();
 	}
 	
-	@Test(description = "test prolazi kroz sve stranice iz sekcije MJERNA MJESTA i verifikuje ih")	// maximized
+	@Test(description = "test prolazi kroz sve stranice iz sekcije MJERNA MJESTA i verifikuje ih")
 	public void px_dist_003_04_verifikacije_sekcije_mjerna_mjesta_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
