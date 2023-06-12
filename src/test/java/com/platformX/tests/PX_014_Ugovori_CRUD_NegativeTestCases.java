@@ -9,14 +9,14 @@ import com.platformX.page.LogIn;
 import com.platformX.page.PravnaLica;
 import com.platformX.page.Ugovori;
 
-public class PX_024_Ugovori_CRUD_NegativeTestCases extends BaseTest {
+public class PX_014_Ugovori_CRUD_NegativeTestCases extends BaseTest {
 
-	public PX_024_Ugovori_CRUD_NegativeTestCases() throws IOException, FileNotFoundException {
+	public PX_014_Ugovori_CRUD_NegativeTestCases() throws IOException, FileNotFoundException {
 		super();
 	}
 	
 	@Test (description= "Ugovor postoji za traženo mjerno mjesto")
-	public void px_024_1_neuspjesno_dodavanje_ugovora_test1() throws Exception {
+	public void px_014_1_neuspjesno_dodavanje_ugovora_test1() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
@@ -38,7 +38,7 @@ public class PX_024_Ugovori_CRUD_NegativeTestCases extends BaseTest {
 	}
 	
 	@Test (description= "Datum početka je prije početka obračunskog perioda")
-	public void px_024_2_neuspjesno_dodavanje_ugovora_test2() throws Exception {
+	public void px_014_2_neuspjesno_dodavanje_ugovora_test2() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
@@ -57,7 +57,7 @@ public class PX_024_Ugovori_CRUD_NegativeTestCases extends BaseTest {
 	}
 	
 	@Test (description = "Obrazac za broj protokola ne postoji")
-	public void px_024_3_neuspjesno_dodavanje_ugovora_test3() throws Exception {
+	public void px_014_3_neuspjesno_dodavanje_ugovora_test3() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
@@ -76,7 +76,7 @@ public class PX_024_Ugovori_CRUD_NegativeTestCases extends BaseTest {
 	}
 	
 	@Test (description= "Pokušaj dodavanja ugovora bez reaktivnog brojila")
-	public void px_024_4_neuspjesno_dodavanje_ugovora_test4() throws Exception {
+	public void px_014_4_neuspjesno_dodavanje_ugovora_test4() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
@@ -95,7 +95,7 @@ public class PX_024_Ugovori_CRUD_NegativeTestCases extends BaseTest {
 	}
 	
 	@Test					/* Test provjerava da je nemoguce deaktivirati ugovor kada se izabere prosli datum za datum deaktivacije (01.01.2020.) i verifikuje validacionu poruku */
-	public void px_024_5_neuspjesna_deaktivacija_ugovora_test() throws Exception {
+	public void px_014_5_neuspjesna_deaktivacija_ugovora_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
@@ -116,7 +116,7 @@ public class PX_024_Ugovori_CRUD_NegativeTestCases extends BaseTest {
 	}
 	
 	@Test
-	public void px_024_6_neuspjesno_odbacivanje_ugovora_test() throws Exception {
+	public void px_014_6_neuspjesno_odbacivanje_ugovora_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();

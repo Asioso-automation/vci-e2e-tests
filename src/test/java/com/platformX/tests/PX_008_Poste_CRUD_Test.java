@@ -8,16 +8,16 @@ import com.platformX.page.PocetnaStranica;
 import com.platformX.page.Poste;
 import com.platformX.page.LogIn;
 
-public class PX_018_Poste_CRUD_Test extends BaseTest {
+public class PX_008_Poste_CRUD_Test extends BaseTest {
 
-	public PX_018_Poste_CRUD_Test() throws IOException, FileNotFoundException {
+	public PX_008_Poste_CRUD_Test() throws IOException, FileNotFoundException {
 		super();
 	}
 	
 	private String[] podaci;
 
 	@Test
-	public void px_018_1_dodavanje_poste_test() throws Exception {
+	public void px_008_1_dodavanje_poste_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
@@ -30,7 +30,7 @@ public class PX_018_Poste_CRUD_Test extends BaseTest {
 	}
 	
 	@Test (description= "Pokušaj dodavanja poste sa istim ID-em")
-	public void px_018_2_neuspjesno_dodavanje_poste_test() throws Exception {
+	public void px_008_2_neuspjesno_dodavanje_poste_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
@@ -45,7 +45,7 @@ public class PX_018_Poste_CRUD_Test extends BaseTest {
 	}
 	
 	@Test
-	public void px_018_3_uredjivanje_poste_test() throws Exception {
+	public void px_008_3_uredjivanje_poste_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
@@ -60,7 +60,7 @@ public class PX_018_Poste_CRUD_Test extends BaseTest {
 	}
 	
 	@Test
-	public void px_018_4_brisanje_poste_test() throws Exception {
+	public void px_008_4_brisanje_poste_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
@@ -74,7 +74,7 @@ public class PX_018_Poste_CRUD_Test extends BaseTest {
 		poste.verifikujBrisanjePoste(podaci[0]);
 	}
 	
-	public void px_018_5_neuspjesno_brisanje_poste_test() throws Exception {
+	public void px_008_5_neuspjesno_brisanje_poste_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();

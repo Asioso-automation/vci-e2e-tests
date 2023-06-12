@@ -11,14 +11,14 @@ import com.platformX.page.UplatePage;
 import com.platformX.page.LogIn;
 import com.platformX.page.ZiroRacuni;
 
-public class PX_028_Dnevnici_Uplata_CRUD_Test extends BaseTest {
+public class PX_018_Dnevnici_Uplata_CRUD_Test extends BaseTest {
 
-	public PX_028_Dnevnici_Uplata_CRUD_Test() throws IOException, FileNotFoundException {
+	public PX_018_Dnevnici_Uplata_CRUD_Test() throws IOException, FileNotFoundException {
 		super();
 	}
 
 	@Test
-	public void px_028_1_dodavanje_dnevnika_uplata_test() throws Exception {
+	public void px_018_1_dodavanje_dnevnika_uplata_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
@@ -42,7 +42,7 @@ public class PX_028_Dnevnici_Uplata_CRUD_Test extends BaseTest {
 	}
 	
 	@Test
-	public void px_028_2_preknjizavanje_dnevnika_uplata_test() throws Exception {
+	public void px_018_2_preknjizavanje_dnevnika_uplata_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();

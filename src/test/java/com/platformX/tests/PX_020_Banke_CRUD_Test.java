@@ -8,14 +8,14 @@ import com.platformX.page.Banke;
 import com.platformX.page.PocetnaStranica;
 import com.platformX.page.LogIn;
 
-public class PX_030_Banke_CRUD_Test extends BaseTest {
+public class PX_020_Banke_CRUD_Test extends BaseTest {
 
-	public PX_030_Banke_CRUD_Test() throws IOException, FileNotFoundException {
+	public PX_020_Banke_CRUD_Test() throws IOException, FileNotFoundException {
 		super();
 	}
 
 	@Test
-	public void px_030_1_dodavanje_banke_test() throws Exception {
+	public void px_020_1_dodavanje_banke_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
@@ -28,7 +28,7 @@ public class PX_030_Banke_CRUD_Test extends BaseTest {
 	}
 	
 	@Test (description = "pokusaj dodavanja banke sa postojecim nazivom")
-	public void px_030_2_neuspjesno_dodavanje_banke_test() throws Exception {
+	public void px_020_2_neuspjesno_dodavanje_banke_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
@@ -43,7 +43,7 @@ public class PX_030_Banke_CRUD_Test extends BaseTest {
 	}
 	
 	@Test
-	public void px_030_3_uredjivanje_banke_test() throws Exception {
+	public void px_020_3_uredjivanje_banke_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
@@ -58,7 +58,7 @@ public class PX_030_Banke_CRUD_Test extends BaseTest {
 	}
 	
 	@Test
-	public void px_030_4_brisanje_banke_test() throws Exception {
+	public void px_020_4_brisanje_banke_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();

@@ -8,14 +8,14 @@ import com.platformX.page.PocetnaStranica;
 import com.platformX.page.LogIn;
 import com.platformX.page.Ugovori;
 
-public class PX_025_Ugovori_Validacije_Test extends BaseTest {
+public class PX_015_Ugovori_Validacije_Test extends BaseTest {
 
-	public PX_025_Ugovori_Validacije_Test() throws IOException, FileNotFoundException {
+	public PX_015_Ugovori_Validacije_Test() throws IOException, FileNotFoundException {
 		super();
 	}
 	
 	@Test				// Provjera klijentskih validacija obaveznih polja na formi za dodavanje ugovora
-	public void px_025_1_provjera_validacija_na_ugovoru_test1() throws Exception {
+	public void px_015_1_provjera_validacija_na_ugovoru_test1() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
@@ -27,7 +27,7 @@ public class PX_025_Ugovori_Validacije_Test extends BaseTest {
 	}
 	
 	@Test				// Provjera klijentskih validacija polja na formi za dodavanje ugovora
-	public void px_025_2_provjera_validacija_na_ugovoru_test2() throws Exception {
+	public void px_015_2_provjera_validacija_na_ugovoru_test2() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
@@ -39,7 +39,7 @@ public class PX_025_Ugovori_Validacije_Test extends BaseTest {
 	}
 
 	@Test
-	public void px_025_3_provjera_validacija_na_uredjivanju_ugovora_test() throws Exception {
+	public void px_015_3_provjera_validacija_na_uredjivanju_ugovora_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
@@ -52,7 +52,7 @@ public class PX_025_Ugovori_Validacije_Test extends BaseTest {
 	}
 	
 	@Test
-	public void px_025_4_provjera_validacija_na_preregistraciji_ugovora_test() throws Exception {
+	public void px_015_4_provjera_validacija_na_preregistraciji_ugovora_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();

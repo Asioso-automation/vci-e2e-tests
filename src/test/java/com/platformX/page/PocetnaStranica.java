@@ -23,7 +23,7 @@ public class PocetnaStranica extends PageBase {
 	@FindBy(xpath = "//a[@href='/']")
 	protected WebElement pocetnaStranicaWE;
 	
-	@FindBy(xpath = "//div[1]/div/div/div/div/div/div[2]/input[1]")
+	@FindBy(xpath = "//div[1]/div/div/div/div[2]/input[1]")
 	protected WebElement filterKupacWE;
 	
 	@FindBy(xpath = "//div[2]/div/div/div/div[2]/input[1]")
@@ -1883,7 +1883,9 @@ public class PocetnaStranica extends PageBase {
 	
 	public void pretraziKupce(String kupac) throws InterruptedException {
 		wait.until(ExpectedConditions.elementToBeClickable(filterKupacWE));
+		driver.findElement(By.xpath("//div[@class='v-card__title d-block text-left font-weight-bold text-body-1 grey--text text--darken-3' and contains(text(), 'AKTIVNI UGOVORI PO ODS-U')]")).click();
 		filterKupacWE.sendKeys(kupac);
+		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(@class, 'v-list-item__title') and contains(., '" + kupac + "')]")));
 		driver.findElement(By.xpath("//div[contains(@class, 'v-list-item__title') and contains(., '" + kupac + "')]")).click();
 	}

@@ -51,6 +51,8 @@ public class PX_DIST_012_Trafostanice_CRUD_Test extends BaseTest {
 		trafostanice.verifikujStavku(novaTrafostanica, homePage.podatak2Tabela3WE);
 	}
 	
+	// TODO dodati test za brisanje trafostanice - dodaj trafostanicu, verifikuj trafostanicu, verifikuj odgovarajuci citacki hod, obrisi citacki hod, obrisi trafostanicu
+	
 	@Test
 	public void px_dist_012_3_neuspjesno_brisanje_trafostanice_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);

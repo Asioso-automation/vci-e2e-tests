@@ -8,14 +8,14 @@ import com.platformX.page.PocetnaStranica;
 import com.platformX.page.Ulice;
 import com.platformX.page.LogIn;
 
-public class PX_019_Ulice_CRUD_Test extends BaseTest {
+public class PX_009_Ulice_CRUD_Test extends BaseTest {
 
-	public PX_019_Ulice_CRUD_Test() throws IOException, FileNotFoundException {
+	public PX_009_Ulice_CRUD_Test() throws IOException, FileNotFoundException {
 		super();
 	}
 
 	@Test
-	public void px_019_1_dodavanje_ulice_test() throws Exception {
+	public void px_009_1_dodavanje_ulice_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
@@ -28,7 +28,7 @@ public class PX_019_Ulice_CRUD_Test extends BaseTest {
 	}
 	
 	@Test
-	public void px_019_2_uredjivanje_ulice_test() throws Exception {
+	public void px_009_2_uredjivanje_ulice_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
@@ -43,7 +43,7 @@ public class PX_019_Ulice_CRUD_Test extends BaseTest {
 	}
 	
 	@Test
-	public void px_019_3_brisanje_ulice_test() throws Exception {
+	public void px_009_3_brisanje_ulice_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
@@ -58,7 +58,7 @@ public class PX_019_Ulice_CRUD_Test extends BaseTest {
 	}
 	
 	@Test
-	public void px_019_4_neuspjesno_brisanje_ulice_test() throws Exception {
+	public void px_009_4_neuspjesno_brisanje_ulice_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();

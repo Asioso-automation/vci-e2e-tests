@@ -8,14 +8,14 @@ import com.platformX.page.PocetnaStranica;
 import com.platformX.page.Djelatnosti;
 import com.platformX.page.LogIn;
 
-public class PX_017_Djelatnosti_CRUD_Test extends BaseTest {
+public class PX_007_Djelatnosti_CRUD_Test extends BaseTest {
 
-	public PX_017_Djelatnosti_CRUD_Test() throws IOException, FileNotFoundException {
+	public PX_007_Djelatnosti_CRUD_Test() throws IOException, FileNotFoundException {
 		super();
 	}
 
 	@Test
-	public void px_017_1_dodavanje_djelatnosti_test() throws Exception {
+	public void px_007_1_dodavanje_djelatnosti_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
@@ -29,7 +29,7 @@ public class PX_017_Djelatnosti_CRUD_Test extends BaseTest {
 	}
 	
 	@Test
-	public void px_017_2_uredjivanje_djelatnosti_test() throws Exception {
+	public void px_007_2_uredjivanje_djelatnosti_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
@@ -46,7 +46,7 @@ public class PX_017_Djelatnosti_CRUD_Test extends BaseTest {
 	}
 	
 	@Test
-	public void px_017_3_brisanje_djelatnosti_test() throws Exception {
+	public void px_007_3_brisanje_djelatnosti_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();

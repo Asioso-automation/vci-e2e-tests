@@ -9,14 +9,14 @@ import com.platformX.page.PocetnaStranica;
 import com.platformX.page.LogIn;
 import com.platformX.page.ZiroRacuni;
 
-public class PX_031_Ziro_Racuni_CRUD_Test extends BaseTest {
+public class PX_021_Ziro_Racuni_CRUD_Test extends BaseTest {
 
-	public PX_031_Ziro_Racuni_CRUD_Test() throws IOException, FileNotFoundException {
+	public PX_021_Ziro_Racuni_CRUD_Test() throws IOException, FileNotFoundException {
 		super();
 	}
 
 	@Test
-	public void px_031_1_dodavanje_ziro_racuna_test() throws Exception {
+	public void px_021_1_dodavanje_ziro_racuna_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
@@ -41,7 +41,7 @@ public class PX_031_Ziro_Racuni_CRUD_Test extends BaseTest {
 	}
 	
 	@Test (description = "pokusaj dodavanja ziro racuna sa postojecim brojem")
-	public void px_031_2_neuspjesno_dodavanje_ziro_racuna_test() throws Exception {
+	public void px_021_2_neuspjesno_dodavanje_ziro_racuna_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
@@ -66,7 +66,7 @@ public class PX_031_Ziro_Racuni_CRUD_Test extends BaseTest {
 	}
 	
 	@Test
-	public void px_031_3_uredjivanje_ziro_racuna_test() throws Exception {
+	public void px_021_3_uredjivanje_ziro_racuna_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
@@ -93,7 +93,7 @@ public class PX_031_Ziro_Racuni_CRUD_Test extends BaseTest {
 	}
 	
 	@Test
-	public void px_031_4_brisanje_ziro_racuna_test() throws Exception {
+	public void px_021_4_brisanje_ziro_racuna_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();

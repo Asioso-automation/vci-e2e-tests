@@ -10,14 +10,14 @@ import com.platformX.page.OdbaceniUgovori;
 import com.platformX.page.PravnaLica;
 import com.platformX.page.Ugovori;
 
-public class PX_023_Ugovori_CRUD_PositiveTestCases extends BaseTest {
+public class PX_013_Ugovori_CRUD_PositiveTestCases extends BaseTest {
 
-	public PX_023_Ugovori_CRUD_PositiveTestCases() throws IOException, FileNotFoundException {
+	public PX_013_Ugovori_CRUD_PositiveTestCases() throws IOException, FileNotFoundException {
 		super();
 	}
 
 	@Test
-	public void px_023_1_dodavanje_ugovora_test() throws Exception {
+	public void px_013_1_dodavanje_ugovora_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
@@ -37,7 +37,7 @@ public class PX_023_Ugovori_CRUD_PositiveTestCases extends BaseTest {
 	}
 	
 	@Test
-	public void px_023_2_dodavanje_potpisanog_ugovora_test() throws Exception {
+	public void px_013_2_dodavanje_potpisanog_ugovora_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
@@ -57,7 +57,7 @@ public class PX_023_Ugovori_CRUD_PositiveTestCases extends BaseTest {
 	}
 	
 	@Test
-	public void px_023_3_uredjivanje_ugovora_test() throws Exception {
+	public void px_013_3_uredjivanje_ugovora_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
@@ -78,7 +78,7 @@ public class PX_023_Ugovori_CRUD_PositiveTestCases extends BaseTest {
 	}
 	
 	@Test (enabled = false)		//	Test je trenutno disabled - promijenili su se uslovi za deaktivaciju ugovora i mogucnost ponovnog kreiranja ugovora sa istim mjernim mjestom
-	public void px_023_4_deaktivacija_ugovora_test() throws Exception {
+	public void px_013_4_deaktivacija_ugovora_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
@@ -103,7 +103,7 @@ public class PX_023_Ugovori_CRUD_PositiveTestCases extends BaseTest {
 	}
 	
 	@Test						/* Test dodaje ugovor koji je potpisan, zatim kroz opciju "odbaci" odbacuje ugovor i provjerava da se ugovor vise ne pojavljuje na stranici Ugovori vec na stranici Odbaceni ugovori*/
-	public void px_023_5_odbacivanje_ugovora_test() throws Exception {
+	public void px_013_5_odbacivanje_ugovora_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
@@ -129,7 +129,7 @@ public class PX_023_Ugovori_CRUD_PositiveTestCases extends BaseTest {
 	}
 	
 	@Test (enabled = false)
-	public void px_023_6_preregistracija_ugovora_test() throws Exception {
+	public void px_013_6_preregistracija_ugovora_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();

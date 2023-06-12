@@ -11,14 +11,14 @@ import com.platformX.page.LogIn;
 import com.platformX.page.UplatePage;
 import com.platformX.page.ZiroRacuni;
 
-public class PX_029_Uplate_CRUD_Test extends BaseTest {
+public class PX_019_Uplate_CRUD_Test extends BaseTest {
 
-	public PX_029_Uplate_CRUD_Test() throws IOException, FileNotFoundException {
+	public PX_019_Uplate_CRUD_Test() throws IOException, FileNotFoundException {
 		super();
 	}
 
 	@Test
-	public void px_029_1_dodavanje_uplate_test() throws Exception {
+	public void px_019_1_dodavanje_uplate_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
@@ -47,7 +47,7 @@ public class PX_029_Uplate_CRUD_Test extends BaseTest {
 	}
 	
 	@Test
-	public void px_029_2_dodavanje_uplate_poziv_na_broj_test1() throws Exception {
+	public void px_019_2_dodavanje_uplate_poziv_na_broj_test1() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
@@ -68,7 +68,6 @@ public class PX_029_Uplate_CRUD_Test extends BaseTest {
 		dnevniciUplataPage.verifikujDnevniciUplata();
 		dnevniciUplataPage.dodajDnevnikUplata(banka, ziroRacun);
 		dnevniciUplataPage.verifyDnevnikUplata(bankaTabela, ziroRacunTabela);
-		// TODO doraditi verifikaciju DnevnikUplata // DONE
 		dnevniciUplataPage.navigateToUplateSaStranice();
 		dnevniciUplataPage.navigateToDodajUplatuSaSDetalja();
 		UplatePage uplatePage = new UplatePage(driver);
@@ -77,7 +76,7 @@ public class PX_029_Uplate_CRUD_Test extends BaseTest {
 	}
 	
 	@Test
-	public void px_029_3_dodavanje_uplate_poziv_na_broj_test2() throws Exception {
+	public void px_019_3_dodavanje_uplate_poziv_na_broj_test2() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
@@ -106,7 +105,7 @@ public class PX_029_Uplate_CRUD_Test extends BaseTest {
 	}
 	
 	@Test
-	public void px_029_4_dodavanje_uplate_sa_kupcem_test() throws Exception {
+	public void px_019_4_dodavanje_uplate_sa_kupcem_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();

@@ -8,14 +8,14 @@ import com.platformX.page.PocetnaStranica;
 import com.platformX.page.LogIn;
 import com.platformX.page.UmanjenjaCijene;
 
-public class PX_027_Umanjenja_Cijene_CRUD_Test extends BaseTest {
+public class PX_017_Umanjenja_Cijene_CRUD_Test extends BaseTest {
 
-	public PX_027_Umanjenja_Cijene_CRUD_Test() throws IOException, FileNotFoundException {
+	public PX_017_Umanjenja_Cijene_CRUD_Test() throws IOException, FileNotFoundException {
 		super();
 	}
 
 	@Test
-	public void px_027_1_dodavanje_umanjenja_cijene_test() throws Exception {
+	public void px_017_1_dodavanje_umanjenja_cijene_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
@@ -28,7 +28,7 @@ public class PX_027_Umanjenja_Cijene_CRUD_Test extends BaseTest {
 	}
 	
 	@Test (description = "pokusaj dodavanja umanjenja cijene za postojeći broj mjeseci")
-	public void px_027_2_neuspjesno_dodavanje_umanjenja_cijene_test() throws Exception {
+	public void px_017_2_neuspjesno_dodavanje_umanjenja_cijene_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
@@ -43,7 +43,7 @@ public class PX_027_Umanjenja_Cijene_CRUD_Test extends BaseTest {
 	}
 	
 	@Test
-	public void px_027_3_uredjivanje_umanjenja_cijene_test() throws Exception {
+	public void px_017_3_uredjivanje_umanjenja_cijene_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
@@ -60,7 +60,7 @@ public class PX_027_Umanjenja_Cijene_CRUD_Test extends BaseTest {
 	}
 	
 	@Test
-	public void px_027_4_brisanje_umanjenja_cijene_test() throws Exception {
+	public void px_017_4_brisanje_umanjenja_cijene_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
