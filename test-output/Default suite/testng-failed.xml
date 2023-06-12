@@ -3,13 +3,14 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.platformX.tests.PX_026_Dodavanje_Ziro_Racuna_Test">
+      <class name="com.platformX.tests.PX_005_Radne_Jedinice_CRUD_Test">
         <methods>
           <include name="setUp"/>
-          <include name="px_026_dodavanje_ziro_racuna_test"/>
           <include name="cleanUp"/>
+          <include name="px_005_2_uredjivanje_radne_jedinice_test"/>
+          <include name="px_005_1_dodavanje_radne_jedinice_test"/>
         </methods>
-      </class> <!-- com.platformX.tests.PX_026_Dodavanje_Ziro_Racuna_Test -->
+      </class> <!-- com.platformX.tests.PX_005_Radne_Jedinice_CRUD_Test -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -10,7 +10,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import com.platformX.base.Kolone;
-import com.platformX.util.Helper;
 
 public class RadneJedinice extends PocetnaStranica {
 
@@ -48,13 +47,12 @@ public class RadneJedinice extends PocetnaStranica {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaZiroRacunWE));
 	}
 	
-	public String dodajRadnuJedinicu() throws InterruptedException {
-		String radnaJedinica = "RJ " + Helper.getRandomString(5);
+	public void dodajRadnuJedinicu(String jedinica) throws InterruptedException {
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
 		dodajBtnWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(nazivRadneJediniceWE));
 		nazivRadneJediniceWE.click();
-		nazivRadneJediniceWE.sendKeys(radnaJedinica);
+		nazivRadneJediniceWE.sendKeys(jedinica);
 		wait.until(ExpectedConditions.elementToBeClickable(odsWE));
 		odsWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(odaberiOdsWE));
@@ -64,7 +62,6 @@ public class RadneJedinice extends PocetnaStranica {
 		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
 		submitBtnWE.click();
 		Thread.sleep(500);
-		return radnaJedinica;
 	}
 	
 	public void verifikujRadnuJedinicu(String radnaJedinica) throws Exception {
@@ -78,8 +75,7 @@ public class RadneJedinice extends PocetnaStranica {
 		assertTrue(podatak2Tabela2WE.getText().equals(radnaJedinica), "Radne jedinice: Ime radne jedinice nije dobro!");
 	}
 	
-	public String urediRadnuJedinicu() throws InterruptedException {
-		String radnaJedinica = "RJ " + Helper.getRandomString(5);
+	public void urediRadnuJedinicu(String radnaJedinica) throws InterruptedException {
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		burgerBarWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(urediWE));
@@ -91,7 +87,6 @@ public class RadneJedinice extends PocetnaStranica {
 		nazivRadneJediniceWE.sendKeys(radnaJedinica);
 		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
 		submitBtnWE.click();
-		return radnaJedinica;
 	}
 	
 	public void verifikujBrisanjeRadneJedinice(String jedinica) throws InterruptedException {
