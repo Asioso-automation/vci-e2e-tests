@@ -31,7 +31,11 @@ public class PX_DIST_017_Mjerna_Mjesta_CRUD_Test  extends BaseTest {
 	}
 
 	@Test
+<<<<<<< HEAD:src/test/java/com/platformX/distribution/tests/PX_DIST_017_Mjerna_Mjesta_CRUD_Test.java
 	public void px_dist_017_2_uredjivanje_mjernog_mjesta_Test() throws Exception {
+=======
+	public void px_dist_027_2_uredjivanje_mjernog_mjesta_Test() throws Exception {
+>>>>>>> parent of d9b2668 (minor changes):src/test/java/com/platformX/distribution/tests/PX_DIST_027_Mjerna_Mjesta_CRUD_Test.java
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
@@ -52,7 +56,11 @@ public class PX_DIST_017_Mjerna_Mjesta_CRUD_Test  extends BaseTest {
 	}
 	
 	@Test
+<<<<<<< HEAD:src/test/java/com/platformX/distribution/tests/PX_DIST_017_Mjerna_Mjesta_CRUD_Test.java
 	public void px_dist_017_3_brisanje_mjernog_mjesta_Test() throws Exception {
+=======
+	public void px_dist_027_3_brisanje_mjernog_mjesta_Test() throws Exception {
+>>>>>>> parent of d9b2668 (minor changes):src/test/java/com/platformX/distribution/tests/PX_DIST_027_Mjerna_Mjesta_CRUD_Test.java
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();

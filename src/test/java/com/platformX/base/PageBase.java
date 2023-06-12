@@ -169,11 +169,19 @@ public abstract class PageBase {
 		if (info == true) {
 			wait.until(ExpectedConditions.elementToBeClickable(infoBtnWE));
 		}
+<<<<<<< HEAD
 		try {
 			wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		} catch (Exception e) {
 			Thread.sleep(500);
 		}
+=======
+//		try {
+//			wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
+//		} catch (Exception e) {
+//		}
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
+>>>>>>> parent of d9b2668 (minor changes)
 	}
 
 	public void pretraziStavku(WebElement element, String value) throws InterruptedException {
