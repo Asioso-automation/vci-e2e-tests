@@ -21,13 +21,13 @@ public class PX_DIST_022_Fizicka_Lica_CRUD_Test  extends BaseTest {
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		FizickaLica fizickaLicaPage = homePage.navigirajNaFizickaLica();
-		fizickaLicaPage.verifikujFizickaLica();
-		String fizickoLice = fizickaLicaPage.dodajFizickoLice();
-		fizickaLicaPage.verifikujPoruku("Uspješno završeno.");
-		fizickaLicaPage.pretraziStavku(homePage.filterKolona2WE, fizickoLice);
-		fizickaLicaPage.verifikujFizickaLica();
-		fizickaLicaPage.verifikujStavku(fizickoLice, homePage.podatak2Tabela2WE);
+		FizickaLica fizickaLica = homePage.navigirajNaFizickaLica();
+		fizickaLica.verifikujFizickaLica();
+		String fizickoLice = fizickaLica.dodajFizickoLice();
+		fizickaLica.verifikujPoruku("Uspješno završeno.");
+		fizickaLica.pretraziStavku(homePage.filterKolona2WE, fizickoLice);
+		fizickaLica.verifikujFizickaLica();
+		fizickaLica.verifikujStavku(fizickoLice, homePage.podatak2Tabela2WE);
 	}
 	
 	@Test
@@ -37,18 +37,18 @@ public class PX_DIST_022_Fizicka_Lica_CRUD_Test  extends BaseTest {
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		FizickaLica fizickaLicaPage = homePage.navigirajNaFizickaLica();
-		fizickaLicaPage.verifikujFizickaLica();
-		String fizickoLice = fizickaLicaPage.dodajFizickoLice();
-		fizickaLicaPage.verifikujPoruku("Uspješno završeno.");
-		fizickaLicaPage.pretraziStavku(homePage.filterKolona2WE, fizickoLice);
-		fizickaLicaPage.verifikujFizickaLica();
-		fizickaLicaPage.verifikujStavku(fizickoLice, homePage.podatak2Tabela2WE);
-		String novoFizickoLice = fizickaLicaPage.urediFizickoLice();
-		fizickaLicaPage.verifikujPoruku("Uspješno završeno.");
-		fizickaLicaPage.pretraziStavku(homePage.filterKolona2WE, novoFizickoLice);
-		fizickaLicaPage.verifikujFizickaLica();
-		fizickaLicaPage.verifikujStavku(novoFizickoLice, homePage.podatak2Tabela2WE);
+		FizickaLica fizickaLica = homePage.navigirajNaFizickaLica();
+		fizickaLica.verifikujFizickaLica();
+		String fizickoLice = fizickaLica.dodajFizickoLice();
+		fizickaLica.verifikujPoruku("Uspješno završeno.");
+		fizickaLica.pretraziStavku(homePage.filterKolona2WE, fizickoLice);
+		fizickaLica.verifikujFizickaLica();
+		fizickaLica.verifikujStavku(fizickoLice, homePage.podatak2Tabela2WE);
+		String novoFizickoLice = fizickaLica.urediFizickoLice();
+		fizickaLica.verifikujPoruku("Uspješno završeno.");
+		fizickaLica.pretraziStavku(homePage.filterKolona2WE, novoFizickoLice);
+		fizickaLica.verifikujFizickaLica();
+		fizickaLica.verifikujStavku(novoFizickoLice, homePage.podatak2Tabela2WE);
 	}
 	
 	@Test
@@ -58,15 +58,17 @@ public class PX_DIST_022_Fizicka_Lica_CRUD_Test  extends BaseTest {
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		FizickaLica fizickaLicaPage = homePage.navigirajNaFizickaLica();
-		fizickaLicaPage.verifikujFizickaLica();
-		String fizickoLice = fizickaLicaPage.dodajFizickoLice();
-		fizickaLicaPage.verifikujPoruku("Uspješno završeno.");
-		fizickaLicaPage.pretraziStavku(homePage.filterKolona2WE, fizickoLice);
-		fizickaLicaPage.verifikujFizickaLica();
-		fizickaLicaPage.verifikujStavku(fizickoLice, homePage.podatak2Tabela2WE);
-		fizickaLicaPage.obrisiStavku(true);
-		fizickaLicaPage.verifikujBrisanjeStavke(true, fizickoLice);
+		FizickaLica fizickaLica = homePage.navigirajNaFizickaLica();
+		fizickaLica.verifikujFizickaLica();
+		String fizickoLice = fizickaLica.dodajFizickoLice();
+		fizickaLica.verifikujPoruku("Uspješno završeno.");
+		fizickaLica.pretraziStavku(homePage.filterKolona2WE, fizickoLice);
+		fizickaLica.verifikujFizickaLica();
+		fizickaLica.verifikujStavku(fizickoLice, homePage.podatak2Tabela2WE);
+		fizickaLica.obrisiStavku();
+		fizickaLica.verifikujPoruku("Brisanje je uspješno završeno");
+		fizickaLica.pretraziStavku(homePage.filterKolona2WE, fizickoLice);
+		fizickaLica.verifikujPraznuTabelu();
 	}
 
 }

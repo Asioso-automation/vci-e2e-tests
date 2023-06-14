@@ -64,8 +64,11 @@ public class PX_DIST_004_Terenske_Jedinice_CRUD_Test extends BaseTest {
 		terenskeJedinice.pretraziStavku(homePage.filterKolona2WE, naziv);
 		terenskeJedinice.verifikujTerenskeJedinice();
 		terenskeJedinice.verifikujStavku(naziv, homePage.podatak2Tabela2WE);
-		terenskeJedinice.obrisiStavku(true);
-		terenskeJedinice.verifikujBrisanjeStavke(true, naziv);
+		terenskeJedinice.obrisiStavku();
+		terenskeJedinice.verifikujPoruku("Brisanje je uspješno završeno");
+		terenskeJedinice.pretraziStavku(homePage.filterKolona2WE, naziv);
+		terenskeJedinice.verifikujPraznuTabelu();
+
 	}
 	
 }

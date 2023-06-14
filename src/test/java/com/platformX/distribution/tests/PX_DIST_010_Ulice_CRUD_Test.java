@@ -65,8 +65,10 @@ public class PX_DIST_010_Ulice_CRUD_Test extends BaseTest {
 		ulice.pretraziStavku(homePage.filterKolona2WE, ulica);
 		ulice.verifikujUlice();
 		ulice.verifikujStavku(ulica, homePage.podatak2Tabela2WE);
-		ulice.obrisiStavku(true);
-		ulice.verifikujBrisanjeStavke(true, ulica);
+		ulice.obrisiStavku();
+		ulice.verifikujPoruku("Brisanje je uspješno završeno");
+		ulice.pretraziStavku(homePage.filterKolona2WE, ulica);
+		ulice.verifikujPraznuTabelu();
 	}
 	
 	@Test
@@ -81,7 +83,8 @@ public class PX_DIST_010_Ulice_CRUD_Test extends BaseTest {
 		ulice.pretraziStavku(homePage.filterKolona2WE, "Hajduk Veljkova");
 		ulice.verifikujUlice();
 		ulice.verifikujStavku("Hajduk Veljkova", homePage.podatak2Tabela2WE);
-		ulice.obrisiStavku(false);
+		ulice.obrisiStavku();
+		ulice.verifikujPoruku("Brisanje ovog zapisa nije moguće.");
 	}
 
 }

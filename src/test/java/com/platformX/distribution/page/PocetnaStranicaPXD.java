@@ -1,9 +1,7 @@
 package com.platformX.distribution.page;
 
-import static org.testng.Assert.assertTrue;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -32,8 +30,8 @@ public class PocetnaStranicaPXD extends PageBase {
 	@FindBy(xpath = "//div[contains(text(), 'Odjavi se')]")
 	protected WebElement izlogujSeWE;
 	
-	@FindBy(xpath = "//div[@class='v-card__title title mb-0 word-break']")
-	private WebElement brisanjePopUpWE;
+//	@FindBy(xpath = "//div[@class='v-card__title title mb-0 word-break']")
+//	private WebElement brisanjePopUpWE;
 	
 	@FindBy(xpath = "//button[@type='submit']")
 	protected WebElement submitBtnWE;													// submit - DODAJ/UREDI button na formama za dodavanje/ureÄ‘ivanje Å ifarnika
@@ -426,72 +424,6 @@ public class PocetnaStranicaPXD extends PageBase {
 		profilWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(izlogujSeWE));
 		izlogujSeWE.click();
-	}
-	
-	public void verifikujPoruku(String poruka) throws InterruptedException {
-		wait.until(ExpectedConditions.visibilityOf(porukaWE));
-		assertTrue(porukaWE.getText().trim().equals(poruka), "Poruka upozorenja nije dobra!");
-	}
-	
-	public void obrisiStavku(boolean rezultat) throws InterruptedException {
-		try {
-			wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
-			wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
-			burgerBarWE.click();
-		}
-		catch (Exception e) {
-			wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
-			Thread.sleep(900);
-			wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
-			burgerBarWE.click();
-		}
-		wait.until(ExpectedConditions.elementToBeClickable(obrisiWE));
-		obrisiWE.click();
-		Thread.sleep(500);
-		wait.until(ExpectedConditions.visibilityOf(brisanjePopUpWE));
-		wait.until(ExpectedConditions.elementToBeClickable(potvrdiBrisanjeBtnWE));
-		potvrdiBrisanjeBtnWE.click();
-		Thread.sleep(500);
-		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
-		if (rezultat==true) {
-			try {
-				verifikujPoruku("Brisanje je uspješno završeno");
-			}
-			catch (Exception e) {
-				wait.until(ExpectedConditions.visibilityOf(sekcijaBtnWE));
-			}
-		}
-		else {
-			verifikujPoruku("Brisanje ovog zapisa nije moguće.");
-		}
-	}
-	
-	public void verifikujBrisanjeStavke(boolean kolona, String item) throws InterruptedException {
-		if (kolona==true) {
-			wait.until(ExpectedConditions.elementToBeClickable(filterKolona2WE));
-			wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
-			filterKolona2WE.clear();
-			filterKolona2WE.sendKeys(item);
-			filterKolona2WE.sendKeys(Keys.ENTER);
-		}
-		else {
-			wait.until(ExpectedConditions.elementToBeClickable(filterKolona3WE));
-			wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
-			filterKolona3WE.clear();
-			filterKolona3WE.sendKeys(item);
-			filterKolona3WE.sendKeys(Keys.ENTER);
-		}
-			wait.until(ExpectedConditions.elementToBeClickable(osvjeziBtnWE));
-			try {
-				osvjeziBtnWE.click();
-			}
-			catch (Exception e) {
-				wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
-			}
-			wait.until(ExpectedConditions.visibilityOf(praznaTabelaWE));
-			wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
-			Thread.sleep(700);
-			assertTrue(praznaTabelaWE.getText().equals("Nema podataka"), "DeletedItem: Poruka prazne tabele nije dobra!");
 	}
 	
 	public PocetnaStranica navigirajNaPocetnaStranica() throws FileNotFoundException, IOException {

@@ -21,13 +21,13 @@ public class PX_DIST_017_Mjerna_Mjesta_CRUD_Test  extends BaseTest {
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		MjernaMjesta mjernaMjestaPage = homePage.navigirajNaMjernaMjesta();
-		mjernaMjestaPage.verifikujMjernaMjesta();
-		String mjernoMjesto = mjernaMjestaPage.dodajMjernoMjesto();
-		mjernaMjestaPage.verifikujPoruku("Uspješno završeno.");
-		mjernaMjestaPage.pretraziStavku(homePage.filterKolona3WE, mjernoMjesto);
-		mjernaMjestaPage.verifikujMjernaMjesta();
-		mjernaMjestaPage.verifikujStavku(mjernoMjesto, homePage.podatak2Tabela3WE);
+		MjernaMjesta mjernaMjesta = homePage.navigirajNaMjernaMjesta();
+		mjernaMjesta.verifikujMjernaMjesta();
+		String mjernoMjesto = mjernaMjesta.dodajMjernoMjesto();
+		mjernaMjesta.verifikujPoruku("Uspješno završeno.");
+		mjernaMjesta.pretraziStavku(homePage.filterKolona3WE, mjernoMjesto);
+		mjernaMjesta.verifikujMjernaMjesta();
+		mjernaMjesta.verifikujStavku(mjernoMjesto, homePage.podatak2Tabela3WE);
 	}
 
 	@Test
@@ -37,18 +37,18 @@ public class PX_DIST_017_Mjerna_Mjesta_CRUD_Test  extends BaseTest {
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		MjernaMjesta mjernaMjestaPage = homePage.navigirajNaMjernaMjesta();
-		mjernaMjestaPage.verifikujMjernaMjesta();
-		String mjernoMjesto = mjernaMjestaPage.dodajMjernoMjesto();
-		mjernaMjestaPage.verifikujPoruku("Uspješno završeno.");
-		mjernaMjestaPage.pretraziStavku(homePage.filterKolona3WE, mjernoMjesto);
-		mjernaMjestaPage.verifikujMjernaMjesta();
-		mjernaMjestaPage.verifikujStavku(mjernoMjesto, homePage.podatak2Tabela3WE);
-		String novoMjernoMjesto = mjernaMjestaPage.urediMjernoMjesto();
-		mjernaMjestaPage.verifikujPoruku("Uspješno završeno.");
-		mjernaMjestaPage.pretraziStavku(homePage.filterKolona3WE, novoMjernoMjesto);
-		mjernaMjestaPage.verifikujMjernaMjesta();
-		mjernaMjestaPage.verifikujStavku(novoMjernoMjesto, homePage.podatak2Tabela3WE);
+		MjernaMjesta mjernaMjesta = homePage.navigirajNaMjernaMjesta();
+		mjernaMjesta.verifikujMjernaMjesta();
+		String mjernoMjesto = mjernaMjesta.dodajMjernoMjesto();
+		mjernaMjesta.verifikujPoruku("Uspješno završeno.");
+		mjernaMjesta.pretraziStavku(homePage.filterKolona3WE, mjernoMjesto);
+		mjernaMjesta.verifikujMjernaMjesta();
+		mjernaMjesta.verifikujStavku(mjernoMjesto, homePage.podatak2Tabela3WE);
+		String novoMjernoMjesto = mjernaMjesta.urediMjernoMjesto();
+		mjernaMjesta.verifikujPoruku("Uspješno završeno.");
+		mjernaMjesta.pretraziStavku(homePage.filterKolona3WE, novoMjernoMjesto);
+		mjernaMjesta.verifikujMjernaMjesta();
+		mjernaMjesta.verifikujStavku(novoMjernoMjesto, homePage.podatak2Tabela3WE);
 	}
 	
 	@Test
@@ -58,15 +58,17 @@ public class PX_DIST_017_Mjerna_Mjesta_CRUD_Test  extends BaseTest {
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		MjernaMjesta mjernaMjestaPage = homePage.navigirajNaMjernaMjesta();
-		mjernaMjestaPage.verifikujMjernaMjesta();
-		String mjernoMjesto = mjernaMjestaPage.dodajMjernoMjesto();
-		mjernaMjestaPage.verifikujPoruku("Uspješno završeno.");
-		mjernaMjestaPage.pretraziStavku(homePage.filterKolona3WE, mjernoMjesto);
-		mjernaMjestaPage.verifikujMjernaMjesta();
-		mjernaMjestaPage.verifikujStavku(mjernoMjesto, homePage.podatak2Tabela3WE);
-		mjernaMjestaPage.obrisiStavku(true);
-		mjernaMjestaPage.verifikujBrisanjeStavke(false, mjernoMjesto);
+		MjernaMjesta mjernaMjesta = homePage.navigirajNaMjernaMjesta();
+		mjernaMjesta.verifikujMjernaMjesta();
+		String mjernoMjesto = mjernaMjesta.dodajMjernoMjesto();
+		mjernaMjesta.verifikujPoruku("Uspješno završeno.");
+		mjernaMjesta.pretraziStavku(homePage.filterKolona3WE, mjernoMjesto);
+		mjernaMjesta.verifikujMjernaMjesta();
+		mjernaMjesta.verifikujStavku(mjernoMjesto, homePage.podatak2Tabela3WE);
+		mjernaMjesta.obrisiStavku();
+		mjernaMjesta.verifikujPoruku("Brisanje je uspješno završeno");
+		mjernaMjesta.pretraziStavku(homePage.filterKolona3WE, mjernoMjesto);
+		mjernaMjesta.verifikujPraznuTabelu();
 	}
 	
 }

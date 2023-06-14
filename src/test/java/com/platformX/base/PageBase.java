@@ -82,6 +82,9 @@ public abstract class PageBase {
 
 	@FindBy(xpath = "//i[contains(@class, 'fa-info')]")
 	protected WebElement infoBtnWE;
+	
+	@FindBy(xpath = "//div[@class='v-card__title title mb-0 word-break']")
+	private WebElement brisanjePopUpWE;
 
 	@FindBy(xpath = "//*[contains(@class, 'v-btn__content') and contains(text(), 'Briši')]")
 	protected WebElement potvrdiBrisanjeBtnWE;
@@ -108,8 +111,6 @@ public abstract class PageBase {
 
 	@FindBy(xpath = "//tr[2]/td[4]")
 	public WebElement podatak2Tabela4WE;
-	
-	
 
 	protected Select select(WebElement webElement, String name) {
 		Select selectedElement = new Select(webElement);
@@ -125,6 +126,16 @@ public abstract class PageBase {
 
 	public List<WebElement> brojKolona() {
 		return driver.findElements(By.xpath("//th"));
+	}
+	
+	public void verifikujPoruku(String poruka) throws InterruptedException {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.visibilityOf(porukaWE));
+		assertTrue(porukaWE.getText().trim().equals(poruka), "Poruka upozorenja nije dobra!");
+	}
+	
+	public void verifikujPraznuTabelu() {
+		assertTrue(praznaTabelaWE.getText().equals("Nema podataka"), "PraznaTabela: Poruka prazne tabele nije dobra!");
 	}
 
 	public void verifikacijaZajednickihElemenata(String sekcija, String stranica, String naslovStranice, int brKolona,
@@ -175,7 +186,6 @@ public abstract class PageBase {
 			Thread.sleep(1000);
 			wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		}
-
 	}
 
 	public void pretraziStavku(WebElement element, String value) throws InterruptedException {
@@ -198,6 +208,29 @@ public abstract class PageBase {
 		wait.until(ExpectedConditions.visibilityOf(tableValue));
 		wait.until(ExpectedConditions.elementToBeClickable(tableValue));
 		assertTrue(tableValue.getText().equals(value), "Verifikacija nije uspješna!");
+	}
+		
+	public void obrisiStavku() throws InterruptedException {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		try {
+			wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
+			wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
+			burgerBarWE.click();
+		}
+		catch (Exception e) {
+			wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
+			Thread.sleep(900);
+			wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
+			burgerBarWE.click();
+		}
+		wait.until(ExpectedConditions.elementToBeClickable(obrisiWE));
+		obrisiWE.click();
+		Thread.sleep(500);
+		wait.until(ExpectedConditions.visibilityOf(brisanjePopUpWE));
+		wait.until(ExpectedConditions.elementToBeClickable(potvrdiBrisanjeBtnWE));
+		potvrdiBrisanjeBtnWE.click();
+		Thread.sleep(500);
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 	}
 
 }

@@ -65,8 +65,10 @@ public class PX_DIST_013_Kategorije_Potrosnje_CRUD_Test extends BaseTest {
 		kategorijePotrosnje.pretraziStavku(homePage.filterKolona2WE, kategorijaPotrosnje);
 		kategorijePotrosnje.verifikujKategorijePotrosnje();
 		kategorijePotrosnje.verifikujStavku(kategorijaPotrosnje, homePage.podatak2Tabela2WE); 
-		kategorijePotrosnje.obrisiStavku(true);
-		kategorijePotrosnje.verifikujBrisanjeStavke(true, kategorijaPotrosnje);
+		kategorijePotrosnje.obrisiStavku();
+		kategorijePotrosnje.verifikujPoruku("Brisanje je uspješno završeno");
+		kategorijePotrosnje.pretraziStavku(homePage.filterKolona2WE, kategorijaPotrosnje);
+		kategorijePotrosnje.verifikujPraznuTabelu();
 	}
 	
 }

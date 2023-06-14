@@ -65,8 +65,10 @@ public class PX_DIST_006_Citaci_CRUD_Test extends BaseTest {
 		citaci.pretraziStavku(homePage.filterKolona2WE, imeCitaca);
 		citaci.verifikujCitaci();
 		citaci.verifikujStavku(imeCitaca, homePage.podatak2Tabela2WE);
-		citaci.obrisiStavku(true);
-		citaci.verifikujBrisanjeStavke(true, imeCitaca);
+		citaci.obrisiStavku();
+		citaci.verifikujPoruku("Brisanje je uspješno završeno");
+		citaci.pretraziStavku(homePage.filterKolona2WE, imeCitaca);
+		citaci.verifikujPraznuTabelu();
 	}
 	
 }

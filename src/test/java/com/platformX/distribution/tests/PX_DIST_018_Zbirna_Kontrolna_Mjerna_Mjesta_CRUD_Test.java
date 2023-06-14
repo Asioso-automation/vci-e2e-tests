@@ -27,13 +27,13 @@ public class PX_DIST_018_Zbirna_Kontrolna_Mjerna_Mjesta_CRUD_Test extends BaseTe
 		String registarBrojila = registarBrojilaPage.dodajBrojilo();
 		registarBrojilaPage.verifikujBrojilo(registarBrojila);
 		String brBrojila = registarBrojilaPage.kreirajBrojilo();
-		ZbirnaKontrolnaMjernaMjesta zbirnaKontrolnaMjernaMjestaPage = homePage.navigirajNaZbirnaKontrolnaMjernaMjesta();
-		zbirnaKontrolnaMjernaMjestaPage.verifikujZbirnaKontrolnaMjernaMjesta();
-		String zbirnaKontrolnaMjernaMjesta = zbirnaKontrolnaMjernaMjestaPage.dodajZbirnoKontrolnoMjernoMjesto(brBrojila);
-		zbirnaKontrolnaMjernaMjestaPage.verifikujPoruku("Uspješno završeno.");
-		zbirnaKontrolnaMjernaMjestaPage.pretraziStavku(homePage.filterKolona2WE, zbirnaKontrolnaMjernaMjesta);
-		zbirnaKontrolnaMjernaMjestaPage.verifikujZbirnaKontrolnaMjernaMjesta();
-		zbirnaKontrolnaMjernaMjestaPage.verifikujStavku(zbirnaKontrolnaMjernaMjesta, homePage.podatak2Tabela2WE); 
+		ZbirnaKontrolnaMjernaMjesta zbirnaKontrolnaMjernaMjesta = homePage.navigirajNaZbirnaKontrolnaMjernaMjesta();
+		zbirnaKontrolnaMjernaMjesta.verifikujZbirnaKontrolnaMjernaMjesta();
+		String zbirnoKontrolnoMjernoMjesto = zbirnaKontrolnaMjernaMjesta.dodajZbirnoKontrolnoMjernoMjesto(brBrojila);
+		zbirnaKontrolnaMjernaMjesta.verifikujPoruku("Uspješno završeno.");
+		zbirnaKontrolnaMjernaMjesta.pretraziStavku(homePage.filterKolona2WE, zbirnoKontrolnoMjernoMjesto);
+		zbirnaKontrolnaMjernaMjesta.verifikujZbirnaKontrolnaMjernaMjesta();
+		zbirnaKontrolnaMjernaMjesta.verifikujStavku(zbirnoKontrolnoMjernoMjesto, homePage.podatak2Tabela2WE); 
 	}
 	
 	@Test
@@ -48,18 +48,18 @@ public class PX_DIST_018_Zbirna_Kontrolna_Mjerna_Mjesta_CRUD_Test extends BaseTe
 		String registarBrojila = registarBrojilaPage.dodajBrojilo();
 		registarBrojilaPage.verifikujBrojilo(registarBrojila);
 		String brBrojila = registarBrojilaPage.kreirajBrojilo();
-		ZbirnaKontrolnaMjernaMjesta zbirnaKontrolnaMjernaMjestaPage = homePage.navigirajNaZbirnaKontrolnaMjernaMjesta();
-		zbirnaKontrolnaMjernaMjestaPage.verifikujZbirnaKontrolnaMjernaMjesta();
-		String zbirnaKontrolnaMjernaMjesta = zbirnaKontrolnaMjernaMjestaPage.dodajZbirnoKontrolnoMjernoMjesto(brBrojila);
-		zbirnaKontrolnaMjernaMjestaPage.verifikujPoruku("Uspješno završeno.");
-		zbirnaKontrolnaMjernaMjestaPage.pretraziStavku(homePage.filterKolona2WE, zbirnaKontrolnaMjernaMjesta);
-		zbirnaKontrolnaMjernaMjestaPage.verifikujZbirnaKontrolnaMjernaMjesta();
-		zbirnaKontrolnaMjernaMjestaPage.verifikujStavku(zbirnaKontrolnaMjernaMjesta, homePage.podatak2Tabela2WE); 
-		String novoZbirnoKontrolnoMjernoMjesto = zbirnaKontrolnaMjernaMjestaPage.urediZbirnoKontrolnoMjernoMjesto();
-		zbirnaKontrolnaMjernaMjestaPage.verifikujPoruku("Uspješno završeno.");
-		zbirnaKontrolnaMjernaMjestaPage.pretraziStavku(homePage.filterKolona2WE, novoZbirnoKontrolnoMjernoMjesto);
-		zbirnaKontrolnaMjernaMjestaPage.verifikujZbirnaKontrolnaMjernaMjesta();
-		zbirnaKontrolnaMjernaMjestaPage.verifikujStavku(novoZbirnoKontrolnoMjernoMjesto, homePage.podatak2Tabela2WE); 
+		ZbirnaKontrolnaMjernaMjesta zbirnaKontrolnaMjernaMjesta = homePage.navigirajNaZbirnaKontrolnaMjernaMjesta();
+		zbirnaKontrolnaMjernaMjesta.verifikujZbirnaKontrolnaMjernaMjesta();
+		String zbirnoKontrolnoMjernoMjesto = zbirnaKontrolnaMjernaMjesta.dodajZbirnoKontrolnoMjernoMjesto(brBrojila);
+		zbirnaKontrolnaMjernaMjesta.verifikujPoruku("Uspješno završeno.");
+		zbirnaKontrolnaMjernaMjesta.pretraziStavku(homePage.filterKolona2WE, zbirnoKontrolnoMjernoMjesto);
+		zbirnaKontrolnaMjernaMjesta.verifikujZbirnaKontrolnaMjernaMjesta();
+		zbirnaKontrolnaMjernaMjesta.verifikujStavku(zbirnoKontrolnoMjernoMjesto, homePage.podatak2Tabela2WE); 
+		String novoZbirnoKontrolnoMjernoMjesto = zbirnaKontrolnaMjernaMjesta.urediZbirnoKontrolnoMjernoMjesto();
+		zbirnaKontrolnaMjernaMjesta.verifikujPoruku("Uspješno završeno.");
+		zbirnaKontrolnaMjernaMjesta.pretraziStavku(homePage.filterKolona2WE, novoZbirnoKontrolnoMjernoMjesto);
+		zbirnaKontrolnaMjernaMjesta.verifikujZbirnaKontrolnaMjernaMjesta();
+		zbirnaKontrolnaMjernaMjesta.verifikujStavku(novoZbirnoKontrolnoMjernoMjesto, homePage.podatak2Tabela2WE); 
 	}
 	
 	@Test
@@ -74,15 +74,17 @@ public class PX_DIST_018_Zbirna_Kontrolna_Mjerna_Mjesta_CRUD_Test extends BaseTe
 		String registarBrojila = registarBrojilaPage.dodajBrojilo();
 		registarBrojilaPage.verifikujBrojilo(registarBrojila);
 		String brBrojila = registarBrojilaPage.kreirajBrojilo();
-		ZbirnaKontrolnaMjernaMjesta zbirnaKontrolnaMjernaMjestaPage = homePage.navigirajNaZbirnaKontrolnaMjernaMjesta();
-		zbirnaKontrolnaMjernaMjestaPage.verifikujZbirnaKontrolnaMjernaMjesta();
-		String zbirnaKontrolnaMjernaMjesta = zbirnaKontrolnaMjernaMjestaPage.dodajZbirnoKontrolnoMjernoMjesto(brBrojila);
-		zbirnaKontrolnaMjernaMjestaPage.verifikujPoruku("Uspješno završeno.");
-		zbirnaKontrolnaMjernaMjestaPage.pretraziStavku(homePage.filterKolona2WE, zbirnaKontrolnaMjernaMjesta);
-		zbirnaKontrolnaMjernaMjestaPage.verifikujZbirnaKontrolnaMjernaMjesta();
-		zbirnaKontrolnaMjernaMjestaPage.verifikujStavku(zbirnaKontrolnaMjernaMjesta, homePage.podatak2Tabela2WE); 
-		zbirnaKontrolnaMjernaMjestaPage.obrisiStavku(true);
-		zbirnaKontrolnaMjernaMjestaPage.verifikujBrisanjeStavke(true, zbirnaKontrolnaMjernaMjesta);
+		ZbirnaKontrolnaMjernaMjesta zbirnaKontrolnaMjernaMjesta = homePage.navigirajNaZbirnaKontrolnaMjernaMjesta();
+		zbirnaKontrolnaMjernaMjesta.verifikujZbirnaKontrolnaMjernaMjesta();
+		String zbirnoKontrolnoMjernoMjesto = zbirnaKontrolnaMjernaMjesta.dodajZbirnoKontrolnoMjernoMjesto(brBrojila);
+		zbirnaKontrolnaMjernaMjesta.verifikujPoruku("Uspješno završeno.");
+		zbirnaKontrolnaMjernaMjesta.pretraziStavku(homePage.filterKolona2WE, zbirnoKontrolnoMjernoMjesto);
+		zbirnaKontrolnaMjernaMjesta.verifikujZbirnaKontrolnaMjernaMjesta();
+		zbirnaKontrolnaMjernaMjesta.verifikujStavku(zbirnoKontrolnoMjernoMjesto, homePage.podatak2Tabela2WE); 
+		zbirnaKontrolnaMjernaMjesta.obrisiStavku();
+		zbirnaKontrolnaMjernaMjesta.verifikujPoruku("Brisanje je uspješno završeno");
+		zbirnaKontrolnaMjernaMjesta.pretraziStavku(homePage.filterKolona2WE, zbirnoKontrolnoMjernoMjesto);
+		zbirnaKontrolnaMjernaMjesta.verifikujPraznuTabelu();
 	}
 	
 }

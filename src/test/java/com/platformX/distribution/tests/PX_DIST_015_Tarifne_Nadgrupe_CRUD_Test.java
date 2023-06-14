@@ -65,8 +65,10 @@ public class PX_DIST_015_Tarifne_Nadgrupe_CRUD_Test extends BaseTest{
 	    tarifneNadgrupe.pretraziStavku(homePage.filterKolona2WE, tarifnaNadgrupa);
 	    tarifneNadgrupe.verifikujTarifneNadgrupe();
 	    tarifneNadgrupe.verifikujStavku(tarifnaNadgrupa, homePage.podatak2Tabela2WE); 
-		tarifneNadgrupe.obrisiStavku(true);
-		tarifneNadgrupe.verifikujBrisanjeStavke(true, tarifnaNadgrupa);
+		tarifneNadgrupe.obrisiStavku();
+		tarifneNadgrupe.verifikujPoruku("Brisanje je uspješno završeno");
+		tarifneNadgrupe.pretraziStavku(homePage.filterKolona2WE, tarifnaNadgrupa);
+		tarifneNadgrupe.verifikujPraznuTabelu();
 	}
 
 }

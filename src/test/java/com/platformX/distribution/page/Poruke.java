@@ -1,7 +1,5 @@
 package com.platformX.distribution.page;
 
-import static org.testng.Assert.assertTrue;
-
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import org.openqa.selenium.By;
@@ -98,10 +96,10 @@ public class Poruke extends PocetnaStranicaPXD {
 		return podaci;
 	}
 	
-	public void verifikujPorukuLista(String naslov) throws Exception {
-		wait.until(ExpectedConditions.visibilityOf(podatak2Tabela3WE));
-		assertTrue(podatak2Tabela3WE.getText().trim().contains(naslov), "Poruke: Poruka nije pronađena!");
-	}
+//	public void verifikujPorukuLista(String naslov) throws Exception {
+//		wait.until(ExpectedConditions.visibilityOf(podatak2Tabela3WE));
+//		assertTrue(podatak2Tabela3WE.getText().trim().contains(naslov), "Poruke: Poruka nije pronađena!");
+//	}
 	
 	public void verifikujPorukuPocetna(String naslov, String sadrzaj) throws Exception {
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));

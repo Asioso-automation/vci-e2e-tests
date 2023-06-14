@@ -22,13 +22,13 @@ public class PX_DIST_021_Pravna_Lica_CRUD_Test  extends BaseTest {
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		PravnaLica pravnaLicaPage = homePage.navigirajNaPravnaLica();
-		pravnaLicaPage.verifikujPravnaLica();
-		String pravnoLice = pravnaLicaPage.dodajPravnoLice();
-		pravnaLicaPage.verifikujPoruku("Uspješno završeno.");
-		pravnaLicaPage.pretraziStavku(homePage.filterKolona2WE, pravnoLice);
-		pravnaLicaPage.verifikujPravnaLica();
-		pravnaLicaPage.verifikujStavku(pravnoLice, homePage.podatak2Tabela2WE);
+		PravnaLica pravnaLica = homePage.navigirajNaPravnaLica();
+		pravnaLica.verifikujPravnaLica();
+		String pravnoLice = pravnaLica.dodajPravnoLice();
+		pravnaLica.verifikujPoruku("Uspješno završeno.");
+		pravnaLica.pretraziStavku(homePage.filterKolona2WE, pravnoLice);
+		pravnaLica.verifikujPravnaLica();
+		pravnaLica.verifikujStavku(pravnoLice, homePage.podatak2Tabela2WE);
 	}
 	
 	@Test
@@ -38,18 +38,18 @@ public class PX_DIST_021_Pravna_Lica_CRUD_Test  extends BaseTest {
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		PravnaLica pravnaLicaPage = homePage.navigirajNaPravnaLica();
-		pravnaLicaPage.verifikujPravnaLica();
-		String pravnoLice = pravnaLicaPage.dodajPravnoLice();
-		pravnaLicaPage.verifikujPoruku("Uspješno završeno.");
-		pravnaLicaPage.pretraziStavku(homePage.filterKolona2WE, pravnoLice);
-		pravnaLicaPage.verifikujPravnaLica();
-		pravnaLicaPage.verifikujStavku(pravnoLice, homePage.podatak2Tabela2WE);
-		String novoPravnoLice = pravnaLicaPage.urediPravnoLice();
-		pravnaLicaPage.verifikujPoruku("Uspješno završeno.");
-		pravnaLicaPage.pretraziStavku(homePage.filterKolona2WE, novoPravnoLice);
-		pravnaLicaPage.verifikujPravnaLica();
-		pravnaLicaPage.verifikujStavku(novoPravnoLice, homePage.podatak2Tabela2WE);
+		PravnaLica pravnaLica = homePage.navigirajNaPravnaLica();
+		pravnaLica.verifikujPravnaLica();
+		String pravnoLice = pravnaLica.dodajPravnoLice();
+		pravnaLica.verifikujPoruku("Uspješno završeno.");
+		pravnaLica.pretraziStavku(homePage.filterKolona2WE, pravnoLice);
+		pravnaLica.verifikujPravnaLica();
+		pravnaLica.verifikujStavku(pravnoLice, homePage.podatak2Tabela2WE);
+		String novoPravnoLice = pravnaLica.urediPravnoLice();
+		pravnaLica.verifikujPoruku("Uspješno završeno.");
+		pravnaLica.pretraziStavku(homePage.filterKolona2WE, novoPravnoLice);
+		pravnaLica.verifikujPravnaLica();
+		pravnaLica.verifikujStavku(novoPravnoLice, homePage.podatak2Tabela2WE);
 	}
 	
 	@Test
@@ -59,15 +59,17 @@ public class PX_DIST_021_Pravna_Lica_CRUD_Test  extends BaseTest {
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		PravnaLica pravnaLicaPage = homePage.navigirajNaPravnaLica();
-		pravnaLicaPage.verifikujPravnaLica();
-		String pravnoLice = pravnaLicaPage.dodajPravnoLice();
-		pravnaLicaPage.verifikujPoruku("Uspješno završeno.");
-		pravnaLicaPage.pretraziStavku(homePage.filterKolona2WE, pravnoLice);
-		pravnaLicaPage.verifikujPravnaLica();
-		pravnaLicaPage.verifikujStavku(pravnoLice, homePage.podatak2Tabela2WE);
-		pravnaLicaPage.obrisiStavku(true);
-		pravnaLicaPage.verifikujBrisanjeStavke(true, pravnoLice);
+		PravnaLica pravnaLica = homePage.navigirajNaPravnaLica();
+		pravnaLica.verifikujPravnaLica();
+		String pravnoLice = pravnaLica.dodajPravnoLice();
+		pravnaLica.verifikujPoruku("Uspješno završeno.");
+		pravnaLica.pretraziStavku(homePage.filterKolona2WE, pravnoLice);
+		pravnaLica.verifikujPravnaLica();
+		pravnaLica.verifikujStavku(pravnoLice, homePage.podatak2Tabela2WE);
+		pravnaLica.obrisiStavku();
+		pravnaLica.verifikujPoruku("Brisanje je uspješno završeno");
+		pravnaLica.pretraziStavku(homePage.filterKolona2WE, pravnoLice);
+		pravnaLica.verifikujPraznuTabelu();
 	}
 
 }

@@ -65,8 +65,10 @@ public class PX_DIST_007_Opstine_CRUD_Test extends BaseTest {
 		opstine.pretraziStavku(homePage.filterKolona2WE, opstina);
 		opstine.verifikujOpstine();
 		opstine.verifikujStavku(opstina, homePage.podatak2Tabela2WE);
-		opstine.obrisiStavku(true);
-		opstine.verifikujBrisanjeStavke(true, opstina);
+		opstine.obrisiStavku();
+		opstine.verifikujPoruku("Brisanje je uspješno završeno");
+		opstine.pretraziStavku(homePage.filterKolona2WE, opstina);
+		opstine.verifikujPraznuTabelu();
 	}
 
 }

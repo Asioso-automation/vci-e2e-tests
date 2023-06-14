@@ -78,8 +78,10 @@ public class PX_DIST_019_Elektroenergetske_Saglasnosti_CRUD_Test extends BaseTes
 		elSaglasnosti.pretraziStavku(homePage.filterKolona2WE, eeSaglasnost);
 		elSaglasnosti.verifikujElektroenergetskeSaglasnosti();
 		elSaglasnosti.verifikujStavku(eeSaglasnost, homePage.podatak2Tabela2WE);
-		elSaglasnosti.obrisiStavku(true);
-		elSaglasnosti.verifikujBrisanjeStavke(true, eeSaglasnost);
+		elSaglasnosti.obrisiStavku();
+		elSaglasnosti.verifikujPoruku("Brisanje je uspješno završeno");
+		elSaglasnosti.pretraziStavku(homePage.filterKolona2WE, eeSaglasnost);
+		elSaglasnosti.verifikujPraznuTabelu();
 	}
 
 }

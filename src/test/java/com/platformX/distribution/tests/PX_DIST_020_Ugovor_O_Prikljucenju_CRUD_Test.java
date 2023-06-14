@@ -84,8 +84,10 @@ public class PX_DIST_020_Ugovor_O_Prikljucenju_CRUD_Test extends BaseTest{
 		ugovor.pretraziStavku(homePage.filterKolona4WE, brojProtokola);
 		ugovor.verifikujUgovorOPrikljucenju();
 		ugovor.verifikujStavku(brojProtokola, homePage.podatak2Tabela4WE);
-		ugovor.obrisiStavku(true);
-		ugovor.verifikujBrisanjeStavke(true, elSaglasnost);
+		ugovor.obrisiStavku();
+		ugovor.verifikujPoruku("Brisanje je uspješno završeno");
+		ugovor.pretraziStavku(homePage.filterKolona4WE, brojProtokola);
+		ugovor.verifikujPraznuTabelu();
 	}
 
 }

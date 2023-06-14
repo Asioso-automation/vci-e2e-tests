@@ -64,9 +64,10 @@ public class PX_DIST_016_Tarifne_Grupe_CRUD_Test extends BaseTest{
 		tarifneGrupe.verifikujPoruku("Uspješno završeno.");
 		tarifneGrupe.pretraziStavku(homePage.filterKolona2WE, tarifnaGrupa);
 		tarifneGrupe.verifikujTarifneGrupe();
-		tarifneGrupe.verifikujStavku(tarifnaGrupa, homePage.podatak2Tabela2WE); 
-        tarifneGrupe.obrisiStavku(true);
-        tarifneGrupe.verifikujBrisanjeStavke(true, tarifnaGrupa);
+		tarifneGrupe.obrisiStavku();
+		tarifneGrupe.verifikujPoruku("Brisanje je uspješno završeno");
+		tarifneGrupe.pretraziStavku(homePage.filterKolona2WE, tarifnaGrupa);
+		tarifneGrupe.verifikujPraznuTabelu();
 	}
 
 }

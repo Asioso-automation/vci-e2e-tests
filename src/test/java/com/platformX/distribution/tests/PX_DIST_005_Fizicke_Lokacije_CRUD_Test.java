@@ -87,8 +87,10 @@ public class PX_DIST_005_Fizicke_Lokacije_CRUD_Test extends BaseTest {
 		fizickeLokacije.pretraziStavku(homePage.filterKolona2WE, nazivFizickeLokacije);
 		fizickeLokacije.verifikujFizickeLokacije();
 		fizickeLokacije.verifikujStavku(nazivFizickeLokacije, homePage.podatak2Tabela2WE);
-		fizickeLokacije.obrisiStavku(true);
-		fizickeLokacije.verifikujBrisanjeStavke(true, nazivFizickeLokacije);
+		fizickeLokacije.obrisiStavku();
+		terenskeJedinice.verifikujPoruku("Brisanje je uspješno završeno");
+		terenskeJedinice.pretraziStavku(homePage.filterKolona2WE, nazivFizickeLokacije);
+		terenskeJedinice.verifikujPraznuTabelu();
 	}
 	
 }

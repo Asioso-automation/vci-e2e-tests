@@ -75,8 +75,10 @@ public class PX_DIST_009_Poste_CRUD_Test extends BaseTest {
 		podaci = poste.dodajPostu();
 		poste.verifikujPoruku("Uspješno završeno.");
 		poste.verifikujPostu(podaci[0], podaci[1], podaci[2]);
-		poste.obrisiStavku(true);
-		poste.verifikujBrisanjeStavke(true, podaci[0]);
+		poste.obrisiStavku();
+		poste.verifikujPoruku("Brisanje je uspješno završeno");
+		poste.pretraziStavku(homePage.filterKolona2WE, podaci[0]);
+		poste.verifikujPraznuTabelu();
 	}
 
 	@Test
@@ -89,7 +91,8 @@ public class PX_DIST_009_Poste_CRUD_Test extends BaseTest {
 		Poste poste = homePage.navigirajNaPoste();
 		poste.verifikujPoste();
 		poste.verifikujPostu("Beograd", "11000", "Београд");
-		poste.obrisiStavku(false);
+		poste.obrisiStavku();
+		poste.verifikujPoruku("Brisanje ovog zapisa nije moguće.");
 	}
 
 }

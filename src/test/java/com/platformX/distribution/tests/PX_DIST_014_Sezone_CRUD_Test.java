@@ -65,8 +65,10 @@ public class PX_DIST_014_Sezone_CRUD_Test extends BaseTest {
 		sezone.pretraziStavku(homePage.filterKolona2WE, sezona);
 		sezone.verifikujSezone();
 		sezone.verifikujStavku(sezona, homePage.podatak2Tabela2WE);
-		sezone.obrisiStavku(true);
-		sezone.verifikujBrisanjeStavke(true, sezona);
+		sezone.obrisiStavku();
+		sezone.verifikujPoruku("Brisanje je uspješno završeno");
+		sezone.pretraziStavku(homePage.filterKolona2WE, sezona);
+		sezone.verifikujPraznuTabelu();
 	}
 
 }

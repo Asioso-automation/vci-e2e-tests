@@ -65,8 +65,10 @@ public class PX_DIST_011_Monteri_CRUD_Test extends BaseTest {
 		monteri.pretraziStavku(homePage.filterKolona2WE, monter);
 		monteri.verifikujMonteri();
 		monteri.verifikujStavku(monter, homePage.podatak2Tabela2WE);
-		monteri.obrisiStavku(true);
-		monteri.verifikujBrisanjeStavke(true, monter);
+		monteri.obrisiStavku();
+		monteri.verifikujPoruku("Brisanje je uspješno završeno");
+		monteri.pretraziStavku(homePage.filterKolona2WE, monter);
+		monteri.verifikujPraznuTabelu();
 	}
 	
 }

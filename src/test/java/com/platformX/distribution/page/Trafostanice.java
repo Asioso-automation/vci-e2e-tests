@@ -99,7 +99,7 @@ public class Trafostanice extends PocetnaStranicaPXD {
 		return naziv;
 	}
 	
-	public String urediTrafostanicu(String naziv) throws InterruptedException{
+	public String urediTrafostanicu(String naziv) throws InterruptedException {
 		String trafostanica = "Trafostanica" + Helper.getRandomString(4);
 		wait.until(ExpectedConditions.elementToBeClickable(filterKolona3WE));
 		filterKolona3WE.click();
@@ -119,6 +119,11 @@ public class Trafostanice extends PocetnaStranicaPXD {
 		submitBtnWE.click();
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		return trafostanica;
+	}
+	
+	public String kreirajTrafostanicu() throws InterruptedException {
+		String trafostanicaId = podatak2Tabela2WE.getText() + " - " + podatak2Tabela3WE.getText();
+		return trafostanicaId;
 	}
 
 }

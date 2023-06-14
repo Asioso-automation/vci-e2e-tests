@@ -65,8 +65,10 @@ public class PX_DIST_008_Naseljena_Mjesta_CRUD_Test extends BaseTest{
 		naseljenaMjesta.pretraziStavku(homePage.filterKolona2WE, naseljenoMjesto);
 		naseljenaMjesta.verifikujNaseljenaMjesta();
 		naseljenaMjesta.verifikujStavku(naseljenoMjesto, homePage.podatak2Tabela2WE);
-		naseljenaMjesta.obrisiStavku(true);
-		naseljenaMjesta.verifikujBrisanjeStavke(true, naseljenoMjesto);
+		naseljenaMjesta.obrisiStavku();
+		naseljenaMjesta.verifikujPoruku("Brisanje je uspješno završeno");
+		naseljenaMjesta.pretraziStavku(homePage.filterKolona2WE, naseljenoMjesto);
+		naseljenaMjesta.verifikujPraznuTabelu();
 	}
 
 }

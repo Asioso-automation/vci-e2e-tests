@@ -4,6 +4,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import org.testng.annotations.Test;
 import com.platformX.base.BaseTest;
+import com.platformX.distribution.page.CitackiHodovi;
 import com.platformX.distribution.page.LogIn;
 import com.platformX.distribution.page.PocetnaStranicaPXD;
 import com.platformX.distribution.page.Trafostanice;
@@ -54,7 +55,42 @@ public class PX_DIST_012_Trafostanice_CRUD_Test extends BaseTest {
 	// TODO dodati test za brisanje trafostanice - dodaj trafostanicu, verifikuj trafostanicu, verifikuj odgovarajuci citacki hod, obrisi citacki hod, obrisi trafostanicu
 	
 	@Test
-	public void px_dist_012_3_neuspjesno_brisanje_trafostanice_test() throws Exception {
+	public void px_dist_012_3_brisanje_trafostanice_test() throws Exception {
+		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
+		logIn.verifikujLogIn();
+		logIn.logIn();
+		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
+		homePage.verifikujPocetnuStranicu();
+		Trafostanice trafostanice = homePage.navigirajNaTrafostanice();
+		trafostanice.verifikujTrafostanice();
+		String trafostanica = trafostanice.dodajTrafostanicu();
+		trafostanice.verifikujPoruku("Uspješno završeno.");
+		trafostanice.pretraziStavku(homePage.filterKolona3WE, trafostanica);
+		trafostanice.verifikujTrafostanice();
+		trafostanice.verifikujStavku(trafostanica, homePage.podatak2Tabela3WE);
+		String trafostanicaId = trafostanice.kreirajTrafostanicu();
+		CitackiHodovi citackiHodovi = homePage.navigirajNaCitackiHodovi();
+		citackiHodovi.verifikujCitackiHodovi();
+		citackiHodovi.pretraziStavku(homePage.filterKolona4WE, trafostanicaId);
+		citackiHodovi.verifikujCitackiHodovi();
+		citackiHodovi.verifikujStavku(trafostanicaId, homePage.podatak2Tabela4WE);
+		citackiHodovi.obrisiStavku();
+		citackiHodovi.verifikujPoruku("Brisanje je uspješno završeno");
+		citackiHodovi.pretraziStavku(homePage.filterKolona4WE, trafostanicaId);
+		citackiHodovi.verifikujPraznuTabelu();
+		homePage.navigirajNaTrafostanice();
+		trafostanice.verifikujTrafostanice();
+		trafostanice.pretraziStavku(homePage.filterKolona3WE, trafostanica);
+		trafostanice.verifikujTrafostanice();
+		trafostanice.verifikujStavku(trafostanica, homePage.podatak2Tabela3WE);
+		trafostanice.obrisiStavku();
+		trafostanice.verifikujPoruku("Brisanje je uspješno završeno");
+		trafostanice.pretraziStavku(homePage.filterKolona3WE, trafostanica);
+		trafostanice.verifikujPraznuTabelu();
+	}
+	
+	@Test
+	public void px_dist_012_4_neuspjesno_brisanje_trafostanice_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
@@ -65,7 +101,8 @@ public class PX_DIST_012_Trafostanice_CRUD_Test extends BaseTest {
 		trafostanice.pretraziStavku(homePage.filterKolona3WE, "001-Gradac");
 		trafostanice.verifikujTrafostanice();
 		trafostanice.verifikujStavku("001-Gradac", homePage.podatak2Tabela3WE);
-		trafostanice.obrisiStavku(false);
+		trafostanice.obrisiStavku();
+		trafostanice.verifikujPoruku("Brisanje ovog zapisa nije moguće.");
 	}
 
 }
