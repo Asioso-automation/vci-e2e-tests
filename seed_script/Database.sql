@@ -4,7 +4,7 @@
 
 --because of delete data from Administration.Configuration
 DROP INDEX [CAK_ActiveBillGeneratorSummary] ON [Calculation].[ActiveBillGeneratorSummary]
-DROP INDEX [CAK_ActiveBillGeneratorSummary] ON [Generate].[ActiveBillGeneratorSummary]
+DROP INDEX [CAK_ActiveBillGeneratorSummary] ON [Generate].[ActiveBillGeneratorSummaryV2]
 GO
 
 EXEC sp_MSForEachTable 'ALTER TABLE ? NOCHECK CONSTRAINT ALL' 
@@ -14,7 +14,7 @@ EXEC sp_MSForEachTable 'SET QUOTED_IDENTIFIER ON; DELETE FROM ?'
 GO 
 
 CREATE UNIQUE CLUSTERED INDEX [CAK_ActiveBillGeneratorSummary] ON [Calculation].[ActiveBillGeneratorSummary] ([Id] ASC)
-CREATE UNIQUE CLUSTERED INDEX [CAK_ActiveBillGeneratorSummary] ON [Generate].[ActiveBillGeneratorSummary] ([Id] ASC)
+CREATE UNIQUE CLUSTERED INDEX [CAK_ActiveBillGeneratorSummary] ON [Generate].[ActiveBillGeneratorSummaryV2] ([Id] ASC)
 GO
 
 --insesrtuj podatke
