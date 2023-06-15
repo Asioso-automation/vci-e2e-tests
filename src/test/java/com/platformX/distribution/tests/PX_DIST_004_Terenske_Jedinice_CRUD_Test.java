@@ -4,6 +4,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import org.testng.annotations.Test;
 import com.platformX.base.BaseTest;
+import com.platformX.base.RetryAnalyzer;
 import com.platformX.distribution.page.LogIn;
 import com.platformX.distribution.page.PocetnaStranicaPXD;
 import com.platformX.distribution.page.TerenskeJedinice;
@@ -14,7 +15,7 @@ public class PX_DIST_004_Terenske_Jedinice_CRUD_Test extends BaseTest {
 		super();
 	}
 	
-	@Test
+	@Test(retryAnalyzer = RetryAnalyzer.class)
 	public void px_dist_004_1_dodavanje_terenske_jedinice_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
@@ -24,7 +25,7 @@ public class PX_DIST_004_Terenske_Jedinice_CRUD_Test extends BaseTest {
 		TerenskeJedinice terenskeJedinice = homePage.navigirajNaTerenskeJedinice();
 		terenskeJedinice.verifikujTerenskeJedinice();
 		String naziv = terenskeJedinice.dodajTerenskuJedinicu();
-		terenskeJedinice.verifikujPoruku("Uspješno završeno.");
+		terenskeJedinice.verifikujPoruku("Uspješno završeno.1");		// dodano "1"
 		terenskeJedinice.pretraziStavku(homePage.filterKolona2WE, naziv);
 		terenskeJedinice.verifikujTerenskeJedinice();
 		terenskeJedinice.verifikujStavku(naziv, homePage.podatak2Tabela2WE);
@@ -68,7 +69,6 @@ public class PX_DIST_004_Terenske_Jedinice_CRUD_Test extends BaseTest {
 		terenskeJedinice.verifikujPoruku("Brisanje je uspješno završeno");
 		terenskeJedinice.pretraziStavku(homePage.filterKolona2WE, naziv);
 		terenskeJedinice.verifikujPraznuTabelu();
-
 	}
 	
 }

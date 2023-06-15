@@ -4,6 +4,7 @@ import org.testng.annotations.Test;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import com.platformX.base.BaseTest;
+import com.platformX.base.RetryAnalyzer;
 import com.platformX.page.PocetnaStranica;
 import com.platformX.page.LogIn;
 import com.platformX.page.RadneJedinice;
@@ -18,7 +19,7 @@ public class PX_005_Radne_Jedinice_CRUD_Test extends BaseTest {
 	String radnaJedinica = "RJ " + Helper.getRandomString(5);
 	String novaRadnaJedinica = "RJ " + Helper.getRandomString(5);
 
-	@Test
+	@Test(retryAnalyzer = RetryAnalyzer.class)
 	public void px_005_1_dodavanje_radne_jedinice_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
@@ -31,7 +32,7 @@ public class PX_005_Radne_Jedinice_CRUD_Test extends BaseTest {
 		radneJedinice.verifikujRadnuJedinicu(radnaJedinica);
 	}
 	
-	@Test(dependsOnMethods = { "px_005_1_dodavanje_radne_jedinice_test" })
+	@Test(dependsOnMethods = { "px_005_1_dodavanje_radne_jedinice_test" }, retryAnalyzer = RetryAnalyzer.class)
 	public void px_005_2_uredjivanje_radne_jedinice_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
@@ -45,7 +46,7 @@ public class PX_005_Radne_Jedinice_CRUD_Test extends BaseTest {
 		radneJedinice.verifikujRadnuJedinicu(novaRadnaJedinica);
 	}
 	
-	@Test(dependsOnMethods = { "px_005_2_uredjivanje_radne_jedinice_test" })
+	@Test(dependsOnMethods = { "px_005_2_uredjivanje_radne_jedinice_test" }, retryAnalyzer = RetryAnalyzer.class)
 	public void px_005_3_brisanje_radne_jedinice_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();

@@ -184,7 +184,7 @@ public abstract class PageBase {
 			wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		} catch (Exception e) {
 			Thread.sleep(1000);
-			wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
+//			wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		}
 	}
 

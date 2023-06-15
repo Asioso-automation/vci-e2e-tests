@@ -18,9 +18,10 @@ public class KorekcijeRacuna extends PocetnaStranica {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title body-1 ml-0 pl-0 text-default') and starts-with(., ' Korekcije')]")));
 		verifikacijaZajednickihElemenata("Obračun", "Korekcije Računa", "Korekcije računa", 20, false, false, false, false, true, true, false);
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaSerijskiBrojWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaSerijskiBrojWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPeriodWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTipUgovoraWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKupacWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMjernoMjestoEicWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTipKorekcijeWE));
@@ -30,6 +31,7 @@ public class KorekcijeRacuna extends PocetnaStranica {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMrezWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaObnIzvoriWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNaknadaZaSnabdWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaZajPotrWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPdv1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaUkIznosWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaProknjWE));
