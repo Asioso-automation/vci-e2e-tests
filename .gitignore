@@ -1,2 +1,11 @@
 /bin/
 /target/
+/test-output/emailable-report.html
+/test-output/index.html
+/test-output/jquery-1.7.1.min.js
+/test-output/testng-reports.css
+/test-output/testng-reports.js
+/test-output/testng-results.xml
+/test-output/Default suite/
+/test-output/old/index.html
+/test-output/old/Default suite/
