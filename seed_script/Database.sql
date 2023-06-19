@@ -732,10 +732,10 @@ SET IDENTITY_INSERT [TariffSystem].[TariffGroup] OFF
 
 SET IDENTITY_INSERT [TariffSystem].[TariffItem] ON 
 
-INSERT [TariffSystem].[TariffItem] ([Id], [Description], [MeasureUnit], [Valid],[CalculationTypeId]) VALUES (1, N'Aht', N'kW', 1,1)
-INSERT [TariffSystem].[TariffItem] ([Id], [Description], [MeasureUnit], [Valid],[CalculationTypeId]) VALUES (2, N'Alt', N'kW', 1,1)
-INSERT [TariffSystem].[TariffItem] ([Id], [Description], [MeasureUnit], [Valid],[CalculationTypeId]) VALUES (3, N'Rht', N'kW', 1,1)
-INSERT [TariffSystem].[TariffItem] ([Id], [Description], [MeasureUnit], [Valid],[CalculationTypeId]) VALUES (4, N'Rlt', N'kW', 1,1)
+INSERT [TariffSystem].[TariffItem] ([Id], [Description], [MeasureUnit], [Valid], [CalculationTypeId], [EbixCode]) VALUES (1, N'Aht', N'kW', 1, 1, N'1.8.1')
+INSERT [TariffSystem].[TariffItem] ([Id], [Description], [MeasureUnit], [Valid], [CalculationTypeId], [EbixCode]) VALUES (2, N'Alt', N'kW', 1, 1, N'1.8.2')
+INSERT [TariffSystem].[TariffItem] ([Id], [Description], [MeasureUnit], [Valid], [CalculationTypeId], [EbixCode]) VALUES (3, N'Rht', N'kW', 1, 1, N'3.8.1')
+INSERT [TariffSystem].[TariffItem] ([Id], [Description], [MeasureUnit], [Valid], [CalculationTypeId], [EbixCode]) VALUES (4, N'Rlt', N'kW', 1, 1, N'3.8.2')
 
 SET IDENTITY_INSERT [TariffSystem].[TariffItem] OFF
 
