@@ -24,12 +24,15 @@ public abstract class PageBase {
 	protected final String PLATFORMX_PROPERTIES = "platformx.properties";
 	protected PropertiesUtil platformx_distribution_properties = null;
 	protected final String PLATFORMX_DISTRIBUTION_PROPERTIES = "platformx.distribution.properties";
+	protected PropertiesUtil scp_properties = null;
+	protected final String SCP_PROPERTIES = "scp.properties";
 
 	public PageBase(WebDriver driver) throws FileNotFoundException, IOException {
 		this.driver = driver;
 		PageFactory.initElements(this.driver, this);
 		platformx_properties = new PropertiesUtil(PLATFORMX_PROPERTIES);
 		platformx_distribution_properties = new PropertiesUtil(PLATFORMX_DISTRIBUTION_PROPERTIES);
+		scp_properties = new PropertiesUtil(SCP_PROPERTIES);
 	}
 
 	@FindBy(xpath = "//div[@class='v-alert__content']")
