@@ -16,7 +16,7 @@ public class LogIn extends PageBase {
 
 	public LogIn(WebDriver driver, String URL) throws FileNotFoundException, IOException {
 		super(driver);
-		URL = platformx_properties.getValue("URL.SCP");
+		URL = scp_properties.getValue("URL.SCP.LOGIN");
 		driver.get(URL);
 	}
 	
@@ -37,6 +37,9 @@ public class LogIn extends PageBase {
 	@FindBy(xpath = "//*[contains(@class, 'v-list__tile__title') and contains(text(), 'Vodovod')]")
 	private WebElement vodovodWE;
 	
+	@FindBy(xpath = "//*[contains(@class, 'v-list__tile__title') and contains(text(), 'Sarajevo-gas a.d. Istočno Sarajevo')]")
+	private WebElement gasWE;
+	
 	@FindBy(xpath = "//div[2]/div/div/div")
 	private WebElement porukaUpozorenjaWE;
 	
@@ -53,12 +56,12 @@ public class LogIn extends PageBase {
 		wait.until(ExpectedConditions.elementToBeClickable(korisnickoImeWE));
 		wait.until(ExpectedConditions.elementToBeClickable(organizacijaWE));
 		organizacijaWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(vodovodWE));
-		vodovodWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(gasWE));
+		gasWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(korisnickoImeWE));
-		korisnickoImeWE.sendKeys(platformx_distribution_properties.getValue("DIST.USER.NAME"));
+		korisnickoImeWE.sendKeys(scp_properties.getValue("SCP.USER.NAME"));
 		wait.until(ExpectedConditions.elementToBeClickable(lozinkaWE));
-		lozinkaWE.sendKeys(platformx_distribution_properties.getValue("DIST.PASSWORD"));
+		lozinkaWE.sendKeys(scp_properties.getValue("SCP.PASSWORD"));
 		wait.until(ExpectedConditions.elementToBeClickable(prijaviSeBtnWE));
 		prijaviSeBtnWE.click();
 	}

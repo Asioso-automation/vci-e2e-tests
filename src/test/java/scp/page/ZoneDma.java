@@ -18,10 +18,10 @@ public class ZoneDma extends PocetnaStranica{
 	public void verifikujZoneDma()throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
-				"//div[contains(@class, 'v-toolbar__title') and starts-with(., ' Zone DMA')]")));
+				"//div[contains(@class, 'v-toolbar__title') and contains(text(), ' Zone DMA')]")));
 		verifikacijaZajednickihElemenata("ŠIFARNICI", "ZONE DMA", "Zone DMA", 4, false, false, true, true, true, true, false);
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNazivWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaId1WE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNaziv1WE));
 	}
 
 }

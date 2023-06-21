@@ -18,12 +18,12 @@ public class NaseljenaMjesta extends PocetnaStranica{
 	public void verifikujNaseljenaMjesta()throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
-				"//div[contains(@class, 'v-toolbar__title') and starts-with(., ' Naseljena mjesta')]")));
+				"//div[contains(@class, 'v-toolbar__title') and contains(text(), ' Naseljena mjesta')]")));
 		verifikacijaZajednickihElemenata("ŠIFARNICI", "NASELJENA MJESTA", "Naseljena mjesta", 7, false, false, true, true, true, true, false);
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNazivWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDrzavaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaEntitetWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaId1WE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNaziv1WE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDrzava1WE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaEntitet1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAtmosferskiPritisakWE));
 		// Kolona atmosferski pritisak se pojavljuje samo na organizaciji Gas.	
 	}

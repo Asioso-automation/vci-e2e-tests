@@ -10,6 +10,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
+import com.platformX.base.Kolone;
 import com.platformX.util.Helper;
 
 public class FizickaLica extends PocetnaStranica {
@@ -42,23 +43,42 @@ public class FizickaLica extends PocetnaStranica {
 	public WebElement imePrezimeTabelaWE;
 	
 	// TODO Custom dodaj dugme xpath
-
-	public void verifikujFizickaLica() throws InterruptedException, FileNotFoundException, IOException {
+	
+	public void verifikujFizickaLica()throws InterruptedException, FileNotFoundException, IOException {
+		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
-				"//*[@id='v-fx-0']")));
-		wait.until(ExpectedConditions.visibilityOf(kolonaIdWE));
-		wait.until(ExpectedConditions.visibilityOf(kolonaEmailWE));
-		wait.until(ExpectedConditions.elementToBeClickable(sekcijaBtnWE));
-		wait.until(ExpectedConditions.elementToBeClickable(stranicaBtnWE));
+				"//div[contains(@class, 'v-toolbar__title') and contains(text(), 'Fizička Lica')]")));
+	    verifikacijaZajednickihElemenata("KUPCI", "FIZIČKA LICA", "Fizička Lica", 13, false, false, true, true, true, true, false);
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaId1WE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPrezimeImeWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMjestoWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaUlicaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaJmbgWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaEmailWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKorisnikIzmijenioWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumIzmjeneWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKorisnikPortalaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaOslobodjenPdvaWE));
+	}
+	
+
+//	public void verifikujFizickaLica() throws InterruptedException, FileNotFoundException, IOException {
+//		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
+//				"//*[@id='v-fx-0']")));
+//		wait.until(ExpectedConditions.visibilityOf(kolonaIdWE));
+//		wait.until(ExpectedConditions.visibilityOf(kolonaEmailWE));
+//		wait.until(ExpectedConditions.elementToBeClickable(sekcijaBtnWE));
+//		wait.until(ExpectedConditions.elementToBeClickable(stranicaBtnWE));
 //		wait.until(ExpectedConditions.elementToBeClickable(preuzmiExcelBtnWE));
 //		wait.until(ExpectedConditions.elementToBeClickable(ukloniFiltereBtnWE));
 //		wait.until(ExpectedConditions.elementToBeClickable(osvjeziBtnWE));
-		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
-		assertTrue(sekcijaBtnWE.getText().trim().equals("KUPCI"), "FizickaLica: Naziv sekcije nije dobar!");
-		assertTrue(stranicaBtnWE.getText().trim().equals("FIZIČKA LICA"), "FizickaLica: Naziv stranice nije dobar!");
-		assertTrue(naslovStraniceWE.getText().trim().equals("Fizička Lica"), "FizickaLica: Naziv stranice nije dobar!");
-		assertTrue(brojKolona().size() == 13, "FizickaLica: Broj kolona nije dobar! ");
-	}
+//		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
+//		assertTrue(sekcijaBtnWE.getText().trim().equals("KUPCI"), "FizickaLica: Naziv sekcije nije dobar!");
+//		assertTrue(stranicaBtnWE.getText().trim().equals("FIZIČKA LICA"), "FizickaLica: Naziv stranice nije dobar!");
+//		assertTrue(naslovStraniceWE.getText().trim().equals("Fizička Lica"), "FizickaLica: Naziv stranice nije dobar!");
+//		assertTrue(brojKolona().size() == 13, "FizickaLica: Broj kolona nije dobar! ");
+//	}
 	
 	public String dodajFizickoLice() {
 		String ime = Helper.getRandomString(5) + " (" + Helper.getRandomString(5) + ") " + Helper.getRandomString(5);

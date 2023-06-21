@@ -18,9 +18,9 @@ public class VrsteVodomjera extends PocetnaStranica{
 	public void verifikujVrsteVodomjera()throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
-				"//div[contains(@class, 'v-toolbar__title') and starts-with(., ' Vrste vodomjera')]")));
+				"//div[contains(@class, 'v-toolbar__title') and contains(text(), ' Vrste vodomjera')]")));
 		verifikacijaZajednickihElemenata("ŠIFARNICI", "VRSTE VODOMJERA", "Vrste vodomjera", 4, false, false, true, true, true, true, false);
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNazivWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaId1WE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNaziv1WE));
 	}
 }

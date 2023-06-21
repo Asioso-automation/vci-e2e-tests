@@ -39,6 +39,7 @@ public class PocetnaStranica extends PageBase {
 //	@FindBy(xpath = "//header/div/a")
 //	protected WebElement dodajBtnWE;
 
+	
 	@FindBy(xpath = "//div[1]/nav/div/div[1]")
 	protected WebElement naslovStraniceWE;
 
@@ -65,7 +66,7 @@ public class PocetnaStranica extends PageBase {
 	@FindBy(xpath = "//*[contains(text(),'Izvještaji') and @class='v-btn__content']")
 	protected WebElement izvjestajiWE;
 
-	@FindBy(xpath = "//button[8]")
+	@FindBy(xpath = "//button[7]/div")
 	protected WebElement profilWE;
 	
 	// Stranice
@@ -86,6 +87,50 @@ public class PocetnaStranica extends PageBase {
 		wait.until(ExpectedConditions.elementToBeClickable(izvjestajiWE));
 		wait.until(ExpectedConditions.elementToBeClickable(profilWE));
 		Thread.sleep(1000);
+	}
+	
+	public void verifikacijaZajednickihElemenata(String sekcija, String stranica, String naslovStranice, int brKolona,
+			boolean importBtn, boolean dodajSve, boolean dodaj, boolean preuzmiExcel, boolean ukloniFiltere,
+			boolean osvjezi, boolean info) throws InterruptedException {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		try {
+			wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
+		} catch (Exception e) {
+			Thread.sleep(500);
+		}
+		wait.until(ExpectedConditions.elementToBeClickable(sekcijaBtnWE));
+		wait.until(ExpectedConditions.elementToBeClickable(stranicaBtnWE));
+		assertTrue(sekcijaBtnWE.getText().trim().equals(sekcija), stranica + ": Naziv sekcije nije dobar!");
+		assertTrue(stranicaBtnWE.getText().trim().equals(stranica), stranica + ": Naziv stranice nije dobar!");
+		assertTrue(naslovStraniceWE.getText().trim().equals(naslovStranice), stranica + ": Naziv stranice nije dobar!");
+		assertTrue(brojKolona().size() == brKolona, stranica + ": Broj kolona nije dobar!");
+		if (importBtn == true) {
+			wait.until(ExpectedConditions.elementToBeClickable(importujBtnWE));
+		}
+		if (dodajSve == true) {
+			wait.until(ExpectedConditions.elementToBeClickable(dodajSveBtnWE));
+		}
+		if (dodaj == true) {
+			wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
+		}
+		if (preuzmiExcel == true) {
+			wait.until(ExpectedConditions.elementToBeClickable(preuzmiExcelBtnWE));
+		}
+		if (ukloniFiltere == true) {
+			wait.until(ExpectedConditions.elementToBeClickable(ukloniFiltereBtnWE));
+		}
+		if (osvjezi == true) {
+			wait.until(ExpectedConditions.elementToBeClickable(osvjeziBtnWE));
+		}
+		if (info == true) {
+			wait.until(ExpectedConditions.elementToBeClickable(infoBtnWE));
+		}
+		try {
+			wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
+		} catch (Exception e) {
+			Thread.sleep(1000);
+//			wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
+		}
 	}
 
 	public void izlogujSe() {
@@ -119,5 +164,7 @@ public class PocetnaStranica extends PageBase {
 		objektiWE.click();
 		return new Objekti(driver);
 	}
+	
+	
 	
 }

@@ -10,6 +10,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
+import com.platformX.base.Kolone;
 import com.platformX.util.Helper;
 
 public class Objekti extends PocetnaStranica {
@@ -42,21 +43,37 @@ public class Objekti extends PocetnaStranica {
 	public WebElement adresaTabelaWE;
 	
 	// TODO Custom dodaj dugme xpath
-
-	public void verifikujObjekti() throws InterruptedException, FileNotFoundException, IOException {
+	
+	public void verifikujObjekte()throws InterruptedException, FileNotFoundException, IOException {
+		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
-				"//*[@id='v-fx-0']")));
-		wait.until(ExpectedConditions.elementToBeClickable(sekcijaBtnWE));
-		wait.until(ExpectedConditions.elementToBeClickable(stranicaBtnWE));
+				"//div[contains(@class, 'v-toolbar__title') and contains(text(), ' Kupci bez ugovora')]")));
+		verifikacijaZajednickihElemenata("KUPCI", "OBJEKTI", "Objekti", 11, false, false, true, true, true, true, false);
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaId1WE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNaziv1WE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMZSifraWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMZNazivWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMZKontaktWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaSifraReonaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaReonWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaUlicaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBroj1WE));
+	}
+
+//	public void verifikujObjekti() throws InterruptedException, FileNotFoundException, IOException {
+//		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
+//				"//*[@id='v-fx-0']")));
+//		wait.until(ExpectedConditions.elementToBeClickable(sekcijaBtnWE));
+//		wait.until(ExpectedConditions.elementToBeClickable(stranicaBtnWE));
 //		wait.until(ExpectedConditions.elementToBeClickable(preuzmiExcelBtnWE));
 //		wait.until(ExpectedConditions.elementToBeClickable(ukloniFiltereBtnWE));
 //		wait.until(ExpectedConditions.elementToBeClickable(osvjeziBtnWE));
-		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
-		assertTrue(sekcijaBtnWE.getText().trim().equals("KUPCI"), "Objekti: Naziv sekcije nije dobar!");
-		assertTrue(stranicaBtnWE.getText().trim().equals("OBJEKTI"), "Objekti: Naziv stranice nije dobar!");
-		assertTrue(naslovStraniceWE.getText().trim().equals("Objekti"), "Objekti: Naziv stranice nije dobar!");
-		assertTrue(brojKolona().size() == 11, "Objekti: Broj kolona nije dobar! ");
-	}
+//		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
+//		assertTrue(sekcijaBtnWE.getText().trim().equals("KUPCI"), "Objekti: Naziv sekcije nije dobar!");
+//		assertTrue(stranicaBtnWE.getText().trim().equals("OBJEKTI"), "Objekti: Naziv stranice nije dobar!");
+//		assertTrue(naslovStraniceWE.getText().trim().equals("Objekti"), "Objekti: Naziv stranice nije dobar!");
+//		assertTrue(brojKolona().size() == 11, "Objekti: Broj kolona nije dobar! ");
+//	}
 	
 	public String dodajObjekat() {
 		String broj = Helper.getRandomNumber(2);

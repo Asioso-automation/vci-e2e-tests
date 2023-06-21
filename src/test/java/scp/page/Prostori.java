@@ -9,18 +9,20 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import com.platformX.base.Kolone;
 
-public class ToplotniReoni extends PocetnaStranica{
+public class Prostori extends PocetnaStranica{
 
-	public ToplotniReoni(WebDriver driver) throws FileNotFoundException, IOException {
+	public Prostori(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);
 	}
 
-	public void verifikujToplotneReone()throws InterruptedException, FileNotFoundException, IOException {
+	public void verifikujProstore()throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
-				"//div[contains(@class, 'v-toolbar__title') and contains(text(), ' Toplotni reoni')]")));
-		verifikacijaZajednickihElemenata("ŠIFARNICI", "TOPLOTNI REONI", "Toplotni reoni", 4, false, false, true, true, true, true, false);
+				"//div[contains(@class, 'v-toolbar__title') and contains(text(), ' Prostori')]")));
+		verifikacijaZajednickihElemenata("KUPCI", "PROSTORI", "Prostori", 5, false, false, true, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaId1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNaziv1WE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaVrstaWE));
+
 	}
 }

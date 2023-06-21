@@ -23,6 +23,8 @@ public abstract class BaseTest {
 	protected final String PLATFORMX_PROPERTIES = "platformx.properties";
 	protected PropertiesUtil platformx_distribution_properties = null;
 	protected final String PLATFORMX_DISTRIBUTION_PROPERTIES = "platformx.distribution.properties";
+	protected PropertiesUtil scp_properties = null;
+	protected final String SCP_PROPERTIES = "scp.properties";
 
 	static long startTime;
 	static long endTime;
@@ -33,6 +35,7 @@ public abstract class BaseTest {
 	public BaseTest() throws IOException, FileNotFoundException {
 		platformx_properties = new PropertiesUtil(PLATFORMX_PROPERTIES);
 		platformx_distribution_properties = new PropertiesUtil(PLATFORMX_DISTRIBUTION_PROPERTIES);
+		scp_properties = new PropertiesUtil(SCP_PROPERTIES);
 	}
 
 	@BeforeMethod
