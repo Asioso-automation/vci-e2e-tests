@@ -22,7 +22,7 @@ public class SCP_003_Dodavanje_Objekta_Test extends BaseTest {
 		PocetnaStranica pocetna = new PocetnaStranica(driver);
 		pocetna.verifikujPocetnuStranicu();
 		Objekti objekti = pocetna.navigirajNaObjekti();
-		objekti.verifikujObjekti();
+		objekti.verifikujObjekte();
 		String broj = objekti.dodajObjekat();
 		objekti.verifikujObjekat(broj);
 	}
