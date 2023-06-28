@@ -25,7 +25,7 @@ public class PX_DIST_004_Terenske_Jedinice_CRUD_Test extends BaseTest {
 		TerenskeJedinice terenskeJedinice = homePage.navigirajNaTerenskeJedinice();
 		terenskeJedinice.verifikujTerenskeJedinice();
 		String naziv = terenskeJedinice.dodajTerenskuJedinicu();
-		terenskeJedinice.verifikujPoruku("Uspješno završeno.1");		// dodano "1"
+		terenskeJedinice.verifikujPoruku("Uspješno završeno.");
 		terenskeJedinice.pretraziStavku(homePage.filterKolona2WE, naziv);
 		terenskeJedinice.verifikujTerenskeJedinice();
 		terenskeJedinice.verifikujStavku(naziv, homePage.podatak2Tabela2WE);

@@ -52,9 +52,14 @@ public class PX_006_Operativna_Podrucja_CRUD_Test extends BaseTest {
 		OperativnaPodrucja operativnaPodrucja = homePage.navigirajNaOperativnaPodrucja();
 		operativnaPodrucja.verifikujOperativnaPodrucja();
 		String podrucje = operativnaPodrucja.dodajOperativnoPodrucje();
-		operativnaPodrucja.verifikujOperativnoPodrucje(podrucje);
-		homePage.obrisiStavku(true);
-		operativnaPodrucja.verifikujBrisanjeOperativnogPodrucja(podrucje);
+		operativnaPodrucja.verifikujPoruku("Uspješno završeno.");
+		operativnaPodrucja.pretraziStavku(homePage.filterKolona2WE, podrucje);
+		operativnaPodrucja.verifikujOperativnaPodrucja();
+		operativnaPodrucja.verifikujStavku(podrucje, homePage.podatak2Tabela2WE);
+		operativnaPodrucja.obrisiStavku();
+		operativnaPodrucja.verifikujPoruku("Brisanje je uspješno završeno");
+		operativnaPodrucja.pretraziStavku(homePage.filterKolona2WE, podrucje);
+		operativnaPodrucja.verifikujPraznuTabelu();
 	}
 
 }

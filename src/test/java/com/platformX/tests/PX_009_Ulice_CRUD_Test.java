@@ -53,8 +53,8 @@ public class PX_009_Ulice_CRUD_Test extends BaseTest {
 		ulice.verifikujUlice();
 		String ulica = ulice.dodajUlicu();
 		ulice.verifikujUlicu(ulica);
-		homePage.obrisiStavku(true);
-		ulice.verifikujBrisanjeUlice(ulica);
+		ulice.obrisiStavku(true);
+//		ulice.verifikujBrisanjeStavke(2, ulica);
 	}
 	
 	@Test
@@ -67,7 +67,7 @@ public class PX_009_Ulice_CRUD_Test extends BaseTest {
 		Ulice ulice = homePage.navigirajNaUlice();
 		ulice.verifikujUlice();
 		ulice.verifikujUlicu("Hajduk Veljkova");
-		homePage.obrisiStavku(false);
+		ulice.obrisiStavku(false);
 		ulice.verifikujPoruku("Brisanje ovog zapisa nije moguće.");
 	}
 

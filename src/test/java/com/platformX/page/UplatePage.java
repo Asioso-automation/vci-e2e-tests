@@ -69,7 +69,6 @@ public class UplatePage extends PocetnaStranica {
 		return uplatilac;
 	}
 	
-	
 	public String dodajUplatuPozivNaBroj() throws InterruptedException {
 		String uplatilac = "Uplatilac " + Helper.getRandomString(5);
 		wait.until(ExpectedConditions.elementToBeClickable(pozivNaBrojWE));

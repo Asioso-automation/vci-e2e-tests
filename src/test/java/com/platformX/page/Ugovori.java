@@ -113,11 +113,11 @@ public class Ugovori extends PocetnaStranica {
 	@FindBy(xpath = "//div[2]/div[1]/div/div/div[1]/div[1]/input[1]")
 	private WebElement kupacWE;
 
-	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '11')]")
-	private WebElement odaberiKupcaWE;
-
-	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., kupac)]")
-	private WebElement odaberiKupca1WE;
+//	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '11')]")
+//	private WebElement odaberiKupcaWE;
+//
+//	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., kupac)]")
+//	private WebElement odaberiKupca1WE;
 
 	@FindBy(xpath = "//div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/button")
 	private WebElement obrisiKupcaWE;

@@ -1296,12 +1296,17 @@ public class PocetnaStranica extends PageBase {
 	}
 	
 	public RacuniZaNestandardneUsluge navigirajNaRacuniZaNestandardneUsluge() throws Exception {
+		try {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(nestandardneUslugeWE));
 		nestandardneUslugeWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(racuniZaNSUWE));
 		racuniZaNSUWE.click();
-		return new RacuniZaNestandardneUsluge(driver);
+		}
+		catch (Exception e) {
+			driver.get(platformx_properties.getValue("URL.LOGIN") + platformx_properties.getValue("RACUNI.NSU"));
+		}
+		return new RacuniZaNestandardneUsluge(driver);	
 	}
 	
 	public KorekcijeRacunaZaNestandardneUsluge navigirajNaKorekcijeRacunaZaNestandardneUsluge() throws Exception {

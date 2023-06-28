@@ -3,6 +3,7 @@ package com.platformX.distribution.page;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -30,7 +31,7 @@ public class MonitoringOcitanja extends PocetnaStranicaPXD {
 	@FindBy(xpath = "//div[3]/div[1]/div/div[1]/div[2]/div/div[6]")
     protected WebElement natprosjecnaOcitanjaBtnWE;
 	
-	@FindBy(xpath = "//div[3]/div[1]/div/div[1]/div[2]/div/div[7]")
+	@FindBy(xpath = "//div[@class='v-tab' and contains(text(), ' Dupla očitanja brojila ')]")	//div[3]/div[1]/div/div[1]/div[2]/div/div[7]
     protected WebElement duplaOcitanjaBrojilaBtnWE;
 	
 	@FindBy(xpath = "//div[3]/div[1]/div/div[1]/div[2]/div/div[8]")
@@ -45,14 +46,16 @@ public class MonitoringOcitanja extends PocetnaStranicaPXD {
 	@FindBy(xpath = "//div[3]/div[1]/div/div[1]/div[2]/div/div[11]")
     protected WebElement neocitanaZbirnaKontrolnaMjernaMjestaBtnWE;
 	
-	@FindBy(xpath = "//div[2]/div[3]/div[1]/div/div[1]/div[3]")
-    protected WebElement slideBtnWE;
+	@FindBy(xpath = "//i[contains(@class, 'mdi mdi-chevron-right')]")
+    protected WebElement slideRightBtnWE;
 
 	public void verifikujMonitoringOcitanja()throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Monitoring očitanja')]")));
 		verifikacijaZajednickihElemenata("Očitanja", "Monitoring Očitanja", "Monitoring očitanja", 128, false, false, false, false, false, false, false);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView(true);", neocitanaBrojilaBtnWE);
 		wait.until(ExpectedConditions.visibilityOf(neocitanaBrojilaBtnWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonObracunskiUgovorWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonMjernoMjestoEicWE));
@@ -119,6 +122,7 @@ public class MonitoringOcitanja extends PocetnaStranicaPXD {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonProsjecnaPotrosnjaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonAvtWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonAmtWE));
+		slideRightBtnWE.click();
 		wait.until(ExpectedConditions.visibilityOf(duplaOcitanjaBrojilaBtnWE));
 		duplaOcitanjaBrojilaBtnWE.click();
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonObracunskiUgovorWE));
@@ -133,8 +137,6 @@ public class MonitoringOcitanja extends PocetnaStranicaPXD {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonRvtWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonRmtWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonSnaga1WE));
-		wait.until(ExpectedConditions.visibilityOf(slideBtnWE));
-		slideBtnWE.click();
 		wait.until(ExpectedConditions.visibilityOf(duplaNevalidnaOcitanjaBrojilaBtnWE));
 		duplaNevalidnaOcitanjaBrojilaBtnWE.click();
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonBrojiloWE));
@@ -148,8 +150,6 @@ public class MonitoringOcitanja extends PocetnaStranicaPXD {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonRmtWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonSnaga1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonPorukaCitacaWE));
-		wait.until(ExpectedConditions.visibilityOf(slideBtnWE));
-		slideBtnWE.click();
 		wait.until(ExpectedConditions.visibilityOf(nemaPotrosnjeBtnWE));
 		nemaPotrosnjeBtnWE.click();
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonObracunskiUgovorWE));
@@ -163,8 +163,7 @@ public class MonitoringOcitanja extends PocetnaStranicaPXD {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonAmtWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonRvtWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonRmtWE));
-		wait.until(ExpectedConditions.visibilityOf(slideBtnWE));
-		slideBtnWE.click();
+		slideRightBtnWE.click();
 		wait.until(ExpectedConditions.visibilityOf(iskljucenaBrojilaSaPotrosnjomBtnWE));
 		iskljucenaBrojilaSaPotrosnjomBtnWE.click();
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonObracunskiUgovorWE));
