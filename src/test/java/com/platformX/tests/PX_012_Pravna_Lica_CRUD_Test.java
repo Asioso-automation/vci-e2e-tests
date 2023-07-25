@@ -21,11 +21,11 @@ public class PX_012_Pravna_Lica_CRUD_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
 		homePage.verifikujPocetnuStranicu();
-		PravnaLica pravnaLicaPage = homePage.navigirajNaPravnaLica();
-		pravnaLicaPage.verifikujPravnaLica();
-		String pravnoLice = pravnaLicaPage.dodajPravnoLice();
-		pravnaLicaPage.verifikujPravnaLica();
-		pravnaLicaPage.verifikujPravnoLice(pravnoLice);
+		PravnaLica pravnaLica = homePage.navigirajNaPravnaLica();
+		pravnaLica.verifikujPravnaLica();
+		String pravnoLice = pravnaLica.dodajPravnoLice();
+		pravnaLica.verifikujPravnaLica();
+		pravnaLica.verifikujPravnoLice(pravnoLice);
 	}
 	
 	@Test
@@ -56,8 +56,10 @@ public class PX_012_Pravna_Lica_CRUD_Test extends BaseTest {
 		String pravnoLice = pravnaLica.dodajPravnoLice();
 		pravnaLica.verifikujPravnaLica();
 		pravnaLica.verifikujPravnoLice(pravnoLice);
-		homePage.obrisiStavku(true);
-		pravnaLica.verifikujBrisanjePravnogLica(pravnoLice);
+		pravnaLica.obrisiStavku();
+		pravnaLica.verifikujPoruku("Brisanje je uspješno završeno.");
+		pravnaLica.pretraziStavku(homePage.filterKolona2WE, pravnoLice);
+		pravnaLica.verifikujPraznuTabelu();
 	}
 	
 	@Test
@@ -67,11 +69,11 @@ public class PX_012_Pravna_Lica_CRUD_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
 		homePage.verifikujPocetnuStranicu();
-		PravnaLica pravnaLicaPage = homePage.navigirajNaPravnaLica();
-		pravnaLicaPage.verifikujPravnaLica();
-		pravnaLicaPage.verifikujPravnoLice("Firma 2");
-		homePage.obrisiStavku(false);
-		pravnaLicaPage.verifikujPoruku("Brisanje ovog zapisa nije moguće.");
+		PravnaLica pravnaLica = homePage.navigirajNaPravnaLica();
+		pravnaLica.verifikujPravnaLica();
+		pravnaLica.verifikujPravnoLice("Firma 2");
+		pravnaLica.obrisiStavku();
+		pravnaLica.verifikujPoruku("Brisanje ovog zapisa nije moguće.");
 	}
 
 }

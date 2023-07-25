@@ -53,8 +53,10 @@ public class PX_016_Vrste_Zahtjeva_CRUD_Test extends BaseTest {
 		vrsteZahtjeva.verifikujVrsteZahtjeva();
 		String opis = vrsteZahtjeva.dodajVrstuZahtjeva();
 		vrsteZahtjeva.verifikujVrstuZahtjeva(opis);
-		homePage.obrisiStavku(true);
-		vrsteZahtjeva.verifikujBrisanjeVrsteZahtjeva(opis);
+		vrsteZahtjeva.obrisiStavku();
+		vrsteZahtjeva.verifikujPoruku("Brisanje je uspješno završeno.");
+		vrsteZahtjeva.pretraziStavku(homePage.filterKolona2WE, opis);
+		vrsteZahtjeva.verifikujPraznuTabelu();
 	}
 	
 }

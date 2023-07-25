@@ -19,7 +19,7 @@ public class MasovnoGenerisanjeRacuna extends PocetnaStranica{
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title body-1 ml-0 pl-0 text-default') and starts-with(., ' Masovno generisanje računa')]")));
-		verifikacijaZajednickihElemenata("Obračun", "Masovno Generisanje", "Masovno generisanje računa", 16, false, false, true, true, true, true, false);
+		verifikacijaZajednickihElemenata("Obračun", "Masovno Generisanje", "Masovno generisanje računa", 16, false, false, false, false, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPeriodWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaOdsWE));

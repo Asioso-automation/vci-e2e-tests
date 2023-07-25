@@ -53,8 +53,10 @@ public class PX_011_Kategorije_Cijena_CRUD_Test extends BaseTest {
 		kategorijeCijena.verifikujKategorijeCijena();
 		String kategorija = kategorijeCijena.dodajKategoriju();
 		kategorijeCijena.verifikujKategoriju(kategorija);
-		homePage.obrisiStavku(true);
-		kategorijeCijena.verifikujBrisanjeKategorije(kategorija);
+		kategorijeCijena.obrisiStavku();
+		kategorijeCijena.verifikujPoruku("Brisanje je uspješno završeno.");
+		kategorijeCijena.pretraziStavku(homePage.filterKolona2WE, kategorija);
+		kategorijeCijena.verifikujPraznuTabelu();
 	}
 	
 }

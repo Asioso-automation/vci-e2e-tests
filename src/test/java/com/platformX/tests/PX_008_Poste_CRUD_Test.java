@@ -70,10 +70,13 @@ public class PX_008_Poste_CRUD_Test extends BaseTest {
 		poste.verifikujPoste();
 		podaci = poste.dodajPostu();
 		poste.verifikujPostu(podaci[0], podaci[1], podaci[2]);
-		homePage.obrisiStavku(true);
-		poste.verifikujBrisanjePoste(podaci[0]);
+		poste.obrisiStavku();
+		poste.verifikujPoruku("Brisanje je uspješno završeno.");
+		poste.pretraziStavku(homePage.filterKolona2WE, podaci[0]);
+		poste.verifikujPraznuTabelu();
 	}
 	
+	@Test
 	public void px_008_5_neuspjesno_brisanje_poste_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
@@ -83,7 +86,7 @@ public class PX_008_Poste_CRUD_Test extends BaseTest {
 		Poste poste = homePage.navigirajNaPoste();
 		poste.verifikujPoste();
 		poste.verifikujPostu("Banja Luka", "78000", "");
-		homePage.obrisiStavku(false);
+		poste.obrisiStavku();
 		poste.verifikujPoruku("Brisanje ovog zapisa nije moguće.");
 	}
 

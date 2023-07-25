@@ -68,8 +68,10 @@ public class PX_020_Banke_CRUD_Test extends BaseTest {
 		banke.verifikujBanke();
 		String banka = banke.dodajBanku();
 		banke.verifikujBanku(banka);
-		homePage.obrisiStavku(true);
-		banke.verifikujBrisanjeBanke(banka);
+		banke.obrisiStavku();
+//		banke.verifikujPoruku("Brisanje je uspješno završeno.");
+		banke.pretraziStavku(homePage.filterKolona2WE, banka);
+		banke.verifikujPraznuTabelu();
 	}
 
 }

@@ -56,8 +56,10 @@ public class PX_005_Radne_Jedinice_CRUD_Test extends BaseTest {
 		RadneJedinice radneJedinice = homePage.navigirajNaRadneJedinice();
 		radneJedinice.verifikujRadneJedinice();
 		radneJedinice.verifikujRadnuJedinicu(novaRadnaJedinica);
-		homePage.obrisiStavku(true);
-		radneJedinice.verifikujBrisanjeRadneJedinice(novaRadnaJedinica);
+		radneJedinice.obrisiStavku();
+		radneJedinice.verifikujPoruku("Brisanje je uspješno završeno.");
+		radneJedinice.pretraziStavku(homePage.filterKolona2WE, novaRadnaJedinica);
+		radneJedinice.verifikujPraznuTabelu();
 	}
 
 }

@@ -113,8 +113,10 @@ public class PX_021_Ziro_Racuni_CRUD_Test extends BaseTest {
 		ziroRacuni.pretraziStavku(homePage.filterKolona3WE, ziroRacun);
 		ziroRacuni.verifikujZiroRacuni();
 		ziroRacuni.verifikujStavku(ziroRacun, homePage.podatak2Tabela3WE);
-		homePage.obrisiStavku(true);
-		ziroRacuni.verifikujBrisanjeZiroRacuna(ziroRacun);
+		ziroRacuni.obrisiStavku();
+		ziroRacuni.verifikujPoruku("Brisanje je uspješno završeno.");
+		ziroRacuni.pretraziStavku(homePage.filterKolona3WE, ziroRacun);
+		ziroRacuni.verifikujPraznuTabelu();
 	}
 
 }

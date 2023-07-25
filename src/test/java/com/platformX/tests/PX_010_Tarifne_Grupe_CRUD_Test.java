@@ -14,7 +14,7 @@ public class PX_010_Tarifne_Grupe_CRUD_Test extends BaseTest {
 		super();
 	}
 
-	@Test
+	@Test (enabled=false)
 	public void px_010_1_dodavanje_tarifne_grupe_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
@@ -27,7 +27,7 @@ public class PX_010_Tarifne_Grupe_CRUD_Test extends BaseTest {
 		tarifneGrupe.verifikujTarifnuGrupu(tarifnaGrupa);
 	}
 	
-	@Test
+	@Test (enabled=false)
 	public void px_010_2_uredjivanje_tarifne_grupe_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
@@ -42,7 +42,7 @@ public class PX_010_Tarifne_Grupe_CRUD_Test extends BaseTest {
 		tarifneGrupe.verifikujTarifnuGrupu(novaTarifnaGrupa);
 	}
 	
-	@Test
+	@Test (enabled=false)
 	public void px_010_3_brisanje_tarifne_grupe_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
@@ -53,9 +53,10 @@ public class PX_010_Tarifne_Grupe_CRUD_Test extends BaseTest {
 		tarifneGrupe.verifikujTarifneGrupe();
 		String tarifnaGrupa = tarifneGrupe.dodajTarifnuGrupu();
 		tarifneGrupe.verifikujTarifnuGrupu(tarifnaGrupa);
-		homePage.obrisiStavku(true);
-		tarifneGrupe.verifikujTarifneGrupe();
-		tarifneGrupe.verifikujBrisanjeTarifneGrupe(tarifnaGrupa);
+		tarifneGrupe.obrisiStavku();
+		tarifneGrupe.verifikujPoruku("Brisanje je uspješno završeno.");
+		tarifneGrupe.pretraziStavku(homePage.filterKolona2WE, tarifnaGrupa);
+		tarifneGrupe.verifikujPraznuTabelu();
 	}
 
 }

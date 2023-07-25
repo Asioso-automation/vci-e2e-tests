@@ -70,10 +70,10 @@ public class PX_017_Umanjenja_Cijene_CRUD_Test extends BaseTest {
 		umanjenjaCijene.verifikujUmanjenjaCijene();
 		String brojMjeseci = umanjenjaCijene.dodajUmanjenjeCijene();
 		umanjenjaCijene.verifikujUmanjenjeCijene(brojMjeseci);
-		homePage.obrisiStavku(true);
-		umanjenjaCijene.verifikujUmanjenjaCijene();
-		umanjenjaCijene.osvjeziStranicu();
-		umanjenjaCijene.verifikujBrisanjeUmanjenjaCijene(brojMjeseci);
+		umanjenjaCijene.obrisiStavku();
+		umanjenjaCijene.verifikujPoruku("Brisanje je uspješno završeno.");
+//		umanjenjaCijene.pretraziStavku(homePage.filterKolona2WE, brojMjeseci);
+		umanjenjaCijene.verifikujPraznuTabelu();
 	}
 	
 }

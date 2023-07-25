@@ -57,8 +57,10 @@ public class PX_007_Djelatnosti_CRUD_Test extends BaseTest {
 		String djelatnost = djelatnosti.dodajDjelatnost();
 		djelatnosti.verifikujPoruku("Uspješno završeno.");
 		djelatnosti.verifikujDjelatnost(djelatnost);
-		homePage.obrisiStavku(true);
-		djelatnosti.verifikujBrisanjeDjelatnosti(djelatnost);
+		djelatnosti.obrisiStavku();
+		djelatnosti.verifikujPoruku("Brisanje je uspješno završeno.");
+		djelatnosti.pretraziStavku(homePage.filterKolona3WE, djelatnost);
+		djelatnosti.verifikujPraznuTabelu();
 	}
 
 }

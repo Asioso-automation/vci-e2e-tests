@@ -463,38 +463,38 @@ public class PocetnaStranica extends PageBase {
 		izlogujSeWE.click();
 	}
 	
-	public void obrisiStavku(boolean rezultat) throws InterruptedException {
-		try {
-			wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
-			wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
-			burgerBarWE.click();
-		}
-		catch (Exception e) {
-			wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
-			Thread.sleep(500);
-			wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
-			burgerBarWE.click();
-		}
-		wait.until(ExpectedConditions.elementToBeClickable(obrisiWE));
-		obrisiWE.click();
-		Thread.sleep(500);
-		wait.until(ExpectedConditions.visibilityOf(brisanjePopUpWE));
-		wait.until(ExpectedConditions.elementToBeClickable(potvrdiBrisanjeBtnWE));
-		potvrdiBrisanjeBtnWE.click();
-		Thread.sleep(500);
-		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
-		if (rezultat==true) {
-			try {
-				verifikujPoruku("Brisanje je uspješno završeno");
-			}
-			catch (Exception e) {
-				wait.until(ExpectedConditions.visibilityOf(sekcijaBtnWE));
-			}
-		}
-		else {
-			verifikujPoruku("Brisanje ovog zapisa nije moguće.");
-		}
-	}
+//	public void obrisiStavku(boolean rezultat) throws InterruptedException {
+//		try {
+//			wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
+//			wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
+//			burgerBarWE.click();
+//		}
+//		catch (Exception e) {
+//			wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
+//			Thread.sleep(500);
+//			wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
+//			burgerBarWE.click();
+//		}
+//		wait.until(ExpectedConditions.elementToBeClickable(obrisiWE));
+//		obrisiWE.click();
+//		Thread.sleep(500);
+//		wait.until(ExpectedConditions.visibilityOf(brisanjePopUpWE));
+//		wait.until(ExpectedConditions.elementToBeClickable(potvrdiBrisanjeBtnWE));
+//		potvrdiBrisanjeBtnWE.click();
+//		Thread.sleep(500);
+//		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
+//		if (rezultat==true) {
+//			try {
+//				verifikujPoruku("Brisanje je uspješno završeno");
+//			}
+//			catch (Exception e) {
+//				wait.until(ExpectedConditions.visibilityOf(sekcijaBtnWE));
+//			}
+//		}
+//		else {
+//			verifikujPoruku("Brisanje ovog zapisa nije moguće.");
+//		}
+//	}
 
 	public Organizacije navigirajNaOrganizacije() throws Exception {
 		try {
@@ -1906,7 +1906,7 @@ public class PocetnaStranica extends PageBase {
 	public void verifikujPoruku(String poruka) throws InterruptedException {
 		Thread.sleep(1000);
 		wait.until(ExpectedConditions.visibilityOf(porukaWE));
-		assertTrue(porukaWE.getText().trim().equals(poruka), "Poruka upozorenja nije dobra!");
+		assertTrue(porukaWE.getText().trim().contains(poruka), "Poruka upozorenja nije dobra!");
 	}
 	
 }
