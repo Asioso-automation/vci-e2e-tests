@@ -27,9 +27,6 @@ public class RegistarBrojila extends PocetnaStranicaPXD {
 	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '59712 - E5BD (A-D)')]")
 	 private WebElement odaberiTipBrojilaWE;
 	
-	@FindBy(xpath = "//div[3]/div[4]/div/div/div[1]/div/input")
-	 private WebElement poljeRedniBrojURegistruWE;
-	
 	@FindBy(xpath = "//td[2]/div/div[1]/div/div/div/div[1]/input")
 	 public WebElement filterBrojBrojilaWE;
 	
@@ -63,8 +60,6 @@ public class RegistarBrojila extends PocetnaStranicaPXD {
 		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
 		wait.until(ExpectedConditions.elementToBeClickable(odaberiTipBrojilaWE));
 		odaberiTipBrojilaWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(poljeRedniBrojURegistruWE));
-		poljeRedniBrojURegistruWE.sendKeys(Helper.getRandomNumber(7));
 		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
 		submitBtnWE.click();
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));

@@ -92,6 +92,9 @@ public class ElektroenergetskeSaglasnosti extends PocetnaStranicaPXD {
 	
 	@FindBy(xpath = "//button[@type='button' and contains(@class, 'primary')]")
 	private WebElement daljeBtnWE;
+	
+	@FindBy(xpath = "//div[21]/div[3]/div[1]/div/div[1]/div[2]/input")
+	private WebElement datumZahtjevaInputWE;
 		
 //	NISKI NAPON
 	
@@ -145,6 +148,9 @@ public class ElektroenergetskeSaglasnosti extends PocetnaStranicaPXD {
 	
 	@FindBy(xpath = "//div[@class='v-card__title subtitle-2 title-border text-uppercase mb-5']")  
 	private WebElement naslovWE;
+	
+	@FindBy(xpath = "//div[30]/div[3]/div[1]/div/div[1]/div[2]/input")
+	private WebElement datumZahtjevaInputNNWE;
 	
 	public void verifikujElektroenergetskeSaglasnosti() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
@@ -383,8 +389,17 @@ public class ElektroenergetskeSaglasnosti extends PocetnaStranicaPXD {
 		wait.until(ExpectedConditions.elementToBeClickable(datumBtn3WE));
 		datumBtn3WE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(datumKalendar2WE));
-		wait.until(ExpectedConditions.elementToBeClickable(trenutniDatum2WE));
-		trenutniDatum2WE.click();
+		try {
+			wait.until(ExpectedConditions.elementToBeClickable(trenutniDatum2WE));
+			trenutniDatum2WE.click();
+		} catch (Exception e) {
+			if (tipEES=="Domaćinstva") {
+			datumZahtjevaInputWE.sendKeys("31.07.2023.");
+			}
+			else if (tipEES=="Niski napon") {
+				datumZahtjevaInputNNWE.sendKeys("31.07.2023.");
+			}
+		}
 		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
 		submitBtnWE.click();
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
