@@ -101,10 +101,11 @@ public class ObracunskiUgovori extends PocetnaStranicaPXD {
 		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(@class, 'v-list-item__title') and contains(., '" + mjernoMjesto + "')]")));
 		driver.findElement(By.xpath("//div[contains(@class, 'v-list-item__title') and contains(., '" + mjernoMjesto + "')]")).click();
+		String nazivMjernogMjesta = "NazivMjm " + Helper.getRandomString(7);
 		wait.until(ExpectedConditions.elementToBeClickable(poljeNazivMjernogMjestaWE));
-		poljeNazivMjernogMjestaWE.sendKeys(Helper.getRandomString(7));
+		poljeNazivMjernogMjestaWE.sendKeys(nazivMjernogMjesta);
 		wait.until(ExpectedConditions.elementToBeClickable(poljeNazivMjMjestaNaStampanimDokumentimaWE));
-		poljeNazivMjMjestaNaStampanimDokumentimaWE.sendKeys(Helper.getRandomString(7));
+		poljeNazivMjMjestaNaStampanimDokumentimaWE.sendKeys(nazivMjernogMjesta);
 		wait.until(ExpectedConditions.elementToBeClickable(poljeAktivnoBrojiloWE));
 		poljeAktivnoBrojiloWE.sendKeys(brBrojila);
 		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
@@ -120,7 +121,7 @@ public class ObracunskiUgovori extends PocetnaStranicaPXD {
 	}
 	
 	public String urediObracunskiUgovor() throws InterruptedException {
-		String nazivMjernogMjesta = "Naziv mjm " + Helper.getRandomString(7);
+		String nazivMjernogMjesta = "NazivMjm1 " + Helper.getRandomString(7);
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		burgerBarWE.click();

@@ -26,7 +26,7 @@ public class Anketari extends PocetnaStranica {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaOpstinaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAdresaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojTelefonaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaEmailWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaEmail2WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAktivanWE));
 	}
 	

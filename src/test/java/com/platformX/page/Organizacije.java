@@ -25,7 +25,7 @@ public class Organizacije extends PocetnaStranica {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAdresaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTelefonWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaFaxWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaEmailWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaEmail2WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaInternetAdresaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaCallCentarWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaZiroRacunWE));

@@ -269,6 +269,7 @@ public class PX_003_Verifikacije_Sekcija_Test extends BaseTest {
 		obrasciBrojaProtokolaOpomenaPredUtuzenje.verifikujObrasciBrojaProtokolaOpomenaPredUtuzenje();
 		Tuzbe tuzbe = pocetna.navigirajNaTuzbe();
 		tuzbe.verifikujTuzbe();
+//		dodati verifikaciju stranice IzvrsniPostupak
 		StecajeviLikvidacije stecajevi = pocetna.navigirajNaStecajeviLikvidacije();
 		stecajevi.verifikujStecajeviLikvidacije();
 		Medijacije medijacije = pocetna.navigirajNaMedijacije();

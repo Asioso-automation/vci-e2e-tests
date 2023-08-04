@@ -16,8 +16,8 @@ public class EmailObavjestenja extends PocetnaStranica {
 	public void verifikujEmailObavjestenja() throws FileNotFoundException, IOException, InterruptedException {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
-				"//div[contains(@class, 'v-toolbar__title body-1 ml-0 pl-0 text-default') and starts-with(., ' Email')]")));
-		verifikacijaZajednickihElemenata("Administracija", "Email Obavještenja", "Email obavještenja", 5, false, false, false, false, true, true, false);
+				"//div[contains(@class, 'v-toolbar__title body-1 ml-0 pl-0 text-default') and starts-with(., ' E-mail')]")));
+		verifikacijaZajednickihElemenata("Administracija", "Email Obavještenja", "E-mail obavještenja", 5, false, false, false, false, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNazivWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPrimaociWE));

@@ -87,7 +87,7 @@ public class TarifneGrupe extends PocetnaStranicaPXD {
 	}
 	
 	public String urediTarifnuGrupu()throws Exception {
-		String tarifnaGrupa = "TarfinaGrupa" + Helper.getRandomString(4);
+		String tarifnaGrupa = "TarifnaGrupa" + Helper.getRandomString(4);
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		burgerBarWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(urediWE));

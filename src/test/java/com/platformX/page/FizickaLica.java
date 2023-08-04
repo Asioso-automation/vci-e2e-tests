@@ -23,7 +23,7 @@ public class FizickaLica extends PocetnaStranica {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaOdgovorniODSWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojLicneKarteWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAdresaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaEmailWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaEmail2WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTelefonWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAktivanWE));
 	}
