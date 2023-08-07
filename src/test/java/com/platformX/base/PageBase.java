@@ -48,7 +48,7 @@ public abstract class PageBase {
 	protected WebElement praznaTabelaWE;
 
 	@FindBy(xpath = "(//i[contains(@class, 'fa-bars')])[1]")
-	protected WebElement burgerBarWE; // burger bar u prvoj liniji liste
+	protected WebElement burgerBarWE;
 
 	@FindBy(xpath = "//*[contains(text(),'Obrada u toku...') and contains(@class, 'title')]")
 	protected WebElement obradaModalWE;
@@ -186,8 +186,7 @@ public abstract class PageBase {
 		try {
 			wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		} catch (Exception e) {
-			Thread.sleep(1000);
-//			wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
+		Thread.sleep(1000);
 		}
 	}
 
