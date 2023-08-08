@@ -18,7 +18,7 @@ public class TipoviPotrosaca extends PocetnaStranica{
 	public void verifikujTipovePotrosaca()throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
-				"//div[contains(@class, 'v-toolbar__title') and contains(text(), ' Tipovi potrošača')]")));
+				"//div[contains(@class, 'v-toolbar__title') and contains(text(), 'Tipovi potrošača')]")));
 		verifikacijaZajednickihElemenata("TARIFNI SISTEM", "TIPOVI POTROŠAČA", "Tipovi potrošača", 8, false, false, true, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaId1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNaziv1WE));

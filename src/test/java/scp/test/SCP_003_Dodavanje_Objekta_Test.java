@@ -16,10 +16,10 @@ public class SCP_003_Dodavanje_Objekta_Test extends BaseTest {
 
 	@Test (description="")
 	public void scp_003_dodavanje_objekta_test() throws Exception {
-		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
-		logIn.verifikujLogIn();
-		logIn.logIn();
+		LogIn logIn = new LogIn(driver, SCP_PROPERTIES);
 		PocetnaStranica pocetna = new PocetnaStranica(driver);
+		logIn.verifikujLogIn();
+		logIn.logIn(pocetna.orgGasWE);
 		pocetna.verifikujPocetnuStranicu();
 		Objekti objekti = pocetna.navigirajNaObjekti();
 		objekti.verifikujObjekte();

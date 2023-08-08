@@ -1727,7 +1727,7 @@ public class Kolone extends PageBase {
 	@FindBy(xpath = "//*[contains(@class, 'v-datatable')]//*[text() = 'Vrsta']")
 	public WebElement kolonaVrstaWE;
 	
-	@FindBy(xpath = "//*[contains(@class, 'v-data-table')]//*[text() = 'Tip']")
+	@FindBy(xpath = "//*[contains(@class, 'v-datatable')]//*[text() = 'Tip']")
 	public WebElement kolonaTip1WE;
 	
 	@FindBy(xpath = "//*[contains(@class, 'v-datatable')]//*[text() = 'Aktivan']")
@@ -1786,5 +1786,229 @@ public class Kolone extends PageBase {
 	
 	@FindBy(xpath = "//*[contains(@class, 'v-datatable')]//*[text() = 'Status']")
 	public WebElement kolonaStatus1WE;
-}
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-datatable')]//*[text() = 'Rok plaćanja']")
+	public WebElement kolonaRokPlacanja1WE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-datatable')]//*[text() = 'Procenat popusta']")
+	public WebElement kolonaProcenatPopustaWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-datatable')]//*[text() = 'Progres']")
+	public WebElement kolonaProgresWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-datatable')]//*[text() = 'Organizacija']")
+	public WebElement kolonaOrganizacija1WE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-datatable')]//*[text() = 'Nalog']")
+	public WebElement kolonaNalogWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-datatable')]//*[text() = 'T.G.']")
+	public WebElement kolonaTG1WE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-datatable')]//*[text() = 'Iznos(+PDV)']")
+	public WebElement kolonaIznosPdvWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-datatable')]//*[text() = 'Kamata']")
+	public WebElement kolonaKamata1WE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-datatable')]//*[text() = 'Iznos sa kamatom']")
+	public WebElement kolonaIznosSaKamatomWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-datatable')]//*[text() = 'Poziv na broj']")
+	public WebElement kolonaPozivNaBroj1WE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-datatable')]//*[text() = 'Plaćen']")
+	public WebElement kolonaPlacen1WE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-datatable')]//*[text() = 'ID Računa']")
+	public WebElement kolonaIdRacunaWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-datatable')]//*[text() = 'Zaključen']")
+	public WebElement kolonaZakljucen1WE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-datatable')]//*[text() = 'Ugovor']")
+	public WebElement kolonaUgovor1WE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-datatable')]//*[text() = 'Datum knjiženja']")
+	public WebElement kolonaDatumKnjizenja1WE;
 
+	@FindBy(xpath = "//*[contains(@class, 'v-datatable')]//*[text() = 'Duguje']")
+	public WebElement kolonaDuguje1WE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-datatable')]//*[text() = 'Potražuje']")
+	public WebElement kolonaPotrazuje1WE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-datatable')]//*[text() = 'Preostalo']")
+	public WebElement kolonaPreostalo1WE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-datatable')]//*[text() = 'Tuženo']")
+	public WebElement kolonaTuzenoWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-datatable')]//*[text() = 'Opis']")
+	public WebElement kolonaOpis1WE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-datatable')]//*[text() = 'Broj dokumenta']")
+	public WebElement kolonaBrojDokumentaWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-datatable')]//*[text() = 'Banka']")
+	public WebElement kolonaBanka1WE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-datatable')]//*[text() = 'Vrsta knjiženja']")
+	public WebElement kolonaVrstaKnjizenjaWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-datatable')]//*[text() = 'Izvod']")
+	public WebElement kolonaIzvodWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-datatable')]//*[text() = 'Datum izvoda']")
+	public WebElement kolonaDatumIzvoda1WE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-datatable')]//*[text() = 'Br. neprepoznatih uplata']")
+	public WebElement kolonaBrNeprepoznatihUplataWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-datatable')]//*[text() = 'Iznos neprepoznatih uplata']")
+	public WebElement kolonaIznosNeprepoznatihUplataWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-datatable')]//*[text() = 'Br. uplata']")
+	public WebElement kolonaBrUplataWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-datatable')]//*[text() = 'Ukupan iznos uplata']")
+	public WebElement kolonaUkupanIznosUplataWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-datatable')]//*[text() = 'Broj izvoda']")
+	public WebElement kolonaBrojIzvoda1WE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-datatable')]//*[text() = 'Vrijeme unosa']")
+	public WebElement kolonaVrijemeUnosa1WE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-datatable')]//*[text() = 'Vrsta unosa']")
+	public WebElement kolonaVrstaUnosaWE;
+
+	@FindBy(xpath = "//*[contains(@class, 'v-datatable')]//*[text() = 'Uplatilac']")
+	public WebElement kolonaUplatilac1WE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-datatable')]//*[text() = 'Iznos uplate']")
+	public WebElement kolonaIznosUplateWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-datatable')]//*[text() = 'Iznos avansa']")
+	public WebElement kolonaIznosAvansaWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-datatable')]//*[text() = 'Zaključena']")
+	public WebElement kolonaZakljucena1WE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-datatable')]//*[text() = 'Avans']")
+	public WebElement kolonaAvansWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-datatable')]//*[text() = 'Email trajnog naloga']")
+	public WebElement kolonaEmailTrajnogNalogaWE;
+
+	@FindBy(xpath = "//*[contains(@class, 'v-datatable')]//*[text() = 'Aktivna']")
+	public WebElement kolonaAktivna1WE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-datatable')]//*[text() = 'Vrsta žiro računa']")
+	public WebElement kolonaVrstaZiroRacunaWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-datatable')]//*[text() = 'Email pošiljaoca']")
+	public WebElement kolonaEmailPosiljaocaWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-datatable')]//*[text() = 'Iznos reprograma']")
+	public WebElement kolonaIznosReprogramaWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-datatable')]//*[text() = 'Nalog za isključenje']")
+	public WebElement kolonaNalogzaIskljucenjeWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-datatable')]//*[text() = 'Period generisanja']")
+	public WebElement kolonaPeriodGenerisanja1WE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-datatable')]//*[text() = 'Rok']")
+	public WebElement kolonaRokWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-datatable')]//*[text() = 'Štampa uz račun']")
+	public WebElement kolonaStampaUzRacun1WE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-datatable')]//*[text() = 'Datum iseka']")
+	public WebElement kolonaDatumIstekaWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-datatable')]//*[text() = 'Opomenuti iznos']")
+	public WebElement kolonaOpomenutiIznosWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-datatable')]//*[text() = 'Broj naloga']")
+	public WebElement kolonaBrojNalogaWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-datatable')]//*[text() = 'Opomena pred isklj.']")
+	public WebElement kolonaOpomenaPredIskljWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-datatable')]//*[text() = 'Naloženi iznos']")
+	public WebElement kolonaNalozeniIznosWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-datatable')]//*[text() = 'Preostali iznos']")
+	public WebElement kolonaPreostaliIznosWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-datatable')]//*[text() = 'Isključenje']")
+	public WebElement kolonaIskljucenjeWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-datatable')]//*[text() = 'Broj tužbe']")
+	public WebElement kolonaBrojTuzbeWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-datatable')]//*[text() = 'Tip tužbe']")
+	public WebElement kolonaTipTuzbeWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-datatable')]//*[text() = 'Opomena']")
+	public WebElement kolonaOpomenaWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-datatable')]//*[text() = 'Utuženi iznos']")
+	public WebElement kolonaUtuzeniIznosWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-datatable')]//*[text() = 'Broj presude']")
+	public WebElement kolonaBrojPresudeWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-datatable')]//*[text() = 'Status presude']")
+	public WebElement kolonaStatusPresudeWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-datatable')]//*[text() = 'Datum presude']")
+	public WebElement kolonaDatumPresude1WE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-datatable')]//*[text() = 'Iznos presude']")
+	public WebElement kolonaIznosPresudeWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-datatable')]//*[text() = 'Tužba']")
+	public WebElement kolonaTuzbaWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-datatable')]//*[text() = 'Prethodno']")
+	public WebElement kolonaPrethodnoWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-datatable')]//*[text() = 'Trenutno']")
+	public WebElement kolonaTrenutnoWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-datatable')]//*[text() = 'Potrošnja']")
+	public WebElement kolonaPotrosnjaWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-datatable')]//*[text() = 'Odobrenje']")
+	public WebElement kolonaOdobrenjeWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-datatable')]//*[text() = 'Razlika']")
+	public WebElement kolonaRazlikaWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-datatable')]//*[text() = 'Vodomjer']")
+	public WebElement kolonaVodomjerWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-datatable')]//*[text() = 'Zone očitanja']")
+	public WebElement kolonaZoneOcitanjaWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-datatable')]//*[text() = 'Izmijenio korisnik']")
+	public WebElement kolonaIzmijenioKorisnikWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-datatable')]//*[text() = 'Resetovan']")
+	public WebElement kolonaResetovanWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-datatable')]//*[text() = 'Datum očitanja']")
+	public WebElement kolonaDatumOcitanjaWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-datatable')]//*[text() = 'Datum prethodnog očitanja']")
+	public WebElement kolonaDatumPrethodnogOcitanjaWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-datatable')]//*[text() = 'Novo']")
+	public WebElement kolonaNovoWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-datatable')]//*[text() = 'Postoji redovno očitanje']")
+	public WebElement kolonaPostojiRedovnoWE;
+}

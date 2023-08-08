@@ -18,7 +18,7 @@ public class Korektori extends PocetnaStranica{
 	public void verifikujKorektore()throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
-				"//div[contains(@class, 'v-toolbar__title') and contains(text(), ' Korektori')]")));
+				"//div[contains(@class, 'v-toolbar__title') and contains(text(), 'Korektori')]")));
 		verifikacijaZajednickihElemenata("KUPCI", "KOREKTORI", "Korektori", 9, false, false, true, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaId1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaSrBrojWE));

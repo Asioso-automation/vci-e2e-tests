@@ -18,7 +18,7 @@ public class Kalorimetri extends PocetnaStranica{
 	public void verifikujKalorimetre()throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
-				"//div[contains(@class, 'v-toolbar__title') and contains(text(), ' Kalorimetri')]")));
+				"//div[contains(@class, 'v-toolbar__title') and contains(text(), 'Kalorimetri')]")));
 		verifikacijaZajednickihElemenata("KUPCI", "KALORIMETRI", "Kalorimetri", 11, false, false, true, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaId1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaZonaOcitanjaWE));

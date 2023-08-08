@@ -18,7 +18,7 @@ public class ToplotneStanice extends PocetnaStranica{
 	public void verifikujToplotneStanice()throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
-				"//div[contains(@class, 'v-toolbar__title') and contains(text(), ' Toplotne stanice')]")));
+				"//div[contains(@class, 'v-toolbar__title') and contains(text(), 'Toplotne stanice')]")));
 		verifikacijaZajednickihElemenata("ŠIFARNICI", "TOPLOTNE STANICE", "Toplotne stanice", 9, false, false, true, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaId1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNaziv1WE));

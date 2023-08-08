@@ -17,10 +17,10 @@ public class SCP_00X_Dodavanje_Ugovora_Test extends BaseTest {
 
 	@Test (description="")
 	public void scp_002_dodavanje_ugovora_test() throws Exception {
-		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
-		logIn.verifikujLogIn();
-		logIn.logIn();
+		LogIn logIn = new LogIn(driver, SCP_PROPERTIES);
 		PocetnaStranica pocetna = new PocetnaStranica(driver);
+		logIn.verifikujLogIn();
+		logIn.logIn(pocetna.orgGasWE);
 		pocetna.verifikujPocetnuStranicu();
 		FizickaLica fizickaLica = pocetna.navigirajNaFizickaLica();
 		fizickaLica.verifikujFizickaLica();

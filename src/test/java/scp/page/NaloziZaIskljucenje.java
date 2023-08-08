@@ -1,0 +1,41 @@
+package scp.page;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+
+import com.platformX.base.Kolone;
+public class NaloziZaIskljucenje extends PocetnaStranica{
+
+	public NaloziZaIskljucenje(WebDriver driver) throws FileNotFoundException, IOException {
+		super(driver);
+	}
+
+	@FindBy(xpath = "//i[contains(@class, 'fa-layer-group')]")
+	protected WebElement generateBtnWE;
+	
+	public void verifikujOpomenePredIskljucenje()throws InterruptedException, FileNotFoundException, IOException {
+		Kolone kolone = new Kolone(driver);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
+				"//div[contains(@class, 'v-toolbar__title') and contains(text(), ' Opomene pred isključenje')]")));
+		verifikacijaZajednickihElemenata("ISKLJUČENJA", "OPOMENE PRED ISKLJUČENJE", "Opomene pred isključenje", 15, false, false, false, true, true, true, false);
+		wait.until(ExpectedConditions.elementToBeClickable(generateBtnWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaId1WE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojNalogaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKupac1WE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaProstorWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumKreiranja1WE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaOpomenaPredIskljWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaOpomenutiIznosWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNalozeniIznosWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPreostaliIznosWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaStatus1WE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNapomena1WE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIskljucenjeWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaZakljucen1WE));
+	}
+}

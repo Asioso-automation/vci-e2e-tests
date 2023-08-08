@@ -18,7 +18,7 @@ public class VrsteGasomjera extends PocetnaStranica {
 	public void verifikujVrsteGasomjera()throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
-				"//div[contains(@class, 'v-toolbar__title') and contains(text(), ' Vrste gasomjera')]")));
+				"//div[contains(@class, 'v-toolbar__title') and contains(text(), 'Vrste gasomjera')]")));
 		verifikacijaZajednickihElemenata("ŠIFARNICI", "VRSTE GASOMJERA", "Vrste gasomjera", 4, false, false, true, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaId1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNaziv1WE));

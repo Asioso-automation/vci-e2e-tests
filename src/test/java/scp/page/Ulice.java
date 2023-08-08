@@ -18,7 +18,7 @@ public class Ulice extends PocetnaStranica{
 	public void verifikujUlice()throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
-				"//div[contains(@class, 'v-toolbar__title') and contains(text(), ' Ulice')]")));
+				"//div[contains(@class, 'v-toolbar__title') and contains(text(), 'Ulice')]")));
 		verifikacijaZajednickihElemenata("ŠIFARNICI", "ULICE", "Ulice", 6, false, false, true, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaId1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNaziv1WE));

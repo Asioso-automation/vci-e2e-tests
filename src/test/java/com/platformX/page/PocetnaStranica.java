@@ -1,7 +1,5 @@
 package com.platformX.page;
 
-import static org.testng.Assert.assertTrue;
-
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import org.openqa.selenium.By;
@@ -463,38 +461,6 @@ public class PocetnaStranica extends PageBase {
 		izlogujSeWE.click();
 	}
 	
-//	public void obrisiStavku(boolean rezultat) throws InterruptedException {
-//		try {
-//			wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
-//			wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
-//			burgerBarWE.click();
-//		}
-//		catch (Exception e) {
-//			wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
-//			Thread.sleep(500);
-//			wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
-//			burgerBarWE.click();
-//		}
-//		wait.until(ExpectedConditions.elementToBeClickable(obrisiWE));
-//		obrisiWE.click();
-//		Thread.sleep(500);
-//		wait.until(ExpectedConditions.visibilityOf(brisanjePopUpWE));
-//		wait.until(ExpectedConditions.elementToBeClickable(potvrdiBrisanjeBtnWE));
-//		potvrdiBrisanjeBtnWE.click();
-//		Thread.sleep(500);
-//		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
-//		if (rezultat==true) {
-//			try {
-//				verifikujPoruku("Brisanje je uspješno završeno");
-//			}
-//			catch (Exception e) {
-//				wait.until(ExpectedConditions.visibilityOf(sekcijaBtnWE));
-//			}
-//		}
-//		else {
-//			verifikujPoruku("Brisanje ovog zapisa nije moguće.");
-//		}
-//	}
 
 	public Organizacije navigirajNaOrganizacije() throws Exception {
 		try {
@@ -1901,12 +1867,6 @@ public class PocetnaStranica extends PageBase {
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(@class, 'v-list-item__title') and contains(., '" + mjernoMjesto + "')]")));
 		driver.findElement(By.xpath("//div[contains(@class, 'v-list-item__title') and contains(., '" + mjernoMjesto + "')]")).click();
 		Thread.sleep(1000);
-	}
-	
-	public void verifikujPoruku(String poruka) throws InterruptedException {
-		Thread.sleep(1000);
-		wait.until(ExpectedConditions.visibilityOf(porukaWE));
-		assertTrue(porukaWE.getText().trim().contains(poruka), "Poruka upozorenja nije dobra!");
 	}
 	
 }

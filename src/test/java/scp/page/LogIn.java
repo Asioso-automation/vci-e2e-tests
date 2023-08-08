@@ -34,12 +34,6 @@ public class LogIn extends PageBase {
 	@FindBy(xpath = "//form/div/div[2]/div[1]/div/div[1]")
 	private WebElement organizacijaWE;
 	
-	@FindBy(xpath = "//*[contains(@class, 'v-list__tile__title') and contains(text(), 'Vodovod')]")
-	private WebElement vodovodWE;
-	
-	@FindBy(xpath = "//*[contains(@class, 'v-list__tile__title') and contains(text(), 'Sarajevo-gas a.d. Istočno Sarajevo')]")
-	private WebElement gasWE;
-	
 	@FindBy(xpath = "//div[2]/div/div/div")
 	private WebElement porukaUpozorenjaWE;
 	
@@ -49,15 +43,15 @@ public class LogIn extends PageBase {
 		wait.until(ExpectedConditions.visibilityOf(prijaviSeBtnWE));
 	}
 
-	public void logIn() throws InterruptedException {
+	public void logIn(WebElement organizacija) throws InterruptedException {
 		wait.until(ExpectedConditions.visibilityOf(korisnickoImeWE));
 		wait.until(ExpectedConditions.visibilityOf(lozinkaWE));
 		wait.until(ExpectedConditions.elementToBeClickable(organizacijaWE));
 		wait.until(ExpectedConditions.elementToBeClickable(korisnickoImeWE));
-		wait.until(ExpectedConditions.elementToBeClickable(organizacijaWE));
 		organizacijaWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(gasWE));
-		gasWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
+		wait.until(ExpectedConditions.elementToBeClickable(organizacija));
+		organizacija.click();
 		wait.until(ExpectedConditions.elementToBeClickable(korisnickoImeWE));
 		korisnickoImeWE.sendKeys(scp_properties.getValue("SCP.USER.NAME"));
 		wait.until(ExpectedConditions.elementToBeClickable(lozinkaWE));

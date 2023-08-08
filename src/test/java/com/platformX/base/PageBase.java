@@ -92,6 +92,9 @@ public abstract class PageBase {
 	@FindBy(xpath = "//*[contains(@class, 'v-btn__content') and contains(text(), 'Briši')]")
 	protected WebElement potvrdiBrisanjeBtnWE;
 	
+	@FindBy(xpath = "//div[contains(@class, 'menuable__content__active')]")
+	protected WebElement aktivniLookupWE;
+	
 //	VERIFIKACIJE - ELEMENTI
 	
 	@FindBy(xpath = "//td[2]/div/div/div/div[1]/input")

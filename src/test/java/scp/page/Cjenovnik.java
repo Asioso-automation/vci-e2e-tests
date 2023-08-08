@@ -18,7 +18,7 @@ public class Cjenovnik extends PocetnaStranica{
 	public void verifikujCjenovnik()throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
-				"//div[contains(@class, 'v-toolbar__title') and contains(text(), ' Cjenovnik')]")));
+				"//div[contains(@class, 'v-toolbar__title') and contains(text(), 'Cjenovnik')]")));
 		verifikacijaZajednickihElemenata("TARIFNI SISTEM", "CJENOVNIK", "Cjenovnik", 9, false, false, true, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaId1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPeriodOd1WE));

@@ -18,7 +18,7 @@ public class Mjerila extends PocetnaStranica{
 	public void verifikujMjerila()throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
-				"//div[contains(@class, 'v-toolbar__title') and contains(text(), ' Mjerila')]")));
+				"//div[contains(@class, 'v-toolbar__title') and contains(text(), 'Mjerila')]")));
 		verifikacijaZajednickihElemenata("KUPCI", "MJERILA", "Mjerila", 11, false, false, true, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaId1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaZonaOcitanjaWE));

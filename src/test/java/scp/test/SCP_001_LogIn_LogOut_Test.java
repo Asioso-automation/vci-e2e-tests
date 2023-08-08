@@ -15,14 +15,46 @@ public class SCP_001_LogIn_LogOut_Test extends BaseTest {
 	}
 
 	@Test (description="logIn i logOut sa verifikacijama stranica")
-	public void scp_001_logIn_logOut_test() throws Exception {
-		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
+    public void scp_001_1_logIn_logOut_cistoca_test() throws Exception {
+        LogIn logIn = new LogIn(driver, SCP_PROPERTIES);
+        PocetnaStranica pocetna = new PocetnaStranica(driver);
 		logIn.verifikujLogIn();
-		logIn.logIn();
-		PocetnaStranica pocetna = new PocetnaStranica(driver);
+        logIn.logIn(pocetna.orgCistocaGradiskaWE);
 		pocetna.verifikujPocetnuStranicu();
 		pocetna.izlogujSe();
 		logIn.verifikujLogIn();
 	}
 
+    @Test (description="logIn i logOut sa verifikacijama stranica")
+    public void scp_001_2_logIn_logOut_grad_gradiska_test() throws Exception {
+        LogIn logIn = new LogIn(driver, SCP_PROPERTIES);
+        PocetnaStranica pocetna = new PocetnaStranica(driver);
+        logIn.verifikujLogIn();
+        logIn.logIn(pocetna.orgGradGradiskaWE);
+        pocetna.verifikujPocetnuStranicu();
+        pocetna.izlogujSe();
+        logIn.verifikujLogIn();
+    }
+    
+    @Test (description="logIn i logOut sa verifikacijama stranica")
+    public void scp_001_2_logIn_logOut_gas_test() throws Exception {
+        LogIn logIn = new LogIn(driver, SCP_PROPERTIES);
+        PocetnaStranica pocetna = new PocetnaStranica(driver);
+        logIn.verifikujLogIn();
+        logIn.logIn(pocetna.orgGasWE);
+        pocetna.verifikujPocetnuStranicu();
+        pocetna.izlogujSe();
+        logIn.verifikujLogIn();
+    }
+    
+    @Test (description="logIn i logOut sa verifikacijama stranica")
+    public void scp_001_2_logIn_logOut_vodovod_is_test() throws Exception {
+        LogIn logIn = new LogIn(driver, SCP_PROPERTIES);
+        PocetnaStranica pocetna = new PocetnaStranica(driver);
+        logIn.verifikujLogIn();
+        logIn.logIn(pocetna.orgVodovodIsWE);
+        pocetna.verifikujPocetnuStranicu();
+        pocetna.izlogujSe();
+        logIn.verifikujLogIn();
+    }
 }

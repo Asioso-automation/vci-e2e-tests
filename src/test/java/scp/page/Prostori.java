@@ -18,7 +18,7 @@ public class Prostori extends PocetnaStranica{
 	public void verifikujProstore()throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
-				"//div[contains(@class, 'v-toolbar__title') and contains(text(), ' Prostori')]")));
+				"//div[contains(@class, 'v-toolbar__title') and contains(text(), 'Prostori')]")));
 		verifikacijaZajednickihElemenata("KUPCI", "PROSTORI", "Prostori", 5, false, false, true, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaId1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNaziv1WE));

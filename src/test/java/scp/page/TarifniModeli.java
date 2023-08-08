@@ -18,7 +18,7 @@ public class TarifniModeli extends PocetnaStranica{
 	public void verifikujTarifneModele()throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
-				"//div[contains(@class, 'v-toolbar__title') and contains(text(), ' Tarifni modeli')]")));
+				"//div[contains(@class, 'v-toolbar__title') and contains(text(), 'Tarifni modeli')]")));
 		verifikacijaZajednickihElemenata("TARIFNI SISTEM", "TARIFNI MODELI", "Tarifni modeli", 5, false, false, true, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaId1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaOznakaModelaWE));

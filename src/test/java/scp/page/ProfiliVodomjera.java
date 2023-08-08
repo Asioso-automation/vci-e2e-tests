@@ -18,7 +18,7 @@ public class ProfiliVodomjera extends PocetnaStranica{
 	public void verifikujProfileVodomjera()throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
-				"//div[contains(@class, 'v-toolbar__title') and contains(text(), ' Profili vodomjera')]")));
+				"//div[contains(@class, 'v-toolbar__title') and contains(text(), 'Profili vodomjera')]")));
 		verifikacijaZajednickihElemenata("ŠIFARNICI", "PROFILI VODOMJERA", "Profili vodomjera", 5, false, false, true, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaId1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNaziv1WE));
