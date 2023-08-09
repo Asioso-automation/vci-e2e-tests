@@ -22,7 +22,7 @@ public class Ulice extends PocetnaStranicaPXD {
 	@FindBy(xpath = "//div[2]/div/div/div[1]/div/input")
 	private WebElement nazivNaDokumentimaWE;
 	
-	@FindBy(xpath = "//form/div/div[1]/div/div[2]/div/div/div[1]/div/input")
+	@FindBy(xpath = "//div[2]/div/div/div[1]/div/input")
 	private WebElement urediNazivWE;
 
 	public void verifikujUlice() throws InterruptedException, FileNotFoundException, IOException {
@@ -54,6 +54,7 @@ public class Ulice extends PocetnaStranicaPXD {
 		burgerBarWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(urediWE));
 		urediWE.click();
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		wait.until(ExpectedConditions.elementToBeClickable(urediNazivWE));
 		urediNazivWE.click();
 		urediNazivWE.clear();

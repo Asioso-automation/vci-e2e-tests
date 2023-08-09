@@ -86,7 +86,7 @@ public class FizickaLica extends PocetnaStranicaPXD {
 	 }  
 	 
 	 public String urediFizickoLice() throws InterruptedException {
-		 String nazivFizickogLica = "Fizicko lice" + Helper.getRandomString(5);
+		 String nazivFizickogLica = "Fizicko lice " + Helper.getRandomString(5);
 		 wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		 Thread.sleep(800);																// trenutno ne radi burgerBarWE.click() bez Thread.sleep - ne radi ni sa try/catch
 		 burgerBarWE.click();

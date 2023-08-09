@@ -26,7 +26,7 @@ public class ZahtjeviZaUkljucenja extends PocetnaStranicaPXD {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTipUgovoraWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaFizickaLokacijaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaRazlogIskljucenjaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaRazlogNeizvrsavanjaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumKreiranjaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIniciraoSnabdjevacWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaOtkazanWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaOdbijenWE));		
