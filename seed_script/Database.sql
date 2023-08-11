@@ -41,8 +41,7 @@ GO
 INSERT [Administration].[Configuration] ([Key], [Value]) VALUES (N'MaxValidtyDateForContractTypeChangeAllowed', N'2021-04-01')
 GO
 
-INSERT [Customer].[ContractType]([Id],[Name]) VALUES (1, N'Tržišno')
-GO
+
 
 SET IDENTITY_INSERT BasicCatalog.MeterType ON
 
