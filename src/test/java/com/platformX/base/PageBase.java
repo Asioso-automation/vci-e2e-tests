@@ -117,6 +117,9 @@ public abstract class PageBase {
 
 	@FindBy(xpath = "//tr[2]/td[4]")
 	public WebElement podatak2Tabela4WE;
+	
+	@FindBy(xpath = "//tr[2]/td[1]")
+	public WebElement idWE;
 
 	protected Select select(WebElement webElement, String name) {
 		Select selectedElement = new Select(webElement);
@@ -142,6 +145,13 @@ public abstract class PageBase {
 	
 	public void verifikujPraznuTabelu() {
 		assertTrue(praznaTabelaWE.getText().equals("Nema podataka"), "PraznaTabela: Poruka prazne tabele nije dobra!");
+	}
+	
+	public int pokupiIdStavke() {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.visibilityOf(idWE));
+		int id = Integer.parseInt(idWE.getText());
+		return id;
 	}
 
 	public void verifikacijaZajednickihElemenata(String sekcija, String stranica, String naslovStranice, int brKolona,

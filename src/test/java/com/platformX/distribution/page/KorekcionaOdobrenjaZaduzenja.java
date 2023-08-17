@@ -28,7 +28,6 @@ public class KorekcionaOdobrenjaZaduzenja extends PocetnaStranicaPXD {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaRvtWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaRmtWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaSnaga1WE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNapomenaWE));
 	}
 
 }

@@ -20,25 +20,25 @@ public class MjernaMjesta extends PocetnaStranicaPXD {
 	@FindBy(xpath = "//div[2]/div[1]/div/div/div[1]/div/input")
 	 private WebElement poljeSifraWE;
 
-	@FindBy(xpath = "//div[2]/div[4]/div/div/div[1]/div[1]/input[1]")
+	@FindBy(xpath = "//div[2]/div[5]/div/div/div[1]/div[1]/input[1]")
 	 private WebElement poljeTerenskaJedinicaWE;
 	
 	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '1 - Istočno Novo Sarajevo')]")
 	 private WebElement odaberiTerenskuJedinicuWE;
 	
-	@FindBy(xpath = "//div[2]/div[5]/div/div/div[1]/div[1]/input[1]")
+	@FindBy(xpath = "//div[2]/div[6]/div/div/div[1]/div[1]/input[1]")
 	 private WebElement poljeFizickaLokacijaWE;
 	
 	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '301 - 01 - Istočno Novo Sarajevo')]")
 	 private WebElement odaberiFizickuLokacijuWE;
 	
-	@FindBy(xpath = "//div[2]/div[6]/div/div/div[1]/div[1]/input[1]")
+	@FindBy(xpath = "//div[2]/div[7]/div/div/div[1]/div[1]/input[1]")
 	 private WebElement poljeTrafoStanicaWE;
 	
 	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '11120 - 120-Didas')]")
 	 private WebElement odaberiTrafoStanicuWE;
 	
-	@FindBy(xpath = "//div[9]/div/div/div[1]/div/input")
+	@FindBy(xpath = "//div[10]/div/div/div[1]/div/input")
 	 private WebElement poljeBrojCitackogHodaWE;
 	
 	@FindBy(xpath = "//div[3]/div[2]/div/div/div[1]/div[1]/input[1]")

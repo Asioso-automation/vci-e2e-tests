@@ -59,12 +59,6 @@ public class Poruke extends PocetnaStranicaPXD {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPrioritetWE));
 	}
 	
-	public int pokupiIdPoruke() {
-		wait.until(ExpectedConditions.visibilityOf(idWE));
-		int id = Integer.parseInt(idWE.getText());
-		return id;
-	}
-	
 	public String[] dodajPoruku() throws InterruptedException {
 		String[] podaci = new String[2];
 		podaci[0] = "Naslov Testne Poruke " + Helper.getRandomString(5);

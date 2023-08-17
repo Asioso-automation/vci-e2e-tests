@@ -25,7 +25,6 @@ public class PX_DIST_025_Administracijske_Poruke_CRUD_Test  extends BaseTest {
 		homePage.verifikujPocetnuStranicu();
 		Poruke poruke = homePage.navigirajNaPoruke();
 		poruke.verifikujPoruke();
-		poruke.pokupiIdPoruke();
 		podaci = poruke.dodajPoruku();
 		poruke.verifikujPoruku("Uspješno završeno.");
 		poruke.pretraziStavku(homePage.filterKolona3WE, podaci[0]);
@@ -42,7 +41,6 @@ public class PX_DIST_025_Administracijske_Poruke_CRUD_Test  extends BaseTest {
 		homePage.verifikujPocetnuStranicu();
 		Poruke poruke = homePage.navigirajNaPoruke();
 		poruke.verifikujPoruke();
-		poruke.pokupiIdPoruke();
 		podaci = poruke.dodajPoruku();
 		poruke.verifikujPoruku("Uspješno završeno.");
 		homePage.navigirajNaPocetnaStranica();
@@ -50,24 +48,6 @@ public class PX_DIST_025_Administracijske_Poruke_CRUD_Test  extends BaseTest {
 		homePage.verifikujPocetnuStranicu();
 		poruke.verifikujPorukuPocetna(podaci[0], podaci[1]);
 	}
-	
-//	@Test (description="test kreira, verifikuje i uredjuje ADMINISTRACIJSKU PORUKU")
-//	public void px_dist_025_3_uredjivanje_administracijske_poruke_test() throws Exception {
-//		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
-//		logIn.verifikujLogIn();
-//		logIn.logIn();
-//		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
-//		homePage.verifikujPocetnuStranicu();
-//		Poruke poruke = homePage.navigirajNaPoruke();
-//		poruke.verifikujPoruke();
-//		poruke.pokupiIdPoruke();
-//		podaci = poruke.dodajPoruku();
-//		poruke.verifikujPoruku("Uspješno završeno.");
-//		poruke.pretraziStavku(homePage.filterKolona3WE, podaci[0]);
-//		poruke.verifikujPoruke();
-//		poruke.verifikujStavku(podaci[0], homePage.podatak2Tabela3WE);
-////		TODO dodati metodu za uredjivanje poruke
-//	}
 	
 	@Test (description="test kreira, verifikuje i brise ADMINISTRACIJSKU PORUKU")
 	public void px_dist_025_4_brisanje_administracijske_poruke_test() throws Exception {
@@ -78,7 +58,6 @@ public class PX_DIST_025_Administracijske_Poruke_CRUD_Test  extends BaseTest {
 		homePage.verifikujPocetnuStranicu();
 		Poruke poruke = homePage.navigirajNaPoruke();
 		poruke.verifikujPoruke();
-		poruke.pokupiIdPoruke();
 		podaci = poruke.dodajPoruku();
 		poruke.verifikujPoruku("Uspješno završeno.");
 		poruke.pretraziStavku(homePage.filterKolona3WE, podaci[0]);

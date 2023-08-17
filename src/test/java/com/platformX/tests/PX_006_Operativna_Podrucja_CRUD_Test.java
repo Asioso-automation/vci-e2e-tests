@@ -57,7 +57,7 @@ public class PX_006_Operativna_Podrucja_CRUD_Test extends BaseTest {
 		operativnaPodrucja.verifikujOperativnaPodrucja();
 		operativnaPodrucja.verifikujStavku(podrucje, homePage.podatak2Tabela2WE);
 		operativnaPodrucja.obrisiStavku();
-		operativnaPodrucja.verifikujPoruku("Brisanje je uspješno završeno");
+		operativnaPodrucja.verifikujPoruku("Brisanje je uspješno završeno.");
 		operativnaPodrucja.pretraziStavku(homePage.filterKolona2WE, podrucje);
 		operativnaPodrucja.verifikujPraznuTabelu();
 	}

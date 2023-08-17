@@ -24,7 +24,6 @@ public class VanbilansnaEvidencijaTroskovaSudskihPostupaka extends PocetnaStrani
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDugujeWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPotrazujeWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaOpisWE));
 	}
 	
 	

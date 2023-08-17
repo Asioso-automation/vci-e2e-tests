@@ -10,12 +10,12 @@ import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertNotNull;
 import java.io.IOException;
 
-public class PXD_004_Get_Administration_Users_Test extends RestApiBase {
+public class PXD_002_Administration_Users_Test extends RestApiBase{
 
-	public PXD_004_Get_Administration_Users_Test() throws IOException {
+	public PXD_002_Administration_Users_Test() throws IOException {
 		super();
 	}
-
+	
 	@Test(description = "positive test case")
 	public void pxd_get_administration_users_test1() {
 		// Authorization
@@ -62,4 +62,5 @@ public class PXD_004_Get_Administration_Users_Test extends RestApiBase {
 		Response response = methodGET("http://10.10.10.21:8086/api/Administrations/Users/Get/1");
 		assertEquals(404, response.getStatusCode());
 	}
+	
 }

@@ -35,7 +35,8 @@ public class RestApiBase {
 
 	// method used for POST endpoints
 	public Response methodPOST(String endpoint, String payload) {
-		return given().log().all().contentType("application/json").body(payload).when().post(endpoint);
+		RequestSpecification requestSpec = builder.build();
+		return given().log().all().config(restAssuredConfig).spec(requestSpec).contentType("application/json").body(payload).when().post(endpoint);
 	}
 	
 	public void addHeader(String key, String value) {

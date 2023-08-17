@@ -18,4 +18,13 @@ public class Payloads {
 				+ "}";
 	}
 	
+	public static String pxdFieldUnitList(int skip, int take, String sortColumn, String sortColumnDirection) {
+		return "{\r\n"
+				+ " \"skip\": " + skip + ", \r\n"
+				+ "	\"take\": " + take + ", \r\n"
+				+ "	\"sortColumnName\": \"" + sortColumn + "\", \r\n"
+				+ "	\"sortColumnDirection\": \"" + sortColumnDirection + "\", \r\n"
+				+ "	\"filters\": {} }";
+	}
+	
 }

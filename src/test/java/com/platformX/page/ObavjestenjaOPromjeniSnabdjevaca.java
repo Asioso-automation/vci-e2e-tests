@@ -26,7 +26,8 @@ public class ObavjestenjaOPromjeniSnabdjevaca extends PocetnaStranica {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumKreiranjaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaOcekivaniDatumZavrsetkaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumZavrsetkaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaRazlogOdbijanjaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPotvrdjenWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaOdbijenWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaRealizovanWE));
 	}
 
