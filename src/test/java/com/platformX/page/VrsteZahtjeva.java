@@ -47,6 +47,7 @@ public class VrsteZahtjeva extends PocetnaStranica {
 		opisWE.sendKeys(opis);
 		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
 		submitBtnWE.click();
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		return opis;
 	}
 	

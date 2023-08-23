@@ -17,7 +17,7 @@ public class Predracuni extends PocetnaStranica {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title body-1 ml-0 pl-0 text-default') and starts-with(., ' Predračuni')]")));
-		verifikacijaZajednickihElemenata("Nestandardne Usluge", "Predračuni", "Predračuni", 12, false, false, true, true, true, true, false);
+		verifikacijaZajednickihElemenata("Nestandardne Usluge", "Predračuni", "Predračuni", 13, false, false, true, true, true, true, false);
         wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
         wait.until(ExpectedConditions.visibilityOf(kolone.kolonaSerijskiBrojWE));
         wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPeriodWE));
@@ -26,6 +26,7 @@ public class Predracuni extends PocetnaStranica {
         wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPozivNaBrojWE));
         wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIznosBezPdvWE));
         wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPdv1WE));
+        wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKamataWE));
         wait.until(ExpectedConditions.visibilityOf(kolone.kolonaUkupnoWE));
         wait.until(ExpectedConditions.visibilityOf(kolone.kolonaZakljucenWE));
 	}
