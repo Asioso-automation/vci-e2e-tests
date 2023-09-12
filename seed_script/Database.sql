@@ -512,10 +512,16 @@ INSERT [Customer].[Customer] ([Id], [IsLegalEntity], [Name], [PrintName], [Addit
 
 SET IDENTITY_INSERT [Customer].[Customer] OFF
 
+SET IDENTITY_INSERT [Customer].[ComplaintType] ON 
+
+INSERT INTO [Customer].[ComplaintType] ([Id], [Name]) VALUES ( 1, N'Prigovor')
+
+SET IDENTITY_INSERT [Customer].[ComplaintType] OFF
+
 SET IDENTITY_INSERT [Customer].[RequestType] ON 
 
-INSERT [Customer].[RequestType] ([Id], [Description]) VALUES (1, N'Vrsta zahtjeva 1')
-INSERT [Customer].[RequestType] ([Id], [Description]) VALUES (2, N'Vrsta zahtjeva 2')
+INSERT [Customer].[RequestType] ([Id], [Description], [ComplaintTypeId], [Code]) VALUES (1, N'Vrsta zahtjeva 1', 1, 'P-1')
+INSERT [Customer].[RequestType] ([Id], [Description], [ComplaintTypeId], [Code]) VALUES (2, N'Vrsta zahtjeva 2', 1, 'P-2')
 
 SET IDENTITY_INSERT [Customer].[RequestType] OFF
 
