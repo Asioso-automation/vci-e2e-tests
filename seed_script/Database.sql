@@ -512,11 +512,9 @@ INSERT [Customer].[Customer] ([Id], [IsLegalEntity], [Name], [PrintName], [Addit
 
 SET IDENTITY_INSERT [Customer].[Customer] OFF
 
-SET IDENTITY_INSERT [Customer].[ComplaintType] ON 
 
 INSERT INTO [Customer].[ComplaintType] ([Id], [Name]) VALUES ( 1, N'Prigovor')
 
-SET IDENTITY_INSERT [Customer].[ComplaintType] OFF
 
 SET IDENTITY_INSERT [Customer].[RequestType] ON 
 
