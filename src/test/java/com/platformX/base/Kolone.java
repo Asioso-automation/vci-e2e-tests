@@ -1282,6 +1282,12 @@ public class Kolone extends PageBase {
 	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Reaktivna - Korekcije za period']")
 	public WebElement kolonaReaktivnaKorekcijeZaPeriodWE;
 	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Datum prvog očitanja za period']")
+	public WebElement kolonaDatumPrvogOcitanjaZaPeriodWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Datum posljednjeg očitanja za period']")
+	public WebElement kolonaDatumPosljednjegOcitanjaZaPeriodWE;
+	
 	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Adresa mjernog mjesta']")
 	public WebElement kolonaAdresaMjernogMjestaWE;
 	
