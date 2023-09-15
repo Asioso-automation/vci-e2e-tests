@@ -23,8 +23,11 @@ public class PX_016_Vrste_Zahtjeva_CRUD_Test extends BaseTest {
 		homePage.verifikujPocetnuStranicu();
 		VrsteZahtjeva vrsteZahtjeva = homePage.navigirajNaVrsteZahtjeva();
 		vrsteZahtjeva.verifikujVrsteZahtjeva();
-		String opis = vrsteZahtjeva.dodajVrstuZahtjeva();
-		vrsteZahtjeva.verifikujVrstuZahtjeva(opis);
+		String kod = vrsteZahtjeva.dodajVrstuZahtjeva();
+		vrsteZahtjeva.verifikujPoruku("Uspješno završeno.");
+		vrsteZahtjeva.pretraziStavku(homePage.filterKolona3WE, kod);
+		vrsteZahtjeva.verifikujVrsteZahtjeva();
+		vrsteZahtjeva.verifikujStavku(kod, homePage.podatak2Tabela3WE);
 	}
 	
 	@Test
@@ -36,10 +39,16 @@ public class PX_016_Vrste_Zahtjeva_CRUD_Test extends BaseTest {
 		homePage.verifikujPocetnuStranicu();
 		VrsteZahtjeva vrsteZahtjeva = homePage.navigirajNaVrsteZahtjeva();
 		vrsteZahtjeva.verifikujVrsteZahtjeva();
-		String opis = vrsteZahtjeva.dodajVrstuZahtjeva();
-		vrsteZahtjeva.verifikujVrstuZahtjeva(opis);
-		String noviOpis = vrsteZahtjeva.urediVrstuZahtjeva();
-		vrsteZahtjeva.verifikujVrstuZahtjeva(noviOpis);
+		String kod = vrsteZahtjeva.dodajVrstuZahtjeva();
+		vrsteZahtjeva.verifikujPoruku("Uspješno završeno.");
+		vrsteZahtjeva.pretraziStavku(homePage.filterKolona3WE, kod);
+		vrsteZahtjeva.verifikujVrsteZahtjeva();
+		vrsteZahtjeva.verifikujStavku(kod, homePage.podatak2Tabela3WE);
+		String noviKod = vrsteZahtjeva.urediVrstuZahtjeva();
+		vrsteZahtjeva.verifikujPoruku("Uspješno završeno.");
+		vrsteZahtjeva.pretraziStavku(homePage.filterKolona3WE, noviKod);
+		vrsteZahtjeva.verifikujVrsteZahtjeva();
+		vrsteZahtjeva.verifikujStavku(noviKod, homePage.podatak2Tabela3WE);
 	}
 	
 	@Test
@@ -51,11 +60,14 @@ public class PX_016_Vrste_Zahtjeva_CRUD_Test extends BaseTest {
 		homePage.verifikujPocetnuStranicu();
 		VrsteZahtjeva vrsteZahtjeva = homePage.navigirajNaVrsteZahtjeva();
 		vrsteZahtjeva.verifikujVrsteZahtjeva();
-		String opis = vrsteZahtjeva.dodajVrstuZahtjeva();
-		vrsteZahtjeva.verifikujVrstuZahtjeva(opis);
+		String kod = vrsteZahtjeva.dodajVrstuZahtjeva();
+		vrsteZahtjeva.verifikujPoruku("Uspješno završeno.");
+		vrsteZahtjeva.pretraziStavku(homePage.filterKolona3WE, kod);
+		vrsteZahtjeva.verifikujVrsteZahtjeva();
+		vrsteZahtjeva.verifikujStavku(kod, homePage.podatak2Tabela3WE);
 		vrsteZahtjeva.obrisiStavku();
 		vrsteZahtjeva.verifikujPoruku("Brisanje je uspješno završeno.");
-		vrsteZahtjeva.pretraziStavku(homePage.filterKolona2WE, opis);
+		vrsteZahtjeva.pretraziStavku(homePage.filterKolona2WE, kod);
 		vrsteZahtjeva.verifikujPraznuTabelu();
 	}
 	

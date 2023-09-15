@@ -27,7 +27,7 @@ public class Reklamacije extends PocetnaStranica {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaUgovorWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumRjesenjaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaVrstaIsporukeWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaZakljucenoWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaStatusReklamacijeWE));
 	}
 
 }

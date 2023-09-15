@@ -61,7 +61,7 @@ public class FizickaLica extends PocetnaStranicaPXD {
 		wait.until(ExpectedConditions.elementToBeClickable(poljeImeIPrezimeWE));
 		poljeImeIPrezimeWE.sendKeys(nazivFizickogLica);
 		wait.until(ExpectedConditions.elementToBeClickable(poljeStampaniNazivNaDokumentimaWE));
-		poljeStampaniNazivNaDokumentimaWE.sendKeys(Helper.getRandomString(10));
+		poljeStampaniNazivNaDokumentimaWE.sendKeys(nazivFizickogLica);
 		wait.until(ExpectedConditions.elementToBeClickable(poljeMjestoWE));
 		poljeMjestoWE.sendKeys("6 - Banja Luka");
 		wait.until(ExpectedConditions.elementToBeClickable(odaberiMjestoWE));

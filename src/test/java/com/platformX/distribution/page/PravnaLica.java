@@ -67,7 +67,7 @@ public class PravnaLica extends PocetnaStranicaPXD {
 		wait.until(ExpectedConditions.elementToBeClickable(poljeNazivWE));
 		poljeNazivWE.sendKeys(nazivPravnogLica);
 		wait.until(ExpectedConditions.elementToBeClickable(poljeStampaniNazivNaDokumentimaWE));
-		poljeStampaniNazivNaDokumentimaWE.sendKeys(Helper.getRandomString(6));
+		poljeStampaniNazivNaDokumentimaWE.sendKeys(nazivPravnogLica);
 		wait.until(ExpectedConditions.elementToBeClickable(poljeJibWE));
 		poljeJibWE.sendKeys(Helper.getRandomNumber(13));
 		wait.until(ExpectedConditions.elementToBeClickable(poljeMjestoWE));

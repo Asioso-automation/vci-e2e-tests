@@ -781,6 +781,12 @@ public class Kolone extends PageBase {
 	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Status']")
 	public WebElement kolonaStatusWE;
 	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Status reklamacije']")
+	public WebElement kolonaStatusReklamacijeWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Tip vrste reklamacije']")
+	public WebElement kolonaTipVrsteReklamacijeWE;
+	
 	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Ukupan broj fajlova']")
 	public WebElement kolonaUkupanBrojFajlovaWE;
 	
