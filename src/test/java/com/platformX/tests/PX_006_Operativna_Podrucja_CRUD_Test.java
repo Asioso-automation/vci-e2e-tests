@@ -24,7 +24,9 @@ public class PX_006_Operativna_Podrucja_CRUD_Test extends BaseTest {
 		OperativnaPodrucja operativnaPodrucja = homePage.navigirajNaOperativnaPodrucja();
 		operativnaPodrucja.verifikujOperativnaPodrucja();
 		String podrucje = operativnaPodrucja.dodajOperativnoPodrucje();
-		operativnaPodrucja.verifikujOperativnoPodrucje(podrucje);
+		operativnaPodrucja.pretraziStavku(homePage.filterKolona2WE, podrucje);
+		operativnaPodrucja.verifikujOperativnaPodrucja();
+		operativnaPodrucja.verifikujStavku(podrucje, homePage.podatak2Tabela2WE);
 	}
 	
 	@Test
@@ -37,9 +39,13 @@ public class PX_006_Operativna_Podrucja_CRUD_Test extends BaseTest {
 		OperativnaPodrucja operativnaPodrucja = homePage.navigirajNaOperativnaPodrucja();
 		operativnaPodrucja.verifikujOperativnaPodrucja();
 		String podrucje = operativnaPodrucja.dodajOperativnoPodrucje();
-		operativnaPodrucja.verifikujOperativnoPodrucje(podrucje);
+		operativnaPodrucja.pretraziStavku(homePage.filterKolona2WE, podrucje);
+		operativnaPodrucja.verifikujOperativnaPodrucja();
+		operativnaPodrucja.verifikujStavku(podrucje, homePage.podatak2Tabela2WE);
 		String novoPodrucje = operativnaPodrucja.urediOperativnoPodrucje();
-		operativnaPodrucja.verifikujOperativnoPodrucje(novoPodrucje);
+		operativnaPodrucja.pretraziStavku(homePage.filterKolona2WE, novoPodrucje);
+		operativnaPodrucja.verifikujOperativnaPodrucja();
+		operativnaPodrucja.verifikujStavku(novoPodrucje, homePage.podatak2Tabela2WE);
 	}
 	
 	@Test

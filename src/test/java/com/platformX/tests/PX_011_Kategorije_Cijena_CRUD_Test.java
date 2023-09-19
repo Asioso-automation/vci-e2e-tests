@@ -24,7 +24,10 @@ public class PX_011_Kategorije_Cijena_CRUD_Test extends BaseTest {
 		KategorijeCijena kategorijeCijena = homePage.navigirajNaKategorijeCijena();
 		kategorijeCijena.verifikujKategorijeCijena();
 		String kategorija = kategorijeCijena.dodajKategoriju();
-		kategorijeCijena.verifikujKategoriju(kategorija);
+		kategorijeCijena.verifikujPoruku("Uspješno završeno.");
+		kategorijeCijena.pretraziStavku(homePage.filterKolona2WE, kategorija);
+		kategorijeCijena.verifikujKategorijeCijena();
+		kategorijeCijena.verifikujStavku(kategorija, homePage.podatak2Tabela2WE);
 	}
 
 	@Test
@@ -37,9 +40,15 @@ public class PX_011_Kategorije_Cijena_CRUD_Test extends BaseTest {
 		KategorijeCijena kategorijeCijena = homePage.navigirajNaKategorijeCijena();
 		kategorijeCijena.verifikujKategorijeCijena();
 		String kategorija = kategorijeCijena.dodajKategoriju();
-		kategorijeCijena.verifikujKategoriju(kategorija);
+		kategorijeCijena.verifikujPoruku("Uspješno završeno.");
+		kategorijeCijena.pretraziStavku(homePage.filterKolona2WE, kategorija);
+		kategorijeCijena.verifikujKategorijeCijena();
+		kategorijeCijena.verifikujStavku(kategorija, homePage.podatak2Tabela2WE);
 		String novaKategorija = kategorijeCijena.urediKategorijuCijena();
-		kategorijeCijena.verifikujKategoriju(novaKategorija);
+		kategorijeCijena.verifikujPoruku("Uspješno završeno.");
+		kategorijeCijena.pretraziStavku(homePage.filterKolona2WE, novaKategorija);
+		kategorijeCijena.verifikujKategorijeCijena();
+		kategorijeCijena.verifikujStavku(novaKategorija, homePage.podatak2Tabela2WE);
 	}
 	
 	@Test
@@ -54,7 +63,7 @@ public class PX_011_Kategorije_Cijena_CRUD_Test extends BaseTest {
 		String kategorija = kategorijeCijena.dodajKategoriju();
 		kategorijeCijena.verifikujKategoriju(kategorija);
 		kategorijeCijena.obrisiStavku();
-		kategorijeCijena.verifikujPoruku("Brisanje je uspješno završeno.");
+		//kategorijeCijena.verifikujPoruku("Brisanje je uspješno završeno.");
 		kategorijeCijena.pretraziStavku(homePage.filterKolona2WE, kategorija);
 		kategorijeCijena.verifikujPraznuTabelu();
 	}

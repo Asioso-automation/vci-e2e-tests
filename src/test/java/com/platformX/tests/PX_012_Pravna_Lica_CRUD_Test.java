@@ -24,7 +24,10 @@ public class PX_012_Pravna_Lica_CRUD_Test extends BaseTest {
 		PravnaLica pravnaLica = homePage.navigirajNaPravnaLica();
 		pravnaLica.verifikujPravnaLica();
 		String pravnoLice = pravnaLica.dodajPravnoLice();
+		pravnaLica.verifikujPoruku("Uspješno završeno.");
+		pravnaLica.pretraziStavku(homePage.filterKolona2WE, pravnoLice);
 		pravnaLica.verifikujPravnaLica();
+		pravnaLica.verifikujStavku(pravnoLice, homePage.podatak2Tabela2WE);
 		pravnaLica.verifikujPravnoLice(pravnoLice);
 	}
 	
@@ -38,10 +41,16 @@ public class PX_012_Pravna_Lica_CRUD_Test extends BaseTest {
 		PravnaLica pravnaLica = homePage.navigirajNaPravnaLica();
 		pravnaLica.verifikujPravnaLica();
 		String pravnoLice = pravnaLica.dodajPravnoLice();
+		pravnaLica.verifikujPoruku("Uspješno završeno.");
+		pravnaLica.pretraziStavku(homePage.filterKolona2WE, pravnoLice);
 		pravnaLica.verifikujPravnaLica();
+		pravnaLica.verifikujStavku(pravnoLice, homePage.podatak2Tabela2WE);
 		pravnaLica.verifikujPravnoLice(pravnoLice);
 		String novoPravnoLice = pravnaLica.urediPravnoLice();
-		pravnaLica.verifikujPravnoLice(novoPravnoLice);
+		pravnaLica.verifikujPoruku("Uspješno završeno.");
+		pravnaLica.pretraziStavku(homePage.filterKolona2WE, novoPravnoLice);
+		pravnaLica.verifikujPravnaLica();
+		pravnaLica.verifikujStavku(novoPravnoLice, homePage.podatak2Tabela2WE);
 	}
 	
 	@Test

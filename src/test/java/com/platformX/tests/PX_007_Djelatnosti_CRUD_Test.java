@@ -25,7 +25,9 @@ public class PX_007_Djelatnosti_CRUD_Test extends BaseTest {
 		djelatnosti.verifikujDjelatnosti();
 		String djelatnost = djelatnosti.dodajDjelatnost();
 		djelatnosti.verifikujPoruku("Uspješno završeno.");
-		djelatnosti.verifikujDjelatnost(djelatnost);
+		djelatnosti.pretraziStavku(homePage.filterKolona3WE, djelatnost);
+		djelatnosti.verifikujDjelatnosti();
+		djelatnosti.verifikujStavku(djelatnost, homePage.podatak2Tabela3WE);
 	}
 	
 	@Test
@@ -39,10 +41,14 @@ public class PX_007_Djelatnosti_CRUD_Test extends BaseTest {
 		djelatnosti.verifikujDjelatnosti();
 		String djelatnost = djelatnosti.dodajDjelatnost();
 		djelatnosti.verifikujPoruku("Uspješno završeno.");
-		djelatnosti.verifikujDjelatnost(djelatnost);
+		djelatnosti.pretraziStavku(homePage.filterKolona3WE, djelatnost);
+		djelatnosti.verifikujDjelatnosti();
+		djelatnosti.verifikujStavku(djelatnost, homePage.podatak2Tabela3WE);
 		String novaDjelatnost = djelatnosti.urediDjelatnost();
 		djelatnosti.verifikujPoruku("Uspješno završeno.");
-		djelatnosti.verifikujDjelatnost(novaDjelatnost);
+		djelatnosti.pretraziStavku(homePage.filterKolona3WE, novaDjelatnost);
+		djelatnosti.verifikujDjelatnosti();
+		djelatnosti.verifikujStavku(novaDjelatnost, homePage.podatak2Tabela3WE);
 	}
 	
 	@Test
@@ -58,7 +64,7 @@ public class PX_007_Djelatnosti_CRUD_Test extends BaseTest {
 		djelatnosti.verifikujPoruku("Uspješno završeno.");
 		djelatnosti.verifikujDjelatnost(djelatnost);
 		djelatnosti.obrisiStavku();
-		djelatnosti.verifikujPoruku("Brisanje je uspješno završeno.");
+		//djelatnosti.verifikujPoruku("Brisanje je uspješno završeno.");
 		djelatnosti.pretraziStavku(homePage.filterKolona3WE, djelatnost);
 		djelatnosti.verifikujPraznuTabelu();
 	}

@@ -24,7 +24,10 @@ public class PX_009_Ulice_CRUD_Test extends BaseTest {
 		Ulice ulice = homePage.navigirajNaUlice();
 		ulice.verifikujUlice();
 		String ulica = ulice.dodajUlicu();
-		ulice.verifikujUlicu(ulica);
+		ulice.verifikujPoruku("Uspješno završeno.");
+		ulice.pretraziStavku(homePage.filterKolona2WE, ulica);
+		ulice.verifikujUlice();
+		ulice.verifikujStavku(ulica, homePage.podatak2Tabela2WE);
 	}
 	
 	@Test
@@ -37,9 +40,15 @@ public class PX_009_Ulice_CRUD_Test extends BaseTest {
 		Ulice ulice = homePage.navigirajNaUlice();
 		ulice.verifikujUlice();
 		String ulica = ulice.dodajUlicu();
-		ulice.verifikujUlicu(ulica);
+		ulice.verifikujPoruku("Uspješno završeno.");
+		ulice.pretraziStavku(homePage.filterKolona2WE, ulica);
+		ulice.verifikujUlice();
+		ulice.verifikujStavku(ulica, homePage.podatak2Tabela2WE);
 		String novaUlica = ulice.urediUlicu();
-		ulice.verifikujUlicu(novaUlica);
+		ulice.verifikujPoruku("Uspješno završeno.");
+		ulice.pretraziStavku(homePage.filterKolona2WE, novaUlica);
+		ulice.verifikujUlice();
+		ulice.verifikujStavku(novaUlica, homePage.podatak2Tabela2WE);
 	}
 	
 	@Test

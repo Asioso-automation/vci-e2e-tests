@@ -24,7 +24,10 @@ public class PX_020_Banke_CRUD_Test extends BaseTest {
 		Banke banke = homePage.navigirajNaBanke();
 		banke.verifikujBanke();
 		String banka = banke.dodajBanku();
-		banke.verifikujBanku(banka);
+		banke.verifikujPoruku("Uspješno završeno.");
+		banke.pretraziStavku(homePage.filterKolona2WE, banka);
+		banke.verifikujBanke();
+		banke.verifikujStavku(banka, homePage.podatak2Tabela2WE);
 	}
 	
 	@Test (description = "pokusaj dodavanja banke sa postojecim nazivom")
@@ -37,7 +40,10 @@ public class PX_020_Banke_CRUD_Test extends BaseTest {
 		Banke banke = homePage.navigirajNaBanke();
 		banke.verifikujBanke();
 		String banka = banke.dodajBanku();
-		banke.verifikujBanku(banka);
+		banke.verifikujPoruku("Uspješno završeno.");
+		banke.pretraziStavku(homePage.filterKolona2WE, banka);
+		banke.verifikujBanke();
+		banke.verifikujStavku(banka, homePage.podatak2Tabela2WE);
 		banke.dodajBankuSaImenom(banka);
 		banke.verifikujPoruku("Ovaj naziv banke je već u upotrebi.");	
 	}
@@ -52,9 +58,15 @@ public class PX_020_Banke_CRUD_Test extends BaseTest {
 		Banke banke = homePage.navigirajNaBanke();
 		banke.verifikujBanke();
 		String banka = banke.dodajBanku();
-		banke.verifikujBanku(banka);
+		banke.verifikujPoruku("Uspješno završeno.");
+		banke.pretraziStavku(homePage.filterKolona2WE, banka);
+		banke.verifikujBanke();
+		banke.verifikujStavku(banka, homePage.podatak2Tabela2WE);
 		String novaBanka = banke.urediBanku();
-		banke.verifikujBanku(novaBanka);
+		banke.verifikujPoruku("Uspješno završeno.");
+		banke.pretraziStavku(homePage.filterKolona2WE, novaBanka);
+		banke.verifikujBanke();
+		banke.verifikujStavku(novaBanka, homePage.podatak2Tabela2WE);
 	}
 	
 	@Test

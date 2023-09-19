@@ -24,7 +24,10 @@ public class PX_010_Tarifne_Grupe_CRUD_Test extends BaseTest {
 		TarifneGrupe tarifneGrupe = homePage.navigirajNaTarifneGrupe();
 		tarifneGrupe.verifikujTarifneGrupe();
 		String tarifnaGrupa = tarifneGrupe.dodajTarifnuGrupu();
-		tarifneGrupe.verifikujTarifnuGrupu(tarifnaGrupa);
+		tarifneGrupe.verifikujPoruku("Uspješno završeno.");
+		tarifneGrupe.pretraziStavku(homePage.filterKolona2WE, tarifnaGrupa);
+		tarifneGrupe.verifikujTarifneGrupe();
+		tarifneGrupe.verifikujStavku(tarifnaGrupa, homePage.podatak2Tabela2WE);
 	}
 	
 	@Test (enabled=false)
@@ -37,9 +40,15 @@ public class PX_010_Tarifne_Grupe_CRUD_Test extends BaseTest {
 		TarifneGrupe tarifneGrupe = homePage.navigirajNaTarifneGrupe();
 		tarifneGrupe.verifikujTarifneGrupe();
 		String tarifnaGrupa = tarifneGrupe.dodajTarifnuGrupu();
-		tarifneGrupe.verifikujTarifnuGrupu(tarifnaGrupa);
+		tarifneGrupe.verifikujPoruku("Uspješno završeno.");
+		tarifneGrupe.pretraziStavku(homePage.filterKolona2WE, tarifnaGrupa);
+		tarifneGrupe.verifikujTarifneGrupe();
+		tarifneGrupe.verifikujStavku(tarifnaGrupa, homePage.podatak2Tabela2WE);
 		String novaTarifnaGrupa = tarifneGrupe.urediTarifnuGrupu();
-		tarifneGrupe.verifikujTarifnuGrupu(novaTarifnaGrupa);
+		tarifneGrupe.verifikujPoruku("Uspješno završeno.");
+		tarifneGrupe.pretraziStavku(homePage.filterKolona2WE, novaTarifnaGrupa);
+		tarifneGrupe.verifikujTarifneGrupe();
+		tarifneGrupe.verifikujStavku(novaTarifnaGrupa, homePage.podatak2Tabela2WE);
 	}
 	
 	@Test (enabled=false)

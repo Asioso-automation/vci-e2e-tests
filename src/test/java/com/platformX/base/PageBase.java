@@ -97,6 +97,9 @@ public abstract class PageBase {
 	
 //	VERIFIKACIJE - ELEMENTI
 	
+	@FindBy(xpath = "//td[2]/div/div[1]/div/div/div/div[1]/input")
+	public WebElement filterKolonaWE;
+	
 	@FindBy(xpath = "//td[2]/div/div/div/div[1]/input")
 	public WebElement filterKolona2WE;
 	

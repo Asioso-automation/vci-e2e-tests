@@ -29,7 +29,10 @@ public class PX_005_Radne_Jedinice_CRUD_Test extends BaseTest {
 		RadneJedinice radneJedinice = homePage.navigirajNaRadneJedinice();
 		radneJedinice.verifikujRadneJedinice();
 		radneJedinice.dodajRadnuJedinicu(radnaJedinica);
-		radneJedinice.verifikujRadnuJedinicu(radnaJedinica);
+		radneJedinice.verifikujPoruku("Uspješno završeno.");
+		radneJedinice.pretraziStavku(homePage.filterKolona2WE, radnaJedinica);
+		radneJedinice.verifikujRadneJedinice();
+		radneJedinice.verifikujStavku(radnaJedinica, homePage.podatak2Tabela2WE);
 	}
 	
 	@Test(dependsOnMethods = { "px_005_1_dodavanje_radne_jedinice_test" }, retryAnalyzer = RetryAnalyzer.class)
@@ -41,9 +44,11 @@ public class PX_005_Radne_Jedinice_CRUD_Test extends BaseTest {
 		homePage.verifikujPocetnuStranicu();
 		RadneJedinice radneJedinice = homePage.navigirajNaRadneJedinice();
 		radneJedinice.verifikujRadneJedinice();
-		radneJedinice.verifikujRadnuJedinicu(radnaJedinica);
+		radneJedinice.pretraziStavku(homePage.filterKolona2WE, radnaJedinica);
 		radneJedinice.urediRadnuJedinicu(novaRadnaJedinica);
-		radneJedinice.verifikujRadnuJedinicu(novaRadnaJedinica);
+		radneJedinice.pretraziStavku(homePage.filterKolona2WE, novaRadnaJedinica);
+		radneJedinice.verifikujRadneJedinice();
+		radneJedinice.verifikujStavku(novaRadnaJedinica, homePage.podatak2Tabela2WE);
 	}
 	
 	@Test(dependsOnMethods = { "px_005_2_uredjivanje_radne_jedinice_test" }, retryAnalyzer = RetryAnalyzer.class)

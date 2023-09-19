@@ -24,7 +24,10 @@ public class PX_017_Umanjenja_Cijene_CRUD_Test extends BaseTest {
 		UmanjenjaCijene umanjenjaCijene = homePage.navigirajNaUmanjenjaCijene();
 		umanjenjaCijene.verifikujUmanjenjaCijene();
 		String brojMjeseci = umanjenjaCijene.dodajUmanjenjeCijene();
-		umanjenjaCijene.verifikujUmanjenjeCijene(brojMjeseci);
+		umanjenjaCijene.verifikujPoruku("Uspješno završeno.");
+		umanjenjaCijene.pretraziStavku(homePage.filterKolonaWE, brojMjeseci);
+		umanjenjaCijene.verifikujUmanjenjaCijene();
+		umanjenjaCijene.verifikujStavku(brojMjeseci, homePage.podatak2Tabela2WE);
 	}
 	
 	@Test (description = "pokusaj dodavanja umanjenja cijene za postojeći broj mjeseci")
@@ -52,11 +55,15 @@ public class PX_017_Umanjenja_Cijene_CRUD_Test extends BaseTest {
 		UmanjenjaCijene umanjenjaCijene = homePage.navigirajNaUmanjenjaCijene();
 		umanjenjaCijene.verifikujUmanjenjaCijene();
 		String brojMjeseci = umanjenjaCijene.dodajUmanjenjeCijene();
-		umanjenjaCijene.verifikujUmanjenjeCijene(brojMjeseci);
-		String noviBrojMjeseci = umanjenjaCijene.urediUmanjenjeCijene();
+		umanjenjaCijene.verifikujPoruku("Uspješno završeno.");
+		umanjenjaCijene.pretraziStavku(homePage.filterKolonaWE, brojMjeseci);
 		umanjenjaCijene.verifikujUmanjenjaCijene();
-		umanjenjaCijene.osvjeziStranicu();
-		umanjenjaCijene.verifikujUmanjenjeCijene(noviBrojMjeseci);
+		umanjenjaCijene.verifikujStavku(brojMjeseci, homePage.podatak2Tabela2WE);
+		String noviBrojMjeseci = umanjenjaCijene.urediUmanjenjeCijene();
+		umanjenjaCijene.verifikujPoruku("Uspješno završeno.");
+		umanjenjaCijene.pretraziStavku(homePage.filterKolonaWE, noviBrojMjeseci);
+		umanjenjaCijene.verifikujUmanjenjaCijene();
+		umanjenjaCijene.verifikujStavku(noviBrojMjeseci, homePage.podatak2Tabela2WE);
 	}
 	
 	@Test
