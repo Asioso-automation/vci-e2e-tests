@@ -53,7 +53,7 @@ public class MonitoringOcitanja extends PocetnaStranicaPXD {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Monitoring očitanja')]")));
-		verifikacijaZajednickihElemenata("Očitanja", "Monitoring Očitanja", "Monitoring očitanja", 128, false, false, false, false, false, false, false);
+		verifikacijaZajednickihElemenata("Očitanja", "Monitoring Očitanja", "Monitoring očitanja", 129, false, false, false, false, false, false, false);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].scrollIntoView(true);", neocitanaBrojilaBtnWE);
 		wait.until(ExpectedConditions.visibilityOf(neocitanaBrojilaBtnWE));
@@ -120,6 +120,7 @@ public class MonitoringOcitanja extends PocetnaStranicaPXD {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonCitacWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonNovaPotrosnjaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonProsjecnaPotrosnjaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonProcenatOdstupanjaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonAvtWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonAmtWE));
 		slideRightBtnWE.click();
