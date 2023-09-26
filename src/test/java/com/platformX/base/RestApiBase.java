@@ -39,6 +39,12 @@ public class RestApiBase {
 		return given().log().all().config(restAssuredConfig).spec(requestSpec).contentType("application/json").body(payload).when().post(endpoint);
 	}
 	
+	// method used for DELETE endpoints
+	public Response methodDELETE(String endpoint) {
+		RequestSpecification requestSpec = builder.build();
+		return given().log().all().config(restAssuredConfig).spec(requestSpec).when().delete(endpoint);
+	}
+	
 	public void addHeader(String key, String value) {
     	RequestSpecBuilder requestSpecBuilder = new RequestSpecBuilder();
     	requestSpecBuilder.addHeader(key, value);

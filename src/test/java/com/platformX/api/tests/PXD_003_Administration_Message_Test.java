@@ -49,6 +49,9 @@ public class PXD_003_Administration_Message_Test extends BaseTest {
 		assertEquals(200, response2.getStatusCode());
 		JsonPath jp2 = new JsonPath(response2.asString());
 		assertNotNull(jp2.getString("id"), "Id not forwarded");
+		assertNotNull(jp2.getString("title"), "Title not forwarded");
+		assertNotNull(jp2.getString("body"), "Body not forwarded");
+		assertNotNull(jp2.getString("priority"), "Priority not forwarded");
 		// TODO Assert more parameters
 	}
 	

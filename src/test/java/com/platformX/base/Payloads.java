@@ -27,4 +27,22 @@ public class Payloads {
 				+ "	\"filters\": {} }";
 	}
 	
+	public static String pxdFieldUnitCreate(String name) {
+		return "{\r\n"
+				+ " \"companyId\": " + null + ", \r\n"
+				+ " \"placeId\": " + null + ", \r\n"
+				+ "	\"name\": \"" + name + "\", \r\n"
+				+ " \"address\": " + null + ", \r\n"
+				+ " \"taxId\": " + null + ", \r\n"
+				+ " \"vatNumber\": " + null + ", \r\n"
+				+ " \"phone\": " + null + ", \r\n"
+				+ " \"fax\": " + null + ", \r\n"
+				+ " \"email\": " + null + ", \r\n"
+				+ " \"www\": " + null + ", \r\n"
+				+ " \"callCenter\": " + null + ", \r\n"
+				+ " \"bankAccount\": " + null + ", \r\n"
+				+ " \"failureReportingPhone\": " + null + ", \r\n"				
+				+ "}";
+	}
+	
 }

@@ -49,6 +49,8 @@ public class PX_DIST_025_Administracijske_Poruke_CRUD_Test  extends BaseTest {
 		poruke.verifikujPorukuPocetna(podaci[0], podaci[1]);
 	}
 	
+//	TODO dodati test za uredjivanje administracijske poruke
+	
 	@Test (description="test kreira, verifikuje i brise ADMINISTRACIJSKU PORUKU")
 	public void px_dist_025_4_brisanje_administracijske_poruke_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);

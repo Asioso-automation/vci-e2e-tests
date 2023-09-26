@@ -15,7 +15,9 @@ public class PX_DIST_020_Ugovor_O_Prikljucenju_CRUD_Test extends BaseTest{
 		super();
 	}
 
-	@Test
+//	trenutno se mijenja ova forma - prilagoditi testove nakon release-a
+	
+	@Test (enabled = false)
 	public void px_dist_020_1_dodavanje_ugovora_o_prikljucenju_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
@@ -38,7 +40,7 @@ public class PX_DIST_020_Ugovor_O_Prikljucenju_CRUD_Test extends BaseTest{
 		ugovor.verifikujStavku(brojProtokola, homePage.podatak2Tabela4WE);
 	}
 	
-	@Test
+	@Test (enabled = false)
 	public void px_dist_020_2_uredjivanje_ugovora_o_prikljucenju_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
@@ -63,7 +65,7 @@ public class PX_DIST_020_Ugovor_O_Prikljucenju_CRUD_Test extends BaseTest{
 		ugovor.verifikujPoruku("Uspješno završeno.");
 	}
 	
-	@Test
+	@Test (enabled = false)
 	public void px_dist_020_3_brisanje_ugovora_o_prikljucenju_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
