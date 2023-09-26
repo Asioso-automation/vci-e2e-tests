@@ -108,7 +108,7 @@ public class PXD_001_Authentication_Test extends RestApiBase {
 	@Test (description = "negative test case: missing bearer token")
 	public void pxd_get_user_data_test3_() {
 		Response response = methodGET("http://10.10.10.21:8086/api/Auth/UserData");
-		assertEquals(401, response.getStatusCode());
+		assertEquals(response.getStatusCode(), 401);
 	}
 
 }

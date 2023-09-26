@@ -14,6 +14,8 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import com.platformX.util.Helper;
 import com.platformX.util.PropertiesUtil;
 
 public abstract class PageBase {
@@ -123,6 +125,12 @@ public abstract class PageBase {
 	
 	@FindBy(xpath = "//tr[2]/td[1]")
 	public WebElement idWE;
+	
+//	API params
+	
+	public static int id;
+	public static int id1;
+	public static int wrongId = Integer.parseInt(Helper.getRandomNumber(5));
 
 	protected Select select(WebElement webElement, String name) {
 		Select selectedElement = new Select(webElement);
