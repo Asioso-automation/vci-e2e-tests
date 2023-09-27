@@ -24,8 +24,6 @@ public class PXD_004_BasicCatalogs_FieldUnits_Test extends BaseTest {
 	public PXD_004_BasicCatalogs_FieldUnits_Test() throws IOException {
 		super();
 	}
-	
-//	private int wrongId = Integer.parseInt(Helper.getRandomNumber(5));
 
 	@Test(description = "positive test case")
 	public void pxd_004_01_get_field_unit_test1() throws Exception {
@@ -72,42 +70,8 @@ public class PXD_004_BasicCatalogs_FieldUnits_Test extends BaseTest {
 		assertEquals(response2.print(), "\"Entity \\\"FieldUnit\\\" (" + PageBase.wrongId + ") was not found.\"");
 	}
 	
-	@Test(description = "positive test case", dependsOnMethods = { "pxd_004_01_get_field_unit_test1" })
-	public void  pxd_004_03_get_field_unit_lookup_test1() throws Exception {
-		// API
-		Response response1 = restApiBase.methodPOST("http://10.10.10.21:8086/api/Auth/Authenticate",
-				Payloads.pxdAuth("admin", "staging"));
-		assertEquals(response1.getStatusCode(), 200);
-		JsonPath jp1 = new JsonPath(response1.asString());
-		assertNotNull(jp1.getString("token"), "Token not forwarded");
-		String token = jp1.getString("token");
-		// Get Field Units Lookup
-		restApiBase.addHeader("Authorization", "Bearer " + token);
-		Response response2 = restApiBase.methodGET("http://10.10.10.21:8086/api/BasicCatalogs/FieldUnits/Lookup?Keyword=" + PageBase.id + "&Id=" + PageBase.id);
-		assertEquals(response2.getStatusCode(), 200);
-		JsonPath jp2 = new JsonPath(response2.asString());
-		assertNotNull(jp2.getString("id"), "Id not forwarded");
-		assertNotNull(jp2.getString("text"), "Text not forwarded");
-	}
-	
-	@Test(description = "negative test case: wrong id")
-	public void  pxd_004_04_get_field_unit_lookup_test2() throws Exception {
-		// API
-		Response response1 = restApiBase.methodPOST("http://10.10.10.21:8086/api/Auth/Authenticate",
-				Payloads.pxdAuth("admin", "staging"));
-		assertEquals(response1.getStatusCode(), 200);
-		JsonPath jp1 = new JsonPath(response1.asString());
-		assertNotNull(jp1.getString("token"), "Token not forwarded");
-		String token = jp1.getString("token");
-		// Get Field Units Lookup
-		restApiBase.addHeader("Authorization", "Bearer " + token);
-		Response response2 = restApiBase.methodGET("http://10.10.10.21:8086/api/BasicCatalogs/FieldUnits/Lookup?Keyword=" + PageBase.wrongId + "&Id=" + PageBase.wrongId);
-		assertEquals(response2.getStatusCode(), 200);
-		assertEquals(response2.print(), "[]");
-	}
-	
 	@Test(description = "positive test case")
-	public void  pxd_004_05_post_field_unit_list_test1() throws Exception {
+	public void  pxd_004_03_post_field_units_list_test1() throws Exception {
 		// API
 		Response response1 = restApiBase.methodPOST("http://10.10.10.21:8086/api/Auth/Authenticate",
 				Payloads.pxdAuth("admin", "staging"));
@@ -117,7 +81,7 @@ public class PXD_004_BasicCatalogs_FieldUnits_Test extends BaseTest {
 		String token = jp1.getString("token");
 		// Post Field Units List
 		restApiBase.addHeader("Authorization", "Bearer " + token);
-		Response response2 = restApiBase.methodPOST("http://10.10.10.21:8086/api/BasicCatalogs/FieldUnits/List", Payloads.pxdFieldUnitList(0, 10, "id", "DESC"));
+		Response response2 = restApiBase.methodPOST("http://10.10.10.21:8086/api/BasicCatalogs/FieldUnits/List", Payloads.pxdBasicList(0, 10, "id", "DESC"));
 		assertEquals(response2.getStatusCode(), 200);
 		JsonPath jp2 = new JsonPath(response2.asString());
 		assertNotNull(jp2.getString("totalCount"), "TotalCount not forwarded");
@@ -126,6 +90,40 @@ public class PXD_004_BasicCatalogs_FieldUnits_Test extends BaseTest {
 		assertNotNull(jp2.getString("data"), "Data not forwarded");
 		// TODO Assert more parameters
 	}	
+	
+	@Test(description = "positive test case", dependsOnMethods = { "pxd_004_01_get_field_unit_test1" })
+	public void  pxd_004_04_get_field_unit_lookup_test1() throws Exception {
+		// API
+		Response response1 = restApiBase.methodPOST("http://10.10.10.21:8086/api/Auth/Authenticate",
+				Payloads.pxdAuth("admin", "staging"));
+		assertEquals(response1.getStatusCode(), 200);
+		JsonPath jp1 = new JsonPath(response1.asString());
+		assertNotNull(jp1.getString("token"), "Token not forwarded");
+		String token = jp1.getString("token");
+		// Get Field Unit Lookup
+		restApiBase.addHeader("Authorization", "Bearer " + token);
+		Response response2 = restApiBase.methodGET("http://10.10.10.21:8086/api/BasicCatalogs/FieldUnits/Lookup?Keyword=" + PageBase.id + "&Id=" + PageBase.id);
+		assertEquals(response2.getStatusCode(), 200);
+		JsonPath jp2 = new JsonPath(response2.asString());
+		assertNotNull(jp2.getString("id"), "Id not forwarded");
+		assertNotNull(jp2.getString("text"), "Text not forwarded");
+	}
+	
+	@Test(description = "negative test case: wrong id")
+	public void  pxd_004_05_get_field_unit_lookup_test2() throws Exception {
+		// API
+		Response response1 = restApiBase.methodPOST("http://10.10.10.21:8086/api/Auth/Authenticate",
+				Payloads.pxdAuth("admin", "staging"));
+		assertEquals(response1.getStatusCode(), 200);
+		JsonPath jp1 = new JsonPath(response1.asString());
+		assertNotNull(jp1.getString("token"), "Token not forwarded");
+		String token = jp1.getString("token");
+		// Get Field Unit Lookup
+		restApiBase.addHeader("Authorization", "Bearer " + token);
+		Response response2 = restApiBase.methodGET("http://10.10.10.21:8086/api/BasicCatalogs/FieldUnits/Lookup?Keyword=" + PageBase.wrongId + "&Id=" + PageBase.wrongId);
+		assertEquals(response2.getStatusCode(), 200);
+		assertEquals(response2.print(), "[]");
+	}
 	
 	@Test(description = "positive test case")
 	public void  pxd_004_06_post_field_unit_test1() throws Exception {
@@ -136,7 +134,7 @@ public class PXD_004_BasicCatalogs_FieldUnits_Test extends BaseTest {
 		JsonPath jp1 = new JsonPath(response1.asString());
 		assertNotNull(jp1.getString("token"), "Token not forwarded");
 		String token = jp1.getString("token");
-		// Post Field Units Create
+		// Post Field Unit Create
 		restApiBase.addHeader("Authorization", "Bearer " + token);
 		Response response2 = restApiBase.methodPOST("http://10.10.10.21:8086/api/BasicCatalogs/FieldUnits/Create", Payloads.pxdFieldUnitCreate("TJ test"));
 		assertEquals(response2.getStatusCode(), 200);
@@ -153,7 +151,7 @@ public class PXD_004_BasicCatalogs_FieldUnits_Test extends BaseTest {
 		JsonPath jp1 = new JsonPath(response1.asString());
 		assertNotNull(jp1.getString("token"), "Token not forwarded");
 		String token = jp1.getString("token");
-		// Post Field Units Create
+		// Delete Field Unit
 		restApiBase.addHeader("Authorization", "Bearer " + token);
 		Response response2 = restApiBase.methodDELETE("http://10.10.10.21:8086/api/BasicCatalogs/FieldUnits/Delete/" + PageBase.id1);
 		assertEquals(response2.getStatusCode(), 204);

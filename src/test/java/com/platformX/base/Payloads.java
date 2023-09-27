@@ -18,7 +18,7 @@ public class Payloads {
 				+ "}";
 	}
 	
-	public static String pxdFieldUnitList(int skip, int take, String sortColumn, String sortColumnDirection) {
+	public static String pxdBasicList(int skip, int take, String sortColumn, String sortColumnDirection) {
 		return "{\r\n"
 				+ " \"skip\": " + skip + ", \r\n"
 				+ "	\"take\": " + take + ", \r\n"
