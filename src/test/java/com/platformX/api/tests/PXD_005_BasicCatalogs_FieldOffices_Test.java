@@ -92,7 +92,6 @@ public class PXD_005_BasicCatalogs_FieldOffices_Test extends BaseTest {
 		assertNotNull(jp2.getString("filteredCount"), "FilteredCount not forwarded");
 		assertNotNull(jp2.getString("dataCount"), "DataCount not forwarded");
 		assertNotNull(jp2.getString("data"), "Data not forwarded");
-		// TODO Assert more parameters
 	}
 	
 	@Test(description = "positive test case", dependsOnMethods = { "pxd_005_01_get_field_office_test1" })
