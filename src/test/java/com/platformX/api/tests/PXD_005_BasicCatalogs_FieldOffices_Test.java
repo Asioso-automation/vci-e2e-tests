@@ -71,6 +71,7 @@ public class PXD_005_BasicCatalogs_FieldOffices_Test extends BaseTest {
 		Response response2 = restApiBase.methodGET("http://10.10.10.21:8086/api/BasicCatalogs/FieldOffices/Get/" + PageBase.wrongId);
 		assertEquals(response2.getStatusCode(), 404);
 		assertEquals(response2.print(), "\"Entity \\\"FieldOffice\\\" (" + PageBase.wrongId + ") was not found.\"");
+		//TODO Map responses in properties file
 	}
 	
 	@Test(description = "positive test case")
