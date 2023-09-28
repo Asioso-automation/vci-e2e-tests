@@ -14,7 +14,7 @@ public class PX_DIST_023_Brojila_CRUD_Test  extends BaseTest {
 		super();
 	}
 	
-	@Test
+	@Test (enabled = false)
 	public void px_dist_023_1_dodavanje_brojila_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();

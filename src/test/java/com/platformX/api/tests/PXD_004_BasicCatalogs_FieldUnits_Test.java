@@ -55,7 +55,7 @@ public class PXD_004_BasicCatalogs_FieldUnits_Test extends BaseTest {
 	}
 		
 	@Test(description = "negative test case: wrong id")
-	public void  pxd_004_02_get_field_unit_test2() throws Exception {	
+	public void pxd_004_02_get_field_unit_test2() throws Exception {	
 		// API
 		Response response1 = restApiBase.methodPOST("http://10.10.10.21:8086/api/Auth/Authenticate",
 				Payloads.pxdAuth("admin", "staging"));
@@ -71,7 +71,7 @@ public class PXD_004_BasicCatalogs_FieldUnits_Test extends BaseTest {
 	}
 	
 	@Test(description = "positive test case")
-	public void  pxd_004_03_post_field_units_list_test1() throws Exception {
+	public void pxd_004_03_post_field_units_list_test1() throws Exception {
 		// API
 		Response response1 = restApiBase.methodPOST("http://10.10.10.21:8086/api/Auth/Authenticate",
 				Payloads.pxdAuth("admin", "staging"));
@@ -89,10 +89,10 @@ public class PXD_004_BasicCatalogs_FieldUnits_Test extends BaseTest {
 		assertNotNull(jp2.getString("dataCount"), "DataCount not forwarded");
 		assertNotNull(jp2.getString("data"), "Data not forwarded");
 		// TODO Assert more parameters
-	}	
+	}
 	
 	@Test(description = "positive test case", dependsOnMethods = { "pxd_004_01_get_field_unit_test1" })
-	public void  pxd_004_04_get_field_unit_lookup_test1() throws Exception {
+	public void pxd_004_04_get_field_unit_lookup_test1() throws Exception {
 		// API
 		Response response1 = restApiBase.methodPOST("http://10.10.10.21:8086/api/Auth/Authenticate",
 				Payloads.pxdAuth("admin", "staging"));
@@ -110,7 +110,7 @@ public class PXD_004_BasicCatalogs_FieldUnits_Test extends BaseTest {
 	}
 	
 	@Test(description = "negative test case: wrong id")
-	public void  pxd_004_05_get_field_unit_lookup_test2() throws Exception {
+	public void pxd_004_05_get_field_unit_lookup_test2() throws Exception {
 		// API
 		Response response1 = restApiBase.methodPOST("http://10.10.10.21:8086/api/Auth/Authenticate",
 				Payloads.pxdAuth("admin", "staging"));
@@ -126,7 +126,7 @@ public class PXD_004_BasicCatalogs_FieldUnits_Test extends BaseTest {
 	}
 	
 	@Test(description = "positive test case")
-	public void  pxd_004_06_post_field_unit_test1() throws Exception {
+	public void pxd_004_06_create_field_unit_test1() throws Exception {
 		// API
 		Response response1 = restApiBase.methodPOST("http://10.10.10.21:8086/api/Auth/Authenticate",
 				Payloads.pxdAuth("admin", "staging"));
@@ -140,10 +140,25 @@ public class PXD_004_BasicCatalogs_FieldUnits_Test extends BaseTest {
 		assertEquals(response2.getStatusCode(), 200);
 		assertNotNull(response2.print(), "Response body is empty");
 		PageBase.id1 = Integer.parseInt(response2.print());
-		}
+	}
 	
-	@Test(description = "positive test case", dependsOnMethods = { "pxd_004_06_post_field_unit_test1" })
-	public void  pxd_004_07_delete_field_unit_test1() throws Exception {
+	@Test(description = "positive test case", dependsOnMethods = { "pxd_004_06_create_field_unit_test1" })
+	public void pxd_004_07_update_field_unit_test1() throws Exception {
+		// API
+		Response response1 = restApiBase.methodPOST("http://10.10.10.21:8086/api/Auth/Authenticate",
+				Payloads.pxdAuth("admin", "staging"));
+		assertEquals(response1.getStatusCode(), 200);
+		JsonPath jp1 = new JsonPath(response1.asString());
+		assertNotNull(jp1.getString("token"), "Token not forwarded");
+		String token = jp1.getString("token");
+		// Put Field Unit Update
+		restApiBase.addHeader("Authorization", "Bearer " + token);
+		Response response2 = restApiBase.methodPUT("http://10.10.10.21:8086/api/BasicCatalogs/FieldUnits/Update/" + PageBase.id1, Payloads.pxdFieldUnitUpdate(PageBase.id1, "TJ test", " - "," - "));
+		assertEquals(response2.getStatusCode(), 204);
+	}
+	
+	@Test(description = "positive test case", dependsOnMethods = { "pxd_004_06_create_field_unit_test1" })
+	public void pxd_004_08_delete_field_unit_test1() throws Exception {
 		// API
 		Response response1 = restApiBase.methodPOST("http://10.10.10.21:8086/api/Auth/Authenticate",
 				Payloads.pxdAuth("admin", "staging"));

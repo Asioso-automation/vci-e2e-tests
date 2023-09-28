@@ -17,7 +17,7 @@ public class PXD_002_Administration_Users_Test extends RestApiBase{
 	}
 	
 	@Test(description = "positive test case")
-	public void pxd_get_administration_users_test1() {
+	public void pxd_002_01_get_user_test1() {
 		// Authorization
 		Response response1 = methodPOST("http://10.10.10.21:8086/api/Auth/Authenticate",
 				Payloads.pxdAuth("admin", "staging"));
@@ -36,20 +36,20 @@ public class PXD_002_Administration_Users_Test extends RestApiBase{
 	}
 
 	@Test(description = "negative test case: wrong bearer token")
-	public void pxd_get_administration_users_test2() {
+	public void pxd_002_02_get_user_test2() {
 		addHeader("Authorization", Helper.getRandomString(15));
 		Response response = methodGET("http://10.10.10.21:8086/api/Administrations/Users/Get/10");
 		assertEquals(response.getStatusCode(), 401);
 	}
 
 	@Test(description = "negative test case: missing bearer token")
-	public void pxd_get_user_data_test1() {
+	public void pxd_002_03_get_user_test3() {
 		Response response = methodGET("http://10.10.10.21:8086/api/Administrations/Users/Get/10");
 		assertEquals(response.getStatusCode(), 401);
 	}
 
 	@Test(description = "negative test case: wrong id")
-	public void pxd_get_user_data_test2() {
+	public void pxd_002_04_get_user_test4() {
 		// Authorization
 		Response response1 = methodPOST("http://10.10.10.21:8086/api/Auth/Authenticate",
 				Payloads.pxdAuth("admin", "staging"));

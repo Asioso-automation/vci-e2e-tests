@@ -73,7 +73,7 @@ public class PXD_007_BasicCatalogs_Readers_Test extends BaseTest {
 	}
 	
 	@Test(description = "positive test case")
-	public void  pxd_007_03_post_readers_list_test1() throws Exception {
+	public void pxd_007_03_post_readers_list_test1() throws Exception {
 		// API
 		Response response1 = restApiBase.methodPOST("http://10.10.10.21:8086/api/Auth/Authenticate",
 				Payloads.pxdAuth("admin", "staging"));
@@ -94,7 +94,7 @@ public class PXD_007_BasicCatalogs_Readers_Test extends BaseTest {
 	}
 	
 	@Test(description = "positive test case", dependsOnMethods = { "pxd_007_01_get_reader_test1" })
-	public void  pxd_007_04_get_reader_lookup_test1() throws Exception {
+	public void pxd_007_04_get_reader_lookup_test1() throws Exception {
 		// API
 		Response response1 = restApiBase.methodPOST("http://10.10.10.21:8086/api/Auth/Authenticate",
 				Payloads.pxdAuth("admin", "staging"));

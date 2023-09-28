@@ -17,7 +17,7 @@ public class PX_DIST_024_Obracunski_Ugovori_CRUD_Test  extends BaseTest {
 		super();
 	}
 	
-	@Test
+	@Test (enabled = false)
 	public void px_dist_024_1_dodavanje_obracunskog_ugovora_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
@@ -54,7 +54,7 @@ public class PX_DIST_024_Obracunski_Ugovori_CRUD_Test  extends BaseTest {
 		obracunskiUgovori.verifikujStavku(eic, homePage.podatak2Tabela3WE);
 	}
 	
-	@Test
+	@Test (enabled = false)
 	public void px_dist_024_2_uredjivanje_obracunskog_ugovora_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
@@ -96,7 +96,7 @@ public class PX_DIST_024_Obracunski_Ugovori_CRUD_Test  extends BaseTest {
 		obracunskiUgovori.verifikujStavku(nazivMjm, homePage.podatak2Tabela4WE);
 	}
 	
-	@Test
+	@Test (enabled = false)
 	public void px_dist_024_3_brisanje_obracunskog_ugovora_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();

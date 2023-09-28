@@ -74,7 +74,7 @@ public class PXD_006_BasicCatalogs_Suppliers_Test extends BaseTest {
 	}
 	
 	@Test(description = "positive test case")
-	public void  pxd_006_03_post_suppliers_list_test1() throws Exception {
+	public void pxd_006_03_post_suppliers_list_test1() throws Exception {
 		// API
 		Response response1 = restApiBase.methodPOST("http://10.10.10.21:8086/api/Auth/Authenticate",
 				Payloads.pxdAuth("admin", "staging"));
@@ -95,7 +95,7 @@ public class PXD_006_BasicCatalogs_Suppliers_Test extends BaseTest {
 	}
 	
 	@Test(description = "positive test case", dependsOnMethods = { "pxd_006_01_get_supplier_test1" })
-	public void  pxd_006_04_get_supplier_lookup_test1() throws Exception {
+	public void pxd_006_04_get_supplier_lookup_test1() throws Exception {
 		// API
 		Response response1 = restApiBase.methodPOST("http://10.10.10.21:8086/api/Auth/Authenticate",
 				Payloads.pxdAuth("admin", "staging"));

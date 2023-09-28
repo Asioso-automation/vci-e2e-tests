@@ -75,7 +75,7 @@ public class PXD_005_BasicCatalogs_FieldOffices_Test extends BaseTest {
 	}
 	
 	@Test(description = "positive test case")
-	public void  pxd_005_03_post_field_offices_list_test1() throws Exception {
+	public void pxd_005_03_post_field_offices_list_test1() throws Exception {
 		// API
 		Response response1 = restApiBase.methodPOST("http://10.10.10.21:8086/api/Auth/Authenticate",
 				Payloads.pxdAuth("admin", "staging"));
@@ -96,7 +96,7 @@ public class PXD_005_BasicCatalogs_FieldOffices_Test extends BaseTest {
 	}
 	
 	@Test(description = "positive test case", dependsOnMethods = { "pxd_005_01_get_field_office_test1" })
-	public void  pxd_005_04_get_field_office_lookup_test1() throws Exception {
+	public void pxd_005_04_get_field_office_lookup_test1() throws Exception {
 		// API
 		Response response1 = restApiBase.methodPOST("http://10.10.10.21:8086/api/Auth/Authenticate",
 				Payloads.pxdAuth("admin", "staging"));
