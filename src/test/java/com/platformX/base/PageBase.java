@@ -130,8 +130,10 @@ public abstract class PageBase {
 	
 	public static int id;
 	public static int id1;
-	public static int wrongId = Integer.parseInt(Helper.getRandomNumber(5));
+	public static int wrongIdLong = Integer.parseInt(Helper.getRandomNumber(6));
+	public static int wrongIdShort = Integer.parseInt(Helper.getRandomNumber(2));
 
+	
 	protected Select select(WebElement webElement, String name) {
 		Select selectedElement = new Select(webElement);
 		selectedElement.selectByVisibleText(name);

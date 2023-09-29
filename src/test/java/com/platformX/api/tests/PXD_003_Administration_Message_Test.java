@@ -145,7 +145,7 @@ public class PXD_003_Administration_Message_Test extends BaseTest {
 		assertEquals(response2.getStatusCode(), 204);
 	}
 	
-	@Test(description = "positive test case", dependsOnMethods = { "pxd_003_06_create_administration_message_test1" })
+	@Test(description = "positive test case", dependsOnMethods = { "pxd_003_07_update_administration_message_test1" })
 	public void pxd_003_08_delete_administration_message_test1() throws Exception {
 		// API
 		Response response1 = restApiBase.methodPOST("http://10.10.10.21:8086/api/Auth/Authenticate",

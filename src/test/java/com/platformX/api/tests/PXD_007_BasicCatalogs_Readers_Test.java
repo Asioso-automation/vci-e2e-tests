@@ -67,9 +67,9 @@ public class PXD_007_BasicCatalogs_Readers_Test extends BaseTest {
 		String token = jp1.getString("token");
 		// Get Reader
 		restApiBase.addHeader("Authorization", "Bearer " + token);
-		Response response2 = restApiBase.methodGET("http://10.10.10.21:8086/api/BasicCatalogs/Readers/Get/" + PageBase.wrongId);
+		Response response2 = restApiBase.methodGET("http://10.10.10.21:8086/api/BasicCatalogs/Readers/Get/" + PageBase.wrongIdLong);
 		assertEquals(response2.getStatusCode(), 404);
-		assertEquals(response2.print(), "\"Entity \\\"Reader\\\" (" + PageBase.wrongId + ") was not found.\"");
+		assertEquals(response2.print(), "\"Entity \\\"Reader\\\" (" + PageBase.wrongIdLong + ") was not found.\"");
 	}
 	
 	@Test(description = "positive test case")
@@ -110,6 +110,69 @@ public class PXD_007_BasicCatalogs_Readers_Test extends BaseTest {
 		assertNotNull(jp2.getString("id"), "Id not forwarded");
 		assertNotNull(jp2.getString("text"), "Text not forwarded");
 	}
-	 
+	
+	@Test(description = "negative test case: wrong id")
+	public void pxd_007_05_get_reader_lookup_test2() throws Exception {
+		// API
+		Response response1 = restApiBase.methodPOST("http://10.10.10.21:8086/api/Auth/Authenticate",
+				Payloads.pxdAuth("admin", "staging"));
+		assertEquals(response1.getStatusCode(), 200);
+		JsonPath jp1 = new JsonPath(response1.asString());
+		assertNotNull(jp1.getString("token"), "Token not forwarded");
+		String token = jp1.getString("token");
+		// Get Reader Lookup
+		restApiBase.addHeader("Authorization", "Bearer " + token);
+		Response response2 = restApiBase.methodGET("http://10.10.10.21:8086/api/BasicCatalogs/Readers/Lookup?Keyword=" + PageBase.wrongIdLong + "&Id=" + PageBase.wrongIdLong);
+		assertEquals(response2.getStatusCode(), 200);
+		assertEquals(response2.print(), "[]");
+	}
+	
+	@Test(description = "positive test case")
+	public void pxd_007_06_create_reader_test1() throws Exception {
+		// API
+		Response response1 = restApiBase.methodPOST("http://10.10.10.21:8086/api/Auth/Authenticate",
+				Payloads.pxdAuth("admin", "staging"));
+		assertEquals(response1.getStatusCode(), 200);
+		JsonPath jp1 = new JsonPath(response1.asString());
+		assertNotNull(jp1.getString("token"), "Token not forwarded");
+		String token = jp1.getString("token");
+		// Post Reader Create
+		restApiBase.addHeader("Authorization", "Bearer " + token);
+		Response response2 = restApiBase.methodPOST("http://10.10.10.21:8086/api/BasicCatalogs/Readers/Create", Payloads.pxdReaderCreate("2023-09-01", 308, "Citac test"));
+		assertEquals(response2.getStatusCode(), 200);
+		assertNotNull(response2.print(), "Response body is empty");
+		PageBase.id1 = Integer.parseInt(response2.print());
+	}
+	
+	@Test(description = "positive test case", dependsOnMethods = { "pxd_007_06_create_reader_test1" })
+	public void pxd_007_07_update_reader_test1() throws Exception {
+		// API
+		Response response1 = restApiBase.methodPOST("http://10.10.10.21:8086/api/Auth/Authenticate",
+				Payloads.pxdAuth("admin", "staging"));
+		assertEquals(response1.getStatusCode(), 200);
+		JsonPath jp1 = new JsonPath(response1.asString());
+		assertNotNull(jp1.getString("token"), "Token not forwarded");
+		String token = jp1.getString("token");
+		// Put Reader Update
+		restApiBase.addHeader("Authorization", "Bearer " + token);
+		Response response2 = restApiBase.methodPUT("http://10.10.10.21:8086/api/BasicCatalogs/Readers/Update/" + PageBase.id1, Payloads.pxdReaderUpdate("2023-09-01", "2023-09-02", 308, "308 - Pale", 5, "5 - Pale", PageBase.id1, "Citac test 1"));
+		assertEquals(response2.getStatusCode(), 204);
+	}
+	
+	@Test(description = "positive test case", dependsOnMethods = { "pxd_007_07_update_reader_test1" })
+	public void pxd_007_08_delete_reader_test1() throws Exception {
+		// API
+		Response response1 = restApiBase.methodPOST("http://10.10.10.21:8086/api/Auth/Authenticate",
+				Payloads.pxdAuth("admin", "staging"));
+		assertEquals(response1.getStatusCode(), 200);
+		JsonPath jp1 = new JsonPath(response1.asString());
+		assertNotNull(jp1.getString("token"), "Token not forwarded");
+		String token = jp1.getString("token");
+		// Delete Reader
+		restApiBase.addHeader("Authorization", "Bearer " + token);
+		Response response2 = restApiBase.methodDELETE("http://10.10.10.21:8086/api/BasicCatalogs/Readers/Delete/" + PageBase.id1);
+		assertEquals(response2.getStatusCode(), 204);
+		assertEquals(response2.print(), "");
+	}
 
 }

@@ -68,9 +68,9 @@ public class PXD_006_BasicCatalogs_Suppliers_Test extends BaseTest {
 		String token = jp1.getString("token");
 		// Get Supplier
 		restApiBase.addHeader("Authorization", "Bearer " + token);
-		Response response2 = restApiBase.methodGET("http://10.10.10.21:8086/api/BasicCatalogs/Suppliers/Get/" + PageBase.wrongId);
+		Response response2 = restApiBase.methodGET("http://10.10.10.21:8086/api/BasicCatalogs/Suppliers/Get/" + PageBase.wrongIdShort);
 		assertEquals(response2.getStatusCode(), 404);
-		assertEquals(response2.print(), "\"Entity \\\"Supplier\\\" (" + PageBase.wrongId + ") was not found.\"");
+		assertEquals(response2.print(), "\"Entity \\\"Supplier\\\" (" + PageBase.wrongIdShort + ") was not found.\"");
 	}
 	
 	@Test(description = "positive test case")
@@ -111,6 +111,69 @@ public class PXD_006_BasicCatalogs_Suppliers_Test extends BaseTest {
 		assertNotNull(jp2.getString("id"), "Id not forwarded");
 		assertNotNull(jp2.getString("text"), "Text not forwarded");
 	}
-	    
+	
+	@Test(description = "negative test case: wrong id")
+	public void pxd_006_05_get_supplier_lookup_test2() throws Exception {
+		// API
+		Response response1 = restApiBase.methodPOST("http://10.10.10.21:8086/api/Auth/Authenticate",
+				Payloads.pxdAuth("admin", "staging"));
+		assertEquals(response1.getStatusCode(), 200);
+		JsonPath jp1 = new JsonPath(response1.asString());
+		assertNotNull(jp1.getString("token"), "Token not forwarded");
+		String token = jp1.getString("token");
+		// Get Supplier Lookup
+		restApiBase.addHeader("Authorization", "Bearer " + token);
+		Response response2 = restApiBase.methodGET("http://10.10.10.21:8086/api/BasicCatalogs/Suppliers/Lookup?Keyword=" + PageBase.wrongIdLong + "&Id=" + PageBase.wrongIdLong);
+		assertEquals(response2.getStatusCode(), 200);
+		assertEquals(response2.print(), "[]");
+	}
+	
+	@Test(description = "positive test case")
+	public void pxd_006_06_create_supplier_test1() throws Exception {
+		// API
+		Response response1 = restApiBase.methodPOST("http://10.10.10.21:8086/api/Auth/Authenticate",
+				Payloads.pxdAuth("admin", "staging"));
+		assertEquals(response1.getStatusCode(), 200);
+		JsonPath jp1 = new JsonPath(response1.asString());
+		assertNotNull(jp1.getString("token"), "Token not forwarded");
+		String token = jp1.getString("token");
+		// Post Supplier Create
+		restApiBase.addHeader("Authorization", "Bearer " + token);
+		Response response2 = restApiBase.methodPOST("http://10.10.10.21:8086/api/BasicCatalogs/Suppliers/Create", Payloads.pxdSupplierCreate("1111111111111111", "Snabdjevac test", 6, 78000));
+		assertEquals(response2.getStatusCode(), 200);
+		assertNotNull(response2.print(), "Response body is empty");
+		PageBase.id1 = Integer.parseInt(response2.print());
+	}
+	
+	@Test(description = "positive test case", dependsOnMethods = { "pxd_006_06_create_supplier_test1" })
+	public void pxd_006_07_update_supplier_test1() throws Exception {
+		// API
+		Response response1 = restApiBase.methodPOST("http://10.10.10.21:8086/api/Auth/Authenticate",
+				Payloads.pxdAuth("admin", "staging"));
+		assertEquals(response1.getStatusCode(), 200);
+		JsonPath jp1 = new JsonPath(response1.asString());
+		assertNotNull(jp1.getString("token"), "Token not forwarded");
+		String token = jp1.getString("token");
+		// Put Supplier Update
+		restApiBase.addHeader("Authorization", "Bearer " + token);
+		Response response2 = restApiBase.methodPUT("http://10.10.10.21:8086/api/BasicCatalogs/Suppliers/Update/" + PageBase.id1, Payloads.pxdSupplierUpdate("1111111111111111", PageBase.id1, "Snabdjevac test 1", 6, "6 - Banja Luka", 78000, "78000 - Banja Luka"));
+		assertEquals(response2.getStatusCode(), 204);
+	}
+	
+	@Test(description = "positive test case", dependsOnMethods = { "pxd_006_07_update_supplier_test1" })
+	public void pxd_006_08_delete_supplier_test1() throws Exception {
+		// API
+		Response response1 = restApiBase.methodPOST("http://10.10.10.21:8086/api/Auth/Authenticate",
+				Payloads.pxdAuth("admin", "staging"));
+		assertEquals(response1.getStatusCode(), 200);
+		JsonPath jp1 = new JsonPath(response1.asString());
+		assertNotNull(jp1.getString("token"), "Token not forwarded");
+		String token = jp1.getString("token");
+		// Delete Supplier
+		restApiBase.addHeader("Authorization", "Bearer " + token);
+		Response response2 = restApiBase.methodDELETE("http://10.10.10.21:8086/api/BasicCatalogs/Suppliers/Delete/" + PageBase.id1);
+		assertEquals(response2.getStatusCode(), 204);
+		assertEquals(response2.print(), "");
+	}
 
 }

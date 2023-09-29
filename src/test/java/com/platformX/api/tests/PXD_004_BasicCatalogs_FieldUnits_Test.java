@@ -65,9 +65,9 @@ public class PXD_004_BasicCatalogs_FieldUnits_Test extends BaseTest {
 		String token = jp1.getString("token");
 		// Get Field Unit
 		restApiBase.addHeader("Authorization", "Bearer " + token);
-		Response response2 = restApiBase.methodGET("http://10.10.10.21:8086/api/BasicCatalogs/FieldUnits/Get/" + PageBase.wrongId);
+		Response response2 = restApiBase.methodGET("http://10.10.10.21:8086/api/BasicCatalogs/FieldUnits/Get/" + PageBase.wrongIdLong);
 		assertEquals(response2.getStatusCode(), 404);
-		assertEquals(response2.print(), "\"Entity \\\"FieldUnit\\\" (" + PageBase.wrongId + ") was not found.\"");
+		assertEquals(response2.print(), "\"Entity \\\"FieldUnit\\\" (" + PageBase.wrongIdLong + ") was not found.\"");
 	}
 	
 	@Test(description = "positive test case")
@@ -120,7 +120,7 @@ public class PXD_004_BasicCatalogs_FieldUnits_Test extends BaseTest {
 		String token = jp1.getString("token");
 		// Get Field Unit Lookup
 		restApiBase.addHeader("Authorization", "Bearer " + token);
-		Response response2 = restApiBase.methodGET("http://10.10.10.21:8086/api/BasicCatalogs/FieldUnits/Lookup?Keyword=" + PageBase.wrongId + "&Id=" + PageBase.wrongId);
+		Response response2 = restApiBase.methodGET("http://10.10.10.21:8086/api/BasicCatalogs/FieldUnits/Lookup?Keyword=" + PageBase.wrongIdLong + "&Id=" + PageBase.wrongIdLong);
 		assertEquals(response2.getStatusCode(), 200);
 		assertEquals(response2.print(), "[]");
 	}
@@ -157,7 +157,7 @@ public class PXD_004_BasicCatalogs_FieldUnits_Test extends BaseTest {
 		assertEquals(response2.getStatusCode(), 204);
 	}
 	
-	@Test(description = "positive test case", dependsOnMethods = { "pxd_004_06_create_field_unit_test1" })
+	@Test(description = "positive test case", dependsOnMethods = { "pxd_004_07_update_field_unit_test1" })
 	public void pxd_004_08_delete_field_unit_test1() throws Exception {
 		// API
 		Response response1 = restApiBase.methodPOST("http://10.10.10.21:8086/api/Auth/Authenticate",

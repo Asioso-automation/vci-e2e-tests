@@ -45,6 +45,12 @@ public class RestApiBase {
 		return given().log().all().config(restAssuredConfig).spec(requestSpec).contentType("application/json").body(payload).when().put(endpoint);
 	}
 	
+	// method used for PATCH endpoints
+	public Response methodPATCH(String endpoint, String payload) {
+		RequestSpecification requestSpec = builder.build();
+		return given().log().all().config(restAssuredConfig).spec(requestSpec).contentType("application/json").body(payload).when().patch(endpoint);
+	}
+	
 	// method used for DELETE endpoints
 	public Response methodDELETE(String endpoint) {
 		RequestSpecification requestSpec = builder.build();
