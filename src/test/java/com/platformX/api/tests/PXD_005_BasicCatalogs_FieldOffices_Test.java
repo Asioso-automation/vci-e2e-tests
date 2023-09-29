@@ -123,7 +123,7 @@ public class PXD_005_BasicCatalogs_FieldOffices_Test extends BaseTest {
 		String token = jp1.getString("token");
 		// Get Field Office Lookup
 		restApiBase.addHeader("Authorization", "Bearer " + token);
-		Response response2 = restApiBase.methodGET("http://10.10.10.21:8086/api/BasicCatalogs/FieldOffices/Lookup?Keyword=" + PageBase.wrongIdLong + "&Id=" + PageBase.wrongIdLong);
+		Response response2 = restApiBase.methodGET("http://10.10.10.21:8086/api/BasicCatalogs/FieldOffices/Lookup?Keyword=" + PageBase.wrongIdShort + "&Id=" + PageBase.wrongIdShort);
 		assertEquals(response2.getStatusCode(), 200);
 		assertEquals(response2.print(), "[]");
 	}

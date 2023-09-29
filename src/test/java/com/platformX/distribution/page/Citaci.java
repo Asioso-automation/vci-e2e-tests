@@ -9,7 +9,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import com.platformX.base.Kolone;
-import com.platformX.util.Helper;
 
 public class Citaci extends PocetnaStranicaPXD {
 
@@ -40,9 +39,7 @@ public class Citaci extends PocetnaStranicaPXD {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaFizickaLokacijaWE));
 	}
 
-	public String dodajCitaca() throws InterruptedException {
-		String ime = new String();
-		ime = "Citac " + Helper.getRandomString(5);
+	public String dodajCitaca(String ime) throws InterruptedException {
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
 		dodajBtnWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(imeWE));
@@ -68,8 +65,7 @@ public class Citaci extends PocetnaStranicaPXD {
 		return ime;
 	}
 	
-	public String urediCitaca() throws InterruptedException {
-		String ime = "Citac " + Helper.getRandomString(5);
+	public String urediCitaca(String ime) throws InterruptedException {
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		burgerBarWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(urediWE));
