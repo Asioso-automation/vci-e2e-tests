@@ -103,7 +103,6 @@ public class PXD_003_Administration_Message_Test extends BaseTest {
 		assertNotNull(jp2.getString("filteredCount"), "FilteredCount not forwarded");
 		assertNotNull(jp2.getString("dataCount"), "DataCount not forwarded");
 		assertNotNull(jp2.getString("data"), "Data not forwarded");
-		// TODO Assert more parameters
 	}
 	
 	@Test(description = "positive test case")
@@ -117,7 +116,7 @@ public class PXD_003_Administration_Message_Test extends BaseTest {
 		String token = jp1.getString("token");
 		// Post Administration Message Create
 		restApiBase.addHeader("Authorization", "Bearer " + token);
-		Response response2 = restApiBase.methodPOST("http://10.10.10.21:8086/api/Administrations/Messages/Create", Payloads.pxdAdministrationMessageCreate("Test Naslov", "<p>test</p>", "2023-09-29T00:00", 1));
+		Response response2 = restApiBase.methodPOST("http://10.10.10.21:8086/api/Administrations/Messages/Create", Payloads.pxdAdministrationMessageCreate("Test Naslov", "<p>test</p>", "2023-10-31T00:00", 1));
 		assertEquals(response2.getStatusCode(), 200);
 		//PXD UI
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
@@ -141,7 +140,7 @@ public class PXD_003_Administration_Message_Test extends BaseTest {
 		String token = jp1.getString("token");
 		// Put Administration Message Update
 		restApiBase.addHeader("Authorization", "Bearer " + token);
-		Response response2 = restApiBase.methodPUT("http://10.10.10.21:8086/api/Administrations/Messages/Update/" + PageBase.id1, Payloads.pxdAdministrationMessageUpdate(PageBase.id1, "Test Naslov", "<p>test update</p>", "2023-09-29T00:00", 1, " -   ()"));
+		Response response2 = restApiBase.methodPUT("http://10.10.10.21:8086/api/Administrations/Messages/Update/" + PageBase.id1, Payloads.pxdAdministrationMessageUpdate(PageBase.id1, "Test Naslov", "<p>test update</p>", "2023-10-31T00:00", 1, " -   ()"));
 		assertEquals(response2.getStatusCode(), 204);
 	}
 	
