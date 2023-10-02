@@ -28,8 +28,8 @@ public class FizickeLokacije extends PocetnaStranicaPXD {
 	@FindBy(xpath = "//div[2]/div[1]/div/div/div[1]/div[1]/input[1]")
 	private WebElement terenskaJedinicaWE;
 	
-	@FindBy(xpath = "//div[11]/div/div/div/div")
-	private WebElement terenskaJedinicaLookupWE;
+//	@FindBy(xpath = "//div[11]/div/div/div/div")
+//	private WebElement terenskaJedinicaLookupWE;
 	
 	public void verifikujFizickeLokacije() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);

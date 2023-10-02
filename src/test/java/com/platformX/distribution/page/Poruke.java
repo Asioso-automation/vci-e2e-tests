@@ -16,8 +16,8 @@ public class Poruke extends PocetnaStranicaPXD {
 		super(driver);
 	}
 	
-	@FindBy(xpath = "//tr[2]/td[1]")
-	private WebElement idWE;
+//	@FindBy(xpath = "//tr[2]/td[1]")
+//	private WebElement idWE;
 	
 	@FindBy(xpath = "//form/div/div[1]/div/div[1]/div/div/div[1]/div/input")
 	private WebElement naslovPorukeWE;
@@ -34,17 +34,17 @@ public class Poruke extends PocetnaStranicaPXD {
 	@FindBy(xpath = "//div[contains(@class, 'v-picker v-card v-picker--date')]")
 	private WebElement datepickerWE;
 	
-	@FindBy(xpath = "(//div[@class='message-title'])[2]")
-	private WebElement porukaNaslov2WE;
+//	@FindBy(xpath = "(//div[@class='message-title'])[2]")
+//	private WebElement porukaNaslov2WE;
 	
-	@FindBy(xpath = "(//div[@class='message-title'])[3]")
-	private WebElement porukaNaslov3WE;
+//	@FindBy(xpath = "(//div[@class='message-title'])[3]")
+//	private WebElement porukaNaslov3WE;
 	
-	@FindBy(xpath = "(//div[@class='pl-8'])[2]")
-	private WebElement porukaSadrzaj2WE;
+//	@FindBy(xpath = "(//div[@class='pl-8'])[2]")
+//	private WebElement porukaSadrzaj2WE;
 	
-	@FindBy(xpath = "(//div[@class='pl-8'])[3]")
-	private WebElement porukaSadrzaj3WE;
+//	@FindBy(xpath = "(//div[@class='pl-8'])[3]")
+//	private WebElement porukaSadrzaj3WE;
 
 	public void verifikujPoruke()throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);

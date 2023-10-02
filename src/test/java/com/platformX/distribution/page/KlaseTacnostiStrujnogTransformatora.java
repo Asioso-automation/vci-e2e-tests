@@ -21,4 +21,5 @@ public class KlaseTacnostiStrujnogTransformatora extends PocetnaStranicaPXD {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNazivWE));
 	}
+	
 }

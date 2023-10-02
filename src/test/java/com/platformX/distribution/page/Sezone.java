@@ -56,7 +56,6 @@ public class Sezone extends PocetnaStranicaPXD {
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
 		dodajBtnWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(IdWE));
-		// IdWE.sendKeys("T");
 		IdWE.sendKeys(Helper.getRandomString(1));
 		wait.until(ExpectedConditions.elementToBeClickable(nazivSezoneWE));
 		nazivSezoneWE.sendKeys(naziv);

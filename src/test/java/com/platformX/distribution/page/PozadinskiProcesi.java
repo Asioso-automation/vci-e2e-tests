@@ -3,7 +3,6 @@ package com.platformX.distribution.page;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class PozadinskiProcesi extends PocetnaStranicaPXD {
 

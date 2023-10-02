@@ -48,7 +48,7 @@ public class PX_DIST_006_Citaci_CRUD_Test extends BaseTest {
 		citaci.verifikujCitaci();
 		citaci.verifikujStavku(imeCitaca, homePage.podatak2Tabela2WE);
 		citaci.urediCitaca(novoImeCitaca);
-		citaci.verifikujPoruku("Uspješno završeno");
+		citaci.verifikujPoruku("Uspješno završeno.");
 		citaci.pretraziStavku(homePage.filterKolona2WE, novoImeCitaca);
 		citaci.verifikujCitaci();
 		citaci.verifikujStavku(novoImeCitaca, homePage.podatak2Tabela2WE);

@@ -29,9 +29,6 @@ public class ObracunskaSnaga extends PocetnaStranicaPXD {
 	@FindBy(xpath = "//div[2]/div/div/div/div[1]/div[1]/input[1]") 
 	private WebElement periodOdWE;
 	
-	@FindBy(xpath = "//div[2]/button[1]") 
-	private WebElement dodajBtn1WE;
-	
 	public void verifikujObracunskaSnaga() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
