@@ -27,7 +27,7 @@ public class Ocitanja extends PocetnaStranica{
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title') and contains(text(), 'Očitanja')]")));
-		verifikacijaZajednickihElemenata("OČITANJA", "OČITANJA", "Očitanja", 16, false, false, true, true, true, true, false);
+		verifikacijaZajednickihElemenata("OČITANJA", "OČITANJA", "Očitanja vodomjera", 16, false, false, true, true, true, true, false);
 		wait.until(ExpectedConditions.elementToBeClickable(masovnaOcitanjaBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(neocitaniBtnWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaId1WE));
@@ -40,7 +40,7 @@ public class Ocitanja extends PocetnaStranica{
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaOdobrenjeWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaRazlikaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaVodomjerWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaZoneOcitanjaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaZonaOcitanjaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIzmijenioKorisnikWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNapomena1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaResetovanWE));

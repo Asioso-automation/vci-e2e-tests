@@ -28,7 +28,7 @@ public class Bonifikacije extends PocetnaStranica{
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaObjekatWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaProstorWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNapomena1WE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaProcenatWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaProcenat1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIznos1WE));
 	}
 }

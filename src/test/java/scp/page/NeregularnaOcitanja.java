@@ -14,14 +14,14 @@ public class NeregularnaOcitanja extends PocetnaStranica{
 	public NeregularnaOcitanja(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);
 	}
-	public void verifikujOcitanjaVodomjera()throws InterruptedException, FileNotFoundException, IOException {
+	public void verifikujNeregularnaOcitanjaVodomjera()throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
-				"//div[contains(@class, 'v-toolbar__title') and contains(text(), 'Očitanja')]")));
-		verifikacijaZajednickihElemenata("OČITANJA", "NEREGURALNA OČITANJA", "Neregularna očitanja vodomjera", 13, false, false, false, true, true, true, false);
+				"//div[contains(@class, 'v-toolbar__title') and contains(text(), 'Neregularna očitanja')]")));
+		verifikacijaZajednickihElemenata("OČITANJA", "NEREGULARNA OČITANJA", "Neregularna očitanja vodomjera", 13, false, false, false, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaId1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaVodomjerWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaZoneOcitanjaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaZonaOcitanjaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIzmijenioKorisnikWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumOcitanjaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaVrijemeUnosa1WE));

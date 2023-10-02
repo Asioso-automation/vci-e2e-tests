@@ -66,7 +66,7 @@ public class PocetnaStranica extends PageBase {
 	@FindBy(xpath = "//*[contains(text(),'Izvještaji') and @class='v-btn__content']")
 	protected WebElement izvjestajiWE;
 
-	@FindBy(xpath = "//div[contains(text(), 'admin admin (Admin)')]")
+	@FindBy(xpath = "//i[contains(@class, 'iconPosition fa fa-user')]")
 	protected WebElement profilWE;
 	
 	// Stranice
@@ -98,10 +98,10 @@ public class PocetnaStranica extends PageBase {
 	@FindBy(xpath = "//div[contains(text(), 'Ulice')]")
 	protected WebElement uliceWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Zone')]")
+	@FindBy(xpath = "//*[contains(@class, 'v-list__tile__content') and contains(text(), 'Zone')]")
 	protected WebElement zoneWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Zone DMA')]")
+	@FindBy(xpath = "//*[contains(@class, 'v-list__tile__content') and contains(text(), 'Zone DMA')]")
 	protected WebElement zoneDmaWE;
 	
 	@FindBy(xpath = "//div[contains(text(), 'Radni statusi')]")
@@ -122,7 +122,7 @@ public class PocetnaStranica extends PageBase {
 	@FindBy(xpath = "//div[contains(text(), 'Objekti')]")
 	protected WebElement objektiWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Tarfine nadgrupe')]")
+	@FindBy(xpath = "//div[contains(text(), 'Tarifne nadgrupe')]")
 	protected WebElement tarifneNadgrupeWE;
 	
 	@FindBy(xpath = "//div[contains(text(), 'Tarifne grupe')]")
@@ -225,11 +225,6 @@ public class PocetnaStranica extends PageBase {
 			boolean importBtn, boolean dodajSve, boolean dodaj, boolean preuzmiExcel, boolean ukloniFiltere,
 			boolean osvjezi, boolean info) throws InterruptedException {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
-		try {
-			wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
-		} catch (Exception e) {
-			Thread.sleep(500);
-		}
 		wait.until(ExpectedConditions.elementToBeClickable(sekcijaBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(stranicaBtnWE));
 		assertTrue(sekcijaBtnWE.getText().trim().equals(sekcija), stranica + ": Naziv sekcije nije dobar!");
@@ -256,12 +251,6 @@ public class PocetnaStranica extends PageBase {
 		}
 		if (info == true) {
 			wait.until(ExpectedConditions.elementToBeClickable(infoBtnWE));
-		}
-		try {
-			wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
-		} catch (Exception e) {
-			Thread.sleep(1000);
-//			wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		}
 	}
 
@@ -426,7 +415,7 @@ public class PocetnaStranica extends PageBase {
 		return new IndirektniVodomjeri(driver);
 	}
 	
-	public TarifneNadgrupe navigirajNaTarfineNadgrupe()throws Exception{
+	public TarifneNadgrupe navigirajNaTarifneNadgrupe()throws Exception{
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(tarifniSistemWE));
 		tarifniSistemWE.click();
@@ -587,4 +576,15 @@ public class PocetnaStranica extends PageBase {
 		neregularnaOcitanjaWE.click();
 		return new NeregularnaOcitanja(driver);
 	}
+	
+	public CitackeKnjige navigirajNaCitackeKnjige()throws Exception{
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(ocitanjaWE));
+		ocitanjaWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(citackeKnjigeWE));
+		citackeKnjigeWE.click();
+		return new CitackeKnjige(driver);
+	}
+	
+	
 }
