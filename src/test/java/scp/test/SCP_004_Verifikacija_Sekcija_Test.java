@@ -12,15 +12,18 @@ import scp.page.CitackeKnjige;
 import scp.page.Cjenovnik;
 import scp.page.Drzave;
 import scp.page.Entiteti;
+import scp.page.FinansijskeKartice;
 import scp.page.IndirektniVodomjeri;
+import scp.page.KorekcijeRacuna;
 import scp.page.Kupci;
 import scp.page.KupciBezUgovora;
 import scp.page.LogIn;
 import scp.page.MjesneZajednice;
+import scp.page.MonitoringOcitanja;
 import scp.page.NalogZaOcitanja;
+import scp.page.NaloziZaIskljucenje;
 import scp.page.NaseljenaMjesta;
 import scp.page.NeregularnaOcitanja;
-import scp.page.NestandardneUsluge;
 import scp.page.Objekti;
 import scp.page.Ocitanja;
 import scp.page.Organizacije;
@@ -29,6 +32,7 @@ import scp.page.Poste;
 import scp.page.ProfiliVodomjera;
 import scp.page.ProizvodjaciVodomjera;
 import scp.page.Prostori;
+import scp.page.Racuni;
 import scp.page.RadniStatusi;
 import scp.page.Reoni;
 import scp.page.TarifneGrupe;
@@ -41,6 +45,7 @@ import scp.page.Ulice;
 import scp.page.Usluge;
 import scp.page.Vodomjeri;
 import scp.page.VrsteVodomjera;
+import scp.page.ZbirniRacuni;
 import scp.page.Zone;
 import scp.page.ZoneDma;
 import scp.page.ZoneOcitanja;
@@ -55,6 +60,7 @@ public class SCP_004_Verifikacija_Sekcija_Test extends BaseTest{
 	public void scp_004_verifikacija_sifarnika_vodovod_test() throws Exception{
 		LogIn logIn = new LogIn(driver, SCP_PROPERTIES);
 		PocetnaStranica pocetna = new PocetnaStranica(driver);
+		driver.manage().window().maximize();
 		logIn.verifikujLogIn();
 		logIn.logIn(pocetna.orgVodovodGradiskaWE);
 		pocetna.verifikujPocetnuStranicu();
@@ -142,6 +148,7 @@ public class SCP_004_Verifikacija_Sekcija_Test extends BaseTest{
 	public void scp_004_verifikacija_ocitanja_vodovod_test() throws Exception{
 		LogIn logIn = new LogIn(driver, SCP_PROPERTIES);
 		PocetnaStranica pocetna = new PocetnaStranica(driver);
+		driver.manage().window().maximize();
 		logIn.verifikujLogIn();
 		logIn.logIn(pocetna.orgVodovodGradiskaWE);
 		pocetna.verifikujPocetnuStranicu();
@@ -155,5 +162,26 @@ public class SCP_004_Verifikacija_Sekcija_Test extends BaseTest{
 		neregOcitanja.verifikujNeregularnaOcitanjaVodomjera();
 		CitackeKnjige citackeKnjige = pocetna.navigirajNaCitackeKnjige();
 		citackeKnjige.verifikujCitackeKnjige();
+		MonitoringOcitanja monitoring = pocetna.navigirajNaMonitoringOcitanja();
+		monitoring.verifikujMonitoringOcitanja();
+	}
+	
+	@Test (description="test prolazi kroz sve stranice iz sekcije OBRAČUN i FINANSIJE i verifikuje ih")
+	public void scp_004_verifikacija_obracuna_i_finansija_vodovod_test() throws Exception{
+		LogIn logIn = new LogIn(driver, SCP_PROPERTIES);
+		PocetnaStranica pocetna = new PocetnaStranica(driver);
+		logIn.verifikujLogIn();
+		logIn.logIn(pocetna.orgVodovodGradiskaWE);
+		pocetna.verifikujPocetnuStranicu();
+		Racuni racuni = pocetna.navigirajNaRacune();
+		racuni.verifikujRacune();
+		ZbirniRacuni zbirni = pocetna.navigirajNaZbirneRacune();
+		zbirni.verifikujZbirneRacune();
+		KorekcijeRacuna korekcije = pocetna.navigirajNaKorekcijeRacuna();
+		korekcije.verifikujKorekcijeRacuna();
+		FinansijskeKartice finKartice = pocetna.navigirajNaFinansijskeKartice();
+		finKartice.verifikujFinansijskeKartice();	
+		NaloziZaIskljucenje nalozi = pocetna.navigirajNaNalogeZaIskljucenja();
+		nalozi.verifikujNalogeZaIskljucenjaVodovod();
 	}
 }

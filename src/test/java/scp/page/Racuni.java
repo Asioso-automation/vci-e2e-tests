@@ -29,7 +29,7 @@ public class Racuni extends PocetnaStranica{
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMjesecWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaGodinaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIznos1WE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPdv1WE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPdv2WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIznosPdvWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKamata1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIznosSaKamatomWE));

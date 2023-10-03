@@ -15,7 +15,7 @@ public class ZbirniRacuni extends PocetnaStranica{
 		super(driver);
 	}
 
-	public void verifikujRacune()throws InterruptedException, FileNotFoundException, IOException {
+	public void verifikujZbirneRacune()throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title') and contains(text(), 'Zbirni računi')]")));
@@ -27,7 +27,7 @@ public class ZbirniRacuni extends PocetnaStranica{
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPozivNaBroj1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPeriod1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIznos1WE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPdv1WE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPdv2WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIznosPdvWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKamata1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIznosSaKamatomWE));

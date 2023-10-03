@@ -3,6 +3,8 @@ package scp.page;
 import static org.testng.Assert.assertTrue;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -63,6 +65,12 @@ public class PocetnaStranica extends PageBase {
 	@FindBy(xpath = "//*[contains(text(),'Obračun') and @class='v-btn__content']")
 	protected WebElement obracunWE;
 	
+	@FindBy(xpath = "//*[contains(text(),'Finansije') and @class='v-btn__content']")
+	protected WebElement finansijeWE;
+	
+	@FindBy(xpath = "//*[contains(text(),'Isključenja') and @class='v-btn__content']")
+	protected WebElement iskljucenjaWE;
+	
 	@FindBy(xpath = "//*[contains(text(),'Izvještaji') and @class='v-btn__content']")
 	protected WebElement izvjestajiWE;
 
@@ -98,10 +106,10 @@ public class PocetnaStranica extends PageBase {
 	@FindBy(xpath = "//div[contains(text(), 'Ulice')]")
 	protected WebElement uliceWE;
 	
-	@FindBy(xpath = "//*[contains(@class, 'v-list__tile__content') and contains(text(), 'Zone')]")
+	@FindBy(xpath = "//div[@class='v-list__tile__content' and text()='Zone']")
 	protected WebElement zoneWE;
 	
-	@FindBy(xpath = "//*[contains(@class, 'v-list__tile__content') and contains(text(), 'Zone DMA')]")
+	@FindBy(xpath = "//div[@class='v-list__tile__content' and text()='Zone DMA']")
 	protected WebElement zoneDmaWE;
 	
 	@FindBy(xpath = "//div[contains(text(), 'Radni statusi')]")
@@ -116,7 +124,7 @@ public class PocetnaStranica extends PageBase {
 	@FindBy(xpath = "//div[contains(text(), 'Vrste vodomjera')]")
 	protected WebElement vrsteVodomjeraWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Indirektni vodomjeri')]")
+	@FindBy(xpath = "//div[contains(text(), 'Indirektna potrošnja')]")
 	protected WebElement indirektniVodomjeriWE;
 	
 	@FindBy(xpath = "//div[contains(text(), 'Objekti')]")
@@ -182,6 +190,20 @@ public class PocetnaStranica extends PageBase {
 	@FindBy(xpath = "//div[contains(text(), 'Monitoring očitanja')]")
 	protected WebElement monitoringOcitanjaWE;
 	
+	@FindBy(xpath = "//div[contains(text(), 'Računi')]")
+	protected WebElement racuniWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Zbirni računi')]")
+	protected WebElement zbirniRacuniWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Korekcije računa')]")
+	protected WebElement korekcijeRacunaWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Finansijske kartice')]")
+	protected WebElement finansijskeKarticeWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Nalozi za isključenje')]")
+	protected WebElement naloziZaIskljucenjeWE;
 	
 	
 //  ORGANIZACIJE
@@ -356,6 +378,7 @@ public class PocetnaStranica extends PageBase {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(sifarniciWE));
 		sifarniciWE.click();
+		//driver.findElement(By.linkText("Zone")).click();
 		wait.until(ExpectedConditions.elementToBeClickable(zoneWE));
 		zoneWE.click();
 		return new Zone(driver);
@@ -365,6 +388,7 @@ public class PocetnaStranica extends PageBase {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(sifarniciWE));
 		sifarniciWE.click();
+		//driver.findElement(By.linkText("Zone DMA")).click();
 		wait.until(ExpectedConditions.elementToBeClickable(zoneDmaWE));
 		zoneDmaWE.click();
 		return new ZoneDma(driver);
@@ -586,5 +610,58 @@ public class PocetnaStranica extends PageBase {
 		return new CitackeKnjige(driver);
 	}
 	
+	public MonitoringOcitanja navigirajNaMonitoringOcitanja()throws Exception{
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(ocitanjaWE));
+		ocitanjaWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(monitoringOcitanjaWE));
+		monitoringOcitanjaWE.click();
+		return new MonitoringOcitanja(driver);
+	}
 	
+	public Racuni navigirajNaRacune()throws Exception{
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(obracunWE));
+		obracunWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(racuniWE));
+		racuniWE.click();
+		return new Racuni(driver);
+	}
+	
+	public ZbirniRacuni navigirajNaZbirneRacune()throws Exception{
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(obracunWE));
+		obracunWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(zbirniRacuniWE));
+		zbirniRacuniWE.click();
+		return new ZbirniRacuni(driver);
+	}
+	
+	public KorekcijeRacuna navigirajNaKorekcijeRacuna()throws Exception{
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(obracunWE));
+		obracunWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(korekcijeRacunaWE));
+		korekcijeRacunaWE.click();
+		return new KorekcijeRacuna(driver);
+	}
+	
+	public FinansijskeKartice navigirajNaFinansijskeKartice()throws Exception{
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(finansijeWE));
+		finansijeWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(finansijskeKarticeWE));
+		finansijskeKarticeWE.click();
+		return new FinansijskeKartice(driver);
+	}
+	
+	public NaloziZaIskljucenje navigirajNaNalogeZaIskljucenja()throws Exception{
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(iskljucenjaWE));
+		iskljucenjaWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(naloziZaIskljucenjeWE));
+		naloziZaIskljucenjeWE.click();
+		return new NaloziZaIskljucenje(driver);
+	}
+
 }
