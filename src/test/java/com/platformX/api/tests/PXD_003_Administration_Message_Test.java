@@ -53,11 +53,12 @@ public class PXD_003_Administration_Message_Test extends BaseTest {
 		assertNotNull(jp2.getString("title"), "Title not forwarded");
 		assertNotNull(jp2.getString("body"), "Body not forwarded");
 		assertNotNull(jp2.getString("priority"), "Priority not forwarded");
-		// TODO Assert more parameters
+		assertNotNull(jp2.getString("dateFrom"), "DateFrom not forwarded");
+		assertNotNull(jp2.getString("userText"), "UserText not forwarded");
 	}
 	
 	@Test(description = "negative test case: bearer token missing")
-	public void pxd_003_02_get_administration_message_test2() {
+	public void pxd_003_01_get_administration_message_test2() {
 		restApiBase.addHeader("Authorization", "");
 		// without this test takes bearer token from positive, test case 1
 		Response response = restApiBase.methodGET("http://10.10.10.21:8086/api/Administrations/Messages/Get/119");
@@ -65,14 +66,14 @@ public class PXD_003_Administration_Message_Test extends BaseTest {
 	}
 
 	@Test(description = "negative test case: wrong bearer token")
-	public void pxd_003_03_get_administration_message_test3() {
+	public void pxd_003_01_get_administration_message_test3() {
 		restApiBase.addHeader("Authorization", "Bearer " + Helper.getRandomNumber(10));
 		Response response = restApiBase.methodGET("http://10.10.10.21:8086/api/Administrations/Messages/Get/119");
 		assertEquals(response.getStatusCode(), 401);
 	}
 
 	@Test(description = "negative test case: wrong id")
-	public void pxd_003_04_get_administration_message_test4() {
+	public void pxd_003_01_get_administration_message_test4() {
 		Response response1 = restApiBase.methodPOST("http://10.10.10.21:8086/api/Auth/Authenticate",
 				Payloads.pxdAuth("admin", "staging"));
 		assertEquals(response1.getStatusCode(), 200);
@@ -86,7 +87,7 @@ public class PXD_003_Administration_Message_Test extends BaseTest {
 	}
 	
 	@Test(description = "positive test case")
-	public void pxd_003_05_post_administration_messages_list_test1() throws Exception {
+	public void pxd_003_02_post_administration_messages_list_test1() throws Exception {
 		// API
 		Response response1 = restApiBase.methodPOST("http://10.10.10.21:8086/api/Auth/Authenticate",
 				Payloads.pxdAuth("admin", "staging"));
@@ -106,7 +107,7 @@ public class PXD_003_Administration_Message_Test extends BaseTest {
 	}
 	
 	@Test(description = "positive test case")
-	public void pxd_003_06_create_administration_message_test1() throws Exception {
+	public void pxd_003_03_create_administration_message_test1() throws Exception {
 		// API
 		Response response1 = restApiBase.methodPOST("http://10.10.10.21:8086/api/Auth/Authenticate",
 				Payloads.pxdAuth("admin", "staging"));
@@ -129,8 +130,8 @@ public class PXD_003_Administration_Message_Test extends BaseTest {
 		PageBase.id1 = poruke.pokupiIdStavke();
 	}
 	
-	@Test(description = "positive test case", dependsOnMethods = { "pxd_003_06_create_administration_message_test1" })
-	public void pxd_003_07_update_administration_message_test1() throws Exception {
+	@Test(description = "positive test case", dependsOnMethods = { "pxd_003_03_create_administration_message_test1" })
+	public void pxd_003_04_update_administration_message_test1() throws Exception {
 		// API
 		Response response1 = restApiBase.methodPOST("http://10.10.10.21:8086/api/Auth/Authenticate",
 				Payloads.pxdAuth("admin", "staging"));
@@ -144,8 +145,8 @@ public class PXD_003_Administration_Message_Test extends BaseTest {
 		assertEquals(response2.getStatusCode(), 204);
 	}
 	
-	@Test(description = "positive test case", dependsOnMethods = { "pxd_003_07_update_administration_message_test1" })
-	public void pxd_003_08_delete_administration_message_test1() throws Exception {
+	@Test(description = "positive test case", dependsOnMethods = { "pxd_003_04_update_administration_message_test1" })
+	public void pxd_003_05_delete_administration_message_test1() throws Exception {
 		// API
 		Response response1 = restApiBase.methodPOST("http://10.10.10.21:8086/api/Auth/Authenticate",
 				Payloads.pxdAuth("admin", "staging"));

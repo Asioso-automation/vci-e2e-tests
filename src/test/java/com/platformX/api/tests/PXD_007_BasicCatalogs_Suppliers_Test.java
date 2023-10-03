@@ -11,6 +11,7 @@ import com.platformX.base.RestApiBase;
 import com.platformX.distribution.page.LogIn;
 import com.platformX.distribution.page.PocetnaStranicaPXD;
 import com.platformX.distribution.page.Snabdjevaci;
+import com.platformX.util.Helper;
 import com.platformX.util.PropertiesUtil;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
@@ -57,8 +58,22 @@ public class PXD_007_BasicCatalogs_Suppliers_Test extends BaseTest {
 		assertNotNull(jp2.getString("postOfficeText"), "PostOfficeText not forwarded");
 	}
 	
+	@Test(description = "negative test case: bearer token missing")
+	public void pxd_007_01_get_supplier_test2() {
+		restApiBase.addHeader("Authorization", "");
+		Response response = restApiBase.methodGET("http://10.10.10.21:8086/api/BasicCatalogs/Suppliers/Get/1");
+		assertEquals(response.getStatusCode(), 401);
+	}
+
+	@Test(description = "negative test case: wrong bearer token")
+	public void pxd_007_01_get_supplier_test3() {
+		restApiBase.addHeader("Authorization", "Bearer " + Helper.getRandomNumber(10));
+		Response response = restApiBase.methodGET("http://10.10.10.21:8086/api/BasicCatalogs/Suppliers/Get/1");
+		assertEquals(response.getStatusCode(), 401);
+	}
+	
 	@Test(description = "negative test case: wrong id")
-	public void pxd_007_02_get_supplier_test2() throws Exception {
+	public void pxd_007_01_get_supplier_test4() throws Exception {
 		// API
 		Response response1 = restApiBase.methodPOST("http://10.10.10.21:8086/api/Auth/Authenticate",
 				Payloads.pxdAuth("admin", "staging"));
@@ -74,7 +89,7 @@ public class PXD_007_BasicCatalogs_Suppliers_Test extends BaseTest {
 	}
 	
 	@Test(description = "positive test case")
-	public void pxd_007_03_post_suppliers_list_test1() throws Exception {
+	public void pxd_007_02_post_suppliers_list_test1() throws Exception {
 		// API
 		Response response1 = restApiBase.methodPOST("http://10.10.10.21:8086/api/Auth/Authenticate",
 				Payloads.pxdAuth("admin", "staging"));
@@ -94,7 +109,7 @@ public class PXD_007_BasicCatalogs_Suppliers_Test extends BaseTest {
 	}
 	
 	@Test(description = "positive test case", dependsOnMethods = { "pxd_007_01_get_supplier_test1" })
-	public void pxd_007_04_get_supplier_lookup_test1() throws Exception {
+	public void pxd_007_03_get_supplier_lookup_test1() throws Exception {
 		// API
 		Response response1 = restApiBase.methodPOST("http://10.10.10.21:8086/api/Auth/Authenticate",
 				Payloads.pxdAuth("admin", "staging"));
@@ -112,7 +127,7 @@ public class PXD_007_BasicCatalogs_Suppliers_Test extends BaseTest {
 	}
 	
 	@Test(description = "negative test case: wrong id")
-	public void pxd_007_05_get_supplier_lookup_test2() throws Exception {
+	public void pxd_007_03_get_supplier_lookup_test2() throws Exception {
 		// API
 		Response response1 = restApiBase.methodPOST("http://10.10.10.21:8086/api/Auth/Authenticate",
 				Payloads.pxdAuth("admin", "staging"));
@@ -128,7 +143,7 @@ public class PXD_007_BasicCatalogs_Suppliers_Test extends BaseTest {
 	}
 	
 	@Test(description = "positive test case")
-	public void pxd_007_06_create_supplier_test1() throws Exception {
+	public void pxd_007_04_create_supplier_test1() throws Exception {
 		// API
 		Response response1 = restApiBase.methodPOST("http://10.10.10.21:8086/api/Auth/Authenticate",
 				Payloads.pxdAuth("admin", "staging"));
@@ -144,8 +159,8 @@ public class PXD_007_BasicCatalogs_Suppliers_Test extends BaseTest {
 		PageBase.id1 = Integer.parseInt(response2.print());
 	}
 	
-	@Test(description = "positive test case", dependsOnMethods = { "pxd_007_06_create_supplier_test1" })
-	public void pxd_007_07_update_supplier_test1() throws Exception {
+	@Test(description = "positive test case", dependsOnMethods = { "pxd_007_04_create_supplier_test1" })
+	public void pxd_007_05_update_supplier_test1() throws Exception {
 		// API
 		Response response1 = restApiBase.methodPOST("http://10.10.10.21:8086/api/Auth/Authenticate",
 				Payloads.pxdAuth("admin", "staging"));
@@ -159,8 +174,8 @@ public class PXD_007_BasicCatalogs_Suppliers_Test extends BaseTest {
 		assertEquals(response2.getStatusCode(), 204);
 	}
 	
-	@Test(description = "positive test case", dependsOnMethods = { "pxd_007_07_update_supplier_test1" })
-	public void pxd_007_08_delete_supplier_test1() throws Exception {
+	@Test(description = "positive test case", dependsOnMethods = { "pxd_007_05_update_supplier_test1" })
+	public void pxd_007_06_delete_supplier_test1() throws Exception {
 		// API
 		Response response1 = restApiBase.methodPOST("http://10.10.10.21:8086/api/Auth/Authenticate",
 				Payloads.pxdAuth("admin", "staging"));

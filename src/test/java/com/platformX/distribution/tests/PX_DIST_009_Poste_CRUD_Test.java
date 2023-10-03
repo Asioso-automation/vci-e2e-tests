@@ -27,7 +27,9 @@ public class PX_DIST_009_Poste_CRUD_Test extends BaseTest {
 		poste.verifikujPoste();
 		podaci = poste.dodajPostu();
 		poste.verifikujPoruku("Uspješno završeno.");
-		poste.verifikujPostu(podaci[0], podaci[1], podaci[2]);
+		poste.pretraziStavku(homePage.filterKolona2WE, podaci[0]);
+		poste.verifikujPoste();
+		poste.verifikujStavku(podaci[1], homePage.podatak2Tabela1WE);
 	}
 	
 	@Test (description= "Pokušaj dodavanja poste sa istim ID-em")
@@ -41,7 +43,9 @@ public class PX_DIST_009_Poste_CRUD_Test extends BaseTest {
 		poste.verifikujPoste();
 		podaci = poste.dodajPostu();
 		poste.verifikujPoruku("Uspješno završeno.");
-		poste.verifikujPostu(podaci[0], podaci[1], podaci[2]);
+		poste.pretraziStavku(homePage.filterKolona2WE, podaci[0]);
+		poste.verifikujPoste();
+		poste.verifikujStavku(podaci[1], homePage.podatak2Tabela1WE);
 		poste.dodajPostuSaPodacima(podaci[0], podaci[1], podaci[2]);
 		poste.verifikujPoruku("Pošta već postoji za dati ID.");
 	}
@@ -57,10 +61,14 @@ public class PX_DIST_009_Poste_CRUD_Test extends BaseTest {
 		poste.verifikujPoste();
 		podaci = poste.dodajPostu();
 		poste.verifikujPoruku("Uspješno završeno.");
-		poste.verifikujPostu(podaci[0], podaci[1], podaci[2]);
+		poste.pretraziStavku(homePage.filterKolona2WE, podaci[0]);
+		poste.verifikujPoste();
+		poste.verifikujStavku(podaci[1], homePage.podatak2Tabela1WE);
 		String novaPosta = poste.urediPostu();
 		poste.verifikujPoruku("Uspješno završeno.");
-		poste.verifikujPostu(novaPosta, podaci[1], podaci[2]);
+		poste.pretraziStavku(homePage.filterKolona2WE, novaPosta);
+		poste.verifikujPoste();
+		poste.verifikujStavku(podaci[1], homePage.podatak2Tabela1WE);
 	}
 	
 	@Test
@@ -74,7 +82,9 @@ public class PX_DIST_009_Poste_CRUD_Test extends BaseTest {
 		poste.verifikujPoste();
 		podaci = poste.dodajPostu();
 		poste.verifikujPoruku("Uspješno završeno.");
-		poste.verifikujPostu(podaci[0], podaci[1], podaci[2]);
+		poste.pretraziStavku(homePage.filterKolona2WE, podaci[0]);
+		poste.verifikujPoste();
+		poste.verifikujStavku(podaci[1], homePage.podatak2Tabela1WE);
 		poste.obrisiStavku();
 		poste.verifikujPoruku("Brisanje je uspješno završeno");
 		poste.pretraziStavku(homePage.filterKolona2WE, podaci[0]);
@@ -90,7 +100,9 @@ public class PX_DIST_009_Poste_CRUD_Test extends BaseTest {
 		homePage.verifikujPocetnuStranicu();
 		Poste poste = homePage.navigirajNaPoste();
 		poste.verifikujPoste();
-		poste.verifikujPostu("Beograd", "11000", "Београд");
+		poste.pretraziStavku(homePage.filterKolona2WE, "Novi Beograd");
+		poste.verifikujPoste();
+		poste.verifikujStavku("11070", homePage.podatak2Tabela1WE);
 		poste.obrisiStavku();
 		poste.verifikujPoruku("Brisanje ovog zapisa nije moguće.");
 	}

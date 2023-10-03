@@ -12,6 +12,7 @@ import com.platformX.base.RestApiBase;
 import com.platformX.distribution.page.LogIn;
 import com.platformX.distribution.page.PocetnaStranicaPXD;
 import com.platformX.distribution.page.Poste;
+import com.platformX.util.Helper;
 import com.platformX.util.PropertiesUtil;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
@@ -54,8 +55,22 @@ public class PXD_012_BasicCatalogs_PostOffices_Test extends BaseTest {
 		assertNotNull(jp2.getString("printName"), "PrintName not forwarded");
 	}
 	
+	@Test(description = "negative test case: bearer token missing")
+	public void pxd_012_01_get_post_office_test2() {
+		restApiBase.addHeader("Authorization", "");
+		Response response = restApiBase.methodGET("http://10.10.10.21:8086/api/BasicCatalogs/PostOffices/Get/0");
+		assertEquals(response.getStatusCode(), 401);
+	}
+
+	@Test(description = "negative test case: wrong bearer token")
+	public void pxd_012_01_get_post_office_test3() {
+		restApiBase.addHeader("Authorization", "Bearer " + Helper.getRandomNumber(10));
+		Response response = restApiBase.methodGET("http://10.10.10.21:8086/api/BasicCatalogs/PostOffices/Get/0");
+		assertEquals(response.getStatusCode(), 401);
+	}
+	
 	@Test(description = "negative test case: wrong id")
-	public void pxd_012_02_get_post_office_test2() throws Exception {
+	public void pxd_012_01_get_post_office_test4() throws Exception {
 		// API
 		Response response1 = restApiBase.methodPOST("http://10.10.10.21:8086/api/Auth/Authenticate",
 				Payloads.pxdAuth("admin", "staging"));
@@ -71,7 +86,7 @@ public class PXD_012_BasicCatalogs_PostOffices_Test extends BaseTest {
 	}
 	
 	@Test(description = "positive test case")
-	public void pxd_012_03_post_post_offices_list_test1() throws Exception {
+	public void pxd_012_02_post_post_offices_list_test1() throws Exception {
 		// API
 		Response response1 = restApiBase.methodPOST("http://10.10.10.21:8086/api/Auth/Authenticate",
 				Payloads.pxdAuth("admin", "staging"));
@@ -89,9 +104,42 @@ public class PXD_012_BasicCatalogs_PostOffices_Test extends BaseTest {
 		assertNotNull(jp2.getString("dataCount"), "DataCount not forwarded");
 		assertNotNull(jp2.getString("data"), "Data not forwarded");
 	}
+	
+	@Test(description = "positive test case", dependsOnMethods = { "pxd_012_01_get_post_office_test1" })
+	public void pxd_012_03_get_post_office_lookup_test1() throws Exception {
+		// API
+		Response response1 = restApiBase.methodPOST("http://10.10.10.21:8086/api/Auth/Authenticate",
+				Payloads.pxdAuth("admin", "staging"));
+		assertEquals(response1.getStatusCode(), 200);
+		JsonPath jp1 = new JsonPath(response1.asString());
+		assertNotNull(jp1.getString("token"), "Token not forwarded");
+		String token = jp1.getString("token");
+		// Get Post Office Lookup
+		restApiBase.addHeader("Authorization", "Bearer " + token);
+		Response response2 = restApiBase.methodGET("http://10.10.10.21:8086/api/BasicCatalogs/Places/Lookup?Keyword=" + PageBase.id + "&Id=" + PageBase.id);
+		assertEquals(response2.getStatusCode(), 200);
+		JsonPath jp2 = new JsonPath(response2.asString());
+		assertNotNull(jp2.getString("id"), "Id not forwarded");
+		assertNotNull(jp2.getString("text"), "Text not forwarded");
+	}
+	
+	@Test(description = "negative test case: wrong id")
+	public void pxd_012_03_get_post_office_lookup_test2() throws Exception {
+		// API
+		Response response1 = restApiBase.methodPOST("http://10.10.10.21:8086/api/Auth/Authenticate",
+				Payloads.pxdAuth("admin", "staging"));
+		assertEquals(response1.getStatusCode(), 200);
+		JsonPath jp1 = new JsonPath(response1.asString());
+		assertNotNull(jp1.getString("token"), "Token not forwarded");
+		String token = jp1.getString("token");
+		// Get Post Office Lookup
+		restApiBase.addHeader("Authorization", "Bearer " + token);
+		Response response2 = restApiBase.methodGET("http://10.10.10.21:8086/api/BasicCatalogs/Places/Lookup?Keyword=" + PageBase.wrongIdLong + "&Id=" + PageBase.wrongIdLong);
+		assertEquals(response2.getStatusCode(), 200);
+		assertEquals(response2.print(), "[]");
+	}
 
-//  TODO	/api/BasicCatalogs/PostOffices/Lookup
-//			/api/BasicCatalogs/PostOffices/Create
+// TODO		/api/BasicCatalogs/PostOffices/Create
 //			/api/BasicCatalogs/PostOffices/Update/{id}
 //			/api/BasicCatalogs/PostOffices/Delete/{id}
 

@@ -31,7 +31,7 @@ public class PXD_001_Authentication_Test extends RestApiBase {
 	}
 
 	@Test(description = "negative test case: wrong username")
-	public void pxd_001_02_authentication_test2() {
+	public void pxd_001_01_authentication_test2() {
 		Response response = methodPOST("http://10.10.10.21:8086/api/Auth/Authenticate",
 				Payloads.pxdAuth(Helper.getRandomString(5), "staging"));
 		assertEquals(response.getStatusCode(), 400);
@@ -42,7 +42,7 @@ public class PXD_001_Authentication_Test extends RestApiBase {
 	}
 
 	@Test(description = "negative test case: wrong password")
-	public void pxd_001_03_authentication_test3() {
+	public void pxd_001_01_authentication_test3() {
 		Response response = methodPOST("http://10.10.10.21:8086/api/Auth/Authenticate",
 				Payloads.pxdAuth("admin", Helper.getRandomString(5)));
 		assertEquals(response.getStatusCode(), 400);
@@ -53,7 +53,7 @@ public class PXD_001_Authentication_Test extends RestApiBase {
 	}
 
 	@Test(description = "negative test case: username missing")
-	public void pxd_001_04_authentication_test4() {
+	public void pxd_001_01_authentication_test4() {
 		Response response = methodPOST("http://10.10.10.21:8086/api/Auth/Authenticate",
 				Payloads.pxdAuth("", Helper.getRandomString(5)));
 		assertEquals(response.getStatusCode(), 400);
@@ -62,7 +62,7 @@ public class PXD_001_Authentication_Test extends RestApiBase {
 	}
 
 	@Test(description = "negative test case: password missing")
-	public void pxd_001_05_authentication_test5() {
+	public void pxd_001_01_authentication_test5() {
 		Response response = methodPOST("http://10.10.10.21:8086/api/Auth/Authenticate", Payloads.pxdAuth("admin", ""));
 		assertEquals(response.getStatusCode(), 400);
 		JsonPath jp = new JsonPath(response.asString());
@@ -70,7 +70,7 @@ public class PXD_001_Authentication_Test extends RestApiBase {
 	}
 	
 	@Test(description = "negative test case: username and password missing")
-	public void pxd_001_06_authentication_test6() {
+	public void pxd_001_01_authentication_test6() {
 		Response response = methodPOST("http://10.10.10.21:8086/api/Auth/Authenticate", Payloads.pxdAuth("", ""));
 		assertEquals(response.getStatusCode(), 400);
 		JsonPath jp = new JsonPath(response.asString());
@@ -81,7 +81,7 @@ public class PXD_001_Authentication_Test extends RestApiBase {
 // UserData
 	
 	@Test (description = "positive test case")
-	public void pxd_001_07_get_user_data_test1() {
+	public void pxd_001_02_get_user_data_test1() {
 		// Authorization
 		Response response1 = methodPOST("http://10.10.10.21:8086/api/Auth/Authenticate", Payloads.pxdAuth("admin", "staging"));
 		assertEquals(response1.getStatusCode(), 200);
@@ -95,6 +95,8 @@ public class PXD_001_Authentication_Test extends RestApiBase {
 		JsonPath jp2 = new JsonPath(response2.asString());
 		assertEquals(jp2.get("username"), "admin");
 		assertEquals(jp2.get("name"), "Adminko");
+		assertEquals(jp2.get("surname"), "Adminković");
+		assertNotNull(jp2.getString("permissions"), "Permissions not forwarded");
 		// TODO Assert more
 	}
 	

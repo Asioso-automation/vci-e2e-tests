@@ -1,15 +1,12 @@
 package com.platformX.distribution.page;
 
-import static org.testng.Assert.assertTrue;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import com.platformX.base.Kolone;
 import com.platformX.util.Helper;
 
@@ -27,15 +24,6 @@ public class Poste extends PocetnaStranicaPXD {
 	
 	@FindBy(xpath = "//div[3]/div/div/div[1]/div/input")
 	private WebElement nazivNaDokWE;
-	
-	@FindBy(xpath = "//tr[2]/td[2]")
-	private WebElement nazivPosteTabelaWE;
-	
-	@FindBy(xpath = "//tr[2]/td[3]")
-	private WebElement nazivPosteNaDokTabelaWE;
-	
-	@FindBy(xpath = "//tr[2]/td[1]")
-	private WebElement idTabelaWE;
 	
 	@FindBy(xpath = "//div[1]/div/div/div[1]/div/input")
 	private WebElement urediNazivWE;
@@ -77,39 +65,6 @@ public class Poste extends PocetnaStranicaPXD {
 		nazivNaDokWE.sendKeys(nazivNaDok);
 		submitBtnWE.click();
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
-	}
-	
-	public void verifikujPostu(String naziv, String id, String nazivNaDok) throws Exception {
-		WebDriverWait wait = new WebDriverWait(driver, 5);
-		try {
-		wait.until(ExpectedConditions.elementToBeClickable(filterKolona2WE));
-		filterKolona2WE.click();
-		filterKolona2WE.clear();
-		filterKolona2WE.sendKeys(naziv);
-		filterKolona2WE.sendKeys(Keys.ENTER);
-		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
-		wait.until(ExpectedConditions.visibilityOf(nazivPosteTabelaWE));
-		assertTrue(nazivPosteTabelaWE.getText().equals(naziv), "Poste: Posta nije pronadjena!");
-		assertTrue(nazivPosteNaDokTabelaWE.getText().equals(nazivNaDok), "Poste: Posta nije pronadjena!");
-		assertTrue(idTabelaWE.getText().equals(id), "Poste: Posta nije pronadjena!");
-		}
-		catch (Exception e) {
-			verifikujPoruku("Pošta već postoji za dati ID.");
-			wait.until(ExpectedConditions.elementToBeClickable(idWE));
-			idWE.click();
-			idWE.clear();
-			idWE.sendKeys(Helper.getRandomNumber(4));
-			submitBtnWE.click();
-			wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
-			wait.until(ExpectedConditions.elementToBeClickable(filterKolona2WE));
-			filterKolona2WE.click();
-			filterKolona2WE.clear();
-			filterKolona2WE.sendKeys(naziv);
-			filterKolona2WE.sendKeys(Keys.ENTER);
-			wait.until(ExpectedConditions.visibilityOf(nazivPosteTabelaWE));
-			assertTrue(nazivPosteTabelaWE.getText().equals(naziv), "Poste: Posta nije pronadjena!");
-			assertTrue(nazivPosteNaDokTabelaWE.getText().equals(nazivNaDok), "Poste: Posta nije pronadjena!");
-		}
 	}
 	
 	public String urediPostu() throws InterruptedException {

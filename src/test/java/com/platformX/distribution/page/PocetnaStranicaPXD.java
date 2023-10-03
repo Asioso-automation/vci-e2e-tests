@@ -105,7 +105,7 @@ public class PocetnaStranicaPXD extends PageBase {
 
 //	 Stranice
 
-	@FindBy(xpath = "//div[contains(text(), 'Organizacije') and @class='v-list-item__title'")
+	@FindBy(xpath = "//div[contains(text(), 'Organizacije') and @class='v-list-item__title']")
 	protected WebElement organizacijeWE;
 	
 	@FindBy(xpath = "//div[contains(text(), 'Terenske jedinice') and @class='v-list-item__title']")

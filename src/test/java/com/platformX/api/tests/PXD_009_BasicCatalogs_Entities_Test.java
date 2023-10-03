@@ -12,6 +12,7 @@ import com.platformX.base.RestApiBase;
 import com.platformX.distribution.page.Entiteti;
 import com.platformX.distribution.page.LogIn;
 import com.platformX.distribution.page.PocetnaStranicaPXD;
+import com.platformX.util.Helper;
 import com.platformX.util.PropertiesUtil;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
@@ -53,8 +54,22 @@ public class PXD_009_BasicCatalogs_Entities_Test extends BaseTest {
 		assertNotNull(jp2.getString("name"), "Name not forwarded");
 	}
 	
+	@Test(description = "negative test case: bearer token missing")
+	public void pxd_009_01_get_entity_test2() {
+		restApiBase.addHeader("Authorization", "");
+		Response response = restApiBase.methodGET("http://10.10.10.21:8086/api/BasicCatalogs/Entities/Get/1");
+		assertEquals(response.getStatusCode(), 401);
+	}
+
+	@Test(description = "negative test case: wrong bearer token")
+	public void pxd_009_01_get_entity_test3() {
+		restApiBase.addHeader("Authorization", "Bearer " + Helper.getRandomNumber(10));
+		Response response = restApiBase.methodGET("http://10.10.10.21:8086/api/BasicCatalogs/Entities/Get/1");
+		assertEquals(response.getStatusCode(), 401);
+	}
+	
 	@Test(description = "negative test case: wrong id")
-	public void pxd_009_02_get_entity_test2() throws Exception {
+	public void pxd_009_01_get_entity_test4() throws Exception {
 		// API
 		Response response1 = restApiBase.methodPOST("http://10.10.10.21:8086/api/Auth/Authenticate",
 				Payloads.pxdAuth("admin", "staging"));
@@ -70,7 +85,7 @@ public class PXD_009_BasicCatalogs_Entities_Test extends BaseTest {
 	}
 	
 	@Test(description = "positive test case")
-	public void pxd_009_03_post_entities_list_test1() throws Exception {
+	public void pxd_009_02_post_entities_list_test1() throws Exception {
 		// API
 		Response response1 = restApiBase.methodPOST("http://10.10.10.21:8086/api/Auth/Authenticate",
 				Payloads.pxdAuth("admin", "staging"));
@@ -89,8 +104,41 @@ public class PXD_009_BasicCatalogs_Entities_Test extends BaseTest {
 		assertNotNull(jp2.getString("data"), "Data not forwarded");
 	}
 	
-//	TODO	/api/BasicCatalogs/Entities/Lookup
-//			/api/BasicCatalogs/Entities/Create
+	@Test(description = "positive test case", dependsOnMethods = { "pxd_009_01_get_entity_test1" })
+	public void pxd_009_03_get_entity_lookup_test1() throws Exception {
+		// API
+		Response response1 = restApiBase.methodPOST("http://10.10.10.21:8086/api/Auth/Authenticate",
+				Payloads.pxdAuth("admin", "staging"));
+		assertEquals(response1.getStatusCode(), 200);
+		JsonPath jp1 = new JsonPath(response1.asString());
+		assertNotNull(jp1.getString("token"), "Token not forwarded");
+		String token = jp1.getString("token");
+		// Get Entity Lookup
+		restApiBase.addHeader("Authorization", "Bearer " + token);
+		Response response2 = restApiBase.methodGET("http://10.10.10.21:8086/api/BasicCatalogs/Entities/Lookup?Keyword=" + PageBase.id + "&Id=" + PageBase.id);
+		assertEquals(response2.getStatusCode(), 200);
+		JsonPath jp2 = new JsonPath(response2.asString());
+		assertNotNull(jp2.getString("id"), "Id not forwarded");
+		assertNotNull(jp2.getString("text"), "Text not forwarded");
+	}
+	
+	@Test(description = "negative test case: wrong id")
+	public void pxd_009_03_get_entity_lookup_test2() throws Exception {
+		// API
+		Response response1 = restApiBase.methodPOST("http://10.10.10.21:8086/api/Auth/Authenticate",
+				Payloads.pxdAuth("admin", "staging"));
+		assertEquals(response1.getStatusCode(), 200);
+		JsonPath jp1 = new JsonPath(response1.asString());
+		assertNotNull(jp1.getString("token"), "Token not forwarded");
+		String token = jp1.getString("token");
+		// Get Entity Lookup
+		restApiBase.addHeader("Authorization", "Bearer " + token);
+		Response response2 = restApiBase.methodGET("http://10.10.10.21:8086/api/BasicCatalogs/Entities/Lookup?Keyword=" + PageBase.wrongIdShort + "&Id=" + PageBase.wrongIdShort);
+		assertEquals(response2.getStatusCode(), 200);
+		assertEquals(response2.print(), "[]");
+	}
+	
+// TODO		/api/BasicCatalogs/Entities/Create
 //			/api/BasicCatalogs/Entities/Update/{id}
 //			/api/BasicCatalogs/Entities/Delete/{id}
 

@@ -8,6 +8,7 @@ import com.platformX.base.RestApiBase;
 import com.platformX.distribution.page.LogIn;
 import com.platformX.distribution.page.PocetnaStranicaPXD;
 import com.platformX.distribution.page.TerenskeJedinice;
+import com.platformX.util.Helper;
 import com.platformX.util.PropertiesUtil;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
@@ -53,9 +54,23 @@ public class PXD_005_BasicCatalogs_FieldUnits_Test extends BaseTest {
 		assertNotNull(jp2.getString("placeText"), "PlaceText not forwarded");
 		assertNotNull(jp2.getString("companyText"), "CompanyText not forwarded");
 	}
+	
+	@Test(description = "negative test case: bearer token missing")
+	public void pxd_005_01_get_field_unit_test2() {
+		restApiBase.addHeader("Authorization", "");
+		Response response = restApiBase.methodGET("http://10.10.10.21:8086/api/BasicCatalogs/FieldUnits/Get/0");
+		assertEquals(response.getStatusCode(), 401);
+	}
+
+	@Test(description = "negative test case: wrong bearer token")
+	public void pxd_005_01_get_field_unit_test3() {
+		restApiBase.addHeader("Authorization", "Bearer " + Helper.getRandomNumber(10));
+		Response response = restApiBase.methodGET("http://10.10.10.21:8086/api/BasicCatalogs/FieldUnits/Get/0");
+		assertEquals(response.getStatusCode(), 401);
+	}
 		
 	@Test(description = "negative test case: wrong id")
-	public void pxd_005_02_get_field_unit_test2() throws Exception {	
+	public void pxd_005_01_get_field_unit_test4() throws Exception {	
 		// API
 		Response response1 = restApiBase.methodPOST("http://10.10.10.21:8086/api/Auth/Authenticate",
 				Payloads.pxdAuth("admin", "staging"));
@@ -71,7 +86,7 @@ public class PXD_005_BasicCatalogs_FieldUnits_Test extends BaseTest {
 	}
 	
 	@Test(description = "positive test case")
-	public void pxd_005_03_post_field_units_list_test1() throws Exception {
+	public void pxd_005_02_post_field_units_list_test1() throws Exception {
 		// API
 		Response response1 = restApiBase.methodPOST("http://10.10.10.21:8086/api/Auth/Authenticate",
 				Payloads.pxdAuth("admin", "staging"));
@@ -91,7 +106,7 @@ public class PXD_005_BasicCatalogs_FieldUnits_Test extends BaseTest {
 	}
 	
 	@Test(description = "positive test case", dependsOnMethods = { "pxd_005_01_get_field_unit_test1" })
-	public void pxd_005_04_get_field_unit_lookup_test1() throws Exception {
+	public void pxd_005_03_get_field_unit_lookup_test1() throws Exception {
 		// API
 		Response response1 = restApiBase.methodPOST("http://10.10.10.21:8086/api/Auth/Authenticate",
 				Payloads.pxdAuth("admin", "staging"));
@@ -109,7 +124,7 @@ public class PXD_005_BasicCatalogs_FieldUnits_Test extends BaseTest {
 	}
 	
 	@Test(description = "negative test case: wrong id")
-	public void pxd_005_05_get_field_unit_lookup_test2() throws Exception {
+	public void pxd_005_03_get_field_unit_lookup_test2() throws Exception {
 		// API
 		Response response1 = restApiBase.methodPOST("http://10.10.10.21:8086/api/Auth/Authenticate",
 				Payloads.pxdAuth("admin", "staging"));
@@ -125,7 +140,7 @@ public class PXD_005_BasicCatalogs_FieldUnits_Test extends BaseTest {
 	}
 	
 	@Test(description = "positive test case")
-	public void pxd_005_06_create_field_unit_test1() throws Exception {
+	public void pxd_005_04_create_field_unit_test1() throws Exception {
 		// API
 		Response response1 = restApiBase.methodPOST("http://10.10.10.21:8086/api/Auth/Authenticate",
 				Payloads.pxdAuth("admin", "staging"));
@@ -141,8 +156,8 @@ public class PXD_005_BasicCatalogs_FieldUnits_Test extends BaseTest {
 		PageBase.id1 = Integer.parseInt(response2.print());
 	}
 	
-	@Test(description = "positive test case", dependsOnMethods = { "pxd_005_06_create_field_unit_test1" })
-	public void pxd_005_07_update_field_unit_test1() throws Exception {
+	@Test(description = "positive test case", dependsOnMethods = { "pxd_005_04_create_field_unit_test1" })
+	public void pxd_005_05_update_field_unit_test1() throws Exception {
 		// API
 		Response response1 = restApiBase.methodPOST("http://10.10.10.21:8086/api/Auth/Authenticate",
 				Payloads.pxdAuth("admin", "staging"));
@@ -156,8 +171,8 @@ public class PXD_005_BasicCatalogs_FieldUnits_Test extends BaseTest {
 		assertEquals(response2.getStatusCode(), 204);
 	}
 	
-	@Test(description = "positive test case", dependsOnMethods = { "pxd_005_07_update_field_unit_test1" })
-	public void pxd_005_08_delete_field_unit_test1() throws Exception {
+	@Test(description = "positive test case", dependsOnMethods = { "pxd_005_05_update_field_unit_test1" })
+	public void pxd_005_06_delete_field_unit_test1() throws Exception {
 		// API
 		Response response1 = restApiBase.methodPOST("http://10.10.10.21:8086/api/Auth/Authenticate",
 				Payloads.pxdAuth("admin", "staging"));
