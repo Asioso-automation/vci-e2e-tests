@@ -25,7 +25,7 @@ public class PXD_008_BasicCatalogs_Readers_Test extends BaseTest {
 	public PXD_008_BasicCatalogs_Readers_Test() throws IOException {
 		super();
 	}
-	
+		
 	@Test(description = "positive test case")
 	public void pxd_008_01_get_reader_test1() throws Exception {
 		//PXD UI
@@ -152,7 +152,7 @@ public class PXD_008_BasicCatalogs_Readers_Test extends BaseTest {
 		String token = jp1.getString("token");
 		// Post Reader Create
 		restApiBase.addHeader("Authorization", "Bearer " + token);
-		Response response2 = restApiBase.methodPOST("http://10.10.10.21:8086/api/BasicCatalogs/Readers/Create", Payloads.pxdReaderCreate("2023-09-01", 308, "Citac test"));
+		Response response2 = restApiBase.methodPOST("http://10.10.10.21:8086/api/BasicCatalogs/Readers/Create", Payloads.pxdReaderCreate("2023-09-01", 308, "Citac"));
 		assertEquals(response2.getStatusCode(), 200);
 		assertNotNull(response2.print(), "Response body is empty");
 		PageBase.id1 = Integer.parseInt(response2.print());
@@ -169,7 +169,7 @@ public class PXD_008_BasicCatalogs_Readers_Test extends BaseTest {
 		String token = jp1.getString("token");
 		// Put Reader Update
 		restApiBase.addHeader("Authorization", "Bearer " + token);
-		Response response2 = restApiBase.methodPUT("http://10.10.10.21:8086/api/BasicCatalogs/Readers/Update/" + PageBase.id1, Payloads.pxdReaderUpdate("2023-09-01", "2023-09-02", 308, "308 - Pale", 5, "5 - Pale", PageBase.id1, "Citac test 1"));
+		Response response2 = restApiBase.methodPUT("http://10.10.10.21:8086/api/BasicCatalogs/Readers/Update/" + PageBase.id1, Payloads.pxdReaderUpdate("2023-09-01", "2023-09-02", 308, "308 - Pale", 5, "5 - Pale", PageBase.id1, "Citac 1"));
 		assertEquals(response2.getStatusCode(), 204);
 	}
 	

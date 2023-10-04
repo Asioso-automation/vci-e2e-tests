@@ -171,4 +171,52 @@ public class Payloads {
 				+ "}";
 	}
 	
+	public static String pxdEntityCreate(String name) {
+		return "{\r\n"
+				+ "	\"name\": \"" + name + "\" \r\n"
+				+ "}";
+	}
+	
+	public static String pxdEntityUpdate(int id, String name) {
+		return "{\r\n"
+				+ " \"id\": " + id + ", \r\n"
+				+ "	\"name\": \"" + name + "\" \r\n"
+				+ "}";
+	}
+	
+	public static String pxdMunicipalityCreate(String name, int entityId, String countryId) {
+		return "{\r\n"
+				+ "	\"name\": \"" + name + "\", \r\n"
+				+ " \"entityId\": " + entityId + ", \r\n"
+				+ "	\"countryId\": \"" + countryId + "\" \r\n"
+				+ "}";
+	}
+	
+	public static String pxdMunicipalityUpdate(int id, String name, int entityId, String countryId) {
+		return "{\r\n"
+				+ " \"id\": " + id + ", \r\n"
+				+ "	\"name\": \"" + name + "\", \r\n"
+				+ " \"entityId\": " + entityId + ", \r\n"
+				+ "	\"countryId\": \"" + countryId + "\" \r\n"
+				+ "}";
+	}
+
+	public static String pxdPlaceCreate(String name, String printName, int municipalityId) {
+		return "{\r\n"
+				+ "	\"name\": \"" + name + "\", \r\n"
+				+ "	\"printName\": \"" + printName + "\", \r\n"
+				+ " \"municipalityId\": " + municipalityId + " \r\n"
+				+ "}";
+	}
+	
+	public static String pxdPlaceUpdate(int id, String name, String printName, int municipalityId) {
+		return "{\r\n"
+				+ " \"id\": " + id + ", \r\n"
+				+ "	\"name\": \"" + name + "\", \r\n"
+				+ "	\"printName\": \"" + printName + "\", \r\n"
+				+ " \"municipalityId\": " + municipalityId + " \r\n"
+				+ "}";
+	}
+
+	
 }

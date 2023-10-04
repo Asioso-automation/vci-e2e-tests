@@ -153,7 +153,7 @@ public class PXD_007_BasicCatalogs_Suppliers_Test extends BaseTest {
 		String token = jp1.getString("token");
 		// Post Supplier Create
 		restApiBase.addHeader("Authorization", "Bearer " + token);
-		Response response2 = restApiBase.methodPOST("http://10.10.10.21:8086/api/BasicCatalogs/Suppliers/Create", Payloads.pxdSupplierCreate("1111111111111111", "Snabdjevac test", 6, 78000));
+		Response response2 = restApiBase.methodPOST("http://10.10.10.21:8086/api/BasicCatalogs/Suppliers/Create", Payloads.pxdSupplierCreate("1111111111111111", "Snabdjevac", 6, 78000));
 		assertEquals(response2.getStatusCode(), 200);
 		assertNotNull(response2.print(), "Response body is empty");
 		PageBase.id1 = Integer.parseInt(response2.print());
@@ -170,7 +170,7 @@ public class PXD_007_BasicCatalogs_Suppliers_Test extends BaseTest {
 		String token = jp1.getString("token");
 		// Put Supplier Update
 		restApiBase.addHeader("Authorization", "Bearer " + token);
-		Response response2 = restApiBase.methodPUT("http://10.10.10.21:8086/api/BasicCatalogs/Suppliers/Update/" + PageBase.id1, Payloads.pxdSupplierUpdate("1111111111111111", PageBase.id1, "Snabdjevac test 1", 6, "6 - Banja Luka", 78000, "78000 - Banja Luka"));
+		Response response2 = restApiBase.methodPUT("http://10.10.10.21:8086/api/BasicCatalogs/Suppliers/Update/" + PageBase.id1, Payloads.pxdSupplierUpdate("1111111111111111", PageBase.id1, "Snabdjevac 1", 6, "6 - Banja Luka", 78000, "78000 - Banja Luka"));
 		assertEquals(response2.getStatusCode(), 204);
 	}
 	

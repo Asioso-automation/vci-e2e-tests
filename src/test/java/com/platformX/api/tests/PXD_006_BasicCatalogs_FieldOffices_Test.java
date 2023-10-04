@@ -154,7 +154,7 @@ public class PXD_006_BasicCatalogs_FieldOffices_Test extends BaseTest {
 		String token = jp1.getString("token");
 		// Post Field Office Create
 		restApiBase.addHeader("Authorization", "Bearer " + token);
-		Response response2 = restApiBase.methodPOST("http://10.10.10.21:8086/api/BasicCatalogs/FieldOffices/Create", Payloads.pxdFieldOfficeCreate(5, "FL test", 11, 123));
+		Response response2 = restApiBase.methodPOST("http://10.10.10.21:8086/api/BasicCatalogs/FieldOffices/Create", Payloads.pxdFieldOfficeCreate(5, "FizickaLokacija", 11, 123));
 		assertEquals(response2.getStatusCode(), 200);
 		assertNotNull(response2.print(), "Response body is empty");
 		PageBase.id1 = Integer.parseInt(response2.print());
@@ -171,7 +171,7 @@ public class PXD_006_BasicCatalogs_FieldOffices_Test extends BaseTest {
 		String token = jp1.getString("token");
 		// Patch Field Office Update
 		restApiBase.addHeader("Authorization", "Bearer " + token);
-		Response response2 = restApiBase.methodPATCH("http://10.10.10.21:8086/api/BasicCatalogs/FieldOffices/Update/" + PageBase.id1, Payloads.pxdFieldOfficeUpdate(PageBase.id1, 5, "FL test 1", "11", "123", "5 - Pale", " - "));
+		Response response2 = restApiBase.methodPATCH("http://10.10.10.21:8086/api/BasicCatalogs/FieldOffices/Update/" + PageBase.id1, Payloads.pxdFieldOfficeUpdate(PageBase.id1, 5, "FizickaLokacija 1", "11", "123", "5 - Pale", " - "));
 		assertEquals(response2.getStatusCode(), 204);
 	}
 	

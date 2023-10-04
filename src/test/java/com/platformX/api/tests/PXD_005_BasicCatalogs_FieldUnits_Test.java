@@ -150,7 +150,7 @@ public class PXD_005_BasicCatalogs_FieldUnits_Test extends BaseTest {
 		String token = jp1.getString("token");
 		// Post Field Unit Create
 		restApiBase.addHeader("Authorization", "Bearer " + token);
-		Response response2 = restApiBase.methodPOST("http://10.10.10.21:8086/api/BasicCatalogs/FieldUnits/Create", Payloads.pxdFieldUnitCreate("TJ test"));
+		Response response2 = restApiBase.methodPOST("http://10.10.10.21:8086/api/BasicCatalogs/FieldUnits/Create", Payloads.pxdFieldUnitCreate("TerenskaJedinica"));
 		assertEquals(response2.getStatusCode(), 200);
 		assertNotNull(response2.print(), "Response body is empty");
 		PageBase.id1 = Integer.parseInt(response2.print());
@@ -167,7 +167,7 @@ public class PXD_005_BasicCatalogs_FieldUnits_Test extends BaseTest {
 		String token = jp1.getString("token");
 		// Put Field Unit Update
 		restApiBase.addHeader("Authorization", "Bearer " + token);
-		Response response2 = restApiBase.methodPUT("http://10.10.10.21:8086/api/BasicCatalogs/FieldUnits/Update/" + PageBase.id1, Payloads.pxdFieldUnitUpdate(PageBase.id1, "TJ test", " - "," - "));
+		Response response2 = restApiBase.methodPUT("http://10.10.10.21:8086/api/BasicCatalogs/FieldUnits/Update/" + PageBase.id1, Payloads.pxdFieldUnitUpdate(PageBase.id1, "TerenskaJedinica 1", " - "," - "));
 		assertEquals(response2.getStatusCode(), 204);
 	}
 	

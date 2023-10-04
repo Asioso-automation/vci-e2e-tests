@@ -138,8 +138,52 @@ public class PXD_009_BasicCatalogs_Entities_Test extends BaseTest {
 		assertEquals(response2.print(), "[]");
 	}
 	
-// TODO		/api/BasicCatalogs/Entities/Create
-//			/api/BasicCatalogs/Entities/Update/{id}
-//			/api/BasicCatalogs/Entities/Delete/{id}
+	@Test(description = "positive test case")
+	public void pxd_009_04_create_entity_test1() throws Exception {
+		// API
+		Response response1 = restApiBase.methodPOST("http://10.10.10.21:8086/api/Auth/Authenticate",
+				Payloads.pxdAuth("admin", "staging"));
+		assertEquals(response1.getStatusCode(), 200);
+		JsonPath jp1 = new JsonPath(response1.asString());
+		assertNotNull(jp1.getString("token"), "Token not forwarded");
+		String token = jp1.getString("token");
+		// Post Entity Create
+		restApiBase.addHeader("Authorization", "Bearer " + token);
+		Response response2 = restApiBase.methodPOST("http://10.10.10.21:8086/api/BasicCatalogs/Entities/Create", Payloads.pxdEntityCreate("Entitet"));
+		assertEquals(response2.getStatusCode(), 200);
+		assertNotNull(response2.print(), "Response body is empty");
+		PageBase.id1 = Integer.parseInt(response2.print());
+	}
+	
+	@Test(description = "positive test case", dependsOnMethods = { "pxd_009_04_create_entity_test1" })
+	public void pxd_009_05_update_entity_test1() throws Exception {
+		// API
+		Response response1 = restApiBase.methodPOST("http://10.10.10.21:8086/api/Auth/Authenticate",
+				Payloads.pxdAuth("admin", "staging"));
+		assertEquals(response1.getStatusCode(), 200);
+		JsonPath jp1 = new JsonPath(response1.asString());
+		assertNotNull(jp1.getString("token"), "Token not forwarded");
+		String token = jp1.getString("token");
+		// Put Entity Update
+		restApiBase.addHeader("Authorization", "Bearer " + token);
+		Response response2 = restApiBase.methodPUT("http://10.10.10.21:8086/api/BasicCatalogs/Entities/Update/" + PageBase.id1, Payloads.pxdEntityUpdate(PageBase.id1, "Entitet 1"));
+		assertEquals(response2.getStatusCode(), 204);
+	}
+	
+	@Test(description = "positive test case", dependsOnMethods = { "pxd_009_05_update_entity_test1" })
+	public void pxd_009_06_delete_entity_test1() throws Exception {
+		// API
+		Response response1 = restApiBase.methodPOST("http://10.10.10.21:8086/api/Auth/Authenticate",
+				Payloads.pxdAuth("admin", "staging"));
+		assertEquals(response1.getStatusCode(), 200);
+		JsonPath jp1 = new JsonPath(response1.asString());
+		assertNotNull(jp1.getString("token"), "Token not forwarded");
+		String token = jp1.getString("token");
+		// Delete Entity
+		restApiBase.addHeader("Authorization", "Bearer " + token);
+		Response response2 = restApiBase.methodDELETE("http://10.10.10.21:8086/api/BasicCatalogs/Entities/Delete/" + PageBase.id1);
+		assertEquals(response2.getStatusCode(), 204);
+		assertEquals(response2.print(), "");
+	}
 
 }
