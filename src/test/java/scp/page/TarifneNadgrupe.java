@@ -25,4 +25,14 @@ public class TarifneNadgrupe extends PocetnaStranica{
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAktivno1WE));
 	}
 	
+	public void verifikujTarifneNadgrupeSon()throws InterruptedException, FileNotFoundException, IOException {
+		Kolone kolone = new Kolone(driver);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
+				"//div[contains(@class, 'v-toolbar__title') and contains(text(), 'Tarifne nadgrupe')]")));
+		verifikacijaZajednickihElemenata("TARIFNI SISTEM", "TARIFNE NADGRUPE", "Tarifne nadgrupe", 4, false, false, false, true, true, true, false);
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaId1WE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNaziv1WE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAktivno1WE));
+	}
+	
 }

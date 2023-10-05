@@ -9,13 +9,13 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import com.platformX.base.Kolone;
 
-public class IndirektniVodomjeri extends PocetnaStranica{
+public class IndirektnaPotrosnja extends PocetnaStranica{
 
-	public IndirektniVodomjeri(WebDriver driver) throws FileNotFoundException, IOException {
+	public IndirektnaPotrosnja(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);
 	}
 	
-	public void verifikujIndirektneVodomjeri()throws InterruptedException, FileNotFoundException, IOException {
+	public void verifikujIndirektnuPotrosnju()throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title') and contains(text(), 'Indirektna potrošnja')]")));

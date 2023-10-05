@@ -9,17 +9,17 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import com.platformX.base.Kolone;
 
-public class VrstePresude extends PocetnaStranica{
+public class VrstePresuda extends PocetnaStranica{
 
-	public VrstePresude(WebDriver driver) throws FileNotFoundException, IOException {
+	public VrstePresuda(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);
 	}
 
-	public void verifikujVrstePresude()throws InterruptedException, FileNotFoundException, IOException {
+	public void verifikujVrstePresuda()throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
-				"//div[contains(@class, 'v-toolbar__title') and contains(text(), 'Vrste presude')]")));
-		verifikacijaZajednickihElemenata("TUŽBE", "VRSTE PRESUDE", "Vrste presude", 4, false, false, true, true, true, true, false);
+				"//div[contains(@class, 'v-toolbar__title') and contains(text(), 'Vrste presuda')]")));
+		verifikacijaZajednickihElemenata("PRAVNI ODNOSI", "VRSTE PRESUDA", "Vrste presuda", 4, false, false, true, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaId1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNaziv1WE));
 	}

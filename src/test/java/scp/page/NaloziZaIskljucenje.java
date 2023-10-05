@@ -15,8 +15,8 @@ public class NaloziZaIskljucenje extends PocetnaStranica{
 		super(driver);
 	}
 
-	@FindBy(xpath = "//i[contains(@class, 'fa-layer-group')]")
-	protected WebElement generateBtnWE;
+	@FindBy(xpath = "(//i[@class='v-icon fas fa-layer-group theme--light'])[2]")
+	protected WebElement generateBtnWE;	
 	
 	@FindBy(xpath = "//i[contains(@class, 'fa-print')]")
 	protected WebElement printBtnWE;

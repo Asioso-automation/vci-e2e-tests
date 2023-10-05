@@ -20,9 +20,8 @@ public class OpomenePredIskljucenje extends PocetnaStranica{
 	@FindBy(xpath = "//i[contains(@class, 'fa-print')]")
 	protected WebElement printBtnWE;
 	
-	@FindBy(xpath = "//i[contains(@class, 'fa-layer-group')]")
-	protected WebElement generateBtnWE;
-	
+	@FindBy(xpath = "(//i[@class='v-icon fas fa-layer-group theme--light'])[2]")
+	protected WebElement generateBtnWE;	
 	
 	public void verifikujOpomenePredIskljucenje()throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
@@ -32,16 +31,19 @@ public class OpomenePredIskljucenje extends PocetnaStranica{
 		wait.until(ExpectedConditions.elementToBeClickable(printBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(generateBtnWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaId1WE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNalogzaIskljucenjeWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPeriodOd1WE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPeriodDo1WE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPeriodGenerisanja1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKupac1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaProstorWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPeriodGenerisanja1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumKreiranja1WE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaRokWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaOpomenutiIznosWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumIstekaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaRokWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPeriodOd1WE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPeriodDo1WE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaOpomenutiIznosWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaStampaUzRacun1WE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPostojiNalogWE));
+		
+		
+		
 	}
 }

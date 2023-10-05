@@ -15,7 +15,7 @@ public class TefObrasci extends PocetnaStranica{
 		super(driver);
 	}
 
-	public void verifikujRacune()throws InterruptedException, FileNotFoundException, IOException {
+	public void verifikujTefObrasce()throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title') and contains(text(), 'TEF obrasci')]")));

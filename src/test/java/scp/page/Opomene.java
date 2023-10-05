@@ -17,14 +17,14 @@ public class Opomene extends PocetnaStranica{
 		super(driver);
 	}
 	
-	@FindBy(xpath = "//i[contains(@class, 'fa-layer-group')]")
+	@FindBy(xpath = "(//i[@class='v-icon fas fa-layer-group theme--light'])[2]")
 	protected WebElement generateBtnWE;
 	
 	public void verifikujOpomene()throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title') and contains(text(), 'Opomene')]")));
-		verifikacijaZajednickihElemenata("TUŽBE", "OPOMENE", "Opomene", 12, false, false, true, true, true, true, true);
+		verifikacijaZajednickihElemenata("PRAVNI ODNOSI", "OPOMENE", "Opomene", 12, false, false, true, true, true, true, true);
 		wait.until(ExpectedConditions.elementToBeClickable(generateBtnWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaId1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPeriodOd1WE));

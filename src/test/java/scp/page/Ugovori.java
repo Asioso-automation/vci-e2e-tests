@@ -15,7 +15,7 @@ public class Ugovori extends PocetnaStranica{
 		super(driver);
 	}
 
-	public void verifikujUgovore()throws InterruptedException, FileNotFoundException, IOException {
+	public void verifikujUgovoreVodovod()throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title') and contains(text(), 'Ugovori')]")));
@@ -35,4 +35,57 @@ public class Ugovori extends PocetnaStranica{
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIskljucen1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPausalWE));
 	}
+	
+	public void verifikujUgovoreCistoca()throws InterruptedException, FileNotFoundException, IOException {
+		Kolone kolone = new Kolone(driver);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
+				"//div[contains(@class, 'v-toolbar__title') and contains(text(), 'Ugovori')]")));
+		verifikacijaZajednickihElemenata("KUPCI", "UGOVORI", "Ugovori", 13, false, false, true, true, true, true, false);
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaId1WE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBroj1WE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKupac1WE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTip1WE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaJibJmbgWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaProstorWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTarifnaGrupa1WE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumPocetkaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumIzdavanjaDokumentaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAktivan1WE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIskljucen1WE));
+	}
+	
+	public void verifikujUgovoreOpstina()throws InterruptedException, FileNotFoundException, IOException {
+		Kolone kolone = new Kolone(driver);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
+				"//div[contains(@class, 'v-toolbar__title') and contains(text(), 'Ugovori')]")));
+		verifikacijaZajednickihElemenata("KUPCI", "UGOVORI", "Ugovori", 13, false, false, true, true, true, true, false);
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaId1WE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBroj1WE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKupac1WE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTip1WE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaJibJmbgWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaProstorWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTarifnaGrupa1WE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumPocetkaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumRjesenja1WE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAktivan1WE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIskljucen1WE));
+	}
+	
+	public void verifikujUgovoreSon()throws InterruptedException, FileNotFoundException, IOException {
+		Kolone kolone = new Kolone(driver);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
+				"//div[contains(@class, 'v-toolbar__title') and contains(text(), 'Ugovori')]")));
+		verifikacijaZajednickihElemenata("KUPCI", "UGOVORI", "Ugovori", 11, false, false, false, true, true, true, false);
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaId1WE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaOrganizacija1WE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKupac1WE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaProstorWE));
+		//wait.until(ExpectedConditions.visibilityOf(kolone.kolonaJibJmbgWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAdresa1WE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTarifnaGrupa1WE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAktivan1WE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIskljucen1WE));
+	}
+	
 }

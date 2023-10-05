@@ -1,0 +1,30 @@
+package scp.page;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+
+import com.platformX.base.Kolone;
+
+public class OslobadjanjeOdKamate extends PocetnaStranica{
+
+	public OslobadjanjeOdKamate(WebDriver driver) throws FileNotFoundException, IOException {
+		super(driver);
+	}
+
+	public void verifikujOslobadjaneOdKamate()throws InterruptedException, FileNotFoundException, IOException {
+		Kolone kolone = new Kolone(driver);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
+				"//div[contains(@class, 'v-toolbar__title') and contains(text(), 'Oslobađanje od kamate')]")));
+		verifikacijaZajednickihElemenata("KUPCI", "OSLOBAĐANJE OD KAMATE", "Oslobađanje od kamate", 7, false, false, true, true, true, true, false);
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaId1WE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKupac1WE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaProstorWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPeriodOd2WE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPeriodDo2WE));
+	}
+	
+}

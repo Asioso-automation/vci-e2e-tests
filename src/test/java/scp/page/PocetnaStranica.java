@@ -71,6 +71,9 @@ public class PocetnaStranica extends PageBase {
 	@FindBy(xpath = "//*[contains(text(),'Isključenja') and @class='v-btn__content']")
 	protected WebElement iskljucenjaWE;
 	
+	@FindBy(xpath = "//*[contains(text(),'Pravni odnosi') and @class='v-btn__content']")
+	protected WebElement pravniOdnosiWE;
+	
 	@FindBy(xpath = "//*[contains(text(),'Izvještaji') and @class='v-btn__content']")
 	protected WebElement izvjestajiWE;
 
@@ -125,7 +128,7 @@ public class PocetnaStranica extends PageBase {
 	protected WebElement vrsteVodomjeraWE;
 	
 	@FindBy(xpath = "//div[contains(text(), 'Indirektna potrošnja')]")
-	protected WebElement indirektniVodomjeriWE;
+	protected WebElement indirektnaPotrosnjaWE;
 	
 	@FindBy(xpath = "//div[contains(text(), 'Objekti')]")
 	protected WebElement objektiWE;
@@ -154,7 +157,7 @@ public class PocetnaStranica extends PageBase {
 	@FindBy(xpath = "//div[contains(text(), 'Cjenovnik')]")
 	protected WebElement cjenovnikWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Kupci')]")
+	@FindBy(xpath = "//div[@class='v-list__tile__content' and text()='Kupci']")
 	protected WebElement kupci1WE;
 	
 	@FindBy(xpath = "//div[contains(text(), 'Kupci bez ugovora')]")
@@ -202,9 +205,59 @@ public class PocetnaStranica extends PageBase {
 	@FindBy(xpath = "//div[contains(text(), 'Finansijske kartice')]")
 	protected WebElement finansijskeKarticeWE;
 	
+	@FindBy(xpath = "//div[contains(text(), 'Dnevnici uplata')]")
+	protected WebElement dnevniciUplataWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Sve uplate')]")
+	protected WebElement sveUplateWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Banke')]")
+	protected WebElement bankeWE;
+
+	@FindBy(xpath = "//div[contains(text(), 'Žiro računi')]")
+	protected WebElement ziroRacuniWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Rokovi plaćanja')]")
+	protected WebElement rokoviPlacanjaWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Oslobađanje od kamate')]")
+	protected WebElement oslobadjanjeOdKamateWE;
+	
 	@FindBy(xpath = "//div[contains(text(), 'Nalozi za isključenje')]")
 	protected WebElement naloziZaIskljucenjeWE;
 	
+	@FindBy(xpath = "//div[contains(text(), 'Opomene pred isključenje')]")
+	protected WebElement opomenePredIskljucenjeWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Opomene')]")
+	protected WebElement opomeneWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Presude')]")
+	protected WebElement presudeWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Tužbe')]")
+	protected WebElement tuzbeWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Vrste presuda')]")
+	protected WebElement vrstePresudaWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Statusi naloga za isključenje')]")
+	protected WebElement statusiNalogaWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Nalozi za obračun')]")
+	protected WebElement naloziZaObracunWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'TEF obrasci')]")
+	protected WebElement tefObrasciWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Prenos salda po stavkama')]")
+	protected WebElement prenosSaldaWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Kupci sa neiskorištenim avansom')]")
+	protected WebElement kupciSaNeiskoristenimAvansomWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Reprogrami')]")
+	protected WebElement reprogramiWE;
 	
 //  ORGANIZACIJE
 	    
@@ -285,383 +338,832 @@ public class PocetnaStranica extends PageBase {
 	}
 	
 	public FizickaLica navigirajNaFizickaLica() throws Exception {
+		try {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(kupciWE));
 		kupciWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(fizikaLicaWE));
 		fizikaLicaWE.click();
+		}
+		catch (Exception e) {
+			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("FIZICKA.LICA"));
+			}
 		return new FizickaLica(driver);
-	}
+		}
 	
-	public Objekti navigirajNaObjekti() throws Exception {
+
+ 		public Objekti navigirajNaObjekti() throws Exception {
+ 		try {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(kupciWE));
 		kupciWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(objektiWE));
 		objektiWE.click();
+ 		}
+ 		catch (Exception e) {
+ 			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("OBJEKTI"));
+ 			}
 		return new Objekti(driver);
 	}
 
 	public Organizacije navigirajNaOrganizacije()throws Exception{
+		try {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(sifarniciWE));
 		sifarniciWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(organizacijeWE));
 		organizacijeWE.click();
+		}
+		catch (Exception e) {
+			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("ORGANIZACIJE"));
+			}
 		return new Organizacije(driver);
 	}
 	
 	public Drzave navigirajNaDrzave()throws Exception{
+		try {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(sifarniciWE));
 		sifarniciWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(drzaveWE));
 		drzaveWE.click();
+		}
+		catch (Exception e) {
+			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("DRZAVE"));
+			}
 		return new Drzave(driver);
 	}
 	
 	public Entiteti navigirajNaEntitete()throws Exception{
+		try {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(sifarniciWE));
 		sifarniciWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(entitetiWE));
 		entitetiWE.click();
+		}
+		catch (Exception e) {
+			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("ENTITETI"));
+			}
 		return new Entiteti(driver);
 	}
 	
 	public NaseljenaMjesta navigirajNaNaseljenaMjesta()throws Exception{
+		try {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(sifarniciWE));
 		sifarniciWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(naseljenaMjestaWE));
 		naseljenaMjestaWE.click();
+		}
+		catch (Exception e) {
+			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("NASELJENA.MJESTA"));
+			}
 		return new NaseljenaMjesta(driver);
 	}
 	
 	public MjesneZajednice navigirajNaMjesneZajednice()throws Exception{
+		try {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(sifarniciWE));
 		sifarniciWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(mjesneZajedniceWE));
 		mjesneZajedniceWE.click();
+		}
+		catch (Exception e) {
+			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("MJESNE.ZAJEDNICE"));
+			}
 		return new MjesneZajednice(driver);
 	}
 	
 	public Reoni navigirajNaReone()throws Exception{
+		try {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(sifarniciWE));
 		sifarniciWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(reoniWE));
 		reoniWE.click();
+		}
+		catch (Exception e) {
+			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("REONI"));
+			}
 		return new Reoni(driver);
 	}
 	
 	public Poste navigirajNaPoste()throws Exception{
+		try {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(sifarniciWE));
 		sifarniciWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(posteWE));
 		posteWE.click();
+		}
+		catch (Exception e) {
+			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("POSTE"));
+			}
 		return new Poste(driver);
 	}
 	
 	public Ulice navigirajNaUlice()throws Exception{
+		try {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(sifarniciWE));
 		sifarniciWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(uliceWE));
 		uliceWE.click();
+		}
+		catch (Exception e) {
+			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("ULICE"));
+			}
 		return new Ulice(driver);
 	}
 	
 	public Zone navigirajNaZone()throws Exception{
+		try {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(sifarniciWE));
 		sifarniciWE.click();
 		//driver.findElement(By.linkText("Zone")).click();
 		wait.until(ExpectedConditions.elementToBeClickable(zoneWE));
 		zoneWE.click();
+		}
+		catch (Exception e) {
+			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("ZONE"));
+			}
 		return new Zone(driver);
 	}
 	
 	public ZoneDma navigirajNaZoneDma()throws Exception{
+		try {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(sifarniciWE));
 		sifarniciWE.click();
 		//driver.findElement(By.linkText("Zone DMA")).click();
 		wait.until(ExpectedConditions.elementToBeClickable(zoneDmaWE));
 		zoneDmaWE.click();
+		}
+		catch (Exception e) {
+			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("ZONE.DMA"));
+			}
 		return new ZoneDma(driver);
 	}
 	
 	public RadniStatusi navigirajNaRadneStatuse ()throws Exception{
+		try {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(sifarniciWE));
 		sifarniciWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(radniStatusiWE));
 		radniStatusiWE.click();
+		}
+		catch (Exception e) {
+			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("RADNI.STATUSI"));
+			}
 		return new RadniStatusi(driver);
 	}
 	
 	public ProizvodjaciVodomjera navigirajNaProizvodjaceVodomjera()throws Exception{
+		try {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(sifarniciWE));
 		sifarniciWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(proizvodjaciVodomjeraWE));
 		proizvodjaciVodomjeraWE.click();
+		}
+		catch (Exception e) {
+			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("PROIZVODJACI.VODOMJERA"));
+			}
 		return new ProizvodjaciVodomjera(driver);
 	}
 	
 	public ProfiliVodomjera navigirajNaProfileVodomjera()throws Exception{
+		try {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(sifarniciWE));
 		sifarniciWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(profiliVodomjeraWE));
 		profiliVodomjeraWE.click();
+		}
+		catch (Exception e) {
+			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("PROFILI.VODOMJERA"));
+			}
 		return new ProfiliVodomjera(driver);
 	}
 	
 	public VrsteVodomjera navigirajNaVrsteVodomjera()throws Exception{
+		try {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(sifarniciWE));
 		sifarniciWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(vrsteVodomjeraWE));
 		vrsteVodomjeraWE.click();
+		}
+		catch (Exception e) {
+			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("VRSTE.VODOMJERA"));
+			}
 		return new VrsteVodomjera(driver);
 	} 
 	
-	public IndirektniVodomjeri navigirajNaIndirektneVodomjere()throws Exception{
+	public IndirektnaPotrosnja navigirajNaIndirektnuPotrosnju()throws Exception{
+		try {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(sifarniciWE));
 		sifarniciWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(indirektniVodomjeriWE));
-		indirektniVodomjeriWE.click();
-		return new IndirektniVodomjeri(driver);
+		wait.until(ExpectedConditions.elementToBeClickable(indirektnaPotrosnjaWE));
+		indirektnaPotrosnjaWE.click();
+		}
+		catch (Exception e) {
+			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("INDIREKTNA.POTROSNJA"));
+			}
+		return new IndirektnaPotrosnja(driver);
 	}
 	
 	public TarifneNadgrupe navigirajNaTarifneNadgrupe()throws Exception{
+		try {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(tarifniSistemWE));
 		tarifniSistemWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(tarifneNadgrupeWE));
 		tarifneNadgrupeWE.click();
+		}
+		catch (Exception e) {
+			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("TARIFNE.NADGRUPE"));
+			}
 		return new TarifneNadgrupe(driver);
 	}
 	
 	public TarifneGrupe navigirajNaTarifneGrupe()throws Exception{
+		try {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(tarifniSistemWE));
 		tarifniSistemWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(tarifneGrupeWE));
 		tarifneGrupeWE.click();
+		}
+		catch (Exception e) {
+			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("TARIFNE.GRUPE"));
+			}
 		return new TarifneGrupe(driver);
 	}
 	
 	public TarifnePodgrupe navigirajNaTarifnePodgrupe()throws Exception{
+		try {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(tarifniSistemWE));
 		tarifniSistemWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(tarifnePodgrupeWE));
 		tarifnePodgrupeWE.click();
+		}
+		catch (Exception e) {
+			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("TARIFNE.PODGRUPE"));
+			}
 		return new TarifnePodgrupe(driver);
 	}
 	
 	public TarifniModeli navigirajNaTaifneModele()throws Exception{
+		try {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(tarifniSistemWE));
 		tarifniSistemWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(tarifniModeliWE));
 		tarifniModeliWE.click();
+		}
+		catch (Exception e) {
+			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("TARIFNI.MODELI"));
+			}
 		return new TarifniModeli(driver);
 	}
 	
 	public TipoviPotrosaca navigirajNaTipovePotrosaca()throws Exception{
+		try {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(tarifniSistemWE));
 		tarifniSistemWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(tipoviPotrosacaWE));
 		tipoviPotrosacaWE.click();
+		}
+		catch (Exception e) {
+			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("TIPOVI.POTROSACA"));
+			}
 		return new TipoviPotrosaca(driver);
 	}
 	
 	public Usluge navigirajNaUsluge()throws Exception{
+		try {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(tarifniSistemWE));
 		tarifniSistemWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(uslugeWE));
 		uslugeWE.click();
+		}
+		catch (Exception e) {
+			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("USLUGE"));
+			}
 		return new Usluge(driver);
 	}
 	
 	public NestandardneUsluge navigirajNaNestandardneUsluge()throws Exception{
+		try {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(tarifniSistemWE));
 		tarifniSistemWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(nesUslugeWE));
 		nesUslugeWE.click();
+		}
+		catch (Exception e) {
+			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("NESTANDARDNE.USLUGE"));
+			}
 		return new NestandardneUsluge(driver);
 	}
 	
 	public Cjenovnik navigirajNaCjenovnik()throws Exception{
+		try {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(tarifniSistemWE));
 		tarifniSistemWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(cjenovnikWE));
 		cjenovnikWE.click();
+		}
+		catch (Exception e) {
+			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("CJENOVNIK"));
+			}
 		return new Cjenovnik(driver);
 	}
 
 	public Kupci navigirajNaKupce()throws Exception{
+		try {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(kupciWE));
 		kupciWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(kupci1WE));
 		kupci1WE.click();
+		}
+		catch (Exception e) {
+			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("KUPCI"));
+			}
 		return new Kupci(driver);
 	}
 	
 	public KupciBezUgovora navigirajNaKupceBezUgovora()throws Exception{
+		try {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(kupciWE));
 		kupciWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(kupciBezUgovoraWE));
 		kupciBezUgovoraWE.click();
+		}
+		catch (Exception e) {
+			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("KUPCI.BEZ.UGOVORA"));
+			}
 		return new KupciBezUgovora(driver);
 	}
 	
 	public Prostori navigirajNaProstore()throws Exception{
+		try {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(kupciWE));
 		kupciWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(prostoriWE));
 		prostoriWE.click();
+		}
+		catch (Exception e) {
+			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("PROSTORI"));
+			}
 		return new Prostori(driver);
 	}
 	
 	public Vodomjeri navigirajNaVodomjere()throws Exception{
+		try {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(kupciWE));
 		kupciWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(mjerniInstrumentiWE));
 		mjerniInstrumentiWE.click();
+		}
+		catch (Exception e) {
+			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("MJERNI.INSTRUMENTI.VODOVOD"));
+			}
 		return new Vodomjeri(driver);
 	}
 	
 	public Ugovori navigirajNaUgovore()throws Exception{
+		try {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(kupciWE));
 		kupciWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(ugovoriWE));
 		ugovoriWE.click();
+		}
+		catch (Exception e) {
+			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("UGOVORI.VODOVOD"));
+			}
 		return new Ugovori(driver);
 	}
 	
 	public Bonifikacije navigirajNaBonifikacije()throws Exception{
+		try {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(kupciWE));
 		kupciWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(bonifikacijeWE));
 		bonifikacijeWE.click();
+		}
+		catch (Exception e) {
+			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("BONIFIKACIJE"));
+			}
 		return new Bonifikacije(driver);
 	}
 	
 	public ZoneOcitanja navigirajNaZoneOcitanja()throws Exception{
+		try {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(ocitanjaWE));
 		ocitanjaWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(zoneOcitanjaWE));
 		zoneOcitanjaWE.click();
+		}
+		catch (Exception e) {
+			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("ZONE.OCITANJA.VODOVOD"));
+			}
 		return new ZoneOcitanja(driver);
 	}
 	
 	public NalogZaOcitanja navigirajNaNalogeZaOcitanja()throws Exception{
+		try {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(ocitanjaWE));
 		ocitanjaWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(nalogZaOcitanjaWE));
 		nalogZaOcitanjaWE.click();
+		}
+		catch (Exception e) {
+			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("NALOG.ZA.OCITANJA.VODOVOD"));
+			}
 		return new NalogZaOcitanja(driver);
 	}
 	
 	public Ocitanja navigirajNaOcitanja()throws Exception{
+		try {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(ocitanjaWE));
 		ocitanjaWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(ocitanja1WE));
 		ocitanja1WE.click();
+		}
+		catch (Exception e) {
+			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("OCITANJA.VODOVOD"));
+			}
 		return new Ocitanja(driver);
 	}
 	
 	public NeregularnaOcitanja navigirajNaNeregularnaOcitanja()throws Exception{
+		try {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(ocitanjaWE));
 		ocitanjaWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(neregularnaOcitanjaWE));
 		neregularnaOcitanjaWE.click();
+		}
+		catch (Exception e) {
+			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("NEREGULARNA.OCITANJA"));
+			}
 		return new NeregularnaOcitanja(driver);
 	}
 	
 	public CitackeKnjige navigirajNaCitackeKnjige()throws Exception{
+		try {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(ocitanjaWE));
 		ocitanjaWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(citackeKnjigeWE));
 		citackeKnjigeWE.click();
+		}
+		catch (Exception e) {
+			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("CITACKE.KNJIGE.VODOVOD"));
+			}
 		return new CitackeKnjige(driver);
 	}
 	
 	public MonitoringOcitanja navigirajNaMonitoringOcitanja()throws Exception{
+		try {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(ocitanjaWE));
 		ocitanjaWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(monitoringOcitanjaWE));
 		monitoringOcitanjaWE.click();
+		}
+		catch (Exception e) {
+			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("MONITORING.OCITANJA"));
+			}
 		return new MonitoringOcitanja(driver);
 	}
 	
 	public Racuni navigirajNaRacune()throws Exception{
+		try {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(obracunWE));
 		obracunWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(racuniWE));
 		racuniWE.click();
+		}
+		catch (Exception e) {
+			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("RACUNI"));
+			}
 		return new Racuni(driver);
 	}
 	
 	public ZbirniRacuni navigirajNaZbirneRacune()throws Exception{
+		try {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(obracunWE));
 		obracunWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(zbirniRacuniWE));
 		zbirniRacuniWE.click();
+		}
+		catch (Exception e) {
+			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("ZBIRNI.RACUNI"));
+			}
 		return new ZbirniRacuni(driver);
 	}
 	
 	public KorekcijeRacuna navigirajNaKorekcijeRacuna()throws Exception{
+		try {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(obracunWE));
 		obracunWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(korekcijeRacunaWE));
 		korekcijeRacunaWE.click();
+		}
+		catch (Exception e) {
+			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("KOREKCIJE.RACUNA"));
+			}
 		return new KorekcijeRacuna(driver);
 	}
 	
 	public FinansijskeKartice navigirajNaFinansijskeKartice()throws Exception{
+		try {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(finansijeWE));
 		finansijeWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(finansijskeKarticeWE));
 		finansijskeKarticeWE.click();
+		}
+		catch (Exception e) {
+			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("FINASIJSKE.KARTICE"));
+			}
 		return new FinansijskeKartice(driver);
 	}
 	
+	public DnevniciUplata navigirajNaDnevnikeUplata()throws Exception{
+		try {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(finansijeWE));
+		finansijeWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(dnevniciUplataWE));
+		dnevniciUplataWE.click();
+		}
+		catch (Exception e) {
+			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("DNEVNICI.UPLATA"));
+			}
+		return new DnevniciUplata(driver);
+	}
+	
+	public SveUplate navigirajNaSveUplate()throws Exception{
+		try {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(finansijeWE));
+		finansijeWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(sveUplateWE));
+		sveUplateWE.click();
+		}
+		catch (Exception e) {
+			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("SVE.UPLATE"));
+			}
+		return new SveUplate(driver);
+	}
+	
+	public Banke navigirajNaBanke()throws Exception{
+		try {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(finansijeWE));
+		finansijeWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(bankeWE));
+		bankeWE.click();
+		}
+		catch (Exception e) {
+			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("BANKE"));
+			}
+		return new Banke(driver);
+	}
+	
+	public ZiroRacuni navigirajNaZiroRacune()throws Exception{
+		try {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(finansijeWE));
+		finansijeWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(ziroRacuniWE));
+		ziroRacuniWE.click();
+		}
+		catch (Exception e) {
+			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("ZIRO.RACUNI"));
+			}
+		return new ZiroRacuni(driver);
+	}
+	
+	public RokoviPlacanja navigirajNaRokovePlacanja()throws Exception{
+		try {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(kupciWE));
+		kupciWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(rokoviPlacanjaWE));
+		rokoviPlacanjaWE.click();
+		}
+		catch (Exception e) {
+			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("ROKOVI.PLACANJA"));
+			}
+		return new RokoviPlacanja(driver);
+	}
+	
+	public OslobadjanjeOdKamate navigirajNaOslobadjanjeodKamate()throws Exception{
+		try {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(kupciWE));
+		kupciWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(oslobadjanjeOdKamateWE));
+		oslobadjanjeOdKamateWE.click();
+		}
+		catch (Exception e) {
+			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("OSLOBADJANJE.OD.KAMATE"));
+			}
+		return new OslobadjanjeOdKamate(driver);
+	}
+	
 	public NaloziZaIskljucenje navigirajNaNalogeZaIskljucenja()throws Exception{
+		try {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(iskljucenjaWE));
 		iskljucenjaWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(naloziZaIskljucenjeWE));
 		naloziZaIskljucenjeWE.click();
+		}
+		catch (Exception e) {
+			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("NALOZI.ZA.ISKLJUCENJA.VODOVOD"));
+			}
 		return new NaloziZaIskljucenje(driver);
 	}
 
+	public OpomenePredIskljucenje navigirajNaOpomenePredIskljucenja()throws Exception{
+		try {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(iskljucenjaWE));
+		iskljucenjaWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(opomenePredIskljucenjeWE));
+		opomenePredIskljucenjeWE.click();
+		}
+		catch (Exception e) {
+			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("OPOMENE.PRED.ISKLJUCENJE"));
+			}
+		return new OpomenePredIskljucenje(driver);
+	}
+	
+	public StatusiNalogaZaIskljucenje navigirajNaStatuseNaloga()throws Exception{
+		try {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(iskljucenjaWE));
+		iskljucenjaWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(statusiNalogaWE));
+		statusiNalogaWE.click();
+		}
+		catch (Exception e) {
+			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("STATUSI.NALOGA.ZA.ISKLJUCENJE"));
+			}
+		return new StatusiNalogaZaIskljucenje(driver);
+	}
+	
+	public Opomene navigirajNaOpomene()throws Exception{
+		try {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(pravniOdnosiWE));
+		pravniOdnosiWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(opomeneWE));
+		opomeneWE.click();
+		}
+		catch (Exception e) {
+			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("OPOMENE"));
+			}
+		return new Opomene(driver);
+	}
+	
+	public Tuzbe navigirajNaTuzbe()throws Exception{
+		try {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(pravniOdnosiWE));
+		pravniOdnosiWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(tuzbeWE));
+		tuzbeWE.click();
+		}
+		catch (Exception e) {
+			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("TUZBE"));
+			}
+		return new Tuzbe(driver);
+	}
+	
+	public Presude navigirajNaPresude()throws Exception{
+		try {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(pravniOdnosiWE));
+		pravniOdnosiWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(presudeWE));
+		presudeWE.click();
+		}
+		catch (Exception e) {
+			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("PRESUDE"));
+			}
+		return new Presude(driver);
+	}
+	
+	public VrstePresuda navigirajNaVrstePresuda()throws Exception{
+		try {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(pravniOdnosiWE));
+		pravniOdnosiWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(vrstePresudaWE));
+		vrstePresudaWE.click();
+		}
+		catch (Exception e) {
+			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("VRSTE.PRESUDA"));
+			}
+		return new VrstePresuda(driver);
+	}
+	
+	public NalogZaObracun navigirajNaNalogeZaObracun()throws Exception{
+		try {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(obracunWE));
+		obracunWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(naloziZaObracunWE));
+		naloziZaObracunWE.click();
+		}
+		catch (Exception e) {
+			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("NALOZI.ZA.OBRACUN"));
+			}
+		return new NalogZaObracun(driver);
+	}
+
+	public TefObrasci navigirajNaTefObrasce()throws Exception{
+		try {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(obracunWE));
+		obracunWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(tefObrasciWE));
+		tefObrasciWE.click();
+		}
+		catch (Exception e) {
+			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("TEF.OBRASCI"));
+			}
+		return new TefObrasci(driver);
+	}
+	
+	public PrenosSaldaPoStavkama navigirajNaPrenosSaldaPoStavkama()throws Exception{
+		try {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(finansijeWE));
+		finansijeWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(prenosSaldaWE));
+		prenosSaldaWE.click();
+		}
+		catch (Exception e) {
+			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("PRENOS.SALDA.PO.STAVKAMA"));
+			}
+		return new PrenosSaldaPoStavkama(driver);
+	}
+	
+	public KupciSaNeiskoristenimAvansom navigirajNaKupceSaNeiskoristenimAvansom()throws Exception{
+		try {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(finansijeWE));
+		finansijeWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(kupciSaNeiskoristenimAvansomWE));
+		kupciSaNeiskoristenimAvansomWE.click();
+		}
+		catch (Exception e) {
+			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("KUPCI.SA.NEISKORISTENIM.AVANSOM"));
+			}
+		return new KupciSaNeiskoristenimAvansom(driver);
+	}
+	
+	public Reprogrami navigirajNaReprograme()throws Exception{
+		try {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(finansijeWE));
+		finansijeWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(reprogramiWE));
+		reprogramiWE.click();
+		}
+		catch (Exception e) {
+			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("REPROGRAMI"));
+			}
+		return new Reprogrami(driver);
+	}
+	
 }

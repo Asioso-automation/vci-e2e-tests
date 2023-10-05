@@ -11,13 +11,13 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import com.platformX.base.Kolone;
 
-public class Tužbe extends PocetnaStranica{
+public class Tuzbe extends PocetnaStranica{
 
-	public Tužbe(WebDriver driver) throws FileNotFoundException, IOException {
+	public Tuzbe(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);
 	}
 	
-	@FindBy(xpath = "//i[contains(@class, 'fa-layer-group')]")
+	@FindBy(xpath = "(//i[@class='v-icon fas fa-layer-group theme--light'])[2]")
 	protected WebElement generateBtnWE;
 	
 	@FindBy(xpath = "//i[contains(@class, 'fa-print')]")
@@ -27,7 +27,7 @@ public class Tužbe extends PocetnaStranica{
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title') and contains(text(), 'Tužbe')]")));
-		verifikacijaZajednickihElemenata("TUŽBE", "TUŽBE", "Tužbe", 11, false, false, false, true, true, true, false);
+		verifikacijaZajednickihElemenata("PRAVNI ODNOSI", "TUŽBE", "Tužbe", 11, false, false, false, true, true, true, false);
 		wait.until(ExpectedConditions.elementToBeClickable(printBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(generateBtnWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaId1WE));

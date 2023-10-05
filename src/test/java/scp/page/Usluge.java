@@ -29,4 +29,20 @@ public class Usluge extends PocetnaStranica{
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPdvStopa1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaVazeca1WE));
 	}
+	
+	public void verifikujUslugeSon()throws InterruptedException, FileNotFoundException, IOException {
+		Kolone kolone = new Kolone(driver);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
+				"//div[contains(@class, 'v-toolbar__title') and contains(text(), 'Usluge')]")));
+		verifikacijaZajednickihElemenata("TARIFNI SISTEM", "USLUGE", "Usluge", 10, false, false, false, true, true, true, false);
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaId1WE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNaziv1WE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTipObracuna1WE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNacinObracunaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTarifniStavWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaJedinicaMjereWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPdvStopa1WE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaVazeca1WE));
+	}
+	
 }
