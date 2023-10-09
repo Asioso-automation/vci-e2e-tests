@@ -25,9 +25,11 @@ public class NestandardneUsluge extends PocetnaStranica{
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaVrstaStavkeWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaJedinicaMjereWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPredlozenaCijenaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPdvStopa1WE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPdvStopa2WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaUlaziUKifWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaUlaziUOpomeneWE));
 	}
-
+	
+	// Kad UI ispravi labelu, zamenidi PdvStopa2WE sa PdvStopa1WE
+	
 }

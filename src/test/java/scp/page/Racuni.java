@@ -34,4 +34,27 @@ public class Racuni extends PocetnaStranica{
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKamata1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIznosSaKamatomWE));
 	}
+	
+	public void verifikujRacuneGas()throws InterruptedException, FileNotFoundException, IOException {
+		Kolone kolone = new Kolone(driver);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
+				"//div[contains(@class, 'v-toolbar__title') and contains(text(), 'Računi')]")));
+		verifikacijaZajednickihElemenata("OBRAČUN", "RAČUNI", "Računi", 18, false, false, false, true, true, true, false);
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBroj1WE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNalogWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaOrganizacija1WE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKupac1WE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTip1WE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTG1WE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPritisakAtmosferskiWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPritisakPognoskiWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNacinObracunaKorekcijeWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMjesecWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaGodinaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIznos1WE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPdv2WE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIznosPdvWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKamata1WE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIznosSaKamatomWE));
+	}
 }

@@ -21,7 +21,7 @@ public class SCP_003_Dodavanje_Objekta_Test extends BaseTest {
 		logIn.verifikujLogIn();
 		logIn.logIn(pocetna.orgGasWE);
 		pocetna.verifikujPocetnuStranicu();
-		Objekti objekti = pocetna.navigirajNaObjekti();
+		Objekti objekti = pocetna.navigirajNaObjekte();
 		objekti.verifikujObjekte();
 		String broj = objekti.dodajObjekat();
 		objekti.verifikujObjekat(broj);

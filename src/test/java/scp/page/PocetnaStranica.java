@@ -118,6 +118,36 @@ public class PocetnaStranica extends PageBase {
 	@FindBy(xpath = "//div[contains(text(), 'Radni statusi')]")
 	protected WebElement radniStatusiWE;
 	
+	@FindBy(xpath = "//div[contains(text(), 'Toplotne stanice')]")
+	protected WebElement toplotneStaniceWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Toplotni reoni')]")
+	protected WebElement toplotniReoniWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Toplovodi')]")
+	protected WebElement toplovodiWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Tipovi kalorimetara')]")
+	protected WebElement tipoviKalorimetaraWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Proizvođači kalorimetara')]")
+	protected WebElement proizvodjaciKalorimetaraWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Mjerila')]")
+	protected WebElement mjerilaWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Korektori')]")
+	protected WebElement korektoriWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Tipovi mjerila')]")
+	protected WebElement tipoviMjerilaWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Proizvođači mjerila')]")
+	protected WebElement proizvodjaciMjerilaWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Vrste mjerila')]")
+	protected WebElement vrsteMjerilaWE;
+	
 	@FindBy(xpath = "//div[contains(text(), 'Proizvođači vodomjera')]")
 	protected WebElement proizvodjaciVodomjeraWE;
 	
@@ -144,6 +174,10 @@ public class PocetnaStranica extends PageBase {
 	
 	@FindBy(xpath = "//div[contains(text(), 'Tarifni modeli')]")
 	protected WebElement tarifniModeliWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Dani i sati grijanja')]")
+	protected WebElement daniISatiGrijanjaWE;
+	
 	
 	@FindBy(xpath = "//div[contains(text(), 'Tipovi potrošača')]")
 	protected WebElement tipoviPotrosacaWE;
@@ -190,6 +224,9 @@ public class PocetnaStranica extends PageBase {
 	@FindBy(xpath = "//div[contains(text(), 'Čitačke knjige')]")
 	protected WebElement citackeKnjigeWE;
 	
+	@FindBy(xpath = "//div[contains(text(), 'Grejne sezone')]")
+	protected WebElement grejneSezoneWE;
+	
 	@FindBy(xpath = "//div[contains(text(), 'Monitoring očitanja')]")
 	protected WebElement monitoringOcitanjaWE;
 	
@@ -201,6 +238,15 @@ public class PocetnaStranica extends PageBase {
 	
 	@FindBy(xpath = "//div[contains(text(), 'Korekcije računa')]")
 	protected WebElement korekcijeRacunaWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Parametri obračuna')]")
+	protected WebElement parametriObracunaWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Avansne fakture')]")
+	protected WebElement avansneFaktureWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Računi za nestandardne usluge')]")
+	protected WebElement racuniZaNestandardneUslugeWE;
 	
 	@FindBy(xpath = "//div[contains(text(), 'Finansijske kartice')]")
 	protected WebElement finansijskeKarticeWE;
@@ -269,6 +315,9 @@ public class PocetnaStranica extends PageBase {
 	    
 	@FindBy(xpath = "//*[contains(@class, 'v-list__tile__title') and contains(text(), 'KP Toplana')]")
 	public WebElement orgToplanaGradiskaWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-list__tile__title') and contains(text(), 'Toplane - INS a.d. Istočno Sarajevo')]")
+	public WebElement orgToplanaInsWE;
 	    
 	@FindBy(xpath = "//*[contains(@class, 'v-list__tile__title') and contains(text(), 'KP Vodovod')]")
 	public WebElement orgVodovodGradiskaWE;
@@ -284,6 +333,9 @@ public class PocetnaStranica extends PageBase {
 	
 	@FindBy(xpath = "//*[contains(@class, 'v-list__tile__title') and contains(text(), 'KP \"VODOVOD I KANALIZACIJA\" A.D. ISTOČNO SARAJEVO')]")
 	public WebElement orgSonISVodovodWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-list__tile__title') and contains(text(), 'Administracija')]")
+	public WebElement orgAdministracijaWE;
 
 	public void verifikujPocetnuStranicu() throws InterruptedException {
 		wait.until(ExpectedConditions.elementToBeClickable(sifarniciWE));
@@ -352,7 +404,7 @@ public class PocetnaStranica extends PageBase {
 		}
 	
 
- 		public Objekti navigirajNaObjekti() throws Exception {
+ 		public Objekti navigirajNaObjekte() throws Exception {
  		try {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(kupciWE));
@@ -522,6 +574,160 @@ public class PocetnaStranica extends PageBase {
 		return new RadniStatusi(driver);
 	}
 	
+	public ToplotneStanice navigirajNaToplotneStanice()throws Exception{
+		try {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(sifarniciWE));
+		sifarniciWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(toplotneStaniceWE));
+		toplotneStaniceWE.click();
+		}
+		catch (Exception e) {
+			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("TOPLOTNE.STANICE"));
+			}
+		return new ToplotneStanice(driver);
+	}
+	
+	public ToplotniReoni navigirajNaToplotneReone()throws Exception{
+		try {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(sifarniciWE));
+		sifarniciWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(toplotniReoniWE));
+		toplotniReoniWE.click();
+		}
+		catch (Exception e) {
+			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("TOPLOTNI.REONI"));
+			}
+		return new ToplotniReoni(driver);
+	}
+	
+	public Toplovodi navigirajNaToplovode()throws Exception{
+		try {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(sifarniciWE));
+		sifarniciWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(toplovodiWE));
+		toplovodiWE.click();
+		}
+		catch (Exception e) {
+			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("TOPLOVODI"));
+			}
+		return new Toplovodi(driver);
+	}
+	
+	public TipoviKalorimetara navigirajNaTipoveKalorimetara()throws Exception{
+		try {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(sifarniciWE));
+		sifarniciWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(tipoviKalorimetaraWE));
+		tipoviKalorimetaraWE.click();
+		}
+		catch (Exception e) {
+			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("TIPOVI.KALORIMETARA"));
+			}
+		return new TipoviKalorimetara(driver);
+	}
+	
+	public ProizvodjaciKalorimetara navigirajNaProizvodjaceKalorimetara()throws Exception{
+		try {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(sifarniciWE));
+		sifarniciWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(proizvodjaciKalorimetaraWE));
+		proizvodjaciKalorimetaraWE.click();
+		}
+		catch (Exception e) {
+			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("PROIZVODJACI.KALORIMETARA"));
+			}
+		return new ProizvodjaciKalorimetara(driver);
+	}
+	
+	public Kalorimetri navigirajNaKalorimetre()throws Exception{
+		try {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(kupciWE));
+		kupciWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(mjerniInstrumentiWE));
+		mjerniInstrumentiWE.click();
+		}
+		catch (Exception e) {
+			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("MJERNI.INSTRUMENTI.TOPLANA"));
+			}
+		return new Kalorimetri(driver);
+	}
+	
+	public Mjerila navigirajNaMjerila()throws Exception{
+		try {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(kupciWE));
+		kupciWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(mjerniInstrumentiWE));
+		mjerniInstrumentiWE.click();
+		}
+		catch (Exception e) {
+			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("MJERNI.INSTRUMENTI.GAS"));
+			}
+		return new Mjerila(driver);
+	}
+	
+	public Korektori navigirajNaKorektore()throws Exception{
+		try {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(kupciWE));
+		kupciWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(korektoriWE));
+		korektoriWE.click();
+		}
+		catch (Exception e) {
+			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("KOREKTORI"));
+			}
+		return new Korektori(driver);
+	}
+	
+	public TipoviMjerila navigirajNaTipoveMjerila()throws Exception{
+		try {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(sifarniciWE));
+		sifarniciWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(tipoviMjerilaWE));
+		tipoviMjerilaWE.click();
+		}
+		catch (Exception e) {
+			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("TIPOVI.GASOMJERA"));
+			}
+		return new TipoviMjerila(driver);
+	}
+	
+	public ProizvodjaciMjerila navigirajNaProizvodjaceMjerila()throws Exception{
+		try {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(sifarniciWE));
+		sifarniciWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(proizvodjaciMjerilaWE));
+		proizvodjaciMjerilaWE.click();
+		}
+		catch (Exception e) {
+			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("PROIZVODJACI.GASOMJERA"));
+			}
+		return new ProizvodjaciMjerila(driver);
+	}
+	
+	public VrsteMjerila navigirajNaVrsteMjerila()throws Exception{
+		try {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(sifarniciWE));
+		sifarniciWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(vrsteMjerilaWE));
+		vrsteMjerilaWE.click();
+		}
+		catch (Exception e) {
+			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("VRSTE.GASOMJERA"));
+			}
+		return new VrsteMjerila(driver);
+	}
+	
 	public ProizvodjaciVodomjera navigirajNaProizvodjaceVodomjera()throws Exception{
 		try {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
@@ -620,7 +826,7 @@ public class PocetnaStranica extends PageBase {
 		return new TarifnePodgrupe(driver);
 	}
 	
-	public TarifniModeli navigirajNaTaifneModele()throws Exception{
+	public TarifniModeli navigirajNaTarifneModele()throws Exception{
 		try {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(tarifniSistemWE));
@@ -632,6 +838,20 @@ public class PocetnaStranica extends PageBase {
 			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("TARIFNI.MODELI"));
 			}
 		return new TarifniModeli(driver);
+	}
+	
+	public DaniISatiGrijanja navigirajNaDaneISateGrijanja()throws Exception{
+		try {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(tarifniSistemWE));
+		tarifniSistemWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(daniISatiGrijanjaWE));
+		daniISatiGrijanjaWE.click();
+		}
+		catch (Exception e) {
+			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("DANI.I.SATI.GRIJANJA"));
+			}
+		return new DaniISatiGrijanja(driver);
 	}
 	
 	public TipoviPotrosaca navigirajNaTipovePotrosaca()throws Exception{
@@ -811,7 +1031,7 @@ public class PocetnaStranica extends PageBase {
 		ocitanja1WE.click();
 		}
 		catch (Exception e) {
-			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("OCITANJA.VODOVOD"));
+			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("OCITANJA.TOPLANA"));
 			}
 		return new Ocitanja(driver);
 	}
@@ -842,6 +1062,20 @@ public class PocetnaStranica extends PageBase {
 			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("CITACKE.KNJIGE.VODOVOD"));
 			}
 		return new CitackeKnjige(driver);
+	}
+	
+	public GrejneSezone navigirajNaGrejneSezone()throws Exception{
+		try {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(ocitanjaWE));
+		ocitanjaWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(grejneSezoneWE));
+		grejneSezoneWE.click();
+		}
+		catch (Exception e) {
+			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("GREJNE.SEZONE"));
+			}
+		return new GrejneSezone(driver);
 	}
 	
 	public MonitoringOcitanja navigirajNaMonitoringOcitanja()throws Exception{
@@ -886,6 +1120,20 @@ public class PocetnaStranica extends PageBase {
 		return new ZbirniRacuni(driver);
 	}
 	
+	public RacuniZaNestandardneUsluge navigirajNaRacuneZaNestandardneUsluge()throws Exception{
+		try {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(obracunWE));
+		obracunWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(racuniZaNestandardneUslugeWE));
+		racuniZaNestandardneUslugeWE.click();
+		}
+		catch (Exception e) {
+			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("RACUNI.ZA.NESTANDARDNE.USLUGE"));
+			}
+		return new RacuniZaNestandardneUsluge(driver);
+	}
+	
 	public KorekcijeRacuna navigirajNaKorekcijeRacuna()throws Exception{
 		try {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
@@ -898,6 +1146,34 @@ public class PocetnaStranica extends PageBase {
 			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("KOREKCIJE.RACUNA"));
 			}
 		return new KorekcijeRacuna(driver);
+	}
+	
+	public ParametriObracuna navigirajNaParametreObracuna()throws Exception{
+		try {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(obracunWE));
+		obracunWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(parametriObracunaWE));
+		parametriObracunaWE.click();
+		}
+		catch (Exception e) {
+			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("PARAMETRI.OBRACUN"));
+			}
+		return new ParametriObracuna(driver);
+	}
+	
+	public AvansneFakture navigirajNaAvansneFakture()throws Exception{
+		try {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(obracunWE));
+		obracunWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(avansneFaktureWE));
+		avansneFaktureWE.click();
+		}
+		catch (Exception e) {
+			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("AVANSNE.FAKTURE"));
+			}
+		return new AvansneFakture(driver);
 	}
 	
 	public FinansijskeKartice navigirajNaFinansijskeKartice()throws Exception{

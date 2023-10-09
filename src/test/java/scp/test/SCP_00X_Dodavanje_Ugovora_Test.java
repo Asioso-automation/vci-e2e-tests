@@ -26,7 +26,7 @@ public class SCP_00X_Dodavanje_Ugovora_Test extends BaseTest {
 		fizickaLica.verifikujFizickaLica();
 		String ime = fizickaLica.dodajFizickoLice();
 		fizickaLica.verifikujFizickoLice(ime);
-		Objekti objekti = pocetna.navigirajNaObjekti();
+		Objekti objekti = pocetna.navigirajNaObjekte();
 		objekti.verifikujObjekte();
 		String broj = objekti.dodajObjekat();
 		objekti.verifikujObjekat(broj);
