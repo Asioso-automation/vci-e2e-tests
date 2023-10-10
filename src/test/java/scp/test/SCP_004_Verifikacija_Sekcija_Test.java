@@ -6,8 +6,7 @@ import java.io.IOException;
 import org.testng.annotations.Test;
 
 import com.platformX.base.BaseTest;
-import com.platformX.page.TipoviMjenica;
-
+import scp.page.AdministracijaKorisnika;
 import scp.page.AvansneFakture;
 import scp.page.Banke;
 import scp.page.Bonifikacije;
@@ -15,6 +14,7 @@ import scp.page.CitackeKnjige;
 import scp.page.Cjenovnik;
 import scp.page.DaniISatiGrijanja;
 import scp.page.DnevniciUplata;
+import scp.page.DnevnikIzmjena;
 import scp.page.Drzave;
 import scp.page.Entiteti;
 import scp.page.FinansijskeKartice;
@@ -44,6 +44,7 @@ import scp.page.Organizacije;
 import scp.page.OslobadjanjeOdKamate;
 import scp.page.ParametriObracuna;
 import scp.page.PocetnaStranica;
+import scp.page.Poruke;
 import scp.page.Poste;
 import scp.page.PrenosSaldaPoStavkama;
 import scp.page.Presude;
@@ -827,4 +828,64 @@ public class SCP_004_Verifikacija_Sekcija_Test extends BaseTest{
 		MonitoringOcitanja monitoring = pocetna.navigirajNaMonitoringOcitanja();
 		monitoring.verifikujMonitoringOcitanjaToplama();	
 	}
+	
+	@Test (description="test prolazi kroz sve stranice iz sekcije OBRAČUN i verifikuje ih")
+	public void scp_004_verifikacija_obracun_toplana_test() throws Exception{
+		LogIn logIn = new LogIn(driver, SCP_PROPERTIES);
+		PocetnaStranica pocetna = new PocetnaStranica(driver);
+		driver.manage().window().maximize();
+		logIn.verifikujLogIn();
+		logIn.logIn(pocetna.orgToplanaInsWE);
+		pocetna.verifikujPocetnuStranicu();
+		Racuni racuni = pocetna.navigirajNaRacune();
+		racuni.verifikujRacune();
+		ZbirniRacuni zbirni = pocetna.navigirajNaZbirneRacune();
+		zbirni.verifikujZbirneRacune();
+		RacuniZaNestandardneUsluge nesUsluge = pocetna.navigirajNaRacuneZaNestandardneUsluge();
+		nesUsluge.verifikujRacuneZaNestandardneUsluge();
+		KorekcijeRacuna korekcije = pocetna.navigirajNaKorekcijeRacuna();
+		korekcije.verifikujKorekcijeRacuna();
+	}
+	
+	@Test (description="test prolazi kroz sve stranice iz sekcije FINANSIJE i ISKLJUČENJA verifikuje ih")
+	public void scp_004_verifikacija_finansije_toplana_test() throws Exception{
+		LogIn logIn = new LogIn(driver, SCP_PROPERTIES);
+		PocetnaStranica pocetna = new PocetnaStranica(driver);
+		driver.manage().window().maximize();
+		logIn.verifikujLogIn();
+		logIn.logIn(pocetna.orgToplanaInsWE);
+		pocetna.verifikujPocetnuStranicu();
+		FinansijskeKartice finKartice = pocetna.navigirajNaFinansijskeKartice();
+		finKartice.verifikujFinansijskeKartice();
+		DnevniciUplata dnevnici = pocetna.navigirajNaDnevnikeUplata();
+		dnevnici.verifikujDnevnikeUplata();
+		PrenosSaldaPoStavkama prenos = pocetna.navigirajNaPrenosSaldaPoStavkama();
+		prenos.verifikujPrenosSaldaPoStavkama();
+		SveUplate sve = pocetna.navigirajNaSveUplate();
+		sve.verifikujSveUplate();
+		Banke banke = pocetna.navigirajNaBanke();
+		banke.verifikujBanke();
+		ZiroRacuni ziro = pocetna.navigirajNaZiroRacune();
+		ziro.verifikujZiroRacune();
+		Reprogrami reprogrami = pocetna.navigirajNaReprograme();
+		reprogrami.verifikujReprograme();
+		NaloziZaIskljucenje nalozi = pocetna.navigirajNaNalogeZaIskljucenja();
+		nalozi.verifikujNalogeZaIskljucenjaVodovod();
+	}
+	
+	@Test (description="test prolazi kroz sve stranice iz sekcije ADMINISTRACIJA verifikuje ih")
+	public void scp_004_verifikacija_administracija_test() throws Exception{
+		LogIn logIn = new LogIn(driver, SCP_PROPERTIES);
+		PocetnaStranica pocetna = new PocetnaStranica(driver);
+		driver.manage().window().maximize();
+		logIn.verifikujLogIn();
+		logIn.logIn(pocetna.orgAdministracijaWE);
+		AdministracijaKorisnika administracija = pocetna.navigirajNaAdministracijaKorisnika();
+		administracija.verifikujAdministracijuKorisnika();
+		Poruke poruke = pocetna.navigirajNaPoruke();
+		poruke.verifikujPoruke();
+		DnevnikIzmjena dnevnik = pocetna.navigirajNaDnevnikIzmjena();
+		dnevnik.verifikujDnevnikIzmjena();
+	}
+	
 }

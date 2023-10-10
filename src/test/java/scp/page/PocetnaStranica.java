@@ -76,9 +76,14 @@ public class PocetnaStranica extends PageBase {
 	
 	@FindBy(xpath = "//*[contains(text(),'Izvještaji') and @class='v-btn__content']")
 	protected WebElement izvjestajiWE;
+	
+	@FindBy(xpath = "//*[contains(text(),'Administracija') and @class='v-btn__content']")
+	protected WebElement administracijaWE;
 
 	@FindBy(xpath = "//i[contains(@class, 'iconPosition fa fa-user')]")
 	protected WebElement profilWE;
+	
+	
 	
 	// Stranice
 	
@@ -304,6 +309,15 @@ public class PocetnaStranica extends PageBase {
 	
 	@FindBy(xpath = "//div[contains(text(), 'Reprogrami')]")
 	protected WebElement reprogramiWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Administracija korisnika')]")
+	protected WebElement administracijaKorisnikaWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Poruke')]")
+	protected WebElement porukeWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Dnevnik izmjena')]")
+	protected WebElement dnevnikIzmjenaWE;
 	
 //  ORGANIZACIJE
 	    
@@ -1440,6 +1454,48 @@ public class PocetnaStranica extends PageBase {
 			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("REPROGRAMI"));
 			}
 		return new Reprogrami(driver);
+	}
+	
+	public AdministracijaKorisnika navigirajNaAdministracijaKorisnika()throws Exception{
+		try {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(administracijaWE));
+		administracijaWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(administracijaKorisnikaWE));
+		administracijaKorisnikaWE.click();
+		}
+		catch (Exception e) {
+			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("ADMINISTRACIJA.KORISNIKA"));
+			}
+		return new AdministracijaKorisnika(driver);
+	}
+	
+	public Poruke navigirajNaPoruke()throws Exception{
+		try {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(administracijaWE));
+		administracijaWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(porukeWE));
+		porukeWE.click();
+		}
+		catch (Exception e) {
+			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("PORUKE"));
+			}
+		return new Poruke(driver);
+	}
+	
+	public DnevnikIzmjena navigirajNaDnevnikIzmjena()throws Exception{
+		try {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(administracijaWE));
+		administracijaWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(dnevnikIzmjenaWE));
+		dnevnikIzmjenaWE.click();
+		}
+		catch (Exception e) {
+			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("DNEVNIK.IZMJENA"));
+			}
+		return new DnevnikIzmjena(driver);
 	}
 	
 }
