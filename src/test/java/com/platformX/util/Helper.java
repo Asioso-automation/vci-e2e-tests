@@ -13,6 +13,21 @@ public class Helper {
 		return email.split("@")[0] + "+" + UUID.randomUUID().toString().substring(0, 3) + "@" + email.split("@")[1];
 	}
 
+	
+
+	public static String getRandomStringCharts(int n) {
+        String charts = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+        StringBuilder salt = new StringBuilder();
+        Random rnd = new Random();
+        while (salt.length() < n) { 
+            int index = (int) (rnd.nextFloat() * charts.length());
+            salt.append(charts.charAt(index));
+        }
+        String saltStr = salt.toString();
+        return saltStr;
+
+    }
+	
 	public static String getRandomNumber(int randomNumbersCount) {
 		String random = "";
 		int[] randomNumbers = new int[randomNumbersCount];

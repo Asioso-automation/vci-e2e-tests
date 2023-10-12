@@ -4,10 +4,14 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import com.platformX.base.Kolone;
+import com.platformX.util.Helper;
 
 public class NaseljenaMjesta extends PocetnaStranica{
 
@@ -15,6 +19,18 @@ public class NaseljenaMjesta extends PocetnaStranica{
 		super(driver);
 	}
 
+	@FindBy(xpath = "//form/div/div[1]/div/div[1]/div/div/div[1]/div/input") 
+	private WebElement idWE;
+	
+	@FindBy(xpath = "//form/div/div[1]/div/div[2]/div/div/div[1]/div/input") 
+	private WebElement nazivWE;
+	
+	@FindBy(xpath = "//form/div/div[1]/div/div[4]/div/div/div[1]/div[1]/input") 
+	private WebElement drzavaWE;
+	
+	@FindBy(xpath = "//form/div/div[1]/div/div[5]/div/div/div[1]/div[1]/input") 
+	private WebElement entitetWE;
+	
 	public void verifikujNaseljenaMjesta()throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
@@ -36,5 +52,28 @@ public class NaseljenaMjesta extends PocetnaStranica{
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaEntitet1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAtmosferskiPritisakWE));
 		// Kolona atmosferski pritisak se pojavljuje samo na organizaciji Gas.	
+	}
+	
+	public String dodajNaseljenaMjesta() throws InterruptedException{
+		String naseljenoMjesto = "Naseljeno mjesto" + Helper.getRandomString(4);
+		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
+		dodajBtnWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(idWE));
+		idWE.sendKeys(Helper.getRandomNumber(4));
+		wait.until(ExpectedConditions.elementToBeClickable(nazivWE));
+		nazivWE.sendKeys(naseljenoMjesto);
+		wait.until(ExpectedConditions.elementToBeClickable(drzavaWE));
+		drzavaWE.sendKeys("BIH");
+		Thread.sleep(1000);
+		drzavaWE.sendKeys(Keys.ARROW_DOWN);
+		drzavaWE.sendKeys(Keys.ENTER);
+		wait.until(ExpectedConditions.elementToBeClickable(entitetWE));
+		entitetWE.sendKeys("1");
+		Thread.sleep(1000);
+		entitetWE.sendKeys(Keys.ARROW_DOWN);
+		entitetWE.sendKeys(Keys.ENTER);
+		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
+		submitBtnWE.click();
+		return naseljenoMjesto;
 	}
 }

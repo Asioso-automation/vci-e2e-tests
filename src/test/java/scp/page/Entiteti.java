@@ -5,16 +5,22 @@ import java.io.IOException;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import com.platformX.base.Kolone;
+import com.platformX.util.Helper;
 
 public class Entiteti extends PocetnaStranica{
 
 	public Entiteti(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);
 	}
-
+	
+	@FindBy(xpath = "//form/div/div[1]/div/div/div/div/div[1]/div/input")
+	private WebElement nazivEntitetaWE;
+	
 	public void verifikujEntitete()throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
@@ -24,4 +30,14 @@ public class Entiteti extends PocetnaStranica{
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNaziv1WE));
 	}
 	
+	public String dodajEntitete()throws InterruptedException{
+		String entitet = "Entitet" + Helper.getRandomString(5);
+		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
+		dodajBtnWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(nazivEntitetaWE));
+		nazivEntitetaWE.sendKeys(entitet);
+		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
+		submitBtnWE.click();
+		return entitet;
+	}
 }

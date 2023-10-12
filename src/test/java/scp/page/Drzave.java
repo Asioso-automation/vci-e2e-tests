@@ -5,15 +5,25 @@ import java.io.IOException;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import com.platformX.base.Kolone;
+import com.platformX.util.Helper;
 
 public class Drzave extends PocetnaStranica{
 
 	public Drzave(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);
 	}
+	
+	@FindBy(xpath = "//form/div/div[1]/div/div[1]/div/div/div[1]/div/input") 
+	private WebElement sifraDrzaveWE;
+	
+	@FindBy(xpath = "//form/div/div[1]/div/div[2]/div/div/div[1]/div/input") 
+	private WebElement nazivDrzaveWE;
+	
 	
 	public void verifikujDrzave()throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
@@ -24,4 +34,17 @@ public class Drzave extends PocetnaStranica{
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNaziv1WE));
 	}
 
+
+	public String dodajDrzave() throws InterruptedException{
+		String drzava = "Drzava" + Helper.getRandomString(5);
+		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
+		dodajBtnWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(sifraDrzaveWE));
+		sifraDrzaveWE.sendKeys(Helper.getRandomStringCharts(3));
+		wait.until(ExpectedConditions.elementToBeClickable(nazivDrzaveWE));
+		nazivDrzaveWE.sendKeys(drzava);
+		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
+		submitBtnWE.click();
+		return drzava;
+	}	
 }

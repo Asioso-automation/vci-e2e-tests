@@ -5,6 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -28,6 +29,9 @@ public class PocetnaStranica extends PageBase {
 
 	@FindBy(xpath = "//ul/button[2]")
 	protected WebElement stranicaBtnWE;
+	
+	@FindBy(xpath = "//button[@type='submit']")
+	protected WebElement submitBtnWE;
 
 //	@FindBy(xpath = "//header/div/button[1]")
 //	protected WebElement preuzmiExcelBtnWE;
@@ -40,10 +44,21 @@ public class PocetnaStranica extends PageBase {
 //
 //	@FindBy(xpath = "//header/div/a")
 //	protected WebElement dodajBtnWE;
+	
+	@FindBy(xpath = "//span[text()='Uspješno završeno.']")
+	public WebElement porukaWE;
 
+	@FindBy(xpath = "//td[2]/div/div/div/div[1]/input")
+	public WebElement filterKolona2WE;
 	
 	@FindBy(xpath = "//div[1]/nav/div/div[1]")
-	protected WebElement naslovStraniceWE;
+	public WebElement naslovStraniceWE;
+	
+	@FindBy(xpath = "//div[1]/table/tbody/tr[1]/td[2]")
+	public WebElement podatak2TabelaWE;
+	
+	@FindBy(xpath = "//div[@class='v-card__title title mb-0 word-break']")
+	private WebElement brisanjePopUpWE;
 
 //	 Sekcije
 
@@ -394,7 +409,49 @@ public class PocetnaStranica extends PageBase {
 			wait.until(ExpectedConditions.elementToBeClickable(infoBtnWE));
 		}
 	}
+	
+		public void pretraziStavku(WebElement element, String value) throws InterruptedException{
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.visibilityOf(element));
+		wait.until(ExpectedConditions.elementToBeClickable(element));
+		element.click();
+		element.clear();
+		element.sendKeys(value);
+		element.sendKeys(Keys.ENTER);
+		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
+	}
+		
+	public void verifikujPoruku(String poruka) throws InterruptedException {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.visibilityOf(porukaWE));
+		assertTrue(porukaWE.getText().trim().equals(poruka), "Poruka upozorenja nije dobra!");
+	}
 
+	public void verifikujPraznuTabelu() {
+		assertTrue(praznaTabelaWE.getText().equals("Nema podataka"), "PraznaTabela: Poruka prazne tabele nije dobra!");
+	}
+	
+	public void verifikujStavku(String value, WebElement tableValue) {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.visibilityOf(tableValue));
+		wait.until(ExpectedConditions.elementToBeClickable(tableValue));
+		assertTrue(tableValue.getText().equals(value), "Verifikacija nije uspješna!");
+	}
+	
+	public void obrisiStavku() throws InterruptedException {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
+		burgerBarWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(obrisiWE));
+		obrisiWE.click();
+		Thread.sleep(500);
+		wait.until(ExpectedConditions.visibilityOf(brisanjePopUpWE));
+		wait.until(ExpectedConditions.elementToBeClickable(potvrdiBrisanjeBtnWE));
+		potvrdiBrisanjeBtnWE.click();
+		Thread.sleep(500);
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
+	}
+	
 	public void izlogujSe() {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(profilWE));
