@@ -5,15 +5,25 @@ import java.io.IOException;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import com.platformX.base.Kolone;
+import com.platformX.util.Helper;
 
 public class Poste extends PocetnaStranica{
 
 	public Poste(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);
 	}
+	
+	@FindBy(xpath = "//form/div/div[1]/div/div[1]/div/div/div[1]/div/input") 
+	private WebElement idWE;
+	
+	@FindBy(xpath = "//form/div/div[1]/div/div[2]/div/div/div[1]/div/input") 
+	private WebElement nazivWE;
+	
 	
 	public void verifikujPoste()throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
@@ -24,4 +34,18 @@ public class Poste extends PocetnaStranica{
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNaziv1WE));
 	}
 
+	public String dodajPoste()throws InterruptedException{
+		String posta = "Posta" + Helper.getRandomString(4);
+		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
+		dodajBtnWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(idWE));
+		idWE.sendKeys(Helper.getRandomNumber(4));
+		wait.until(ExpectedConditions.elementToBeClickable(nazivWE));
+		nazivWE.sendKeys(posta);
+		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
+		submitBtnWE.click();
+		return posta;
+		
+	}
+	
 }

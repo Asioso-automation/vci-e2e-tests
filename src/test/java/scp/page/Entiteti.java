@@ -21,7 +21,7 @@ public class Entiteti extends PocetnaStranica{
 	@FindBy(xpath = "//form/div/div[1]/div/div/div/div/div[1]/div/input")
 	private WebElement nazivEntitetaWE;
 	
-	public void verifikujEntitete()throws InterruptedException, FileNotFoundException, IOException {
+	public void verifikujEntiteti()throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title') and contains(text(), 'Entiteti')]")));
@@ -30,7 +30,7 @@ public class Entiteti extends PocetnaStranica{
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNaziv1WE));
 	}
 	
-	public String dodajEntitete()throws InterruptedException{
+	public String dodajEntiteti()throws InterruptedException{
 		String entitet = "Entitet" + Helper.getRandomString(5);
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
 		dodajBtnWE.click();

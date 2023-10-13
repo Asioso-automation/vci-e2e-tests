@@ -105,7 +105,7 @@ public class SCP_004_Verifikacija_Sekcija_Test extends BaseTest{
 		Drzave drzave = pocetna.navigirajNaDrzave();
 		drzave.verifikujDrzave();
 		Entiteti entiteti = pocetna.navigirajNaEntitete();
-		entiteti.verifikujEntitete();
+		entiteti.verifikujEntiteti();
 		NaseljenaMjesta naseljenaMjesta = pocetna.navigirajNaNaseljenaMjesta();
 		naseljenaMjesta.verifikujNaseljenaMjesta();
 		MjesneZajednice mjesneZajednice = pocetna.navigirajNaMjesneZajednice();
@@ -121,7 +121,7 @@ public class SCP_004_Verifikacija_Sekcija_Test extends BaseTest{
 		ZoneDma zoneDma = pocetna.navigirajNaZoneDma();
 		zoneDma.verifikujZoneDma();
 		RadniStatusi radniStatusi = pocetna.navigirajNaRadneStatuse();
-		radniStatusi.verifikujRadneStatuse();
+		radniStatusi.verifikujRadniStatusi();
 		ProizvodjaciVodomjera proizvodjaci = pocetna.navigirajNaProizvodjaceVodomjera();
 		proizvodjaci.verifikujProizvodjaceVodomjera();
 		ProfiliVodomjera profili = pocetna.navigirajNaProfileVodomjera();
@@ -145,7 +145,7 @@ public class SCP_004_Verifikacija_Sekcija_Test extends BaseTest{
 		Drzave drzave = pocetna.navigirajNaDrzave();
 		drzave.verifikujDrzave();
 		Entiteti entiteti = pocetna.navigirajNaEntitete();
-		entiteti.verifikujEntitete();
+		entiteti.verifikujEntiteti();
 		NaseljenaMjesta naseljenaMjesta = pocetna.navigirajNaNaseljenaMjesta();
 		naseljenaMjesta.verifikujNaseljenaMjesta();
 		MjesneZajednice mjesneZajednice = pocetna.navigirajNaMjesneZajednice();
@@ -159,7 +159,7 @@ public class SCP_004_Verifikacija_Sekcija_Test extends BaseTest{
 		Zone zone = pocetna.navigirajNaZone();
 		zone.verifikujZone();
 		RadniStatusi radniStatusi = pocetna.navigirajNaRadneStatuse();
-		radniStatusi.verifikujRadneStatuse();
+		radniStatusi.verifikujRadniStatusi();
 	}
 	
 	@Test (description="test prolazi kroz sve stranice iz sekcije SIFARNICI i verifikuje ih")
@@ -175,7 +175,7 @@ public class SCP_004_Verifikacija_Sekcija_Test extends BaseTest{
 		Drzave drzave = pocetna.navigirajNaDrzave();
 		drzave.verifikujDrzave();
 		Entiteti entiteti = pocetna.navigirajNaEntitete();
-		entiteti.verifikujEntitete();
+		entiteti.verifikujEntiteti();
 		NaseljenaMjesta naseljenaMjesta = pocetna.navigirajNaNaseljenaMjesta();
 		naseljenaMjesta.verifikujNaseljenaMjesta();
 		MjesneZajednice mjesneZajednice = pocetna.navigirajNaMjesneZajednice();
@@ -189,7 +189,7 @@ public class SCP_004_Verifikacija_Sekcija_Test extends BaseTest{
 		Zone zone = pocetna.navigirajNaZone();
 		zone.verifikujZone();
 		RadniStatusi radniStatusi = pocetna.navigirajNaRadneStatuse();
-		radniStatusi.verifikujRadneStatuse();
+		radniStatusi.verifikujRadniStatusi();
 	}
 	
 	@Test (description="test prolazi kroz sve stranice iz sekcije SIFARNICI i verifikuje ih")
@@ -205,7 +205,7 @@ public class SCP_004_Verifikacija_Sekcija_Test extends BaseTest{
 		Drzave drzave = pocetna.navigirajNaDrzave();
 		drzave.verifikujDrzave();
 		Entiteti entiteti = pocetna.navigirajNaEntitete();
-		entiteti.verifikujEntitete();
+		entiteti.verifikujEntiteti();
 		NaseljenaMjesta naseljenaMjesta = pocetna.navigirajNaNaseljenaMjesta();
 		naseljenaMjesta.verifikujNaseljenaMjesta();
 		MjesneZajednice mjesneZajednice = pocetna.navigirajNaMjesneZajednice();
@@ -219,7 +219,7 @@ public class SCP_004_Verifikacija_Sekcija_Test extends BaseTest{
 		Zone zone = pocetna.navigirajNaZone();
 		zone.verifikujZone();
 		RadniStatusi radniStatusi = pocetna.navigirajNaRadneStatuse();
-		radniStatusi.verifikujRadneStatuse();
+		radniStatusi.verifikujRadniStatusi();
 	}
 	
 	@Test (description="test prolazi kroz sve stranice iz sekcije TARIFNI SISTEM i verifikuje ih")
@@ -560,7 +560,7 @@ public class SCP_004_Verifikacija_Sekcija_Test extends BaseTest{
 		Drzave drzave = pocetna.navigirajNaDrzave();
 		drzave.verifikujDrzave();
 		Entiteti entiteti = pocetna.navigirajNaEntitete();
-		entiteti.verifikujEntitete();
+		entiteti.verifikujEntiteti();
 		NaseljenaMjesta mjesta = pocetna.navigirajNaNaseljenaMjesta();
 		mjesta.verifikujNaseljenaMjestaGas();
 		MjesneZajednice zajednice = pocetna.navigirajNaMjesneZajednice();
@@ -574,9 +574,9 @@ public class SCP_004_Verifikacija_Sekcija_Test extends BaseTest{
 		Zone zone = pocetna.navigirajNaZone();
 		zone.verifikujZone();
 		RadniStatusi radniStatusi = pocetna.navigirajNaRadneStatuse();
-		radniStatusi.verifikujRadneStatuse();
+		radniStatusi.verifikujRadniStatusi();
 		TipoviMjerila tipoviMjerila = pocetna.navigirajNaTipoveMjerila();
-		tipoviMjerila.verifikujTipoveMjerila();
+		tipoviMjerila.verifikujTipoviMjerila();
 		ProizvodjaciMjerila proizvodjaci = pocetna.navigirajNaProizvodjaceMjerila();
 		proizvodjaci.verifikujProizvodjaceMjerila();
 		VrsteMjerila vrste = pocetna.navigirajNaVrsteMjerila();
@@ -731,7 +731,7 @@ public class SCP_004_Verifikacija_Sekcija_Test extends BaseTest{
 		Drzave drzave = pocetna.navigirajNaDrzave();
 		drzave.verifikujDrzave();
 		Entiteti entiteti = pocetna.navigirajNaEntitete();
-		entiteti.verifikujEntitete();
+		entiteti.verifikujEntiteti();
 		NaseljenaMjesta mjesta = pocetna.navigirajNaNaseljenaMjesta();
 		mjesta.verifikujNaseljenaMjesta();
 		MjesneZajednice mjesne = pocetna.navigirajNaMjesneZajednice();
@@ -745,7 +745,7 @@ public class SCP_004_Verifikacija_Sekcija_Test extends BaseTest{
 		Zone zone = pocetna.navigirajNaZone();
 		zone.verifikujZone();
 		RadniStatusi radni = pocetna.navigirajNaRadneStatuse(); 
-		radni.verifikujRadneStatuse();
+		radni.verifikujRadniStatusi();
 		ToplotneStanice stanice = pocetna.navigirajNaToplotneStanice();
 		stanice.verifikujToplotneStanice();
 		ToplotniReoni topReoni = pocetna.navigirajNaToplotneReone();
