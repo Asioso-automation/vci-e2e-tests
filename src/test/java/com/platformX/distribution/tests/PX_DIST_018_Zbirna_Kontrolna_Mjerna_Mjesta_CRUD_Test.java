@@ -15,7 +15,7 @@ public class PX_DIST_018_Zbirna_Kontrolna_Mjerna_Mjesta_CRUD_Test extends BaseTe
 		super();
 	}
 
-	@Test (enabled = false)
+	@Test
 	public void px_dist_018_1_dodavanje_zbirnog_kontrolnog_mjernog_mjesta_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
@@ -36,7 +36,7 @@ public class PX_DIST_018_Zbirna_Kontrolna_Mjerna_Mjesta_CRUD_Test extends BaseTe
 		zbirnaKontrolnaMjernaMjesta.verifikujStavku(zbirnoKontrolnoMjernoMjesto, homePage.podatak2Tabela2WE); 
 	}
 	
-	@Test (enabled = false)
+	@Test
 	public void px_dist_018_2_uredjivanje_zbirnog_kontrolnog_mjernog_mjesta_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
@@ -62,7 +62,7 @@ public class PX_DIST_018_Zbirna_Kontrolna_Mjerna_Mjesta_CRUD_Test extends BaseTe
 		zbirnaKontrolnaMjernaMjesta.verifikujStavku(novoZbirnoKontrolnoMjernoMjesto, homePage.podatak2Tabela2WE); 
 	}
 	
-	@Test (enabled = false)
+	@Test
 	public void px_dist_018_3_brisanje_zbirnog_kontrolnog_mjernog_mjesta_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();

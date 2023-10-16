@@ -14,7 +14,7 @@ public class PX_DIST_017_Mjerna_Mjesta_CRUD_Test  extends BaseTest {
 		super();
 	}
 	
-	@Test (enabled = false)
+	@Test
 	public void px_dist_017_1_dodavanje_mjernog_mjesta_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
@@ -30,7 +30,7 @@ public class PX_DIST_017_Mjerna_Mjesta_CRUD_Test  extends BaseTest {
 		mjernaMjesta.verifikujStavku(mjernoMjesto, homePage.podatak2Tabela3WE);
 	}
 
-	@Test (enabled = false)
+	@Test
 	public void px_dist_017_2_uredjivanje_mjernog_mjesta_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
@@ -51,7 +51,7 @@ public class PX_DIST_017_Mjerna_Mjesta_CRUD_Test  extends BaseTest {
 		mjernaMjesta.verifikujStavku(novoMjernoMjesto, homePage.podatak2Tabela3WE);
 	}
 	
-	@Test (enabled = false)
+	@Test
 	public void px_dist_017_3_brisanje_mjernog_mjesta_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();

@@ -922,20 +922,6 @@ public class PocetnaStranicaPXD extends PageBase {
 		return new RokoviVazenja(driver);
 	}
 	
-	public RazloziPribavljanjaEES navigirajNaRazloziPribavljanjaEES() throws Exception {
-		try {
-		WebDriverWait wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.elementToBeClickable(sifarniciWE));
-		sifarniciWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(razloziPribavljanjaEESWE));
-		razloziPribavljanjaEESWE.click();
-		}
-		catch (Exception e) {
-			driver.get(platformx_distribution_properties.getValue("URL.DIST.LOGIN") + platformx_distribution_properties.getValue("RAZLOZI.PRIBAVLJANJA.EES"));
-		}
-		return new RazloziPribavljanjaEES(driver);
-	}
-	
 	public VrsteObjekata navigirajNaVrsteObjekata() throws Exception {
 		try {
 		WebDriverWait wait = new WebDriverWait(driver, 10);

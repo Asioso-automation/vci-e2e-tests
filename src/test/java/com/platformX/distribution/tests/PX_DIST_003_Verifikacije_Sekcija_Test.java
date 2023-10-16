@@ -99,8 +99,6 @@ public class PX_DIST_003_Verifikacije_Sekcija_Test extends BaseTest {
 		vrsteZastitnihUredjaja.verifikujVrsteZastitnihUredjaja();
 		RokoviVazenja rokoviVazenja = pocetna.navigirajNaRokoviVazenja();
 		rokoviVazenja.verifikujRokoveVazenja();
-		RazloziPribavljanjaEES razloziPribavljanjaEES = pocetna.navigirajNaRazloziPribavljanjaEES();
-		razloziPribavljanjaEES.verifikujRazlogePribavljanjaEES();
 		VrsteObjekata vrsteObjekata = pocetna.navigirajNaVrsteObjekata();
 		vrsteObjekata.verifikujVrsteObjekata();
 		TipoviStandardnogPrikljucka tipoviStandardnogPrikljucka = pocetna.navigirajNaTipoviStandardnogPrikljucka();

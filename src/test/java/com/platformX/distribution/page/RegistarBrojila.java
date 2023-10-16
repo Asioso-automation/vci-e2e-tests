@@ -24,6 +24,9 @@ public class RegistarBrojila extends PocetnaStranicaPXD {
 	@FindBy(xpath = "//div[3]/div[3]/div/div/div[1]/div/input")
 	 private WebElement poljeSerijskiBrojWE;
 	
+	@FindBy(xpath = "//div[3]/div[4]/div/div/div[1]/div/input")
+	private WebElement poljeRedniBrojURegistruWE;
+	
 	@FindBy(xpath = "//div[4]/div/div/div/div[1]/div[1]/input[1]")
 	 private WebElement poljeTipBrojilaWE;
 	
@@ -60,6 +63,8 @@ public class RegistarBrojila extends PocetnaStranicaPXD {
 		poljeBrojWE.sendKeys(brojBrojila);
 		wait.until(ExpectedConditions.elementToBeClickable(poljeSerijskiBrojWE));
 		poljeSerijskiBrojWE.sendKeys("SN" + brojBrojila);
+		wait.until(ExpectedConditions.elementToBeClickable(poljeRedniBrojURegistruWE));
+		poljeRedniBrojURegistruWE.sendKeys(brojBrojila);
 		wait.until(ExpectedConditions.elementToBeClickable(poljeTipBrojilaWE));
 		poljeTipBrojilaWE.sendKeys("59712 - E5BD (A-D)");
 		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
