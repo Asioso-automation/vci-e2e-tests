@@ -241,8 +241,8 @@ public class SCP_004_Verifikacija_Sekcija_Test extends BaseTest{
 		tipovi.verifikujTipovePotrosaca();
 		Usluge usluge = pocetna.navigirajNaUsluge();
 		usluge.verifikujUsluge();
-	//	NestandardneUsluge nesUsluge = pocetna.navigirajNaNestandardneUsluge();
-	//	nesUsluge.verifikujNestandardneUsluge();
+	//	NestandardneUsluge nestandardne = pocetna.navigirajNaNestandardneUsluge();
+	//	nestandardne.verifikujNestandardneUsluge();
 		Cjenovnik cjenovnik = pocetna.navigirajNaCjenovnik();
 		cjenovnik.verifikujCjenovnik();
 	}
@@ -600,8 +600,8 @@ public class SCP_004_Verifikacija_Sekcija_Test extends BaseTest{
 		modeli.verifikujTarifneModele();
 		Usluge usluge = pocetna.navigirajNaUsluge();
 		usluge.verifikujUsluge();
-		NestandardneUsluge nesUsluge = pocetna.navigirajNaNestandardneUsluge();
-		nesUsluge.verifikujNestandardneUsluge();
+		NestandardneUsluge nestandardne = pocetna.navigirajNaNestandardneUsluge();
+		nestandardne.verifikujNestandardneUsluge();
 		Cjenovnik cjenovnik = pocetna.navigirajNaCjenovnik();
 		cjenovnik.navigirajNaCjenovnik();
 	}
@@ -777,8 +777,8 @@ public class SCP_004_Verifikacija_Sekcija_Test extends BaseTest{
 		dani.verifikujDaneISateGrijanja();
 		Usluge usluge = pocetna.navigirajNaUsluge();
 		usluge.verifikujUsluge();
-		NestandardneUsluge nesUsluge = pocetna.navigirajNaNestandardneUsluge();
-		nesUsluge.verifikujNestandardneUsluge();
+		NestandardneUsluge nestandardne = pocetna.navigirajNaNestandardneUsluge();
+		nestandardne.verifikujNestandardneUsluge();
 		Cjenovnik cjenovnik = pocetna.navigirajNaCjenovnik();
 		cjenovnik.verifikujCjenovnik();
 	}
@@ -841,8 +841,8 @@ public class SCP_004_Verifikacija_Sekcija_Test extends BaseTest{
 		racuni.verifikujRacune();
 		ZbirniRacuni zbirni = pocetna.navigirajNaZbirneRacune();
 		zbirni.verifikujZbirneRacune();
-		RacuniZaNestandardneUsluge nesUsluge = pocetna.navigirajNaRacuneZaNestandardneUsluge();
-		nesUsluge.verifikujRacuneZaNestandardneUsluge();
+		RacuniZaNestandardneUsluge racuniZanestandardne = pocetna.navigirajNaRacuneZaNestandardneUsluge();
+		racuniZanestandardne.verifikujRacuneZaNestandardneUsluge();
 		KorekcijeRacuna korekcije = pocetna.navigirajNaKorekcijeRacuna();
 		korekcije.verifikujKorekcijeRacuna();
 	}

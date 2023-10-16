@@ -51,11 +51,17 @@ public class PocetnaStranica extends PageBase {
 	@FindBy(xpath = "//td[2]/div/div/div/div[1]/input")
 	public WebElement filterKolona2WE;
 	
+	@FindBy(xpath = "//td[6]/div/div[1]/div/div/div/div[1]/input")
+	public WebElement filterKolona6WE;
+	
 	@FindBy(xpath = "//div[1]/nav/div/div[1]")
 	public WebElement naslovStraniceWE;
 	
 	@FindBy(xpath = "//div[1]/table/tbody/tr[1]/td[2]")
 	public WebElement podatak2TabelaWE;
+	
+	@FindBy(xpath = "//div[1]/table/tbody/tr[1]/td[6]")
+	public WebElement podatak6TabelaWE;
 	
 	@FindBy(xpath = "//div[@class='v-card__title title mb-0 word-break']")
 	private WebElement brisanjePopUpWE;

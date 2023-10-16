@@ -68,5 +68,4 @@ public class Helper {
 		String random = String.valueOf(number);
 		return random;
 	}
-
 }

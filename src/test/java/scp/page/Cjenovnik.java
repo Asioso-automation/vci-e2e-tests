@@ -5,6 +5,8 @@ import java.io.IOException;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import com.platformX.base.Kolone;
@@ -14,6 +16,21 @@ public class Cjenovnik extends PocetnaStranica{
 	public Cjenovnik(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);
 	}
+	
+	@FindBy(xpath = "//div/div[1]/div[1]/div[1]/div/div/div[1]/div[1]/input") 
+	private WebElement tarifnaGrupaWE;
+	
+	@FindBy(xpath = "//div/div[1]/div[1]/div[2]/div/div/div[1]/div[1]/input") 
+	private WebElement uslugaWE;
+	
+	@FindBy(xpath = "//div/div[2]/form/div/div[1]/div[2]/div[1]/div/div/div[1]/div/input") 
+	private WebElement kolicinaWE;
+	
+	@FindBy(xpath = "//div/div[2]/form/div/div[1]/div[2]/div[2]/div/div/div[1]/div/input") 
+	private WebElement cijenaWE;
+	
+	@FindBy(xpath = "//div/div[1]/div[3]/div[1]/div/div/div[1]/div[1]/input") 
+	private WebElement periodOdWE;
 	
 	public void verifikujCjenovnik()throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
@@ -41,6 +58,5 @@ public class Cjenovnik extends PocetnaStranica{
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaUslugaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKolicinaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaCijena1WE));
-	}
-	
+	}	
 }

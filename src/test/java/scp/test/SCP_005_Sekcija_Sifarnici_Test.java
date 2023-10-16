@@ -69,13 +69,13 @@ public class SCP_005_Sekcija_Sifarnici_Test extends BaseTest{
 		logIn.verifikujLogIn();
 		logIn.logIn(pocetna.orgGasWE);
 		pocetna.verifikujPocetnuStranicu();
-		NaseljenaMjesta nasMjesta = pocetna.navigirajNaNaseljenaMjesta();
-		nasMjesta.verifikujNaseljenaMjestaGas();
-		String nasMjesto = nasMjesta.dodajNaseljenaMjesta();
-		nasMjesta.verifikujPoruku("Uspješno završeno.");
-		nasMjesta.pretraziStavku(pocetna.filterKolona2WE, nasMjesto);
-		nasMjesta.verifikujNaseljenaMjestaGas();
-		nasMjesta.verifikujStavku(nasMjesto, pocetna.podatak2TabelaWE);
+		NaseljenaMjesta naseljena = pocetna.navigirajNaNaseljenaMjesta();
+		naseljena.verifikujNaseljenaMjestaGas();
+		String naseljeno = naseljena.dodajNaseljenaMjesta();
+		naseljena.verifikujPoruku("Uspješno završeno.");
+		naseljena.pretraziStavku(pocetna.filterKolona2WE, naseljeno);
+		naseljena.verifikujNaseljenaMjestaGas();
+		naseljena.verifikujStavku(naseljeno, pocetna.podatak2TabelaWE);
 	}
 	
 	@Test (description=" test kreira NASELJENO MJESTO iz sekcije SIFARNICI i verifikuje ga")
@@ -86,13 +86,13 @@ public class SCP_005_Sekcija_Sifarnici_Test extends BaseTest{
 		logIn.verifikujLogIn();
 		logIn.logIn(pocetna.orgVodovodGradiskaWE);
 		pocetna.verifikujPocetnuStranicu();
-		NaseljenaMjesta nasMjesta = pocetna.navigirajNaNaseljenaMjesta();
-		nasMjesta.verifikujNaseljenaMjesta();
-		String nasMjesto = nasMjesta.dodajNaseljenaMjesta();
-		nasMjesta.verifikujPoruku("Uspješno završeno.");
-		nasMjesta.pretraziStavku(pocetna.filterKolona2WE, nasMjesto);
-		nasMjesta.verifikujNaseljenaMjesta();
-		nasMjesta.verifikujStavku(nasMjesto, pocetna.podatak2TabelaWE);
+		NaseljenaMjesta naseljena = pocetna.navigirajNaNaseljenaMjesta();
+		naseljena.verifikujNaseljenaMjesta();
+		String naseljeno = naseljena.dodajNaseljenaMjesta();
+		naseljena.verifikujPoruku("Uspješno završeno.");
+		naseljena.pretraziStavku(pocetna.filterKolona2WE, naseljeno);
+		naseljena.verifikujNaseljenaMjesta();
+		naseljena.verifikujStavku(naseljeno, pocetna.podatak2TabelaWE);
 	}
 	
 	@Test (description=" test kreira MJESNU ZAJEDNICU iz sekcije SIFARNICI i verifikuje je")
