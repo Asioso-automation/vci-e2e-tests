@@ -37,9 +37,20 @@ public class Helper {
     	 }
     	 String saltStr = salt.toString();
     	 return saltStr;    
-
     }
 	
+     public static String getRandomNubmer1to4(int n) {
+    	 String charts = "1234";
+    	 StringBuilder salt = new StringBuilder();
+    	 Random rnd = new Random();
+    	 while (salt.length() < n) { 
+    		 int index = (int) (rnd.nextFloat() * charts.length());
+    		 salt.append(charts.charAt(index));
+    	 }
+    	 String saltStr = salt.toString();
+    	 return saltStr;    
+    }
+     
 	public static String getRandomNumber(int randomNumbersCount) {
 		String random = "";
 		int[] randomNumbers = new int[randomNumbersCount];

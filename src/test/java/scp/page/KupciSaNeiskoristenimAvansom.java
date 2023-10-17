@@ -23,7 +23,7 @@ public class KupciSaNeiskoristenimAvansom extends PocetnaStranica{
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaId1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKupac1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaProstorWE));
-		//wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNeiskoristeniIznos1WE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNeiskoristeniIznos1WE));
 	}
 
 }

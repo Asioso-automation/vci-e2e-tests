@@ -36,11 +36,11 @@ public class Objekti extends PocetnaStranica {
 	@FindBy(xpath = "//div[1]/div[2]/div/div/div[1]/div/input")
 	public WebElement brojWE;
 	
-	@FindBy(xpath = "//div[2]/button[1]")
-	public WebElement dodajObjekatWE;
-	
 	@FindBy(xpath = "//div[1]/table/tbody/tr/td[2]")
 	public WebElement adresaTabelaWE;
+	
+	@FindBy(xpath = "//div/div[1]/div[5]/div/div/div/div[1]/div/textarea")
+	public WebElement napomenaWE;
 	
 	// TODO Custom dodaj dugme xpath
 	
@@ -75,18 +75,22 @@ public class Objekti extends PocetnaStranica {
 //		assertTrue(brojKolona().size() == 11, "Objekti: Broj kolona nije dobar! ");
 //	}
 	
-	public String dodajObjekat() {
+	public String dodajObjekat() throws InterruptedException {
 		String broj = Helper.getRandomNumber(2);
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
 		dodajBtnWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(uliceWE));
 		uliceWE.click();
-		uliceWE.sendKeys("2264 - (78000 BANJA LUKA) - Jevrejska");
-		wait.until(ExpectedConditions.elementToBeClickable(odaberiUlicuWE));
-		odaberiUlicuWE.click();
+		uliceWE.sendKeys(Helper.getRandomNumber(2));
+		Thread.sleep(500);
+		uliceWE.sendKeys(Keys.ARROW_DOWN);
+		uliceWE.sendKeys(Keys.ENTER);
 		wait.until(ExpectedConditions.elementToBeClickable(brojWE));
 		brojWE.sendKeys(broj);
-		dodajObjekatWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(napomenaWE));
+		napomenaWE.sendKeys("#test");
+		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
+		submitBtnWE.click();
 		return broj;
 	}
 	

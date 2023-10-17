@@ -23,8 +23,11 @@ public class SCP_003_Dodavanje_Objekta_Test extends BaseTest {
 		pocetna.verifikujPocetnuStranicu();
 		Objekti objekti = pocetna.navigirajNaObjekte();
 		objekti.verifikujObjekte();
-		String broj = objekti.dodajObjekat();
-		objekti.verifikujObjekat(broj);
+		String objekat = objekti.dodajObjekat();
+		objekti.verifikujPoruku("Uspješno završeno.");
+		objekti.pretraziStavku(pocetna.filterKolona9WE, objekat);
+		objekti.verifikujObjekte();
+		objekti.verifikujStavku(objekat, pocetna.podatak9TabelaWE);
 	}
 
 }
