@@ -16,8 +16,8 @@ public class PX_DIST_006_Citaci_CRUD_Test extends BaseTest {
 		super();
 	}
 
-	String imeCitaca = "Citac " + Helper.getRandomString(5);
-	String novoImeCitaca = "Citac 1 " + Helper.getRandomString(5);
+	String citac = "Citac " + Helper.getRandomString(5);
+	String noviCitac = "NoviCitac " + Helper.getRandomString(5);
 	
 	@Test (retryAnalyzer = RetryAnalyzer.class)
 	public void px_dist_006_1_dodavanje_citaca_test() throws Exception {
@@ -28,14 +28,14 @@ public class PX_DIST_006_Citaci_CRUD_Test extends BaseTest {
 		homePage.verifikujPocetnuStranicu();
 		Citaci citaci = homePage.navigirajNaCitaci();
 		citaci.verifikujCitaci();
-		citaci.dodajCitaca(imeCitaca);
+		citaci.dodajCitaca(citac);
 		citaci.verifikujPoruku("Uspješno završeno.");
-		citaci.pretraziStavku(homePage.filterKolona2WE, imeCitaca);
+		citaci.pretraziStavku(homePage.filterKolona2WE, citac);
 		citaci.verifikujCitaci();
-		citaci.verifikujStavku(imeCitaca, homePage.podatak2Tabela2WE);
+		citaci.verifikujStavku(citac, homePage.podatak2Tabela2WE);
 	}
 	
-	@Test (dependsOnMethods = { "px_dist_006_1_dodavanje_citaca_test" }, retryAnalyzer = RetryAnalyzer.class)
+	@Test (retryAnalyzer = RetryAnalyzer.class, dependsOnMethods = { "px_dist_006_1_dodavanje_citaca_test" })
 	public void px_dist_006_2_uredjivanje_citaca_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
@@ -44,17 +44,17 @@ public class PX_DIST_006_Citaci_CRUD_Test extends BaseTest {
 		homePage.verifikujPocetnuStranicu();
 		Citaci citaci = homePage.navigirajNaCitaci();
 		citaci.verifikujCitaci();
-		citaci.pretraziStavku(homePage.filterKolona2WE, imeCitaca);
+		citaci.pretraziStavku(homePage.filterKolona2WE, citac);
 		citaci.verifikujCitaci();
-		citaci.verifikujStavku(imeCitaca, homePage.podatak2Tabela2WE);
-		citaci.urediCitaca(novoImeCitaca);
+		citaci.verifikujStavku(citac, homePage.podatak2Tabela2WE);
+		citaci.urediCitaca(noviCitac);
 		citaci.verifikujPoruku("Uspješno završeno.");
-		citaci.pretraziStavku(homePage.filterKolona2WE, novoImeCitaca);
+		citaci.pretraziStavku(homePage.filterKolona2WE, noviCitac);
 		citaci.verifikujCitaci();
-		citaci.verifikujStavku(novoImeCitaca, homePage.podatak2Tabela2WE);
+		citaci.verifikujStavku(noviCitac, homePage.podatak2Tabela2WE);
 	}
 	
-	@Test (dependsOnMethods = { "px_dist_006_2_uredjivanje_citaca_test" }, retryAnalyzer = RetryAnalyzer.class)
+	@Test (retryAnalyzer = RetryAnalyzer.class, dependsOnMethods = { "px_dist_006_2_uredjivanje_citaca_test" })
 	public void px_dist_006_3_brisanje_citaca_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
@@ -63,12 +63,12 @@ public class PX_DIST_006_Citaci_CRUD_Test extends BaseTest {
 		homePage.verifikujPocetnuStranicu();
 		Citaci citaci = homePage.navigirajNaCitaci();
 		citaci.verifikujCitaci();
-		citaci.pretraziStavku(homePage.filterKolona2WE, novoImeCitaca);
+		citaci.pretraziStavku(homePage.filterKolona2WE, noviCitac);
 		citaci.verifikujCitaci();
-		citaci.verifikujStavku(novoImeCitaca, homePage.podatak2Tabela2WE);
+		citaci.verifikujStavku(noviCitac, homePage.podatak2Tabela2WE);
 		citaci.obrisiStavku();
 		citaci.verifikujPoruku("Brisanje je uspješno završeno");
-		citaci.pretraziStavku(homePage.filterKolona2WE, novoImeCitaca);
+		citaci.pretraziStavku(homePage.filterKolona2WE, noviCitac);
 		citaci.verifikujPraznuTabelu();
 	}
 	

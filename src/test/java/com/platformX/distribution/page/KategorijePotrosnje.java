@@ -8,7 +8,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import com.platformX.base.Kolone;
-import com.platformX.util.Helper;
 
 public class KategorijePotrosnje extends PocetnaStranicaPXD {
 
@@ -28,8 +27,7 @@ public class KategorijePotrosnje extends PocetnaStranicaPXD {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNazivWE));
 	}
 
-	public String dodajKategorijuPotrosnje() throws InterruptedException {
-		String naziv = "KategorijaPotrosnje" + Helper.getRandomString(5);
+	public String dodajKategorijuPotrosnje(String naziv) throws InterruptedException {
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		dodajBtnWE.click();
@@ -41,8 +39,7 @@ public class KategorijePotrosnje extends PocetnaStranicaPXD {
 		return naziv;	
 	}
 	
-	public String urediKategorijuPotrosnje() throws InterruptedException {
-		String kategorijaPotrosnje = "KategorijaPotrosnje" + Helper.getRandomString(5);
+	public String urediKategorijuPotrosnje(String naziv) throws InterruptedException {
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		burgerBarWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(urediWE));
@@ -51,11 +48,11 @@ public class KategorijePotrosnje extends PocetnaStranicaPXD {
 		wait.until(ExpectedConditions.elementToBeClickable(nazivKategorijePotrosnjeWE));
 		nazivKategorijePotrosnjeWE.click();
 		nazivKategorijePotrosnjeWE.clear();
-		nazivKategorijePotrosnjeWE.sendKeys(kategorijaPotrosnje);
+		nazivKategorijePotrosnjeWE.sendKeys(naziv);
 		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
 		submitBtnWE.click();
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
-		return kategorijaPotrosnje;
+		return naziv;
 	}
 
 }

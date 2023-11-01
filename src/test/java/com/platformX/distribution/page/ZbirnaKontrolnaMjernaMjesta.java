@@ -56,8 +56,7 @@ public class ZbirnaKontrolnaMjernaMjesta extends PocetnaStranicaPXD {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKontrolnoMjernoMjestoWE));
 	}
 	
-	public String dodajZbirnoKontrolnoMjernoMjesto(String brBrojila) throws InterruptedException, FileNotFoundException, IOException {
-		String nazivZbirnogKontrolnogMjesta = "Zbirno mjm " + Helper.getRandomString(5);
+	public String dodajZbirnoKontrolnoMjernoMjesto(String brBrojila, String nazivZbirnogKontrolnogMjesta) throws InterruptedException, FileNotFoundException, IOException {
 	    wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
 	    dodajBtnWE.click();
 	    wait.until(ExpectedConditions.elementToBeClickable(poljeNazivWE));
@@ -93,8 +92,7 @@ public class ZbirnaKontrolnaMjernaMjesta extends PocetnaStranicaPXD {
 		return nazivZbirnogKontrolnogMjesta;
 	}
 	
-	public String urediZbirnoKontrolnoMjernoMjesto() throws InterruptedException, FileNotFoundException, IOException {
-		String nazivZbirnogKontrolnogMjesta = "Zbirno mjm " + Helper.getRandomString(5);
+	public String urediZbirnoKontrolnoMjernoMjesto(String nazivZbirnogKontrolnogMjesta) throws InterruptedException, FileNotFoundException, IOException {
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		burgerBarWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(urediWE));

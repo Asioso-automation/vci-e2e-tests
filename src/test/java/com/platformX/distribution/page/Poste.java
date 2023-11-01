@@ -38,8 +38,7 @@ public class Poste extends PocetnaStranicaPXD {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaStampaniNazivNaDokWE));
 	}
 	
-	public String[] dodajPostu() throws InterruptedException {
-		String[] podaci = new String[3];
+	public String[] dodajPostu(String[] podaci) throws InterruptedException {
 		podaci[0] = "Posta "+ Helper.getRandomString(5);
 		podaci[1] = Helper.getRandomNumber(4);
 		podaci[2] = Helper.getRandomString(5);
@@ -67,8 +66,7 @@ public class Poste extends PocetnaStranicaPXD {
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 	}
 	
-	public String urediPostu() throws InterruptedException {
-		String posta = "Posta " + Helper.getRandomString(5);
+	public String urediPostu(String posta) throws InterruptedException {
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		burgerBarWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(urediWE));

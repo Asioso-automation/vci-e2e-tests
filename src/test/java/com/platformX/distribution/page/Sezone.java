@@ -51,8 +51,7 @@ public class Sezone extends PocetnaStranicaPXD {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDoWE));
 	}
 	
-	public String dodajSezonu() throws InterruptedException {
-		String naziv = "Sezona " + Helper.getRandomString(4);
+	public String dodajSezonu(String naziv) throws InterruptedException {
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
 		dodajBtnWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(IdWE));
@@ -79,8 +78,7 @@ public class Sezone extends PocetnaStranicaPXD {
 	    return naziv;
 	}
 	
-	public String urediSezonu() throws InterruptedException {
-		String sezona = "Sezona" + Helper.getRandomString(5);
+	public String urediSezonu(String naziv) throws InterruptedException {
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		burgerBarWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(urediWE));
@@ -88,11 +86,11 @@ public class Sezone extends PocetnaStranicaPXD {
 		wait.until(ExpectedConditions.elementToBeClickable(nazivSezoneWE));
 		nazivSezoneWE.click();
 		nazivSezoneWE.clear();
-		nazivSezoneWE.sendKeys(sezona);
+		nazivSezoneWE.sendKeys(naziv);
 		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
 		submitBtnWE.click();
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
-		return sezona;
+		return naziv;
 	}
 
 }

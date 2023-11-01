@@ -58,12 +58,11 @@ public class TarifneGrupe extends PocetnaStranicaPXD {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaReaktivnaWE));
 	}
 	
-	public String dodajTarifnuGrupu() throws InterruptedException {
-		String naziv = "TarifnaGrupa" + Helper.getRandomString(4);
-		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
+	public String dodajTarifnuGrupu(String naziv) throws InterruptedException {
+ 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
 		dodajBtnWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(nazivTarifneGrupeWE));
-		nazivTarifneGrupeWE.sendKeys(naziv);
+		nazivTarifneGrupeWE.sendKeys(naziv);    
 		wait.until(ExpectedConditions.elementToBeClickable(ebixSifraWE));
 		ebixSifraWE.sendKeys(Helper.getRandomNumber(4));
 		wait.until(ExpectedConditions.elementToBeClickable(nadgrupaWE));
@@ -86,8 +85,7 @@ public class TarifneGrupe extends PocetnaStranicaPXD {
 		return naziv;
 	}
 	
-	public String urediTarifnuGrupu()throws Exception {
-		String tarifnaGrupa = "TarifnaGrupa" + Helper.getRandomString(4);
+	public String urediTarifnuGrupu(String naziv)throws Exception {
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		burgerBarWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(urediWE));
@@ -95,11 +93,11 @@ public class TarifneGrupe extends PocetnaStranicaPXD {
 		wait.until(ExpectedConditions.elementToBeClickable(nazivTarifneGrupeWE));
 		nazivTarifneGrupeWE.click();
 		nazivTarifneGrupeWE.clear();
-		nazivTarifneGrupeWE.sendKeys(tarifnaGrupa);
+		nazivTarifneGrupeWE.sendKeys(naziv);
 		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
 		submitBtnWE.click();
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
-		return tarifnaGrupa;
+		return naziv;
 	}
 
 }

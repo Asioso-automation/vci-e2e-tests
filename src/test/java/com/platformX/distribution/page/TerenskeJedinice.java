@@ -8,7 +8,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import com.platformX.base.Kolone;
-import com.platformX.util.Helper;
 
 public class TerenskeJedinice extends PocetnaStranicaPXD {
 
@@ -36,9 +35,7 @@ public class TerenskeJedinice extends PocetnaStranicaPXD {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaEmailWE));
 	}
 
-	public String dodajTerenskuJedinicu() throws InterruptedException {
-		String naziv = new String();
-		naziv = "TerenskaJedinica " + Helper.getRandomString(5);
+	public String dodajTerenskuJedinicu(String naziv) throws InterruptedException {
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
 		dodajBtnWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(nazivWE));
@@ -48,8 +45,7 @@ public class TerenskeJedinice extends PocetnaStranicaPXD {
 		return naziv;
 	}
 	
-	public String urediTerenskuJedinicu() throws InterruptedException {
-		String naziv = "TerenskaJedinica " + Helper.getRandomString(5);
+	public String urediTerenskuJedinicu(String naziv) throws InterruptedException {
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		burgerBarWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(urediWE));

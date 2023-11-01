@@ -4,9 +4,11 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import org.testng.annotations.Test;
 import com.platformX.base.BaseTest;
+import com.platformX.base.RetryAnalyzer;
 import com.platformX.distribution.page.LogIn;
 import com.platformX.distribution.page.MjernaMjesta;
 import com.platformX.distribution.page.PocetnaStranicaPXD;
+import com.platformX.util.Helper;
 
 public class PX_DIST_017_Mjerna_Mjesta_CRUD_Test  extends BaseTest {
 
@@ -14,7 +16,10 @@ public class PX_DIST_017_Mjerna_Mjesta_CRUD_Test  extends BaseTest {
 		super();
 	}
 	
-	@Test
+	String sifraMjernogMjesta = Helper.getRandomNumber(6);
+	String novaSifraMjernogMjesta = Helper.getRandomNumber(6);
+	
+	@Test (retryAnalyzer = RetryAnalyzer.class)
 	public void px_dist_017_1_dodavanje_mjernog_mjesta_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
@@ -23,14 +28,14 @@ public class PX_DIST_017_Mjerna_Mjesta_CRUD_Test  extends BaseTest {
 		homePage.verifikujPocetnuStranicu();
 		MjernaMjesta mjernaMjesta = homePage.navigirajNaMjernaMjesta();
 		mjernaMjesta.verifikujMjernaMjesta();
-		String mjernoMjesto = mjernaMjesta.dodajMjernoMjesto();
+		mjernaMjesta.dodajMjernoMjesto(sifraMjernogMjesta);
 		mjernaMjesta.verifikujPoruku("Uspješno završeno.");
-		mjernaMjesta.pretraziStavku(homePage.filterKolona3WE, mjernoMjesto);
+		mjernaMjesta.pretraziStavku(homePage.filterKolona3WE, sifraMjernogMjesta);
 		mjernaMjesta.verifikujMjernaMjesta();
-		mjernaMjesta.verifikujStavku(mjernoMjesto, homePage.podatak2Tabela3WE);
+		mjernaMjesta.verifikujStavku(sifraMjernogMjesta, homePage.podatak2Tabela3WE);
 	}
 
-	@Test
+	@Test (retryAnalyzer = RetryAnalyzer.class, dependsOnMethods = { "px_dist_017_1_dodavanje_mjernog_mjesta_test" })
 	public void px_dist_017_2_uredjivanje_mjernog_mjesta_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
@@ -39,19 +44,17 @@ public class PX_DIST_017_Mjerna_Mjesta_CRUD_Test  extends BaseTest {
 		homePage.verifikujPocetnuStranicu();
 		MjernaMjesta mjernaMjesta = homePage.navigirajNaMjernaMjesta();
 		mjernaMjesta.verifikujMjernaMjesta();
-		String mjernoMjesto = mjernaMjesta.dodajMjernoMjesto();
-		mjernaMjesta.verifikujPoruku("Uspješno završeno.");
-		mjernaMjesta.pretraziStavku(homePage.filterKolona3WE, mjernoMjesto);
+		mjernaMjesta.pretraziStavku(homePage.filterKolona3WE, sifraMjernogMjesta);
 		mjernaMjesta.verifikujMjernaMjesta();
-		mjernaMjesta.verifikujStavku(mjernoMjesto, homePage.podatak2Tabela3WE);
-		String novoMjernoMjesto = mjernaMjesta.urediMjernoMjesto();
+		mjernaMjesta.verifikujStavku(sifraMjernogMjesta, homePage.podatak2Tabela3WE);
+		mjernaMjesta.urediMjernoMjesto(novaSifraMjernogMjesta);
 		mjernaMjesta.verifikujPoruku("Uspješno završeno.");
-		mjernaMjesta.pretraziStavku(homePage.filterKolona3WE, novoMjernoMjesto);
+		mjernaMjesta.pretraziStavku(homePage.filterKolona3WE, novaSifraMjernogMjesta);
 		mjernaMjesta.verifikujMjernaMjesta();
-		mjernaMjesta.verifikujStavku(novoMjernoMjesto, homePage.podatak2Tabela3WE);
+		mjernaMjesta.verifikujStavku(novaSifraMjernogMjesta, homePage.podatak2Tabela3WE);
 	}
 	
-	@Test
+	@Test (retryAnalyzer = RetryAnalyzer.class, dependsOnMethods = { "px_dist_017_2_uredjivanje_mjernog_mjesta_test" })
 	public void px_dist_017_3_brisanje_mjernog_mjesta_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
@@ -60,14 +63,12 @@ public class PX_DIST_017_Mjerna_Mjesta_CRUD_Test  extends BaseTest {
 		homePage.verifikujPocetnuStranicu();
 		MjernaMjesta mjernaMjesta = homePage.navigirajNaMjernaMjesta();
 		mjernaMjesta.verifikujMjernaMjesta();
-		String mjernoMjesto = mjernaMjesta.dodajMjernoMjesto();
-		mjernaMjesta.verifikujPoruku("Uspješno završeno.");
-		mjernaMjesta.pretraziStavku(homePage.filterKolona3WE, mjernoMjesto);
+		mjernaMjesta.pretraziStavku(homePage.filterKolona3WE, novaSifraMjernogMjesta);
 		mjernaMjesta.verifikujMjernaMjesta();
-		mjernaMjesta.verifikujStavku(mjernoMjesto, homePage.podatak2Tabela3WE);
+		mjernaMjesta.verifikujStavku(novaSifraMjernogMjesta, homePage.podatak2Tabela3WE);
 		mjernaMjesta.obrisiStavku();
 		mjernaMjesta.verifikujPoruku("Brisanje je uspješno završeno");
-		mjernaMjesta.pretraziStavku(homePage.filterKolona3WE, mjernoMjesto);
+		mjernaMjesta.pretraziStavku(homePage.filterKolona3WE, novaSifraMjernogMjesta);
 		mjernaMjesta.verifikujPraznuTabelu();
 	}
 	

@@ -56,8 +56,7 @@ public class Trafostanice extends PocetnaStranicaPXD {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAktivnaWE));
 	}
 	
-	public String dodajTrafostanicu() throws Exception{
-		String naziv = "Trafostanica" + Helper.getRandomString(4);
+	public String dodajTrafostanicu(String naziv) throws Exception{
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
 		dodajBtnWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(sifraWE));
@@ -100,12 +99,6 @@ public class Trafostanice extends PocetnaStranicaPXD {
 	}
 	
 	public String urediTrafostanicu(String naziv) throws InterruptedException {
-		String trafostanica = "Trafostanica" + Helper.getRandomString(4);
-		wait.until(ExpectedConditions.elementToBeClickable(filterKolona3WE));
-		filterKolona3WE.click();
-		filterKolona3WE.clear();
-		filterKolona3WE.sendKeys(naziv);
-		filterKolona3WE.sendKeys(Keys.ENTER);
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		burgerBarWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(urediWE));
@@ -114,11 +107,11 @@ public class Trafostanice extends PocetnaStranicaPXD {
 		wait.until(ExpectedConditions.elementToBeClickable(nazivWE));
 		nazivWE.click();
 		nazivWE.clear();
-		nazivWE.sendKeys(trafostanica);
+		nazivWE.sendKeys(naziv);
 		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
 		submitBtnWE.click();
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
-		return trafostanica;
+		return naziv;
 	}
 	
 	public String kreirajTrafostanicu() throws InterruptedException {

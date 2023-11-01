@@ -8,7 +8,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import com.platformX.base.Kolone;
-import com.platformX.util.Helper;
 
 public class Opstine extends PocetnaStranicaPXD {
 
@@ -33,9 +32,7 @@ public class Opstine extends PocetnaStranicaPXD {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDrzavaWE));
 	}
 
-	public String dodajOpstinu() throws InterruptedException {
-		String naziv = new String();
-		naziv = "Opstina " + Helper.getRandomString(5);
+	public String dodajOpstinu(String naziv) throws InterruptedException {
 		String drzava = new String();
 		drzava = "BIH";
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
@@ -51,8 +48,7 @@ public class Opstine extends PocetnaStranicaPXD {
 		return naziv;
 	}
 	
-	public String urediOpstinu() throws InterruptedException {
-		String naziv = "Opstina " + Helper.getRandomString(5);
+	public String urediOpstinu(String naziv) throws InterruptedException {
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		burgerBarWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(urediWE));

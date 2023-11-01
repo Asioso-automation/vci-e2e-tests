@@ -8,7 +8,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import com.platformX.base.Kolone;
-import com.platformX.util.Helper;
 
 public class Monteri extends PocetnaStranicaPXD {
 
@@ -29,8 +28,7 @@ public class Monteri extends PocetnaStranicaPXD {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojTelefonaWE));
 	}
 	
-	public String dodajMontera()throws InterruptedException{
-		String naziv = "Monter" + Helper.getRandomString(4);
+	public String dodajMontera(String naziv)throws InterruptedException{
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
 		dodajBtnWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(imePrezimeWE));
@@ -41,8 +39,7 @@ public class Monteri extends PocetnaStranicaPXD {
 		return naziv;
 	}
 	
-	public String urediMontera()throws InterruptedException{
-		String monter = "Monter" + Helper.getRandomString(4);
+	public String urediMontera(String naziv)throws InterruptedException{
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		burgerBarWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(urediWE));
@@ -50,11 +47,11 @@ public class Monteri extends PocetnaStranicaPXD {
 		wait.until(ExpectedConditions.elementToBeClickable(imePrezimeWE));
 		imePrezimeWE.click();
 		imePrezimeWE.clear();
-		imePrezimeWE.sendKeys(monter);
+		imePrezimeWE.sendKeys(naziv);
 		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
 		submitBtnWE.click();
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
-		return monter;
+		return naziv;
 	}
 
 }

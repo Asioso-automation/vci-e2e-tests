@@ -36,8 +36,7 @@ public class NaseljenaMjesta extends PocetnaStranicaPXD {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaOpstinaWE));
 	}
 
-	public String dodajNaseljenoMjesto() throws Exception {
-		String naziv = "NaseljenoMjesto" + Helper.getRandomString(4);
+	public String dodajNaseljenoMjesto(String naziv) throws Exception {
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
 		dodajBtnWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(nazivWE));
@@ -58,8 +57,7 @@ public class NaseljenaMjesta extends PocetnaStranicaPXD {
 		return naziv;
 	}
 	
-	public String urediNaseljenoMjesto() throws InterruptedException{
-		String naseljenoMjesto = "NaseljenoMjesto" + Helper.getRandomString(4);
+	public String urediNaseljenoMjesto(String naziv) throws InterruptedException{
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		burgerBarWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(urediWE));
@@ -68,15 +66,15 @@ public class NaseljenaMjesta extends PocetnaStranicaPXD {
 		wait.until(ExpectedConditions.elementToBeClickable(nazivWE));
 		nazivWE.click();
 		nazivWE.clear();
-		nazivWE.sendKeys(naseljenoMjesto);
+		nazivWE.sendKeys(naziv);
 		wait.until(ExpectedConditions.elementToBeClickable(stampaniNazivWE));
 		stampaniNazivWE.click();
 		stampaniNazivWE.clear();
-		stampaniNazivWE.sendKeys(naseljenoMjesto);
+		stampaniNazivWE.sendKeys(naziv);
 		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
 		submitBtnWE.click();
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
-		return naseljenoMjesto;
+		return naziv;
 	}
 	
 }

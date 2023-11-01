@@ -28,9 +28,6 @@ public class FizickeLokacije extends PocetnaStranicaPXD {
 	@FindBy(xpath = "//div[2]/div[1]/div/div/div[1]/div[1]/input[1]")
 	private WebElement terenskaJedinicaWE;
 	
-//	@FindBy(xpath = "//div[11]/div/div/div/div")
-//	private WebElement terenskaJedinicaLookupWE;
-	
 	public void verifikujFizickeLokacije() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
@@ -47,9 +44,7 @@ public class FizickeLokacije extends PocetnaStranicaPXD {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaEmailWE));
 	}
 	
-	public String dodajFizickuLokaciju(String terenskaJedinica) throws InterruptedException {
-		String naziv = new String();
-		naziv = "FizickaLokacija " + Helper.getRandomString(5);
+	public String dodajFizickuLokaciju(String naziv, String terenskaJedinica) throws InterruptedException {
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
 		dodajBtnWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(nazivWE));
@@ -68,8 +63,7 @@ public class FizickeLokacije extends PocetnaStranicaPXD {
 		return naziv;
 	}
 	
-	public String urediFizickuLokaciju() throws InterruptedException {
-		String naziv = "FizickaLokacija " + Helper.getRandomString(5);
+	public String urediFizickuLokaciju(String naziv) throws InterruptedException {
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		burgerBarWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(urediWE));

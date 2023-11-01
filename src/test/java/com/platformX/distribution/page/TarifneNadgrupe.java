@@ -8,7 +8,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import com.platformX.base.Kolone;
-import com.platformX.util.Helper;
 
 public class TarifneNadgrupe extends PocetnaStranicaPXD {
 
@@ -28,8 +27,7 @@ public class TarifneNadgrupe extends PocetnaStranicaPXD {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNazivWE));
 	}
 
-	public String dodajTarifnuNadrgupu() throws InterruptedException{
-		String naziv = "Tarifna nadgrupa" + Helper.getRandomString(4);
+	public String dodajTarifnuNadrgupu(String naziv) throws InterruptedException{
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
 		dodajBtnWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(nazivTarifneNadrupeWE));
@@ -40,8 +38,7 @@ public class TarifneNadgrupe extends PocetnaStranicaPXD {
 		return naziv;
 	}
 	
-	public String urediTarifnuNadgrupu()throws InterruptedException {
-		String tarifnaNadrgupa = "Tarifna nadrgupa" + Helper.getRandomString(4);
+	public String urediTarifnuNadgrupu(String naziv)throws InterruptedException {
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		burgerBarWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(urediWE));
@@ -49,11 +46,11 @@ public class TarifneNadgrupe extends PocetnaStranicaPXD {
 		wait.until(ExpectedConditions.elementToBeClickable(nazivTarifneNadrupeWE));
 		nazivTarifneNadrupeWE.click();
 		nazivTarifneNadrupeWE.clear();
-		nazivTarifneNadrupeWE.sendKeys(tarifnaNadrgupa);
+		nazivTarifneNadrupeWE.sendKeys(naziv);
 		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
 		submitBtnWE.click();
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
-		return tarifnaNadrgupa;
+		return naziv;
 	}
 
 }

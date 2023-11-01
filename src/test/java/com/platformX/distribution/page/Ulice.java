@@ -35,8 +35,7 @@ public class Ulice extends PocetnaStranicaPXD {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaValidnaWE));
 	}
 	
-	public String dodajUlicu() throws InterruptedException {
-		String naziv = "Ulica " + Helper.getRandomString(5);
+	public String dodajUlicu(String naziv) throws InterruptedException {
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
 		dodajBtnWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(nazivWE));
@@ -48,8 +47,7 @@ public class Ulice extends PocetnaStranicaPXD {
 		return naziv;
 	}
 	
-	public String urediUlicu() throws InterruptedException {
-		String ulica = "Ulica " + Helper.getRandomString(5);
+	public String urediUlicu(String ulica) throws InterruptedException {
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		burgerBarWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(urediWE));

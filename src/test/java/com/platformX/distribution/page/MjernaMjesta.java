@@ -80,8 +80,7 @@ public class MjernaMjesta extends PocetnaStranicaPXD {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAktivanUgovorWE));
 	}
 	
-	public String dodajMjernoMjesto() throws InterruptedException, FileNotFoundException, IOException {
-		String sifraMjernogMjesta = Helper.getRandomNumber(6);
+	public String dodajMjernoMjesto(String sifraMjernogMjesta) throws InterruptedException, FileNotFoundException, IOException {
 		String nazivMjernogMjesta = "Naziv mjernog mjesta " + sifraMjernogMjesta;
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
 		dodajBtnWE.click();
@@ -135,8 +134,7 @@ public class MjernaMjesta extends PocetnaStranicaPXD {
 	   return mjernoMjesto;
 	}
 	
-	 public String urediMjernoMjesto() throws InterruptedException {
-		 String sifraMjernogMjesta = Helper.getRandomNumber(6);
+	 public String urediMjernoMjesto(String sifraMjernogMjesta) throws InterruptedException {
 		 wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		 Thread.sleep(800);																// ne radi burgerBarWE.click() bez Thread.sleep
 		 burgerBarWE.click();
