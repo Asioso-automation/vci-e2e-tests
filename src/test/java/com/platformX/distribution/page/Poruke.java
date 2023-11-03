@@ -59,8 +59,8 @@ public class Poruke extends PocetnaStranicaPXD {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPrioritetWE));
 	}
 	
-	public String[] dodajPoruku() throws InterruptedException {
-		String[] podaci = new String[2];
+	public String[] dodajPoruku(String[] podaci) throws InterruptedException {
+//		String[] podaci = new String[2];
 		podaci[0] = "Naslov Testne Poruke " + Helper.getRandomString(5);
 		podaci[1] = "Sadrzaj testne poruke " + Helper.getRandomString(5);
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));

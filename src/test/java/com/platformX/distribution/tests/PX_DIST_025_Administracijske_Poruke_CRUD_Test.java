@@ -4,6 +4,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import org.testng.annotations.Test;
 import com.platformX.base.BaseTest;
+import com.platformX.base.RetryAnalyzer;
 import com.platformX.distribution.page.LogIn;
 import com.platformX.distribution.page.PocetnaStranicaPXD;
 import com.platformX.distribution.page.Poruke;
@@ -14,9 +15,11 @@ public class PX_DIST_025_Administracijske_Poruke_CRUD_Test  extends BaseTest {
 		super();
 	}
 	
-	private String[] podaci;
+//	private String[] podaci;
+	String[] podaci = new String[2];
+	String[] podaci1 = new String[2];
 	
-	@Test (description="test kreira i verifikuje ADMINISTRACIJSKU PORUKU na listi")
+	@Test (description="test kreira i verifikuje ADMINISTRACIJSKU PORUKU na listi", retryAnalyzer = RetryAnalyzer.class)
 	public void px_dist_025_1_dodavanje_administracijske_poruke_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
@@ -25,7 +28,7 @@ public class PX_DIST_025_Administracijske_Poruke_CRUD_Test  extends BaseTest {
 		homePage.verifikujPocetnuStranicu();
 		Poruke poruke = homePage.navigirajNaPoruke();
 		poruke.verifikujPoruke();
-		podaci = poruke.dodajPoruku();
+		poruke.dodajPoruku(podaci);
 		poruke.verifikujPoruku("Uspješno završeno.");
 		poruke.pretraziStavku(homePage.filterKolona3WE, podaci[0]);
 		poruke.verifikujPoruke();
@@ -41,17 +44,17 @@ public class PX_DIST_025_Administracijske_Poruke_CRUD_Test  extends BaseTest {
 		homePage.verifikujPocetnuStranicu();
 		Poruke poruke = homePage.navigirajNaPoruke();
 		poruke.verifikujPoruke();
-		podaci = poruke.dodajPoruku();
+		poruke.dodajPoruku(podaci1);
 		poruke.verifikujPoruku("Uspješno završeno.");
 		homePage.navigirajNaPocetnaStranica();
 		homePage.osvjeziStranicu();
 		homePage.verifikujPocetnuStranicu();
-		poruke.verifikujPorukuPocetna(podaci[0], podaci[1]);
+		poruke.verifikujPorukuPocetna(podaci1[0], podaci1[1]);
 	}
 	
 //	TODO dodati test za uredjivanje administracijske poruke
 	
-	@Test (description="test kreira, verifikuje i brise ADMINISTRACIJSKU PORUKU")
+	@Test (description="test kreira, verifikuje i brise ADMINISTRACIJSKU PORUKU", retryAnalyzer = RetryAnalyzer.class, dependsOnMethods = { "px_dist_025_1_dodavanje_administracijske_poruke_test" })
 	public void px_dist_025_4_brisanje_administracijske_poruke_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
@@ -60,8 +63,6 @@ public class PX_DIST_025_Administracijske_Poruke_CRUD_Test  extends BaseTest {
 		homePage.verifikujPocetnuStranicu();
 		Poruke poruke = homePage.navigirajNaPoruke();
 		poruke.verifikujPoruke();
-		podaci = poruke.dodajPoruku();
-		poruke.verifikujPoruku("Uspješno završeno.");
 		poruke.pretraziStavku(homePage.filterKolona3WE, podaci[0]);
 		poruke.verifikujPoruke();
 		poruke.verifikujStavku(podaci[0], homePage.podatak2Tabela3WE);

@@ -16,7 +16,7 @@ public class PX_DIST_019_Elektroenergetske_Saglasnosti_CRUD_Test extends BaseTes
 
 //	trenutno se mijenja ova forma - prilagoditi testove nakon release-a
 	
-	@Test (enabled = false)
+	@Test
 	public void px_dist_019_1_dodavanje_elektroenergetske_saglasnosti_domacinstva_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
@@ -48,7 +48,7 @@ public class PX_DIST_019_Elektroenergetske_Saglasnosti_CRUD_Test extends BaseTes
 		elSaglasnosti.verifikujStavku(eeSaglasnost, homePage.podatak2Tabela2WE);
 	}
 	
-	@Test (enabled = false)
+	@Test
 	public void px_dist_019_3_uredjivanje_elektroenergetske_saglasnosti_domacinstva_test() throws Exception {		
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
@@ -66,7 +66,7 @@ public class PX_DIST_019_Elektroenergetske_Saglasnosti_CRUD_Test extends BaseTes
 		elSaglasnosti.verifikujPoruku("Uspješno završeno.");
 	}
 	
-	@Test (enabled = false)
+	@Test
 	public void px_dist_019_4_brisanje_elektroenergetske_saglasnosti_domacinstva_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();

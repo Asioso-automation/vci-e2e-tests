@@ -8,7 +8,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import com.platformX.base.Kolone;
-import com.platformX.util.Helper;
 
 public class FizickaLica extends PocetnaStranicaPXD {
 	
@@ -54,14 +53,13 @@ public class FizickaLica extends PocetnaStranicaPXD {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAktivanWE));
 	}
 	
-	public String dodajFizickoLice() throws InterruptedException, FileNotFoundException, IOException {
-		String nazivFizickogLica = "Fizicko lice " + Helper.getRandomString(5);
+	public String dodajFizickoLice(String naziv) throws InterruptedException, FileNotFoundException, IOException {
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
 		dodajBtnWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(poljeImeIPrezimeWE));
-		poljeImeIPrezimeWE.sendKeys(nazivFizickogLica);
+		poljeImeIPrezimeWE.sendKeys(naziv);
 		wait.until(ExpectedConditions.elementToBeClickable(poljeStampaniNazivNaDokumentimaWE));
-		poljeStampaniNazivNaDokumentimaWE.sendKeys(nazivFizickogLica);
+		poljeStampaniNazivNaDokumentimaWE.sendKeys(naziv);
 		wait.until(ExpectedConditions.elementToBeClickable(poljeMjestoWE));
 		poljeMjestoWE.sendKeys("6 - Banja Luka");
 		wait.until(ExpectedConditions.elementToBeClickable(odaberiMjestoWE));
@@ -77,7 +75,7 @@ public class FizickaLica extends PocetnaStranicaPXD {
 		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
 		submitBtnWE.click();
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
-		return nazivFizickogLica;
+		return naziv;
 	}
 	
 	 public String kreirajFizickoLice() {
@@ -85,8 +83,7 @@ public class FizickaLica extends PocetnaStranicaPXD {
 		return kupac;
 	 }  
 	 
-	 public String urediFizickoLice() throws InterruptedException {
-		 String nazivFizickogLica = "Fizicko lice " + Helper.getRandomString(5);
+	 public String urediFizickoLice(String naziv) throws InterruptedException {
 		 wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		 Thread.sleep(800);																// trenutno ne radi burgerBarWE.click() bez Thread.sleep - ne radi ni sa try/catch
 		 burgerBarWE.click();
@@ -95,11 +92,11 @@ public class FizickaLica extends PocetnaStranicaPXD {
 		 wait.until(ExpectedConditions.elementToBeClickable(poljeImeIPrezimeWE));
 		 poljeImeIPrezimeWE.click();
 		 poljeImeIPrezimeWE.clear();
-		 poljeImeIPrezimeWE.sendKeys(nazivFizickogLica);
+		 poljeImeIPrezimeWE.sendKeys(naziv);
 		 wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
 		 submitBtnWE.click();
 		 wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
-		 return nazivFizickogLica; 
+		 return naziv; 
 	 }
 	 
 }

@@ -60,14 +60,13 @@ public class PravnaLica extends PocetnaStranicaPXD {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAktivanWE));
 	}
 	
-	public String dodajPravnoLice() throws InterruptedException, FileNotFoundException, IOException {
-		String nazivPravnogLica = "Pravno lice " + Helper.getRandomString(5);
+	public String dodajPravnoLice(String naziv) throws InterruptedException, FileNotFoundException, IOException {
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
 		dodajBtnWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(poljeNazivWE));
-		poljeNazivWE.sendKeys(nazivPravnogLica);
+		poljeNazivWE.sendKeys(naziv);
 		wait.until(ExpectedConditions.elementToBeClickable(poljeStampaniNazivNaDokumentimaWE));
-		poljeStampaniNazivNaDokumentimaWE.sendKeys(nazivPravnogLica);
+		poljeStampaniNazivNaDokumentimaWE.sendKeys(naziv);
 		wait.until(ExpectedConditions.elementToBeClickable(poljeJibWE));
 		poljeJibWE.sendKeys(Helper.getRandomNumber(13));
 		wait.until(ExpectedConditions.elementToBeClickable(poljeMjestoWE));
@@ -92,7 +91,7 @@ public class PravnaLica extends PocetnaStranicaPXD {
 		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
 		submitBtnWE.click();
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
-		return nazivPravnogLica;		
+		return naziv;		
 	}
 	
 	public String kreirajPravnoLice() {
@@ -100,8 +99,7 @@ public class PravnaLica extends PocetnaStranicaPXD {
 		return kupac;
 	}
 	
-	public String urediPravnoLice() throws InterruptedException {
-		String nazivPravnogLica = "Pravno lice" + Helper.getRandomString(5);
+	public String urediPravnoLice(String naziv) throws InterruptedException {
 		try {
 			wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 			burgerBarWE.click();
@@ -116,11 +114,11 @@ public class PravnaLica extends PocetnaStranicaPXD {
 		wait.until(ExpectedConditions.elementToBeClickable(poljeNazivWE));
 		poljeNazivWE.click();
 		poljeNazivWE.clear();
-		poljeNazivWE.sendKeys(nazivPravnogLica);
+		poljeNazivWE.sendKeys(naziv);
 		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
 		submitBtnWE.click();
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
-		return nazivPravnogLica;
+		return naziv;
 	}
 
 }
