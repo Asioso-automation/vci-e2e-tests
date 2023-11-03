@@ -1,10 +1,8 @@
 package com.platformX.page;
 
-import static org.testng.Assert.assertTrue;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -50,23 +48,6 @@ public class UmanjenjaCijene extends PocetnaStranica {
 		return brojMjeseci;
 	}
 	
-	public void verifikujUmanjenjeCijene(String brojMjeseci) throws InterruptedException {
-		Thread.sleep(1000);
-		wait.until(ExpectedConditions.elementToBeClickable(filterKolonaWE));
-		Thread.sleep(500);
-		filterKolonaWE.click();
-		Thread.sleep(1000);
-		filterKolonaWE.click();
-		filterKolonaWE.clear();
-		filterKolonaWE.sendKeys(brojMjeseci);
-		filterKolonaWE.sendKeys(Keys.ENTER);
-		Thread.sleep(1000);
-		wait.until(ExpectedConditions.visibilityOf(jedinstvenElementWE));
-		wait.until(ExpectedConditions.visibilityOf(podatak2Tabela2WE));
-		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
-		assertTrue(podatak2Tabela2WE.getText().equals(brojMjeseci), "UmanjenjaCijena: Broj mjeseci nije dobar!");
-	}
-	
 	public String urediUmanjenjeCijene() throws InterruptedException {
 		String brojMjeseci = Helper.getRandomNumberInRange(1, 9999);
 		String procenat = Helper.getRandomNumber(2);
@@ -85,20 +66,6 @@ public class UmanjenjaCijene extends PocetnaStranica {
 		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
 		submitBtnWE.click();
 		return brojMjeseci;
-	}
-	
-	public void verifikujBrisanjeUmanjenjaCijene(String brojMjeseci) throws InterruptedException {
-		wait.until(ExpectedConditions.elementToBeClickable(filterKolonaWE));
-		filterKolonaWE.click();
-		Thread.sleep(1000);
-		filterKolonaWE.click();
-		filterKolonaWE.clear();
-		filterKolonaWE.sendKeys(brojMjeseci);
-		filterKolonaWE.sendKeys(Keys.ENTER);
-		Thread.sleep(1000);
-		wait.until(ExpectedConditions.visibilityOf(podatak2TabelaWE));
-		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
-		assertTrue(podatak2TabelaWE.getText().equals("Nema podataka"), "TarifneGrupe: Poruka prazne tabele nije dobra!");
 	}
 	
 	public void dodajPredefinisanoUmanjenjeCijene(String brojMjeseci) {

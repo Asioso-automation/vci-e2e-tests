@@ -111,6 +111,12 @@ public abstract class PageBase {
 	@FindBy(xpath = "//td[4]/div/div/div/div[1]/input")
 	public WebElement filterKolona4WE;
 	
+	@FindBy(xpath = "//td[2]/div/div[1]/div/div/div/div[1]/input")
+	public WebElement filterIntKolona1WE;
+	
+	@FindBy(xpath = "//div[1]/div/div[2]/div/div/input")
+	public WebElement filterInt1Kolona1WE;
+	
 	@FindBy(xpath = "//tr[2]/td[1]")
 	public WebElement podatak2Tabela1WE;
 	
@@ -225,6 +231,23 @@ public abstract class PageBase {
 		element.clear();
 		element.sendKeys(value);
 		element.sendKeys(Keys.ENTER);
+		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
+		Thread.sleep(1000);
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
+	}
+	
+	public void pretraziStavkuInt(WebElement element, WebElement element1, String value) throws InterruptedException {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
+		wait.until(ExpectedConditions.visibilityOf(element));
+		wait.until(ExpectedConditions.elementToBeClickable(element));
+		element.click();
+		wait.until(ExpectedConditions.visibilityOf(element1));
+		wait.until(ExpectedConditions.elementToBeClickable(element1));
+		element1.click();
+		element1.clear();
+		element1.sendKeys(value);
+		element1.sendKeys(Keys.ENTER);
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
 		Thread.sleep(1000);
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));

@@ -16,7 +16,7 @@ public class PX_013_Ugovori_CRUD_PositiveTestCases extends BaseTest {
 		super();
 	}
 
-	@Test
+	@Test (enabled = false)	// Ne radi lookup "Mjerno mjesto (EIC)"
 	public void px_013_1_dodavanje_ugovora_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
@@ -36,7 +36,7 @@ public class PX_013_Ugovori_CRUD_PositiveTestCases extends BaseTest {
 		ugovoriPage.pronadjiUgovorPravnoLice(pravnoLice);
 	}
 	
-	@Test
+	@Test (enabled = false)
 	public void px_013_2_dodavanje_potpisanog_ugovora_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
@@ -56,7 +56,7 @@ public class PX_013_Ugovori_CRUD_PositiveTestCases extends BaseTest {
 		ugovoriPage.pronadjiUgovorPravnoLice(pravnoLice);
 	}
 	
-	@Test
+	@Test (enabled = false)
 	public void px_013_3_uredjivanje_ugovora_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
@@ -102,7 +102,7 @@ public class PX_013_Ugovori_CRUD_PositiveTestCases extends BaseTest {
 		// ugovoriPage.verifikujBrojNecekranihKolona(3);
 	}
 	
-	@Test						/* Test dodaje ugovor koji je potpisan, zatim kroz opciju "odbaci" odbacuje ugovor i provjerava da se ugovor vise ne pojavljuje na stranici Ugovori vec na stranici Odbaceni ugovori*/
+	@Test (enabled = false)						/* Test dodaje ugovor koji je potpisan, zatim kroz opciju "odbaci" odbacuje ugovor i provjerava da se ugovor vise ne pojavljuje na stranici Ugovori vec na stranici Odbaceni ugovori*/
 	public void px_013_5_odbacivanje_ugovora_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();

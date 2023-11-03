@@ -450,15 +450,17 @@ public class Ugovori extends PocetnaStranica {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKupacIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNazivKupcaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaEicWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNazivMjmWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTGWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKategorijaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTipWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPocinjeWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaZavrsavaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPocetakPrimjeneWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaZavrsetakPrimjeneWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaVaziOdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaVaziDoWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPotpWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaOdsAneksWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAktWE));
 	}
 

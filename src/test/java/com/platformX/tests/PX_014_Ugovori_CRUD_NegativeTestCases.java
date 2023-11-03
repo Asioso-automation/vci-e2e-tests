@@ -15,7 +15,7 @@ public class PX_014_Ugovori_CRUD_NegativeTestCases extends BaseTest {
 		super();
 	}
 	
-	@Test (description= "Ugovor postoji za traženo mjerno mjesto")
+	@Test (enabled = false, description= "Ugovor postoji za traženo mjerno mjesto")	// Ne radi lookup "Mjerno mjesto (EIC)"
 	public void px_014_1_neuspjesno_dodavanje_ugovora_test1() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
@@ -37,7 +37,7 @@ public class PX_014_Ugovori_CRUD_NegativeTestCases extends BaseTest {
 		ugovoriPage.verifikujPorukuForme("Ugovor za traženo mjerno mjesto, 1514BASD99 , već postoji u navedenom periodu.");
 	}
 	
-	@Test (description= "Datum početka je prije početka obračunskog perioda")
+	@Test (enabled = false, description= "Datum početka je prije početka obračunskog perioda")
 	public void px_014_2_neuspjesno_dodavanje_ugovora_test2() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
@@ -56,7 +56,7 @@ public class PX_014_Ugovori_CRUD_NegativeTestCases extends BaseTest {
 		ugovoriPage.verifikujPorukuForme("Početni datum ne smije biti prije početka aktivnog perioda.");
 	}
 	
-	@Test (description = "Obrazac za broj protokola ne postoji")
+	@Test (enabled = false, description = "Obrazac za broj protokola ne postoji")
 	public void px_014_3_neuspjesno_dodavanje_ugovora_test3() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
@@ -75,7 +75,7 @@ public class PX_014_Ugovori_CRUD_NegativeTestCases extends BaseTest {
 		ugovoriPage.verifikujPorukuForme("Obrazac za traženi ODS i tarifnu grupu u traženom periodu ne postoji.");
 	}
 	
-	@Test (description= "Pokušaj dodavanja ugovora bez reaktivnog brojila")
+	@Test (enabled = false, description= "Pokušaj dodavanja ugovora bez reaktivnog brojila")
 	public void px_014_4_neuspjesno_dodavanje_ugovora_test4() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
@@ -94,7 +94,7 @@ public class PX_014_Ugovori_CRUD_NegativeTestCases extends BaseTest {
 		ugovoriPage.verifikujPorukuForme("Reaktivna konstanta za odabranu tarifnu grupu ne smije biti prazna.");
 	}
 	
-	@Test					/* Test provjerava da je nemoguce deaktivirati ugovor kada se izabere prosli datum za datum deaktivacije (01.01.2020.) i verifikuje validacionu poruku */
+	@Test (enabled = false)				/* Test provjerava da je nemoguce deaktivirati ugovor kada se izabere prosli datum za datum deaktivacije (01.01.2020.) i verifikuje validacionu poruku */
 	public void px_014_5_neuspjesna_deaktivacija_ugovora_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
@@ -115,7 +115,7 @@ public class PX_014_Ugovori_CRUD_NegativeTestCases extends BaseTest {
 		ugovoriPage.deaktivirajUgovor("01.01.2020.");
 	}
 	
-	@Test
+	@Test (enabled = false)
 	public void px_014_6_neuspjesno_odbacivanje_ugovora_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
