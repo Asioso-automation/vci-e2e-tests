@@ -54,6 +54,9 @@ public class PocetnaStranica extends PageBase {
 	@FindBy(xpath = "//td[3]/div/div/div/div[1]/input")
 	public WebElement filterKolona3WE;
 	
+	@FindBy(xpath = "//td[4]/div/div/div/div[1]/input")
+	public WebElement filterKolona4WE;
+	
 	@FindBy(xpath = "//td[6]/div/div[1]/div/div/div/div[1]/input")
 	public WebElement filterKolona6WE;
 	
@@ -69,6 +72,9 @@ public class PocetnaStranica extends PageBase {
 	@FindBy(xpath = "//div[1]/table/tbody/tr[1]/td[3]")
 	public WebElement podatak3TabelaWE;
 	
+	@FindBy(xpath = "//div[1]/table/tbody/tr[1]/td[4]")
+	public WebElement podatak4TabelaWE;
+	
 	@FindBy(xpath = "//div[1]/table/tbody/tr[1]/td[6]")
 	public WebElement podatak6TabelaWE;
 	
@@ -77,6 +83,21 @@ public class PocetnaStranica extends PageBase {
 	
 	@FindBy(xpath = "//div[@class='v-card__title title mb-0 word-break']")
 	private WebElement brisanjePopUpWE;
+	
+	@FindBy(xpath = "(//i[@aria-hidden = 'true' and contains(@class, 'fa-calendar-alt')])[1]")
+    protected WebElement datumBtn1WE;
+	
+	@FindBy(xpath = "(//i[@aria-hidden = 'true' and contains(@class, 'fa-calendar-alt')])[2]")
+	protected WebElement datumBtn2WE;
+	
+	@FindBy(xpath = "(//*[contains(@class, 'v-date-picker-table--date')])[1]")  
+    protected WebElement datumKalendar1WE;
+    
+    @FindBy(xpath = "(//*[contains(@class, 'v-date-picker-table--date')])[2]")  
+    protected WebElement datumKalendar2WE;
+    
+    @FindBy(xpath = "(//*[contains(@class, 'v-btn--floating v-btn--outline')])")  
+    protected WebElement trenutniDatum1WE;
 
 //	 Sekcije
 
