@@ -129,8 +129,6 @@ public abstract class PageBase {
 	@FindBy(xpath = "//tr[2]/td[4]")
 	public WebElement podatak2Tabela4WE;
 	
-	@FindBy(xpath = "//div[1]/table/tbody/tr[1]/td[4]")
-	public WebElement podatak2Tabela4bWE;
 	
 	@FindBy(xpath = "//tr[2]/td[1]")
 	public WebElement idWE;

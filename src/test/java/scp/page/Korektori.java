@@ -4,22 +4,35 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import com.platformX.base.Kolone;
+import com.platformX.util.Helper;
 
 public class Korektori extends PocetnaStranica{
 
 	public Korektori(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);
 	}
+	
+	@FindBy(xpath = "//div[1]/div[2]/div/div/div[1]/div/input") 
+	private WebElement srBrWE;
+	
+	@FindBy(xpath = "//div[3]/div[1]/div/div/div[1]/div[1]/input") 
+	private WebElement tipOcitanjaWE;
+	
+	@FindBy(xpath = "//div[1]/div[3]/div[3]/div[1]/div/div[1]/div[2]/input") 
+	private WebElement datumInstalacijeWE;
 
 	public void verifikujKorektore()throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title') and contains(text(), 'Korektori')]")));
-		verifikacijaZajednickihElemenata("KUPCI", "KOREKTORI", "Korektori", 9, false, false, true, true, true, true, false);
+		verifikacijaZajednickihElemenata("KUPCI", "KOREKTORI", "Korektori", 11, false, false, true, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaId1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaSrBrojWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaOznakaWE));
@@ -27,5 +40,25 @@ public class Korektori extends PocetnaStranica{
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaVrstaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaProizvodjacWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAktivan1WE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTipOcitanja1WE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaModulWE));
+	}
+	
+	public String dodajKorektore()throws InterruptedException{
+		String srBroj = "SrBroj" + Helper.getRandomString(5);
+		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
+		dodajBtnWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(srBrWE));
+		srBrWE.sendKeys(srBroj);
+		wait.until(ExpectedConditions.elementToBeClickable(tipOcitanjaWE));
+		tipOcitanjaWE.sendKeys(Helper.getRandomNubmer1to4(1));
+		Thread.sleep(1000);
+		tipOcitanjaWE.sendKeys(Keys.ARROW_DOWN);
+		tipOcitanjaWE.sendKeys(Keys.ENTER);
+		wait.until(ExpectedConditions.elementToBeClickable(datumInstalacijeWE));
+		datumInstalacijeWE.sendKeys("08.11.2023.");
+		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
+		submitBtnWE.click();
+		return srBroj;
 	}
 }

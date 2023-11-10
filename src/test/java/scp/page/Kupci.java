@@ -91,8 +91,8 @@ public class Kupci extends PocetnaStranica{
 		ulicaWE.sendKeys(Keys.ENTER);
 		wait.until(ExpectedConditions.elementToBeClickable(brojWE));
 		brojWE.sendKeys(Helper.getRandomNumber(2));
-		wait.until(ExpectedConditions.elementToBeClickable(dodajUgovorWE));
-		dodajUgovorWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
+		submitBtnWE.click();
 		return ime;
 	}
 	
@@ -110,13 +110,13 @@ public class Kupci extends PocetnaStranica{
 		// TODO Napraviti kolekciju enuma za imena
 		wait.until(ExpectedConditions.elementToBeClickable(ulicaWE));
 		ulicaWE.sendKeys(Helper.getRandomNumber(1));
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		ulicaWE.sendKeys(Keys.ARROW_DOWN);
 		ulicaWE.sendKeys(Keys.ENTER);
 		wait.until(ExpectedConditions.elementToBeClickable(broj1WE));
 		broj1WE.sendKeys(Helper.getRandomNumber(2));
-		wait.until(ExpectedConditions.elementToBeClickable(dodajUgovorWE));
-		dodajUgovorWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
+		submitBtnWE.click();
 		return ime;
 	}
 	

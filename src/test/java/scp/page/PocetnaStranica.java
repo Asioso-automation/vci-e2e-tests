@@ -4,7 +4,7 @@ import static org.testng.Assert.assertTrue;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-import org.openqa.selenium.By;
+
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -60,6 +60,9 @@ public class PocetnaStranica extends PageBase {
 	@FindBy(xpath = "//td[6]/div/div[1]/div/div/div/div[1]/input")
 	public WebElement filterKolona6WE;
 	
+	@FindBy(xpath = "//tr/td[8]/div/div/div/div[1]/input")
+	public WebElement filterKolona8WE;
+	
 	@FindBy(xpath = "//tr/td[9]/div/div/div/div[1]/input")
 	public WebElement filterKolona9WE;
 	
@@ -77,6 +80,9 @@ public class PocetnaStranica extends PageBase {
 	
 	@FindBy(xpath = "//div[1]/table/tbody/tr[1]/td[6]")
 	public WebElement podatak6TabelaWE;
+	
+	@FindBy(xpath = "//div[1]/table/tbody/tr[1]/td[8]")
+	public WebElement podatak8TabelaWE;
 	
 	@FindBy(xpath = "//div[1]/table/tbody/tr[1]/td[9]")
 	public WebElement podatak9TabelaWE;

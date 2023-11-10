@@ -4,10 +4,14 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import com.platformX.base.Kolone;
+import com.platformX.util.Helper;
 
 public class Vodomjeri extends PocetnaStranica{
 
@@ -15,6 +19,22 @@ public class Vodomjeri extends PocetnaStranica{
 		super(driver);
 	}
 
+	@FindBy(xpath = "//div[1]/div[2]/div/div/div[1]/div/input") 
+	private WebElement srBrWE;
+	
+	@FindBy(xpath = "//div[1]/div[3]/div[1]/div/div/div[1]/div/input") 
+	private WebElement pocetnoOcitanjeWE;
+	
+	@FindBy(xpath = "//div[1]/div[4]/div[1]/div/div/div[1]/div[1]/input") 
+	private WebElement zoneOcitanjaWE;
+	
+	@FindBy(xpath = "//div[1]/div[5]/div[1]/div/div/div[1]/div[1]/input") 
+	private WebElement tipOcitanjaWE;
+	
+	@FindBy(xpath = "//div[1]/div[4]/div[3]/div[1]/div/div[1]/div[2]/input") 
+	private WebElement datumInstalacijeWE;
+
+	
 	public void verifikujVodomjere()throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
@@ -33,4 +53,36 @@ public class Vodomjeri extends PocetnaStranica{
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTipOcitanjaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAktivan1WE));
 	}
+	
+	public String dodajVodomjere() throws InterruptedException{
+		String srBroj = "SrBr" + Helper.getRandomString(4);
+		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
+		dodajBtnWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(srBrWE));
+		srBrWE.sendKeys(srBroj);
+		wait.until(ExpectedConditions.elementToBeClickable(pocetnoOcitanjeWE));
+		pocetnoOcitanjeWE.sendKeys("0");
+		wait.until(ExpectedConditions.elementToBeClickable(datumBtn1WE));
+		datumBtn1WE.click();
+		wait.until(ExpectedConditions.invisibilityOf(datumKalendar1WE));
+		wait.until(ExpectedConditions.elementToBeClickable(trenutniDatum1WE));
+		trenutniDatum1WE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(zoneOcitanjaWE));
+		zoneOcitanjaWE.sendKeys(Helper.getRandomNubmer1to4(1));
+		Thread.sleep(700);
+		zoneOcitanjaWE.sendKeys(Keys.ARROW_DOWN);
+		zoneOcitanjaWE.sendKeys(Keys.ENTER);
+		wait.until(ExpectedConditions.elementToBeClickable(datumInstalacijeWE));
+		datumInstalacijeWE.sendKeys("08.11.2023.");
+		wait.until(ExpectedConditions.elementToBeClickable(tipOcitanjaWE));
+		tipOcitanjaWE.sendKeys(Helper.getRandomNubmer1to4(1));
+		Thread.sleep(700);
+		tipOcitanjaWE.sendKeys(Keys.ARROW_DOWN);
+		tipOcitanjaWE.sendKeys(Keys.ENTER);
+		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
+		submitBtnWE.click();
+		return srBroj;
+	}
+	
+	
 }
