@@ -213,6 +213,9 @@ public class PocetnaStranica extends PageBase {
 	@FindBy(xpath = "//div[contains(text(), 'Vrste mjerila')]")
 	protected WebElement vrsteMjerilaWE;
 	
+	@FindBy(xpath = "//div[contains(text(), 'Vrste kalorimetara')]")
+	protected WebElement vrsteKalorimetaraWE;
+	
 	@FindBy(xpath = "//div[contains(text(), 'Proizvođači vodomjera')]")
 	protected WebElement proizvodjaciVodomjeraWE;
 	
@@ -842,6 +845,20 @@ public class PocetnaStranica extends PageBase {
 			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("VRSTE.GASOMJERA"));
 			}
 		return new VrsteMjerila(driver);
+	}
+	
+	public VrsteKalorimetara navigirajNaVrsteKalorimetara()throws Exception{
+		try {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(sifarniciWE));
+		sifarniciWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(vrsteKalorimetaraWE));
+		vrsteKalorimetaraWE.click();
+		}
+		catch (Exception e) {
+			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("VRSTE.KALORIMETARA"));
+			}
+		return new VrsteKalorimetara(driver);
 	}
 	
 	public ProizvodjaciVodomjera navigirajNaProizvodjaceVodomjera()throws Exception{

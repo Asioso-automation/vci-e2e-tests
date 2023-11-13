@@ -4,16 +4,38 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import com.platformX.base.Kolone;
+import com.platformX.util.Helper;
 
 public class Ugovori extends PocetnaStranica{
 
 	public Ugovori(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);
 	}
+	
+	@FindBy(xpath = "//div[3]/div[1]/div/div/div[1]/div[1]/input")
+	private WebElement kupacWE;
+	
+	@FindBy(xpath = "//div[5]/div[2]/div/div/div[1]/div[1]/input")
+	private WebElement tarifnaGrupaWE;
+	
+	@FindBy(xpath = "//div[7]/div[1]/div/div/div[1]/div[1]/input")
+	private WebElement mjeriloWE;
+	
+	@FindBy(xpath = "//div[7]/div[2]/div/div/div[1]/div[1]/input")
+	private WebElement nacinObracunaKorekcijeWE;
+	
+	@FindBy(xpath = "//div/div[1]/div[12]/div[1]/div/div/div[1]/div/div")
+	private WebElement dostavaPostomWE;
+	
+	@FindBy(xpath = "//div[10]/div[1]/div/div/div[1]/div/input")
+	private WebElement brojUgovoraWE;
 
 	public void verifikujUgovoreVodovod()throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
@@ -128,4 +150,38 @@ public class Ugovori extends PocetnaStranica{
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPausalWE));
 	}
 	
+	public String dodajUgovorGas(String kupac, String mjerilo)throws InterruptedException{
+		String brojUgovora = "UG" + Helper.getRandomNumber(4);
+		wait.until(ExpectedConditions.elementToBeClickable(kupacWE));
+		kupacWE.sendKeys(kupac);
+		Thread.sleep(1000);
+		kupacWE.sendKeys(Keys.ARROW_DOWN);
+		kupacWE.sendKeys(Keys.ENTER);
+		wait.until(ExpectedConditions.elementToBeClickable(datumBtn1WE));
+		datumBtn1WE.click();
+		wait.until(ExpectedConditions.invisibilityOf(datumKalendar1WE));
+		wait.until(ExpectedConditions.elementToBeClickable(trenutniDatum1WE));
+		trenutniDatum1WE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(tarifnaGrupaWE));
+		tarifnaGrupaWE.sendKeys(Helper.getRandomNubmer1to4(1));
+		tarifnaGrupaWE.sendKeys(Keys.ARROW_DOWN);
+		tarifnaGrupaWE.sendKeys(Keys.ENTER);
+		wait.until(ExpectedConditions.elementToBeClickable(mjeriloWE));
+		mjeriloWE.sendKeys(mjerilo);
+		Thread.sleep(1000);
+		mjeriloWE.sendKeys(Keys.ARROW_DOWN);
+		mjeriloWE.sendKeys(Keys.ENTER);
+		wait.until(ExpectedConditions.elementToBeClickable(nacinObracunaKorekcijeWE));
+		nacinObracunaKorekcijeWE.sendKeys("bez");
+		Thread.sleep(500);
+		nacinObracunaKorekcijeWE.sendKeys(Keys.ARROW_DOWN);
+		nacinObracunaKorekcijeWE.sendKeys(Keys.ENTER);
+		wait.until(ExpectedConditions.elementToBeClickable(brojUgovoraWE));
+		brojUgovoraWE.sendKeys(brojUgovora);
+		wait.until(ExpectedConditions.elementToBeClickable(dostavaPostomWE));
+		dostavaPostomWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
+		submitBtnWE.click();
+		return brojUgovora;
+	}
 }

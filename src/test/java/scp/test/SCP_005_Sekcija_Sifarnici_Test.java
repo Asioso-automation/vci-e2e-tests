@@ -13,11 +13,17 @@ import scp.page.MjesneZajednice;
 import scp.page.NaseljenaMjesta;
 import scp.page.PocetnaStranica;
 import scp.page.Poste;
+import scp.page.ProizvodjaciKalorimetara;
 import scp.page.ProizvodjaciMjerila;
 import scp.page.RadniStatusi;
 import scp.page.Reoni;
+import scp.page.TipoviKalorimetara;
 import scp.page.TipoviMjerila;
+import scp.page.ToplotneStanice;
+import scp.page.ToplotniReoni;
+import scp.page.Toplovodi;
 import scp.page.Ulice;
+import scp.page.VrsteKalorimetara;
 import scp.page.VrsteMjerila;
 import scp.page.Zone;
 
@@ -247,6 +253,100 @@ public class SCP_005_Sekcija_Sifarnici_Test extends BaseTest{
 		vrste.verifikujVrsteMjerila();
 		vrste.verifikujStavku(vrsta, pocetna.podatak2TabelaWE);
 		// Fali poruka "Uspješno završeno." na stranici. Kad se reši bug, da se obriše zakomentarisani deo testa
+	}
+	
+	@Test (description=" test kreira TOPLOVOD i TOPLOTNU STANICU iz sekcije SIFARNICI i verifikuje ga")
+	public void scp_005_dodavanje_toplovoda_toplotne_stanice_test() throws Exception {
+		LogIn logIn = new LogIn(driver, SCP_PROPERTIES);
+		PocetnaStranica pocetna = new PocetnaStranica(driver);
+		driver.manage().window().maximize();
+		logIn.verifikujLogIn();
+		logIn.logIn(pocetna.orgToplanaInsWE);
+		pocetna.verifikujPocetnuStranicu();
+		Toplovodi toplovodi = pocetna.navigirajNaToplovode();
+		toplovodi.verifikujToplovode();
+		String toplovod = toplovodi.dodajToplovode();
+		toplovodi.verifikujPoruku("Uspješno završeno.");
+		toplovodi.pretraziStavku(pocetna.filterKolona2WE, toplovod);
+		toplovodi.verifikujToplovode();
+		toplovodi.verifikujStavku(toplovod, pocetna.podatak2TabelaWE);
+		ToplotneStanice toplotneStanice = pocetna.navigirajNaToplotneStanice();
+		toplotneStanice.verifikujToplotneStanice();
+		String toplotnaStanica = toplotneStanice.dodajToplotneStanice(toplovod);
+		toplotneStanice.verifikujPoruku("Uspješno završeno.");
+		toplotneStanice.pretraziStavku(pocetna.filterKolona2WE, toplotnaStanica);
+		toplotneStanice.verifikujToplotneStanice();
+		toplotneStanice.verifikujStavku(toplotnaStanica, pocetna.podatak2TabelaWE);
+	}
+	
+	@Test (description=" test kreira TOPLOTNI REON iz sekcije SIFARNICI i verifikuje ga")
+	public void scp_005_dodavanje_toplotnog_reona_test() throws Exception {
+		LogIn logIn = new LogIn(driver, SCP_PROPERTIES);
+		PocetnaStranica pocetna = new PocetnaStranica(driver);
+		driver.manage().window().maximize();
+		logIn.verifikujLogIn();
+		logIn.logIn(pocetna.orgToplanaInsWE);
+		pocetna.verifikujPocetnuStranicu();
+		ToplotniReoni toplotniReoni = pocetna.navigirajNaToplotneReone();
+		toplotniReoni.verifikujToplotneReone();
+		String toplotniReon = toplotniReoni.dodajToplotneReone();
+	 // toplotniReoni.verifikujPoruku("Uspješno završeno.");
+		toplotniReoni.pretraziStavku(pocetna.filterKolona2WE, toplotniReon);
+		toplotniReoni.verifikujToplotneReone();
+		toplotniReoni.verifikujStavku(toplotniReon, pocetna.podatak2TabelaWE);
+		// Fali poruka "Uspješno završeno." na stranici. Kad se reši bug, da se obriše zakomentarisani deo testa
+	}
+	
+	
+	@Test (description=" test kreira TIP KALORIMETRA  iz sekcije SIFARNICI i verifikuje ga")
+	public void scp_005_dodavanje_tipovi_kalorimetara_test() throws Exception {
+		LogIn logIn = new LogIn(driver, SCP_PROPERTIES);
+		PocetnaStranica pocetna = new PocetnaStranica(driver);
+		driver.manage().window().maximize();
+		logIn.verifikujLogIn();
+		logIn.logIn(pocetna.orgToplanaInsWE);
+		pocetna.verifikujPocetnuStranicu();
+		TipoviKalorimetara tipoviKalorimetara = pocetna.navigirajNaTipoveKalorimetara();
+		tipoviKalorimetara.verifikujTipoveKalorimetara();
+		String tipKalorimetra = tipoviKalorimetara.dodajTipoviKalorimetara();
+		tipoviKalorimetara.verifikujPoruku("Uspješno završeno.");
+		tipoviKalorimetara.pretraziStavku(pocetna.filterKolona2WE, tipKalorimetra);
+		tipoviKalorimetara.verifikujTipoveKalorimetara();
+		tipoviKalorimetara.verifikujStavku(tipKalorimetra, pocetna.podatak2TabelaWE);
+	}
+	
+	@Test (description=" test kreira PROIZVODJACA KALORIMETRA  iz sekcije SIFARNICI i verifikuje ga")
+	public void scp_005_dodavanje_proizvodjaci_kalorimetara_test() throws Exception {
+		LogIn logIn = new LogIn(driver, SCP_PROPERTIES);
+		PocetnaStranica pocetna = new PocetnaStranica(driver);
+		driver.manage().window().maximize();
+		logIn.verifikujLogIn();
+		logIn.logIn(pocetna.orgToplanaInsWE);
+		pocetna.verifikujPocetnuStranicu();
+		ProizvodjaciKalorimetara proizvodjaci = pocetna.navigirajNaProizvodjaceKalorimetara();
+		proizvodjaci.verifikujProizvodjaceKalorimetara();
+		String proizvodjac = proizvodjaci.dodajProizvodjaciKalorimetara();
+		proizvodjaci.verifikujPoruku("Uspješno završeno.");
+		proizvodjaci.pretraziStavku(pocetna.filterKolona2WE, proizvodjac);
+		proizvodjaci.verifikujProizvodjaceKalorimetara();
+		proizvodjaci.verifikujStavku(proizvodjac, pocetna.podatak2TabelaWE);
+	}
+	
+	@Test (description=" test kreira VRSTU KALORIMETRA  iz sekcije SIFARNICI i verifikuje ga")
+	public void scp_005_dodavanje_vrste_kalorimetra_test() throws Exception {
+		LogIn logIn = new LogIn(driver, SCP_PROPERTIES);
+		PocetnaStranica pocetna = new PocetnaStranica(driver);
+		driver.manage().window().maximize();
+		logIn.verifikujLogIn();
+		logIn.logIn(pocetna.orgToplanaInsWE);
+		pocetna.verifikujPocetnuStranicu();
+		VrsteKalorimetara vrste = pocetna.navigirajNaVrsteKalorimetara();
+		vrste.verifikujVrsteKalorimetara();
+		String vrsta = vrste.dodajVrsteKalorimetara();
+		vrste.verifikujPoruku("Uspješno završeno.");
+		vrste.pretraziStavku(pocetna.filterKolona2WE, vrsta);
+		vrste.verifikujVrsteKalorimetara();
+		vrste.verifikujStavku(vrsta, pocetna.podatak2TabelaWE);
 	}
 	
 }

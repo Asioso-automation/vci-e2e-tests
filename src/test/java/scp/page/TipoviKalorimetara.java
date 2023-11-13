@@ -5,14 +5,26 @@ import java.io.IOException;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import com.platformX.base.Kolone;
+import com.platformX.util.Helper;
 public class TipoviKalorimetara extends PocetnaStranica{
 
 	public TipoviKalorimetara(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);
 	}
+	
+	@FindBy(xpath = "//form/div/div[1]/div/div[1]/div/div/div[1]/div/input") 
+	private WebElement nazivWE;
+	
+	@FindBy(xpath = "//form/div/div[1]/div/div[2]/div/div/div[1]/div/input") 
+	private WebElement sifraWE;
+	
+	@FindBy(xpath = "//form/div/div[1]/div/div[3]/div/div/div[1]/div/input") 
+	private WebElement brojCifaraWE;
 
 	public void verifikujTipoveKalorimetara()throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
@@ -24,4 +36,20 @@ public class TipoviKalorimetara extends PocetnaStranica{
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaSifra1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojCifara1WE));
 	}
+	
+	public String dodajTipoviKalorimetara()throws InterruptedException{
+		String tipKalorimetra = "TipKalorimetra" + Helper.getRandomString(4);
+		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
+		dodajBtnWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(nazivWE));
+		nazivWE.sendKeys(tipKalorimetra);
+		wait.until(ExpectedConditions.elementToBeClickable(sifraWE));
+		sifraWE.sendKeys(Helper.getRandomString(5));
+		wait.until(ExpectedConditions.elementToBeClickable(brojCifaraWE));
+		brojCifaraWE.sendKeys(Helper.getRandomNubmer1to8(1));
+		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
+		submitBtnWE.click();
+		return tipKalorimetra;
+	}
+	
 }
