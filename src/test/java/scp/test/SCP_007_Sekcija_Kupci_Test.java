@@ -31,7 +31,7 @@ public class SCP_007_Sekcija_Kupci_Test extends BaseTest{
 		PocetnaStranica pocetna = new PocetnaStranica(driver);
 		driver.manage().window().maximize();
 		logIn.verifikujLogIn();
-		logIn.logIn(pocetna.orgGasWE);
+		logIn.logIn(pocetna.orgVodovodIsWE);
 		pocetna.verifikujPocetnuStranicu();
 		Kupci kupci = pocetna.navigirajNaKupce();
 		kupci.verifikujKupce();
@@ -48,7 +48,7 @@ public class SCP_007_Sekcija_Kupci_Test extends BaseTest{
 		PocetnaStranica pocetna = new PocetnaStranica(driver);
 		driver.manage().window().maximize();
 		logIn.verifikujLogIn();
-		logIn.logIn(pocetna.orgGasWE);
+		logIn.logIn(pocetna.orgVodovodIsWE);
 		pocetna.verifikujPocetnuStranicu();
 		Kupci kupci = pocetna.navigirajNaKupce();
 		kupci.verifikujKupce();

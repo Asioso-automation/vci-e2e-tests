@@ -42,11 +42,8 @@ public class Kupci extends PocetnaStranica{
 	@FindBy(xpath = "//div[2]/form/div[2]/div[1]/div[3]/div[1]/div/div/div[1]/div[1]/input")
 	public WebElement ulicaWE;
 	
-	@FindBy(xpath = "/html/body/div/div[12]/main/div/div/div/div[2]/form/div[2]/div[1]/div[3]/div[2]/div/div/div[1]/div/input")
+	@FindBy(xpath = "//*[contains(@class, 'v-text-field__slot')]//*[@aria-label = 'Broj']")
 	public WebElement brojWE;
-	
-	@FindBy(xpath = "/html/body/div/div[11]/main/div/div/div/div[2]/form/div[2]/div[1]/div[3]/div[2]/div/div/div[1]/div/input")
-	public WebElement broj1WE;
 	
 	@FindBy(xpath = "/html/body/div/div[1]/div/div/div[2]/a/div/div")
 	public WebElement fizickoLiceWE;
@@ -113,8 +110,8 @@ public class Kupci extends PocetnaStranica{
 		Thread.sleep(1000);
 		ulicaWE.sendKeys(Keys.ARROW_DOWN);
 		ulicaWE.sendKeys(Keys.ENTER);
-		wait.until(ExpectedConditions.elementToBeClickable(broj1WE));
-		broj1WE.sendKeys(Helper.getRandomNumber(2));
+		wait.until(ExpectedConditions.elementToBeClickable(brojWE));
+		brojWE.sendKeys(Helper.getRandomNumber(2));
 		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
 		submitBtnWE.click();
 		return ime;

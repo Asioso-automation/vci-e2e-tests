@@ -19,16 +19,16 @@ public class Vodomjeri extends PocetnaStranica{
 		super(driver);
 	}
 
-	@FindBy(xpath = "//div[1]/div[2]/div/div/div[1]/div/input") 
+	@FindBy(xpath = "//*[contains(@class, 'v-text-field__slot')]//*[@aria-label = 'Serijski broj']") 
 	private WebElement srBrWE;
 	
-	@FindBy(xpath = "//div[1]/div[3]/div[1]/div/div/div[1]/div/input") 
+	@FindBy(xpath = "//*[contains(@class, 'v-text-field__slot')]//*[@aria-label = 'Početno očitanje vodomjera']") 
 	private WebElement pocetnoOcitanjeWE;
 	
-	@FindBy(xpath = "//div[1]/div[4]/div[1]/div/div/div[1]/div[1]/input") 
+	@FindBy(xpath = "//*[contains(@class, 'v-select__slot')]//*[@aria-label = 'Zona očitanja']") 
 	private WebElement zoneOcitanjaWE;
 	
-	@FindBy(xpath = "//div[1]/div[5]/div[1]/div/div/div[1]/div[1]/input") 
+	@FindBy(xpath = "//*[contains(@class, 'v-select__slot')]//*[@aria-label = 'Tip očitanja']") 
 	private WebElement tipOcitanjaWE;
 	
 	@FindBy(xpath = "//div[1]/div[4]/div[3]/div[1]/div/div[1]/div[2]/input") 
@@ -39,7 +39,7 @@ public class Vodomjeri extends PocetnaStranica{
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title') and contains(text(), 'Vodomjeri')]")));
-		verifikacijaZajednickihElemenata("KUPCI", "VODOMJERI", "Vodomjeri", 14, false, false, true, true, true, true, false);
+		verifikacijaZajednickihElemenata("KUPCI", "VODOMJERI", "Vodomjeri", 15, false, false, true, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaId1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaZonaOcitanjaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrUZoniOcitanjaWE));
@@ -51,6 +51,7 @@ public class Vodomjeri extends PocetnaStranica{
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaProizvodjacWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumIstekaBazdarenjaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTipOcitanjaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaModulWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAktivan1WE));
 	}
 	
@@ -60,25 +61,25 @@ public class Vodomjeri extends PocetnaStranica{
 		dodajBtnWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(srBrWE));
 		srBrWE.sendKeys(srBroj);
+		wait.until(ExpectedConditions.elementToBeClickable(zoneOcitanjaWE));
+		zoneOcitanjaWE.sendKeys(Helper.getRandomNubmer1to4(1));
+		Thread.sleep(1000);
+		zoneOcitanjaWE.sendKeys(Keys.ARROW_DOWN);
+		zoneOcitanjaWE.sendKeys(Keys.ENTER);
 		wait.until(ExpectedConditions.elementToBeClickable(pocetnoOcitanjeWE));
 		pocetnoOcitanjeWE.sendKeys("0");
-		wait.until(ExpectedConditions.elementToBeClickable(datumBtn1WE));
-		datumBtn1WE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(datumBtn2WE));
+		datumBtn2WE.click();
 		wait.until(ExpectedConditions.invisibilityOf(datumKalendar1WE));
 		wait.until(ExpectedConditions.elementToBeClickable(trenutniDatum1WE));
 		trenutniDatum1WE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(zoneOcitanjaWE));
-		zoneOcitanjaWE.sendKeys(Helper.getRandomNubmer1to4(1));
-		Thread.sleep(700);
-		zoneOcitanjaWE.sendKeys(Keys.ARROW_DOWN);
-		zoneOcitanjaWE.sendKeys(Keys.ENTER);
-		wait.until(ExpectedConditions.elementToBeClickable(datumInstalacijeWE));
-		datumInstalacijeWE.sendKeys("08.11.2023.");
 		wait.until(ExpectedConditions.elementToBeClickable(tipOcitanjaWE));
 		tipOcitanjaWE.sendKeys(Helper.getRandomNubmer1to4(1));
 		Thread.sleep(700);
 		tipOcitanjaWE.sendKeys(Keys.ARROW_DOWN);
 		tipOcitanjaWE.sendKeys(Keys.ENTER);
+		wait.until(ExpectedConditions.elementToBeClickable(datumInstalacijeWE));
+		datumInstalacijeWE.sendKeys("08.11.2023.");
 		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
 		submitBtnWE.click();
 		return srBroj;

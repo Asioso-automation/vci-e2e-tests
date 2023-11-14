@@ -19,23 +19,48 @@ public class Ugovori extends PocetnaStranica{
 		super(driver);
 	}
 	
-	@FindBy(xpath = "//div[3]/div[1]/div/div/div[1]/div[1]/input")
+	@FindBy(xpath = "//*[contains(@class, 'v-select__slot')]//*[@aria-label = 'Kupac']")
 	private WebElement kupacWE;
 	
-	@FindBy(xpath = "//div[5]/div[2]/div/div/div[1]/div[1]/input")
+	@FindBy(xpath = "//*[contains(@class, 'v-select__slot')]//*[@aria-label = 'Tarifna grupa']")
 	private WebElement tarifnaGrupaWE;
 	
-	@FindBy(xpath = "//div[7]/div[1]/div/div/div[1]/div[1]/input")
-	private WebElement mjeriloWE;
+	@FindBy(xpath = "//*[contains(@class, 'v-select__slot')]//*[@aria-label = 'Vodomjer']")
+	private WebElement mjeriloVodovodWE;
 	
-	@FindBy(xpath = "//div[7]/div[2]/div/div/div[1]/div[1]/input")
+	@FindBy(xpath = "//*[contains(@class, 'v-select__slot')]//*[@aria-label = 'Mjerilo']")
+	private WebElement mjeriloGasWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-select__slot')]//*[@aria-label = 'Način obračuna korekcije']")
 	private WebElement nacinObracunaKorekcijeWE;
 	
 	@FindBy(xpath = "//div/div[1]/div[12]/div[1]/div/div/div[1]/div/div")
+	private WebElement dostavaPostomGasWE;
+	
+	@FindBy(xpath = "//div/div[1]/div[11]/div[1]/div/div/div[1]/div/div")
 	private WebElement dostavaPostomWE;
 	
-	@FindBy(xpath = "//div[10]/div[1]/div/div/div[1]/div/input")
+	@FindBy(xpath = "//div/div[1]/div[10]/div[1]/div/div/div[1]/div/div")
+	private WebElement dostavaPostomCistocaWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-text-field__slot')]//*[@aria-label = 'Broj Ugovora']")
 	private WebElement brojUgovoraWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-select__slot')]//*[@aria-label = 'Zona DMA']")
+	private WebElement zonaDmaWE;
+	
+	@FindBy(xpath = "//div/div[1]/div[2]/div/div[3]/div/div[1]/div/div")
+	private WebElement pausalWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-select__slot')]//*[@aria-label = 'Tip potrošača']")
+	private WebElement tipPotrosacaWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-text-field__slot')]//*[@aria-label = 'Površina']") 
+	private WebElement povrsinaWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-text-field__slot')]//*[@aria-label = 'Površina za grijanje']") 
+	private WebElement povrsinaGrijanjeWE;
+	
 
 	public void verifikujUgovoreVodovod()throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
@@ -166,16 +191,117 @@ public class Ugovori extends PocetnaStranica{
 		tarifnaGrupaWE.sendKeys(Helper.getRandomNubmer1to4(1));
 		tarifnaGrupaWE.sendKeys(Keys.ARROW_DOWN);
 		tarifnaGrupaWE.sendKeys(Keys.ENTER);
-		wait.until(ExpectedConditions.elementToBeClickable(mjeriloWE));
-		mjeriloWE.sendKeys(mjerilo);
+		wait.until(ExpectedConditions.elementToBeClickable(mjeriloGasWE));
+		mjeriloGasWE.sendKeys(mjerilo);
 		Thread.sleep(1000);
-		mjeriloWE.sendKeys(Keys.ARROW_DOWN);
-		mjeriloWE.sendKeys(Keys.ENTER);
+		mjeriloGasWE.sendKeys(Keys.ARROW_DOWN);
+		mjeriloGasWE.sendKeys(Keys.ENTER);
 		wait.until(ExpectedConditions.elementToBeClickable(nacinObracunaKorekcijeWE));
 		nacinObracunaKorekcijeWE.sendKeys("bez");
 		Thread.sleep(500);
 		nacinObracunaKorekcijeWE.sendKeys(Keys.ARROW_DOWN);
 		nacinObracunaKorekcijeWE.sendKeys(Keys.ENTER);
+		wait.until(ExpectedConditions.elementToBeClickable(brojUgovoraWE));
+		brojUgovoraWE.sendKeys(brojUgovora);
+		wait.until(ExpectedConditions.elementToBeClickable(dostavaPostomGasWE));
+		dostavaPostomGasWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
+		submitBtnWE.click();
+		return brojUgovora;
+	}
+	
+	public String dodajUgovorVodovod(String kupac, String mjerilo) throws InterruptedException{
+		String brojUgovora = "UG" + Helper.getRandomNumber(4);
+		wait.until(ExpectedConditions.elementToBeClickable(kupacWE));
+		kupacWE.sendKeys(kupac);
+		Thread.sleep(1000);
+		kupacWE.sendKeys(Keys.ARROW_DOWN);
+		kupacWE.sendKeys(Keys.ENTER);
+		wait.until(ExpectedConditions.elementToBeClickable(datumBtn1WE));
+		datumBtn1WE.click();
+		wait.until(ExpectedConditions.invisibilityOf(datumKalendar1WE));
+		wait.until(ExpectedConditions.elementToBeClickable(trenutniDatum1WE));
+		trenutniDatum1WE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(tarifnaGrupaWE));
+		tarifnaGrupaWE.sendKeys(Helper.getRandomNubmer1to4(1));
+		tarifnaGrupaWE.sendKeys(Keys.ARROW_DOWN);
+		tarifnaGrupaWE.sendKeys(Keys.ENTER);
+		wait.until(ExpectedConditions.elementToBeClickable(mjeriloVodovodWE));
+		mjeriloVodovodWE.sendKeys(mjerilo);
+		Thread.sleep(1000);
+		mjeriloVodovodWE.sendKeys(Keys.ARROW_DOWN);
+		mjeriloVodovodWE.sendKeys(Keys.ENTER);
+		wait.until(ExpectedConditions.elementToBeClickable(brojUgovoraWE));
+		brojUgovoraWE.sendKeys(brojUgovora);
+		wait.until(ExpectedConditions.elementToBeClickable(zonaDmaWE));
+		zonaDmaWE.sendKeys("a");
+		Thread.sleep(500);
+		zonaDmaWE.sendKeys(Keys.ARROW_DOWN);
+		zonaDmaWE.sendKeys(Keys.ENTER);
+		wait.until(ExpectedConditions.elementToBeClickable(dostavaPostomWE));
+		dostavaPostomWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
+		submitBtnWE.click();
+		return brojUgovora;
+	}
+	
+	public String dodajUgovorPausal (String kupac) throws InterruptedException{
+		String brojUgovora = "UG" + Helper.getRandomNumber(4);
+		wait.until(ExpectedConditions.elementToBeClickable(pausalWE));
+		pausalWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(kupacWE));
+		kupacWE.sendKeys(kupac);
+		Thread.sleep(1000);
+		kupacWE.sendKeys(Keys.ARROW_DOWN);
+		kupacWE.sendKeys(Keys.ENTER);
+		wait.until(ExpectedConditions.elementToBeClickable(datumBtn1WE));
+		datumBtn1WE.click();
+		wait.until(ExpectedConditions.invisibilityOf(datumKalendar1WE));
+		wait.until(ExpectedConditions.elementToBeClickable(trenutniDatum1WE));
+		trenutniDatum1WE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(tarifnaGrupaWE));
+		tarifnaGrupaWE.sendKeys(Helper.getRandomNubmer1to4(1));
+		tarifnaGrupaWE.sendKeys(Keys.ARROW_DOWN);
+		tarifnaGrupaWE.sendKeys(Keys.ENTER);
+		wait.until(ExpectedConditions.elementToBeClickable(tipPotrosacaWE));
+		tipPotrosacaWE.sendKeys("1");
+		Thread.sleep(500);
+		tipPotrosacaWE.sendKeys(Keys.ARROW_DOWN);
+		tipPotrosacaWE.sendKeys(Keys.ENTER);
+		wait.until(ExpectedConditions.elementToBeClickable(brojUgovoraWE));
+		brojUgovoraWE.sendKeys(brojUgovora);
+		wait.until(ExpectedConditions.elementToBeClickable(zonaDmaWE));
+		zonaDmaWE.sendKeys("a");
+		Thread.sleep(500);
+		zonaDmaWE.sendKeys(Keys.ARROW_DOWN);
+		zonaDmaWE.sendKeys(Keys.ENTER);
+		wait.until(ExpectedConditions.elementToBeClickable(dostavaPostomWE));
+		dostavaPostomWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
+		submitBtnWE.click();
+		return brojUgovora;
+	}
+	
+	public String dodajUgovorToplana(String kupac)throws InterruptedException{
+		String brojUgovora = "UG" + Helper.getRandomNumber(4);
+		wait.until(ExpectedConditions.elementToBeSelected(kupacWE));
+		kupacWE.sendKeys(kupac);
+		Thread.sleep(1000);
+		kupacWE.sendKeys(Keys.ARROW_DOWN);
+		kupacWE.sendKeys(Keys.ENTER);
+		wait.until(ExpectedConditions.elementToBeClickable(datumBtn1WE));
+		datumBtn1WE.click();
+		wait.until(ExpectedConditions.invisibilityOf(datumKalendar1WE));
+		wait.until(ExpectedConditions.elementToBeClickable(trenutniDatum1WE));
+		trenutniDatum1WE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(tarifnaGrupaWE));
+		tarifnaGrupaWE.sendKeys(Helper.getRandomNubmer1to4(1));
+		tarifnaGrupaWE.sendKeys(Keys.ARROW_DOWN);
+		tarifnaGrupaWE.sendKeys(Keys.ENTER);
+		wait.until(ExpectedConditions.elementToBeClickable(povrsinaWE));
+		povrsinaWE.sendKeys(Helper.getRandomNumber(2));
+		wait.until(ExpectedConditions.elementToBeClickable(povrsinaGrijanjeWE));
+		povrsinaGrijanjeWE.sendKeys(Helper.getRandomNumber(2));
 		wait.until(ExpectedConditions.elementToBeClickable(brojUgovoraWE));
 		brojUgovoraWE.sendKeys(brojUgovora);
 		wait.until(ExpectedConditions.elementToBeClickable(dostavaPostomWE));
@@ -184,4 +310,32 @@ public class Ugovori extends PocetnaStranica{
 		submitBtnWE.click();
 		return brojUgovora;
 	}
+	
+	public String dodajUgovorCistoca(String kupac)throws InterruptedException{
+		String brojUgovora = "UG" + Helper.getRandomNumber(4);
+		wait.until(ExpectedConditions.elementToBeSelected(kupacWE));
+		kupacWE.sendKeys(kupac);
+		Thread.sleep(1000);
+		kupacWE.sendKeys(Keys.ARROW_DOWN);
+		kupacWE.sendKeys(Keys.ENTER);
+		wait.until(ExpectedConditions.elementToBeClickable(povrsinaWE));
+		povrsinaWE.sendKeys(Helper.getRandomNumber(2));
+		wait.until(ExpectedConditions.elementToBeClickable(datumBtn1WE));
+		datumBtn1WE.click();
+		wait.until(ExpectedConditions.invisibilityOf(datumKalendar1WE));
+		wait.until(ExpectedConditions.elementToBeClickable(trenutniDatum1WE));
+		trenutniDatum1WE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(tarifnaGrupaWE));
+		tarifnaGrupaWE.sendKeys(Helper.getRandomNubmer1to4(1));
+		tarifnaGrupaWE.sendKeys(Keys.ARROW_DOWN);
+		tarifnaGrupaWE.sendKeys(Keys.ENTER);
+		wait.until(ExpectedConditions.elementToBeClickable(brojUgovoraWE));
+		brojUgovoraWE.sendKeys(brojUgovora);
+		wait.until(ExpectedConditions.elementToBeClickable(dostavaPostomCistocaWE));
+		dostavaPostomCistocaWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
+		submitBtnWE.click();
+		return brojUgovora;	
+	}
+	
 }

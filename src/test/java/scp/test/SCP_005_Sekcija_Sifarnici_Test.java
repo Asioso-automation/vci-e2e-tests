@@ -13,17 +13,14 @@ import scp.page.MjesneZajednice;
 import scp.page.NaseljenaMjesta;
 import scp.page.PocetnaStranica;
 import scp.page.Poste;
-import scp.page.ProizvodjaciKalorimetara;
 import scp.page.ProizvodjaciMjerila;
 import scp.page.RadniStatusi;
 import scp.page.Reoni;
-import scp.page.TipoviKalorimetara;
 import scp.page.TipoviMjerila;
 import scp.page.ToplotneStanice;
 import scp.page.ToplotniReoni;
 import scp.page.Toplovodi;
 import scp.page.Ulice;
-import scp.page.VrsteKalorimetara;
 import scp.page.VrsteMjerila;
 import scp.page.Zone;
 
@@ -209,7 +206,7 @@ public class SCP_005_Sekcija_Sifarnici_Test extends BaseTest{
 		PocetnaStranica pocetna = new PocetnaStranica(driver);
 		driver.manage().window().maximize();
 		logIn.verifikujLogIn();
-		logIn.logIn(pocetna.orgGasWE);
+		logIn.logIn(pocetna.orgVodovodIsWE);
 		pocetna.verifikujPocetnuStranicu();
 		TipoviMjerila tipovi = pocetna.navigirajNaTipoveMjerila();
 		tipovi.verifikujTipoviMjerila();
@@ -226,7 +223,7 @@ public class SCP_005_Sekcija_Sifarnici_Test extends BaseTest{
 		PocetnaStranica pocetna = new PocetnaStranica(driver);
 		driver.manage().window().maximize();
 		logIn.verifikujLogIn();
-		logIn.logIn(pocetna.orgGasWE);
+		logIn.logIn(pocetna.orgVodovodIsWE);
 		pocetna.verifikujPocetnuStranicu();
 		ProizvodjaciMjerila proizvodjaci = pocetna.navigirajNaProizvodjaceMjerila();
 		proizvodjaci.verifikujProizvodjaceMjerila();
@@ -243,16 +240,15 @@ public class SCP_005_Sekcija_Sifarnici_Test extends BaseTest{
 		PocetnaStranica pocetna = new PocetnaStranica(driver);
 		driver.manage().window().maximize();
 		logIn.verifikujLogIn();
-		logIn.logIn(pocetna.orgGasWE);
+		logIn.logIn(pocetna.orgVodovodIsWE);
 		pocetna.verifikujPocetnuStranicu();
 		VrsteMjerila vrste = pocetna.navigirajNaVrsteMjerila();
 		vrste.verifikujVrsteMjerila();
 		String vrsta = vrste.dodajVrsteMjerila();
-	//	vrste.verifikujPoruku("Uspješno završeno.");
+		vrste.verifikujPoruku("Uspješno završeno.");
 		vrste.pretraziStavku(pocetna.filterKolona2WE, vrsta);
 		vrste.verifikujVrsteMjerila();
 		vrste.verifikujStavku(vrsta, pocetna.podatak2TabelaWE);
-		// Fali poruka "Uspješno završeno." na stranici. Kad se reši bug, da se obriše zakomentarisani deo testa
 	}
 	
 	@Test (description=" test kreira TOPLOVOD i TOPLOTNU STANICU iz sekcije SIFARNICI i verifikuje ga")
@@ -294,59 +290,8 @@ public class SCP_005_Sekcija_Sifarnici_Test extends BaseTest{
 		toplotniReoni.pretraziStavku(pocetna.filterKolona2WE, toplotniReon);
 		toplotniReoni.verifikujToplotneReone();
 		toplotniReoni.verifikujStavku(toplotniReon, pocetna.podatak2TabelaWE);
-		// Fali poruka "Uspješno završeno." na stranici. Kad se reši bug, da se obriše zakomentarisani deo testa
-	}
-	
-	
-	@Test (description=" test kreira TIP KALORIMETRA  iz sekcije SIFARNICI i verifikuje ga")
-	public void scp_005_dodavanje_tipovi_kalorimetara_test() throws Exception {
-		LogIn logIn = new LogIn(driver, SCP_PROPERTIES);
-		PocetnaStranica pocetna = new PocetnaStranica(driver);
-		driver.manage().window().maximize();
-		logIn.verifikujLogIn();
-		logIn.logIn(pocetna.orgToplanaInsWE);
-		pocetna.verifikujPocetnuStranicu();
-		TipoviKalorimetara tipoviKalorimetara = pocetna.navigirajNaTipoveKalorimetara();
-		tipoviKalorimetara.verifikujTipoveKalorimetara();
-		String tipKalorimetra = tipoviKalorimetara.dodajTipoviKalorimetara();
-		tipoviKalorimetara.verifikujPoruku("Uspješno završeno.");
-		tipoviKalorimetara.pretraziStavku(pocetna.filterKolona2WE, tipKalorimetra);
-		tipoviKalorimetara.verifikujTipoveKalorimetara();
-		tipoviKalorimetara.verifikujStavku(tipKalorimetra, pocetna.podatak2TabelaWE);
-	}
-	
-	@Test (description=" test kreira PROIZVODJACA KALORIMETRA  iz sekcije SIFARNICI i verifikuje ga")
-	public void scp_005_dodavanje_proizvodjaci_kalorimetara_test() throws Exception {
-		LogIn logIn = new LogIn(driver, SCP_PROPERTIES);
-		PocetnaStranica pocetna = new PocetnaStranica(driver);
-		driver.manage().window().maximize();
-		logIn.verifikujLogIn();
-		logIn.logIn(pocetna.orgToplanaInsWE);
-		pocetna.verifikujPocetnuStranicu();
-		ProizvodjaciKalorimetara proizvodjaci = pocetna.navigirajNaProizvodjaceKalorimetara();
-		proizvodjaci.verifikujProizvodjaceKalorimetara();
-		String proizvodjac = proizvodjaci.dodajProizvodjaciKalorimetara();
-		proizvodjaci.verifikujPoruku("Uspješno završeno.");
-		proizvodjaci.pretraziStavku(pocetna.filterKolona2WE, proizvodjac);
-		proizvodjaci.verifikujProizvodjaceKalorimetara();
-		proizvodjaci.verifikujStavku(proizvodjac, pocetna.podatak2TabelaWE);
-	}
-	
-	@Test (description=" test kreira VRSTU KALORIMETRA  iz sekcije SIFARNICI i verifikuje ga")
-	public void scp_005_dodavanje_vrste_kalorimetra_test() throws Exception {
-		LogIn logIn = new LogIn(driver, SCP_PROPERTIES);
-		PocetnaStranica pocetna = new PocetnaStranica(driver);
-		driver.manage().window().maximize();
-		logIn.verifikujLogIn();
-		logIn.logIn(pocetna.orgToplanaInsWE);
-		pocetna.verifikujPocetnuStranicu();
-		VrsteKalorimetara vrste = pocetna.navigirajNaVrsteKalorimetara();
-		vrste.verifikujVrsteKalorimetara();
-		String vrsta = vrste.dodajVrsteKalorimetara();
-		vrste.verifikujPoruku("Uspješno završeno.");
-		vrste.pretraziStavku(pocetna.filterKolona2WE, vrsta);
-		vrste.verifikujVrsteKalorimetara();
-		vrste.verifikujStavku(vrsta, pocetna.podatak2TabelaWE);
+		
+	 // Fali poruka "Uspješno završeno." na stranici. Kad se reši bug, da se obriše zakomentarisani deo testa
 	}
 	
 }

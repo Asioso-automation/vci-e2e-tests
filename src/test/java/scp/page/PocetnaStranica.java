@@ -104,6 +104,9 @@ public class PocetnaStranica extends PageBase {
     
     @FindBy(xpath = "(//*[contains(@class, 'v-btn--floating v-btn--outline')])")  
     protected WebElement trenutniDatum1WE;
+    
+    @FindBy(xpath = "(//*[contains(@class, 'v-btn--floating v-btn--outline')])[2]")  
+    protected WebElement trenutniDatum2WE;
 
 //	 Sekcije
 
@@ -814,7 +817,7 @@ public class PocetnaStranica extends PageBase {
 		tipoviMjerilaWE.click();
 		}
 		catch (Exception e) {
-			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("TIPOVI.GASOMJERA"));
+			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("TIPOVI.MJERILA"));
 			}
 		return new TipoviMjerila(driver);
 	}
@@ -828,7 +831,7 @@ public class PocetnaStranica extends PageBase {
 		proizvodjaciMjerilaWE.click();
 		}
 		catch (Exception e) {
-			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("PROIZVODJACI.GASOMJERA"));
+			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("PROIZVODJACI.MJERILA"));
 			}
 		return new ProizvodjaciMjerila(driver);
 	}
@@ -842,7 +845,7 @@ public class PocetnaStranica extends PageBase {
 		vrsteMjerilaWE.click();
 		}
 		catch (Exception e) {
-			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("VRSTE.GASOMJERA"));
+			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("VRSTE.MJERILA"));
 			}
 		return new VrsteMjerila(driver);
 	}

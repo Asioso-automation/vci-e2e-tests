@@ -53,7 +53,7 @@ public class Prostori extends PocetnaStranica{
 	}
 	
 	public String dodajProstori() throws InterruptedException{
-		String vrsta = "Stan";
+		String vrsta = "Kuća";
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
 		dodajBtnWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(vrstaProstoraWE));
