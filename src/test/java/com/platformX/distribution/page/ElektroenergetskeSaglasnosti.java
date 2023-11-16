@@ -104,58 +104,58 @@ public class ElektroenergetskeSaglasnosti extends PocetnaStranicaPXD {
 		
 //	NISKI NAPON
 	
-	@FindBy(xpath = "//div[11]/div[1]/div/div/div[1]/div[1]/input[1]")
+	@FindBy(xpath = "//div[9]/div[1]/div/div/div[1]/div[1]/input[1]")
 	private WebElement odobrenaSnagaStambeniDioWE;
 	
-	@FindBy(xpath = "//div[11]/div[2]/div/div/div[1]/div[1]/input[1]")
+	@FindBy(xpath = "//div[9]/div[2]/div/div/div[1]/div[1]/input[1]")
 	private WebElement odobrenaSnagaPoslovniDioWE;
 	
-	@FindBy(xpath = "//div[14]/div[1]/div/div/div[1]/div[1]/input[1]")
+	@FindBy(xpath = "//div[12]/div[1]/div/div/div[1]/div[1]/input[1]")
 	 private WebElement naponskiNivoNWE;
 	
-	@FindBy(xpath = "//div[14]/div[2]/div/div/div[1]/div[1]/input[1]")  
+	@FindBy(xpath = "//div[12]/div[2]/div/div/div[1]/div[1]/input[1]")  
 	 private WebElement mjestoPrikljucenjaNWE;
 	
-	@FindBy(xpath = "//div[14]/div[3]/div/div/div[1]/div[1]/input[1]")  
+	@FindBy(xpath = "//div[12]/div[3]/div/div/div[1]/div[1]/input[1]")  
 	 private WebElement vrstaPrikljuckaNWE;
 	
-	@FindBy(xpath = "//div[15]/div[1]/div/div/div[1]/div[1]/input[1]")  
+	@FindBy(xpath = "//div[13]/div[1]/div/div/div[1]/div[1]/input[1]")  
 	 private WebElement tipPrikljucnogVodaNWE;
 	
-	@FindBy(xpath = "//div[15]/div[2]/div/div/div[1]/div[1]/input[1]")  
+	@FindBy(xpath = "//div[13]/div[2]/div/div/div[1]/div[1]/input[1]")  
 	 private WebElement presjekMm2NWE;
 	
-	@FindBy(xpath = "//div[16]/div[1]/div/div/div[1]/div[1]/input[1]")  
+	@FindBy(xpath = "//div[14]/div[1]/div/div/div[1]/div[1]/input[1]")  
 	 private WebElement napojnaTransformatorskaStanicaNWE;
 	
-	@FindBy(xpath = "//div[20]/div[2]/div/div/div/div[1]/div/div/div[1]/div/input")  
+	@FindBy(xpath = "//div[18]/div[2]/div/div/div/div[1]/div/div/div[1]/div/input")  
 	 private WebElement brojUgradjenihBrojilaNSWE;
 	
-	@FindBy(xpath = "//div[20]/div[2]/div/div/div/div[2]/div/div/div[1]/div[1]/input[1]")  
+	@FindBy(xpath = "//div[18]/div[2]/div/div/div/div[2]/div/div/div[1]/div[1]/input[1]")  
 	 private WebElement nazivnaStrujaGlavnogOsiguracaNSWE;
 	
-	@FindBy(xpath = "//div[21]/div[1]/div/div/div[1]/div[1]/input[1]")  
+	@FindBy(xpath = "//div[19]/div[1]/div/div/div[1]/div[1]/input[1]")  
 	 private WebElement lokacijaMjernogMjestaNSWE;
 	
-	@FindBy(xpath = "//div[24]/div[2]/div/div/div/div[1]/div/div/div[1]/div/input")
+	@FindBy(xpath = "//div[22]/div[2]/div/div/div/div[1]/div/div/div[1]/div/input")
 	 private WebElement brojUgradjenihBrojilaNPWE;
 		
-	@FindBy(xpath = "//div[24]/div[2]/div/div/div/div[2]/div/div/div[1]/div/input")  
+	@FindBy(xpath = "//div[22]/div[2]/div/div/div/div[2]/div/div/div[1]/div/input")  
 	 private WebElement nazivnaStrujaGlavnogOsiguracaNPWE;
 	
-	@FindBy(xpath = "//div[25]/div[1]/div/div/div[1]/div[1]/input[1]")  
+	@FindBy(xpath = "//div[23]/div[1]/div/div/div[1]/div[1]/input[1]")  
 	 private WebElement lokacijaMjernogMjestaNPWE;
 	
 	@FindBy(xpath = "//*[contains(text(), 'Stambeni dio')]")
 	private WebElement stambenioDioWE;
 	
-	@FindBy(xpath = "//div[30]/div[2]/div/div/div[1]/div[1]/input[1]")  
+	@FindBy(xpath = "//div[26]/div/div/div[1]/div[1]/input[1]")  
 	private WebElement rokVazenjaNWE;
 	
 	@FindBy(xpath = "//div[@class='v-card__title subtitle-2 title-border text-uppercase mb-5']")  
 	private WebElement naslovWE;
 	
-	@FindBy(xpath = "//div[30]/div[3]/div[1]/div/div[1]/div[2]/input")
+	@FindBy(xpath = "//div[2]/div[2]/div[1]/div/div[1]/div[2]/input")
 	private WebElement datumZahtjevaInputNNWE;
 	
 	public void verifikujElektroenergetskeSaglasnosti() throws InterruptedException, FileNotFoundException, IOException {
@@ -399,7 +399,7 @@ public class ElektroenergetskeSaglasnosti extends PocetnaStranicaPXD {
 			wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
 			lokacijaMjernogMjestaNPWE.sendKeys(Keys.ARROW_DOWN);
 			lokacijaMjernogMjestaNPWE.sendKeys(Keys.ENTER);
-			js.executeScript("arguments[0].scrollIntoView(true);", rokVazenjaNWE);
+//			js.executeScript("arguments[0].scrollIntoView(true);", rokVazenjaNWE);
 			wait.until(ExpectedConditions.elementToBeClickable(rokVazenjaNWE));
 			rokVazenjaNWE.click();
 			wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));

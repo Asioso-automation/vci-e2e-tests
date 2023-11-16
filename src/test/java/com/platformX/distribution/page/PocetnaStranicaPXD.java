@@ -65,7 +65,12 @@ public class PocetnaStranicaPXD extends PageBase {
 	
 //	@FindBy(xpath = "(//*[contains(@class, 'v-date-picker-table__current')])[3]")  
 //	protected WebElement trenutniDatum3WE;
-
+	
+	@FindBy(xpath = "//i[contains(@class, 'mdi-chevron-right')]")
+	protected WebElement strelicaDesnoWE;
+	
+	@FindBy(xpath = "//i[contains(@class, 'mdi-chevron-left')]")
+	protected WebElement strelicaLijevoWE;
 	
 
 //	 Sekcije
@@ -90,6 +95,9 @@ public class PocetnaStranicaPXD extends PageBase {
 	
 	@FindBy(xpath = "//*[contains(text(),'Očitanja') and @class='v-btn__content']")
 	protected WebElement ocitanjaWE;
+	
+	@FindBy(xpath = "//*[contains(text(),'Neovlaštena potrošnja') and @class='v-btn__content']")
+	protected WebElement neovlastenaPotrosnjaWE;
 
 	@FindBy(xpath = "//*[text()='Obračun' and @class='v-btn__content']")
 	protected WebElement obracunWE;
@@ -100,7 +108,7 @@ public class PocetnaStranicaPXD extends PageBase {
 	@FindBy(xpath = "//*[contains(text(),'Izvještaji') and @class='v-btn__content']")
 	protected WebElement izvjestajiWE;
 
-	@FindBy(xpath = "//button[8]")
+	@FindBy(xpath = "(//i[contains(@class, 'fa-user')])[1]")
 	protected WebElement profilWE;
 
 //	 Stranice
@@ -375,6 +383,12 @@ public class PocetnaStranicaPXD extends PageBase {
 	@FindBy(xpath = "//div[contains(text(), 'Monitoring očitanja') and @class='v-list-item__title']")
     protected WebElement monitoringOcitanjaWE;
 	
+	@FindBy(xpath = "//*[contains(text(),'Neovlaštena potrošnja') and @class='v-list-item__title']")
+	protected WebElement neovlastenaPotrosnjaStrWE;
+	
+	@FindBy(xpath = "//*[contains(text(),'Zapisnici o utvrđenoj neovlaštenoj potrošnji') and @class='v-list-item__title']")
+	protected WebElement zapisniciOUtvrdjenojNeovlastenojPotrosnjiWE;
+	
 	@FindBy(xpath = "//div[contains(text(), 'Nalozi za obračun') and @class='v-list-item__title']")
     protected WebElement naloziZaObracunWE;
 	
@@ -410,6 +424,8 @@ public class PocetnaStranicaPXD extends PageBase {
 		wait.until(ExpectedConditions.elementToBeClickable(obracunskiUgovoriWE));
 		wait.until(ExpectedConditions.elementToBeClickable(ocitanjaWE));
 		wait.until(ExpectedConditions.elementToBeClickable(obracunWE));
+		wait.until(ExpectedConditions.elementToBeClickable(strelicaDesnoWE));
+		strelicaDesnoWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(administracijaWE));
 		wait.until(ExpectedConditions.elementToBeClickable(izvjestajiWE));
 		wait.until(ExpectedConditions.elementToBeClickable(profilWE));
@@ -1678,6 +1694,34 @@ public class PocetnaStranicaPXD extends PageBase {
 		return new MonitoringOcitanja(driver);
     }
     
+    public NeovlastenaPotrosnja navigirajNaNeovlastenaPotrosnja() throws Exception {
+    	try {
+    	WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(neovlastenaPotrosnjaWE));
+		neovlastenaPotrosnjaWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(neovlastenaPotrosnjaStrWE));
+		neovlastenaPotrosnjaStrWE.click();
+    	}
+    	catch (Exception e) {
+			driver.get(platformx_distribution_properties.getValue("URL.DIST.LOGIN") + platformx_distribution_properties.getValue("NEOVLASTENA.POTROSNJA"));
+		}
+    	return new NeovlastenaPotrosnja(driver);
+    }
+    
+    public ZapisniciOUtvrdjenojNeovlastenojPotrosnji navigirajNaZapisniciOUtvrdjenojNeovlastenojPotrosnji() throws Exception {
+    	try {
+    	WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(neovlastenaPotrosnjaWE));
+		neovlastenaPotrosnjaWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(zapisniciOUtvrdjenojNeovlastenojPotrosnjiWE));
+		zapisniciOUtvrdjenojNeovlastenojPotrosnjiWE.click();
+    	}
+    	catch (Exception e) {
+			driver.get(platformx_distribution_properties.getValue("URL.DIST.LOGIN") + platformx_distribution_properties.getValue("ZAPISNICI.O.UTVRDJENOJ.NEOVLASTENOJ.POTROSNJI"));
+		}
+    	return new ZapisniciOUtvrdjenojNeovlastenojPotrosnji(driver);
+    }
+    
     public NaloziZaObracun navigirajNaNaloziZaObracun () throws Exception {
     	try {
     	WebDriverWait wait = new WebDriverWait(driver, 10);
@@ -1776,7 +1820,7 @@ public class PocetnaStranicaPXD extends PageBase {
 		return new DnevnikIzmjena(driver);
     }
     
-    public PozadinskiProcesi navigirajNaPozadinskiProecsi() throws FileNotFoundException, IOException {
+    public PozadinskiProcesi navigirajNaPozadinskiProcesi() throws FileNotFoundException, IOException {
     	try {
         WebDriverWait wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.elementToBeClickable(administracijaWE));

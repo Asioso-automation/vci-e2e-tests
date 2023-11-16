@@ -263,8 +263,21 @@ public class PX_DIST_003_Verifikacije_Sekcija_Test extends BaseTest {
 		monitoringOcitanja.verifikujMonitoringOcitanja();
 	}
 	
+	@Test (description = "test prolazi kroz sve stranice iz sekcije NEOVLASTENA POTROSNJA i verifikuje ih")
+	public void px_dist_003_09_verifikacija_sekcije_neovlastena_potrosnja_test() throws Exception {
+		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
+		logIn.verifikujLogIn();
+		logIn.logIn();
+		PocetnaStranicaPXD pocetna = new PocetnaStranicaPXD(driver);
+		pocetna.verifikujPocetnuStranicu();
+		NeovlastenaPotrosnja neovlastenaPotrosnja = pocetna.navigirajNaNeovlastenaPotrosnja();
+		neovlastenaPotrosnja.verifikujNeovlastenaPotrosnja();
+		ZapisniciOUtvrdjenojNeovlastenojPotrosnji zapisniciOUtvrdjenojNeovlastenojPotrosnji = pocetna.navigirajNaZapisniciOUtvrdjenojNeovlastenojPotrosnji();
+		zapisniciOUtvrdjenojNeovlastenojPotrosnji.verifikujZapisniciOUtvrdjenojNeovlastenojPotrosnji();
+	}
+	
 	@Test (description = "test prolazi kroz sve stranice iz sekcije OBRACUN i verifikuje ih")
-	public void px_dist_003_09_verifikacija_sekcije_obracun_test() throws Exception {
+	public void px_dist_003_10_verifikacija_sekcije_obracun_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
@@ -281,7 +294,7 @@ public class PX_DIST_003_Verifikacije_Sekcija_Test extends BaseTest {
 	}
 	
 	@Test (description = "test prolazi kroz sve stranice iz sekcije ADMINISTRACIJA i verifikuje ih")
-	public void px_dist_003_10_verifikacija_sekcije_administracija_test() throws Exception {
+	public void px_dist_003_11_verifikacija_sekcije_administracija_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
@@ -293,7 +306,7 @@ public class PX_DIST_003_Verifikacije_Sekcija_Test extends BaseTest {
 		poruke.verifikujPoruke();
 		DnevnikIzmjena dnevnikIzmjena = homePage.navigirajNaDnevnikIzmjena();
 		dnevnikIzmjena.verifikujDnevnikIzmjena();
-//		PozadinskiProcesi pozadinskiProcesi = homePage.navigirajNaPozadinskiProecsi();
+//		PozadinskiProcesi pozadinskiProcesi = homePage.navigirajNaPozadinskiProcesi();
 //		pozadinskiProcesi.verifikujPozadinskiProcesi();
 	}
 	

@@ -55,7 +55,7 @@ public class ObracunskiUgovori extends PocetnaStranicaPXD {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKupacWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMjMjestoWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTrenutniNazivMjernogMjestaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNazivMjMjestaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAdresaMjMjestaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTrenutniSnabdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTrenutniTipUgovoraWE));
