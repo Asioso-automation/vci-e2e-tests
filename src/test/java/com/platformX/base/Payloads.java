@@ -217,6 +217,22 @@ public class Payloads {
 				+ " \"municipalityId\": " + municipalityId + " \r\n"
 				+ "}";
 	}
+	
+	public static String pxdPostOfficeCreate(int id, String name, String printName) {
+		return "{\r\n"
+				+ "	\"id\": " + id + ", \r\n"
+				+ "	\"name\": \"" + name + "\", \r\n"
+				+ " \"printName\": \"" + printName + "\" \r\n"
+				+ "}";
+	}
+	
+	public static String pxdPostOfficeUpdate(int id, String name, String printName) {
+		return "{\r\n"
+				+ "	\"id\": " + id + ", \r\n"
+				+ "	\"name\": \"" + name + "\", \r\n"
+				+ " \"printName\": \"" + printName + "\" \r\n"
+				+ "}";
+	}
 
 	
 }

@@ -138,9 +138,53 @@ public class PXD_012_BasicCatalogs_PostOffices_Test extends BaseTest {
 		assertEquals(response2.getStatusCode(), 200);
 		assertEquals(response2.print(), "[]");
 	}
-
-// TODO		/api/BasicCatalogs/PostOffices/Create
-//			/api/BasicCatalogs/PostOffices/Update/{id}
-//			/api/BasicCatalogs/PostOffices/Delete/{id}
+	
+	@Test(description = "positive test case")
+	public void pxd_012_04_create_place_test1() throws Exception {
+		// API
+		Response response1 = restApiBase.methodPOST("http://10.10.10.21:8086/api/Auth/Authenticate",
+				Payloads.pxdAuth("admin", "staging"));
+		assertEquals(response1.getStatusCode(), 200);
+		JsonPath jp1 = new JsonPath(response1.asString());
+		assertNotNull(jp1.getString("token"), "Token not forwarded");
+		String token = jp1.getString("token");
+		// Post Post Office Create
+		restApiBase.addHeader("Authorization", "Bearer " + token);
+		Response response2 = restApiBase.methodPOST("http://10.10.10.21:8086/api/BasicCatalogs/PostOffices/Create", Payloads.pxdPostOfficeCreate(333, "Posta", "Posta"));
+		assertEquals(response2.getStatusCode(), 200);
+		assertNotNull(response2.print(), "Response body is empty");
+		PageBase.id1 = Integer.parseInt(response2.print());
+	}
+	
+	@Test(description = "positive test case", dependsOnMethods = { "pxd_012_04_create_place_test1" })
+	public void pxd_012_05_update_place_test1() throws Exception {
+		// API
+		Response response1 = restApiBase.methodPOST("http://10.10.10.21:8086/api/Auth/Authenticate",
+				Payloads.pxdAuth("admin", "staging"));
+		assertEquals(response1.getStatusCode(), 200);
+		JsonPath jp1 = new JsonPath(response1.asString());
+		assertNotNull(jp1.getString("token"), "Token not forwarded");
+		String token = jp1.getString("token");
+		// Put Post Office Update
+		restApiBase.addHeader("Authorization", "Bearer " + token);
+		Response response2 = restApiBase.methodPUT("http://10.10.10.21:8086/api/BasicCatalogs/PostOffices/Update/" + PageBase.id1, Payloads.pxdPostOfficeUpdate(333, "Posta 1", "Posta 1"));
+		assertEquals(response2.getStatusCode(), 204);
+	}
+	
+	@Test(description = "positive test case", dependsOnMethods = { "pxd_012_05_update_place_test1" })
+	public void pxd_012_06_delete_place_test1() throws Exception {
+		// API
+		Response response1 = restApiBase.methodPOST("http://10.10.10.21:8086/api/Auth/Authenticate",
+				Payloads.pxdAuth("admin", "staging"));
+		assertEquals(response1.getStatusCode(), 200);
+		JsonPath jp1 = new JsonPath(response1.asString());
+		assertNotNull(jp1.getString("token"), "Token not forwarded");
+		String token = jp1.getString("token");
+		// Delete Post Office
+		restApiBase.addHeader("Authorization", "Bearer " + token);
+		Response response2 = restApiBase.methodDELETE("http://10.10.10.21:8086/api/BasicCatalogs/PostOffices/Delete/" + PageBase.id1);
+		assertEquals(response2.getStatusCode(), 204);
+		assertEquals(response2.print(), "");
+	}
 
 }
