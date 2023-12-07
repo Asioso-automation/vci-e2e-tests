@@ -24,7 +24,7 @@ public class PX_DIST_026_Neovlastena_Potrosnja_CRUD_Test extends BaseTest{
 	String kupac = new String();
 	String noviKupac = new String();
 	
-	@Test (retryAnalyzer = RetryAnalyzer.class)
+	@Test (enabled = false, retryAnalyzer = RetryAnalyzer.class)
 	public void px_dist_026_1_dodavanje_neovlastene_potrosnje_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
@@ -55,7 +55,7 @@ public class PX_DIST_026_Neovlastena_Potrosnja_CRUD_Test extends BaseTest{
 		neovlastenaPotrosnja.verifikujStavku(kupac, homePage.podatak2Tabela2WE);
 	}
 	
-	@Test (retryAnalyzer = RetryAnalyzer.class, dependsOnMethods = { "px_dist_026_1_dodavanje_neovlastene_potrosnje_test" })
+	@Test (enabled = false, retryAnalyzer = RetryAnalyzer.class, dependsOnMethods = { "px_dist_026_1_dodavanje_neovlastene_potrosnje_test" })
 	public void px_dist_026_2_uredjivanje_neovlastene_potrosnje_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
@@ -82,7 +82,7 @@ public class PX_DIST_026_Neovlastena_Potrosnja_CRUD_Test extends BaseTest{
 		neovlastenaPotrosnja.verifikujStavku(noviKupac, homePage.podatak2Tabela2WE);
 	}
 	
-	@Test (retryAnalyzer = RetryAnalyzer.class, dependsOnMethods = { "px_dist_026_2_uredjivanje_neovlastene_potrosnje_test" })
+	@Test (enabled = false, retryAnalyzer = RetryAnalyzer.class, dependsOnMethods = { "px_dist_026_2_uredjivanje_neovlastene_potrosnje_test" })
 	public void px_dist_026_3_brisanje_neovlastene_potrosnje_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();

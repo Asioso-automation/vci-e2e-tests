@@ -60,14 +60,14 @@ public class PXD_008_BasicCatalogs_Readers_Test extends BaseTest {
 	@Test(description = "negative test case: bearer token missing")
 	public void pxd_008_01_get_reader_test2() {
 		restApiBase.addHeader("Authorization", "");
-		Response response = restApiBase.methodGET("http://10.10.10.21:8086/api/BasicCatalogs/Suppliers/Get/1");
+		Response response = restApiBase.methodGET("http://10.10.10.21:8086/api/BasicCatalogs/Readers/Get/1");
 		assertEquals(response.getStatusCode(), 401);
 	}
 
 	@Test(description = "negative test case: wrong bearer token")
 	public void pxd_008_01_get_reader_test3() {
 		restApiBase.addHeader("Authorization", "Bearer " + Helper.getRandomNumber(10));
-		Response response = restApiBase.methodGET("http://10.10.10.21:8086/api/BasicCatalogs/Suppliers/Get/1");
+		Response response = restApiBase.methodGET("http://10.10.10.21:8086/api/BasicCatalogs/Readers/Get/1");
 		assertEquals(response.getStatusCode(), 401);
 	}
 	

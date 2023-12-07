@@ -139,9 +139,54 @@ public class PXD_013_BasicCatalogs_Streets_Test extends BaseTest {
 		assertEquals(response2.getStatusCode(), 200);
 		assertEquals(response2.print(), "[]");
 	}
-
-// TODO		/api/BasicCatalogs/Streets/Create
-//			/api/BasicCatalogs/Streets/Update/{id}
-//			/api/BasicCatalogs/Streets/Delete/{id}
+	
+	@Test(description = "positive test case")
+	public void pxd_013_04_create_street_test1() throws Exception {
+		// API
+		Response response1 = restApiBase.methodPOST("http://10.10.10.21:8086/api/Auth/Authenticate",
+				Payloads.pxdAuth("admin", "staging"));
+		assertEquals(response1.getStatusCode(), 200);
+		JsonPath jp1 = new JsonPath(response1.asString());
+		assertNotNull(jp1.getString("token"), "Token not forwarded");
+		String token = jp1.getString("token");
+		// Post Street Create
+		restApiBase.addHeader("Authorization", "Bearer " + token);
+		Response response2 = restApiBase.methodPOST("http://10.10.10.21:8086/api/BasicCatalogs/Streets/Create", Payloads.pxdStreetCreate("Ulica", "Ulica"));
+		assertEquals(response2.getStatusCode(), 200);
+		assertNotNull(response2.print(), "Response body is empty");
+		PageBase.id1 = Integer.parseInt(response2.print());
+	}
+	
+	@Test(description = "positive test case", dependsOnMethods = { "pxd_013_04_create_street_test1" })
+	public void pxd_013_05_update_street_test1() throws Exception {
+		// API
+		Response response1 = restApiBase.methodPOST("http://10.10.10.21:8086/api/Auth/Authenticate",
+				Payloads.pxdAuth("admin", "staging"));
+		assertEquals(response1.getStatusCode(), 200);
+		JsonPath jp1 = new JsonPath(response1.asString());
+		assertNotNull(jp1.getString("token"), "Token not forwarded");
+		String token = jp1.getString("token");
+		// Put Street Update
+		restApiBase.addHeader("Authorization", "Bearer " + token);
+		Response response2 = restApiBase.methodPUT("http://10.10.10.21:8086/api/BasicCatalogs/Streets/Update/" + PageBase.id1, Payloads.pxdStreetUpdate(PageBase.id1, "Ulica 1", "Ulica 1"));
+		assertEquals(response2.getStatusCode(), 204);
+	}
+	
+	@Test(description = "positive test case", dependsOnMethods = { "pxd_013_05_update_street_test1" })
+	public void pxd_013_06_delete_street_test1() throws Exception {
+		// API
+		Response response1 = restApiBase.methodPOST("http://10.10.10.21:8086/api/Auth/Authenticate",
+				Payloads.pxdAuth("admin", "staging"));
+		assertEquals(response1.getStatusCode(), 200);
+		JsonPath jp1 = new JsonPath(response1.asString());
+		assertNotNull(jp1.getString("token"), "Token not forwarded");
+		String token = jp1.getString("token");
+		// Delete Street
+		restApiBase.addHeader("Authorization", "Bearer " + token);
+		Response response2 = restApiBase.methodDELETE("http://10.10.10.21:8086/api/BasicCatalogs/Streets/Delete/" + PageBase.id1);
+		assertEquals(response2.getStatusCode(), 204);
+		assertEquals(response2.print(), "");
+	}
+	
 
 }

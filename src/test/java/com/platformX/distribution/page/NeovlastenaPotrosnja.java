@@ -30,17 +30,18 @@ public class NeovlastenaPotrosnja extends PocetnaStranicaPXD {
 	 private WebElement poljeBrojDanaWE;
 	 
 	 @FindBy(xpath = "//div[2]/div[1]/div/div/div[1]/div/input")  
-	 private WebElement poljeAvtWE;	 
+	 private WebElement poljeAvtWE;
 
 	public void verifikujNeovlastenaPotrosnja()throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Neovlaštena potrošnja')]")));
-		verifikacijaZajednickihElemenata("Neovlaštena Potrošnja", "Neovlaštena Potrošnja", "Neovlaštena potrošnja", 8, false, false, true, true, true, true, false);
+		verifikacijaZajednickihElemenata("Neovlaštena Potrošnja", "Neovlaštena Potrošnja", "Neovlaštena potrošnja", 9, false, false, true, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKupacWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMjernoMjestoWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTrafostanicaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaRedniBrojIzlazaNaTrafostaniciWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumKreiranjaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKolicinaKwhWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaZakljucenoWE));

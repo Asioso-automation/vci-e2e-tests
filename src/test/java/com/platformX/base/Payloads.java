@@ -234,5 +234,67 @@ public class Payloads {
 				+ "}";
 	}
 
+	public static String pxdPostOfficeCreateUpdate(int id, String name, String printName) {
+		return "{\r\n"
+				+ " \"id\": " + id + ", \r\n"
+				+ "	\"name\": \"" + name + "\", \r\n"
+				+ "	\"printName\": \"" + printName + "\", \r\n"
+				+ "}";
+	}
+	
+	public static String pxdStreetCreate(String name, String printName) {
+		return "{\r\n"
+				+ "	\"name\": \"" + name + "\", \r\n"
+				+ "	\"printName\": \"" + printName + "\", \r\n"
+//				+ " \"valid\": " + null + " \r\n"
+				+ "}";
+	}
+	
+	public static String pxdStreetUpdate(int id, String name, String printName) {
+		return "{\r\n"
+				+ " \"id\": " + id + ", \r\n"
+				+ "	\"name\": \"" + name + "\", \r\n"
+				+ "	\"printName\": \"" + printName + "\", \r\n"
+				+ " \"valid\": " + true + " \r\n"
+				+ "}";
+	}
+	
+	public static String pxdInstallmentPersonCreate(String name) {
+		return "{\r\n"
+				+ "	\"name\": \"" + name + "\", \r\n"
+//				+ " \"phoneNumber\": " + null + " \r\n"
+				+ "}";
+	}
+	
+	public static String pxdInstallmentPersonUpdate(int id, String name) {
+		return "{\r\n"
+				+ " \"id\": " + id + ", \r\n"
+				+ "	\"name\": \"" + name + "\", \r\n"
+//				+ " \"phoneNumber\": " + null + " \r\n"
+				+ "}";
+	}
+	
+	public static String pxdInstallmentPersonLocationCreate(String dateFrom, int fieldOfficeId, int fieldUnitId, int installmentPersonId) {
+		return "{\r\n"
+				+ "	\"dateFrom\": \"" + dateFrom + "\", \r\n"
+				+ " \"fieldOfficeId\": " + fieldOfficeId + ", \r\n"
+				+ " \"fieldUnitId\": " + fieldUnitId + ", \r\n"
+				+ " \"installmentPersonId\": " + installmentPersonId + " \r\n"
+				+ "}";
+	}
+	
+	public static String pxdInstallmentPersonLocationUpdate(String dateFrom, int fieldOfficeId, String fieldOfficeText, int fieldUnitId, String fieldUnitText, int id, int installmentPersonId, String installmentPersonText) {
+		return "{\r\n"
+				+ "	\"dateFrom\": \"" + dateFrom + "\", \r\n"
+				+ " \"fieldOfficeId\": " + fieldOfficeId + ", \r\n"
+				+ "	\"fieldOfficeText\": \"" + fieldOfficeText + "\", \r\n"
+				+ " \"fieldUnitId\": " + fieldUnitId + ", \r\n"
+				+ "	\"fieldUnitText\": \"" + fieldUnitText + "\", \r\n"
+				+ " \"id\": " + id + ", \r\n"
+				+ " \"installmentPersonId\": " + installmentPersonId + ", \r\n"
+				+ "	\"installmentPersonText\": \"" + installmentPersonText + "\", \r\n"
+				+ "}";
+	}
+
 	
 }

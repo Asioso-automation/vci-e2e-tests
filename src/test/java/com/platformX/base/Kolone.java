@@ -938,6 +938,9 @@ public class Kolone extends PageBase {
 	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Trafostanica']")
 	public WebElement kolonaTrafostanicaWE;
 	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Redni broj izlaza na trafostanici']")
+	public WebElement kolonaRedniBrojIzlazaNaTrafostaniciWE;
+	
 	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Čitački hod']")
 	public WebElement kolonaCitackiHodWE;
 	
