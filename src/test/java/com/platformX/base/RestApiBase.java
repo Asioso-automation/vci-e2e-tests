@@ -38,6 +38,15 @@ public class RestApiBase {
 		RequestSpecification requestSpec = builder.build();
 		return given().log().all().config(restAssuredConfig).spec(requestSpec).when().get(endpoint);
 	}
+	
+	// TODO
+		public JsonPath methodGETupdated(String endpoint, int status) {
+			RequestSpecification requestSpec = builder.build();
+			Response response = given().log().all().config(restAssuredConfig).spec(requestSpec).when().get(endpoint);
+			assertEquals(status, response.getStatusCode());
+			JsonPath jp = new JsonPath(response.asString());
+			return jp;
+		}
 
 	// method used for POST endpoints
 	public Response methodPOST(String endpoint, String payload) {
@@ -45,6 +54,16 @@ public class RestApiBase {
 		return given().log().all().config(restAssuredConfig).spec(requestSpec).contentType("application/json")
 				.body(payload).when().post(endpoint);
 	}
+	
+	// TODO
+		public JsonPath methodPOSTupdated(String endpoint, String payload, int status) {
+			RequestSpecification requestSpec = builder.build();
+			Response response =  given().log().all().config(restAssuredConfig).spec(requestSpec).contentType("application/json")
+					.body(payload).when().post(endpoint);
+			assertEquals(status, response.getStatusCode());
+			JsonPath jp = new JsonPath(response.asString());
+			return jp;
+		}
 
 	// method used for PUT endpoints
 	public Response methodPUT(String endpoint, String payload) {
@@ -72,7 +91,7 @@ public class RestApiBase {
 		builder = requestSpecBuilder;
 	}
 
-	protected String authorize() {
+	protected String authorize() { // authAdmin
 		// Authorization
 		Response response1 = methodPOST("http://10.10.10.21:8086/api/Auth/Authenticate",
 				Payloads.pxdAuth(api_properties.getValue("USERNAME"), api_properties.getValue("PASSWORD")));

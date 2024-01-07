@@ -3,15 +3,19 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.platformX.api.tests.PXD_003_Administration_Message_Test">
+      <class name="com.platformX.api.tests.PXD_000_Prepare_And_Read_Data_Tests">
         <methods>
-          <include name="pxd_003_03_create_administration_message_test1"/>
-          <include name="pxd_003_05_delete_administration_message_test1"/>
           <include name="setUp"/>
+          <include name="pxd_003_01_get_administration_message_test1"/>
           <include name="cleanUp"/>
-          <include name="pxd_003_04_update_administration_message_test1"/>
+          <include name="pxd_004_01_get_company_test1"/>
         </methods>
-      </class> <!-- com.platformX.api.tests.PXD_003_Administration_Message_Test -->
+      </class> <!-- com.platformX.api.tests.PXD_000_Prepare_And_Read_Data_Tests -->
+      <class name="com.platformX.api.tests.PXD_004_BasicCatalogs_Companies_Test">
+        <methods>
+          <include name="pxd_004_01_get_company_test1"/>
+        </methods>
+      </class> <!-- com.platformX.api.tests.PXD_004_BasicCatalogs_Companies_Test -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
