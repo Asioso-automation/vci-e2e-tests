@@ -1,11 +1,9 @@
 package com.platformX.api.tests;
 
-import org.testng.Assert;
 import org.testng.annotations.Test;
 import com.platformX.base.Payloads;
 import com.platformX.base.RestApiBase;
 import com.platformX.util.Helper;
-
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import static org.testng.Assert.assertEquals;
@@ -19,21 +17,16 @@ public class PXD_001_Authentication_Test extends RestApiBase {
 	}
 
 // Authenticate
-	
+
 	@Test(description = "positive test case")
 	public void pxd_001_01_authentication_test1() {
-		Response response = methodPOST("http://10.10.10.21:8086/api/Auth/Authenticate",
-				Payloads.pxdAuth("admin", "staging"));
-		Assert.assertEquals(response.getStatusCode(), 200, "Correct status code is not returned");
-		assertEquals(response.getStatusCode(), 200);
-		JsonPath jp = new JsonPath(response.asString());
-		assertNotNull(jp.getString("token"), "Token not forwarded");
+		authorize();
 	}
 
 	@Test(description = "negative test case: wrong username")
 	public void pxd_001_01_authentication_test2() {
 		Response response = methodPOST("http://10.10.10.21:8086/api/Auth/Authenticate",
-				Payloads.pxdAuth(Helper.getRandomString(5), "staging"));
+				Payloads.pxdAuth(Helper.getRandomString(5), api_properties.getValue("PASSWORD")));
 		assertEquals(response.getStatusCode(), 400);
 		JsonPath jp = new JsonPath(response.asString());
 		assertEquals(jp.get("message.name"), "Invalid username or password.");
@@ -44,7 +37,7 @@ public class PXD_001_Authentication_Test extends RestApiBase {
 	@Test(description = "negative test case: wrong password")
 	public void pxd_001_01_authentication_test3() {
 		Response response = methodPOST("http://10.10.10.21:8086/api/Auth/Authenticate",
-				Payloads.pxdAuth("admin", Helper.getRandomString(5)));
+				Payloads.pxdAuth(api_properties.getValue("USERNAME"), Helper.getRandomString(5)));
 		assertEquals(response.getStatusCode(), 400);
 		JsonPath jp = new JsonPath(response.asString());
 		assertEquals(jp.get("message.name"), "Invalid username or password.");
@@ -55,7 +48,7 @@ public class PXD_001_Authentication_Test extends RestApiBase {
 	@Test(description = "negative test case: username missing")
 	public void pxd_001_01_authentication_test4() {
 		Response response = methodPOST("http://10.10.10.21:8086/api/Auth/Authenticate",
-				Payloads.pxdAuth("", Helper.getRandomString(5)));
+				Payloads.pxdAuth("", api_properties.getValue("PASSWORD")));
 		assertEquals(response.getStatusCode(), 400);
 		JsonPath jp = new JsonPath(response.asString());
 		assertEquals(jp.get("Username[0]"), "NotEmptyValidator");
@@ -63,12 +56,13 @@ public class PXD_001_Authentication_Test extends RestApiBase {
 
 	@Test(description = "negative test case: password missing")
 	public void pxd_001_01_authentication_test5() {
-		Response response = methodPOST("http://10.10.10.21:8086/api/Auth/Authenticate", Payloads.pxdAuth("admin", ""));
+		Response response = methodPOST("http://10.10.10.21:8086/api/Auth/Authenticate",
+				Payloads.pxdAuth(api_properties.getValue("USERNAME"), ""));
 		assertEquals(response.getStatusCode(), 400);
 		JsonPath jp = new JsonPath(response.asString());
 		assertEquals(jp.get("Password[0]"), "NotEmptyValidator");
 	}
-	
+
 	@Test(description = "negative test case: username and password missing")
 	public void pxd_001_01_authentication_test6() {
 		Response response = methodPOST("http://10.10.10.21:8086/api/Auth/Authenticate", Payloads.pxdAuth("", ""));
@@ -77,17 +71,13 @@ public class PXD_001_Authentication_Test extends RestApiBase {
 		assertEquals(jp.get("Username[0]"), "NotEmptyValidator");
 		assertEquals(jp.get("Password[0]"), "NotEmptyValidator");
 	}
-	
+
 // UserData
-	
-	@Test (description = "positive test case")
+
+	@Test(description = "positive test case")
 	public void pxd_001_02_get_user_data_test1() {
 		// Authorization
-		Response response1 = methodPOST("http://10.10.10.21:8086/api/Auth/Authenticate", Payloads.pxdAuth("admin", "staging"));
-		assertEquals(response1.getStatusCode(), 200);
-		JsonPath jp1 = new JsonPath(response1.asString());
-		assertNotNull(jp1.getString("token"), "Token not forwarded");
-		String token = jp1.getString("token");
+		String token = authorize();
 		// Get User Data
 		addHeader("Authorization", "Bearer " + token);
 		Response response2 = methodGET("http://10.10.10.21:8086/api/Auth/UserData");
@@ -99,16 +89,16 @@ public class PXD_001_Authentication_Test extends RestApiBase {
 		assertNotNull(jp2.getString("permissions"), "Permissions not forwarded");
 		// TODO Assert more
 	}
-	
-	@Test (description = "negative test case: wrong bearer token")
-	public void pxd_001_08_get_user_data_test2() {
-		addHeader("Authorization", 	Helper.getRandomString(15));
+
+	@Test(description = "negative test case: wrong bearer token")
+	public void pxd_001_02_get_user_data_test2() {
+		addHeader("Authorization", Helper.getRandomString(15));
 		Response response = methodGET("http://10.10.10.21:8086/api/Auth/UserData");
 		assertEquals(401, response.getStatusCode());
 	}
-	
-	@Test (description = "negative test case: missing bearer token")
-	public void pxd_001_09_get_user_data_test3() {
+
+	@Test(description = "negative test case: missing bearer token")
+	public void pxd_001_02_get_user_data_test3() {
 		Response response = methodGET("http://10.10.10.21:8086/api/Auth/UserData");
 		assertEquals(response.getStatusCode(), 401);
 	}

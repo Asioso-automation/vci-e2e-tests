@@ -3,6 +3,9 @@ package com.platformX.base;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import static io.restassured.RestAssured.given;
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertNotNull;
+
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import com.platformX.util.PropertiesUtil;
@@ -10,22 +13,25 @@ import io.restassured.RestAssured;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.config.ConnectionConfig;
 import io.restassured.config.RestAssuredConfig;
+import io.restassured.path.json.JsonPath;
 
 public class RestApiBase {
-	
+
 	private RequestSpecBuilder builder;
+	protected PropertiesUtil properties;
+	protected PropertiesUtil api_properties = null;
 	protected static final String API_PROPERTIES = "api.properties";
-    protected PropertiesUtil properties = new PropertiesUtil(API_PROPERTIES);
-    private RestAssuredConfig restAssuredConfig;
-	
+	private RestAssuredConfig restAssuredConfig;
+
 	public RestApiBase() throws IOException {
-        RestAssured.urlEncodingEnabled = false;
-        ConnectionConfig connectionConfig = new ConnectionConfig().closeIdleConnectionsAfterEachResponseAfter(120,
-                TimeUnit.SECONDS);
-        restAssuredConfig = new RestAssuredConfig().connectionConfig(connectionConfig);
-        RequestSpecBuilder requestSpecBuilder = new RequestSpecBuilder();
-        builder = requestSpecBuilder;
-   }
+		api_properties = new PropertiesUtil(API_PROPERTIES);
+		RestAssured.urlEncodingEnabled = false;
+		ConnectionConfig connectionConfig = new ConnectionConfig().closeIdleConnectionsAfterEachResponseAfter(120,
+				TimeUnit.SECONDS);
+		restAssuredConfig = new RestAssuredConfig().connectionConfig(connectionConfig);
+		RequestSpecBuilder requestSpecBuilder = new RequestSpecBuilder();
+		builder = requestSpecBuilder;
+	}
 
 	// method used for GET endpoints
 	public Response methodGET(String endpoint) {
@@ -36,31 +42,44 @@ public class RestApiBase {
 	// method used for POST endpoints
 	public Response methodPOST(String endpoint, String payload) {
 		RequestSpecification requestSpec = builder.build();
-		return given().log().all().config(restAssuredConfig).spec(requestSpec).contentType("application/json").body(payload).when().post(endpoint);
+		return given().log().all().config(restAssuredConfig).spec(requestSpec).contentType("application/json")
+				.body(payload).when().post(endpoint);
 	}
-	
+
 	// method used for PUT endpoints
 	public Response methodPUT(String endpoint, String payload) {
 		RequestSpecification requestSpec = builder.build();
-		return given().log().all().config(restAssuredConfig).spec(requestSpec).contentType("application/json").body(payload).when().put(endpoint);
+		return given().log().all().config(restAssuredConfig).spec(requestSpec).contentType("application/json")
+				.body(payload).when().put(endpoint);
 	}
-	
+
 	// method used for PATCH endpoints
 	public Response methodPATCH(String endpoint, String payload) {
 		RequestSpecification requestSpec = builder.build();
-		return given().log().all().config(restAssuredConfig).spec(requestSpec).contentType("application/json").body(payload).when().patch(endpoint);
+		return given().log().all().config(restAssuredConfig).spec(requestSpec).contentType("application/json")
+				.body(payload).when().patch(endpoint);
 	}
-	
+
 	// method used for DELETE endpoints
 	public Response methodDELETE(String endpoint) {
 		RequestSpecification requestSpec = builder.build();
 		return given().log().all().config(restAssuredConfig).spec(requestSpec).when().delete(endpoint);
 	}
-	
-	public void addHeader(String key, String value) {
-    	RequestSpecBuilder requestSpecBuilder = new RequestSpecBuilder();
-    	requestSpecBuilder.addHeader(key, value);
-    	builder = requestSpecBuilder;
-    }
 
-} 
+	public void addHeader(String key, String value) {
+		RequestSpecBuilder requestSpecBuilder = new RequestSpecBuilder();
+		requestSpecBuilder.addHeader(key, value);
+		builder = requestSpecBuilder;
+	}
+
+	protected String authorize() {
+		// Authorization
+		Response response1 = methodPOST("http://10.10.10.21:8086/api/Auth/Authenticate",
+				Payloads.pxdAuth(api_properties.getValue("USERNAME"), api_properties.getValue("PASSWORD")));
+		assertEquals(response1.getStatusCode(), 200);
+		JsonPath jp1 = new JsonPath(response1.asString());
+		assertNotNull(jp1.getString("token"), "Token not forwarded");
+		String token = jp1.getString("token");
+		return token;
+	}
+}

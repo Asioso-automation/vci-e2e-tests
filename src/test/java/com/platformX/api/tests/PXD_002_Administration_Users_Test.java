@@ -1,7 +1,6 @@
 package com.platformX.api.tests;
 
 import org.testng.annotations.Test;
-import com.platformX.base.Payloads;
 import com.platformX.base.RestApiBase;
 import com.platformX.util.Helper;
 import io.restassured.path.json.JsonPath;
@@ -10,22 +9,17 @@ import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertNotNull;
 import java.io.IOException;
 
-public class PXD_002_Administration_Users_Test extends RestApiBase{
+public class PXD_002_Administration_Users_Test extends RestApiBase {
 
 	public PXD_002_Administration_Users_Test() throws IOException {
 		super();
 	}
 	
+	RestApiBase restApiBase = new RestApiBase();
+
 	@Test(description = "positive test case")
 	public void pxd_002_01_get_user_test1() {
-		// Authorization
-		Response response1 = methodPOST("http://10.10.10.21:8086/api/Auth/Authenticate",
-				Payloads.pxdAuth("admin", "staging"));
-		assertEquals(response1.getStatusCode(), 200);
-		JsonPath jp1 = new JsonPath(response1.asString());
-		assertNotNull(jp1.getString("token"), "Token not forwarded");
-		String token = jp1.getString("token");
-		// Get Administration User
+		String token = authorize();
 		addHeader("Authorization", "Bearer " + token);
 		Response response2 = methodGET("http://10.10.10.21:8086/api/Administrations/Users/Get/10");
 		assertEquals(response2.getStatusCode(), 200);
@@ -53,17 +47,11 @@ public class PXD_002_Administration_Users_Test extends RestApiBase{
 
 	@Test(description = "negative test case: wrong id")
 	public void pxd_002_01_get_user_test4() {
-		// Authorization
-		Response response1 = methodPOST("http://10.10.10.21:8086/api/Auth/Authenticate",
-				Payloads.pxdAuth("admin", "staging"));
-		assertEquals(response1.getStatusCode(), 200);
-		JsonPath jp1 = new JsonPath(response1.asString());
-		assertNotNull(jp1.getString("token"), "Token not forwarded");
-		String token = jp1.getString("token");
-		// Get Administration User
+		String token = authorize();
 		addHeader("Authorization", "Bearer " + token);
+		// Get Administration User
 		Response response = methodGET("http://10.10.10.21:8086/api/Administrations/Users/Get/1");
 		assertEquals(response.getStatusCode(), 404);
 	}
-	
+
 }
