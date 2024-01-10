@@ -29,10 +29,11 @@ public class Citaci extends PocetnaStranicaPXD {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Čitači')]")));
-		verifikacijaZajednickihElemenata("Šifarnici", "Čitači", "Čitači", 8, false, false, true, true, true, true, false);
+		verifikacijaZajednickihElemenata("Šifarnici", "Čitači", "Čitači", 9, false, false, true, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaImeWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojMobilnogTelefonaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKorisnikWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumOdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumDoWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTerenskaJedinicaWE));

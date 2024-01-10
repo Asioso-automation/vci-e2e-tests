@@ -15,7 +15,7 @@ public class PX_DIST_019_Elektroenergetske_Saglasnosti_CRUD_Test extends BaseTes
 		super();
 	}
 
-//	trenutno se mijenja ova forma - prilagoditi testove nakon release-a
+//	trenutno se mijenja ova forma - prilagoditi testove nakon release-a > samo za niski napon
 	String eeSaglasnost = new String();
 	
 	

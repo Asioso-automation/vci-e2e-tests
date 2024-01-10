@@ -33,6 +33,9 @@ public class ElektroenergetskeSaglasnosti extends PocetnaStranicaPXD {
 	@FindBy(xpath = "//div[6]/div/div/div[1]/div[1]/input[1]")  
 	 private WebElement tipPrikljuckaWE;
 	
+	@FindBy(xpath = "//div[7]/div/div/div[1]/div/input")  
+	 private WebElement brojProtokolaWE;
+	
 	@FindBy(xpath = "//div[4]/div[1]/div/div/div[1]/div[1]/input[1]")  
 	 private WebElement mjestoWE;
 	
@@ -54,7 +57,7 @@ public class ElektroenergetskeSaglasnosti extends PocetnaStranicaPXD {
 	@FindBy(xpath = "//div[7]/div[2]/div/div/div[1]/div[1]/input[1]")  
 	 private WebElement odobrenaPrikljucnaSnagaWE;
 	
-	@FindBy(xpath = "//div[7]/div[3]/div/div/div[1]/div[1]/input[1]")  
+	@FindBy(xpath = "//div[7]/div[2]/div/div/div[1]/div[1]/input[1]")  
 	 private WebElement tarifnaGrupaWE;
 	
 	@FindBy(xpath = "//div[10]/div[1]/div/div/div[1]/div[1]/input[1]")
@@ -66,10 +69,13 @@ public class ElektroenergetskeSaglasnosti extends PocetnaStranicaPXD {
 	@FindBy(xpath = "//div[10]/div[3]/div/div/div[1]/div[1]/input[1]")  
 	 private WebElement vrstaPrikljuckaWE;
 	
-	@FindBy(xpath = "//div[11]/div[1]/div/div/div[1]/div[1]/input[1]")  
-	 private WebElement tipPrikljucnogVodaWE;
+	@FindBy(xpath = "//div[11]/div[1]/div/div/div[1]/div/input")  
+	 private WebElement brojPrikljucnihVodovaWE;
 	
 	@FindBy(xpath = "//div[11]/div[2]/div/div/div[1]/div[1]/input[1]")  
+	 private WebElement tipPrikljucnogVodaWE;
+	
+	@FindBy(xpath = "//div[11]/div[3]/div/div/div[1]/div[1]/input[1]")  
 	 private WebElement presjekMm2WE;
 	
 	@FindBy(xpath = "//div[12]/div[1]/div/div/div[1]/div[1]/input[1]")  
@@ -91,7 +97,7 @@ public class ElektroenergetskeSaglasnosti extends PocetnaStranicaPXD {
 	private WebElement porukaWE;
 	
 	@FindBy(xpath = "//tr[2]/td[2]")
-	private WebElement brojProtokolaWE;
+	private WebElement brojProtokolaTabelaWE;
 	
 	@FindBy(xpath = "//div[contains(@class, 'v-stepper__step--active')]")
 	private WebElement odaberiTipEESWE;
@@ -231,14 +237,19 @@ public class ElektroenergetskeSaglasnosti extends PocetnaStranicaPXD {
 		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
 		tipPrikljuckaWE.sendKeys(Keys.ARROW_DOWN);
 		tipPrikljuckaWE.sendKeys(Keys.ENTER);
+//		
+		wait.until(ExpectedConditions.elementToBeClickable(brojProtokolaWE));
+		brojProtokolaWE.sendKeys(Helper.getRandomString(5));
+//		
 		wait.until(ExpectedConditions.elementToBeClickable(mjestoWE));
 		mjestoWE.click();
 		mjestoWE.sendKeys(Helper.getRandomNumber(1));
 		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
 		mjestoWE.sendKeys(Keys.ARROW_DOWN);
 		mjestoWE.sendKeys(Keys.ENTER);
+//		js.executeScript("arguments[0].scrollIntoView(true);", brojUuliciWE);
 		wait.until(ExpectedConditions.elementToBeClickable(postaWE));
-		postaWE.click();
+//		postaWE.click();
 		postaWE.sendKeys(Helper.getRandomNumber(1));
 		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
 		postaWE.sendKeys(Keys.ARROW_DOWN);
@@ -260,12 +271,12 @@ public class ElektroenergetskeSaglasnosti extends PocetnaStranicaPXD {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 //	tip EES 1 - Domacinstva
 		if (tipEES=="Domaćinstva") {
-		js.executeScript("arguments[0].scrollIntoView(true);", odobrenaPrikljucnaSnagaWE);
-		wait.until(ExpectedConditions.elementToBeClickable(odobrenaPrikljucnaSnagaWE));
-		odobrenaPrikljucnaSnagaWE.sendKeys(Helper.getRandomNumber(1));
-		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
-		odobrenaPrikljucnaSnagaWE.sendKeys(Keys.ARROW_DOWN);
-		odobrenaPrikljucnaSnagaWE.sendKeys(Keys.ENTER);
+		js.executeScript("arguments[0].scrollIntoView(true);", tarifnaGrupaWE);
+//		wait.until(ExpectedConditions.elementToBeClickable(odobrenaPrikljucnaSnagaWE));
+//		odobrenaPrikljucnaSnagaWE.sendKeys(Helper.getRandomNumber(1));
+//		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
+//		odobrenaPrikljucnaSnagaWE.sendKeys(Keys.ARROW_DOWN);
+//		odobrenaPrikljucnaSnagaWE.sendKeys(Keys.ENTER);
 		wait.until(ExpectedConditions.elementToBeClickable(tarifnaGrupaWE));
 		tarifnaGrupaWE.sendKeys("4");
 		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
@@ -273,7 +284,7 @@ public class ElektroenergetskeSaglasnosti extends PocetnaStranicaPXD {
 		tarifnaGrupaWE.sendKeys(Keys.ENTER);
 		wait.until(ExpectedConditions.elementToBeClickable(naponskiNivoWE));
 		naponskiNivoWE.click();
-		naponskiNivoWE.sendKeys(Helper.getRandomNumber(1));
+		naponskiNivoWE.sendKeys("17");
 		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
 		naponskiNivoWE.sendKeys(Keys.ARROW_DOWN);
 		naponskiNivoWE.sendKeys(Keys.ENTER);
@@ -288,6 +299,10 @@ public class ElektroenergetskeSaglasnosti extends PocetnaStranicaPXD {
 		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
 		vrstaPrikljuckaWE.sendKeys(Keys.ARROW_DOWN);
 		vrstaPrikljuckaWE.sendKeys(Keys.ENTER);
+//	
+		wait.until(ExpectedConditions.elementToBeClickable(brojPrikljucnihVodovaWE));
+		brojPrikljucnihVodovaWE.sendKeys(Helper.getRandomNumber(1));
+//		
 		wait.until(ExpectedConditions.elementToBeClickable(tipPrikljucnogVodaWE));
 		tipPrikljucnogVodaWE.click();
 		tipPrikljucnogVodaWE.sendKeys(Helper.getRandomNumber(1));
@@ -314,7 +329,7 @@ public class ElektroenergetskeSaglasnosti extends PocetnaStranicaPXD {
 		lokacijaMjernogMjestaWE.sendKeys(Keys.ENTER);
 		wait.until(ExpectedConditions.elementToBeClickable(brojUgradjenihBrojilaWE));
 		brojUgradjenihBrojilaWE.click();
-		brojUgradjenihBrojilaWE.sendKeys(Helper.getRandomNumber(1));
+		brojUgradjenihBrojilaWE.sendKeys("1");
 		wait.until(ExpectedConditions.elementToBeClickable(nazivnaStrujaGlavnogOsiguracaWE));
 		nazivnaStrujaGlavnogOsiguracaWE.sendKeys("1");
 		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
@@ -407,12 +422,11 @@ public class ElektroenergetskeSaglasnosti extends PocetnaStranicaPXD {
 			rokVazenjaNWE.sendKeys(Keys.ENTER);
 		}
 		js.executeScript("arguments[0].scrollIntoView(true);", submitBtnWE);
-
 		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
 		submitBtnWE.click();
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
-		String brProtokola = brojProtokolaWE.getText();
+		String brProtokola = brojProtokolaTabelaWE.getText();
 		return brProtokola;
 	}
 	
