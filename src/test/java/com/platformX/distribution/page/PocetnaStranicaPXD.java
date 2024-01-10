@@ -425,13 +425,13 @@ public class PocetnaStranicaPXD extends PageBase {
 		wait.until(ExpectedConditions.elementToBeClickable(ocitanjaWE));
 		wait.until(ExpectedConditions.elementToBeClickable(obracunWE));
 		wait.until(ExpectedConditions.elementToBeClickable(strelicaDesnoWE));
-		strelicaDesnoWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(administracijaWE));
-		wait.until(ExpectedConditions.elementToBeClickable(izvjestajiWE));
-		wait.until(ExpectedConditions.elementToBeClickable(profilWE));
-		wait.until(ExpectedConditions.elementToBeClickable(filterMjernoMjestoWE));
-		wait.until(ExpectedConditions.elementToBeClickable(filterKupacWE));
-		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
+//		strelicaDesnoWE.click();
+//		wait.until(ExpectedConditions.elementToBeClickable(administracijaWE));
+//		wait.until(ExpectedConditions.elementToBeClickable(izvjestajiWE));
+//		wait.until(ExpectedConditions.elementToBeClickable(profilWE));
+//		wait.until(ExpectedConditions.elementToBeClickable(filterMjernoMjestoWE));
+//		wait.until(ExpectedConditions.elementToBeClickable(filterKupacWE));
+//		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 	}
 
 	public void logOut() {

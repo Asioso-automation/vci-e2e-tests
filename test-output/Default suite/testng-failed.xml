@@ -3,14 +3,19 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.platformX.tests.PX_005_Radne_Jedinice_CRUD_Test">
+      <class name="com.platformX.api.tests.PXD_000_Prepare_And_Read_Data_Tests">
         <methods>
           <include name="setUp"/>
+          <include name="pxd_003_01_get_administration_message_test1"/>
           <include name="cleanUp"/>
-          <include name="px_005_2_uredjivanje_radne_jedinice_test"/>
-          <include name="px_005_1_dodavanje_radne_jedinice_test"/>
+          <include name="pxd_004_01_get_company_test1"/>
         </methods>
-      </class> <!-- com.platformX.tests.PX_005_Radne_Jedinice_CRUD_Test -->
+      </class> <!-- com.platformX.api.tests.PXD_000_Prepare_And_Read_Data_Tests -->
+      <class name="com.platformX.api.tests.PXD_004_BasicCatalogs_Companies_Test">
+        <methods>
+          <include name="pxd_004_01_get_company_test1"/>
+        </methods>
+      </class> <!-- com.platformX.api.tests.PXD_004_BasicCatalogs_Companies_Test -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
