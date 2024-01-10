@@ -329,7 +329,7 @@ public class ElektroenergetskeSaglasnosti extends PocetnaStranicaPXD {
 		lokacijaMjernogMjestaWE.sendKeys(Keys.ENTER);
 		wait.until(ExpectedConditions.elementToBeClickable(brojUgradjenihBrojilaWE));
 		brojUgradjenihBrojilaWE.click();
-		brojUgradjenihBrojilaWE.sendKeys("1");
+		brojUgradjenihBrojilaWE.sendKeys(Helper.getRandomNumberInRange(1, 4));
 		wait.until(ExpectedConditions.elementToBeClickable(nazivnaStrujaGlavnogOsiguracaWE));
 		nazivnaStrujaGlavnogOsiguracaWE.sendKeys("1");
 		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));

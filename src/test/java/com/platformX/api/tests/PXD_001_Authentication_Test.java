@@ -25,7 +25,7 @@ public class PXD_001_Authentication_Test extends RestApiBase {
 
 	@Test(description = "negative test case: wrong username")
 	public void pxd_001_01_authentication_test2() {
-		JsonPath jp = methodPOSTupdated("http://10.10.10.21:8086/api/Auth/Authenticate",
+		JsonPath jp = methodPOSTupdated(api_properties.getValue("AUTHENTICATE"),
 				Payloads.pxdAuth(Helper.getRandomString(5), api_properties.getValue("PASSWORD")), 400);
 		assertEquals(jp.get("message.name"), "Invalid username or password.");
 		assertEquals(jp.get("message.value"), "Invalid username or password.");

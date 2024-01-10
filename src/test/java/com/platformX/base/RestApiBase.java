@@ -59,7 +59,7 @@ public class RestApiBase {
 		public JsonPath methodPOSTupdated(String endpoint, String payload, int status) {
 			RequestSpecification requestSpec = builder.build();
 			Response response =  given().log().all().config(restAssuredConfig).spec(requestSpec).contentType("application/json")
-					.body(payload).when().post(endpoint);
+					.body(payload).when().post(api_properties.getValue("URL.BASE") + endpoint);
 			assertEquals(status, response.getStatusCode());
 			JsonPath jp = new JsonPath(response.asString());
 			return jp;
