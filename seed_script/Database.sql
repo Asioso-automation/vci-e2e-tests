@@ -42,7 +42,6 @@ INSERT [Administration].[Configuration] ([Key], [Value]) VALUES (N'MaxValidtyDat
 GO
 
 
-
 SET IDENTITY_INSERT BasicCatalog.MeterType ON
 
 Insert Into BasicCatalog.MeterType ([Id],[Name])
@@ -239,6 +238,7 @@ INSERT [BasicCatalog].[Company] ([Id], [PlaceId], [PostOfficeId], [Name], [Short
 
 SET IDENTITY_INSERT [BasicCatalog].[Company] OFF
 
+
 INSERT [BasicCatalog].[Country] ([Id], [Name]) VALUES (N'BIH', N'Bosna i Hercegovina')
 
 
@@ -264,7 +264,6 @@ INSERT [Administration].[User] ([Id], [Username], [PasswordSalt], [PasswordHash]
 SET IDENTITY_INSERT [Administration].[User] OFF
 
 
-
 SET IDENTITY_INSERT [Administration].[Message] ON 
 
 Insert Into Administration.Message ([Id],[Title],[Body],[DateFrom],[DateTo],[Priority],[DsoId],[UserId])
@@ -273,15 +272,12 @@ Values (2,N'Poruka testne prirode',N'<p>Testna poruka</p>','2020-10-15 12:00:00.
 SET IDENTITY_INSERT [Administration].[Message] OFF
 
 
-
 SET IDENTITY_INSERT [Administration].ContractNumberTemplate ON 
 
 Insert Into Administration.ContractNumberTemplate ([Id],[DsoId],[ContractNumberTemplateGroupId],[Template],[DateFrom],[DateTo],[NextOrderNumber])
 Values (1,1,1,N'Broj - {{orderNumber}} - A','2020-01-01',NULL,0)
 
 SET IDENTITY_INSERT [Administration].ContractNumberTemplate OFF
-
-
 
 
 SET IDENTITY_INSERT [Administration].[Module] ON 
@@ -368,7 +364,6 @@ SET IDENTITY_INSERT [Administration].[Module] OFF
 GO
 
 
-
 SET IDENTITY_INSERT [Administration].UserModule ON
 
 Insert Into Administration.UserModule ([Id],[UserId],[ModuleId],[Write],[Delete])
@@ -428,12 +423,18 @@ Values (3,1,1,1,1)
 
 SET IDENTITY_INSERT [Administration].UserModule OFF
 
+
 SET IDENTITY_INSERT [Calculation].[CalculationType] ON
 
 INSERT INTO [Calculation].[CalculationType] ([Id], [Name]) VALUES (1, N'Redovna potrošnja')
 INSERT INTO [Calculation].[CalculationType] ([Id], [Name]) VALUES (2, N'Nestandardne usluge')
 
 SET IDENTITY_INSERT [Calculation].[CalculationType] OFF
+
+
+INSERT [Calculation].[BillOrder] ([Id], [PeriodId], [DsoId], [Date], [SeasonId], [DateOfPayment], [AmountWithoutTax], [Tax], [AmountWithTax], [NumberOfCustomers], [NumberOfMeteringPoints], [NumberOfBills], [Note], [Closed],[GeneratedAdvancePaymentInvoiceFiles], [CalculationTypeId], [ForPrint]) VALUES (202007, 2007, NULL, CAST(N'2020-07-31' AS Date), N'S', CAST(N'2020-11-25' AS Date), CAST(0.00 AS Decimal(14, 2)), CAST(0.00 AS Decimal(10, 2)), CAST(0.00 AS Decimal(14, 2)), 0, 0, 0, NULL, 1, 0, 1, 1)
+INSERT [Calculation].[BillOrder] ([Id], [PeriodId], [DsoId], [Date], [SeasonId], [DateOfPayment], [AmountWithoutTax], [Tax], [AmountWithTax], [NumberOfCustomers], [NumberOfMeteringPoints], [NumberOfBills], [Note], [Closed],[GeneratedAdvancePaymentInvoiceFiles], [CalculationTypeId], [ForPrint]) VALUES (202010, 2010, NULL, CAST(N'2020-10-31' AS Date), N'S', CAST(N'2020-11-25' AS Date), CAST(0.00 AS Decimal(14, 2)), CAST(0.00 AS Decimal(10, 2)), CAST(0.00 AS Decimal(14, 2)), 0, 0, 0, NULL, 0, 0, 1, 1)
+
 
 INSERT [Calculation].[Bill] ([Id], [BillOrderId], [ContractId], [TariffGroupId], [DsoId], [CustomerId], [CustomerName], [MeteringPointId], [EIC], [MeteringPointName], [VatPayer], [AssociatedLegalEntities], [IsForLegalEntity], [TaxId], [VatNumber], [DateOfBill], [DateOfPayment], [SerialNumber], [NumberOfBillInYear], [RecapitulationReferenceNumber], [ReferenceNumber], [MeteringPointInDsoId], [DateOfPreviousReading], [DateOfReading], [Energy], [EnergyVat], [Netting], [NettingVat], [RenewableElectricity], [RenewableElectricityVat], [SupplyFee], [SupplyFeeVat], [CommonConsumption], [CommonConsumptionVat], [AmountWithoutVat], [Vat], [AmountWithVat], [Interest], [TotalBillAmount], [PreviousBalance], [PaymentsInPeriod], [CorrectionsInPeriod], [TotalForPayment], [OverdueNotification], [Recapitulation], [DeliveryPath], [DeliveryAddress], [EmailForDelivery], [EmailDelivery], [CommonConsumptionGroupId], [BillForPeriodId], [CalculationTypeId], [NonStandardService], [NonStandardServiceVat], [ForPrint], [PercentageHT], [PercentageLT], [ReactiveEnergyBillingExemption], [BillForCorrection], [OriginalCustomerId]) VALUES (1270, 202007, 200008, 1, 6, 2100267, N'Prevoz Dwelt', 62100355, N'36ZTZDM         ', N'Avioprevoz Dwelt', 1, 0, 0, NULL, NULL, CAST(N'2019-10-31' AS Date), CAST(N'2019-11-25' AS Date), N'1271', 1271, NULL, N'1270', 31033756, CAST(N'2019-09-30' AS Date), CAST(N'2019-10-31' AS Date), CAST(10716.52 AS Decimal(12, 2)), CAST(1821.81 AS Decimal(12, 2)), CAST(5566.91 AS Decimal(12, 2)), CAST(946.37 AS Decimal(12, 2)), CAST(989.30 AS Decimal(12, 2)), CAST(168.18 AS Decimal(12, 2)), CAST(0.00 AS Decimal(12, 2)), CAST(0.00 AS Decimal(12, 2)), CAST(0.00 AS Decimal(14, 2)), CAST(0.00 AS Decimal(14, 2)), CAST(17272.73 AS Decimal(14, 2)), CAST(2936.36 AS Decimal(12, 2)), CAST(20209.09 AS Decimal(14, 2)), CAST(0.00 AS Decimal(14, 2)), CAST(20209.09 AS Decimal(14, 2)), CAST(0.00 AS Decimal(14, 2)), CAST(0.00 AS Decimal(12, 2)), CAST(0.00 AS Decimal(12, 2)), CAST(20209.09 AS Decimal(14, 2)), 0, 0, NULL, N'Neka adresa', NULL, 0, NULL, 2007, 1, CAST(0.00 AS Decimal(12, 2)), CAST(0.00 AS Decimal(12, 2)), 1, CAST(0.00 AS Decimal(5, 2)), CAST(0.00 AS Decimal(5, 2)), 0, 0, 2100267)
 INSERT [Calculation].[Bill] ([Id], [BillOrderId], [ContractId], [TariffGroupId], [DsoId], [CustomerId], [CustomerName], [MeteringPointId], [EIC], [MeteringPointName], [VatPayer], [AssociatedLegalEntities], [IsForLegalEntity], [TaxId], [VatNumber], [DateOfBill], [DateOfPayment], [SerialNumber], [NumberOfBillInYear], [RecapitulationReferenceNumber], [ReferenceNumber], [MeteringPointInDsoId], [DateOfPreviousReading], [DateOfReading], [Energy], [EnergyVat], [Netting], [NettingVat], [RenewableElectricity], [RenewableElectricityVat], [SupplyFee], [SupplyFeeVat], [CommonConsumption], [CommonConsumptionVat], [AmountWithoutVat], [Vat], [AmountWithVat], [Interest], [TotalBillAmount], [PreviousBalance], [PaymentsInPeriod], [CorrectionsInPeriod], [TotalForPayment], [OverdueNotification], [Recapitulation], [DeliveryPath], [DeliveryAddress], [EmailForDelivery], [EmailDelivery], [CommonConsumptionGroupId], [BillForPeriodId], [CalculationTypeId], [NonStandardService], [NonStandardServiceVat], [ForPrint], [PercentageHT], [PercentageLT], [ReactiveEnergyBillingExemption], [BillForCorrection], [OriginalCustomerId]) VALUES (1274, 202007, 600001, 1, 6, 4100010, N'Avioprevoz Dwelt', 66100001, N'36BL13          ', N'Prevoz Dwelt', 1, 0, 0, NULL, NULL, CAST(N'2019-10-31' AS Date), CAST(N'2019-11-25' AS Date), N'1275', 1275, NULL, N'1274', 66100001, CAST(N'2019-09-30' AS Date), CAST(N'2019-10-31' AS Date), CAST(17579.09 AS Decimal(12, 2)), CAST(2988.45 AS Decimal(12, 2)), CAST(6172.36 AS Decimal(12, 2)), CAST(1049.30 AS Decimal(12, 2)), CAST(1668.60 AS Decimal(12, 2)), CAST(283.66 AS Decimal(12, 2)), CAST(0.00 AS Decimal(12, 2)), CAST(0.00 AS Decimal(12, 2)),CAST(0.00 AS Decimal(14, 2)), CAST(0.00 AS Decimal(14, 2)), CAST(25420.05 AS Decimal(14, 2)), CAST(4321.41 AS Decimal(12, 2)), CAST(29741.46 AS Decimal(14, 2)), CAST(0.00 AS Decimal(14, 2)), CAST(29741.46 AS Decimal(14, 2)), CAST(0.00 AS Decimal(14, 2)), CAST(0.00 AS Decimal(12, 2)), CAST(0.00 AS Decimal(12, 2)), CAST(29741.46 AS Decimal(14, 2)), 0, 0, NULL, N'Neka adresa', NULL, 0, NULL, 2007, 1, CAST(0.0 AS Decimal(12, 2)), CAST(0.0 AS Decimal(12, 2)), 1, CAST(0.00 AS Decimal(5, 2)), CAST(0.00 AS Decimal(5, 2)), 0, 0, 4100010)
@@ -446,18 +447,17 @@ INSERT [Calculation].[Bill] ([Id], [BillOrderId], [ContractId], [TariffGroupId],
 INSERT [Calculation].[Bill] ([Id], [BillOrderId], [ContractId], [TariffGroupId], [DsoId], [CustomerId], [CustomerName], [MeteringPointId], [EIC], [MeteringPointName], [VatPayer], [AssociatedLegalEntities], [IsForLegalEntity], [TaxId], [VatNumber], [DateOfBill], [DateOfPayment], [SerialNumber], [NumberOfBillInYear], [RecapitulationReferenceNumber], [ReferenceNumber], [MeteringPointInDsoId], [DateOfPreviousReading], [DateOfReading], [Energy], [EnergyVat], [Netting], [NettingVat], [RenewableElectricity], [RenewableElectricityVat], [SupplyFee], [SupplyFeeVat], [CommonConsumption], [CommonConsumptionVat], [AmountWithoutVat], [Vat], [AmountWithVat], [Interest], [TotalBillAmount], [PreviousBalance], [PaymentsInPeriod], [CorrectionsInPeriod], [TotalForPayment], [OverdueNotification], [Recapitulation], [DeliveryPath], [DeliveryAddress], [EmailForDelivery], [EmailDelivery], [CommonConsumptionGroupId], [BillForPeriodId], [CalculationTypeId], [NonStandardService], [NonStandardServiceVat], [ForPrint], [PercentageHT], [PercentageLT], [ReactiveEnergyBillingExemption], [BillForCorrection], [OriginalCustomerId]) VALUES (1988, 202007, 100064, 1, 1, 4100843, N'Mljekara Dwelt', 61100021, N'36Z1SB1200027N  ', N'Mljekara Dwelt', 1, 0, 0, NULL, NULL, CAST(N'2019-10-31' AS Date), CAST(N'2019-11-25' AS Date), N'1989', 1988, NULL, N'1988', 3800027, CAST(N'2019-09-30' AS Date), CAST(N'2019-10-31' AS Date), CAST(7045.65 AS Decimal(12, 2)), CAST(1197.76 AS Decimal(12, 2)), CAST(1536.26 AS Decimal(12, 2)), CAST(261.16 AS Decimal(12, 2)), CAST(807.45 AS Decimal(12, 2)), CAST(137.27 AS Decimal(12, 2)), CAST(0.00 AS Decimal(12, 2)), CAST(0.00 AS Decimal(12, 2)),CAST(0.00 AS Decimal(14, 2)), CAST(0.00 AS Decimal(14, 2)), CAST(9389.36 AS Decimal(14, 2)), CAST(1596.19 AS Decimal(12, 2)), CAST(10985.55 AS Decimal(14, 2)), CAST(21.84 AS Decimal(14, 2)), CAST(11007.39 AS Decimal(14, 2)), CAST(12132.22 AS Decimal(14, 2)), CAST(0.00 AS Decimal(12, 2)), CAST(0.00 AS Decimal(12, 2)), CAST(11007.39 AS Decimal(14, 2)), 0, 0, NULL, N'Neka adresa', NULL, 0, NULL, 2007, 1, CAST(0.0 AS Decimal(12, 2)), CAST(0.0 AS Decimal(12, 2)), 1, CAST(0.00 AS Decimal(5, 2)), CAST(0.00 AS Decimal(5, 2)), 0, 0, 4100843)
 INSERT [Calculation].[Bill] ([Id], [BillOrderId], [ContractId], [TariffGroupId], [DsoId], [CustomerId], [CustomerName], [MeteringPointId], [EIC], [MeteringPointName], [VatPayer], [AssociatedLegalEntities], [IsForLegalEntity], [TaxId], [VatNumber], [DateOfBill], [DateOfPayment], [SerialNumber], [NumberOfBillInYear], [RecapitulationReferenceNumber], [ReferenceNumber], [MeteringPointInDsoId], [DateOfPreviousReading], [DateOfReading], [Energy], [EnergyVat], [Netting], [NettingVat], [RenewableElectricity], [RenewableElectricityVat], [SupplyFee], [SupplyFeeVat], [CommonConsumption], [CommonConsumptionVat], [AmountWithoutVat], [Vat], [AmountWithVat], [Interest], [TotalBillAmount], [PreviousBalance], [PaymentsInPeriod], [CorrectionsInPeriod], [TotalForPayment], [OverdueNotification], [Recapitulation], [DeliveryPath], [DeliveryAddress], [EmailForDelivery], [EmailDelivery], [CommonConsumptionGroupId], [BillForPeriodId], [CalculationTypeId], [NonStandardService], [NonStandardServiceVat], [ForPrint], [PercentageHT], [PercentageLT], [ReactiveEnergyBillingExemption], [BillForCorrection], [OriginalCustomerId]) VALUES (1989, 202007, 100065, 1, 1, 4100843, N'Mljekara Dwelt', 61100069, N'36Z0SB00        ', N'Mljekara Dwelt', 1, 0, 0, NULL, NULL, CAST(N'2019-10-31' AS Date), CAST(N'2019-11-25' AS Date), N'1990', 1989, NULL, N'1989', 3800084, CAST(N'2019-09-30' AS Date), CAST(N'2019-10-31' AS Date), CAST(2231.95 AS Decimal(12, 2)), CAST(379.43 AS Decimal(12, 2)), CAST(486.66 AS Decimal(12, 2)), CAST(82.73 AS Decimal(12, 2)), CAST(269.59 AS Decimal(12, 2)), CAST(45.83 AS Decimal(12, 2)), CAST(0.00 AS Decimal(12, 2)), CAST(0.00 AS Decimal(12, 2)),CAST(0.00 AS Decimal(14, 2)), CAST(0.00 AS Decimal(14, 2)), CAST(2988.20 AS Decimal(14, 2)), CAST(507.99 AS Decimal(12, 2)), CAST(3496.19 AS Decimal(14, 2)), CAST(2.95 AS Decimal(14, 2)), CAST(3499.14 AS Decimal(14, 2)), CAST(1637.70 AS Decimal(14, 2)), CAST(0.00 AS Decimal(12, 2)), CAST(0.00 AS Decimal(12, 2)), CAST(3499.14 AS Decimal(14, 2)), 0, 0, NULL, N'Neka adresa', NULL, 0, NULL, 2007, 1, CAST(0.0 AS Decimal(12, 2)), CAST(0.0 AS Decimal(12, 2)), 1, CAST(0.00 AS Decimal(5, 2)), CAST(0.00 AS Decimal(5, 2)), 0, 0, 4100843)
 
-SET IDENTITY_INSERT [Calculation].[BillCorrectionType] ON 
-
-INSERT [Calculation].[BillCorrectionType] ([Id], [Name], [CalculationTypeId]) VALUES (1, N'test', 1)
-
-SET IDENTITY_INSERT [Calculation].[BillCorrectionType] OFF
 
 INSERT [Calculation].[BillItem] ([Id], [BillId], [TariffItemId], [Description], [MeasureUnit], [NewReading], [OldReading], [Spent], [Quantity], [VatRate], [EnergyPrice], [EnergyAmount], [NettingPrice], [NettingAmount], [ActiveConstant], [ReactiveConstant], [PowerConstant], [ActiveMeterNumber], [ReactiveMeterNumber], [IndirectConsumption], [LosesInTransformation], [Penalties], [AssignmentApproval], [EnergyPriceWithoutDiscount], [EnergyPriceDiscountPercentage], [NonStandardServicesPrice], [NonStandardServicesAmount],[SavingElectricityPercentage],DistributiveNettingAmount,TransferNettingPrice,TransferNettingAmount,DistributiveNettingPrice) VALUES (1, 1270, 1, N'Test 1', N'kWh', CAST(150.0000 AS Decimal(12, 4)), CAST(144.0000 AS Decimal(12, 4)), CAST(6.0000 AS Decimal(12, 4)), CAST(1.0000 AS Decimal(12, 4)), CAST(17 AS Decimal(4, 0)), CAST(23.000000 AS Decimal(12, 6)), CAST(34.0000 AS Decimal(12, 4)), CAST(12.000000 AS Decimal(12, 6)), CAST(123.0000 AS Decimal(12, 4)), CAST(13.0000 AS Decimal(12, 4)), CAST(123.0000 AS Decimal(12, 4)), CAST(13.0000 AS Decimal(12, 4)), N'1', N'1', CAST(1.0000 AS Decimal(12, 4)), CAST(1.0000 AS Decimal(12, 4)), CAST(1.0000 AS Decimal(12, 4)), CAST(1.0000 AS Decimal(12, 4)), CAST(0.000000 AS Decimal(12, 6)), 0, 0, 0,0,0,0,0,0)
 INSERT [Calculation].[BillItem] ([Id], [BillId], [TariffItemId], [Description], [MeasureUnit], [NewReading], [OldReading], [Spent], [Quantity], [VatRate], [EnergyPrice], [EnergyAmount], [NettingPrice], [NettingAmount], [ActiveConstant], [ReactiveConstant], [PowerConstant], [ActiveMeterNumber], [ReactiveMeterNumber], [IndirectConsumption], [LosesInTransformation], [Penalties], [AssignmentApproval], [EnergyPriceWithoutDiscount], [EnergyPriceDiscountPercentage], [NonStandardServicesPrice], [NonStandardServicesAmount],[SavingElectricityPercentage],DistributiveNettingAmount,TransferNettingPrice,TransferNettingAmount,DistributiveNettingPrice) VALUES (2, 1270, 1, N'Test 1', N'kWh', CAST(150.0000 AS Decimal(12, 4)), CAST(144.0000 AS Decimal(12, 4)), CAST(6.0000 AS Decimal(12, 4)), CAST(1.0000 AS Decimal(12, 4)), CAST(17 AS Decimal(4, 0)), CAST(23.000000 AS Decimal(12, 6)), CAST(34.0000 AS Decimal(12, 4)), CAST(12.000000 AS Decimal(12, 6)), CAST(123.0000 AS Decimal(12, 4)), CAST(13.0000 AS Decimal(12, 4)), CAST(123.0000 AS Decimal(12, 4)), CAST(13.0000 AS Decimal(12, 4)), N'1', N'1', CAST(1.0000 AS Decimal(12, 4)), CAST(1.0000 AS Decimal(12, 4)), CAST(1.0000 AS Decimal(12, 4)), CAST(1.0000 AS Decimal(12, 4)), CAST(0.000000 AS Decimal(12, 6)), 0, 0, 0,0,0,0,0,0)
 INSERT [Calculation].[BillItem] ([Id], [BillId], [TariffItemId], [Description], [MeasureUnit], [NewReading], [OldReading], [Spent], [Quantity], [VatRate], [EnergyPrice], [EnergyAmount], [NettingPrice], [NettingAmount], [ActiveConstant], [ReactiveConstant], [PowerConstant], [ActiveMeterNumber], [ReactiveMeterNumber], [IndirectConsumption], [LosesInTransformation], [Penalties], [AssignmentApproval], [EnergyPriceWithoutDiscount], [EnergyPriceDiscountPercentage], [NonStandardServicesPrice], [NonStandardServicesAmount],[SavingElectricityPercentage],DistributiveNettingAmount,TransferNettingPrice,TransferNettingAmount,DistributiveNettingPrice) VALUES (3, 1274, 1, N'Test 1', N'kWh', CAST(150.0000 AS Decimal(12, 4)), CAST(144.0000 AS Decimal(12, 4)), CAST(6.0000 AS Decimal(12, 4)), CAST(1.0000 AS Decimal(12, 4)), CAST(17 AS Decimal(4, 0)), CAST(23.000000 AS Decimal(12, 6)), CAST(34.0000 AS Decimal(12, 4)), CAST(12.000000 AS Decimal(12, 6)), CAST(123.0000 AS Decimal(12, 4)), CAST(13.0000 AS Decimal(12, 4)), CAST(123.0000 AS Decimal(12, 4)), CAST(13.0000 AS Decimal(12, 4)), N'1', N'1', CAST(1.0000 AS Decimal(12, 4)), CAST(1.0000 AS Decimal(12, 4)), CAST(1.0000 AS Decimal(12, 4)), CAST(1.0000 AS Decimal(12, 4)), CAST(0.000000 AS Decimal(12, 6)), 0, 0, 0,0,0,0,0,0)
 
-INSERT [Calculation].[BillOrder] ([Id], [PeriodId], [DsoId], [Date], [SeasonId], [DateOfPayment], [AmountWithoutTax], [Tax], [AmountWithTax], [NumberOfCustomers], [NumberOfMeteringPoints], [NumberOfBills], [Note], [Closed],[GeneratedAdvancePaymentInvoiceFiles], [CalculationTypeId], [ForPrint]) VALUES (202007, 2007, NULL, CAST(N'2020-07-31' AS Date), N'S', CAST(N'2020-11-25' AS Date), CAST(0.00 AS Decimal(14, 2)), CAST(0.00 AS Decimal(10, 2)), CAST(0.00 AS Decimal(14, 2)), 0, 0, 0, NULL, 1, 0, 1, 1)
-INSERT [Calculation].[BillOrder] ([Id], [PeriodId], [DsoId], [Date], [SeasonId], [DateOfPayment], [AmountWithoutTax], [Tax], [AmountWithTax], [NumberOfCustomers], [NumberOfMeteringPoints], [NumberOfBills], [Note], [Closed],[GeneratedAdvancePaymentInvoiceFiles], [CalculationTypeId], [ForPrint]) VALUES (202010, 2010, NULL, CAST(N'2020-10-31' AS Date), N'S', CAST(N'2020-11-25' AS Date), CAST(0.00 AS Decimal(14, 2)), CAST(0.00 AS Decimal(10, 2)), CAST(0.00 AS Decimal(14, 2)), 0, 0, 0, NULL, 0, 0, 1, 1)
+
+SET IDENTITY_INSERT [Calculation].[BillCorrectionType] ON 
+
+INSERT [Calculation].[BillCorrectionType] ([Id], [Name], [CalculationTypeId]) VALUES (1, N'test', 1)
+
+SET IDENTITY_INSERT [Calculation].[BillCorrectionType] OFF
 
 
 INSERT [Calculation].[CalculationItem] ([Id], [Name]) VALUES (1, N'Reading')
@@ -542,9 +542,11 @@ INSERT INTO [Finance].[BookingType]
     ,(10, N'Potraživanja u izvršnom postupku', N'Потраживања у извршном поступку', 1, 0)
     ,(11, N'Troškova sudskih postupaka', N'Трошкови судских поступака', 1, 0)
 
+
 INSERT [Finance].[AccountingType] ([Id], [Name]) VALUES (1, N'Racun')
 INSERT [Finance].[AccountingType] ([Id], [Name]) VALUES (2, N'Uplata')
 INSERT [Finance].[AccountingType] ([Id], [Name]) VALUES (3, N'Korekcija')
+
 
 SET IDENTITY_INSERT [Finance].[Bank] ON 
 
