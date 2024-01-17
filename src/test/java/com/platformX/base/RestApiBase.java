@@ -5,7 +5,6 @@ import io.restassured.specification.RequestSpecification;
 import static io.restassured.RestAssured.given;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertNotNull;
-
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import com.platformX.util.PropertiesUtil;
@@ -22,7 +21,7 @@ public class RestApiBase {
 	protected PropertiesUtil api_properties = null;
 	protected static final String API_PROPERTIES = "api.properties";
 	private RestAssuredConfig restAssuredConfig;
-
+	
 	public RestApiBase() throws IOException {
 		api_properties = new PropertiesUtil(API_PROPERTIES);
 		RestAssured.urlEncodingEnabled = false;
@@ -34,55 +33,73 @@ public class RestApiBase {
 	}
 
 	// method used for GET endpoints
-	public Response methodGET(String endpoint) {
+	public Response methodGETresponse(String endpoint) {
 		RequestSpecification requestSpec = builder.build();
-		return given().log().all().config(restAssuredConfig).spec(requestSpec).when().get(endpoint);
+		return given().log().all().config(restAssuredConfig).spec(requestSpec).when().get(api_properties.getValue("URL.BASE") + endpoint);
 	}
 	
 	// TODO
-		public JsonPath methodGETupdated(String endpoint, int status) {
+		public JsonPath methodGET(String endpoint, int status) {
 			RequestSpecification requestSpec = builder.build();
-			Response response = given().log().all().config(restAssuredConfig).spec(requestSpec).when().get(endpoint);
+			Response response = given().log().all().config(restAssuredConfig).spec(requestSpec).when().get(api_properties.getValue("URL.BASE") + endpoint);
 			assertEquals(status, response.getStatusCode());
 			JsonPath jp = new JsonPath(response.asString());
 			return jp;
 		}
 
 	// method used for POST endpoints
-	public Response methodPOST(String endpoint, String payload) {
+	public Response methodPOSTresponse(String endpoint, String payload) {
 		RequestSpecification requestSpec = builder.build();
 		return given().log().all().config(restAssuredConfig).spec(requestSpec).contentType("application/json")
-				.body(payload).when().post(endpoint);
+				.body(payload).when().post(api_properties.getValue("URL.BASE") + endpoint);
 	}
 	
 	// TODO
-		public JsonPath methodPOSTupdated(String endpoint, String payload, int status) {
+		public JsonPath methodPOST(String endpoint, String payload, int status) {
 			RequestSpecification requestSpec = builder.build();
 			Response response =  given().log().all().config(restAssuredConfig).spec(requestSpec).contentType("application/json")
 					.body(payload).when().post(api_properties.getValue("URL.BASE") + endpoint);
-			assertEquals(status, response.getStatusCode());
+			assertEquals(response.getStatusCode(), status);
 			JsonPath jp = new JsonPath(response.asString());
 			return jp;
 		}
 
 	// method used for PUT endpoints
-	public Response methodPUT(String endpoint, String payload) {
+	public Response methodPUTresponse(String endpoint, String payload) {
 		RequestSpecification requestSpec = builder.build();
 		return given().log().all().config(restAssuredConfig).spec(requestSpec).contentType("application/json")
-				.body(payload).when().put(endpoint);
+				.body(payload).when().put(api_properties.getValue("URL.BASE") + endpoint);
+	}
+	
+	public JsonPath methodPUT(String endpoint, String payload, int status) {
+		RequestSpecification requestSpec = builder.build();
+		Response response =  given().log().all().config(restAssuredConfig).spec(requestSpec).contentType("application/json")
+				.body(payload).when().put(api_properties.getValue("URL.BASE") + endpoint);
+		assertEquals(response.getStatusCode(), status);
+		JsonPath jp = new JsonPath(response.asString());
+		return jp;
 	}
 
 	// method used for PATCH endpoints
 	public Response methodPATCH(String endpoint, String payload) {
 		RequestSpecification requestSpec = builder.build();
 		return given().log().all().config(restAssuredConfig).spec(requestSpec).contentType("application/json")
-				.body(payload).when().patch(endpoint);
+				.body(payload).when().patch(api_properties.getValue("URL.BASE") + endpoint);
 	}
 
 	// method used for DELETE endpoints
-	public Response methodDELETE(String endpoint) {
+	public Response methodDELETEresponse(String endpoint) {
 		RequestSpecification requestSpec = builder.build();
-		return given().log().all().config(restAssuredConfig).spec(requestSpec).when().delete(endpoint);
+		return given().log().all().config(restAssuredConfig).spec(requestSpec).when().delete(api_properties.getValue("URL.BASE") + endpoint);
+	}
+	
+	public JsonPath methodDELETE(String endpoint, int status) {
+		RequestSpecification requestSpec = builder.build();
+		Response response =  given().log().all().config(restAssuredConfig).spec(requestSpec).when().delete(api_properties.getValue("URL.BASE") + endpoint);
+		assertEquals(response.getStatusCode(), status);
+		assertEquals(response.print(), "");
+		JsonPath jp = new JsonPath(response.asString());
+		return jp;
 	}
 
 	public void addHeader(String key, String value) {
@@ -93,12 +110,10 @@ public class RestApiBase {
 
 	protected String authorize() { // authAdmin
 		// Authorization
-		Response response1 = methodPOST("http://10.10.10.21:8086/api/Auth/Authenticate",
-				Payloads.pxdAuth(api_properties.getValue("USERNAME"), api_properties.getValue("PASSWORD")));
-		assertEquals(response1.getStatusCode(), 200);
-		JsonPath jp1 = new JsonPath(response1.asString());
-		assertNotNull(jp1.getString("token"), "Token not forwarded");
-		String token = jp1.getString("token");
+		JsonPath jp = methodPOST(api_properties.getValue("AUTHENTICATE"),
+				Payloads.pxdAuth(api_properties.getValue("USERNAME"), api_properties.getValue("PASSWORD")), 200);
+		assertNotNull(jp.getString("token"), "Token not forwarded");
+		String token = jp.getString("token");
 		return token;
 	}
 	

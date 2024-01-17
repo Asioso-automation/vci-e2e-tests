@@ -39,7 +39,7 @@ public class PXD_009_BasicCatalogs_Entities_Test extends BaseTest {
 		entiteti.verifikujEntitete();
 		PageBase.id = entiteti.pokupiIdStavke();
 		// API
-		Response response1 = restApiBase.methodPOST("http://10.10.10.21:8086/api/Auth/Authenticate",
+		Response response1 = restApiBase.methodPOSTresponse("http://10.10.10.21:8086/api/Auth/Authenticate",
 				Payloads.pxdAuth("admin", "staging"));
 		assertEquals(response1.getStatusCode(), 200);
 		JsonPath jp1 = new JsonPath(response1.asString());
@@ -47,7 +47,7 @@ public class PXD_009_BasicCatalogs_Entities_Test extends BaseTest {
 		String token = jp1.getString("token");
 		// Get Entity
 		restApiBase.addHeader("Authorization", "Bearer " + token);
-		Response response2 = restApiBase.methodGET("http://10.10.10.21:8086/api/BasicCatalogs/Entities/Get/" + PageBase.id);
+		Response response2 = restApiBase.methodGETresponse("http://10.10.10.21:8086/api/BasicCatalogs/Entities/Get/" + PageBase.id);
 		assertEquals(response2.getStatusCode(), 200);
 		JsonPath jp2 = new JsonPath(response2.asString());
 		assertNotNull(jp2.getString("id"), "Id not forwarded");
@@ -57,21 +57,21 @@ public class PXD_009_BasicCatalogs_Entities_Test extends BaseTest {
 	@Test(description = "negative test case: bearer token missing")
 	public void pxd_009_01_get_entity_test2() {
 		restApiBase.addHeader("Authorization", "");
-		Response response = restApiBase.methodGET("http://10.10.10.21:8086/api/BasicCatalogs/Entities/Get/1");
+		Response response = restApiBase.methodGETresponse("http://10.10.10.21:8086/api/BasicCatalogs/Entities/Get/1");
 		assertEquals(response.getStatusCode(), 401);
 	}
 
 	@Test(description = "negative test case: wrong bearer token")
 	public void pxd_009_01_get_entity_test3() {
 		restApiBase.addHeader("Authorization", "Bearer " + Helper.getRandomNumber(10));
-		Response response = restApiBase.methodGET("http://10.10.10.21:8086/api/BasicCatalogs/Entities/Get/1");
+		Response response = restApiBase.methodGETresponse("http://10.10.10.21:8086/api/BasicCatalogs/Entities/Get/1");
 		assertEquals(response.getStatusCode(), 401);
 	}
 	
 	@Test(description = "negative test case: wrong id")
 	public void pxd_009_01_get_entity_test4() throws Exception {
 		// API
-		Response response1 = restApiBase.methodPOST("http://10.10.10.21:8086/api/Auth/Authenticate",
+		Response response1 = restApiBase.methodPOSTresponse("http://10.10.10.21:8086/api/Auth/Authenticate",
 				Payloads.pxdAuth("admin", "staging"));
 		assertEquals(response1.getStatusCode(), 200);
 		JsonPath jp1 = new JsonPath(response1.asString());
@@ -79,7 +79,7 @@ public class PXD_009_BasicCatalogs_Entities_Test extends BaseTest {
 		String token = jp1.getString("token");
 		// Get Entity
 		restApiBase.addHeader("Authorization", "Bearer " + token);
-		Response response2 = restApiBase.methodGET("http://10.10.10.21:8086/api/BasicCatalogs/Entities/Get/" + PageBase.wrongIdShort);
+		Response response2 = restApiBase.methodGETresponse("http://10.10.10.21:8086/api/BasicCatalogs/Entities/Get/" + PageBase.wrongIdShort);
 		assertEquals(response2.getStatusCode(), 404);
 		assertEquals(response2.print(), "\"Entity \\\"Entity\\\" (" + PageBase.wrongIdShort + ") was not found.\"");
 	}
@@ -87,7 +87,7 @@ public class PXD_009_BasicCatalogs_Entities_Test extends BaseTest {
 	@Test(description = "positive test case")
 	public void pxd_009_02_post_entities_list_test1() throws Exception {
 		// API
-		Response response1 = restApiBase.methodPOST("http://10.10.10.21:8086/api/Auth/Authenticate",
+		Response response1 = restApiBase.methodPOSTresponse("http://10.10.10.21:8086/api/Auth/Authenticate",
 				Payloads.pxdAuth("admin", "staging"));
 		assertEquals(response1.getStatusCode(), 200);
 		JsonPath jp1 = new JsonPath(response1.asString());
@@ -95,7 +95,7 @@ public class PXD_009_BasicCatalogs_Entities_Test extends BaseTest {
 		String token = jp1.getString("token");
 		// Post Entities List
 		restApiBase.addHeader("Authorization", "Bearer " + token);
-		Response response2 = restApiBase.methodPOST("http://10.10.10.21:8086/api/BasicCatalogs/Entities/List", Payloads.pxdBasicList(0, 10, "id", "DESC"));
+		Response response2 = restApiBase.methodPOSTresponse("http://10.10.10.21:8086/api/BasicCatalogs/Entities/List", Payloads.pxdBasicList(0, 10, "id", "DESC"));
 		assertEquals(response2.getStatusCode(), 200);
 		JsonPath jp2 = new JsonPath(response2.asString());
 		assertNotNull(jp2.getString("totalCount"), "TotalCount not forwarded");
@@ -107,7 +107,7 @@ public class PXD_009_BasicCatalogs_Entities_Test extends BaseTest {
 	@Test(description = "positive test case", dependsOnMethods = { "pxd_009_01_get_entity_test1" })
 	public void pxd_009_03_get_entity_lookup_test1() throws Exception {
 		// API
-		Response response1 = restApiBase.methodPOST("http://10.10.10.21:8086/api/Auth/Authenticate",
+		Response response1 = restApiBase.methodPOSTresponse("http://10.10.10.21:8086/api/Auth/Authenticate",
 				Payloads.pxdAuth("admin", "staging"));
 		assertEquals(response1.getStatusCode(), 200);
 		JsonPath jp1 = new JsonPath(response1.asString());
@@ -115,7 +115,7 @@ public class PXD_009_BasicCatalogs_Entities_Test extends BaseTest {
 		String token = jp1.getString("token");
 		// Get Entity Lookup
 		restApiBase.addHeader("Authorization", "Bearer " + token);
-		Response response2 = restApiBase.methodGET("http://10.10.10.21:8086/api/BasicCatalogs/Entities/Lookup?Keyword=" + PageBase.id + "&Id=" + PageBase.id);
+		Response response2 = restApiBase.methodGETresponse("http://10.10.10.21:8086/api/BasicCatalogs/Entities/Lookup?Keyword=" + PageBase.id + "&Id=" + PageBase.id);
 		assertEquals(response2.getStatusCode(), 200);
 		JsonPath jp2 = new JsonPath(response2.asString());
 		assertNotNull(jp2.getString("id"), "Id not forwarded");
@@ -125,7 +125,7 @@ public class PXD_009_BasicCatalogs_Entities_Test extends BaseTest {
 	@Test(description = "negative test case: wrong id")
 	public void pxd_009_03_get_entity_lookup_test2() throws Exception {
 		// API
-		Response response1 = restApiBase.methodPOST("http://10.10.10.21:8086/api/Auth/Authenticate",
+		Response response1 = restApiBase.methodPOSTresponse("http://10.10.10.21:8086/api/Auth/Authenticate",
 				Payloads.pxdAuth("admin", "staging"));
 		assertEquals(response1.getStatusCode(), 200);
 		JsonPath jp1 = new JsonPath(response1.asString());
@@ -133,7 +133,7 @@ public class PXD_009_BasicCatalogs_Entities_Test extends BaseTest {
 		String token = jp1.getString("token");
 		// Get Entity Lookup
 		restApiBase.addHeader("Authorization", "Bearer " + token);
-		Response response2 = restApiBase.methodGET("http://10.10.10.21:8086/api/BasicCatalogs/Entities/Lookup?Keyword=" + PageBase.wrongIdShort + "&Id=" + PageBase.wrongIdShort);
+		Response response2 = restApiBase.methodGETresponse("http://10.10.10.21:8086/api/BasicCatalogs/Entities/Lookup?Keyword=" + PageBase.wrongIdShort + "&Id=" + PageBase.wrongIdShort);
 		assertEquals(response2.getStatusCode(), 200);
 		assertEquals(response2.print(), "[]");
 	}
@@ -141,7 +141,7 @@ public class PXD_009_BasicCatalogs_Entities_Test extends BaseTest {
 	@Test(description = "positive test case")
 	public void pxd_009_04_create_entity_test1() throws Exception {
 		// API
-		Response response1 = restApiBase.methodPOST("http://10.10.10.21:8086/api/Auth/Authenticate",
+		Response response1 = restApiBase.methodPOSTresponse("http://10.10.10.21:8086/api/Auth/Authenticate",
 				Payloads.pxdAuth("admin", "staging"));
 		assertEquals(response1.getStatusCode(), 200);
 		JsonPath jp1 = new JsonPath(response1.asString());
@@ -149,7 +149,7 @@ public class PXD_009_BasicCatalogs_Entities_Test extends BaseTest {
 		String token = jp1.getString("token");
 		// Post Entity Create
 		restApiBase.addHeader("Authorization", "Bearer " + token);
-		Response response2 = restApiBase.methodPOST("http://10.10.10.21:8086/api/BasicCatalogs/Entities/Create", Payloads.pxdEntityCreate("Entitet"));
+		Response response2 = restApiBase.methodPOSTresponse("http://10.10.10.21:8086/api/BasicCatalogs/Entities/Create", Payloads.pxdEntityCreate("Entitet"));
 		assertEquals(response2.getStatusCode(), 200);
 		assertNotNull(response2.print(), "Response body is empty");
 		PageBase.id1 = Integer.parseInt(response2.print());
@@ -158,7 +158,7 @@ public class PXD_009_BasicCatalogs_Entities_Test extends BaseTest {
 	@Test(description = "positive test case", dependsOnMethods = { "pxd_009_04_create_entity_test1" })
 	public void pxd_009_05_update_entity_test1() throws Exception {
 		// API
-		Response response1 = restApiBase.methodPOST("http://10.10.10.21:8086/api/Auth/Authenticate",
+		Response response1 = restApiBase.methodPOSTresponse("http://10.10.10.21:8086/api/Auth/Authenticate",
 				Payloads.pxdAuth("admin", "staging"));
 		assertEquals(response1.getStatusCode(), 200);
 		JsonPath jp1 = new JsonPath(response1.asString());
@@ -166,14 +166,14 @@ public class PXD_009_BasicCatalogs_Entities_Test extends BaseTest {
 		String token = jp1.getString("token");
 		// Put Entity Update
 		restApiBase.addHeader("Authorization", "Bearer " + token);
-		Response response2 = restApiBase.methodPUT("http://10.10.10.21:8086/api/BasicCatalogs/Entities/Update/" + PageBase.id1, Payloads.pxdEntityUpdate(PageBase.id1, "Entitet 1"));
+		Response response2 = restApiBase.methodPUTresponse("http://10.10.10.21:8086/api/BasicCatalogs/Entities/Update/" + PageBase.id1, Payloads.pxdEntityUpdate(PageBase.id1, "Entitet 1"));
 		assertEquals(response2.getStatusCode(), 204);
 	}
 	
 	@Test(description = "positive test case", dependsOnMethods = { "pxd_009_05_update_entity_test1" })
 	public void pxd_009_06_delete_entity_test1() throws Exception {
 		// API
-		Response response1 = restApiBase.methodPOST("http://10.10.10.21:8086/api/Auth/Authenticate",
+		Response response1 = restApiBase.methodPOSTresponse("http://10.10.10.21:8086/api/Auth/Authenticate",
 				Payloads.pxdAuth("admin", "staging"));
 		assertEquals(response1.getStatusCode(), 200);
 		JsonPath jp1 = new JsonPath(response1.asString());
@@ -181,7 +181,7 @@ public class PXD_009_BasicCatalogs_Entities_Test extends BaseTest {
 		String token = jp1.getString("token");
 		// Delete Entity
 		restApiBase.addHeader("Authorization", "Bearer " + token);
-		Response response2 = restApiBase.methodDELETE("http://10.10.10.21:8086/api/BasicCatalogs/Entities/Delete/" + PageBase.id1);
+		Response response2 = restApiBase.methodDELETEresponse("http://10.10.10.21:8086/api/BasicCatalogs/Entities/Delete/" + PageBase.id1);
 		assertEquals(response2.getStatusCode(), 204);
 		assertEquals(response2.print(), "");
 	}

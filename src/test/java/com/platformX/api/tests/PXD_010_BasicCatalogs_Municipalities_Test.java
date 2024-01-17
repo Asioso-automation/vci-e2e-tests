@@ -39,7 +39,7 @@ public class PXD_010_BasicCatalogs_Municipalities_Test extends BaseTest {
 		opstine.verifikujOpstine();
 		PageBase.id = opstine.pokupiIdStavke();
 		// API
-		Response response1 = restApiBase.methodPOST("http://10.10.10.21:8086/api/Auth/Authenticate",
+		Response response1 = restApiBase.methodPOSTresponse("http://10.10.10.21:8086/api/Auth/Authenticate",
 				Payloads.pxdAuth("admin", "staging"));
 		assertEquals(response1.getStatusCode(), 200);
 		JsonPath jp1 = new JsonPath(response1.asString());
@@ -47,7 +47,7 @@ public class PXD_010_BasicCatalogs_Municipalities_Test extends BaseTest {
 		String token = jp1.getString("token");
 		// Get Municipality
 		restApiBase.addHeader("Authorization", "Bearer " + token);
-		Response response2 = restApiBase.methodGET("http://10.10.10.21:8086/api/BasicCatalogs/Municipalities/Get/" + PageBase.id);
+		Response response2 = restApiBase.methodGETresponse("http://10.10.10.21:8086/api/BasicCatalogs/Municipalities/Get/" + PageBase.id);
 		assertEquals(response2.getStatusCode(), 200);
 		JsonPath jp2 = new JsonPath(response2.asString());
 		assertNotNull(jp2.getString("id"), "Id not forwarded");
@@ -59,21 +59,21 @@ public class PXD_010_BasicCatalogs_Municipalities_Test extends BaseTest {
 	@Test(description = "negative test case: bearer token missing")
 	public void pxd_010_01_get_municipality_test2() {
 		restApiBase.addHeader("Authorization", "");
-		Response response = restApiBase.methodGET("http://10.10.10.21:8086/api/BasicCatalogs/Municipalities/Get/0");
+		Response response = restApiBase.methodGETresponse("http://10.10.10.21:8086/api/BasicCatalogs/Municipalities/Get/0");
 		assertEquals(response.getStatusCode(), 401);
 	}
 
 	@Test(description = "negative test case: wrong bearer token")
 	public void pxd_010_01_get_municipality_test3() {
 		restApiBase.addHeader("Authorization", "Bearer " + Helper.getRandomNumber(10));
-		Response response = restApiBase.methodGET("http://10.10.10.21:8086/api/BasicCatalogs/Municipalities/Get/0");
+		Response response = restApiBase.methodGETresponse("http://10.10.10.21:8086/api/BasicCatalogs/Municipalities/Get/0");
 		assertEquals(response.getStatusCode(), 401);
 	}
 	
 	@Test(description = "negative test case: wrong id")
 	public void pxd_010_01_get_municipality_test4() throws Exception {
 		// API
-		Response response1 = restApiBase.methodPOST("http://10.10.10.21:8086/api/Auth/Authenticate",
+		Response response1 = restApiBase.methodPOSTresponse("http://10.10.10.21:8086/api/Auth/Authenticate",
 				Payloads.pxdAuth("admin", "staging"));
 		assertEquals(response1.getStatusCode(), 200);
 		JsonPath jp1 = new JsonPath(response1.asString());
@@ -81,7 +81,7 @@ public class PXD_010_BasicCatalogs_Municipalities_Test extends BaseTest {
 		String token = jp1.getString("token");
 		// Get Municipality
 		restApiBase.addHeader("Authorization", "Bearer " + token);
-		Response response2 = restApiBase.methodGET("http://10.10.10.21:8086/api/BasicCatalogs/Municipalities/Get/" + PageBase.wrongIdLong);
+		Response response2 = restApiBase.methodGETresponse("http://10.10.10.21:8086/api/BasicCatalogs/Municipalities/Get/" + PageBase.wrongIdLong);
 		assertEquals(response2.getStatusCode(), 404);
 		assertEquals(response2.print(), "\"Entity \\\"Municipality\\\" (" + PageBase.wrongIdLong + ") was not found.\"");
 	}
@@ -89,7 +89,7 @@ public class PXD_010_BasicCatalogs_Municipalities_Test extends BaseTest {
 	@Test(description = "positive test case")
 	public void pxd_010_02_post_municipalities_list_test1() throws Exception {
 		// API
-		Response response1 = restApiBase.methodPOST("http://10.10.10.21:8086/api/Auth/Authenticate",
+		Response response1 = restApiBase.methodPOSTresponse("http://10.10.10.21:8086/api/Auth/Authenticate",
 				Payloads.pxdAuth("admin", "staging"));
 		assertEquals(response1.getStatusCode(), 200);
 		JsonPath jp1 = new JsonPath(response1.asString());
@@ -97,7 +97,7 @@ public class PXD_010_BasicCatalogs_Municipalities_Test extends BaseTest {
 		String token = jp1.getString("token");
 		// Post Municipalities List
 		restApiBase.addHeader("Authorization", "Bearer " + token);
-		Response response2 = restApiBase.methodPOST("http://10.10.10.21:8086/api/BasicCatalogs/Municipalities/List", Payloads.pxdBasicList(0, 10, "id", "DESC"));
+		Response response2 = restApiBase.methodPOSTresponse("http://10.10.10.21:8086/api/BasicCatalogs/Municipalities/List", Payloads.pxdBasicList(0, 10, "id", "DESC"));
 		assertEquals(response2.getStatusCode(), 200);
 		JsonPath jp2 = new JsonPath(response2.asString());
 		assertNotNull(jp2.getString("totalCount"), "TotalCount not forwarded");
@@ -109,7 +109,7 @@ public class PXD_010_BasicCatalogs_Municipalities_Test extends BaseTest {
 	@Test(description = "positive test case", dependsOnMethods = { "pxd_010_01_get_municipality_test1" })
 	public void pxd_010_03_get_municipality_lookup_test1() throws Exception {
 		// API
-		Response response1 = restApiBase.methodPOST("http://10.10.10.21:8086/api/Auth/Authenticate",
+		Response response1 = restApiBase.methodPOSTresponse("http://10.10.10.21:8086/api/Auth/Authenticate",
 				Payloads.pxdAuth("admin", "staging"));
 		assertEquals(response1.getStatusCode(), 200);
 		JsonPath jp1 = new JsonPath(response1.asString());
@@ -117,7 +117,7 @@ public class PXD_010_BasicCatalogs_Municipalities_Test extends BaseTest {
 		String token = jp1.getString("token");
 		// Get Municipality Lookup
 		restApiBase.addHeader("Authorization", "Bearer " + token);
-		Response response2 = restApiBase.methodGET("http://10.10.10.21:8086/api/BasicCatalogs/Municipalities/Lookup?Keyword=" + PageBase.id + "&Id=" + PageBase.id);
+		Response response2 = restApiBase.methodGETresponse("http://10.10.10.21:8086/api/BasicCatalogs/Municipalities/Lookup?Keyword=" + PageBase.id + "&Id=" + PageBase.id);
 		assertEquals(response2.getStatusCode(), 200);
 		JsonPath jp2 = new JsonPath(response2.asString());
 		assertNotNull(jp2.getString("id"), "Id not forwarded");
@@ -127,7 +127,7 @@ public class PXD_010_BasicCatalogs_Municipalities_Test extends BaseTest {
 	@Test(description = "negative test case: wrong id")
 	public void pxd_010_03_get_municipality_lookup_test2() throws Exception {
 		// API
-		Response response1 = restApiBase.methodPOST("http://10.10.10.21:8086/api/Auth/Authenticate",
+		Response response1 = restApiBase.methodPOSTresponse("http://10.10.10.21:8086/api/Auth/Authenticate",
 				Payloads.pxdAuth("admin", "staging"));
 		assertEquals(response1.getStatusCode(), 200);
 		JsonPath jp1 = new JsonPath(response1.asString());
@@ -135,7 +135,7 @@ public class PXD_010_BasicCatalogs_Municipalities_Test extends BaseTest {
 		String token = jp1.getString("token");
 		// Get Municipality Lookup
 		restApiBase.addHeader("Authorization", "Bearer " + token);
-		Response response2 = restApiBase.methodGET("http://10.10.10.21:8086/api/BasicCatalogs/Municipalities/Lookup?Keyword=" + PageBase.wrongIdLong + "&Id=" + PageBase.wrongIdLong);
+		Response response2 = restApiBase.methodGETresponse("http://10.10.10.21:8086/api/BasicCatalogs/Municipalities/Lookup?Keyword=" + PageBase.wrongIdLong + "&Id=" + PageBase.wrongIdLong);
 		assertEquals(response2.getStatusCode(), 200);
 		assertEquals(response2.print(), "[]");
 	}
@@ -143,7 +143,7 @@ public class PXD_010_BasicCatalogs_Municipalities_Test extends BaseTest {
 	@Test(description = "positive test case")
 	public void pxd_010_04_create_municipality_test1() throws Exception {
 		// API
-		Response response1 = restApiBase.methodPOST("http://10.10.10.21:8086/api/Auth/Authenticate",
+		Response response1 = restApiBase.methodPOSTresponse("http://10.10.10.21:8086/api/Auth/Authenticate",
 				Payloads.pxdAuth("admin", "staging"));
 		assertEquals(response1.getStatusCode(), 200);
 		JsonPath jp1 = new JsonPath(response1.asString());
@@ -151,7 +151,7 @@ public class PXD_010_BasicCatalogs_Municipalities_Test extends BaseTest {
 		String token = jp1.getString("token");
 		// Post Municipality Create
 		restApiBase.addHeader("Authorization", "Bearer " + token);
-		Response response2 = restApiBase.methodPOST("http://10.10.10.21:8086/api/BasicCatalogs/Municipalities/Create", Payloads.pxdMunicipalityCreate("Opstina", 1, "BIH"));
+		Response response2 = restApiBase.methodPOSTresponse("http://10.10.10.21:8086/api/BasicCatalogs/Municipalities/Create", Payloads.pxdMunicipalityCreate("Opstina", 1, "BIH"));
 		assertEquals(response2.getStatusCode(), 200);
 		assertNotNull(response2.print(), "Response body is empty");
 		PageBase.id1 = Integer.parseInt(response2.print());
@@ -160,7 +160,7 @@ public class PXD_010_BasicCatalogs_Municipalities_Test extends BaseTest {
 	@Test(description = "positive test case", dependsOnMethods = { "pxd_010_04_create_municipality_test1" })
 	public void pxd_010_05_update_municipality_test1() throws Exception {
 		// API
-		Response response1 = restApiBase.methodPOST("http://10.10.10.21:8086/api/Auth/Authenticate",
+		Response response1 = restApiBase.methodPOSTresponse("http://10.10.10.21:8086/api/Auth/Authenticate",
 				Payloads.pxdAuth("admin", "staging"));
 		assertEquals(response1.getStatusCode(), 200);
 		JsonPath jp1 = new JsonPath(response1.asString());
@@ -168,14 +168,14 @@ public class PXD_010_BasicCatalogs_Municipalities_Test extends BaseTest {
 		String token = jp1.getString("token");
 		// Put Municipality Update
 		restApiBase.addHeader("Authorization", "Bearer " + token);
-		Response response2 = restApiBase.methodPUT("http://10.10.10.21:8086/api/BasicCatalogs/Municipalities/Update/" + PageBase.id1, Payloads.pxdMunicipalityUpdate(PageBase.id1, "Opstina 1", 1, "BIH"));
+		Response response2 = restApiBase.methodPUTresponse("http://10.10.10.21:8086/api/BasicCatalogs/Municipalities/Update/" + PageBase.id1, Payloads.pxdMunicipalityUpdate(PageBase.id1, "Opstina 1", 1, "BIH"));
 		assertEquals(response2.getStatusCode(), 204);
 	}
 	
 	@Test(description = "positive test case", dependsOnMethods = { "pxd_010_05_update_municipality_test1" })
 	public void pxd_0010_06_delete_municipality_test1() throws Exception {
 		// API
-		Response response1 = restApiBase.methodPOST("http://10.10.10.21:8086/api/Auth/Authenticate",
+		Response response1 = restApiBase.methodPOSTresponse("http://10.10.10.21:8086/api/Auth/Authenticate",
 				Payloads.pxdAuth("admin", "staging"));
 		assertEquals(response1.getStatusCode(), 200);
 		JsonPath jp1 = new JsonPath(response1.asString());
@@ -183,7 +183,7 @@ public class PXD_010_BasicCatalogs_Municipalities_Test extends BaseTest {
 		String token = jp1.getString("token");
 		// Delete Municipality
 		restApiBase.addHeader("Authorization", "Bearer " + token);
-		Response response2 = restApiBase.methodDELETE("http://10.10.10.21:8086/api/BasicCatalogs/Municipalities/Delete/" + PageBase.id1);
+		Response response2 = restApiBase.methodDELETEresponse("http://10.10.10.21:8086/api/BasicCatalogs/Municipalities/Delete/" + PageBase.id1);
 		assertEquals(response2.getStatusCode(), 204);
 		assertEquals(response2.print(), "");
 	}

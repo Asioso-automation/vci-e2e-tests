@@ -31,7 +31,7 @@ public class MonitoringOcitanja extends PocetnaStranicaPXD {
 	@FindBy(xpath = "//div[3]/div[1]/div/div[1]/div[2]/div/div[6]")
     protected WebElement natprosjecnaOcitanjaBtnWE;
 	
-	@FindBy(xpath = "//div[@class='v-tab' and contains(text(), ' Dupla očitanja brojila ')]")	//div[3]/div[1]/div/div[1]/div[2]/div/div[7]
+	@FindBy(xpath = "//div[3]/div[1]/div/div[1]/div[2]/div/div[7]")		//div[@class='v-tab' and text()=' Dupla očitanja brojila ')]
     protected WebElement duplaOcitanjaBrojilaBtnWE;
 	
 	@FindBy(xpath = "//div[3]/div[1]/div/div[1]/div[2]/div/div[8]")
@@ -46,7 +46,7 @@ public class MonitoringOcitanja extends PocetnaStranicaPXD {
 	@FindBy(xpath = "//div[3]/div[1]/div/div[1]/div[2]/div/div[11]")
     protected WebElement neocitanaZbirnaKontrolnaMjernaMjestaBtnWE;
 	
-	@FindBy(xpath = "//i[contains(@class, 'mdi mdi-chevron-right')]")
+	@FindBy(xpath = "//i[contains(@class, 'mdi mdi-chevron-right theme--light')]")
     protected WebElement slideRightBtnWE;
 
 	public void verifikujMonitoringOcitanja()throws InterruptedException, FileNotFoundException, IOException {
@@ -123,8 +123,9 @@ public class MonitoringOcitanja extends PocetnaStranicaPXD {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonProcenatOdstupanjaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonAvtWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonAmtWE));
-		slideRightBtnWE.click();
+//		slideRightBtnWE.click();
 		wait.until(ExpectedConditions.visibilityOf(duplaOcitanjaBrojilaBtnWE));
+		duplaOcitanjaBrojilaBtnWE.click();
 		duplaOcitanjaBrojilaBtnWE.click();
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonObracunskiUgovorWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonMjernoMjestoEicWE));
@@ -138,7 +139,9 @@ public class MonitoringOcitanja extends PocetnaStranicaPXD {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonRvtWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonRmtWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonSnaga1WE));
+		slideRightBtnWE.click();
 		wait.until(ExpectedConditions.visibilityOf(duplaNevalidnaOcitanjaBrojilaBtnWE));
+		duplaNevalidnaOcitanjaBrojilaBtnWE.click();
 		duplaNevalidnaOcitanjaBrojilaBtnWE.click();
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonBrojiloWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonNazivMjernogMjestaWE));
@@ -164,7 +167,7 @@ public class MonitoringOcitanja extends PocetnaStranicaPXD {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonAmtWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonRvtWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonRmtWE));
-		slideRightBtnWE.click();
+//		slideRightBtnWE.click();
 		wait.until(ExpectedConditions.visibilityOf(iskljucenaBrojilaSaPotrosnjomBtnWE));
 		iskljucenaBrojilaSaPotrosnjomBtnWE.click();
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonObracunskiUgovorWE));

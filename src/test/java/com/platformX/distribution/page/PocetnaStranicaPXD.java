@@ -1795,6 +1795,8 @@ public class PocetnaStranicaPXD extends PageBase {
     public Poruke navigirajNaPoruke () throws Exception {
     	try {
     	WebDriverWait wait = new WebDriverWait(driver, 10);
+    	wait.until(ExpectedConditions.elementToBeClickable(strelicaDesnoWE));
+    	strelicaDesnoWE.click();
     	wait.until(ExpectedConditions.elementToBeClickable(administracijaWE));
 		administracijaWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(porukeWE));
