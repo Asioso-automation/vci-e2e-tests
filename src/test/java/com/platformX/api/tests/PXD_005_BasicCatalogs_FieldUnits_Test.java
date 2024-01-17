@@ -32,6 +32,7 @@ public class PXD_005_BasicCatalogs_FieldUnits_Test extends RestApiBase {
 		addHeader("Authorization", "Bearer " + token);
 		Response response = methodPOST("http://10.10.10.21:8086/api/BasicCatalogs/FieldUnits/Create", Payloads.pxdFieldUnitCreate("TerenskaJedinica " + Helper.getRandomString(5)));
 		assertEquals(response.getStatusCode(), 200);
+		// TODO Prosiriti body da prima i druge parametre "email" npr. i razviti negativne testove
 		assertNotNull(response, "Id not forwarded in response");
 		id = response.asString();
 	}
