@@ -1781,6 +1781,8 @@ public class PocetnaStranicaPXD extends PageBase {
     public Korisnici navigirajNaKorisnici () throws Exception {
     	try {
     	WebDriverWait wait = new WebDriverWait(driver, 10);
+    	wait.until(ExpectedConditions.elementToBeClickable(strelicaDesnoWE));
+    	strelicaDesnoWE.click();
     	wait.until(ExpectedConditions.elementToBeClickable(administracijaWE));
 		administracijaWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(korisniciWE));
@@ -1811,6 +1813,8 @@ public class PocetnaStranicaPXD extends PageBase {
     public DnevnikIzmjena navigirajNaDnevnikIzmjena () throws Exception {
     	try {
     	WebDriverWait wait = new WebDriverWait(driver, 10);
+    	wait.until(ExpectedConditions.elementToBeClickable(strelicaDesnoWE));
+    	strelicaDesnoWE.click();
     	wait.until(ExpectedConditions.elementToBeClickable(administracijaWE));
 		administracijaWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(dnevnikIzmjenaWE));
@@ -1825,6 +1829,8 @@ public class PocetnaStranicaPXD extends PageBase {
     public PozadinskiProcesi navigirajNaPozadinskiProcesi() throws FileNotFoundException, IOException {
     	try {
         WebDriverWait wait = new WebDriverWait(driver, 10);
+    	wait.until(ExpectedConditions.elementToBeClickable(strelicaDesnoWE));
+    	strelicaDesnoWE.click();
         wait.until(ExpectedConditions.elementToBeClickable(administracijaWE));
     	administracijaWE.click();
     	wait.until(ExpectedConditions.elementToBeClickable(pozadinskiProcesiWE));

@@ -42,7 +42,16 @@ public class RestApiBase {
 		public JsonPath methodGET(String endpoint, int status) {
 			RequestSpecification requestSpec = builder.build();
 			Response response = given().log().all().config(restAssuredConfig).spec(requestSpec).when().get(api_properties.getValue("URL.BASE") + endpoint);
-			assertEquals(status, response.getStatusCode());
+			assertEquals(response.getStatusCode(), status);
+			JsonPath jp = new JsonPath(response.asString());
+			return jp;
+		}
+		
+		public JsonPath methodGETempty(String endpoint, int status) {
+			RequestSpecification requestSpec = builder.build();
+			Response response = given().log().all().config(restAssuredConfig).spec(requestSpec).when().get(api_properties.getValue("URL.BASE") + endpoint);
+			assertEquals(response.getStatusCode(), status);
+			assertEquals(response.print(), "[]");
 			JsonPath jp = new JsonPath(response.asString());
 			return jp;
 		}
@@ -81,10 +90,16 @@ public class RestApiBase {
 	}
 
 	// method used for PATCH endpoints
-	public Response methodPATCH(String endpoint, String payload) {
+	public JsonPath methodPATCH(String endpoint, String payload, int status) {
 		RequestSpecification requestSpec = builder.build();
-		return given().log().all().config(restAssuredConfig).spec(requestSpec).contentType("application/json")
+		Response response =  given().log().all().config(restAssuredConfig).spec(requestSpec).contentType("application/json")
 				.body(payload).when().patch(api_properties.getValue("URL.BASE") + endpoint);
+		assertEquals(response.getStatusCode(), status);
+		JsonPath jp = new JsonPath(response.asString());
+		return jp;
+//		RequestSpecification requestSpec = builder.build();
+//		return given().log().all().config(restAssuredConfig).spec(requestSpec).contentType("application/json")
+//				.body(payload).when().patch(api_properties.getValue("URL.BASE") + endpoint);
 	}
 
 	// method used for DELETE endpoints

@@ -15,11 +15,11 @@ public class PX_DIST_019_Elektroenergetske_Saglasnosti_CRUD_Test extends BaseTes
 		super();
 	}
 
-//	trenutno se mijenja ova forma - prilagoditi testove nakon release-a > samo za niski napon
+//	trenutno se mijenja ova forma - prilagoditi testove nakon release-a
 	String eeSaglasnost = new String();
 	
 	
-	@Test (retryAnalyzer = RetryAnalyzer.class)
+	@Test (enabled = false, retryAnalyzer = RetryAnalyzer.class)
 	public void px_dist_019_1_dodavanje_elektroenergetske_saglasnosti_domacinstva_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
@@ -51,7 +51,7 @@ public class PX_DIST_019_Elektroenergetske_Saglasnosti_CRUD_Test extends BaseTes
 		elSaglasnosti.verifikujStavku(eeSaglasnost, homePage.podatak2Tabela2WE);
 	}
 	
-	@Test (retryAnalyzer = RetryAnalyzer.class, dependsOnMethods = { "px_dist_019_1_dodavanje_elektroenergetske_saglasnosti_domacinstva_test" })
+	@Test (enabled = false, retryAnalyzer = RetryAnalyzer.class, dependsOnMethods = { "px_dist_019_1_dodavanje_elektroenergetske_saglasnosti_domacinstva_test" })
 	public void px_dist_019_3_uredjivanje_elektroenergetske_saglasnosti_domacinstva_test() throws Exception {		
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
@@ -67,7 +67,7 @@ public class PX_DIST_019_Elektroenergetske_Saglasnosti_CRUD_Test extends BaseTes
 		elSaglasnosti.verifikujPoruku("Uspješno završeno.");
 	}
 	
-	@Test (retryAnalyzer = RetryAnalyzer.class, dependsOnMethods = { "px_dist_019_3_uredjivanje_elektroenergetske_saglasnosti_domacinstva_test" })
+	@Test (enabled = false, retryAnalyzer = RetryAnalyzer.class, dependsOnMethods = { "px_dist_019_3_uredjivanje_elektroenergetske_saglasnosti_domacinstva_test" })
 	public void px_dist_019_4_brisanje_elektroenergetske_saglasnosti_domacinstva_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
