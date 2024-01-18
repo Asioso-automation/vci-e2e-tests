@@ -71,7 +71,9 @@ public class PXD_006_BasicCatalogs_FieldOffices_Test extends RestApiBase {
 	@Test(description = "negative test case: wrong id", dependsOnMethods = { "pxd_006_04_create_field_office_test1" })
 	public void pxd_006_03_get_field_office_lookup_test2() throws Exception {
 		addHeader("Authorization", "Bearer " + GlobalVariables.token);
-		methodGETempty(api_properties.getValue("FIELD.OFFICES.LOOKUP") + "?Keyword=" + Helper.getRandomNumber(1) + "&Id=" + Helper.getRandomNumber(1), 200);
+		Response response = methodGETresponse(api_properties.getValue("FIELD.OFFICES.LOOKUP") + "?Keyword=" + Helper.getRandomNumber(1) + "&Id=" + Helper.getRandomNumber(1));
+		assertEquals(response.getStatusCode(), 200);
+		assertEquals(response.print(), "[]");
 	}
 	
 	@Test(description = "positive test case")

@@ -46,15 +46,6 @@ public class RestApiBase {
 			JsonPath jp = new JsonPath(response.asString());
 			return jp;
 		}
-		
-		public JsonPath methodGETempty(String endpoint, int status) {
-			RequestSpecification requestSpec = builder.build();
-			Response response = given().log().all().config(restAssuredConfig).spec(requestSpec).when().get(api_properties.getValue("URL.BASE") + endpoint);
-			assertEquals(response.getStatusCode(), status);
-			assertEquals(response.print(), "[]");
-			JsonPath jp = new JsonPath(response.asString());
-			return jp;
-		}
 
 	// method used for POST endpoints
 	public Response methodPOSTresponse(String endpoint, String payload) {

@@ -94,7 +94,9 @@ public class PXD_005_BasicCatalogs_FieldUnits_Test extends RestApiBase {
 	@Test(description = "negative test case: wrong id", dependsOnMethods = { "pxd_005_04_create_field_unit_test1" })
 	public void pxd_005_03_get_field_unit_lookup_test2() throws Exception {
 		addHeader("Authorization", "Bearer " + GlobalVariables.token);
-		methodGETempty(api_properties.getValue("FIELD.UNITS.LOOKUP") + "?Keyword=" + Helper.getRandomNumber(6) + "&Id=" + Helper.getRandomNumber(6), 200);
+		Response response = methodGETresponse(api_properties.getValue("FIELD.UNITS.LOOKUP") + "?Keyword=" + Helper.getRandomNumber(6) + "&Id=" + Helper.getRandomNumber(6));
+		assertEquals(response.getStatusCode(), 200);
+		assertEquals(response.print(), "[]");
 	}
 	
 }

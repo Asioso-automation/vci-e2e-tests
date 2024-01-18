@@ -70,7 +70,9 @@ public class PXD_007_BasicCatalogs_Suppliers_Test extends RestApiBase {
 	@Test(description = "negative test case: wrong id", dependsOnMethods = { "pxd_007_04_create_supplier_test1" })
 	public void pxd_007_03_get_supplier_lookup_test2() throws Exception {
 		addHeader("Authorization", "Bearer " + GlobalVariables.token);
-		methodGETempty(api_properties.getValue("SUPPLIERS.LOOKUP") + "?Keyword=" + Helper.getRandomNumber(1) + "&Id=" + Helper.getRandomNumber(1), 200);
+		Response response = methodGETresponse(api_properties.getValue("SUPPLIERS.LOOKUP") + "?Keyword=" + Helper.getRandomNumber(1) + "&Id=" + Helper.getRandomNumber(1));
+		assertEquals(response.getStatusCode(), 200);
+		assertEquals(response.print(), "[]");
 	}
 	
 	@Test(description = "positive test case")
