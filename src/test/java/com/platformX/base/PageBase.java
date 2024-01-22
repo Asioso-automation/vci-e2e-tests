@@ -175,6 +175,13 @@ public abstract class PageBase {
 		int id = Integer.parseInt(idWE.getText());
 		return id;
 	}
+	
+	public String pokupiIdStavkeString() {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.visibilityOf(idWE));
+		String id = idWE.getText();
+		return id;
+	}
 
 	public void verifikacijaZajednickihElemenata(String sekcija, String stranica, String naslovStranice, int brKolona,
 			boolean importBtn, boolean dodajSve, boolean dodaj, boolean preuzmiExcel, boolean ukloniFiltere,
