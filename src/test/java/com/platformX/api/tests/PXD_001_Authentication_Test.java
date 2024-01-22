@@ -4,6 +4,8 @@ import org.testng.annotations.Test;
 import com.platformX.base.Payloads;
 import com.platformX.base.RestApiBase;
 import com.platformX.util.Helper;
+
+import data.ApiProvider;
 import io.restassured.path.json.JsonPath;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertNotNull;
@@ -70,9 +72,9 @@ public class PXD_001_Authentication_Test extends RestApiBase {
 		// Get User Data
 		addHeader("Authorization", "Bearer " + token);
 		JsonPath jp = methodGET(api_properties.getValue("USER.DATA"), 200);
-		assertEquals(jp.get("username"), "admin");
-		assertEquals(jp.get("name"), "Adminko");
-		assertEquals(jp.get("surname"), "Adminković");
+		assertEquals(jp.get("username"), ApiProvider.userData_userName);
+		assertEquals(jp.get("name"), ApiProvider.userData_name);
+		assertEquals(jp.get("surname"), ApiProvider.userData_surnamename);
 		assertNotNull(jp.getString("permissions"), "Permissions not forwarded");
 		// TODO Assert more
 	}
@@ -81,7 +83,6 @@ public class PXD_001_Authentication_Test extends RestApiBase {
 	public void pxd_001_02_get_user_data_test2() {
 		addHeader("Authorization", Helper.getRandomString(15));
 		methodGET(api_properties.getValue("USER.DATA"), 401);
-//		assertEquals(401, response.getStatusCode());
 	}
 
 	@Test(description = "negative test case: missing bearer token")

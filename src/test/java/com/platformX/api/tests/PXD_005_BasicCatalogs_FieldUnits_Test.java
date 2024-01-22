@@ -16,11 +16,6 @@ public class PXD_005_BasicCatalogs_FieldUnits_Test extends RestApiBase {
 	public PXD_005_BasicCatalogs_FieldUnits_Test() throws IOException {
 		super();
 	}
-	
-// TODO Sve POST/GET/PUT/DELETE metode iz ove klase ce biti nove metode, koje odmah vracaju JSONPATH,
-// TODO nakon toga refaktorisati testove (linija koja provjerava status ce biti suvisna)
-// TODO Jedino ce u 1. testu "pxd_005_04_create_field_unit_test" biti koristena nova/stara methodPOSTResponse metoda,
-// TODO jer moramo procitati id iz response-a (ne mozemo iz JSONPATH-a)
 
 	@Test(description = "positive test case: create field unit")
 	public void pxd_005_04_create_field_unit_test1() throws Exception {
