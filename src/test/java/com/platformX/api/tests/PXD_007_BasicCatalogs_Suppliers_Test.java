@@ -45,7 +45,7 @@ public class PXD_007_BasicCatalogs_Suppliers_Test extends RestApiBase {
 	@Test(description = "negative test case: wrong id", dependsOnMethods = { "pxd_007_04_create_supplier_test1" })
 	public void pxd_007_01_get_supplier_test4() throws Exception {
 		addHeader("Authorization", "Bearer " + GlobalVariables.token);
-		methodGET(api_properties.getValue("SUPPLIERS.GET") + Helper.getRandomNumber(1), 404);
+		methodGET(api_properties.getValue("SUPPLIERS.GET") + Helper.getRandomNumber(2), 404);
 //		assertEquals(response2.print(), "\"Entity \\\"Supplier\\\" (" + PageBase.wrongIdShort + ") was not found.\"");
 	}
 	

@@ -17,6 +17,8 @@ public class PXD_006_BasicCatalogs_FieldOffices_Test extends RestApiBase {
 		super();
 	}
 	
+	String getWrongId = Helper.getRandomNumber(1);
+	
 	@Test(description = "positive test case", dependsOnMethods = { "pxd_006_04_create_field_office_test1" })
 	public void pxd_006_01_get_field_office_test1() throws Exception {
 		addHeader("Authorization", "Bearer " + GlobalVariables.token);
@@ -45,8 +47,9 @@ public class PXD_006_BasicCatalogs_FieldOffices_Test extends RestApiBase {
 	@Test(description = "negative test case: wrong id", dependsOnMethods = { "pxd_006_04_create_field_office_test1" })
 	public void pxd_006_01_get_field_office_test4() throws Exception {
 		addHeader("Authorization", "Bearer " + GlobalVariables.token);
-		methodGET(api_properties.getValue("FIELD.OFFICES.GET") + Helper.getRandomNumber(1), 404);
-//		assertEquals(response2.print(), "\"Entity \\\"FieldOffice\\\" (" + PageBase.wrongIdShort + ") was not found.\"");
+		Response response = methodGETresponse(api_properties.getValue("FIELD.OFFICES.GET") + getWrongId);
+		assertEquals(response.getStatusCode(), 404);
+		assertEquals(response.print(), "\"Entity \\\"FieldOffice\\\" (" + getWrongId + ") was not found.\"");
 		//TODO Map responses in properties file
 	}
 	
