@@ -131,4 +131,9 @@ public class RestApiBase {
 		}
 
 	}
+	
+	public String returnId(String id) {
+		return id;
+	}
+	
 }

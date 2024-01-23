@@ -60,7 +60,6 @@ public class PXD_012_BasicCatalogs_PostOffices_Test extends RestApiBase {
 	public void pxd_012_03_get_post_office_lookup_test1() throws Exception {
 		addHeader("Authorization", "Bearer " + GlobalVariables.token);
 		JsonPath jp = methodGET(api_properties.getValue("POST.OFFICES.LOOKUP") + "?Id=" + GlobalVariables.id + "&Keyword=" + GlobalVariables.id, 200);
-//		Response response2 = restApiBase.methodGETresponse("http://10.10.10.21:8086/api/BasicCatalogs/PostOffices/Lookup?Keyword=" + PageBase.id + "&Id=" + PageBase.id);
 		assertNotNull(jp.getString("id"), "Id not forwarded");
 		assertNotNull(jp.getString("text"), "Text not forwarded");
 	}
