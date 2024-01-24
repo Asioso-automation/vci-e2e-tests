@@ -69,7 +69,7 @@ public class PXD_008_BasicCatalogs_Readers_Test extends RestApiBase {
 	@Test(description = "negative test case: wrong id", dependsOnMethods = { "pxd_008_04_create_reader_test1" })
 	public void pxd_008_03_get_reader_lookup_test2() throws Exception {
 		addHeader("Authorization", "Bearer " + GlobalVariables.token);
-		Response response = methodGETresponse(api_properties.getValue("READERS.LOOKUP") + "?Id=" + Helper.getRandomNumber(1) + "&Keyword=" + Helper.getRandomNumber(1));
+		Response response = methodGETresponse(api_properties.getValue("READERS.LOOKUP") + "?Id=" + Helper.getRandomNumber(5) + "&Keyword=" + Helper.getRandomNumber(1));
 		assertEquals(response.getStatusCode(), 200);
 		assertEquals(response.print(), "[]");
 	}
