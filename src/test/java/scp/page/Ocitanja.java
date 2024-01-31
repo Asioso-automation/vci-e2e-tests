@@ -66,11 +66,11 @@ public class Ocitanja extends PocetnaStranica{
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaResetovanWE));
 	}
 	
-	public void verifikujOcitanjaKalorimetra()throws InterruptedException, FileNotFoundException, IOException {
+	public void verifikujOcitanjaToplana()throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title') and contains(text(), 'Očitanja')]")));
-		verifikacijaZajednickihElemenata("OČITANJA", "OČITANJA", "Očitanja kalorimetra", 11, false, false, true, true, true, true, false);
+		verifikacijaZajednickihElemenata("OČITANJA", "OČITANJA", "Očitanja mjerila", 17, false, false, true, true, true, true, false);
 		wait.until(ExpectedConditions.elementToBeClickable(masovnaOcitanjaBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(neocitaniBtnWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaId1WE));
@@ -79,9 +79,14 @@ public class Ocitanja extends PocetnaStranica{
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatum1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPrethodnoWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTrenutnoWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPotrosnjaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaOdobrenjeWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaRazlikaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKalorimetarWE));
-		//wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNapomena1WE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMjeriloWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaZonaOcitanjaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIzmijenioKorisnikWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNacinUnosaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNapomena1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaResetovanWE));
 	}
 	

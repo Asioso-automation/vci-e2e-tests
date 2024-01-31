@@ -122,6 +122,9 @@ public class PocetnaStranica extends PageBase {
 	@FindBy(xpath = "//*[contains(text(),'Kupci') and @class='v-btn__content']")
 	protected WebElement kupciWE;
 	
+	@FindBy(xpath = "//*[contains(text(),'Mjerila') and @class='v-btn__content']")
+	protected WebElement mjerilaWE;
+	
 	@FindBy(xpath = "//*[contains(text(),'Očitanja') and @class='v-btn__content']")
 	protected WebElement ocitanjaWE;
 
@@ -202,19 +205,19 @@ public class PocetnaStranica extends PageBase {
 	protected WebElement proizvodjaciKalorimetaraWE;
 	
 	@FindBy(xpath = "//div[contains(text(), 'Mjerila')]")
-	protected WebElement mjerilaWE;
+	protected WebElement mjerila1WE;
 	
 	@FindBy(xpath = "//div[contains(text(), 'Korektori')]")
 	protected WebElement korektoriWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Tipovi mjerila')]")
-	protected WebElement tipoviMjerilaWE;
+	@FindBy(xpath = "//div[contains(text(), 'Tipovi')]")
+	protected WebElement tipoviWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Proizvođači mjerila')]")
-	protected WebElement proizvodjaciMjerilaWE;
+	@FindBy(xpath = "//div[contains(text(), 'Proizvođači')]")
+	protected WebElement proizvodjaciWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Vrste mjerila')]")
-	protected WebElement vrsteMjerilaWE;
+	@FindBy(xpath = "//div[@class='v-list__tile__content' and text()='Vrste']")
+	protected WebElement vrsteWE;
 	
 	@FindBy(xpath = "//div[contains(text(), 'Vrste kalorimetara')]")
 	protected WebElement vrsteKalorimetaraWE;
@@ -222,8 +225,8 @@ public class PocetnaStranica extends PageBase {
 	@FindBy(xpath = "//div[contains(text(), 'Proizvođači vodomjera')]")
 	protected WebElement proizvodjaciVodomjeraWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Profili vodomjera')]")
-	protected WebElement profiliVodomjeraWE;
+	@FindBy(xpath = "//div[contains(text(), 'Profili mjerila')]")
+	protected WebElement profiliMjerilaWE;
 	
 	@FindBy(xpath = "//div[contains(text(), 'Vrste vodomjera')]")
 	protected WebElement vrsteVodomjeraWE;
@@ -398,6 +401,9 @@ public class PocetnaStranica extends PageBase {
 	
 	@FindBy(xpath = "//*[contains(@class, 'v-list__tile__title') and contains(text(), 'Toplane - INS a.d. Istočno Sarajevo')]")
 	public WebElement orgToplanaInsWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-list__tile__title') and contains(text(), 'Eko Toplane Banja Luka d.o.o.')]")
+	public WebElement orgEkoToplanaWE;
 	    
 	@FindBy(xpath = "//*[contains(@class, 'v-list__tile__title') and contains(text(), 'KP Vodovod')]")
 	public WebElement orgVodovodGradiskaWE;
@@ -783,13 +789,13 @@ public class PocetnaStranica extends PageBase {
 	public Mjerila navigirajNaMjerila()throws Exception{
 		try {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.elementToBeClickable(kupciWE));
-		kupciWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(mjerniInstrumentiWE));
-		mjerniInstrumentiWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(mjerilaWE));
+		mjerilaWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(mjerila1WE));
+		mjerila1WE.click();
 		}
 		catch (Exception e) {
-			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("MJERNI.INSTRUMENTI.GAS"));
+			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("MJERILA"));
 			}
 		return new Mjerila(driver);
 	}
@@ -811,10 +817,10 @@ public class PocetnaStranica extends PageBase {
 	public TipoviMjerila navigirajNaTipoveMjerila()throws Exception{
 		try {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.elementToBeClickable(sifarniciWE));
-		sifarniciWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(tipoviMjerilaWE));
-		tipoviMjerilaWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(mjerilaWE));
+		mjerilaWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(tipoviWE));
+		tipoviWE.click();
 		}
 		catch (Exception e) {
 			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("TIPOVI.MJERILA"));
@@ -825,10 +831,10 @@ public class PocetnaStranica extends PageBase {
 	public ProizvodjaciMjerila navigirajNaProizvodjaceMjerila()throws Exception{
 		try {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.elementToBeClickable(sifarniciWE));
-		sifarniciWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(proizvodjaciMjerilaWE));
-		proizvodjaciMjerilaWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(mjerilaWE));
+		mjerilaWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(proizvodjaciWE));
+		proizvodjaciWE.click();
 		}
 		catch (Exception e) {
 			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("PROIZVODJACI.MJERILA"));
@@ -839,10 +845,10 @@ public class PocetnaStranica extends PageBase {
 	public VrsteMjerila navigirajNaVrsteMjerila()throws Exception{
 		try {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.elementToBeClickable(sifarniciWE));
-		sifarniciWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(vrsteMjerilaWE));
-		vrsteMjerilaWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(mjerilaWE));
+		mjerilaWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(vrsteWE));
+		vrsteWE.click();
 		}
 		catch (Exception e) {
 			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("VRSTE.MJERILA"));
@@ -878,18 +884,18 @@ public class PocetnaStranica extends PageBase {
 		return new ProizvodjaciVodomjera(driver);
 	}
 	
-	public ProfiliVodomjera navigirajNaProfileVodomjera()throws Exception{
+	public ProfiliMjerila navigirajNaProfileMjerila()throws Exception{
 		try {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.elementToBeClickable(sifarniciWE));
-		sifarniciWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(profiliVodomjeraWE));
-		profiliVodomjeraWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(mjerilaWE));
+		mjerilaWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(profiliMjerilaWE));
+		profiliMjerilaWE.click();
 		}
 		catch (Exception e) {
-			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("PROFILI.VODOMJERA"));
+			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("PROFILI.MJERILA"));
 			}
-		return new ProfiliVodomjera(driver);
+		return new ProfiliMjerila(driver);
 	}
 	
 	public VrsteVodomjera navigirajNaVrsteVodomjera()throws Exception{
@@ -1139,7 +1145,7 @@ public class PocetnaStranica extends PageBase {
 		zoneOcitanjaWE.click();
 		}
 		catch (Exception e) {
-			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("ZONE.OCITANJA.VODOVOD"));
+			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("ZONE.OCITANJA"));
 			}
 		return new ZoneOcitanja(driver);
 	}
@@ -1153,7 +1159,7 @@ public class PocetnaStranica extends PageBase {
 		nalogZaOcitanjaWE.click();
 		}
 		catch (Exception e) {
-			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("NALOG.ZA.OCITANJA.VODOVOD"));
+			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("NALOG.ZA.OCITANJA"));
 			}
 		return new NalogZaOcitanja(driver);
 	}
@@ -1167,7 +1173,7 @@ public class PocetnaStranica extends PageBase {
 		ocitanja1WE.click();
 		}
 		catch (Exception e) {
-			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("OCITANJA.TOPLANA"));
+			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("OCITANJA"));
 			}
 		return new Ocitanja(driver);
 	}
@@ -1195,7 +1201,7 @@ public class PocetnaStranica extends PageBase {
 		citackeKnjigeWE.click();
 		}
 		catch (Exception e) {
-			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("CITACKE.KNJIGE.VODOVOD"));
+			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("CITACKE.KNJIGE"));
 			}
 		return new CitackeKnjige(driver);
 	}

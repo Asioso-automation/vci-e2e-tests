@@ -48,7 +48,7 @@ import scp.page.Poruke;
 import scp.page.Poste;
 import scp.page.PrenosSaldaPoStavkama;
 import scp.page.Presude;
-import scp.page.ProfiliVodomjera;
+import scp.page.ProfiliMjerila;
 import scp.page.ProizvodjaciKalorimetara;
 import scp.page.ProizvodjaciMjerila;
 import scp.page.ProizvodjaciVodomjera;
@@ -122,14 +122,6 @@ public class SCP_004_Verifikacija_Sekcija_Test extends BaseTest{
 		zoneDma.verifikujZoneDma();
 		RadniStatusi radniStatusi = pocetna.navigirajNaRadneStatuse();
 		radniStatusi.verifikujRadniStatusi();
-		ProizvodjaciVodomjera proizvodjaci = pocetna.navigirajNaProizvodjaceVodomjera();
-		proizvodjaci.verifikujProizvodjaceVodomjera();
-		ProfiliVodomjera profili = pocetna.navigirajNaProfileVodomjera();
-		profili.verifikujProfileVodomjera();
-		VrsteVodomjera vrste = pocetna.navigirajNaVrsteVodomjera();
-		vrste.verifikujVrsteVodomjera();
-		IndirektnaPotrosnja indirektni = pocetna.navigirajNaIndirektnuPotrosnju();
-		indirektni.verifikujIndirektnuPotrosnju();
 	}
 	
 	@Test (description="test prolazi kroz sve stranice iz sekcije SIFARNICI i verifikuje ih")
@@ -198,7 +190,7 @@ public class SCP_004_Verifikacija_Sekcija_Test extends BaseTest{
 		PocetnaStranica pocetna = new PocetnaStranica(driver);
 		driver.manage().window().maximize();
 		logIn.verifikujLogIn();
-		logIn.logIn(pocetna.orgSonWE);
+		logIn.logIn(pocetna.orgAdministracijaWE);
 		pocetna.verifikujPocetnuStranicu();
 		Organizacije organizacije = pocetna.navigirajNaOrganizacije();
 		organizacije.verifikujOrganizacije();
@@ -294,7 +286,7 @@ public class SCP_004_Verifikacija_Sekcija_Test extends BaseTest{
 		LogIn logIn = new LogIn(driver, SCP_PROPERTIES);
 		PocetnaStranica pocetna = new PocetnaStranica(driver);
 		logIn.verifikujLogIn();
-		logIn.logIn(pocetna.orgSonWE);
+		logIn.logIn(pocetna.orgAdministracijaWE);
 		pocetna.verifikujPocetnuStranicu();
 		TarifneNadgrupe nadgrupe = pocetna.navigirajNaTarifneNadgrupe();
 		nadgrupe.verifikujTarifneNadgrupeSon();
@@ -325,8 +317,6 @@ public class SCP_004_Verifikacija_Sekcija_Test extends BaseTest{
 		objekti.verifikujObjekte();
 		Prostori prostori = pocetna.navigirajNaProstore();
 		prostori.verifikujProstore();
-		Vodomjeri vodomjeri = pocetna.navigirajNaVodomjere();
-		vodomjeri.verifikujVodomjere();
 		Ugovori ugovori = pocetna.navigirajNaUgovore();
 		ugovori.verifikujUgovoreVodovod();
 		Bonifikacije bonifikacije = pocetna.navigirajNaBonifikacije();
@@ -381,7 +371,7 @@ public class SCP_004_Verifikacija_Sekcija_Test extends BaseTest{
 		LogIn logIn = new LogIn(driver, SCP_PROPERTIES);
 		PocetnaStranica pocetna = new PocetnaStranica(driver);
 		logIn.verifikujLogIn();
-		logIn.logIn(pocetna.orgSonWE);
+		logIn.logIn(pocetna.orgAdministracijaWE);
 		pocetna.verifikujPocetnuStranicu();
 		Kupci kupci = pocetna.navigirajNaKupce();
 		kupci.verifikujKupce();
@@ -412,7 +402,7 @@ public class SCP_004_Verifikacija_Sekcija_Test extends BaseTest{
 		Ocitanja ocitanja = pocetna.navigirajNaOcitanja();
 		ocitanja.verifikujOcitanjaVodomjera();
 		NeregularnaOcitanja neregOcitanja = pocetna.navigirajNaNeregularnaOcitanja();
-		neregOcitanja.verifikujNeregularnaOcitanjaVodomjera();
+		neregOcitanja.verifikujNeregularnaOcitanja();
 		CitackeKnjige citackeKnjige = pocetna.navigirajNaCitackeKnjige();
 		citackeKnjige.verifikujCitackeKnjige();
 		MonitoringOcitanja monitoring = pocetna.navigirajNaMonitoringOcitanja();
@@ -443,7 +433,7 @@ public class SCP_004_Verifikacija_Sekcija_Test extends BaseTest{
 		LogIn logIn = new LogIn(driver, SCP_PROPERTIES);
 		PocetnaStranica pocetna = new PocetnaStranica(driver);
 		logIn.verifikujLogIn();
-		logIn.logIn(pocetna.orgSonWE);
+		logIn.logIn(pocetna.orgAdministracijaWE);
 		pocetna.verifikujPocetnuStranicu();
 		NalogZaObracun obracun = pocetna.navigirajNaNalogeZaObracun();
 		obracun.verifikujNalogZaObracun();
@@ -457,12 +447,12 @@ public class SCP_004_Verifikacija_Sekcija_Test extends BaseTest{
 		tef.verifikujTefObrasce();
 	}
 	
-	@Test (description="test prolazi kroz sve stranice iz sekcije OBRAČUN i FINANSIJE i verifikuje ih")
+	@Test (description="test prolazi kroz sve stranice iz sekcije FINANSIJE i verifikuje ih")
 	public void scp_004_verifikacija__finansija_son_test() throws Exception{
 		LogIn logIn = new LogIn(driver, SCP_PROPERTIES);
 		PocetnaStranica pocetna = new PocetnaStranica(driver);
 		logIn.verifikujLogIn();
-		logIn.logIn(pocetna.orgSonWE);
+		logIn.logIn(pocetna.orgAdministracijaWE);
 		pocetna.verifikujPocetnuStranicu();
 		FinansijskeKartice finKartice = pocetna.navigirajNaFinansijskeKartice();
 		finKartice.verifikujFinansijskeKartice();
@@ -529,7 +519,7 @@ public class SCP_004_Verifikacija_Sekcija_Test extends BaseTest{
 		LogIn logIn = new LogIn(driver, SCP_PROPERTIES);
 		PocetnaStranica pocetna = new PocetnaStranica(driver);
 		logIn.verifikujLogIn();
-		logIn.logIn(pocetna.orgSonWE);
+		logIn.logIn(pocetna.orgAdministracijaWE);
 		pocetna.verifikujPocetnuStranicu();
 		OpomenePredIskljucenje opomeneIskljucenje = pocetna.navigirajNaOpomenePredIskljucenja();
 		opomeneIskljucenje.verifikujOpomenePredIskljucenje();
@@ -575,12 +565,6 @@ public class SCP_004_Verifikacija_Sekcija_Test extends BaseTest{
 		zone.verifikujZone();
 		RadniStatusi radniStatusi = pocetna.navigirajNaRadneStatuse();
 		radniStatusi.verifikujRadniStatusi();
-		TipoviMjerila tipoviMjerila = pocetna.navigirajNaTipoveMjerila();
-		tipoviMjerila.verifikujTipoviMjerila();
-		ProizvodjaciMjerila proizvodjaci = pocetna.navigirajNaProizvodjaceMjerila();
-		proizvodjaci.verifikujProizvodjaceMjerila();
-		VrsteMjerila vrste = pocetna.navigirajNaVrsteMjerila();
-		vrste.verifikujVrsteMjerila();
 	}
 	
 	@Test (description="test prolazi kroz sve stranice iz sekcije TARIFNI SISTEM i verifikuje ih")
@@ -724,7 +708,7 @@ public class SCP_004_Verifikacija_Sekcija_Test extends BaseTest{
 		PocetnaStranica pocetna = new PocetnaStranica(driver);
 		driver.manage().window().maximize();
 		logIn.verifikujLogIn();
-		logIn.logIn(pocetna.orgToplanaInsWE);
+		logIn.logIn(pocetna.orgEkoToplanaWE);
 		pocetna.verifikujPocetnuStranicu();
 		Organizacije organizacije = pocetna.navigirajNaOrganizacije();
 		organizacije.verifikujOrganizacije();
@@ -752,10 +736,6 @@ public class SCP_004_Verifikacija_Sekcija_Test extends BaseTest{
 		topReoni.verifikujToplotneReone();
 		Toplovodi toplovodi = pocetna.navigirajNaToplovode();
 		toplovodi.verifikujToplovode();
-		TipoviKalorimetara tipovi = pocetna.navigirajNaTipoveKalorimetara();
-		tipovi.verifikujTipoveKalorimetara();
-		ProizvodjaciKalorimetara proizvodjaci = pocetna.navigirajNaProizvodjaceKalorimetara();
-		proizvodjaci.verifikujProizvodjaceKalorimetara();
 	}
 	
 	@Test (description="test prolazi kroz sve stranice iz sekcije TARIFNI SISTEM i verifikuje ih")
@@ -763,7 +743,7 @@ public class SCP_004_Verifikacija_Sekcija_Test extends BaseTest{
 		LogIn logIn = new LogIn(driver, SCP_PROPERTIES);
 		PocetnaStranica pocetna = new PocetnaStranica(driver);
 		logIn.verifikujLogIn();
-		logIn.logIn(pocetna.orgToplanaInsWE);
+		logIn.logIn(pocetna.orgEkoToplanaWE);
 		pocetna.verifikujPocetnuStranicu();
 		TarifneNadgrupe nadgrupe = pocetna.navigirajNaTarifneNadgrupe();
 		nadgrupe.verifikujTarifneNadgrupe();
@@ -789,7 +769,7 @@ public class SCP_004_Verifikacija_Sekcija_Test extends BaseTest{
 		LogIn logIn = new LogIn(driver, SCP_PROPERTIES);
 		PocetnaStranica pocetna = new PocetnaStranica(driver);
 		logIn.verifikujLogIn();
-		logIn.logIn(pocetna.orgToplanaInsWE);
+		logIn.logIn(pocetna.orgEkoToplanaWE);
 		pocetna.verifikujPocetnuStranicu();
 		Kupci kupci = pocetna.navigirajNaKupce();
 		kupci.verifikujKupce();
@@ -799,13 +779,29 @@ public class SCP_004_Verifikacija_Sekcija_Test extends BaseTest{
 		objekti.verifikujObjekte();
 		Prostori prostori = pocetna.navigirajNaProstore();
 		prostori.verifikujProstore();
-		Kalorimetri kalorimetri = pocetna.navigirajNaKalorimetre();
-		kalorimetri.verifikujKalorimetre();
 		Ugovori ugovori = pocetna.navigirajNaUgovore();
 		ugovori.verifikujUgovoreToplana();
 		Bonifikacije bonifikacije = pocetna.navigirajNaBonifikacije();
 		bonifikacije.verifikujBonifikacije();
 	}
+	
+	@Test (description="test prolazi kroz sve stranice iz sekcije MJERILA i verifikuje ih")
+	public void scp_004_verifikacija_mjerila_toplana_test() throws Exception{
+		LogIn logIn = new LogIn(driver, SCP_PROPERTIES);
+		PocetnaStranica pocetna = new PocetnaStranica(driver);
+		logIn.verifikujLogIn();
+		logIn.logIn(pocetna.orgEkoToplanaWE);
+		pocetna.verifikujPocetnuStranicu();
+		Mjerila mjerila = pocetna.navigirajNaMjerila();
+		mjerila.verifikujMjerila();
+		VrsteMjerila vrsteMjerila = pocetna.navigirajNaVrsteMjerila();
+		vrsteMjerila.verifikujVrsteMjerila();
+		TipoviMjerila tipoviMjerila = pocetna.navigirajNaTipoveMjerila();
+		tipoviMjerila.verifikujTipoviMjerila();
+		ProizvodjaciMjerila proizvodjaciMjerila = pocetna.navigirajNaProizvodjaceMjerila();
+		proizvodjaciMjerila.verifikujProizvodjaceMjerila();
+	}
+	
 	
 	@Test (description="test prolazi kroz sve stranice iz sekcije OČITANJA i verifikuje ih")
 	public void scp_004_verifikacija_ocitanja_toplana_test() throws Exception{
@@ -813,20 +809,23 @@ public class SCP_004_Verifikacija_Sekcija_Test extends BaseTest{
 		PocetnaStranica pocetna = new PocetnaStranica(driver);
 		driver.manage().window().maximize();
 		logIn.verifikujLogIn();
-		logIn.logIn(pocetna.orgToplanaInsWE);
+		logIn.logIn(pocetna.orgEkoToplanaWE);
 		pocetna.verifikujPocetnuStranicu();
 		ZoneOcitanja zone = pocetna.navigirajNaZoneOcitanja();
 		zone.verifikujZoneOcitanja();
-	//	Ocitanja ocitanja = pocetna.navigirajNaOcitanja();
-	//	ocitanja.verifikujOcitanjaKalorimetra();
 		NalogZaOcitanja nalog = pocetna.navigirajNaNalogeZaOcitanja();
-		nalog.verifikujNalogZaOcitanjaKalorimetra();
+		nalog.verifikujNalogZaOcitanjaMjerila();
+		Ocitanja ocitanja = pocetna.navigirajNaOcitanja();
+		ocitanja.verifikujOcitanjaToplana();
+		MonitoringOcitanja monitoring = pocetna.navigirajNaMonitoringOcitanja();
+		monitoring.verifikujMonitoringOcitanjaToplama();
 		CitackeKnjige knjige = pocetna.navigirajNaCitackeKnjige();
 		knjige.verifikujCitackeKnjige();
+		NeregularnaOcitanja neregularnaOcitanja = pocetna.navigirajNaNeregularnaOcitanja();
+		neregularnaOcitanja.verifikujNeregularnaOcitanja();
 		GrejneSezone sezone = pocetna.navigirajNaGrejneSezone();
 		sezone.verifikujGrejneSezone();
-		MonitoringOcitanja monitoring = pocetna.navigirajNaMonitoringOcitanja();
-		monitoring.verifikujMonitoringOcitanjaToplama();	
+			
 	}
 	
 	@Test (description="test prolazi kroz sve stranice iz sekcije OBRAČUN i verifikuje ih")
@@ -835,7 +834,7 @@ public class SCP_004_Verifikacija_Sekcija_Test extends BaseTest{
 		PocetnaStranica pocetna = new PocetnaStranica(driver);
 		driver.manage().window().maximize();
 		logIn.verifikujLogIn();
-		logIn.logIn(pocetna.orgToplanaInsWE);
+		logIn.logIn(pocetna.orgEkoToplanaWE);
 		pocetna.verifikujPocetnuStranicu();
 		Racuni racuni = pocetna.navigirajNaRacune();
 		racuni.verifikujRacune();
@@ -853,7 +852,7 @@ public class SCP_004_Verifikacija_Sekcija_Test extends BaseTest{
 		PocetnaStranica pocetna = new PocetnaStranica(driver);
 		driver.manage().window().maximize();
 		logIn.verifikujLogIn();
-		logIn.logIn(pocetna.orgToplanaInsWE);
+		logIn.logIn(pocetna.orgEkoToplanaWE);
 		pocetna.verifikujPocetnuStranicu();
 		FinansijskeKartice finKartice = pocetna.navigirajNaFinansijskeKartice();
 		finKartice.verifikujFinansijskeKartice();
@@ -887,5 +886,6 @@ public class SCP_004_Verifikacija_Sekcija_Test extends BaseTest{
 		DnevnikIzmjena dnevnik = pocetna.navigirajNaDnevnikIzmjena();
 		dnevnik.verifikujDnevnikIzmjena();
 	}
+	
 	
 }

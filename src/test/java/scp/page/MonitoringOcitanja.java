@@ -23,8 +23,8 @@ public class MonitoringOcitanja extends PocetnaStranica{
 	@FindBy(xpath = "/html/body/div/div[15]/main/div/div/div/div[2]/form/div/div/div[8]/div/div/div[1]/div/div/div[2]/a")
 	private WebElement neocitaniVodomjerWE;
 	
-	@FindBy(xpath = "/html/body/div/div[15]/main/div/div/div/div[2]/form/div/div/div[8]/div/div/div[1]/div/div/div[2]/a")
-	private WebElement neocitaniKalorimetriWE;
+	@FindBy(xpath = "/html/body/div/div[24]/main/div/div/div/div[2]/form/div/div/div[8]/div/div/div[1]/div/div/div[2]/a")
+	private WebElement neocitanaMjerilaToplanaWE;
 	
 	@FindBy(xpath = "/html/body/div/div[14]/main/div/div/div/div[2]/form/div/div/div[8]/div/div/div[1]/div/div/div[2]/a")
 	private WebElement neocitanaMjerilaWE;
@@ -75,12 +75,8 @@ public class MonitoringOcitanja extends PocetnaStranica{
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title') and contains(text(), 'Monitoring očitanja')]")));
-		verifikacijaZajednickihElemenata("OČITANJA", "MONITORING OČITANJA", "Monitoring očitanja toplana", 5, false, false, false, false, false, false, false);
+		verifikacijaZajednickihElemenata("OČITANJA", "MONITORING OČITANJA", "Monitoring očitanja", 5, false, false, false, false, false, false, false);
 		wait.until(ExpectedConditions.elementToBeClickable(pokreniMonitoringWE));
-		wait.until(ExpectedConditions.elementToBeClickable(neocitaniKalorimetriWE));
-		wait.until(ExpectedConditions.elementToBeClickable(duplaRedovnaWE));
-		wait.until(ExpectedConditions.elementToBeClickable(analizaPotrosnjeWE));
-		wait.until(ExpectedConditions.elementToBeClickable(odstupanjaPotrosnjaWE));
 	}
 	
 }

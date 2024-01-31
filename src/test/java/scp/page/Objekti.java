@@ -48,7 +48,7 @@ public class Objekti extends PocetnaStranica {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title') and contains(text(), 'Objekti')]")));
-		verifikacijaZajednickihElemenata("KUPCI", "OBJEKTI", "Objekti", 11, false, false, true, true, true, true, false);
+		verifikacijaZajednickihElemenata("KUPCI", "OBJEKTI", "Objekti", 13, false, false, true, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaId1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNaziv1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMZSifraWE));
@@ -58,6 +58,7 @@ public class Objekti extends PocetnaStranica {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaReonWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaUlicaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBroj1WE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaUkupanBrojProstoraWE));
 	}
 
 //	public void verifikujObjekti() throws InterruptedException, FileNotFoundException, IOException {

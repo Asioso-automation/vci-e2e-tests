@@ -39,7 +39,7 @@ public class Mjerila extends PocetnaStranica{
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title') and contains(text(), 'Mjerila')]")));
-		verifikacijaZajednickihElemenata("KUPCI", "MJERILA", "Mjerila", 13, false, false, true, true, true, true, false);
+		verifikacijaZajednickihElemenata("MJERILA", "MJERILA", "Mjerila", 14, false, false, true, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaId1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaZonaOcitanjaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrUZoniOcitanjaWE));
@@ -48,10 +48,13 @@ public class Mjerila extends PocetnaStranica{
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTip1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaVrstaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaProizvodjacWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAktivan1WE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumIstekaBazdarenjaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTipOcitanja1WE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAktivan1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaModulWE));
 	}
+	
+	
 	
 	public String dodajMjerila() throws InterruptedException{
 		String srBroj = "SrBr" + Helper.getRandomString(4);
