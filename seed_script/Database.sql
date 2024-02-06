@@ -489,19 +489,19 @@ SET IDENTITY_INSERT [Customer].[RequestType] OFF
 
 
 INSERT INTO [Finance].[BookingType]
-	([Id], [Name], [PrintName], [IsInterestCalculated], [CanDebtRestructure])
+	([Id], [Name], [PrintName], [IsInterestCalculated], [CanDebtRestructure], [CanTransferApprovalTo], [CanTransferApprovalFrom])
  VALUES
-    (1, N'Redovna potrošnja', N'Редовна потрошња', 1, 1)
-    ,(2, N'Reprogram', N'Репрограми', 0, 0)
-    ,(3, N'Pravni odnosi', N'Пресуђена потраживања', 1, 0)
-    ,(4, N'Nestandardne usluge', N'Нестандардне услуге', 1, 0)
-    ,(5, N'Potraživanja u stečajnom postupku', N'Потраживања у стечајном поступку', 1, 0)
-    ,(6, N'Neraspoređene uplate', N'Нераспоређене уплате', 0, 0)
-    ,(7, N'Medijacije', N'Медијације', 1, 0)
-    ,(8, N'Tužbe u pripremi', N'Тужбе у припреми', 0, 0)
-    ,(9, N'Utužena potraživanja', N'Утужена потраживања', 0, 0)
-    ,(10, N'Potraživanja u izvršnom postupku', N'Потраживања у извршном поступку', 1, 0)
-    ,(11, N'Troškova sudskih postupaka', N'Трошкови судских поступака', 1, 0)
+     (1,  N'Redovna potrošnja', N'Редовна потрошња', 1, 1, 0, 0)
+    ,(2,  N'Reprogram', N'Репрограми', 0, 0, 0, 0)
+    ,(3,  N'Pravni odnosi', N'Пресуђена потраживања', 1, 0, 0, 0)
+    ,(4,  N'Nestandardne usluge', N'Нестандардне услуге', 1, 0, 0, 0)
+    ,(5,  N'Potraživanja u stečajnom postupku', N'Потраживања у стечајном поступку', 1, 0, 0, 0)
+    ,(6,  N'Neraspoređene uplate', N'Нераспоређене уплате', 0, 0, 0, 0)
+    ,(7,  N'Medijacije', N'Медијације', 1, 0, 0, 0)
+    ,(8,  N'Tužbe u pripremi', N'Тужбе у припреми', 0, 0, 0, 0)
+    ,(9,  N'Utužena potraživanja', N'Утужена потраживања', 0, 0, 0, 0)
+    ,(10, N'Potraživanja u izvršnom postupku', N'Потраживања у извршном поступку', 1, 0, 0, 0)
+    ,(11, N'Troškova sudskih postupaka', N'Трошкови судских поступака', 1, 0, 0, 0)
 
 
 INSERT [Finance].[AccountingType] ([Id], [Name]) VALUES (1, N'Racun')
