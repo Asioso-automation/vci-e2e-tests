@@ -95,7 +95,7 @@ INSERT [BasicCatalog].[Period] ([Id], [Name], [Year], [Month], [DateFrom], [Date
 GO
 INSERT [BasicCatalog].[Period] ([Id], [Name], [Year], [Month], [DateFrom], [DateTo], [Active], [CalculationInProgress], [Archived]) VALUES (1905, N'мај 2019.', 2019, 5, CAST(N'2019-05-01' AS Date), CAST(N'2019-05-31' AS Date), 0, 0, 0)
 GO
-INSERT [BasicCatalog].[Period] ([Id], [Name], [Year], [Month], [DateFrom], [DateTo], [Active], [CalculationInProgress]) VALUES (1906, N'јун 2019.', 2019, 6, CAST(N'2019-06-01' AS Date), CAST(N'2019-06-30' AS Date), 0, 0, 0)
+INSERT [BasicCatalog].[Period] ([Id], [Name], [Year], [Month], [DateFrom], [DateTo], [Active], [CalculationInProgress], [Archived]) VALUES (1906, N'јун 2019.', 2019, 6, CAST(N'2019-06-01' AS Date), CAST(N'2019-06-30' AS Date), 0, 0, 0)
 GO
 INSERT [BasicCatalog].[Period] ([Id], [Name], [Year], [Month], [DateFrom], [DateTo], [Active], [CalculationInProgress], [Archived]) VALUES (1907, N'јул 2019.', 2019, 7, CAST(N'2019-07-01' AS Date), CAST(N'2019-07-31' AS Date), 0, 0, 0)
 GO
