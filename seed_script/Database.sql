@@ -61,101 +61,101 @@ Values (1,N'Operativno podrucje 1',N'057 111 222',N'057 111 222',N'057 111 222')
 SET IDENTITY_INSERT BasicCatalog.OperationalArea OFF
 
 
-INSERT [BasicCatalog].[Period] ([Id], [Name], [Year], [Month], [DateFrom], [DateTo], [Active], [CalculationInProgress]) VALUES (1801, N'јануар 2018.', 2018, 1, CAST(N'2018-01-01' AS Date), CAST(N'2018-01-31' AS Date), 0, 0)
+INSERT [BasicCatalog].[Period] ([Id], [Name], [Year], [Month], [DateFrom], [DateTo], [Active], [CalculationInProgress], [Archived]) VALUES (1801, N'јануар 2018.', 2018, 1, CAST(N'2018-01-01' AS Date), CAST(N'2018-01-31' AS Date), 0, 0, 0)
 GO
-INSERT [BasicCatalog].[Period] ([Id], [Name], [Year], [Month], [DateFrom], [DateTo], [Active], [CalculationInProgress]) VALUES (1802, N'фебруар 2018.', 2018, 2, CAST(N'2018-02-01' AS Date), CAST(N'2018-02-28' AS Date), 0, 0)
+INSERT [BasicCatalog].[Period] ([Id], [Name], [Year], [Month], [DateFrom], [DateTo], [Active], [CalculationInProgress], [Archived]) VALUES (1802, N'фебруар 2018.', 2018, 2, CAST(N'2018-02-01' AS Date), CAST(N'2018-02-28' AS Date), 0, 0, 0)
 GO
-INSERT [BasicCatalog].[Period] ([Id], [Name], [Year], [Month], [DateFrom], [DateTo], [Active], [CalculationInProgress]) VALUES (1803, N'март 2018.', 2018, 3, CAST(N'2018-03-01' AS Date), CAST(N'2018-03-31' AS Date), 0, 0)
+INSERT [BasicCatalog].[Period] ([Id], [Name], [Year], [Month], [DateFrom], [DateTo], [Active], [CalculationInProgress], [Archived]) VALUES (1803, N'март 2018.', 2018, 3, CAST(N'2018-03-01' AS Date), CAST(N'2018-03-31' AS Date), 0, 0, 0)
 GO
-INSERT [BasicCatalog].[Period] ([Id], [Name], [Year], [Month], [DateFrom], [DateTo], [Active], [CalculationInProgress]) VALUES (1804, N'април 2018.', 2018, 4, CAST(N'2018-04-01' AS Date), CAST(N'2018-04-30' AS Date), 0, 0)
+INSERT [BasicCatalog].[Period] ([Id], [Name], [Year], [Month], [DateFrom], [DateTo], [Active], [CalculationInProgress], [Archived]) VALUES (1804, N'април 2018.', 2018, 4, CAST(N'2018-04-01' AS Date), CAST(N'2018-04-30' AS Date), 0, 0, 0)
 GO
-INSERT [BasicCatalog].[Period] ([Id], [Name], [Year], [Month], [DateFrom], [DateTo], [Active], [CalculationInProgress]) VALUES (1805, N'мај 2018.', 2018, 5, CAST(N'2018-05-01' AS Date), CAST(N'2018-05-31' AS Date), 0, 0)
+INSERT [BasicCatalog].[Period] ([Id], [Name], [Year], [Month], [DateFrom], [DateTo], [Active], [CalculationInProgress], [Archived]) VALUES (1805, N'мај 2018.', 2018, 5, CAST(N'2018-05-01' AS Date), CAST(N'2018-05-31' AS Date), 0, 0, 0)
 GO
-INSERT [BasicCatalog].[Period] ([Id], [Name], [Year], [Month], [DateFrom], [DateTo], [Active], [CalculationInProgress]) VALUES (1806, N'јун 2018.', 2018, 6, CAST(N'2018-06-01' AS Date), CAST(N'2018-06-30' AS Date), 0, 0)
+INSERT [BasicCatalog].[Period] ([Id], [Name], [Year], [Month], [DateFrom], [DateTo], [Active], [CalculationInProgress], [Archived]) VALUES (1806, N'јун 2018.', 2018, 6, CAST(N'2018-06-01' AS Date), CAST(N'2018-06-30' AS Date), 0, 0, 0)
 GO
-INSERT [BasicCatalog].[Period] ([Id], [Name], [Year], [Month], [DateFrom], [DateTo], [Active], [CalculationInProgress]) VALUES (1807, N'јул 2018.', 2018, 7, CAST(N'2018-07-01' AS Date), CAST(N'2018-07-31' AS Date), 0, 0)
+INSERT [BasicCatalog].[Period] ([Id], [Name], [Year], [Month], [DateFrom], [DateTo], [Active], [CalculationInProgress], [Archived]) VALUES (1807, N'јул 2018.', 2018, 7, CAST(N'2018-07-01' AS Date), CAST(N'2018-07-31' AS Date), 0, 0, 0)
 GO
-INSERT [BasicCatalog].[Period] ([Id], [Name], [Year], [Month], [DateFrom], [DateTo], [Active], [CalculationInProgress]) VALUES (1808, N'август 2018.', 2018, 8, CAST(N'2018-08-01' AS Date), CAST(N'2018-08-31' AS Date), 0, 0)
+INSERT [BasicCatalog].[Period] ([Id], [Name], [Year], [Month], [DateFrom], [DateTo], [Active], [CalculationInProgress], [Archived]) VALUES (1808, N'август 2018.', 2018, 8, CAST(N'2018-08-01' AS Date), CAST(N'2018-08-31' AS Date), 0, 0, 0)
 GO
-INSERT [BasicCatalog].[Period] ([Id], [Name], [Year], [Month], [DateFrom], [DateTo], [Active], [CalculationInProgress]) VALUES (1809, N'септембар 2018.', 2018, 9, CAST(N'2018-09-01' AS Date), CAST(N'2018-09-30' AS Date), 0, 0)
+INSERT [BasicCatalog].[Period] ([Id], [Name], [Year], [Month], [DateFrom], [DateTo], [Active], [CalculationInProgress], [Archived]) VALUES (1809, N'септембар 2018.', 2018, 9, CAST(N'2018-09-01' AS Date), CAST(N'2018-09-30' AS Date), 0, 0, 0)
 GO
-INSERT [BasicCatalog].[Period] ([Id], [Name], [Year], [Month], [DateFrom], [DateTo], [Active], [CalculationInProgress]) VALUES (1810, N'октобар 2018.', 2018, 10, CAST(N'2018-10-01' AS Date), CAST(N'2018-10-31' AS Date), 0, 0)
+INSERT [BasicCatalog].[Period] ([Id], [Name], [Year], [Month], [DateFrom], [DateTo], [Active], [CalculationInProgress], [Archived]) VALUES (1810, N'октобар 2018.', 2018, 10, CAST(N'2018-10-01' AS Date), CAST(N'2018-10-31' AS Date), 0, 0, 0)
 GO
-INSERT [BasicCatalog].[Period] ([Id], [Name], [Year], [Month], [DateFrom], [DateTo], [Active], [CalculationInProgress]) VALUES (1811, N'новембар 2018.', 2018, 11, CAST(N'2018-11-01' AS Date), CAST(N'2018-11-30' AS Date), 0, 0)
+INSERT [BasicCatalog].[Period] ([Id], [Name], [Year], [Month], [DateFrom], [DateTo], [Active], [CalculationInProgress], [Archived]) VALUES (1811, N'новембар 2018.', 2018, 11, CAST(N'2018-11-01' AS Date), CAST(N'2018-11-30' AS Date), 0, 0, 0)
 GO
-INSERT [BasicCatalog].[Period] ([Id], [Name], [Year], [Month], [DateFrom], [DateTo], [Active], [CalculationInProgress]) VALUES (1812, N'децембар 2018.', 2018, 12, CAST(N'2018-12-01' AS Date), CAST(N'2018-12-31' AS Date), 0, 0)
+INSERT [BasicCatalog].[Period] ([Id], [Name], [Year], [Month], [DateFrom], [DateTo], [Active], [CalculationInProgress], [Archived]) VALUES (1812, N'децембар 2018.', 2018, 12, CAST(N'2018-12-01' AS Date), CAST(N'2018-12-31' AS Date), 0, 0, 0)
 GO
-INSERT [BasicCatalog].[Period] ([Id], [Name], [Year], [Month], [DateFrom], [DateTo], [Active], [CalculationInProgress]) VALUES (1901, N'јануар 2019.', 2019, 1, CAST(N'2019-01-01' AS Date), CAST(N'2019-01-31' AS Date), 0, 0)
+INSERT [BasicCatalog].[Period] ([Id], [Name], [Year], [Month], [DateFrom], [DateTo], [Active], [CalculationInProgress], [Archived]) VALUES (1901, N'јануар 2019.', 2019, 1, CAST(N'2019-01-01' AS Date), CAST(N'2019-01-31' AS Date), 0, 0, 0)
 GO
-INSERT [BasicCatalog].[Period] ([Id], [Name], [Year], [Month], [DateFrom], [DateTo], [Active], [CalculationInProgress]) VALUES (1902, N'фебруар 2019.', 2019, 2, CAST(N'2019-02-01' AS Date), CAST(N'2019-02-28' AS Date), 0, 0)
+INSERT [BasicCatalog].[Period] ([Id], [Name], [Year], [Month], [DateFrom], [DateTo], [Active], [CalculationInProgress], [Archived]) VALUES (1902, N'фебруар 2019.', 2019, 2, CAST(N'2019-02-01' AS Date), CAST(N'2019-02-28' AS Date), 0, 0, 0)
 GO
-INSERT [BasicCatalog].[Period] ([Id], [Name], [Year], [Month], [DateFrom], [DateTo], [Active], [CalculationInProgress]) VALUES (1903, N'март 2019.', 2019, 3, CAST(N'2019-03-01' AS Date), CAST(N'2019-03-31' AS Date), 0, 0)
+INSERT [BasicCatalog].[Period] ([Id], [Name], [Year], [Month], [DateFrom], [DateTo], [Active], [CalculationInProgress], [Archived]) VALUES (1903, N'март 2019.', 2019, 3, CAST(N'2019-03-01' AS Date), CAST(N'2019-03-31' AS Date), 0, 0, 0)
 GO
-INSERT [BasicCatalog].[Period] ([Id], [Name], [Year], [Month], [DateFrom], [DateTo], [Active], [CalculationInProgress]) VALUES (1904, N'април 2019.', 2019, 4, CAST(N'2019-04-01' AS Date), CAST(N'2019-04-30' AS Date), 0, 0)
+INSERT [BasicCatalog].[Period] ([Id], [Name], [Year], [Month], [DateFrom], [DateTo], [Active], [CalculationInProgress], [Archived]) VALUES (1904, N'април 2019.', 2019, 4, CAST(N'2019-04-01' AS Date), CAST(N'2019-04-30' AS Date), 0, 0, 0)
 GO
-INSERT [BasicCatalog].[Period] ([Id], [Name], [Year], [Month], [DateFrom], [DateTo], [Active], [CalculationInProgress]) VALUES (1905, N'мај 2019.', 2019, 5, CAST(N'2019-05-01' AS Date), CAST(N'2019-05-31' AS Date), 0, 0)
+INSERT [BasicCatalog].[Period] ([Id], [Name], [Year], [Month], [DateFrom], [DateTo], [Active], [CalculationInProgress], [Archived]) VALUES (1905, N'мај 2019.', 2019, 5, CAST(N'2019-05-01' AS Date), CAST(N'2019-05-31' AS Date), 0, 0, 0)
 GO
-INSERT [BasicCatalog].[Period] ([Id], [Name], [Year], [Month], [DateFrom], [DateTo], [Active], [CalculationInProgress]) VALUES (1906, N'јун 2019.', 2019, 6, CAST(N'2019-06-01' AS Date), CAST(N'2019-06-30' AS Date), 0, 0)
+INSERT [BasicCatalog].[Period] ([Id], [Name], [Year], [Month], [DateFrom], [DateTo], [Active], [CalculationInProgress]) VALUES (1906, N'јун 2019.', 2019, 6, CAST(N'2019-06-01' AS Date), CAST(N'2019-06-30' AS Date), 0, 0, 0)
 GO
-INSERT [BasicCatalog].[Period] ([Id], [Name], [Year], [Month], [DateFrom], [DateTo], [Active], [CalculationInProgress]) VALUES (1907, N'јул 2019.', 2019, 7, CAST(N'2019-07-01' AS Date), CAST(N'2019-07-31' AS Date), 0, 0)
+INSERT [BasicCatalog].[Period] ([Id], [Name], [Year], [Month], [DateFrom], [DateTo], [Active], [CalculationInProgress], [Archived]) VALUES (1907, N'јул 2019.', 2019, 7, CAST(N'2019-07-01' AS Date), CAST(N'2019-07-31' AS Date), 0, 0, 0)
 GO
-INSERT [BasicCatalog].[Period] ([Id], [Name], [Year], [Month], [DateFrom], [DateTo], [Active], [CalculationInProgress]) VALUES (1908, N'август 2019.', 2019, 8, CAST(N'2019-08-01' AS Date), CAST(N'2019-08-31' AS Date), 0, 0)
+INSERT [BasicCatalog].[Period] ([Id], [Name], [Year], [Month], [DateFrom], [DateTo], [Active], [CalculationInProgress], [Archived]) VALUES (1908, N'август 2019.', 2019, 8, CAST(N'2019-08-01' AS Date), CAST(N'2019-08-31' AS Date), 0, 0, 0)
 GO
-INSERT [BasicCatalog].[Period] ([Id], [Name], [Year], [Month], [DateFrom], [DateTo], [Active], [CalculationInProgress]) VALUES (1909, N'септембар 2019.', 2019, 9, CAST(N'2019-09-01' AS Date), CAST(N'2019-09-30' AS Date), 0, 0)
+INSERT [BasicCatalog].[Period] ([Id], [Name], [Year], [Month], [DateFrom], [DateTo], [Active], [CalculationInProgress], [Archived]) VALUES (1909, N'септембар 2019.', 2019, 9, CAST(N'2019-09-01' AS Date), CAST(N'2019-09-30' AS Date), 0, 0, 0)
 GO
-INSERT [BasicCatalog].[Period] ([Id], [Name], [Year], [Month], [DateFrom], [DateTo], [Active], [CalculationInProgress]) VALUES (1910, N'октобар 2019.', 2019, 10, CAST(N'2019-10-01' AS Date), CAST(N'2019-10-31' AS Date), 0, 0)
+INSERT [BasicCatalog].[Period] ([Id], [Name], [Year], [Month], [DateFrom], [DateTo], [Active], [CalculationInProgress], [Archived]) VALUES (1910, N'октобар 2019.', 2019, 10, CAST(N'2019-10-01' AS Date), CAST(N'2019-10-31' AS Date), 0, 0, 0)
 GO
-INSERT [BasicCatalog].[Period] ([Id], [Name], [Year], [Month], [DateFrom], [DateTo], [Active], [CalculationInProgress]) VALUES (1911, N'новембар 2019.', 2019, 11, CAST(N'2019-11-01' AS Date), CAST(N'2019-11-30' AS Date), 0, 0)
+INSERT [BasicCatalog].[Period] ([Id], [Name], [Year], [Month], [DateFrom], [DateTo], [Active], [CalculationInProgress], [Archived]) VALUES (1911, N'новембар 2019.', 2019, 11, CAST(N'2019-11-01' AS Date), CAST(N'2019-11-30' AS Date), 0, 0, 0)
 GO
-INSERT [BasicCatalog].[Period] ([Id], [Name], [Year], [Month], [DateFrom], [DateTo], [Active], [CalculationInProgress]) VALUES (1912, N'децембар 2019.', 2019, 12, CAST(N'2019-12-01' AS Date), CAST(N'2019-12-31' AS Date), 0, 0)
+INSERT [BasicCatalog].[Period] ([Id], [Name], [Year], [Month], [DateFrom], [DateTo], [Active], [CalculationInProgress], [Archived]) VALUES (1912, N'децембар 2019.', 2019, 12, CAST(N'2019-12-01' AS Date), CAST(N'2019-12-31' AS Date), 0, 0, 0)
 GO
-INSERT [BasicCatalog].[Period] ([Id], [Name], [Year], [Month], [DateFrom], [DateTo], [Active], [CalculationInProgress]) VALUES (2001, N'јануар 2020.', 2020, 1, CAST(N'2020-01-01' AS Date), CAST(N'2020-01-31' AS Date), 0, 0)
+INSERT [BasicCatalog].[Period] ([Id], [Name], [Year], [Month], [DateFrom], [DateTo], [Active], [CalculationInProgress], [Archived]) VALUES (2001, N'јануар 2020.', 2020, 1, CAST(N'2020-01-01' AS Date), CAST(N'2020-01-31' AS Date), 0, 0, 0)
 GO
-INSERT [BasicCatalog].[Period] ([Id], [Name], [Year], [Month], [DateFrom], [DateTo], [Active], [CalculationInProgress]) VALUES (2002, N'фебруар 2020.', 2020, 2, CAST(N'2020-02-01' AS Date), CAST(N'2020-02-29' AS Date), 0, 0)
+INSERT [BasicCatalog].[Period] ([Id], [Name], [Year], [Month], [DateFrom], [DateTo], [Active], [CalculationInProgress], [Archived]) VALUES (2002, N'фебруар 2020.', 2020, 2, CAST(N'2020-02-01' AS Date), CAST(N'2020-02-29' AS Date), 0, 0, 0)
 GO
-INSERT [BasicCatalog].[Period] ([Id], [Name], [Year], [Month], [DateFrom], [DateTo], [Active], [CalculationInProgress]) VALUES (2003, N'март 2020.', 2020, 3, CAST(N'2020-03-01' AS Date), CAST(N'2020-03-31' AS Date), 0, 0)
+INSERT [BasicCatalog].[Period] ([Id], [Name], [Year], [Month], [DateFrom], [DateTo], [Active], [CalculationInProgress], [Archived]) VALUES (2003, N'март 2020.', 2020, 3, CAST(N'2020-03-01' AS Date), CAST(N'2020-03-31' AS Date), 0, 0, 0)
 GO
-INSERT [BasicCatalog].[Period] ([Id], [Name], [Year], [Month], [DateFrom], [DateTo], [Active], [CalculationInProgress]) VALUES (2004, N'април 2020.', 2020, 4, CAST(N'2020-04-01' AS Date), CAST(N'2020-04-30' AS Date), 0, 0)
+INSERT [BasicCatalog].[Period] ([Id], [Name], [Year], [Month], [DateFrom], [DateTo], [Active], [CalculationInProgress], [Archived]) VALUES (2004, N'април 2020.', 2020, 4, CAST(N'2020-04-01' AS Date), CAST(N'2020-04-30' AS Date), 0, 0, 0)
 GO
-INSERT [BasicCatalog].[Period] ([Id], [Name], [Year], [Month], [DateFrom], [DateTo], [Active], [CalculationInProgress]) VALUES (2005, N'мај 2020.', 2020, 5, CAST(N'2020-05-01' AS Date), CAST(N'2020-05-31' AS Date), 0, 0)
+INSERT [BasicCatalog].[Period] ([Id], [Name], [Year], [Month], [DateFrom], [DateTo], [Active], [CalculationInProgress], [Archived]) VALUES (2005, N'мај 2020.', 2020, 5, CAST(N'2020-05-01' AS Date), CAST(N'2020-05-31' AS Date), 0, 0, 0)
 GO
-INSERT [BasicCatalog].[Period] ([Id], [Name], [Year], [Month], [DateFrom], [DateTo], [Active], [CalculationInProgress]) VALUES (2006, N'јун 2020.', 2020, 6, CAST(N'2020-06-01' AS Date), CAST(N'2020-06-30' AS Date), 0, 0)
+INSERT [BasicCatalog].[Period] ([Id], [Name], [Year], [Month], [DateFrom], [DateTo], [Active], [CalculationInProgress], [Archived]) VALUES (2006, N'јун 2020.', 2020, 6, CAST(N'2020-06-01' AS Date), CAST(N'2020-06-30' AS Date), 0, 0, 0)
 GO
-INSERT [BasicCatalog].[Period] ([Id], [Name], [Year], [Month], [DateFrom], [DateTo], [Active], [CalculationInProgress]) VALUES (2007, N'јул 2020.', 2020, 7, CAST(N'2020-07-01' AS Date), CAST(N'2020-07-31' AS Date), 1, 0)
+INSERT [BasicCatalog].[Period] ([Id], [Name], [Year], [Month], [DateFrom], [DateTo], [Active], [CalculationInProgress], [Archived]) VALUES (2007, N'јул 2020.', 2020, 7, CAST(N'2020-07-01' AS Date), CAST(N'2020-07-31' AS Date), 1, 0, 0)
 GO
-INSERT [BasicCatalog].[Period] ([Id], [Name], [Year], [Month], [DateFrom], [DateTo], [Active], [CalculationInProgress]) VALUES (2008, N'август 2020.', 2020, 8, CAST(N'2020-08-01' AS Date), CAST(N'2020-08-31' AS Date), 0, 0)
+INSERT [BasicCatalog].[Period] ([Id], [Name], [Year], [Month], [DateFrom], [DateTo], [Active], [CalculationInProgress], [Archived]) VALUES (2008, N'август 2020.', 2020, 8, CAST(N'2020-08-01' AS Date), CAST(N'2020-08-31' AS Date), 0, 0, 0)
 GO
-INSERT [BasicCatalog].[Period] ([Id], [Name], [Year], [Month], [DateFrom], [DateTo], [Active], [CalculationInProgress]) VALUES (2009, N'септембар 2020.', 2020, 9, CAST(N'2020-09-01' AS Date), CAST(N'2020-09-30' AS Date), 0, 0)
+INSERT [BasicCatalog].[Period] ([Id], [Name], [Year], [Month], [DateFrom], [DateTo], [Active], [CalculationInProgress], [Archived]) VALUES (2009, N'септембар 2020.', 2020, 9, CAST(N'2020-09-01' AS Date), CAST(N'2020-09-30' AS Date), 0, 0, 0)
 GO
-INSERT [BasicCatalog].[Period] ([Id], [Name], [Year], [Month], [DateFrom], [DateTo], [Active], [CalculationInProgress]) VALUES (2010, N'октобар 2020.', 2020, 10, CAST(N'2020-10-01' AS Date), CAST(N'2020-10-31' AS Date), 0, 0)
+INSERT [BasicCatalog].[Period] ([Id], [Name], [Year], [Month], [DateFrom], [DateTo], [Active], [CalculationInProgress], [Archived]) VALUES (2010, N'октобар 2020.', 2020, 10, CAST(N'2020-10-01' AS Date), CAST(N'2020-10-31' AS Date), 0, 0, 0)
 GO
-INSERT [BasicCatalog].[Period] ([Id], [Name], [Year], [Month], [DateFrom], [DateTo], [Active], [CalculationInProgress]) VALUES (2011, N'новембар 2020.', 2020, 11, CAST(N'2020-11-01' AS Date), CAST(N'2020-11-30' AS Date), 0, 0)
+INSERT [BasicCatalog].[Period] ([Id], [Name], [Year], [Month], [DateFrom], [DateTo], [Active], [CalculationInProgress], [Archived]) VALUES (2011, N'новембар 2020.', 2020, 11, CAST(N'2020-11-01' AS Date), CAST(N'2020-11-30' AS Date), 0, 0, 0)
 GO
-INSERT [BasicCatalog].[Period] ([Id], [Name], [Year], [Month], [DateFrom], [DateTo], [Active], [CalculationInProgress]) VALUES (2012, N'децембар 2020.', 2020, 12, CAST(N'2020-12-01' AS Date), CAST(N'2020-12-31' AS Date), 0, 0)
+INSERT [BasicCatalog].[Period] ([Id], [Name], [Year], [Month], [DateFrom], [DateTo], [Active], [CalculationInProgress], [Archived]) VALUES (2012, N'децембар 2020.', 2020, 12, CAST(N'2020-12-01' AS Date), CAST(N'2020-12-31' AS Date), 0, 0, 0)
 GO
-INSERT [BasicCatalog].[Period] ([Id], [Name], [Year], [Month], [DateFrom], [DateTo], [Active], [CalculationInProgress]) VALUES (2101, N'јануар 2021.', 2021, 1, CAST(N'2021-01-01' AS Date), CAST(N'2021-01-31' AS Date), 0, 0)
+INSERT [BasicCatalog].[Period] ([Id], [Name], [Year], [Month], [DateFrom], [DateTo], [Active], [CalculationInProgress], [Archived]) VALUES (2101, N'јануар 2021.', 2021, 1, CAST(N'2021-01-01' AS Date), CAST(N'2021-01-31' AS Date), 0, 0, 0)
 GO
-INSERT [BasicCatalog].[Period] ([Id], [Name], [Year], [Month], [DateFrom], [DateTo], [Active], [CalculationInProgress]) VALUES (2102, N'фебруар 2021.', 2021, 2, CAST(N'2021-02-01' AS Date), CAST(N'2021-02-28' AS Date), 0, 0)
+INSERT [BasicCatalog].[Period] ([Id], [Name], [Year], [Month], [DateFrom], [DateTo], [Active], [CalculationInProgress], [Archived]) VALUES (2102, N'фебруар 2021.', 2021, 2, CAST(N'2021-02-01' AS Date), CAST(N'2021-02-28' AS Date), 0, 0, 0)
 GO
-INSERT [BasicCatalog].[Period] ([Id], [Name], [Year], [Month], [DateFrom], [DateTo], [Active], [CalculationInProgress]) VALUES (2103, N'март 2021.', 2021, 3, CAST(N'2021-03-01' AS Date), CAST(N'2021-03-31' AS Date), 0, 0)
+INSERT [BasicCatalog].[Period] ([Id], [Name], [Year], [Month], [DateFrom], [DateTo], [Active], [CalculationInProgress], [Archived]) VALUES (2103, N'март 2021.', 2021, 3, CAST(N'2021-03-01' AS Date), CAST(N'2021-03-31' AS Date), 0, 0, 0)
 GO
-INSERT [BasicCatalog].[Period] ([Id], [Name], [Year], [Month], [DateFrom], [DateTo], [Active], [CalculationInProgress]) VALUES (2104, N'април 2021.', 2021, 4, CAST(N'2021-04-01' AS Date), CAST(N'2021-04-30' AS Date), 0, 0)
+INSERT [BasicCatalog].[Period] ([Id], [Name], [Year], [Month], [DateFrom], [DateTo], [Active], [CalculationInProgress], [Archived]) VALUES (2104, N'април 2021.', 2021, 4, CAST(N'2021-04-01' AS Date), CAST(N'2021-04-30' AS Date), 0, 0, 0)
 GO
-INSERT [BasicCatalog].[Period] ([Id], [Name], [Year], [Month], [DateFrom], [DateTo], [Active], [CalculationInProgress]) VALUES (2105, N'мај 2021.', 2021, 5, CAST(N'2021-05-01' AS Date), CAST(N'2021-05-31' AS Date), 0, 0)
+INSERT [BasicCatalog].[Period] ([Id], [Name], [Year], [Month], [DateFrom], [DateTo], [Active], [CalculationInProgress], [Archived]) VALUES (2105, N'мај 2021.', 2021, 5, CAST(N'2021-05-01' AS Date), CAST(N'2021-05-31' AS Date), 0, 0, 0)
 GO
-INSERT [BasicCatalog].[Period] ([Id], [Name], [Year], [Month], [DateFrom], [DateTo], [Active], [CalculationInProgress]) VALUES (2106, N'јун 2021.', 2021, 6, CAST(N'2021-06-01' AS Date), CAST(N'2021-06-30' AS Date), 0, 0)
+INSERT [BasicCatalog].[Period] ([Id], [Name], [Year], [Month], [DateFrom], [DateTo], [Active], [CalculationInProgress], [Archived]) VALUES (2106, N'јун 2021.', 2021, 6, CAST(N'2021-06-01' AS Date), CAST(N'2021-06-30' AS Date), 0, 0, 0)
 GO
-INSERT [BasicCatalog].[Period] ([Id], [Name], [Year], [Month], [DateFrom], [DateTo], [Active], [CalculationInProgress]) VALUES (2107, N'јул 2021.', 2021, 7, CAST(N'2021-07-01' AS Date), CAST(N'2021-07-31' AS Date), 0, 0)
+INSERT [BasicCatalog].[Period] ([Id], [Name], [Year], [Month], [DateFrom], [DateTo], [Active], [CalculationInProgress], [Archived]) VALUES (2107, N'јул 2021.', 2021, 7, CAST(N'2021-07-01' AS Date), CAST(N'2021-07-31' AS Date), 0, 0, 0)
 GO
-INSERT [BasicCatalog].[Period] ([Id], [Name], [Year], [Month], [DateFrom], [DateTo], [Active], [CalculationInProgress]) VALUES (2108, N'август 2021.', 2021, 8, CAST(N'2021-08-01' AS Date), CAST(N'2021-08-31' AS Date), 0, 0)
+INSERT [BasicCatalog].[Period] ([Id], [Name], [Year], [Month], [DateFrom], [DateTo], [Active], [CalculationInProgress], [Archived]) VALUES (2108, N'август 2021.', 2021, 8, CAST(N'2021-08-01' AS Date), CAST(N'2021-08-31' AS Date), 0, 0, 0)
 GO
-INSERT [BasicCatalog].[Period] ([Id], [Name], [Year], [Month], [DateFrom], [DateTo], [Active], [CalculationInProgress]) VALUES (2109, N'септембар 2021.', 2021, 9, CAST(N'2021-09-01' AS Date), CAST(N'2021-09-30' AS Date), 0, 0)
+INSERT [BasicCatalog].[Period] ([Id], [Name], [Year], [Month], [DateFrom], [DateTo], [Active], [CalculationInProgress], [Archived]) VALUES (2109, N'септембар 2021.', 2021, 9, CAST(N'2021-09-01' AS Date), CAST(N'2021-09-30' AS Date), 0, 0, 0)
 GO
-INSERT [BasicCatalog].[Period] ([Id], [Name], [Year], [Month], [DateFrom], [DateTo], [Active], [CalculationInProgress]) VALUES (2110, N'октобар 2021.', 2021, 10, CAST(N'2021-10-01' AS Date), CAST(N'2021-10-31' AS Date), 0, 0)
+INSERT [BasicCatalog].[Period] ([Id], [Name], [Year], [Month], [DateFrom], [DateTo], [Active], [CalculationInProgress], [Archived]) VALUES (2110, N'октобар 2021.', 2021, 10, CAST(N'2021-10-01' AS Date), CAST(N'2021-10-31' AS Date), 0, 0, 0)
 GO
-INSERT [BasicCatalog].[Period] ([Id], [Name], [Year], [Month], [DateFrom], [DateTo], [Active], [CalculationInProgress]) VALUES (2111, N'новембар 2021.', 2021, 11, CAST(N'2021-11-01' AS Date), CAST(N'2021-11-30' AS Date), 0, 0)
+INSERT [BasicCatalog].[Period] ([Id], [Name], [Year], [Month], [DateFrom], [DateTo], [Active], [CalculationInProgress], [Archived]) VALUES (2111, N'новембар 2021.', 2021, 11, CAST(N'2021-11-01' AS Date), CAST(N'2021-11-30' AS Date), 0, 0, 0)
 GO
-INSERT [BasicCatalog].[Period] ([Id], [Name], [Year], [Month], [DateFrom], [DateTo], [Active], [CalculationInProgress]) VALUES (2112, N'децембар 2021.', 2021, 12, CAST(N'2021-12-01' AS Date), CAST(N'2021-12-31' AS Date), 0, 0)
+INSERT [BasicCatalog].[Period] ([Id], [Name], [Year], [Month], [DateFrom], [DateTo], [Active], [CalculationInProgress], [Archived]) VALUES (2112, N'децембар 2021.', 2021, 12, CAST(N'2021-12-01' AS Date), CAST(N'2021-12-31' AS Date), 0, 0, 0)
 GO
 
 
