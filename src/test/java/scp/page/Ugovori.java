@@ -66,7 +66,7 @@ public class Ugovori extends PocetnaStranica{
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title') and contains(text(), 'Ugovori')]")));
-		verifikacijaZajednickihElemenata("KUPCI", "UGOVORI", "Ugovori", 16, false, false, true, true, true, true, false);
+		verifikacijaZajednickihElemenata("KUPCI", "UGOVORI", "Ugovori", 17, false, false, true, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaId1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBroj1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKupac1WE));
@@ -78,6 +78,7 @@ public class Ugovori extends PocetnaStranica{
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaVodomjerWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaZonaOcitanjaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumPocetkaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumPrestankaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAktivan1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIskljucen1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPausalWE));
@@ -108,7 +109,7 @@ public class Ugovori extends PocetnaStranica{
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title') and contains(text(), 'Ugovori')]")));
-		verifikacijaZajednickihElemenata("KUPCI", "UGOVORI", "Ugovori", 13, false, false, true, true, true, true, false);
+		verifikacijaZajednickihElemenata("KUPCI", "UGOVORI", "Ugovori", 14, false, false, true, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaId1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBroj1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKupac1WE));
@@ -117,6 +118,7 @@ public class Ugovori extends PocetnaStranica{
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaProstorWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTarifnaGrupa1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumPocetkaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumPrestankaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumIzdavanjaDokumentaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAktivan1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIskljucen1WE));
@@ -126,7 +128,7 @@ public class Ugovori extends PocetnaStranica{
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title') and contains(text(), 'Ugovori')]")));
-		verifikacijaZajednickihElemenata("KUPCI", "UGOVORI", "Ugovori", 13, false, false, true, true, true, true, false);
+		verifikacijaZajednickihElemenata("KUPCI", "UGOVORI", "Ugovori", 14, false, false, true, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaId1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBroj1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKupac1WE));
@@ -135,6 +137,7 @@ public class Ugovori extends PocetnaStranica{
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaProstorWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTarifnaGrupa1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumPocetkaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumPrestankaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumRjesenja1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAktivan1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIskljucen1WE));
@@ -161,7 +164,7 @@ public class Ugovori extends PocetnaStranica{
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title') and contains(text(), 'Ugovori')]")));
-		verifikacijaZajednickihElemenata("KUPCI", "UGOVORI", "Ugovori", 15, false, false, true, true, true, true, false);
+		verifikacijaZajednickihElemenata("KUPCI", "UGOVORI", "Ugovori", 16, false, false, true, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaId1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBroj1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKupac1WE));
@@ -172,6 +175,7 @@ public class Ugovori extends PocetnaStranica{
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMjeriloWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaZonaOcitanjaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumPocetkaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumPrestankaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAktivan1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIskljucen1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPausalWE));

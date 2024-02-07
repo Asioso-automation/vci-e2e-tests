@@ -5,6 +5,8 @@ import java.io.IOException;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import com.platformX.base.Kolone;
@@ -15,18 +17,19 @@ public class IndirektnaPotrosnja extends PocetnaStranica{
 		super(driver);
 	}
 	
+	@FindBy(xpath = "//div/div/div[1]/div[2]/div/div/div/div[1]/input")
+	public WebElement indirektnoMjeriloWE;
+	
 	public void verifikujIndirektnuPotrosnju()throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title') and contains(text(), 'Indirektna potrošnja')]")));
-		verifikacijaZajednickihElemenata("ŠIFARNICI", "INDIREKTNA POTROŠNJA", "Indirektna potrošnja", 9, false, false, true, true, true, true, false);
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaId1WE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIndirektniVodomjerWE));
+		verifikacijaZajednickihElemenata("OČITANJA", "INDIREKTNA POTROŠNJA", "Indirektna potrošnja", 7, false, false, true, true, true, true, true);
+		wait.until(ExpectedConditions.elementToBeClickable(indirektnoMjeriloWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMjeriloWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPotrosnjaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaVodomjerWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPotrosnjaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPeriodOd1WE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPeriodDo1WE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaSumaPotrosnjeIndirektnihMjerilaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaZonaOcitanjaWE));
 	}
 
 }

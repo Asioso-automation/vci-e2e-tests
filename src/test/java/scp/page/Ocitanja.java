@@ -23,25 +23,27 @@ public class Ocitanja extends PocetnaStranica{
 	@FindBy(xpath = "//i[contains(@class, 'fa-book-reader')]")
 	protected WebElement neocitaniBtnWE;
 	
-	public void verifikujOcitanjaVodomjera()throws InterruptedException, FileNotFoundException, IOException {
+	public void verifikujOcitanjaVodovod()throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title') and contains(text(), 'Očitanja')]")));
-		verifikacijaZajednickihElemenata("OČITANJA", "OČITANJA", "Očitanja vodomjera", 16, false, false, true, true, true, true, false);
+		verifikacijaZajednickihElemenata("OČITANJA", "OČITANJA", "Očitanja vodomjera", 18, false, false, true, true, true, true, false);
 		wait.until(ExpectedConditions.elementToBeClickable(masovnaOcitanjaBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(neocitaniBtnWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaId1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaVrstaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKupac1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatum1WE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNalogZaOcitanjeWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPrethodnoWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTrenutnoWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPotrosnjaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaOdobrenjeWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaRazlikaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaVodomjerWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMjeriloWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaZonaOcitanjaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIzmijenioKorisnikWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNacinUnosaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNapomena1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaResetovanWE));
 	}
@@ -50,18 +52,24 @@ public class Ocitanja extends PocetnaStranica{
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title') and contains(text(), 'Očitanja')]")));
-		verifikacijaZajednickihElemenata("OČITANJA", "OČITANJA", "Očitanja mjerila", 13, false, false, true, true, true, true, false);
+		verifikacijaZajednickihElemenata("OČITANJA", "OČITANJA", "Očitanja mjerila", 19, false, false, true, true, true, true, false);
 		wait.until(ExpectedConditions.elementToBeClickable(masovnaOcitanjaBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(neocitaniBtnWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaId1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaVrstaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKupac1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatum1WE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNalogZaOcitanjeWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPrethodnoWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTrenutnoWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPotrosnjaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaOdobrenjeWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaRazlikaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPogonskiPritisakWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMjeriloWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaZonaOcitanjaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIzmijenioKorisnikWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNacinUnosaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNapomena1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaResetovanWE));
 	}
@@ -70,13 +78,14 @@ public class Ocitanja extends PocetnaStranica{
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title') and contains(text(), 'Očitanja')]")));
-		verifikacijaZajednickihElemenata("OČITANJA", "OČITANJA", "Očitanja mjerila", 17, false, false, true, true, true, true, false);
+		verifikacijaZajednickihElemenata("OČITANJA", "OČITANJA", "Očitanja mjerila", 18, false, false, true, true, true, true, false);
 		wait.until(ExpectedConditions.elementToBeClickable(masovnaOcitanjaBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(neocitaniBtnWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaId1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaVrstaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKupac1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatum1WE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNalogZaOcitanjeWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPrethodnoWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTrenutnoWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPotrosnjaWE));

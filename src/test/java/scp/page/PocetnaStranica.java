@@ -407,6 +407,9 @@ public class PocetnaStranica extends PageBase {
 	    
 	@FindBy(xpath = "//*[contains(@class, 'v-list__tile__title') and contains(text(), 'KP Vodovod')]")
 	public WebElement orgVodovodGradiskaWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-list__tile__title') and contains(text(), 'Mokro')]")
+	public WebElement orgMokroWE;
 	    
 	@FindBy(xpath = "//*[contains(@class, 'v-list__tile__title') and contains(text(), 'SON')]")
 	public WebElement orgSonWE;

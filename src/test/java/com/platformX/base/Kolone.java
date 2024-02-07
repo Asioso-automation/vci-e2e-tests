@@ -2162,6 +2162,9 @@ public class Kolone extends PageBase {
 	@FindBy(xpath = "//*[contains(@class, 'v-datatable')]//*[text() = 'Potrošnja']")
 	public WebElement kolonaPotrosnjaWE;
 	
+	@FindBy(xpath = "//*[contains(@class, 'v-datatable')]//*[text() = 'Suma potrošnje indirektnih mjerila']")
+	public WebElement kolonaSumaPotrosnjeIndirektnihMjerilaWE;
+	
 	@FindBy(xpath = "//*[contains(@class, 'v-datatable')]//*[text() = 'Odobrenje']")
 	public WebElement kolonaOdobrenjeWE;
 	
@@ -2185,6 +2188,9 @@ public class Kolone extends PageBase {
 	
 	@FindBy(xpath = "//*[contains(@class, 'v-datatable')]//*[text() = 'Način unosa']")
 	public WebElement kolonaNacinUnosaWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-datatable')]//*[text() = 'Nalog za očitanje']")
+	public WebElement kolonaNalogZaOcitanjeWE;
 	
 	@FindBy(xpath = "//*[contains(@class, 'v-datatable')]//*[text() = 'Resetovan']")
 	public WebElement kolonaResetovanWE;
