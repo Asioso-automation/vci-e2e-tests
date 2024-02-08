@@ -181,7 +181,7 @@ public class SCP_004_Verifikacija_Sekcija_Test extends BaseTest {
 		logIn.logIn(pocetna.orgVodovodGradiskaWE);
 		pocetna.verifikujPocetnuStranicu();
 		Mjerila mjerila = pocetna.navigirajNaMjerila();
-		mjerila.verifikujMjerila();
+		mjerila.verifikujMjerilaVodovod();
 		VrsteMjerila vrsteMjerila = pocetna.navigirajNaVrsteMjerila();
 		vrsteMjerila.verifikujVrsteMjerila();
 		TipoviMjerila tipoviMjerila = pocetna.navigirajNaTipoveMjerila();
@@ -203,7 +203,7 @@ public class SCP_004_Verifikacija_Sekcija_Test extends BaseTest {
 		ZoneOcitanja zoneOcitanja = pocetna.navigirajNaZoneOcitanja();
 		zoneOcitanja.verifikujZoneOcitanja();
 		NalogZaOcitanja nalogOcitanja = pocetna.navigirajNaNalogeZaOcitanja();
-		nalogOcitanja.verifikujNalogZaOcitanjaVodomjera();
+		nalogOcitanja.verifikujNalogZaOcitanjaMjerila();
 		Ocitanja ocitanja = pocetna.navigirajNaOcitanja();
 		ocitanja.verifikujOcitanjaVodovod();
 		MonitoringOcitanja monitoring = pocetna.navigirajNaMonitoringOcitanja();

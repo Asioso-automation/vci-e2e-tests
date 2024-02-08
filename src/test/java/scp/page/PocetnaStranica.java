@@ -918,8 +918,8 @@ public class PocetnaStranica extends PageBase {
 	public IndirektnaPotrosnja navigirajNaIndirektnuPotrosnju()throws Exception{
 		try {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.elementToBeClickable(sifarniciWE));
-		sifarniciWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(ocitanjaWE));
+		ocitanjaWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(indirektnaPotrosnjaWE));
 		indirektnaPotrosnjaWE.click();
 		}

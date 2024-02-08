@@ -75,7 +75,7 @@ public class Ugovori extends PocetnaStranica{
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaProstorWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTarifnaGrupa1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrClanovaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaVodomjerWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMjeriloWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaZonaOcitanjaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumPocetkaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumPrestankaWE));
