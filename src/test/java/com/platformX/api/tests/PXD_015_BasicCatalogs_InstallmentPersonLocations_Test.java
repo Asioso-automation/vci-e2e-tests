@@ -94,7 +94,7 @@ public class PXD_015_BasicCatalogs_InstallmentPersonLocations_Test extends RestA
 	public void pxd_015_04_create_installment_persons_location_test1() throws Exception {
 		GlobalVariables.token = authorize();
 		addHeader("Authorization", "Bearer " + GlobalVariables.token);
-		Response response = methodPOSTresponse(api_properties.getValue("INSTALLMENT.PERSON.LOCATIONS.CREATE"), Payloads.pxdInstallmentPersonLocationCreate("2023-12-01", 301, 1, GlobalVariables.id1));
+		Response response = methodPOSTresponse(api_properties.getValue("INSTALLMENT.PERSON.LOCATIONS.CREATE"), Payloads.pxdInstallmentPersonLocationCreate("2023-12-01", 4101, 41, GlobalVariables.id1));
 		assertEquals(response.getStatusCode(), 200);
 		assertNotNull(response.print(), "Response body is empty");
 		GlobalVariables.id = response.asString();
@@ -103,7 +103,7 @@ public class PXD_015_BasicCatalogs_InstallmentPersonLocations_Test extends RestA
 	@Test(description = "positive test case", dependsOnMethods = { "pxd_015_04_create_installment_persons_location_test1" })
 	public void pxd_015_05_update_installment_person_location_test1() throws Exception {
 		addHeader("Authorization", "Bearer " + GlobalVariables.token);
-		methodPUTresponse(api_properties.getValue("INSTALLMENT.PERSON.LOCATIONS.UPDATE") + GlobalVariables.id, Payloads.pxdInstallmentPersonLocationUpdate("2023-12-05", 301, "301 - Istočno Novo Sarajevo", 1, "1 - Istočno Novo Sarajevo", Integer.parseInt(GlobalVariables.id), GlobalVariables.id1, "Monter NovaLokacija"));
+		methodPUTresponse(api_properties.getValue("INSTALLMENT.PERSON.LOCATIONS.UPDATE") + GlobalVariables.id, Payloads.pxdInstallmentPersonLocationUpdate("2023-12-05", 4101, "4101 - BIJELJINA", 41, "41 - TJ Bijeljina", Integer.parseInt(GlobalVariables.id), GlobalVariables.id1, "Monter NovaLokacija"));
 	}
 	
 	@Test(description = "positive test case", dependsOnMethods = { "pxd_015_04_create_installment_persons_location_test1" })

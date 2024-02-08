@@ -78,7 +78,7 @@ public class PXD_008_BasicCatalogs_Readers_Test extends RestApiBase {
 	public void pxd_008_04_create_reader_test1() throws Exception {
 		GlobalVariables.token = authorize();
 		addHeader("Authorization", "Bearer " + GlobalVariables.token);
-		Response response = methodPOSTresponse(api_properties.getValue("READERS.CREATE"), Payloads.pxdReaderCreate("2023-09-01", 308, "Citac"));
+		Response response = methodPOSTresponse(api_properties.getValue("READERS.CREATE"), Payloads.pxdReaderCreate("2023-09-01", 4101, "Citac"));
 		assertEquals(response.getStatusCode(), 200);
 		assertNotNull(response.print(), "Response body is empty");
 		GlobalVariables.id = response.asString();
@@ -87,7 +87,7 @@ public class PXD_008_BasicCatalogs_Readers_Test extends RestApiBase {
 	@Test(description = "positive test case", dependsOnMethods = { "pxd_008_04_create_reader_test1" })
 	public void pxd_008_05_update_reader_test1() throws Exception {
 		addHeader("Authorization", "Bearer " + GlobalVariables.token);
-		methodPUT(api_properties.getValue("READERS.UPDATE") + GlobalVariables.id, Payloads.pxdReaderUpdate("2023-09-01", "2023-09-02", 308, "308 - Pale", 5, "5 - Pale", Integer.parseInt(GlobalVariables.id), "Citac 1"), 204);
+		methodPUT(api_properties.getValue("READERS.UPDATE") + GlobalVariables.id, Payloads.pxdReaderUpdate("2023-09-01", "2023-09-02", 4101, "4101 - BIJELJINA", 41, "41 - TJ Bijeljina", Integer.parseInt(GlobalVariables.id), "Citac 1"), 204);
 	}
 	
 	@Test(description = "positive test case", dependsOnMethods = { "pxd_008_04_create_reader_test1" })

@@ -20,10 +20,10 @@ public class PXD_002_Administration_Users_Test extends RestApiBase {
 	public void pxd_002_01_get_user_test1() {
 		String token = authorize();
 		addHeader("Authorization", "Bearer " + token);
-		JsonPath jp = methodGET(api_properties.getValue("USERS.GET") + "10", 200);
-		assertEquals(jp.get("name"), "Miroslav");
-		assertEquals(jp.get("surname"), "Kremenović");
-		assertEquals(jp.get("username"), "KMIROSLAV");
+		JsonPath jp = methodGET(api_properties.getValue("USERS.GET") + "346", 200);
+		assertEquals(jp.get("name"), "Miloje");
+		assertEquals(jp.get("surname"), "Jovanović");
+		assertEquals(jp.get("username"), "MJovanovic");
 		assertEquals(jp.get("fieldOfficeIdDataOnlyText"), " - ");
 		assertNotNull(jp.getString("userModules"), "UserModules not forwarded");
 		// TODO Assert more
@@ -32,12 +32,12 @@ public class PXD_002_Administration_Users_Test extends RestApiBase {
 	@Test(description = "negative test case: wrong bearer token")
 	public void pxd_002_01_get_user_test2() {
 		addHeader("Authorization", Helper.getRandomString(15));
-		methodGET(api_properties.getValue("USERS.GET") + "10", 401);
+		methodGET(api_properties.getValue("USERS.GET") + "346", 401);
 	}
 
 	@Test(description = "negative test case: missing bearer token")
 	public void pxd_002_01_get_user_test3() {
-		methodGET(api_properties.getValue("USERS.GET") + "10", 401);
+		methodGET(api_properties.getValue("USERS.GET") + "346", 401);
 	}
 
 	@Test(description = "negative test case: wrong id")

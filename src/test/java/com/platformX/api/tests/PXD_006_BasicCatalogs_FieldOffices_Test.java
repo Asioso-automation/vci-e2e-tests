@@ -87,7 +87,7 @@ public class PXD_006_BasicCatalogs_FieldOffices_Test extends RestApiBase {
 	public void pxd_006_04_create_field_office_test1() throws Exception {
 		GlobalVariables.token = authorize();
 		addHeader("Authorization", "Bearer " + GlobalVariables.token);
-		Response response = methodPOSTresponse(api_properties.getValue("FIELD.OFFICES.CREATE"), Payloads.pxdFieldOfficeCreate(5, "FizickaLokacija", 11, 123));
+		Response response = methodPOSTresponse(api_properties.getValue("FIELD.OFFICES.CREATE"), Payloads.pxdFieldOfficeCreate(41, "FizickaLokacija", 11, 123));
 		assertEquals(response.getStatusCode(), 200);
 		assertNotNull(response.print(), "Response body is empty");
 		GlobalVariables.id = response.asString();
@@ -96,7 +96,7 @@ public class PXD_006_BasicCatalogs_FieldOffices_Test extends RestApiBase {
 	@Test(description = "positive test case", dependsOnMethods = { "pxd_006_04_create_field_office_test1" })
 	public void pxd_006_05_update_field_office_test1() throws Exception {
 		addHeader("Authorization", "Bearer " + GlobalVariables.token);
-		methodPATCH(api_properties.getValue("FIELD.OFFICES.UPDATE") + GlobalVariables.id, Payloads.pxdFieldOfficeUpdate(Integer.parseInt(GlobalVariables.id), 5, "FizickaLokacija 1", "11", "123", "5 - Pale", " - "), 204);
+		methodPATCH(api_properties.getValue("FIELD.OFFICES.UPDATE") + GlobalVariables.id, Payloads.pxdFieldOfficeUpdate(Integer.parseInt(GlobalVariables.id), 41, "FizickaLokacija 1", "11", "123", "41 - TJ Bijeljina", " - "), 204);
 	}
 	
 	@Test(description = "positive test case", dependsOnMethods = { "pxd_006_04_create_field_office_test1" })
