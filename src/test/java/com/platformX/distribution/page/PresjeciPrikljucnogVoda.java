@@ -7,13 +7,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import com.platformX.base.Kolone;
 
-public class PresjeciVoda extends PocetnaStranicaPXD {
+public class PresjeciPrikljucnogVoda extends PocetnaStranicaPXD {
 
-	public PresjeciVoda(WebDriver driver) throws FileNotFoundException, IOException {
+	public PresjeciPrikljucnogVoda(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);
 	}
 	
-	public void verifikujPresjeciVoda() throws InterruptedException, FileNotFoundException, IOException {
+	public void verifikujPresjeciPrikljucnogVoda() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Presjeci voda')]")));

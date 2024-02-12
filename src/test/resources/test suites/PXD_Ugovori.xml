@@ -1,4 +1,3 @@
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="Ugovori PXD">
 	<test name="Ugovori PXD">
 	<!--Duration of suite execution: ~10 minutes-->
@@ -7,39 +6,21 @@
 		<!--PlatformXDistribution-->
 				
 			<class
-				name="com.platformX.distribution.tests.PX_DIST_003_Verifikacija_Sekcije_Sifarnici_Test" />
+				name="com.platformX.distribution.tests.PX_DIST_003_Verifikacije_Sekcija_Test" />
 			<class
-				name="com.platformX.distribution.tests.PX_DIST_004_Verifikacija_Sekcije_Sifarnici_Za_Zapisnike_Test" />
+				name="com.platformX.distribution.tests.PX_DIST_012_Trafostanice_CRUD_Test" />
 			<class
-				name="com.platformX.distribution.tests.PX_DIST_005_Verifikacija_Sekcije_Tarifni_Sistem_Test" />
+				name="com.platformX.distribution.tests.PX_DIST_017_Mjerna_Mjesta_CRUD_Test" />
 			<class
-				name="com.platformX.distribution.tests.PX_DIST_006_Verifikacija_Sekcije_Mjerna_Mjesta_Test" />
+				name="com.platformX.distribution.tests.PX_DIST_018_Zbirna_Kontrolna_Mjerna_Mjesta_CRUD_Testt" />
 			<class
-				name="com.platformX.distribution.tests.PX_DIST_007_Verifikacija_Sekcije_Kupci_Test" />
+				name="com.platformX.distribution.tests.PX_DIST_021_Pravna_Lica_CRUD_Test" />
 			<class
-				name="com.platformX.distribution.tests.PX_DIST_008_Verifikacija_Sekcije_Brojila_Test" />
+				name="com.platformX.distribution.tests.PX_DIST_022_Fizicka_Lica_CRUD_Test" />
 			<class
-				name="com.platformX.distribution.tests.PX_DIST_009_Verifikacija_Sekcije_Obracunski_Ugovori_Test" />
+				name="com.platformX.distribution.tests.PX_DIST_023_Brojila_CRUD_Test" />
 			<class
-				name="com.platformX.distribution.tests.PX_DIST_010_Verifikacija_Sekcije_Ocitanja_Test" />
-			<class
-				name="com.platformX.distribution.tests.PX_DIST_011_Verifikacija_Sekcije_Obracun_Test" />
-			<class
-				name="com.platformX.distribution.tests.PX_DIST_012_Verifikacija_Sekcije_Administracija_Test" />
-			<class
-				name="com.platformX.distribution.tests.PX_DIST_022_Trafostanice_CRUD_Test" />
-			<class
-				name="com.platformX.distribution.tests.PX_DIST_027_Mjerna_Mjesta_CRUD_Test" />
-			<class
-				name="com.platformX.distribution.tests.PX_DIST_028_Zbirna_Kontrolna_Mjerna_Mjesta_CRUD_Test" />
-			<class
-				name="com.platformX.distribution.tests.PX_DIST_031_Pravna_Lica_CRUD_Test" />
-			<class
-				name="com.platformX.distribution.tests.PX_DIST_032_Fizicka_Lica_CRUD_Test" />
-			<class
-				name="com.platformX.distribution.tests.PX_DIST_033_Brojila_CRUD_Test" />
-			<class
-				name="com.platformX.distribution.tests.PX_DIST_034_Obracunski_Ugovori_CRUD_Test" />
+				name="com.platformX.distribution.tests.PX_DIST_024_Obracunski_Ugovori_CRUD_Test" />
 		</classes>
 	</test>
 </suite>

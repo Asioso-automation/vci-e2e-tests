@@ -161,8 +161,8 @@ public class PocetnaStranicaPXD extends PageBase {
 	@FindBy(xpath = "//div[contains(text(), 'Načini polaganja instalacija') and @class='v-list-item__title']")
 	protected WebElement naciniPolaganjaInstalacijaWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Nazivna struja') and @class='v-list-item__title']")
-	protected WebElement nazivnaStrujaWE;
+	@FindBy(xpath = "//div[contains(text(), 'Nazivne struje') and @class='v-list-item__title']")
+	protected WebElement nazivneStrujeWE;
 	
 	@FindBy(xpath = "//div[contains(text(), 'Materijali ormarića brojila') and @class='v-list-item__title']")
 	protected WebElement materijaliOrmaricaBrojilaWE;
@@ -179,8 +179,8 @@ public class PocetnaStranicaPXD extends PageBase {
 	@FindBy(xpath = "//div[contains(text(), 'Mjesta priključenja') and @class='v-list-item__title']")
 	protected WebElement mjestaPrikljucenjaWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Presjeci voda') and @class='v-list-item__title']")
-	protected WebElement presjeciVodaWE;
+	@FindBy(xpath = "//div[contains(text(), 'Presjeci priključnog voda') and @class='v-list-item__title']")
+	protected WebElement presjeciPrikljucnogVodaWE;
 	
 	@FindBy(xpath = "//div[contains(text(), 'Materijali provodnika') and @class='v-list-item__title']")
 	protected WebElement materijaliProvodnikaWE;
@@ -672,18 +672,18 @@ public class PocetnaStranicaPXD extends PageBase {
 		return new NaciniPolaganjaInstalacija(driver);
 	}
 	
-	public NazivnaStruja navigirajNaNazivnaStruja() throws Exception {
+	public NazivneStruje navigirajNaNazivneStruje() throws Exception {
 		try {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(sifarniciWE));
 		sifarniciWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(nazivnaStrujaWE));
-		nazivnaStrujaWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(nazivneStrujeWE));
+		nazivneStrujeWE.click();
 		}
 		catch (Exception e) {
-			driver.get(platformx_distribution_properties.getValue("URL.DIST.LOGIN") + platformx_distribution_properties.getValue("NAZIVNA.STRUJA"));
+			driver.get(platformx_distribution_properties.getValue("URL.DIST.LOGIN") + platformx_distribution_properties.getValue("NAZIVNE.STRUJE"));
 		}
-		return new NazivnaStruja(driver);
+		return new NazivneStruje(driver);
 	}
 	
 	public MaterijaliOrmaricaBrojila navigirajNaMaterijaliOrmaricaBrojila() throws Exception {
@@ -756,18 +756,18 @@ public class PocetnaStranicaPXD extends PageBase {
 		return new MjestaPrikljucenja(driver);
 	}
 
-	public PresjeciVoda navigirajNaPresjeciVoda() throws Exception {
+	public PresjeciPrikljucnogVoda navigirajNaPresjeciPrikljucnogVoda() throws Exception {
 		try {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(sifarniciWE));
 		sifarniciWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(presjeciVodaWE));
-		presjeciVodaWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(presjeciPrikljucnogVodaWE));
+		presjeciPrikljucnogVodaWE.click();
 		}
 		catch (Exception e) {
 			driver.get(platformx_distribution_properties.getValue("URL.DIST.LOGIN") + platformx_distribution_properties.getValue("PRESJECI.VODA"));
 		}
-		return new PresjeciVoda(driver);
+		return new PresjeciPrikljucnogVoda(driver);
 	}
 	
 	public MaterijaliProvodnika navigirajNaMaterijaliProvodnika() throws Exception {

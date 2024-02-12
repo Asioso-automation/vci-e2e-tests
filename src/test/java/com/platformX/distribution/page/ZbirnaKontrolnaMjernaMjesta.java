@@ -3,7 +3,6 @@ package com.platformX.distribution.page;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -29,7 +28,7 @@ public class ZbirnaKontrolnaMjernaMjesta extends PocetnaStranicaPXD {
 	@FindBy(xpath = "//div[4]/div/div/div[1]/div[1]/input[1]")
 	 private WebElement poljeTrafoStanicaWE;
 	
-	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '11120 - 120-Didas')]")
+	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '410112 - NOVA BANKA')]")			// 11120 - 120-Didas > 410112 - NOVA BANKA
 	 private WebElement odaberiTrafoStanicuWE;
 	
 	@FindBy(xpath = "//div[6]/div/div/div[1]/div[1]/input[1]")
@@ -49,7 +48,7 @@ public class ZbirnaKontrolnaMjernaMjesta extends PocetnaStranicaPXD {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaRedniBrojWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTrafostanicaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaFizickaLokacijaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPrenosniOdnosWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKonstantaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojiloWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumOdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumDoWE));
@@ -70,16 +69,10 @@ public class ZbirnaKontrolnaMjernaMjesta extends PocetnaStranicaPXD {
 		poljeKonstantaWE.click();
 		poljeKonstantaWE.sendKeys(Helper.getRandomNumber(1));
 		wait.until(ExpectedConditions.elementToBeClickable(poljeTrafoStanicaWE));
-		poljeTrafoStanicaWE.sendKeys("11120 - 120-Didas");
+		poljeTrafoStanicaWE.sendKeys("410112 - NOVA BANKA");
 		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
 		wait.until(ExpectedConditions.elementToBeClickable(odaberiTrafoStanicuWE));
 		odaberiTrafoStanicuWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(poljeCitackiHodWE));
-		poljeCitackiHodWE.click();
-		poljeCitackiHodWE.sendKeys("01 01 00 011120");
-		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
-		poljeCitackiHodWE.sendKeys(Keys.ARROW_DOWN);
-		poljeCitackiHodWE.sendKeys(Keys.ENTER);
 		wait.until(ExpectedConditions.elementToBeClickable(poljeBrojCitackogHodaWE));   
 		poljeBrojCitackogHodaWE.sendKeys(Helper.getRandomNumber(4));
 		wait.until(ExpectedConditions.elementToBeClickable(datumBtn1WE));

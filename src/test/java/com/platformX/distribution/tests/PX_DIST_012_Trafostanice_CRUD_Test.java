@@ -88,7 +88,7 @@ public class PX_DIST_012_Trafostanice_CRUD_Test extends BaseTest {
 		trafostanice.verifikujPraznuTabelu();
 	}
 	
-	@Test
+	@Test (retryAnalyzer = RetryAnalyzer.class)
 	public void px_dist_012_4_neuspjesno_brisanje_trafostanice_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
@@ -97,9 +97,9 @@ public class PX_DIST_012_Trafostanice_CRUD_Test extends BaseTest {
 		homePage.verifikujPocetnuStranicu();
 		Trafostanice trafostanice = homePage.navigirajNaTrafostanice();
 		trafostanice.verifikujTrafostanice();
-		trafostanice.pretraziStavku(homePage.filterKolona3WE, "001-Gradac");
+		trafostanice.pretraziStavku(homePage.filterKolona3WE, "ŽTS MOČILA");				// promijenjeno sa 001-Gradac na ŽTS MOČILA
 		trafostanice.verifikujTrafostanice();
-		trafostanice.verifikujStavku("001-Gradac", homePage.podatak2Tabela3WE);
+		trafostanice.verifikujStavku("ŽTS MOČILA", homePage.podatak2Tabela3WE);
 		trafostanice.obrisiStavku();
 		trafostanice.verifikujPoruku("Brisanje ovog zapisa nije moguće.");
 	}

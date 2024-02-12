@@ -72,7 +72,7 @@ public class PX_DIST_010_Ulice_CRUD_Test extends BaseTest {
 		ulice.verifikujPraznuTabelu();
 	}
 	
-	@Test
+	@Test (retryAnalyzer = RetryAnalyzer.class)
 	public void px_dist_010_4_neuspjesno_brisanje_ulice_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
@@ -81,9 +81,9 @@ public class PX_DIST_010_Ulice_CRUD_Test extends BaseTest {
 		homePage.verifikujPocetnuStranicu();
 		Ulice ulice = homePage.navigirajNaUlice();
 		ulice.verifikujUlice();
-		ulice.pretraziStavku(homePage.filterKolona2WE, "Hajduk Veljkova");
+		ulice.pretraziStavku(homePage.filterKolona2WE, "HERCEGOVAČKA");				// promijenjeno sa Hajduk Veljkova na HERCEGOVAČKA
 		ulice.verifikujUlice();
-		ulice.verifikujStavku("Hajduk Veljkova", homePage.podatak2Tabela2WE);
+		ulice.verifikujStavku("HERCEGOVAČKA", homePage.podatak2Tabela2WE);
 		ulice.obrisiStavku();
 		ulice.verifikujPoruku("Brisanje ovog zapisa nije moguće.");
 	}

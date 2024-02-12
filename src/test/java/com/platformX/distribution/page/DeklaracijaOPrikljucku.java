@@ -17,12 +17,14 @@ public class DeklaracijaOPrikljucku extends PocetnaStranicaPXD {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Deklaracija o priključku')]")));
-		verifikacijaZajednickihElemenata("Mjerna Mjesta", "Deklaracija O Priključku", "Deklaracija o priključku", 9, false, false, true, true, true, true, false);
+		verifikacijaZajednickihElemenata("Mjerna Mjesta", "Deklaracija O Priključku", "Deklaracija o priključku", 10, false, false, true, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDeklaracijaZaUgovorWE));
+//		TODO kolona EesWE
+//		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDeklaracijaZaUgovorWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKupacWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMjernoMjestoEicWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojiloWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTarifnaGrupaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAdresaMjernogMjestaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojProtokolaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumWE));

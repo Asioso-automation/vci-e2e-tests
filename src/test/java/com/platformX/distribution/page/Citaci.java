@@ -46,12 +46,12 @@ public class Citaci extends PocetnaStranicaPXD {
 		wait.until(ExpectedConditions.elementToBeClickable(imeWE));
 		imeWE.sendKeys(ime);
 		wait.until(ExpectedConditions.elementToBeClickable(terenskaJedinicaWE));
-		terenskaJedinicaWE.sendKeys("5");
+		terenskaJedinicaWE.sendKeys("41");											// promijenjeno sa 5 (Pale) na 41 (TJ Bijeljina)
 		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
 		terenskaJedinicaWE.sendKeys(Keys.ARROW_DOWN);
 		terenskaJedinicaWE.sendKeys(Keys.ENTER);
 		wait.until(ExpectedConditions.elementToBeClickable(fizickaLokacijaWE));
-		fizickaLokacijaWE.sendKeys("308");
+		fizickaLokacijaWE.sendKeys("4101");											// promijenjeno sa 308 (Pale) na 4101 (FL Bijeljina)
 		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
 		fizickaLokacijaWE.sendKeys(Keys.ARROW_DOWN);
 		fizickaLokacijaWE.sendKeys(Keys.ENTER);

@@ -7,17 +7,17 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import com.platformX.base.Kolone;
 
-public class NazivnaStruja extends PocetnaStranicaPXD {
+public class NazivneStruje extends PocetnaStranicaPXD {
 
-	public NazivnaStruja(WebDriver driver) throws FileNotFoundException, IOException {
+	public NazivneStruje(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);
 	}
 	
-	public void verifikujNazivnaStruja() throws InterruptedException, FileNotFoundException, IOException {
+	public void verifikujNazivneStruje() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
-				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Nazivna struja')]")));
-		verifikacijaZajednickihElemenata("Šifarnici", "Nazivna Struja", "Nazivna struja", 3, false, false, true, true, true, true, false);
+				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Nazivne struje')]")));
+		verifikacijaZajednickihElemenata("Šifarnici", "Nazivna Struja", "Nazivne struje", 3, false, false, true, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaVrijednostWE));
 	}

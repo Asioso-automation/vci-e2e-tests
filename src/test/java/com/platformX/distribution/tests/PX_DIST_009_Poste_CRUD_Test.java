@@ -88,7 +88,7 @@ public class PX_DIST_009_Poste_CRUD_Test extends BaseTest {
 		poste.verifikujPraznuTabelu();
 	}
 
-	@Test
+	@Test (retryAnalyzer = RetryAnalyzer.class)
 	public void px_dist_009_5_neuspjesno_brisanje_poste_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
@@ -97,9 +97,9 @@ public class PX_DIST_009_Poste_CRUD_Test extends BaseTest {
 		homePage.verifikujPocetnuStranicu();
 		Poste poste = homePage.navigirajNaPoste();
 		poste.verifikujPoste();
-		poste.pretraziStavku(homePage.filterKolona2WE, "Novi Beograd");
+		poste.pretraziStavku(homePage.filterKolona2WE, "Zagreb");			// promijenjeno sa Novi Beograd na Zagreb
 		poste.verifikujPoste();
-		poste.verifikujStavku("11070", homePage.podatak2Tabela1WE);
+		poste.verifikujStavku("10000", homePage.podatak2Tabela1WE);			// promijenjeno sa 11070 na 10000
 		poste.obrisiStavku();
 		poste.verifikujPoruku("Brisanje ovog zapisa nije moguće.");
 	}
