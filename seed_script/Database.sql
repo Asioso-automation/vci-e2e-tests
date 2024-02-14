@@ -507,15 +507,21 @@ INSERT INTO [Finance].[BookingType]
     ,(11, N'Troškova sudskih postupaka', N'Трошкови судских поступака', 1, 0, 0, 0)
 
 
-INSERT [Finance].[AccountingType] ([Id], [Name]) VALUES (1, N'Racun')
-INSERT [Finance].[AccountingType] ([Id], [Name]) VALUES (2, N'Uplata')
-INSERT [Finance].[AccountingType] ([Id], [Name]) VALUES (3, N'Korekcija')
+INSERT [Finance].[AccountingType] 
+    ([Id], [Name]) 
+VALUES 
+    (1, N'Racun'),
+    (2, N'Uplata'),
+    (3, N'Korekcija')
 
 
 SET IDENTITY_INSERT [Finance].[Bank] ON 
 
-INSERT [Finance].[Bank] ([Id], [Name], [LeadingAccountNumbers]) VALUES (166, N'Banka 1', '552')
-INSERT [Finance].[Bank] ([Id], [Name], [LeadingAccountNumbers]) VALUES (167, N'Banka 2', '532')
+INSERT [Finance].[Bank] 
+    ([Id], [Name], [LeadingAccountNumbers], [PrintName]) 
+VALUES 
+    (166, N'Banka 1', '552', N'Banka 1'),
+    (167, N'Banka 2', '532', N'Banka 2')
 
 SET IDENTITY_INSERT [Finance].[Bank] OFF
 
