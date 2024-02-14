@@ -17,7 +17,7 @@ public class NazivneStruje extends PocetnaStranicaPXD {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Nazivne struje')]")));
-		verifikacijaZajednickihElemenata("Šifarnici", "Nazivna Struja", "Nazivne struje", 3, false, false, true, true, true, true, false);
+		verifikacijaZajednickihElemenata("Šifarnici", "Nazivne Struje", "Nazivne struje", 3, false, false, true, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaVrijednostWE));
 	}

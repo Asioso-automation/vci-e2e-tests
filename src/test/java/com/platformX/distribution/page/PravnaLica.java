@@ -29,19 +29,19 @@ public class PravnaLica extends PocetnaStranicaPXD {
 	@FindBy(xpath = "//div[4]/div[1]/div/div/div[1]/div[1]/input[1]")
 	 private WebElement poljeMjestoWE;
 
-	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '6 - Banja Luka')]")
+	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '25 - Bijeljina')]")				// 6 - Banja Luka > 25 - Bijeljina
 	 private WebElement odaberiMjestoWE;
 
 	@FindBy(xpath = "//div[4]/div[2]/div/div/div[1]/div[1]/input[1]")
 	 private WebElement poljeUlicaWE;
 
-	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '10950 - Svetog Save')]")
+	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '1001 - JASENICA III')]")			// 10950 - Svetog Save > 1001 - JASENICA III
 	 private WebElement odaberiUlicuWE;
 
 	@FindBy(xpath = "//div[4]/div[4]/div/div/div[1]/div[1]/input[1]")
 	 private WebElement poljePostaWE;
 
-	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '78000 - Banja Luka')]")
+	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '76300 - Bijeljina')]")			// 78000 - Banja Luka > 76300 - Bijeljina
 	 private WebElement odaberiPostuWE;
 
 	public void verifikujPravnaLica() throws InterruptedException, FileNotFoundException, IOException {
@@ -71,18 +71,18 @@ public class PravnaLica extends PocetnaStranicaPXD {
 		poljeJibWE.sendKeys(Helper.getRandomNumber(13));
 		wait.until(ExpectedConditions.elementToBeClickable(poljeMjestoWE));
 		poljeMjestoWE.click();
-		poljeMjestoWE.sendKeys("6 - Banja Luka");
+		poljeMjestoWE.sendKeys("25 - Bijeljina");
 		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
 		wait.until(ExpectedConditions.elementToBeClickable(odaberiMjestoWE));
 		odaberiMjestoWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(poljeUlicaWE));
-		poljeUlicaWE.sendKeys("10950 - Svetog Save");
+		poljeUlicaWE.sendKeys("1001 - JASENICA III");
 		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
 		wait.until(ExpectedConditions.elementToBeClickable(odaberiUlicuWE));
 		odaberiUlicuWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(poljePostaWE));
 		poljePostaWE.click();
-		poljePostaWE.sendKeys("78000 - Banja Luka");
+		poljePostaWE.sendKeys("76300 - Bijeljina");
 		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
 		wait.until(ExpectedConditions.elementToBeClickable(odaberiPostuWE));
 		odaberiPostuWE.click();
