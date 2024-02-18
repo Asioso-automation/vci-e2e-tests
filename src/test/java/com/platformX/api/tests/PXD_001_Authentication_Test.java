@@ -4,7 +4,6 @@ import org.testng.annotations.Test;
 import com.platformX.base.Payloads;
 import com.platformX.base.RestApiBase;
 import com.platformX.util.Helper;
-
 import data.ApiProvider;
 import io.restassured.path.json.JsonPath;
 import static org.testng.Assert.assertEquals;
@@ -76,7 +75,7 @@ public class PXD_001_Authentication_Test extends RestApiBase {
 		assertEquals(jp.get("name"), ApiProvider.userData_name);
 		assertEquals(jp.get("surname"), ApiProvider.userData_surnamename);
 		assertNotNull(jp.getString("permissions"), "Permissions not forwarded");
-		// TODO Assert more
+		// TODO Assert more parameters
 	}
 
 	@Test(description = "negative test case: wrong bearer token")

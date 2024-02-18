@@ -32,7 +32,7 @@ public class RestApiBase {
 		builder = requestSpecBuilder;
 	}
 
-	// method used for GET endpoints
+	// methods used for GET end-points
 	public Response methodGETresponse(String endpoint) {
 		RequestSpecification requestSpec = builder.build();
 		return given().log().all().config(restAssuredConfig).spec(requestSpec).when()
@@ -48,7 +48,7 @@ public class RestApiBase {
 		return jp;
 	}
 
-	// method used for POST endpoints
+	// methods used for POST end-points
 	public Response methodPOSTresponse(String endpoint, String payload) {
 		RequestSpecification requestSpec = builder.build();
 		return given().log().all().config(restAssuredConfig).spec(requestSpec).contentType("application/json")
@@ -65,7 +65,7 @@ public class RestApiBase {
 		return jp;
 	}
 
-	// method used for PUT endpoints
+	// methods used for PUT end-points
 	public Response methodPUTresponse(String endpoint, String payload) {
 		RequestSpecification requestSpec = builder.build();
 		return given().log().all().config(restAssuredConfig).spec(requestSpec).contentType("application/json")
@@ -82,7 +82,13 @@ public class RestApiBase {
 		return jp;
 	}
 
-	// method used for PATCH endpoints
+	// methods used for PATCH end-points
+	public Response methodPATCHresponse(String endpoint, String payload) {
+		RequestSpecification requestSpec = builder.build();
+		return given().log().all().config(restAssuredConfig).spec(requestSpec).contentType("application/json")
+				.body(payload).when().patch(api_properties.getValue("URL.BASE") + endpoint);
+	}
+	
 	public JsonPath methodPATCH(String endpoint, String payload, int status) {
 		RequestSpecification requestSpec = builder.build();
 		Response response = given().log().all().config(restAssuredConfig).spec(requestSpec)
@@ -93,7 +99,7 @@ public class RestApiBase {
 		return jp;
 	}
 
-	// method used for DELETE endpoints
+	// methods used for DELETE end-points
 	public Response methodDELETEresponse(String endpoint) {
 		RequestSpecification requestSpec = builder.build();
 		return given().log().all().config(restAssuredConfig).spec(requestSpec).when()
@@ -116,7 +122,7 @@ public class RestApiBase {
 		builder = requestSpecBuilder;
 	}
 
-	protected String authorize() { // authAdmin
+	protected String authorize() { // authorization with admin
 		JsonPath jp = methodPOST(api_properties.getValue("AUTHENTICATE"),
 				Payloads.pxdAuth(api_properties.getValue("USERNAME"), api_properties.getValue("PASSWORD")), 200);
 		assertNotNull(jp.getString("token"), "Token not forwarded");
