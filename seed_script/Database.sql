@@ -21,11 +21,13 @@ GO
 
 SET IDENTITY_INSERT BasicCatalog.Entity ON
 
-Insert Into BasicCatalog.Entity ([Id],[Name])
-Values (1,N'Republika Srpska')
-,(2,N'Federacija BiH')
-,(3,N'Brcko Distrik')
-,(4,N'Mjesto van BiH')
+INSERT BasicCatalog.Entity 
+    ([Id],[Name])
+VALUES 
+    (1, N'Republika Srpska'),
+    (2, N'Federacija BiH'),
+    (3, N'Brcko Distrik'),
+    (4, N'Mjesto van BiH')
 
 SET IDENTITY_INSERT BasicCatalog.Entity OFF
 
@@ -729,7 +731,7 @@ SET IDENTITY_INSERT [TariffSystem].[TariffGroup] OFF
 SET IDENTITY_INSERT [TariffSystem].[TariffItem] ON 
 
 INSERT [TariffSystem].[TariffItem] 
-    ([Id], [Description], [MeasureUnit], [Valid], [CalculationTypeId], [EbixCode]) 
+    ([Id], [Description], [MeasureUnit], [Valid], [CalculationTypeId], [EbixCode], [MeteringPointTypeId]) 
 VALUES 
     (1, N'Aht', N'kW', 1, 1, N'1.8.1', 1),
     (2, N'Alt', N'kW', 1, 1, N'1.8.2', 1),
