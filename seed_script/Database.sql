@@ -612,37 +612,51 @@ VALUES
 
 SET IDENTITY_INSERT [BasicCatalog].[TerritorialAffiliation] OFF 
 
+
+INSERT [BasicCatalog].[MeteringPointType]
+    ([Id]], [Name], [Code], [Consumer], [Producer])
+VALUES 
+	(1, N'Potrošnja',             N'E17', 1, 0),
+	(2, N'Proizvodnja',           N'E18', 0, 1),
+	(3, N'Potrošnja-Proizvodnja', N'E19', 1, 0),
+	(4, N'Razmjena',              N'E20', 1, 0)
+
+
 SET IDENTITY_INSERT [Metering].[MeteringPoint] ON
 
-INSERT [Metering].[MeteringPoint] ([Id], [DsoId], [EIC], [DsoOfGridId], [MeteringPointInDsoId], [PlaceId], [StreetId], [AddressText], [StreetNumber], [PostOfficeId], [TerritorialAffiliationId]) VALUES (0, 1, N'Nepoznato mjm', 1, 0, 1, 1, N'Nepoznata ulica', N'NN', 78000, 1)
-INSERT [Metering].[MeteringPoint] ([Id], [DsoId], [EIC], [DsoOfGridId], [MeteringPointInDsoId], [PlaceId], [StreetId], [AddressText], [StreetNumber], [PostOfficeId], [TerritorialAffiliationId]) VALUES (1, 1, N'AMOSA542A       ', 1, 0, 1, 1, N'Nepoznata ulica', N'NN', 78000, 1)
-INSERT [Metering].[MeteringPoint] ([Id], [DsoId], [EIC], [DsoOfGridId], [MeteringPointInDsoId], [PlaceId], [StreetId], [AddressText], [StreetNumber], [PostOfficeId], [TerritorialAffiliationId]) VALUES (2, 1, N'1514BASD99      ', 1, 0, 1, 1, N'Nepoznata ulica', N'NN', 78000, 1)
-INSERT [Metering].[MeteringPoint] ([Id], [DsoId], [EIC], [DsoOfGridId], [MeteringPointInDsoId], [PlaceId], [StreetId], [AddressText], [StreetNumber], [PostOfficeId], [TerritorialAffiliationId]) VALUES (61100001, 1, N'36Z03800001H    ', 1, 1, 1, 1, N'Nepoznata ulica', N'NN', 78000, 1)
-INSERT [Metering].[MeteringPoint] ([Id], [DsoId], [EIC], [DsoOfGridId], [MeteringPointInDsoId], [PlaceId], [StreetId], [AddressText], [StreetNumber], [PostOfficeId], [TerritorialAffiliationId]) VALUES (61100021, 1, N'36Z1SB1200027N  ', 1, 1, 1, 1, N'Nepoznata ulica', N'NN', 78000, 1)
-INSERT [Metering].[MeteringPoint] ([Id], [DsoId], [EIC], [DsoOfGridId], [MeteringPointInDsoId], [PlaceId], [StreetId], [AddressText], [StreetNumber], [PostOfficeId], [TerritorialAffiliationId]) VALUES (61100069, 1, N'36Z0SB00        ', 1, 1, 1, 1, N'Nepoznata ulica', N'NN', 78000, 1)
-INSERT [Metering].[MeteringPoint] ([Id], [DsoId], [EIC], [DsoOfGridId], [MeteringPointInDsoId], [PlaceId], [StreetId], [AddressText], [StreetNumber], [PostOfficeId], [TerritorialAffiliationId]) VALUES (61100089, 1, N'dfsf56456       ', 1, 1, 1, 1, N'Nepoznata ulica', N'NN', 78000, 1)
-INSERT [Metering].[MeteringPoint] ([Id], [DsoId], [EIC], [DsoOfGridId], [MeteringPointInDsoId], [PlaceId], [StreetId], [AddressText], [StreetNumber], [PostOfficeId], [TerritorialAffiliationId]) VALUES (61100265, 1, N'36Z0100154X     ', 1, 1, 1, 1, N'Nepoznata ulica', N'NN', 78000, 1)
-INSERT [Metering].[MeteringPoint] ([Id], [DsoId], [EIC], [DsoOfGridId], [MeteringPointInDsoId], [PlaceId], [StreetId], [AddressText], [StreetNumber], [PostOfficeId], [TerritorialAffiliationId]) VALUES (62100355, 1, N'36ZTZDM         ', 6, 1, 1, 1, N'Nepoznata ulica', N'NN', 78000, 1)
-INSERT [Metering].[MeteringPoint] ([Id], [DsoId], [EIC], [DsoOfGridId], [MeteringPointInDsoId], [PlaceId], [StreetId], [AddressText], [StreetNumber], [PostOfficeId], [TerritorialAffiliationId]) VALUES (64100070, 1, N'151414          ', 6, 1, 1, 1, N'Nepoznata ulica', N'NN', 78000, 1)
-INSERT [Metering].[MeteringPoint] ([Id], [DsoId], [EIC], [DsoOfGridId], [MeteringPointInDsoId], [PlaceId], [StreetId], [AddressText], [StreetNumber], [PostOfficeId], [TerritorialAffiliationId]) VALUES (64102062, 1, N'36Z400          ', 4, 1, 1, 1, N'Nepoznata ulica', N'NN', 78000, 1)
-INSERT [Metering].[MeteringPoint] ([Id], [DsoId], [EIC], [DsoOfGridId], [MeteringPointInDsoId], [PlaceId], [StreetId], [AddressText], [StreetNumber], [PostOfficeId], [TerritorialAffiliationId]) VALUES (64102347, 1, N'K009151661R     ', 4, 1, 1, 1, N'Nepoznata ulica', N'NN', 78000, 1)
-INSERT [Metering].[MeteringPoint] ([Id], [DsoId], [EIC], [DsoOfGridId], [MeteringPointInDsoId], [PlaceId], [StreetId], [AddressText], [StreetNumber], [PostOfficeId], [TerritorialAffiliationId]) VALUES (64102458, 1, N'36Z0SK009       ', 4, 1, 1, 1, N'Nepoznata ulica', N'NN', 78000, 1)
-INSERT [Metering].[MeteringPoint] ([Id], [DsoId], [EIC], [DsoOfGridId], [MeteringPointInDsoId], [PlaceId], [StreetId], [AddressText], [StreetNumber], [PostOfficeId], [TerritorialAffiliationId]) VALUES (64102459, 1, N'SK009281150R    ', 4, 1, 1, 1, N'Nepoznata ulica', N'NN', 78000, 1)
-INSERT [Metering].[MeteringPoint] ([Id], [DsoId], [EIC], [DsoOfGridId], [MeteringPointInDsoId], [PlaceId], [StreetId], [AddressText], [StreetNumber], [PostOfficeId], [TerritorialAffiliationId]) VALUES (64102666, 1, N'36Z0S501070Z    ', 4, 1, 1, 1, N'Nepoznata ulica', N'NN', 78000, 1)
-INSERT [Metering].[MeteringPoint] ([Id], [DsoId], [EIC], [DsoOfGridId], [MeteringPointInDsoId], [PlaceId], [StreetId], [AddressText], [StreetNumber], [PostOfficeId], [TerritorialAffiliationId]) VALUES (64102798, 1, N'36Z0SK085O      ', 4, 1, 1, 1, N'Nepoznata ulica', N'NN', 78000, 1)
-INSERT [Metering].[MeteringPoint] ([Id], [DsoId], [EIC], [DsoOfGridId], [MeteringPointInDsoId], [PlaceId], [StreetId], [AddressText], [StreetNumber], [PostOfficeId], [TerritorialAffiliationId]) VALUES (64103708, 1, N'36066699C       ', 4, 1, 1, 1, N'Nepoznata ulica', N'NN', 78000, 1)
-INSERT [Metering].[MeteringPoint] ([Id], [DsoId], [EIC], [DsoOfGridId], [MeteringPointInDsoId], [PlaceId], [StreetId], [AddressText], [StreetNumber], [PostOfficeId], [TerritorialAffiliationId]) VALUES (64103709, 1, N'3K0850660G      ', 4, 1, 1, 1, N'Nepoznata ulica', N'NN', 78000, 1)
-INSERT [Metering].[MeteringPoint] ([Id], [DsoId], [EIC], [DsoOfGridId], [MeteringPointInDsoId], [PlaceId], [StreetId], [AddressText], [StreetNumber], [PostOfficeId], [TerritorialAffiliationId]) VALUES (64103710, 1, N'36SK08501E      ', 4, 1, 1, 1, N'Nepoznata ulica', N'NN', 78000, 1)
-INSERT [Metering].[MeteringPoint] ([Id], [DsoId], [EIC], [DsoOfGridId], [MeteringPointInDsoId], [PlaceId], [StreetId], [AddressText], [StreetNumber], [PostOfficeId], [TerritorialAffiliationId]) VALUES (64103711, 2, N'36K085053       ', 4, 1, 1, 1, N'Nepoznata ulica', N'NN', 78000, 1)
-INSERT [Metering].[MeteringPoint] ([Id], [DsoId], [EIC], [DsoOfGridId], [MeteringPointInDsoId], [PlaceId], [StreetId], [AddressText], [StreetNumber], [PostOfficeId], [TerritorialAffiliationId]) VALUES (66100001, 2, N'36BL13          ', 6, 1, 1, 1, N'Nepoznata ulica', N'NN', 78000, 1)
-INSERT [Metering].[MeteringPoint] ([Id], [DsoId], [EIC], [DsoOfGridId], [MeteringPointInDsoId], [PlaceId], [StreetId], [AddressText], [StreetNumber], [PostOfficeId], [TerritorialAffiliationId]) VALUES (66100002, 3, N'36BL13B         ', 6, 1, 1, 1, N'Nepoznata ulica', N'NN', 78000, 1)
-INSERT [Metering].[MeteringPoint] ([Id], [DsoId], [EIC], [DsoOfGridId], [MeteringPointInDsoId], [PlaceId], [StreetId], [AddressText], [StreetNumber], [PostOfficeId], [TerritorialAffiliationId]) VALUES (66100003, 4, N'36ZBL17         ', 6, 1, 1, 1, N'Nepoznata ulica', N'NN', 78000, 1)
-INSERT [Metering].[MeteringPoint] ([Id], [DsoId], [EIC], [DsoOfGridId], [MeteringPointInDsoId], [PlaceId], [StreetId], [AddressText], [StreetNumber], [PostOfficeId], [TerritorialAffiliationId]) VALUES (66100004, 5, N'LUK3B24         ', 6, 1, 1, 1, N'Nepoznata ulica', N'NN', 78000, 1)
-INSERT [Metering].[MeteringPoint] ([Id], [DsoId], [EIC], [DsoOfGridId], [MeteringPointInDsoId], [PlaceId], [StreetId], [AddressText], [StreetNumber], [PostOfficeId], [TerritorialAffiliationId]) VALUES (66100005, 6, N'36Z53B1Z        ', 6, 1, 1, 1, N'Nepoznata ulica', N'NN', 78000, 1)
-INSERT [Metering].[MeteringPoint] ([Id], [DsoId], [EIC], [DsoOfGridId], [MeteringPointInDsoId], [PlaceId], [StreetId], [AddressText], [StreetNumber], [PostOfficeId], [TerritorialAffiliationId]) VALUES (66100006, 1, N'3PD53B2W        ', 6, 1, 1, 1, N'Nepoznata ulica', N'NN', 78000, 1)
-INSERT [Metering].[MeteringPoint] ([Id], [DsoId], [EIC], [DsoOfGridId], [MeteringPointInDsoId], [PlaceId], [StreetId], [AddressText], [StreetNumber], [PostOfficeId], [TerritorialAffiliationId]) VALUES (66100007, 1, N'36ZBLNG         ', 6, 1, 1, 1, N'Nepoznata ulica', N'NN', 78000, 1)
+INSERT [Metering].[MeteringPoint] 
+    ([Id], [DsoId], [EIC], [DsoOfGridId], [MeteringPointInDsoId], [PlaceId], [StreetId], [AddressText], [StreetNumber], [PostOfficeId], [TerritorialAffiliationId], [MeteringPointTypeId]) 
+VALUES 
+    (0,        1, N'Nepoznato mjm',    1, 0, 1, 1, N'Nepoznata ulica', N'NN', 78000, 1, 1),
+    (1,        1, N'AMOSA542A       ', 1, 0, 1, 1, N'Nepoznata ulica', N'NN', 78000, 1, 1),
+    (2,        1, N'1514BASD99      ', 1, 0, 1, 1, N'Nepoznata ulica', N'NN', 78000, 1, 1),
+    (61100001, 1, N'36Z03800001H    ', 1, 1, 1, 1, N'Nepoznata ulica', N'NN', 78000, 1, 1),
+    (61100021, 1, N'36Z1SB1200027N  ', 1, 1, 1, 1, N'Nepoznata ulica', N'NN', 78000, 1, 1),
+    (61100069, 1, N'36Z0SB00        ', 1, 1, 1, 1, N'Nepoznata ulica', N'NN', 78000, 1, 1),
+    (61100089, 1, N'dfsf56456       ', 1, 1, 1, 1, N'Nepoznata ulica', N'NN', 78000, 1, 1),
+    (61100265, 1, N'36Z0100154X     ', 1, 1, 1, 1, N'Nepoznata ulica', N'NN', 78000, 1, 1),
+    (62100355, 1, N'36ZTZDM         ', 6, 1, 1, 1, N'Nepoznata ulica', N'NN', 78000, 1, 1),
+    (64100070, 1, N'151414          ', 6, 1, 1, 1, N'Nepoznata ulica', N'NN', 78000, 1, 1),
+    (64102062, 1, N'36Z400          ', 4, 1, 1, 1, N'Nepoznata ulica', N'NN', 78000, 1, 1),
+    (64102347, 1, N'K009151661R     ', 4, 1, 1, 1, N'Nepoznata ulica', N'NN', 78000, 1, 1),
+    (64102458, 1, N'36Z0SK009       ', 4, 1, 1, 1, N'Nepoznata ulica', N'NN', 78000, 1, 1),
+    (64102459, 1, N'SK009281150R    ', 4, 1, 1, 1, N'Nepoznata ulica', N'NN', 78000, 1, 1),
+    (64102666, 1, N'36Z0S501070Z    ', 4, 1, 1, 1, N'Nepoznata ulica', N'NN', 78000, 1, 1),
+    (64102798, 1, N'36Z0SK085O      ', 4, 1, 1, 1, N'Nepoznata ulica', N'NN', 78000, 1, 1),
+    (64103708, 1, N'36066699C       ', 4, 1, 1, 1, N'Nepoznata ulica', N'NN', 78000, 1, 1),
+    (64103709, 1, N'3K0850660G      ', 4, 1, 1, 1, N'Nepoznata ulica', N'NN', 78000, 1, 1),
+    (64103710, 1, N'36SK08501E      ', 4, 1, 1, 1, N'Nepoznata ulica', N'NN', 78000, 1, 1),
+    (64103711, 2, N'36K085053       ', 4, 1, 1, 1, N'Nepoznata ulica', N'NN', 78000, 1, 1),
+    (66100001, 2, N'36BL13          ', 6, 1, 1, 1, N'Nepoznata ulica', N'NN', 78000, 1, 1),
+    (66100002, 3, N'36BL13B         ', 6, 1, 1, 1, N'Nepoznata ulica', N'NN', 78000, 1, 1),
+    (66100003, 4, N'36ZBL17         ', 6, 1, 1, 1, N'Nepoznata ulica', N'NN', 78000, 1, 1),
+    (66100004, 5, N'LUK3B24         ', 6, 1, 1, 1, N'Nepoznata ulica', N'NN', 78000, 1, 1),
+    (66100005, 6, N'36Z53B1Z        ', 6, 1, 1, 1, N'Nepoznata ulica', N'NN', 78000, 1, 1),
+    (66100006, 1, N'3PD53B2W        ', 6, 1, 1, 1, N'Nepoznata ulica', N'NN', 78000, 1, 1),
+    (66100007, 1, N'36ZBLNG         ', 6, 1, 1, 1, N'Nepoznata ulica', N'NN', 78000, 1, 1)
 
 SET IDENTITY_INSERT [Metering].[MeteringPoint] OFF
+
 
 INSERT [Metering].[ReadingType] ([Id], [Name]) VALUES (1, N'Type of reading 1')
 
