@@ -603,18 +603,20 @@ INSERT [Finance].[Transaction] ([Id], [DebitId], [CreditId], [Date], [EntryDate]
 
 SET IDENTITY_INSERT [Finance].[Transaction] OFF
 
+
 SET IDENTITY_INSERT [BasicCatalog].[TerritorialAffiliation] ON 
 
-INSERT [BasicCatalog].[TerritorialAffiliation] ([Id], [Name])
+INSERT [BasicCatalog].[TerritorialAffiliation] 
+    ([Id], [Name])
 VALUES
-(1, N'Republika Srpska')
-,(2, N'Federacija BiH')
+    (1, N'Republika Srpska'),
+    (2, N'Federacija BiH')
 
 SET IDENTITY_INSERT [BasicCatalog].[TerritorialAffiliation] OFF 
 
 
 INSERT [BasicCatalog].[MeteringPointType]
-    ([Id]], [Name], [Code], [Consumer], [Producer])
+    ([Id], [Name], [Code], [Consumer], [Producer])
 VALUES 
 	(1, N'Potrošnja',             N'E17', 1, 0),
 	(2, N'Proizvodnja',           N'E18', 0, 1),
