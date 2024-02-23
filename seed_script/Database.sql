@@ -545,14 +545,14 @@ SET IDENTITY_INSERT [Finance].[Credit] OFF
 
 SET IDENTITY_INSERT [Finance].[Debit] ON 
 
-INSERT [Finance].[Debit] ([Id], [BookingTypeId], [AccountingTypeId], [FinancialTypeId], [CustomerId], [MeteringPointId], [ContractId], [BillId], [PaymentId], [BillCorrectionId], [InterestCorrectionId], [DebtRestructureId], [AccusationId], [BankruptcyId], [MediationId], [DebtAcquittanceId], [PeriodId], [Date], [EntryDate], [DueDate], [Amount], [AmountLeft], [Description], [Note], [ReferenceNumber]) VALUES (133, 1, 1, 1, 2100267, 62100355, 200008, 1270, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1910, CAST(N'2019-10-31' AS Date), CAST(N'2019-12-19T10:10:46.653' AS DateTime), CAST(N'2019-11-25' AS Date), CAST(10716.52 AS Decimal(12, 2)), CAST(10716.52 AS Decimal(12, 2)), N'Energija', NULL, N'1270')
-INSERT [Finance].[Debit] ([Id], [BookingTypeId], [AccountingTypeId], [FinancialTypeId], [CustomerId], [MeteringPointId], [ContractId], [BillId], [PaymentId], [BillCorrectionId], [InterestCorrectionId], [DebtRestructureId], [AccusationId], [BankruptcyId], [MediationId], [DebtAcquittanceId], [PeriodId], [Date], [EntryDate], [DueDate], [Amount], [AmountLeft], [Description], [Note], [ReferenceNumber]) VALUES (135, 1, 1, 6, 4100010, 66100003, 600003, 1276, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1910, CAST(N'2019-10-31' AS Date), CAST(N'2019-12-19T10:10:46.793' AS DateTime), CAST(N'2019-11-25' AS Date), CAST(44.73 AS Decimal(12, 2)), CAST(24.73 AS Decimal(12, 2)), N'Pdv na mrežarinu', NULL, N'1276')
-INSERT [Finance].[Debit] ([Id], [BookingTypeId], [AccountingTypeId], [FinancialTypeId], [CustomerId], [MeteringPointId], [ContractId], [BillId], [PaymentId], [BillCorrectionId], [InterestCorrectionId], [DebtRestructureId], [AccusationId], [BankruptcyId], [MediationId], [DebtAcquittanceId], [PeriodId], [Date], [EntryDate], [DueDate], [Amount], [AmountLeft], [Description], [Note], [ReferenceNumber]) VALUES (137, 1, 1, 6, 4100010, 66100004, 600004, 1277, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1910, CAST(N'2019-10-31' AS Date), CAST(N'2019-12-19T10:10:46.793' AS DateTime), CAST(N'2019-11-25' AS Date), CAST(1053.78 AS Decimal(12, 2)), CAST(1033.78 AS Decimal(12, 2)), N'Pdv na mrežarinu', NULL, N'1277')
-INSERT [Finance].[Debit] ([Id], [BookingTypeId], [AccountingTypeId], [FinancialTypeId], [CustomerId], [MeteringPointId], [ContractId], [BillId], [PaymentId], [BillCorrectionId], [InterestCorrectionId], [DebtRestructureId], [AccusationId], [BankruptcyId], [MediationId], [DebtAcquittanceId], [PeriodId], [Date], [EntryDate], [DueDate], [Amount], [AmountLeft], [Description], [Note], [ReferenceNumber]) VALUES (139, 1, 1, 6, 4100010, 66100005, 600005, 1278, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1910, CAST(N'2019-10-31' AS Date), CAST(N'2019-12-19T10:10:46.793' AS DateTime), CAST(N'2019-11-25' AS Date), CAST(1237.16 AS Decimal(12, 2)), CAST(1237.16 AS Decimal(12, 2)), N'Pdv na mrežarinu', NULL, N'1278')
-INSERT [Finance].[Debit] ([Id], [BookingTypeId], [AccountingTypeId], [FinancialTypeId], [CustomerId], [MeteringPointId], [ContractId], [BillId], [PaymentId], [BillCorrectionId], [InterestCorrectionId], [DebtRestructureId], [AccusationId], [BankruptcyId], [MediationId], [DebtAcquittanceId], [PeriodId], [Date], [EntryDate], [DueDate], [Amount], [AmountLeft], [Description], [Note], [ReferenceNumber]) VALUES (141, 1, 1, 6, 4100010, 66100007, 600007, 1280, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1910, CAST(N'2019-10-31' AS Date), CAST(N'2019-12-19T10:10:46.793' AS DateTime), CAST(N'2019-11-25' AS Date), CAST(272.66 AS Decimal(12, 2)), CAST(242.66 AS Decimal(12, 2)), N'Pdv na mrežarinu', NULL, N'1280')
-INSERT [Finance].[Debit] ([Id], [BookingTypeId], [AccountingTypeId], [FinancialTypeId], [CustomerId], [MeteringPointId], [ContractId], [BillId], [PaymentId], [BillCorrectionId], [InterestCorrectionId], [DebtRestructureId], [AccusationId], [BankruptcyId], [MediationId], [DebtAcquittanceId], [PeriodId], [Date], [EntryDate], [DueDate], [Amount], [AmountLeft], [Description], [Note], [ReferenceNumber]) VALUES (143, 1, 1, 6, 4100843, 61100001, 100063, 1987, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1910, CAST(N'2019-10-31' AS Date), CAST(N'2019-12-19T10:10:46.793' AS DateTime), CAST(N'2019-11-25' AS Date), CAST(1475.41 AS Decimal(12, 2)), CAST(1475.41 AS Decimal(12, 2)), N'Pdv na mrežarinu', NULL, N'1987')
-INSERT [Finance].[Debit] ([Id], [BookingTypeId], [AccountingTypeId], [FinancialTypeId], [CustomerId], [MeteringPointId], [ContractId], [BillId], [PaymentId], [BillCorrectionId], [InterestCorrectionId], [DebtRestructureId], [AccusationId], [BankruptcyId], [MediationId], [DebtAcquittanceId], [PeriodId], [Date], [EntryDate], [DueDate], [Amount], [AmountLeft], [Description], [Note], [ReferenceNumber]) VALUES (145, 1, 1, 6, 4100843, 61100021, 100064, 1988, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1910, CAST(N'2019-10-31' AS Date), CAST(N'2019-12-19T10:10:46.793' AS DateTime), CAST(N'2019-11-25' AS Date), CAST(261.16 AS Decimal(12, 2)), CAST(261.16 AS Decimal(12, 2)), N'Pdv na mrežarinu', NULL, N'1988')
-INSERT [Finance].[Debit] ([Id], [BookingTypeId], [AccountingTypeId], [FinancialTypeId], [CustomerId], [MeteringPointId], [ContractId], [BillId], [PaymentId], [BillCorrectionId], [InterestCorrectionId], [DebtRestructureId], [AccusationId], [BankruptcyId], [MediationId], [DebtAcquittanceId], [PeriodId], [Date], [EntryDate], [DueDate], [Amount], [AmountLeft], [Description], [Note], [ReferenceNumber]) VALUES (147, 1, 1, 6, 4100843, 61100069, 100065, 1989, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1910, CAST(N'2019-10-31' AS Date), CAST(N'2019-12-19T10:10:46.793' AS DateTime), CAST(N'2019-11-25' AS Date), CAST(82.73 AS Decimal(12, 2)), CAST(82.73 AS Decimal(12, 2)), N'Pdv na mrežarinu', NULL, N'1989')
+INSERT [Finance].[Debit] ([Id], [BookingTypeId], [AccountingTypeId], [FinancialTypeId], [CustomerId], [MeteringPointId], [ContractId], [BillId], [PaymentId], [BillCorrectionId], [InterestCorrectionId], [DebtRestructureId], [AccusationId], [BankruptcyId], [MediationId], [DebtAcquittanceId], [PeriodId], [Date], [EntryDate], [DueDate], [Amount], [AmountLeft], [Description], [Note], [ReferenceNumber], [ContractTypeId]) VALUES (133, 1, 1, 1, 2100267, 62100355, 200008, 1270, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1910, CAST(N'2019-10-31' AS Date), CAST(N'2019-12-19T10:10:46.653' AS DateTime), CAST(N'2019-11-25' AS Date), CAST(10716.52 AS Decimal(12, 2)), CAST(10716.52 AS Decimal(12, 2)), N'Energija', NULL, N'1270', 0)
+INSERT [Finance].[Debit] ([Id], [BookingTypeId], [AccountingTypeId], [FinancialTypeId], [CustomerId], [MeteringPointId], [ContractId], [BillId], [PaymentId], [BillCorrectionId], [InterestCorrectionId], [DebtRestructureId], [AccusationId], [BankruptcyId], [MediationId], [DebtAcquittanceId], [PeriodId], [Date], [EntryDate], [DueDate], [Amount], [AmountLeft], [Description], [Note], [ReferenceNumber], [ContractTypeId]) VALUES (135, 1, 1, 6, 4100010, 66100003, 600003, 1276, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1910, CAST(N'2019-10-31' AS Date), CAST(N'2019-12-19T10:10:46.793' AS DateTime), CAST(N'2019-11-25' AS Date), CAST(44.73 AS Decimal(12, 2)), CAST(24.73 AS Decimal(12, 2)), N'Pdv na mrežarinu', NULL, N'1276', 0)
+INSERT [Finance].[Debit] ([Id], [BookingTypeId], [AccountingTypeId], [FinancialTypeId], [CustomerId], [MeteringPointId], [ContractId], [BillId], [PaymentId], [BillCorrectionId], [InterestCorrectionId], [DebtRestructureId], [AccusationId], [BankruptcyId], [MediationId], [DebtAcquittanceId], [PeriodId], [Date], [EntryDate], [DueDate], [Amount], [AmountLeft], [Description], [Note], [ReferenceNumber], [ContractTypeId]) VALUES (137, 1, 1, 6, 4100010, 66100004, 600004, 1277, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1910, CAST(N'2019-10-31' AS Date), CAST(N'2019-12-19T10:10:46.793' AS DateTime), CAST(N'2019-11-25' AS Date), CAST(1053.78 AS Decimal(12, 2)), CAST(1033.78 AS Decimal(12, 2)), N'Pdv na mrežarinu', NULL, N'1277', 0)
+INSERT [Finance].[Debit] ([Id], [BookingTypeId], [AccountingTypeId], [FinancialTypeId], [CustomerId], [MeteringPointId], [ContractId], [BillId], [PaymentId], [BillCorrectionId], [InterestCorrectionId], [DebtRestructureId], [AccusationId], [BankruptcyId], [MediationId], [DebtAcquittanceId], [PeriodId], [Date], [EntryDate], [DueDate], [Amount], [AmountLeft], [Description], [Note], [ReferenceNumber], [ContractTypeId]) VALUES (139, 1, 1, 6, 4100010, 66100005, 600005, 1278, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1910, CAST(N'2019-10-31' AS Date), CAST(N'2019-12-19T10:10:46.793' AS DateTime), CAST(N'2019-11-25' AS Date), CAST(1237.16 AS Decimal(12, 2)), CAST(1237.16 AS Decimal(12, 2)), N'Pdv na mrežarinu', NULL, N'1278', 0)
+INSERT [Finance].[Debit] ([Id], [BookingTypeId], [AccountingTypeId], [FinancialTypeId], [CustomerId], [MeteringPointId], [ContractId], [BillId], [PaymentId], [BillCorrectionId], [InterestCorrectionId], [DebtRestructureId], [AccusationId], [BankruptcyId], [MediationId], [DebtAcquittanceId], [PeriodId], [Date], [EntryDate], [DueDate], [Amount], [AmountLeft], [Description], [Note], [ReferenceNumber], [ContractTypeId]) VALUES (141, 1, 1, 6, 4100010, 66100007, 600007, 1280, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1910, CAST(N'2019-10-31' AS Date), CAST(N'2019-12-19T10:10:46.793' AS DateTime), CAST(N'2019-11-25' AS Date), CAST(272.66 AS Decimal(12, 2)), CAST(242.66 AS Decimal(12, 2)), N'Pdv na mrežarinu', NULL, N'1280', 0)
+INSERT [Finance].[Debit] ([Id], [BookingTypeId], [AccountingTypeId], [FinancialTypeId], [CustomerId], [MeteringPointId], [ContractId], [BillId], [PaymentId], [BillCorrectionId], [InterestCorrectionId], [DebtRestructureId], [AccusationId], [BankruptcyId], [MediationId], [DebtAcquittanceId], [PeriodId], [Date], [EntryDate], [DueDate], [Amount], [AmountLeft], [Description], [Note], [ReferenceNumber], [ContractTypeId]) VALUES (143, 1, 1, 6, 4100843, 61100001, 100063, 1987, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1910, CAST(N'2019-10-31' AS Date), CAST(N'2019-12-19T10:10:46.793' AS DateTime), CAST(N'2019-11-25' AS Date), CAST(1475.41 AS Decimal(12, 2)), CAST(1475.41 AS Decimal(12, 2)), N'Pdv na mrežarinu', NULL, N'1987', 0)
+INSERT [Finance].[Debit] ([Id], [BookingTypeId], [AccountingTypeId], [FinancialTypeId], [CustomerId], [MeteringPointId], [ContractId], [BillId], [PaymentId], [BillCorrectionId], [InterestCorrectionId], [DebtRestructureId], [AccusationId], [BankruptcyId], [MediationId], [DebtAcquittanceId], [PeriodId], [Date], [EntryDate], [DueDate], [Amount], [AmountLeft], [Description], [Note], [ReferenceNumber], [ContractTypeId]) VALUES (145, 1, 1, 6, 4100843, 61100021, 100064, 1988, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1910, CAST(N'2019-10-31' AS Date), CAST(N'2019-12-19T10:10:46.793' AS DateTime), CAST(N'2019-11-25' AS Date), CAST(261.16 AS Decimal(12, 2)), CAST(261.16 AS Decimal(12, 2)), N'Pdv na mrežarinu', NULL, N'1988', 0)
+INSERT [Finance].[Debit] ([Id], [BookingTypeId], [AccountingTypeId], [FinancialTypeId], [CustomerId], [MeteringPointId], [ContractId], [BillId], [PaymentId], [BillCorrectionId], [InterestCorrectionId], [DebtRestructureId], [AccusationId], [BankruptcyId], [MediationId], [DebtAcquittanceId], [PeriodId], [Date], [EntryDate], [DueDate], [Amount], [AmountLeft], [Description], [Note], [ReferenceNumber], [ContractTypeId]) VALUES (147, 1, 1, 6, 4100843, 61100069, 100065, 1989, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1910, CAST(N'2019-10-31' AS Date), CAST(N'2019-12-19T10:10:46.793' AS DateTime), CAST(N'2019-11-25' AS Date), CAST(82.73 AS Decimal(12, 2)), CAST(82.73 AS Decimal(12, 2)), N'Pdv na mrežarinu', NULL, N'1989', 0)
 
 SET IDENTITY_INSERT [Finance].[Debit] OFF
 
@@ -711,11 +711,15 @@ INSERT [TariffSystem].[PriceList] ([Id], [TariffGroupId], [SeasonId], [PriceCate
 INSERT [TariffSystem].[PriceList] ([Id], [TariffGroupId], [SeasonId], [PriceCategoryId], [TariffItemId], [Price], [VatRate], [DateFrom], [DateTo], [CalculationTypeId]) VALUES (23, 24, N'S', 1, 1, CAST(0.120000 AS Decimal(14, 6)), CAST(17 AS Numeric(18, 0)), CAST(N'2029-01-02' AS Date), CAST(N'2039-01-01' AS Date), 1)
 INSERT [TariffSystem].[PriceList] ([Id], [TariffGroupId], [SeasonId], [PriceCategoryId], [TariffItemId], [Price], [VatRate], [DateFrom], [DateTo], [CalculationTypeId]) VALUES (20, 24, N'S', 1, 1, CAST(0.135000 AS Decimal(14, 6)), CAST(17 AS Numeric(18, 0)), CAST(N'2039-01-02' AS Date), CAST(N'2049-01-01' AS Date), 1)
 INSERT [TariffSystem].[PriceList] ([Id], [TariffGroupId], [SeasonId], [PriceCategoryId], [TariffItemId], [Price], [VatRate], [DateFrom], [DateTo], [CalculationTypeId]) VALUES (21, 24, N'S', 1, 1, CAST(0.010000 AS Decimal(14, 6)), CAST(17 AS Numeric(18, 0)), CAST(N'2049-01-02' AS Date), CAST(N'2099-01-01' AS Date), 1)
+
 SET IDENTITY_INSERT [TariffSystem].[PriceList] OFF
 
 
-INSERT [TariffSystem].[Season] ([Id], [Name], [DateFrom], [DateTo]) VALUES (N'S', N'Ljetna', N'01.03.', N'30.09.')
-INSERT [TariffSystem].[Season] ([Id], [Name], [DateFrom], [DateTo]) VALUES (N'W', N'Zimska', N'01.10.', N'28.02.')
+INSERT [TariffSystem].[Season] 
+    ([Id], [Name], [DateFrom], [DateTo]) 
+VALUES 
+    (N'S', N'Ljetna', N'01.03.', N'30.09.'),
+    (N'W', N'Zimska', N'01.10.', N'28.02.')
 
 
 SET IDENTITY_INSERT [TariffSystem].[TariffGroup] ON 
@@ -743,43 +747,38 @@ SET IDENTITY_INSERT [TariffSystem].[TariffItem] OFF
 
 SET IDENTITY_INSERT [TariffSystem].[TariffSuperGroup] ON 
 
-INSERT [TariffSystem].[TariffSuperGroup] ([Id], [Name], [PrintName]) VALUES (1, N'Tarifna nadgrupa 1', 'Nadgurpa 1')
-INSERT [TariffSystem].[TariffSuperGroup] ([Id], [Name], [PrintName]) VALUES (17, N'Tarifna nadgrupa 2', 'Nadgrupa 2')
-INSERT [TariffSystem].[TariffSuperGroup] ([Id], [Name], [PrintName]) VALUES (18, N'Tarifna nadgrupa 3', 'Nadgrupa 3')
+INSERT [TariffSystem].[TariffSuperGroup] 
+    ([Id], [Name], [PrintName]) 
+VALUES 
+    (1,  N'Tarifna nadgrupa 1', 'Nadgurpa 1'),
+    (17, N'Tarifna nadgrupa 2', 'Nadgrupa 2'),
+    (18, N'Tarifna nadgrupa 3', 'Nadgrupa 3')
 
 SET IDENTITY_INSERT [TariffSystem].[TariffSuperGroup] OFF
 
-GO
-INSERT [Customer].[ContractDeclineReason] ([Id], [Name]) VALUES (N'CMP', N'Prethodni snabdjevač je podnio žalbu na zahtev za ugovor')
-GO
-INSERT [Customer].[ContractDeclineReason] ([Id], [Name]) VALUES (N'E09', N'Instalacija se ne može identifikovati')
-GO
-INSERT [Customer].[ContractDeclineReason] ([Id], [Name]) VALUES (N'E0H', N'Podaci nisu dostupni')
-GO
-INSERT [Customer].[ContractDeclineReason] ([Id], [Name]) VALUES (N'E10', N'Mjerno mjesto se ne može identifikovati')
-GO
-INSERT [Customer].[ContractDeclineReason] ([Id], [Name]) VALUES (N'E14', N'Drugi razlog')
-GO
-INSERT [Customer].[ContractDeclineReason] ([Id], [Name]) VALUES (N'E17', N'Traženi datum promene nije u vremenskim ograničenjima')
-GO
-INSERT [Customer].[ContractDeclineReason] ([Id], [Name]) VALUES (N'E22', N'Mjerno mjesto je blokirano za prebacivanje')
-GO
-INSERT [Customer].[ContractDeclineReason] ([Id], [Name]) VALUES (N'E37', N'Nema važećeg ugovora o pristupu mreži')
-GO
-INSERT [Customer].[ContractDeclineReason] ([Id], [Name]) VALUES (N'E50', N'Period nije validan')
-GO
-INSERT [Customer].[ContractDeclineReason] ([Id], [Name]) VALUES (N'E55', N'Neovlašćeno izmereni podaci')
-GO
-INSERT [Customer].[ContractDeclineReason] ([Id], [Name]) VALUES (N'E81', N'Mjerno mjesto nije povezano')
-GO
 
-GO
+INSERT [Customer].[ContractDeclineReason] 
+    ([Id], [Name]) 
+VALUES 
+    (N'CMP', N'Prethodni snabdjevač je podnio žalbu na zahtev za ugovor'),
+    (N'E09', N'Instalacija se ne može identifikovati'),
+    (N'E0H', N'Podaci nisu dostupni'),
+    (N'E10', N'Mjerno mjesto se ne može identifikovati'),
+    (N'E14', N'Drugi razlog'),
+    (N'E17', N'Traženi datum promene nije u vremenskim ograničenjima'),
+    (N'E22', N'Mjerno mjesto je blokirano za prebacivanje'),
+    (N'E37', N'Nema važećeg ugovora o pristupu mreži'),
+    (N'E50', N'Period nije validan'),
+    (N'E55', N'Neovlašćeno izmereni podaci'),
+    (N'E81', N'Mjerno mjesto nije povezano')
+
+
 SET IDENTITY_INSERT [BasicCatalog].[ContractDeactivationReason] ON 
-GO
+
 INSERT [BasicCatalog].[ContractDeactivationReason] ([Id], [Name]) VALUES (1, N'Test 1')
-GO
+
 SET IDENTITY_INSERT [BasicCatalog].[ContractDeactivationReason] OFF
-GO
+
 
 ----vrati constrainte
 
