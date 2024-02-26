@@ -583,8 +583,11 @@ SET IDENTITY_INSERT [Finance].[Interest] OFF
 
 SET IDENTITY_INSERT [Finance].[Payment] ON 
 
-INSERT [Finance].[Payment] ([Id], [PaymentJournalId], [CustomerId], [MeteringPointId], [BookingTypeId], [ReferenceNumber], [Amount], [Payer], [Note], [OrderNumber], [EntryDateTime], [UserId], [Archived]) VALUES (71, 46, 4100010, 66100003, 1, N'1276', CAST(5.00 AS Decimal(12, 2)), NULL, NULL, 1, CAST(N'2020-10-15T15:41:39.800' AS DateTime), 3, 1)
-INSERT [Finance].[Payment] ([Id], [PaymentJournalId], [CustomerId], [MeteringPointId], [BookingTypeId], [ReferenceNumber], [Amount], [Payer], [Note], [OrderNumber], [EntryDateTime], [UserId], [Archived]) VALUES (72, 46, 4100010, 66100001, 1, NULL, CAST(20.00 AS Decimal(12, 2)), NULL, NULL, 2, CAST(N'2020-10-15T15:41:54.740' AS DateTime), 3, 1)
+INSERT [Finance].[Payment] 
+    ([Id], [PaymentJournalId], [CustomerId], [MeteringPointId], [BookingTypeId], [ReferenceNumber], [Amount], [Payer], [Note], [OrderNumber], [EntryDateTime], [UserId], [Archived], [ContractTypeId]) 
+VALUES 
+    (71, 46, 4100010, 66100003, 1, N'1276', CAST(5.00 AS Decimal(12, 2)), NULL, NULL, 1, CAST(N'2020-10-15T15:41:39.800' AS DateTime), 3, 0, 1),
+    (72, 46, 4100010, 66100001, 1, NULL,   CAST(20.00 AS Decimal(12, 2)), NULL, NULL, 2, CAST(N'2020-10-15T15:41:54.740' AS DateTime), 3, 0, 1)
 
 SET IDENTITY_INSERT [Finance].[Payment] OFF
 
