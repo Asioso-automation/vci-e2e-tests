@@ -21,7 +21,7 @@ public class PXD_005_BasicCatalogs_FieldUnits_Test extends RestApiBase {
 	public void pxd_005_04_create_field_unit_test1() throws Exception {
 		GlobalVariables.token = authorize();
 		addHeader("Authorization", "Bearer " + GlobalVariables.token);
-		Response response = methodPOSTresponse(api_properties.getValue("FIELD.UNITS.CREATE"), Payloads.pxdFieldUnitCreate("TerenskaJedinica " + Helper.getRandomString(5)));
+		Response response = methodPOSTresponse(api_properties.getValue("FIELD.UNITS.CREATE"), Payloads.pxdFieldUnitCreate("TerenskaJedinica " + Helper.getRandomString(5), Integer.parseInt(Helper.getRandomNumber(2))));
 		assertEquals(response.getStatusCode(), 200);
 		// TODO Prosiriti body da prima i druge parametre "email" npr. i razviti negativne testove
 		assertNotNull(response, "Id not forwarded in response");
@@ -41,7 +41,7 @@ public class PXD_005_BasicCatalogs_FieldUnits_Test extends RestApiBase {
 	@Test(description = "positive test case: update field unit", dependsOnMethods = { "pxd_005_04_create_field_unit_test1" })
 	public void pxd_005_05_update_field_unit_test() throws Exception {
 		addHeader("Authorization", "Bearer " + GlobalVariables.token);
-		methodPUT(api_properties.getValue("FIELD.UNITS.UPDATE") + GlobalVariables.id, Payloads.pxdFieldUnitUpdate(Integer.parseInt(GlobalVariables.id), "TerenskaJedinica 1", " - "," - "), 204);
+		methodPUT(api_properties.getValue("FIELD.UNITS.UPDATE") + GlobalVariables.id, Payloads.pxdFieldUnitUpdate(Integer.parseInt(GlobalVariables.id), "TerenskaJedinica 1", " - "," - ", Integer.parseInt(Helper.getRandomNumber(2))), 204);
 	}
 	
 	@Test(description = "positive test case: delete field unit", dependsOnMethods = { "pxd_005_04_create_field_unit_test1" })

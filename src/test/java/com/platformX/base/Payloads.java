@@ -50,7 +50,7 @@ public class Payloads {
 				+ "}";
 	}
 	
-	public static String pxdFieldUnitCreate(String name) {
+	public static String pxdFieldUnitCreate(String name, int code) {
 		return "{\r\n"
 //				+ " \"companyId\": " + null + ", \r\n"
 //				+ " \"placeId\": " + null + ", \r\n"
@@ -64,11 +64,12 @@ public class Payloads {
 //				+ " \"www\": " + null + ", \r\n"
 //				+ " \"callCenter\": " + null + ", \r\n"
 //				+ " \"bankAccount\": " + null + ", \r\n"
-//				+ " \"failureReportingPhone\": " + null + " \r\n"				
+//				+ " \"failureReportingPhone\": " + null + ", \r\n"
+				+ " \"code\": " + code + " \r\n"
 				+ "}";
 	}
 	
-	public static String pxdFieldUnitUpdate(int id, String name, String placeText, String companyText) {
+	public static String pxdFieldUnitUpdate(int id, String name, String placeText, String companyText, int code) {
 		return "{\r\n"
 				+ " \"id\": " + id + ", \r\n"
 //				+ " \"companyId\": " + null + ", \r\n"
@@ -85,7 +86,8 @@ public class Payloads {
 //				+ " \"bankAccount\": " + null + ", \r\n"
 //				+ " \"failureReportingPhone\": " + null + ", \r\n"		
 				+ "	\"placeText\": \"" + placeText + "\", \r\n"
-				+ "	\"companyText\": \"" + companyText + "\" \r\n"
+				+ "	\"companyText\": \"" + companyText + "\", \r\n"
+				+ " \"code\": " + code + " \r\n"
 				+ "}";
 	}
 	
