@@ -427,18 +427,24 @@ INSERT [Calculation].[BillItem] ([Id], [BillId], [TariffItemId], [Description], 
 
 SET IDENTITY_INSERT [Calculation].[BillCorrectionType] ON 
 
-INSERT [Calculation].[BillCorrectionType] ([Id], [Name], [CalculationTypeId]) VALUES (1, N'test', 1)
+INSERT [Calculation].[BillCorrectionType] 
+    ([Id], [Name], [CalculationTypeId]) 
+VALUES 
+    (1, N'Test', 1)
 
 SET IDENTITY_INSERT [Calculation].[BillCorrectionType] OFF
 
 
-INSERT [Calculation].[CalculationItem] ([Id], [Name]) VALUES (1, N'Reading')
-INSERT [Calculation].[CalculationItem] ([Id], [Name]) VALUES (2, N'Losses')
-INSERT [Calculation].[CalculationItem] ([Id], [Name]) VALUES (3, N'Indirect Consumption')
-INSERT [Calculation].[CalculationItem] ([Id], [Name]) VALUES (4, N'Penalties')
-INSERT [Calculation].[CalculationItem] ([Id], [Name]) VALUES (5, N'Supply Fee')
-INSERT [Calculation].[CalculationItem] ([Id], [Name]) VALUES (7, N'Approved Reactive')
-INSERT [Calculation].[CalculationItem] ([Id], [Name]) VALUES (9, N'Calculation')
+INSERT [Calculation].[CalculationItem] 
+    ([Id], [Name]) 
+VALUES 
+    (1, N'Reading'),
+    (2, N'Losses'),
+    (3, N'Indirect Consumption'),
+    (4, N'Penalties'),
+    (5, N'Supply Fee'),
+    (7, N'Approved Reactive'),
+    (9, N'Calculation')
 
 
 SET IDENTITY_INSERT [Calculation].[EnergyCalculation] ON 
@@ -454,9 +460,12 @@ INSERT [Calculation].[EnergyCalculation] ([Id], [PeriodId], [DsoId], [DateOfExch
 SET IDENTITY_INSERT [Calculation].[EnergyCalculation] OFF
 
 
-Insert Into [Customer].[ContractType] ([Id],[Name]) VALUES (1,N'Tip 1')
-Insert Into [Customer].[ContractType] ([Id],[Name]) VALUES (2,N'Tip 2')
-Insert Into [Customer].[ContractType] ([Id],[Name]) VALUES (3,N'Tip 3')
+INSERT [Customer].[ContractType] 
+    ([Id], [Name], [IsDefaultType]) 
+VALUES 
+    (1, N'Tip 1', 1),
+    (2, N'Tip 2', 0),
+    (3, N'Tip 3', 0)
 
 SET IDENTITY_INSERT [Customer].[Contract] ON 
 
@@ -488,13 +497,19 @@ INSERT [Customer].[Customer] ([Id], [IsLegalEntity], [Name], [PrintName], [Addit
 SET IDENTITY_INSERT [Customer].[Customer] OFF
 
 
-INSERT INTO [Customer].[ComplaintType] ([Id], [Name]) VALUES ( 1, N'Prigovor')
+INSERT [Customer].[ComplaintType] 
+    ([Id], [Name]) 
+VALUES 
+    (1, N'Prigovor')
 
 
 SET IDENTITY_INSERT [Customer].[RequestType] ON 
 
-INSERT [Customer].[RequestType] ([Id], [Description], [ComplaintTypeId], [Code]) VALUES (1, N'Vrsta zahtjeva 1', 1, 'P-1')
-INSERT [Customer].[RequestType] ([Id], [Description], [ComplaintTypeId], [Code]) VALUES (2, N'Vrsta zahtjeva 2', 1, 'P-2')
+INSERT [Customer].[RequestType] 
+    ([Id], [Description], [ComplaintTypeId], [Code]) 
+VALUES 
+    (1, N'Vrsta zahtjeva 1', 1, 'P-1'),
+    (2, N'Vrsta zahtjeva 2', 1, 'P-2')
 
 SET IDENTITY_INSERT [Customer].[RequestType] OFF
 
@@ -536,7 +551,10 @@ SET IDENTITY_INSERT [Finance].[Bank] OFF
 
 SET IDENTITY_INSERT [Finance].[BankAccount] ON 
 
-INSERT [Finance].[BankAccount] ([Id], [BankId], [Number], [BankSenderEmail], [AdapterName], [Active]) VALUES (117, 166, N'552-123-12345678-14', NULL, NULL, 1)
+INSERT [Finance].[BankAccount] 
+    ([Id], [BankId], [Number], [BankSenderEmail], [AdapterName], [Active]) 
+VALUES 
+    (117, 166, N'552-123-12345678-14', NULL, NULL, 1)
 
 SET IDENTITY_INSERT [Finance].[BankAccount] OFF
 
