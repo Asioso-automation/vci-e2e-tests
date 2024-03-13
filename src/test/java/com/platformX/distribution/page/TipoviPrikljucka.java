@@ -7,22 +7,23 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import com.platformX.base.Kolone;
 
-public class TipoviStandardnogPrikljucka extends PocetnaStranicaPXD {
+public class TipoviPrikljucka extends PocetnaStranicaPXD {
 
-	public TipoviStandardnogPrikljucka(WebDriver driver) throws FileNotFoundException, IOException {
+	public TipoviPrikljucka(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);
 	}
 
-	public void verifikujTipoveStandardnogPrikljucka() throws InterruptedException, FileNotFoundException, IOException {
+	public void verifikujTipoviPrikljucka() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
-				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Tipovi standardnog priključka')]")));
-		verifikacijaZajednickihElemenata("Šifarnici", "Tipovi Standardnog Priključka", "Tipovi standardnog priključka", 6, false, false, true, true, true, true, false);
+				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Tipovi priključka')]")));
+		verifikacijaZajednickihElemenata("Šifarnici", "Tipovi Priključka", "Tipovi priključka", 6, false, false, false, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNazivWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaSifraWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaCijenaWE));
 //		kolonaTrofazniPrikljucakWE napraviti
+//		kolonaFiksnaCijenaWE napraviti
 	}
 
 }

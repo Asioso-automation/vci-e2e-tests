@@ -22,9 +22,10 @@ public class TerenskeJedinice extends PocetnaStranicaPXD {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Terenske jedinice')]")));
-		verifikacijaZajednickihElemenata("Šifarnici", "Terenske Jedinice", "Terenske jedinice", 11, false, false, true, true, true, true, false);
+		verifikacijaZajednickihElemenata("Šifarnici", "Terenske Jedinice", "Terenske jedinice", 12, false, false, true, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNazivWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaSifraWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaOrganizacijaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaZiroRacunWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMjestoWE));

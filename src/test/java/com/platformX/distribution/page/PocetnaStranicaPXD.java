@@ -224,8 +224,8 @@ public class PocetnaStranicaPXD extends PageBase {
 	@FindBy(xpath = "//div[contains(text(), 'Vrste objekata') and @class='v-list-item__title']")
 	protected WebElement vrsteObjekataWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Tipovi standardnog priključka') and @class='v-list-item__title']")
-	protected WebElement tipoviStandardnogPrikljuckaWE;
+	@FindBy(xpath = "//div[contains(text(), 'Tipovi priključka') and @class='v-list-item__title']")
+	protected WebElement tipoviPrikljuckaWE;
 	
 	@FindBy(xpath = "//div[contains(text(), 'Načini plaćanja') and @class='v-list-item__title']")
 	protected WebElement naciniPlacanjaWE;
@@ -952,18 +952,18 @@ public class PocetnaStranicaPXD extends PageBase {
 		return new VrsteObjekata(driver);
 	}
 	
-	public TipoviStandardnogPrikljucka navigirajNaTipoviStandardnogPrikljucka() throws Exception {
+	public TipoviPrikljucka navigirajNaTipoviPrikljucka() throws Exception {
 		try {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(sifarniciWE));
 		sifarniciWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(tipoviStandardnogPrikljuckaWE));
-		tipoviStandardnogPrikljuckaWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(tipoviPrikljuckaWE));
+		tipoviPrikljuckaWE.click();
 		}
 		catch (Exception e) {
-			driver.get(platformx_distribution_properties.getValue("URL.DIST.LOGIN") + platformx_distribution_properties.getValue("TIPOVI.STANDARDNOG.PRIKLJUCKA"));
+			driver.get(platformx_distribution_properties.getValue("URL.DIST.LOGIN") + platformx_distribution_properties.getValue("TIPOVI.PRIKLJUCKA"));
 		}
-		return new TipoviStandardnogPrikljucka(driver);
+		return new TipoviPrikljucka(driver);
 	}
 	
 	public NaciniPlacanja navigirajNaNaciniPlacanja() throws Exception {

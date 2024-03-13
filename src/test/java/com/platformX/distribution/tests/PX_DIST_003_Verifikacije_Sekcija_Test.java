@@ -71,8 +71,8 @@ public class PX_DIST_003_Verifikacije_Sekcija_Test extends BaseTest {
 		tipoviPrikljucnogVoda.verifikujTipoviPrikljucnogVoda();
 		PresjeciPrikljucnogVoda presjeciPrikljucnogVoda = pocetna.navigirajNaPresjeciPrikljucnogVoda();
 		presjeciPrikljucnogVoda.verifikujPresjeciPrikljucnogVoda();
-		TipoviStandardnogPrikljucka tipoviStandardnogPrikljucka = pocetna.navigirajNaTipoviStandardnogPrikljucka();
-		tipoviStandardnogPrikljucka.verifikujTipoveStandardnogPrikljucka();
+		TipoviPrikljucka tipoviPrikljucka = pocetna.navigirajNaTipoviPrikljucka();
+		tipoviPrikljucka.verifikujTipoviPrikljucka();
 		PrikljucneSnage prikljucneSnage = pocetna.navigirajNaPrikljucneSnage();
 		prikljucneSnage.verifikujPrikljucneSnage();
 		NazivneStruje nazivneStruje = pocetna.navigirajNaNazivneStruje();
@@ -110,9 +110,10 @@ public class PX_DIST_003_Verifikacije_Sekcija_Test extends BaseTest {
 		SistemiZastiteOdPrenapona sistemiZastiteOdPrenapona = pocetna.navigirajNaSistemiZastiteOdPrenapona();
 		sistemiZastiteOdPrenapona.verifikujSistemiZastiteOdPrenapona();
 		RokoviVazenja rokoviVazenja = pocetna.navigirajNaRokoviVazenja();
-		rokoviVazenja.verifikujRokoveVazenja();
+		rokoviVazenja.verifikujRokoviVazenja();
 		NaciniPlacanja naciniPlacanja = pocetna.navigirajNaNaciniPlacanja();
-		naciniPlacanja.verifikujNacinePlacanja();
+		naciniPlacanja.verifikujNaciniPlacanja();
+// TODO Uslovi placanja
 	}
 	
 	@Test (description="test prolazi kroz sve stranice iz sekcije TARIFNI SISTEM i verifikuje ih")
@@ -134,6 +135,7 @@ public class PX_DIST_003_Verifikacije_Sekcija_Test extends BaseTest {
 		obracunskaSnaga.verifikujObracunskaSnaga();
 		CjenovnikMrezarine cjenovnik = pocetna.navigirajNaCjenovnikMrezarine();
 		cjenovnik.verifikujCjenovnikMrezarine();
+// TODO dodati class CjenovnikNeovlastenePotrosnje
 	}
 	
 	@Test(description = "test prolazi kroz sve stranice iz sekcije MJERNA MJESTA i verifikuje ih")

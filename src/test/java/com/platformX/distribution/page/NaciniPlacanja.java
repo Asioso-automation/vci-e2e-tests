@@ -13,7 +13,7 @@ public class NaciniPlacanja extends PocetnaStranicaPXD {
 		super(driver);
 	}
 	
-	public void verifikujNacinePlacanja() throws InterruptedException, FileNotFoundException, IOException {
+	public void verifikujNaciniPlacanja() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Načini plaćanja')]")));
