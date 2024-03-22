@@ -34,6 +34,7 @@ public class KategorijePotrosnje extends PocetnaStranicaPXD {
 		dodajBtnWE.click();
 		wait.until(ExpectedConditions.visibilityOf(nazivKategorijePotrosnjeWE));
 		nazivKategorijePotrosnjeWE.sendKeys(naziv);
+//		TODO dodati unos kategorije naponskog nivoa
 		wait.until(ExpectedConditions.visibilityOf(submitBtnWE));
 		submitBtnWE.click();
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));

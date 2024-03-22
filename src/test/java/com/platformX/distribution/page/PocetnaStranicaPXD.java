@@ -1708,20 +1708,6 @@ public class PocetnaStranicaPXD extends PageBase {
     	return new NeovlastenaPotrosnja(driver);
     }
     
-    public ZapisniciOUtvrdjenojNeovlastenojPotrosnji navigirajNaZapisniciOUtvrdjenojNeovlastenojPotrosnji() throws Exception {
-    	try {
-    	WebDriverWait wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.elementToBeClickable(neovlastenaPotrosnjaWE));
-		neovlastenaPotrosnjaWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(zapisniciOUtvrdjenojNeovlastenojPotrosnjiWE));
-		zapisniciOUtvrdjenojNeovlastenojPotrosnjiWE.click();
-    	}
-    	catch (Exception e) {
-			driver.get(platformx_distribution_properties.getValue("URL.DIST.LOGIN") + platformx_distribution_properties.getValue("ZAPISNICI.O.UTVRDJENOJ.NEOVLASTENOJ.POTROSNJI"));
-		}
-    	return new ZapisniciOUtvrdjenojNeovlastenojPotrosnji(driver);
-    }
-    
     public NaloziZaObracun navigirajNaNaloziZaObracun () throws Exception {
     	try {
     	WebDriverWait wait = new WebDriverWait(driver, 10);

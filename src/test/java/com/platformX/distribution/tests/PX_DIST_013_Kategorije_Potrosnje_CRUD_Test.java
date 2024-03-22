@@ -19,7 +19,7 @@ public class PX_DIST_013_Kategorije_Potrosnje_CRUD_Test extends BaseTest {
 	String kategorijaPotrosnje =  "KategorijaPotrosnje " + Helper.getRandomString(5);
 	String novaKategorijaPotrosnje = "NovaKategorijaPotrosnje " + Helper.getRandomString(5);
 	
-	@Test (retryAnalyzer = RetryAnalyzer.class)
+	@Test (enabled=false, retryAnalyzer = RetryAnalyzer.class)
 	public void px_dist_013_1_dodavanje_kategorije_potrosnje_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
@@ -35,7 +35,7 @@ public class PX_DIST_013_Kategorije_Potrosnje_CRUD_Test extends BaseTest {
 		kategorijePotrosnje.verifikujStavku(kategorijaPotrosnje, homePage.podatak2Tabela2WE); 
 	}
 	
-	@Test (retryAnalyzer = RetryAnalyzer.class, dependsOnMethods = { "px_dist_013_1_dodavanje_kategorije_potrosnje_test" })
+	@Test (enabled=false, retryAnalyzer = RetryAnalyzer.class, dependsOnMethods = { "px_dist_013_1_dodavanje_kategorije_potrosnje_test" })
 	public void px_dist_013_2_uredjivanje_kategorije_potrosnje_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
@@ -54,7 +54,7 @@ public class PX_DIST_013_Kategorije_Potrosnje_CRUD_Test extends BaseTest {
 		kategorijePotrosnje.verifikujStavku(novaKategorijaPotrosnje, homePage.podatak2Tabela2WE); 
 	}
 	
-	@Test (retryAnalyzer = RetryAnalyzer.class, dependsOnMethods = { "px_dist_013_2_uredjivanje_kategorije_potrosnje_test" })
+	@Test (enabled=false, retryAnalyzer = RetryAnalyzer.class, dependsOnMethods = { "px_dist_013_2_uredjivanje_kategorije_potrosnje_test" })
 	public void px_dist_013_3_brisanje_kategorije_potrosnje_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();

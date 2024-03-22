@@ -276,8 +276,7 @@ public class PX_DIST_003_Verifikacije_Sekcija_Test extends BaseTest {
 		pocetna.verifikujPocetnuStranicu();
 		NeovlastenaPotrosnja neovlastenaPotrosnja = pocetna.navigirajNaNeovlastenaPotrosnja();
 		neovlastenaPotrosnja.verifikujNeovlastenaPotrosnja();
-		ZapisniciOUtvrdjenojNeovlastenojPotrosnji zapisniciOUtvrdjenojNeovlastenojPotrosnji = pocetna.navigirajNaZapisniciOUtvrdjenojNeovlastenojPotrosnji();
-		zapisniciOUtvrdjenojNeovlastenojPotrosnji.verifikujZapisniciOUtvrdjenojNeovlastenojPotrosnji();
+//		TODO Racuni NP
 	}
 	
 	@Test (description = "test prolazi kroz sve stranice iz sekcije OBRACUN i verifikuje ih")

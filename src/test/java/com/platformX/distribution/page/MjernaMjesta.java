@@ -71,7 +71,7 @@ public class MjernaMjesta extends PocetnaStranicaPXD {
 		verifikacijaZajednickihElemenata("Mjerna Mjesta", "Mjerna Mjesta", "Mjerna mjesta", 16, false, false, true, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaEicWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaSifraWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaSifraEdBrojWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNazivMjernogMjestaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAktivniUgovorWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTerenskaJedinicaWE));

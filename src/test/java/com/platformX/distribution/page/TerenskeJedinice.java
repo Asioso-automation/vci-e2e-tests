@@ -8,6 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import com.platformX.base.Kolone;
+import com.platformX.util.Helper;
 
 public class TerenskeJedinice extends PocetnaStranicaPXD {
 
@@ -17,6 +18,9 @@ public class TerenskeJedinice extends PocetnaStranicaPXD {
 	
 	@FindBy(xpath = "//div[1]/div/div/div/div[1]/div/input")
 	private WebElement nazivWE;
+	
+	@FindBy(xpath = "//div[1]/div[2]/div/div/div[1]/div/input")
+	private WebElement sifraWE;
 	
 	public void verifikujTerenskeJedinice() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
@@ -41,6 +45,8 @@ public class TerenskeJedinice extends PocetnaStranicaPXD {
 		dodajBtnWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(nazivWE));
 		nazivWE.sendKeys(naziv);
+		wait.until(ExpectedConditions.elementToBeClickable(sifraWE));
+		sifraWE.sendKeys(Helper.getRandomNumber(2));
 		submitBtnWE.click();
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		return naziv;
