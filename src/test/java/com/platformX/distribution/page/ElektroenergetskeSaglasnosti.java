@@ -179,9 +179,10 @@ public class ElektroenergetskeSaglasnosti extends PocetnaStranicaPXD {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaRazlogEesWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKategorijaPrikljuckaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumWE));
-// TODO kolonaAktiviranaWE
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAktiviranaWE));
 	}
 	
+//	TODO razdvojiti metodu za dodavanje EES na tri metode, za svaki tip EES
 	public String dodajElektronergetskuSaglasnost(String tipEES) throws Exception {
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
 		dodajBtnWE.click();

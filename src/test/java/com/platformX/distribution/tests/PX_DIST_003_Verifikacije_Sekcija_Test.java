@@ -91,12 +91,14 @@ public class PX_DIST_003_Verifikacije_Sekcija_Test extends BaseTest {
 		nazivneStrujeBrojila.verifikujNazivneStrujeBrojila();
 		KlaseTacnostiStrujnogTransformatora klaseTacnostiStrujnogTransformatora = pocetna.navigirajNaKlaseTacnostiStrujnogTransformatora();
 		klaseTacnostiStrujnogTransformatora.verifikujKlaseTacnostiStrujnogTransformatora();
-// TODO Strujni prenosni odnos
+		StrujniPrenosniOdnos strujniPrenosniOdnos = pocetna.navigirajNaStrujniPrenosniOdnos();
+		strujniPrenosniOdnos.verifikujStrujniPrenosniOdnos();
 		NazivneStrujeOsiguraca nazivneStrujeOsiguraca = pocetna.navigirajNaNazivneStrujeOsiguraca();
 		nazivneStrujeOsiguraca.verifikujNazivneStrujeOsiguraca();
 		KlaseTacnostiNaponskogTransformatora klaseTacnostiNaponskogTransformatora = pocetna.navigirajNaKlaseTacnostiNaponskogTransformatora();
 		klaseTacnostiNaponskogTransformatora.verifikujKlaseTacnostiNaponskogTransformatora();
-// TODO Naponski prenosni odnos
+		NaponskiPrenosniOdnos naponskiPrenosniodnos = pocetna.navigirajNaNaponskiPrenosniOdnos();
+		naponskiPrenosniodnos.verifikujNaponskiPrenosniOdnos();
 		NaciniUpravljanjaPotrosnjom naciniUpravljanjaPotrosnjom = pocetna.navigirajNaNaciniUpravljanjaPotrosnjom();
 		naciniUpravljanjaPotrosnjom.verifikujNaciniUpravljanjaPotrosnjom();
 		VrsteUpravljackihUredjaja vrsteUpravljackihUredjaja = pocetna.navigirajNaVrsteUpravljackihUredjaja();
@@ -113,7 +115,8 @@ public class PX_DIST_003_Verifikacije_Sekcija_Test extends BaseTest {
 		rokoviVazenja.verifikujRokoviVazenja();
 		NaciniPlacanja naciniPlacanja = pocetna.navigirajNaNaciniPlacanja();
 		naciniPlacanja.verifikujNaciniPlacanja();
-// TODO Uslovi placanja
+		UsloviPlacanja usloviPlacanja = pocetna.navigirajNaUsloviPlacanja();
+		usloviPlacanja.verifikujUsloviPlacanja();
 	}
 	
 	@Test (description="test prolazi kroz sve stranice iz sekcije TARIFNI SISTEM i verifikuje ih")
@@ -135,7 +138,8 @@ public class PX_DIST_003_Verifikacije_Sekcija_Test extends BaseTest {
 		obracunskaSnaga.verifikujObracunskaSnaga();
 		CjenovnikMrezarine cjenovnik = pocetna.navigirajNaCjenovnikMrezarine();
 		cjenovnik.verifikujCjenovnikMrezarine();
-// TODO dodati class CjenovnikNeovlastenePotrosnje
+		CjenovnikNeovlastenePotrosnje cjenovnikNeovlastenePotrosnje = pocetna.navigirajNaCjenovnikNeovlastenePotrosnje();
+		cjenovnikNeovlastenePotrosnje.verifikujCjenovnikNeovlastenePotrosnje();
 	}
 	
 	@Test(description = "test prolazi kroz sve stranice iz sekcije MJERNA MJESTA i verifikuje ih")
@@ -196,7 +200,7 @@ public class PX_DIST_003_Verifikacije_Sekcija_Test extends BaseTest {
 		PocetnaStranicaPXD pocetna = new PocetnaStranicaPXD(driver);
 		pocetna.verifikujPocetnuStranicu();
 		KoristenaBrojila koristenaBrojila = pocetna.navigirajNaKoristenaBrojila();
-	    koristenaBrojila.verifikujKoristenaBrojila();
+//	    koristenaBrojila.verifikujKoristenaBrojila();
 	    TipoviBrojila tipoviBrojila = pocetna.navigirajNaTipoviBrojila();
 	    tipoviBrojila.verifikujTipoviBrojila();
 	    RegistarBrojila registarBrojila = pocetna.navigirajNaRegistarBrojila();

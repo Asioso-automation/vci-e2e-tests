@@ -60,8 +60,8 @@ public class UgovorOPrikljucenju extends PocetnaStranicaPXD {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojProtokolaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaVrstaPodrucjaWE));
-// TODO kolonaKategorijaPrikljuckaWE
-// TODO kolonaAktiviranWE
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKategorijaPrikljuckaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAktiviranWE));
 	}
 
 	public String dodajUgovorOPrikljucenju(String nazivEES)throws Exception {

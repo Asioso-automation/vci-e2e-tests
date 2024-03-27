@@ -32,7 +32,8 @@ public class KorekcijeOcitanja extends PocetnaStranicaPXD {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaStariNoviRvtWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaStariNoviRmtWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaStaraNovaSnagaWE));
-//		TODO kolone za predatu energiju, AVT- i AMT-
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaStariNoviAvtMinusWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaStariNoviAmtMinusWE));
 	}
 	
 }

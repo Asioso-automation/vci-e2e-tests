@@ -19,8 +19,7 @@ public class DeklaracijaOPrikljucku extends PocetnaStranicaPXD {
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Deklaracija o priključku')]")));
 		verifikacijaZajednickihElemenata("Mjerna Mjesta", "Deklaracija O Priključku", "Deklaracija o priključku", 10, false, false, true, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
-//		TODO kolona EesWE
-//		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDeklaracijaZaUgovorWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaEesWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKupacWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMjernoMjestoEicWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojiloWE));

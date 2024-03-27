@@ -16,7 +16,7 @@ public class PocetnaStranicaPXD extends PageBase {
 		super(driver);
 	}
 	
-	WebDriverWait wait = new WebDriverWait(driver, 20);
+	protected WebDriverWait wait = new WebDriverWait(driver, 20);
 	
 	@FindBy(xpath = "//a[@href='/']")
 	protected WebElement pocetnaStranicaWE;
@@ -230,14 +230,23 @@ public class PocetnaStranicaPXD extends PageBase {
 	@FindBy(xpath = "//div[contains(text(), 'Načini plaćanja') and @class='v-list-item__title']")
 	protected WebElement naciniPlacanjaWE;
 	
+	@FindBy(xpath = "//div[contains(text(), 'Uslovi plaćanja') and @class='v-list-item__title']")
+	protected WebElement usloviPlacanjaWE;
+	
 	@FindBy(xpath = "//div[contains(text(), 'Klase tačnosti strujnog tran.') and @class='v-list-item__title']")
 	protected WebElement klaseTacnostiStrujnogTranWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Strujni prenosni odnos') and @class='v-list-item__title']")
+	protected WebElement strujniPrenosniOdnosWE;
 	
 	@FindBy(xpath = "//div[contains(text(), 'Nazivne struje osigurača') and @class='v-list-item__title']")
 	protected WebElement nazivneStrujeOsiguracaWE;
 	
 	@FindBy(xpath = "//div[contains(text(), 'Klase tačnosti naponskog tran.') and @class='v-list-item__title']")
 	protected WebElement klaseTacnostiNaponskogTranWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Naponski prenosni odnos') and @class='v-list-item__title']")
+	protected WebElement naponskiPrenosniOdnosWE;
 
 	@FindBy(xpath = "//div[contains(text(), 'Kategorije potrošnje') and @class='v-list-item__title']")
 	protected WebElement kategorijePotrosnjeWE;
@@ -256,6 +265,9 @@ public class PocetnaStranicaPXD extends PageBase {
 
 	@FindBy(xpath = "//div[contains(text(), 'Cjenovnik mrežarine') and @class='v-list-item__title']")
 	protected WebElement cjenovnikMrezarineWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Cjenovnik neovlaštene potrošnje') and @class='v-list-item__title']")
+	protected WebElement cjenovnikNeovlastenePotrosnjeWE;
 	
 	@FindBy(xpath = "//div[contains(text(), 'Mjerna mjesta') and @class='v-list-item__title']")
 	protected WebElement mjernaMjestaStrWE;
@@ -980,6 +992,20 @@ public class PocetnaStranicaPXD extends PageBase {
 		return new NaciniPlacanja(driver);
 	}
 	
+	public UsloviPlacanja navigirajNaUsloviPlacanja() throws Exception {
+		try {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(sifarniciWE));
+		sifarniciWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(usloviPlacanjaWE));
+		usloviPlacanjaWE.click();
+		}
+		catch (Exception e) {
+			driver.get(platformx_distribution_properties.getValue("URL.DIST.LOGIN") + platformx_distribution_properties.getValue("USLOVI.PLACANJA"));
+		}
+		return new UsloviPlacanja(driver);
+	}
+	
 	public KlaseTacnostiStrujnogTransformatora navigirajNaKlaseTacnostiStrujnogTransformatora() throws Exception {
 		try {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
@@ -992,6 +1018,20 @@ public class PocetnaStranicaPXD extends PageBase {
 			driver.get(platformx_distribution_properties.getValue("URL.DIST.LOGIN") + platformx_distribution_properties.getValue("KLASE.TACNOSTI.STRUJNOG.TRANSFORMATORA"));
 		}
 		return new KlaseTacnostiStrujnogTransformatora(driver);
+	}
+	
+	public StrujniPrenosniOdnos navigirajNaStrujniPrenosniOdnos() throws Exception {
+		try {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(sifarniciWE));
+		sifarniciWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(strujniPrenosniOdnosWE));
+		strujniPrenosniOdnosWE.click();
+		}
+		catch (Exception e) {
+			driver.get(platformx_distribution_properties.getValue("URL.DIST.LOGIN") + platformx_distribution_properties.getValue("STRUJNI.PRENOSNI.ODNOS"));
+		}
+		return new StrujniPrenosniOdnos(driver);
 	}
 	
 	public NazivneStrujeOsiguraca navigirajNaNazivneStrujeOsiguraca() throws Exception {
@@ -1020,6 +1060,20 @@ public class PocetnaStranicaPXD extends PageBase {
 			driver.get(platformx_distribution_properties.getValue("URL.DIST.LOGIN") + platformx_distribution_properties.getValue("KLASE.TACNOSTI.NAPONSKOG.TRANSFORMATORA"));
 		}
 		return new KlaseTacnostiNaponskogTransformatora(driver);
+	}
+	
+	public NaponskiPrenosniOdnos navigirajNaNaponskiPrenosniOdnos() throws Exception {
+		try {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(sifarniciWE));
+		sifarniciWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(naponskiPrenosniOdnosWE));
+		naponskiPrenosniOdnosWE.click();
+		}
+		catch (Exception e) {
+			driver.get(platformx_distribution_properties.getValue("URL.DIST.LOGIN") + platformx_distribution_properties.getValue("NAPONSKI.PRENOSNI.ODNOS"));
+		}
+		return new NaponskiPrenosniOdnos(driver);
 	}
 	
 	public KategorijePotrosnje navigirajNaKategorijePotrosnje() throws Exception {
@@ -1104,6 +1158,20 @@ public class PocetnaStranicaPXD extends PageBase {
 			driver.get(platformx_distribution_properties.getValue("URL.DIST.LOGIN") + platformx_distribution_properties.getValue("CJENOVNIK.MREZARINE"));
 		}
 		return new CjenovnikMrezarine(driver);
+	}
+	
+	public CjenovnikNeovlastenePotrosnje navigirajNaCjenovnikNeovlastenePotrosnje() throws Exception {
+		try {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(tarifniSistemWE));
+		tarifniSistemWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(cjenovnikNeovlastenePotrosnjeWE));
+		cjenovnikNeovlastenePotrosnjeWE.click();
+		}
+		catch (Exception e) {
+			driver.get(platformx_distribution_properties.getValue("URL.DIST.LOGIN") + platformx_distribution_properties.getValue("CJENOVNIK.NEOVLASTENE.POTROSNJE"));
+		}
+		return new CjenovnikNeovlastenePotrosnje(driver);
 	}
 	
 	public MjernaMjesta navigirajNaMjernaMjesta() throws Exception {

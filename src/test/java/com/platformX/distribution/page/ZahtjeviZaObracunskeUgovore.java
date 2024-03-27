@@ -37,7 +37,7 @@ public class ZahtjeviZaObracunskeUgovore extends PocetnaStranicaPXD {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPrethSnabObavWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPrethSnabPotvrWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPrethSnabOdbioWE));
-//		TODO kolonaPromTarifneGrupeWE
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPromTarifneGrupeWE));
 	}
 	
 }

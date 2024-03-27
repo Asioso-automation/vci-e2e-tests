@@ -32,7 +32,6 @@ public class ZbirnaKontrolnaPotrosnja extends PocetnaStranicaPXD {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAktivnaKorekcijeZaPeriodWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaReaktivnaKorekcijeZaPeriodWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAktivnaSaKorekcijamaZaPeriodWE));
-//		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNeovlastenaAktivnaObracunZaPeriodWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumPrvogOcitanjaZaPeriodWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumPosljednjegOcitanjaZaPeriodWE));
 	}

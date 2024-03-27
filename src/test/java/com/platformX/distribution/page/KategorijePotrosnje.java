@@ -3,11 +3,13 @@ package com.platformX.distribution.page;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import com.platformX.base.Kolone;
+import com.platformX.util.Helper;
 
 public class KategorijePotrosnje extends PocetnaStranicaPXD {
 
@@ -15,8 +17,11 @@ public class KategorijePotrosnje extends PocetnaStranicaPXD {
 		super(driver);
 	}
 	
-	@FindBy(xpath = "//input") 
+	@FindBy(xpath = "//div[1]/div/div/div[1]/div/input") 
 	private WebElement nazivKategorijePotrosnjeWE;
+	
+	@FindBy(xpath = "//div[2]/div/div/div[1]/div[1]/input[1]") 
+	private WebElement kategorijaNaponskogNivoaWE;
 
 	public void verifikujKategorijePotrosnje() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
@@ -25,7 +30,7 @@ public class KategorijePotrosnje extends PocetnaStranicaPXD {
 		verifikacijaZajednickihElemenata("Tarifni Sistem", "Kategorije Potrošnje", "Kategorije potrošnje", 4, false, false, true, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNazivWE));
-//		dodati kolonaKategorijaNaponskogNivoaWE
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKategorijaNaponskogNivoaWE));
 	}
 
 	public String dodajKategorijuPotrosnje(String naziv) throws InterruptedException {
@@ -34,7 +39,11 @@ public class KategorijePotrosnje extends PocetnaStranicaPXD {
 		dodajBtnWE.click();
 		wait.until(ExpectedConditions.visibilityOf(nazivKategorijePotrosnjeWE));
 		nazivKategorijePotrosnjeWE.sendKeys(naziv);
-//		TODO dodati unos kategorije naponskog nivoa
+		wait.until(ExpectedConditions.visibilityOf(kategorijaNaponskogNivoaWE));
+		kategorijaNaponskogNivoaWE.sendKeys(Helper.getRandomNumberInRange(1, 3));
+		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
+		kategorijaNaponskogNivoaWE.sendKeys(Keys.ARROW_DOWN);
+		kategorijaNaponskogNivoaWE.sendKeys(Keys.ENTER);
 		wait.until(ExpectedConditions.visibilityOf(submitBtnWE));
 		submitBtnWE.click();
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));

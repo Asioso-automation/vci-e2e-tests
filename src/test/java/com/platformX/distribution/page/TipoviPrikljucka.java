@@ -22,8 +22,8 @@ public class TipoviPrikljucka extends PocetnaStranicaPXD {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNazivWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaSifraWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaCijenaWE));
-//		kolonaTrofazniPrikljucakWE napraviti
-//		kolonaFiksnaCijenaWE napraviti
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTrofazniPrikljucakWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaFiksnaCijenaWE));
 	}
 
 }
