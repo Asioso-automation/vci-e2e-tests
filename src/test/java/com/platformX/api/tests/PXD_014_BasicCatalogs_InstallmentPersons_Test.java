@@ -18,8 +18,6 @@ public class PXD_014_BasicCatalogs_InstallmentPersons_Test extends RestApiBase {
 		super();
 	}
 	
-//	public static String useId;
-	
 	@Test(description = "positive test case", dependsOnMethods = { "pxd_014_04_create_installment_person_test1" })
 	public void pxd_014_01_get_installment_person_test1() throws Exception {
 		addHeader("Authorization", "Bearer " + GlobalVariables.token);
