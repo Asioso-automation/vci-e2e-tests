@@ -3,11 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.platformX.api.tests.PXD_005_BasicCatalogs_FieldUnits_Test">
+      <class name="com.platformX.distribution.tests.PX_DIST_013_Kategorije_Potrosnje_CRUD_Test">
         <methods>
-          <include name="pxd_005_04_create_field_unit_test1"/>
+          <include name="setUp"/>
+          <include name="px_dist_013_1_dodavanje_kategorije_potrosnje_test"/>
+          <include name="cleanUp"/>
         </methods>
-      </class> <!-- com.platformX.api.tests.PXD_005_BasicCatalogs_FieldUnits_Test -->
+      </class> <!-- com.platformX.distribution.tests.PX_DIST_013_Kategorije_Potrosnje_CRUD_Test -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

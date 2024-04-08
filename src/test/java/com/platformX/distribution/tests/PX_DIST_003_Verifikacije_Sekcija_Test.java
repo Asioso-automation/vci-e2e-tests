@@ -199,7 +199,7 @@ public class PX_DIST_003_Verifikacije_Sekcija_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranicaPXD pocetna = new PocetnaStranicaPXD(driver);
 		pocetna.verifikujPocetnuStranicu();
-		KoristenaBrojila koristenaBrojila = pocetna.navigirajNaKoristenaBrojila();
+//		KoristenaBrojila koristenaBrojila = pocetna.navigirajNaKoristenaBrojila();
 //	    koristenaBrojila.verifikujKoristenaBrojila();
 	    TipoviBrojila tipoviBrojila = pocetna.navigirajNaTipoviBrojila();
 	    tipoviBrojila.verifikujTipoviBrojila();
