@@ -21,31 +21,28 @@ public class ObracunskiUgovori extends PocetnaStranicaPXD {
 	 private WebElement poljeKupacWE;
 	
 	@FindBy(xpath = "//div[2]/div/div/div[1]/div[1]/input[1]")
-	 private WebElement poljeTipUgovoraWE;
-	
-	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '3 - Domaćinstva')]")
-	 private WebElement odaberiTipUgovoraWE;
-	
-	@FindBy(xpath = "//div[3]/div/div/div[1]/div[1]/input[1]")
 	 private WebElement poljeTarifnaGrupaWE;
 	
-	@FindBy(xpath = "//div[5]/div/div/div[1]/div[1]/input[1]")
+	@FindBy(xpath = "//div[4]/div/div/div[1]/div[1]/input[1]")
 	 private WebElement poljeMjernoMjestoWE;
 	
-	@FindBy(xpath = "//div[6]/div/div/div[1]/div/input")
+	@FindBy(xpath = "//div[5]/div/div/div[1]/div/input")
 	 private WebElement poljeNazivMjernogMjestaWE;
 	
-	@FindBy(xpath = "//div[7]/div/div/div[1]/div/input")
+	@FindBy(xpath = "//div[6]/div/div/div[1]/div/input")
 	 private WebElement poljeNazivMjMjestaNaStampanimDokumentimaWE;
 	
-	@FindBy(xpath = "//div[8]/div/div/div[1]/div[1]/input[1]")
+	@FindBy(xpath = "//div[7]/div/div/div[1]/div[1]/input[1]")
 	 private WebElement poljeAktivnoBrojiloWE;
 	
-	@FindBy(xpath = "//div[11]/div/div/div[1]/div/input")
+	@FindBy(xpath = "//div[10]/div/div/div[1]/div/input")
 	 private WebElement poljeAktivnaKonstantaWE;
 	
-	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '4 - TG-1 (Domaćinstva 0,4 kV JT), JT')]")
+	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '4 - TG')]")
 	 private WebElement odaberiTarifnuGrupuWE;
+	
+	@FindBy(xpath = "//textarea")
+	 private WebElement napomenaWE;
 
 	public void verifikujObracunskiUgovori() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
@@ -78,15 +75,11 @@ public class ObracunskiUgovori extends PocetnaStranicaPXD {
 			dodajBtnWE.click();
 		}
 		wait.until(ExpectedConditions.elementToBeClickable(poljeKupacWE));
+		poljeKupacWE.click();
 		poljeKupacWE.sendKeys(kupac);
 		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(@class, 'v-list-item__title') and contains(., '" + kupac + "')]")));
 		driver.findElement(By.xpath("//div[contains(@class, 'v-list-item__title') and contains(., '" + kupac + "')]")).click();
-		wait.until(ExpectedConditions.elementToBeClickable(poljeTipUgovoraWE));
-		poljeTipUgovoraWE.sendKeys("3 - Domaćinstva");
-		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
-		wait.until(ExpectedConditions.elementToBeClickable(odaberiTipUgovoraWE));
-		odaberiTipUgovoraWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(poljeTarifnaGrupaWE));
 		poljeTarifnaGrupaWE.sendKeys("4 - TG-1 (Domaćinstva 0,4 kV JT), JT");
 		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
@@ -120,23 +113,23 @@ public class ObracunskiUgovori extends PocetnaStranicaPXD {
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 	}
 	
-	public String urediObracunskiUgovor() throws InterruptedException {
-		String nazivMjernogMjesta = "NazivMjm1 " + Helper.getRandomString(7);
+	public String urediObracunskiUgovor(String napomena) throws InterruptedException {
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		burgerBarWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(urediWE));
 		urediWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(poljeNazivMjernogMjestaWE));
-		poljeNazivMjernogMjestaWE.click();
-		poljeNazivMjernogMjestaWE.clear();
-		poljeNazivMjernogMjestaWE.sendKeys(nazivMjernogMjesta);
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("arguments[0].scrollIntoView(true);", submitBtnWE);
+		wait.until(ExpectedConditions.elementToBeClickable(napomenaWE));
+		napomenaWE.sendKeys(napomena);
+//		poljeNazivMjernogMjestaWE.click();
+//		poljeNazivMjernogMjestaWE.clear();
+//		poljeNazivMjernogMjestaWE.sendKeys(noviNazivMjm);
+//		JavascriptExecutor js = (JavascriptExecutor) driver;
+//		js.executeScript("arguments[0].scrollIntoView(true);", submitBtnWE);
 		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
 		submitBtnWE.click();
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
-		return nazivMjernogMjesta;
+		return napomena;
 	}
 	
 }

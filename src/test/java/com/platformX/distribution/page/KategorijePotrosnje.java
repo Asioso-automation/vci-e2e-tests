@@ -3,13 +3,11 @@ package com.platformX.distribution.page;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import com.platformX.base.Kolone;
-import com.platformX.util.Helper;
 
 public class KategorijePotrosnje extends PocetnaStranicaPXD {
 
@@ -31,39 +29,6 @@ public class KategorijePotrosnje extends PocetnaStranicaPXD {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNazivWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKategorijaNaponskogNivoaWE));
-	}
-
-	public String dodajKategorijuPotrosnje(String naziv) throws InterruptedException {
-		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
-		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
-		dodajBtnWE.click();
-		wait.until(ExpectedConditions.visibilityOf(nazivKategorijePotrosnjeWE));
-		nazivKategorijePotrosnjeWE.sendKeys(naziv);
-		wait.until(ExpectedConditions.visibilityOf(kategorijaNaponskogNivoaWE));
-		kategorijaNaponskogNivoaWE.sendKeys(Helper.getRandomNumberInRange(1, 3));
-		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
-		kategorijaNaponskogNivoaWE.sendKeys(Keys.ARROW_DOWN);
-		kategorijaNaponskogNivoaWE.sendKeys(Keys.ENTER);
-		wait.until(ExpectedConditions.visibilityOf(submitBtnWE));
-		submitBtnWE.click();
-		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
-		return naziv;	
-	}
-	
-	public String urediKategorijuPotrosnje(String naziv) throws InterruptedException {
-		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
-		burgerBarWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(urediWE));
-		urediWE.click();
-		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
-		wait.until(ExpectedConditions.elementToBeClickable(nazivKategorijePotrosnjeWE));
-		nazivKategorijePotrosnjeWE.click();
-		nazivKategorijePotrosnjeWE.clear();
-		nazivKategorijePotrosnjeWE.sendKeys(naziv);
-		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
-		submitBtnWE.click();
-		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
-		return naziv;
 	}
 
 }

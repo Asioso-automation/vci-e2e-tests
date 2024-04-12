@@ -39,13 +39,13 @@ public class PocetnaStranicaPXD extends PageBase {
 	@FindBy(xpath = "//div[contains(@class, 'menuable__content__active')]")
 	protected WebElement aktivniLookupWE;
 	
-	@FindBy(xpath = "(//button[@aria-label = 'prepend icon' and contains(@class, 'fa-calendar-alt')])[1]")
+	@FindBy(xpath = "(//button[contains(@aria-label, 'prepended action') and contains(@class, 'fa-calendar-alt')])[1]")
 	protected WebElement datumBtn1WE;
 	
-	@FindBy(xpath = "(//button[@aria-label = 'prepend icon' and contains(@class, 'fa-calendar-alt')])[2]")
+	@FindBy(xpath = "(//button[contains(@aria-label, 'prepended action') and contains(@class, 'fa-calendar-alt')])[2]")
 	protected WebElement datumBtn2WE;
 	
-	@FindBy(xpath = "(//button[@aria-label = 'prepend icon' and contains(@class, 'fa-calendar-alt')])[3]")
+	@FindBy(xpath = "(//button[contains(@aria-label, 'prepended action') and contains(@class, 'fa-calendar-alt')])[3]")
 	protected WebElement datumBtn3WE;
 	
 	@FindBy(xpath = "(//*[contains(@class, 'v-date-picker-table--date')])[1]")  
@@ -65,7 +65,7 @@ public class PocetnaStranicaPXD extends PageBase {
 	
 //	@FindBy(xpath = "(//*[contains(@class, 'v-date-picker-table__current')])[3]")  
 //	protected WebElement trenutniDatum3WE;
-	
+		
 	@FindBy(xpath = "//i[contains(@class, 'mdi-chevron-right')]")
 	protected WebElement strelicaDesnoWE;
 	
