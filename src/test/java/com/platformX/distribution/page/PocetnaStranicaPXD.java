@@ -326,26 +326,26 @@ public class PocetnaStranicaPXD extends PageBase {
 	@FindBy(xpath = "//div[contains(text(), 'Registar brojila') and @class='v-list-item__title']")
 	protected WebElement registarBrojilaWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Izvor napajanja brojila') and @class='v-list-item__title']")
-	protected WebElement izvorNapajanjaBrojilaWE;
+	@FindBy(xpath = "//div[contains(text(), 'Izvori napajanja brojila') and @class='v-list-item__title']")
+	protected WebElement izvoriNapajanjaBrojilaWE;
 	
 	@FindBy(xpath = "//div[contains(text(), 'Proizvođači brojila') and @class='v-list-item__title']")
 	protected WebElement proizvodjaciBrojilaWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Sposobnost priključenja brojila') and @class='v-list-item__title']")
-	protected WebElement sposobnostPrikljucenjaBrojilaWE;
+	@FindBy(xpath = "//div[contains(text(), 'Sposobnosti priključenja brojila') and @class='v-list-item__title']")
+	protected WebElement sposobnostiPrikljucenjaBrojilaWE;
 	
 	@FindBy(xpath = "//div[contains(text(), 'Mogućnost daljinskog pristupa') and @class='v-list-item__title']")
 	protected WebElement mogucnostDaljinskogPristupaWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Lokacija brojila') and @class='v-list-item__title']")
-	protected WebElement lokacijaBrojilaWE;
+	@FindBy(xpath = "//div[contains(text(), 'Lokacije brojila') and @class='v-list-item__title']")
+	protected WebElement lokacijeBrojilaWE;
 	
 	@FindBy(xpath = "//div[contains(text(), 'Relokacije brojila') and @class='v-list-item__title']")
 	protected WebElement relokacijeBrojilaWE;
 
-	@FindBy(xpath = "//div[contains(text(), 'Razlog promjene lokacije') and @class='v-list-item__title']")
-	protected WebElement razlogPromjeneLokacijeWE;
+	@FindBy(xpath = "//div[contains(text(), 'Razlozi promjene lokacije') and @class='v-list-item__title']")
+	protected WebElement razloziPromjeneLokacijeWE;
 	
 	@FindBy(xpath = "//div[contains(text(), 'Naponski nivoi') and @class='v-list-item__title']")
 	protected WebElement naponskiNivoiWE;
@@ -1440,13 +1440,13 @@ public class PocetnaStranicaPXD extends PageBase {
 		return new RegistarBrojila(driver);
 	}
 	
-	public IzvorNapajanjaBrojila navigirajNaIzvorNapajanjaBrojila() throws Exception {
+	public IzvorNapajanjaBrojila navigirajNaIzvoriNapajanjaBrojila() throws Exception {
 		try {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(brojilaWE));
 		brojilaWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(izvorNapajanjaBrojilaWE));
-		izvorNapajanjaBrojilaWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(izvoriNapajanjaBrojilaWE));
+		izvoriNapajanjaBrojilaWE.click();
 		}
 		catch (Exception e) {
 			driver.get(platformx_distribution_properties.getValue("URL.DIST.LOGIN") + platformx_distribution_properties.getValue("IZVOR.NAPAJANJA.BROJILA"));
@@ -1468,13 +1468,13 @@ public class PocetnaStranicaPXD extends PageBase {
 		return new ProizvodjaciBrojila(driver);
 	}
 	
-	public SposobnostPrikljucenjaBrojila navigirajNaSposobnostPrikljucenaBrojila() throws Exception {
+	public SposobnostPrikljucenjaBrojila navigirajNaSposobnostiPrikljucenaBrojila() throws Exception {
 		try {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(brojilaWE));
 		brojilaWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(sposobnostPrikljucenjaBrojilaWE));
-		sposobnostPrikljucenjaBrojilaWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(sposobnostiPrikljucenjaBrojilaWE));
+		sposobnostiPrikljucenjaBrojilaWE.click();
 		}
 		catch (Exception e) {
 			driver.get(platformx_distribution_properties.getValue("URL.DIST.LOGIN") + platformx_distribution_properties.getValue("SPOSOBNOST.PRIKLJUCENJA.BROJILA"));
@@ -1496,13 +1496,13 @@ public class PocetnaStranicaPXD extends PageBase {
 		return new MogucnostDaljinskogPristupa(driver);
 	}
 	
-	public LokacijaBrojila navigirajNaLokacijaBrojila() throws Exception {
+	public LokacijaBrojila navigirajNaLokacijeBrojila() throws Exception {
 		try {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(brojilaWE));
 		brojilaWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(lokacijaBrojilaWE));
-		lokacijaBrojilaWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(lokacijeBrojilaWE));
+		lokacijeBrojilaWE.click();
 		}
 		catch (Exception e) {
 			driver.get(platformx_distribution_properties.getValue("URL.DIST.LOGIN") + platformx_distribution_properties.getValue("LOKACIJA.BROJILA"));
@@ -1524,13 +1524,13 @@ public class PocetnaStranicaPXD extends PageBase {
 		return new RelokacijeBrojila(driver);
 	}
 	
-	public RazlogPromjeneLokacije navigirajNaRazlogPromjeneLokacije() throws Exception {
+	public RazlogPromjeneLokacije navigirajNaRazloziPromjeneLokacije() throws Exception {
 		try {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(brojilaWE));
 		brojilaWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(razlogPromjeneLokacijeWE));
-		razlogPromjeneLokacijeWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(razloziPromjeneLokacijeWE));
+		razloziPromjeneLokacijeWE.click();
 		}
 		catch (Exception e) {
 			driver.get(platformx_distribution_properties.getValue("URL.DIST.LOGIN") + platformx_distribution_properties.getValue("RAZLOG.PROMJENE.LOKACIJE"));

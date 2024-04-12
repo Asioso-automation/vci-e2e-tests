@@ -17,10 +17,12 @@ public class CitackeListe  extends PocetnaStranicaPXD {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Čitačke liste')]")));
-		verifikacijaZajednickihElemenata("Očitanja", "Čitačke Liste", "Čitačke liste", 11, false, true, true, true, true, true, false);
+		verifikacijaZajednickihElemenata("Očitanja", "Čitačke Liste", "Čitačke liste", 12, false, true, true, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaCitacWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTrafostanicaWE));
+//		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTrafostanicaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaFizickaLokacijaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaZonaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaSektorWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaCitackiHodWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaUkupanBrojStavkiWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojOcitanihStavkiWE));

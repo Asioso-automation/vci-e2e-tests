@@ -42,6 +42,9 @@ public abstract class PageBase {
 
 	@FindBy(xpath = "//div[contains(text(), 'Uredi')]")
 	protected WebElement urediWE;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Pogledaj') and @class='v-list-item__title']")
+	protected WebElement pogledajWE;
 
 	@FindBy(xpath = "//div[contains(text(), 'Bri')]")
 	protected WebElement obrisiWE;
@@ -128,6 +131,9 @@ public abstract class PageBase {
 
 	@FindBy(xpath = "//tr[2]/td[4]")
 	public WebElement podatak2Tabela4WE;
+	
+	@FindBy(xpath = "//tr[2]/td[10]/div")
+	public WebElement podatak2Tabela10WE;
 	
 	
 	@FindBy(xpath = "//tr[2]/td[1]")

@@ -22,7 +22,8 @@ public class PX_DIST_024_Obracunski_Ugovori_CRUD_Test  extends BaseTest {
 	String fizickoLice = "FizickoLice " + Helper.getRandomString(5);
 	String sifraMjernogMjesta = Helper.getRandomNumber(6);
 	String eic;
-	String napomena = "Napomena test " + Helper.getRandomString(7);
+	String konstanta = Helper.getRandomNumberInRange(1, 20);
+	String konstantaTabela = "A: " + konstanta + ",00";
 	
 	@Test (retryAnalyzer = RetryAnalyzer.class)
 	public void px_dist_024_1_dodavanje_obracunskog_ugovora_test() throws Exception {
@@ -73,11 +74,13 @@ public class PX_DIST_024_Obracunski_Ugovori_CRUD_Test  extends BaseTest {
 		obracunskiUgovori.pretraziStavku(homePage.filterKolona3WE, eic);
 		obracunskiUgovori.verifikujObracunskiUgovori();
 		obracunskiUgovori.verifikujStavku(eic, homePage.podatak2Tabela3WE);
-		obracunskiUgovori.urediObracunskiUgovor(napomena);
+		obracunskiUgovori.urediObracunskiUgovor(konstanta);
 		obracunskiUgovori.verifikujPoruku("Uspješno završeno.");
+		obracunskiUgovori.navigirajNaObracunskiUgovori();
+		obracunskiUgovori.verifikujObracunskiUgovori();
 		obracunskiUgovori.pretraziStavku(homePage.filterKolona3WE, eic);
 		obracunskiUgovori.verifikujObracunskiUgovori();
-		obracunskiUgovori.verifikujStavku(eic, homePage.podatak2Tabela3WE);
+		obracunskiUgovori.verifikujStavku(konstantaTabela, homePage.podatak2Tabela10WE);
 	}
 	
 	@Test (retryAnalyzer = RetryAnalyzer.class, dependsOnMethods = { "px_dist_024_1_dodavanje_obracunskog_ugovora_test" })

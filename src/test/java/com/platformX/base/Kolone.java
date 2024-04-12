@@ -215,7 +215,7 @@ public class Kolone extends PageBase {
 	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'PDV obveznik']")
 	public WebElement kolonaPdvObveznikWE;
 	
-	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Ime i Prezime']") // P-p
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Ime i Prezime']")
 	public WebElement kolonaImeIPrezimeWE;
 	
 	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Ime i prezime']")
@@ -319,6 +319,9 @@ public class Kolone extends PageBase {
 	
 	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Nedostupno mjm.']")
 	public WebElement kolonaNedostupnoMjmWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Kontrola očitanja']")
+	public WebElement kolonaKontrolaOcitanjaWE;
 	
 	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Datum kreiranja']")
 	public WebElement kolonaDatumKreiranjaWE;
@@ -976,6 +979,12 @@ public class Kolone extends PageBase {
 	
 	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Čitački hod']")
 	public WebElement kolonaCitackiHodWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Zona']")
+	public WebElement kolonaZonaWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Sektor']")
+	public WebElement kolonaSektorWE;
 	
 	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Pod naponom']")
 	public WebElement kolonaPodNaponomWE;

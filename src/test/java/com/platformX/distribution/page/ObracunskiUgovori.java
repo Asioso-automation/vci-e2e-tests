@@ -18,31 +18,37 @@ public class ObracunskiUgovori extends PocetnaStranicaPXD {
 	}
 
 	@FindBy(xpath = "//div[1]/div/div/div[1]/div[1]/input[1]")
-	 private WebElement poljeKupacWE;
+	private WebElement poljeKupacWE;
 	
 	@FindBy(xpath = "//div[2]/div/div/div[1]/div[1]/input[1]")
-	 private WebElement poljeTarifnaGrupaWE;
+	private WebElement poljeTarifnaGrupaWE;
 	
 	@FindBy(xpath = "//div[4]/div/div/div[1]/div[1]/input[1]")
-	 private WebElement poljeMjernoMjestoWE;
+	private WebElement poljeMjernoMjestoWE;
 	
 	@FindBy(xpath = "//div[5]/div/div/div[1]/div/input")
-	 private WebElement poljeNazivMjernogMjestaWE;
+	private WebElement poljeNazivMjernogMjestaWE;
 	
 	@FindBy(xpath = "//div[6]/div/div/div[1]/div/input")
-	 private WebElement poljeNazivMjMjestaNaStampanimDokumentimaWE;
+	private WebElement poljeNazivMjMjestaNaStampanimDokumentimaWE;
 	
 	@FindBy(xpath = "//div[7]/div/div/div[1]/div[1]/input[1]")
-	 private WebElement poljeAktivnoBrojiloWE;
+	private WebElement poljeAktivnoBrojiloWE;
 	
 	@FindBy(xpath = "//div[10]/div/div/div[1]/div/input")
-	 private WebElement poljeAktivnaKonstantaWE;
+	private WebElement poljeAktivnaKonstantaWE;
 	
 	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '4 - TG')]")
-	 private WebElement odaberiTarifnuGrupuWE;
+	private WebElement odaberiTarifnuGrupuWE;
 	
 	@FindBy(xpath = "//textarea")
-	 private WebElement napomenaWE;
+	private WebElement napomenaWE;
+	
+	@FindBy(xpath = "//div[@class='v-tab v-tab--active']")
+	private WebElement aktivniTabWE;
+	
+	@FindBy(xpath = "//div[14]/div/div/div[1]/div/input")
+	private WebElement poljeAktivnaKonstanta1WE;
 
 	public void verifikujObracunskiUgovori() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
@@ -113,14 +119,26 @@ public class ObracunskiUgovori extends PocetnaStranicaPXD {
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 	}
 	
-	public String urediObracunskiUgovor(String napomena) throws InterruptedException {
+	public String urediObracunskiUgovor(String konstanta) throws InterruptedException {
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		burgerBarWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(urediWE));
 		urediWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(napomenaWE));
-		napomenaWE.sendKeys(napomena);
+		wait.until(ExpectedConditions.elementToBeClickable(pogledajWE));
+		pogledajWE.click();
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView(true);", aktivniTabWE);
+		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
+		burgerBarWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(urediWE));
+		urediWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(poljeAktivnaKonstanta1WE));
+		poljeAktivnaKonstanta1WE.click();
+		poljeAktivnaKonstanta1WE.clear();
+		poljeAktivnaKonstanta1WE.sendKeys(konstanta);
+//		wait.until(ExpectedConditions.elementToBeClickable(napomenaWE));
+//		napomenaWE.sendKeys(napomena);
 //		poljeNazivMjernogMjestaWE.click();
 //		poljeNazivMjernogMjestaWE.clear();
 //		poljeNazivMjernogMjestaWE.sendKeys(noviNazivMjm);
@@ -129,7 +147,7 @@ public class ObracunskiUgovori extends PocetnaStranicaPXD {
 		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
 		submitBtnWE.click();
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
-		return napomena;
+		return konstanta;
 	}
 	
 }

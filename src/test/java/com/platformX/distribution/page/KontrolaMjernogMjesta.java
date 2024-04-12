@@ -17,7 +17,7 @@ public class KontrolaMjernogMjesta extends PocetnaStranicaPXD {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Kontrola mjernog mjesta')]")));
-		verifikacijaZajednickihElemenata("Mjerna Mjesta", "Kontrola Mjernog Mjesta", "Kontrola mjernog mjesta", 14, false, false, true, true, true, true, false);
+		verifikacijaZajednickihElemenata("Mjerna Mjesta", "Kontrola Mjernog Mjesta", "Kontrola mjernog mjesta", 15, false, false, true, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojProtokolaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPoRadnomNaloguWE));		
@@ -30,6 +30,7 @@ public class KontrolaMjernogMjesta extends PocetnaStranicaPXD {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumKreiranjaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumZavrsavanjaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNedostupnoMjmWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKontrolaOcitanjaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaZavrsenaWE));
 	}
 
