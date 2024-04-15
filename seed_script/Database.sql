@@ -3,8 +3,7 @@
 --izbrisi sve podatke
 
 --because of delete data from Administration.Configuration
-DROP INDEX [CAK_ActiveBillGeneratorSummary] ON [Calculation].[ActiveBillGeneratorSummary]
-DROP INDEX [CAK_ActiveBillGeneratorSummary] ON [Generate].[ActiveBillGeneratorSummaryV2]
+DROP INDEX [CAK_ActiveBillGeneratorSummary] ON [Generate].[ActiveBillGeneratorSummary]
 GO
 
 EXEC sp_MSForEachTable 'ALTER TABLE ? NOCHECK CONSTRAINT ALL' 
@@ -13,8 +12,7 @@ GO
 EXEC sp_MSForEachTable 'SET QUOTED_IDENTIFIER ON; DELETE FROM ?' 
 GO 
 
-CREATE UNIQUE CLUSTERED INDEX [CAK_ActiveBillGeneratorSummary] ON [Calculation].[ActiveBillGeneratorSummary] ([Id] ASC)
-CREATE UNIQUE CLUSTERED INDEX [CAK_ActiveBillGeneratorSummary] ON [Generate].[ActiveBillGeneratorSummaryV2] ([Id] ASC)
+CREATE UNIQUE CLUSTERED INDEX [CAK_ActiveBillGeneratorSummary] ON [Generate].[ActiveBillGeneratorSummary] ([Id] ASC)
 GO
 
 --insesrtuj podatke
