@@ -541,11 +541,11 @@ INSERT INTO [Finance].[BookingType]
 
 
 INSERT [Finance].[AccountingType] 
-    ([Id], [Name]) 
+    ([Id], [Name], [PrintName]) 
 VALUES 
-    (1, N'Racun'),
-    (2, N'Uplata'),
-    (3, N'Korekcija')
+    (1, N'Racun',     N'Racun'),
+    (2, N'Uplata',    N'Uplata'),
+    (3, N'Korekcija', N'Korekcija')
 
 
 SET IDENTITY_INSERT [Finance].[Bank] ON 
@@ -591,14 +591,17 @@ INSERT [Finance].[Debit] ([Id], [BookingTypeId], [AccountingTypeId], [FinancialT
 SET IDENTITY_INSERT [Finance].[Debit] OFF
 
 
-INSERT [Finance].[FinancialType] ([Id], [Name], [AccountingSequence], [IsInterestCalculated]) VALUES (1, N'Energija', 7, 1)
-INSERT [Finance].[FinancialType] ([Id], [Name], [AccountingSequence], [IsInterestCalculated]) VALUES (2, N'Mrežarina', 5, 1)
-INSERT [Finance].[FinancialType] ([Id], [Name], [AccountingSequence], [IsInterestCalculated]) VALUES (3, N'Naknada za OIEE', 6, 1)
-INSERT [Finance].[FinancialType] ([Id], [Name], [AccountingSequence], [IsInterestCalculated]) VALUES (4, N'Kamata', 1, 1)
-INSERT [Finance].[FinancialType] ([Id], [Name], [AccountingSequence], [IsInterestCalculated]) VALUES (5, N'PDV na energiju', 4, 1)
-INSERT [Finance].[FinancialType] ([Id], [Name], [AccountingSequence], [IsInterestCalculated]) VALUES (6, N'PDV na mrežarinu', 2, 1)
-INSERT [Finance].[FinancialType] ([Id], [Name], [AccountingSequence], [IsInterestCalculated]) VALUES (7, N'PDV na OIEE', 3, 1)
-INSERT [Finance].[FinancialType] ([Id], [Name], [AccountingSequence], [IsInterestCalculated]) VALUES (8, N'Uplata', 8, 1)
+INSERT [Finance].[FinancialType] 
+    ([Id], [Name], [AccountingSequence], [IsInterestCalculated], [PrintName]) 
+VALUES 
+    (1, N'Energija',         7, 1, N'Energija'),
+    (2, N'Mrežarina',        5, 1, N'Mrežarina'),
+    (3, N'Naknada za OIEE',  6, 1, N'Naknada za OIEE'),
+    (4, N'Kamata',           1, 1, N'Kamata'),
+    (5, N'PDV na energiju',  4, 1, N'PDV na energiju'),
+    (6, N'PDV na mrežarinu', 2, 1, N'PDV na mrežarinu'),
+    (7, N'PDV na OIEE',      3, 1, N'PDV na OIEE'),
+    (8, N'Uplata',           8, 1, N'Uplata')
 
 
 SET IDENTITY_INSERT [Finance].[Interest] ON 
@@ -655,12 +658,12 @@ SET IDENTITY_INSERT [BasicCatalog].[TerritorialAffiliation] OFF
 
 
 INSERT [BasicCatalog].[MeteringPointType]
-    ([Id], [Name], [Code], [Consumer], [Producer])
+    ([Id], [Name], [Code], [Consumer], [Producer], [Visible])
 VALUES 
-	(1, N'Potrošnja',             N'E17', 1, 0),
-	(2, N'Proizvodnja',           N'E18', 0, 1),
-	(3, N'Potrošnja-Proizvodnja', N'E19', 1, 0),
-	(4, N'Razmjena',              N'E20', 1, 0)
+	(1, N'Potrošnja',             N'E17', 1, 0, 1),
+	(2, N'Proizvodnja',           N'E18', 0, 1, 0),
+	(3, N'Potrošnja-Proizvodnja', N'E19', 1, 0, 1),
+	(4, N'Razmjena',              N'E20', 1, 0, 0)
 
 
 SET IDENTITY_INSERT [Metering].[MeteringPoint] ON
@@ -727,9 +730,12 @@ SET IDENTITY_INSERT [TariffSystem].[ContractNumberTemplateGroup] OFF
 
 SET IDENTITY_INSERT [TariffSystem].[PriceCategory] ON 
 
-INSERT [TariffSystem].[PriceCategory] ([Id], [Name], [NettingCategory], [TenderPrice], [TimeRestricted]) VALUES (1, N'Kategorija cijene 1', 0, 0, 0)
-INSERT [TariffSystem].[PriceCategory] ([Id], [Name], [NettingCategory], [TenderPrice], [TimeRestricted]) VALUES (7, N'Kategorija cijene 2', 0, 0, 0)
-INSERT [TariffSystem].[PriceCategory] ([Id], [Name], [NettingCategory], [TenderPrice], [TimeRestricted]) VALUES (20, N'Kategorija mrezarine', 1, 0, 0)
+INSERT [TariffSystem].[PriceCategory] 
+    ([Id], [Name], [NettingCategory], [TenderPrice], [TimeRestricted], [PrintName]) 
+VALUES 
+    (1,  N'Kategorija cijene 1',  0, 0, 0, N'Kategorija cijene 1'),
+    (7,  N'Kategorija cijene 2',  0, 0, 0, N'Kategorija cijene 2'),
+    (20, N'Kategorija mrezarine', 1, 0, 0, N'Kategorija mrezarine')
 
 SET IDENTITY_INSERT [TariffSystem].[PriceCategory] OFF
 
