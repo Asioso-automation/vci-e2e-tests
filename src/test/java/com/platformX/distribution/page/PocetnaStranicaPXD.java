@@ -30,9 +30,6 @@ public class PocetnaStranicaPXD extends PageBase {
 	@FindBy(xpath = "//div[contains(text(), 'Odjavi se')]")
 	protected WebElement izlogujSeWE;
 	
-//	@FindBy(xpath = "//div[@class='v-card__title title mb-0 word-break']")
-//	private WebElement brisanjePopUpWE;
-	
 	@FindBy(xpath = "//button[@type='submit']")
 	protected WebElement submitBtnWE;													// submit - DODAJ/UREDI button na formama za dodavanje/ureÄ‘ivanje Å ifarnika
 	
