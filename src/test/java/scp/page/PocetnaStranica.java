@@ -186,6 +186,9 @@ public class PocetnaStranica extends PageBase {
 	@FindBy(xpath = "//div[@class='v-list__tile__content' and text()='Zone DMA']")
 	protected WebElement zoneDmaWE;
 	
+	@FindBy(xpath = "//div[contains(text(), 'Kategorije objekata')]")
+	protected WebElement kategorijeObjekataWE;
+	
 	@FindBy(xpath = "//div[contains(text(), 'Radni statusi')]")
 	protected WebElement radniStatusiWE;
 	
@@ -225,8 +228,8 @@ public class PocetnaStranica extends PageBase {
 	@FindBy(xpath = "//div[contains(text(), 'Proizvođači vodomjera')]")
 	protected WebElement proizvodjaciVodomjeraWE;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Profili mjerila')]")
-	protected WebElement profiliMjerilaWE;
+	@FindBy(xpath = "//div[contains(text(), 'Profili')]")
+	protected WebElement profiliWE;
 	
 	@FindBy(xpath = "//div[contains(text(), 'Vrste vodomjera')]")
 	protected WebElement vrsteVodomjeraWE;
@@ -691,6 +694,20 @@ public class PocetnaStranica extends PageBase {
 		return new ZoneDma(driver);
 	}
 	
+	public KategorijeObjekata navigirajNaKategorijeObjekata()throws Exception{
+		try {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(sifarniciWE));
+		sifarniciWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(kategorijeObjekataWE));
+		kategorijeObjekataWE.click();
+		}
+		catch (Exception e) {
+			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("KATEGORIJE.OBJEKATA"));
+			}
+		return new KategorijeObjekata(driver);
+	}
+	
 	public RadniStatusi navigirajNaRadneStatuse ()throws Exception{
 		try {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
@@ -892,8 +909,8 @@ public class PocetnaStranica extends PageBase {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(mjerilaWE));
 		mjerilaWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(profiliMjerilaWE));
-		profiliMjerilaWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(profiliWE));
+		profiliWE.click();
 		}
 		catch (Exception e) {
 			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("PROFILI.MJERILA"));

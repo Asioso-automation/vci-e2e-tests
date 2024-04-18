@@ -41,7 +41,7 @@ public class Kalorimetri extends PocetnaStranica{
 		verifikacijaZajednickihElemenata("KUPCI", "KALORIMETRI", "Kalorimetri", 13, false, false, true, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaId1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaZonaOcitanjaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrUZoniOcitanjaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrUZoniWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaSrBrojWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaOznakaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTip1WE));

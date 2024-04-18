@@ -19,7 +19,7 @@ public class RacuniZaNestandardneUsluge extends PocetnaStranica{
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title') and contains(text(), 'Računi za nestandardne usluge')]")));
-		verifikacijaZajednickihElemenata("OBRAČUN", "RAČUNI ZA NESTANDARDNE USLUGE", "Računi za nestandardne usluge", 17, false, false, true, true, true, true, false);
+		verifikacijaZajednickihElemenata("Obračun", "Računi Za Nestandardne Usluge", "Računi za nestandardne usluge", 17, false, false, true, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaId1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKupac1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaProstorWE));

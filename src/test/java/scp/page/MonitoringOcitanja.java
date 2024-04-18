@@ -24,7 +24,7 @@ public class MonitoringOcitanja extends PocetnaStranica{
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title') and contains(text(), 'Monitoring očitanja')]")));
-		verifikacijaZajednickihElemenata("OČITANJA", "MONITORING OČITANJA", "Monitoring očitanja", 6, false, false, false, false, false, false, false);
+		verifikacijaZajednickihElemenata("Očitanja", "Monitoring Očitanja", "Monitoring očitanja", 6, false, false, false, false, false, false, false);
 		wait.until(ExpectedConditions.elementToBeClickable(pokreniMonitoringWE));
 	}
 	
@@ -32,7 +32,7 @@ public class MonitoringOcitanja extends PocetnaStranica{
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title') and contains(text(), 'Monitoring očitanja')]")));
-		verifikacijaZajednickihElemenata("OČITANJA", "MONITORING OČITANJA", "Monitoring očitanja", 5, false, false, false, false, false, false, false);
+		verifikacijaZajednickihElemenata("Očitanja", "Monitoring Očitanja", "Monitoring očitanja", 5, false, false, false, false, false, false, false);
 		wait.until(ExpectedConditions.elementToBeClickable(pokreniMonitoringWE));
 	}
 	
@@ -40,7 +40,7 @@ public class MonitoringOcitanja extends PocetnaStranica{
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title') and contains(text(), 'Monitoring očitanja')]")));
-		verifikacijaZajednickihElemenata("OČITANJA", "MONITORING OČITANJA", "Monitoring očitanja", 5, false, false, false, false, false, false, false);
+		verifikacijaZajednickihElemenata("Očitanja", "Monitoring Očitanja", "Monitoring očitanja", 5, false, false, false, false, false, false, false);
 		wait.until(ExpectedConditions.elementToBeClickable(pokreniMonitoringWE));
 	}
 	

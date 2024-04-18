@@ -48,17 +48,19 @@ public class Objekti extends PocetnaStranica {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title') and contains(text(), 'Objekti')]")));
-		verifikacijaZajednickihElemenata("KUPCI", "OBJEKTI", "Objekti", 13, false, false, true, true, true, true, false);
+		verifikacijaZajednickihElemenata("Kupci", "Objekti", "Objekti", 15, false, false, true, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaId1WE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNaziv1WE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMZSifraWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMZNazivWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMZKontaktWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaSifraReonaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaReonWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaUlicaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBroj1WE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaUkupanBrojProstoraWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNaziv1WE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKategorija1WE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMZNazivWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaReonWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaProstoriWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKuceWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaStanoviWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPoslovniProstoriWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaGarazeWE));
 	}
 
 //	public void verifikujObjekti() throws InterruptedException, FileNotFoundException, IOException {

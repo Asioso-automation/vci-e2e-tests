@@ -1,6 +1,5 @@
 package scp.page;
 
-import static org.testng.Assert.expectThrows;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -46,8 +45,7 @@ public class Prostori extends PocetnaStranica{
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title') and contains(text(), 'Prostori')]")));
-		verifikacijaZajednickihElemenata("KUPCI", "PROSTORI", "Prostori", 5, false, false, true, true, true, true, false);
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaId1WE));
+		verifikacijaZajednickihElemenata("Kupci", "Prostori", "Prostori", 4, false, false, true, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNaziv1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaVrstaWE));
 	}

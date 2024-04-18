@@ -19,7 +19,7 @@ public class DnevniciUplata extends PocetnaStranica{
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title') and contains(text(), 'Dnevnici uplata')]")));
-		verifikacijaZajednickihElemenata("FINANSIJE", "DNEVNICI UPLATA", "Dnevnici uplata", 13, false, false, true, true, true, true, false);
+		verifikacijaZajednickihElemenata("Finansije", "Dnevnici Uplata", "Dnevnici uplata", 13, false, false, true, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaId1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBanka1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaVrstaKnjizenjaWE));

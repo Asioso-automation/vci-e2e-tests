@@ -25,7 +25,7 @@ public class Organizacije extends PocetnaStranica{
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title') and contains(text(), 'Organizacije')]")));
-		verifikacijaZajednickihElemenata("ŠIFARNICI", "ORGANIZACIJE", "Organizacije", 11, false, false, false, true, true, true, false);
+		verifikacijaZajednickihElemenata("Šifarnici", "Organizacije", "Organizacije", 11, false, false, false, true, true, true, false);
 		wait.until(ExpectedConditions.elementToBeClickable(SpremnaZaObracunBtnWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaId1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNaziv1WE));

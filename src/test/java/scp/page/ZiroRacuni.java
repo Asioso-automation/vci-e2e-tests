@@ -19,7 +19,7 @@ public class ZiroRacuni extends PocetnaStranica{
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title') and contains(text(), 'Žiro računi')]")));
-		verifikacijaZajednickihElemenata("FINANSIJE", "ŽIRO RAČUNI", "Žiro računi", 9, false, false, true, true, true, true, false);
+		verifikacijaZajednickihElemenata("Finansije", "Žiro Računi", "Žiro računi", 9, false, false, true, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaId1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBroj1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBanka1WE));

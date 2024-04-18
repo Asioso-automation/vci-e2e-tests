@@ -24,7 +24,7 @@ public class Opomene extends PocetnaStranica{
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title') and contains(text(), 'Opomene')]")));
-		verifikacijaZajednickihElemenata("PRAVNI ODNOSI", "OPOMENE", "Opomene", 13, false, false, true, true, true, true, true);
+		verifikacijaZajednickihElemenata("Pravni Odnosi", "Opomene", "Opomene", 13, false, false, true, true, true, true, true);
 		wait.until(ExpectedConditions.elementToBeClickable(generateBtnWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaId1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPeriodOd1WE));

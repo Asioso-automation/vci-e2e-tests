@@ -27,7 +27,7 @@ public class Tuzbe extends PocetnaStranica{
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title') and contains(text(), 'Tužbe')]")));
-		verifikacijaZajednickihElemenata("PRAVNI ODNOSI", "TUŽBE", "Tužbe", 15, false, false, false, true, true, true, false);
+		verifikacijaZajednickihElemenata("Pravni Odnosi", "Tužbe", "Tužbe", 15, false, false, false, true, true, true, false);
 		wait.until(ExpectedConditions.elementToBeClickable(printBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(generateBtnWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaId1WE));

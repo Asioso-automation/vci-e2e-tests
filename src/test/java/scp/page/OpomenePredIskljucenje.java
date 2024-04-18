@@ -27,7 +27,7 @@ public class OpomenePredIskljucenje extends PocetnaStranica{
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title') and contains(text(), 'Opomene pred isključenje')]")));
-		verifikacijaZajednickihElemenata("ISKLJUČENJA", "OPOMENE PRED ISKLJUČENJE", "Opomene pred isključenje", 14, false, false, true, true, true, true, false);
+		verifikacijaZajednickihElemenata("Isključenja", "Opomene Pred Isključenje", "Opomene pred isključenje", 14, false, false, true, true, true, true, false);
 		wait.until(ExpectedConditions.elementToBeClickable(printBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(generateBtnWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaId1WE));

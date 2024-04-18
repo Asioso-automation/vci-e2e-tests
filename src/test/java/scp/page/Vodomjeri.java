@@ -42,14 +42,14 @@ public class Vodomjeri extends PocetnaStranica{
 		verifikacijaZajednickihElemenata("KUPCI", "VODOMJERI", "Vodomjeri", 15, false, false, true, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaId1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaZonaOcitanjaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrUZoniOcitanjaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrUZoniWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaSrBrojWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaOznakaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTip1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaVrstaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaProfilWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaProizvodjacWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumIstekaBazdarenjaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumIstekaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTipOcitanjaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaModulWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAktivan1WE));

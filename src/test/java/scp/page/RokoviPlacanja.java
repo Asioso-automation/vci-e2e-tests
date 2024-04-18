@@ -18,7 +18,7 @@ public class RokoviPlacanja extends PocetnaStranica{
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title') and contains(text(), 'Rokovi plaćanja')]")));
-		verifikacijaZajednickihElemenata("KUPCI", "ROKOVI PLAĆANJA", "Rokovi plaćanja", 6, false, false, true, true, true, true, false);
+		verifikacijaZajednickihElemenata("Kupci", "Rokovi Plaćanja", "Rokovi plaćanja", 6, false, false, true, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaId1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojDanaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaVrijemeUnosa1WE));

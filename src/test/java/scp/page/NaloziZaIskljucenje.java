@@ -25,7 +25,7 @@ public class NaloziZaIskljucenje extends PocetnaStranica{
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title') and contains(text(), 'Nalozi za isključenje')]")));
-		verifikacijaZajednickihElemenata("ISKLJUČENJA", "NALOZI ZA ISKLJUČENJE", "Nalozi za isključenje", 15, false, false, false, true, true, true, false);
+		verifikacijaZajednickihElemenata("Isključenja", "Nalozi Za Isključenja", "Nalozi za isključenje", 15, false, false, false, true, true, true, false);
 		wait.until(ExpectedConditions.elementToBeClickable(generateBtnWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaId1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojNalogaWE));
@@ -46,7 +46,7 @@ public class NaloziZaIskljucenje extends PocetnaStranica{
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title') and contains(text(), 'Nalozi za isključenje')]")));
-		verifikacijaZajednickihElemenata("ISKLJUČENJA", "NALOZI ZA ISKLJUČENJE", "Nalozi za isključenje", 15, false, false, false, true, true, true, false);
+		verifikacijaZajednickihElemenata("Isključenja", "Nalozi Za Isključenja", "Nalozi za isključenje", 15, false, false, false, true, true, true, false);
 		wait.until(ExpectedConditions.elementToBeClickable(printBtnWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaId1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojNalogaWE));

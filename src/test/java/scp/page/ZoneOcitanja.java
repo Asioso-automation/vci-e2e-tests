@@ -25,7 +25,7 @@ public class ZoneOcitanja extends PocetnaStranica{
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title') and contains(text(), 'Zone očitanja')]")));
-		verifikacijaZajednickihElemenata("OČITANJA", "ZONE OČITANJA", "Zone očitanja", 5, false, false, true, true, true, true, false);
+		verifikacijaZajednickihElemenata("Očitanja", "Zone Očitanja", "Zone očitanja", 5, false, false, true, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaId1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNaziv1WE));
 	}

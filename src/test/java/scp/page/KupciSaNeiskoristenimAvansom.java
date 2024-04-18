@@ -19,7 +19,7 @@ public class KupciSaNeiskoristenimAvansom extends PocetnaStranica{
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title') and contains(text(), 'Kupci sa neiskorištenim avansom')]")));
-		verifikacijaZajednickihElemenata("FINANSIJE", "KUPCI SA NEISKORIŠTENIM AVANSOM", "Kupci sa neiskorištenim avansom", 6, false, false, false, true, true, true, false);
+		verifikacijaZajednickihElemenata("Finansije", "Kupci Sa Neiskorištenim avansom", "Kupci sa neiskorištenim avansom", 6, false, false, false, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaId1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKupac1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaProstorWE));

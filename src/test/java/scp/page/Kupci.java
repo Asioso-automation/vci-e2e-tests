@@ -55,7 +55,7 @@ public class Kupci extends PocetnaStranica{
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title') and contains(text(), 'Kupci')]")));
-	    verifikacijaZajednickihElemenata("KUPCI", "KUPCI", "Kupci", 12, false, false, true, true, true, true, false);
+	    verifikacijaZajednickihElemenata("Kupci", "Kupci", "Kupci", 12, false, false, true, true, true, true, false);
 	    wait.until(ExpectedConditions.elementToBeClickable(filterBtnWE));
 	    wait.until(ExpectedConditions.visibilityOf(kolone.kolonaId1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNaziv1WE));

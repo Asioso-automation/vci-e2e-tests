@@ -35,7 +35,7 @@ public class NaseljenaMjesta extends PocetnaStranica{
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title') and contains(text(), 'Naseljena mjesta')]")));
-		verifikacijaZajednickihElemenata("ŠIFARNICI", "NASELJENA MJESTA", "Naseljena mjesta", 6, false, false, true, true, true, true, false);
+		verifikacijaZajednickihElemenata("Šifarnici", "Naseljena Mjesta", "Naseljena mjesta", 6, false, false, true, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaId1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNaziv1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDrzava1WE));
@@ -45,7 +45,7 @@ public class NaseljenaMjesta extends PocetnaStranica{
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title') and contains(text(), 'Naseljena mjesta')]")));
-		verifikacijaZajednickihElemenata("ŠIFARNICI", "NASELJENA MJESTA", "Naseljena mjesta", 7, false, false, true, true, true, true, false);
+		verifikacijaZajednickihElemenata("Šifarnici", "Naseljena Mjesta", "Naseljena mjesta", 7, false, false, true, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaId1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNaziv1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDrzava1WE));
