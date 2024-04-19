@@ -25,7 +25,7 @@ public class Toplovodi extends PocetnaStranica{
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title') and contains(text(), 'Toplovodi')]")));
-		verifikacijaZajednickihElemenata("ŠIFARNICI", "TOPLOVODI", "Toplovodi", 4, false, false, true, true, true, true, false);
+		verifikacijaZajednickihElemenata("Šifarnici", "Toplovodi", "Toplovodi", 4, false, false, true, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaId1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNaziv1WE));
 	}

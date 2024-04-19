@@ -19,7 +19,7 @@ public class NalogZaObracun extends PocetnaStranica{
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title') and contains(text(), 'Nalog za obračun')]")));
-		verifikacijaZajednickihElemenata("OBRAČUN", "NALOG ZA OBRAČUN", "Nalog za obračun", 10, false, false, true, true, true, true, false);
+		verifikacijaZajednickihElemenata("Obračun", "Nalog Za Obračun", "Nalog za obračun", 10, false, false, true, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaId1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatum1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaGodinaWE));

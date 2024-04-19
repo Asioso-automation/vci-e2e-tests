@@ -3,6 +3,8 @@ package scp.page;
 import static org.testng.Assert.assertTrue;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+
+import org.apache.xerces.impl.xs.XSElementDeclHelper;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -27,13 +29,16 @@ public class Objekti extends PocetnaStranica {
 	
 	// Elemnti forme za dodavanje fizickog lica
 	
-	@FindBy(xpath = "//div[1]/div[1]/div/div/div[1]/div[1]/input")
+	@FindBy(xpath = "//div/div[1]/div[1]/div[1]/div/div/div[1]/div/input")
+	public WebElement nazivWE;
+	
+	@FindBy(xpath = "//div[1]/div[3]/div/div/div[1]/div[1]/input")
 	public WebElement uliceWE;
 	
 	@FindBy(xpath = "//div[4]/div/div/div/a/div/div")
 	public WebElement odaberiUlicuWE;
 	
-	@FindBy(xpath = "//div[1]/div[2]/div/div/div[1]/div/input")
+	@FindBy(xpath = "//form/div/div[1]/div[2]/div[1]/div/div/div[1]/div/input")
 	public WebElement brojWE;
 	
 	@FindBy(xpath = "//div[1]/table/tbody/tr/td[2]")
@@ -79,22 +84,24 @@ public class Objekti extends PocetnaStranica {
 //	}
 	
 	public String dodajObjekat() throws InterruptedException {
-		String broj = Helper.getRandomNumber(2);
+		String naziv = "Naziv" + Helper.getRandomNubmer1to8(3);
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
 		dodajBtnWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(nazivWE));
+		nazivWE.sendKeys(naziv);
 		wait.until(ExpectedConditions.elementToBeClickable(uliceWE));
 		uliceWE.click();
 		uliceWE.sendKeys(Helper.getRandomNumber(2));
-		Thread.sleep(500);
+		Thread.sleep(700);
 		uliceWE.sendKeys(Keys.ARROW_DOWN);
 		uliceWE.sendKeys(Keys.ENTER);
 		wait.until(ExpectedConditions.elementToBeClickable(brojWE));
-		brojWE.sendKeys(broj);
+		brojWE.sendKeys(Helper.getRandomNubmer1to8(2));
 		wait.until(ExpectedConditions.elementToBeClickable(napomenaWE));
 		napomenaWE.sendKeys("#test");
 		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
 		submitBtnWE.click();
-		return broj;
+		return naziv;
 	}
 	
 	public void verifikujObjekat(String broj) throws InterruptedException {

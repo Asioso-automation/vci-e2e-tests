@@ -50,7 +50,7 @@ public class Cjenovnik extends PocetnaStranica{
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title') and contains(text(), 'Cjenovnik')]")));
-		verifikacijaZajednickihElemenata("TARIFNI SISTEM", "CJENOVNIK", "Cjenovnik", 9, false, false, false, true, true, true, false);
+		verifikacijaZajednickihElemenata("Tarifni Sistem", "Cjenovnik", "Cjenovnik", 9, false, false, false, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaId1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPeriodOd2WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPeriodDo2WE));

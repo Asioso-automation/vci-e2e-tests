@@ -19,7 +19,7 @@ public class DaniISatiGrijanja extends PocetnaStranica{
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title') and contains(text(), 'Dani i sati grijanja')]")));
-		verifikacijaZajednickihElemenata("TARIFNI SISTEM", "DANI I SATI GRIJANJA", "Dani i sati grijanja", 8, false, false, true, true, true, true, false);
+		verifikacijaZajednickihElemenata("Tarifni Sistem", "Dani I Sati Grijanja", "Dani i sati grijanja", 8, false, false, true, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaId1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaGrejnaSezonaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaGodinaWE));

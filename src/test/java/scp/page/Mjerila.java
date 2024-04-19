@@ -45,13 +45,14 @@ public class Mjerila extends PocetnaStranica{
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrUZoniWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaSrBrojWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaOznakaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaModulWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPlombaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTip1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaVrstaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaProizvodjacWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIstekBazdarenjaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTipOcitanja1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAktivan1WE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaModulWE));
+		
 	}
 	
 

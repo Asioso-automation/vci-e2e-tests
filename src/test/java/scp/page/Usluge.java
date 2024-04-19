@@ -49,7 +49,7 @@ public class Usluge extends PocetnaStranica{
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title') and contains(text(), 'Usluge')]")));
-		verifikacijaZajednickihElemenata("TARIFNI SISTEM", "USLUGE", "Usluge", 10, false, false, false, true, true, true, false);
+		verifikacijaZajednickihElemenata("Tarifni Sistem", "Usluge", "Usluge", 10, false, false, false, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaId1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNaziv1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTipObracuna1WE));

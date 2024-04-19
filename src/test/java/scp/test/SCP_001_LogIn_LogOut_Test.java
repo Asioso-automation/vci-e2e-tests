@@ -48,13 +48,36 @@ public class SCP_001_LogIn_LogOut_Test extends BaseTest {
     }
     
     @Test (description="logIn i logOut sa verifikacijama stranica")
-    public void scp_001_2_logIn_logOut_vodovod_is_test() throws Exception {
+    public void scp_001_2_logIn_logOut_vodovod_test() throws Exception {
         LogIn logIn = new LogIn(driver, SCP_PROPERTIES);
         PocetnaStranica pocetna = new PocetnaStranica(driver);
         logIn.verifikujLogIn();
-        logIn.logIn(pocetna.orgVodovodIsWE);
+        logIn.logIn(pocetna.orgVodovodGradiskaWE);
         pocetna.verifikujPocetnuStranicu();
         pocetna.izlogujSe();
         logIn.verifikujLogIn();
     }
+    
+    @Test (description="logIn i logOut sa verifikacijama stranica")
+    public void scp_001_2_logIn_logOut_toplana_test() throws Exception {
+        LogIn logIn = new LogIn(driver, SCP_PROPERTIES);
+        PocetnaStranica pocetna = new PocetnaStranica(driver);
+        logIn.verifikujLogIn();
+        logIn.logIn(pocetna.orgToplanaGradiskaWE);
+        pocetna.verifikujPocetnuStranicu();
+        pocetna.izlogujSe();
+        logIn.verifikujLogIn();
+    }
+    
+    @Test (description="logIn i logOut sa verifikacijama stranica")
+    public void scp_001_2_logIn_logOut_son_test() throws Exception {
+        LogIn logIn = new LogIn(driver, SCP_PROPERTIES);
+        PocetnaStranica pocetna = new PocetnaStranica(driver);
+        logIn.verifikujLogIn();
+        logIn.logIn(pocetna.orgSonWE);
+        pocetna.verifikujPocetnuStranicu();
+        pocetna.izlogujSe();
+        logIn.verifikujLogIn();
+    }
+    
 }

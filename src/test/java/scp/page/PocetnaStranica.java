@@ -416,9 +416,12 @@ public class PocetnaStranica extends PageBase {
 	    
 	@FindBy(xpath = "//*[contains(@class, 'v-list__tile__title') and contains(text(), 'SON')]")
 	public WebElement orgSonWE;
-	    
-	@FindBy(xpath = "//*[contains(@class, 'v-list__tile__title') and contains(text(), 'Sarajevo-gas a.d. Istočno Sarajevo')]")
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-list__tile__title') and contains(text(), 'Gas')]")
 	public WebElement orgGasWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-list__tile__title') and contains(text(), 'Sarajevo-gas a.d. Istočno Sarajevo')]")
+	public WebElement orgSarajevoGasWE;
 	
 	@FindBy(xpath = "//*[contains(@class, 'v-list__tile__title') and contains(text(), 'Vodovod')]")
 	public WebElement orgVodovodIsWE;
