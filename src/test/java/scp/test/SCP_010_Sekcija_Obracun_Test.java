@@ -11,9 +11,9 @@ import scp.page.LogIn;
 import scp.page.PocetnaStranica;
 import scp.page.TefObrasci;
 
-public class SCP_009_Sekcija_Obracun_Test extends BaseTest{
+public class SCP_010_Sekcija_Obracun_Test extends BaseTest{
 
-	public SCP_009_Sekcija_Obracun_Test() throws IOException, FileNotFoundException {
+	public SCP_010_Sekcija_Obracun_Test() throws IOException, FileNotFoundException {
 		super();
 	}
 

@@ -25,10 +25,10 @@ public class NaseljenaMjesta extends PocetnaStranica{
 	@FindBy(xpath = "//form/div/div[1]/div/div[2]/div/div/div[1]/div/input") 
 	private WebElement nazivWE;
 	
-	@FindBy(xpath = "//form/div/div[1]/div/div[4]/div/div/div[1]/div[1]/input") 
+	@FindBy(xpath = "//div[1]/div/div[3]/div/div/div[1]/div[1]/input") 
 	private WebElement drzavaWE;
 	
-	@FindBy(xpath = "//form/div/div[1]/div/div[5]/div/div/div[1]/div[1]/input") 
+	@FindBy(xpath = "//div[1]/div/div[4]/div/div/div[1]/div[1]/input") 
 	private WebElement entitetWE;
 	
 	public void verifikujNaseljenaMjesta()throws InterruptedException, FileNotFoundException, IOException {
@@ -64,12 +64,12 @@ public class NaseljenaMjesta extends PocetnaStranica{
 		nazivWE.sendKeys(naseljenoMjesto);
 		wait.until(ExpectedConditions.elementToBeClickable(drzavaWE));
 		drzavaWE.sendKeys("BIH");
-		Thread.sleep(1000);
+		Thread.sleep(500);
 		drzavaWE.sendKeys(Keys.ARROW_DOWN);
 		drzavaWE.sendKeys(Keys.ENTER);
 		wait.until(ExpectedConditions.elementToBeClickable(entitetWE));
-		entitetWE.sendKeys("1");
-		Thread.sleep(1000);
+		entitetWE.sendKeys(Helper.getRandomNubmer1to4(1));
+		Thread.sleep(500);
 		entitetWE.sendKeys(Keys.ARROW_DOWN);
 		entitetWE.sendKeys(Keys.ENTER);
 		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));

@@ -48,6 +48,9 @@ public class PocetnaStranica extends PageBase {
 	@FindBy(xpath = "//span[text()='Uspješno završeno.']")
 	public WebElement porukaWE;
 
+	@FindBy(xpath = "//td[1]/div/div/div/div[1]/input")
+	public WebElement filterKolona1WE;
+	
 	@FindBy(xpath = "//td[2]/div/div/div/div[1]/input")
 	public WebElement filterKolona2WE;
 	
@@ -68,6 +71,9 @@ public class PocetnaStranica extends PageBase {
 	
 	@FindBy(xpath = "//div[1]/nav/div/div[1]")
 	public WebElement naslovStraniceWE;
+	
+	@FindBy(xpath = "//div[1]/table/tbody/tr[1]/td[1]")
+	public WebElement podatak1TabelaWE;
 	
 	@FindBy(xpath = "//div[1]/table/tbody/tr[1]/td[2]")
 	public WebElement podatak2TabelaWE;

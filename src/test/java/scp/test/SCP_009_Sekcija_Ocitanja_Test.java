@@ -11,9 +11,9 @@ import scp.page.LogIn;
 import scp.page.PocetnaStranica;
 import scp.page.ZoneOcitanja;
 
-public class SCP_008_Sekcija_Ocitanja_Test extends BaseTest{
+public class SCP_009_Sekcija_Ocitanja_Test extends BaseTest{
 
-	public SCP_008_Sekcija_Ocitanja_Test() throws IOException, FileNotFoundException {
+	public SCP_009_Sekcija_Ocitanja_Test() throws IOException, FileNotFoundException {
 		super();
 	}
 

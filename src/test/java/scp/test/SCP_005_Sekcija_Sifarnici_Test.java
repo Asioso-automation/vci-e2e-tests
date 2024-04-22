@@ -81,23 +81,6 @@ public class SCP_005_Sekcija_Sifarnici_Test extends BaseTest{
 		naseljena.verifikujStavku(naseljeno, pocetna.podatak2TabelaWE);
 	}
 	
-	@Test (description=" test kreira NASELJENO MJESTO iz sekcije SIFARNICI i verifikuje ga")
-	public void scp_005_dodavanje_naseljenog_mjesta__test() throws Exception {
-		LogIn logIn = new LogIn(driver, SCP_PROPERTIES);
-		PocetnaStranica pocetna = new PocetnaStranica(driver);
-		driver.manage().window().maximize();
-		logIn.verifikujLogIn();
-		logIn.logIn(pocetna.orgVodovodGradiskaWE);
-		pocetna.verifikujPocetnuStranicu();
-		NaseljenaMjesta naseljena = pocetna.navigirajNaNaseljenaMjesta();
-		naseljena.verifikujNaseljenaMjesta();
-		String naseljeno = naseljena.dodajNaseljenaMjesta();
-		naseljena.verifikujPoruku("Uspješno završeno.");
-		naseljena.pretraziStavku(pocetna.filterKolona2WE, naseljeno);
-		naseljena.verifikujNaseljenaMjesta();
-		naseljena.verifikujStavku(naseljeno, pocetna.podatak2TabelaWE);
-	}
-	
 	@Test (description=" test kreira MJESNU ZAJEDNICU iz sekcije SIFARNICI i verifikuje je")
 	public void scp_005_dodavanje_mjesne_zajednice_test() throws Exception {
 		LogIn logIn = new LogIn(driver, SCP_PROPERTIES);
@@ -200,64 +183,13 @@ public class SCP_005_Sekcija_Sifarnici_Test extends BaseTest{
 		statusi.verifikujStavku(status, pocetna.podatak2TabelaWE);
 	}
 	
-	@Test (description=" test kreira TIP MJERILA  iz sekcije SIFARNICI i verifikuje ga")
-	public void scp_005_dodavanje_tipovi_mjerila_test() throws Exception {
-		LogIn logIn = new LogIn(driver, SCP_PROPERTIES);
-		PocetnaStranica pocetna = new PocetnaStranica(driver);
-		driver.manage().window().maximize();
-		logIn.verifikujLogIn();
-		logIn.logIn(pocetna.orgVodovodIsWE);
-		pocetna.verifikujPocetnuStranicu();
-		TipoviMjerila tipovi = pocetna.navigirajNaTipoveMjerila();
-		tipovi.verifikujTipoviMjerila();
-		String tipMjerila = tipovi.dodajTipoviMjerila();
-		tipovi.verifikujPoruku("Uspješno završeno.");
-		tipovi.pretraziStavku(pocetna.filterKolona2WE, tipMjerila);
-		tipovi.verifikujTipoviMjerila();
-		tipovi.verifikujStavku(tipMjerila, pocetna.podatak2TabelaWE);
-	}
-	
-	@Test (description=" test kreira PROIZVODJACA MJERILA  iz sekcije SIFARNICI i verifikuje ga")
-	public void scp_005_dodavanje_proizvodjaci_mjerila_test() throws Exception {
-		LogIn logIn = new LogIn(driver, SCP_PROPERTIES);
-		PocetnaStranica pocetna = new PocetnaStranica(driver);
-		driver.manage().window().maximize();
-		logIn.verifikujLogIn();
-		logIn.logIn(pocetna.orgVodovodIsWE);
-		pocetna.verifikujPocetnuStranicu();
-		ProizvodjaciMjerila proizvodjaci = pocetna.navigirajNaProizvodjaceMjerila();
-		proizvodjaci.verifikujProizvodjaceMjerila();
-		String proizvodjac = proizvodjaci.dodajProizvodjaciMjerila();
-		proizvodjaci.verifikujPoruku("Uspješno završeno.");
-		proizvodjaci.pretraziStavku(pocetna.filterKolona2WE, proizvodjac);
-		proizvodjaci.verifikujProizvodjaceMjerila();
-		proizvodjaci.verifikujStavku(proizvodjac, pocetna.podatak2TabelaWE);
-	}
-	
-	@Test (description=" test kreira VRSTU MJERILA  iz sekcije SIFARNICI i verifikuje ga")
-	public void scp_005_dodavanje_vrste_mjerila_test() throws Exception {
-		LogIn logIn = new LogIn(driver, SCP_PROPERTIES);
-		PocetnaStranica pocetna = new PocetnaStranica(driver);
-		driver.manage().window().maximize();
-		logIn.verifikujLogIn();
-		logIn.logIn(pocetna.orgVodovodIsWE);
-		pocetna.verifikujPocetnuStranicu();
-		VrsteMjerila vrste = pocetna.navigirajNaVrsteMjerila();
-		vrste.verifikujVrsteMjerila();
-		String vrsta = vrste.dodajVrsteMjerila();
-		vrste.verifikujPoruku("Uspješno završeno.");
-		vrste.pretraziStavku(pocetna.filterKolona2WE, vrsta);
-		vrste.verifikujVrsteMjerila();
-		vrste.verifikujStavku(vrsta, pocetna.podatak2TabelaWE);
-	}
-	
 	@Test (description=" test kreira TOPLOVOD i TOPLOTNU STANICU iz sekcije SIFARNICI i verifikuje ga")
 	public void scp_005_dodavanje_toplovoda_toplotne_stanice_test() throws Exception {
 		LogIn logIn = new LogIn(driver, SCP_PROPERTIES);
 		PocetnaStranica pocetna = new PocetnaStranica(driver);
 		driver.manage().window().maximize();
 		logIn.verifikujLogIn();
-		logIn.logIn(pocetna.orgToplanaInsWE);
+		logIn.logIn(pocetna.orgToplanaGradiskaWE);
 		pocetna.verifikujPocetnuStranicu();
 		Toplovodi toplovodi = pocetna.navigirajNaToplovode();
 		toplovodi.verifikujToplovode();
@@ -281,7 +213,7 @@ public class SCP_005_Sekcija_Sifarnici_Test extends BaseTest{
 		PocetnaStranica pocetna = new PocetnaStranica(driver);
 		driver.manage().window().maximize();
 		logIn.verifikujLogIn();
-		logIn.logIn(pocetna.orgToplanaInsWE);
+		logIn.logIn(pocetna.orgToplanaGradiskaWE);
 		pocetna.verifikujPocetnuStranicu();
 		ToplotniReoni toplotniReoni = pocetna.navigirajNaToplotneReone();
 		toplotniReoni.verifikujToplotneReone();
