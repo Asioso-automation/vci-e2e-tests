@@ -22,6 +22,7 @@ public class Reprogrami extends PocetnaStranica {
 		verifikacijaZajednickihElemenata("Finansije", "Reprogrami", "Reprogrami", 14, false, false, true, true, true, true, true);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKupacWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMjernoMjestoEicWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojUgovoraWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumPotpisaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaRokZaPlacanjePrveRateWE));

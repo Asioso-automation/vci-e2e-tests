@@ -64,7 +64,7 @@ public class RegistarBrojila extends PocetnaStranicaPXD {
 		wait.until(ExpectedConditions.elementToBeClickable(poljeSerijskiBrojWE));
 		poljeSerijskiBrojWE.sendKeys("SN" + brojBrojila);
 		wait.until(ExpectedConditions.elementToBeClickable(poljeRedniBrojURegistruWE));
-		poljeRedniBrojURegistruWE.sendKeys(brojBrojila);
+		poljeRedniBrojURegistruWE.sendKeys(Helper.getRandomNumber(3) + brojBrojila);
 		wait.until(ExpectedConditions.elementToBeClickable(poljeTipBrojilaWE));
 		poljeTipBrojilaWE.sendKeys("11 - DB2M");									// 59712 - E5BD (A-D) > 11 - DB2M
 		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));

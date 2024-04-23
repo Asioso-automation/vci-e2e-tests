@@ -28,9 +28,10 @@ public class Djelatnosti extends PocetnaStranica {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title body-1 ml-0 pl-0 text-default') and starts-with(., ' Djelatnosti')]")));
-		verifikacijaZajednickihElemenata("Šifarnici", "Djelatnosti", "Djelatnosti", 4, false, false, true, true, true, true, false);
+		verifikacijaZajednickihElemenata("Šifarnici", "Djelatnosti", "Djelatnosti", 5, false, false, true, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaSifraDjelatnostiWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaGrupaDjelatnostiWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNazivWE));
 	}
 	

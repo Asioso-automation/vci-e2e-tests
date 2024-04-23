@@ -83,6 +83,9 @@ public class Kolone extends PageBase {
 	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Šifra djelatnosti']")
 	public WebElement kolonaSifraDjelatnostiWE;
 	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Grupa djelatnosti']")
+	public WebElement kolonaGrupaDjelatnostiWE;
+	
 	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Entitet']")
 	public WebElement kolonaEntitetWE;
 	
@@ -167,8 +170,8 @@ public class Kolone extends PageBase {
 	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Tip obračuna']")
 	public WebElement kolonaTipObracunaWE;
 	
-	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Tip mrežarine']")
-	public WebElement kolonaTipMrezarineWE;
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Vrsta mrežarine']")
+	public WebElement kolonaVrstaMrezarineWE;
 	
 	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Opseg potrošnje']")
 	public WebElement kolonaOpsegPotrosnjeWE;
@@ -214,6 +217,9 @@ public class Kolone extends PageBase {
 	
 	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'PDV obveznik']")
 	public WebElement kolonaPdvObveznikWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'U stečaju']")
+	public WebElement kolonaUStecajuWE;
 	
 	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Ime i Prezime']")
 	public WebElement kolonaImeIPrezimeWE;
@@ -517,6 +523,9 @@ public class Kolone extends PageBase {
 	
 	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Zaključen']")
 	public WebElement kolonaZakljucenWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Arhivirano']")
+	public WebElement kolonaArhiviranoWE;
 	
 	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Analiziran']")
 	public WebElement kolonaAnaliziranWE;

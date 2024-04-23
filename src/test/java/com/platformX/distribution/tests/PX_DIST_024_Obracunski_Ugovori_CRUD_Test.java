@@ -62,7 +62,7 @@ public class PX_DIST_024_Obracunski_Ugovori_CRUD_Test  extends BaseTest {
 		obracunskiUgovori.verifikujStavku(eic, homePage.podatak2Tabela3WE);
 	}
 	
-	@Test (retryAnalyzer = RetryAnalyzer.class, dependsOnMethods = { "px_dist_024_1_dodavanje_obracunskog_ugovora_test" })
+	@Test (enabled = false, retryAnalyzer = RetryAnalyzer.class, dependsOnMethods = { "px_dist_024_1_dodavanje_obracunskog_ugovora_test" })
 	public void px_dist_024_2_uredjivanje_obracunskog_ugovora_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();

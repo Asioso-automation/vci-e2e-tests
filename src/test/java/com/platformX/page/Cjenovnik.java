@@ -24,7 +24,7 @@ public class Cjenovnik extends PocetnaStranica {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaVrstaTarifeWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaSezonaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTipObracunaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTipMrezarineWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaVrstaMrezarineWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaOpsegPotrosnjeWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumOdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumDoWE));

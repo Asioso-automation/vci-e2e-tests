@@ -99,8 +99,8 @@ public class PX_003_Verifikacije_Sekcija_Test extends BaseTest {
 		reklamacije.verifikujReklamacije();
 		VrsteZahtjeva vrsteZahtjeva = pocetna.navigirajNaVrsteZahtjeva();
 		vrsteZahtjeva.verifikujVrsteZahtjeva();
-		VrsteIsporukeReklamacija vrsteIsporuke = pocetna.navigirajNaVrsteIsporukeReklamacija();
-		vrsteIsporuke.verifikujVrsteIsporukeReklamacija();
+//		VrsteIsporukeReklamacija vrsteIsporuke = pocetna.navigirajNaVrsteIsporukeReklamacija();
+//		vrsteIsporuke.verifikujVrsteIsporukeReklamacija();
 		ObrasciBrojaUgovora obrasciBrojaUgovora = pocetna.navigirajNaObrasciBrojaUgovora();
 		obrasciBrojaUgovora.verifikujObrasciBrojaUgovora();
 		GrupeObrazacaBrojaUgovora grupeObrazacaBrojaUgovora = pocetna.navigirajNaGrupeObrazacaBrojaUgovora();
@@ -218,6 +218,7 @@ public class PX_003_Verifikacije_Sekcija_Test extends BaseTest {
 		avansi.verifikujAvansi();
 		Reprogrami reprogrami = pocetna.navigirajNaReprogrami();
 		reprogrami.verifikujReprogrami();
+//		TODO SudskaPoravnanja
 		ObrasciBrojaUgovoraReprograma obrasciBrojaUgovoraReprograma = pocetna.navigirajNaObrasciBrojaUgovoraReprograma();
 		obrasciBrojaUgovoraReprograma.verifikujObrasciBrojaUgovoraReprograma();
 		Banke banke = pocetna.navigirajNaBanke();

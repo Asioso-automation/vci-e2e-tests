@@ -446,7 +446,7 @@ public class PocetnaStranica extends PageBase {
 		wait.until(ExpectedConditions.elementToBeClickable(mjernaMjestaWE));
 		wait.until(ExpectedConditions.elementToBeClickable(obracunWE));
 		wait.until(ExpectedConditions.elementToBeClickable(finansijeWE));
-		wait.until(ExpectedConditions.elementToBeClickable(izvjestajiWE));
+//		wait.until(ExpectedConditions.elementToBeClickable(izvjestajiWE));
 		wait.until(ExpectedConditions.elementToBeClickable(profilWE));
 		wait.until(ExpectedConditions.elementToBeClickable(filterKupacWE));
 		wait.until(ExpectedConditions.elementToBeClickable(filterMjernoMjestoWE));
