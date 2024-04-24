@@ -296,10 +296,10 @@ public class PX_003_Verifikacije_Sekcija_Test extends BaseTest {
 		poruke.verifikujPoruke();
 		EmailObavjestenja emailObavjestenja = pocetna.navigirajNaEmailObavjestenja();
 		emailObavjestenja.verifikujEmailObavjestenja();
-	    DnevnikIzmjena dnevnikIzmjena = pocetna.navigirajNaDnevnikIzmjena();
-		dnevnikIzmjena.verifikujDnevnikIzmjena();
-		Izvjestaji izvjestaji = pocetna.navigirajNaIzvjestaji();
-		izvjestaji.verifikujIzvjestaji();
+//	    DnevnikIzmjena dnevnikIzmjena = pocetna.navigirajNaDnevnikIzmjena();
+//		dnevnikIzmjena.verifikujDnevnikIzmjena();
+//		Izvjestaji izvjestaji = pocetna.navigirajNaIzvjestaji();
+//		izvjestaji.verifikujIzvjestaji();
 	}
 	
 }

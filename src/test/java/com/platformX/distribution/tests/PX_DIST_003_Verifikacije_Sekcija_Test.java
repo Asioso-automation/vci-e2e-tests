@@ -269,6 +269,7 @@ public class PX_DIST_003_Verifikacije_Sekcija_Test extends BaseTest {
 		zbirnaKontrolnaOcitanja.verifikujZbirnaKontrolnaOcitanja();
 		ZbirnaKontrolnaPotrosnja zbirnaKontrolnaPotrosnja = pocetna.navigirajNaZbirnaKontrolnaPotrosnja();
 		zbirnaKontrolnaPotrosnja.verifikujZbirnaKontrolnaPotrosnja();
+//		TODO ProcjenaOcitanja
 		MonitoringOcitanja monitoringOcitanja = pocetna.navigirajNaMonitoringOcitanja();
 		monitoringOcitanja.verifikujMonitoringOcitanja();
 	}
