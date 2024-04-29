@@ -30,31 +30,31 @@ public class PravnaLica extends PocetnaStranica {
 	@FindBy(xpath = "//div[4]/div[2]/div/div/div[1]/div/input")
 	private WebElement jibWE;
 	
-	@FindBy(xpath = "//div[5]/div[3]/div/div/div[1]/div[1]/input[1]")
+	@FindBy(xpath = "//div[5]/div[2]/div/div/div[1]/div[1]/input[1]")
 	private WebElement nadlezniODSWE;
 	
 	@FindBy(xpath = "//*[contains(text(), '1 - New York')]")
 	private WebElement odaberiODSWE;
 
-	@FindBy(xpath = "//div[5]/div[2]/div/div/div[1]/div[1]/input[1]")
+	@FindBy(xpath = "//div[7]/div[1]/div/div/div[1]/div[1]/input[1]")
 	private WebElement postaWE;
 
 	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '78000 - Banja Luka')]")
 	private WebElement odaberiPostuWE;
 
-	@FindBy(xpath = "//div[6]/div[1]/div/div/div[1]/div[1]/input[1]")
+	@FindBy(xpath = "//div[7]/div[2]/div/div/div[1]/div[1]/input[1]")
 	private WebElement mjestoWE;
 
 	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '1 - Banja')]")
 	private WebElement odaberiMjestoWE;
 
-	@FindBy(xpath = "//div[6]/div[2]/div/div/div[1]/div[1]/input[1]")
+	@FindBy(xpath = "//div[7]/div[3]/div/div/div[1]/div[1]/input[1]")
 	private WebElement ulicaWE;
 
 	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '6 - Nikole Tesle')]")
 	private WebElement odaberiUlicuWE;
 
-	@FindBy(xpath = "//div[6]/div[3]/div/div/div[1]/div/input")
+	@FindBy(xpath = "//div[7]/div[4]/div/div/div[1]/div/input")
 	private WebElement brojUliceWE;
 	
 	@FindBy(xpath = "//main/div/div/div/div[1]/header/div/button[1]")

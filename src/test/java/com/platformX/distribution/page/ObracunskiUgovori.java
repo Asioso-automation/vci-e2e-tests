@@ -17,25 +17,25 @@ public class ObracunskiUgovori extends PocetnaStranicaPXD {
 		super(driver);
 	}
 
-	@FindBy(xpath = "//div[1]/div/div/div[1]/div[1]/input[1]")
+	@FindBy(xpath = "//div[1]/div[1]/div/div/div[1]/div[1]/input[1]")
 	private WebElement poljeKupacWE;
 	
-	@FindBy(xpath = "//div[2]/div/div/div[1]/div[1]/input[1]")
+	@FindBy(xpath = "//div[1]/div[2]/div/div/div[1]/div[1]/input[1]")
 	private WebElement poljeTarifnaGrupaWE;
 	
-	@FindBy(xpath = "//div[4]/div/div/div[1]/div[1]/input[1]")
+	@FindBy(xpath = "//div[2]/div[1]/div/div/div[1]/div[1]/input[1]")
 	private WebElement poljeMjernoMjestoWE;
 	
-	@FindBy(xpath = "//div[5]/div/div/div[1]/div/input")
+	@FindBy(xpath = "//div[2]/div[2]/div/div/div[1]/div/input")
 	private WebElement poljeNazivMjernogMjestaWE;
 	
-	@FindBy(xpath = "//div[6]/div/div/div[1]/div/input")
+	@FindBy(xpath = "//div[2]/div[3]/div/div/div[1]/div/input")
 	private WebElement poljeNazivMjMjestaNaStampanimDokumentimaWE;
 	
-	@FindBy(xpath = "//div[7]/div/div/div[1]/div[1]/input[1]")
+	@FindBy(xpath = "//div[3]/div[1]/div/div/div[1]/div[1]/input[1]")
 	private WebElement poljeAktivnoBrojiloWE;
 	
-	@FindBy(xpath = "//div[10]/div/div/div[1]/div/input")
+	@FindBy(xpath = "//div[4]/div[1]/div/div/div[1]/div/input")
 	private WebElement poljeAktivnaKonstantaWE;
 	
 	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '4 - TG')]")
@@ -47,7 +47,7 @@ public class ObracunskiUgovori extends PocetnaStranicaPXD {
 	@FindBy(xpath = "//div[@class='v-tab v-tab--active']")
 	private WebElement aktivniTabWE;
 	
-	@FindBy(xpath = "//div[14]/div/div/div[1]/div/input")
+	@FindBy(xpath = "//div[5]/div[1]/div/div/div[1]/div/input")
 	private WebElement poljeAktivnaKonstanta1WE;
 
 	public void verifikujObracunskiUgovori() throws InterruptedException, FileNotFoundException, IOException {

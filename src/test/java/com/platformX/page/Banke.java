@@ -24,6 +24,9 @@ public class Banke extends PocetnaStranica {
 	private WebElement nazivBankeWE;
 	
 	@FindBy(xpath = "//div[2]/div/div/div[1]/div/input") 
+	private WebElement stampaniNazivBankeWE;
+	
+	@FindBy(xpath = "//div[3]/div/div/div[1]/div/input") 
 	private WebElement cifreZiroRacunaWE;
 	
 	public void verifikujBanke() throws FileNotFoundException, IOException, InterruptedException {
@@ -45,6 +48,8 @@ public class Banke extends PocetnaStranica {
 		dodajBtnWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(nazivBankeWE));
 		nazivBankeWE.sendKeys(banka);
+		wait.until(ExpectedConditions.elementToBeClickable(stampaniNazivBankeWE));
+		stampaniNazivBankeWE.sendKeys(banka);
 		wait.until(ExpectedConditions.elementToBeClickable(cifreZiroRacunaWE));
 		cifreZiroRacunaWE.sendKeys("111");
 		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));

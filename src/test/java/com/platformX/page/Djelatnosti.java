@@ -19,6 +19,9 @@ public class Djelatnosti extends PocetnaStranica {
 	
 	@FindBy(xpath = "//div[2]/div/div/div[1]/div/input")
 	private WebElement nazivDjelatnostiWE;
+	
+	@FindBy(xpath = "//div[3]/div/div/div[1]/div/input")
+	private WebElement stampaniNazivDjelatnostiWE;
 
 	public Djelatnosti(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);
@@ -44,6 +47,8 @@ public class Djelatnosti extends PocetnaStranica {
 		sifraDjelatnostiWE.sendKeys(Helper.getRandomString(5));
 		wait.until(ExpectedConditions.elementToBeClickable(nazivDjelatnostiWE));
 		nazivDjelatnostiWE.sendKeys(djelatnost);
+		wait.until(ExpectedConditions.elementToBeClickable(stampaniNazivDjelatnostiWE));
+		stampaniNazivDjelatnostiWE.sendKeys(djelatnost);
 		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
 		submitBtnWE.click();
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));

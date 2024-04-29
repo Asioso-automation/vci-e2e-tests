@@ -218,10 +218,10 @@ public class Ugovori extends PocetnaStranica {
 //	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., 'K009151661R')]")
 //	private WebElement odaberiMjernoMjesto16WE;
 
-	@FindBy(xpath = "//div/div/div[1]/div/div[2]/div/div/div[1]/div/input")
+	@FindBy(xpath = "//div[1]/div[4]/div/div/div[1]/div/input")
 	private WebElement nazivMjernogMjestaWE;
 
-	@FindBy(xpath = "//div/div/div[1]/div/div[3]/div/div/div[1]/div/input")
+	@FindBy(xpath = "//div[1]/div[5]/div/div/div[1]/div/input")
 	private WebElement nazivNaStampanimDokumentimaWE;
 
 	@FindBy(xpath = "//div/div/div[1]/div/div[4]/div/div/div[1]/div/input")
@@ -303,28 +303,28 @@ public class Ugovori extends PocetnaStranica {
 	@FindBy(xpath = "//div/div/div[1]/div/div[1]/div/div/div[2]/div/div/div")
 	private WebElement mjernoMjestoPorukaWE;
 
-	@FindBy(xpath = "//div[4]/div/div/div[2]/div/div/div")
+	@FindBy(xpath = "//div[6]/div/div/div[2]/div/div/div")
 	private WebElement aktivnoBrojiloPorukaWE;
 
-	@FindBy(xpath = "//div[5]/div/div/div[2]/div/div/div")
+	@FindBy(xpath = "//div[7]/div/div/div[2]/div/div/div")
 	private WebElement reaktivnoBrojiloPorukaWE;
 
-	@FindBy(xpath = "//div/div/div[1]/div/div[2]/div/div/div[2]/div/div/div")
+	@FindBy(xpath = "//div[1]/div[4]/div/div/div[2]/div/div/div")
 	private WebElement nazivMjernogMjestaPorukaWE;
 
-	@FindBy(xpath = "//div/div/div[1]/div/div[3]/div/div/div[2]/div/div/div")
+	@FindBy(xpath = "//div[1]/div[5]/div/div/div[2]/div/div/div")
 	private WebElement nazivNaStampanimDokumentimaPorukaWE;
 
-	@FindBy(xpath = "//div[11]/div/div/div[2]/div/div/div")
+	@FindBy(xpath = "//div[13]/div/div/div[2]/div/div/div")
 	private WebElement postaPorukaWE;
 
-	@FindBy(xpath = "//div[12]/div/div/div[2]/div/div/div")
+	@FindBy(xpath = "//div[14]/div/div/div[2]/div/div/div")
 	private WebElement mjestoPorukaWE;
 
-	@FindBy(xpath = "//div[13]/div/div/div[2]/div/div/div")
+	@FindBy(xpath = "//div[15]/div/div/div[2]/div/div/div")
 	private WebElement ulicaPorukaWE;
 
-	@FindBy(xpath = "//div[14]/div/div/div[2]/div/div/div")
+	@FindBy(xpath = "//div[16]/div/div/div[2]/div/div/div")
 	private WebElement brojUlicePorukaWE;
 
 	@FindBy(xpath = "//div[8]/div/div/div[2]/div/div/div")
@@ -688,8 +688,8 @@ public class Ugovori extends PocetnaStranica {
 				"Dodavanje ugovora: Validaciona poruka na polju Naziv mjernog mjesta na stampanim dokumentimanije nije dobra!");
 		assertTrue(postaPorukaWE.getText().trim().equals("Obavezno polje"),
 				"Dodavanje ugovora: Validaciona poruka na polju Posta nije dobra!");
-		assertTrue(mjestoPorukaWE.getText().trim().equals("Obavezno polje"),
-				"Dodavanje ugovora: Validaciona poruka na polju Mjesto nije dobra!");
+//		assertTrue(mjestoPorukaWE.getText().trim().equals("Obavezno polje"),
+//				"Dodavanje ugovora: Validaciona poruka na polju Mjesto nije dobra!");
 		assertTrue(mjestoPorukaWE.getText().trim().equals("Obavezno polje"),
 				"Dodavanje ugovora: Validaciona poruka na polju Mjesto nije dobra!");
 		assertTrue(ulicaPorukaWE.getText().trim().equals("Obavezno polje"),

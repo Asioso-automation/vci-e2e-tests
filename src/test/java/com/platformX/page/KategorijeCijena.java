@@ -16,6 +16,9 @@ public class KategorijeCijena extends PocetnaStranica {
 	
 	@FindBy(xpath = "//div[1]/div/div/div/div[1]/div/input")
 	private WebElement nazivKategorijeWE;
+	
+	@FindBy(xpath = "//div[1]/div[2]/div/div/div[1]/div/input")
+	private WebElement stampaniNazivKategorijeWE;
 
 	public KategorijeCijena(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);
@@ -39,6 +42,8 @@ public class KategorijeCijena extends PocetnaStranica {
 		dodajBtnWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(nazivKategorijeWE));
 		nazivKategorijeWE.sendKeys(kategorija);
+		wait.until(ExpectedConditions.elementToBeClickable(stampaniNazivKategorijeWE));
+		stampaniNazivKategorijeWE.sendKeys(kategorija);
 		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
 		submitBtnWE.click();
 		return kategorija;

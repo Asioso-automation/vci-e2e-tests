@@ -17,16 +17,16 @@ public class RadneJedinice extends PocetnaStranica {
 		super(driver);
 	}
 	
-	@FindBy(xpath = "//div[1]/div[1]/div/div/div[1]/div/input")
+	@FindBy(xpath = "//div[2]/div[1]/div/div/div[1]/div/input")
 	private WebElement nazivRadneJediniceWE;
 	
-	@FindBy(xpath = "//div[1]/div[3]/div/div/div[1]/div[1]/input[1]")
+	@FindBy(xpath = "//div[2]/div[3]/div/div/div[1]/div[1]/input[1]")
 	private WebElement odsWE;
 	
 	@FindBy(xpath = "//div[contains(text(), 'New York')]")
 	private WebElement odaberiOdsWE;
 	
-	@FindBy(xpath = "//div[2]/div[2]/div/div/div[1]/div/input")
+	@FindBy(xpath = "//div[3]/div[1]/div/div/div[1]/div/input")
 	private WebElement jibWE;
 
 	public void verifikujRadneJedinice() throws InterruptedException, FileNotFoundException, IOException {
