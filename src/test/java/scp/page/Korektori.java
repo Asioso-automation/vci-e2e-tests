@@ -19,14 +19,14 @@ public class Korektori extends PocetnaStranica{
 		super(driver);
 	}
 	
-	@FindBy(xpath = "//div[1]/div[2]/div/div/div[1]/div/input") 
+	@FindBy(xpath = "//form/div/div[1]/div[1]/div/div[2]/div/div[1]/div/div") 
+	private WebElement korektorBtnWE;
+	
+	@FindBy(xpath = "//form/div/div[1]/div[2]/div[1]/div/div/div[1]/div/input") 
 	private WebElement srBrWE;
 	
-	@FindBy(xpath = "//div[3]/div[1]/div/div/div[1]/div[1]/input") 
+	@FindBy(xpath = "//form/div/div[1]/div[4]/div[1]/div/div/div[1]/div[1]/input") 
 	private WebElement tipOcitanjaWE;
-	
-	@FindBy(xpath = "//div[1]/div[3]/div[3]/div[1]/div/div[1]/div[2]/input") 
-	private WebElement datumInstalacijeWE;
 
 	public void verifikujKorektore()throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
@@ -48,15 +48,19 @@ public class Korektori extends PocetnaStranica{
 		String srBroj = "SrBroj" + Helper.getRandomString(5);
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
 		dodajBtnWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(korektorBtnWE));
+		korektorBtnWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(srBrWE));
 		srBrWE.sendKeys(srBroj);
 		wait.until(ExpectedConditions.elementToBeClickable(tipOcitanjaWE));
 		tipOcitanjaWE.sendKeys(Helper.getRandomNubmer1to4(1));
-		Thread.sleep(1000);
+		Thread.sleep(700);
 		tipOcitanjaWE.sendKeys(Keys.ARROW_DOWN);
 		tipOcitanjaWE.sendKeys(Keys.ENTER);
-		wait.until(ExpectedConditions.elementToBeClickable(datumInstalacijeWE));
-		datumInstalacijeWE.sendKeys("08.11.2023.");
+		wait.until(ExpectedConditions.elementToBeClickable(datumBtn2WE));
+		datumBtn2WE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(trenutniDatum1WE));
+		trenutniDatum1WE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
 		submitBtnWE.click();
 		return srBroj;

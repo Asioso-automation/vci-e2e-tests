@@ -102,17 +102,26 @@ public class PocetnaStranica extends PageBase {
 	@FindBy(xpath = "(//i[@aria-hidden = 'true' and contains(@class, 'fa-calendar-alt')])[2]")
 	protected WebElement datumBtn2WE;
 	
+	@FindBy(xpath = "(//i[@aria-hidden = 'true' and contains(@class, 'fa-calendar-alt')])[3]")
+    protected WebElement datumBtn3WE;
+	
 	@FindBy(xpath = "(//*[contains(@class, 'v-date-picker-table--date')])[1]")  
     protected WebElement datumKalendar1WE;
     
     @FindBy(xpath = "(//*[contains(@class, 'v-date-picker-table--date')])[2]")  
     protected WebElement datumKalendar2WE;
     
+    @FindBy(xpath = "(//*[contains(@class, 'v-date-picker-table--date')])[3]")  
+    protected WebElement datumKalendar3WE;
+    
     @FindBy(xpath = "(//*[contains(@class, 'v-btn--floating v-btn--outline')])")  
     protected WebElement trenutniDatum1WE;
     
     @FindBy(xpath = "(//*[contains(@class, 'v-btn--floating v-btn--outline')])[2]")  
     protected WebElement trenutniDatum2WE;
+    
+    @FindBy(xpath = "(//*[contains(@class, 'v-btn--floating v-btn--outline')])[3]")  
+    protected WebElement trenutniDatum3WE;
 
 //	 Sekcije
 
@@ -832,10 +841,10 @@ public class PocetnaStranica extends PageBase {
 	public Korektori navigirajNaKorektore()throws Exception{
 		try {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.elementToBeClickable(kupciWE));
-		kupciWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(korektoriWE));
-		korektoriWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(mjerilaWE));
+		mjerilaWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(mjerila1WE));
+		mjerila1WE.click();
 		}
 		catch (Exception e) {
 			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("KOREKTORI"));

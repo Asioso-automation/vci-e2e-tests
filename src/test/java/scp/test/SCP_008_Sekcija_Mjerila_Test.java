@@ -20,35 +20,36 @@ public class SCP_008_Sekcija_Mjerila_Test extends BaseTest {
 	public SCP_008_Sekcija_Mjerila_Test() throws IOException, FileNotFoundException {
 		super();
 	}
-//	
-//	  @Test (description=" test kreira MJERILO iz sekcije MJERILA i verifikuje ga")
-//	  public void scp_008_dodavanje_mjerila_test() throws Exception { LogIn logIn =
-//	  new LogIn(driver, SCP_PROPERTIES); PocetnaStranica pocetna = new
-//	  PocetnaStranica(driver); driver.manage().window().maximize();
-//	  logIn.verifikujLogIn(); logIn.logIn(pocetna.orgGasWE);
-//	  pocetna.verifikujPocetnuStranicu(); Mjerila mjerila =
-//	  pocetna.navigirajNaMjerila(); mjerila.verifikujMjerila(); String mjerilo =
-//	  mjerila.dodajMjerila(); mjerila.verifikujPoruku("Uspješno završeno.");
-//	  mjerila.pretraziStavku(pocetna.filterKolona4WE, mjerilo);
-//	  mjerila.verifikujMjerila(); mjerila.verifikujStavku(mjerilo,
-//	  pocetna.podatak4TabelaWE); }
-//	  
+	
+	  @Test (description=" test kreira MJERILO iz sekcije MJERILA i verifikuje ga")
+	  public void scp_008_dodavanje_mjerila_test() throws Exception { LogIn logIn =
+	  new LogIn(driver, SCP_PROPERTIES); PocetnaStranica pocetna = new
+	  PocetnaStranica(driver); driver.manage().window().maximize();
+	  logIn.verifikujLogIn(); logIn.logIn(pocetna.orgGasWE);
+	  pocetna.verifikujPocetnuStranicu();
+	  Mjerila mjerila =	pocetna.navigirajNaMjerila();
+	  mjerila.verifikujMjerila();
+	  String mjerilo = mjerila.dodajMjerila(); 
+	  mjerila.verifikujPoruku("Uspješno završeno.");
+	  mjerila.pretraziStavku(pocetna.filterKolona4WE, mjerilo);
+	  mjerila.verifikujMjerila(); mjerila.verifikujStavku(mjerilo,
+	  pocetna.podatak4TabelaWE); }
+	  
 	 
 	
-//	  @Test (description=" test kreira KOREKTOR iz sekcije KUPCI i verifikuje ga")
-//	  public void scp_007_dodavanje_korektora_test() throws Exception { 
-//	  LogIn logIn = new LogIn(driver, SCP_PROPERTIES);
-//	  PocetnaStranica pocetna = new PocetnaStranica(driver);
-//	  driver.manage().window().maximize();
-//	  logIn.verifikujLogIn(); logIn.logIn(pocetna.orgGasWE);
-//	  pocetna.verifikujPocetnuStranicu(); Korektori korektori =
-//	  pocetna.navigirajNaKorektore(); korektori.verifikujKorektore(); String
-//	  korektor = korektori.dodajKorektore();
-//	  korektori.verifikujPoruku("Uspješno završeno.");
-//	  korektori.pretraziStavku(pocetna.filterKolona2WE, korektor);
-//	  korektori.verifikujKorektore(); korektori.verifikujStavku(korektor,
-//	  pocetna.podatak2TabelaWE); }
-//	 
+	  @Test (description=" test kreira KOREKTOR iz sekcije KUPCI i verifikuje ga")
+	  public void scp_007_dodavanje_korektora_test() throws Exception { 
+	  LogIn logIn = new LogIn(driver, SCP_PROPERTIES);
+	  PocetnaStranica pocetna = new PocetnaStranica(driver);
+	  driver.manage().window().maximize();
+	  logIn.verifikujLogIn(); logIn.logIn(pocetna.orgGasWE);
+	  pocetna.verifikujPocetnuStranicu();
+	  Korektori korektori = pocetna.navigirajNaKorektore();
+	  String korektor = korektori.dodajKorektore();
+	  korektori.verifikujPoruku("Uspješno završeno.");
+	  korektori.pretraziStavku(pocetna.filterKolona4WE, korektor);
+	  korektori.verifikujStavku(korektor, pocetna.podatak4TabelaWE); }
+	 
 
 	@Test(description = " test kreira TIP MJERILA  iz sekcije MJERILA i verifikuje ga")
 	public void scp_008_dodavanje_tipovi_mjerila_test() throws Exception {

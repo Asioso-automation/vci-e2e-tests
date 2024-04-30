@@ -23,7 +23,7 @@ public class SCP_010_Sekcija_Obracun_Test extends BaseTest{
 		PocetnaStranica pocetna = new PocetnaStranica(driver);
 		driver.manage().window().maximize();
 		logIn.verifikujLogIn();
-		logIn.logIn(pocetna.orgAdministracijaWE);
+		logIn.logIn(pocetna.orgSonWE);
 		pocetna.verifikujPocetnuStranicu();
 		TefObrasci tef = pocetna.navigirajNaTefObrasce();
 		tef.verifikujTefObrasce();
