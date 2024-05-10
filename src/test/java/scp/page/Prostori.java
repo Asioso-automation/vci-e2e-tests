@@ -35,11 +35,17 @@ public class Prostori extends PocetnaStranica{
 	@FindBy(xpath = "//div[2]/form/div/div[1]/div[2]/div[2]/div/div/div[1]/div/input")
 	private WebElement spratBrojWE;
 	
-	@FindBy(xpath = "//div[3]/div/div[1]/table/tbody/tr[1]/td[4]/button/div/i")
+	@FindBy(xpath = "//tr[2]/td/div/div/div[3]/div/div[1]/table/tbody/tr/td[6]/button/div/i")
 	private WebElement burgerBarWE;
+	
+	@FindBy(xpath = "//div/div[1]/table/tbody/tr[1]/td[13]/button/div/i")
+	private WebElement dropDownWE;
 	
 	@FindBy(xpath = "/html/body/div/div[1]/div/div[2]/a/div[2]/div")
 	private WebElement kreirajUgovorWE;
+	
+	@FindBy(xpath = "//table/tbody/tr[2]/td/div/div/div[1]/nav/div/button[1]/div/i")
+	private WebElement dodajProstorWE;
 
 	public void verifikujProstore()throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
@@ -52,18 +58,15 @@ public class Prostori extends PocetnaStranica{
 	
 	public String dodajProstori() throws InterruptedException{
 		String vrsta = "Kuća";
-		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
-		dodajBtnWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(dropDownWE));
+		dropDownWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(dodajProstorWE));
+		dodajProstorWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(vrstaProstoraWE));
 		vrstaProstoraWE.sendKeys(vrsta);
 		Thread.sleep(1000);
 		vrstaProstoraWE.sendKeys(Keys.ARROW_DOWN);
 		vrstaProstoraWE.sendKeys(Keys.ENTER);
-		wait.until(ExpectedConditions.elementToBeClickable(objekatWE));
-		objekatWE.sendKeys(Helper.getRandomNubmer1to8(2));
-		Thread.sleep(1000);
-		objekatWE.sendKeys(Keys.ARROW_DOWN);
-		objekatWE.sendKeys(Keys.ENTER);
 		wait.until(ExpectedConditions.elementToBeClickable(ulazWE));
 		ulazWE.sendKeys(Helper.getRandomNubmer1to8(1));
 		wait.until(ExpectedConditions.elementToBeClickable(spratBrojWE));
@@ -76,6 +79,8 @@ public class Prostori extends PocetnaStranica{
 	}
 	
 	public void dodajUgovorProstori()throws InterruptedException{
+		wait.until(ExpectedConditions.elementToBeClickable(dropDownWE));
+		dropDownWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		burgerBarWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(kreirajUgovorWE));
