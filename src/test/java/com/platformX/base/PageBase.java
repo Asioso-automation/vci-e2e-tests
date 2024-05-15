@@ -1,7 +1,6 @@
 package com.platformX.base;
 
 import static org.testng.Assert.assertTrue;
-
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.List;
@@ -14,7 +13,6 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import com.platformX.util.Helper;
 import com.platformX.util.PropertiesUtil;
 
@@ -299,5 +297,25 @@ public abstract class PageBase {
 		Thread.sleep(500);
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 	}
-
+	
+	
+	// Zajednicka metoda za navigaciju po stranicama
+	// Iskoristena u "PX_DIST_003_Verifikacije_Sekcija_Test" u 1. test case-u za navigaciju na Organizacije
+	// TODO Izdvojiti generisanje xapths u odvojene metode, dodati u catch odlazak na stranicu putem linka i poruku
+	 public <T extends PageBase> T navigateOnPage(Class<T> pageClass, String sekcija, String stranica) {
+	        try {
+	        	WebDriverWait wait = new WebDriverWait(driver, 10);
+	        	wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
+	    		wait.until(ExpectedConditions.elementToBeClickable
+	    				(By.xpath("//*[contains(text(),'" + sekcija + "') and @class='v-btn__content']"))).click();
+	    		wait.until(ExpectedConditions.elementToBeClickable
+	    				(By.xpath("//div[contains(text(),'" + stranica + "') and @class='v-list-item__title']"))).click();
+	            // Instantiate the provided page class using its constructor
+	            return pageClass.getDeclaredConstructor(WebDriver.class).newInstance(driver);
+	        } catch (Exception e) {
+	            e.printStackTrace();
+	        }
+	        return null;
+	    }
+	
 }
