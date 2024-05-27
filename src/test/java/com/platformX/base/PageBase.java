@@ -298,6 +298,16 @@ public abstract class PageBase {
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 	}
 	
+	public String propertiesNaziv(String naziv) {
+		naziv = naziv.toUpperCase();
+		naziv = naziv.replace("Š", "S");
+		naziv = naziv.replace("Đ", "DJ");
+		naziv = naziv.replace("Ž", "Z");
+		naziv = naziv.replace("Č", "C");
+		naziv = naziv.replace("Ć", "C");
+		naziv = naziv.replace(" ", ".");
+		return naziv;
+	}
 	
 	// Zajednicka metoda za navigaciju po stranicama
 	// Iskoristena u "PX_DIST_003_Verifikacije_Sekcija_Test" u 1. test case-u za navigaciju na Organizacije
@@ -310,11 +320,12 @@ public abstract class PageBase {
 	    				(By.xpath("//*[contains(text(),'" + sekcija + "') and @class='v-btn__content']"))).click();
 	    		wait.until(ExpectedConditions.elementToBeClickable
 	    				(By.xpath("//div[contains(text(),'" + stranica + "') and @class='v-list-item__title']"))).click();
-	            // Instantiate the provided page class using its constructor
+//	            // Instantiate the provided page class using its constructor
 	            return pageClass.getDeclaredConstructor(WebDriver.class).newInstance(driver);
 	        } catch (Exception e) {
 	            e.printStackTrace();
-	        }
+	            driver.get(platformx_distribution_properties.getValue("URL.DIST.LOGIN") + platformx_distribution_properties.getValue(propertiesNaziv(stranica)));	        
+	            }
 	        return null;
 	    }
 	

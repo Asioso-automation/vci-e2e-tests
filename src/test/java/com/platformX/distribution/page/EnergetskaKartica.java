@@ -17,7 +17,7 @@ public class EnergetskaKartica extends PocetnaStranicaPXD {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Energetska kartica')]")));
-		verifikacijaZajednickihElemenata("Mjerna Mjesta", "Energetska Kartica", "Energetska kartica", 17, false, false, false, true, true, true, true);
+		verifikacijaZajednickihElemenata("Mjerna Mjesta", "Energetska Kartica", "Energetska kartica", 21, false, false, false, true, true, true, true);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNazivMjernogMjestaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaObracunskiUgovorWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaVrstaZapisaWE));
@@ -34,6 +34,10 @@ public class EnergetskaKartica extends PocetnaStranicaPXD {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaUtrosakRMTWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaStanjeSnageWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaUtrosakSnageWE));
+// TODO	kolonaStanjeAVTMinusWE
+//		kolonaUtrosakAVTMinusWE
+//		kolonaStanjeAMTMinusWE
+//		kolonaUtrosakAMTMinusWE
 	}
 
 }

@@ -28,14 +28,14 @@ public class PX_DIST_005_Fizicke_Lokacije_CRUD_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		TerenskeJedinice terenskeJedinice = homePage.navigirajNaTerenskeJedinice();
+		TerenskeJedinice terenskeJedinice = homePage.navigateOnPage(TerenskeJedinice.class, "Šifarnici", "Terenske jedinice");
 		terenskeJedinice.verifikujTerenskeJedinice();
 		terenskeJedinice.dodajTerenskuJedinicu(terenskaJedinica);
 		terenskeJedinice.verifikujPoruku("Uspješno završeno.");
 		terenskeJedinice.pretraziStavku(homePage.filterKolona2WE, terenskaJedinica);
 		terenskeJedinice.verifikujTerenskeJedinice();
 		terenskeJedinice.verifikujStavku(terenskaJedinica, homePage.podatak2Tabela2WE);
-		FizickeLokacije fizickeLokacije = homePage.navigirajNaFizickeLokacije();
+		FizickeLokacije fizickeLokacije = homePage.navigateOnPage(FizickeLokacije.class, "Šifarnici", "Fizičke lokacije");
 		fizickeLokacije.verifikujFizickeLokacije();
 		fizickeLokacije.dodajFizickuLokaciju(fizickaLokacija, terenskaJedinica);
 		fizickeLokacije.verifikujPoruku("Uspješno završeno.");
@@ -51,7 +51,7 @@ public class PX_DIST_005_Fizicke_Lokacije_CRUD_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		FizickeLokacije fizickeLokacije = homePage.navigirajNaFizickeLokacije();
+		FizickeLokacije fizickeLokacije = homePage.navigateOnPage(FizickeLokacije.class, "Šifarnici", "Fizičke lokacije");
 		fizickeLokacije.verifikujFizickeLokacije();
 		fizickeLokacije.pretraziStavku(homePage.filterKolona2WE, fizickaLokacija);
 		fizickeLokacije.verifikujFizickeLokacije();
@@ -70,7 +70,7 @@ public class PX_DIST_005_Fizicke_Lokacije_CRUD_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		FizickeLokacije fizickeLokacije = homePage.navigirajNaFizickeLokacije();
+		FizickeLokacije fizickeLokacije = homePage.navigateOnPage(FizickeLokacije.class, "Šifarnici", "Fizičke lokacije");
 		fizickeLokacije.verifikujFizickeLokacije();
 		fizickeLokacije.pretraziStavku(homePage.filterKolona2WE, novaFizickaLokacija);
 		fizickeLokacije.verifikujFizickeLokacije();

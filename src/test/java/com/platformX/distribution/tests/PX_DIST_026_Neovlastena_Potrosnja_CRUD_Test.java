@@ -39,7 +39,7 @@ public class PX_DIST_026_Neovlastena_Potrosnja_CRUD_Test extends BaseTest{
 		fizickaLica.verifikujFizickaLica();
 		fizickaLica.verifikujStavku(fizickoLice, homePage.podatak2Tabela2WE);
 		kupac = fizickaLica.kreirajFizickoLice();
-		Trafostanice trafostanice = homePage.navigirajNaTrafostanice();
+		Trafostanice trafostanice = homePage.navigateOnPage(Trafostanice.class, "Šifarnici", "Trafostanice");
 		trafostanice.verifikujTrafostanice();
 		trafostanice.dodajTrafostanicu(trafostanica);
 		trafostanice.verifikujPoruku("Uspješno završeno.");

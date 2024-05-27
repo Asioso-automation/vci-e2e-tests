@@ -26,7 +26,7 @@ public class PX_DIST_011_Monteri_CRUD_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		Monteri monteri = homePage.navigirajNaMonteri();
+		Monteri monteri = homePage.navigateOnPage(Monteri.class, "Šifarnici", "Monteri");
 		monteri.verifikujMonteri();
 		monteri.dodajMontera(monter);
 		monteri.verifikujPoruku("Uspješno završeno.");
@@ -42,7 +42,7 @@ public class PX_DIST_011_Monteri_CRUD_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		Monteri monteri = homePage.navigirajNaMonteri();
+		Monteri monteri = homePage.navigateOnPage(Monteri.class, "Šifarnici", "Monteri");
 		monteri.verifikujMonteri();
 		monteri.pretraziStavku(homePage.filterKolona2WE, monter);
 		monteri.verifikujMonteri();
@@ -61,7 +61,7 @@ public class PX_DIST_011_Monteri_CRUD_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		Monteri monteri = homePage.navigirajNaMonteri();
+		Monteri monteri = homePage.navigateOnPage(Monteri.class, "Šifarnici", "Monteri");
 		monteri.verifikujMonteri();
 		monteri.pretraziStavku(homePage.filterKolona2WE, noviMonter);
 		monteri.verifikujMonteri();

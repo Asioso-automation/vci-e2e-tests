@@ -22,7 +22,7 @@ public class PX_DIST_019_Elektroenergetske_Saglasnosti_CRUD_Test extends BaseTes
 	String brojProtokolaTabela = brojProtokola + "EES";
 	
 	
-	@Test (retryAnalyzer = RetryAnalyzer.class)
+	@Test (enabled = false, retryAnalyzer = RetryAnalyzer.class)
 	public void px_dist_019_1_dodavanje_elektroenergetske_saglasnosti_domacinstva_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();

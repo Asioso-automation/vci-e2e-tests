@@ -26,7 +26,7 @@ public class PX_DIST_008_Naseljena_Mjesta_CRUD_Test extends BaseTest{
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		NaseljenaMjesta naseljenaMjesta = homePage.navigirajNaNaseljenaMjesta();
+		NaseljenaMjesta naseljenaMjesta = homePage.navigateOnPage(NaseljenaMjesta.class, "Šifarnici", "Naseljena mjesta");
 		naseljenaMjesta.verifikujNaseljenaMjesta();
 		naseljenaMjesta.dodajNaseljenoMjesto(naseljenoMjesto);
 		naseljenaMjesta.verifikujPoruku("Uspješno završeno.");
@@ -42,7 +42,7 @@ public class PX_DIST_008_Naseljena_Mjesta_CRUD_Test extends BaseTest{
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		NaseljenaMjesta naseljenaMjesta = homePage.navigirajNaNaseljenaMjesta();
+		NaseljenaMjesta naseljenaMjesta = homePage.navigateOnPage(NaseljenaMjesta.class, "Šifarnici", "Naseljena mjesta");
 		naseljenaMjesta.verifikujNaseljenaMjesta();
 		naseljenaMjesta.pretraziStavku(homePage.filterKolona2WE, naseljenoMjesto);
 		naseljenaMjesta.verifikujNaseljenaMjesta();
@@ -61,7 +61,7 @@ public class PX_DIST_008_Naseljena_Mjesta_CRUD_Test extends BaseTest{
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		NaseljenaMjesta naseljenaMjesta = homePage.navigirajNaNaseljenaMjesta();
+		NaseljenaMjesta naseljenaMjesta = homePage.navigateOnPage(NaseljenaMjesta.class, "Šifarnici", "Naseljena mjesta");
 		naseljenaMjesta.verifikujNaseljenaMjesta();
 		naseljenaMjesta.pretraziStavku(homePage.filterKolona2WE, novoNaseljenoMjesto);
 		naseljenaMjesta.verifikujNaseljenaMjesta();

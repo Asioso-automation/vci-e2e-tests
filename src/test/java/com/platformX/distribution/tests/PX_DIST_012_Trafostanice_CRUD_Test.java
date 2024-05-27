@@ -27,7 +27,7 @@ public class PX_DIST_012_Trafostanice_CRUD_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		Trafostanice trafostanice = homePage.navigirajNaTrafostanice();
+		Trafostanice trafostanice = homePage.navigateOnPage(Trafostanice.class, "Šifarnici", "Trafostanice");
 		trafostanice.verifikujTrafostanice();
 		trafostanice.dodajTrafostanicu(trafostanica);
 		trafostanice.verifikujPoruku("Uspješno završeno.");
@@ -43,7 +43,7 @@ public class PX_DIST_012_Trafostanice_CRUD_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		Trafostanice trafostanice = homePage.navigirajNaTrafostanice();
+		Trafostanice trafostanice = homePage.navigateOnPage(Trafostanice.class, "Šifarnici", "Trafostanice");
 		trafostanice.verifikujTrafostanice();
 		trafostanice.pretraziStavku(homePage.filterKolona3WE, trafostanica);
 		trafostanice.verifikujTrafostanice();
@@ -62,7 +62,7 @@ public class PX_DIST_012_Trafostanice_CRUD_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		Trafostanice trafostanice = homePage.navigirajNaTrafostanice();
+		Trafostanice trafostanice = homePage.navigateOnPage(Trafostanice.class, "Šifarnici", "Trafostanice");
 		trafostanice.verifikujTrafostanice();
 		trafostanice.pretraziStavku(homePage.filterKolona3WE, novaTrafostanica);
 		trafostanice.verifikujTrafostanice();
@@ -77,7 +77,7 @@ public class PX_DIST_012_Trafostanice_CRUD_Test extends BaseTest {
 		citackiHodovi.verifikujPoruku("Brisanje je uspješno završeno");
 		citackiHodovi.pretraziStavku(homePage.filterKolona4WE, trafostanicaId);
 		citackiHodovi.verifikujPraznuTabelu();
-		homePage.navigirajNaTrafostanice();
+		homePage.navigateOnPage(Trafostanice.class, "Šifarnici", "Trafostanice");
 		trafostanice.verifikujTrafostanice();
 		trafostanice.pretraziStavku(homePage.filterKolona3WE, novaTrafostanica);
 		trafostanice.verifikujTrafostanice();
@@ -95,7 +95,7 @@ public class PX_DIST_012_Trafostanice_CRUD_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		Trafostanice trafostanice = homePage.navigirajNaTrafostanice();
+		Trafostanice trafostanice = homePage.navigateOnPage(Trafostanice.class, "Šifarnici", "Trafostanice");
 		trafostanice.verifikujTrafostanice();
 		trafostanice.pretraziStavku(homePage.filterKolona3WE, "ŽTS MOČILA");				// promijenjeno sa 001-Gradac na ŽTS MOČILA
 		trafostanice.verifikujTrafostanice();

@@ -26,7 +26,7 @@ public class PX_DIST_009_Poste_CRUD_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		Poste poste = homePage.navigirajNaPoste();
+		Poste poste = homePage.navigateOnPage(Poste.class, "Šifarnici", "Pošte");
 		poste.verifikujPoste();
 		poste.dodajPostu(podaci);
 		poste.verifikujPoruku("Uspješno završeno.");
@@ -42,7 +42,7 @@ public class PX_DIST_009_Poste_CRUD_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		Poste poste = homePage.navigirajNaPoste();
+		Poste poste = homePage.navigateOnPage(Poste.class, "Šifarnici", "Pošte");
 		poste.verifikujPoste();
 		poste.pretraziStavku(homePage.filterKolona2WE, podaci[0]);
 		poste.verifikujPoste();
@@ -58,7 +58,7 @@ public class PX_DIST_009_Poste_CRUD_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		Poste poste = homePage.navigirajNaPoste();
+		Poste poste = homePage.navigateOnPage(Poste.class, "Šifarnici", "Pošte");
 		poste.verifikujPoste();
 		poste.pretraziStavku(homePage.filterKolona2WE, podaci[0]);
 		poste.verifikujPoste();
@@ -77,7 +77,7 @@ public class PX_DIST_009_Poste_CRUD_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		Poste poste = homePage.navigirajNaPoste();
+		Poste poste = homePage.navigateOnPage(Poste.class, "Šifarnici", "Pošte");
 		poste.verifikujPoste();
 		poste.pretraziStavku(homePage.filterKolona2WE, novaPosta);
 		poste.verifikujPoste();
@@ -95,7 +95,7 @@ public class PX_DIST_009_Poste_CRUD_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		Poste poste = homePage.navigirajNaPoste();
+		Poste poste = homePage.navigateOnPage(Poste.class, "Šifarnici", "Pošte");
 		poste.verifikujPoste();
 		poste.pretraziStavku(homePage.filterKolona2WE, "Zagreb");			// promijenjeno sa Novi Beograd na Zagreb
 		poste.verifikujPoste();

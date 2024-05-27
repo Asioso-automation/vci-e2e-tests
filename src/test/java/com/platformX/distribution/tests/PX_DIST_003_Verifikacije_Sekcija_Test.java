@@ -18,41 +18,38 @@ public class PX_DIST_003_Verifikacije_Sekcija_Test extends BaseTest {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
-		PocetnaStranicaPXD pocetna = new PocetnaStranicaPXD(driver);
-		pocetna.verifikujPocetnuStranicu();
-
-		// Organizacije organizacije = pocetna.navigirajNaOrganizacije();
+		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
+		homePage.verifikujPocetnuStranicu();
 		// Nova implementacija za navigaciju:
-		Organizacije organizacije = pocetna.navigateOnPage(Organizacije.class, "Šifarnici", "Organizacije");
-
+		Organizacije organizacije = homePage.navigateOnPage(Organizacije.class, "Šifarnici", "Organizacije");
 		organizacije.verifikujOrganizacije();
-		TerenskeJedinice terenskeJedinice = pocetna.navigirajNaTerenskeJedinice();
+		TerenskeJedinice terenskeJedinice = homePage.navigateOnPage(TerenskeJedinice.class, "Šifarnici", "Terenske jedinice");
 		terenskeJedinice.verifikujTerenskeJedinice();
-		FizickeLokacije fizickeLokacije = pocetna.navigirajNaFizickeLokacije();
+		FizickeLokacije fizickeLokacije = homePage.navigateOnPage(FizickeLokacije.class, "Šifarnici", "Fizičke lokacije");
 		fizickeLokacije.verifikujFizickeLokacije();
-		Snabdjevaci snabdjevaci = pocetna.navigirajNaSnabdjevaci();
+		Snabdjevaci snabdjevaci = homePage.navigateOnPage(Snabdjevaci.class, "Šifarnici", "Snabdjevači");
 		snabdjevaci.verifikujSnabdjevaci();
-		Citaci citaci = pocetna.navigirajNaCitaci();
+		Citaci citaci = homePage.navigateOnPage(Citaci.class, "Šifarnici", "Čitači");
 		citaci.verifikujCitaci();
-		Entiteti entiteti = pocetna.navigirajNaEntiteti();
+		Entiteti entiteti = homePage.navigateOnPage(Entiteti.class, "Šifarnici", "Entiteti");
 		entiteti.verifikujEntitete();
-		Opstine opstine = pocetna.navigirajNaOpstine();
+		Opstine opstine = homePage.navigateOnPage(Opstine.class, "Šifarnici", "Opštine");
 		opstine.verifikujOpstine();
-		NaseljenaMjesta naseljenaMjesta = pocetna.navigirajNaNaseljenaMjesta();
+		NaseljenaMjesta naseljenaMjesta = homePage.navigateOnPage(NaseljenaMjesta.class, "Šifarnici", "Naseljena mjesta");
 		naseljenaMjesta.verifikujNaseljenaMjesta();
-		Poste poste = pocetna.navigirajNaPoste();
+		Poste poste = homePage.navigateOnPage(Poste.class, "Šifarnici", "Pošte");
 		poste.verifikujPoste();
-		Ulice ulice = pocetna.navigirajNaUlice();
+		Ulice ulice = homePage.navigateOnPage(Ulice.class, "Šifarnici", "Ulice");
 		ulice.verifikujUlice();
-		Monteri monteri = pocetna.navigirajNaMonteri();
+		Monteri monteri = homePage.navigateOnPage(Monteri.class, "Šifarnici", "Monteri");
 		monteri.verifikujMonteri();
-		LokacijeMontera lokacije = pocetna.navigirajNaLokacijeMontera();
+		LokacijeMontera lokacije = homePage.navigateOnPage(LokacijeMontera.class, "Šifarnici", "Lokacije montera");
 		lokacije.verifikujLokacijeMontera();
-		Trafostanice trafostanice = pocetna.navigirajNaTrafostanice();
+		Trafostanice trafostanice = homePage.navigateOnPage(Trafostanice.class, "Šifarnici", "Trafostanice");
 		trafostanice.verifikujTrafostanice();
-		Vlasnistva vlasnistva = pocetna.navigirajNaVlasnistva();
+		Vlasnistva vlasnistva = homePage.navigateOnPage(Vlasnistva.class, "Šifarnici", "Vlasništva");
 		vlasnistva.verifikujVlasnistva();
-		VrstePodrucja vrstePodrucja = pocetna.navigirajNaVrstePodrucja();
+		VrstePodrucja vrstePodrucja = homePage.navigateOnPage(VrstePodrucja.class, "Šifarnici", "Vrste područja");
 		vrstePodrucja.verifikujVrstePodrucja();
 	}
 
@@ -61,67 +58,67 @@ public class PX_DIST_003_Verifikacije_Sekcija_Test extends BaseTest {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
-		PocetnaStranicaPXD pocetna = new PocetnaStranicaPXD(driver);
-		pocetna.verifikujPocetnuStranicu();
-		VrsteObjekata vrsteObjekata = pocetna.navigirajNaVrsteObjekata();
+		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
+		homePage.verifikujPocetnuStranicu();
+		VrsteObjekata vrsteObjekata = homePage.navigirajNaVrsteObjekata();
 		vrsteObjekata.verifikujVrsteObjekata();
-		LokacijeMjernihMjesta lokacijeMjernihMjesta = pocetna.navigirajNaLokacijeMjernihMjesta();
+		LokacijeMjernihMjesta lokacijeMjernihMjesta = homePage.navigirajNaLokacijeMjernihMjesta();
 		lokacijeMjernihMjesta.verifikujLokacijeMjernihMjesta();
-		MjestaPrikljucenja mjestaPrikljucenja = pocetna.navigirajNaMjestaPrikljucenja();
+		MjestaPrikljucenja mjestaPrikljucenja = homePage.navigirajNaMjestaPrikljucenja();
 		mjestaPrikljucenja.verifikujMjestaPrikljucenja();
-		NaciniPolaganjaInstalacija naciniPolaganjaInstalacija = pocetna.navigirajNaNaciniPolaganjaInstalacija();
+		NaciniPolaganjaInstalacija naciniPolaganjaInstalacija = homePage.navigirajNaNaciniPolaganjaInstalacija();
 		naciniPolaganjaInstalacija.verifikujNaciniPolaganjaInstalacija();
-		TipoviPrikljucnogVoda tipoviPrikljucnogVoda = pocetna.navigirajNaTipoviPrikljucnogVoda();
+		TipoviPrikljucnogVoda tipoviPrikljucnogVoda = homePage.navigirajNaTipoviPrikljucnogVoda();
 		tipoviPrikljucnogVoda.verifikujTipoviPrikljucnogVoda();
-		PresjeciPrikljucnogVoda presjeciPrikljucnogVoda = pocetna.navigirajNaPresjeciPrikljucnogVoda();
+		PresjeciPrikljucnogVoda presjeciPrikljucnogVoda = homePage.navigirajNaPresjeciPrikljucnogVoda();
 		presjeciPrikljucnogVoda.verifikujPresjeciPrikljucnogVoda();
-		TipoviPrikljucka tipoviPrikljucka = pocetna.navigirajNaTipoviPrikljucka();
+		TipoviPrikljucka tipoviPrikljucka = homePage.navigirajNaTipoviPrikljucka();
 		tipoviPrikljucka.verifikujTipoviPrikljucka();
-		PrikljucneSnage prikljucneSnage = pocetna.navigirajNaPrikljucneSnage();
+		PrikljucneSnage prikljucneSnage = homePage.navigirajNaPrikljucneSnage();
 		prikljucneSnage.verifikujPrikljucneSnage();
-		NazivneStruje nazivneStruje = pocetna.navigirajNaNazivneStruje();
+		NazivneStruje nazivneStruje = homePage.navigirajNaNazivneStruje();
 		nazivneStruje.verifikujNazivneStruje();
-		MaterijaliProvodnika materijaliProvodnika = pocetna.navigirajNaMaterijaliProvodnika();
+		MaterijaliProvodnika materijaliProvodnika = homePage.navigirajNaMaterijaliProvodnika();
 		materijaliProvodnika.verifikujMaterijaliProvodnika();
-		TipoviIzolacija tipoviIzolacija = pocetna.navigirajNaTipoviIzolacija();
+		TipoviIzolacija tipoviIzolacija = homePage.navigirajNaTipoviIzolacija();
 		tipoviIzolacija.verifikujTipoviIzolacija();
-		TipoviMjernihMostova tipoviMjernihMostova = pocetna.navigirajNaTipoviMjernihMostova();
+		TipoviMjernihMostova tipoviMjernihMostova = homePage.navigirajNaTipoviMjernihMostova();
 		tipoviMjernihMostova.verifikujTipoviMjernihMostova();
-		MaterijaliOrmaricaBrojila materijaliOrmaricaBrojila = pocetna.navigirajNaMaterijaliOrmaricaBrojila();
+		MaterijaliOrmaricaBrojila materijaliOrmaricaBrojila = homePage.navigirajNaMaterijaliOrmaricaBrojila();
 		materijaliOrmaricaBrojila.verifikujMaterijaliOrmaricaBrojila();
-		KlaseTacnostiBrojila klaseTacnostiBrojila = pocetna.navigirajNaKlaseTacnostiBrojila();
+		KlaseTacnostiBrojila klaseTacnostiBrojila = homePage.navigirajNaKlaseTacnostiBrojila();
 		klaseTacnostiBrojila.verifikujKlaseTacnostiBrojila();
-		NazivneStrujeBrojila nazivneStrujeBrojila = pocetna.navigirajNaNazivneStrujeBrojila();
+		NazivneStrujeBrojila nazivneStrujeBrojila = homePage.navigirajNaNazivneStrujeBrojila();
 		nazivneStrujeBrojila.verifikujNazivneStrujeBrojila();
-		KlaseTacnostiStrujnogTransformatora klaseTacnostiStrujnogTransformatora = pocetna
+		KlaseTacnostiStrujnogTransformatora klaseTacnostiStrujnogTransformatora = homePage
 				.navigirajNaKlaseTacnostiStrujnogTransformatora();
 		klaseTacnostiStrujnogTransformatora.verifikujKlaseTacnostiStrujnogTransformatora();
-		StrujniPrenosniOdnos strujniPrenosniOdnos = pocetna.navigirajNaStrujniPrenosniOdnos();
+		StrujniPrenosniOdnos strujniPrenosniOdnos = homePage.navigirajNaStrujniPrenosniOdnos();
 		strujniPrenosniOdnos.verifikujStrujniPrenosniOdnos();
-		NazivneStrujeOsiguraca nazivneStrujeOsiguraca = pocetna.navigirajNaNazivneStrujeOsiguraca();
+		NazivneStrujeOsiguraca nazivneStrujeOsiguraca = homePage.navigirajNaNazivneStrujeOsiguraca();
 		nazivneStrujeOsiguraca.verifikujNazivneStrujeOsiguraca();
-		KlaseTacnostiNaponskogTransformatora klaseTacnostiNaponskogTransformatora = pocetna
+		KlaseTacnostiNaponskogTransformatora klaseTacnostiNaponskogTransformatora = homePage
 				.navigirajNaKlaseTacnostiNaponskogTransformatora();
 		klaseTacnostiNaponskogTransformatora.verifikujKlaseTacnostiNaponskogTransformatora();
-		NaponskiPrenosniOdnos naponskiPrenosniodnos = pocetna.navigirajNaNaponskiPrenosniOdnos();
+		NaponskiPrenosniOdnos naponskiPrenosniodnos = homePage.navigirajNaNaponskiPrenosniOdnos();
 		naponskiPrenosniodnos.verifikujNaponskiPrenosniOdnos();
-		NaciniUpravljanjaPotrosnjom naciniUpravljanjaPotrosnjom = pocetna.navigirajNaNaciniUpravljanjaPotrosnjom();
+		NaciniUpravljanjaPotrosnjom naciniUpravljanjaPotrosnjom = homePage.navigirajNaNaciniUpravljanjaPotrosnjom();
 		naciniUpravljanjaPotrosnjom.verifikujNaciniUpravljanjaPotrosnjom();
-		VrsteUpravljackihUredjaja vrsteUpravljackihUredjaja = pocetna.navigirajNaVrsteUpravljackihUredjaja();
+		VrsteUpravljackihUredjaja vrsteUpravljackihUredjaja = homePage.navigirajNaVrsteUpravljackihUredjaja();
 		vrsteUpravljackihUredjaja.verifikujVrsteUpravljackihUredjaja();
-		VrsteImpulsnihUredjaja vrsteImpulsnihUredjaja = pocetna.navigirajNaVrsteImpulsnihUredjaja();
+		VrsteImpulsnihUredjaja vrsteImpulsnihUredjaja = homePage.navigirajNaVrsteImpulsnihUredjaja();
 		vrsteImpulsnihUredjaja.verifikujVrsteImpulsnihUredjaja();
-		VrsteZastitnihUredjaja vrsteZastitnihUredjaja = pocetna.navigirajNaVrsteZastitnihUredjaja();
+		VrsteZastitnihUredjaja vrsteZastitnihUredjaja = homePage.navigirajNaVrsteZastitnihUredjaja();
 		vrsteZastitnihUredjaja.verifikujVrsteZastitnihUredjaja();
-		SistemiZastiteOdIndDodira sistemiZastiteOdIndDodira = pocetna.navigirajNaSistemiZastiteOdIndDodira();
+		SistemiZastiteOdIndDodira sistemiZastiteOdIndDodira = homePage.navigirajNaSistemiZastiteOdIndDodira();
 		sistemiZastiteOdIndDodira.verifikujSistemiZastiteOdIndDodira();
-		SistemiZastiteOdPrenapona sistemiZastiteOdPrenapona = pocetna.navigirajNaSistemiZastiteOdPrenapona();
+		SistemiZastiteOdPrenapona sistemiZastiteOdPrenapona = homePage.navigirajNaSistemiZastiteOdPrenapona();
 		sistemiZastiteOdPrenapona.verifikujSistemiZastiteOdPrenapona();
-		RokoviVazenja rokoviVazenja = pocetna.navigirajNaRokoviVazenja();
+		RokoviVazenja rokoviVazenja = homePage.navigirajNaRokoviVazenja();
 		rokoviVazenja.verifikujRokoviVazenja();
-		NaciniPlacanja naciniPlacanja = pocetna.navigirajNaNaciniPlacanja();
+		NaciniPlacanja naciniPlacanja = homePage.navigirajNaNaciniPlacanja();
 		naciniPlacanja.verifikujNaciniPlacanja();
-		UsloviPlacanja usloviPlacanja = pocetna.navigirajNaUsloviPlacanja();
+		UsloviPlacanja usloviPlacanja = homePage.navigirajNaUsloviPlacanja();
 		usloviPlacanja.verifikujUsloviPlacanja();
 	}
 
@@ -130,21 +127,21 @@ public class PX_DIST_003_Verifikacije_Sekcija_Test extends BaseTest {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
-		PocetnaStranicaPXD pocetna = new PocetnaStranicaPXD(driver);
-		pocetna.verifikujPocetnuStranicu();
-		KategorijePotrosnje kategorijePotrosnje = pocetna.navigirajNaKategorijePotrosnje();
+		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
+		homePage.verifikujPocetnuStranicu();
+		KategorijePotrosnje kategorijePotrosnje = homePage.navigirajNaKategorijePotrosnje();
 		kategorijePotrosnje.verifikujKategorijePotrosnje();
-		Sezone sezone = pocetna.navigirajNaSezone();
+		Sezone sezone = homePage.navigirajNaSezone();
 		sezone.verifikujSezone();
-		TarifneNadgrupe tarifneNadgrupe = pocetna.navigirajNaTarifneNadgrupe();
+		TarifneNadgrupe tarifneNadgrupe = homePage.navigirajNaTarifneNadgrupe();
 		tarifneNadgrupe.verifikujTarifneNadgrupe();
-		TarifneGrupe tarifneGrupe = pocetna.navigirajNaTarifneGrupe();
+		TarifneGrupe tarifneGrupe = homePage.navigirajNaTarifneGrupe();
 		tarifneGrupe.verifikujTarifneGrupe();
-		ObracunskaSnaga obracunskaSnaga = pocetna.navigirajNaObracunskaSnaga();
+		ObracunskaSnaga obracunskaSnaga = homePage.navigirajNaObracunskaSnaga();
 		obracunskaSnaga.verifikujObracunskaSnaga();
-		CjenovnikMrezarine cjenovnik = pocetna.navigirajNaCjenovnikMrezarine();
+		CjenovnikMrezarine cjenovnik = homePage.navigirajNaCjenovnikMrezarine();
 		cjenovnik.verifikujCjenovnikMrezarine();
-		CjenovnikNeovlastenePotrosnje cjenovnikNeovlastenePotrosnje = pocetna
+		CjenovnikNeovlastenePotrosnje cjenovnikNeovlastenePotrosnje = homePage
 				.navigirajNaCjenovnikNeovlastenePotrosnje();
 		cjenovnikNeovlastenePotrosnje.verifikujCjenovnikNeovlastenePotrosnje();
 	}
@@ -154,34 +151,35 @@ public class PX_DIST_003_Verifikacije_Sekcija_Test extends BaseTest {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
-		PocetnaStranicaPXD pocetna = new PocetnaStranicaPXD(driver);
-		pocetna.verifikujPocetnuStranicu();
-		MjernaMjesta mjernaMjesta = pocetna.navigirajNaMjernaMjesta();
+		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
+		homePage.verifikujPocetnuStranicu();
+		MjernaMjesta mjernaMjesta = homePage.navigirajNaMjernaMjesta();
 		mjernaMjesta.verifikujMjernaMjesta();
-		ZbirnaKontrolnaMjernaMjesta zbirnaMjernaMjesta = pocetna.navigirajNaZbirnaKontrolnaMjernaMjesta();
+		ZbirnaKontrolnaMjernaMjesta zbirnaMjernaMjesta = homePage.navigirajNaZbirnaKontrolnaMjernaMjesta();
 		zbirnaMjernaMjesta.verifikujZbirnaKontrolnaMjernaMjesta();
-		EnergetskaKartica kartica = pocetna.navigirajNaEnergetskaKartica();
+		EnergetskaKartica kartica = homePage.navigirajNaEnergetskaKartica();
 		kartica.verifikujEnergetskaKartica();
-		ZahtjeviZaDostavuPodataka zahtjeviZaDostavu = pocetna.navigirajNaZahtjeviZaDostavuPodataka();
+		ZahtjeviZaDostavuPodataka zahtjeviZaDostavu = homePage.navigirajNaZahtjeviZaDostavuPodataka();
 		zahtjeviZaDostavu.verifikujZahtjeviZaDostavuPodataka();
-		ZahtjeviZaIskljucenja zahtjeviZaIskljucenja = pocetna.navigirajNaZahtjeviZaIskljucenja();
+		ZahtjeviZaIskljucenja zahtjeviZaIskljucenja = homePage.navigirajNaZahtjeviZaIskljucenja();
 		zahtjeviZaIskljucenja.verifikujZahtjeviZaIskljucenja();
-		ZahtjeviZaUkljucenja zahtjeviZaUkljucenja = pocetna.navigirajNaZahtjeviZaUkljucenja();
+		ZahtjeviZaUkljucenja zahtjeviZaUkljucenja = homePage.navigirajNaZahtjeviZaUkljucenja();
 		zahtjeviZaUkljucenja.verifikujZahtjeviZaUkljucenja();
-		RazlogNeizvrsavanjaZahtjeva razlogNeizvrsavanjaZahtjeva = pocetna.navigirajNaRazlogNeizvrsavanjaZahtjeva();
+		RazlogNeizvrsavanjaZahtjeva razlogNeizvrsavanjaZahtjeva = homePage.navigirajNaRazlogNeizvrsavanjaZahtjeva();
 		razlogNeizvrsavanjaZahtjeva.verifikujRazlogNeizvrsavanjaZahtjeva();
-		AktivnaIskljucenjaMjernihMjesta aktivnaIskljucenjaMjernihMjesta = pocetna
+		AktivnaIskljucenjaMjernihMjesta aktivnaIskljucenjaMjernihMjesta = homePage
 				.navigirajNaAktivnaIskljucenjaMjernihMjesta();
 		aktivnaIskljucenjaMjernihMjesta.verifikujAktivnaIskljucenjaMjernihMjesta();
-		IndirektnaMjernaMjesta indirektnaMjernaMjesta = pocetna.navigirajNaIndirektnaMjernaMjesta();
+		IndirektnaMjernaMjesta indirektnaMjernaMjesta = homePage.navigirajNaIndirektnaMjernaMjesta();
 		indirektnaMjernaMjesta.verifikujIndirektnaMjernaMjesta();
-		KontrolaMjernogMjesta kontrolaMjernogMjesta = pocetna.navigirajNaKontrolaMjernogMjesta();
+		KontrolaMjernogMjesta kontrolaMjernogMjesta = homePage.navigirajNaKontrolaMjernogMjesta();
 		kontrolaMjernogMjesta.verifikujKontrolaMjernogMjesta();
-		ElektroenergetskeSaglasnosti elektroenergetskeSaglasnosti = pocetna.navigirajNaElektroenergetskeSaglasnosti();
+//		TODO Saglasnost na lokaciju
+		ElektroenergetskeSaglasnosti elektroenergetskeSaglasnosti = homePage.navigirajNaElektroenergetskeSaglasnosti();
 		elektroenergetskeSaglasnosti.verifikujElektroenergetskeSaglasnosti();
-		UgovorOPrikljucenju ugovorOPrikljucenju = pocetna.navigirajNaUgovorOPrikljucenju();
+		UgovorOPrikljucenju ugovorOPrikljucenju = homePage.navigirajNaUgovorOPrikljucenju();
 		ugovorOPrikljucenju.verifikujUgovorOPrikljucenju();
-		DeklaracijaOPrikljucku deklaracijaOPrikljucku = pocetna.navigirajNaDeklaracijaOPrikljucku();
+		DeklaracijaOPrikljucku deklaracijaOPrikljucku = homePage.navigirajNaDeklaracijaOPrikljucku();
 		deklaracijaOPrikljucku.verifikujDeklaracijaOPrikljucku();
 //		TODO Registar plombi
 	}
@@ -191,13 +189,13 @@ public class PX_DIST_003_Verifikacije_Sekcija_Test extends BaseTest {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
-		PocetnaStranicaPXD pocetna = new PocetnaStranicaPXD(driver);
-		pocetna.verifikujPocetnuStranicu();
-		PravnaLica pravnaLica = pocetna.navigirajNaPravnaLica();
+		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
+		homePage.verifikujPocetnuStranicu();
+		PravnaLica pravnaLica = homePage.navigirajNaPravnaLica();
 		pravnaLica.verifikujPravnaLica();
-		FizickaLica fizickaLica = pocetna.navigirajNaFizickaLica();
+		FizickaLica fizickaLica = homePage.navigirajNaFizickaLica();
 		fizickaLica.verifikujFizickaLica();
-		ZahtjeviZaDostavuPodatakaKUPCI zahtjeviZaDostavuPodatakaKupci = pocetna
+		ZahtjeviZaDostavuPodatakaKUPCI zahtjeviZaDostavuPodatakaKupci = homePage
 				.navigirajNaZahtjeviZaDostavuPodatakaKUPCI();
 		zahtjeviZaDostavuPodatakaKupci.verifikujZahtjeviZaDostavuPodatakaKUPCI();
 	}
@@ -207,32 +205,32 @@ public class PX_DIST_003_Verifikacije_Sekcija_Test extends BaseTest {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
-		PocetnaStranicaPXD pocetna = new PocetnaStranicaPXD(driver);
-		pocetna.verifikujPocetnuStranicu();
+		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
+		homePage.verifikujPocetnuStranicu();
 //		KoristenaBrojila koristenaBrojila = pocetna.navigirajNaKoristenaBrojila();
 //	    koristenaBrojila.verifikujKoristenaBrojila();
-		TipoviBrojila tipoviBrojila = pocetna.navigirajNaTipoviBrojila();
+		TipoviBrojila tipoviBrojila = homePage.navigirajNaTipoviBrojila();
 		tipoviBrojila.verifikujTipoviBrojila();
-		RegistarBrojila registarBrojila = pocetna.navigirajNaRegistarBrojila();
+		RegistarBrojila registarBrojila = homePage.navigirajNaRegistarBrojila();
 		registarBrojila.verifikujRegistarBrojila();
-		IzvorNapajanjaBrojila izvorNapajanjaBrojila = pocetna.navigirajNaIzvoriNapajanjaBrojila();
+		IzvorNapajanjaBrojila izvorNapajanjaBrojila = homePage.navigirajNaIzvoriNapajanjaBrojila();
 		izvorNapajanjaBrojila.verifikujIzvorNapajanjaBrojila();
-		ProizvodjaciBrojila proizvodjaciBrojila = pocetna.navigirajNaProizvodjaciBrojila();
+		ProizvodjaciBrojila proizvodjaciBrojila = homePage.navigirajNaProizvodjaciBrojila();
 		proizvodjaciBrojila.verifikujProizvodjaciBrojila();
-		SposobnostPrikljucenjaBrojila sposobnostPrikljucenjaBrojila = pocetna
+		SposobnostPrikljucenjaBrojila sposobnostPrikljucenjaBrojila = homePage
 				.navigirajNaSposobnostiPrikljucenaBrojila();
 		sposobnostPrikljucenjaBrojila.verifikujSposobnostPrikljucenjaBrojila();
-		MogucnostDaljinskogPristupa mogucnostDaljinskogPristupa = pocetna.navigirajNaMogucnostDaljinskogPristupa();
+		MogucnostDaljinskogPristupa mogucnostDaljinskogPristupa = homePage.navigirajNaMogucnostDaljinskogPristupa();
 		mogucnostDaljinskogPristupa.verifikujMogucnostDaljinskogPristupa();
-		LokacijaBrojila lokacijaBrojila = pocetna.navigirajNaLokacijeBrojila();
+		LokacijaBrojila lokacijaBrojila = homePage.navigirajNaLokacijeBrojila();
 		lokacijaBrojila.verifikujLokacijaBrojila();
-		RelokacijeBrojila relokacijeBrojila = pocetna.navigirajNaRelokacijeBrojila();
+		RelokacijeBrojila relokacijeBrojila = homePage.navigirajNaRelokacijeBrojila();
 		relokacijeBrojila.verifikujRelokacijeBrojila();
-		RazlogPromjeneLokacije razlogPromjeneLokacije = pocetna.navigirajNaRazloziPromjeneLokacije();
+		RazlogPromjeneLokacije razlogPromjeneLokacije = homePage.navigirajNaRazloziPromjeneLokacije();
 		razlogPromjeneLokacije.verifikujRazlogPromjeneLokacije();
-		NaponskiNivoi naponskiNivoi = pocetna.navigirajNaNaponskiNivoi();
+		NaponskiNivoi naponskiNivoi = homePage.navigirajNaNaponskiNivoi();
 		naponskiNivoi.verifikujNaponskiNivoi();
-		StrujniNivoi strujniNivoi = pocetna.navigirajNaStrujniNivoi();
+		StrujniNivoi strujniNivoi = homePage.navigirajNaStrujniNivoi();
 		strujniNivoi.verifikujStrujniNivoi();
 	}
 
@@ -241,13 +239,13 @@ public class PX_DIST_003_Verifikacije_Sekcija_Test extends BaseTest {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
-		PocetnaStranicaPXD pocetna = new PocetnaStranicaPXD(driver);
-		pocetna.verifikujPocetnuStranicu();
-		ObracunskiUgovori obracunskiUgovori = pocetna.navigirajNaObracunskiUgovori();
+		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
+		homePage.verifikujPocetnuStranicu();
+		ObracunskiUgovori obracunskiUgovori = homePage.navigirajNaObracunskiUgovori();
 		obracunskiUgovori.verifikujObracunskiUgovori();
-		ZahtjeviZaObracunskeUgovore zahtjeviZaObracunskeUgovore = pocetna.navigirajNaZahtjeviZaObracunskeUgovore();
+		ZahtjeviZaObracunskeUgovore zahtjeviZaObracunskeUgovore = homePage.navigirajNaZahtjeviZaObracunskeUgovore();
 		zahtjeviZaObracunskeUgovore.verifikujZahtjeviZaObracunskeUgovore();
-		ZahtjeviZaRaskidUgovora zahtjeviZaRaskidUgovora = pocetna.navigirajNaZahtjeviZaRaskidUgovora();
+		ZahtjeviZaRaskidUgovora zahtjeviZaRaskidUgovora = homePage.navigirajNaZahtjeviZaRaskidUgovora();
 		zahtjeviZaRaskidUgovora.verifikujZahtjeviZaRaskidUgovora();
 	}
 
@@ -256,30 +254,30 @@ public class PX_DIST_003_Verifikacije_Sekcija_Test extends BaseTest {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
-		PocetnaStranicaPXD pocetna = new PocetnaStranicaPXD(driver);
-		pocetna.verifikujPocetnuStranicu();
-		OcitanjaBrojila ocitanjabrojila = pocetna.navigirajNaOcitanjaBrojila();
+		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
+		homePage.verifikujPocetnuStranicu();
+		OcitanjaBrojila ocitanjabrojila = homePage.navigirajNaOcitanjaBrojila();
 		ocitanjabrojila.verifikujOcitanjaBrojila();
-		KorekcijeOcitanja korekcijeocitanja = pocetna.navigirajNaKorekcijeOcitanja();
+		KorekcijeOcitanja korekcijeocitanja = homePage.navigirajNaKorekcijeOcitanja();
 		korekcijeocitanja.verifikujKorekcijeOcitanja();
-		ImportiOcitanja importiocitanja = pocetna.navigirajNaImportiOcitanja();
+		ImportiOcitanja importiocitanja = homePage.navigirajNaImportiOcitanja();
 		importiocitanja.verifikujImportiOcitanja();
-		IzmijenjenaOcitanja izmijenjenaocitanja = pocetna.navigirajNaIzmijenjenaOcitanja();
+		IzmijenjenaOcitanja izmijenjenaocitanja = homePage.navigirajNaIzmijenjenaOcitanja();
 		izmijenjenaocitanja.verifikujIzmijenjenaOcitanja();
-		NevalidnaOcitanja nevalidnaocitanja = pocetna.navigirajNaNevalidnaOcitanja();
+		NevalidnaOcitanja nevalidnaocitanja = homePage.navigirajNaNevalidnaOcitanja();
 		nevalidnaocitanja.verifikujNevalidnaOcitanja();
-		CitackiHodovi citackihodovi = pocetna.navigirajNaCitackiHodovi();
+		CitackiHodovi citackihodovi = homePage.navigirajNaCitackiHodovi();
 		citackihodovi.verifikujCitackiHodovi();
-		CitackeListe citackeliste = pocetna.navigirajNaCitackeListe();
+		CitackeListe citackeliste = homePage.navigirajNaCitackeListe();
 		citackeliste.verifikujCitackeListe();
-		CitaciPoCitackimHodovima citaciPoCitackimHodovima = pocetna.navigirajNaCitaciPoCitackimHodovima();
+		CitaciPoCitackimHodovima citaciPoCitackimHodovima = homePage.navigirajNaCitaciPoCitackimHodovima();
 		citaciPoCitackimHodovima.verifikujCitaciPoCitackimHodovima();
-		ZbirnaKontrolnaOcitanja zbirnaKontrolnaOcitanja = pocetna.navigirajNaZbirnaKontrolnaOcitanja();
+		ZbirnaKontrolnaOcitanja zbirnaKontrolnaOcitanja = homePage.navigirajNaZbirnaKontrolnaOcitanja();
 		zbirnaKontrolnaOcitanja.verifikujZbirnaKontrolnaOcitanja();
-		ZbirnaKontrolnaPotrosnja zbirnaKontrolnaPotrosnja = pocetna.navigirajNaZbirnaKontrolnaPotrosnja();
+		ZbirnaKontrolnaPotrosnja zbirnaKontrolnaPotrosnja = homePage.navigirajNaZbirnaKontrolnaPotrosnja();
 		zbirnaKontrolnaPotrosnja.verifikujZbirnaKontrolnaPotrosnja();
 //		TODO ProcjenaOcitanja
-		MonitoringOcitanja monitoringOcitanja = pocetna.navigirajNaMonitoringOcitanja();
+		MonitoringOcitanja monitoringOcitanja = homePage.navigirajNaMonitoringOcitanja();
 		monitoringOcitanja.verifikujMonitoringOcitanja();
 	}
 
@@ -288,9 +286,9 @@ public class PX_DIST_003_Verifikacije_Sekcija_Test extends BaseTest {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
-		PocetnaStranicaPXD pocetna = new PocetnaStranicaPXD(driver);
-		pocetna.verifikujPocetnuStranicu();
-		NeovlastenaPotrosnja neovlastenaPotrosnja = pocetna.navigirajNaNeovlastenaPotrosnja();
+		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
+		homePage.verifikujPocetnuStranicu();
+		NeovlastenaPotrosnja neovlastenaPotrosnja = homePage.navigirajNaNeovlastenaPotrosnja();
 		neovlastenaPotrosnja.verifikujNeovlastenaPotrosnja();
 //		TODO Racuni NP
 	}
@@ -300,15 +298,15 @@ public class PX_DIST_003_Verifikacije_Sekcija_Test extends BaseTest {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
-		PocetnaStranicaPXD pocetna = new PocetnaStranicaPXD(driver);
-		pocetna.verifikujPocetnuStranicu();
-		NaloziZaObracun naloziZaObracun = pocetna.navigirajNaNaloziZaObracun();
+		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
+		homePage.verifikujPocetnuStranicu();
+		NaloziZaObracun naloziZaObracun = homePage.navigirajNaNaloziZaObracun();
 		naloziZaObracun.verifikujNaloziZaObracun();
-		KorekcijeEnergetskihObracuna korekcijeEnergetskihObracuna = pocetna.navigirajNaKorekcijeEnergetskihObracuna();
+		KorekcijeEnergetskihObracuna korekcijeEnergetskihObracuna = homePage.navigirajNaKorekcijeEnergetskihObracuna();
 		korekcijeEnergetskihObracuna.verifikujKorekcijeEnergetskihObracuna();
-		MjesecnaOdobrenjaZaduzenja mjesecnaOdobrenjaZaduzenja = pocetna.navigirajNaMjesecnaOdobrenjaZaduzenja();
+		MjesecnaOdobrenjaZaduzenja mjesecnaOdobrenjaZaduzenja = homePage.navigirajNaMjesecnaOdobrenjaZaduzenja();
 		mjesecnaOdobrenjaZaduzenja.verifikujMjesecnaOdobrenjaZaduzenja();
-		KorekcionaOdobrenjaZaduzenja korekcionaOdobrenjaZaduzenja = pocetna.navigirajNaKorekcionaOdobrenjaZaduzenja();
+		KorekcionaOdobrenjaZaduzenja korekcionaOdobrenjaZaduzenja = homePage.navigirajNaKorekcionaOdobrenjaZaduzenja();
 		korekcionaOdobrenjaZaduzenja.verifikujKorekcionaOdobrenjaZaduzenja();
 	}
 
