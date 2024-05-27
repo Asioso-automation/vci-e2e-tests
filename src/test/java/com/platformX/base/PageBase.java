@@ -3,6 +3,7 @@ package com.platformX.base;
 import static org.testng.Assert.assertTrue;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -13,6 +14,8 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import com.platformX.distribution.page.PocetnaStranicaPXD;
 import com.platformX.util.Helper;
 import com.platformX.util.PropertiesUtil;
 
@@ -312,21 +315,28 @@ public abstract class PageBase {
 	// Zajednicka metoda za navigaciju po stranicama
 	// Iskoristena u "PX_DIST_003_Verifikacije_Sekcija_Test" u 1. test case-u za navigaciju na Organizacije
 	// TODO Izdvojiti generisanje xapths u odvojene metode, dodati u catch odlazak na stranicu putem linka i poruku
-	 public <T extends PageBase> T navigateOnPage(Class<T> pageClass, String sekcija, String stranica) {
-	        try {
+	 public <T extends PageBase> T navigateOnPage(Class<T> pageClass, String sekcija, String stranica) throws InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException, SecurityException, Exception {
 	        	WebDriverWait wait = new WebDriverWait(driver, 10);
 	        	wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
+	        	try {
 	    		wait.until(ExpectedConditions.elementToBeClickable
 	    				(By.xpath("//*[contains(text(),'" + sekcija + "') and @class='v-btn__content']"))).click();
 	    		wait.until(ExpectedConditions.elementToBeClickable
 	    				(By.xpath("//div[contains(text(),'" + stranica + "') and @class='v-list-item__title']"))).click();
+	        	} catch (Exception e) {
+	        		try {
+	        		wait.until(ExpectedConditions.elementToBeClickable(PocetnaStranicaPXD.strelicaDesnoWE));
+	        		PocetnaStranicaPXD.strelicaDesnoWE.click();
+		    		wait.until(ExpectedConditions.elementToBeClickable
+		    				(By.xpath("//*[contains(text(),'" + sekcija + "') and @class='v-btn__content']"))).click();
+		    		wait.until(ExpectedConditions.elementToBeClickable
+		    				(By.xpath("//div[contains(text(),'" + stranica + "') and @class='v-list-item__title']"))).click();
+	        		} catch (Exception a) {
+			            driver.get(platformx_distribution_properties.getValue("URL.DIST.LOGIN") + platformx_distribution_properties.getValue(propertiesNaziv(stranica)));	        
+	        		}
+	        	}
 //	            // Instantiate the provided page class using its constructor
 	            return pageClass.getDeclaredConstructor(WebDriver.class).newInstance(driver);
-	        } catch (Exception e) {
-	            e.printStackTrace();
-	            driver.get(platformx_distribution_properties.getValue("URL.DIST.LOGIN") + platformx_distribution_properties.getValue(propertiesNaziv(stranica)));	        
-	            }
-	        return null;
 	    }
 	
 }

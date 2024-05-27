@@ -18,51 +18,54 @@ public class MjernaMjesta extends PocetnaStranicaPXD {
 		super(driver);
 	}
 
-	@FindBy(xpath = "//div[2]/div[1]/div/div/div[1]/div/input")
-	private WebElement poljeNazivMjernogMjestaWE;
-	
-	@FindBy(xpath = "//div[2]/div[2]/div/div/div[1]/div/input")
-	private WebElement poljeNazivMjmNaStampanimDokWE;
-	
 	@FindBy(xpath = "//div[3]/div[1]/div/div/div[1]/div/input")
 	private WebElement poljeSifraWE;
+	
+	@FindBy(xpath = "//div[4]/div[1]/div/div/div[1]/div/input")
+	private WebElement poljeNazivMjernogMjestaWE;
+	
+	@FindBy(xpath = "//div[4]/div[2]/div/div/div[1]/div/input")
+	private WebElement poljeNazivMjmNaStampanimDokWE;
+	
+	@FindBy(xpath = "//div[5]/div[3]/div/div/div[1]/div[1]/input[1]")
+	private WebElement poljeVlasnikWE;
+	
+	@FindBy(xpath = "//div[5]/div[4]/div/div/div[1]/div[1]/input[1]")
+	private WebElement poljeTipPotrosacaWE;
 
-	@FindBy(xpath = "//div[6]/div/div/div[1]/div[1]/input[1]")
+	@FindBy(xpath = "//div[5]/div[5]/div/div/div[1]/div[1]/input[1]")
 	private WebElement poljeTerenskaJedinicaWE;
 	
 	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '41 - TJ Bijeljina')]")		// 1 - Istočno Novo Sarajevo > 41 - TJ Bijeljina
 	private WebElement odaberiTerenskuJedinicuWE;
 	
-	@FindBy(xpath = "//div[7]/div/div/div[1]/div[1]/input[1]")
+	@FindBy(xpath = "//div[5]/div[6]/div/div/div[1]/div[1]/input[1]")
 	private WebElement poljeFizickaLokacijaWE;
 	
 	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '4101 - 01 - BIJELJINA')]")		// 301 - 01 - Istočno Novo Sarajevo > 4101 - 01 - BIJELJINA
 	private WebElement odaberiFizickuLokacijuWE;
 	
-	@FindBy(xpath = "//div[8]/div/div/div[1]/div[1]/input[1]")
+	@FindBy(xpath = "//div[5]/div[7]/div/div/div[1]/div[1]/input[1]")
 	private WebElement poljeTrafoStanicaWE;
 	
 	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '410112 - NOVA BANKA')]")			// 11120 - 120-Didas > 410112 - NOVA BANKA
 	private WebElement odaberiTrafoStanicuWE;
 	
-	@FindBy(xpath = "//div[11]/div/div/div[1]/div/input")
+	@FindBy(xpath = "//div[5]/div[10]/div/div/div[1]/div/input")
 	private WebElement poljeBrojCitackogHodaWE;
 	
-	@FindBy(xpath = "//div[3]/div[15]/div/div/div[1]/div[1]/input[1]")
+	@FindBy(xpath = "//div[7]/div[2]/div/div/div[1]/div[1]/input[1]")
 	private WebElement poljeUlicaWE;
 	
 	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '1001 - JASENICA III')]")			// 10950 - Svetog Save > 1001 - JASENICA III
 	private WebElement odaberiUlicuWE;
 	
-	@FindBy(xpath = "//div[3]/div[17]/div/div/div[1]/div[1]/input[1]")
+	@FindBy(xpath = "//div[7]/div[4]/div/div/div[1]/div[1]/input[1]")
 	private WebElement poljePostaWE;
 	
 	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '76300 - Bijeljina')]")			// 78000 - Banja Luka > 76300 - Bijeljina
 	private WebElement odaberiPostuWE;
 	
-	@FindBy(xpath = "//div[4]/div/div/div[1]/div[1]/input[1]")
-	private WebElement poljeTipPotrosacaWE;
-
 	public void verifikujMjernaMjesta() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
@@ -90,12 +93,17 @@ public class MjernaMjesta extends PocetnaStranicaPXD {
 		String nazivMjernogMjesta = "Naziv mjernog mjesta " + sifraMjernogMjesta;
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
 		dodajBtnWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(poljeSifraWE));
+		poljeSifraWE.sendKeys(sifraMjernogMjesta);
 		wait.until(ExpectedConditions.elementToBeClickable(poljeNazivMjernogMjestaWE));
 		poljeNazivMjernogMjestaWE.sendKeys(nazivMjernogMjesta);
 		wait.until(ExpectedConditions.elementToBeClickable(poljeNazivMjmNaStampanimDokWE));
 		poljeNazivMjmNaStampanimDokWE.sendKeys(nazivMjernogMjesta);
-		wait.until(ExpectedConditions.elementToBeClickable(poljeSifraWE));
-		poljeSifraWE.sendKeys(sifraMjernogMjesta);
+		wait.until(ExpectedConditions.elementToBeClickable(poljeVlasnikWE));
+		poljeVlasnikWE.sendKeys(Helper.getRandomNumber(3));
+		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
+		poljeVlasnikWE.sendKeys(Keys.ARROW_DOWN);
+		poljeVlasnikWE.sendKeys(Keys.ENTER);
 		wait.until(ExpectedConditions.elementToBeClickable(poljeTipPotrosacaWE));
 		poljeTipPotrosacaWE.click();
 		poljeTipPotrosacaWE.sendKeys(Keys.ARROW_DOWN);

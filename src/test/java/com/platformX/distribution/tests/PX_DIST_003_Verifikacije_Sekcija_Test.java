@@ -153,7 +153,7 @@ public class PX_DIST_003_Verifikacije_Sekcija_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		MjernaMjesta mjernaMjesta = homePage.navigirajNaMjernaMjesta();
+		MjernaMjesta mjernaMjesta = homePage.navigateOnPage(MjernaMjesta.class, "Mjerna mjesta", "Mjerna mjesta");
 		mjernaMjesta.verifikujMjernaMjesta();
 		ZbirnaKontrolnaMjernaMjesta zbirnaMjernaMjesta = homePage.navigirajNaZbirnaKontrolnaMjernaMjesta();
 		zbirnaMjernaMjesta.verifikujZbirnaKontrolnaMjernaMjesta();
@@ -317,11 +317,11 @@ public class PX_DIST_003_Verifikacije_Sekcija_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		Korisnici korisnici = homePage.navigirajNaKorisnici();
+		Korisnici korisnici = homePage.navigateOnPage(Korisnici.class, "Administracija", "Korisnici");
 		korisnici.verifikujKorisnici();
-		Poruke poruke = homePage.navigirajNaPoruke();
+		Poruke poruke = homePage.navigateOnPage(Poruke.class, "Administracija", "Poruke");
 		poruke.verifikujPoruke();
-		DnevnikIzmjena dnevnikIzmjena = homePage.navigirajNaDnevnikIzmjena();
+		DnevnikIzmjena dnevnikIzmjena = homePage.navigateOnPage(DnevnikIzmjena.class, "Administracija", "Dnevnik izmjena");
 		dnevnikIzmjena.verifikujDnevnikIzmjena();
 //		PozadinskiProcesi pozadinskiProcesi = homePage.navigirajNaPozadinskiProcesi();
 //		pozadinskiProcesi.verifikujPozadinskiProcesi();

@@ -64,10 +64,10 @@ public class PocetnaStranicaPXD extends PageBase {
 //	protected WebElement trenutniDatum3WE;
 		
 	@FindBy(xpath = "//i[contains(@class, 'mdi-chevron-right')]")
-	protected WebElement strelicaDesnoWE;
+	public static WebElement strelicaDesnoWE;
 	
 	@FindBy(xpath = "//i[contains(@class, 'mdi-chevron-left')]")
-	protected WebElement strelicaLijevoWE;
+	public static WebElement strelicaLijevoWE;
 	
 
 //	 Sekcije
