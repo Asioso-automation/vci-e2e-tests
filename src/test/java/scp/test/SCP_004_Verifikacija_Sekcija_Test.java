@@ -43,6 +43,7 @@ import scp.page.OpomenePredIskljucenje;
 import scp.page.Organizacije;
 import scp.page.OslobadjanjeOdKamate;
 import scp.page.ParametriObracuna;
+import scp.page.Plombe;
 import scp.page.PocetnaStranica;
 import scp.page.Poruke;
 import scp.page.Poste;
@@ -188,6 +189,8 @@ public class SCP_004_Verifikacija_Sekcija_Test extends BaseTest {
 		profiliMjerila.verifikujProfileMjerila();
 		ProizvodjaciMjerila proizvodjaciMjerila = pocetna.navigirajNaProizvodjaceMjerila();
 		proizvodjaciMjerila.verifikujProizvodjaceMjerila();
+		Plombe plombe = pocetna.navigirajNaPlombe();
+		plombe.verifikujPlombe();
 	}
 
 	@Test(description = "test prolazi kroz sve stranice iz sekcije OČITANJA i verifikuje ih")

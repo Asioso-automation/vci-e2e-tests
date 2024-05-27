@@ -234,6 +234,9 @@ public class PocetnaStranica extends PageBase {
 	@FindBy(xpath = "//div[contains(text(), 'Proizvođači')]")
 	protected WebElement proizvodjaciWE;
 	
+	@FindBy(xpath = "//div[contains(text(), 'Plombe')]")
+	protected WebElement plombeWE;
+	
 	@FindBy(xpath = "//div[@class='v-list__tile__content' and text()='Vrste']")
 	protected WebElement vrsteWE;
 	
@@ -878,6 +881,20 @@ public class PocetnaStranica extends PageBase {
 			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("PROIZVODJACI.MJERILA"));
 			}
 		return new ProizvodjaciMjerila(driver);
+	}
+	
+	public Plombe navigirajNaPlombe()throws Exception{
+		try {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(mjerilaWE));
+		mjerilaWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(plombeWE));
+		plombeWE.click();
+		}
+		catch (Exception e) {
+			driver.get(scp_properties.getValue("URL.SCP") + scp_properties.getValue("PLOMBE"));
+			}
+		return new Plombe(driver);
 	}
 	
 	public VrsteMjerila navigirajNaVrsteMjerila()throws Exception{

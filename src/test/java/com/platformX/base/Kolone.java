@@ -1987,6 +1987,12 @@ public class Kolone extends PageBase {
 	@FindBy(xpath = "//*[contains(@class, 'v-datatable')]//*[text() = 'Datum izdavanja dokumenta']")
 	public WebElement kolonaDatumIzdavanjaDokumentaWE;
 	
+	@FindBy(xpath = "//*[contains(@class, 'v-datatable')]//*[text() = 'Datum postavljanja plombe']")
+	public WebElement kolonaDatumPostavljanjaPlombeWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-datatable')]//*[text() = 'Datum uklanjanja plombe']")
+	public WebElement kolonaDatumUklanjanjaPlombeWE;
+	
 	@FindBy(xpath = "//*[contains(@class, 'v-datatable')]//*[text() = 'Isključen']")
 	public WebElement kolonaIskljucen1WE;
 	
