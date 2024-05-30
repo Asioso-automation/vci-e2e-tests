@@ -315,7 +315,7 @@ public abstract class PageBase {
 	// Zajednicka metoda za navigaciju po stranicama
 	// Iskoristena u "PX_DIST_003_Verifikacije_Sekcija_Test" u 1. test case-u za navigaciju na Organizacije
 	// TODO Izdvojiti generisanje xapths u odvojene metode, dodati u catch odlazak na stranicu putem linka i poruku
-	 public <T extends PageBase> T navigateOnPage(Class<T> pageClass, String sekcija, String stranica) throws InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException, SecurityException, Exception {
+	 public <T extends PageBase> T navigateOnPage(Class<T> pageClass, String sekcija, String stranica) throws InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException, SecurityException {
 	        	WebDriverWait wait = new WebDriverWait(driver, 10);
 	        	wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 	        	try {

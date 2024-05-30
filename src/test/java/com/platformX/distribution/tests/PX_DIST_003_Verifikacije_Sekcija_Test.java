@@ -53,72 +53,73 @@ public class PX_DIST_003_Verifikacije_Sekcija_Test extends BaseTest {
 		vrstePodrucja.verifikujVrstePodrucja();
 	}
 
-	@Test(retryAnalyzer = RetryAnalyzer.class, description = "test prolazi kroz sve stranice iz sekcije SIFARNICI ZA ZAPISNIKE i verifikuje ih")
+	//retryAnalyzer = RetryAnalyzer.class, 
+	@Test(description = "test prolazi kroz sve stranice iz sekcije SIFARNICI ZA ZAPISNIKE i verifikuje ih")
 	public void px_dist_003_02_verifikacije_sekcije_sifarnici_za_zapisnike_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		VrsteObjekata vrsteObjekata = homePage.navigirajNaVrsteObjekata();
+		VrsteObjekata vrsteObjekata = homePage.navigateOnPage(VrsteObjekata.class, "Šifarnici", "Vrste objekata");
 		vrsteObjekata.verifikujVrsteObjekata();
-		LokacijeMjernihMjesta lokacijeMjernihMjesta = homePage.navigirajNaLokacijeMjernihMjesta();
+		LokacijeMjernihMjesta lokacijeMjernihMjesta = homePage.navigateOnPage(LokacijeMjernihMjesta.class, "Šifarnici", "Lokacije mjernih mjesta");
 		lokacijeMjernihMjesta.verifikujLokacijeMjernihMjesta();
-		MjestaPrikljucenja mjestaPrikljucenja = homePage.navigirajNaMjestaPrikljucenja();
+		MjestaPrikljucenja mjestaPrikljucenja = homePage.navigateOnPage(MjestaPrikljucenja.class, "Šifarnici", "Mjesta priključenja");
 		mjestaPrikljucenja.verifikujMjestaPrikljucenja();
-		NaciniPolaganjaInstalacija naciniPolaganjaInstalacija = homePage.navigirajNaNaciniPolaganjaInstalacija();
+		NaciniPolaganjaInstalacija naciniPolaganjaInstalacija = homePage.navigateOnPage(NaciniPolaganjaInstalacija.class, "Šifarnici", "Načini polaganja instalacija");
 		naciniPolaganjaInstalacija.verifikujNaciniPolaganjaInstalacija();
-		TipoviPrikljucnogVoda tipoviPrikljucnogVoda = homePage.navigirajNaTipoviPrikljucnogVoda();
+		TipoviPrikljucnogVoda tipoviPrikljucnogVoda = homePage.navigateOnPage(TipoviPrikljucnogVoda.class, "Šifarnici", "Tipovi priključnog voda");
 		tipoviPrikljucnogVoda.verifikujTipoviPrikljucnogVoda();
-		PresjeciPrikljucnogVoda presjeciPrikljucnogVoda = homePage.navigirajNaPresjeciPrikljucnogVoda();
+		PresjeciPrikljucnogVoda presjeciPrikljucnogVoda = homePage.navigateOnPage(PresjeciPrikljucnogVoda.class, "Šifarnici", "Presjeci priključnog voda");
 		presjeciPrikljucnogVoda.verifikujPresjeciPrikljucnogVoda();
-		TipoviPrikljucka tipoviPrikljucka = homePage.navigirajNaTipoviPrikljucka();
+		TipoviPrikljucka tipoviPrikljucka = homePage.navigateOnPage(TipoviPrikljucka.class, "Šifarnici", "Tipovi priključka");
 		tipoviPrikljucka.verifikujTipoviPrikljucka();
-		PrikljucneSnage prikljucneSnage = homePage.navigirajNaPrikljucneSnage();
+		PrikljucneSnage prikljucneSnage = homePage.navigateOnPage(PrikljucneSnage.class, "Šifarnici", "Priključne snage");
 		prikljucneSnage.verifikujPrikljucneSnage();
-		NazivneStruje nazivneStruje = homePage.navigirajNaNazivneStruje();
+		NazivneStruje nazivneStruje = homePage.navigateOnPage(NazivneStruje.class, "Šifarnici", "Nazivne struje");
 		nazivneStruje.verifikujNazivneStruje();
-		MaterijaliProvodnika materijaliProvodnika = homePage.navigirajNaMaterijaliProvodnika();
+		MaterijaliProvodnika materijaliProvodnika = homePage.navigateOnPage(MaterijaliProvodnika.class, "Šifarnici", "Materijali provodnika");
 		materijaliProvodnika.verifikujMaterijaliProvodnika();
-		TipoviIzolacija tipoviIzolacija = homePage.navigirajNaTipoviIzolacija();
+		TipoviIzolacija tipoviIzolacija = homePage.navigateOnPage(TipoviIzolacija.class, "Šifarnici", "Tipovi izolacija");
 		tipoviIzolacija.verifikujTipoviIzolacija();
-		TipoviMjernihMostova tipoviMjernihMostova = homePage.navigirajNaTipoviMjernihMostova();
+		TipoviMjernihMostova tipoviMjernihMostova = homePage.navigateOnPage(TipoviMjernihMostova.class, "Šifarnici", "Tipovi mjernih mostova");
 		tipoviMjernihMostova.verifikujTipoviMjernihMostova();
-		MaterijaliOrmaricaBrojila materijaliOrmaricaBrojila = homePage.navigirajNaMaterijaliOrmaricaBrojila();
+		MaterijaliOrmaricaBrojila materijaliOrmaricaBrojila = homePage.navigateOnPage(MaterijaliOrmaricaBrojila.class, "Šifarnici", "Materijali ormarića brojila");
 		materijaliOrmaricaBrojila.verifikujMaterijaliOrmaricaBrojila();
-		KlaseTacnostiBrojila klaseTacnostiBrojila = homePage.navigirajNaKlaseTacnostiBrojila();
+		KlaseTacnostiBrojila klaseTacnostiBrojila = homePage.navigateOnPage(KlaseTacnostiBrojila.class, "Šifarnici", "Klase tačnosti brojila");
 		klaseTacnostiBrojila.verifikujKlaseTacnostiBrojila();
-		NazivneStrujeBrojila nazivneStrujeBrojila = homePage.navigirajNaNazivneStrujeBrojila();
+		NazivneStrujeBrojila nazivneStrujeBrojila = homePage.navigateOnPage(NazivneStrujeBrojila.class, "Šifarnici", "Nazivne struje brojila");
 		nazivneStrujeBrojila.verifikujNazivneStrujeBrojila();
 		KlaseTacnostiStrujnogTransformatora klaseTacnostiStrujnogTransformatora = homePage
-				.navigirajNaKlaseTacnostiStrujnogTransformatora();
+				.navigateOnPage(KlaseTacnostiStrujnogTransformatora.class, "Šifarnici", "Klase tačnosti strujnog tran.");
 		klaseTacnostiStrujnogTransformatora.verifikujKlaseTacnostiStrujnogTransformatora();
-		StrujniPrenosniOdnos strujniPrenosniOdnos = homePage.navigirajNaStrujniPrenosniOdnos();
+		StrujniPrenosniOdnos strujniPrenosniOdnos = homePage.navigateOnPage(StrujniPrenosniOdnos.class, "Šifarnici", "Strujni prenosni odnos");
 		strujniPrenosniOdnos.verifikujStrujniPrenosniOdnos();
-		NazivneStrujeOsiguraca nazivneStrujeOsiguraca = homePage.navigirajNaNazivneStrujeOsiguraca();
+		NazivneStrujeOsiguraca nazivneStrujeOsiguraca = homePage.navigateOnPage(NazivneStrujeOsiguraca.class, "Šifarnici", "Nazivne struje osigurača");
 		nazivneStrujeOsiguraca.verifikujNazivneStrujeOsiguraca();
 		KlaseTacnostiNaponskogTransformatora klaseTacnostiNaponskogTransformatora = homePage
-				.navigirajNaKlaseTacnostiNaponskogTransformatora();
+				.navigateOnPage(KlaseTacnostiNaponskogTransformatora.class, "Šifarnici", "Klase tačnosti naponskog tran.");
 		klaseTacnostiNaponskogTransformatora.verifikujKlaseTacnostiNaponskogTransformatora();
-		NaponskiPrenosniOdnos naponskiPrenosniodnos = homePage.navigirajNaNaponskiPrenosniOdnos();
+		NaponskiPrenosniOdnos naponskiPrenosniodnos = homePage.navigateOnPage(NaponskiPrenosniOdnos.class, "Šifarnici", "Naponski prenosni odnos");
 		naponskiPrenosniodnos.verifikujNaponskiPrenosniOdnos();
-		NaciniUpravljanjaPotrosnjom naciniUpravljanjaPotrosnjom = homePage.navigirajNaNaciniUpravljanjaPotrosnjom();
+		NaciniUpravljanjaPotrosnjom naciniUpravljanjaPotrosnjom = homePage.navigateOnPage(NaciniUpravljanjaPotrosnjom.class, "Šifarnici", "Načini upravljanja potrošnjom");
 		naciniUpravljanjaPotrosnjom.verifikujNaciniUpravljanjaPotrosnjom();
-		VrsteUpravljackihUredjaja vrsteUpravljackihUredjaja = homePage.navigirajNaVrsteUpravljackihUredjaja();
+		VrsteUpravljackihUredjaja vrsteUpravljackihUredjaja = homePage.navigateOnPage(VrsteUpravljackihUredjaja.class, "Šifarnici", "Vrste upravljačkih uređaja");
 		vrsteUpravljackihUredjaja.verifikujVrsteUpravljackihUredjaja();
-		VrsteImpulsnihUredjaja vrsteImpulsnihUredjaja = homePage.navigirajNaVrsteImpulsnihUredjaja();
+		VrsteImpulsnihUredjaja vrsteImpulsnihUredjaja = homePage.navigateOnPage(VrsteImpulsnihUredjaja.class, "Šifarnici", "Vrste impulsnih uređaja");
 		vrsteImpulsnihUredjaja.verifikujVrsteImpulsnihUredjaja();
-		VrsteZastitnihUredjaja vrsteZastitnihUredjaja = homePage.navigirajNaVrsteZastitnihUredjaja();
+		VrsteZastitnihUredjaja vrsteZastitnihUredjaja = homePage.navigateOnPage(VrsteZastitnihUredjaja.class, "Šifarnici", "Vrste zaštitnih uređaja");
 		vrsteZastitnihUredjaja.verifikujVrsteZastitnihUredjaja();
-		SistemiZastiteOdIndDodira sistemiZastiteOdIndDodira = homePage.navigirajNaSistemiZastiteOdIndDodira();
+		SistemiZastiteOdIndDodira sistemiZastiteOdIndDodira = homePage.navigateOnPage(SistemiZastiteOdIndDodira.class, "Šifarnici", "Sistemi zaštite od ind. dodira");
 		sistemiZastiteOdIndDodira.verifikujSistemiZastiteOdIndDodira();
-		SistemiZastiteOdPrenapona sistemiZastiteOdPrenapona = homePage.navigirajNaSistemiZastiteOdPrenapona();
+		SistemiZastiteOdPrenapona sistemiZastiteOdPrenapona = homePage.navigateOnPage(SistemiZastiteOdPrenapona.class, "Šifarnici", "Sistemi zaštite od prenapona");
 		sistemiZastiteOdPrenapona.verifikujSistemiZastiteOdPrenapona();
-		RokoviVazenja rokoviVazenja = homePage.navigirajNaRokoviVazenja();
+		RokoviVazenja rokoviVazenja = homePage.navigateOnPage(RokoviVazenja.class, "Šifarnici", "Rokovi važenja");
 		rokoviVazenja.verifikujRokoviVazenja();
-		NaciniPlacanja naciniPlacanja = homePage.navigirajNaNaciniPlacanja();
+		NaciniPlacanja naciniPlacanja = homePage.navigateOnPage(NaciniPlacanja.class, "Šifarnici", "Načini plaćanja");
 		naciniPlacanja.verifikujNaciniPlacanja();
-		UsloviPlacanja usloviPlacanja = homePage.navigirajNaUsloviPlacanja();
+		UsloviPlacanja usloviPlacanja = homePage.navigateOnPage(UsloviPlacanja.class, "Šifarnici", "Uslovi plaćanja");
 		usloviPlacanja.verifikujUsloviPlacanja();
 	}
 
@@ -129,20 +130,19 @@ public class PX_DIST_003_Verifikacije_Sekcija_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		KategorijePotrosnje kategorijePotrosnje = homePage.navigirajNaKategorijePotrosnje();
+		KategorijePotrosnje kategorijePotrosnje = homePage.navigateOnPage(KategorijePotrosnje.class, "Tarifni sistem", "Kategorije potrošnje");
 		kategorijePotrosnje.verifikujKategorijePotrosnje();
-		Sezone sezone = homePage.navigirajNaSezone();
+		Sezone sezone = homePage.navigateOnPage(Sezone.class, "Tarifni sistem", "Sezone");
 		sezone.verifikujSezone();
-		TarifneNadgrupe tarifneNadgrupe = homePage.navigirajNaTarifneNadgrupe();
+		TarifneNadgrupe tarifneNadgrupe = homePage.navigateOnPage(TarifneNadgrupe.class, "Tarifni sistem", "Tarifne nadgrupe");
 		tarifneNadgrupe.verifikujTarifneNadgrupe();
-		TarifneGrupe tarifneGrupe = homePage.navigirajNaTarifneGrupe();
+		TarifneGrupe tarifneGrupe = homePage.navigateOnPage(TarifneGrupe.class, "Tarifni sistem", "Tarifne grupe");
 		tarifneGrupe.verifikujTarifneGrupe();
-		ObracunskaSnaga obracunskaSnaga = homePage.navigirajNaObracunskaSnaga();
+		ObracunskaSnaga obracunskaSnaga = homePage.navigateOnPage(ObracunskaSnaga.class, "Tarifni sistem", "Obračunska snaga");
 		obracunskaSnaga.verifikujObracunskaSnaga();
-		CjenovnikMrezarine cjenovnik = homePage.navigirajNaCjenovnikMrezarine();
+		CjenovnikMrezarine cjenovnik = homePage.navigateOnPage(CjenovnikMrezarine.class, "Tarifni sistem", "Cjenovnik mrežarine");
 		cjenovnik.verifikujCjenovnikMrezarine();
-		CjenovnikNeovlastenePotrosnje cjenovnikNeovlastenePotrosnje = homePage
-				.navigirajNaCjenovnikNeovlastenePotrosnje();
+		CjenovnikNeovlastenePotrosnje cjenovnikNeovlastenePotrosnje = homePage.navigateOnPage(CjenovnikNeovlastenePotrosnje.class, "Tarifni sistem", "Cjenovnik neovlaštene potrošnje");
 		cjenovnikNeovlastenePotrosnje.verifikujCjenovnikNeovlastenePotrosnje();
 	}
 
