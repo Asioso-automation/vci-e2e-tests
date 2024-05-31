@@ -53,8 +53,7 @@ public class PX_DIST_003_Verifikacije_Sekcija_Test extends BaseTest {
 		vrstePodrucja.verifikujVrstePodrucja();
 	}
 
-	//retryAnalyzer = RetryAnalyzer.class, 
-	@Test(description = "test prolazi kroz sve stranice iz sekcije SIFARNICI ZA ZAPISNIKE i verifikuje ih")
+	@Test(retryAnalyzer = RetryAnalyzer.class, description = "test prolazi kroz sve stranice iz sekcije SIFARNICI ZA ZAPISNIKE i verifikuje ih")
 	public void px_dist_003_02_verifikacije_sekcije_sifarnici_za_zapisnike_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
