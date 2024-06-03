@@ -309,6 +309,7 @@ public abstract class PageBase {
 		naziv = naziv.replace("Č", "C");
 		naziv = naziv.replace("Ć", "C");
 		naziv = naziv.replace(" ", ".");
+		naziv = naziv.replace("/", ".");
 		return naziv;
 	}
 	

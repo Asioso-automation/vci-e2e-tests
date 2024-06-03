@@ -31,7 +31,7 @@ public class PX_DIST_026_Neovlastena_Potrosnja_CRUD_Test extends BaseTest{
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		FizickaLica fizickaLica = homePage.navigirajNaFizickaLica();
+		FizickaLica fizickaLica = homePage.navigateOnPage(FizickaLica.class, "Kupci", "Fizička lica");
 		fizickaLica.verifikujFizickaLica();
 		fizickaLica.dodajFizickoLice(fizickoLice);
 		fizickaLica.verifikujPoruku("Uspješno završeno.");
@@ -62,7 +62,7 @@ public class PX_DIST_026_Neovlastena_Potrosnja_CRUD_Test extends BaseTest{
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		FizickaLica fizickaLica = homePage.navigirajNaFizickaLica();
+		FizickaLica fizickaLica = homePage.navigateOnPage(FizickaLica.class, "Kupci", "Fizička lica");
 		fizickaLica.verifikujFizickaLica();
 		fizickaLica.dodajFizickoLice(novoFizickoLice);
 		fizickaLica.verifikujPoruku("Uspješno završeno.");

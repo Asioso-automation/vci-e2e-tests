@@ -154,31 +154,31 @@ public class PX_DIST_003_Verifikacije_Sekcija_Test extends BaseTest {
 		homePage.verifikujPocetnuStranicu();
 		MjernaMjesta mjernaMjesta = homePage.navigateOnPage(MjernaMjesta.class, "Mjerna mjesta", "Mjerna mjesta");
 		mjernaMjesta.verifikujMjernaMjesta();
-		ZbirnaKontrolnaMjernaMjesta zbirnaMjernaMjesta = homePage.navigirajNaZbirnaKontrolnaMjernaMjesta();
+		ZbirnaKontrolnaMjernaMjesta zbirnaMjernaMjesta = homePage.navigateOnPage(ZbirnaKontrolnaMjernaMjesta.class, "Mjerna mjesta", "Zbirna/kontrolna mjerna mjesta");
 		zbirnaMjernaMjesta.verifikujZbirnaKontrolnaMjernaMjesta();
-		EnergetskaKartica kartica = homePage.navigirajNaEnergetskaKartica();
+		EnergetskaKartica kartica = homePage.navigateOnPage(EnergetskaKartica.class, "Mjerna mjesta", "Energetska kartica");
 		kartica.verifikujEnergetskaKartica();
-		ZahtjeviZaDostavuPodataka zahtjeviZaDostavu = homePage.navigirajNaZahtjeviZaDostavuPodataka();
+		ZahtjeviZaDostavuPodataka zahtjeviZaDostavu = homePage.navigateOnPage(ZahtjeviZaDostavuPodataka.class, "Mjerna mjesta", "Zahtjevi za dostavu podataka");
 		zahtjeviZaDostavu.verifikujZahtjeviZaDostavuPodataka();
-		ZahtjeviZaIskljucenja zahtjeviZaIskljucenja = homePage.navigirajNaZahtjeviZaIskljucenja();
+		ZahtjeviZaIskljucenja zahtjeviZaIskljucenja = homePage.navigateOnPage(ZahtjeviZaIskljucenja.class, "Mjerna mjesta", "Zahtjevi za isključenja");
 		zahtjeviZaIskljucenja.verifikujZahtjeviZaIskljucenja();
-		ZahtjeviZaUkljucenja zahtjeviZaUkljucenja = homePage.navigirajNaZahtjeviZaUkljucenja();
+		ZahtjeviZaUkljucenja zahtjeviZaUkljucenja = homePage.navigateOnPage(ZahtjeviZaUkljucenja.class, "Mjerna mjesta", "Zahtjevi za uključenja");
 		zahtjeviZaUkljucenja.verifikujZahtjeviZaUkljucenja();
-		RazlogNeizvrsavanjaZahtjeva razlogNeizvrsavanjaZahtjeva = homePage.navigirajNaRazlogNeizvrsavanjaZahtjeva();
+		RazlogNeizvrsavanjaZahtjeva razlogNeizvrsavanjaZahtjeva = homePage.navigateOnPage(RazlogNeizvrsavanjaZahtjeva.class, "Mjerna mjesta", "Razlog neizvršavanja zahtjeva");
 		razlogNeizvrsavanjaZahtjeva.verifikujRazlogNeizvrsavanjaZahtjeva();
 		AktivnaIskljucenjaMjernihMjesta aktivnaIskljucenjaMjernihMjesta = homePage
-				.navigirajNaAktivnaIskljucenjaMjernihMjesta();
+				.navigateOnPage(AktivnaIskljucenjaMjernihMjesta.class, "Mjerna mjesta", "Aktivna isključenja mjernih mjesta");
 		aktivnaIskljucenjaMjernihMjesta.verifikujAktivnaIskljucenjaMjernihMjesta();
-		IndirektnaMjernaMjesta indirektnaMjernaMjesta = homePage.navigirajNaIndirektnaMjernaMjesta();
+		IndirektnaMjernaMjesta indirektnaMjernaMjesta = homePage.navigateOnPage(IndirektnaMjernaMjesta.class, "Mjerna mjesta", "Indirektna mjerna mjesta");
 		indirektnaMjernaMjesta.verifikujIndirektnaMjernaMjesta();
-		KontrolaMjernogMjesta kontrolaMjernogMjesta = homePage.navigirajNaKontrolaMjernogMjesta();
+		KontrolaMjernogMjesta kontrolaMjernogMjesta = homePage.navigateOnPage(KontrolaMjernogMjesta.class, "Mjerna mjesta", "Kontrola mjernog mjesta");
 		kontrolaMjernogMjesta.verifikujKontrolaMjernogMjesta();
 //		TODO Saglasnost na lokaciju
-		ElektroenergetskeSaglasnosti elektroenergetskeSaglasnosti = homePage.navigirajNaElektroenergetskeSaglasnosti();
+		ElektroenergetskeSaglasnosti elektroenergetskeSaglasnosti = homePage.navigateOnPage(ElektroenergetskeSaglasnosti.class, "Mjerna mjesta", "Elektroenergetske saglasnosti");
 		elektroenergetskeSaglasnosti.verifikujElektroenergetskeSaglasnosti();
-		UgovorOPrikljucenju ugovorOPrikljucenju = homePage.navigirajNaUgovorOPrikljucenju();
+		UgovorOPrikljucenju ugovorOPrikljucenju = homePage.navigateOnPage(UgovorOPrikljucenju.class, "Mjerna mjesta", "Ugovor o priključenju");
 		ugovorOPrikljucenju.verifikujUgovorOPrikljucenju();
-		DeklaracijaOPrikljucku deklaracijaOPrikljucku = homePage.navigirajNaDeklaracijaOPrikljucku();
+		DeklaracijaOPrikljucku deklaracijaOPrikljucku = homePage.navigateOnPage(DeklaracijaOPrikljucku.class, "Mjerna mjesta", "Deklaracija o priključku");
 		deklaracijaOPrikljucku.verifikujDeklaracijaOPrikljucku();
 //		TODO Registar plombi
 	}
@@ -190,12 +190,12 @@ public class PX_DIST_003_Verifikacije_Sekcija_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		PravnaLica pravnaLica = homePage.navigirajNaPravnaLica();
+		PravnaLica pravnaLica = homePage.navigateOnPage(PravnaLica.class, "Kupci", "Pravna lica");
 		pravnaLica.verifikujPravnaLica();
-		FizickaLica fizickaLica = homePage.navigirajNaFizickaLica();
+		FizickaLica fizickaLica = homePage.navigateOnPage(FizickaLica.class, "Kupci", "Fizička lica");
 		fizickaLica.verifikujFizickaLica();
 		ZahtjeviZaDostavuPodatakaKUPCI zahtjeviZaDostavuPodatakaKupci = homePage
-				.navigirajNaZahtjeviZaDostavuPodatakaKUPCI();
+				.navigateOnPage(ZahtjeviZaDostavuPodatakaKUPCI.class, "Kupci", "Zahtjevi za dostavu podataka kupci"); // dopisano "kupci" da bi ispravno navigiralo preko linka (isti naziv stranice u drugoj sekciji, nije jedinstven element)
 		zahtjeviZaDostavuPodatakaKupci.verifikujZahtjeviZaDostavuPodatakaKUPCI();
 	}
 

@@ -29,7 +29,7 @@ public class PX_DIST_019_Elektroenergetske_Saglasnosti_CRUD_Test extends BaseTes
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		ElektroenergetskeSaglasnosti elektroenergetskeSaglasnosti = homePage.navigirajNaElektroenergetskeSaglasnosti();
+		ElektroenergetskeSaglasnosti elektroenergetskeSaglasnosti = homePage.navigateOnPage(ElektroenergetskeSaglasnosti.class, "Mjerna mjesta", "Elektroenergetske saglasnosti");
 		elektroenergetskeSaglasnosti.verifikujElektroenergetskeSaglasnosti();
 		elektroenergetskeSaglasnosti.dodajElektronergetskuSaglasnostD(brojProtokola);
 		elektroenergetskeSaglasnosti.verifikujPoruku("Uspješno završeno.");

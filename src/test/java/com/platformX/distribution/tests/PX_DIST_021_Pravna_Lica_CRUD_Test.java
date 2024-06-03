@@ -27,7 +27,7 @@ public class PX_DIST_021_Pravna_Lica_CRUD_Test  extends BaseTest {
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		PravnaLica pravnaLica = homePage.navigirajNaPravnaLica();
+		PravnaLica pravnaLica = homePage.navigateOnPage(PravnaLica.class, "Kupci", "Pravna lica");
 		pravnaLica.verifikujPravnaLica();
 		pravnaLica.dodajPravnoLice(pravnoLice);
 		pravnaLica.verifikujPoruku("Uspješno završeno.");
@@ -43,7 +43,7 @@ public class PX_DIST_021_Pravna_Lica_CRUD_Test  extends BaseTest {
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		PravnaLica pravnaLica = homePage.navigirajNaPravnaLica();
+		PravnaLica pravnaLica = homePage.navigateOnPage(PravnaLica.class, "Kupci", "Pravna lica");
 		pravnaLica.verifikujPravnaLica();
 		pravnaLica.pretraziStavku(homePage.filterKolona2WE, pravnoLice);
 		pravnaLica.verifikujPravnaLica();
@@ -62,8 +62,7 @@ public class PX_DIST_021_Pravna_Lica_CRUD_Test  extends BaseTest {
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		PravnaLica pravnaLica = homePage.navigirajNaPravnaLica();
-		pravnaLica.verifikujPravnaLica();
+		PravnaLica pravnaLica = homePage.navigateOnPage(PravnaLica.class, "Kupci", "Pravna lica");
 		pravnaLica.pretraziStavku(homePage.filterKolona2WE, novoPravnoLice);
 		pravnaLica.verifikujPravnaLica();
 		pravnaLica.verifikujStavku(novoPravnoLice, homePage.podatak2Tabela2WE);

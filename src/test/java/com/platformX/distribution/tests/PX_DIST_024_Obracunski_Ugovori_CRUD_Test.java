@@ -32,7 +32,7 @@ public class PX_DIST_024_Obracunski_Ugovori_CRUD_Test  extends BaseTest {
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		FizickaLica fizickaLica = homePage.navigirajNaFizickaLica();
+		FizickaLica fizickaLica = homePage.navigateOnPage(FizickaLica.class, "Kupci", "Fizička lica");
 		fizickaLica.verifikujFizickaLica();
 		fizickaLica.dodajFizickoLice(fizickoLice);
 		fizickaLica.verifikujPoruku("Uspješno završeno.");
@@ -40,7 +40,7 @@ public class PX_DIST_024_Obracunski_Ugovori_CRUD_Test  extends BaseTest {
 		fizickaLica.verifikujFizickaLica();
 		fizickaLica.verifikujStavku(fizickoLice, homePage.podatak2Tabela2WE);
 		String kupac = fizickaLica.kreirajFizickoLice();
-		MjernaMjesta mjernaMjesta = homePage.navigirajNaMjernaMjesta();
+		MjernaMjesta mjernaMjesta = homePage.navigateOnPage(MjernaMjesta.class, "Mjerna mjesta", "Mjerna mjesta");
 		mjernaMjesta.verifikujMjernaMjesta();
 		mjernaMjesta.dodajMjernoMjesto(sifraMjernogMjesta);
 		mjernaMjesta.verifikujPoruku("Uspješno završeno.");
