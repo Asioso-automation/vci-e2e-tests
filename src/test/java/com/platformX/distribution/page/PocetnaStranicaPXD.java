@@ -303,370 +303,20 @@ public class PocetnaStranicaPXD extends PageBase {
 		return new PocetnaStranica(driver);
 	}
 	
-	public KoristenaBrojila navigirajNaKoristenaBrojila() throws Exception {
-		try {
-		WebDriverWait wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.elementToBeClickable(brojilaWE));
-		brojilaWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(koristenaBrojilaWE));
-		koristenaBrojilaWE.click();
-		}
-		catch (Exception e) {
-			driver.get(platformx_distribution_properties.getValue("URL.DIST.LOGIN") + platformx_distribution_properties.getValue("KORISTENA.BROJILA"));
-		}
-		return new KoristenaBrojila(driver);
-	}
-	
-	public TipoviBrojila navigirajNaTipoviBrojila() throws Exception {
-		try {
-		WebDriverWait wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.elementToBeClickable(brojilaWE));
-		brojilaWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(tipoviBrojilaWE));
-		tipoviBrojilaWE.click();
-		}
-		catch (Exception e) {
-			driver.get(platformx_distribution_properties.getValue("URL.DIST.LOGIN") + platformx_distribution_properties.getValue("TIPOVI.BROJILA"));
-		}
-		return new TipoviBrojila(driver);
-	}
-	
-	public RegistarBrojila navigirajNaRegistarBrojila() throws Exception {
-		try {
-		WebDriverWait wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.elementToBeClickable(brojilaWE));
-		brojilaWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(registarBrojilaWE));
-		registarBrojilaWE.click();
-		}
-		catch (Exception e) {
-			driver.get(platformx_distribution_properties.getValue("URL.DIST.LOGIN") + platformx_distribution_properties.getValue("REGISTAR.BROJILA"));
-		}
-		return new RegistarBrojila(driver);
-	}
-	
-	public IzvorNapajanjaBrojila navigirajNaIzvoriNapajanjaBrojila() throws Exception {
-		try {
-		WebDriverWait wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.elementToBeClickable(brojilaWE));
-		brojilaWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(izvoriNapajanjaBrojilaWE));
-		izvoriNapajanjaBrojilaWE.click();
-		}
-		catch (Exception e) {
-			driver.get(platformx_distribution_properties.getValue("URL.DIST.LOGIN") + platformx_distribution_properties.getValue("IZVOR.NAPAJANJA.BROJILA"));
-		}
-		return new IzvorNapajanjaBrojila(driver);
-	}
-	
-	public ProizvodjaciBrojila navigirajNaProizvodjaciBrojila() throws Exception {
-		try {
-		WebDriverWait wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.elementToBeClickable(brojilaWE));
-		brojilaWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(proizvodjaciBrojilaWE));
-		proizvodjaciBrojilaWE.click();
-		}
-		catch (Exception e) {
-			driver.get(platformx_distribution_properties.getValue("URL.DIST.LOGIN") + platformx_distribution_properties.getValue("PROIZVODJACI.BROJILA"));
-		}
-		return new ProizvodjaciBrojila(driver);
-	}
-	
-	public SposobnostPrikljucenjaBrojila navigirajNaSposobnostiPrikljucenaBrojila() throws Exception {
-		try {
-		WebDriverWait wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.elementToBeClickable(brojilaWE));
-		brojilaWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(sposobnostiPrikljucenjaBrojilaWE));
-		sposobnostiPrikljucenjaBrojilaWE.click();
-		}
-		catch (Exception e) {
-			driver.get(platformx_distribution_properties.getValue("URL.DIST.LOGIN") + platformx_distribution_properties.getValue("SPOSOBNOST.PRIKLJUCENJA.BROJILA"));
-		}
-		return new SposobnostPrikljucenjaBrojila(driver);
-	}
-	
-	public MogucnostDaljinskogPristupa navigirajNaMogucnostDaljinskogPristupa() throws Exception {
-		try {
-		WebDriverWait wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.elementToBeClickable(brojilaWE));
-		brojilaWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(mogucnostDaljinskogPristupaWE));
-		mogucnostDaljinskogPristupaWE.click();
-		}
-		catch (Exception e) {
-			driver.get(platformx_distribution_properties.getValue("URL.DIST.LOGIN") + platformx_distribution_properties.getValue("MOGUCNOST.DALJINSKOG.PRISTUPA"));
-		}
-		return new MogucnostDaljinskogPristupa(driver);
-	}
-	
-	public LokacijaBrojila navigirajNaLokacijeBrojila() throws Exception {
-		try {
-		WebDriverWait wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.elementToBeClickable(brojilaWE));
-		brojilaWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(lokacijeBrojilaWE));
-		lokacijeBrojilaWE.click();
-		}
-		catch (Exception e) {
-			driver.get(platformx_distribution_properties.getValue("URL.DIST.LOGIN") + platformx_distribution_properties.getValue("LOKACIJA.BROJILA"));
-		}
-		return new LokacijaBrojila(driver);
-	}
-	
-	public RelokacijeBrojila navigirajNaRelokacijeBrojila() throws Exception {
-		try {
-		WebDriverWait wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.elementToBeClickable(brojilaWE));
-		brojilaWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(relokacijeBrojilaWE));
-		relokacijeBrojilaWE.click();
-		}
-		catch (Exception e) {
-			driver.get(platformx_distribution_properties.getValue("URL.DIST.LOGIN") + platformx_distribution_properties.getValue("RELOKACIJE.BROJILA"));
-		}
-		return new RelokacijeBrojila(driver);
-	}
-	
-	public RazlogPromjeneLokacije navigirajNaRazloziPromjeneLokacije() throws Exception {
-		try {
-		WebDriverWait wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.elementToBeClickable(brojilaWE));
-		brojilaWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(razloziPromjeneLokacijeWE));
-		razloziPromjeneLokacijeWE.click();
-		}
-		catch (Exception e) {
-			driver.get(platformx_distribution_properties.getValue("URL.DIST.LOGIN") + platformx_distribution_properties.getValue("RAZLOG.PROMJENE.LOKACIJE"));
-		}
-		return new RazlogPromjeneLokacije(driver);
-	}
-	
-	public NaponskiNivoi navigirajNaNaponskiNivoi() throws Exception {
-		try {
-		WebDriverWait wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.elementToBeClickable(brojilaWE));
-		brojilaWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(naponskiNivoiWE));
-		naponskiNivoiWE.click();
-		}
-		catch (Exception e) {
-			driver.get(platformx_distribution_properties.getValue("URL.DIST.LOGIN") + platformx_distribution_properties.getValue("NAPONSKI.NIVOI"));
-		}
-		return new NaponskiNivoi(driver);
-	}
-	
-	public StrujniNivoi navigirajNaStrujniNivoi() throws Exception {
-		try {
-		WebDriverWait wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.elementToBeClickable(brojilaWE));
-		brojilaWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(strujniNivoiWE));
-		strujniNivoiWE.click();
-		}
-		catch (Exception e) {
-			driver.get(platformx_distribution_properties.getValue("URL.DIST.LOGIN") + platformx_distribution_properties.getValue("STRUJNI.NIVOI"));
-		}
-		return new StrujniNivoi(driver);
-	}
-	
-	public ObracunskiUgovori navigirajNaObracunskiUgovori() throws Exception {
-		try {
-		WebDriverWait wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.elementToBeClickable(obracunskiUgovoriWE));
-		obracunskiUgovoriWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(obracunskiUgovoriStrWE));
-		obracunskiUgovoriStrWE.click();
-		}
-		catch (Exception e) {
-			driver.get(platformx_distribution_properties.getValue("URL.DIST.LOGIN") + platformx_distribution_properties.getValue("OBRACUNSKI.UGOVORI"));
-		}
-		return new ObracunskiUgovori(driver);
-	}
-	
-	public ZahtjeviZaObracunskeUgovore navigirajNaZahtjeviZaObracunskeUgovore() throws Exception {
-		try {
-		WebDriverWait wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.elementToBeClickable(obracunskiUgovoriWE));
-		obracunskiUgovoriWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(zahtjeviZaObracunskeUgovoreWE));
-		zahtjeviZaObracunskeUgovoreWE.click();
-		}
-		catch (Exception e) {
-			driver.get(platformx_distribution_properties.getValue("URL.DIST.LOGIN") + platformx_distribution_properties.getValue("ZAHTJEVI.ZA.OBRACUNSKE.UGOVORE"));
-		}
-		return new ZahtjeviZaObracunskeUgovore(driver);
-	}
-	
-	public ZahtjeviZaRaskidUgovora navigirajNaZahtjeviZaRaskidUgovora() throws Exception {
-		try {
-		WebDriverWait wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.elementToBeClickable(obracunskiUgovoriWE));
-		obracunskiUgovoriWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(zahtjeviZaRaskidUgovoraWE));
-		zahtjeviZaRaskidUgovoraWE.click();
-		}
-		catch (Exception e) {
-			driver.get(platformx_distribution_properties.getValue("URL.DIST.LOGIN") + platformx_distribution_properties.getValue("ZAHTJEVI.ZA.RASKID.UGOVORA"));
-		}
-		return new ZahtjeviZaRaskidUgovora(driver);
-	}
-	
-    public OcitanjaBrojila navigirajNaOcitanjaBrojila() throws Exception {
-    	try {
-    	WebDriverWait wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.elementToBeClickable(ocitanjaWE));
-		ocitanjaWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(ocitanjaBrojilaWE));
-		ocitanjaBrojilaWE.click();
-    	}
-    	catch (Exception e) {
-			driver.get(platformx_distribution_properties.getValue("URL.DIST.LOGIN") + platformx_distribution_properties.getValue("OCITANJA.BROJILA"));
-		}
-		return new OcitanjaBrojila(driver);
-    }
-	
-    public KorekcijeOcitanja navigirajNaKorekcijeOcitanja() throws Exception {
-    	try {
-    	WebDriverWait wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.elementToBeClickable(ocitanjaWE));
-		ocitanjaWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(korekcijeOcitanjaWE));
-		korekcijeOcitanjaWE.click();
-    	}
-    	catch (Exception e) {
-			driver.get(platformx_distribution_properties.getValue("URL.DIST.LOGIN") + platformx_distribution_properties.getValue("KOREKCIJE.OCITANJA"));
-		}
-		return new KorekcijeOcitanja(driver);
-    }
-    
-    public ImportiOcitanja navigirajNaImportiOcitanja() throws Exception {
-    	try {
-    	WebDriverWait wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.elementToBeClickable(ocitanjaWE));
-		ocitanjaWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(importiOcitanjaWE));
-	    importiOcitanjaWE.click();
-    	}
-    	catch (Exception e) {
-			driver.get(platformx_distribution_properties.getValue("URL.DIST.LOGIN") + platformx_distribution_properties.getValue("IMPORTI.OCITANJA"));
-		}
-		return new ImportiOcitanja(driver);
-    }
-    
-    public IzmijenjenaOcitanja navigirajNaIzmijenjenaOcitanja() throws Exception {
-    	try {
-    	WebDriverWait wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.elementToBeClickable(ocitanjaWE));
-		ocitanjaWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(izmijenjenaOcitanjaWE));
-		izmijenjenaOcitanjaWE.click();
-    	}
-    	catch (Exception e) {
-			driver.get(platformx_distribution_properties.getValue("URL.DIST.LOGIN") + platformx_distribution_properties.getValue("IZMIJENJENA.OCITANJA"));
-		}
-		return new IzmijenjenaOcitanja(driver);
-    }
-    
-    public NevalidnaOcitanja navigirajNaNevalidnaOcitanja() throws Exception {
-    	try {
-    	WebDriverWait wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.elementToBeClickable(ocitanjaWE));
-		ocitanjaWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(nevalidnaOcitanjaWE));
-		nevalidnaOcitanjaWE.click();
-    	}
-    	catch (Exception e) {
-			driver.get(platformx_distribution_properties.getValue("URL.DIST.LOGIN") + platformx_distribution_properties.getValue("NEVALIDNA.OCITANJA"));
-		}
-		return new NevalidnaOcitanja(driver);
-    }
-    
-    public CitackiHodovi navigirajNaCitackiHodovi() throws Exception {
-    	try {
-    	WebDriverWait wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.elementToBeClickable(ocitanjaWE));
-		ocitanjaWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(citackiHodoviWE));
-		citackiHodoviWE.click();
-    	}
-    	catch (Exception e) {
-			driver.get(platformx_distribution_properties.getValue("URL.DIST.LOGIN") + platformx_distribution_properties.getValue("CITACKI.HODOVI"));
-		}
-		return new CitackiHodovi(driver);
-    }
-    
-    public CitackeListe navigirajNaCitackeListe() throws Exception {
-    	try {
-    	WebDriverWait wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.elementToBeClickable(ocitanjaWE));
-		ocitanjaWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(citackeListeWE));
-		citackeListeWE.click();
-    	}
-    	catch (Exception e) {
-			driver.get(platformx_distribution_properties.getValue("URL.DIST.LOGIN") + platformx_distribution_properties.getValue("CITACKE.LISTE"));
-		}
-		return new CitackeListe(driver);
-    }
-    
-    public CitaciPoCitackimHodovima navigirajNaCitaciPoCitackimHodovima() throws Exception {
-    	try {
-    	WebDriverWait wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.elementToBeClickable(ocitanjaWE));
-		ocitanjaWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(citaciPoCitackimHodovimaWE));
-	    citaciPoCitackimHodovimaWE.click();
-    	}
-    	catch (Exception e) {
-			driver.get(platformx_distribution_properties.getValue("URL.DIST.LOGIN") + platformx_distribution_properties.getValue("CITACI.PO.CITACKIM.HODOVIMA"));
-		}
-		return new CitaciPoCitackimHodovima(driver);
-    }
-    
-    public ZbirnaKontrolnaOcitanja navigirajNaZbirnaKontrolnaOcitanja() throws Exception {
-    	try {
-    	WebDriverWait wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.elementToBeClickable(ocitanjaWE));
-		ocitanjaWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(zbirnaKontrolnaOcitanjaWE));
-	    zbirnaKontrolnaOcitanjaWE.click();
-    	}
-    	catch (Exception e) {
-			driver.get(platformx_distribution_properties.getValue("URL.DIST.LOGIN") + platformx_distribution_properties.getValue("ZBIRNA.KONTROLNA.OCITANJA"));
-		}
-		return new ZbirnaKontrolnaOcitanja(driver);
-    }
-    
-    public ZbirnaKontrolnaPotrosnja navigirajNaZbirnaKontrolnaPotrosnja() throws Exception {
-    	try {
-    	WebDriverWait wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.elementToBeClickable(ocitanjaWE));
-		ocitanjaWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(zbirnaKontrolnaPotrosnjaWE));
-	    zbirnaKontrolnaPotrosnjaWE.click();
-    	}
-    	catch (Exception e) {
-			driver.get(platformx_distribution_properties.getValue("URL.DIST.LOGIN") + platformx_distribution_properties.getValue("ZBIRNA.KONTROLNA.POTROSNJA"));
-		}
-		return new ZbirnaKontrolnaPotrosnja(driver);
-    }
-    
-    public MonitoringOcitanja navigirajNaMonitoringOcitanja() throws Exception {
-    	try {
-    	WebDriverWait wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.elementToBeClickable(ocitanjaWE));
-		ocitanjaWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(monitoringOcitanjaWE));
-	    monitoringOcitanjaWE.click();
-    	}
-    	catch (Exception e) {
-			driver.get(platformx_distribution_properties.getValue("URL.DIST.LOGIN") + platformx_distribution_properties.getValue("MONITORING.OCITANJA"));
-		}
-		return new MonitoringOcitanja(driver);
-    }
-    
+//	public ObracunskiUgovori navigirajNaObracunskiUgovori() throws Exception {
+//		try {
+//		WebDriverWait wait = new WebDriverWait(driver, 10);
+//		wait.until(ExpectedConditions.elementToBeClickable(obracunskiUgovoriWE));
+//		obracunskiUgovoriWE.click();
+//		wait.until(ExpectedConditions.elementToBeClickable(obracunskiUgovoriStrWE));
+//		obracunskiUgovoriStrWE.click();
+//		}
+//		catch (Exception e) {
+//			driver.get(platformx_distribution_properties.getValue("URL.DIST.LOGIN") + platformx_distribution_properties.getValue("OBRACUNSKI.UGOVORI"));
+//		}
+//		return new ObracunskiUgovori(driver);
+//	}
+   
     public NeovlastenaPotrosnja navigirajNaNeovlastenaPotrosnja() throws Exception {
     	try {
     	WebDriverWait wait = new WebDriverWait(driver, 10);
@@ -679,78 +329,6 @@ public class PocetnaStranicaPXD extends PageBase {
 			driver.get(platformx_distribution_properties.getValue("URL.DIST.LOGIN") + platformx_distribution_properties.getValue("NEOVLASTENA.POTROSNJA"));
 		}
     	return new NeovlastenaPotrosnja(driver);
-    }
-    
-    public NaloziZaObracun navigirajNaNaloziZaObracun () throws Exception {
-    	try {
-    	WebDriverWait wait = new WebDriverWait(driver, 10);
-    	wait.until(ExpectedConditions.elementToBeClickable(obracunWE));
-		obracunWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(naloziZaObracunWE));
-	    naloziZaObracunWE.click();
-    	}
-		catch (Exception e) {
-			driver.get(platformx_distribution_properties.getValue("URL.DIST.LOGIN") + platformx_distribution_properties.getValue("NALOZI.ZA.OBRACUN"));
-		}
-		return new NaloziZaObracun(driver);
-    }
-    
-    public KorekcijeEnergetskihObracuna navigirajNaKorekcijeEnergetskihObracuna () throws Exception {
-    	try {
-    	WebDriverWait wait = new WebDriverWait(driver, 10);
-    	wait.until(ExpectedConditions.elementToBeClickable(obracunWE));
-		obracunWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(korekcijeEnergetskihObracunaWE));
-	    korekcijeEnergetskihObracunaWE.click();
-    	}
-		catch (Exception e) {
-			driver.get(platformx_distribution_properties.getValue("URL.DIST.LOGIN") + platformx_distribution_properties.getValue("KOREKCIJE.ENERGETSKIH.OBRACUNA"));
-		}
-		return new KorekcijeEnergetskihObracuna(driver);
-    }
-    
-    public MjesecnaOdobrenjaZaduzenja navigirajNaMjesecnaOdobrenjaZaduzenja () throws Exception {
-    	try {
-    	WebDriverWait wait = new WebDriverWait(driver, 10);
-    	wait.until(ExpectedConditions.elementToBeClickable(obracunWE));
-		obracunWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(mjesecnaOdobrenjaZaduzenjaWE));
-	    mjesecnaOdobrenjaZaduzenjaWE.click();
-    	}
-		catch (Exception e) {
-			driver.get(platformx_distribution_properties.getValue("URL.DIST.LOGIN") + platformx_distribution_properties.getValue("MJESECNA.ODOBRENJA.ZADUZENJA"));
-		}
-		return new MjesecnaOdobrenjaZaduzenja(driver);
-    }
-    
-    public KorekcionaOdobrenjaZaduzenja navigirajNaKorekcionaOdobrenjaZaduzenja () throws Exception {
-    	try {
-    	WebDriverWait wait = new WebDriverWait(driver, 10);
-    	wait.until(ExpectedConditions.elementToBeClickable(obracunWE));
-		obracunWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(korekcionaOdobrenjaZaduzenjaWE));
-	    korekcionaOdobrenjaZaduzenjaWE.click();
-    	}
-		catch (Exception e) {
-			driver.get(platformx_distribution_properties.getValue("URL.DIST.LOGIN") + platformx_distribution_properties.getValue("KOREKCIONA.ODOBRENJA.ZADUZENJA"));
-		}
-		return new KorekcionaOdobrenjaZaduzenja(driver);
-    }
-    
-    public Korisnici navigirajNaKorisnici () throws Exception {
-    	try {
-    	WebDriverWait wait = new WebDriverWait(driver, 10);
-    	wait.until(ExpectedConditions.elementToBeClickable(strelicaDesnoWE));
-    	strelicaDesnoWE.click();
-    	wait.until(ExpectedConditions.elementToBeClickable(administracijaWE));
-		administracijaWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(korisniciWE));
-	    korisniciWE.click();
-    	}
-    	catch (Exception e) {
-			driver.get(platformx_distribution_properties.getValue("URL.DIST.LOGIN") + platformx_distribution_properties.getValue("KORISNICI"));
-		}
-		return new Korisnici(driver);
     }
     
     public Poruke navigirajNaPoruke () throws Exception {
@@ -769,36 +347,36 @@ public class PocetnaStranicaPXD extends PageBase {
 		return new Poruke(driver);
     }
     
-    public DnevnikIzmjena navigirajNaDnevnikIzmjena () throws Exception {
-    	try {
-    	WebDriverWait wait = new WebDriverWait(driver, 10);
-    	wait.until(ExpectedConditions.elementToBeClickable(strelicaDesnoWE));
-    	strelicaDesnoWE.click();
-    	wait.until(ExpectedConditions.elementToBeClickable(administracijaWE));
-		administracijaWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(dnevnikIzmjenaWE));
-	    dnevnikIzmjenaWE.click();
-    	}
-    	catch (Exception e) {
-			driver.get(platformx_distribution_properties.getValue("URL.DIST.LOGIN") + platformx_distribution_properties.getValue("DNEVNIK.IZMJENA"));
-		}
-		return new DnevnikIzmjena(driver);
-    }
+//    public DnevnikIzmjena navigirajNaDnevnikIzmjena () throws Exception {
+//    	try {
+//    	WebDriverWait wait = new WebDriverWait(driver, 10);
+//    	wait.until(ExpectedConditions.elementToBeClickable(strelicaDesnoWE));
+//    	strelicaDesnoWE.click();
+//    	wait.until(ExpectedConditions.elementToBeClickable(administracijaWE));
+//		administracijaWE.click();
+//		wait.until(ExpectedConditions.elementToBeClickable(dnevnikIzmjenaWE));
+//	    dnevnikIzmjenaWE.click();
+//    	}
+//    	catch (Exception e) {
+//			driver.get(platformx_distribution_properties.getValue("URL.DIST.LOGIN") + platformx_distribution_properties.getValue("DNEVNIK.IZMJENA"));
+//		}
+//		return new DnevnikIzmjena(driver);
+//    }
     
-    public PozadinskiProcesi navigirajNaPozadinskiProcesi() throws FileNotFoundException, IOException {
-    	try {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-    	wait.until(ExpectedConditions.elementToBeClickable(strelicaDesnoWE));
-    	strelicaDesnoWE.click();
-        wait.until(ExpectedConditions.elementToBeClickable(administracijaWE));
-    	administracijaWE.click();
-    	wait.until(ExpectedConditions.elementToBeClickable(pozadinskiProcesiWE));
-    	pozadinskiProcesiWE.click();
-        }
-        catch (Exception e) {
-    		driver.get(platformx_distribution_properties.getValue("URL.DIST.LOGIN") + platformx_distribution_properties.getValue("POZADINSKI.PROCESI"));
-    	}
-    	return new PozadinskiProcesi(driver);
-    }
+//    public PozadinskiProcesi navigirajNaPozadinskiProcesi() throws FileNotFoundException, IOException {
+//    	try {
+//        WebDriverWait wait = new WebDriverWait(driver, 10);
+//    	wait.until(ExpectedConditions.elementToBeClickable(strelicaDesnoWE));
+//    	strelicaDesnoWE.click();
+//        wait.until(ExpectedConditions.elementToBeClickable(administracijaWE));
+//    	administracijaWE.click();
+//    	wait.until(ExpectedConditions.elementToBeClickable(pozadinskiProcesiWE));
+//    	pozadinskiProcesiWE.click();
+//        }
+//        catch (Exception e) {
+//    		driver.get(platformx_distribution_properties.getValue("URL.DIST.LOGIN") + platformx_distribution_properties.getValue("POZADINSKI.PROCESI"));
+//    	}
+//    	return new PozadinskiProcesi(driver);
+//    }
         
 }

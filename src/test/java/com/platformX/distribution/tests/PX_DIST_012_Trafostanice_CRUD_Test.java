@@ -68,7 +68,7 @@ public class PX_DIST_012_Trafostanice_CRUD_Test extends BaseTest {
 		trafostanice.verifikujTrafostanice();
 		trafostanice.verifikujStavku(novaTrafostanica, homePage.podatak2Tabela3WE);
 		String trafostanicaId = trafostanice.kreirajTrafostanicu();
-		CitackiHodovi citackiHodovi = homePage.navigirajNaCitackiHodovi();
+		CitackiHodovi citackiHodovi = homePage.navigateOnPage(CitackiHodovi.class, "Očitanja", "Čitački hodovi");
 		citackiHodovi.verifikujCitackiHodovi();
 		citackiHodovi.pretraziStavku(homePage.filterKolona4WE, trafostanicaId);
 		citackiHodovi.verifikujCitackiHodovi();

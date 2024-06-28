@@ -17,7 +17,7 @@ public class ZahtjeviZaIskljucenja extends PocetnaStranicaPXD {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Zahtjevi za isključenja')]")));
-		verifikacijaZajednickihElemenata("Mjerna Mjesta", "Zahtjevi Za Isključenja", "Zahtjevi za isključenja (proces 16)", 17, false, false, true, true, true, true, true);
+		verifikacijaZajednickihElemenata("Mjerna Mjesta", "Zahtjevi Za Isključenja", "Zahtjevi za isključenja (proces 16)", 18, false, false, true, true, true, true, true);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojProtokolaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKupacWE));
@@ -32,6 +32,7 @@ public class ZahtjeviZaIskljucenja extends PocetnaStranicaPXD {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaOdbWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPotvrWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaObavjKupacWE));
+//		TODO kolonaNezavrsenNalogZaZamjenuBrojila
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaZavrWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIskljRealizWE));
 	}

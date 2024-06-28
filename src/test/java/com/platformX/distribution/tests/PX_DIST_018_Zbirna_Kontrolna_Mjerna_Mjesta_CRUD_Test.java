@@ -27,11 +27,11 @@ public class PX_DIST_018_Zbirna_Kontrolna_Mjerna_Mjesta_CRUD_Test extends BaseTe
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		RegistarBrojila registarBrojilaPage = homePage.navigirajNaRegistarBrojila();
-		registarBrojilaPage.verifikujRegistarBrojila();
-		String registarBrojila = registarBrojilaPage.dodajBrojilo();
-		registarBrojilaPage.verifikujBrojilo(registarBrojila);
-		String brBrojila = registarBrojilaPage.kreirajBrojilo();
+		RegistarBrojila registarBrojila = homePage.navigateOnPage(RegistarBrojila.class, "Brojila", "Registar brojila");
+		registarBrojila.verifikujRegistarBrojila();
+		String brojilo = registarBrojila.dodajBrojilo();
+		registarBrojila.verifikujBrojilo(brojilo);
+		String brBrojila = registarBrojila.kreirajBrojilo();
 		ZbirnaKontrolnaMjernaMjesta zbirnaKontrolnaMjernaMjesta = homePage.navigateOnPage(ZbirnaKontrolnaMjernaMjesta.class, "Mjerna mjesta", "Zbirna/kontrolna mjerna mjesta");
 		zbirnaKontrolnaMjernaMjesta.verifikujZbirnaKontrolnaMjernaMjesta();
 		zbirnaKontrolnaMjernaMjesta.dodajZbirnoKontrolnoMjernoMjesto(brBrojila, zbirnoKontrolnoMjernoMjesto);

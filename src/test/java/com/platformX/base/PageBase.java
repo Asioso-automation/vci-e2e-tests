@@ -321,7 +321,7 @@ public abstract class PageBase {
 	        	wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 	        	try {
 	    		wait.until(ExpectedConditions.elementToBeClickable
-	    				(By.xpath("//*[contains(text(),'" + sekcija + "') and @class='v-btn__content']"))).click();
+	    				(By.xpath("//*[text()='" + sekcija + "' and @class='v-btn__content']"))).click();
 	    		wait.until(ExpectedConditions.elementToBeClickable
 	    				(By.xpath("//div[contains(text(),'" + stranica + "') and @class='v-list-item__title']"))).click();
 	        	} catch (Exception e) {
@@ -329,7 +329,7 @@ public abstract class PageBase {
 	        		wait.until(ExpectedConditions.elementToBeClickable(PocetnaStranicaPXD.strelicaDesnoWE));
 	        		PocetnaStranicaPXD.strelicaDesnoWE.click();
 		    		wait.until(ExpectedConditions.elementToBeClickable
-		    				(By.xpath("//*[contains(text(),'" + sekcija + "') and @class='v-btn__content']"))).click();
+		    				(By.xpath("//*[text()='" + sekcija + "' and @class='v-btn__content']"))).click();
 		    		wait.until(ExpectedConditions.elementToBeClickable
 		    				(By.xpath("//div[contains(text(),'" + stranica + "') and @class='v-list-item__title']"))).click();
 	        		} catch (Exception a) {
