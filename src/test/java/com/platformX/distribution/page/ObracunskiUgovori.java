@@ -32,10 +32,13 @@ public class ObracunskiUgovori extends PocetnaStranicaPXD {
 	@FindBy(xpath = "//div[2]/div[3]/div/div/div[1]/div/input")
 	private WebElement poljeNazivMjMjestaNaStampanimDokumentimaWE;
 	
-	@FindBy(xpath = "//div[3]/div[1]/div/div/div[1]/div[1]/input[1]")
+	@FindBy(xpath = "//div[3]/div/div/div/div[1]/div/input")
+	private WebElement poljeOdobrenaPrikljucnaSnagaWE;
+	
+	@FindBy(xpath = "//div[4]/div[1]/div/div/div[1]/div[1]/input[1]")
 	private WebElement poljeAktivnoBrojiloWE;
 	
-	@FindBy(xpath = "//div[4]/div[1]/div/div/div[1]/div/input")
+	@FindBy(xpath = "//div[5]/div[1]/div/div/div[1]/div/input")
 	private WebElement poljeAktivnaKonstantaWE;
 	
 	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '4 - TG')]")
@@ -105,6 +108,8 @@ public class ObracunskiUgovori extends PocetnaStranicaPXD {
 		poljeNazivMjernogMjestaWE.sendKeys(nazivMjernogMjesta);
 		wait.until(ExpectedConditions.elementToBeClickable(poljeNazivMjMjestaNaStampanimDokumentimaWE));
 		poljeNazivMjMjestaNaStampanimDokumentimaWE.sendKeys(nazivMjernogMjesta);
+		wait.until(ExpectedConditions.elementToBeClickable(poljeOdobrenaPrikljucnaSnagaWE));
+		poljeOdobrenaPrikljucnaSnagaWE.sendKeys(Helper.getRandomNumber(2));
 		wait.until(ExpectedConditions.elementToBeClickable(poljeAktivnoBrojiloWE));
 		poljeAktivnoBrojiloWE.sendKeys(brBrojila);
 		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));

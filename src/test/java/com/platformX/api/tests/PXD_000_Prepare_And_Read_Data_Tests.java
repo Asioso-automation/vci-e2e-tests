@@ -29,7 +29,7 @@ public class PXD_000_Prepare_And_Read_Data_Tests extends BaseTest {
 		logIn.logIn();
 		PocetnaStranicaPXD pocetna = new PocetnaStranicaPXD(driver);
 		pocetna.verifikujPocetnuStranicu();
-		Poruke poruke = pocetna.navigirajNaPoruke();
+		Poruke poruke = pocetna.navigateOnPage(Poruke.class, "Administracija", "Poruke");
 		poruke.verifikujPoruke();
 		GlobalVariables.id = poruke.pokupiIdStavkeString();
 	}

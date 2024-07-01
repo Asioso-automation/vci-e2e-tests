@@ -46,7 +46,7 @@ public class PX_DIST_026_Neovlastena_Potrosnja_CRUD_Test extends BaseTest{
 		trafostanice.pretraziStavku(homePage.filterKolona3WE, trafostanica);
 		trafostanice.verifikujTrafostanice();
 		trafostanice.verifikujStavku(trafostanica, homePage.podatak2Tabela3WE);
-		NeovlastenaPotrosnja neovlastenaPotrosnja = homePage.navigirajNaNeovlastenaPotrosnja();
+		NeovlastenaPotrosnja neovlastenaPotrosnja = homePage.navigateOnPage(NeovlastenaPotrosnja.class, "Neovlaštena potrošnja", "Neovlaštena potrošnja");
 		neovlastenaPotrosnja.verifikujNeovlastenaPotrosnja();
 		neovlastenaPotrosnja.dodajNeovlastenuPotrosnju(fizickoLice, trafostanica);
 		neovlastenaPotrosnja.verifikujPoruku("Uspješno završeno.");
@@ -70,8 +70,7 @@ public class PX_DIST_026_Neovlastena_Potrosnja_CRUD_Test extends BaseTest{
 		fizickaLica.verifikujFizickaLica();
 		fizickaLica.verifikujStavku(novoFizickoLice, homePage.podatak2Tabela2WE);
 		noviKupac = fizickaLica.kreirajFizickoLice();
-		NeovlastenaPotrosnja neovlastenaPotrosnja = homePage.navigirajNaNeovlastenaPotrosnja();
-		neovlastenaPotrosnja.verifikujNeovlastenaPotrosnja();
+		NeovlastenaPotrosnja neovlastenaPotrosnja = homePage.navigateOnPage(NeovlastenaPotrosnja.class, "Neovlaštena potrošnja", "Neovlaštena potrošnja");
 		neovlastenaPotrosnja.pretraziStavku(homePage.filterKolona2WE, fizickoLice);
 		neovlastenaPotrosnja.verifikujNeovlastenaPotrosnja();
 		neovlastenaPotrosnja.verifikujStavku(kupac, homePage.podatak2Tabela2WE);
@@ -89,7 +88,7 @@ public class PX_DIST_026_Neovlastena_Potrosnja_CRUD_Test extends BaseTest{
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		NeovlastenaPotrosnja neovlastenaPotrosnja = homePage.navigirajNaNeovlastenaPotrosnja();
+		NeovlastenaPotrosnja neovlastenaPotrosnja = homePage.navigateOnPage(NeovlastenaPotrosnja.class, "Neovlaštena potrošnja", "Neovlaštena potrošnja");
 		neovlastenaPotrosnja.verifikujNeovlastenaPotrosnja();
 		neovlastenaPotrosnja.pretraziStavku(homePage.filterKolona2WE, novoFizickoLice);
 		neovlastenaPotrosnja.verifikujNeovlastenaPotrosnja();

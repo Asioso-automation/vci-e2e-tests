@@ -1511,6 +1511,76 @@ public class Kolone extends PageBase {
 	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Prikaži prethodno očitanje']")
 	public WebElement kolonaPrikaziPrethodnoOcitanjeWE;
 	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Vrsta']")
+	public WebElement kolonaVrsta1WE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Proizvođač']")
+	public WebElement kolonaProizvodjac1WE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Namjena objekta']")
+	public WebElement kolonaNamjenaObjektaWE;
+
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Oznaka']")
+	public WebElement kolonaOznaka1WE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Broj plombe']")
+	public WebElement kolonaBrojPlombeWE;
+
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Zaduženje napravio']")
+	public WebElement kolonaZaduzenjeNapravioWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Datum zaduženja']")
+	public WebElement kolonaDatumZaduzenjaWE;
+
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Datum razduženja']")
+	public WebElement kolonaDatumRazduzenjaWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Broj radnog naloga']")
+	public WebElement kolonaBrojRadnogNalogaWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Broj i tip skinutog brojila']")
+	public WebElement kolonaBrojTipSkinutogBrojilaWE;
+
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Broj i tip postavljenog brojila']")
+	public WebElement kolonaBrojTipPostavljenogBrojilaWE;
+
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Tip konekcije postavljenog brojila']")
+	public WebElement kolonaTipKonekcijePostavljenogBrojilaWE;
+
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Razlog zamjene brojila']")
+	public WebElement kolonaRazlogZamjeneBrojilaWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Kreirao korisnik']")
+	public WebElement kolonaKreiraoKorisnikWE;
+
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Završio korisnik']")
+	public WebElement kolonaZavrsioKorisnikWE;
+
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Zbirno mjerno mjesto']")
+	public WebElement kolonaZbirnoMjernoMjestoWE;
+
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Neovlaštena potrošnja']")
+	public WebElement kolonaNeovlastenaPotrosnjaWE;
+
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Iznos energije bez PDV-a']")
+	public WebElement kolonaIznosEnergijeBezPdvWE;
+
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Iznos snage bez PDV-a']")
+	public WebElement kolonaIznosSnageBezPdvWE;
+
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Datum računa']")
+	public WebElement kolonaDatumRacunaWE;
+
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Storniran']")
+	public WebElement kolonaStorniranWE;
+
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Iznos PDV-a']")
+	public WebElement kolonaIznosPdvaWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Iznos sa PDV-om']")
+	public WebElement kolonaIznosSaPdvomWE;
+
+	
 	// Kolone MONITORING
 	
 	@FindBy(xpath = "//*[contains(@class,'v-window-item--active')]//*[contains(@class, 'v-data-table-header')]//*[text() = 'Mjerno mjesto (EIC)']")
