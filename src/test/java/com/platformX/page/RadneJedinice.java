@@ -1,10 +1,8 @@
 package com.platformX.page;
 
-import static org.testng.Assert.assertTrue;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -64,17 +62,6 @@ public class RadneJedinice extends PocetnaStranica {
 		Thread.sleep(500);
 	}
 	
-	public void verifikujRadnuJedinicu(String radnaJedinica) throws Exception {
-		wait.until(ExpectedConditions.elementToBeClickable(filterKolona2WE));
-		filterKolona2WE.click();
-		filterKolona2WE.clear();
-		filterKolona2WE.sendKeys(radnaJedinica);
-		filterKolona2WE.sendKeys(Keys.ENTER);
-		Thread.sleep(1000);
-		wait.until(ExpectedConditions.visibilityOf(podatak2Tabela2WE));
-		assertTrue(podatak2Tabela2WE.getText().equals(radnaJedinica), "Radne jedinice: Ime radne jedinice nije dobro!");
-	}
-	
 	public void urediRadnuJedinicu(String radnaJedinica) throws InterruptedException {
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		burgerBarWE.click();
@@ -87,20 +74,6 @@ public class RadneJedinice extends PocetnaStranica {
 		nazivRadneJediniceWE.sendKeys(radnaJedinica);
 		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
 		submitBtnWE.click();
-	}
-	
-	public void verifikujBrisanjeRadneJedinice(String jedinica) throws InterruptedException {
-		wait.until(ExpectedConditions.visibilityOf(filterKolona2WE));
-		Thread.sleep(1000);
-		wait.until(ExpectedConditions.elementToBeClickable(filterKolona2WE));
-		filterKolona2WE.click();
-		filterKolona2WE.clear();
-		filterKolona2WE.sendKeys(jedinica);
-		filterKolona2WE.sendKeys(Keys.ENTER);
-		Thread.sleep(1000);
-		wait.until(ExpectedConditions.visibilityOf(podatak2TabelaWE));
-		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
-		assertTrue(podatak2TabelaWE.getText().equals("Nema podataka"), "Radne jedinice: Poruka prazne tabele nije dobra!");
 	}
 
 }

@@ -4,7 +4,9 @@ import org.testng.annotations.Test;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import com.platformX.base.BaseTest;
+import com.platformX.base.RetryAnalyzer;
 import com.platformX.page.PocetnaStranica;
+import com.platformX.util.Helper;
 import com.platformX.page.LogIn;
 import com.platformX.page.OperativnaPodrucja;
 
@@ -14,6 +16,9 @@ public class PX_006_Operativna_Podrucja_CRUD_Test extends BaseTest {
 		super();
 	}
 
+	String operativnoPodrucje = "OP " + Helper.getRandomString(5);
+	String novoOperativnoPodrucje = "NovoOP " + Helper.getRandomString(5);
+	
 	@Test
 	public void px_006_1_dodavanje_operativnog_podrucja_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
@@ -23,13 +28,14 @@ public class PX_006_Operativna_Podrucja_CRUD_Test extends BaseTest {
 		homePage.verifikujPocetnuStranicu();
 		OperativnaPodrucja operativnaPodrucja = homePage.navigirajNaOperativnaPodrucja();
 		operativnaPodrucja.verifikujOperativnaPodrucja();
-		String podrucje = operativnaPodrucja.dodajOperativnoPodrucje();
-		operativnaPodrucja.pretraziStavku(homePage.filterKolona2WE, podrucje);
+		operativnaPodrucja.dodajOperativnoPodrucje(operativnoPodrucje);
+		operativnaPodrucja.verifikujPoruku("Uspješno završeno.");
+		operativnaPodrucja.pretraziStavku(homePage.filterKolona2WE, operativnoPodrucje);
 		operativnaPodrucja.verifikujOperativnaPodrucja();
-		operativnaPodrucja.verifikujStavku(podrucje, homePage.podatak2Tabela2WE);
+		operativnaPodrucja.verifikujStavku(operativnoPodrucje, homePage.podatak2Tabela2WE);
 	}
 	
-	@Test
+	@Test(retryAnalyzer = RetryAnalyzer.class, dependsOnMethods = { "px_006_1_dodavanje_operativnog_podrucja_test" })
 	public void px_006_2_uredjivanje_operativnog_podrucja_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
@@ -38,17 +44,17 @@ public class PX_006_Operativna_Podrucja_CRUD_Test extends BaseTest {
 		homePage.verifikujPocetnuStranicu();
 		OperativnaPodrucja operativnaPodrucja = homePage.navigirajNaOperativnaPodrucja();
 		operativnaPodrucja.verifikujOperativnaPodrucja();
-		String podrucje = operativnaPodrucja.dodajOperativnoPodrucje();
-		operativnaPodrucja.pretraziStavku(homePage.filterKolona2WE, podrucje);
+		operativnaPodrucja.pretraziStavku(homePage.filterKolona2WE, operativnoPodrucje);
 		operativnaPodrucja.verifikujOperativnaPodrucja();
-		operativnaPodrucja.verifikujStavku(podrucje, homePage.podatak2Tabela2WE);
-		String novoPodrucje = operativnaPodrucja.urediOperativnoPodrucje();
-		operativnaPodrucja.pretraziStavku(homePage.filterKolona2WE, novoPodrucje);
+		operativnaPodrucja.verifikujStavku(operativnoPodrucje, homePage.podatak2Tabela2WE);
+		operativnaPodrucja.urediOperativnoPodrucje(novoOperativnoPodrucje);
+		operativnaPodrucja.verifikujPoruku("Uspješno završeno.");
+		operativnaPodrucja.pretraziStavku(homePage.filterKolona2WE, novoOperativnoPodrucje);
 		operativnaPodrucja.verifikujOperativnaPodrucja();
-		operativnaPodrucja.verifikujStavku(novoPodrucje, homePage.podatak2Tabela2WE);
+		operativnaPodrucja.verifikujStavku(novoOperativnoPodrucje, homePage.podatak2Tabela2WE);
 	}
 	
-	@Test
+	@Test(retryAnalyzer = RetryAnalyzer.class, dependsOnMethods = { "px_006_2_uredjivanje_operativnog_podrucja_test" })
 	public void px_006_3_brisanje_operativnog_podrucja_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
@@ -57,14 +63,12 @@ public class PX_006_Operativna_Podrucja_CRUD_Test extends BaseTest {
 		homePage.verifikujPocetnuStranicu();
 		OperativnaPodrucja operativnaPodrucja = homePage.navigirajNaOperativnaPodrucja();
 		operativnaPodrucja.verifikujOperativnaPodrucja();
-		String podrucje = operativnaPodrucja.dodajOperativnoPodrucje();
-		operativnaPodrucja.verifikujPoruku("Uspješno završeno.");
-		operativnaPodrucja.pretraziStavku(homePage.filterKolona2WE, podrucje);
+		operativnaPodrucja.pretraziStavku(homePage.filterKolona2WE, novoOperativnoPodrucje);
 		operativnaPodrucja.verifikujOperativnaPodrucja();
-		operativnaPodrucja.verifikujStavku(podrucje, homePage.podatak2Tabela2WE);
+		operativnaPodrucja.verifikujStavku(novoOperativnoPodrucje, homePage.podatak2Tabela2WE);
 		operativnaPodrucja.obrisiStavku();
 		operativnaPodrucja.verifikujPoruku("Brisanje je uspješno završeno.");
-		operativnaPodrucja.pretraziStavku(homePage.filterKolona2WE, podrucje);
+		operativnaPodrucja.pretraziStavku(homePage.filterKolona2WE, novoOperativnoPodrucje);
 		operativnaPodrucja.verifikujPraznuTabelu();
 	}
 

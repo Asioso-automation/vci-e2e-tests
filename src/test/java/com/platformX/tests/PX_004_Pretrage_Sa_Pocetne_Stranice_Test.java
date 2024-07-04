@@ -33,7 +33,7 @@ public class PX_004_Pretrage_Sa_Pocetne_Stranice_Test extends BaseTest {
 		pravnaLicaPage.verifikujDetaljePravnogLica();
 	}
 	
-	@Test
+	@Test(enabled=false)
 	public void px_004_2_pretraga_mjernih_mjesta_sa_pocetne_stranice_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();

@@ -17,13 +17,16 @@ public class Avansi extends PocetnaStranica {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title body-1 ml-0 pl-0 text-default') and starts-with(., ' Avansi')]")));
-		verifikacijaZajednickihElemenata("Finansije", "Avansi", "Avansi", 11, false, false, false, true, true, true, false);
+		verifikacijaZajednickihElemenata("Finansije", "Avansi", "Avansi", 12, false, false, false, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKupacWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMjernoMjestoEicWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaUkupanIznosWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNeiskoristeniIznosWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaZadnjaIzmjenaWE));
+//		TODO kolonaVrstaFinansijskeKartice
+//		kolonaDatumUplate
+//		kolonaUDuguNaDrugojFinK
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKupacNeZeliWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaUDuguNaDrugaMjmWE));
 	}

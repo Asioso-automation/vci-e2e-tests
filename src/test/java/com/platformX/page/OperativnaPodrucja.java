@@ -1,16 +1,13 @@
 package com.platformX.page;
 
-import static org.testng.Assert.assertTrue;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import com.platformX.base.Kolone;
-import com.platformX.util.Helper;
 
 public class OperativnaPodrucja extends PocetnaStranica {
 
@@ -42,8 +39,7 @@ public class OperativnaPodrucja extends PocetnaStranica {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTelefonZaPrigovoreWE));
 	}
 	
-	public String dodajOperativnoPodrucje() {
-		String operativnoPodrucje = "OP " + Helper.getRandomString(5);
+	public String dodajOperativnoPodrucje(String operativnoPodrucje) {
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
 		dodajBtnWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(nazivOperativnogPodrucjaWE));
@@ -59,20 +55,7 @@ public class OperativnaPodrucja extends PocetnaStranica {
 		return operativnoPodrucje;
 	}
 	
-	public void verifikujOperativnoPodrucje(String operativnoPodrucje) throws Exception {
-		wait.until(ExpectedConditions.elementToBeClickable(filterKolona2WE));
-		Thread.sleep(500);
-		filterKolona2WE.click();
-		filterKolona2WE.clear();
-		filterKolona2WE.sendKeys(operativnoPodrucje);
-		filterKolona2WE.sendKeys(Keys.ENTER);
-		Thread.sleep(1000);
-		wait.until(ExpectedConditions.visibilityOf(podatak2Tabela2WE));
-		assertTrue(podatak2Tabela2WE.getText().equals(operativnoPodrucje), "Operativno podrucje: Ime radne jedinice nije dobro!");
-	}
-	
-	public String urediOperativnoPodrucje() throws InterruptedException {
-		String novoPodrucje = "OP " + Helper.getRandomString(5);
+	public String urediOperativnoPodrucje(String novoPodrucje) throws InterruptedException {
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		burgerBarWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(urediWE));
@@ -85,20 +68,6 @@ public class OperativnaPodrucja extends PocetnaStranica {
 		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
 		submitBtnWE.click();
 		return novoPodrucje;
-	}
-	
-	public void verifikujBrisanjeOperativnogPodrucja(String podrucje) throws InterruptedException {
-		wait.until(ExpectedConditions.visibilityOf(filterKolona2WE));
-		Thread.sleep(1000);
-		wait.until(ExpectedConditions.elementToBeClickable(filterKolona2WE));
-		filterKolona2WE.click();
-		filterKolona2WE.clear();
-		filterKolona2WE.sendKeys(podrucje);
-		filterKolona2WE.sendKeys(Keys.ENTER);
-		Thread.sleep(1000);
-		wait.until(ExpectedConditions.visibilityOf(podatak2TabelaWE));
-		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
-		assertTrue(podatak2TabelaWE.getText().equals("Nema podataka"), "OperativnaPodrucja: Poruka prazne tabele nije dobra!");
 	}
 
 }

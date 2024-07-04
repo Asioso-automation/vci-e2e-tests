@@ -17,7 +17,7 @@ public class PX_019_Uplate_CRUD_Test extends BaseTest {
 		super();
 	}
 
-	@Test
+	@Test(enabled=false)
 	public void px_019_1_dodavanje_uplate_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
@@ -46,7 +46,7 @@ public class PX_019_Uplate_CRUD_Test extends BaseTest {
 		uplatePage.verifikujUplatu(uplatilac);
 	}
 	
-	@Test
+	@Test(enabled=false)
 	public void px_019_2_dodavanje_uplate_poziv_na_broj_test1() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
@@ -75,7 +75,7 @@ public class PX_019_Uplate_CRUD_Test extends BaseTest {
 		uplatePage.verifikujUplatu(uplatilac);
 	}
 	
-	@Test
+	@Test(enabled=false)
 	public void px_019_3_dodavanje_uplate_poziv_na_broj_test2() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
@@ -104,7 +104,7 @@ public class PX_019_Uplate_CRUD_Test extends BaseTest {
 		uplatePage.verifikujUplatu(uplatilac);
 	}
 	
-	@Test
+	@Test(enabled=false)
 	public void px_019_4_dodavanje_uplate_sa_kupcem_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();

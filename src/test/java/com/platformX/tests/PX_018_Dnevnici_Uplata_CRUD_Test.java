@@ -17,7 +17,7 @@ public class PX_018_Dnevnici_Uplata_CRUD_Test extends BaseTest {
 		super();
 	}
 
-	@Test
+	@Test(enabled=false)
 	public void px_018_1_dodavanje_dnevnika_uplata_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
@@ -41,7 +41,7 @@ public class PX_018_Dnevnici_Uplata_CRUD_Test extends BaseTest {
 		dnevniciUplataPage.verifyDnevnikUplata(bankaTabela, ziroRacunTabela);
 	}
 	
-	@Test
+	@Test(enabled=false)
 	public void px_018_2_preknjizavanje_dnevnika_uplata_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();

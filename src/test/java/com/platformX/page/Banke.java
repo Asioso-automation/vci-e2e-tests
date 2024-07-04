@@ -33,11 +33,10 @@ public class Banke extends PocetnaStranica {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title body-1 ml-0 pl-0 text-default') and starts-with(., ' Banke')]")));
-		verifikacijaZajednickihElemenata("Finansije", "Banke", "Banke", 6, false, false, true, true, true, true, false);
+		verifikacijaZajednickihElemenata("Finansije", "Banke", "Banke", 5, false, false, true, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNazivWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPocetneCifreZiroRacunaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaEmailZaTrajniNalog1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAktivnaWE));
 	}
 	
@@ -63,6 +62,8 @@ public class Banke extends PocetnaStranica {
 		dodajBtnWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(nazivBankeWE));
 		nazivBankeWE.sendKeys(ime);
+		wait.until(ExpectedConditions.elementToBeClickable(stampaniNazivBankeWE));
+		stampaniNazivBankeWE.sendKeys(ime);
 		wait.until(ExpectedConditions.elementToBeClickable(cifreZiroRacunaWE));
 		cifreZiroRacunaWE.sendKeys("111");
 		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));

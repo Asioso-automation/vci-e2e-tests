@@ -35,7 +35,7 @@ public class PX_005_Radne_Jedinice_CRUD_Test extends BaseTest {
 		radneJedinice.verifikujStavku(radnaJedinica, homePage.podatak2Tabela2WE);
 	}
 	
-	@Test(dependsOnMethods = { "px_005_1_dodavanje_radne_jedinice_test" }, retryAnalyzer = RetryAnalyzer.class)
+	@Test(retryAnalyzer = RetryAnalyzer.class, dependsOnMethods = { "px_005_1_dodavanje_radne_jedinice_test" })
 	public void px_005_2_uredjivanje_radne_jedinice_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
@@ -45,13 +45,16 @@ public class PX_005_Radne_Jedinice_CRUD_Test extends BaseTest {
 		RadneJedinice radneJedinice = homePage.navigirajNaRadneJedinice();
 		radneJedinice.verifikujRadneJedinice();
 		radneJedinice.pretraziStavku(homePage.filterKolona2WE, radnaJedinica);
+		radneJedinice.verifikujRadneJedinice();
+		radneJedinice.verifikujStavku(radnaJedinica, homePage.podatak2Tabela2WE);
 		radneJedinice.urediRadnuJedinicu(novaRadnaJedinica);
+		radneJedinice.verifikujPoruku("Uspješno završeno.");
 		radneJedinice.pretraziStavku(homePage.filterKolona2WE, novaRadnaJedinica);
 		radneJedinice.verifikujRadneJedinice();
 		radneJedinice.verifikujStavku(novaRadnaJedinica, homePage.podatak2Tabela2WE);
 	}
 	
-	@Test(dependsOnMethods = { "px_005_2_uredjivanje_radne_jedinice_test" }, retryAnalyzer = RetryAnalyzer.class)
+	@Test(retryAnalyzer = RetryAnalyzer.class, dependsOnMethods = { "px_005_2_uredjivanje_radne_jedinice_test" })
 	public void px_005_3_brisanje_radne_jedinice_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
@@ -60,7 +63,9 @@ public class PX_005_Radne_Jedinice_CRUD_Test extends BaseTest {
 		homePage.verifikujPocetnuStranicu();
 		RadneJedinice radneJedinice = homePage.navigirajNaRadneJedinice();
 		radneJedinice.verifikujRadneJedinice();
-		radneJedinice.verifikujRadnuJedinicu(novaRadnaJedinica);
+		radneJedinice.pretraziStavku(homePage.filterKolona2WE, novaRadnaJedinica);
+		radneJedinice.verifikujRadneJedinice();
+		radneJedinice.verifikujStavku(novaRadnaJedinica, homePage.podatak2Tabela2WE);
 		radneJedinice.obrisiStavku();
 		radneJedinice.verifikujPoruku("Brisanje je uspješno završeno.");
 		radneJedinice.pretraziStavku(homePage.filterKolona2WE, novaRadnaJedinica);

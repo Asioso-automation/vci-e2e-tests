@@ -224,18 +224,19 @@ public class Ugovori extends PocetnaStranica {
 	@FindBy(xpath = "//div[1]/div[5]/div/div/div[1]/div/input")
 	private WebElement nazivNaStampanimDokumentimaWE;
 
-	@FindBy(xpath = "//div/div/div[1]/div/div[4]/div/div/div[1]/div/input")
+	@FindBy(xpath = "//div[1]/div[6]/div/div/div[1]/div/input")
 	private WebElement aktivnoBrojiloWE;
 
-	@FindBy(xpath = "//div/div/div[1]/div/div[5]/div/div/div[1]/div/input")
+	@FindBy(xpath = "//div[1]/div[7]/div/div/div[1]/div/input")
 	private WebElement reaktivnoBrojiloWE;
 	
-	@FindBy(xpath = "//div/div/div[1]/div/div[6]/div/div/div[1]/div/input")
+	@FindBy(xpath = "//div[8]/div/div/div[1]/div/input")
 	private WebElement ugovorenaPrikljucnaSnagaWE;
 
-	@FindBy(xpath = "//div/div/div[1]/div/div[7]/div/div/div[1]/div/input")
+	@FindBy(xpath = "//div[9]/div/div/div[1]/div/input")
 	private WebElement aktivnaKonstantaWE;
-	@FindBy(xpath = "//div[11]/div/div/div[1]/div[1]/input[1]")
+	
+	@FindBy(xpath = "//div[13]/div/div/div[1]/div[1]/input[1]")
 	private WebElement postaWE;
 
 	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '78000 - Banja Luka')]")
@@ -244,7 +245,7 @@ public class Ugovori extends PocetnaStranica {
 	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '71420')]")
 	private WebElement odaberiPostu1WE;
 
-	@FindBy(xpath = "//div[12]/div/div/div[1]/div[1]/input[1]")
+	@FindBy(xpath = "//div[14]/div/div/div[1]/div[1]/input[1]")
 	private WebElement mjestoWE;
 
 	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '1 - Ba')]")
@@ -253,7 +254,7 @@ public class Ugovori extends PocetnaStranica {
 	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '3 - Pale')]")
 	private WebElement odaberiMjesto1WE;
 
-	@FindBy(xpath = "//div[13]/div/div/div[1]/div[1]/input[1]")
+	@FindBy(xpath = "//div[15]/div/div/div[1]/div[1]/input[1]")
 	private WebElement ulicaWE;
 
 	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '6 - Nikole Tesle')]")
@@ -262,13 +263,13 @@ public class Ugovori extends PocetnaStranica {
 	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '2 - Dr')]")
 	private WebElement odaberiUlicu1WE;
 
-	@FindBy(xpath = "//div[14]/div/div/div[1]/div/input")
+	@FindBy(xpath = "//div[16]/div/div/div[1]/div/input")
 	private WebElement brojUliceWE;
 
-	@FindBy(xpath = "//div[17]/div/div/div[1]/div/div")
+	@FindBy(xpath = "//div[19]/div/div/div[1]/div/div")
 	private WebElement eMailDostavaWE;
 
-	@FindBy(xpath = "//div[18]/div/div/div[1]/div/input")
+	@FindBy(xpath = "//div[20]/div/div/div[1]/div/input")
 	private WebElement eMailWE;
 
 	@FindBy(xpath = "//div[9]/div[1]/div/div/div[1]/div/input")
@@ -750,7 +751,7 @@ public class Ugovori extends PocetnaStranica {
 		assertTrue(telefonPorukaWE.getText().trim().equals("Maksimalno 30 karaktera"),
 				"Dodavanje ugovora: Validaciona poruka na polju Telefon nije dobra!");
 		wait.until(ExpectedConditions.visibilityOf(eMailOsobePorukaWE));
-		assertTrue(eMailOsobePorukaWE.getText().trim().equals("Email nije validan"),
+		assertTrue(eMailOsobePorukaWE.getText().trim().equals("E-mail nije validan"),
 				"Dodavanje ugovora: Validaciona poruka na polju E-mail osobe nije dobra!");
 		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
 		submitBtnWE.click();		
