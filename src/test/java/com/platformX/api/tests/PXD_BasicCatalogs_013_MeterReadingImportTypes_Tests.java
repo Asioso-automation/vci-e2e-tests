@@ -9,14 +9,14 @@ import com.platformX.util.Helper;
 import data.GlobalVariables;
 import io.restassured.path.json.JsonPath;
 
-public class PXD_016_BasicCatalogs_MeterReadingImportTypes_Test extends RestApiBase {
+public class PXD_BasicCatalogs_013_MeterReadingImportTypes_Tests extends RestApiBase {
 
-	public PXD_016_BasicCatalogs_MeterReadingImportTypes_Test() throws IOException, FileNotFoundException {
+	public PXD_BasicCatalogs_013_MeterReadingImportTypes_Tests() throws IOException, FileNotFoundException {
 		super();
 	}
 	
 	@Test(description = "positive test case")
-	public void pxd_016_01_get_basic_catalogs_meter_reading_import_types_test1() throws Exception {
+	public void pxd_basicCatalogs_013_01_get_meter_reading_import_types_test1() throws Exception {
 		GlobalVariables.token = authorize();
 		addHeader("Authorization", "Bearer " + GlobalVariables.token);
 		JsonPath jp = methodGET(api_properties.getValue("METER.READING.IMPORT.TYPES"), 200);
@@ -25,14 +25,14 @@ public class PXD_016_BasicCatalogs_MeterReadingImportTypes_Test extends RestApiB
 	}
 	
 	@Test(description = "negative test case: bearer token missing")
-	public void pxd_015_01_get_basic_catalogs_meter_reading_import_types_test2() {
+	public void pxd_basicCatalogs_013_01_get_meter_reading_import_types_test2() {
 		GlobalVariables.token = authorize();
 		addHeader("Authorization", "");
 		methodGET(api_properties.getValue("METER.READING.IMPORT.TYPES"), 401);
 	}
 	
 	@Test(description = "negative test case: wrong bearer token")
-	public void pxd_015_01_get_basic_catalogs_meter_reading_import_types_test3() {
+	public void pxd_basicCatalogs_013_01_get_meter_reading_import_types_test3() {
 		GlobalVariables.token = authorize();
 		addHeader("Authorization", Helper.getRandomString(15));
 		methodGET(api_properties.getValue("METER.READING.IMPORT.TYPES"), 401);

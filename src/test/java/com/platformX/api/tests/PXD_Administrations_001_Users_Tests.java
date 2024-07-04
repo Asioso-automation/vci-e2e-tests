@@ -9,15 +9,14 @@ import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertNotNull;
 import java.io.IOException;
 
-public class PXD_002_Administration_Users_Test extends RestApiBase {
+public class PXD_Administrations_001_Users_Tests extends RestApiBase {
 
-	public PXD_002_Administration_Users_Test() throws IOException {
+	public PXD_Administrations_001_Users_Tests() throws IOException {
 		super();
 	}
-	
 
 	@Test(description = "positive test case")
-	public void pxd_002_01_get_user_test1() {
+	public void pxd_administrations_001_01_get_user_test1() {
 		String token = authorize();
 		addHeader("Authorization", "Bearer " + token);
 		JsonPath jp = methodGET(api_properties.getValue("USERS.GET") + "346", 200);
@@ -30,18 +29,18 @@ public class PXD_002_Administration_Users_Test extends RestApiBase {
 	}
 
 	@Test(description = "negative test case: wrong bearer token")
-	public void pxd_002_01_get_user_test2() {
+	public void pxd_administrations_001_01_get_user_test2() {
 		addHeader("Authorization", Helper.getRandomString(15));
 		methodGET(api_properties.getValue("USERS.GET") + "346", 401);
 	}
 
 	@Test(description = "negative test case: missing bearer token")
-	public void pxd_002_01_get_user_test3() {
+	public void pxd_administrations_001_01_get_user_test3() {
 		methodGET(api_properties.getValue("USERS.GET") + "346", 401);
 	}
 
 	@Test(description = "negative test case: wrong id")
-	public void pxd_002_01_get_user_test4() {
+	public void pxd_administrations_001_01_get_user_test4() {
 		String token = authorize();
 		addHeader("Authorization", "Bearer " + token);
 		// Get Administration User

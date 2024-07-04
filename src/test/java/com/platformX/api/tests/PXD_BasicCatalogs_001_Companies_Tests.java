@@ -14,14 +14,14 @@
 //
 ////kada je ovaj test ukljucen, i ostali testovi padaju
 //
-//public class PXD_004_BasicCatalogs_Companies_Test extends RestApiBase {
+//public class PXD_BasicCatalogs_001_Companies_Tests extends RestApiBase {
 //
-//	public PXD_004_BasicCatalogs_Companies_Test() throws IOException, FileNotFoundException {
+//	public PXD_BasicCatalogs_001_Companies_Tests() throws IOException, FileNotFoundException {
 //		super();
 //	}
 //
 //	@Test(description = "positive test case", dependsOnGroups = { "Pronadji Organizaciju" })
-//	public void pxd_004_01_get_company_test1() throws Exception {
+//	public void pxd_basicCatalogs_001_01_get_company_test1() throws Exception {
 //		GlobalVariables.token = authorize();
 //		addHeader("Authorization", "Bearer " + GlobalVariables.token);
 //		JsonPath jp = methodGET(api_properties.getValue("COMPANIES.GET") + GlobalVariables.id, 200);
@@ -43,20 +43,20 @@
 //		assertNotNull(jp.getString("postOfficeText"), "PostOfficeText not forwarded");
 //	}
 //
-//	@Test(description = "negative test case: bearer token missing", dependsOnMethods = { "pxd_004_01_get_company_test1" })
-//	public void pxd_004_01_get_company_test2() {
+//	@Test(description = "negative test case: bearer token missing", dependsOnMethods = { "pxd_basicCatalogs_001_01_get_company_test1" })
+//	public void pxd_basicCatalogs_001_01_get_company_test2() {
 //		addHeader("Authorization", "");
 //		methodGET(api_properties.getValue("COMPANIES.GET") + GlobalVariables.id, 401);
 //	}
 //
-//	@Test(description = "negative test case: wrong bearer token", dependsOnMethods = { "pxd_004_01_get_company_test1" })
-//	public void pxd_004_01_get_company_test3() {
+//	@Test(description = "negative test case: wrong bearer token", dependsOnMethods = { "pxd_basicCatalogs_001_01_get_company_test1" })
+//	public void pxd_basicCatalogs_001_01_get_company_test3() {
 //		addHeader("Authorization", "Bearer " + Helper.getRandomNumber(10));
 //		methodGET(api_properties.getValue("COMPANIES.GET") + GlobalVariables.id, 401);
 //	}
 //
 //	@Test(description = "negative test case: wrong id")
-//	public void pxd_004_01_get_company_test4() throws Exception {
+//	public void pxd_basicCatalogs_001_01_get_company_test4() throws Exception {
 //		GlobalVariables.token = authorize();
 //		addHeader("Authorization", "Bearer " + GlobalVariables.token);
 //		methodGET(api_properties.getValue("COMPANIES.GET") + Helper.getRandomNumber(2), 404);
@@ -67,7 +67,7 @@
 //	}
 //
 //	@Test(description = "positive test case")
-//	public void pxd_004_02_post_companies_list_test1() throws Exception {
+//	public void pxd_basicCatalogs_001_02_post_companies_list_test1() throws Exception {
 //		GlobalVariables.token = authorize();
 //		addHeader("Authorization", "Bearer " + GlobalVariables.token);
 //		JsonPath jp = methodPOST(api_properties.getValue("COMPANIES.LIST"),
@@ -78,8 +78,8 @@
 //		assertNotNull(jp.getString("data"), "Data not forwarded");
 //	}
 //
-//	@Test(description = "positive test case", dependsOnMethods = { "pxd_004_01_get_company_test1" })
-//	public void pxd_004_03_get_company_lookup_test1() throws Exception {
+//	@Test(description = "positive test case", dependsOnMethods = { "pxd_basicCatalogs_001_01_get_company_test1" })
+//	public void pxd_basicCatalogs_001_03_get_company_lookup_test1() throws Exception {
 //		GlobalVariables.token = authorize();
 //		addHeader("Authorization", "Bearer " + GlobalVariables.token);
 //		JsonPath jp = methodGET(api_properties.getValue("COMPANIES.LOOKUP") + "?Keyword="
@@ -89,7 +89,7 @@
 //	}
 //
 //	@Test(description = "negative test case: wrong id")
-//	public void pxd_004_03_get_company_lookup_test2() throws Exception {
+//	public void pxd_basicCatalogs_001_03_get_company_lookup_test2() throws Exception {
 //		GlobalVariables.token = authorize();
 //		addHeader("Authorization", "Bearer " + GlobalVariables.token);
 //		Response response = methodGETresponse(api_properties.getValue("COMPANIES.LOOKUP") + "?Keyword="

@@ -1,0 +1,14 @@
+<suite name="PXD_API_Auth_Administration">
+	<test name="PXD_API_Auth_Administration">
+	<!--Duration of suite execution: ~2 minutes-->
+	<classes>
+		<!--API-->
+		<class
+				name="com.platformX.api.tests.PXD_Auth_001_Tests" />
+		<class
+				name="com.platformX.api.tests.PXD_Administrations_001_Users_Tests" />
+		<class
+				name="com.platformX.api.tests.PXD_Administrations_003_AuditLog_Tests" />
+		</classes>
+	</test>
+</suite>

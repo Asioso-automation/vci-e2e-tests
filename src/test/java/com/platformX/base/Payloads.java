@@ -297,6 +297,27 @@ public class Payloads {
 				+ "	\"installmentPersonText\": \"" + installmentPersonText + "\", \r\n"
 				+ "}";
 	}
+	
+	public static String pxdAgreedEnergyApprovalCreate(int calculationContractDataId, int aht, int alt, int rht, int rlt, int power) {
+		return "{\r\n"
+				+ " \"calculationContractDataId\": " + calculationContractDataId + ", \r\n"
+				+ " \"aht\": " + aht + ", \r\n"
+				+ " \"alt\": " + alt + ", \r\n"
+				+ " \"rht\": " + rht + ", \r\n"
+				+ " \"rlt\": " + rlt + ", \r\n"
+				+ " \"power\": " + power + " \r\n"
+				+ "}";
+	}
 
+	public static String pxdAgreedEnergyApprovalUpdate(int id, int aht, int alt, int rht, int rlt, int power) {
+		return "{\r\n"
+				+ " \"id\": " + id + ", \r\n"
+				+ " \"aht\": " + aht + ", \r\n"
+				+ " \"alt\": " + alt + ", \r\n"
+				+ " \"rht\": " + rht + ", \r\n"
+				+ " \"rlt\": " + rlt + ", \r\n"
+				+ " \"power\": " + power + " \r\n"
+				+ "}";
+	}
 	
 }

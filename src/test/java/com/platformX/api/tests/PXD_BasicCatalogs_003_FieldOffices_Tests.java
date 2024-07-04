@@ -11,16 +11,16 @@ import data.GlobalVariables;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 
-public class PXD_006_BasicCatalogs_FieldOffices_Test extends RestApiBase {
+public class PXD_BasicCatalogs_003_FieldOffices_Tests extends RestApiBase {
 
-	public PXD_006_BasicCatalogs_FieldOffices_Test() throws IOException {
+	public PXD_BasicCatalogs_003_FieldOffices_Tests() throws IOException {
 		super();
 	}
 	
 	String getWrongId = Helper.getRandomNumber(1);
 	
-	@Test(description = "positive test case", dependsOnMethods = { "pxd_006_04_create_field_office_test1" })
-	public void pxd_006_01_get_field_office_test1() throws Exception {
+	@Test(description = "positive test case", dependsOnMethods = { "pxd_basicCatalogs_003_04_create_field_office_test1" })
+	public void pxd_basicCatalogs_003_01_get_field_office_test1() throws Exception {
 		addHeader("Authorization", "Bearer " + GlobalVariables.token);
 		JsonPath jp = methodGET(api_properties.getValue("FIELD.OFFICES.GET") + GlobalVariables.id, 200);
 		
@@ -37,19 +37,19 @@ public class PXD_006_BasicCatalogs_FieldOffices_Test extends RestApiBase {
 	}
 
 	@Test(description = "negative test case: bearer token missing")
-	public void pxd_006_01_get_field_office_test2() {
+	public void pxd_basicCatalogs_003_01_get_field_office_test2() {
 		addHeader("Authorization", "");
 		methodGET(api_properties.getValue("FIELD.OFFICES.GET") + Helper.getRandomNumber(1), 401);
 	}
 
 	@Test(description = "negative test case: wrong bearer token")
-	public void pxd_006_01_get_field_office_test3() {
+	public void pxd_basicCatalogs_003_01_get_field_office_test3() {
 		addHeader("Authorization", "Bearer " + Helper.getRandomNumber(10));
 		methodGET(api_properties.getValue("FIELD.OFFICES.GET") + Helper.getRandomNumber(1), 401);
 	}
 
-	@Test(description = "negative test case: wrong id", dependsOnMethods = { "pxd_006_04_create_field_office_test1" })
-	public void pxd_006_01_get_field_office_test4() throws Exception {
+	@Test(description = "negative test case: wrong id", dependsOnMethods = { "pxd_basicCatalogs_003_04_create_field_office_test1" })
+	public void pxd_basicCatalogs_003_01_get_field_office_test4() throws Exception {
 		addHeader("Authorization", "Bearer " + GlobalVariables.token);
 		Response response = methodGETresponse(api_properties.getValue("FIELD.OFFICES.GET") + getWrongId);
 		assertEquals(response.getStatusCode(), 404);
@@ -57,8 +57,8 @@ public class PXD_006_BasicCatalogs_FieldOffices_Test extends RestApiBase {
 		//TODO Map responses in properties file
 	}
 	
-	@Test(description = "positive test case", dependsOnMethods = { "pxd_006_04_create_field_office_test1" })
-	public void pxd_006_02_post_field_offices_list_test1() throws Exception {
+	@Test(description = "positive test case", dependsOnMethods = { "pxd_basicCatalogs_003_04_create_field_office_test1" })
+	public void pxd_basicCatalogs_003_02_post_field_offices_list_test1() throws Exception {
 		addHeader("Authorization", "Bearer " + GlobalVariables.token);
 		JsonPath jp = methodPOST(api_properties.getValue("FIELD.OFFICES.LIST"), Payloads.pxdBasicList(0, 10, "id", "DESC"), 200);
 		assertNotNull(jp.getString("totalCount"), "TotalCount not forwarded");
@@ -67,16 +67,16 @@ public class PXD_006_BasicCatalogs_FieldOffices_Test extends RestApiBase {
 		assertNotNull(jp.getString("data"), "Data not forwarded");
 	}
 	
-	@Test(description = "positive test case", dependsOnMethods = { "pxd_006_04_create_field_office_test1" })
-	public void pxd_006_03_get_field_office_lookup_test1() throws Exception {
+	@Test(description = "positive test case", dependsOnMethods = { "pxd_basicCatalogs_003_04_create_field_office_test1" })
+	public void pxd_basicCatalogs_003_03_get_field_office_lookup_test1() throws Exception {
 		addHeader("Authorization", "Bearer " + GlobalVariables.token);
 		JsonPath jp = methodGET(api_properties.getValue("FIELD.OFFICES.LOOKUP") + "?Keyword=" + GlobalVariables.id + "&Id=" + GlobalVariables.id, 200);
 		assertNotNull(jp.getString("id"), "Id not forwarded");
 		assertNotNull(jp.getString("text"), "Text not forwarded");
 	}
 	
-	@Test(description = "negative test case: wrong id", dependsOnMethods = { "pxd_006_04_create_field_office_test1" })
-	public void pxd_006_03_get_field_office_lookup_test2() throws Exception {
+	@Test(description = "negative test case: wrong id", dependsOnMethods = { "pxd_basicCatalogs_003_04_create_field_office_test1" })
+	public void pxd_basicCatalogs_003_03_get_field_office_lookup_test2() throws Exception {
 		addHeader("Authorization", "Bearer " + GlobalVariables.token);
 		Response response = methodGETresponse(api_properties.getValue("FIELD.OFFICES.LOOKUP") + "?Keyword=" + Helper.getRandomNumber(1) + "&Id=" + Helper.getRandomNumber(1));
 		assertEquals(response.getStatusCode(), 200);
@@ -84,7 +84,7 @@ public class PXD_006_BasicCatalogs_FieldOffices_Test extends RestApiBase {
 	}
 	
 	@Test(description = "positive test case")
-	public void pxd_006_04_create_field_office_test1() throws Exception {
+	public void pxd_basicCatalogs_003_04_create_field_office_test1() throws Exception {
 		GlobalVariables.token = authorize();
 		addHeader("Authorization", "Bearer " + GlobalVariables.token);
 		Response response = methodPOSTresponse(api_properties.getValue("FIELD.OFFICES.CREATE"), Payloads.pxdFieldOfficeCreate(41, "FizickaLokacija", 11, 123));
@@ -93,14 +93,14 @@ public class PXD_006_BasicCatalogs_FieldOffices_Test extends RestApiBase {
 		GlobalVariables.id = response.asString();
 	}
 	
-	@Test(description = "positive test case", dependsOnMethods = { "pxd_006_04_create_field_office_test1" })
-	public void pxd_006_05_update_field_office_test1() throws Exception {
+	@Test(description = "positive test case", dependsOnMethods = { "pxd_basicCatalogs_003_04_create_field_office_test1" })
+	public void pxd_basicCatalogs_003_05_update_field_office_test1() throws Exception {
 		addHeader("Authorization", "Bearer " + GlobalVariables.token);
 		methodPATCH(api_properties.getValue("FIELD.OFFICES.UPDATE") + GlobalVariables.id, Payloads.pxdFieldOfficeUpdate(Integer.parseInt(GlobalVariables.id), 41, "FizickaLokacija 1", "11", "123", "41 - TJ Bijeljina", " - "), 204);
 	}
 	
-	@Test(description = "positive test case", dependsOnMethods = { "pxd_006_04_create_field_office_test1" })
-	public void pxd_006_06_delete_field_office_test1() throws Exception {
+	@Test(description = "positive test case", dependsOnMethods = { "pxd_basicCatalogs_003_04_create_field_office_test1" })
+	public void pxd_basicCatalogs_003_06_delete_field_office_test1() throws Exception {
 		addHeader("Authorization", "Bearer " + GlobalVariables.token);
 		methodDELETE(api_properties.getValue("FIELD.OFFICES.DELETE") + GlobalVariables.id, 204);
 	}

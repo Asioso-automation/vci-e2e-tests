@@ -10,21 +10,21 @@ import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertNotNull;
 import java.io.IOException;
 
-public class PXD_001_Authentication_Test extends RestApiBase {
+public class PXD_Auth_001_Tests extends RestApiBase {
 
-	public PXD_001_Authentication_Test() throws IOException {
+	public PXD_Auth_001_Tests() throws IOException {
 		super();
 	}
 
 // Authenticate
 
 	@Test(description = "positive test case")
-	public void pxd_001_01_authentication_test1() {
+	public void pxd_auth_001_01_authenticate_test1() {
 		authorize();
 	}
 
 	@Test(description = "negative test case: wrong username")
-	public void pxd_001_01_authentication_test2() {
+	public void pxd_auth_001_01_authenticate_test2() {
 		JsonPath jp = methodPOST(api_properties.getValue("AUTHENTICATE"),
 				Payloads.pxdAuth(Helper.getRandomString(5), api_properties.getValue("PASSWORD")), 400);
 		assertEquals(jp.get("message.name"), "Invalid username or password.");
@@ -33,7 +33,7 @@ public class PXD_001_Authentication_Test extends RestApiBase {
 	}
 
 	@Test(description = "negative test case: wrong password")
-	public void pxd_001_01_authentication_test3() {
+	public void pxd_auth_001_01_authenticate_test3() {
 		JsonPath jp = methodPOST(api_properties.getValue("AUTHENTICATE"),
 				Payloads.pxdAuth(api_properties.getValue("USERNAME"), Helper.getRandomString(5)), 400);
 		assertEquals(jp.get("message.name"), "Invalid username or password.");
@@ -42,21 +42,21 @@ public class PXD_001_Authentication_Test extends RestApiBase {
 	}
 
 	@Test(description = "negative test case: username missing")
-	public void pxd_001_01_authentication_test4() {
+	public void pxd_auth_001_01_authenticate_test4() {
 		JsonPath jp = methodPOST(api_properties.getValue("AUTHENTICATE"),				
 				Payloads.pxdAuth("", api_properties.getValue("PASSWORD")), 400);
 		assertEquals(jp.get("Username[0]"), "NotEmptyValidator");
 	}
 
 	@Test(description = "negative test case: password missing")
-	public void pxd_001_01_authentication_test5() {
+	public void pxd_auth_001_01_authenticate_test5() {
 		JsonPath jp = methodPOST(api_properties.getValue("AUTHENTICATE"),				
 				Payloads.pxdAuth(api_properties.getValue("USERNAME"), ""), 400);
 		assertEquals(jp.get("Password[0]"), "NotEmptyValidator");
 	}
 
 	@Test(description = "negative test case: username and password missing")
-	public void pxd_001_01_authentication_test6() {
+	public void pxd_001_01_authenticate_test6() {
 		JsonPath jp = methodPOST(api_properties.getValue("AUTHENTICATE"), Payloads.pxdAuth("", ""), 400);
 		assertEquals(jp.get("Username[0]"), "NotEmptyValidator");
 		assertEquals(jp.get("Password[0]"), "NotEmptyValidator");
@@ -65,7 +65,7 @@ public class PXD_001_Authentication_Test extends RestApiBase {
 // UserData
 
 	@Test(description = "positive test case")
-	public void pxd_001_02_get_user_data_test1() {
+	public void pxd_auth_001_02_get_user_data_test1() {
 		// Authorization
 		String token = authorize();
 		// Get User Data
@@ -79,13 +79,13 @@ public class PXD_001_Authentication_Test extends RestApiBase {
 	}
 
 	@Test(description = "negative test case: wrong bearer token")
-	public void pxd_001_02_get_user_data_test2() {
+	public void pxd_auth_001_02_get_user_data_test2() {
 		addHeader("Authorization", Helper.getRandomString(15));
 		methodGET(api_properties.getValue("USER.DATA"), 401);
 	}
 
 	@Test(description = "negative test case: missing bearer token")
-	public void pxd_001_02_get_user_data_test3() {
+	public void pxd_auth_001_02_get_user_data_test3() {
 		methodGET(api_properties.getValue("USER.DATA"), 401);
 	}
 
