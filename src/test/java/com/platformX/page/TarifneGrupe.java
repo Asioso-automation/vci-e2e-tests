@@ -1,10 +1,8 @@
 package com.platformX.page;
 
-import static org.testng.Assert.assertTrue;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -23,16 +21,22 @@ public class TarifneGrupe extends PocetnaStranica {
 	@FindBy(xpath = "//div[1]/div[1]/div[1]/div/div/div[1]/div/input")
 	private WebElement nazivTarifneGrupeWE;
 	
-	@FindBy(xpath = "//div[1]/div[2]/div/div/div[1]/div/input")
+	@FindBy(xpath = "//div[1]/div[2]/div/div/div[1]/div[1]/input[1]")
+	private WebElement tipUgovoraWE;
+	
+	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '1 - Tip 1')]")
+	private WebElement tip1WE;
+	
+	@FindBy(xpath = "//div[1]/div[3]/div/div/div[1]/div/input")
 	private WebElement ebixSifraWE;
 	
-	@FindBy(xpath = "//div[1]/div[3]/div/div/div[1]/div[1]/div[1]")
-	private WebElement grupaObrazacaWE;
+	@FindBy(xpath = "//div[4]/div/div/div[1]/div[1]/div[1]/input")
+	private WebElement grupaObrascaWE;
 	
 	@FindBy(xpath = "//div[contains(@class, 'v-list-item__content') and starts-with(., '1 - Grupa obrasca 1')]")
 	private WebElement grupa1WE;
 	
-	@FindBy(xpath = "//div[1]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]")
+	@FindBy(xpath = "//div[2]/div[1]/div/div/div[1]/div[1]/div[1]/input")
 	private WebElement nadgrupaWE;
 	
 	@FindBy(xpath = "//div[contains(@class, 'v-list-item__content') and starts-with(., '1 - Tarifna nadgrupa 1')]")
@@ -65,14 +69,17 @@ public class TarifneGrupe extends PocetnaStranica {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaReaktivnaWE));
 	}
 	
-	public String dodajTarifnuGrupu() {
-		String tarifnaGrupa = "TG " + Helper.getRandomString(5);
+	public String dodajTarifnuGrupu(String tarifnaGrupa) {
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
 		dodajBtnWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(nazivTarifneGrupeWE));
 		nazivTarifneGrupeWE.sendKeys(tarifnaGrupa);
+		wait.until(ExpectedConditions.elementToBeClickable(tipUgovoraWE));
+		tipUgovoraWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(tip1WE));
+		tip1WE.click();
 		ebixSifraWE.sendKeys(Helper.getRandomString(5));
-		grupaObrazacaWE.click();
+		grupaObrascaWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(grupa1WE));
 		grupa1WE.click();
 		nadgrupaWE.click();
@@ -88,21 +95,7 @@ public class TarifneGrupe extends PocetnaStranica {
 		return tarifnaGrupa;
 	}
 	
-	public void verifikujTarifnuGrupu(String tarifnaGrupa) throws InterruptedException {
-		wait.until(ExpectedConditions.elementToBeClickable(filterKolona2WE));
-		filterKolona2WE.click();
-		filterKolona2WE.clear();
-		filterKolona2WE.sendKeys(tarifnaGrupa);
-		filterKolona2WE.sendKeys(Keys.ENTER);
-		Thread.sleep(1000);
-		wait.until(ExpectedConditions.visibilityOf(jedinstvenElementWE));
-		wait.until(ExpectedConditions.visibilityOf(podatak2Tabela2WE));
-		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
-		assertTrue(podatak2Tabela2WE.getText().equals(tarifnaGrupa), "TarifneGrupe: Ime grupe nije dobro!");
-	}
-	
-	public String urediTarifnuGrupu() {
-		String tarifnaGrupa = "TG " + Helper.getRandomString(5);
+	public String urediTarifnuGrupu(String tarifnaGrupa) {
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		burgerBarWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(urediWE));
@@ -113,18 +106,6 @@ public class TarifneGrupe extends PocetnaStranica {
 		nazivTarifneGrupeWE.sendKeys(tarifnaGrupa);
 		submitBtnWE.click();
 		return tarifnaGrupa;
-	}
-	
-	public void verifikujBrisanjeTarifneGrupe(String tarifnaGrupa) throws InterruptedException {
-		wait.until(ExpectedConditions.elementToBeClickable(filterKolona2WE));
-		filterKolona2WE.click();
-		filterKolona2WE.clear();
-		filterKolona2WE.sendKeys(tarifnaGrupa);
-		filterKolona2WE.sendKeys(Keys.ENTER);
-		Thread.sleep(1000);
-		wait.until(ExpectedConditions.visibilityOf(podatak2TabelaWE));
-		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
-		assertTrue(podatak2TabelaWE.getText().equals("Nema podataka"), "TarifneGrupe: Poruka prazne tabele nije dobra!");
 	}
 
 }

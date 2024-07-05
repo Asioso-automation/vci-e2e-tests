@@ -310,15 +310,18 @@ public abstract class PageBase {
 		naziv = naziv.replace("Ć", "C");
 		naziv = naziv.replace(" ", ".");
 		naziv = naziv.replace("/", ".");
+		naziv = naziv.replace("-", "");
 		return naziv;
 	}
 	
 	// Zajednicka metoda za navigaciju po stranicama
 	// Iskoristena u "PX_DIST_003_Verifikacije_Sekcija_Test" u 1. test case-u za navigaciju na Organizacije
 	// TODO Izdvojiti generisanje xapths u odvojene metode, dodati u catch odlazak na stranicu putem linka i poruku
-	 public <T extends PageBase> T navigateOnPage(Class<T> pageClass, String sekcija, String stranica) throws InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException, SecurityException {
+	 public <T extends PageBase> T navigateOnPage(String app, Class<T> pageClass, String sekcija, String stranica) throws InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException, SecurityException {
 	        	WebDriverWait wait = new WebDriverWait(driver, 10);
-	        	wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
+	        	try {
+	        		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
+	        	} catch (Exception e) {}
 	        	try {
 	    		wait.until(ExpectedConditions.elementToBeClickable
 	    				(By.xpath("//*[text()='" + sekcija + "' and @class='v-btn__content']"))).click();
@@ -333,7 +336,12 @@ public abstract class PageBase {
 		    		wait.until(ExpectedConditions.elementToBeClickable
 		    				(By.xpath("//div[contains(text(),'" + stranica + "') and @class='v-list-item__title']"))).click();
 	        		} catch (Exception a) {
-			            driver.get(platformx_distribution_properties.getValue("URL.DIST.LOGIN") + platformx_distribution_properties.getValue(propertiesNaziv(stranica)));	        
+	        			if(app == "PXD") {
+				            driver.get(platformx_distribution_properties.getValue("URL.DIST.LOGIN") + platformx_distribution_properties.getValue(propertiesNaziv(stranica)));	        
+	        			}
+	        			if(app == "PX") {
+				            driver.get(platformx_properties.getValue("URL.LOGIN") + platformx_properties.getValue(propertiesNaziv(stranica)));	        
+	        			}
 	        		}
 	        	}
 //	            // Instantiate the provided page class using its constructor

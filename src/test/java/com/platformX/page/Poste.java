@@ -4,7 +4,6 @@ import static org.testng.Assert.assertTrue;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -40,8 +39,7 @@ public class Poste extends PocetnaStranica {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaStampaniNazivWE));
 	}
 	
-	public String[] dodajPostu() throws InterruptedException {
-		String[] podaci = new String[3];
+	public String[] dodajPostu(String[] podaci) throws InterruptedException {
 		podaci[0] = "Posta "+ Helper.getRandomString(5);
 		podaci[1] = Helper.getRandomNumber(3);
 		podaci[2] = Helper.getRandomString(5);
@@ -70,21 +68,20 @@ public class Poste extends PocetnaStranica {
 	}
 	
 	public void verifikujPostu(String naziv, String id, String nazivNaDok) throws Exception {
-		wait.until(ExpectedConditions.elementToBeClickable(filterKolona2WE));
-		Thread.sleep(1000);
-		filterKolona2WE.click();
-		filterKolona2WE.clear();
-		filterKolona2WE.sendKeys(naziv);
-		filterKolona2WE.sendKeys(Keys.ENTER);
-		Thread.sleep(1000);
+//		wait.until(ExpectedConditions.elementToBeClickable(filterKolona2WE));
+//		Thread.sleep(1000);
+//		filterKolona2WE.click();
+//		filterKolona2WE.clear();
+//		filterKolona2WE.sendKeys(naziv);
+//		filterKolona2WE.sendKeys(Keys.ENTER);
+//		Thread.sleep(1000);
 		wait.until(ExpectedConditions.visibilityOf(podatak2Tabela2WE));
 		assertTrue(podatak2Tabela2WE.getText().equals(naziv), "Poste: Posta nije pronadjena!");
 		assertTrue(podatak2Tabela3WE.getText().equals(nazivNaDok), "Poste: Posta nije pronadjena!");
 		assertTrue(podatak2Tabela1WE.getText().equals(id), "Poste: Posta nije pronadjena!");
 	}
 	
-	public String urediPostu() throws InterruptedException {
-		String posta = "Posta " + Helper.getRandomString(5);
+	public String urediPostu(String posta) throws InterruptedException {
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		burgerBarWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(urediWE));
@@ -99,18 +96,4 @@ public class Poste extends PocetnaStranica {
 		return posta;
 	}
 	
-	public void verifikujBrisanjePoste(String posta) throws InterruptedException {
-		wait.until(ExpectedConditions.visibilityOf(filterKolona2WE));
-		Thread.sleep(1000);
-		wait.until(ExpectedConditions.elementToBeClickable(filterKolona2WE));
-		filterKolona2WE.click();
-		filterKolona2WE.clear();
-		filterKolona2WE.sendKeys(posta);
-		filterKolona2WE.sendKeys(Keys.ENTER);
-		Thread.sleep(1000);
-		wait.until(ExpectedConditions.visibilityOf(podatak2TabelaWE));
-		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
-		assertTrue(podatak2TabelaWE.getText().equals("Nema podataka"), "Poste: Poruka prazne tabele nije dobra!");
-	}
-
 }

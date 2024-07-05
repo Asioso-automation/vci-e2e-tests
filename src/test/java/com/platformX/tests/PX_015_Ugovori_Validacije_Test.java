@@ -21,9 +21,9 @@ public class PX_015_Ugovori_Validacije_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
 		homePage.verifikujPocetnuStranicu();
-		Ugovori ugovoriPage = homePage.navigirajNaUgovori();
-		ugovoriPage.verifikujUgovori();
-		ugovoriPage.verifikujObaveznaPolja();
+		Ugovori ugovori = homePage.navigateOnPage("PX", Ugovori.class, "Kupci", "Ugovori");
+		ugovori.verifikujUgovori();
+		ugovori.verifikujObaveznaPolja();
 	}
 	
 	@Test				// Provjera klijentskih validacija polja na formi za dodavanje ugovora
@@ -33,9 +33,9 @@ public class PX_015_Ugovori_Validacije_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
 		homePage.verifikujPocetnuStranicu();
-		Ugovori ugovoriPage = homePage.navigirajNaUgovori();
-		ugovoriPage.verifikujUgovori();
-		ugovoriPage.verifikujValidacijePolja();
+		Ugovori ugovori = homePage.navigateOnPage("PX", Ugovori.class, "Kupci", "Ugovori");
+		ugovori.verifikujUgovori();
+		ugovori.verifikujValidacijePolja();
 	}
 
 	@Test (enabled = false)	// Ne radi lookup "Za mjerno mjesto"
@@ -45,10 +45,10 @@ public class PX_015_Ugovori_Validacije_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
 		homePage.verifikujPocetnuStranicu();
-		Ugovori ugovoriPage = homePage.navigirajNaUgovori();
-		ugovoriPage.verifikujUgovori();
-		ugovoriPage.pronadjiUgovorPoEic("36ZBLNG");
-		ugovoriPage.verifikujObaveznaPoljaUredjivanjeUgovora();
+		Ugovori ugovori = homePage.navigateOnPage("PX", Ugovori.class, "Kupci", "Ugovori");
+		ugovori.verifikujUgovori();
+		ugovori.pronadjiUgovorPoEic("36ZBLNG");
+		ugovori.verifikujObaveznaPoljaUredjivanjeUgovora();
 	}
 	
 	@Test (enabled = false)	// Ne radi lookup "Za mjerno mjesto"
@@ -58,12 +58,12 @@ public class PX_015_Ugovori_Validacije_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
 		homePage.verifikujPocetnuStranicu();
-		Ugovori ugovoriPage = homePage.navigirajNaUgovori();
-		ugovoriPage.verifikujUgovori();
+		Ugovori ugovori = homePage.navigateOnPage("PX", Ugovori.class, "Kupci", "Ugovori");
+		ugovori.verifikujUgovori();
 		// ugovoriPage.pronadjiUgovor("Mjerno mjesto 2");
-		ugovoriPage.pronadjiUgovorPoEic("36ZBLNG");
-		ugovoriPage.otvoriPreregistraciju();
-		ugovoriPage.verifikujObaveznaPoljaPreregistracijeUgovora();
+		ugovori.pronadjiUgovorPoEic("36ZBLNG");
+		ugovori.otvoriPreregistraciju();
+		ugovori.verifikujObaveznaPoljaPreregistracijeUgovora();
 	}
 	
 }

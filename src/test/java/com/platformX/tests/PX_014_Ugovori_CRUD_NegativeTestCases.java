@@ -22,19 +22,19 @@ public class PX_014_Ugovori_CRUD_NegativeTestCases extends BaseTest {
 		logIn.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
 		homePage.verifikujPocetnuStranicu();
-		PravnaLica pravnaLicaPage = homePage.navigirajNaPravnaLica();
-		pravnaLicaPage.verifikujPravnaLica();
-		String pravnoLice = pravnaLicaPage.dodajPravnoLice();
-		pravnaLicaPage.verifikujPravnaLica();
-		pravnaLicaPage.verifikujPravnoLice(pravnoLice);
-		String kupac = pravnaLicaPage.kreirajKupca();
-		Ugovori ugovoriPage = homePage.navigirajNaUgovori();
-		ugovoriPage.verifikujUgovori();
-		ugovoriPage.dodajUgovor(kupac, "7 - Kategorija cijene 2", "15.07.2020.", "15.07.2020.", "1514BASD99", true);
-		ugovoriPage.verifikujUgovori();
-		ugovoriPage.pronadjiUgovorPravnoLice(pravnoLice);
-		ugovoriPage.dodajUgovor(kupac, "7 - Kategorija cijene 2", "15.07.2020.", "15.07.2020.", "1514BASD99", true);
-		ugovoriPage.verifikujPorukuForme("Ugovor za traženo mjerno mjesto, 1514BASD99 , već postoji u navedenom periodu.");
+		PravnaLica pravnaLica = homePage.navigateOnPage("PX", PravnaLica.class, "Kupci", "Pravna lica");
+		pravnaLica.verifikujPravnaLica();
+		String pravnoLice = pravnaLica.dodajPravnoLice();
+		pravnaLica.verifikujPravnaLica();
+		pravnaLica.verifikujPravnoLice(pravnoLice);
+		String kupac = pravnaLica.kreirajKupca();
+		Ugovori ugovori = homePage.navigateOnPage("PX", Ugovori.class, "Kupci", "Ugovori");
+		ugovori.verifikujUgovori();
+		ugovori.dodajUgovor(kupac, "7 - Kategorija cijene 2", "15.07.2020.", "15.07.2020.", "1514BASD99", true);
+		ugovori.verifikujUgovori();
+		ugovori.pronadjiUgovorPravnoLice(pravnoLice);
+		ugovori.dodajUgovor(kupac, "7 - Kategorija cijene 2", "15.07.2020.", "15.07.2020.", "1514BASD99", true);
+		ugovori.verifikujPorukuForme("Ugovor za traženo mjerno mjesto, 1514BASD99 , već postoji u navedenom periodu.");
 	}
 	
 	@Test (enabled = false, description= "Datum početka je prije početka obračunskog perioda")
@@ -44,16 +44,16 @@ public class PX_014_Ugovori_CRUD_NegativeTestCases extends BaseTest {
 		logIn.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
 		homePage.verifikujPocetnuStranicu();
-		PravnaLica pravnaLicaPage = homePage.navigirajNaPravnaLica();
-		pravnaLicaPage.verifikujPravnaLica();
-		String pravnoLice = pravnaLicaPage.dodajPravnoLice();
-		pravnaLicaPage.verifikujPravnaLica();
-		pravnaLicaPage.verifikujPravnoLice(pravnoLice);
-		String kupac = pravnaLicaPage.kreirajKupca();
-		Ugovori ugovoriPage = homePage.navigirajNaUgovori();
-		ugovoriPage.verifikujUgovori();
-		ugovoriPage.dodajUgovor(kupac, "7 - Kategorija cijene 2", "15.06.2020.", "15.06.2020.", "1514BASD99", true);
-		ugovoriPage.verifikujPorukuForme("Početni datum ne smije biti prije početka aktivnog perioda.");
+		PravnaLica pravnaLica = homePage.navigateOnPage("PX", PravnaLica.class, "Kupci", "Pravna lica");
+		pravnaLica.verifikujPravnaLica();
+		String pravnoLice = pravnaLica.dodajPravnoLice();
+		pravnaLica.verifikujPravnaLica();
+		pravnaLica.verifikujPravnoLice(pravnoLice);
+		String kupac = pravnaLica.kreirajKupca();
+		Ugovori ugovori = homePage.navigateOnPage("PX", Ugovori.class, "Kupci", "Ugovori");
+		ugovori.verifikujUgovori();
+		ugovori.dodajUgovor(kupac, "7 - Kategorija cijene 2", "15.06.2020.", "15.06.2020.", "1514BASD99", true);
+		ugovori.verifikujPorukuForme("Početni datum ne smije biti prije početka aktivnog perioda.");
 	}
 	
 	@Test (enabled = false, description = "Obrazac za broj protokola ne postoji")
@@ -63,16 +63,16 @@ public class PX_014_Ugovori_CRUD_NegativeTestCases extends BaseTest {
 		logIn.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
 		homePage.verifikujPocetnuStranicu();
-		PravnaLica pravnaLicaPage = homePage.navigirajNaPravnaLica();
-		pravnaLicaPage.verifikujPravnaLica();
-		String pravnoLice = pravnaLicaPage.dodajPravnoLice();
-		pravnaLicaPage.verifikujPravnaLica();
-		pravnaLicaPage.verifikujPravnoLice(pravnoLice);
-		String kupac = pravnaLicaPage.kreirajKupca();
-		Ugovori ugovoriPage = homePage.navigirajNaUgovori();
-		ugovoriPage.verifikujUgovori();
-		ugovoriPage.dodajUgovor(kupac, "7 - Kategorija cijene 2", "15.07.2020.", "15.07.2020.", "36K085053", true);
-		ugovoriPage.verifikujPorukuForme("Obrazac za traženi ODS i tarifnu grupu u traženom periodu ne postoji.");
+		PravnaLica pravnaLica = homePage.navigateOnPage("PX", PravnaLica.class, "Kupci", "Pravna lica");
+		pravnaLica.verifikujPravnaLica();
+		String pravnoLice = pravnaLica.dodajPravnoLice();
+		pravnaLica.verifikujPravnaLica();
+		pravnaLica.verifikujPravnoLice(pravnoLice);
+		String kupac = pravnaLica.kreirajKupca();
+		Ugovori ugovori = homePage.navigateOnPage("PX", Ugovori.class, "Kupci", "Ugovori");
+		ugovori.verifikujUgovori();
+		ugovori.dodajUgovor(kupac, "7 - Kategorija cijene 2", "15.07.2020.", "15.07.2020.", "36K085053", true);
+		ugovori.verifikujPorukuForme("Obrazac za traženi ODS i tarifnu grupu u traženom periodu ne postoji.");
 	}
 	
 	@Test (enabled = false, description= "Pokušaj dodavanja ugovora bez reaktivnog brojila")
@@ -82,16 +82,16 @@ public class PX_014_Ugovori_CRUD_NegativeTestCases extends BaseTest {
 		logIn.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
 		homePage.verifikujPocetnuStranicu();
-		PravnaLica pravnaLicaPage = homePage.navigirajNaPravnaLica();
-		pravnaLicaPage.verifikujPravnaLica();
-		String pravnoLice = pravnaLicaPage.dodajPravnoLice();
-		pravnaLicaPage.verifikujPravnaLica();
-		pravnaLicaPage.verifikujPravnoLice(pravnoLice);
-		String kupac = pravnaLicaPage.kreirajKupca();
-		Ugovori ugovoriPage = homePage.navigirajNaUgovori();
-		ugovoriPage.verifikujUgovori();
-		ugovoriPage.dodajUgovor(kupac, "7 - Kategorija cijene 2", "15.07.2020.", "15.07.2020.", "36066699C", false);
-		ugovoriPage.verifikujPorukuForme("Reaktivna konstanta za odabranu tarifnu grupu ne smije biti prazna.");
+		PravnaLica pravnaLica = homePage.navigateOnPage("PX", PravnaLica.class, "Kupci", "Pravna lica");
+		pravnaLica.verifikujPravnaLica();
+		String pravnoLice = pravnaLica.dodajPravnoLice();
+		pravnaLica.verifikujPravnaLica();
+		pravnaLica.verifikujPravnoLice(pravnoLice);
+		String kupac = pravnaLica.kreirajKupca();
+		Ugovori ugovori = homePage.navigateOnPage("PX", Ugovori.class, "Kupci", "Ugovori");
+		ugovori.verifikujUgovori();
+		ugovori.dodajUgovor(kupac, "7 - Kategorija cijene 2", "15.07.2020.", "15.07.2020.", "36066699C", false);
+		ugovori.verifikujPorukuForme("Reaktivna konstanta za odabranu tarifnu grupu ne smije biti prazna.");
 	}
 	
 	@Test (enabled = false)				/* Test provjerava da je nemoguce deaktivirati ugovor kada se izabere prosli datum za datum deaktivacije (01.01.2020.) i verifikuje validacionu poruku */
@@ -101,18 +101,18 @@ public class PX_014_Ugovori_CRUD_NegativeTestCases extends BaseTest {
 		logIn.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
 		homePage.verifikujPocetnuStranicu();
-		PravnaLica pravnaLicaPage = homePage.navigirajNaPravnaLica();
-		pravnaLicaPage.verifikujPravnaLica();
-		String pravnoLice = pravnaLicaPage.dodajPravnoLice();
-		pravnaLicaPage.verifikujPravnaLica();
-		pravnaLicaPage.verifikujPravnoLice(pravnoLice);
-		String kupac = pravnaLicaPage.kreirajKupca();
-		Ugovori ugovoriPage = homePage.navigirajNaUgovori();
-		ugovoriPage.verifikujUgovori();
-		ugovoriPage.dodajUgovor(kupac, "7 - Kategorija cijene 2", "15.07.2020.", "15.07.2020.", "3PD53B2W", true);
-		ugovoriPage.pronadjiUgovorPravnoLice(pravnoLice);
-		ugovoriPage.verifikujBrojNecekiranihKolona(1);
-		ugovoriPage.deaktivirajUgovor("01.01.2020.");
+		PravnaLica pravnaLica = homePage.navigateOnPage("PX", PravnaLica.class, "Kupci", "Pravna lica");
+		pravnaLica.verifikujPravnaLica();
+		String pravnoLice = pravnaLica.dodajPravnoLice();
+		pravnaLica.verifikujPravnaLica();
+		pravnaLica.verifikujPravnoLice(pravnoLice);
+		String kupac = pravnaLica.kreirajKupca();
+		Ugovori ugovori = homePage.navigateOnPage("PX", Ugovori.class, "Kupci", "Ugovori");
+		ugovori.verifikujUgovori();
+		ugovori.dodajUgovor(kupac, "7 - Kategorija cijene 2", "15.07.2020.", "15.07.2020.", "3PD53B2W", true);
+		ugovori.pronadjiUgovorPravnoLice(pravnoLice);
+		ugovori.verifikujBrojNecekiranihKolona(1);
+		ugovori.deaktivirajUgovor("01.01.2020.");
 	}
 	
 	@Test (enabled = false)
@@ -122,11 +122,11 @@ public class PX_014_Ugovori_CRUD_NegativeTestCases extends BaseTest {
 		logIn.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
 		homePage.verifikujPocetnuStranicu();	
-		Ugovori ugovoriPage = homePage.navigirajNaUgovori();
-		ugovoriPage.verifikujUgovori();
-		ugovoriPage.pronadjiUgovorPoEic("36ZBLNG");
-		ugovoriPage.odbaciUgovor();
-		ugovoriPage.verifikujPoruku("Odbacivanje ovog ugovora nije moguće.");
+		Ugovori ugovori = homePage.navigateOnPage("PX", Ugovori.class, "Kupci", "Ugovori");
+		ugovori.verifikujUgovori();
+		ugovori.pronadjiUgovorPoEic("36ZBLNG");
+		ugovori.odbaciUgovor();
+		ugovori.verifikujPoruku("Odbacivanje ovog ugovora nije moguće.");
 	}
 
 }

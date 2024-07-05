@@ -1,10 +1,8 @@
 package com.platformX.page;
 
-import static org.testng.Assert.assertTrue;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -37,8 +35,7 @@ public class Ulice extends PocetnaStranica {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaValidnaWE));
 	}
 	
-	public String dodajUlicu() throws InterruptedException {
-		String naziv = "Ulica " + Helper.getRandomString(5);
+	public String dodajUlicu(String naziv) throws InterruptedException {
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
 		dodajBtnWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(nazivWE));
@@ -50,20 +47,7 @@ public class Ulice extends PocetnaStranica {
 		return naziv;
 	}
 	
-	public void verifikujUlicu(String naziv) throws Exception {
-		wait.until(ExpectedConditions.elementToBeClickable(filterKolona2WE));
-		Thread.sleep(1000);
-		filterKolona2WE.click();
-		filterKolona2WE.clear();
-		filterKolona2WE.sendKeys(naziv);
-		filterKolona2WE.sendKeys(Keys.ENTER);
-		Thread.sleep(1000);
-		wait.until(ExpectedConditions.visibilityOf(podatak2Tabela2WE));
-		assertTrue(podatak2Tabela2WE.getText().equals(naziv), "Ulice: Ulica nije pronadjena!");
-	}
-	
-	public String urediUlicu() throws InterruptedException {
-		String ulica = "Ulica " + Helper.getRandomString(5);
+	public String urediUlicu(String ulica) throws InterruptedException {
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		burgerBarWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(urediWE));
@@ -76,20 +60,6 @@ public class Ulice extends PocetnaStranica {
 		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
 		submitBtnWE.click();
 		return ulica;
-	}
-	
-	public void verifikujBrisanjeUlice(String ulica) throws InterruptedException {
-		wait.until(ExpectedConditions.visibilityOf(filterKolona2WE));
-		Thread.sleep(1000);
-		wait.until(ExpectedConditions.elementToBeClickable(filterKolona2WE));
-		filterKolona2WE.click();
-		filterKolona2WE.clear();
-		filterKolona2WE.sendKeys(ulica);
-		filterKolona2WE.sendKeys(Keys.ENTER);
-		Thread.sleep(1000);
-		wait.until(ExpectedConditions.visibilityOf(podatak2TabelaWE));
-		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
-		assertTrue(podatak2TabelaWE.getText().equals("Nema podataka"), "Ulice: Poruka prazne tabele nije dobra!");
 	}
 
 }

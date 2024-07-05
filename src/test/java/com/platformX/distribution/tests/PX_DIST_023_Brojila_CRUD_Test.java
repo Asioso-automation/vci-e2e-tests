@@ -21,7 +21,7 @@ public class PX_DIST_023_Brojila_CRUD_Test  extends BaseTest {
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		RegistarBrojila registarBrojila = homePage.navigateOnPage(RegistarBrojila.class, "Brojila", "Registar brojila");
+		RegistarBrojila registarBrojila = homePage.navigateOnPage("PXD", RegistarBrojila.class, "Brojila", "Registar brojila");
 		registarBrojila.verifikujRegistarBrojila();
 		String brojilo = registarBrojila.dodajBrojilo();
 		registarBrojila.verifikujBrojilo(brojilo);

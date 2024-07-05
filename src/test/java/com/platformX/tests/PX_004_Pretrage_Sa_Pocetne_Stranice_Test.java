@@ -22,15 +22,15 @@ public class PX_004_Pretrage_Sa_Pocetne_Stranice_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
 		homePage.verifikujPocetnuStranicu();
-		PravnaLica pravnaLicaPage = homePage.navigirajNaPravnaLica();
-		pravnaLicaPage.verifikujPravnaLica();
-		String pravnoLice = pravnaLicaPage.dodajPravnoLice();
-		pravnaLicaPage.verifikujPravnaLica();
-		pravnaLicaPage.verifikujPravnoLice(pravnoLice);
+		PravnaLica pravnaLica = homePage.navigateOnPage("PX", PravnaLica.class, "Kupci", "Pravna lica");
+		pravnaLica.verifikujPravnaLica();
+		String pravnoLice = pravnaLica.dodajPravnoLice();
+		pravnaLica.verifikujPravnaLica();
+		pravnaLica.verifikujPravnoLice(pravnoLice);
 		homePage.navigateToPocetnaStranica();
 		homePage.verifikujPocetnuStranicu();
 		homePage.pretraziKupce(pravnoLice);
-		pravnaLicaPage.verifikujDetaljePravnogLica();
+		pravnaLica.verifikujDetaljePravnogLica();
 	}
 	
 	@Test(enabled=false)

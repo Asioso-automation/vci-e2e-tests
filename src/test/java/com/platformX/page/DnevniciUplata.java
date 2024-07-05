@@ -115,7 +115,7 @@ public class DnevniciUplata extends PocetnaStranica {
 	}
 	
 	public void verifyDnevnikUplata(String bankaTabela, String ziroRacunTabela) throws Exception {
-		navigirajNaDnevniciUplata();
+		navigateOnPage("PX", DnevniciUplata.class, "Finansije", "Dnevnici uplata");
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		wait.until(ExpectedConditions.elementToBeClickable(filterKolona2WE));
 		filterKolona2WE.sendKeys(bankaTabela);

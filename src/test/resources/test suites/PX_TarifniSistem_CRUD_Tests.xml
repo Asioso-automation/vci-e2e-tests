@@ -1,0 +1,14 @@
+<suite name="PX_TarifniSistem_CRUD_Tests">
+	<test name="PX_TarifniSistem_CRUD_Tests">
+	<!--Duration of suite execution: ~10 minutes-->
+		<classes>
+		
+		<!--PlatformX-->
+			
+			<class
+				name="com.platformX.tests.PX_010_Tarifne_Grupe_CRUD_Test" />		
+			<class
+				name="com.platformX.tests.PX_011_Kategorije_Cijena_CRUD_Test" />
+		</classes>
+	</test>
+</suite>

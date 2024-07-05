@@ -7,9 +7,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import com.platformX.base.Kolone;
 
-public class KamatePage extends PocetnaStranica {
+public class Kamate extends PocetnaStranica {
 
-	public KamatePage(WebDriver driver) throws FileNotFoundException, IOException {
+	public Kamate(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);
 	}
 

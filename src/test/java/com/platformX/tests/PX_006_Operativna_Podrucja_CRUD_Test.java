@@ -19,14 +19,14 @@ public class PX_006_Operativna_Podrucja_CRUD_Test extends BaseTest {
 	String operativnoPodrucje = "OP " + Helper.getRandomString(5);
 	String novoOperativnoPodrucje = "NovoOP " + Helper.getRandomString(5);
 	
-	@Test
+	@Test(retryAnalyzer = RetryAnalyzer.class)
 	public void px_006_1_dodavanje_operativnog_podrucja_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
 		homePage.verifikujPocetnuStranicu();
-		OperativnaPodrucja operativnaPodrucja = homePage.navigirajNaOperativnaPodrucja();
+		OperativnaPodrucja operativnaPodrucja = homePage.navigateOnPage("PX", OperativnaPodrucja.class, "Šifarnici", "Operativna područja");
 		operativnaPodrucja.verifikujOperativnaPodrucja();
 		operativnaPodrucja.dodajOperativnoPodrucje(operativnoPodrucje);
 		operativnaPodrucja.verifikujPoruku("Uspješno završeno.");
@@ -42,7 +42,7 @@ public class PX_006_Operativna_Podrucja_CRUD_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
 		homePage.verifikujPocetnuStranicu();
-		OperativnaPodrucja operativnaPodrucja = homePage.navigirajNaOperativnaPodrucja();
+		OperativnaPodrucja operativnaPodrucja = homePage.navigateOnPage("PX", OperativnaPodrucja.class, "Šifarnici", "Operativna područja");
 		operativnaPodrucja.verifikujOperativnaPodrucja();
 		operativnaPodrucja.pretraziStavku(homePage.filterKolona2WE, operativnoPodrucje);
 		operativnaPodrucja.verifikujOperativnaPodrucja();
@@ -61,7 +61,7 @@ public class PX_006_Operativna_Podrucja_CRUD_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
 		homePage.verifikujPocetnuStranicu();
-		OperativnaPodrucja operativnaPodrucja = homePage.navigirajNaOperativnaPodrucja();
+		OperativnaPodrucja operativnaPodrucja = homePage.navigateOnPage("PX", OperativnaPodrucja.class, "Šifarnici", "Operativna područja");
 		operativnaPodrucja.verifikujOperativnaPodrucja();
 		operativnaPodrucja.pretraziStavku(homePage.filterKolona2WE, novoOperativnoPodrucje);
 		operativnaPodrucja.verifikujOperativnaPodrucja();

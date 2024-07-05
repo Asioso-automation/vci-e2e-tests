@@ -23,17 +23,17 @@ public class PX_013_Ugovori_CRUD_PositiveTestCases extends BaseTest {
 		logIn.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
 		homePage.verifikujPocetnuStranicu();
-		PravnaLica pravnaLicaPage = homePage.navigirajNaPravnaLica();
-		pravnaLicaPage.verifikujPravnaLica();
-		String pravnoLice = pravnaLicaPage.dodajPravnoLice();
-		pravnaLicaPage.verifikujPravnaLica();
-		pravnaLicaPage.verifikujPravnoLice(pravnoLice);
-		String kupac = pravnaLicaPage.kreirajKupca();
-		Ugovori ugovoriPage = homePage.navigirajNaUgovori();
-		ugovoriPage.verifikujUgovori();
-		ugovoriPage.dodajUgovor(kupac, "7 - Kategorija cijene 2", "15.07.2020.", "15.07.2020.", "AMOSA542A", true);
-		ugovoriPage.verifikujUgovori();
-		ugovoriPage.pronadjiUgovorPravnoLice(pravnoLice);
+		PravnaLica pravnaLica = homePage.navigateOnPage("PX", PravnaLica.class, "Kupci", "Pravna lica");
+		pravnaLica.verifikujPravnaLica();
+		String pravnoLice = pravnaLica.dodajPravnoLice();
+		pravnaLica.verifikujPravnaLica();
+		pravnaLica.verifikujPravnoLice(pravnoLice);
+		String kupac = pravnaLica.kreirajKupca();
+		Ugovori ugovori = homePage.navigateOnPage("PX", Ugovori.class, "Kupci", "Ugovori");
+		ugovori.verifikujUgovori();
+		ugovori.dodajUgovor(kupac, "7 - Kategorija cijene 2", "15.07.2020.", "15.07.2020.", "AMOSA542A", true);
+		ugovori.verifikujUgovori();
+		ugovori.pronadjiUgovorPravnoLice(pravnoLice);
 	}
 	
 	@Test (enabled = false)
@@ -43,17 +43,17 @@ public class PX_013_Ugovori_CRUD_PositiveTestCases extends BaseTest {
 		logIn.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
 		homePage.verifikujPocetnuStranicu();
-		PravnaLica pravnaLicaPage = homePage.navigirajNaPravnaLica();
-		pravnaLicaPage.verifikujPravnaLica();
-		String pravnoLice = pravnaLicaPage.dodajPravnoLice();
-		pravnaLicaPage.verifikujPravnaLica();
-		pravnaLicaPage.verifikujPravnoLice(pravnoLice);
-		String kupac = pravnaLicaPage.kreirajKupca();
-		Ugovori ugovoriPage = homePage.navigirajNaUgovori();
-		ugovoriPage.verifikujUgovori();
-		ugovoriPage.dodajPotpisanUgovor("36Z0100154X", kupac);
-		ugovoriPage.verifikujUgovori();
-		ugovoriPage.pronadjiUgovorPravnoLice(pravnoLice);
+		PravnaLica pravnaLica = homePage.navigateOnPage("PX", PravnaLica.class, "Kupci", "Pravna lica");
+		pravnaLica.verifikujPravnaLica();
+		String pravnoLice = pravnaLica.dodajPravnoLice();
+		pravnaLica.verifikujPravnaLica();
+		pravnaLica.verifikujPravnoLice(pravnoLice);
+		String kupac = pravnaLica.kreirajKupca();
+		Ugovori ugovori = homePage.navigateOnPage("PX", Ugovori.class, "Kupci", "Ugovori");
+		ugovori.verifikujUgovori();
+		ugovori.dodajPotpisanUgovor("36Z0100154X", kupac);
+		ugovori.verifikujUgovori();
+		ugovori.pronadjiUgovorPravnoLice(pravnoLice);
 	}
 	
 	@Test (enabled = false)
@@ -63,18 +63,18 @@ public class PX_013_Ugovori_CRUD_PositiveTestCases extends BaseTest {
 		logIn.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
 		homePage.verifikujPocetnuStranicu();
-		PravnaLica pravnaLicaPage = homePage.navigirajNaPravnaLica();
-		pravnaLicaPage.verifikujPravnaLica();
-		String pravnoLice = pravnaLicaPage.dodajPravnoLice();
-		pravnaLicaPage.verifikujPravnaLica();
-		pravnaLicaPage.verifikujPravnoLice(pravnoLice);
-		String kupac = pravnaLicaPage.kreirajKupca();
-		Ugovori ugovoriPage = homePage.navigirajNaUgovori();
-		ugovoriPage.verifikujUgovori();
-		ugovoriPage.dodajUgovor(kupac, "7 - Kategorija cijene 2", "15.07.2020.", "15.07.2020.", "dfsf56456", true);
-		ugovoriPage.verifikujUgovori();
-		ugovoriPage.pronadjiUgovorPravnoLice(pravnoLice);
-		ugovoriPage.urediUgovor();
+		PravnaLica pravnaLica = homePage.navigateOnPage("PX", PravnaLica.class, "Kupci", "Pravna lica");
+		pravnaLica.verifikujPravnaLica();
+		String pravnoLice = pravnaLica.dodajPravnoLice();
+		pravnaLica.verifikujPravnaLica();
+		pravnaLica.verifikujPravnoLice(pravnoLice);
+		String kupac = pravnaLica.kreirajKupca();
+		Ugovori ugovori = homePage.navigateOnPage("PX", Ugovori.class, "Kupci", "Ugovori");
+		ugovori.verifikujUgovori();
+		ugovori.dodajUgovor(kupac, "7 - Kategorija cijene 2", "15.07.2020.", "15.07.2020.", "dfsf56456", true);
+		ugovori.verifikujUgovori();
+		ugovori.pronadjiUgovorPravnoLice(pravnoLice);
+		ugovori.urediUgovor();
 	}
 	
 	@Test (enabled = false)		//	Test je trenutno disabled - promijenili su se uslovi za deaktivaciju ugovora i mogucnost ponovnog kreiranja ugovora sa istim mjernim mjestom
@@ -84,21 +84,21 @@ public class PX_013_Ugovori_CRUD_PositiveTestCases extends BaseTest {
 		logIn.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
 		homePage.verifikujPocetnuStranicu();
-		PravnaLica pravnaLicaPage = homePage.navigirajNaPravnaLica();
-		pravnaLicaPage.verifikujPravnaLica();
-		String pravnoLice = pravnaLicaPage.dodajPravnoLice();
-		pravnaLicaPage.verifikujPravnaLica();
-		pravnaLicaPage.verifikujPravnoLice(pravnoLice);
-		String kupac = pravnaLicaPage.kreirajKupca();
-		Ugovori ugovoriPage = homePage.navigirajNaUgovori();
-		ugovoriPage.verifikujUgovori();
-		ugovoriPage.dodajUgovor(kupac, "7 - Kategorija cijene 2", "15.07.2020.", "15.07.2020.", "36Z0SK009", true);
-		ugovoriPage.verifikujUgovori();
-		ugovoriPage.pronadjiUgovorPravnoLice(pravnoLice);
-		ugovoriPage.verifikujBrojNecekiranihKolona(1);
-		ugovoriPage.deaktivirajUgovor(null);
+		PravnaLica pravnaLica = homePage.navigateOnPage("PX", PravnaLica.class, "Kupci", "Pravna lica");
+		pravnaLica.verifikujPravnaLica();
+		String pravnoLice = pravnaLica.dodajPravnoLice();
+		pravnaLica.verifikujPravnaLica();
+		pravnaLica.verifikujPravnoLice(pravnoLice);
+		String kupac = pravnaLica.kreirajKupca();
+		Ugovori ugovori = homePage.navigateOnPage("PX", Ugovori.class, "Kupci", "Ugovori");
+		ugovori.verifikujUgovori();
+		ugovori.dodajUgovor(kupac, "7 - Kategorija cijene 2", "15.07.2020.", "15.07.2020.", "36Z0SK009", true);
+		ugovori.verifikujUgovori();
+		ugovori.pronadjiUgovorPravnoLice(pravnoLice);
+		ugovori.verifikujBrojNecekiranihKolona(1);
+		ugovori.deaktivirajUgovor(null);
 		//ugovoriPage.verifikujUgovori();
-		ugovoriPage.pronadjiUgovorPravnoLice(pravnoLice);
+		ugovori.pronadjiUgovorPravnoLice(pravnoLice);
 		// ugovoriPage.verifikujBrojNecekranihKolona(3);
 	}
 	
@@ -109,20 +109,20 @@ public class PX_013_Ugovori_CRUD_PositiveTestCases extends BaseTest {
 		logIn.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
 		homePage.verifikujPocetnuStranicu();
-		PravnaLica pravnaLicaPage = homePage.navigirajNaPravnaLica();
-		pravnaLicaPage.verifikujPravnaLica();
-		String pravnoLice = pravnaLicaPage.dodajPravnoLice();
-		pravnaLicaPage.verifikujPravnaLica();
-		pravnaLicaPage.verifikujPravnoLice(pravnoLice);
-		String kupac = pravnaLicaPage.kreirajKupca();
-		Ugovori ugovoriPage = homePage.navigirajNaUgovori();
-		ugovoriPage.verifikujUgovori();
-		ugovoriPage.dodajPotpisanUgovor("SK009281150R", kupac);
-		ugovoriPage.pronadjiUgovorPravnoLice(pravnoLice);
-		ugovoriPage.verifikujBrojNecekiranihKolona(0);
-		ugovoriPage.odbaciUgovor();
-		ugovoriPage.verifikujOdbaceniUgovor(kupac);
-		homePage.navigirajNaOdbaceniUgovori();
+		PravnaLica pravnaLica = homePage.navigateOnPage("PX", PravnaLica.class, "Kupci", "Pravna lica");
+		pravnaLica.verifikujPravnaLica();
+		String pravnoLice = pravnaLica.dodajPravnoLice();
+		pravnaLica.verifikujPravnaLica();
+		pravnaLica.verifikujPravnoLice(pravnoLice);
+		String kupac = pravnaLica.kreirajKupca();
+		Ugovori ugovori = homePage.navigateOnPage("PX", Ugovori.class, "Kupci", "Ugovori");
+		ugovori.verifikujUgovori();
+		ugovori.dodajPotpisanUgovor("SK009281150R", kupac);
+		ugovori.pronadjiUgovorPravnoLice(pravnoLice);
+		ugovori.verifikujBrojNecekiranihKolona(0);
+		ugovori.odbaciUgovor();
+		ugovori.verifikujOdbaceniUgovor(kupac);
+		homePage.navigateOnPage("PX", OdbaceniUgovori.class, "Kupci", "Odbačeni ugovori");
 		OdbaceniUgovori odbaceniUgovoriPage = new OdbaceniUgovori(driver);
 		odbaceniUgovoriPage.verifikujOdbaceniUgovori();
 		odbaceniUgovoriPage.verifikujOdbaceniUgovor("SK009281150R");
@@ -135,13 +135,13 @@ public class PX_013_Ugovori_CRUD_PositiveTestCases extends BaseTest {
 		logIn.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
 		homePage.verifikujPocetnuStranicu();
-		Ugovori ugovoriPage = homePage.navigirajNaUgovori();
-		ugovoriPage.verifikujUgovori();
-		ugovoriPage.pronadjiUgovorPoEic("36Z0SB00");
-		ugovoriPage.otvoriPreregistraciju();
-		ugovoriPage.preregistrujUgovor();
-		ugovoriPage.verifikujUgovori();
-		ugovoriPage.verifikujPreregistrovanUgovor("36Z0SB00", "4100010 - Firma 2, Hajduk Veljkova 1, 78000 Banja Luka");
+		Ugovori ugovori = homePage.navigateOnPage("PX", Ugovori.class, "Kupci", "Ugovori");
+		ugovori.verifikujUgovori();
+		ugovori.pronadjiUgovorPoEic("36Z0SB00");
+		ugovori.otvoriPreregistraciju();
+		ugovori.preregistrujUgovor();
+		ugovori.verifikujUgovori();
+		ugovori.verifikujPreregistrovanUgovor("36Z0SB00", "4100010 - Firma 2, Hajduk Veljkova 1, 78000 Banja Luka");
 	}
 
 }

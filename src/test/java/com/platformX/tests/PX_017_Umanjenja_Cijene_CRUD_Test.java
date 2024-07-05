@@ -21,7 +21,7 @@ public class PX_017_Umanjenja_Cijene_CRUD_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
 		homePage.verifikujPocetnuStranicu();
-		UmanjenjaCijene umanjenjaCijene = homePage.navigirajNaUmanjenjaCijene();
+		UmanjenjaCijene umanjenjaCijene = homePage.navigateOnPage("PX", UmanjenjaCijene.class, "Obračun", "Umanjenja cijene");
 		umanjenjaCijene.verifikujUmanjenjaCijene();
 		String brojMjeseci = umanjenjaCijene.dodajUmanjenjeCijene();
 		umanjenjaCijene.verifikujPoruku("Uspješno završeno.");
@@ -37,7 +37,7 @@ public class PX_017_Umanjenja_Cijene_CRUD_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
 		homePage.verifikujPocetnuStranicu();
-		UmanjenjaCijene umanjenjaCijene = homePage.navigirajNaUmanjenjaCijene();
+		UmanjenjaCijene umanjenjaCijene = homePage.navigateOnPage("PX", UmanjenjaCijene.class, "Obračun", "Umanjenja cijene");
 		umanjenjaCijene.verifikujUmanjenjaCijene();
 		String brojMjeseci = umanjenjaCijene.dodajUmanjenjeCijene();
 		umanjenjaCijene.verifikujPoruku("Uspješno završeno.");
@@ -55,7 +55,7 @@ public class PX_017_Umanjenja_Cijene_CRUD_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
 		homePage.verifikujPocetnuStranicu();
-		UmanjenjaCijene umanjenjaCijene = homePage.navigirajNaUmanjenjaCijene();
+		UmanjenjaCijene umanjenjaCijene = homePage.navigateOnPage("PX", UmanjenjaCijene.class, "Obračun", "Umanjenja cijene");
 		umanjenjaCijene.verifikujUmanjenjaCijene();
 		String brojMjeseci = umanjenjaCijene.dodajUmanjenjeCijene();
 		umanjenjaCijene.verifikujPoruku("Uspješno završeno.");
@@ -76,7 +76,7 @@ public class PX_017_Umanjenja_Cijene_CRUD_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
 		homePage.verifikujPocetnuStranicu();
-		UmanjenjaCijene umanjenjaCijene = homePage.navigirajNaUmanjenjaCijene();
+		UmanjenjaCijene umanjenjaCijene = homePage.navigateOnPage("PX", UmanjenjaCijene.class, "Obračun", "Umanjenja cijene");
 		umanjenjaCijene.verifikujUmanjenjaCijene();
 		String brojMjeseci = umanjenjaCijene.dodajUmanjenjeCijene();
 		umanjenjaCijene.verifikujPoruku("Uspješno završeno.");

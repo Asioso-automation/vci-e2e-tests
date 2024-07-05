@@ -1,10 +1,8 @@
 package com.platformX.page;
 
-import static org.testng.Assert.assertTrue;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -38,8 +36,7 @@ public class Djelatnosti extends PocetnaStranica {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNazivWE));
 	}
 	
-	public String dodajDjelatnost() throws InterruptedException {
-		String djelatnost = "Djelatnost " + Helper.getRandomString(5);
+	public String dodajDjelatnost(String djelatnost) throws InterruptedException {
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
 		dodajBtnWE.click();
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
@@ -55,20 +52,7 @@ public class Djelatnosti extends PocetnaStranica {
 		return djelatnost;
 	}
 	
-	public void verifikujDjelatnost(String djelatnost) throws InterruptedException {
-		wait.until(ExpectedConditions.elementToBeClickable(filterKolona3WE));
-		filterKolona3WE.click();
-		filterKolona3WE.clear();
-		filterKolona3WE.sendKeys(djelatnost);
-		filterKolona3WE.sendKeys(Keys.ENTER);
-		Thread.sleep(1000);
-		wait.until(ExpectedConditions.visibilityOf(podatak2Tabela3WE));
-		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
-		assertTrue(podatak2Tabela3WE.getText().equals(djelatnost), "Djelatnosti: Ime djelatnosti nije dobro!");
-	}
-	
-	public String urediDjelatnost() {
-		String djelatnost = "Djelatnost " + Helper.getRandomString(5);
+	public String urediDjelatnost(String djelatnost) {
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		burgerBarWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(urediWE));
@@ -82,19 +66,6 @@ public class Djelatnosti extends PocetnaStranica {
 		submitBtnWE.click();
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		return djelatnost;
-	}
-	
-	public void verifikujBrisanjeDjelatnosti(String djelatnost) throws InterruptedException {
-		wait.until(ExpectedConditions.elementToBeClickable(filterKolona3WE));
-		Thread.sleep(1000);
-		filterKolona3WE.click();
-		filterKolona3WE.clear();
-		filterKolona3WE.sendKeys(djelatnost);
-		filterKolona3WE.sendKeys(Keys.ENTER);
-		Thread.sleep(1000);
-		wait.until(ExpectedConditions.visibilityOf(podatak2TabelaWE));
-		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
-		assertTrue(podatak2TabelaWE.getText().equals("Nema podataka"), "Djelatnosti: Poruka prazne tabele nije dobra!");
 	}
 
 }

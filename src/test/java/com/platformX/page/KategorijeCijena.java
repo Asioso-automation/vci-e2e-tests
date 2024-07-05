@@ -1,16 +1,13 @@
 package com.platformX.page;
 
-import static org.testng.Assert.assertTrue;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import com.platformX.base.Kolone;
-import com.platformX.util.Helper;
 
 public class KategorijeCijena extends PocetnaStranica {
 	
@@ -36,8 +33,7 @@ public class KategorijeCijena extends PocetnaStranica {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaVremenskiOgranicenaWE));
 	}
 	
-	public String dodajKategoriju() {
-		String kategorija = Helper.getRandomString(5);
+	public String dodajKategoriju(String kategorija) {
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
 		dodajBtnWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(nazivKategorijeWE));
@@ -49,21 +45,7 @@ public class KategorijeCijena extends PocetnaStranica {
 		return kategorija;
 	}
 	
-	public void verifikujKategoriju(String kategorija) throws InterruptedException {
-		wait.until(ExpectedConditions.elementToBeClickable(filterKolona2WE));
-		filterKolona2WE.click();
-		filterKolona2WE.clear();
-		filterKolona2WE.sendKeys(kategorija);
-		filterKolona2WE.sendKeys(Keys.ENTER);
-		Thread.sleep(1000);
-		wait.until(ExpectedConditions.visibilityOf(jedinstvenElementWE));
-		wait.until(ExpectedConditions.visibilityOf(podatak2Tabela2WE));
-		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
-		assertTrue(podatak2Tabela2WE.getText().equals(kategorija), "KtegorijeCijena: Ime kategorije nije dobro!");
-	}
-	
-	public String urediKategorijuCijena() {
-		String novaKategorija = Helper.getRandomString(5);
+	public String urediKategorijuCijena(String novaKategorija) {
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		burgerBarWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(urediWE));
@@ -75,18 +57,6 @@ public class KategorijeCijena extends PocetnaStranica {
 		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
 		submitBtnWE.click();
 		return novaKategorija;
-	}
-	
-	public void verifikujBrisanjeKategorije(String kategorija) throws InterruptedException {
-		wait.until(ExpectedConditions.elementToBeClickable(filterKolona2WE));
-		filterKolona2WE.click();
-		filterKolona2WE.clear();
-		filterKolona2WE.sendKeys(kategorija);
-		filterKolona2WE.sendKeys(Keys.ENTER);
-		Thread.sleep(1000);
-		wait.until(ExpectedConditions.visibilityOf(podatak2TabelaWE));
-		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
-		assertTrue(podatak2TabelaWE.getText().equals("Nema podataka"), "TarifneGrupe: Poruka prazne tabele nije dobra!");
 	}
 
 }

@@ -26,7 +26,7 @@ public class PX_DIST_006_Citaci_CRUD_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		Citaci citaci = homePage.navigateOnPage(Citaci.class, "Šifarnici", "Čitači");
+		Citaci citaci = homePage.navigateOnPage("PXD", Citaci.class, "Šifarnici", "Čitači");
 		citaci.verifikujCitaci();
 		citaci.dodajCitaca(citac);
 		citaci.verifikujPoruku("Uspješno završeno.");
@@ -42,7 +42,7 @@ public class PX_DIST_006_Citaci_CRUD_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		Citaci citaci = homePage.navigateOnPage(Citaci.class, "Šifarnici", "Čitači");
+		Citaci citaci = homePage.navigateOnPage("PXD", Citaci.class, "Šifarnici", "Čitači");
 		citaci.verifikujCitaci();
 		citaci.pretraziStavku(homePage.filterKolona2WE, citac);
 		citaci.verifikujCitaci();
@@ -61,7 +61,7 @@ public class PX_DIST_006_Citaci_CRUD_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		Citaci citaci = homePage.navigateOnPage(Citaci.class, "Šifarnici", "Čitači");
+		Citaci citaci = homePage.navigateOnPage("PXD", Citaci.class, "Šifarnici", "Čitači");
 		citaci.verifikujCitaci();
 		citaci.pretraziStavku(homePage.filterKolona2WE, noviCitac);
 		citaci.verifikujCitaci();

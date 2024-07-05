@@ -31,7 +31,7 @@ public class PX_DIST_026_Neovlastena_Potrosnja_CRUD_Test extends BaseTest{
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		FizickaLica fizickaLica = homePage.navigateOnPage(FizickaLica.class, "Kupci", "Fizička lica");
+		FizickaLica fizickaLica = homePage.navigateOnPage("PXD", FizickaLica.class, "Kupci", "Fizička lica");
 		fizickaLica.verifikujFizickaLica();
 		fizickaLica.dodajFizickoLice(fizickoLice);
 		fizickaLica.verifikujPoruku("Uspješno završeno.");
@@ -39,14 +39,14 @@ public class PX_DIST_026_Neovlastena_Potrosnja_CRUD_Test extends BaseTest{
 		fizickaLica.verifikujFizickaLica();
 		fizickaLica.verifikujStavku(fizickoLice, homePage.podatak2Tabela2WE);
 		kupac = fizickaLica.kreirajFizickoLice();
-		Trafostanice trafostanice = homePage.navigateOnPage(Trafostanice.class, "Šifarnici", "Trafostanice");
+		Trafostanice trafostanice = homePage.navigateOnPage("PXD", Trafostanice.class, "Šifarnici", "Trafostanice");
 		trafostanice.verifikujTrafostanice();
 		trafostanice.dodajTrafostanicu(trafostanica);
 		trafostanice.verifikujPoruku("Uspješno završeno.");
 		trafostanice.pretraziStavku(homePage.filterKolona3WE, trafostanica);
 		trafostanice.verifikujTrafostanice();
 		trafostanice.verifikujStavku(trafostanica, homePage.podatak2Tabela3WE);
-		NeovlastenaPotrosnja neovlastenaPotrosnja = homePage.navigateOnPage(NeovlastenaPotrosnja.class, "Neovlaštena potrošnja", "Neovlaštena potrošnja");
+		NeovlastenaPotrosnja neovlastenaPotrosnja = homePage.navigateOnPage("PXD", NeovlastenaPotrosnja.class, "Neovlaštena potrošnja", "Neovlaštena potrošnja");
 		neovlastenaPotrosnja.verifikujNeovlastenaPotrosnja();
 		neovlastenaPotrosnja.dodajNeovlastenuPotrosnju(fizickoLice, trafostanica);
 		neovlastenaPotrosnja.verifikujPoruku("Uspješno završeno.");
@@ -62,7 +62,7 @@ public class PX_DIST_026_Neovlastena_Potrosnja_CRUD_Test extends BaseTest{
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		FizickaLica fizickaLica = homePage.navigateOnPage(FizickaLica.class, "Kupci", "Fizička lica");
+		FizickaLica fizickaLica = homePage.navigateOnPage("PXD", FizickaLica.class, "Kupci", "Fizička lica");
 		fizickaLica.verifikujFizickaLica();
 		fizickaLica.dodajFizickoLice(novoFizickoLice);
 		fizickaLica.verifikujPoruku("Uspješno završeno.");
@@ -70,7 +70,7 @@ public class PX_DIST_026_Neovlastena_Potrosnja_CRUD_Test extends BaseTest{
 		fizickaLica.verifikujFizickaLica();
 		fizickaLica.verifikujStavku(novoFizickoLice, homePage.podatak2Tabela2WE);
 		noviKupac = fizickaLica.kreirajFizickoLice();
-		NeovlastenaPotrosnja neovlastenaPotrosnja = homePage.navigateOnPage(NeovlastenaPotrosnja.class, "Neovlaštena potrošnja", "Neovlaštena potrošnja");
+		NeovlastenaPotrosnja neovlastenaPotrosnja = homePage.navigateOnPage("PXD", NeovlastenaPotrosnja.class, "Neovlaštena potrošnja", "Neovlaštena potrošnja");
 		neovlastenaPotrosnja.pretraziStavku(homePage.filterKolona2WE, fizickoLice);
 		neovlastenaPotrosnja.verifikujNeovlastenaPotrosnja();
 		neovlastenaPotrosnja.verifikujStavku(kupac, homePage.podatak2Tabela2WE);
@@ -88,7 +88,7 @@ public class PX_DIST_026_Neovlastena_Potrosnja_CRUD_Test extends BaseTest{
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		NeovlastenaPotrosnja neovlastenaPotrosnja = homePage.navigateOnPage(NeovlastenaPotrosnja.class, "Neovlaštena potrošnja", "Neovlaštena potrošnja");
+		NeovlastenaPotrosnja neovlastenaPotrosnja = homePage.navigateOnPage("PXD", NeovlastenaPotrosnja.class, "Neovlaštena potrošnja", "Neovlaštena potrošnja");
 		neovlastenaPotrosnja.verifikujNeovlastenaPotrosnja();
 		neovlastenaPotrosnja.pretraziStavku(homePage.filterKolona2WE, novoFizickoLice);
 		neovlastenaPotrosnja.verifikujNeovlastenaPotrosnja();

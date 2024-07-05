@@ -26,7 +26,7 @@ public class PX_DIST_015_Tarifne_Nadgrupe_CRUD_Test extends BaseTest{
 		logIn.logIn();
 	    PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 	    homePage.verifikujPocetnuStranicu();
-	    TarifneNadgrupe tarifneNadgrupe = homePage.navigateOnPage(TarifneNadgrupe.class, "Tarifni sistem", "Tarifne nadgrupe");
+	    TarifneNadgrupe tarifneNadgrupe = homePage.navigateOnPage("PXD", TarifneNadgrupe.class, "Tarifni sistem", "Tarifne nadgrupe");
 	    tarifneNadgrupe.verifikujTarifneNadgrupe();
 	    tarifneNadgrupe.dodajTarifnuNadrgupu(tarifnaNadgrupa);
 	    tarifneNadgrupe.verifikujPoruku("Uspješno završeno.");
@@ -42,7 +42,7 @@ public class PX_DIST_015_Tarifne_Nadgrupe_CRUD_Test extends BaseTest{
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		TarifneNadgrupe tarifneNadgrupe = homePage.navigateOnPage(TarifneNadgrupe.class, "Tarifni sistem", "Tarifne nadgrupe");
+		TarifneNadgrupe tarifneNadgrupe = homePage.navigateOnPage("PXD", TarifneNadgrupe.class, "Tarifni sistem", "Tarifne nadgrupe");
 		tarifneNadgrupe.verifikujTarifneNadgrupe();
 	    tarifneNadgrupe.pretraziStavku(homePage.filterKolona2WE, tarifnaNadgrupa);
 	    tarifneNadgrupe.verifikujTarifneNadgrupe();
@@ -61,7 +61,7 @@ public class PX_DIST_015_Tarifne_Nadgrupe_CRUD_Test extends BaseTest{
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		TarifneNadgrupe tarifneNadgrupe = homePage.navigateOnPage(TarifneNadgrupe.class, "Tarifni sistem", "Tarifne nadgrupe");
+		TarifneNadgrupe tarifneNadgrupe = homePage.navigateOnPage("PXD", TarifneNadgrupe.class, "Tarifni sistem", "Tarifne nadgrupe");
 		tarifneNadgrupe.verifikujTarifneNadgrupe();
 	    tarifneNadgrupe.pretraziStavku(homePage.filterKolona2WE, novaTarifnaNadgrupa);
 	    tarifneNadgrupe.verifikujTarifneNadgrupe();

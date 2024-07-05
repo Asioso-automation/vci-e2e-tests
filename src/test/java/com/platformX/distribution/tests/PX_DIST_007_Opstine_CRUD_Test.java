@@ -26,7 +26,7 @@ public class PX_DIST_007_Opstine_CRUD_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		Opstine opstine = homePage.navigateOnPage(Opstine.class, "Šifarnici", "Opštine");
+		Opstine opstine = homePage.navigateOnPage("PXD", Opstine.class, "Šifarnici", "Opštine");
 		opstine.verifikujOpstine();
 		opstine.dodajOpstinu(opstina);
 		opstine.verifikujPoruku("Uspješno završeno.");
@@ -42,7 +42,7 @@ public class PX_DIST_007_Opstine_CRUD_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		Opstine opstine = homePage.navigateOnPage(Opstine.class, "Šifarnici", "Opštine");
+		Opstine opstine = homePage.navigateOnPage("PXD", Opstine.class, "Šifarnici", "Opštine");
 		opstine.verifikujOpstine();
 		opstine.pretraziStavku(homePage.filterKolona2WE, opstina);
 		opstine.verifikujOpstine();
@@ -61,7 +61,7 @@ public class PX_DIST_007_Opstine_CRUD_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		Opstine opstine = homePage.navigateOnPage(Opstine.class, "Šifarnici", "Opštine");
+		Opstine opstine = homePage.navigateOnPage("PXD", Opstine.class, "Šifarnici", "Opštine");
 		opstine.verifikujOpstine();
 		opstine.pretraziStavku(homePage.filterKolona2WE, novaOpstina);
 		opstine.verifikujOpstine();

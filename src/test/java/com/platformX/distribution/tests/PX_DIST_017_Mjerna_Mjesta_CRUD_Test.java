@@ -26,7 +26,7 @@ public class PX_DIST_017_Mjerna_Mjesta_CRUD_Test  extends BaseTest {
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		MjernaMjesta mjernaMjesta = homePage.navigateOnPage(MjernaMjesta.class, "Mjerna mjesta", "Mjerna mjesta");
+		MjernaMjesta mjernaMjesta = homePage.navigateOnPage("PXD", MjernaMjesta.class, "Mjerna mjesta", "Mjerna mjesta");
 		mjernaMjesta.verifikujMjernaMjesta();
 		mjernaMjesta.dodajMjernoMjesto(sifraMjernogMjesta);
 		mjernaMjesta.verifikujPoruku("Uspješno završeno.");
@@ -42,7 +42,7 @@ public class PX_DIST_017_Mjerna_Mjesta_CRUD_Test  extends BaseTest {
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		MjernaMjesta mjernaMjesta = homePage.navigateOnPage(MjernaMjesta.class, "Mjerna mjesta", "Mjerna mjesta");
+		MjernaMjesta mjernaMjesta = homePage.navigateOnPage("PXD", MjernaMjesta.class, "Mjerna mjesta", "Mjerna mjesta");
 		mjernaMjesta.verifikujMjernaMjesta();
 		mjernaMjesta.pretraziStavku(homePage.filterKolona3WE, sifraMjernogMjesta);
 		mjernaMjesta.verifikujMjernaMjesta();
@@ -61,7 +61,7 @@ public class PX_DIST_017_Mjerna_Mjesta_CRUD_Test  extends BaseTest {
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		MjernaMjesta mjernaMjesta = homePage.navigateOnPage(MjernaMjesta.class, "Mjerna mjesta", "Mjerna mjesta");
+		MjernaMjesta mjernaMjesta = homePage.navigateOnPage("PXD", MjernaMjesta.class, "Mjerna mjesta", "Mjerna mjesta");
 		mjernaMjesta.verifikujMjernaMjesta();
 		mjernaMjesta.pretraziStavku(homePage.filterKolona3WE, novaSifraMjernogMjesta);
 		mjernaMjesta.verifikujMjernaMjesta();

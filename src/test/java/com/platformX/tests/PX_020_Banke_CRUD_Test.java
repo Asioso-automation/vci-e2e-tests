@@ -21,7 +21,7 @@ public class PX_020_Banke_CRUD_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
 		homePage.verifikujPocetnuStranicu();
-		Banke banke = homePage.navigirajNaBanke();
+		Banke banke = homePage.navigateOnPage("PX", Banke.class, "Finansije", "Banke");
 		banke.verifikujBanke();
 		String banka = banke.dodajBanku();
 		banke.verifikujPoruku("Uspješno završeno.");
@@ -37,7 +37,7 @@ public class PX_020_Banke_CRUD_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
 		homePage.verifikujPocetnuStranicu();
-		Banke banke = homePage.navigirajNaBanke();
+		Banke banke = homePage.navigateOnPage("PX", Banke.class, "Finansije", "Banke");
 		banke.verifikujBanke();
 		String banka = banke.dodajBanku();
 		banke.verifikujPoruku("Uspješno završeno.");
@@ -55,7 +55,7 @@ public class PX_020_Banke_CRUD_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
 		homePage.verifikujPocetnuStranicu();
-		Banke banke = homePage.navigirajNaBanke();
+		Banke banke = homePage.navigateOnPage("PX", Banke.class, "Finansije", "Banke");
 		banke.verifikujBanke();
 		String banka = banke.dodajBanku();
 		banke.verifikujPoruku("Uspješno završeno.");
@@ -76,7 +76,7 @@ public class PX_020_Banke_CRUD_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
 		homePage.verifikujPocetnuStranicu();
-		Banke banke = homePage.navigirajNaBanke();
+		Banke banke = homePage.navigateOnPage("PX", Banke.class, "Finansije", "Banke");
 		banke.verifikujBanke();
 		String banka = banke.dodajBanku();
 		banke.verifikujBanku(banka);
