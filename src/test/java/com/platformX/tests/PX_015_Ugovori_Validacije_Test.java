@@ -21,7 +21,7 @@ public class PX_015_Ugovori_Validacije_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
 		homePage.verifikujPocetnuStranicu();
-		Ugovori ugovori = homePage.navigateOnPage("PX", Ugovori.class, "Kupci", "Ugovori");
+		Ugovori ugovori = homePage.navigateOnPagePX(Ugovori.class, "Kupci", "Ugovori");
 		ugovori.verifikujUgovori();
 		ugovori.verifikujObaveznaPolja();
 	}
@@ -33,7 +33,7 @@ public class PX_015_Ugovori_Validacije_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
 		homePage.verifikujPocetnuStranicu();
-		Ugovori ugovori = homePage.navigateOnPage("PX", Ugovori.class, "Kupci", "Ugovori");
+		Ugovori ugovori = homePage.navigateOnPagePX(Ugovori.class, "Kupci", "Ugovori");
 		ugovori.verifikujUgovori();
 		ugovori.verifikujValidacijePolja();
 	}
@@ -45,7 +45,7 @@ public class PX_015_Ugovori_Validacije_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
 		homePage.verifikujPocetnuStranicu();
-		Ugovori ugovori = homePage.navigateOnPage("PX", Ugovori.class, "Kupci", "Ugovori");
+		Ugovori ugovori = homePage.navigateOnPagePX(Ugovori.class, "Kupci", "Ugovori");
 		ugovori.verifikujUgovori();
 		ugovori.pronadjiUgovorPoEic("36ZBLNG");
 		ugovori.verifikujObaveznaPoljaUredjivanjeUgovora();
@@ -58,7 +58,7 @@ public class PX_015_Ugovori_Validacije_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
 		homePage.verifikujPocetnuStranicu();
-		Ugovori ugovori = homePage.navigateOnPage("PX", Ugovori.class, "Kupci", "Ugovori");
+		Ugovori ugovori = homePage.navigateOnPagePX(Ugovori.class, "Kupci", "Ugovori");
 		ugovori.verifikujUgovori();
 		// ugovoriPage.pronadjiUgovor("Mjerno mjesto 2");
 		ugovori.pronadjiUgovorPoEic("36ZBLNG");

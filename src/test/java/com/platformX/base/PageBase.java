@@ -347,5 +347,18 @@ public abstract class PageBase {
 //	            // Instantiate the provided page class using its constructor
 	            return pageClass.getDeclaredConstructor(WebDriver.class).newInstance(driver);
 	    }
+	 
+	 public <T extends PageBase> T navigateOnPagePX(Class<T> pageClass, String sekcija, String stranica) throws InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException, SecurityException {
+     	WebDriverWait wait = new WebDriverWait(driver, 10);
+     	try {
+ 		wait.until(ExpectedConditions.elementToBeClickable
+ 				(By.xpath("//*[text()='" + sekcija + "' and @class='v-btn__content']"))).click();
+ 		wait.until(ExpectedConditions.elementToBeClickable
+ 				(By.xpath("//div[contains(text(),'" + stranica + "') and @class='v-list-item__title']"))).click();
+     	} catch (Exception e) {
+			            driver.get(platformx_properties.getValue("URL.LOGIN") + platformx_properties.getValue(propertiesNaziv(stranica)));
+     	}
+         return pageClass.getDeclaredConstructor(WebDriver.class).newInstance(driver);
+ }
 	
 }

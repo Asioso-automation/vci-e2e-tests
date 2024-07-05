@@ -21,7 +21,7 @@ public class PX_012_Pravna_Lica_CRUD_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
 		homePage.verifikujPocetnuStranicu();
-		PravnaLica pravnaLica = homePage.navigateOnPage("PX", PravnaLica.class, "Kupci", "Pravna lica");
+		PravnaLica pravnaLica = homePage.navigateOnPagePX(PravnaLica.class, "Kupci", "Pravna lica");
 		pravnaLica.verifikujPravnaLica();
 		String pravnoLice = pravnaLica.dodajPravnoLice();
 		pravnaLica.verifikujPoruku("Uspješno završeno.");
@@ -38,7 +38,7 @@ public class PX_012_Pravna_Lica_CRUD_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
 		homePage.verifikujPocetnuStranicu();
-		PravnaLica pravnaLica = homePage.navigateOnPage("PX", PravnaLica.class, "Kupci", "Pravna lica");
+		PravnaLica pravnaLica = homePage.navigateOnPagePX(PravnaLica.class, "Kupci", "Pravna lica");
 		pravnaLica.verifikujPravnaLica();
 		String pravnoLice = pravnaLica.dodajPravnoLice();
 		pravnaLica.verifikujPoruku("Uspješno završeno.");
@@ -60,7 +60,7 @@ public class PX_012_Pravna_Lica_CRUD_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
 		homePage.verifikujPocetnuStranicu();
-		PravnaLica pravnaLica = homePage.navigateOnPage("PX", PravnaLica.class, "Kupci", "Pravna lica");
+		PravnaLica pravnaLica = homePage.navigateOnPagePX(PravnaLica.class, "Kupci", "Pravna lica");
 		pravnaLica.verifikujPravnaLica();
 		String pravnoLice = pravnaLica.dodajPravnoLice();
 		pravnaLica.verifikujPravnaLica();
@@ -78,7 +78,7 @@ public class PX_012_Pravna_Lica_CRUD_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
 		homePage.verifikujPocetnuStranicu();
-		PravnaLica pravnaLica = homePage.navigateOnPage("PX", PravnaLica.class, "Kupci", "Pravna lica");
+		PravnaLica pravnaLica = homePage.navigateOnPagePX(PravnaLica.class, "Kupci", "Pravna lica");
 		pravnaLica.verifikujPravnaLica();
 		pravnaLica.verifikujPravnoLice("Firma 2");
 		pravnaLica.obrisiStavku();

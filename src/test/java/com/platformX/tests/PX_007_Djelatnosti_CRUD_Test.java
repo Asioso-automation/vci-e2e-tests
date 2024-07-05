@@ -26,7 +26,7 @@ public class PX_007_Djelatnosti_CRUD_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
 		homePage.verifikujPocetnuStranicu();
-		Djelatnosti  djelatnosti = homePage.navigateOnPage("PX", Djelatnosti.class, "Šifarnici", "Djelatnosti");
+		Djelatnosti  djelatnosti = homePage.navigateOnPagePX(Djelatnosti.class, "Šifarnici", "Djelatnosti");
 		djelatnosti.verifikujDjelatnosti();
 		djelatnosti.dodajDjelatnost(djelatnost);
 		djelatnosti.verifikujPoruku("Uspješno završeno.");
@@ -42,7 +42,7 @@ public class PX_007_Djelatnosti_CRUD_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
 		homePage.verifikujPocetnuStranicu();
-		Djelatnosti  djelatnosti = homePage.navigateOnPage("PX", Djelatnosti.class, "Šifarnici", "Djelatnosti");
+		Djelatnosti  djelatnosti = homePage.navigateOnPagePX(Djelatnosti.class, "Šifarnici", "Djelatnosti");
 		djelatnosti.verifikujDjelatnosti();
 		djelatnosti.pretraziStavku(homePage.filterKolona3WE, djelatnost);
 		djelatnosti.verifikujDjelatnosti();
@@ -61,7 +61,7 @@ public class PX_007_Djelatnosti_CRUD_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
 		homePage.verifikujPocetnuStranicu();
-		Djelatnosti  djelatnosti = homePage.navigateOnPage("PX", Djelatnosti.class, "Šifarnici", "Djelatnosti");
+		Djelatnosti  djelatnosti = homePage.navigateOnPagePX(Djelatnosti.class, "Šifarnici", "Djelatnosti");
 		djelatnosti.verifikujDjelatnosti();
 		djelatnosti.pretraziStavku(homePage.filterKolona3WE, novaDjelatnost);
 		djelatnosti.verifikujDjelatnosti();

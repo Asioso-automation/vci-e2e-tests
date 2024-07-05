@@ -21,7 +21,7 @@ public class PX_016_Vrste_Zahtjeva_CRUD_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
 		homePage.verifikujPocetnuStranicu();
-		VrsteZahtjeva vrsteZahtjeva = homePage.navigateOnPage("PX", VrsteZahtjeva.class, "Kupci", "Vrste zahtjeva");
+		VrsteZahtjeva vrsteZahtjeva = homePage.navigateOnPagePX(VrsteZahtjeva.class, "Kupci", "Vrste zahtjeva");
 		vrsteZahtjeva.verifikujVrsteZahtjeva();
 		String kod = vrsteZahtjeva.dodajVrstuZahtjeva();
 		vrsteZahtjeva.verifikujPoruku("Uspješno završeno.");
@@ -37,7 +37,7 @@ public class PX_016_Vrste_Zahtjeva_CRUD_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
 		homePage.verifikujPocetnuStranicu();
-		VrsteZahtjeva vrsteZahtjeva = homePage.navigateOnPage("PX", VrsteZahtjeva.class, "Kupci", "Vrste zahtjeva");
+		VrsteZahtjeva vrsteZahtjeva = homePage.navigateOnPagePX(VrsteZahtjeva.class, "Kupci", "Vrste zahtjeva");
 		vrsteZahtjeva.verifikujVrsteZahtjeva();
 		String kod = vrsteZahtjeva.dodajVrstuZahtjeva();
 		vrsteZahtjeva.verifikujPoruku("Uspješno završeno.");
@@ -58,7 +58,7 @@ public class PX_016_Vrste_Zahtjeva_CRUD_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
 		homePage.verifikujPocetnuStranicu();
-		VrsteZahtjeva vrsteZahtjeva = homePage.navigateOnPage("PX", VrsteZahtjeva.class, "Kupci", "Vrste zahtjeva");
+		VrsteZahtjeva vrsteZahtjeva = homePage.navigateOnPagePX(VrsteZahtjeva.class, "Kupci", "Vrste zahtjeva");
 		vrsteZahtjeva.verifikujVrsteZahtjeva();
 		String kod = vrsteZahtjeva.dodajVrstuZahtjeva();
 		vrsteZahtjeva.verifikujPoruku("Uspješno završeno.");

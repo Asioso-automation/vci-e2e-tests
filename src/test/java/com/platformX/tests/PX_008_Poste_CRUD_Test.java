@@ -27,7 +27,7 @@ public class PX_008_Poste_CRUD_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
 		homePage.verifikujPocetnuStranicu();
-		Poste poste = homePage.navigateOnPage("PX", Poste.class, "Šifarnici", "Pošte");
+		Poste poste = homePage.navigateOnPagePX(Poste.class, "Šifarnici", "Pošte");
 		poste.verifikujPoste();
 		poste.dodajPostu(podaci);
 		poste.verifikujPoruku("Uspješno završeno.");
@@ -44,7 +44,7 @@ public class PX_008_Poste_CRUD_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
 		homePage.verifikujPocetnuStranicu();
-		Poste poste = homePage.navigateOnPage("PX", Poste.class, "Šifarnici", "Pošte");
+		Poste poste = homePage.navigateOnPagePX(Poste.class, "Šifarnici", "Pošte");
 		poste.verifikujPoste();
 		poste.dodajPostu(podaci1);
 		poste.verifikujPoruku("Uspješno završeno.");
@@ -63,7 +63,7 @@ public class PX_008_Poste_CRUD_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
 		homePage.verifikujPocetnuStranicu();
-		Poste poste = homePage.navigateOnPage("PX", Poste.class, "Šifarnici", "Pošte");
+		Poste poste = homePage.navigateOnPagePX(Poste.class, "Šifarnici", "Pošte");
 		poste.verifikujPoste();
 		poste.pretraziStavku(homePage.filterKolona2WE, podaci[0]);
 		poste.verifikujPoste();
@@ -84,7 +84,7 @@ public class PX_008_Poste_CRUD_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
 		homePage.verifikujPocetnuStranicu();
-		Poste poste = homePage.navigateOnPage("PX", Poste.class, "Šifarnici", "Pošte");
+		Poste poste = homePage.navigateOnPagePX(Poste.class, "Šifarnici", "Pošte");
 		poste.verifikujPoste();
 		poste.pretraziStavku(homePage.filterKolona2WE, novaPosta);
 		poste.verifikujPoste();
@@ -103,7 +103,7 @@ public class PX_008_Poste_CRUD_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
 		homePage.verifikujPocetnuStranicu();
-		Poste poste = homePage.navigateOnPage("PX", Poste.class, "Šifarnici", "Pošte");
+		Poste poste = homePage.navigateOnPagePX(Poste.class, "Šifarnici", "Pošte");
 		poste.verifikujPoste();
 		poste.pretraziStavku(homePage.filterKolona2WE, "Banja Luka");
 		poste.verifikujPoste();

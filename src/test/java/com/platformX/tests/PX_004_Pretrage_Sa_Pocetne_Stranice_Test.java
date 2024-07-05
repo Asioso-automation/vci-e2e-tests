@@ -22,7 +22,7 @@ public class PX_004_Pretrage_Sa_Pocetne_Stranice_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
 		homePage.verifikujPocetnuStranicu();
-		PravnaLica pravnaLica = homePage.navigateOnPage("PX", PravnaLica.class, "Kupci", "Pravna lica");
+		PravnaLica pravnaLica = homePage.navigateOnPagePX(PravnaLica.class, "Kupci", "Pravna lica");
 		pravnaLica.verifikujPravnaLica();
 		String pravnoLice = pravnaLica.dodajPravnoLice();
 		pravnaLica.verifikujPravnaLica();

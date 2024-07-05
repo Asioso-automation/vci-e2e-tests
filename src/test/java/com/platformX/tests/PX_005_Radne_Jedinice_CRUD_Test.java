@@ -26,7 +26,7 @@ public class PX_005_Radne_Jedinice_CRUD_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
 		homePage.verifikujPocetnuStranicu();
-		RadneJedinice radneJedinice = homePage.navigateOnPage("PX", RadneJedinice.class, "Šifarnici", "Radne jedinice");
+		RadneJedinice radneJedinice = homePage.navigateOnPagePX(RadneJedinice.class, "Šifarnici", "Radne jedinice");
 		radneJedinice.verifikujRadneJedinice();
 		radneJedinice.dodajRadnuJedinicu(radnaJedinica);
 		radneJedinice.verifikujPoruku("Uspješno završeno.");
@@ -42,7 +42,7 @@ public class PX_005_Radne_Jedinice_CRUD_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
 		homePage.verifikujPocetnuStranicu();
-		RadneJedinice radneJedinice = homePage.navigateOnPage("PX", RadneJedinice.class, "Šifarnici", "Radne jedinice");
+		RadneJedinice radneJedinice = homePage.navigateOnPagePX(RadneJedinice.class, "Šifarnici", "Radne jedinice");
 		radneJedinice.verifikujRadneJedinice();
 		radneJedinice.pretraziStavku(homePage.filterKolona2WE, radnaJedinica);
 		radneJedinice.verifikujRadneJedinice();
@@ -61,7 +61,7 @@ public class PX_005_Radne_Jedinice_CRUD_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
 		homePage.verifikujPocetnuStranicu();
-		RadneJedinice radneJedinice = homePage.navigateOnPage("PX", RadneJedinice.class, "Šifarnici", "Radne jedinice");
+		RadneJedinice radneJedinice = homePage.navigateOnPagePX(RadneJedinice.class, "Šifarnici", "Radne jedinice");
 		radneJedinice.verifikujRadneJedinice();
 		radneJedinice.pretraziStavku(homePage.filterKolona2WE, novaRadnaJedinica);
 		radneJedinice.verifikujRadneJedinice();

@@ -26,7 +26,7 @@ public class PX_011_Kategorije_Cijena_CRUD_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
 		homePage.verifikujPocetnuStranicu();
-		KategorijeCijena kategorijeCijena = homePage.navigateOnPage("PX", KategorijeCijena.class, "Tarifni sistem", "Kategorije cijena");
+		KategorijeCijena kategorijeCijena = homePage.navigateOnPagePX(KategorijeCijena.class, "Tarifni sistem", "Kategorije cijena");
 		kategorijeCijena.verifikujKategorijeCijena();
 		kategorijeCijena.dodajKategoriju(kategorija);
 		kategorijeCijena.verifikujPoruku("Uspješno završeno.");
@@ -42,7 +42,7 @@ public class PX_011_Kategorije_Cijena_CRUD_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
 		homePage.verifikujPocetnuStranicu();
-		KategorijeCijena kategorijeCijena = homePage.navigateOnPage("PX", KategorijeCijena.class, "Tarifni sistem", "Kategorije cijena");
+		KategorijeCijena kategorijeCijena = homePage.navigateOnPagePX(KategorijeCijena.class, "Tarifni sistem", "Kategorije cijena");
 		kategorijeCijena.verifikujKategorijeCijena();
 		kategorijeCijena.pretraziStavku(homePage.filterKolona2WE, kategorija);
 		kategorijeCijena.verifikujKategorijeCijena();
@@ -61,7 +61,7 @@ public class PX_011_Kategorije_Cijena_CRUD_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
 		homePage.verifikujPocetnuStranicu();
-		KategorijeCijena kategorijeCijena = homePage.navigateOnPage("PX", KategorijeCijena.class, "Tarifni sistem", "Kategorije cijena");
+		KategorijeCijena kategorijeCijena = homePage.navigateOnPagePX(KategorijeCijena.class, "Tarifni sistem", "Kategorije cijena");
 		kategorijeCijena.verifikujKategorijeCijena();
 		kategorijeCijena.pretraziStavku(homePage.filterKolona2WE, novaKategorija);
 		kategorijeCijena.verifikujKategorijeCijena();

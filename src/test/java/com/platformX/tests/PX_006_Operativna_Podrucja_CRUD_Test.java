@@ -26,7 +26,7 @@ public class PX_006_Operativna_Podrucja_CRUD_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
 		homePage.verifikujPocetnuStranicu();
-		OperativnaPodrucja operativnaPodrucja = homePage.navigateOnPage("PX", OperativnaPodrucja.class, "Šifarnici", "Operativna područja");
+		OperativnaPodrucja operativnaPodrucja = homePage.navigateOnPagePX(OperativnaPodrucja.class, "Šifarnici", "Operativna područja");
 		operativnaPodrucja.verifikujOperativnaPodrucja();
 		operativnaPodrucja.dodajOperativnoPodrucje(operativnoPodrucje);
 		operativnaPodrucja.verifikujPoruku("Uspješno završeno.");
@@ -42,7 +42,7 @@ public class PX_006_Operativna_Podrucja_CRUD_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
 		homePage.verifikujPocetnuStranicu();
-		OperativnaPodrucja operativnaPodrucja = homePage.navigateOnPage("PX", OperativnaPodrucja.class, "Šifarnici", "Operativna područja");
+		OperativnaPodrucja operativnaPodrucja = homePage.navigateOnPagePX(OperativnaPodrucja.class, "Šifarnici", "Operativna područja");
 		operativnaPodrucja.verifikujOperativnaPodrucja();
 		operativnaPodrucja.pretraziStavku(homePage.filterKolona2WE, operativnoPodrucje);
 		operativnaPodrucja.verifikujOperativnaPodrucja();
@@ -61,7 +61,7 @@ public class PX_006_Operativna_Podrucja_CRUD_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranica homePage = new PocetnaStranica(driver);
 		homePage.verifikujPocetnuStranicu();
-		OperativnaPodrucja operativnaPodrucja = homePage.navigateOnPage("PX", OperativnaPodrucja.class, "Šifarnici", "Operativna područja");
+		OperativnaPodrucja operativnaPodrucja = homePage.navigateOnPagePX(OperativnaPodrucja.class, "Šifarnici", "Operativna područja");
 		operativnaPodrucja.verifikujOperativnaPodrucja();
 		operativnaPodrucja.pretraziStavku(homePage.filterKolona2WE, novoOperativnoPodrucje);
 		operativnaPodrucja.verifikujOperativnaPodrucja();
