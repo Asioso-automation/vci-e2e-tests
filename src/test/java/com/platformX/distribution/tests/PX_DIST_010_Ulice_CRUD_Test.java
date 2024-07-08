@@ -26,7 +26,7 @@ public class PX_DIST_010_Ulice_CRUD_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		Ulice ulice = homePage.navigateOnPage("PXD", Ulice.class, "Šifarnici", "Ulice");
+		Ulice ulice = homePage.navigateOnPage(Ulice.class, "Šifarnici", "Ulice");
 		ulice.verifikujUlice();
 		ulice.dodajUlicu(ulica);
 		ulice.verifikujPoruku("Uspješno završeno.");
@@ -42,7 +42,7 @@ public class PX_DIST_010_Ulice_CRUD_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		Ulice ulice = homePage.navigateOnPage("PXD", Ulice.class, "Šifarnici", "Ulice");
+		Ulice ulice = homePage.navigateOnPage(Ulice.class, "Šifarnici", "Ulice");
 		ulice.verifikujUlice();
 		ulice.pretraziStavku(homePage.filterKolona2WE, ulica);
 		ulice.verifikujUlice();
@@ -61,7 +61,7 @@ public class PX_DIST_010_Ulice_CRUD_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		Ulice ulice = homePage.navigateOnPage("PXD", Ulice.class, "Šifarnici", "Ulice");
+		Ulice ulice = homePage.navigateOnPage(Ulice.class, "Šifarnici", "Ulice");
 		ulice.verifikujUlice();
 		ulice.pretraziStavku(homePage.filterKolona2WE, novaUlica);
 		ulice.verifikujUlice();
@@ -79,7 +79,7 @@ public class PX_DIST_010_Ulice_CRUD_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		Ulice ulice = homePage.navigateOnPage("PXD", Ulice.class, "Šifarnici", "Ulice");
+		Ulice ulice = homePage.navigateOnPage(Ulice.class, "Šifarnici", "Ulice");
 		ulice.verifikujUlice();
 		ulice.pretraziStavku(homePage.filterKolona2WE, "HERCEGOVAČKA");				// promijenjeno sa Hajduk Veljkova na HERCEGOVAČKA
 		ulice.verifikujUlice();

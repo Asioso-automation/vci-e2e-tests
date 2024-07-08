@@ -26,7 +26,7 @@ public class PX_DIST_025_Administracijske_Poruke_CRUD_Test  extends BaseTest {
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		Poruke poruke = homePage.navigateOnPage("PXD", Poruke.class, "Administracija", "Poruke");
+		Poruke poruke = homePage.navigateOnPage(Poruke.class, "Administracija", "Poruke");
 		poruke.verifikujPoruke();
 		poruke.dodajPoruku(podaci);
 		poruke.verifikujPoruku("Uspješno završeno.");
@@ -42,7 +42,7 @@ public class PX_DIST_025_Administracijske_Poruke_CRUD_Test  extends BaseTest {
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		Poruke poruke = homePage.navigateOnPage("PXD", Poruke.class, "Administracija", "Poruke");
+		Poruke poruke = homePage.navigateOnPage(Poruke.class, "Administracija", "Poruke");
 		poruke.verifikujPoruke();
 		poruke.dodajPoruku(podaci1);
 		poruke.verifikujPoruku("Uspješno završeno.");
@@ -61,7 +61,7 @@ public class PX_DIST_025_Administracijske_Poruke_CRUD_Test  extends BaseTest {
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		Poruke poruke = homePage.navigateOnPage("PXD", Poruke.class, "Administracija", "Poruke");
+		Poruke poruke = homePage.navigateOnPage(Poruke.class, "Administracija", "Poruke");
 		poruke.verifikujPoruke();
 		poruke.pretraziStavku(homePage.filterKolona3WE, podaci[0]);
 		poruke.verifikujPoruke();

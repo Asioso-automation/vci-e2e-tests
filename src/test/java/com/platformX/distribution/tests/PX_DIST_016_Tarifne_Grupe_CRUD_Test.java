@@ -26,7 +26,7 @@ public class PX_DIST_016_Tarifne_Grupe_CRUD_Test extends BaseTest{
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		TarifneGrupe tarifneGrupe = homePage.navigateOnPage("PXD", TarifneGrupe.class, "Tarifni sistem", "Tarifne grupe");
+		TarifneGrupe tarifneGrupe = homePage.navigateOnPage(TarifneGrupe.class, "Tarifni sistem", "Tarifne grupe");
 		tarifneGrupe.verifikujTarifneGrupe();
 		tarifneGrupe.dodajTarifnuGrupu(tarifnaGrupa);
 		tarifneGrupe.verifikujPoruku("Uspješno završeno.");
@@ -42,7 +42,7 @@ public class PX_DIST_016_Tarifne_Grupe_CRUD_Test extends BaseTest{
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		TarifneGrupe tarifneGrupe = homePage.navigateOnPage("PXD", TarifneGrupe.class, "Tarifni sistem", "Tarifne grupe");
+		TarifneGrupe tarifneGrupe = homePage.navigateOnPage(TarifneGrupe.class, "Tarifni sistem", "Tarifne grupe");
 		tarifneGrupe.verifikujTarifneGrupe();
 		tarifneGrupe.pretraziStavku(homePage.filterKolona2WE, tarifnaGrupa);
 		tarifneGrupe.verifikujTarifneGrupe();
@@ -61,7 +61,7 @@ public class PX_DIST_016_Tarifne_Grupe_CRUD_Test extends BaseTest{
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		TarifneGrupe tarifneGrupe = homePage.navigateOnPage("PXD", TarifneGrupe.class, "Tarifni sistem", "Tarifne grupe");
+		TarifneGrupe tarifneGrupe = homePage.navigateOnPage(TarifneGrupe.class, "Tarifni sistem", "Tarifne grupe");
 		tarifneGrupe.verifikujTarifneGrupe();
 		tarifneGrupe.pretraziStavku(homePage.filterKolona2WE, novaTarifnaGrupa);
 		tarifneGrupe.verifikujTarifneGrupe();

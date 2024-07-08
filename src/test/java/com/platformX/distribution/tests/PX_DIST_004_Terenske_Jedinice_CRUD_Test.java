@@ -26,7 +26,7 @@ public class PX_DIST_004_Terenske_Jedinice_CRUD_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		TerenskeJedinice terenskeJedinice = homePage.navigateOnPage("PXD", TerenskeJedinice.class, "Šifarnici", "Terenske jedinice");
+		TerenskeJedinice terenskeJedinice = homePage.navigateOnPage(TerenskeJedinice.class, "Šifarnici", "Terenske jedinice");
 		terenskeJedinice.verifikujTerenskeJedinice();
 		terenskeJedinice.dodajTerenskuJedinicu(terenskaJedinica);
 		terenskeJedinice.verifikujPoruku("Uspješno završeno.");
@@ -42,7 +42,7 @@ public class PX_DIST_004_Terenske_Jedinice_CRUD_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		TerenskeJedinice terenskeJedinice = homePage.navigateOnPage("PXD", TerenskeJedinice.class, "Šifarnici", "Terenske jedinice");
+		TerenskeJedinice terenskeJedinice = homePage.navigateOnPage(TerenskeJedinice.class, "Šifarnici", "Terenske jedinice");
 		terenskeJedinice.verifikujTerenskeJedinice();
 		terenskeJedinice.pretraziStavku(homePage.filterKolona2WE, terenskaJedinica);
 		terenskeJedinice.verifikujTerenskeJedinice();
@@ -60,7 +60,7 @@ public class PX_DIST_004_Terenske_Jedinice_CRUD_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		TerenskeJedinice terenskeJedinice = homePage.navigateOnPage("PXD", TerenskeJedinice.class, "Šifarnici", "Terenske jedinice");
+		TerenskeJedinice terenskeJedinice = homePage.navigateOnPage(TerenskeJedinice.class, "Šifarnici", "Terenske jedinice");
 		terenskeJedinice.verifikujTerenskeJedinice();
 		terenskeJedinice.pretraziStavku(homePage.filterKolona2WE, novaTerenskaJedinica);
 		terenskeJedinice.verifikujTerenskeJedinice();

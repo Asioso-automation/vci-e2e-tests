@@ -303,6 +303,7 @@ public abstract class PageBase {
 	
 	public String propertiesNaziv(String naziv) {
 		naziv = naziv.toUpperCase();
+		naziv = naziv.replace(". ", ".");
 		naziv = naziv.replace("Š", "S");
 		naziv = naziv.replace("Đ", "DJ");
 		naziv = naziv.replace("Ž", "Z");
@@ -317,14 +318,13 @@ public abstract class PageBase {
 	// Zajednicka metoda za navigaciju po stranicama
 	// Iskoristena u "PX_DIST_003_Verifikacije_Sekcija_Test" u 1. test case-u za navigaciju na Organizacije
 	// TODO Izdvojiti generisanje xapths u odvojene metode, dodati u catch odlazak na stranicu putem linka i poruku
-	 public <T extends PageBase> T navigateOnPage(String app, Class<T> pageClass, String sekcija, String stranica) throws InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException, SecurityException {
+	 public <T extends PageBase> T navigateOnPage(Class<T> pageClass, String sekcija, String stranica) throws InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException, SecurityException {
 	        	WebDriverWait wait = new WebDriverWait(driver, 10);
-	        	try {
-	        		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
-	        	} catch (Exception e) {}
+	        	wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 	        	try {
 	    		wait.until(ExpectedConditions.elementToBeClickable
 	    				(By.xpath("//*[text()='" + sekcija + "' and @class='v-btn__content']"))).click();
+	    		wait.until(ExpectedConditions.visibilityOf((WebElement) By.xpath("//div[contains(@class, 'menuable__content__active')]")));
 	    		wait.until(ExpectedConditions.elementToBeClickable
 	    				(By.xpath("//div[contains(text(),'" + stranica + "') and @class='v-list-item__title']"))).click();
 	        	} catch (Exception e) {
@@ -333,15 +333,11 @@ public abstract class PageBase {
 	        		PocetnaStranicaPXD.strelicaDesnoWE.click();
 		    		wait.until(ExpectedConditions.elementToBeClickable
 		    				(By.xpath("//*[text()='" + sekcija + "' and @class='v-btn__content']"))).click();
+		    		wait.until(ExpectedConditions.visibilityOf((WebElement) By.xpath("//div[@class='menuable__content__active']")));
 		    		wait.until(ExpectedConditions.elementToBeClickable
 		    				(By.xpath("//div[contains(text(),'" + stranica + "') and @class='v-list-item__title']"))).click();
 	        		} catch (Exception a) {
-	        			if(app == "PXD") {
 				            driver.get(platformx_distribution_properties.getValue("URL.DIST.LOGIN") + platformx_distribution_properties.getValue(propertiesNaziv(stranica)));	        
-	        			}
-	        			if(app == "PX") {
-				            driver.get(platformx_properties.getValue("URL.LOGIN") + platformx_properties.getValue(propertiesNaziv(stranica)));	        
-	        			}
 	        		}
 	        	}
 //	            // Instantiate the provided page class using its constructor
@@ -353,6 +349,7 @@ public abstract class PageBase {
      	try {
  		wait.until(ExpectedConditions.elementToBeClickable
  				(By.xpath("//*[text()='" + sekcija + "' and @class='v-btn__content']"))).click();
+		wait.until(ExpectedConditions.visibilityOf((WebElement) By.xpath("//div[@class='menuable__content__active']")));
  		wait.until(ExpectedConditions.elementToBeClickable
  				(By.xpath("//div[contains(text(),'" + stranica + "') and @class='v-list-item__title']"))).click();
      	} catch (Exception e) {
