@@ -97,9 +97,9 @@ public class PX_DIST_009_Poste_CRUD_Test extends BaseTest {
 		homePage.verifikujPocetnuStranicu();
 		Poste poste = homePage.navigateOnPage(Poste.class, "Šifarnici", "Pošte");
 		poste.verifikujPoste();
-		poste.pretraziStavku(homePage.filterKolona2WE, "Zagreb");			// promijenjeno sa Novi Beograd na Zagreb
+		poste.pretraziStavku(homePage.filterKolona2WE, "Trebinje");
 		poste.verifikujPoste();
-		poste.verifikujStavku("10000", homePage.podatak2Tabela1WE);			// promijenjeno sa 11070 na 10000
+		poste.verifikujStavku("89000", homePage.podatak2Tabela1WE);
 		poste.obrisiStavku();
 		poste.verifikujPoruku("Brisanje ovog zapisa nije moguće.");
 	}
