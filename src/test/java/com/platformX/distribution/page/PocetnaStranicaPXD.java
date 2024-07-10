@@ -99,6 +99,9 @@ public class PocetnaStranicaPXD extends PageBase {
 	@FindBy(xpath = "//*[text()='Obračun' and @class='v-btn__content']")
 	protected WebElement obracunWE;
 	
+	@FindBy(xpath = "//*[@class='v-btn__content' and text()='Finansije']")
+	protected WebElement finansijeWE;
+	
 	@FindBy(xpath = "//*[contains(text(),'Administracija') and @class='v-btn__content']")
 	protected WebElement administracijaWE;
 	
@@ -107,7 +110,6 @@ public class PocetnaStranicaPXD extends PageBase {
 
 	@FindBy(xpath = "(//i[contains(@class, 'fa-user')])[1]")
 	protected WebElement profilWE;
-
 	
 	public void verifikujPocetnuStranicu() throws InterruptedException {
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
@@ -143,6 +145,15 @@ public class PocetnaStranicaPXD extends PageBase {
 		wait.until(ExpectedConditions.elementToBeClickable(pocetnaStranicaWE));
 		pocetnaStranicaWE.click();
 		return new PocetnaStranica(driver);
+	}
+	
+	public void strelicaDesnoNavigate() {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(strelicaDesnoWE));
+		strelicaDesnoWE.click();
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
+		wait.until(ExpectedConditions.visibilityOf(finansijeWE));
+		wait.until(ExpectedConditions.visibilityOf(administracijaWE));		
 	}
 	
 }

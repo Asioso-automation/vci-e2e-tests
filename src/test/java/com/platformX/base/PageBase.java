@@ -13,7 +13,6 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import com.platformX.distribution.page.PocetnaStranicaPXD;
 import com.platformX.util.Helper;
 import com.platformX.util.PropertiesUtil;
 
@@ -136,7 +135,6 @@ public abstract class PageBase {
 		
 	@FindBy(xpath = "//tr[2]/td[1]")
 	public WebElement idWE;
-
 
 //	API params
 	
@@ -326,18 +324,12 @@ public abstract class PageBase {
 		String sekcijaXpath = generateXpath(sekcija, sekcijaXClass);
 		String stranicaXpath = generateXpath(stranica, stranicaXClass);
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
-		try {		
+		try {
 			wait.until(ExpectedConditions.elementToBeClickable(By.xpath(sekcijaXpath))).click();
+			wait.until(ExpectedConditions.visibilityOf(aktivniLookupWE));
 			wait.until(ExpectedConditions.elementToBeClickable(By.xpath(stranicaXpath))).click();
 		} catch (Exception e) {
-			try {
-				wait.until(ExpectedConditions.elementToBeClickable(PocetnaStranicaPXD.strelicaDesnoWE));
-				PocetnaStranicaPXD.strelicaDesnoWE.click();
-				wait.until(ExpectedConditions.elementToBeClickable(By.xpath(sekcijaXpath))).click();
-				wait.until(ExpectedConditions.elementToBeClickable(By.xpath(stranicaXpath))).click();
-			} catch (Exception a) {
-				driver.get(platformx_distribution_properties.getValue("URL.DIST.LOGIN") + platformx_distribution_properties.getValue(propertiesNaziv(stranica)));	        
-			}
+			driver.get(platformx_distribution_properties.getValue("URL.DIST.LOGIN") + platformx_distribution_properties.getValue(propertiesNaziv(stranica)));	        
 		}
 		return pageClass.getDeclaredConstructor(WebDriver.class).newInstance(driver);
 	}
@@ -348,6 +340,7 @@ public abstract class PageBase {
 		String stranicaXpath = generateXpath(stranica, stranicaXClass);
 		try {
 			wait.until(ExpectedConditions.elementToBeClickable(By.xpath(sekcijaXpath))).click();
+			wait.until(ExpectedConditions.visibilityOf(aktivniLookupWE));
 			wait.until(ExpectedConditions.elementToBeClickable(By.xpath(stranicaXpath))).click();
 		} catch (Exception e) {
 			driver.get(platformx_properties.getValue("URL.LOGIN") + platformx_properties.getValue(propertiesNaziv(stranica)));

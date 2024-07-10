@@ -20,7 +20,6 @@ public class PX_DIST_003_Verifikacije_Sekcija_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		// Nova implementacija za navigaciju:
 		Organizacije organizacije = homePage.navigateOnPage(Organizacije.class, "Šifarnici", "Organizacije");
 		organizacije.verifikujOrganizacije();
 		TerenskeJedinice terenskeJedinice = homePage.navigateOnPage(TerenskeJedinice.class, "Šifarnici", "Terenske jedinice");
@@ -332,6 +331,7 @@ public class PX_DIST_003_Verifikacije_Sekcija_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
+		homePage.strelicaDesnoNavigate();
 		FinansijskeKartice finansijskeKartice = homePage.navigateOnPage(FinansijskeKartice.class, "Finansije", "Finansijske kartice");
 		finansijskeKartice.verifikujFinansijskeKartice();
 		DnevniciUplata dnevniciUplata = homePage.navigateOnPage(DnevniciUplata.class, "Finansije", "Dnevnici uplata");
@@ -351,6 +351,7 @@ public class PX_DIST_003_Verifikacije_Sekcija_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
+		homePage.strelicaDesnoNavigate();
 		Korisnici korisnici = homePage.navigateOnPage(Korisnici.class, "Administracija", "Korisnici");
 		korisnici.verifikujKorisnici();
 		Poruke poruke = homePage.navigateOnPage(Poruke.class, "Administracija", "Poruke");
