@@ -10,11 +10,20 @@ GO
 EXEC sp_MSForEachTable 'SET QUOTED_IDENTIFIER ON; DELETE FROM ?' 
 GO 
 
---because of delete data from Administration.Configuration
-DROP INDEX [CAK_ActiveBillGeneratorSummary] ON [Generate].[ActiveBillGeneratorSummary]
+-- Check if the index exists before attempting to drop it
+IF EXISTS (
+    SELECT 1 
+    FROM sys.indexes 
+    WHERE object_id = OBJECT_ID('Generate.ActiveBillGeneratorSummary')
+    AND name = 'CAK_ActiveBillGeneratorSummary'
+)
+BEGIN
+    DROP INDEX [CAK_ActiveBillGeneratorSummary] ON [Generate].[ActiveBillGeneratorSummary]
+END
 GO
 
-CREATE UNIQUE CLUSTERED INDEX [CAK_ActiveBillGeneratorSummary] ON [Generate].[ActiveBillGeneratorSummary] ([Id] ASC)
+CREATE UNIQUE CLUSTERED INDEX [CAK_ActiveBillGeneratorSummary] 
+ON [Generate].[ActiveBillGeneratorSummary] ([Id] ASC)
 GO
 
 --insesrtuj podatke
