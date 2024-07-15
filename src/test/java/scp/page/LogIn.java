@@ -28,7 +28,7 @@ public class LogIn extends PageBase {
 	@FindBy(xpath = "//div[2]/div/div[1]/div/input")
 	private WebElement korisnickoImeWE;
 
-	@FindBy(xpath = "//div[3]/div/div[1]/div/input")
+	@FindBy(xpath = "//div[3]/div/div/div[1]/div[1]/input")
 	private WebElement lozinkaWE;
 	
 	@FindBy(xpath = "//form/div/div[2]/div[1]/div/div[1]")

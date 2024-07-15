@@ -339,6 +339,8 @@ public class SCP_004_Verifikacija_Sekcija_Test extends BaseTest {
 		tipoviMjerila.verifikujTipoviMjerila();
 		ProizvodjaciMjerila proizvodjaciMjerila = pocetna.navigirajNaProizvodjaceMjerila();
 		proizvodjaciMjerila.verifikujProizvodjaceMjerila();
+		Plombe plombe = pocetna.navigirajNaPlombe();
+		plombe.verifikujPlombe();
 	}
 	
 	@Test(description = "test prolazi kroz sve stranice iz sekcije OČITANJA i verifikuje ih")
@@ -480,7 +482,7 @@ public class SCP_004_Verifikacija_Sekcija_Test extends BaseTest {
 		Objekti objekti = pocetna.navigirajNaObjekte();
 		objekti.verifikujObjekte();
 		Prostori prostori = pocetna.navigirajNaProstore();
-		prostori.verifikujProstore();
+		prostori.verifikujProstoreOpstinaCistoca();
 		Ugovori ugovori = pocetna.navigirajNaUgovore();
 		ugovori.verifikujUgovoreCistoca();
 		Bonifikacije bonifikacije = pocetna.navigirajNaBonifikacije();
@@ -573,7 +575,7 @@ public class SCP_004_Verifikacija_Sekcija_Test extends BaseTest {
 		Objekti objekti = pocetna.navigirajNaObjekte();
 		objekti.verifikujObjekte();
 		Prostori prostori = pocetna.navigirajNaProstore();
-		prostori.verifikujProstore();
+		prostori.verifikujProstoreOpstinaCistoca();
 		Ugovori ugovori = pocetna.navigirajNaUgovore();
 		ugovori.verifikujUgovoreOpstina();
 		Bonifikacije bonifikacije = pocetna.navigirajNaBonifikacije();
@@ -704,6 +706,8 @@ public class SCP_004_Verifikacija_Sekcija_Test extends BaseTest {
 		tipovi.verifikujTipoviMjerila();
 		ProizvodjaciMjerila proizvodjaci = pocetna.navigirajNaProizvodjaceMjerila();
 		proizvodjaci.verifikujProizvodjaceMjerila();
+		Plombe plombe = pocetna.navigirajNaPlombe();
+		plombe.verifikujPlombe();
 	}
 	
 	@Test(description = "test prolazi kroz sve stranice iz sekcije OČITANJA i verifikuje ih")
@@ -842,7 +846,7 @@ public class SCP_004_Verifikacija_Sekcija_Test extends BaseTest {
 		Objekti objekti = pocetna.navigirajNaObjekte();
 		objekti.verifikujObjekte();
 		Prostori prostori = pocetna.navigirajNaProstore();
-		prostori.verifikujProstore();
+		prostori.verifikujProstoreSon();
 		Ugovori ugovori = pocetna.navigirajNaUgovore();
 		ugovori.verifikujUgovoreSon();
 		RokoviPlacanja rokovi = pocetna.navigirajNaRokovePlacanja();

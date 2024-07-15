@@ -26,28 +26,29 @@ public class SCP_007_Sekcija_Kupci_Test extends BaseTest{
 	}
 	
 	
-//	@Test (description=" test kreira PROSTOR iz sekcije KUPCI i verifikuje ga")
-//	public void scp_007_dodavanje_prostora_test() throws Exception {
-//		LogIn logIn = new LogIn(driver, SCP_PROPERTIES);
-//		PocetnaStranica pocetna = new PocetnaStranica(driver);
-//		driver.manage().window().maximize();
-//		logIn.verifikujLogIn();
-//		logIn.logIn(pocetna.orgGasWE);
-//		pocetna.verifikujPocetnuStranicu();
-//		Objekti objekti = pocetna.navigirajNaObjekte();
-//		objekti.verifikujObjekte();
-//		String objekat = objekti.dodajObjekat();
-//		objekti.verifikujPoruku("Uspješno završeno.");
-//		objekti.pretraziStavku(pocetna.filterKolona4WE, objekat);
-//		objekti.verifikujObjekte();
-//		objekti.verifikujStavku(objekat, pocetna.podatak4TabelaWE);
-//		Prostori prostori = prostori.dodajProstori();
-//		prostori = pocetna.navigirajNaProstore();
-//		//prostori.verifikujPoruku("Uspješno završeno.");
-//		prostori.pretraziStavku(pocetna.filterKolona1WE, prostor);
-//		prostori.verifikujProstore();
-//		prostori.verifikujStavku(prostor, pocetna.podatak1TabelaWE);
-//	}
+	@Test (description=" test kreira PROSTOR iz sekcije KUPCI i verifikuje ga")
+	public void scp_007_dodavanje_prostora_test() throws Exception {
+		LogIn logIn = new LogIn(driver, SCP_PROPERTIES);
+		PocetnaStranica pocetna = new PocetnaStranica(driver);
+		driver.manage().window().maximize();
+		logIn.verifikujLogIn();
+		logIn.logIn(pocetna.orgGasWE);
+		pocetna.verifikujPocetnuStranicu();
+		Objekti objekti = pocetna.navigirajNaObjekte();
+		objekti.verifikujObjekte();
+		String objekat = objekti.dodajObjekat();
+		objekti.verifikujPoruku("Uspješno završeno.");
+		objekti.pretraziStavku(pocetna.filterKolona4WE, objekat);
+		objekti.verifikujObjekte();
+		objekti.verifikujStavku(objekat, pocetna.podatak4TabelaWE);
+		Prostori prostori = pocetna.navigirajNaProstore();
+		prostori.verifikujProstore();
+		objekti = pocetna.navigirajNaObjekte();
+		String prostor = prostori.dodajProstori();
+		//prostori.verifikujPoruku("Uspješno završeno.");
+		prostori.pretraziStavku(pocetna.filterKolona6ProstoriWE, prostor);
+		prostori.verifikujStavku(prostor, pocetna.podatak6TabelaProstoriWE);
+	}
 
 	
 	@Test (description=" test kreira BONIFIKACIJU iz sekcije KUPCI i verifikuje ga")

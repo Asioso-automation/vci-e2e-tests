@@ -19,6 +19,7 @@ public class Prostori extends PocetnaStranica{
 	public Prostori(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);
 	}
+
 	
 	@FindBy(xpath = "//div/div[1]/div[1]/div[1]/div/div/div[1]/div[1]/input")
 	private WebElement vrstaProstoraWE;
@@ -61,26 +62,49 @@ public class Prostori extends PocetnaStranica{
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaStanWE));
 	}
 	
+	public void verifikujProstoreOpstinaCistoca()throws InterruptedException, FileNotFoundException, IOException {
+		Kolone kolone = new Kolone(driver);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
+				"//div[contains(@class, 'v-toolbar__title') and contains(text(), 'Prostori')]")));
+		verifikacijaZajednickihElemenata("Kupci", "Prostori", "Prostori", 7, false, false, true, true, true, true, false);
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNaziv1WE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaVrstaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKupac1WE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaSpratWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaStanWE));
+	}
+	
+	public void verifikujProstoreSon()throws InterruptedException, FileNotFoundException, IOException {
+		Kolone kolone = new Kolone(driver);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
+				"//div[contains(@class, 'v-toolbar__title') and contains(text(), 'Prostori')]")));
+		verifikacijaZajednickihElemenata("Kupci", "Prostori", "Prostori", 6, false, false, true, true, true, true, false);
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNaziv1WE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaVrstaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaSpratWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaStanWE));
+	}
+	
 	public String dodajProstori() throws InterruptedException{
-		String vrsta = "Kuća";
+		String sprat = Helper.getRandomNubmer1to8(1);
 		wait.until(ExpectedConditions.elementToBeClickable(dropDownWE));
 		dropDownWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(dodajProstorWE));
 		dodajProstorWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(vrstaProstoraWE));
-		vrstaProstoraWE.sendKeys(vrsta);
+		vrstaProstoraWE.sendKeys("Kuća");
 		Thread.sleep(1000);
 		vrstaProstoraWE.sendKeys(Keys.ARROW_DOWN);
 		vrstaProstoraWE.sendKeys(Keys.ENTER);
 		wait.until(ExpectedConditions.elementToBeClickable(ulazWE));
 		ulazWE.sendKeys(Helper.getRandomNubmer1to8(1));
 		wait.until(ExpectedConditions.elementToBeClickable(spratBrojWE));
-		spratBrojWE.sendKeys(Helper.getRandomNubmer1to8(1));
+		spratBrojWE.sendKeys(sprat);
 		wait.until(ExpectedConditions.elementToBeClickable(napomenaWE));
 		napomenaWE.sendKeys("#test");
 		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
 		submitBtnWE.click();
-		return vrsta;
+		return sprat;
 	}
 	
 	public void dodajUgovorProstori()throws InterruptedException{
