@@ -44,25 +44,4 @@ public class Korektori extends PocetnaStranica{
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaModulWE));
 	}
 	
-	public String dodajKorektore()throws InterruptedException{
-		String srBroj = "SrBroj" + Helper.getRandomString(5);
-		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
-		dodajBtnWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(korektorBtnWE));
-		korektorBtnWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(srBrWE));
-		srBrWE.sendKeys(srBroj);
-		wait.until(ExpectedConditions.elementToBeClickable(tipOcitanjaWE));
-		tipOcitanjaWE.sendKeys(Helper.getRandomNubmer1to4(1));
-		Thread.sleep(700);
-		tipOcitanjaWE.sendKeys(Keys.ARROW_DOWN);
-		tipOcitanjaWE.sendKeys(Keys.ENTER);
-		wait.until(ExpectedConditions.elementToBeClickable(datumBtn2WE));
-		datumBtn2WE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(trenutniDatum1WE));
-		trenutniDatum1WE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
-		submitBtnWE.click();
-		return srBroj;
-	}
 }

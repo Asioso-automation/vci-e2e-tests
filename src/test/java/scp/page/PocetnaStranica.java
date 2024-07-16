@@ -111,6 +111,9 @@ public class PocetnaStranica extends PageBase {
 	@FindBy(xpath = "(//i[@aria-hidden = 'true' and contains(@class, 'fa-calendar-alt')])[3]")
     protected WebElement datumBtn3WE;
 	
+	@FindBy(xpath = "(//i[@aria-hidden = 'true' and contains(@class, 'fa-calendar-alt')])[4]")
+    protected WebElement datumBtn4WE;
+	
 	@FindBy(xpath = "(//*[contains(@class, 'v-date-picker-table--date')])[1]")  
     protected WebElement datumKalendar1WE;
     
@@ -120,6 +123,9 @@ public class PocetnaStranica extends PageBase {
     @FindBy(xpath = "(//*[contains(@class, 'v-date-picker-table--date')])[3]")  
     protected WebElement datumKalendar3WE;
     
+    @FindBy(xpath = "(//*[contains(@class, 'v-date-picker-table--date')])[4]")  
+    protected WebElement datumKalendar4WE;
+    
     @FindBy(xpath = "(//*[contains(@class, 'v-btn--floating v-btn--outline')])")  
     protected WebElement trenutniDatum1WE;
     
@@ -128,6 +134,9 @@ public class PocetnaStranica extends PageBase {
     
     @FindBy(xpath = "(//*[contains(@class, 'v-btn--floating v-btn--outline')])[3]")  
     protected WebElement trenutniDatum3WE;
+    
+    @FindBy(xpath = "(//*[contains(@class, 'v-btn--floating v-btn--outline')])[4]")  
+    protected WebElement trenutniDatum4WE;
 
 //	 Sekcije
 

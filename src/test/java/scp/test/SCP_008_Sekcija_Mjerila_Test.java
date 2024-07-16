@@ -25,30 +25,33 @@ public class SCP_008_Sekcija_Mjerila_Test extends BaseTest {
 	  public void scp_008_dodavanje_mjerila_test() throws Exception { LogIn logIn =
 	  new LogIn(driver, SCP_PROPERTIES); PocetnaStranica pocetna = new
 	  PocetnaStranica(driver); driver.manage().window().maximize();
-	  logIn.verifikujLogIn(); logIn.logIn(pocetna.orgGasWE);
+	  logIn.verifikujLogIn();
+	  logIn.logIn(pocetna.orgGasWE);
 	  pocetna.verifikujPocetnuStranicu();
 	  Mjerila mjerila =	pocetna.navigirajNaMjerila();
 	  mjerila.verifikujMjerila();
-	  String mjerilo = mjerila.dodajMjerila(); 
+	  String mjerilo = mjerila.dodajMjerilaGas(); 
 	  mjerila.verifikujPoruku("Uspješno završeno.");
-	  mjerila.pretraziStavku(pocetna.filterKolona4WE, mjerilo);
+	  mjerila.pretraziStavku(pocetna.filterKolona3WE, mjerilo);
 	  mjerila.verifikujMjerila(); mjerila.verifikujStavku(mjerilo,
-	  pocetna.podatak4TabelaWE); }
+	  pocetna.podatak3TabelaWE); }
 	  
 	 
 	
-	  @Test (description=" test kreira KOREKTOR iz sekcije KUPCI i verifikuje ga")
+	  @Test (description=" test kreira KOREKTOR iz sekcije MJERILA i verifikuje ga")
 	  public void scp_007_dodavanje_korektora_test() throws Exception { 
 	  LogIn logIn = new LogIn(driver, SCP_PROPERTIES);
 	  PocetnaStranica pocetna = new PocetnaStranica(driver);
 	  driver.manage().window().maximize();
-	  logIn.verifikujLogIn(); logIn.logIn(pocetna.orgGasWE);
+	  logIn.verifikujLogIn();
+	  logIn.logIn(pocetna.orgGasWE);
 	  pocetna.verifikujPocetnuStranicu();
-	  Korektori korektori = pocetna.navigirajNaKorektore();
-	  String korektor = korektori.dodajKorektore();
-	  korektori.verifikujPoruku("Uspješno završeno.");
-	  korektori.pretraziStavku(pocetna.filterKolona4WE, korektor);
-	  korektori.verifikujStavku(korektor, pocetna.podatak4TabelaWE); }
+	  Mjerila mjerila = pocetna.navigirajNaMjerila();
+	  mjerila.verifikujMjerila();
+	  String korektor = mjerila.dodajKorektore();
+	  mjerila.verifikujPoruku("Uspješno završeno.");
+	  mjerila.pretraziStavku(pocetna.filterKolona3WE, korektor);
+	  mjerila.verifikujStavku(korektor, pocetna.podatak3TabelaWE); }
 	 
 
 	@Test(description = " test kreira TIP MJERILA  iz sekcije MJERILA i verifikuje ga")

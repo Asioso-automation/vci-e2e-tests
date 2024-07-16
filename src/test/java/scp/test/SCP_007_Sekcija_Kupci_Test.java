@@ -32,7 +32,7 @@ public class SCP_007_Sekcija_Kupci_Test extends BaseTest{
 		PocetnaStranica pocetna = new PocetnaStranica(driver);
 		driver.manage().window().maximize();
 		logIn.verifikujLogIn();
-		logIn.logIn(pocetna.orgGasWE);
+		logIn.logIn(pocetna.orgVodovodGradiskaWE);
 		pocetna.verifikujPocetnuStranicu();
 		Objekti objekti = pocetna.navigirajNaObjekte();
 		objekti.verifikujObjekte();

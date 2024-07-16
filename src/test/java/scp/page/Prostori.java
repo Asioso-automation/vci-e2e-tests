@@ -33,10 +33,13 @@ public class Prostori extends PocetnaStranica{
 	@FindBy(xpath = "//div[2]/form/div/div[1]/div[2]/div[1]/div/div/div[1]/div/input")
 	private WebElement ulazWE;
 	
+	@FindBy(xpath = "//div/div[1]/div[5]/div/div[1]/div/div/div[1]/div[1]/input")
+	private WebElement zonaOcitanjaWE;
+	
 	@FindBy(xpath = "//div[2]/form/div/div[1]/div[2]/div[2]/div/div/div[1]/div/input")
 	private WebElement spratBrojWE;
 	
-	@FindBy(xpath = "//tr[2]/td/div/div/div[3]/div/div[1]/table/tbody/tr/td[6]/button/div/i")
+	@FindBy(xpath = "//td[8]/button/div")
 	private WebElement burgerBarWE;
 	
 	@FindBy(xpath = "//div/div[1]/table/tbody/tr[1]/td[13]/button/div/i")
@@ -47,6 +50,8 @@ public class Prostori extends PocetnaStranica{
 	
 	@FindBy(xpath = "//table/tbody/tr[2]/td/div/div/div[1]/nav/div/button[1]/div/i")
 	private WebElement dodajProstorWE;
+	
+	
 
 	public void verifikujProstore()throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
@@ -100,6 +105,11 @@ public class Prostori extends PocetnaStranica{
 		ulazWE.sendKeys(Helper.getRandomNubmer1to8(1));
 		wait.until(ExpectedConditions.elementToBeClickable(spratBrojWE));
 		spratBrojWE.sendKeys(sprat);
+		wait.until(ExpectedConditions.elementToBeClickable(zonaOcitanjaWE));
+		zonaOcitanjaWE.sendKeys(Helper.getRandomNubmer1to8(1));
+		Thread.sleep(1000);
+		zonaOcitanjaWE.sendKeys(Keys.ARROW_DOWN);
+		zonaOcitanjaWE.sendKeys(Keys.ENTER);
 		wait.until(ExpectedConditions.elementToBeClickable(napomenaWE));
 		napomenaWE.sendKeys("#test");
 		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
@@ -108,8 +118,6 @@ public class Prostori extends PocetnaStranica{
 	}
 	
 	public void dodajUgovorProstori()throws InterruptedException{
-		wait.until(ExpectedConditions.elementToBeClickable(dropDownWE));
-		dropDownWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		burgerBarWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(kreirajUgovorWE));

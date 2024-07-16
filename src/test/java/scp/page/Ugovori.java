@@ -25,11 +25,8 @@ public class Ugovori extends PocetnaStranica{
 	@FindBy(xpath = "//*[contains(@class, 'v-select__slot')]//*[@aria-label = 'Tarifna grupa']")
 	private WebElement tarifnaGrupaWE;
 	
-	@FindBy(xpath = "//*[contains(@class, 'v-select__slot')]//*[@aria-label = 'Vodomjer']")
-	private WebElement mjeriloVodovodWE;
-	
 	@FindBy(xpath = "//*[contains(@class, 'v-select__slot')]//*[@aria-label = 'Mjerilo']")
-	private WebElement mjeriloGasWE;
+	private WebElement mjeriloWE;
 	
 	@FindBy(xpath = "//*[contains(@class, 'v-select__slot')]//*[@aria-label = 'Način obračuna korekcije']")
 	private WebElement nacinObracunaKorekcijeWE;
@@ -45,6 +42,9 @@ public class Ugovori extends PocetnaStranica{
 	
 	@FindBy(xpath = "//div/div[1]/div[10]/div[1]/div/div/div[1]/div/input")
 	private WebElement brojUgovoraWE;
+	
+	@FindBy(xpath = "//div/div[1]/div[8]/div[1]/div/div/div[1]/div/input")
+	private WebElement brojUgovoraVodovodWE;
 	
 	@FindBy(xpath = "//div/div[1]/div[9]/div[2]/div/div/div[1]/div[1]/input")
 	private WebElement zonaDmaWE;
@@ -191,7 +191,7 @@ public class Ugovori extends PocetnaStranica{
 		String brojUgovora = "UG" + Helper.getRandomNumber(4);
 		wait.until(ExpectedConditions.elementToBeClickable(kupacWE));
 		kupacWE.sendKeys(kupac);
-		Thread.sleep(1000);
+		Thread.sleep(1200);
 		kupacWE.sendKeys(Keys.ARROW_DOWN);
 		kupacWE.sendKeys(Keys.ENTER);
 		wait.until(ExpectedConditions.elementToBeClickable(datumBtn1WE));
@@ -202,11 +202,11 @@ public class Ugovori extends PocetnaStranica{
 		tarifnaGrupaWE.sendKeys("1");
 		tarifnaGrupaWE.sendKeys(Keys.ARROW_DOWN);
 		tarifnaGrupaWE.sendKeys(Keys.ENTER);
-		wait.until(ExpectedConditions.elementToBeClickable(mjeriloGasWE));
-		mjeriloGasWE.sendKeys(mjerilo);
-		Thread.sleep(1000);
-		mjeriloGasWE.sendKeys(Keys.ARROW_DOWN);
-		mjeriloGasWE.sendKeys(Keys.ENTER);
+		wait.until(ExpectedConditions.elementToBeClickable(mjeriloWE));
+		mjeriloWE.sendKeys(mjerilo);
+		Thread.sleep(1200);
+		mjeriloWE.sendKeys(Keys.ARROW_DOWN);
+		mjeriloWE.sendKeys(Keys.ENTER);
 		wait.until(ExpectedConditions.elementToBeClickable(nacinObracunaKorekcijeWE));
 		nacinObracunaKorekcijeWE.sendKeys("bez");
 		Thread.sleep(500);
@@ -234,13 +234,13 @@ public class Ugovori extends PocetnaStranica{
 		tarifnaGrupaWE.sendKeys(Helper.getRandomNubmer1to4(1));
 		tarifnaGrupaWE.sendKeys(Keys.ARROW_DOWN);
 		tarifnaGrupaWE.sendKeys(Keys.ENTER);
-		wait.until(ExpectedConditions.elementToBeClickable(mjeriloVodovodWE));
-		mjeriloVodovodWE.sendKeys(mjerilo);
+		wait.until(ExpectedConditions.elementToBeClickable(mjeriloWE));
+		mjeriloWE.sendKeys(mjerilo);
 		Thread.sleep(1000);
-		mjeriloVodovodWE.sendKeys(Keys.ARROW_DOWN);
-		mjeriloVodovodWE.sendKeys(Keys.ENTER);
-		wait.until(ExpectedConditions.elementToBeClickable(brojUgovoraWE));
-		brojUgovoraWE.sendKeys(brojUgovora);
+		mjeriloWE.sendKeys(Keys.ARROW_DOWN);
+		mjeriloWE.sendKeys(Keys.ENTER);
+		wait.until(ExpectedConditions.elementToBeClickable(brojUgovoraVodovodWE));
+		brojUgovoraVodovodWE.sendKeys(brojUgovora);
 		wait.until(ExpectedConditions.elementToBeClickable(zonaDmaWE));
 		zonaDmaWE.sendKeys(Helper.getRandomNubmer1to4(1));
 		Thread.sleep(500);

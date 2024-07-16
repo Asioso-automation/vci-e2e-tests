@@ -20,13 +20,13 @@ public class SCP_00X_Dodavanje_Ugovora_Test extends BaseTest {
 		super();
 	}
 
-	@Test (description="test kreira UGOVOR(Gas) za FIZICKO LICE i verifikuje ga")
-	public void scp_00X_dodavanje_ugovora_fizicko_lice_gas_test() throws Exception {
+	@Test (description="test kreira UGOVOR(Vodovod) za FIZICKO LICE i verifikuje ga")
+	public void scp_00X_dodavanje_ugovora_fizicko_lice_vodovod_test() throws Exception {
 		LogIn logIn = new LogIn(driver, SCP_PROPERTIES);
 		PocetnaStranica pocetna = new PocetnaStranica(driver);
 		driver.manage().window().maximize();
 		logIn.verifikujLogIn();
-		logIn.logIn(pocetna.orgGasWE);
+		logIn.logIn(pocetna.orgVodovodGradiskaWE);
 		pocetna.verifikujPocetnuStranicu();
 		Kupci kupci = pocetna.navigirajNaKupce();
 		kupci.verifikujKupce();
@@ -36,12 +36,12 @@ public class SCP_00X_Dodavanje_Ugovora_Test extends BaseTest {
 		kupci.verifikujKupce();
 		kupci.verifikujStavku(fizickoLice, pocetna.podatak2TabelaWE);
 		Mjerila mjerila = pocetna.navigirajNaMjerila();
-		mjerila.verifikujMjerila();
-		String mjerilo = mjerila.dodajMjerila();
+		mjerila.verifikujMjerilaVodovod();
+		String mjerilo = mjerila.dodajMjerilaVodovod();
 		mjerila.verifikujPoruku("Uspješno završeno.");
-		mjerila.pretraziStavku(pocetna.filterKolona4WE, mjerilo);
-		mjerila.verifikujMjerila();
-		mjerila.verifikujStavku(mjerilo, pocetna.podatak4TabelaWE);
+		mjerila.pretraziStavku(pocetna.filterKolona3WE, mjerilo);
+		mjerila.verifikujMjerilaVodovod();
+		mjerila.verifikujStavku(mjerilo, pocetna.podatak3TabelaWE);
 		Objekti objekti = pocetna.navigirajNaObjekte();
 		objekti.verifikujObjekte();
 		objekti.dodajObjekat();
@@ -51,17 +51,17 @@ public class SCP_00X_Dodavanje_Ugovora_Test extends BaseTest {
 		objekti.verifikujObjekte();
 		prostori.dodajProstori();
 		Ugovori ugovori = pocetna.navigirajNaUgovore();
-		ugovori.verifikujUgovoreGas();
+		ugovori.verifikujUgovoreVodovod();
 		ugovori.navigirajNaObjekte();
 		prostori.dodajUgovorProstori();
-		String ugovor = ugovori.dodajUgovorGas(fizickoLice, mjerilo);
+		String ugovor = ugovori.dodajUgovorVodovod(fizickoLice, mjerilo);
 		ugovori.verifikujPoruku("Uspješno završeno.");
 		ugovori.pretraziStavku(pocetna.filterKolona2WE, ugovor);
-		ugovori.verifikujUgovoreGas();
+		ugovori.verifikujUgovoreVodovod();
 		ugovori.verifikujStavku(ugovor, pocetna.podatak2TabelaWE);
 	}
 	
-	@Test (description="test kreira UGOVOR(Gas) za PRAVNO LICE i verifikuje ga")
+	@Test (description="test kreira UGOVOR(Vodovod) za PRAVNO LICE i verifikuje ga")
 	public void scp_00X_dodavanje_ugovora_pravno_lice_test() throws Exception {
 		LogIn logIn = new LogIn(driver, SCP_PROPERTIES);
 		PocetnaStranica pocetna = new PocetnaStranica(driver);
@@ -77,12 +77,12 @@ public class SCP_00X_Dodavanje_Ugovora_Test extends BaseTest {
 		kupci.verifikujKupce();
 		kupci.verifikujStavku(pravnoLice, pocetna.podatak2TabelaWE);
 		Mjerila mjerila = pocetna.navigirajNaMjerila();
-		mjerila.verifikujMjerila();
-		String mjerilo = mjerila.dodajMjerila();
+		mjerila.verifikujMjerilaVodovod();
+		String mjerilo = mjerila.dodajMjerilaVodovod();
 		mjerila.verifikujPoruku("Uspješno završeno.");
-		mjerila.pretraziStavku(pocetna.filterKolona4WE, mjerilo);
-		mjerila.verifikujMjerila();
-		mjerila.verifikujStavku(mjerilo, pocetna.podatak4TabelaWE);
+		mjerila.pretraziStavku(pocetna.filterKolona3WE, mjerilo);
+		mjerila.verifikujMjerilaVodovod();
+		mjerila.verifikujStavku(mjerilo, pocetna.podatak3TabelaWE);
 		Objekti objekti = pocetna.navigirajNaObjekte();
 		objekti.verifikujObjekte();
 		objekti.dodajObjekat();
@@ -92,13 +92,13 @@ public class SCP_00X_Dodavanje_Ugovora_Test extends BaseTest {
 		objekti.verifikujObjekte();
 		prostori.dodajProstori();
 		Ugovori ugovori = pocetna.navigirajNaUgovore();
-		ugovori.verifikujUgovoreGas();
+		ugovori.verifikujUgovoreVodovod();
 		ugovori.navigirajNaObjekte();
 		prostori.dodajUgovorProstori();
-		String ugovor = ugovori.dodajUgovorGas(pravnoLice, mjerilo);
+		String ugovor = ugovori.dodajUgovorVodovod(pravnoLice, mjerilo);
 		ugovori.verifikujPoruku("Uspješno završeno.");
 		ugovori.pretraziStavku(pocetna.filterKolona2WE, ugovor);
-		ugovori.verifikujUgovoreGas();
+		ugovori.verifikujUgovoreVodovod();
 		ugovori.verifikujStavku(ugovor, pocetna.podatak2TabelaWE);
 	}
 	
