@@ -21,19 +21,19 @@ public class Mjerila extends PocetnaStranica{
 	
 	// Gas 
 	
-	@FindBy(xpath = "//form/div/div[1]/div[2]/div[1]/div/div/div[1]/div/input") 
+	@FindBy(xpath = "//*[contains(@class, 'v-text-field__slot')]//*[@aria-label = 'Serijski broj']") 
 	private WebElement srBrWE;
 	
-	@FindBy(xpath = "//div[1]/div[3]/div[1]/div/div/div[1]/div/input") 
+	@FindBy(xpath = "//*[contains(@class, 'v-text-field__slot')]//*[@aria-label = 'Početno očitanje mjerila']") 
 	private WebElement pocetnoOcitanjeWE;
 	
-	@FindBy(xpath = "//div/div[1]/div[5]/div[1]/div/div/div[1]/div[1]/input") 
+	@FindBy(xpath = "//*[contains(@class, 'v-select__slot')]//*[@aria-label = 'Tip očitanja']") 
 	private WebElement tipOcitanjaWE;
 	
 	@FindBy(xpath = "//div/div[1]/div[4]/div[1]/div/div/div[1]/div[1]/input") 
 	private WebElement tipOcitanjaKorektorWE;
 	
-	@FindBy(xpath = "//div[1]/div[7]/div/div[1]/div/div/div[1]/div/input") 
+	@FindBy(xpath = "//*[contains(@class, 'v-text-field__slot')]//*[@aria-label = 'Šifra plombes']") 
 	private WebElement sifraPlombeWE;
 	
 	@FindBy(xpath = "//form/div/div[1]/div[1]/div/div[2]/div/div[1]/div/div") 
@@ -101,9 +101,10 @@ public class Mjerila extends PocetnaStranica{
 	public String dodajMjerilaGas() throws InterruptedException{
 		String srBroj = "SrBr" + Helper.getRandomString(4);
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
+		Thread.sleep(1000);
 		dodajBtnWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(srBr1WE));
-		srBr1WE.sendKeys(srBroj);
+		wait.until(ExpectedConditions.elementToBeClickable(srBrWE));
+		srBrWE.sendKeys(srBroj);
 		wait.until(ExpectedConditions.elementToBeClickable(pocetnoOcitanjeWE));
 		pocetnoOcitanjeWE.sendKeys("0");
 		wait.until(ExpectedConditions.elementToBeClickable(datumBtn1WE));
@@ -154,8 +155,8 @@ public class Mjerila extends PocetnaStranica{
 		trenutniDatum1WE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(sifraPlombe1WE));
 		sifraPlombe1WE.sendKeys("Plomba" + Helper.getRandomNubmer1to8(5));
-		wait.until(ExpectedConditions.elementToBeClickable(datumPlombeWE));
-		datumPlombeWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(datumBtn4WE));
+		datumBtn4WE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(trenutniDatum1WE));
 		trenutniDatum1WE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
@@ -163,6 +164,38 @@ public class Mjerila extends PocetnaStranica{
 		return srBroj;
 	}
 	
+	public String dodajMjerila() throws InterruptedException{
+		String srBroj = "SrBr" + Helper.getRandomString(4);
+		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
+		Thread.sleep(1000);
+		dodajBtnWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(srBrWE));
+		srBrWE.sendKeys(srBroj);
+		wait.until(ExpectedConditions.elementToBeClickable(pocetnoOcitanjeWE));
+		pocetnoOcitanjeWE.sendKeys("0");
+		wait.until(ExpectedConditions.elementToBeClickable(datumBtn1WE));
+		datumBtn1WE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(trenutniDatum1WE));
+		trenutniDatum1WE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(tipOcitanjaWE));
+		tipOcitanjaWE.sendKeys(Helper.getRandomNubmer1to4(1));
+		Thread.sleep(700);
+		tipOcitanjaWE.sendKeys(Keys.ARROW_DOWN);
+		tipOcitanjaWE.sendKeys(Keys.ENTER);
+		wait.until(ExpectedConditions.elementToBeClickable(datumBtn3WE));
+		datumBtn3WE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(trenutniDatum1WE));
+		trenutniDatum1WE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(sifraPlombeWE));
+		sifraPlombeWE.sendKeys("Plomba" + Helper.getRandomNubmer1to8(5));
+		wait.until(ExpectedConditions.elementToBeClickable(datumBtn4WE));
+		datumBtn4WE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(trenutniDatum1WE));
+		trenutniDatum1WE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
+		submitBtnWE.click();
+		return srBroj;
+	}
 	
 	public String dodajKorektore()throws InterruptedException{
 		String srBroj = "SrBroj" + Helper.getRandomString(5);

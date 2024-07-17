@@ -42,6 +42,9 @@ public class Prostori extends PocetnaStranica{
 	@FindBy(xpath = "//td[8]/button/div")
 	private WebElement burgerBarWE;
 	
+	@FindBy(xpath = "//td[6]/button/div")
+	private WebElement burgerBar1WE;
+	
 	@FindBy(xpath = "//div/div[1]/table/tbody/tr[1]/td[13]/button/div/i")
 	private WebElement dropDownWE;
 	
@@ -117,9 +120,65 @@ public class Prostori extends PocetnaStranica{
 		return sprat;
 	}
 	
+	public String dodajProstoriGas() throws InterruptedException{
+		String sprat = Helper.getRandomNubmer1to8(1);
+		wait.until(ExpectedConditions.elementToBeClickable(dropDownWE));
+		dropDownWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(dodajProstorWE));
+		dodajProstorWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(vrstaProstoraWE));
+		vrstaProstoraWE.sendKeys("Kuća");
+		Thread.sleep(1000);
+		vrstaProstoraWE.sendKeys(Keys.ARROW_DOWN);
+		vrstaProstoraWE.sendKeys(Keys.ENTER);
+		wait.until(ExpectedConditions.elementToBeClickable(ulazWE));
+		ulazWE.sendKeys(Helper.getRandomNubmer1to8(1));
+		wait.until(ExpectedConditions.elementToBeClickable(spratBrojWE));
+		spratBrojWE.sendKeys(sprat);
+		wait.until(ExpectedConditions.elementToBeClickable(zonaOcitanjaWE));
+		zonaOcitanjaWE.sendKeys("Test");
+		Thread.sleep(1000);
+		zonaOcitanjaWE.sendKeys(Keys.ARROW_DOWN);
+		zonaOcitanjaWE.sendKeys(Keys.ENTER);
+		wait.until(ExpectedConditions.elementToBeClickable(napomenaWE));
+		napomenaWE.sendKeys("#test");
+		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
+		submitBtnWE.click();
+		return sprat;
+	}
+	
+	public String dodajProstoriOpstinaCistoca() throws InterruptedException{
+		String sprat = Helper.getRandomNubmer1to8(1);
+		wait.until(ExpectedConditions.elementToBeClickable(dropDownWE));
+		dropDownWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(dodajProstorWE));
+		dodajProstorWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(vrstaProstoraWE));
+		vrstaProstoraWE.sendKeys("Kuća");
+		Thread.sleep(1000);
+		vrstaProstoraWE.sendKeys(Keys.ARROW_DOWN);
+		vrstaProstoraWE.sendKeys(Keys.ENTER);
+		wait.until(ExpectedConditions.elementToBeClickable(ulazWE));
+		ulazWE.sendKeys(Helper.getRandomNubmer1to8(1));
+		wait.until(ExpectedConditions.elementToBeClickable(spratBrojWE));
+		spratBrojWE.sendKeys(sprat);
+		wait.until(ExpectedConditions.elementToBeClickable(napomenaWE));
+		napomenaWE.sendKeys("#test");
+		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
+		submitBtnWE.click();
+		return sprat;
+	}
+	
 	public void dodajUgovorProstori()throws InterruptedException{
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		burgerBarWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(kreirajUgovorWE));
+		kreirajUgovorWE.click();
+	}
+	
+	public void dodajUgovorProstoriOpstinaCistoca()throws InterruptedException{
+		wait.until(ExpectedConditions.elementToBeClickable(burgerBar1WE));
+		burgerBar1WE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(kreirajUgovorWE));
 		kreirajUgovorWE.click();
 	}

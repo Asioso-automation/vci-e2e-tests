@@ -28,20 +28,20 @@ public class Ugovori extends PocetnaStranica{
 	@FindBy(xpath = "//*[contains(@class, 'v-select__slot')]//*[@aria-label = 'Mjerilo']")
 	private WebElement mjeriloWE;
 	
+	@FindBy(xpath = "//*[contains(@class, 'v-select__slot')]//*[@aria-label = 'Zona']")
+	private WebElement zonaWE;
+	
 	@FindBy(xpath = "//*[contains(@class, 'v-select__slot')]//*[@aria-label = 'Način obračuna korekcije']")
 	private WebElement nacinObracunaKorekcijeWE;
 	
-	@FindBy(xpath = "//div/div[1]/div[12]/div[1]/div/div/div[1]/div/div")
-	private WebElement dostavaPostomGasWE;
-	
-	@FindBy(xpath = "//div/div[1]/div[11]/div[1]/div/div/div[1]/div/div")
-	private WebElement dostavaPostomWE;
-	
-	@FindBy(xpath = "//div/div[1]/div[10]/div[1]/div/div/div[1]/div/div")
-	private WebElement dostavaPostomCistocaWE;
-	
-	@FindBy(xpath = "//div/div[1]/div[10]/div[1]/div/div/div[1]/div/input")
+	@FindBy(xpath = "//*[contains(@class, 'v-text-field__slot')]//*[@aria-label = 'Broj Ugovora']") 
 	private WebElement brojUgovoraWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-text-field__slot')]//*[@aria-label = 'Bodovi (zona)']") 
+	private WebElement bodoviZonaWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-text-field__slot')]//*[@aria-label = 'Bodovi (opremljenost)']") 
+	private WebElement bodoviOpremljenostWE;
 	
 	@FindBy(xpath = "//div/div[1]/div[8]/div[1]/div/div/div[1]/div/input")
 	private WebElement brojUgovoraVodovodWE;
@@ -223,7 +223,7 @@ public class Ugovori extends PocetnaStranica{
 		String brojUgovora = "UG" + Helper.getRandomNumber(4);
 		wait.until(ExpectedConditions.elementToBeClickable(kupacWE));
 		kupacWE.sendKeys(kupac);
-		Thread.sleep(1000);
+		Thread.sleep(1200);
 		kupacWE.sendKeys(Keys.ARROW_DOWN);
 		kupacWE.sendKeys(Keys.ENTER);
 		wait.until(ExpectedConditions.elementToBeClickable(datumBtn1WE));
@@ -236,7 +236,7 @@ public class Ugovori extends PocetnaStranica{
 		tarifnaGrupaWE.sendKeys(Keys.ENTER);
 		wait.until(ExpectedConditions.elementToBeClickable(mjeriloWE));
 		mjeriloWE.sendKeys(mjerilo);
-		Thread.sleep(1000);
+		Thread.sleep(1200);
 		mjeriloWE.sendKeys(Keys.ARROW_DOWN);
 		mjeriloWE.sendKeys(Keys.ENTER);
 		wait.until(ExpectedConditions.elementToBeClickable(brojUgovoraVodovodWE));
@@ -281,8 +281,6 @@ public class Ugovori extends PocetnaStranica{
 		Thread.sleep(500);
 		zonaDmaWE.sendKeys(Keys.ARROW_DOWN);
 		zonaDmaWE.sendKeys(Keys.ENTER);
-		wait.until(ExpectedConditions.elementToBeClickable(dostavaPostomWE));
-		dostavaPostomWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
 		submitBtnWE.click();
 		return brojUgovora;
@@ -290,7 +288,7 @@ public class Ugovori extends PocetnaStranica{
 	
 	public String dodajUgovorToplana(String kupac)throws InterruptedException{
 		String brojUgovora = "UG" + Helper.getRandomNumber(4);
-		wait.until(ExpectedConditions.elementToBeSelected(kupacWE));
+		wait.until(ExpectedConditions.elementToBeClickable(kupacWE));
 		kupacWE.sendKeys(kupac);
 		Thread.sleep(1000);
 		kupacWE.sendKeys(Keys.ARROW_DOWN);
@@ -301,7 +299,7 @@ public class Ugovori extends PocetnaStranica{
 		wait.until(ExpectedConditions.elementToBeClickable(trenutniDatum1WE));
 		trenutniDatum1WE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(tarifnaGrupaWE));
-		tarifnaGrupaWE.sendKeys(Helper.getRandomNubmer1to4(1));
+		tarifnaGrupaWE.sendKeys("test");
 		tarifnaGrupaWE.sendKeys(Keys.ARROW_DOWN);
 		tarifnaGrupaWE.sendKeys(Keys.ENTER);
 		wait.until(ExpectedConditions.elementToBeClickable(povrsinaWE));
@@ -310,8 +308,6 @@ public class Ugovori extends PocetnaStranica{
 		povrsinaGrijanjeWE.sendKeys(Helper.getRandomNumber(2));
 		wait.until(ExpectedConditions.elementToBeClickable(brojUgovoraWE));
 		brojUgovoraWE.sendKeys(brojUgovora);
-		wait.until(ExpectedConditions.elementToBeClickable(dostavaPostomWE));
-		dostavaPostomWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
 		submitBtnWE.click();
 		return brojUgovora;
@@ -319,7 +315,7 @@ public class Ugovori extends PocetnaStranica{
 	
 	public String dodajUgovorCistoca(String kupac)throws InterruptedException{
 		String brojUgovora = "UG" + Helper.getRandomNumber(4);
-		wait.until(ExpectedConditions.elementToBeSelected(kupacWE));
+		wait.until(ExpectedConditions.elementToBeClickable(kupacWE));
 		kupacWE.sendKeys(kupac);
 		Thread.sleep(1000);
 		kupacWE.sendKeys(Keys.ARROW_DOWN);
@@ -335,10 +331,43 @@ public class Ugovori extends PocetnaStranica{
 		tarifnaGrupaWE.sendKeys(Helper.getRandomNubmer1to4(1));
 		tarifnaGrupaWE.sendKeys(Keys.ARROW_DOWN);
 		tarifnaGrupaWE.sendKeys(Keys.ENTER);
+		brojUgovoraWE.sendKeys(Keys.DOWN);
 		wait.until(ExpectedConditions.elementToBeClickable(brojUgovoraWE));
 		brojUgovoraWE.sendKeys(brojUgovora);
-		wait.until(ExpectedConditions.elementToBeClickable(dostavaPostomCistocaWE));
-		dostavaPostomCistocaWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
+		submitBtnWE.click();
+		return brojUgovora;	
+	}
+	
+	public String dodajUgovorOpstina(String kupac)throws InterruptedException{
+		String brojUgovora = "UG" + Helper.getRandomNumber(4);
+		wait.until(ExpectedConditions.elementToBeClickable(kupacWE));
+		kupacWE.sendKeys(kupac);
+		Thread.sleep(1000);
+		kupacWE.sendKeys(Keys.ARROW_DOWN);
+		kupacWE.sendKeys(Keys.ENTER);
+		wait.until(ExpectedConditions.elementToBeClickable(povrsinaWE));
+		povrsinaWE.sendKeys(Helper.getRandomNumber(2));
+		wait.until(ExpectedConditions.elementToBeClickable(zonaWE));
+		zonaWE.sendKeys(Helper.getRandomNubmer1to8(1));
+		zonaWE.sendKeys(Keys.ARROW_DOWN);
+		zonaWE.sendKeys(Keys.ENTER);
+		wait.until(ExpectedConditions.elementToBeClickable(bodoviZonaWE));
+		bodoviZonaWE.sendKeys(Helper.getRandomNubmer1to8(2));
+		wait.until(ExpectedConditions.elementToBeClickable(bodoviOpremljenostWE));
+		bodoviOpremljenostWE.sendKeys(Helper.getRandomNubmer1to8(2));
+		wait.until(ExpectedConditions.elementToBeClickable(datumBtn1WE));
+		datumBtn1WE.click();
+		wait.until(ExpectedConditions.invisibilityOf(datumKalendar1WE));
+		wait.until(ExpectedConditions.elementToBeClickable(trenutniDatum1WE));
+		trenutniDatum1WE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(tarifnaGrupaWE));
+		tarifnaGrupaWE.sendKeys(Helper.getRandomNubmer1to4(1));
+		tarifnaGrupaWE.sendKeys(Keys.ARROW_DOWN);
+		tarifnaGrupaWE.sendKeys(Keys.ENTER);
+		brojUgovoraWE.sendKeys(Keys.DOWN);
+		wait.until(ExpectedConditions.elementToBeClickable(brojUgovoraWE));
+		brojUgovoraWE.sendKeys(brojUgovora);
 		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
 		submitBtnWE.click();
 		return brojUgovora;	

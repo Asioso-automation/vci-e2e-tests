@@ -22,9 +22,10 @@ public class SCP_008_Sekcija_Mjerila_Test extends BaseTest {
 	}
 	
 	  @Test (description=" test kreira MJERILO iz sekcije MJERILA i verifikuje ga")
-	  public void scp_008_dodavanje_mjerila_test() throws Exception { LogIn logIn =
-	  new LogIn(driver, SCP_PROPERTIES); PocetnaStranica pocetna = new
-	  PocetnaStranica(driver); driver.manage().window().maximize();
+	  public void scp_008_dodavanje_mjerila_test() throws Exception { 
+	  LogIn logIn = new LogIn(driver, SCP_PROPERTIES); 
+	  PocetnaStranica pocetna = new PocetnaStranica(driver);
+	  driver.manage().window().maximize();
 	  logIn.verifikujLogIn();
 	  logIn.logIn(pocetna.orgGasWE);
 	  pocetna.verifikujPocetnuStranicu();
@@ -36,6 +37,22 @@ public class SCP_008_Sekcija_Mjerila_Test extends BaseTest {
 	  mjerila.verifikujMjerila(); mjerila.verifikujStavku(mjerilo,
 	  pocetna.podatak3TabelaWE); }
 	  
+	  
+	  @Test (description=" test kreira MJERILO iz sekcije MJERILA (vodovod)i verifikuje ga")
+	  public void scp_008_dodavanje_mjerila_vodovod_test() throws Exception {   
+	  LogIn logIn =new LogIn(driver, SCP_PROPERTIES); 
+	  PocetnaStranica pocetna = new PocetnaStranica(driver);
+	  driver.manage().window().maximize();
+	  logIn.verifikujLogIn();
+	  logIn.logIn(pocetna.orgVodovodGradiskaWE);
+	  pocetna.verifikujPocetnuStranicu();
+	  Mjerila mjerila =	pocetna.navigirajNaMjerila();
+	  mjerila.verifikujMjerilaVodovod();
+	  String mjerilo = mjerila.dodajMjerilaVodovod(); 
+	  mjerila.verifikujPoruku("Uspješno završeno.");
+	  mjerila.pretraziStavku(pocetna.filterKolona3WE, mjerilo);
+	  mjerila.verifikujMjerila(); mjerila.verifikujStavku(mjerilo,
+	  pocetna.podatak3TabelaWE); }
 	 
 	
 	  @Test (description=" test kreira KOREKTOR iz sekcije MJERILA i verifikuje ga")
