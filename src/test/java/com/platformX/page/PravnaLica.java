@@ -1,11 +1,9 @@
 package com.platformX.page;
 
-import static org.testng.Assert.assertTrue;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -79,13 +77,13 @@ public class PravnaLica extends PocetnaStranica {
 	    wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAktivanWE));
 	}
 
-	public String dodajPravnoLice() throws InterruptedException {
-		String nazivPravnogLica = "Pravno lice " + Helper.getRandomString(5);
+	public String dodajPravnoLice(String naziv) throws InterruptedException {
+//		String nazivPravnogLica = "Pravno lice " + Helper.getRandomString(5);
 		Thread.sleep(1000);
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
 		dodajBtnWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(nazivPravnogLicaWE));
-		nazivPravnogLicaWE.sendKeys(nazivPravnogLica);
+		nazivPravnogLicaWE.sendKeys(naziv);
 		wait.until(ExpectedConditions.elementToBeClickable(stampaniNazivNaDokumentimaWE));
 		stampaniNazivNaDokumentimaWE.sendKeys(Helper.getRandomString(5));
 		wait.until(ExpectedConditions.elementToBeClickable(jibWE));
@@ -116,20 +114,7 @@ public class PravnaLica extends PocetnaStranica {
 		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
 		submitBtnWE.click();
 		Thread.sleep(1000);
-		return nazivPravnogLica;
-	}
-
-	public void verifikujPravnoLice(String nazivPravnogLica) throws InterruptedException {
-		wait.until(ExpectedConditions.elementToBeClickable(filterKolona2WE));
-		Thread.sleep(500);
-		filterKolona2WE.click();
-		filterKolona2WE.clear();
-		filterKolona2WE.sendKeys(nazivPravnogLica);
-		filterKolona2WE.sendKeys(Keys.ENTER);
-		Thread.sleep(1000);
-		wait.until(ExpectedConditions.visibilityOf(podatak2Tabela2WE));
-		assertTrue(podatak2Tabela2WE.getText().contains(nazivPravnogLica),
-				"Pravna lica: Naziv pravnog lica nije dobar!");
+		return naziv;
 	}
 
 	public String kreirajKupca() {
@@ -142,8 +127,7 @@ public class PravnaLica extends PocetnaStranica {
 		wait.until(ExpectedConditions.elementToBeClickable(urediPravnoLiceBtnWE));
 	}
 	
-	public String urediPravnoLice() throws InterruptedException {
-		String nazivPravnogLica = "Pravno lice " + Helper.getRandomString(5);
+	public String urediPravnoLice(String naziv) throws InterruptedException {
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		burgerBarWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(urediWE));
@@ -152,24 +136,10 @@ public class PravnaLica extends PocetnaStranica {
 		wait.until(ExpectedConditions.elementToBeClickable(nazivPravnogLicaWE));
 		nazivPravnogLicaWE.click();
 		nazivPravnogLicaWE.clear();
-		nazivPravnogLicaWE.sendKeys(nazivPravnogLica);
+		nazivPravnogLicaWE.sendKeys(naziv);
 		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
 		submitBtnWE.click();
-		return nazivPravnogLica;
-	}
-	
-	public void verifikujBrisanjePravnogLica(String pravnoLice) throws InterruptedException {
-		wait.until(ExpectedConditions.visibilityOf(filterKolona2WE));
-		Thread.sleep(1000);
-		wait.until(ExpectedConditions.elementToBeClickable(filterKolona2WE));
-		filterKolona2WE.click();
-		filterKolona2WE.clear();
-		filterKolona2WE.sendKeys(pravnoLice);
-		filterKolona2WE.sendKeys(Keys.ENTER);
-		Thread.sleep(1000);
-		wait.until(ExpectedConditions.visibilityOf(podatak2TabelaWE));
-		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
-		assertTrue(podatak2TabelaWE.getText().equals("Nema podataka"), "PravnaLica: Poruka prazne tabele nije dobra!");
+		return naziv;
 	}
 
 }

@@ -45,8 +45,7 @@ public class VrsteZahtjeva extends PocetnaStranica {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaOpisWE));
 	}
 	
-	public String dodajVrstuZahtjeva() {
-		String kod = Helper.getRandomString(5);
+	public String dodajVrstuZahtjeva(String kod) {
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
 		dodajBtnWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(tipVrsteReklamacijeWE));
@@ -63,8 +62,7 @@ public class VrsteZahtjeva extends PocetnaStranica {
 		return kod;
 	}
 	
-	public String urediVrstuZahtjeva() {
-		String kod = Helper.getRandomString(5);
+	public String urediVrstuZahtjeva(String kod) {
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 		burgerBarWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(urediBtnWE));

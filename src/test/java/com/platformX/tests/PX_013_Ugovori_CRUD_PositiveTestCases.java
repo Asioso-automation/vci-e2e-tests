@@ -9,6 +9,7 @@ import com.platformX.page.LogIn;
 import com.platformX.page.OdbaceniUgovori;
 import com.platformX.page.PravnaLica;
 import com.platformX.page.Ugovori;
+import com.platformX.util.Helper;
 
 public class PX_013_Ugovori_CRUD_PositiveTestCases extends BaseTest {
 
@@ -16,6 +17,8 @@ public class PX_013_Ugovori_CRUD_PositiveTestCases extends BaseTest {
 		super();
 	}
 
+	String pravnoLice = "Pravno lice " + Helper.getRandomString(5);
+	
 	@Test (enabled = false)	// Ne radi lookup "Mjerno mjesto (EIC)"
 	public void px_013_1_dodavanje_ugovora_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
@@ -25,9 +28,12 @@ public class PX_013_Ugovori_CRUD_PositiveTestCases extends BaseTest {
 		homePage.verifikujPocetnuStranicu();
 		PravnaLica pravnaLica = homePage.navigateOnPagePX(PravnaLica.class, "Kupci", "Pravna lica");
 		pravnaLica.verifikujPravnaLica();
-		String pravnoLice = pravnaLica.dodajPravnoLice();
+		pravnaLica.dodajPravnoLice(pravnoLice);
 		pravnaLica.verifikujPravnaLica();
-		pravnaLica.verifikujPravnoLice(pravnoLice);
+//		pravnaLica.verifikujPravnoLice(pravnoLice);
+		pravnaLica.pretraziStavku(homePage.filterKolona2WE, pravnoLice);
+		pravnaLica.verifikujPravnaLica();
+		pravnaLica.verifikujStavku(pravnoLice, homePage.podatak2Tabela2WE);
 		String kupac = pravnaLica.kreirajKupca();
 		Ugovori ugovori = homePage.navigateOnPagePX(Ugovori.class, "Kupci", "Ugovori");
 		ugovori.verifikujUgovori();
@@ -45,9 +51,12 @@ public class PX_013_Ugovori_CRUD_PositiveTestCases extends BaseTest {
 		homePage.verifikujPocetnuStranicu();
 		PravnaLica pravnaLica = homePage.navigateOnPagePX(PravnaLica.class, "Kupci", "Pravna lica");
 		pravnaLica.verifikujPravnaLica();
-		String pravnoLice = pravnaLica.dodajPravnoLice();
+		pravnaLica.dodajPravnoLice(pravnoLice);
 		pravnaLica.verifikujPravnaLica();
-		pravnaLica.verifikujPravnoLice(pravnoLice);
+//		pravnaLica.verifikujPravnoLice(pravnoLice);
+		pravnaLica.pretraziStavku(homePage.filterKolona2WE, pravnoLice);
+		pravnaLica.verifikujPravnaLica();
+		pravnaLica.verifikujStavku(pravnoLice, homePage.podatak2Tabela2WE);
 		String kupac = pravnaLica.kreirajKupca();
 		Ugovori ugovori = homePage.navigateOnPagePX(Ugovori.class, "Kupci", "Ugovori");
 		ugovori.verifikujUgovori();
@@ -65,9 +74,12 @@ public class PX_013_Ugovori_CRUD_PositiveTestCases extends BaseTest {
 		homePage.verifikujPocetnuStranicu();
 		PravnaLica pravnaLica = homePage.navigateOnPagePX(PravnaLica.class, "Kupci", "Pravna lica");
 		pravnaLica.verifikujPravnaLica();
-		String pravnoLice = pravnaLica.dodajPravnoLice();
+		pravnaLica.dodajPravnoLice(pravnoLice);
 		pravnaLica.verifikujPravnaLica();
-		pravnaLica.verifikujPravnoLice(pravnoLice);
+//		pravnaLica.verifikujPravnoLice(pravnoLice);
+		pravnaLica.pretraziStavku(homePage.filterKolona2WE, pravnoLice);
+		pravnaLica.verifikujPravnaLica();
+		pravnaLica.verifikujStavku(pravnoLice, homePage.podatak2Tabela2WE);
 		String kupac = pravnaLica.kreirajKupca();
 		Ugovori ugovori = homePage.navigateOnPagePX(Ugovori.class, "Kupci", "Ugovori");
 		ugovori.verifikujUgovori();
@@ -86,9 +98,12 @@ public class PX_013_Ugovori_CRUD_PositiveTestCases extends BaseTest {
 		homePage.verifikujPocetnuStranicu();
 		PravnaLica pravnaLica = homePage.navigateOnPagePX(PravnaLica.class, "Kupci", "Pravna lica");
 		pravnaLica.verifikujPravnaLica();
-		String pravnoLice = pravnaLica.dodajPravnoLice();
+		pravnaLica.dodajPravnoLice(pravnoLice);
 		pravnaLica.verifikujPravnaLica();
-		pravnaLica.verifikujPravnoLice(pravnoLice);
+//		pravnaLica.verifikujPravnoLice(pravnoLice);
+		pravnaLica.pretraziStavku(homePage.filterKolona2WE, pravnoLice);
+		pravnaLica.verifikujPravnaLica();
+		pravnaLica.verifikujStavku(pravnoLice, homePage.podatak2Tabela2WE);
 		String kupac = pravnaLica.kreirajKupca();
 		Ugovori ugovori = homePage.navigateOnPagePX(Ugovori.class, "Kupci", "Ugovori");
 		ugovori.verifikujUgovori();
@@ -111,9 +126,12 @@ public class PX_013_Ugovori_CRUD_PositiveTestCases extends BaseTest {
 		homePage.verifikujPocetnuStranicu();
 		PravnaLica pravnaLica = homePage.navigateOnPagePX(PravnaLica.class, "Kupci", "Pravna lica");
 		pravnaLica.verifikujPravnaLica();
-		String pravnoLice = pravnaLica.dodajPravnoLice();
+		pravnaLica.dodajPravnoLice(pravnoLice);
 		pravnaLica.verifikujPravnaLica();
-		pravnaLica.verifikujPravnoLice(pravnoLice);
+//		pravnaLica.verifikujPravnoLice(pravnoLice);
+		pravnaLica.pretraziStavku(homePage.filterKolona2WE, pravnoLice);
+		pravnaLica.verifikujPravnaLica();
+		pravnaLica.verifikujStavku(pravnoLice, homePage.podatak2Tabela2WE);
 		String kupac = pravnaLica.kreirajKupca();
 		Ugovori ugovori = homePage.navigateOnPagePX(Ugovori.class, "Kupci", "Ugovori");
 		ugovori.verifikujUgovori();

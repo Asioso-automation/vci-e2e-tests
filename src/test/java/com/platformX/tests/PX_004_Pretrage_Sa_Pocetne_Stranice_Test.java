@@ -8,6 +8,7 @@ import com.platformX.page.PocetnaStranica;
 import com.platformX.page.LogIn;
 import com.platformX.page.MjernaMjesta;
 import com.platformX.page.PravnaLica;
+import com.platformX.util.Helper;
 
 public class PX_004_Pretrage_Sa_Pocetne_Stranice_Test extends BaseTest {
 
@@ -15,6 +16,8 @@ public class PX_004_Pretrage_Sa_Pocetne_Stranice_Test extends BaseTest {
 		super();
 	}
 
+	String pravnoLice = "Pravno lice " + Helper.getRandomString(5);
+	
 	@Test
 	public void px_004_1_pretraga_pravnih_lica_sa_pocetne_stranice_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
@@ -24,9 +27,11 @@ public class PX_004_Pretrage_Sa_Pocetne_Stranice_Test extends BaseTest {
 		homePage.verifikujPocetnuStranicu();
 		PravnaLica pravnaLica = homePage.navigateOnPagePX(PravnaLica.class, "Kupci", "Pravna lica");
 		pravnaLica.verifikujPravnaLica();
-		String pravnoLice = pravnaLica.dodajPravnoLice();
+		pravnaLica.dodajPravnoLice(pravnoLice);
+		pravnaLica.verifikujPoruku("Uspješno završeno.");
+		pravnaLica.pretraziStavku(homePage.filterKolona2WE, pravnoLice);
 		pravnaLica.verifikujPravnaLica();
-		pravnaLica.verifikujPravnoLice(pravnoLice);
+		pravnaLica.verifikujStavku(pravnoLice, homePage.podatak2Tabela2WE);	
 		homePage.navigateToPocetnaStranica();
 		homePage.verifikujPocetnuStranicu();
 		homePage.pretraziKupce(pravnoLice);
