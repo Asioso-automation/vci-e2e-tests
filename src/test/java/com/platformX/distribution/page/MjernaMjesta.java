@@ -84,7 +84,7 @@ public class MjernaMjesta extends PocetnaStranicaPXD {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaElektroenergetskaSaglasnostWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAdresaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaCitackiHodWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaImaNapomenuWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPostojiNapomenaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPodNaponomWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAktivanUgovorWE));
 //		TODO kolonaUgovorUPripremiWE
