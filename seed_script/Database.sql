@@ -263,14 +263,14 @@ INSERT [BasicCatalog].[Country] ([Id], [Name]) VALUES (N'BIH', N'Bosna i Hercego
 
 
 INSERT [BasicCatalog].[DistributionSystemOperator] 
-    ([Id], [Code], [Eic], [Name], [CostBearerSapCode], [SapAccount], [Address], [Email], [ContactNumber], [PhoneNumberForFaultApplication], [PhoneNumberForServiceInformation], [PhoneNumberForBillComplaint], [PrintName], [HasOperationalArea], [Process12CalculationEnabled]) 
+    ([Id], [Code], [Eic], [Name], [CostBearerSapCode], [SapAccount], [Address], [Email], [ContactNumber], [PhoneNumberForFaultApplication], [PhoneNumberForServiceInformation], [PhoneNumberForBillComplaint], [PrintName], [HasOperationalArea]) 
 VALUES 
-    (1, N'C', N'XXXXXXXXXXXXXXXX', N'New York', N'test', N'ads', NULL, NULL, NULL, N'', N'', N'', NULL, 0, 0),
-    (2, N'D', N'XXXXXXXXXXXXXXXX', N'Moscow',   N'test', N'ads', NULL, NULL, NULL, N'', N'', N'', NULL, 0, 0),
-    (3, N'H', N'XXXXXXXXXXXXXXXX', N'Tokyo',    N'test', N'ads', NULL, NULL, NULL, N'', N'', N'', NULL, 0, 0),
-    (4, N'K', N'XXXXXXXXXXXXXXXX', N'London',   N'test', N'ads', NULL, NULL, NULL, N'', N'', N'', NULL, 0, 0),
-    (5, N'P', N'XXXXXXXXXXXXXXXX', N'Berlin',   N'test', N'ads', NULL, NULL, NULL, N'', N'', N'', NULL, 0, 0),
-    (6, N'E', N'XXXXXXXXXXXXXXXX', N'Pale',     N'test', N'ads', NULL, NULL, NULL, N'', N'', N'', NULL, 0, 0)
+    (1, N'C', N'XXXXXXXXXXXXXXXX', N'New York', N'test', N'ads', NULL, NULL, NULL, N'', N'', N'', NULL, 0),
+    (2, N'D', N'XXXXXXXXXXXXXXXX', N'Moscow',   N'test', N'ads', NULL, NULL, NULL, N'', N'', N'', NULL, 0),
+    (3, N'H', N'XXXXXXXXXXXXXXXX', N'Tokyo',    N'test', N'ads', NULL, NULL, NULL, N'', N'', N'', NULL, 0),
+    (4, N'K', N'XXXXXXXXXXXXXXXX', N'London',   N'test', N'ads', NULL, NULL, NULL, N'', N'', N'', NULL, 0),
+    (5, N'P', N'XXXXXXXXXXXXXXXX', N'Berlin',   N'test', N'ads', NULL, NULL, NULL, N'', N'', N'', NULL, 0),
+    (6, N'E', N'XXXXXXXXXXXXXXXX', N'Pale',     N'test', N'ads', NULL, NULL, NULL, N'', N'', N'', NULL, 0)
 
 
 SET IDENTITY_INSERT [Administration].[User] ON 
