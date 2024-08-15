@@ -126,8 +126,6 @@ public class PX_DIST_003_Verifikacije_Sekcija_Test extends BaseTest {
 		trafostanice.verifikujTrafostanice();
 		Vlasnistva vlasnistva = homePage.navigateOnPage(Vlasnistva.class, "Šifarnici", "Vlasništva");
 		vlasnistva.verifikujVlasnistva();
-		TipoviBrojila tipoviBrojila = homePage.navigateOnPage(TipoviBrojila.class, "Šifarnici", "Tipovi brojila");
-		tipoviBrojila.verifikujTipoviBrojila();
 		IzvorNapajanjaBrojila izvorNapajanjaBrojila = homePage.navigateOnPage(IzvorNapajanjaBrojila.class, "Šifarnici", "Izvori napajanja brojila");
 		izvorNapajanjaBrojila.verifikujIzvorNapajanjaBrojila();
 		ProizvodjaciBrojila proizvodjaciBrojila = homePage.navigateOnPage(ProizvodjaciBrojila.class, "Šifarnici", "Proizvođači brojila");
@@ -145,10 +143,35 @@ public class PX_DIST_003_Verifikacije_Sekcija_Test extends BaseTest {
 		naponskiNivoi.verifikujNaponskiNivoi();
 		StrujniNivoi strujniNivoi = homePage.navigateOnPage(StrujniNivoi.class, "Šifarnici", "Strujni nivoi");
 		strujniNivoi.verifikujStrujniNivoi();
+	}
+	
+	@Test(retryAnalyzer = RetryAnalyzer.class, description = "test prolazi kroz sve stranice iz podsekcije SIFARNICI MJERNIH UREDJAJA i verifikuje ih")
+	public void px_dist_003_01_verifikacija_sekcije_sifarnici_test4() throws Exception {
+		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
+		logIn.verifikujLogIn();
+		logIn.logIn();
+		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
+		homePage.verifikujPocetnuStranicu();
+		TipoviBrojila tipoviBrojila = homePage.navigateOnPage(TipoviBrojila.class, "Šifarnici", "Tipovi brojila");
+		tipoviBrojila.verifikujTipoviBrojila();
 		TipoviTransformatora tipoviTransformatora = homePage.navigateOnPage(TipoviTransformatora.class, "Šifarnici", "Tipovi transformatora");
 		tipoviTransformatora.verifikujTipoviTransformatora();
 	}
 
+	@Test(retryAnalyzer = RetryAnalyzer.class, description = "test prolazi kroz sve stranice iz podsekcije FINANSIJSKI SIFARNICI i verifikuje ih")
+	public void px_dist_003_01_verifikacija_sekcije_sifarnici_test5() throws Exception {
+		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
+		logIn.verifikujLogIn();
+		logIn.logIn();
+		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
+		homePage.verifikujPocetnuStranicu();
+		Banke banke = homePage.navigateOnPage(Banke.class, "Šifarnici", "Banke");
+		banke.verifikujBanke();
+		ZiroRacuni ziroRacuni = homePage.navigateOnPage(ZiroRacuni.class, "Šifarnici", "Žiro računi");
+		ziroRacuni.verifikujZiroRacuni();
+	}
+
+	
 	@Test(retryAnalyzer = RetryAnalyzer.class, description = "test prolazi kroz sve stranice iz sekcije TARIFNI SISTEM i verifikuje ih")
 	public void px_dist_003_02_verifikacija_sekcije_tarifni_sistem_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
@@ -338,10 +361,6 @@ public class PX_DIST_003_Verifikacije_Sekcija_Test extends BaseTest {
 		dnevniciUplata.verifikujDnevniciUplata();
 		SveUplate sveUplate = homePage.navigateOnPage(SveUplate.class, "Finansije", "Sve uplate");
 		sveUplate.verifikujSveUplate();
-		ZiroRacuni ziroRacuni = homePage.navigateOnPage(ZiroRacuni.class, "Finansije", "Žiro računi");
-		ziroRacuni.verifikujZiroRacuni();
-		Banke banke = homePage.navigateOnPage(Banke.class, "Finansije", "Banke");
-		banke.verifikujBanke();
 	}
 
 	@Test(retryAnalyzer = RetryAnalyzer.class, description = "test prolazi kroz sve stranice iz sekcije ADMINISTRACIJA i verifikuje ih")
