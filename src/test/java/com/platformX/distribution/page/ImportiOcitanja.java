@@ -29,7 +29,7 @@ public class ImportiOcitanja extends PocetnaStranicaPXD {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumZadnjegOcitanjaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIzvorOcitanjaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaUspjesnoImportovanoWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojPogresnihUnosaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojNeuspjesnihUnosaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojUnosaBezVrijednostiSaNapomenomWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojUnosaBezVrijednostBezNapomeneWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNevalidnaOcitanjaWE));

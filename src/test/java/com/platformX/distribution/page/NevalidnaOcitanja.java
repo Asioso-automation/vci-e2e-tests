@@ -17,11 +17,11 @@ public class NevalidnaOcitanja extends PocetnaStranicaPXD {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Nevalidna očitanja')]")));
-		verifikacijaZajednickihElemenata("Očitanja", "Nevalidna Očitanja", "Nevalidna očitanja", 19, false, false, false, true, true, true, false);
+		verifikacijaZajednickihElemenata("Očitanja", "Nevalidna Očitanja", "Nevalidna očitanja", 20, false, false, false, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojiloWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNazivMjernogMjestaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMjernoMjestoEicWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNazivMjernogMjestaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTrafostanicaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaCitacWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaRazlogWE));
@@ -30,8 +30,10 @@ public class NevalidnaOcitanja extends PocetnaStranicaPXD {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaRvtWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaRmtWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaSnaga1WE));
-//		TODO kolone AVT- i AMT-
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAvt1WE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAmt1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPorukaCitacaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaZbirnoKontrolnoOcitanjeWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaRijesenoWE));
 	}

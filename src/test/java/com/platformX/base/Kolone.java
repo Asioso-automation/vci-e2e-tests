@@ -449,6 +449,12 @@ public class Kolone extends PageBase {
 	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'RMT']")
 	public WebElement kolonaRmtWE;
 	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'AVT-']")
+	public WebElement kolonaAvt1WE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'AMT-']")
+	public WebElement kolonaAmt1WE;
+	
 	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'A. konstanta']")
 	public WebElement kolonaAKonstantaWE;
 	
@@ -1292,8 +1298,8 @@ public class Kolone extends PageBase {
 	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Uspješno importovano']")
 	public WebElement kolonaUspjesnoImportovanoWE;
 	
-	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Broj pogrešnih unosa']")
-	public WebElement kolonaBrojPogresnihUnosaWE;
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Broj neuspješnih unosa']")
+	public WebElement kolonaBrojNeuspjesnihUnosaWE;
 	
 	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Broj unosa bez vrijednosti sa napomenom']")
 	public WebElement kolonaBrojUnosaBezVrijednostiSaNapomenomWE;
@@ -1361,35 +1367,32 @@ public class Kolone extends PageBase {
 	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Zbirno/kontrolno mjerno mjesto']")
 	public WebElement kolonaZbirnoKontrolnoMjernoMjestoWE;
 	
-	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Aktivna obračun za period']")
-	public WebElement kolonaAktivnaObracunZaPeriodWE;
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Aktivna obračunata']")
+	public WebElement kolonaAktivnaObracunataWE;
 	
-	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Reaktivna obračun za period']")
-	public WebElement kolonaReaktivnaObracunZaPeriodWE;
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Reaktivna obračunata']")
+	public WebElement kolonaReaktivnaObracunataWE;
 	
-	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Razlika aktivna']")
-	public WebElement kolonaRazlikaAktivnaWE;
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Aktivna - razlika']")
+	public WebElement kolonaAktivnaRazlikaWE;
 	
-	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Razlika aktivna (%)']")
-	public WebElement kolonaRazlikaAktivna1WE;
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Aktivna - razlika (%)']")
+	public WebElement kolonaAktivna1RazlikaWE;
 	
-	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Razlika reaktivna']")
-	public WebElement kolonaRazlikaReaktivnaWE;
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Reaktivna - razlika']")
+	public WebElement kolonaReaktivnaRazlikaWE;
 	
-	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Aktivna - sa korekcijama za period']")
-	public WebElement kolonaAktivnaSaKorekcijamaZaPeriodWE;
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Aktivna - sa korekcijama']")
+	public WebElement kolonaAktivnaSaKorekcijamaWE;
 	
-	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Aktivna - Korekcije za period']")
-	public WebElement kolonaAktivnaKorekcijeZaPeriodWE;
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Aktivna - korekcije']")
+	public WebElement kolonaAktivnaKorekcijeWE;
 	
-	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Reaktivna - Korekcije za period']")
-	public WebElement kolonaReaktivnaKorekcijeZaPeriodWE;
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Reaktivna - korekcije']")
+	public WebElement kolonaReaktivnaKorekcijeWE;
 	
-	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Datum prvog očitanja za period']")
-	public WebElement kolonaDatumPrvogOcitanjaZaPeriodWE;
-	
-	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Datum posljednjeg očitanja za period']")
-	public WebElement kolonaDatumPosljednjegOcitanjaZaPeriodWE;
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Datum posljednjeg očitanja']")
+	public WebElement kolonaDatumPosljednjegOcitanjaWE;
 	
 	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Adresa mjernog mjesta']")
 	public WebElement kolonaAdresaMjernogMjestaWE;
@@ -1570,9 +1573,15 @@ public class Kolone extends PageBase {
 
 	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Datum računa']")
 	public WebElement kolonaDatumRacunaWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Datum plaćanja']")
+	public WebElement kolonaDatumPlacanjaWE;
 
 	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Storniran']")
 	public WebElement kolonaStorniranWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Postoji odobrenje']")
+	public WebElement kolonaPostojiOdobrenjeWE;
 
 	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Iznos PDV-a']")
 	public WebElement kolonaIznosPdvaWE;
@@ -1582,6 +1591,9 @@ public class Kolone extends PageBase {
 	
 	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Šifra tipa neovlaštene potrošnje']")
 	public WebElement kolonaSifraTipaNeovlastenePotrosnjeWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Obračunata neovlaštena']")
+	public WebElement kolonaObracunataNeovlastenaWE;
 	
 	// Kolone MONITORING
 	

@@ -135,6 +135,9 @@ public abstract class PageBase {
 		
 	@FindBy(xpath = "//tr[2]/td[1]")
 	public WebElement idWE;
+	
+	@FindBy(xpath = "//i[contains(@class, 'mdi-chevron-right')]")
+	public static WebElement strelicaDesnoWE;
 
 //	API params
 	
@@ -329,7 +332,15 @@ public abstract class PageBase {
 			wait.until(ExpectedConditions.visibilityOf(aktivniLookupWE));
 			wait.until(ExpectedConditions.elementToBeClickable(By.xpath(stranicaXpath))).click();
 		} catch (Exception e) {
-			driver.get(platformx_distribution_properties.getValue("URL.DIST.LOGIN") + platformx_distribution_properties.getValue(propertiesNaziv(stranica)));	        
+			try {
+				wait.until(ExpectedConditions.elementToBeClickable(strelicaDesnoWE));
+				strelicaDesnoWE.click();
+				wait.until(ExpectedConditions.elementToBeClickable(By.xpath(sekcijaXpath))).click();
+				wait.until(ExpectedConditions.visibilityOf(aktivniLookupWE));
+				wait.until(ExpectedConditions.elementToBeClickable(By.xpath(stranicaXpath))).click();
+			} catch (Exception f) {
+				driver.get(platformx_distribution_properties.getValue("URL.DIST.LOGIN") + platformx_distribution_properties.getValue(propertiesNaziv(stranica)));
+			}
 		}
 		return pageClass.getDeclaredConstructor(WebDriver.class).newInstance(driver);
 	}

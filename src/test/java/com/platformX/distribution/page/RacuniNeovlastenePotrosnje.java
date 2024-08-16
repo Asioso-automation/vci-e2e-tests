@@ -17,7 +17,7 @@ public class RacuniNeovlastenePotrosnje extends PocetnaStranicaPXD {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Računi neovlaštene potrošnje')]")));
-		verifikacijaZajednickihElemenata("Neovlaštena Potrošnja", "Računi Neovlaštene Potrošnje", "Računi neovlaštene potrošnje", 14, false, false, false, true, true, true, false);
+		verifikacijaZajednickihElemenata("Neovlaštena Potrošnja", "Računi Neovlaštene Potrošnje", "Računi neovlaštene potrošnje", 16, false, false, false, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKupacWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMjernoMjestoWE));
@@ -29,7 +29,9 @@ public class RacuniNeovlastenePotrosnje extends PocetnaStranicaPXD {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIznosPdvaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIznosSaPdvomWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumRacunaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumPlacanjaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaZakljucenWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPostojiOdobrenjeWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaStorniranWE));
 	}	
 	

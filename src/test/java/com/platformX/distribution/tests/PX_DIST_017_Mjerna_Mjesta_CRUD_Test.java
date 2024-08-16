@@ -30,9 +30,9 @@ public class PX_DIST_017_Mjerna_Mjesta_CRUD_Test  extends BaseTest {
 		mjernaMjesta.verifikujMjernaMjesta();
 		mjernaMjesta.dodajMjernoMjesto(sifraMjernogMjesta);
 		mjernaMjesta.verifikujPoruku("Uspješno završeno.");
-		mjernaMjesta.pretraziStavku(homePage.filterKolona3WE, sifraMjernogMjesta);
+		mjernaMjesta.pretraziStavku(homePage.filterKolona4WE, sifraMjernogMjesta);
 		mjernaMjesta.verifikujMjernaMjesta();
-		mjernaMjesta.verifikujStavku(sifraMjernogMjesta, homePage.podatak2Tabela3WE);
+		mjernaMjesta.verifikujStavku(sifraMjernogMjesta, homePage.podatak2Tabela4WE);
 	}
 
 	@Test (retryAnalyzer = RetryAnalyzer.class, dependsOnMethods = { "px_dist_017_1_dodavanje_mjernog_mjesta_test" })
@@ -44,14 +44,14 @@ public class PX_DIST_017_Mjerna_Mjesta_CRUD_Test  extends BaseTest {
 		homePage.verifikujPocetnuStranicu();
 		MjernaMjesta mjernaMjesta = homePage.navigateOnPage(MjernaMjesta.class, "Mjerna mjesta", "Mjerna mjesta");
 		mjernaMjesta.verifikujMjernaMjesta();
-		mjernaMjesta.pretraziStavku(homePage.filterKolona3WE, sifraMjernogMjesta);
+		mjernaMjesta.pretraziStavku(homePage.filterKolona4WE, sifraMjernogMjesta);
 		mjernaMjesta.verifikujMjernaMjesta();
-		mjernaMjesta.verifikujStavku(sifraMjernogMjesta, homePage.podatak2Tabela3WE);
+		mjernaMjesta.verifikujStavku(sifraMjernogMjesta, homePage.podatak2Tabela4WE);
 		mjernaMjesta.urediMjernoMjesto(novaSifraMjernogMjesta);
 		mjernaMjesta.verifikujPoruku("Uspješno završeno.");
-		mjernaMjesta.pretraziStavku(homePage.filterKolona3WE, novaSifraMjernogMjesta);
+		mjernaMjesta.pretraziStavku(homePage.filterKolona4WE, novaSifraMjernogMjesta);
 		mjernaMjesta.verifikujMjernaMjesta();
-		mjernaMjesta.verifikujStavku(novaSifraMjernogMjesta, homePage.podatak2Tabela3WE);
+		mjernaMjesta.verifikujStavku(novaSifraMjernogMjesta, homePage.podatak2Tabela4WE);
 	}
 	
 	@Test (retryAnalyzer = RetryAnalyzer.class, dependsOnMethods = { "px_dist_017_2_uredjivanje_mjernog_mjesta_test" })
@@ -63,12 +63,12 @@ public class PX_DIST_017_Mjerna_Mjesta_CRUD_Test  extends BaseTest {
 		homePage.verifikujPocetnuStranicu();
 		MjernaMjesta mjernaMjesta = homePage.navigateOnPage(MjernaMjesta.class, "Mjerna mjesta", "Mjerna mjesta");
 		mjernaMjesta.verifikujMjernaMjesta();
-		mjernaMjesta.pretraziStavku(homePage.filterKolona3WE, novaSifraMjernogMjesta);
+		mjernaMjesta.pretraziStavku(homePage.filterKolona4WE, novaSifraMjernogMjesta);
 		mjernaMjesta.verifikujMjernaMjesta();
-		mjernaMjesta.verifikujStavku(novaSifraMjernogMjesta, homePage.podatak2Tabela3WE);
+		mjernaMjesta.verifikujStavku(novaSifraMjernogMjesta, homePage.podatak2Tabela4WE);
 		mjernaMjesta.obrisiStavku();
 		mjernaMjesta.verifikujPoruku("Brisanje je uspješno završeno");
-		mjernaMjesta.pretraziStavku(homePage.filterKolona3WE, novaSifraMjernogMjesta);
+		mjernaMjesta.pretraziStavku(homePage.filterKolona4WE, novaSifraMjernogMjesta);
 		mjernaMjesta.verifikujPraznuTabelu();
 	}
 	

@@ -27,31 +27,34 @@ public class MjernaMjesta extends PocetnaStranicaPXD {
 	@FindBy(xpath = "//div[4]/div[2]/div/div/div[1]/div/input")
 	private WebElement poljeNazivMjmNaStampanimDokWE;
 	
-	@FindBy(xpath = "//div[5]/div[3]/div/div/div[1]/div[1]/input[1]")
+	@FindBy(xpath = "//div[5]/div[5]/div/div/div[1]/div[1]/input[1]")
 	private WebElement poljeVlasnikWE;
 	
-	@FindBy(xpath = "//div[5]/div[4]/div/div/div[1]/div[1]/input[1]")
+	@FindBy(xpath = "//div[5]/div[1]/div/div/div[1]/div[1]/input[1]")
 	private WebElement poljeTipPotrosacaWE;
+	
+	@FindBy(xpath = "//div[5]/div[4]/div/div/div[1]/div[1]/input[1]")
+	private WebElement poljeLokacijaMjernogMjestaWE;	
 
-	@FindBy(xpath = "//div[5]/div[5]/div/div/div[1]/div[1]/input[1]")
+	@FindBy(xpath = "//div[5]/div[6]/div/div/div[1]/div[1]/input[1]")
 	private WebElement poljeTerenskaJedinicaWE;
 	
 	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '41 - TJ Bijeljina')]")		// 1 - Istočno Novo Sarajevo > 41 - TJ Bijeljina
 	private WebElement odaberiTerenskuJedinicuWE;
 	
-	@FindBy(xpath = "//div[5]/div[6]/div/div/div[1]/div[1]/input[1]")
+	@FindBy(xpath = "//div[5]/div[7]/div/div/div[1]/div[1]/input[1]")
 	private WebElement poljeFizickaLokacijaWE;
 	
 	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '4101 - 01 - BIJELJINA')]")		// 301 - 01 - Istočno Novo Sarajevo > 4101 - 01 - BIJELJINA
 	private WebElement odaberiFizickuLokacijuWE;
 	
-	@FindBy(xpath = "//div[5]/div[7]/div/div/div[1]/div[1]/input[1]")
+	@FindBy(xpath = "//div[5]/div[8]/div/div/div[1]/div[1]/input[1]")
 	private WebElement poljeTrafoStanicaWE;
 	
 	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '410112 - NOVA BANKA')]")			// 11120 - 120-Didas > 410112 - NOVA BANKA
 	private WebElement odaberiTrafoStanicuWE;
 	
-	@FindBy(xpath = "//div[5]/div[10]/div/div/div[1]/div/input")
+	@FindBy(xpath = "//div[5]/div[11]/div/div/div[1]/div/input")
 	private WebElement poljeBrojCitackogHodaWE;
 	
 	@FindBy(xpath = "//div[7]/div[2]/div/div/div[1]/div[1]/input[1]")
@@ -71,23 +74,24 @@ public class MjernaMjesta extends PocetnaStranicaPXD {
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Mjerna mjesta')]")));
-		verifikacijaZajednickihElemenata("Mjerna Mjesta", "Mjerna Mjesta", "Mjerna mjesta", 17, false, false, true, true, true, true, false);
+		verifikacijaZajednickihElemenata("Mjerna Mjesta", "Mjerna Mjesta", "Mjerna mjesta", 18, false, false, true, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaElektroenergetskaSaglasnostWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaEicWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaSifraEdBrojWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNazivMjernogMjestaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaUgovorWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNazivMjernogMjestaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTerenskaJedinicaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaFizickaLokacijaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTrafostanicaWE));
-//		TODO kolonaTipPotrosacaWE
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaElektroenergetskaSaglasnostWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAdresaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaCitackiHodWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAdresaWE));
+//		kolonaLokacijaMjernogMjestaWE
+//		kolonaOdobrenaPrikljucnaSnagaWE
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPostojiNapomenaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPodNaponomWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAktivanUgovorWE));
 //		TODO kolonaUgovorUPripremiWE
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAktivanUgovorWE));
 	}
 	
 	public String dodajMjernoMjesto(String sifraMjernogMjesta) throws InterruptedException, FileNotFoundException, IOException {
@@ -108,7 +112,11 @@ public class MjernaMjesta extends PocetnaStranicaPXD {
 		wait.until(ExpectedConditions.elementToBeClickable(poljeTipPotrosacaWE));
 		poljeTipPotrosacaWE.click();
 		poljeTipPotrosacaWE.sendKeys(Keys.ARROW_DOWN);
-		poljeTipPotrosacaWE.sendKeys(Keys.ENTER);
+		poljeTipPotrosacaWE.sendKeys(Keys.ENTER);		
+		wait.until(ExpectedConditions.elementToBeClickable(poljeLokacijaMjernogMjestaWE));
+		poljeLokacijaMjernogMjestaWE.click();
+		poljeLokacijaMjernogMjestaWE.sendKeys(Keys.ARROW_DOWN);
+		poljeLokacijaMjernogMjestaWE.sendKeys(Keys.ENTER);		
 		wait.until(ExpectedConditions.elementToBeClickable(poljeTerenskaJedinicaWE));
 		poljeTerenskaJedinicaWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
