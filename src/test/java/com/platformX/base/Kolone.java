@@ -2035,6 +2035,9 @@ public class Kolone extends PageBase {
 	@FindBy(xpath = "//*[contains(@class, 'v-datatable')]//*[text() = 'Kupac']")
 	public WebElement kolonaKupac1WE;
 	
+	@FindBy(xpath = "//*[contains(@class, 'v-datatable')]//*[text() = 'ID prostor']")
+	public WebElement kolonaIdProstorWE;
+	
 	@FindBy(xpath = "//*[contains(@class, 'v-datatable')]//*[text() = 'Prostor']")
 	public WebElement kolonaProstorWE;
 	

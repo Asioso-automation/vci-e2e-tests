@@ -60,7 +60,8 @@ public class Prostori extends PocetnaStranica{
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title') and contains(text(), 'Prostori')]")));
-		verifikacijaZajednickihElemenata("Kupci", "Prostori", "Prostori", 9, false, false, true, true, true, true, false);
+		verifikacijaZajednickihElemenata("Kupci", "Prostori", "Prostori", 10, false, false, true, true, true, true, false);
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaId1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNaziv1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaVrstaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKupac1WE));
@@ -74,7 +75,8 @@ public class Prostori extends PocetnaStranica{
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title') and contains(text(), 'Prostori')]")));
-		verifikacijaZajednickihElemenata("Kupci", "Prostori", "Prostori", 7, false, false, true, true, true, true, false);
+		verifikacijaZajednickihElemenata("Kupci", "Prostori", "Prostori", 8, false, false, true, true, true, true, false);
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaId1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNaziv1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaVrstaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKupac1WE));
@@ -86,7 +88,8 @@ public class Prostori extends PocetnaStranica{
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title') and contains(text(), 'Prostori')]")));
-		verifikacijaZajednickihElemenata("Kupci", "Prostori", "Prostori", 6, false, false, true, true, true, true, false);
+		verifikacijaZajednickihElemenata("Kupci", "Prostori", "Prostori", 7, false, false, true, true, true, true, false);
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaId1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNaziv1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaVrstaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaSpratWE));

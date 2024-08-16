@@ -72,6 +72,7 @@ public class Ugovori extends PocetnaStranica{
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKupac1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTip1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaJibJmbgWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdProstorWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaProstorWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTarifnaGrupa1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrClanovaWE));
@@ -95,6 +96,7 @@ public class Ugovori extends PocetnaStranica{
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKupac1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTip1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaJibJmbgWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdProstorWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaProstorWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTarifnaGrupa1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMjeriloWE));
@@ -117,6 +119,7 @@ public class Ugovori extends PocetnaStranica{
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKupac1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTip1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaJibJmbgWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdProstorWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaProstorWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTarifnaGrupa1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumPocetkaWE));
@@ -137,6 +140,7 @@ public class Ugovori extends PocetnaStranica{
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKupac1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTip1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaJibJmbgWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdProstorWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaProstorWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTarifnaGrupa1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumPocetkaWE));
@@ -155,6 +159,7 @@ public class Ugovori extends PocetnaStranica{
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaId1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaOrganizacija1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKupac1WE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdProstorWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaProstorWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMjeriloWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaJibJmbgWE));
@@ -175,6 +180,7 @@ public class Ugovori extends PocetnaStranica{
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKupac1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTip1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaJibJmbgWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdProstorWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaProstorWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTarifnaGrupa1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMjeriloWE));

@@ -24,12 +24,13 @@ public class IndirektnaPotrosnja extends PocetnaStranica{
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title') and contains(text(), 'Indirektna potrošnja')]")));
-		verifikacijaZajednickihElemenata("Očitanja", "Indirektna Potrošnja", "Indirektna potrošnja", 9, false, false, true, true, true, true, true);
+		verifikacijaZajednickihElemenata("Očitanja", "Indirektna Potrošnja", "Indirektna potrošnja", 10, false, false, true, true, true, true, true);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMjeriloWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPotrosnjaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIndirektnaPotrosnjaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAktivnaIndirektnaMjerilaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKupac1WE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdProstorWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaProstorWE));
 	}
 
