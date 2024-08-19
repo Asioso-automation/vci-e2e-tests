@@ -51,7 +51,8 @@ public class SCP_008_Sekcija_Mjerila_Test extends BaseTest {
 	  String mjerilo = mjerila.dodajMjerilaVodovod(); 
 	  mjerila.verifikujPoruku("Uspješno završeno.");
 	  mjerila.pretraziStavku(pocetna.filterKolona3WE, mjerilo);
-	  mjerila.verifikujMjerila(); mjerila.verifikujStavku(mjerilo,
+	  mjerila.verifikujMjerilaVodovod();
+	  mjerila.verifikujStavku(mjerilo,
 	  pocetna.podatak3TabelaWE); }
 	 
 	

@@ -4,6 +4,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -134,7 +135,7 @@ public class Mjerila extends PocetnaStranica{
 	public String dodajMjerilaVodovod() throws InterruptedException{
 		String srBroj = "SrBr" + Helper.getRandomString(4);
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
-		Thread.sleep(1000);
+		Thread.sleep(1300);
 		dodajBtnWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(srBr1WE));
 		srBr1WE.sendKeys(srBroj);
@@ -155,6 +156,8 @@ public class Mjerila extends PocetnaStranica{
 		trenutniDatum1WE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(sifraPlombe1WE));
 		sifraPlombe1WE.sendKeys("Plomba" + Helper.getRandomNubmer1to8(5));
+		JavascriptExecutor js = ((JavascriptExecutor) driver);
+		js.executeScript("window.scrollTo(0, document.body.scrollHeight)");		
 		wait.until(ExpectedConditions.elementToBeClickable(datumBtn4WE));
 		datumBtn4WE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(trenutniDatum1WE));
@@ -188,6 +191,8 @@ public class Mjerila extends PocetnaStranica{
 		trenutniDatum1WE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(sifraPlombeWE));
 		sifraPlombeWE.sendKeys("Plomba" + Helper.getRandomNubmer1to8(5));
+		JavascriptExecutor js = ((JavascriptExecutor) driver);
+		js.executeScript("window.scrollTo(0, document.body.scrollHeight)");	
 		wait.until(ExpectedConditions.elementToBeClickable(datumBtn4WE));
 		datumBtn4WE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(trenutniDatum1WE));

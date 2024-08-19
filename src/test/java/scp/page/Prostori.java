@@ -39,7 +39,7 @@ public class Prostori extends PocetnaStranica{
 	@FindBy(xpath = "//div[2]/form/div/div[1]/div[2]/div[2]/div/div/div[1]/div/input")
 	private WebElement spratBrojWE;
 	
-	@FindBy(xpath = "//td[8]/button/div")
+	@FindBy(xpath = "//td[9]/button/div")
 	private WebElement burgerBarWE;
 	
 	@FindBy(xpath = "//td[6]/button/div")
