@@ -43,6 +43,7 @@ public class TarifneNadgrupe extends PocetnaStranicaPXD {
 		burgerBarWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(urediWE));
 		urediWE.click();
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		wait.until(ExpectedConditions.elementToBeClickable(nazivTarifneNadrupeWE));
 		nazivTarifneNadrupeWE.click();
 		nazivTarifneNadrupeWE.clear();

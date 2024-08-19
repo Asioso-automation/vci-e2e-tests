@@ -107,6 +107,12 @@ public class PocetnaStranicaPXD extends PageBase {
 	
 	@FindBy(xpath = "//*[contains(text(),'Izvještaji') and @class='v-btn__content']")
 	protected WebElement izvjestajiWE;
+	
+	@FindBy(xpath = "//i[contains(@class, 'fa-search')]")
+	protected WebElement pretragaWE;
+	
+	@FindBy(xpath = "//i[contains(@class, 'fa-filter')]")
+	protected WebElement filteriWE;
 
 	@FindBy(xpath = "(//i[contains(@class, 'fa-user')])[1]")
 	protected WebElement profilWE;
@@ -119,17 +125,19 @@ public class PocetnaStranicaPXD extends PageBase {
 		wait.until(ExpectedConditions.elementToBeClickable(kupciWE));
 		wait.until(ExpectedConditions.elementToBeClickable(brojilaWE));
 		wait.until(ExpectedConditions.elementToBeClickable(obracunskiUgovoriWE));
-		wait.until(ExpectedConditions.elementToBeClickable(ocitanjaWE));
-		wait.until(ExpectedConditions.elementToBeClickable(obracunWE));
 		wait.until(ExpectedConditions.elementToBeClickable(strelicaDesnoWE));
 		strelicaDesnoWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(ocitanjaWE));
+		wait.until(ExpectedConditions.elementToBeClickable(neovlastenaPotrosnjaWE));
+		wait.until(ExpectedConditions.elementToBeClickable(obracunWE));
+		wait.until(ExpectedConditions.elementToBeClickable(finansijeWE));
 		wait.until(ExpectedConditions.elementToBeClickable(administracijaWE));
 		wait.until(ExpectedConditions.elementToBeClickable(izvjestajiWE));
+		wait.until(ExpectedConditions.elementToBeClickable(pretragaWE));
+		wait.until(ExpectedConditions.elementToBeClickable(filteriWE));
 		wait.until(ExpectedConditions.elementToBeClickable(profilWE));
 		wait.until(ExpectedConditions.elementToBeClickable(strelicaLijevoWE));
 		strelicaLijevoWE.click();
-//		wait.until(ExpectedConditions.elementToBeClickable(filterMjernoMjestoWE));
-//		wait.until(ExpectedConditions.elementToBeClickable(filterKupacWE));
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 	}
 

@@ -44,9 +44,9 @@ public class PX_DIST_024_Obracunski_Ugovori_CRUD_Test  extends BaseTest {
 		mjernaMjesta.verifikujMjernaMjesta();
 		mjernaMjesta.dodajMjernoMjesto(sifraMjernogMjesta);
 		mjernaMjesta.verifikujPoruku("Uspješno završeno.");
-		mjernaMjesta.pretraziStavku(homePage.filterKolona3WE, sifraMjernogMjesta);
+		mjernaMjesta.pretraziStavku(homePage.filterKolona4WE, sifraMjernogMjesta);
 		mjernaMjesta.verifikujMjernaMjesta();
-		mjernaMjesta.verifikujStavku(sifraMjernogMjesta, homePage.podatak2Tabela3WE);
+		mjernaMjesta.verifikujStavku(sifraMjernogMjesta, homePage.podatak2Tabela4WE);
 		eic = mjernaMjesta.kreirajMjernoMjesto();
 		RegistarBrojila registarBrojila = homePage.navigateOnPage(RegistarBrojila.class, "Brojila", "Registar brojila");
 		registarBrojila.verifikujRegistarBrojila();

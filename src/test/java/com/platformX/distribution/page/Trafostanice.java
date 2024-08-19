@@ -26,7 +26,7 @@ public class Trafostanice extends PocetnaStranicaPXD {
 	@FindBy(xpath = "//div[2]/div[4]/div/div/div[1]/div[1]/input[1]")
 	private WebElement fizickaLokacijaWE;
 	
-	@FindBy(xpath = "//div[2]/div[5]/div/div/div[1]/div/input")
+	@FindBy(xpath = "//div[6]/div/div/div[1]/div/input")
 	private WebElement tipWE;
 	
 	@FindBy(xpath = "//div[3]/div[1]/div/div/div[1]/div[1]/input[1]")
@@ -42,16 +42,17 @@ public class Trafostanice extends PocetnaStranicaPXD {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Trafostanice')]")));
-		verifikacijaZajednickihElemenata("Šifarnici", "Trafostanice", "Trafostanice", 12, false, false, true, true, true, true, false);
+		verifikacijaZajednickihElemenata("Šifarnici", "Trafostanice", "Trafostanice", 13, false, false, true, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaSifraWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNazivWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaVlasnikWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaFizickaLokacijaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAdresaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaGodinaIzgradnjeWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTipWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPrenosniOdnosWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojTransformatoraWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPrenosniOdnosWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaSnaga1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAktivnaWE));
 	}

@@ -157,7 +157,7 @@ public class MjernaMjesta extends PocetnaStranicaPXD {
 	 }
 	
 	public String kreirajMjernoMjesto() {
-	   String mjernoMjesto = podatak2Tabela2WE.getText();
+	   String mjernoMjesto = podatak2Tabela3WE.getText();
 	   return mjernoMjesto;
 	}
 	
