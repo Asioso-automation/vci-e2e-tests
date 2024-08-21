@@ -1,4 +1,4 @@
-package scp.test;
+package scp.tests;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;

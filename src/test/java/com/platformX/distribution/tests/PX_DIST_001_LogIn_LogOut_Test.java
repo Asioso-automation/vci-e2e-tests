@@ -4,6 +4,7 @@ import org.testng.annotations.Test;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import com.platformX.base.BaseTest;
+import com.platformX.base.RetryAnalyzer;
 import com.platformX.distribution.page.LogIn;
 import com.platformX.distribution.page.PocetnaStranicaPXD;
 
@@ -13,7 +14,7 @@ public class PX_DIST_001_LogIn_LogOut_Test extends BaseTest {
 		super();
 	}
 
-	@Test (description="logIn i logOut sa verifikacijama stranica")
+	@Test (retryAnalyzer = RetryAnalyzer.class, description="logIn i logOut sa verifikacijama stranica")
 	public void px_dist_001_logIn_logOut_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();

@@ -13,7 +13,7 @@ public class PX_DIST_003_Verifikacije_Sekcija_Test extends BaseTest {
 		super();
 	}
 
-	@Test(retryAnalyzer = RetryAnalyzer.class, description = "test prolazi kroz sve stranice iz sekcije SIFARNICI i verifikuje ih")
+	@Test (retryAnalyzer = RetryAnalyzer.class, description = "test prolazi kroz sve stranice iz sekcije SIFARNICI i verifikuje ih")
 	public void px_dist_003_01_verifikacija_sekcije_sifarnici_test1() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
@@ -48,7 +48,7 @@ public class PX_DIST_003_Verifikacije_Sekcija_Test extends BaseTest {
 		vrstePodrucja.verifikujVrstePodrucja();
 	}
 
-	@Test(retryAnalyzer = RetryAnalyzer.class, description = "test prolazi kroz sve stranice iz podsekcije SIFARNICI ZA ZAPISNIKE i verifikuje ih")
+	@Test (retryAnalyzer = RetryAnalyzer.class, description = "test prolazi kroz sve stranice iz podsekcije SIFARNICI ZA ZAPISNIKE i verifikuje ih")
 	public void px_dist_003_01_verifikacija_sekcije_sifarnici_test2() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
@@ -115,7 +115,7 @@ public class PX_DIST_003_Verifikacije_Sekcija_Test extends BaseTest {
 		usloviPlacanja.verifikujUsloviPlacanja();		
 	}
 	
-	@Test(retryAnalyzer = RetryAnalyzer.class, description = "test prolazi kroz sve stranice iz podsekcije MJERNI SIFARNICI i verifikuje ih")
+	@Test (retryAnalyzer = RetryAnalyzer.class, description = "test prolazi kroz sve stranice iz podsekcije MJERNI SIFARNICI i verifikuje ih")
 	public void px_dist_003_01_verifikacija_sekcije_sifarnici_test3() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
@@ -145,7 +145,7 @@ public class PX_DIST_003_Verifikacije_Sekcija_Test extends BaseTest {
 		strujniNivoi.verifikujStrujniNivoi();
 	}
 	
-	@Test(retryAnalyzer = RetryAnalyzer.class, description = "test prolazi kroz sve stranice iz podsekcije SIFARNICI MJERNIH UREDJAJA i verifikuje ih")
+	@Test (retryAnalyzer = RetryAnalyzer.class, description = "test prolazi kroz sve stranice iz podsekcije SIFARNICI MJERNIH UREDJAJA i verifikuje ih")
 	public void px_dist_003_01_verifikacija_sekcije_sifarnici_test4() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
@@ -158,7 +158,7 @@ public class PX_DIST_003_Verifikacije_Sekcija_Test extends BaseTest {
 		tipoviTransformatora.verifikujTipoviTransformatora();
 	}
 
-	@Test(retryAnalyzer = RetryAnalyzer.class, description = "test prolazi kroz sve stranice iz podsekcije FINANSIJSKI SIFARNICI i verifikuje ih")
+	@Test (retryAnalyzer = RetryAnalyzer.class, description = "test prolazi kroz sve stranice iz podsekcije FINANSIJSKI SIFARNICI i verifikuje ih")
 	public void px_dist_003_01_verifikacija_sekcije_sifarnici_test5() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
@@ -172,7 +172,7 @@ public class PX_DIST_003_Verifikacije_Sekcija_Test extends BaseTest {
 	}
 
 	
-	@Test(retryAnalyzer = RetryAnalyzer.class, description = "test prolazi kroz sve stranice iz sekcije TARIFNI SISTEM i verifikuje ih")
+	@Test (retryAnalyzer = RetryAnalyzer.class, description = "test prolazi kroz sve stranice iz sekcije TARIFNI SISTEM i verifikuje ih")
 	public void px_dist_003_02_verifikacija_sekcije_tarifni_sistem_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
@@ -195,7 +195,7 @@ public class PX_DIST_003_Verifikacije_Sekcija_Test extends BaseTest {
 		cjenovnikNeovlastenePotrosnje.verifikujCjenovnikNeovlastenePotrosnje();
 	}
 
-	@Test(retryAnalyzer = RetryAnalyzer.class, description = "test prolazi kroz sve stranice iz sekcije MJERNA MJESTA i verifikuje ih")
+	@Test (retryAnalyzer = RetryAnalyzer.class, description = "test prolazi kroz sve stranice iz sekcije MJERNA MJESTA i verifikuje ih")
 	public void px_dist_003_03_verifikacija_sekcije_mjerna_mjesta_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
@@ -235,7 +235,7 @@ public class PX_DIST_003_Verifikacije_Sekcija_Test extends BaseTest {
 		registarPlombi.verifikujRegistarPlombi();
 	}
 
-	@Test(retryAnalyzer = RetryAnalyzer.class, description = "test prolazi kroz sve stranice iz sekcije KUPCI i verifikuje ih")
+	@Test (retryAnalyzer = RetryAnalyzer.class, description = "test prolazi kroz sve stranice iz sekcije KUPCI i verifikuje ih")
 	public void px_dist_003_04_verifikacija_sekcije_kupci_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
@@ -251,7 +251,7 @@ public class PX_DIST_003_Verifikacije_Sekcija_Test extends BaseTest {
 		zahtjeviZaDostavuPodatakaKupci.verifikujZahtjeviZaDostavuPodatakaKUPCI();
 	}
 
-	@Test(retryAnalyzer = RetryAnalyzer.class, description = "test prolazi kroz sve stranice iz sekcije BROJILA i verifikuje ih")
+	@Test (retryAnalyzer = RetryAnalyzer.class, description = "test prolazi kroz sve stranice iz sekcije BROJILA i verifikuje ih")
 	public void px_dist_003_05_verifikacija_sekcije_brojila_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
@@ -270,7 +270,7 @@ public class PX_DIST_003_Verifikacije_Sekcija_Test extends BaseTest {
 		transformatori.verifikujTransformatori();
 	}
 
-	@Test(retryAnalyzer = RetryAnalyzer.class, description = "test prolazi kroz sve stranice iz sekcije OBRACUNSKI UGOVORI i verifikuje ih")
+	@Test (retryAnalyzer = RetryAnalyzer.class, description = "test prolazi kroz sve stranice iz sekcije OBRACUNSKI UGOVORI i verifikuje ih")
 	public void px_dist_003_06_verifikacija_sekcije_obracunski_ugovori_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
@@ -285,7 +285,7 @@ public class PX_DIST_003_Verifikacije_Sekcija_Test extends BaseTest {
 		zahtjeviZaRaskidUgovora.verifikujZahtjeviZaRaskidUgovora();
 	}
 
-	@Test(retryAnalyzer = RetryAnalyzer.class, description = "test prolazi kroz sve stranice iz sekcije OCITANJA i verifikuje ih")
+	@Test (retryAnalyzer = RetryAnalyzer.class, description = "test prolazi kroz sve stranice iz sekcije OCITANJA i verifikuje ih")
 	public void px_dist_003_07_verifikacija_sekcije_ocitanja_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
@@ -317,7 +317,7 @@ public class PX_DIST_003_Verifikacije_Sekcija_Test extends BaseTest {
 		monitoringOcitanja.verifikujMonitoringOcitanja();
 	}
 
-	@Test(retryAnalyzer = RetryAnalyzer.class, description = "test prolazi kroz sve stranice iz sekcije NEOVLASTENA POTROSNJA i verifikuje ih")
+	@Test (retryAnalyzer = RetryAnalyzer.class, description = "test prolazi kroz sve stranice iz sekcije NEOVLASTENA POTROSNJA i verifikuje ih")
 	public void px_dist_003_08_verifikacija_sekcije_neovlastena_potrosnja_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
@@ -330,7 +330,7 @@ public class PX_DIST_003_Verifikacije_Sekcija_Test extends BaseTest {
 		racuni.verifikujRacuniNeovlastenePotrosnje();
 	}
 
-	@Test(retryAnalyzer = RetryAnalyzer.class, description = "test prolazi kroz sve stranice iz sekcije OBRACUN i verifikuje ih")
+	@Test (retryAnalyzer = RetryAnalyzer.class, description = "test prolazi kroz sve stranice iz sekcije OBRACUN i verifikuje ih")
 	public void px_dist_003_09_verifikacija_sekcije_obracun_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
@@ -347,7 +347,7 @@ public class PX_DIST_003_Verifikacije_Sekcija_Test extends BaseTest {
 		korekcionaOdobrenjaZaduzenja.verifikujKorekcionaOdobrenjaZaduzenja();
 	}
 	
-	@Test(retryAnalyzer = RetryAnalyzer.class, description = "test prolazi kroz sve stranice iz sekcije FINANSIJE i verifikuje ih")
+	@Test (retryAnalyzer = RetryAnalyzer.class, description = "test prolazi kroz sve stranice iz sekcije FINANSIJE i verifikuje ih")
 	public void px_dist_003_10_verifikacija_sekcije_finansije_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
@@ -363,7 +363,7 @@ public class PX_DIST_003_Verifikacije_Sekcija_Test extends BaseTest {
 		sveUplate.verifikujSveUplate();
 	}
 
-	@Test(retryAnalyzer = RetryAnalyzer.class, description = "test prolazi kroz sve stranice iz sekcije ADMINISTRACIJA i verifikuje ih")
+	@Test (retryAnalyzer = RetryAnalyzer.class, description = "test prolazi kroz sve stranice iz sekcije ADMINISTRACIJA i verifikuje ih")
 	public void px_dist_003_11_verifikacija_sekcije_administracija_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();

@@ -4,6 +4,7 @@ import org.testng.annotations.Test;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import com.platformX.base.BaseTest;
+import com.platformX.base.RetryAnalyzer;
 import com.platformX.page.PocetnaStranica;
 import com.platformX.page.LogIn;
 import com.platformX.page.MjernaMjesta;
@@ -18,7 +19,7 @@ public class PX_004_Pretrage_Sa_Pocetne_Stranice_Test extends BaseTest {
 
 	String pravnoLice = "Pravno lice " + Helper.getRandomString(5);
 	
-	@Test
+	@Test (retryAnalyzer = RetryAnalyzer.class)
 	public void px_004_1_pretraga_pravnih_lica_sa_pocetne_stranice_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();
@@ -38,7 +39,7 @@ public class PX_004_Pretrage_Sa_Pocetne_Stranice_Test extends BaseTest {
 		pravnaLica.verifikujDetaljePravnogLica();
 	}
 	
-	@Test(enabled=false)
+	@Test(enabled=false, retryAnalyzer = RetryAnalyzer.class)
 	public void px_004_2_pretraga_mjernih_mjesta_sa_pocetne_stranice_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_PROPERTIES);
 		logIn.verifikujLogIn();

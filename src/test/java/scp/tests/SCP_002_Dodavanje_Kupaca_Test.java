@@ -1,4 +1,4 @@
-package scp.test;
+package scp.tests;
 
 import org.testng.annotations.Test;
 import java.io.FileNotFoundException;

@@ -137,6 +137,8 @@ public class MjernaMjesta extends PocetnaStranicaPXD {
 		Thread.sleep(500);
 		poljeBrojCitackogHodaWE.click();
 		poljeBrojCitackogHodaWE.sendKeys(Helper.getRandomNumber(4));
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView(true);", poljeUlicaWE);
 		wait.until(ExpectedConditions.elementToBeClickable(poljeUlicaWE));
 		poljeUlicaWE.sendKeys("1001 - JASENICA III");
 		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
@@ -147,8 +149,7 @@ public class MjernaMjesta extends PocetnaStranicaPXD {
 		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
 		wait.until(ExpectedConditions.elementToBeClickable(odaberiPostuWE));
 		odaberiPostuWE.click();
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("arguments[0].scrollIntoView(true);", submitBtnWE);
+//		js.executeScript("arguments[0].scrollIntoView(true);", submitBtnWE);
 		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
 		submitBtnWE.click();
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
