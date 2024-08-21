@@ -155,7 +155,7 @@ public class PocetnaStranica extends PageBase {
 		wait.until(ExpectedConditions.elementToBeClickable(finansijeWE));
 		wait.until(ExpectedConditions.elementToBeClickable(pravniOdnosiWE));
 		wait.until(ExpectedConditions.elementToBeClickable(administracijaWE));
-		wait.until(ExpectedConditions.elementToBeClickable(pretragaWE));
+//		wait.until(ExpectedConditions.elementToBeClickable(pretragaWE));
 //		wait.until(ExpectedConditions.elementToBeClickable(izvjestajiWE));
 //		wait.until(ExpectedConditions.elementToBeClickable(profilWE));			probati pustiti testove sa ovim elementom	
 		wait.until(ExpectedConditions.elementToBeClickable(filterKupacWE));

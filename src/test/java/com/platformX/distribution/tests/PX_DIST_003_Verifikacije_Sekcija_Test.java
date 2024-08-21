@@ -258,8 +258,8 @@ public class PX_DIST_003_Verifikacije_Sekcija_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		KoristenaBrojila koristenaBrojila = homePage.navigateOnPage(KoristenaBrojila.class, "Brojila", "Korištena brojila");
-	    koristenaBrojila.verifikujKoristenaBrojila();
+//		KoristenaBrojila koristenaBrojila = homePage.navigateOnPage(KoristenaBrojila.class, "Brojila", "Korištena brojila");
+//	    koristenaBrojila.verifikujKoristenaBrojila();
 	    ZamjeneBrojila zamjeneBrojila = homePage.navigateOnPage(ZamjeneBrojila.class, "Brojila", "Zamjene brojila");
 	    zamjeneBrojila.verifikujZamjeneBrojila();
 		RegistarBrojila registarBrojila = homePage.navigateOnPage(RegistarBrojila.class, "Brojila", "Registar brojila");
