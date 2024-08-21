@@ -35,7 +35,7 @@ public class PX_DIST_025_Administracijske_Poruke_CRUD_Test  extends BaseTest {
 		poruke.verifikujStavku(podaci[0], homePage.podatak2Tabela3WE);
 	}
 	
-	@Test (description="test kreira i verifikuje ADMINISTRACIJSKU PORUKU na pocetnoj stranici")
+	@Test (enabled=false, description="test kreira i verifikuje ADMINISTRACIJSKU PORUKU na pocetnoj stranici")		//na pocetnoj stranici su poruke vidljive nakon klika na button filter
 	public void px_dist_025_2_dodavanje_administracijske_poruke_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();

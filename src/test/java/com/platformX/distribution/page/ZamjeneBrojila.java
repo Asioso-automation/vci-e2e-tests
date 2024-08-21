@@ -17,11 +17,12 @@ public class ZamjeneBrojila extends PocetnaStranicaPXD {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Zamjene brojila')]")));
-		verifikacijaZajednickihElemenata("Brojila", "Zamjene Brojila", "Zamjene brojila", 20, false, true, true, true, true, true, false);
+		verifikacijaZajednickihElemenata("Brojila", "Zamjene Brojila", "Zamjene brojila", 23, false, true, true, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTipWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojZapisnikaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojRadnogNalogaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojPoveznogDokumentaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMjernoMjestoEicWE));		
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNazivMjernogMjestaWE));		
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAdresaMjernogMjestaWE));		
@@ -35,7 +36,9 @@ public class ZamjeneBrojila extends PocetnaStranicaPXD {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaZavrsioKorisnikWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumKreiranjaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumRealizacijeWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumZavrsavanjaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaZbirnoMjernoMjestoWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaStatusAzurnostiZaSkinutoBrojiloWE));
 	}
 	
 }

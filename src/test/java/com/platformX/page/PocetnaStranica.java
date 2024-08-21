@@ -137,19 +137,27 @@ public class PocetnaStranica extends PageBase {
 
 	@FindBy(xpath = "//*[contains(text(),'Izvještaji') and @class='v-btn__content']")
 	protected WebElement izvjestajiWE;
+	
+	@FindBy(xpath = "//i[contains(@class,'fa-search')]")
+	protected WebElement pretragaWE;
 
-	@FindBy(xpath = "//span/span/i")
+	@FindBy(xpath = "//span[contains(@class,'v-badge--overlap')]")
 	protected WebElement profilWE;
 
 	public void verifikujPocetnuStranicu() throws InterruptedException {
 		wait.until(ExpectedConditions.elementToBeClickable(sifarniciWE));
 		wait.until(ExpectedConditions.elementToBeClickable(tarifniSistemWE));
 		wait.until(ExpectedConditions.elementToBeClickable(kupciWE));
+		wait.until(ExpectedConditions.elementToBeClickable(kupciProizvodjaciWE));
 		wait.until(ExpectedConditions.elementToBeClickable(mjernaMjestaWE));
 		wait.until(ExpectedConditions.elementToBeClickable(obracunWE));
+		wait.until(ExpectedConditions.elementToBeClickable(nestandardneUslugeWE));
 		wait.until(ExpectedConditions.elementToBeClickable(finansijeWE));
+		wait.until(ExpectedConditions.elementToBeClickable(pravniOdnosiWE));
+		wait.until(ExpectedConditions.elementToBeClickable(administracijaWE));
+		wait.until(ExpectedConditions.elementToBeClickable(pretragaWE));
 //		wait.until(ExpectedConditions.elementToBeClickable(izvjestajiWE));
-		wait.until(ExpectedConditions.elementToBeClickable(profilWE));
+//		wait.until(ExpectedConditions.elementToBeClickable(profilWE));			probati pustiti testove sa ovim elementom	
 		wait.until(ExpectedConditions.elementToBeClickable(filterKupacWE));
 		wait.until(ExpectedConditions.elementToBeClickable(filterMjernoMjestoWE));
 		Thread.sleep(1000);

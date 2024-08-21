@@ -1541,6 +1541,9 @@ public class Kolone extends PageBase {
 	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Broj radnog naloga']")
 	public WebElement kolonaBrojRadnogNalogaWE;
 	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Broj poveznog dokumenta']")
+	public WebElement kolonaBrojPoveznogDokumentaWE;
+	
 	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Broj i tip skinutog brojila']")
 	public WebElement kolonaBrojTipSkinutogBrojilaWE;
 
@@ -1597,6 +1600,9 @@ public class Kolone extends PageBase {
 	
 	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Godina izgradnje']")
 	public WebElement kolonaGodinaIzgradnjeWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Status ažurnosti za skinuto brojilo']")
+	public WebElement kolonaStatusAzurnostiZaSkinutoBrojiloWE;
 	
 	// Kolone MONITORING
 	
