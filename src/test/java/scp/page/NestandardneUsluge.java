@@ -25,13 +25,13 @@ public class NestandardneUsluge extends PocetnaStranica{
 	@FindBy(xpath = "//form/div/div[1]/div[2]/div[2]/div/div/div[1]/div/input") 
 	private WebElement jedinicaMjereWE;
 	
-	@FindBy(xpath = "//div/div[1]/div[2]/div[3]/div/div/div[1]/div/input") 
+	@FindBy(xpath = "//div/div[1]/div[2]/div[4]/div/div/div[1]/div/input") 
 	private WebElement predlozenaCijenaWE;
 	
-	@FindBy(xpath = "//div/div[1]/div[2]/div[4]/div/div/div[1]/div/input") 
+	@FindBy(xpath = "//div/div[1]/div[2]/div[5]/div/div/div[1]/div/input") 
 	private WebElement pdvStopaWE;
 	
-	@FindBy(xpath = "//div/div[1]/div[2]/div[5]/div/div/div[1]/div[1]/input") 
+	@FindBy(xpath = "//div/div[1]/div[2]/div[6]/div/div/div[1]/div[1]/input") 
 	private WebElement vrstaStavkeWE;
 	
 	public void verifikujNestandardneUsluge()throws InterruptedException, FileNotFoundException, IOException {

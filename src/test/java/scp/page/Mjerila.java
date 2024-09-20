@@ -34,7 +34,7 @@ public class Mjerila extends PocetnaStranica{
 	@FindBy(xpath = "//div/div[1]/div[4]/div[1]/div/div/div[1]/div[1]/input") 
 	private WebElement tipOcitanjaKorektorWE;
 	
-	@FindBy(xpath = "//*[contains(@class, 'v-text-field__slot')]//*[@aria-label = 'Šifra plombes']") 
+	@FindBy(xpath = "//*[contains(@class, 'v-text-field__slot')]//*[@aria-label = 'Šifra plombe']") 
 	private WebElement sifraPlombeWE;
 	
 	@FindBy(xpath = "//form/div/div[1]/div[1]/div/div[2]/div/div[1]/div/div") 

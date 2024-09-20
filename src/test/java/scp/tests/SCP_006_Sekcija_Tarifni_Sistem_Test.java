@@ -114,7 +114,7 @@ public class SCP_006_Sekcija_Tarifni_Sistem_Test extends BaseTest{
 		PocetnaStranica pocetna = new PocetnaStranica(driver);
 		driver.manage().window().maximize();
 		logIn.verifikujLogIn();
-		logIn.logIn(pocetna.orgGasWE);
+		logIn.logIn(pocetna.orgVodovodGradiskaWE);
 		pocetna.verifikujPocetnuStranicu();
 		NestandardneUsluge nestandardne = pocetna.navigirajNaNestandardneUsluge();
 		nestandardne.verifikujNestandardneUsluge();

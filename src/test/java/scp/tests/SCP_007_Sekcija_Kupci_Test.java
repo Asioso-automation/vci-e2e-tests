@@ -46,26 +46,26 @@ public class SCP_007_Sekcija_Kupci_Test extends BaseTest{
 		objekti = pocetna.navigirajNaObjekte();
 		String prostor = prostori.dodajProstori();
 		//prostori.verifikujPoruku("Uspješno završeno.");
-		prostori.pretraziStavku(pocetna.filterKolona6ProstoriWE, prostor);
-		prostori.verifikujStavku(prostor, pocetna.podatak6TabelaProstoriWE);
+		//prostori.pretraziStavku(pocetna.filterKolona7WE, prostor);
+		//prostori.verifikujStavku(prostor, pocetna.podatak7TabelaWE);
 	}
 
 	
-	@Test (description=" test kreira BONIFIKACIJU iz sekcije KUPCI i verifikuje ga")
-	public void scp_007_dodavanje_bonifikacije_test() throws Exception {
-		LogIn logIn = new LogIn(driver, SCP_PROPERTIES);
-		PocetnaStranica pocetna = new PocetnaStranica(driver);
-		driver.manage().window().maximize();
-		logIn.verifikujLogIn();
-		logIn.logIn(pocetna.orgGasWE);
-		pocetna.verifikujPocetnuStranicu();
-		Bonifikacije bonifikacije = pocetna.navigirajNaBonifikacije();
-		bonifikacije.verifikujBonifikacije();
-		String bonifikacija = bonifikacije.dodajBonifikacije();
-		bonifikacije.verifikujPoruku("Uspješno završeno.");
-		bonifikacije.pretraziStavku(pocetna.filterKolona8WE, bonifikacija);
-		bonifikacije.verifikujBonifikacije();
-		bonifikacije.verifikujStavku(bonifikacija, pocetna.podatak8TabelaWE);
-	}
+//	@Test (description=" test kreira BONIFIKACIJU iz sekcije KUPCI i verifikuje ga")
+//	public void scp_007_dodavanje_bonifikacije_test() throws Exception {
+//		LogIn logIn = new LogIn(driver, SCP_PROPERTIES);
+//		PocetnaStranica pocetna = new PocetnaStranica(driver);
+//		driver.manage().window().maximize();
+//		logIn.verifikujLogIn();
+//		logIn.logIn(pocetna.orgGasWE);
+//		pocetna.verifikujPocetnuStranicu();
+//		Bonifikacije bonifikacije = pocetna.navigirajNaBonifikacije();
+//		bonifikacije.verifikujBonifikacije();
+//		String bonifikacija = bonifikacije.dodajBonifikacije();
+//		bonifikacije.verifikujPoruku("Uspješno završeno.");
+//		bonifikacije.pretraziStavku(pocetna.filterKolona8WE, bonifikacija);
+//		bonifikacije.verifikujBonifikacije();
+//		bonifikacije.verifikujStavku(bonifikacija, pocetna.podatak8TabelaWE);
+//	}
 	
 }

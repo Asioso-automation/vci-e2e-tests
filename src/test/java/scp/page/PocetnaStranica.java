@@ -63,8 +63,11 @@ public class PocetnaStranica extends PageBase {
 	@FindBy(xpath = "//td[6]/div/div[1]/div/div/div/div[1]/input")
 	public WebElement filterKolona6WE;
 	
-	@FindBy(xpath = "//td/div/div/div[2]/table/tbody/tr/td[6]/div/div/div/div[1]/input")
-	public WebElement filterKolona6ProstoriWE;
+	@FindBy(xpath = "//td[7]/div/div[1]/div/div/div/div[1]/input")
+	public WebElement filterKolona7WE;
+	
+	@FindBy(xpath = "//td/div/div/div[2]/table/tbody/tr/td[7]/div/div/div")
+	public WebElement filterKolona7ProstoriWE;
 	
 	@FindBy(xpath = "//tr/td[8]/div/div/div/div[1]/input")
 	public WebElement filterKolona8WE;
@@ -90,8 +93,11 @@ public class PocetnaStranica extends PageBase {
 	@FindBy(xpath = "//div[1]/table/tbody/tr[1]/td[6]")
 	public WebElement podatak6TabelaWE;
 	
-	@FindBy(xpath = "//td/div/div/div[3]/div/div[1]/table/tbody/tr/td[6]")
-	public WebElement podatak6TabelaProstoriWE;
+	@FindBy(xpath = "//div[1]/table/tbody/tr[1]/td[7]")
+	public WebElement podatak7TabelaWE;
+	
+	@FindBy(xpath = "//td/div/div/div[3]/div/div[1]/table/tbody/tr/td[7]")
+	public WebElement podatak7TabelaProstoriWE;
 	
 	@FindBy(xpath = "//div[1]/table/tbody/tr[1]/td[8]")
 	public WebElement podatak8TabelaWE;

@@ -18,7 +18,7 @@ public class SCP_010_Sekcija_Obracun_Test extends BaseTest{
 	}
 
 	@Test (description=" test kreira TEF OBRAZAC  iz sekcije OBRAČUN i verifikuje ga")
-	public void scp_009_dodavanje_tef_obrasca_test() throws Exception {
+	public void scp_010_dodavanje_tef_obrasca_test() throws Exception {
 		LogIn logIn = new LogIn(driver, SCP_PROPERTIES);
 		PocetnaStranica pocetna = new PocetnaStranica(driver);
 		driver.manage().window().maximize();

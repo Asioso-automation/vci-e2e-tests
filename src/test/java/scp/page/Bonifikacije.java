@@ -63,7 +63,7 @@ public class Bonifikacije extends PocetnaStranica{
 		wait.until(ExpectedConditions.elementToBeClickable(iznosWE));
 		iznosWE.sendKeys(Helper.getRandomNubmer1to8(2));
 		wait.until(ExpectedConditions.elementToBeClickable(periodOdWE));
-		periodOdWE.sendKeys("januar");
+		periodOdWE.sendKeys("2025");
 		Thread.sleep(1000);
 		periodOdWE.sendKeys(Keys.ARROW_DOWN);
 		periodOdWE.sendKeys(Keys.ENTER);
