@@ -45,7 +45,7 @@ public class SCP_007_Sekcija_Kupci_Test extends BaseTest{
 		prostori.verifikujProstore();
 		objekti = pocetna.navigirajNaObjekte();
 		String prostor = prostori.dodajProstori();
-		//prostori.verifikujPoruku("Uspješno završeno.");
+		prostori.verifikujPoruku("Uspješno završeno.");
 		//prostori.pretraziStavku(pocetna.filterKolona7WE, prostor);
 		//prostori.verifikujStavku(prostor, pocetna.podatak7TabelaWE);
 	}
