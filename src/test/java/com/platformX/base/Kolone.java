@@ -1226,6 +1226,9 @@ public class Kolone extends PageBase {
 	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'AMM integrisano']")
 	public WebElement kolonaAmmIntegrisanoWE;
 	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Podržava AMM integraciju']")
+	public WebElement kolonaPodrzavaAmmIntegracijuWE;
+	
 	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'DLMS integrisano']")
 	public WebElement kolonaDlmsIntegrisanoWE;
 	
@@ -1603,6 +1606,12 @@ public class Kolone extends PageBase {
 	
 	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Status ažurnosti za skinuto brojilo']")
 	public WebElement kolonaStatusAzurnostiZaSkinutoBrojiloWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Obračun izvršio']")
+	public WebElement kolonaObracunIzvrsioWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Račun zaključio']")
+	public WebElement kolonaRacunZakljucioWE;
 	
 	// Kolone MONITORING
 	

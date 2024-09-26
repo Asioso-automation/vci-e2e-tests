@@ -51,7 +51,7 @@ public class RegistarBrojila extends PocetnaStranicaPXD {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTipBrojilaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaGodinaIstekaZigaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaGodinaProizvodnjeWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAmmIntegrisanoWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPodrzavaAmmIntegracijuWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDlmsIntegrisanoWE));
 	}
 	

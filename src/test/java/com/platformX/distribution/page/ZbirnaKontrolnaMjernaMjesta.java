@@ -19,13 +19,13 @@ public class ZbirnaKontrolnaMjernaMjesta extends PocetnaStranicaPXD {
 	@FindBy(xpath = "//div[2]/div[1]/div/div/div[1]/div/input")
 	 private WebElement poljeNazivWE;
 	
-	@FindBy(xpath = "//div[2]/div/div/div[1]/div[1]/input[1]")
+	@FindBy(xpath = "//div[2]/div[2]/div/div/div[1]/div[1]/input[1]")
 	 private WebElement poljeBrojiloWE;
 	
-	@FindBy(xpath = "//div[3]/div/div/div[1]/div/input")
+	@FindBy(xpath = "//div[2]/div[3]/div/div/div[1]/div/input")
 	 private WebElement poljeKonstantaWE;
 	
-	@FindBy(xpath = "//div[4]/div/div/div[1]/div[1]/input[1]")
+	@FindBy(xpath = "//div[2]/div[4]/div/div/div[1]/div[1]/input[1]")
 	 private WebElement poljeTrafoStanicaWE;
 	
 	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '410112 - NOVA BANKA')]")			// 11120 - 120-Didas > 410112 - NOVA BANKA
@@ -41,7 +41,7 @@ public class ZbirnaKontrolnaMjernaMjesta extends PocetnaStranicaPXD {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Zbirna/kontrolna mjerna mjesta')]")));
-		verifikacijaZajednickihElemenata("Mjerna Mjesta", "Zbirna/kontrolna Mjerna Mjesta", "Zbirna/kontrolna mjerna mjesta", 12, false, false, true, true, true, true, false);
+		verifikacijaZajednickihElemenata("Mjerna Mjesta", "Zbirna/kontrolna Mjerna Mjesta", "Zbirna/kontrolna mjerna mjesta", 13, false, false, true, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNazivWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaCitackiHodWE));
@@ -53,6 +53,7 @@ public class ZbirnaKontrolnaMjernaMjesta extends PocetnaStranicaPXD {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumOdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumDoWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKontrolnoMjernoMjestoWE));
+//		kolonaAmmIntegrisano
 	}
 	
 	public String dodajZbirnoKontrolnoMjernoMjesto(String brBrojila, String nazivZbirnogKontrolnogMjesta) throws InterruptedException, FileNotFoundException, IOException {

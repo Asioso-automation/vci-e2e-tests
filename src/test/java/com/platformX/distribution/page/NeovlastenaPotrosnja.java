@@ -41,7 +41,7 @@ public class NeovlastenaPotrosnja extends PocetnaStranicaPXD {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKupacWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMjernoMjestoWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTerenskaJedinicaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaReferentWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaObracunIzvrsioWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTarifnaGrupaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojiloWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumOdWE));

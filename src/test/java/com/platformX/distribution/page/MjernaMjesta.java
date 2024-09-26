@@ -74,7 +74,7 @@ public class MjernaMjesta extends PocetnaStranicaPXD {
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Mjerna mjesta')]")));
-		verifikacijaZajednickihElemenata("Mjerna Mjesta", "Mjerna Mjesta", "Mjerna mjesta", 18, false, false, true, true, true, true, false);
+		verifikacijaZajednickihElemenata("Mjerna Mjesta", "Mjerna Mjesta", "Mjerna mjesta", 20, false, false, true, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaElektroenergetskaSaglasnostWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaEicWE));
@@ -88,10 +88,11 @@ public class MjernaMjesta extends PocetnaStranicaPXD {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAdresaWE));
 //		kolonaLokacijaMjernogMjestaWE
 //		kolonaOdobrenaPrikljucnaSnagaWE
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPostojiNapomenaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPodNaponomWE));
 //		TODO kolonaUgovorUPripremiWE
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAktivanUgovorWE));
+//		kolonaElektrana
+//		kolonaAmmIntegrisano
 	}
 	
 	public String dodajMjernoMjesto(String sifraMjernogMjesta) throws InterruptedException, FileNotFoundException, IOException {
