@@ -27,22 +27,22 @@ public class Prostori extends PocetnaStranica{
 	@FindBy(xpath = "//div/div[1]/div[1]/div[2]/div/div/div[1]/div[1]/input")
 	private WebElement objekatWE;
 	
-	@FindBy(xpath = "//div/div[1]/div[3]/div/div/div/div[1]/div/textarea")
-	private WebElement napomenaWE;
-
 	@FindBy(xpath = "//div[2]/form/div/div[1]/div[2]/div[1]/div/div/div[1]/div/input")
 	private WebElement ulazWE;
 	
-	@FindBy(xpath = "//div/div[1]/div[5]/div/div[1]/div/div/div[1]/div[1]/input")
+	@FindBy(xpath = "//div[1]/div[6]/div/div[1]/div/div/div[1]/div[1]/input")
 	private WebElement zonaOcitanjaWE;
 	
 	@FindBy(xpath = "//div[2]/form/div/div[1]/div[2]/div[2]/div/div/div[1]/div/input")
 	private WebElement spratBrojWE;
 	
+	@FindBy(xpath = "//div/div[1]/div[3]/div/div/div/div[1]/div[1]/input")
+	private WebElement zonaDmaWE;
+	
 	@FindBy(xpath = "//td[9]/button/div")
 	private WebElement burgerBarWE;
 	
-	@FindBy(xpath = "//td[6]/button/div")
+	@FindBy(xpath = "//table/tbody/tr/td[7]/button/div/i")
 	private WebElement burgerBar1WE;
 	
 	@FindBy(xpath = "//div/div[1]/table/tbody/tr[1]/td[13]/button/div/i")
@@ -111,13 +111,15 @@ public class Prostori extends PocetnaStranica{
 		ulazWE.sendKeys(Helper.getRandomNubmer1to8(1));
 		wait.until(ExpectedConditions.elementToBeClickable(spratBrojWE));
 		spratBrojWE.sendKeys(sprat);
+		wait.until(ExpectedConditions.elementToBeClickable(zonaDmaWE));
+		zonaDmaWE.sendKeys(Helper.getRandomNubmer1to8(1));
+		zonaDmaWE.sendKeys(Keys.ARROW_DOWN);
+		zonaDmaWE.sendKeys(Keys.ENTER);
 		wait.until(ExpectedConditions.elementToBeClickable(zonaOcitanjaWE));
 		zonaOcitanjaWE.sendKeys(Helper.getRandomNubmer1to8(1));
 		Thread.sleep(1000);
 		zonaOcitanjaWE.sendKeys(Keys.ARROW_DOWN);
 		zonaOcitanjaWE.sendKeys(Keys.ENTER);
-		wait.until(ExpectedConditions.elementToBeClickable(napomenaWE));
-		napomenaWE.sendKeys("#test");
 		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
 		submitBtnWE.click();
 		return sprat;
@@ -143,8 +145,6 @@ public class Prostori extends PocetnaStranica{
 		Thread.sleep(1000);
 		zonaOcitanjaWE.sendKeys(Keys.ARROW_DOWN);
 		zonaOcitanjaWE.sendKeys(Keys.ENTER);
-		wait.until(ExpectedConditions.elementToBeClickable(napomenaWE));
-		napomenaWE.sendKeys("#test");
 		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
 		submitBtnWE.click();
 		return sprat;
@@ -165,8 +165,6 @@ public class Prostori extends PocetnaStranica{
 		ulazWE.sendKeys(Helper.getRandomNubmer1to8(1));
 		wait.until(ExpectedConditions.elementToBeClickable(spratBrojWE));
 		spratBrojWE.sendKeys(sprat);
-		wait.until(ExpectedConditions.elementToBeClickable(napomenaWE));
-		napomenaWE.sendKeys("#test");
 		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
 		submitBtnWE.click();
 		return sprat;

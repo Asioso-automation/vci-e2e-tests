@@ -513,6 +513,11 @@ public class PocetnaStranica extends PageBase {
 		if (info == true) {
 			wait.until(ExpectedConditions.elementToBeClickable(infoBtnWE));
 		}
+		try {
+			wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
+		} catch (Exception e) {
+		Thread.sleep(1000);
+		}
 	}
 	
 		public void pretraziStavku(WebElement element, String value) throws InterruptedException{
