@@ -1613,6 +1613,15 @@ public class Kolone extends PageBase {
 	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Račun zaključio']")
 	public WebElement kolonaRacunZakljucioWE;
 	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Privremeni objekat']")
+	public WebElement kolonaPrivremeniObjekatWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Naponski nivo']")
+	public WebElement kolonaNaponskiNivoWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'v-data-table-header')]//*[text() = 'Z/k mjerno mjesto']")
+	public WebElement kolonaZKMjernoMjestoWE;
+	
 	// Kolone MONITORING
 	
 	@FindBy(xpath = "//*[contains(@class,'v-window-item--active')]//*[contains(@class, 'v-data-table-header')]//*[text() = 'Mjerno mjesto (EIC)']")

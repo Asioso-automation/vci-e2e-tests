@@ -20,12 +20,9 @@ public class PXD_BasicCatalogs_005_Readers_Tests extends RestApiBase {
 	@Test(description = "positive test case", dependsOnMethods = { "pxd_basicCatalogs_005_04_create_reader_test1" })
 	public void pxd_basicCatalogs_005_01_get_reader_test1() throws Exception {
 		addHeader("Authorization", "Bearer " + GlobalVariables.token);
-		JsonPath jp = methodGET(api_properties.getValue("READERS.GET") + GlobalVariables.id, 200);
-		assertNotNull(jp.getString("id"), "Id not forwarded");
-		assertNotNull(jp.getString("fieldOfficeId"), "FieldOfficeId not forwarded");
-		assertNotNull(jp.getString("name"), "Name not forwarded");
-		assertNotNull(jp.getString("dateFrom"), "DateFrom not forwarded");
-		assertNotNull(jp.getString("fieldUnitText"), "FieldUnitText not forwarded");
+		JsonPath jp = methodGET(api_properties.getValue("READERS.GET") + GlobalVariables.id, 200);	
+		String[] parameters = {"id", "fieldOfficeId", "name", "dateFrom", "fieldUnitText", "fieldOfficeText"};
+		verifyNotNull(jp, parameters);		
 		assertNotNull(jp.getString("fieldOfficeText"), "FieldOfficeText not forwarded");
 	}
 	

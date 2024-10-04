@@ -22,8 +22,8 @@ public class PXD_BasicCatalogs_006_Entities_Tests extends RestApiBase {
 	public void pxd_basicCatalogs_006_01_get_entity_test1() throws Exception {
 		addHeader("Authorization", "Bearer " + GlobalVariables.token);
 		JsonPath jp = methodGET(api_properties.getValue("ENTITIES.GET") + GlobalVariables.id, 200);
-		assertNotNull(jp.getString("id"), "Id not forwarded");
-		assertNotNull(jp.getString("name"), "Name not forwarded");
+		String[] parameters = {"id", "name"};
+		verifyNotNull(jp, parameters);
 	}
 	
 	@Test(description = "negative test case: bearer token missing")

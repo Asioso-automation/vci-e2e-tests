@@ -20,23 +20,10 @@ public class PXD_Customers_001_AgreedEnergyApprovals_Tests extends RestApiBase {
 	@Test(description = "positive test case: get created agreed energy approval", dependsOnMethods = { "pxd_customers_001_03_create_agreed_energy_approval_test1" })
 	public void pxd_customers_001_01_get_agreed_energy_approval_test1() throws Exception {
 		addHeader("Authorization", "Bearer " + GlobalVariables.token);
-		JsonPath jp = methodGET(api_properties.getValue("AGREED.ENERGY.APPROVALS.GET") + GlobalVariables.id, 200);
-		assertNotNull(jp.getString("id"), "Id not forwarded");
-		assertNotNull(jp.getString("periodId"), "PeriodId not forwarded");
-		assertNotNull(jp.getString("customerId"), "CustomerId not forwarded");
-		assertNotNull(jp.getString("meteringPointId"), "MeteringPointId not forwarded");
-		assertNotNull(jp.getString("calculationContractId"), "CalculationContractId not forwarded");
-		assertNotNull(jp.getString("calculationContractDataId"), "CalculationContractDataId not forwarded");
-		assertNotNull(jp.getString("aht"), "Aht not forwarded");
-		assertNotNull(jp.getString("alt"), "Alt not forwarded");
-		assertNotNull(jp.getString("rht"), "Rht not forwarded");
-		assertNotNull(jp.getString("rlt"), "Rlt not forwarded");
-		assertNotNull(jp.getString("power"), "Power not forwarded");
-		assertNotNull(jp.getString("isLegalEntity"), "IsLegalEntity not forwarded");
-		assertNotNull(jp.getString("periodText"), "PeriodText not forwarded");
-		assertNotNull(jp.getString("customerText"), "CustomerText not forwarded");
-		assertNotNull(jp.getString("eic"), "Eic not forwarded");
-		assertNotNull(jp.getString("calculationContractDataText"), "CalculationContractDataText not forwarded");
+		JsonPath jp = methodGET(api_properties.getValue("AGREED.ENERGY.APPROVALS.GET") + GlobalVariables.id, 200);		
+		String[] parameters = {"id", "periodId", "customerId", "meteringPointId", "calculationContractId", "calculationContractDataId", "aht", "alt", "rht", "rlt", "power", 
+				"isLegalEntity", "periodText", "customerText", "eic", "calculationContractDataText"};
+		verifyNotNull(jp, parameters);
 	}
 	
 	@Test(description = "negative test case: bearer token missing")

@@ -22,10 +22,8 @@ public class PXD_BasicCatalogs_007_Municipalities_Tests extends RestApiBase {
 	public void pxd_basicCatalogs_007_01_get_municipality_test1() throws Exception {
 		addHeader("Authorization", "Bearer " + GlobalVariables.token);
 		JsonPath jp = methodGET(api_properties.getValue("MUNICIPALITIES.GET") + GlobalVariables.id, 200);
-		assertNotNull(jp.getString("id"), "Id not forwarded");
-		assertNotNull(jp.getString("name"), "Name not forwarded");
-		assertNotNull(jp.getString("countryId"), "CountryId not forwarded");
-		assertNotNull(jp.getString("countryText"), "CountryText not forwarded");
+		String[] parameters = {"id", "name", "countryId", "countryText"};
+		verifyNotNull(jp, parameters);
 	}
 	
 	@Test(description = "negative test case: bearer token missing")

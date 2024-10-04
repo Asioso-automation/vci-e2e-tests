@@ -20,6 +20,9 @@ public class TerenskeJedinice extends PocetnaStranicaPXD {
 	private WebElement nazivWE;
 	
 	@FindBy(xpath = "//div[1]/div[2]/div/div/div[1]/div/input")
+	private WebElement nazivNaStampanimDokWE;
+	
+	@FindBy(xpath = "//div[2]/div[1]/div/div/div[1]/div/input")
 	private WebElement sifraWE;
 	
 	public void verifikujTerenskeJedinice() throws InterruptedException, FileNotFoundException, IOException {
@@ -45,6 +48,8 @@ public class TerenskeJedinice extends PocetnaStranicaPXD {
 		dodajBtnWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(nazivWE));
 		nazivWE.sendKeys(naziv);
+		wait.until(ExpectedConditions.elementToBeClickable(nazivNaStampanimDokWE));
+		nazivNaStampanimDokWE.sendKeys(naziv);
 		wait.until(ExpectedConditions.elementToBeClickable(sifraWE));
 		sifraWE.sendKeys(Helper.getRandomNumber(2));
 		submitBtnWE.click();

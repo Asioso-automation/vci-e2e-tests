@@ -1,6 +1,5 @@
 package com.platformX.api.tests;
 
-import static org.testng.Assert.assertNotNull;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import org.testng.annotations.Test;
@@ -19,9 +18,9 @@ public class PXD_BasicCatalogs_013_MeterReadingImportTypes_Tests extends RestApi
 	public void pxd_basicCatalogs_013_01_get_meter_reading_import_types_test1() throws Exception {
 		GlobalVariables.token = authorize();
 		addHeader("Authorization", "Bearer " + GlobalVariables.token);
-		JsonPath jp = methodGET(api_properties.getValue("METER.READING.IMPORT.TYPES"), 200);
-		assertNotNull(jp.getString("id"), "Id not forwarded");
-		assertNotNull(jp.getString("text"), "Text not forwarded");
+		JsonPath jp = methodGET(api_properties.getValue("METER.READING.IMPORT.TYPES"), 200);	
+		String[] parameters = {"id", "text"};
+		verifyNotNull(jp, parameters);
 	}
 	
 	@Test(description = "negative test case: bearer token missing")

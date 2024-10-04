@@ -21,14 +21,10 @@ public class PXD_BasicCatalogs_008_Places_Tests extends RestApiBase {
 	@Test(description = "positive test case", dependsOnMethods = { "pxd_basicCatalogs_008_04_create_place_test1" })
 	public void pxd_basicCatalogs_008_01_get_place_test1() throws Exception {
 		addHeader("Authorization", "Bearer " + GlobalVariables.token);
-		JsonPath jp = methodGET(api_properties.getValue("PLACES.GET") + GlobalVariables.id, 200);
-		assertNotNull(jp.getString("id"), "Id not forwarded");
-		assertNotNull(jp.getString("name"), "Name not forwarded");
-		assertNotNull(jp.getString("printName"), "PrintName not forwarded");
-		assertNotNull(jp.getString("municipalityId"), "MunicipalityId not forwarded");
-		assertNotNull(jp.getString("municipalityText"), "MunicipalityText not forwarded");
+		JsonPath jp = methodGET(api_properties.getValue("PLACES.GET") + GlobalVariables.id, 200);		
+		String[] parameters = {"id", "name", "printName", "municipalityId", "municipalityText"};
+		verifyNotNull(jp, parameters);
 	}
-	
 	@Test(description = "negative test case: bearer token missing")
 	public void pxd_basicCatalogs_008_01_get_place_test2() {
 		addHeader("Authorization", "");

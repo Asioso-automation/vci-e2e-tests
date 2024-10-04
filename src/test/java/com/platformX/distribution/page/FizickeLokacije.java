@@ -16,16 +16,19 @@ public class FizickeLokacije extends PocetnaStranicaPXD {
 		super(driver);
 	}
 
-	@FindBy(xpath = "//div[1]/div/div/div/div[1]/div/input")
+	@FindBy(xpath = "//div[1]/div[1]/div/div/div[1]/div/input")
 	private WebElement nazivWE;
 	
 	@FindBy(xpath = "//div[1]/div[2]/div/div/div[1]/div/input")
-	private WebElement sifraWE;
+	private WebElement nazivNaStampanimDokWE;
 	
 	@FindBy(xpath = "//div[1]/div[3]/div/div/div[1]/div/input")
+	private WebElement sifraWE;
+	
+	@FindBy(xpath = "//div[4]/div/div/div[1]/div/input")
 	private WebElement sifraBrProtokolaWE;
 	
-	@FindBy(xpath = "//div[2]/div[1]/div/div/div[1]/div[1]/input[1]")
+	@FindBy(xpath = "//div[5]/div/div/div[1]/div[1]/input[1]")
 	private WebElement terenskaJedinicaWE;
 	
 	public void verifikujFizickeLokacije() throws InterruptedException, FileNotFoundException, IOException {
@@ -49,6 +52,8 @@ public class FizickeLokacije extends PocetnaStranicaPXD {
 		dodajBtnWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(nazivWE));
 		nazivWE.sendKeys(naziv);
+		wait.until(ExpectedConditions.elementToBeClickable(nazivNaStampanimDokWE));
+		nazivNaStampanimDokWE.sendKeys(naziv);
 		wait.until(ExpectedConditions.elementToBeClickable(sifraWE));
 		sifraWE.sendKeys(Helper.getRandomNumber(2));
 		wait.until(ExpectedConditions.elementToBeClickable(sifraBrProtokolaWE));

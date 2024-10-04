@@ -21,10 +21,9 @@ public class PXD_BasicCatalogs_009_PostOffices_Tests extends RestApiBase {
 	@Test(description = "positive test case", dependsOnMethods = { "pxd_basicCatalogs_009_04_create_post_office_test1" })
 	public void pxd_basicCatalogs_009_01_get_post_office_test1() throws Exception {
 		addHeader("Authorization", "Bearer " + GlobalVariables.token);
-		JsonPath jp = methodGET(api_properties.getValue("POST.OFFICES.GET") + GlobalVariables.id, 200);
-		assertNotNull(jp.getString("id"), "Id not forwarded");
-		assertNotNull(jp.getString("name"), "Name not forwarded");
-		assertNotNull(jp.getString("printName"), "PrintName not forwarded");
+		JsonPath jp = methodGET(api_properties.getValue("POST.OFFICES.GET") + GlobalVariables.id, 200);		
+		String[] parameters = {"id", "name", "printName"};
+		verifyNotNull(jp, parameters);
 	}
 	
 	@Test(description = "negative test case: bearer token missing")

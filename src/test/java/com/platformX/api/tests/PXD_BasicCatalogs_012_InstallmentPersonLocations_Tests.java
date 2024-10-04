@@ -35,14 +35,8 @@ public class PXD_BasicCatalogs_012_InstallmentPersonLocations_Tests extends Rest
 	public void pxd_basicCatalogs_012_01_get_installment_person_location_test1() throws Exception {
 		addHeader("Authorization", "Bearer " + GlobalVariables.token);
 		JsonPath jp = methodGET(api_properties.getValue("INSTALLMENT.PERSON.LOCATIONS.GET") + GlobalVariables.id, 200);
-		assertNotNull(jp.getString("id"), "Id not forwarded");
-		assertNotNull(jp.getString("installmentPersonId"), "InstallmentPersonId not forwarded");
-		assertNotNull(jp.getString("fieldUnitId"), "FieldUnitId not forwarded");
-		assertNotNull(jp.getString("fieldOfficeId"), "FieldOfficeId not forwarded");
-		assertNotNull(jp.getString("dateFrom"), "DateFrom not forwarded");
-		assertNotNull(jp.getString("installmentPersonText"), "InstallmentPersonText not forwarded");
-		assertNotNull(jp.getString("fieldUnitText"), "FieldUnitText not forwarded");
-		assertNotNull(jp.getString("fieldOfficeText"), "FieldOfficeText not forwarded");
+		String[] parameters = {"id", "installmentPersonId", "fieldUnitId", "fieldOfficeId", "dateFrom", "installmentPersonText", "fieldUnitText", "fieldOfficeText"};
+		verifyNotNull(jp, parameters);
 	}
 	
 	@Test(description = "negative test case: bearer token missing")

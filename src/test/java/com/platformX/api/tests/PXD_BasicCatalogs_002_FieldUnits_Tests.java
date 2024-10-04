@@ -21,10 +21,8 @@ public class PXD_BasicCatalogs_002_FieldUnits_Tests extends RestApiBase {
 	public void pxd_basicCatalogs_002_01_get_field_unit_test1() throws Exception {
 		addHeader("Authorization", "Bearer " + GlobalVariables.token);
 		JsonPath jp = methodGET(api_properties.getValue("FIELD.UNITS.GET") + GlobalVariables.id, 200);
-		assertNotNull(jp.getString("id"), "Id not forwarded");
-		assertNotNull(jp.getString("name"), "Name not forwarded");
-		assertNotNull(jp.getString("placeText"), "PlaceText not forwarded");
-		assertNotNull(jp.getString("companyText"), "CompanyText not forwarded");
+		String[] parameters = {"id", "name", "printName", "placeText", "companyText"};
+		verifyNotNull(jp, parameters);
 	}
 	
 	@Test(description = "negative test case: bearer token missing")

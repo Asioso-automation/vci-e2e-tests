@@ -17,21 +17,23 @@ public class KontrolaMjernogMjesta extends PocetnaStranicaPXD {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Kontrola mjernog mjesta')]")));
-		verifikacijaZajednickihElemenata("Mjerna Mjesta", "Kontrola Mjernog Mjesta", "Kontrola mjernog mjesta", 16, false, false, true, true, true, true, false);
+		verifikacijaZajednickihElemenata("Mjerna Mjesta", "Kontrola Mjernog Mjesta", "Kontrola mjernog mjesta", 18, false, false, true, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojProtokolaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPoRadnomNaloguWE));		
-//		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTipKontroleWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPoRadnomNaloguWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTipMjerenjaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMjernoMjestoEicWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNazivMjernogMjestaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojiloWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaFizickaLokacijaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaRazlogKontroleWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKreiraoKorisnikWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaZavrsioKorisnikWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumKreiranjaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumZavrsavanjaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNedostupnoMjmWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKontrolaOcitanjaWE));
-//		TODO kolonaZkMjernoMjesto
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaZKMjernoMjestoWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaZavrsenaWE));
 	}
 

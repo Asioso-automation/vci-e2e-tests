@@ -104,11 +104,6 @@ public class ObracunskiUgovori extends PocetnaStranicaPXD {
 		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(@class, 'v-list-item__title') and contains(., '" + mjernoMjesto + "')]")));
 		driver.findElement(By.xpath("//div[contains(@class, 'v-list-item__title') and contains(., '" + mjernoMjesto + "')]")).click();
-		String nazivMjernogMjesta = "NazivMjm " + Helper.getRandomString(7);
-		wait.until(ExpectedConditions.elementToBeClickable(poljeNazivMjernogMjestaWE));
-		poljeNazivMjernogMjestaWE.sendKeys(nazivMjernogMjesta);
-		wait.until(ExpectedConditions.elementToBeClickable(poljeNazivMjMjestaNaStampanimDokumentimaWE));
-		poljeNazivMjMjestaNaStampanimDokumentimaWE.sendKeys(nazivMjernogMjesta);
 		wait.until(ExpectedConditions.elementToBeClickable(poljeOdobrenaPrikljucnaSnagaWE));
 		poljeOdobrenaPrikljucnaSnagaWE.sendKeys(Helper.getRandomNumber(2));
 		wait.until(ExpectedConditions.elementToBeClickable(poljeAktivnoBrojiloWE));

@@ -21,11 +21,9 @@ public class PXD_BasicCatalogs_010_Streets_Tests extends RestApiBase {
 	@Test(description = "positive test case", dependsOnMethods = { "pxd_basicCatalogs_010_04_create_street_test1" })
 	public void pxd_basicCatalogs_010_01_get_street_test1() throws Exception {
 		addHeader("Authorization", "Bearer " + GlobalVariables.token);
-		JsonPath jp = methodGET(api_properties.getValue("STREETS.GET") + GlobalVariables.id, 200);
-		assertNotNull(jp.getString("id"), "Id not forwarded");
-		assertNotNull(jp.getString("name"), "Name not forwarded");
-		assertNotNull(jp.getString("valid"), "valid not forwarded");
-		assertNotNull(jp.getString("printName"), "PrintName not forwarded");
+		JsonPath jp = methodGET(api_properties.getValue("STREETS.GET") + GlobalVariables.id, 200);	
+		String[] parameters = {"id", "name", "valid", "printName"};
+		verifyNotNull(jp, parameters);
 	}
 	
 	@Test(description = "negative test case: bearer token missing")

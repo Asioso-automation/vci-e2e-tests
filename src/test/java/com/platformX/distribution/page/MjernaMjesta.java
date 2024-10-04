@@ -21,12 +21,6 @@ public class MjernaMjesta extends PocetnaStranicaPXD {
 	@FindBy(xpath = "//div[3]/div[1]/div/div/div[1]/div/input")
 	private WebElement poljeSifraWE;
 	
-	@FindBy(xpath = "//div[4]/div[1]/div/div/div[1]/div/input")
-	private WebElement poljeNazivMjernogMjestaWE;
-	
-	@FindBy(xpath = "//div[4]/div[2]/div/div/div[1]/div/input")
-	private WebElement poljeNazivMjmNaStampanimDokWE;
-	
 	@FindBy(xpath = "//div[5]/div[5]/div/div/div[1]/div[1]/input[1]")
 	private WebElement poljeVlasnikWE;
 	
@@ -96,15 +90,10 @@ public class MjernaMjesta extends PocetnaStranicaPXD {
 	}
 	
 	public String dodajMjernoMjesto(String sifraMjernogMjesta) throws InterruptedException, FileNotFoundException, IOException {
-		String nazivMjernogMjesta = "Naziv mjernog mjesta " + sifraMjernogMjesta;
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
 		dodajBtnWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(poljeSifraWE));
 		poljeSifraWE.sendKeys(sifraMjernogMjesta);
-		wait.until(ExpectedConditions.elementToBeClickable(poljeNazivMjernogMjestaWE));
-		poljeNazivMjernogMjestaWE.sendKeys(nazivMjernogMjesta);
-		wait.until(ExpectedConditions.elementToBeClickable(poljeNazivMjmNaStampanimDokWE));
-		poljeNazivMjmNaStampanimDokWE.sendKeys(nazivMjernogMjesta);
 		wait.until(ExpectedConditions.elementToBeClickable(poljeVlasnikWE));
 		poljeVlasnikWE.sendKeys(Helper.getRandomNumber(3));
 		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
@@ -155,7 +144,6 @@ public class MjernaMjesta extends PocetnaStranicaPXD {
 		submitBtnWE.click();
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		return sifraMjernogMjesta;
-		
 	 }
 	
 	public String kreirajMjernoMjesto() {
