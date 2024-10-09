@@ -83,16 +83,13 @@ public class PX_DIST_003_Verifikacije_Sekcija_Test extends BaseTest {
 		klaseTacnostiBrojila.verifikujKlaseTacnostiBrojila();
 		NazivneStrujeBrojila nazivneStrujeBrojila = homePage.navigateOnPage(NazivneStrujeBrojila.class, "Šifarnici", "Nazivne struje brojila");
 		nazivneStrujeBrojila.verifikujNazivneStrujeBrojila();
-//		KlaseTacnostiStrujnogTransformatora klaseTacnostiStrujnogTransformatora = homePage
-//				.navigateOnPage(KlaseTacnostiStrujnogTransformatora.class, "Šifarnici", "Klase tačnosti strujnog tran.");
-//		klaseTacnostiStrujnogTransformatora.verifikujKlaseTacnostiStrujnogTransformatora();
+		KlaseTacnostiTransformatora klaseTacnostiStrujnogTransformatora = homePage
+				.navigateOnPage(KlaseTacnostiTransformatora.class, "Šifarnici", "Klase tačnosti transformatora");
+		klaseTacnostiStrujnogTransformatora.verifikujKlaseTacnostiTransformatora();
 		StrujniPrenosniOdnos strujniPrenosniOdnos = homePage.navigateOnPage(StrujniPrenosniOdnos.class, "Šifarnici", "Strujni prenosni odnos");
 		strujniPrenosniOdnos.verifikujStrujniPrenosniOdnos();
 		NazivneStrujeOsiguraca nazivneStrujeOsiguraca = homePage.navigateOnPage(NazivneStrujeOsiguraca.class, "Šifarnici", "Nazivne struje osigurača");
-		nazivneStrujeOsiguraca.verifikujNazivneStrujeOsiguraca();
-//		KlaseTacnostiNaponskogTransformatora klaseTacnostiNaponskogTransformatora = homePage
-//				.navigateOnPage(KlaseTacnostiNaponskogTransformatora.class, "Šifarnici", "Klase tačnosti naponskog tran.");
-//		klaseTacnostiNaponskogTransformatora.verifikujKlaseTacnostiNaponskogTransformatora();
+		nazivneStrujeOsiguraca.verifikujNazivneStrujeOsiguraca();		
 		NaponskiPrenosniOdnos naponskiPrenosniodnos = homePage.navigateOnPage(NaponskiPrenosniOdnos.class, "Šifarnici", "Naponski prenosni odnos");
 		naponskiPrenosniodnos.verifikujNaponskiPrenosniOdnos();
 		NaciniUpravljanjaPotrosnjom naciniUpravljanjaPotrosnjom = homePage.navigateOnPage(NaciniUpravljanjaPotrosnjom.class, "Šifarnici", "Načini upravljanja potrošnjom");
@@ -264,8 +261,9 @@ public class PX_DIST_003_Verifikacije_Sekcija_Test extends BaseTest {
 		registarBrojila.verifikujRegistarBrojila();
 		RelokacijeBrojila relokacijeBrojila = homePage.navigateOnPage(RelokacijeBrojila.class, "Brojila", "Relokacije brojila");
 		relokacijeBrojila.verifikujRelokacijeBrojila();
-		Transformatori transformatori = homePage.navigateOnPage(Transformatori.class, "Brojila", "Transformatori");
-		transformatori.verifikujTransformatori();
+		StrujniMjerniTransformatori transformatori = homePage.navigateOnPage(StrujniMjerniTransformatori.class, "Brojila", "Strujni mjerni transformatori");
+		transformatori.verifikujStrujniMjerniTransformatori();
+//		TODO NaponskiMjerniTransformatori
 	}
 
 	@Test (retryAnalyzer = RetryAnalyzer.class, description = "test prolazi kroz sve stranice iz sekcije OBRACUNSKI UGOVORI i verifikuje ih")
