@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8b4dd787-556a-4704-827d-a7affe3c56de" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -38,6 +39,10 @@
       </MavenImportingSettings>
     </option>
   </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 7
+}]]></component>
   <component name="ProjectId" id="1fEK1hjNnI4w11h0qKIhkI6X0CL" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -46,26 +51,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553978227915" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "TestNG.PXD_Administrations_001_Users_Tests.executor": "Run",
+    "TestNG.PXD_BasicCatalogs_006_Entities_Tests.pxd_basicCatalogs_006_01_get_entity_test2.executor": "Run",
+    "kotlin-language-version-configured": "true"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Aleksandar\IdeaProjects\samPlatform\src\test\resources\prod" />
       <recent name="C:\Users\Aleksandar\IdeaProjects\samPlatform\src\test\resources\integration" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.QA_001_LogIn_LogOut_Test.qa_001_logIn_logOut_test">
+  <component name="RunManager" selected="TestNG.PXD_BasicCatalogs_006_Entities_Tests.pxd_basicCatalogs_006_01_get_entity_test2">
     <configuration name="BS_0000_LogIn_LogOut_Test.bs_0000_LogIn_LogOut_Test" type="TestNG" nameIsGenerated="true">
       <module name="SAMPlatform" />
       <extension name="coverage">
@@ -101,6 +101,41 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="PXD_Administrations_001_Users_Tests" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.platformX.api.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.platformX.api.tests" />
+      <option name="MAIN_CLASS_NAME" value="com.platformX.api.tests.PXD_Administrations_001_Users_Tests" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PXD_BasicCatalogs_006_Entities_Tests.pxd_basicCatalogs_006_01_get_entity_test2" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.platformX.api.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.platformX.api.tests" />
+      <option name="MAIN_CLASS_NAME" value="com.platformX.api.tests.PXD_BasicCatalogs_006_Entities_Tests" />
+      <option name="METHOD_NAME" value="pxd_basicCatalogs_006_01_get_entity_test2" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="QA_001_LogIn_LogOut_Test.qa_001_logIn_logOut_test" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Test" />
       <extension name="coverage">
@@ -113,41 +148,6 @@
       <option name="MAIN_CLASS_NAME" value="com.platformX.tests.QA_001_LogIn_LogOut_Test" />
       <option name="METHOD_NAME" value="qa_001_logIn_logOut_test" />
       <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="QA_002_Verifikuj_Stranice_Test.qa_002_verifikuj_stranice_test" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="Test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.platformX.tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.platformX.tests" />
-      <option name="MAIN_CLASS_NAME" value="com.platformX.tests.QA_002_Verifikuj_Stranice_Test" />
-      <option name="METHOD_NAME" value="qa_002_verifikuj_stranice_test" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="QA_013_Dodaj_Ugovor_Test" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="Test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.platformX.tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.platformX.tests" />
-      <option name="MAIN_CLASS_NAME" value="com.platformX.tests.QA_013_Dodaj_Ugovor_Test" />
-      <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
       <method v="2">
@@ -192,11 +192,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.PXD_BasicCatalogs_006_Entities_Tests.pxd_basicCatalogs_006_01_get_entity_test2" />
+        <item itemvalue="TestNG.PXD_Administrations_001_Users_Tests" />
         <item itemvalue="TestNG.QA_001_LogIn_LogOut_Test.qa_001_logIn_logOut_test" />
         <item itemvalue="TestNG.X_QA_026_Deaktiviraj_Ugovor_Test.qa_026_deaktiviraj_ugovor_test" />
         <item itemvalue="TestNG.QA_013_Dodaj_Ugovor_Test.qa_013_dodaj_ugovor_test" />
-        <item itemvalue="TestNG.QA_013_Dodaj_Ugovor_Test" />
-        <item itemvalue="TestNG.QA_002_Verifikuj_Stranice_Test.qa_002_verifikuj_stranice_test" />
       </list>
     </recent_temporary>
   </component>
@@ -241,7 +241,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />

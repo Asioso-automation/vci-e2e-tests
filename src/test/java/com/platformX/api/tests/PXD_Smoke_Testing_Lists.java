@@ -13,6 +13,8 @@ public class PXD_Smoke_Testing_Lists extends RestApiBase {
 		super();
 	}
 	
+	// TODO Nazvati testnu klasu i metode po imenu ep koji se gadja, npr. PXD_SortingTest, a taj test moze biti dio smoke test suite-a
+	
 	@Test(description = "smoke test case: all lists sorted desc")
 	public void pxd_smoke_001_01_post_basic_lists_desc_test() throws Exception {
 		GlobalVariables.token = authorize();

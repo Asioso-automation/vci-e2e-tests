@@ -7,12 +7,10 @@ import com.platformX.base.BaseTest;
 import scp.page.PocetnaStranica;
 import scp.page.Prostori;
 import scp.page.Ugovori;
-import scp.page.Vodomjeri;
 import scp.page.Kupci;
 import scp.page.LogIn;
 import scp.page.Mjerila;
 import scp.page.Objekti;
-
 
 public class SCP_00X_Dodavanje_Ugovora_Test extends BaseTest {
 

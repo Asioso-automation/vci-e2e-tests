@@ -27,6 +27,8 @@ public class Payloads {
 				+ "	\"filters\": {} }";
 	}
 	
+	// TODO Provjeriti da li zakomentarisani parametri ne postoje u body-u ili nisu obavezni, ako nisu potrebni obrisati ih
+	
 	public static String pxdAdministrationMessageCreate(String title, String body, String dateFrom, int priority) {
 		return "{\r\n"
 				+ " \"title\": \"" + title + "\", \r\n"

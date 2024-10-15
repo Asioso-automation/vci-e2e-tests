@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="10" total="11" passed="1">
+<testng-results skipped="0" failed="0" ignored="3" total="4" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="43124" started-at="2024-05-15T21:54:11Z" finished-at="2024-05-15T21:54:54Z">
+  <suite name="Default suite" duration-ms="38518" started-at="2024-10-15T19:33:33Z" finished-at="2024-10-15T19:34:11Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="43124" started-at="2024-05-15T21:54:11Z" finished-at="2024-05-15T21:54:54Z">
-      <class name="com.platformX.distribution.tests.PX_DIST_003_Verifikacije_Sekcija_Test">
-        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.platformX.distribution.tests.PX_DIST_003_Verifikacije_Sekcija_Test@79b06cab]" name="setUp" is-config="true" duration-ms="5358" started-at="2024-05-15T23:54:11Z" finished-at="2024-05-15T23:54:16Z">
+    <test name="Default test" duration-ms="38518" started-at="2024-10-15T19:33:33Z" finished-at="2024-10-15T19:34:11Z">
+      <class name="com.platformX.tests.PX_020_Banke_CRUD_Test">
+        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.platformX.tests.PX_020_Banke_CRUD_Test@2ea227af]" name="setUp" is-config="true" duration-ms="5459" started-at="2024-10-15T21:33:33Z" finished-at="2024-10-15T21:33:38Z">
           <params>
             <param index="0">
               <value>
@@ -18,15 +18,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="px_dist_003_01_verifikacije_sekcije_sifarnici_test()[pri:0, instance:com.platformX.distribution.tests.PX_DIST_003_Verifikacije_Sekcija_Test@79b06cab]" name="px_dist_003_01_verifikacije_sekcije_sifarnici_test" duration-ms="37124" started-at="2024-05-15T23:54:16Z" description="test prolazi kroz sve stranice iz sekcije SIFARNICI i verifikuje ih" finished-at="2024-05-15T23:54:54Z">
+        <test-method status="PASS" signature="px_020_1_dodavanje_banke_test()[pri:0, instance:com.platformX.tests.PX_020_Banke_CRUD_Test@2ea227af]" name="px_020_1_dodavanje_banke_test" duration-ms="32384" started-at="2024-10-15T21:33:38Z" finished-at="2024-10-15T21:34:10Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- px_dist_003_01_verifikacije_sekcije_sifarnici_test -->
-        <test-method status="PASS" signature="cleanUp()[pri:0, instance:com.platformX.distribution.tests.PX_DIST_003_Verifikacije_Sekcija_Test@79b06cab]" name="cleanUp" is-config="true" duration-ms="625" started-at="2024-05-15T23:54:54Z" finished-at="2024-05-15T23:54:54Z">
+        </test-method> <!-- px_020_1_dodavanje_banke_test -->
+        <test-method status="PASS" signature="cleanUp()[pri:0, instance:com.platformX.tests.PX_020_Banke_CRUD_Test@2ea227af]" name="cleanUp" is-config="true" duration-ms="661" started-at="2024-10-15T21:34:10Z" finished-at="2024-10-15T21:34:11Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- cleanUp -->
-      </class> <!-- com.platformX.distribution.tests.PX_DIST_003_Verifikacije_Sekcija_Test -->
+      </class> <!-- com.platformX.tests.PX_020_Banke_CRUD_Test -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

@@ -13,6 +13,8 @@ public class SCP_001_LogIn_LogOut_Test extends BaseTest {
 	public SCP_001_LogIn_LogOut_Test() throws IOException, FileNotFoundException {
 		super();
 	}
+	
+	// TODO Dodati desc na svim testovima u paketu gdje nedostaju
 
 	@Test (description="logIn i logOut sa verifikacijama stranica")
     public void scp_001_1_logIn_logOut_cistoca_test() throws Exception {

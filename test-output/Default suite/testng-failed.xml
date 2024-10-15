@@ -3,13 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.platformX.distribution.tests.PX_DIST_003_Verifikacije_Sekcija_Test">
+      <class name="scp.tests.SCP_002_Dodavanje_Kupaca_Test">
         <methods>
+          <include name="scp_002_dodavanje_fizickog_lica_vodovod_test"/>
           <include name="setUp"/>
           <include name="cleanUp"/>
-          <include name="px_dist_003_01_verifikacije_sekcije_sifarnici_test"/>
         </methods>
-      </class> <!-- com.platformX.distribution.tests.PX_DIST_003_Verifikacije_Sekcija_Test -->
+      </class> <!-- scp.tests.SCP_002_Dodavanje_Kupaca_Test -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
