@@ -57,7 +57,7 @@ public class ObracunskiUgovori extends PocetnaStranicaPXD {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Obračunski ugovori')]")));
-		verifikacijaZajednickihElemenata("Ugovori", "Obračunski Ugovori", "Obračunski ugovori", 13, false, false, true, true, true, true, true);
+		verifikacijaZajednickihElemenata("Ugovori", "Obračunski Ugovori", "Obračunski ugovori", 14, false, false, true, true, true, true, true);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKupacWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMjMjestoWE));
@@ -68,9 +68,8 @@ public class ObracunskiUgovori extends PocetnaStranicaPXD {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTrenutnaTGWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTrenutnoBrojiloWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTrenutnaKonstWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPostojiNapomenaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaUPripremiWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAktivanWE));
-//		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDeklaracijaOPrikljuckuWE));
 	}
 	
 	public void dodajObracunskiUgovor(String kupac, String mjernoMjesto, String brBrojila) throws InterruptedException, FileNotFoundException, IOException {
