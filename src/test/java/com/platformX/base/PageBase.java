@@ -198,6 +198,9 @@ public abstract class PageBase {
 		} catch (Exception e) {
 			Thread.sleep(500);
 		}
+		wait.until(ExpectedConditions.visibilityOf(naslovStraniceWE));				// nekad ostane otvoren meni koji zaklanja elemente
+		naslovStraniceWE.click();
+
 		wait.until(ExpectedConditions.elementToBeClickable(sekcijaBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(stranicaBtnWE));
 		assertTrue(sekcijaBtnWE.getText().trim().equals(sekcija), stranica + ": Naziv sekcije nije dobar!");
