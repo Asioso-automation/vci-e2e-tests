@@ -17,28 +17,28 @@ public class ObracunskiUgovori extends PocetnaStranicaPXD {
 		super(driver);
 	}
 
-	@FindBy(xpath = "//div[1]/div[1]/div/div/div[1]/div[1]/input[1]")
+	@FindBy(xpath = "//div[3]/div[1]/div/div/div[1]/div[1]/input[1]")
 	private WebElement poljeKupacWE;
 	
-	@FindBy(xpath = "//div[1]/div[2]/div/div/div[1]/div[1]/input[1]")
-	private WebElement poljeTarifnaGrupaWE;
-	
-	@FindBy(xpath = "//div[2]/div[1]/div/div/div[1]/div[1]/input[1]")
+	@FindBy(xpath = "//div[3]/div[2]/div/div/div[1]/div[1]/input[1]")
 	private WebElement poljeMjernoMjestoWE;
 	
-	@FindBy(xpath = "//div[2]/div[2]/div/div/div[1]/div/input")
+	@FindBy(xpath = "//div[4]/div[1]/div/div/div[1]/div/input")
 	private WebElement poljeNazivMjernogMjestaWE;
 	
-	@FindBy(xpath = "//div[2]/div[3]/div/div/div[1]/div/input")
+	@FindBy(xpath = "//div[4]/div[2]/div/div/div[1]/div/input")
 	private WebElement poljeNazivMjMjestaNaStampanimDokumentimaWE;
 	
-	@FindBy(xpath = "//div[3]/div/div/div/div[1]/div/input")
+	@FindBy(xpath = "//div[5]/div[1]/div/div/div[1]/div[1]/input[1]")
+	private WebElement poljeTarifnaGrupaWE;
+	
+	@FindBy(xpath = "//div[5]/div[2]/div/div/div[1]/div/input")
 	private WebElement poljeOdobrenaPrikljucnaSnagaWE;
 	
-	@FindBy(xpath = "//div[4]/div[1]/div/div/div[1]/div[1]/input[1]")
+	@FindBy(xpath = "//div[7]/div[1]/div/div/div[1]/div[1]/input[1]")
 	private WebElement poljeAktivnoBrojiloWE;
 	
-	@FindBy(xpath = "//div[5]/div[1]/div/div/div[1]/div/input")
+	@FindBy(xpath = "//div[7]/div[1]/div/div/div[1]/div/input")
 	private WebElement poljeAktivnaKonstantaWE;
 	
 	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '4 - TG')]")
@@ -110,8 +110,8 @@ public class ObracunskiUgovori extends PocetnaStranicaPXD {
 		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(@class, 'v-list-item__title') and contains(., '" + brBrojila + "')]")));
 		driver.findElement(By.xpath("//div[contains(@class, 'v-list-item__title') and contains(., '" + brBrojila + "')]")).click();
-		wait.until(ExpectedConditions.elementToBeClickable(poljeAktivnaKonstantaWE));
-		poljeAktivnaKonstantaWE.sendKeys(Helper.getRandomNumber(1));
+//		wait.until(ExpectedConditions.elementToBeClickable(poljeAktivnaKonstantaWE));
+//		poljeAktivnaKonstantaWE.sendKeys(Helper.getRandomNumber(1));
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].scrollIntoView(true);", submitBtnWE);
 		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));

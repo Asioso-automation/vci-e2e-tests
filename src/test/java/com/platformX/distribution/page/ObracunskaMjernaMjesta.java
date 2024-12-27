@@ -12,9 +12,9 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import com.platformX.base.Kolone;
 import com.platformX.util.Helper;
 
-public class MjernaMjesta extends PocetnaStranicaPXD {
+public class ObracunskaMjernaMjesta extends PocetnaStranicaPXD {
 
-	public MjernaMjesta(WebDriver driver) throws FileNotFoundException, IOException {
+	public ObracunskaMjernaMjesta(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);
 	}
 
@@ -65,10 +65,11 @@ public class MjernaMjesta extends PocetnaStranicaPXD {
 	
 	public void verifikujMjernaMjesta() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
+		Thread.sleep(1000);
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
-				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Mjerna mjesta')]")));
-		verifikacijaZajednickihElemenata("Mjerna Mjesta", "Mjerna Mjesta", "Mjerna mjesta", 20, false, false, true, true, true, true, false);
+				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Obračunska mjerna mjesta')]")));
+		verifikacijaZajednickihElemenata("Mjerna Mjesta", "Obračunska Mjerna Mjesta", "Obračunska mjerna mjesta", 20, false, false, true, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaElektroenergetskaSaglasnostWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaEicWE));
@@ -94,19 +95,19 @@ public class MjernaMjesta extends PocetnaStranicaPXD {
 		dodajBtnWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(poljeSifraWE));
 		poljeSifraWE.sendKeys(sifraMjernogMjesta);
+		wait.until(ExpectedConditions.elementToBeClickable(poljeTipPotrosacaWE));
+		poljeTipPotrosacaWE.click();
+		poljeTipPotrosacaWE.sendKeys(Keys.ARROW_DOWN);
+		poljeTipPotrosacaWE.sendKeys(Keys.ENTER);
+		wait.until(ExpectedConditions.elementToBeClickable(poljeLokacijaMjernogMjestaWE));
+		poljeLokacijaMjernogMjestaWE.click();
+		poljeLokacijaMjernogMjestaWE.sendKeys(Keys.ARROW_DOWN);
+		poljeLokacijaMjernogMjestaWE.sendKeys(Keys.ENTER);
 		wait.until(ExpectedConditions.elementToBeClickable(poljeVlasnikWE));
 		poljeVlasnikWE.sendKeys(Helper.getRandomNumber(3));
 		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
 		poljeVlasnikWE.sendKeys(Keys.ARROW_DOWN);
 		poljeVlasnikWE.sendKeys(Keys.ENTER);
-		wait.until(ExpectedConditions.elementToBeClickable(poljeTipPotrosacaWE));
-		poljeTipPotrosacaWE.click();
-		poljeTipPotrosacaWE.sendKeys(Keys.ARROW_DOWN);
-		poljeTipPotrosacaWE.sendKeys(Keys.ENTER);		
-		wait.until(ExpectedConditions.elementToBeClickable(poljeLokacijaMjernogMjestaWE));
-		poljeLokacijaMjernogMjestaWE.click();
-		poljeLokacijaMjernogMjestaWE.sendKeys(Keys.ARROW_DOWN);
-		poljeLokacijaMjernogMjestaWE.sendKeys(Keys.ENTER);		
 		wait.until(ExpectedConditions.elementToBeClickable(poljeTerenskaJedinicaWE));
 		poljeTerenskaJedinicaWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));

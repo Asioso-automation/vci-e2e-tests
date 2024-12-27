@@ -7,7 +7,7 @@ import com.platformX.base.BaseTest;
 import com.platformX.distribution.page.ElektroenergetskeSaglasnosti;
 import com.platformX.distribution.page.LogIn;
 import com.platformX.distribution.page.PocetnaStranicaPXD;
-import com.platformX.distribution.page.UgovorOPrikljucenju;
+import com.platformX.distribution.page.UgovoriOPrikljucenju;
 
 public class PX_DIST_020_Ugovor_O_Prikljucenju_CRUD_Test extends BaseTest{
 

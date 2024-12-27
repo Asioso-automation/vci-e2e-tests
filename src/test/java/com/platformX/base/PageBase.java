@@ -198,13 +198,13 @@ public abstract class PageBase {
 		} catch (Exception e) {
 			Thread.sleep(500);
 		}
-		try {
-			wait.until(ExpectedConditions.visibilityOf(naslovStraniceWE));				// nekad ostane otvoren meni koji zaklanja elemente
-			naslovStraniceWE.click();
-		} catch (Exception e) {
-			wait.until(ExpectedConditions.visibilityOf(naslovStranice1WE));				// nekad ostane otvoren meni koji zaklanja elemente
-			naslovStranice1WE.click();
-		}
+//		try {
+//			wait.until(ExpectedConditions.visibilityOf(sekcijaBtnWE));				// nekad ostane otvoren meni koji zaklanja elemente
+//			sekcijaBtnWE.click();
+//		} catch (Exception e) {
+//			wait.until(ExpectedConditions.visibilityOf(naslovStranice1WE));				// nekad ostane otvoren meni koji zaklanja elemente
+//			naslovStranice1WE.click();
+//		}
 		wait.until(ExpectedConditions.elementToBeClickable(sekcijaBtnWE));
 		wait.until(ExpectedConditions.elementToBeClickable(stranicaBtnWE));
 		assertTrue(sekcijaBtnWE.getText().trim().equals(sekcija), stranica + ": Naziv sekcije nije dobar!");

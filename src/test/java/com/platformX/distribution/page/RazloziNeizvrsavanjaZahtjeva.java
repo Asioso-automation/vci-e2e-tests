@@ -7,17 +7,17 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import com.platformX.base.Kolone;
 
-public class RazlogNeizvrsavanjaZahtjeva extends PocetnaStranicaPXD {
+public class RazloziNeizvrsavanjaZahtjeva extends PocetnaStranicaPXD {
 
-	public RazlogNeizvrsavanjaZahtjeva(WebDriver driver) throws FileNotFoundException, IOException {
+	public RazloziNeizvrsavanjaZahtjeva(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);
 	}
 	
-	public void verifikujRazlogNeizvrsavanjaZahtjeva() throws InterruptedException, FileNotFoundException, IOException {
+	public void verifikujRazloziNeizvrsavanjaZahtjeva() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
-				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Razlog neizvršavanja zahtjeva')]")));
-		verifikacijaZajednickihElemenata("Mjerna Mjesta", "Razlog Neizvršavanja Zahtjeva", "Razlog neizvršavanja zahtjeva", 4, false, false, true, true, true, true, false);
+				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Razlozi neizvršavanja zahtjeva')]")));
+		verifikacijaZajednickihElemenata("Mjerna Mjesta", "Razlozi Neizvršavanja Zahtjeva", "Razlozi neizvršavanja zahtjeva", 4, false, false, true, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNazivWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaEbixKodWE));

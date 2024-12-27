@@ -197,35 +197,37 @@ public class PX_DIST_003_Verifikacije_Sekcija_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		MjernaMjesta mjernaMjesta = homePage.navigateOnPage(MjernaMjesta.class, "Mjerna mjesta", "Mjerna mjesta");
+		ObracunskaMjernaMjesta mjernaMjesta = homePage.navigateOnPage(ObracunskaMjernaMjesta.class, "Mjerna mjesta", "Obračunska mjerna mjesta");
 		mjernaMjesta.verifikujMjernaMjesta();
 		ZbirnaKontrolnaMjernaMjesta zbirnaMjernaMjesta = homePage.navigateOnPage(ZbirnaKontrolnaMjernaMjesta.class, "Mjerna mjesta", "Zbirna/kontrolna mjerna mjesta");
 		zbirnaMjernaMjesta.verifikujZbirnaKontrolnaMjernaMjesta();
-		EnergetskaKartica kartica = homePage.navigateOnPage(EnergetskaKartica.class, "Mjerna mjesta", "Energetska kartica");
+		IndirektnaMjernaMjesta indirektnaMjernaMjesta = homePage.navigateOnPage(IndirektnaMjernaMjesta.class, "Mjerna mjesta", "Indirektna mjerna mjesta");
+		indirektnaMjernaMjesta.verifikujIndirektnaMjernaMjesta();
+		EnergetskeKartice kartica = homePage.navigateOnPage(EnergetskeKartice.class, "Mjerna mjesta", "Energetske kartice");
 		kartica.verifikujEnergetskaKartica();
+		LokacijskeSaglasnosti lokacijskeSaglasnosti = homePage.navigateOnPage(LokacijskeSaglasnosti.class, "Mjerna mjesta", "Lokacijske saglasnosti");
+		lokacijskeSaglasnosti.verifikujLokacijskeSaglasnosti();
+		ElektroenergetskeSaglasnosti elektroenergetskeSaglasnosti = homePage.navigateOnPage(ElektroenergetskeSaglasnosti.class, "Mjerna mjesta", "Elektroenergetske saglasnosti");
+		elektroenergetskeSaglasnosti.verifikujElektroenergetskeSaglasnosti();
+//		TODO Promjene EES - kreirati novu klasu
+		UgovoriOPrikljucenju ugovoriOPrikljucenju = homePage.navigateOnPage(UgovoriOPrikljucenju.class, "Mjerna mjesta", "Ugovori o priključenju");
+		ugovoriOPrikljucenju.verifikujUgovoriOPrikljucenju();		
+		DeklaracijeOPrikljucku deklaracijeOPrikljucku = homePage.navigateOnPage(DeklaracijeOPrikljucku.class, "Mjerna mjesta", "Deklaracije o priključku");
+		deklaracijeOPrikljucku.verifikujDeklaracijeOPrikljucku();
 		ZahtjeviZaDostavuPodataka zahtjeviZaDostavu = homePage.navigateOnPage(ZahtjeviZaDostavuPodataka.class, "Mjerna mjesta", "Zahtjevi za dostavu podataka");
 		zahtjeviZaDostavu.verifikujZahtjeviZaDostavuPodataka();
 		ZahtjeviZaIskljucenja zahtjeviZaIskljucenja = homePage.navigateOnPage(ZahtjeviZaIskljucenja.class, "Mjerna mjesta", "Zahtjevi za isključenja");
 		zahtjeviZaIskljucenja.verifikujZahtjeviZaIskljucenja();
 		ZahtjeviZaUkljucenja zahtjeviZaUkljucenja = homePage.navigateOnPage(ZahtjeviZaUkljucenja.class, "Mjerna mjesta", "Zahtjevi za uključenja");
 		zahtjeviZaUkljucenja.verifikujZahtjeviZaUkljucenja();
-		RazlogNeizvrsavanjaZahtjeva razlogNeizvrsavanjaZahtjeva = homePage.navigateOnPage(RazlogNeizvrsavanjaZahtjeva.class, "Mjerna mjesta", "Razlog neizvršavanja zahtjeva");
-		razlogNeizvrsavanjaZahtjeva.verifikujRazlogNeizvrsavanjaZahtjeva();
+//		TODO Importi obavjestenja o isklj. - kreirati novu klasu
 		AktivnaIskljucenjaMjernihMjesta aktivnaIskljucenjaMjernihMjesta = homePage
-				.navigateOnPage(AktivnaIskljucenjaMjernihMjesta.class, "Mjerna mjesta", "Aktivna isključenja mjernih mjesta");
+				.navigateOnPage(AktivnaIskljucenjaMjernihMjesta.class, "Mjerna mjesta", "Aktivna isključenja MM");
 		aktivnaIskljucenjaMjernihMjesta.verifikujAktivnaIskljucenjaMjernihMjesta();
-		IndirektnaMjernaMjesta indirektnaMjernaMjesta = homePage.navigateOnPage(IndirektnaMjernaMjesta.class, "Mjerna mjesta", "Indirektna mjerna mjesta");
-		indirektnaMjernaMjesta.verifikujIndirektnaMjernaMjesta();
-		KontrolaMjernogMjesta kontrolaMjernogMjesta = homePage.navigateOnPage(KontrolaMjernogMjesta.class, "Mjerna mjesta", "Kontrola mjernog mjesta");
-		kontrolaMjernogMjesta.verifikujKontrolaMjernogMjesta();
-		SaglasnostNaLokaciju saglasnostNaLokaciju = homePage.navigateOnPage(SaglasnostNaLokaciju.class, "Mjerna mjesta", "Saglasnost na lokaciju");
-		saglasnostNaLokaciju.verifikujSaglasnostNaLokaciju();
-		ElektroenergetskeSaglasnosti elektroenergetskeSaglasnosti = homePage.navigateOnPage(ElektroenergetskeSaglasnosti.class, "Mjerna mjesta", "Elektroenergetske saglasnosti");
-		elektroenergetskeSaglasnosti.verifikujElektroenergetskeSaglasnosti();
-		UgovorOPrikljucenju ugovorOPrikljucenju = homePage.navigateOnPage(UgovorOPrikljucenju.class, "Mjerna mjesta", "Ugovor o priključenju");
-		ugovorOPrikljucenju.verifikujUgovorOPrikljucenju();
-		DeklaracijaOPrikljucku deklaracijaOPrikljucku = homePage.navigateOnPage(DeklaracijaOPrikljucku.class, "Mjerna mjesta", "Deklaracija o priključku");
-		deklaracijaOPrikljucku.verifikujDeklaracijaOPrikljucku();
+		RazloziNeizvrsavanjaZahtjeva razloziNeizvrsavanjaZahtjeva = homePage.navigateOnPage(RazloziNeizvrsavanjaZahtjeva.class, "Mjerna mjesta", "Razlozi neizvršavanja zahtjeva");
+		razloziNeizvrsavanjaZahtjeva.verifikujRazloziNeizvrsavanjaZahtjeva();
+		KontroleMjernihMjesta kontroleMjernihMjesta = homePage.navigateOnPage(KontroleMjernihMjesta.class, "Mjerna mjesta", "Kontrole mjernih mjesta");
+		kontroleMjernihMjesta.verifikujKontroleMjernihMjesta();	
 		RegistarPlombi registarPlombi = homePage.navigateOnPage(RegistarPlombi.class, "Mjerna mjesta", "Registar plombi");
 		registarPlombi.verifikujRegistarPlombi();
 	}

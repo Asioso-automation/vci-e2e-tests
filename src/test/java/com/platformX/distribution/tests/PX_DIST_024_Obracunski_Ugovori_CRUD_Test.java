@@ -7,7 +7,7 @@ import com.platformX.base.BaseTest;
 import com.platformX.base.RetryAnalyzer;
 import com.platformX.distribution.page.FizickaLica;
 import com.platformX.distribution.page.LogIn;
-import com.platformX.distribution.page.MjernaMjesta;
+import com.platformX.distribution.page.ObracunskaMjernaMjesta;
 import com.platformX.distribution.page.ObracunskiUgovori;
 import com.platformX.distribution.page.PocetnaStranicaPXD;
 import com.platformX.distribution.page.RegistarBrojila;
@@ -40,7 +40,7 @@ public class PX_DIST_024_Obracunski_Ugovori_CRUD_Test  extends BaseTest {
 		fizickaLica.verifikujFizickaLica();
 		fizickaLica.verifikujStavku(fizickoLice, homePage.podatak2Tabela2WE);
 		String kupac = fizickaLica.kreirajFizickoLice();
-		MjernaMjesta mjernaMjesta = homePage.navigateOnPage(MjernaMjesta.class, "Mjerna mjesta", "Mjerna mjesta");
+		ObracunskaMjernaMjesta mjernaMjesta = homePage.navigateOnPage(ObracunskaMjernaMjesta.class, "Mjerna mjesta", "Obračunska mjerna mjesta");
 		mjernaMjesta.verifikujMjernaMjesta();
 		mjernaMjesta.dodajMjernoMjesto(sifraMjernogMjesta);
 		mjernaMjesta.verifikujPoruku("Uspješno završeno.");

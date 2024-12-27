@@ -13,9 +13,9 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import com.platformX.base.Kolone;
 import com.platformX.util.Helper;
 
-public class UgovorOPrikljucenju extends PocetnaStranicaPXD {
+public class UgovoriOPrikljucenju extends PocetnaStranicaPXD {
 	
-	public UgovorOPrikljucenju(WebDriver driver) throws FileNotFoundException, IOException {
+	public UgovoriOPrikljucenju(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);
 	}
 	
@@ -49,11 +49,11 @@ public class UgovorOPrikljucenju extends PocetnaStranicaPXD {
 	@FindBy(xpath = "//div[4]/div[1]/div/div/div[1]/div[1]/input[1]")  
 	 private WebElement vrstaPodrucjaWE;
 	
-	public void verifikujUgovorOPrikljucenju() throws InterruptedException, FileNotFoundException, IOException {
+	public void verifikujUgovoriOPrikljucenju() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
-				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Ugovor o priključenju')]")));
-		verifikacijaZajednickihElemenata("Mjerna Mjesta", "Ugovor O Priključenju", "Ugovor o priključenju", 9, false, false, true, true, true, true, false);
+				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Ugovori o priključenju')]")));
+		verifikacijaZajednickihElemenata("Mjerna Mjesta", "Ugovori O Priključenju", "Ugovori o priključenju", 9, false, false, true, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaElektroenergetskaSaglasnostWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKupacWE));

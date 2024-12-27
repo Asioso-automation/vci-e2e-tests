@@ -7,17 +7,17 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import com.platformX.base.Kolone;
 
-public class DeklaracijaOPrikljucku extends PocetnaStranicaPXD {
+public class DeklaracijeOPrikljucku extends PocetnaStranicaPXD {
 
-	public DeklaracijaOPrikljucku(WebDriver driver) throws FileNotFoundException, IOException {
+	public DeklaracijeOPrikljucku(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);
 	}
 	
-	public void verifikujDeklaracijaOPrikljucku() throws InterruptedException, FileNotFoundException, IOException {
+	public void verifikujDeklaracijeOPrikljucku() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
-				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Deklaracija o priključku')]")));
-		verifikacijaZajednickihElemenata("Mjerna Mjesta", "Deklaracija O Priključku", "Deklaracija o priključku", 10, false, false, false, true, true, true, false);
+				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Deklaracije o priključku')]")));
+		verifikacijaZajednickihElemenata("Mjerna Mjesta", "Deklaracije O Priključku", "Deklaracije o priključku", 10, false, false, false, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojProtokolaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaEesWE));

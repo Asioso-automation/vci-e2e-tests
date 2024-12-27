@@ -58,7 +58,7 @@ public class PXD_Customers_001_AgreedEnergyApprovals_Tests extends RestApiBase {
 	public void pxd_customers_001_03_create_agreed_energy_approval_test1() throws Exception {
 		GlobalVariables.token = authorize();
 		addHeader("Authorization", "Bearer " + GlobalVariables.token);
-		Response response = methodPOSTresponse(api_properties.getValue("AGREED.ENERGY.APPROVALS.CREATE"), Payloads.pxdAgreedEnergyApprovalCreate(64930, Integer.parseInt(Helper.getRandomNumber(3)), Integer.parseInt(Helper.getRandomNumber(3)), 0, 0, 0));
+		Response response = methodPOSTresponse(api_properties.getValue("AGREED.ENERGY.APPROVALS.CREATE"), Payloads.pxdAgreedEnergyApprovalCreate(1208854, Integer.parseInt(Helper.getRandomNumber(3)), Integer.parseInt(Helper.getRandomNumber(3)), 0, 0, 0));
 		assertEquals(response.getStatusCode(), 200);
 		assertNotNull(response, "Id not forwarded in response");
 		GlobalVariables.id = response.asString();

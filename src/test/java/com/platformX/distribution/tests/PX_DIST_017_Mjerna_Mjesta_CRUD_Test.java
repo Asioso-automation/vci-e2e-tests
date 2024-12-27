@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 import com.platformX.base.BaseTest;
 import com.platformX.base.RetryAnalyzer;
 import com.platformX.distribution.page.LogIn;
-import com.platformX.distribution.page.MjernaMjesta;
+import com.platformX.distribution.page.ObracunskaMjernaMjesta;
 import com.platformX.distribution.page.PocetnaStranicaPXD;
 import com.platformX.util.Helper;
 
@@ -26,7 +26,7 @@ public class PX_DIST_017_Mjerna_Mjesta_CRUD_Test  extends BaseTest {
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		MjernaMjesta mjernaMjesta = homePage.navigateOnPage(MjernaMjesta.class, "Mjerna mjesta", "Mjerna mjesta");
+		ObracunskaMjernaMjesta mjernaMjesta = homePage.navigateOnPage(ObracunskaMjernaMjesta.class, "Mjerna mjesta", "Obračunska mjerna mjesta");
 		mjernaMjesta.verifikujMjernaMjesta();
 		mjernaMjesta.dodajMjernoMjesto(sifraMjernogMjesta);
 		mjernaMjesta.verifikujPoruku("Uspješno završeno.");
@@ -42,7 +42,7 @@ public class PX_DIST_017_Mjerna_Mjesta_CRUD_Test  extends BaseTest {
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		MjernaMjesta mjernaMjesta = homePage.navigateOnPage(MjernaMjesta.class, "Mjerna mjesta", "Mjerna mjesta");
+		ObracunskaMjernaMjesta mjernaMjesta = homePage.navigateOnPage(ObracunskaMjernaMjesta.class, "Mjerna mjesta", "Obračunska mjerna mjesta");
 		mjernaMjesta.verifikujMjernaMjesta();
 		mjernaMjesta.pretraziStavku(homePage.filterKolona4WE, sifraMjernogMjesta);
 		mjernaMjesta.verifikujMjernaMjesta();
@@ -61,7 +61,7 @@ public class PX_DIST_017_Mjerna_Mjesta_CRUD_Test  extends BaseTest {
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		MjernaMjesta mjernaMjesta = homePage.navigateOnPage(MjernaMjesta.class, "Mjerna mjesta", "Mjerna mjesta");
+		ObracunskaMjernaMjesta mjernaMjesta = homePage.navigateOnPage(ObracunskaMjernaMjesta.class, "Mjerna mjesta", "Obračunska mjerna mjesta");
 		mjernaMjesta.verifikujMjernaMjesta();
 		mjernaMjesta.pretraziStavku(homePage.filterKolona4WE, novaSifraMjernogMjesta);
 		mjernaMjesta.verifikujMjernaMjesta();

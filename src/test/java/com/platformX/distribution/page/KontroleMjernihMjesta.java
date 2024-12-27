@@ -7,17 +7,17 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import com.platformX.base.Kolone;
 
-public class KontrolaMjernogMjesta extends PocetnaStranicaPXD {
+public class KontroleMjernihMjesta extends PocetnaStranicaPXD {
 	
-	public KontrolaMjernogMjesta(WebDriver driver) throws FileNotFoundException, IOException {
+	public KontroleMjernihMjesta(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);
 	}
 	
-	public void verifikujKontrolaMjernogMjesta() throws InterruptedException, FileNotFoundException, IOException {
+	public void verifikujKontroleMjernihMjesta() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
-				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Kontrola mjernog mjesta')]")));
-		verifikacijaZajednickihElemenata("Mjerna Mjesta", "Kontrola Mjernog Mjesta", "Kontrola mjernog mjesta", 18, false, false, true, true, true, true, false);
+				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Kontrole mjernih mjesta')]")));
+		verifikacijaZajednickihElemenata("Mjerna Mjesta", "Kontrole Mjernih Mjesta", "Kontrole mjernih mjesta", 18, false, false, true, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojProtokolaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPoRadnomNaloguWE));
