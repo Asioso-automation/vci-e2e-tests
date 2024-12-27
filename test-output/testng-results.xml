@@ -1,32 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="3" total="4" passed="1">
+<testng-results ignored="0" total="10" passed="10" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="38518" started-at="2024-10-15T19:33:33Z" finished-at="2024-10-15T19:34:11Z">
+  <suite started-at="2024-12-27T13:25:27Z" name="Default suite" finished-at="2024-12-27T13:25:29Z" duration-ms="2112">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="38518" started-at="2024-10-15T19:33:33Z" finished-at="2024-10-15T19:34:11Z">
-      <class name="com.platformX.tests.PX_020_Banke_CRUD_Test">
-        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.platformX.tests.PX_020_Banke_CRUD_Test@2ea227af]" name="setUp" is-config="true" duration-ms="5459" started-at="2024-10-15T21:33:33Z" finished-at="2024-10-15T21:33:38Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
+    <test started-at="2024-12-27T13:25:27Z" name="Default test" finished-at="2024-12-27T13:25:29Z" duration-ms="2112">
+      <class name="com.platformX.api.tests.PXD_Metering_MeteringCatalogs_001_TransformerStationType_Tests">
+        <test-method signature="pxd_metering_meteringCatalogs_001_04_create_transformerStationType_test1()[pri:0, instance:com.platformX.api.tests.PXD_Metering_MeteringCatalogs_001_TransformerStationType_Tests@c0b41d6]" started-at="2024-12-27T14:25:27Z" name="pxd_metering_meteringCatalogs_001_04_create_transformerStationType_test1" description="positive test case" finished-at="2024-12-27T14:25:28Z" duration-ms="1629" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="px_020_1_dodavanje_banke_test()[pri:0, instance:com.platformX.tests.PX_020_Banke_CRUD_Test@2ea227af]" name="px_020_1_dodavanje_banke_test" duration-ms="32384" started-at="2024-10-15T21:33:38Z" finished-at="2024-10-15T21:34:10Z">
+        </test-method> <!-- pxd_metering_meteringCatalogs_001_04_create_transformerStationType_test1 -->
+        <test-method signature="pxd_metering_meteringCatalogs_001_01_get_tranformerStationType_test2()[pri:0, instance:com.platformX.api.tests.PXD_Metering_MeteringCatalogs_001_TransformerStationType_Tests@c0b41d6]" started-at="2024-12-27T14:25:28Z" name="pxd_metering_meteringCatalogs_001_01_get_tranformerStationType_test2" description="negative test case: bearer token missing" finished-at="2024-12-27T14:25:29Z" depends-on-methods="com.platformX.api.tests.PXD_Metering_MeteringCatalogs_001_TransformerStationType_Tests.pxd_metering_meteringCatalogs_001_04_create_transformerStationType_test1" duration-ms="46" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- px_020_1_dodavanje_banke_test -->
-        <test-method status="PASS" signature="cleanUp()[pri:0, instance:com.platformX.tests.PX_020_Banke_CRUD_Test@2ea227af]" name="cleanUp" is-config="true" duration-ms="661" started-at="2024-10-15T21:34:10Z" finished-at="2024-10-15T21:34:11Z">
+        </test-method> <!-- pxd_metering_meteringCatalogs_001_01_get_tranformerStationType_test2 -->
+        <test-method signature="pxd_metering_meteringCatalogs_001_01_get_transformerStationType_test1()[pri:0, instance:com.platformX.api.tests.PXD_Metering_MeteringCatalogs_001_TransformerStationType_Tests@c0b41d6]" started-at="2024-12-27T14:25:29Z" name="pxd_metering_meteringCatalogs_001_01_get_transformerStationType_test1" description="positive test case" finished-at="2024-12-27T14:25:29Z" depends-on-methods="com.platformX.api.tests.PXD_Metering_MeteringCatalogs_001_TransformerStationType_Tests.pxd_metering_meteringCatalogs_001_04_create_transformerStationType_test1" duration-ms="54" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- cleanUp -->
-      </class> <!-- com.platformX.tests.PX_020_Banke_CRUD_Test -->
+        </test-method> <!-- pxd_metering_meteringCatalogs_001_01_get_transformerStationType_test1 -->
+        <test-method signature="pxd_metering_meteringCatalogs_001_01_get_transformerStationType_test3()[pri:0, instance:com.platformX.api.tests.PXD_Metering_MeteringCatalogs_001_TransformerStationType_Tests@c0b41d6]" started-at="2024-12-27T14:25:29Z" name="pxd_metering_meteringCatalogs_001_01_get_transformerStationType_test3" description="negative test case: wrong bearer token" finished-at="2024-12-27T14:25:29Z" depends-on-methods="com.platformX.api.tests.PXD_Metering_MeteringCatalogs_001_TransformerStationType_Tests.pxd_metering_meteringCatalogs_001_04_create_transformerStationType_test1" duration-ms="30" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- pxd_metering_meteringCatalogs_001_01_get_transformerStationType_test3 -->
+        <test-method signature="pxd_metering_meteringCatalogs_001_01_get_transformerStationType_test4()[pri:0, instance:com.platformX.api.tests.PXD_Metering_MeteringCatalogs_001_TransformerStationType_Tests@c0b41d6]" started-at="2024-12-27T14:25:29Z" name="pxd_metering_meteringCatalogs_001_01_get_transformerStationType_test4" description="negative test case: wrong id" finished-at="2024-12-27T14:25:29Z" depends-on-methods="com.platformX.api.tests.PXD_Metering_MeteringCatalogs_001_TransformerStationType_Tests.pxd_metering_meteringCatalogs_001_04_create_transformerStationType_test1" duration-ms="35" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- pxd_metering_meteringCatalogs_001_01_get_transformerStationType_test4 -->
+        <test-method signature="pxd_metering_meteringCatalogs_001_02_post_transformerStationType_list_test1()[pri:0, instance:com.platformX.api.tests.PXD_Metering_MeteringCatalogs_001_TransformerStationType_Tests@c0b41d6]" started-at="2024-12-27T14:25:29Z" name="pxd_metering_meteringCatalogs_001_02_post_transformerStationType_list_test1" description="positive test case" finished-at="2024-12-27T14:25:29Z" depends-on-methods="com.platformX.api.tests.PXD_Metering_MeteringCatalogs_001_TransformerStationType_Tests.pxd_metering_meteringCatalogs_001_04_create_transformerStationType_test1" duration-ms="82" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- pxd_metering_meteringCatalogs_001_02_post_transformerStationType_list_test1 -->
+        <test-method signature="pxd_metering_meteringCatalogs_001_03_get_transformerStationType_lookup_test1()[pri:0, instance:com.platformX.api.tests.PXD_Metering_MeteringCatalogs_001_TransformerStationType_Tests@c0b41d6]" started-at="2024-12-27T14:25:29Z" name="pxd_metering_meteringCatalogs_001_03_get_transformerStationType_lookup_test1" description="positive test case" finished-at="2024-12-27T14:25:29Z" depends-on-methods="com.platformX.api.tests.PXD_Metering_MeteringCatalogs_001_TransformerStationType_Tests.pxd_metering_meteringCatalogs_001_04_create_transformerStationType_test1" duration-ms="82" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- pxd_metering_meteringCatalogs_001_03_get_transformerStationType_lookup_test1 -->
+        <test-method signature="pxd_metering_meteringCatalogs_001_03_get_transformerStationType_lookup_test2()[pri:0, instance:com.platformX.api.tests.PXD_Metering_MeteringCatalogs_001_TransformerStationType_Tests@c0b41d6]" started-at="2024-12-27T14:25:29Z" name="pxd_metering_meteringCatalogs_001_03_get_transformerStationType_lookup_test2" description="negative test case: wrong id" finished-at="2024-12-27T14:25:29Z" depends-on-methods="com.platformX.api.tests.PXD_Metering_MeteringCatalogs_001_TransformerStationType_Tests.pxd_metering_meteringCatalogs_001_04_create_transformerStationType_test1" duration-ms="49" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- pxd_metering_meteringCatalogs_001_03_get_transformerStationType_lookup_test2 -->
+        <test-method signature="pxd_metering_meteringCatalogs_001_05_update_entity_test1()[pri:0, instance:com.platformX.api.tests.PXD_Metering_MeteringCatalogs_001_TransformerStationType_Tests@c0b41d6]" started-at="2024-12-27T14:25:29Z" name="pxd_metering_meteringCatalogs_001_05_update_entity_test1" description="positive test case" finished-at="2024-12-27T14:25:29Z" depends-on-methods="com.platformX.api.tests.PXD_Metering_MeteringCatalogs_001_TransformerStationType_Tests.pxd_metering_meteringCatalogs_001_04_create_transformerStationType_test1" duration-ms="36" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- pxd_metering_meteringCatalogs_001_05_update_entity_test1 -->
+        <test-method signature="pxd_metering_meteringCatalogs_001_06_delete_entity_test1()[pri:0, instance:com.platformX.api.tests.PXD_Metering_MeteringCatalogs_001_TransformerStationType_Tests@c0b41d6]" started-at="2024-12-27T14:25:29Z" name="pxd_metering_meteringCatalogs_001_06_delete_entity_test1" description="positive test case" finished-at="2024-12-27T14:25:29Z" depends-on-methods="com.platformX.api.tests.PXD_Metering_MeteringCatalogs_001_TransformerStationType_Tests.pxd_metering_meteringCatalogs_001_04_create_transformerStationType_test1" duration-ms="41" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- pxd_metering_meteringCatalogs_001_06_delete_entity_test1 -->
+      </class> <!-- com.platformX.api.tests.PXD_Metering_MeteringCatalogs_001_TransformerStationType_Tests -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

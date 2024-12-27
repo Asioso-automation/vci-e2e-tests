@@ -326,4 +326,20 @@ public class Payloads {
 				+ "}";
 	}
 	
+	public static String pxdTransformerStationTypeCreate(String type, String name) {
+		return "{\r\n"
+				+ " \"type\": \"" + type + "\", \r\n"
+				+ " \"name\": \"" + name + "\"\r\n"
+				+ "}";
+	
+	}
+	
+	public static String pxdTransformerStationTypeUpdate(int id, String type, String name) {
+		return "{\r\n"
+				+ " \"id\": " + id + ", \r\n"
+				+ " \"type\": \"" + type + "\", \r\n"
+				+ " \"name\": \"" + name + "\" \r\n"
+				+ "}";
+	}
+	
 }

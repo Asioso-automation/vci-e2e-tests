@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test name="Default test(failed)">
     <classes>
-      <class name="scp.tests.SCP_002_Dodavanje_Kupaca_Test">
+      <class name="com.platformX.api.tests.PXD_Metering_MeteringCatalogs_001_TransformerStationType_Tests">
         <methods>
-          <include name="scp_002_dodavanje_fizickog_lica_vodovod_test"/>
-          <include name="setUp"/>
-          <include name="cleanUp"/>
+          <include name="pxd_metering_meteringCatalogs_001_04_create_transformerStationType_test1"/>
+          <include name="pxd_metering_meteringCatalogs_001_02_post_transformerStationType_list_test1"/>
         </methods>
-      </class> <!-- scp.tests.SCP_002_Dodavanje_Kupaca_Test -->
+      </class> <!-- com.platformX.api.tests.PXD_Metering_MeteringCatalogs_001_TransformerStationType_Tests -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
