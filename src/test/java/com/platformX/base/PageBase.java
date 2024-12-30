@@ -188,6 +188,54 @@ public abstract class PageBase {
 		String id = idWE.getText();
 		return id;
 	}
+	
+//    static String toCamelCase(String s){
+//        String[] parts = s.split(" ");
+//        String camelCaseString = "";
+//        for (String part : parts){
+//            if(part!=null && part.trim().length()>0)
+//           camelCaseString = camelCaseString + toProperCase(part);
+//            else
+//                camelCaseString=camelCaseString+part+" ";   
+//        }
+//        return camelCaseString;
+//     }
+//
+//     static String toProperCase(String s) {
+//         String temp=s.trim();
+//         String spaces="";
+//         if(temp.length()!=s.length())
+//         {
+//         int startCharIndex=s.charAt(temp.indexOf(0));
+//         spaces=s.substring(0,startCharIndex);
+//         }
+//         temp=temp.substring(0, 1).toUpperCase() +
+//         spaces+temp.substring(1).toLowerCase()+" ";
+//         return temp;
+//     }
+//     
+//     public static void main(String[] args) {
+//    	 String string="HI tHiS is   SomE Statement";
+//    	 System.out.println(toCamelCase(string));
+//     }
+	
+	  public static String toCamelCase(final String init) {
+		    if (init == null)
+		        return null;
+
+		    final StringBuilder ret = new StringBuilder(init.length());
+
+		    for (final String word : init.split(" ")) {
+		        if (!word.isEmpty()) {
+		            ret.append(Character.toUpperCase(word.charAt(0)));
+		            ret.append(word.substring(1).toLowerCase());
+		        }
+		        if (!(ret.length() == init.length()))
+		            ret.append(" ");
+		    }
+
+		    return ret.toString();
+		}
 
 	public void verifikacijaZajednickihElemenata(String sekcija, String stranica, String naslovStranice, int brKolona,
 			boolean importBtn, boolean dodajSve, boolean dodaj, boolean preuzmiExcel, boolean ukloniFiltere,
@@ -205,10 +253,14 @@ public abstract class PageBase {
 //			wait.until(ExpectedConditions.visibilityOf(naslovStranice1WE));				// nekad ostane otvoren meni koji zaklanja elemente
 //			naslovStranice1WE.click();
 //		}
-		wait.until(ExpectedConditions.elementToBeClickable(sekcijaBtnWE));
-		wait.until(ExpectedConditions.elementToBeClickable(stranicaBtnWE));
-		assertTrue(sekcijaBtnWE.getText().trim().equals(sekcija), stranica + ": Naziv sekcije nije dobar!");
-		assertTrue(stranicaBtnWE.getText().trim().equals(stranica), stranica + ": Naziv stranice nije dobar!");
+
+		String sekcija1 = sekcijaBtnWE.getText().trim();									// privremeno rjesenje za veliko slovo poslije šđžčć na firefox driveru
+		sekcija1 = toCamelCase(sekcija1);
+		String stranica1 = stranicaBtnWE.getText().trim();
+		stranica1 = toCamelCase(stranica1);
+
+		assertTrue(sekcija1.equals(sekcija), stranica + ": Naziv sekcije nije dobar!");
+		assertTrue(stranica1.equals(stranica), stranica + ": Naziv stranice nije dobar!");
 		try {
 			assertTrue(naslovStraniceWE.getText().trim().equals(naslovStranice),
 					stranica + ": Naziv stranice nije dobar!");
