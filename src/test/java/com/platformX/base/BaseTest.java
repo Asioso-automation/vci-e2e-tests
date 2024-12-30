@@ -40,7 +40,7 @@ public abstract class BaseTest {
 
 	@BeforeMethod
 	@Parameters({ "browser" })
-	public void setUp(@Optional("chrome") String browser) {
+	public void setUp(@Optional("firefox") String browser) {
 		if (browser.equalsIgnoreCase("firefox")) {
 			System.setProperty("webdriver.gecko.driver", "src/test/resources/drivers/geckodriver.exe");
 			FirefoxProfile profile = new FirefoxProfile();
@@ -49,8 +49,9 @@ public abstract class BaseTest {
 			profile.setPreference("dom.disable_beforeunload", true);
 			FirefoxOptions options = new FirefoxOptions();
 			options.setProfile(profile);
+			options.addArguments("--start-maximized");
+			options.addArguments("--window-size=1466,768");
 			driver = new FirefoxDriver(options);
-			driver.manage().window().maximize();
 		} else if (browser.equalsIgnoreCase("chrome")) {
 			try {
 			System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver.exe");
