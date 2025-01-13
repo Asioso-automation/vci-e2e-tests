@@ -17,7 +17,7 @@ public class KontroleMjernihMjesta extends PocetnaStranicaPXD {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Kontrole mjernih mjesta')]")));
-		verifikacijaZajednickihElemenata("Mjerna Mjesta", "Kontrole Mjernih Mjesta", "Kontrole mjernih mjesta", 18, false, false, true, true, true, true, false);
+		verifikacijaZajednickihElemenata("Mjerna Mjesta", "Kontrole Mjernih Mjesta", "Kontrole mjernih mjesta", 20, false, false, true, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojProtokolaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPoRadnomNaloguWE));
@@ -27,9 +27,11 @@ public class KontroleMjernihMjesta extends PocetnaStranicaPXD {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojiloWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaFizickaLokacijaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaRazlogKontroleWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaStatusWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKreiraoKorisnikWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaZavrsioKorisnikWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumKreiranjaWE));
+		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumRealizacijeWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumZavrsavanjaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNedostupnoMjmWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKontrolaOcitanjaWE));

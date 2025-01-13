@@ -64,13 +64,10 @@ public class NaseljenaMjesta extends PocetnaStranicaPXD {
 		urediWE.click();
 		Thread.sleep(1000);
 		wait.until(ExpectedConditions.elementToBeClickable(nazivWE));
-		nazivWE.click();
-		nazivWE.clear();
-		nazivWE.sendKeys(naziv);
+		changeInput(nazivWE, naziv);
+//		nazivWE.sendKeys(naziv);
 		wait.until(ExpectedConditions.elementToBeClickable(stampaniNazivWE));
-		stampaniNazivWE.click();
-		stampaniNazivWE.clear();
-		stampaniNazivWE.sendKeys(naziv);
+		changeInput(nazivWE, naziv);
 		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
 		submitBtnWE.click();
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));

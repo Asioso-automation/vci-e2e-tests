@@ -72,9 +72,7 @@ public class Poste extends PocetnaStranicaPXD {
 		wait.until(ExpectedConditions.elementToBeClickable(urediWE));
 		urediWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(urediNazivWE));
-		urediNazivWE.click();
-		urediNazivWE.clear();
-		urediNazivWE.sendKeys(posta);
+		changeInput(urediNazivWE, posta);
 		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
 		submitBtnWE.click();
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));

@@ -139,7 +139,10 @@ public class MonitoringOcitanja extends PocetnaStranicaPXD {
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonRvtWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonRmtWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonSnaga1WE));
-		slideRightBtnWE.click();
+		try {
+			slideRightBtnWE.click();
+		} catch (Exception e) {
+		}
 		wait.until(ExpectedConditions.visibilityOf(duplaNevalidnaOcitanjaBrojilaBtnWE));
 		duplaNevalidnaOcitanjaBrojilaBtnWE.click();
 		duplaNevalidnaOcitanjaBrojilaBtnWE.click();

@@ -16,7 +16,7 @@ public class TerenskeJedinice extends PocetnaStranicaPXD {
 		super(driver);
 	}
 	
-	@FindBy(xpath = "//div[1]/div/div/div/div[1]/div/input")
+	@FindBy(xpath = "//div[1]/div[1]/div/div/div[1]/div/input")
 	private WebElement nazivWE;
 	
 	@FindBy(xpath = "//div[1]/div[2]/div/div/div[1]/div/input")
@@ -63,9 +63,8 @@ public class TerenskeJedinice extends PocetnaStranicaPXD {
 		wait.until(ExpectedConditions.elementToBeClickable(urediWE));
 		urediWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(nazivWE));
-		nazivWE.click();
-		nazivWE.clear();
-		nazivWE.sendKeys(naziv);
+		changeInput(nazivWE, naziv);
+//		nazivWE.sendKeys(naziv);
 		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
 		submitBtnWE.click();
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));

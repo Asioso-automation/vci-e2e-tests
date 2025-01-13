@@ -7,6 +7,8 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.firefox.FirefoxProfile;
@@ -40,7 +42,7 @@ public abstract class BaseTest {
 
 	@BeforeMethod
 	@Parameters({ "browser" })
-	public void setUp(@Optional("firefox") String browser) {
+	public void setUp(@Optional("edge") String browser) {
 		if (browser.equalsIgnoreCase("firefox")) {
 			System.setProperty("webdriver.gecko.driver", "src/test/resources/drivers/geckodriver.exe");
 			FirefoxProfile profile = new FirefoxProfile();
@@ -71,7 +73,12 @@ public abstract class BaseTest {
 			options.addArguments("chrome.switches", "--disable-extensions");
 			driver = new ChromeDriver(options);
 			  }
-		} else {
+		} else if (browser.equalsIgnoreCase("edge")) {
+			System.setProperty("webdriver.edge.driver", "src/test/resources/drivers/msedgedriver.exe");
+			EdgeOptions options = new EdgeOptions();
+			driver = new EdgeDriver(options);
+		}
+		else {
 		}
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		startTime = System.currentTimeMillis();

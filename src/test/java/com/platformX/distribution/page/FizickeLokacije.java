@@ -74,9 +74,8 @@ public class FizickeLokacije extends PocetnaStranicaPXD {
 		wait.until(ExpectedConditions.elementToBeClickable(urediWE));
 		urediWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(nazivWE));
-		nazivWE.click();
-		nazivWE.clear();
-		nazivWE.sendKeys(naziv);
+		changeInput(nazivWE, naziv);
+//		nazivWE.sendKeys(naziv);
 		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
 		submitBtnWE.click();
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));

@@ -72,9 +72,8 @@ public class Citaci extends PocetnaStranicaPXD {
 		wait.until(ExpectedConditions.elementToBeClickable(urediWE));
 		urediWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(imeWE));
-		imeWE.click();
-		imeWE.clear();
-		imeWE.sendKeys(ime);
+		changeInput(imeWE, ime);
+//		imeWE.sendKeys(ime);
 		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
 		submitBtnWE.click();
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));

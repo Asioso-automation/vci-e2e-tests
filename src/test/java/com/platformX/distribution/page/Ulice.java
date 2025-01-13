@@ -54,9 +54,7 @@ public class Ulice extends PocetnaStranicaPXD {
 		urediWE.click();
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		wait.until(ExpectedConditions.elementToBeClickable(urediNazivWE));
-		urediNazivWE.click();
-		urediNazivWE.clear();
-		urediNazivWE.sendKeys(ulica);
+		changeInput(urediNazivWE, ulica);
 		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
 		submitBtnWE.click();
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
