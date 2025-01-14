@@ -153,25 +153,26 @@ public class ObracunskaMjernaMjesta extends PocetnaStranicaPXD {
 	}
 	
 	 public String urediMjernoMjesto(String sifraMjernogMjesta) throws InterruptedException {
-		 wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
-		 Thread.sleep(800);																// ne radi burgerBarWE.click() bez Thread.sleep
-		 burgerBarWE.click();
-		 wait.until(ExpectedConditions.elementToBeClickable(urediWE));
-		 urediWE.click();
-		 try {
-			 wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
-		 } catch (Exception e) {
-			 wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
-		 }
-		 wait.until(ExpectedConditions.elementToBeClickable(poljeSifraWE));
-		 Thread.sleep(500);
-		 poljeSifraWE.click();
-		 poljeSifraWE.clear();
-		 poljeSifraWE.sendKeys(sifraMjernogMjesta);
-		 wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
-		 submitBtnWE.click();
-		 wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
-		 return sifraMjernogMjesta; 
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView(true);", burgerBarWE);
+		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
+		Thread.sleep(800);																// ne radi burgerBarWE.click() bez Thread.sleep
+		burgerBarWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(urediWE));
+		urediWE.click();
+		try {
+			wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
+		} catch (Exception e) {
+			wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
+		}
+		wait.until(ExpectedConditions.elementToBeClickable(poljeSifraWE));
+//		Thread.sleep(500);
+		changeInput(poljeSifraWE, sifraMjernogMjesta);
+//		poljeSifraWE.sendKeys(sifraMjernogMjesta);
+		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
+		submitBtnWE.click();
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
+		return sifraMjernogMjesta; 
 	 }
 
 }

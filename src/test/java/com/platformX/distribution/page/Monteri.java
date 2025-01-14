@@ -46,9 +46,8 @@ public class Monteri extends PocetnaStranicaPXD {
 		urediWE.click();
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		wait.until(ExpectedConditions.elementToBeClickable(imePrezimeWE));
-		imePrezimeWE.click();
-		imePrezimeWE.clear();
-		imePrezimeWE.sendKeys(naziv);
+		changeInput(imePrezimeWE, naziv);
+//		imePrezimeWE.sendKeys(naziv);
 		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
 		submitBtnWE.click();
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));

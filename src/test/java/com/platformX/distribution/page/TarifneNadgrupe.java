@@ -45,9 +45,8 @@ public class TarifneNadgrupe extends PocetnaStranicaPXD {
 		urediWE.click();
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		wait.until(ExpectedConditions.elementToBeClickable(nazivTarifneNadrupeWE));
-		nazivTarifneNadrupeWE.click();
-		nazivTarifneNadrupeWE.clear();
-		nazivTarifneNadrupeWE.sendKeys(naziv);
+		changeInput(nazivTarifneNadrupeWE, naziv);
+//		nazivTarifneNadrupeWE.sendKeys(naziv);
 		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
 		submitBtnWE.click();
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));

@@ -133,9 +133,8 @@ public class ObracunskiUgovori extends PocetnaStranicaPXD {
 		wait.until(ExpectedConditions.elementToBeClickable(urediWE));
 		urediWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(poljeAktivnaKonstanta1WE));
-		poljeAktivnaKonstanta1WE.click();
-		poljeAktivnaKonstanta1WE.clear();
-		poljeAktivnaKonstanta1WE.sendKeys(konstanta);
+		changeInput(poljeAktivnaKonstanta1WE, konstanta);
+//		poljeAktivnaKonstanta1WE.sendKeys(konstanta);
 		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
 		submitBtnWE.click();
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));

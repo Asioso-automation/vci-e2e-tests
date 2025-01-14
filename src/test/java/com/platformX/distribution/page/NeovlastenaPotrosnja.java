@@ -88,11 +88,8 @@ public class NeovlastenaPotrosnja extends PocetnaStranicaPXD {
 		wait.until(ExpectedConditions.elementToBeClickable(urediWE));
 		urediWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(poljeKupacWE));
-		poljeKupacWE.click();
-		poljeKupacWE.click();
-		poljeKupacWE.clear();
-		poljeKupacWE.clear();
-		poljeKupacWE.sendKeys(noviKupac);
+		changeInput(poljeKupacWE, noviKupac);
+//		poljeKupacWE.sendKeys(noviKupac);
 		Thread.sleep(1000);
 		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
 		poljeKupacWE.sendKeys(Keys.ARROW_DOWN);

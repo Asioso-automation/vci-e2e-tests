@@ -90,9 +90,8 @@ public class FizickaLica extends PocetnaStranicaPXD {
 		 wait.until(ExpectedConditions.elementToBeClickable(urediWE));
 		 urediWE.click();
 		 wait.until(ExpectedConditions.elementToBeClickable(poljeImeIPrezimeWE));
-		 poljeImeIPrezimeWE.click();
-		 poljeImeIPrezimeWE.clear();
-		 poljeImeIPrezimeWE.sendKeys(naziv);
+		 changeInput(poljeImeIPrezimeWE, naziv);
+//		 poljeImeIPrezimeWE.sendKeys(naziv);
 		 wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
 		 submitBtnWE.click();
 		 wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));

@@ -112,9 +112,8 @@ public class PravnaLica extends PocetnaStranicaPXD {
 		wait.until(ExpectedConditions.elementToBeClickable(urediWE));
 		urediWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(poljeNazivWE));
-		poljeNazivWE.click();
-		poljeNazivWE.clear();
-		poljeNazivWE.sendKeys(naziv);
+		changeInput(poljeNazivWE, naziv);
+//		poljeNazivWE.sendKeys(naziv);
 		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
 		submitBtnWE.click();
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));

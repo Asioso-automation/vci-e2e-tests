@@ -93,9 +93,8 @@ public class ZbirnaKontrolnaMjernaMjesta extends PocetnaStranicaPXD {
 		urediWE.click();
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		wait.until(ExpectedConditions.elementToBeClickable(poljeNazivWE));
-		poljeNazivWE.click();
-		poljeNazivWE.clear();
-		poljeNazivWE.sendKeys(nazivZbirnogKontrolnogMjesta);
+		changeInput(poljeNazivWE, nazivZbirnogKontrolnogMjesta);
+//		poljeNazivWE.sendKeys(nazivZbirnogKontrolnogMjesta);
 		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
 		submitBtnWE.click();
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));

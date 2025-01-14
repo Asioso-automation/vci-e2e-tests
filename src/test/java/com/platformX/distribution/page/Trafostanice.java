@@ -80,7 +80,10 @@ public class Trafostanice extends PocetnaStranicaPXD {
 		fizickaLokacijaWE.sendKeys(Keys.ENTER);
 		wait.until(ExpectedConditions.elementToBeClickable(tipWE));
 		tipWE.click();
-		tipWE.sendKeys(Helper.getRandomString(4));
+		tipWE.sendKeys(Helper.getRandomNumberInRange(1, 12));
+		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
+		tipWE.sendKeys(Keys.ARROW_DOWN);
+		tipWE.sendKeys(Keys.ENTER);
 		wait.until(ExpectedConditions.elementToBeClickable(mjestoWE));
 		mjestoWE.click();
 		mjestoWE.sendKeys(Helper.getRandomNumber(1));
@@ -112,9 +115,8 @@ public class Trafostanice extends PocetnaStranicaPXD {
 		urediWE.click();
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		wait.until(ExpectedConditions.elementToBeClickable(nazivWE));
-		nazivWE.click();
-		nazivWE.clear();
-		nazivWE.sendKeys(naziv);
+		changeInput(nazivWE, naziv);
+//		nazivWE.sendKeys(naziv);
 		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
 		submitBtnWE.click();
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));

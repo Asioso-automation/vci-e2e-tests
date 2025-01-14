@@ -5,6 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.List;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -296,6 +297,8 @@ public abstract class PageBase {
 		catch (Exception e) {
 			wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 			Thread.sleep(900);
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+			js.executeScript("arguments[0].scrollIntoView(true);", burgerBarWE);
 			wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 			burgerBarWE.click();
 		}
