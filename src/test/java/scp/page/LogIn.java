@@ -22,38 +22,44 @@ public class LogIn extends PageBase {
 	
 	WebDriverWait wait = new WebDriverWait(driver, 30);
 	
-	@FindBy(xpath = "//div[3]/button")
+	@FindBy(xpath = "//div/button")
 	private WebElement prijaviSeBtnWE;
 
-	@FindBy(xpath = "//div[2]/div/div[1]/div/input")
+	@FindBy(xpath = "//div[3]/div[1]/div/div[3]/input")
 	private WebElement korisnickoImeWE;
 
-	@FindBy(xpath = "//div[3]/div/div/div[1]/div[1]/input")
+	@FindBy(xpath = "//div[4]/div[1]/div/div[3]/input")
 	private WebElement lozinkaWE;
 	
-	@FindBy(xpath = "//form/div/div[2]/div[1]/div/div[1]")
+	@FindBy(xpath = "//div[1]/div/div[3]/div")
 	private WebElement organizacijaWE;
 	
 	@FindBy(xpath = "//div[2]/div/div/div")
 	private WebElement porukaUpozorenjaWE;
 	
-	public void verifikujLogIn() {
+	@FindBy(xpath = "//img[@alt='SCP Smart City Platform']")
+	private WebElement logoSCPWE;
+	
+	public void verifikujLogIn() throws InterruptedException {
+		wait.until(ExpectedConditions.visibilityOf(logoSCPWE));
+//		Thread.sleep(1000);
+		korisnickoImeWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(korisnickoImeWE));
+		lozinkaWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(lozinkaWE));
 		wait.until(ExpectedConditions.visibilityOf(prijaviSeBtnWE));
 	}
 
 	public void logIn(WebElement organizacija) throws InterruptedException {
-		wait.until(ExpectedConditions.visibilityOf(korisnickoImeWE));
-		wait.until(ExpectedConditions.visibilityOf(lozinkaWE));
-		wait.until(ExpectedConditions.elementToBeClickable(organizacijaWE));
-		wait.until(ExpectedConditions.elementToBeClickable(korisnickoImeWE));
+		wait.until(ExpectedConditions.visibilityOf(logoSCPWE));
 		organizacijaWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
 		wait.until(ExpectedConditions.elementToBeClickable(organizacija));
 		organizacija.click();
+		wait.until(ExpectedConditions.elementToBeClickable(organizacijaWE));
+		korisnickoImeWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(korisnickoImeWE));
 		korisnickoImeWE.sendKeys(scp_properties.getValue("SCP.USER.NAME"));
+		lozinkaWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(lozinkaWE));
 		lozinkaWE.sendKeys(scp_properties.getValue("SCP.PASSWORD"));
 		wait.until(ExpectedConditions.elementToBeClickable(prijaviSeBtnWE));

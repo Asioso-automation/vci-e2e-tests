@@ -21,9 +21,9 @@ public class SCP_001_LogIn_LogOut_Test extends BaseTest {
         LogIn logIn = new LogIn(driver, SCP_PROPERTIES);
         PocetnaStranica pocetna = new PocetnaStranica(driver);
 		logIn.verifikujLogIn();
-        logIn.logIn(pocetna.orgCistocaGradiskaWE);
+		logIn.logIn(pocetna.orgCistocaGradiskaWE);
 		pocetna.verifikujPocetnuStranicu();
-		pocetna.izlogujSe();
+		pocetna.odjaviSe();
 		logIn.verifikujLogIn();
 	}
 
@@ -34,7 +34,7 @@ public class SCP_001_LogIn_LogOut_Test extends BaseTest {
         logIn.verifikujLogIn();
         logIn.logIn(pocetna.orgGradGradiskaWE);
         pocetna.verifikujPocetnuStranicu();
-        pocetna.izlogujSe();
+        pocetna.odjaviSe();
         logIn.verifikujLogIn();
     }
     
@@ -45,7 +45,7 @@ public class SCP_001_LogIn_LogOut_Test extends BaseTest {
         logIn.verifikujLogIn();
         logIn.logIn(pocetna.orgGasWE);
         pocetna.verifikujPocetnuStranicu();
-        pocetna.izlogujSe();
+        pocetna.odjaviSe();
         logIn.verifikujLogIn();
     }
     
@@ -56,7 +56,7 @@ public class SCP_001_LogIn_LogOut_Test extends BaseTest {
         logIn.verifikujLogIn();
         logIn.logIn(pocetna.orgVodovodGradiskaWE);
         pocetna.verifikujPocetnuStranicu();
-        pocetna.izlogujSe();
+        pocetna.odjaviSe();
         logIn.verifikujLogIn();
     }
     
@@ -67,7 +67,7 @@ public class SCP_001_LogIn_LogOut_Test extends BaseTest {
         logIn.verifikujLogIn();
         logIn.logIn(pocetna.orgToplanaGradiskaWE);
         pocetna.verifikujPocetnuStranicu();
-        pocetna.izlogujSe();
+        pocetna.odjaviSe();
         logIn.verifikujLogIn();
     }
     
@@ -78,7 +78,7 @@ public class SCP_001_LogIn_LogOut_Test extends BaseTest {
         logIn.verifikujLogIn();
         logIn.logIn(pocetna.orgSonWE);
         pocetna.verifikujPocetnuStranicu();
-        pocetna.izlogujSe();
+        pocetna.odjaviSe();
         logIn.verifikujLogIn();
     }
     

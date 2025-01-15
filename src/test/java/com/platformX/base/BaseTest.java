@@ -51,8 +51,6 @@ public abstract class BaseTest {
 			profile.setPreference("dom.disable_beforeunload", true);
 			FirefoxOptions options = new FirefoxOptions();
 			options.setProfile(profile);
-			options.addArguments("--start-maximized");
-			options.addArguments("--window-size=1466,768");
 			driver = new FirefoxDriver(options);
 		} else if (browser.equalsIgnoreCase("chrome")) {
 			try {

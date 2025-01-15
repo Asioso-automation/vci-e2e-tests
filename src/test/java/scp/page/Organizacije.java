@@ -24,7 +24,7 @@ public class Organizacije extends PocetnaStranica{
 	public void verifikujOrganizacije() throws InterruptedException, FileNotFoundException, IOException {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
-				"//div[contains(@class, 'v-toolbar__title') and contains(text(), 'Organizacije')]")));
+				"//div[contains(@class, 'v-toolbar-title') and text()='Organizacije']")));
 		verifikacijaZajednickihElemenata("Šifarnici", "Organizacije", "Organizacije", 11, false, false, false, true, true, true, false);
 		wait.until(ExpectedConditions.elementToBeClickable(SpremnaZaObracunBtnWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaId1WE));

@@ -21,8 +21,8 @@ public class PocetnaStranica extends PageBase {
 	
 	WebDriverWait wait = new WebDriverWait(driver, 30);
 
-	@FindBy(xpath = "//div[contains(text(), 'Izloguj se')]")
-	protected WebElement izlogujSeWE;
+	@FindBy(xpath = "//div[contains(text(), 'Odjavi se')]")
+	protected WebElement odjaviSeWE;
 	
 	@FindBy(xpath = "//ul/button[1]")
 	protected WebElement sekcijaBtnWE;
@@ -146,43 +146,43 @@ public class PocetnaStranica extends PageBase {
 
 //	 Sekcije
 
-	@FindBy(xpath = "//*[contains(text(),'Šifarnici') and @class='v-btn__content']")
+	@FindBy(xpath = "//*[text()='Šifarnici' and @class='v-btn__content']")
 	protected WebElement sifarniciWE;
 
-	@FindBy(xpath = "//*[contains(text(),'Tarifni sistem') and @class='v-btn__content']")
+	@FindBy(xpath = "//*[text()='Tarifni sistem' and @class='v-btn__content']")
 	protected WebElement tarifniSistemWE;
 
-	@FindBy(xpath = "//*[contains(text(),'Mjerna mjesta') and @class='v-btn__content']")
+	@FindBy(xpath = "//*[text()='Mjerna mjesta' and @class='v-btn__content']")
 	protected WebElement mjernaMjestaWE;
 
-	@FindBy(xpath = "//*[contains(text(),'Kupci') and @class='v-btn__content']")
+	@FindBy(xpath = "//*[text()='Kupci' and @class='v-btn__content']")
 	protected WebElement kupciWE;
 	
-	@FindBy(xpath = "//*[contains(text(),'Mjerila') and @class='v-btn__content']")
+	@FindBy(xpath = "//*[text()='Mjerila' and @class='v-btn__content']")
 	protected WebElement mjerilaWE;
 	
-	@FindBy(xpath = "//*[contains(text(),'Očitanja') and @class='v-btn__content']")
+	@FindBy(xpath = "//*[text()='Očitanja' and @class='v-btn__content']")
 	protected WebElement ocitanjaWE;
 
-	@FindBy(xpath = "//*[contains(text(),'Obračun') and @class='v-btn__content']")
+	@FindBy(xpath = "//*[text()='Obračun' and @class='v-btn__content']")
 	protected WebElement obracunWE;
 	
-	@FindBy(xpath = "//*[contains(text(),'Finansije') and @class='v-btn__content']")
+	@FindBy(xpath = "//*[text()='Finansije' and @class='v-btn__content']")
 	protected WebElement finansijeWE;
 	
-	@FindBy(xpath = "//*[contains(text(),'Isključenja') and @class='v-btn__content']")
+	@FindBy(xpath = "//*[text()='Isključenja' and @class='v-btn__content']")
 	protected WebElement iskljucenjaWE;
 	
-	@FindBy(xpath = "//*[contains(text(),'Pravni odnosi') and @class='v-btn__content']")
+	@FindBy(xpath = "//*[text()='Pravni odnosi' and @class='v-btn__content']")
 	protected WebElement pravniOdnosiWE;
 	
-	@FindBy(xpath = "//*[contains(text(),'Izvještaji') and @class='v-btn__content']")
+	@FindBy(xpath = "//*[text()='Izvještaji' and @class='v-btn__content']")
 	protected WebElement izvjestajiWE;
 	
-	@FindBy(xpath = "//*[contains(text(),'Administracija') and @class='v-btn__content']")
+	@FindBy(xpath = "//*[text()='Administracija' and @class='v-btn__content']")
 	protected WebElement administracijaWE;
 
-	@FindBy(xpath = "//i[contains(@class, 'iconPosition fa fa-user')]")
+	@FindBy(xpath = "(//*[@class='svg-inline--fa fa-user'])[1]")
 	protected WebElement profilWE;
 	
 	
@@ -432,43 +432,43 @@ public class PocetnaStranica extends PageBase {
 	
 //  ORGANIZACIJE
 	    
-	@FindBy(xpath = "//*[contains(@class, 'v-list__tile__title') and contains(text(), 'KP Gradska čistoća')]")
+	@FindBy(xpath = "//*[contains(@class, 'v-list-item-title') and contains(text(), 'KP Gradska čistoća')]")
 	public WebElement orgCistocaGradiskaWE;
 	    
-	@FindBy(xpath = "//*[contains(@class, 'v-list__tile__title') and contains(text(), 'Grad Gradiška')]")
+	@FindBy(xpath = "//*[contains(@class, 'v-list-item-title') and contains(text(), 'Grad Gradiška')]")
 	public WebElement orgGradGradiskaWE;
 	    
-	@FindBy(xpath = "//*[contains(@class, 'v-list__tile__title') and contains(text(), 'KP Toplana')]")
+	@FindBy(xpath = "//*[contains(@class, 'v-list-item-title') and contains(text(), 'KP Toplana')]")
 	public WebElement orgToplanaGradiskaWE;
 	
-	@FindBy(xpath = "//*[contains(@class, 'v-list__tile__title') and contains(text(), 'Toplane - INS a.d. Istočno Sarajevo')]")
+	@FindBy(xpath = "//*[contains(@class, 'v-list-item-title') and contains(text(), 'Toplane - INS a.d. Istočno Sarajevo')]")
 	public WebElement orgToplanaInsWE;
 	
-	@FindBy(xpath = "//*[contains(@class, 'v-list__tile__title') and contains(text(), 'Eko Toplane Banja Luka d.o.o.')]")
+	@FindBy(xpath = "//*[contains(@class, 'v-list-item-title') and contains(text(), 'Eko Toplane Banja Luka d.o.o.')]")
 	public WebElement orgEkoToplanaWE;
 	    
-	@FindBy(xpath = "//*[contains(@class, 'v-list__tile__title') and contains(text(), 'KP Vodovod')]")
+	@FindBy(xpath = "//*[contains(@class, 'v-list-item-title') and contains(text(), 'KP Vodovod')]")
 	public WebElement orgVodovodGradiskaWE;
 	
-	@FindBy(xpath = "//*[contains(@class, 'v-list__tile__title') and contains(text(), 'Mokro')]")
+	@FindBy(xpath = "//*[contains(@class, 'v-list-item-title') and contains(text(), 'Mokro')]")
 	public WebElement orgMokroWE;
 	    
-	@FindBy(xpath = "//*[contains(@class, 'v-list__tile__title') and contains(text(), 'SON')]")
+	@FindBy(xpath = "//*[contains(@class, 'v-list-item-title') and contains(text(), 'SON')]")
 	public WebElement orgSonWE;
 	
-	@FindBy(xpath = "//*[contains(@class, 'v-list__tile__title') and contains(text(), 'Gas')]")
+	@FindBy(xpath = "//*[contains(@class, 'v-list-item-title') and contains(text(), 'Gas')]")
 	public WebElement orgGasWE;
 	
-	@FindBy(xpath = "//*[contains(@class, 'v-list__tile__title') and contains(text(), 'Sarajevo-gas a.d. Istočno Sarajevo')]")
+	@FindBy(xpath = "//*[contains(@class, 'v-list-item-title') and contains(text(), 'Sarajevo-gas a.d. Istočno Sarajevo')]")
 	public WebElement orgSarajevoGasWE;
 	
-	@FindBy(xpath = "//*[contains(@class, 'v-list__tile__title') and contains(text(), 'Vodovod')]")
+	@FindBy(xpath = "//*[contains(@class, 'v-list-item-title') and contains(text(), 'Vodovod')]")
 	public WebElement orgVodovodIsWE;
 	
-	@FindBy(xpath = "//*[contains(@class, 'v-list__tile__title') and contains(text(), 'KP \"VODOVOD I KANALIZACIJA\" A.D. ISTOČNO SARAJEVO')]")
+	@FindBy(xpath = "//*[contains(@class, 'v-list-item-title') and contains(text(), 'KP \"VODOVOD I KANALIZACIJA\" A.D. ISTOČNO SARAJEVO')]")
 	public WebElement orgSonISVodovodWE;
 	
-	@FindBy(xpath = "//*[contains(@class, 'v-list__tile__title') and contains(text(), 'Administracija')]")
+	@FindBy(xpath = "//*[contains(@class, 'v-list-item-title') and contains(text(), 'Administracija')]")
 	public WebElement orgAdministracijaWE;
 
 	public void verifikujPocetnuStranicu() throws InterruptedException {
@@ -478,7 +478,7 @@ public class PocetnaStranica extends PageBase {
 //		wait.until(ExpectedConditions.elementToBeClickable(ocitanjaWE));
 		wait.until(ExpectedConditions.elementToBeClickable(obracunWE));
 		wait.until(ExpectedConditions.elementToBeClickable(izvjestajiWE));
-//		wait.until(ExpectedConditions.elementToBeClickable(profilWE));
+		wait.until(ExpectedConditions.elementToBeClickable(profilWE));
 		Thread.sleep(1000);
 	}
 	
@@ -562,12 +562,12 @@ public class PocetnaStranica extends PageBase {
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 	}
 	
-	public void izlogujSe() {
+	public void odjaviSe() {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(profilWE));
 		profilWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(izlogujSeWE));
-		izlogujSeWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(odjaviSeWE));
+		odjaviSeWE.click();
 	}
 	
 	public FizickaLica navigirajNaFizickaLica() throws Exception {
