@@ -75,7 +75,7 @@ public class PocetnaStranica extends PageBase {
 	@FindBy(xpath = "//tr/td[9]/div/div/div/div[1]/input")
 	public WebElement filterKolona9WE;
 	
-	@FindBy(xpath = "//div[1]/nav/div/div[1]")
+	@FindBy(xpath = "//div/div/div/div/header/div/div[1]/div")
 	public WebElement naslovStraniceWE;
 	
 	@FindBy(xpath = "//div[1]/table/tbody/tr[1]/td[1]")
@@ -470,6 +470,23 @@ public class PocetnaStranica extends PageBase {
 	
 	@FindBy(xpath = "//*[contains(@class, 'v-list-item-title') and contains(text(), 'Administracija')]")
 	public WebElement orgAdministracijaWE;
+	
+//	ZAJEDNICKI ELEMENTI
+	
+	@FindBy(xpath = "//*[contains(@class, 'fa-plus')]")
+	public WebElement dodajBtnWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'fa-file-arrow-down')]")
+	protected WebElement preuzmiExcelBtnWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'fa-broom')]")
+	protected WebElement ukloniFiltereBtnWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'fa-arrow-rotate-right')]")
+	protected WebElement osvjeziBtnWE;
+	
+	@FindBy(xpath = "//*[contains(@class, 'fa-info')]")
+	protected WebElement infoBtnWE;
 
 	public void verifikujPocetnuStranicu() throws InterruptedException {
 		wait.until(ExpectedConditions.elementToBeClickable(sifarniciWE));
@@ -487,7 +504,7 @@ public class PocetnaStranica extends PageBase {
 			boolean osvjezi, boolean info) throws InterruptedException {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(sekcijaBtnWE));
-		wait.until(ExpectedConditions.elementToBeClickable(stranicaBtnWE));
+		wait.until(ExpectedConditions.elementToBeClickable(stranicaBtnWE));		
 		assertTrue(sekcijaBtnWE.getText().trim().equals(sekcija), stranica + ": Naziv sekcije nije dobar!");
 		assertTrue(stranicaBtnWE.getText().trim().equals(stranica), stranica + ": Naziv stranice nije dobar!");
 		assertTrue(naslovStraniceWE.getText().trim().equals(naslovStranice), stranica + ": Naziv stranice nije dobar!");
@@ -505,7 +522,7 @@ public class PocetnaStranica extends PageBase {
 			wait.until(ExpectedConditions.elementToBeClickable(preuzmiExcelBtnWE));
 		}
 		if (ukloniFiltere == true) {
-			wait.until(ExpectedConditions.elementToBeClickable(ukloniFiltereBtnWE));
+			wait.until(ExpectedConditions.visibilityOf(ukloniFiltereBtnWE));
 		}
 		if (osvjezi == true) {
 			wait.until(ExpectedConditions.elementToBeClickable(osvjeziBtnWE));

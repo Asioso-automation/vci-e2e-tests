@@ -390,4 +390,12 @@ public abstract class PageBase {
 //		element.sendKeys(Keys.BACK_SPACE);
 	}
 	
+//	test - zajednicka metoda za verifikaciju kolona			
+	public void verifikacijaKolona(WebElement pageName[]) {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		for (int i=0; i<pageName.length; i++) {
+			wait.until(ExpectedConditions.visibilityOf(pageName[i]));
+		}
+	}
+	
 }
