@@ -17,7 +17,7 @@ public class Tuzbe extends PocetnaStranica {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title body-1 ml-0 pl-0 text-default') and starts-with(., ' Tužbe')]")));
-		verifikacijaZajednickihElemenata("Pravni Odnosi", "Tužbe", "Tužbe", 15, false, false, true, true, true, true, false);
+		verifikacijaZajednickihElemenata2("Pravni Odnosi", "Tužbe", "Tužbe", 15, false, false, true, true, true, true, false);
 		// TODO dodati verifikacije novih kolona
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKupacWE));

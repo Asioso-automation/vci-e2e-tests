@@ -17,7 +17,7 @@ public class RegistarPlombi extends PocetnaStranicaPXD {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Registar plombi')]")));
-		verifikacijaZajednickihElemenata("Mjerna Mjesta", "Registar Plombi", "Registar plombi", 10, false, false, true, true, true, true, false);
+		verifikacijaZajednickihElemenata2("Mjerna Mjesta", "Registar Plombi", "Registar plombi", 10, false, false, true, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaOznaka1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojPlombeWE));

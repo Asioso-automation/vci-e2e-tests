@@ -17,7 +17,7 @@ public class FinansijskeKartice extends PocetnaStranicaPXD {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Finansijska kartica')]")));
-		verifikacijaZajednickihElemenata("Finansije", "Finansijske Kartice", "Finansijska kartica", 13, false, false, false, false, false, false, true);
+		verifikacijaZajednickihElemenata2("Finansije", "Finansijske Kartice", "Finansijska kartica", 13, false, false, false, false, false, false, true);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMjernoMjestoEicWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPeriodWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumWE));

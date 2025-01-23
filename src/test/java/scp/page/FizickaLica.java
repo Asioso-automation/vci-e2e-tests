@@ -48,7 +48,7 @@ public class FizickaLica extends PocetnaStranica {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title') and contains(text(), 'Fizička Lica')]")));
-	    verifikacijaZajednickihElemenata("KUPCI", "FIZIČKA LICA", "Fizička Lica", 13, false, false, true, true, true, true, false);
+	    verifikacijaZajednickihElemenata2("KUPCI", "FIZIČKA LICA", "Fizička Lica", 13, false, false, true, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaId1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPrezimeImeWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMjestoWE));

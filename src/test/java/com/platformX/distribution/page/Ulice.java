@@ -24,15 +24,18 @@ public class Ulice extends PocetnaStranicaPXD {
 	
 	@FindBy(xpath = "//div[2]/div/div/div[1]/div/input")
 	private WebElement urediNazivWE;
+	
+	Kolone kolone = new Kolone(driver);
+	
+	public WebElement[] columns = {kolone.kolonaIdWE, kolone.kolonaNazivWE, kolone.kolonaValidnaWE};
+	
+	public WebElement[] buttons = {dodajBtnWE, preuzmiExcelBtnWE, ukloniFiltereBtnWE, osvjeziBtnWE};
 
-	public void verifikujUlice() throws InterruptedException, FileNotFoundException, IOException {
-		Kolone kolone = new Kolone(driver);
+	public void navigirajVerifikujUlice() throws Exception {
+		navigateOnPage(Ulice.class, "Šifarnici", "Ulice");
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Ulice')]")));
-		verifikacijaZajednickihElemenata("Šifarnici", "Ulice", "Ulice", 4, false, false, true, true, true, true, false);
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNazivWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaValidnaWE));
+		verifikacijaStranice("Šifarnici", "Ulice", "Ulice", columns, buttons);
 	}
 	
 	public String dodajUlicu(String naziv) throws InterruptedException {

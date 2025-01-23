@@ -17,7 +17,7 @@ public class VanbilansnaEvidencijaTroskovaSudskihPostupaka extends PocetnaStrani
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title body-1 ml-0 pl-0 text-default') and starts-with(., ' Vanbilansna')]")));
-		verifikacijaZajednickihElemenata("Pravni Odnosi", "Vanbilansna Evidencija Troškova Sudskih Postupaka", "Vanbilansna evidencija troškova sudskih postupaka", 17, false, false, true, true, true, true, false);
+		verifikacijaZajednickihElemenata2("Pravni Odnosi", "Vanbilansna Evidencija Troškova Sudskih Postupaka", "Vanbilansna evidencija troškova sudskih postupaka", 17, false, false, true, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKupacWE));		
 		wait.until(ExpectedConditions.visibilityOf(kolone.tuzbaWE));

@@ -26,12 +26,12 @@ public class PX_DIST_007_Opstine_CRUD_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		Opstine opstine = homePage.navigateOnPage(Opstine.class, "Šifarnici", "Opštine");
-		opstine.verifikujOpstine();
+		Opstine opstine = new Opstine(driver);
+		opstine.navigirajVerifikujOpstine();
 		opstine.dodajOpstinu(opstina);
 		opstine.verifikujPoruku("Uspješno završeno.");
 		opstine.pretraziStavku(homePage.filterKolona2WE, opstina);
-		opstine.verifikujOpstine();
+		opstine.verifikacijaStranice("Šifarnici", "Opštine", "Opštine", opstine.columns, opstine.buttons);
 		opstine.verifikujStavku(opstina, homePage.podatak2Tabela2WE);
 	}
 	
@@ -42,15 +42,15 @@ public class PX_DIST_007_Opstine_CRUD_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		Opstine opstine = homePage.navigateOnPage(Opstine.class, "Šifarnici", "Opštine");
-		opstine.verifikujOpstine();
+		Opstine opstine = new Opstine(driver);
+		opstine.navigirajVerifikujOpstine();
 		opstine.pretraziStavku(homePage.filterKolona2WE, opstina);
-		opstine.verifikujOpstine();
+		opstine.verifikacijaStranice("Šifarnici", "Opštine", "Opštine", opstine.columns, opstine.buttons);
 		opstine.verifikujStavku(opstina, homePage.podatak2Tabela2WE);
 		opstine.urediOpstinu(novaOpstina);
 		opstine.verifikujPoruku("Uspješno završeno.");
 		opstine.pretraziStavku(homePage.filterKolona2WE, novaOpstina);
-		opstine.verifikujOpstine();
+		opstine.verifikacijaStranice("Šifarnici", "Opštine", "Opštine", opstine.columns, opstine.buttons);
 		opstine.verifikujStavku(novaOpstina, homePage.podatak2Tabela2WE);
 	}
 	
@@ -61,10 +61,10 @@ public class PX_DIST_007_Opstine_CRUD_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		Opstine opstine = homePage.navigateOnPage(Opstine.class, "Šifarnici", "Opštine");
-		opstine.verifikujOpstine();
+		Opstine opstine = new Opstine(driver);
+		opstine.navigirajVerifikujOpstine();
 		opstine.pretraziStavku(homePage.filterKolona2WE, novaOpstina);
-		opstine.verifikujOpstine();
+		opstine.verifikacijaStranice("Šifarnici", "Opštine", "Opštine", opstine.columns, opstine.buttons);
 		opstine.verifikujStavku(novaOpstina, homePage.podatak2Tabela2WE);
 		opstine.obrisiStavku();
 		opstine.verifikujPoruku("Brisanje je uspješno završeno");

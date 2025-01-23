@@ -29,18 +29,18 @@ public class PX_DIST_005_Fizicke_Lokacije_CRUD_Test extends BaseTest {
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
 		TerenskeJedinice terenskeJedinice = homePage.navigateOnPage(TerenskeJedinice.class, "Šifarnici", "Terenske jedinice");
-		terenskeJedinice.verifikujTerenskeJedinice();
+		terenskeJedinice.navigirajVerifikujTerenskeJedinice();
 		terenskeJedinice.dodajTerenskuJedinicu(terenskaJedinica);
 		terenskeJedinice.verifikujPoruku("Uspješno završeno.");
 		terenskeJedinice.pretraziStavku(homePage.filterKolona2WE, terenskaJedinica);
-		terenskeJedinice.verifikujTerenskeJedinice();
+		terenskeJedinice.navigirajVerifikujTerenskeJedinice();
 		terenskeJedinice.verifikujStavku(terenskaJedinica, homePage.podatak2Tabela2WE);
 		FizickeLokacije fizickeLokacije = homePage.navigateOnPage(FizickeLokacije.class, "Šifarnici", "Fizičke lokacije");
-		fizickeLokacije.verifikujFizickeLokacije();
+		fizickeLokacije.navigirajVerifikujFizickeLokacije();
 		fizickeLokacije.dodajFizickuLokaciju(fizickaLokacija, terenskaJedinica);
 		fizickeLokacije.verifikujPoruku("Uspješno završeno.");
 		fizickeLokacije.pretraziStavku(homePage.filterKolona2WE, fizickaLokacija);
-		fizickeLokacije.verifikujFizickeLokacije();
+		fizickeLokacije.navigirajVerifikujFizickeLokacije();
 		fizickeLokacije.verifikujStavku(fizickaLokacija, homePage.podatak2Tabela2WE);
 	}
 
@@ -52,14 +52,14 @@ public class PX_DIST_005_Fizicke_Lokacije_CRUD_Test extends BaseTest {
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
 		FizickeLokacije fizickeLokacije = homePage.navigateOnPage(FizickeLokacije.class, "Šifarnici", "Fizičke lokacije");
-		fizickeLokacije.verifikujFizickeLokacije();
+		fizickeLokacije.navigirajVerifikujFizickeLokacije();
 		fizickeLokacije.pretraziStavku(homePage.filterKolona2WE, fizickaLokacija);
-		fizickeLokacije.verifikujFizickeLokacije();
+		fizickeLokacije.navigirajVerifikujFizickeLokacije();
 		fizickeLokacije.verifikujStavku(fizickaLokacija, homePage.podatak2Tabela2WE);
 		fizickeLokacije.urediFizickuLokaciju(novaFizickaLokacija);
 		fizickeLokacije.verifikujPoruku("Uspješno završeno.");
 		fizickeLokacije.pretraziStavku(homePage.filterKolona2WE, novaFizickaLokacija);
-		fizickeLokacije.verifikujFizickeLokacije();
+		fizickeLokacije.navigirajVerifikujFizickeLokacije();
 		fizickeLokacije.verifikujStavku(novaFizickaLokacija, homePage.podatak2Tabela2WE);
 	}
 	
@@ -71,9 +71,9 @@ public class PX_DIST_005_Fizicke_Lokacije_CRUD_Test extends BaseTest {
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
 		FizickeLokacije fizickeLokacije = homePage.navigateOnPage(FizickeLokacije.class, "Šifarnici", "Fizičke lokacije");
-		fizickeLokacije.verifikujFizickeLokacije();
+		fizickeLokacije.navigirajVerifikujFizickeLokacije();
 		fizickeLokacije.pretraziStavku(homePage.filterKolona2WE, novaFizickaLokacija);
-		fizickeLokacije.verifikujFizickeLokacije();
+		fizickeLokacije.navigirajVerifikujFizickeLokacije();
 		fizickeLokacije.verifikujStavku(novaFizickaLokacija, homePage.podatak2Tabela2WE);
 		fizickeLokacije.obrisiStavku();
 		fizickeLokacije.verifikujPoruku("Brisanje je uspješno završeno");

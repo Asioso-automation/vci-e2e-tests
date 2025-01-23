@@ -17,7 +17,7 @@ public class ZahtjeviZaUkljucenja extends PocetnaStranicaPXD {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Zahtjevi za uključenja')]")));
-		verifikacijaZajednickihElemenata("Mjerna Mjesta", "Zahtjevi Za Uključenja", "Zahtjevi za uključenja (proces 16)", 17, false, false, true, true, true, true, true);
+		verifikacijaZajednickihElemenata2("Mjerna Mjesta", "Zahtjevi Za Uključenja", "Zahtjevi za uključenja (proces 16)", 17, false, false, true, true, true, true, true);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojProtokolaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKupacWE));

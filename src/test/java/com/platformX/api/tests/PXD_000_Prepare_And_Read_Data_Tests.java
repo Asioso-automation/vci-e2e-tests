@@ -43,7 +43,7 @@ public class PXD_000_Prepare_And_Read_Data_Tests extends BaseTest {
 		PocetnaStranicaPXD pocetna = new PocetnaStranicaPXD(driver);
 		pocetna.verifikujPocetnuStranicu();
 		Organizacije organizacije = pocetna.navigateOnPage(Organizacije.class, "Šifarnici", "Organizacije");
-		organizacije.verifikujOrganizacije();
+		organizacije.navigirajVerifikujOrganizacije();
 		GlobalVariables.id = organizacije.pokupiIdStavkeString();
 	}
 

@@ -32,7 +32,7 @@ public class Korektori extends PocetnaStranica{
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title') and contains(text(), 'Korektori')]")));
-		verifikacijaZajednickihElemenata("KUPCI", "KOREKTORI", "Korektori", 11, false, false, true, true, true, true, false);
+		verifikacijaZajednickihElemenata2("KUPCI", "KOREKTORI", "Korektori", 11, false, false, true, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaId1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaSrBrojWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaOznakaWE));

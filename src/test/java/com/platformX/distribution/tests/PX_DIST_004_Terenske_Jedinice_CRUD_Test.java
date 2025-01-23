@@ -26,12 +26,12 @@ public class PX_DIST_004_Terenske_Jedinice_CRUD_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		TerenskeJedinice terenskeJedinice = homePage.navigateOnPage(TerenskeJedinice.class, "Šifarnici", "Terenske jedinice");
-		terenskeJedinice.verifikujTerenskeJedinice();
+		TerenskeJedinice terenskeJedinice = new TerenskeJedinice(driver);
+		terenskeJedinice.navigirajVerifikujTerenskeJedinice();
 		terenskeJedinice.dodajTerenskuJedinicu(terenskaJedinica);
 		terenskeJedinice.verifikujPoruku("Uspješno završeno.");
 		terenskeJedinice.pretraziStavku(homePage.filterKolona2WE, terenskaJedinica);
-		terenskeJedinice.verifikujTerenskeJedinice();
+		terenskeJedinice.verifikacijaStranice("Šifarnici", "Terenske Jedinice", "Terenske jedinice", terenskeJedinice.columns, terenskeJedinice.buttons);
 		terenskeJedinice.verifikujStavku(terenskaJedinica, homePage.podatak2Tabela2WE);
 	}
 		
@@ -42,15 +42,15 @@ public class PX_DIST_004_Terenske_Jedinice_CRUD_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		TerenskeJedinice terenskeJedinice = homePage.navigateOnPage(TerenskeJedinice.class, "Šifarnici", "Terenske jedinice");
-		terenskeJedinice.verifikujTerenskeJedinice();
+		TerenskeJedinice terenskeJedinice = new TerenskeJedinice(driver);
+		terenskeJedinice.navigirajVerifikujTerenskeJedinice();
 		terenskeJedinice.pretraziStavku(homePage.filterKolona2WE, terenskaJedinica);
-		terenskeJedinice.verifikujTerenskeJedinice();
+		terenskeJedinice.verifikacijaStranice("Šifarnici", "Terenske Jedinice", "Terenske jedinice", terenskeJedinice.columns, terenskeJedinice.buttons);
 		terenskeJedinice.verifikujStavku(terenskaJedinica, homePage.podatak2Tabela2WE);
 		terenskeJedinice.urediTerenskuJedinicu(novaTerenskaJedinica);
 		terenskeJedinice.verifikujPoruku("Uspješno završeno.");
 		terenskeJedinice.pretraziStavku(homePage.filterKolona2WE, novaTerenskaJedinica);
-		terenskeJedinice.verifikujTerenskeJedinice();
+		terenskeJedinice.verifikacijaStranice("Šifarnici", "Terenske Jedinice", "Terenske jedinice", terenskeJedinice.columns, terenskeJedinice.buttons);
 		terenskeJedinice.verifikujStavku(novaTerenskaJedinica, homePage.podatak2Tabela2WE);
 	}
 	
@@ -60,10 +60,10 @@ public class PX_DIST_004_Terenske_Jedinice_CRUD_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		TerenskeJedinice terenskeJedinice = homePage.navigateOnPage(TerenskeJedinice.class, "Šifarnici", "Terenske jedinice");
-		terenskeJedinice.verifikujTerenskeJedinice();
+		TerenskeJedinice terenskeJedinice = new TerenskeJedinice(driver);
+		terenskeJedinice.navigirajVerifikujTerenskeJedinice();
 		terenskeJedinice.pretraziStavku(homePage.filterKolona2WE, novaTerenskaJedinica);
-		terenskeJedinice.verifikujTerenskeJedinice();
+		terenskeJedinice.verifikacijaStranice("Šifarnici", "Terenske Jedinice", "Terenske jedinice", terenskeJedinice.columns, terenskeJedinice.buttons);
 		terenskeJedinice.verifikujStavku(novaTerenskaJedinica, homePage.podatak2Tabela2WE);
 		terenskeJedinice.obrisiStavku();
 		terenskeJedinice.verifikujPoruku("Brisanje je uspješno završeno");

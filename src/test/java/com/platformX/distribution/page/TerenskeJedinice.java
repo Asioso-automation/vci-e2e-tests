@@ -25,22 +25,18 @@ public class TerenskeJedinice extends PocetnaStranicaPXD {
 	@FindBy(xpath = "//div[2]/div[1]/div/div/div[1]/div/input")
 	private WebElement sifraWE;
 	
-	public void verifikujTerenskeJedinice() throws InterruptedException, FileNotFoundException, IOException {
-		Kolone kolone = new Kolone(driver);
+	Kolone kolone = new Kolone(driver);
+	
+	public WebElement[] columns = {kolone.kolonaIdWE, kolone.kolonaNazivWE, kolone.kolonaSifraWE, kolone.kolonaOrganizacijaWE, kolone.kolonaZiroRacunWE,
+			kolone.kolonaMjestoWE, kolone.kolonaAdresaWE, kolone.kolonaBrojTelefonaWE, kolone.kolonaCallCentarWE, kolone.kolonaFaxWE, kolone.kolonaEmailWE};
+	
+	public WebElement[] buttons = {dodajBtnWE, preuzmiExcelBtnWE, ukloniFiltereBtnWE, osvjeziBtnWE};
+	
+	public void navigirajVerifikujTerenskeJedinice() throws Exception {
+		navigateOnPage(TerenskeJedinice.class, "Šifarnici", "Terenske jedinice");
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Terenske jedinice')]")));
-		verifikacijaZajednickihElemenata("Šifarnici", "Terenske Jedinice", "Terenske jedinice", 12, false, false, true, true, true, true, false);
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNazivWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaSifraWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaOrganizacijaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaZiroRacunWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMjestoWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAdresaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojTelefonaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaCallCentarWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaFaxWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaEmailWE));
+		verifikacijaStranice("Šifarnici", "Terenske Jedinice", "Terenske jedinice", columns, buttons);
 	}
 
 	public String dodajTerenskuJedinicu(String naziv) throws InterruptedException {

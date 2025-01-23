@@ -17,15 +17,18 @@ public class Monteri extends PocetnaStranicaPXD {
 
 	@FindBy(xpath = "//div[1]/div/div/div[1]/div/input")
 	private WebElement imePrezimeWE;
+	
+	Kolone kolone = new Kolone(driver);
+	
+	public WebElement[] columns = {kolone.kolonaIdWE, kolone.kolonaImeIprezimeWE, kolone.kolonaBrojTelefonaWE};
+	
+	public WebElement[] buttons = {dodajBtnWE, preuzmiExcelBtnWE, ukloniFiltereBtnWE, osvjeziBtnWE};
 
-	public void verifikujMonteri() throws InterruptedException, FileNotFoundException, IOException {
-		Kolone kolone = new Kolone(driver);
+	public void navigirajVerifikujMonteri() throws Exception {
+		navigateOnPage(Monteri.class, "Šifarnici", "Monteri");
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Monteri')]")));
-		verifikacijaZajednickihElemenata("Šifarnici", "Monteri", "Monteri", 4, false, false, true, true, true, true, false);
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaImeIprezimeWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojTelefonaWE));
+		verifikacijaStranice("Šifarnici", "Monteri", "Monteri", columns, buttons);
 	}
 	
 	public String dodajMontera(String naziv)throws InterruptedException{

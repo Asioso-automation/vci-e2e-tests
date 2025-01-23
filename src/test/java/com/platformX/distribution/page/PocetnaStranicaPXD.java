@@ -126,6 +126,7 @@ public class PocetnaStranicaPXD extends PageBase {
 		wait.until(ExpectedConditions.elementToBeClickable(brojilaWE));
 		wait.until(ExpectedConditions.elementToBeClickable(obracunskiUgovoriWE));
 		wait.until(ExpectedConditions.elementToBeClickable(strelicaDesnoWE));
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		strelicaDesnoWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(ocitanjaWE));
 		wait.until(ExpectedConditions.elementToBeClickable(neovlastenaPotrosnjaWE));

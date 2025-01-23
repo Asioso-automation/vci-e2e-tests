@@ -31,7 +31,7 @@ public class TarifniModeli extends PocetnaStranica{
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title') and contains(text(), 'Tarifni modeli')]")));
-		verifikacijaZajednickihElemenata("Tarifni Sistem", "Tarifni Modeli", "Tarifni modeli", 5, false, false, true, true, true, true, false);
+		verifikacijaZajednickihElemenata2("Tarifni Sistem", "Tarifni Modeli", "Tarifni modeli", 5, false, false, true, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaId1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaOznakaModelaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaOsnovaZaObracunWE));
@@ -41,7 +41,7 @@ public class TarifniModeli extends PocetnaStranica{
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title') and contains(text(), 'Tarifni modeli')]")));
-		verifikacijaZajednickihElemenata("Tarifni Sistem", "Tarifni Modeli", "Tarifni modeli", 4, false, false, false, true, true, true, false);
+		verifikacijaZajednickihElemenata2("Tarifni Sistem", "Tarifni Modeli", "Tarifni modeli", 4, false, false, false, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaId1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaOznakaModelaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaOsnovaZaObracunWE));

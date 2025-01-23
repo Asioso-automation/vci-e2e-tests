@@ -17,7 +17,7 @@ public class MaterijaliOrmaricaBrojila extends PocetnaStranicaPXD {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Materijali ormarića brojila')]")));
-		verifikacijaZajednickihElemenata("Šifarnici", "Materijali Ormarića Brojila", "Materijali ormarića brojila", 3, false, false, true, true, true, true, false);
+		verifikacijaZajednickihElemenata2("Šifarnici", "Materijali Ormarića Brojila", "Materijali ormarića brojila", 3, false, false, true, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNazivWE));
 	}

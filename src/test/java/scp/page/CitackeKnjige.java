@@ -19,7 +19,7 @@ public class CitackeKnjige extends PocetnaStranica{
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title') and contains(text(), 'Čitačke knjige')]")));
-		verifikacijaZajednickihElemenata("Očitanja", "Čitačke Knjige", "Čitačke knjige", 9, false, false, true, true, true, true, false);
+		verifikacijaZajednickihElemenata2("Očitanja", "Čitačke Knjige", "Čitačke knjige", 9, false, false, true, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMjesecWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaGodinaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaZonaOcitanjaIdWE));

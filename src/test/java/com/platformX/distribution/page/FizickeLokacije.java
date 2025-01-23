@@ -31,20 +31,18 @@ public class FizickeLokacije extends PocetnaStranicaPXD {
 	@FindBy(xpath = "//div[5]/div/div/div[1]/div[1]/input[1]")
 	private WebElement terenskaJedinicaWE;
 	
-	public void verifikujFizickeLokacije() throws InterruptedException, FileNotFoundException, IOException {
-		Kolone kolone = new Kolone(driver);
+	Kolone kolone = new Kolone(driver);
+	
+	public WebElement[] columns = {kolone.kolonaIdWE, kolone.kolonaNazivWE, kolone.kolonaSifraWE, kolone.kolonaTerenskaJedinicaWE, kolone.kolonaMjestoWE,
+			kolone.kolonaAdresaWE, kolone.kolonaBrojTelefonaWE, kolone.kolonaFaxWE, kolone.kolonaEmailWE};
+	
+	public WebElement[] buttons = {dodajBtnWE, preuzmiExcelBtnWE, ukloniFiltereBtnWE, osvjeziBtnWE};
+	
+	public void navigirajVerifikujFizickeLokacije() throws Exception {
+		navigateOnPage(FizickeLokacije.class, "Šifarnici", "Fizičke lokacije");
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Fizičke lokacije')]")));
-		verifikacijaZajednickihElemenata("Šifarnici", "Fizičke Lokacije", "Fizičke lokacije", 10, false, false, true, true, true, true, false);
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNazivWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaSifraWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTerenskaJedinicaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMjestoWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAdresaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojTelefonaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaFaxWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaEmailWE));
+		verifikacijaStranice("Šifarnici", "Fizičke Lokacije", "Fizičke lokacije", columns, buttons);
 	}
 	
 	public String dodajFizickuLokaciju(String naziv, String terenskaJedinica) throws InterruptedException {

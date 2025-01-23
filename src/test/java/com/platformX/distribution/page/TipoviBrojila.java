@@ -17,7 +17,7 @@ public class TipoviBrojila extends PocetnaStranicaPXD {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Tipovi brojila')]")));
-		verifikacijaZajednickihElemenata("Šifarnici", "Tipovi Brojila", "Tipovi brojila", 16, false, false, true, true, true, true, true);
+		verifikacijaZajednickihElemenata2("Šifarnici", "Tipovi Brojila", "Tipovi brojila", 16, false, false, true, true, true, true, true);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNazivWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNivoStrujeWE));

@@ -26,12 +26,12 @@ public class PX_DIST_006_Citaci_CRUD_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		Citaci citaci = homePage.navigateOnPage(Citaci.class, "Šifarnici", "Čitači");
-		citaci.verifikujCitaci();
+		Citaci citaci = new Citaci(driver);
+		citaci.navigirajVerifikujCitaci();
 		citaci.dodajCitaca(citac);
 		citaci.verifikujPoruku("Uspješno završeno.");
 		citaci.pretraziStavku(homePage.filterKolona2WE, citac);
-		citaci.verifikujCitaci();
+		citaci.verifikacijaStranice("Šifarnici", "Čitači", "Čitači", citaci.columns, citaci.buttons);
 		citaci.verifikujStavku(citac, homePage.podatak2Tabela2WE);
 	}
 	
@@ -42,15 +42,15 @@ public class PX_DIST_006_Citaci_CRUD_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		Citaci citaci = homePage.navigateOnPage(Citaci.class, "Šifarnici", "Čitači");
-		citaci.verifikujCitaci();
+		Citaci citaci = new Citaci(driver);
+		citaci.navigirajVerifikujCitaci();
 		citaci.pretraziStavku(homePage.filterKolona2WE, citac);
-		citaci.verifikujCitaci();
+		citaci.verifikacijaStranice("Šifarnici", "Čitači", "Čitači", citaci.columns, citaci.buttons);
 		citaci.verifikujStavku(citac, homePage.podatak2Tabela2WE);
 		citaci.urediCitaca(noviCitac);
 		citaci.verifikujPoruku("Uspješno završeno.");
 		citaci.pretraziStavku(homePage.filterKolona2WE, noviCitac);
-		citaci.verifikujCitaci();
+		citaci.verifikacijaStranice("Šifarnici", "Čitači", "Čitači", citaci.columns, citaci.buttons);
 		citaci.verifikujStavku(noviCitac, homePage.podatak2Tabela2WE);
 	}
 	
@@ -61,10 +61,10 @@ public class PX_DIST_006_Citaci_CRUD_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		Citaci citaci = homePage.navigateOnPage(Citaci.class, "Šifarnici", "Čitači");
-		citaci.verifikujCitaci();
+		Citaci citaci = new Citaci(driver);
+		citaci.navigirajVerifikujCitaci();
 		citaci.pretraziStavku(homePage.filterKolona2WE, noviCitac);
-		citaci.verifikujCitaci();
+		citaci.verifikacijaStranice("Šifarnici", "Čitači", "Čitači", citaci.columns, citaci.buttons);
 		citaci.verifikujStavku(noviCitac, homePage.podatak2Tabela2WE);
 		citaci.obrisiStavku();
 		citaci.verifikujPoruku("Brisanje je uspješno završeno");

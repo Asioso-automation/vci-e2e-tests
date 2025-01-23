@@ -499,7 +499,7 @@ public class PocetnaStranica extends PageBase {
 		Thread.sleep(1000);
 	}
 	
-	public void verifikacijaZajednickihElemenata(String sekcija, String stranica, String naslovStranice, int brKolona,
+	public void verifikacijaZajednickihElemenata2(String sekcija, String stranica, String naslovStranice, int brKolona,
 			boolean importBtn, boolean dodajSve, boolean dodaj, boolean preuzmiExcel, boolean ukloniFiltere,
 			boolean osvjezi, boolean info) throws InterruptedException {
 		WebDriverWait wait = new WebDriverWait(driver, 10);

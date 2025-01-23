@@ -19,7 +19,7 @@ public class AdministracijaKorisnika extends PocetnaStranica{
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title') and contains(text(), 'Administracija korisnika')]")));
-		verifikacijaZajednickihElemenata("Administracija", "Administracija Korisnika", "Administracija korisnika", 8, false, false, true, true, true, true, false);
+		verifikacijaZajednickihElemenata2("Administracija", "Administracija Korisnika", "Administracija korisnika", 8, false, false, true, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaId1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIme1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPrezime1WE));

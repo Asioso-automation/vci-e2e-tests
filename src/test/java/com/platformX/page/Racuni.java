@@ -17,7 +17,7 @@ public class Racuni extends PocetnaStranica {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title body-1 ml-0 pl-0 text-default') and starts-with(., ' Računi')]")));
-		verifikacijaZajednickihElemenata("Obračun", "Računi", "Računi", 13, false, false, false, true, true, true, false);
+		verifikacijaZajednickihElemenata2("Obračun", "Računi", "Računi", 13, false, false, false, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaSerijskiBrojWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPeriodWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKupacWE));

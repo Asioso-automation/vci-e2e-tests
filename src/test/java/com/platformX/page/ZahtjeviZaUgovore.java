@@ -17,7 +17,7 @@ public class ZahtjeviZaUgovore extends PocetnaStranica {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title body-1 ml-0 pl-0 text-default') and starts-with(., ' Zahtjevi za ugovore')]")));
-		verifikacijaZajednickihElemenata("Kupci", "Zahtjevi Za Ugovore", "Zahtjevi za ugovore", 17, false, false, true,	true, true, true, false);
+		verifikacijaZajednickihElemenata2("Kupci", "Zahtjevi Za Ugovore", "Zahtjevi za ugovore", 17, false, false, true,	true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrProtokolaWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKupacWE));

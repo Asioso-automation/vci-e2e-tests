@@ -32,7 +32,7 @@ public class Reoni extends PocetnaStranica{
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title') and contains(text(), 'Reoni')]")));
-		verifikacijaZajednickihElemenata("Šifarnici", "Reoni", "Reoni", 6, false, false, true, true, true, true, false);
+		verifikacijaZajednickihElemenata2("Šifarnici", "Reoni", "Reoni", 6, false, false, true, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaId1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNaziv1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaSifra1WE));

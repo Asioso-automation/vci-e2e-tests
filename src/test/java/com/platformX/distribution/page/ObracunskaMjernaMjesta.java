@@ -69,7 +69,7 @@ public class ObracunskaMjernaMjesta extends PocetnaStranicaPXD {
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Obračunska mjerna mjesta')]")));
-		verifikacijaZajednickihElemenata("Mjerna Mjesta", "Obračunska Mjerna Mjesta", "Obračunska mjerna mjesta", 20, false, false, true, true, true, true, false);
+		verifikacijaZajednickihElemenata2("Mjerna Mjesta", "Obračunska Mjerna Mjesta", "Obračunska mjerna mjesta", 20, false, false, true, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaElektroenergetskaSaglasnostWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaEicWE));

@@ -24,20 +24,19 @@ public class Citaci extends PocetnaStranicaPXD {
 	
 	@FindBy(xpath = "//div[2]/div[2]/div/div/div[1]/div[1]/input[1]")
 	private WebElement fizickaLokacijaWE;
+	
+	Kolone kolone = new Kolone(driver);
+	
+	public WebElement[] columns = {kolone.kolonaIdWE, kolone.kolonaImeWE, kolone.kolonaBrojMobilnogTelefonaWE, kolone.kolonaKorisnikWE, 
+			kolone.kolonaDatumOdWE, kolone.kolonaDatumDoWE, kolone.kolonaTerenskaJedinicaWE, kolone.kolonaFizickaLokacijaWE};
+	
+	public WebElement[] buttons = {dodajBtnWE, preuzmiExcelBtnWE, ukloniFiltereBtnWE, osvjeziBtnWE};
 
-	public void verifikujCitaci() throws InterruptedException, FileNotFoundException, IOException {
-		Kolone kolone = new Kolone(driver);
+	public void navigirajVerifikujCitaci() throws Exception {
+		navigateOnPage(Citaci.class, "Šifarnici", "Čitači");
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Čitači')]")));
-		verifikacijaZajednickihElemenata("Šifarnici", "Čitači", "Čitači", 9, false, false, true, true, true, true, false);
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaImeWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojMobilnogTelefonaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKorisnikWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumOdWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumDoWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTerenskaJedinicaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaFizickaLokacijaWE));
+		verifikacijaStranice("Šifarnici", "Čitači", "Čitači", columns, buttons);
 	}
 
 	public String dodajCitaca(String ime) throws InterruptedException {

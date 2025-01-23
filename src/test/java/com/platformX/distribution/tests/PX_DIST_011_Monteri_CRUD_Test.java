@@ -26,12 +26,12 @@ public class PX_DIST_011_Monteri_CRUD_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		Monteri monteri = homePage.navigateOnPage(Monteri.class, "Šifarnici", "Monteri");
-		monteri.verifikujMonteri();
+		Monteri monteri = new Monteri(driver);
+		monteri.navigirajVerifikujMonteri();	
 		monteri.dodajMontera(monter);
 		monteri.verifikujPoruku("Uspješno završeno.");
 		monteri.pretraziStavku(homePage.filterKolona2WE, monter);
-		monteri.verifikujMonteri();
+		monteri.verifikacijaStranice("Šifarnici", "Monteri", "Monteri", monteri.columns, monteri.buttons);
 		monteri.verifikujStavku(monter, homePage.podatak2Tabela2WE);
 	}
 	
@@ -42,15 +42,15 @@ public class PX_DIST_011_Monteri_CRUD_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		Monteri monteri = homePage.navigateOnPage(Monteri.class, "Šifarnici", "Monteri");
-		monteri.verifikujMonteri();
+		Monteri monteri = new Monteri(driver);
+		monteri.navigirajVerifikujMonteri();	
 		monteri.pretraziStavku(homePage.filterKolona2WE, monter);
-		monteri.verifikujMonteri();
+		monteri.verifikacijaStranice("Šifarnici", "Monteri", "Monteri", monteri.columns, monteri.buttons);
 		monteri.verifikujStavku(monter, homePage.podatak2Tabela2WE);
 		monteri.urediMontera(noviMonter);
 		monteri.verifikujPoruku("Uspješno završeno.");
 		monteri.pretraziStavku(homePage.filterKolona2WE, noviMonter);
-		monteri.verifikujMonteri();
+		monteri.verifikacijaStranice("Šifarnici", "Monteri", "Monteri", monteri.columns, monteri.buttons);
 		monteri.verifikujStavku(noviMonter, homePage.podatak2Tabela2WE);
 	}
 	
@@ -61,10 +61,10 @@ public class PX_DIST_011_Monteri_CRUD_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		Monteri monteri = homePage.navigateOnPage(Monteri.class, "Šifarnici", "Monteri");
-		monteri.verifikujMonteri();
+		Monteri monteri = new Monteri(driver);
+		monteri.navigirajVerifikujMonteri();	
 		monteri.pretraziStavku(homePage.filterKolona2WE, noviMonter);
-		monteri.verifikujMonteri();
+		monteri.verifikacijaStranice("Šifarnici", "Monteri", "Monteri", monteri.columns, monteri.buttons);
 		monteri.verifikujStavku(noviMonter, homePage.podatak2Tabela2WE);
 		monteri.obrisiStavku();
 		monteri.verifikujPoruku("Brisanje je uspješno završeno");

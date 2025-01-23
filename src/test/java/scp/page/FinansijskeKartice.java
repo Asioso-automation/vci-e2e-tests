@@ -19,7 +19,7 @@ public class FinansijskeKartice extends PocetnaStranica{
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title') and contains(text(), 'Finansijske kartice')]")));
-		verifikacijaZajednickihElemenata("Finansije", "Finansijske Kartice", "Finansijske kartice", 13, false, false, false, true, true, true, false);
+		verifikacijaZajednickihElemenata2("Finansije", "Finansijske Kartice", "Finansijske kartice", 13, false, false, false, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPeriod1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatum1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumKnjizenja1WE));

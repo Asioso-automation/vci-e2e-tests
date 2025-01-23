@@ -17,7 +17,7 @@ public class TipoviMjenica extends PocetnaStranica {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title body-1 ml-0 pl-0 text-default') and starts-with(., ' Tipovi')]")));
-		verifikacijaZajednickihElemenata("Kupci", "Tipovi Mjenica", "Tipovi mjenica", 4, false, false, true, true, true, true, false);
+		verifikacijaZajednickihElemenata2("Kupci", "Tipovi Mjenica", "Tipovi mjenica", 4, false, false, true, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNazivWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPrefiksWE));

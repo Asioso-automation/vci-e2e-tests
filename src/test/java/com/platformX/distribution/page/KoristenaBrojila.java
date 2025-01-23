@@ -17,7 +17,7 @@ public class KoristenaBrojila extends PocetnaStranicaPXD {
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Korištena brojila')]")));
-		verifikacijaZajednickihElemenata("Brojila", "Korištena Brojila", "Korištena brojila", 12, false, false, false, true, true, true, false);
+		verifikacijaZajednickihElemenata2("Brojila", "Korištena Brojila", "Korištena brojila", 12, false, false, false, true, true, true, false);
 //		broj kolona na app ja 11, ali test prolazi samo ako se stavi broj kolona 12 - istraziti
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojBrojilaWE));

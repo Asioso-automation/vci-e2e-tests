@@ -57,14 +57,22 @@ public abstract class PageBase {
 	@FindBy(xpath = "//*[contains(text(),'Obrada u toku...') and contains(@class, 'title')]")
 	protected WebElement obradaModalWE;
 
-	@FindBy(xpath = "//ul/button[1]")
-	protected WebElement sekcijaBtnWE;
+//	@FindBy(xpath = "//ul/button[1]")
+//	protected WebElement sekcijaBtnWE;
+//
+//	@FindBy(xpath = "//ul/button[2]")
+//	protected WebElement stranicaBtnWE;
+	
+	@FindBy(xpath = "//ul/button[1]/span")
+	protected WebElement sekcijaWE;
+	
+	@FindBy(xpath = "//ul/button[2]/span")
+	protected WebElement stranicaWE;
 
-	@FindBy(xpath = "//ul/button[2]")
-	protected WebElement stranicaBtnWE;
-
-	@FindBy(xpath = "//div/div[1]/div[1]/header/div/div[1]")
+	@FindBy(xpath = "(//header/div/div[1])[2]")
 	protected WebElement naslovStraniceWE;
+	//div/div[1]/div[1]/header/div/div[1]
+//	(//header/div/div[1])[2]
 
 	@FindBy(xpath = "//main/div/div/header/div/div[1]")
 	protected WebElement naslovStranice1WE;
@@ -190,7 +198,7 @@ public abstract class PageBase {
 		return id;
 	}
 
-	public void verifikacijaZajednickihElemenata(String sekcija, String stranica, String naslovStranice, int brKolona,
+	public void verifikacijaZajednickihElemenata2(String sekcija, String stranica, String naslovStranice, int brKolona,
 			boolean importBtn, boolean dodajSve, boolean dodaj, boolean preuzmiExcel, boolean ukloniFiltere,
 			boolean osvjezi, boolean info) throws InterruptedException {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
@@ -199,22 +207,10 @@ public abstract class PageBase {
 		} catch (Exception e) {
 			Thread.sleep(500);
 		}
-//		try {
-//			wait.until(ExpectedConditions.visibilityOf(sekcijaBtnWE));				// nekad ostane otvoren meni koji zaklanja elemente
-//			sekcijaBtnWE.click();
-//		} catch (Exception e) {
-//			wait.until(ExpectedConditions.visibilityOf(naslovStranice1WE));				// nekad ostane otvoren meni koji zaklanja elemente
-//			naslovStranice1WE.click();
-//		}
 		assertTrue(sekcija.equals(sekcija), stranica + ": Naziv sekcije nije dobar!");
 		assertTrue(stranica.equals(stranica), stranica + ": Naziv stranice nije dobar!");
-		try {
-			assertTrue(naslovStraniceWE.getText().trim().equals(naslovStranice),
+		assertTrue(naslovStraniceWE.getText().trim().equals(naslovStranice),
 					stranica + ": Naziv stranice nije dobar!");
-		} catch (Exception e) {
-			assertTrue(naslovStranice1WE.getText().trim().equals(naslovStranice),
-					stranica + ": Naziv stranice nije dobar!");
-		}
 		assertTrue(brojKolona().size() == brKolona, stranica + ": Broj kolona nije dobar!");
 		if (importBtn == true) {
 			wait.until(ExpectedConditions.elementToBeClickable(importujBtnWE));
@@ -356,11 +352,7 @@ public abstract class PageBase {
 		}
 //		pokusaj zaobilaska random otvaranja menija
 		try {
-			try {
-				naslovStraniceWE.click();
-			} catch (Exception e) {
-				naslovStranice1WE.click();
-			}
+			naslovStraniceWE.click();
 		} catch (Exception e) {
 			osvjeziBtnWE.click();
 		}
@@ -390,11 +382,93 @@ public abstract class PageBase {
 //		element.sendKeys(Keys.BACK_SPACE);
 	}
 	
-//	test - zajednicka metoda za verifikaciju kolona			
-	public void verifikacijaKolona(WebElement pageName[]) {
+  static String toCamelCase(String s){
+	  String[] parts = s.split(" ");
+	  String camelCaseString = "";
+	  for (String part : parts){
+		  if(part!=null && part.trim().length()>0)
+			  camelCaseString = camelCaseString + toProperCase(part);
+		  else
+			  camelCaseString=camelCaseString+part+" ";   
+	  }
+	  return camelCaseString;
+  }
+
+  static String toProperCase(String s) {
+	  String temp=s.trim();
+	  String spaces="";
+	  if(temp.length()!=s.length())
+	  {
+		  int startCharIndex=s.charAt(temp.indexOf(0));
+		  spaces=s.substring(0,startCharIndex);
+	  }
+	  temp=temp.substring(0, 1).toUpperCase() +
+		spaces+temp.substring(1).toLowerCase()+" ";
+	  return temp;
+  }
+  
+////	test - zajednicka metoda za verifikaciju kolona			
+//	public void verifikacijaKolona(WebElement pageName[]) {
+//		WebDriverWait wait = new WebDriverWait(driver, 10);
+//		for (int i=0; i<pageName.length; i++) {
+//			wait.until(ExpectedConditions.visibilityOf(pageName[i]));
+//			System.out.println(pageName[i].getText().trim());
+//		}
+//	}
+  
+//  public void verifikacijaBtn1(WebElement[] btnElementi) throws InterruptedException {
+//	  WebDriverWait wait = new WebDriverWait(driver, 10);
+//	  for (int i=0; i<btnElementi.length; i++) {
+//			System.out.println(i);;		// provjera koji element liste uzima
+//			wait.until(ExpectedConditions.elementToBeClickable(btnElementi[i]));
+//			System.out.println(i);;		// provjera da li je pronasao taj element na stranici
+//		}
+//  }
+  
+//	public void verifikacijaZajednickihElemenata1(String sekcija, String stranica, String naslovStranice, int brKolona,
+//			WebElement[] btnElementi) throws InterruptedException {
+//		WebDriverWait wait = new WebDriverWait(driver, 10);
+//		try {
+//			wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
+//		} catch (Exception e) {
+//			Thread.sleep(500);
+//		}
+//		assertTrue(sekcija.equals(sekcija), stranica + ": Naziv sekcije nije dobar!");
+//		assertTrue(stranica.equals(stranica), stranica + ": Naziv stranice nije dobar!");
+//		assertTrue(toProperCase(naslovStraniceWE.getText().trim()).equals(naslovStranice),
+//				stranica + ": Naziv stranice nije dobar!");
+//		assertTrue(brojKolona().size() == brKolona, stranica + ": Broj kolona nije dobar!");
+//		verifikacijaBtn1(btnElementi);	// novi nacin verifikacije button-a	
+//		try {
+//			wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
+//		} catch (Exception e) {
+//		Thread.sleep(1000);
+//		}
+//	}
+
+	public void verifikacijaStranice(String sekcija, String stranica, String naslovStranice, WebElement[] listaKolona, WebElement[] btnElementi) throws InterruptedException {
+//		verifikacijaZajednickihElemenata
 		WebDriverWait wait = new WebDriverWait(driver, 10);
-		for (int i=0; i<pageName.length; i++) {
-			wait.until(ExpectedConditions.visibilityOf(pageName[i]));
+		try {
+			wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
+		} catch (Exception e) {
+			Thread.sleep(500);
+		}
+		assertTrue(toProperCase(sekcijaWE.getText().trim()).equals(sekcija + " "), stranica + ": Naziv sekcije nije dobar!");
+		assertTrue(toCamelCase(stranicaWE.getText().trim()).equals(stranica + " "), stranica + ": Naziv stranice nije dobar!");
+		assertTrue(toProperCase(naslovStraniceWE.getText().trim()).equals(naslovStranice + " "),
+					stranica + ": Naziv stranice nije dobar!");
+		assertTrue(brojKolona().size() == listaKolona.length+1, stranica + ": Broj kolona nije dobar!");
+//		verifikacijaBtn
+		for (int i=0; i<btnElementi.length; i++) {
+//			System.out.println(i);		// provjera koji element liste uzima
+			wait.until(ExpectedConditions.elementToBeClickable(btnElementi[i]));
+//			System.out.println(i);		// provjera da li je pronasao taj element na stranici
+		}
+//		verifikacijaKolona
+		for (int i=0; i<listaKolona.length; i++) {
+			wait.until(ExpectedConditions.visibilityOf(listaKolona[i]));
+//			System.out.println(listaKolona[i].getText().trim());	// provjera koje kolone su provjerene
 		}
 	}
 	

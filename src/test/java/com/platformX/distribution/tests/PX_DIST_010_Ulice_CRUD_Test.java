@@ -26,12 +26,12 @@ public class PX_DIST_010_Ulice_CRUD_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		Ulice ulice = homePage.navigateOnPage(Ulice.class, "Šifarnici", "Ulice");
-		ulice.verifikujUlice();
+		Ulice ulice = new Ulice(driver);
+		ulice.navigirajVerifikujUlice();
 		ulice.dodajUlicu(ulica);
 		ulice.verifikujPoruku("Uspješno završeno.");
 		ulice.pretraziStavku(homePage.filterKolona2WE, ulica);
-		ulice.verifikujUlice();
+		ulice.verifikacijaStranice("Šifarnici", "Ulice", "Ulice", ulice.columns, ulice.buttons);
 		ulice.verifikujStavku(ulica, homePage.podatak2Tabela2WE);
 	}
 	
@@ -42,15 +42,15 @@ public class PX_DIST_010_Ulice_CRUD_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		Ulice ulice = homePage.navigateOnPage(Ulice.class, "Šifarnici", "Ulice");
-		ulice.verifikujUlice();
+		Ulice ulice = new Ulice(driver);
+		ulice.navigirajVerifikujUlice();
 		ulice.pretraziStavku(homePage.filterKolona2WE, ulica);
-		ulice.verifikujUlice();
+		ulice.verifikacijaStranice("Šifarnici", "Ulice", "Ulice", ulice.columns, ulice.buttons);
 		ulice.verifikujStavku(ulica, homePage.podatak2Tabela2WE);
 		ulice.urediUlicu(novaUlica);
 		ulice.verifikujPoruku("Uspješno završeno.");
 		ulice.pretraziStavku(homePage.filterKolona2WE, novaUlica);
-		ulice.verifikujUlice();
+		ulice.verifikacijaStranice("Šifarnici", "Ulice", "Ulice", ulice.columns, ulice.buttons);
 		ulice.verifikujStavku(novaUlica, homePage.podatak2Tabela2WE);
 	}
 	
@@ -61,10 +61,10 @@ public class PX_DIST_010_Ulice_CRUD_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		Ulice ulice = homePage.navigateOnPage(Ulice.class, "Šifarnici", "Ulice");
-		ulice.verifikujUlice();
+		Ulice ulice = new Ulice(driver);
+		ulice.navigirajVerifikujUlice();
 		ulice.pretraziStavku(homePage.filterKolona2WE, novaUlica);
-		ulice.verifikujUlice();
+		ulice.verifikacijaStranice("Šifarnici", "Ulice", "Ulice", ulice.columns, ulice.buttons);
 		ulice.verifikujStavku(novaUlica, homePage.podatak2Tabela2WE);
 		ulice.obrisiStavku();
 		ulice.verifikujPoruku("Brisanje je uspješno završeno");
@@ -79,10 +79,10 @@ public class PX_DIST_010_Ulice_CRUD_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		Ulice ulice = homePage.navigateOnPage(Ulice.class, "Šifarnici", "Ulice");
-		ulice.verifikujUlice();
+		Ulice ulice = new Ulice(driver);
+		ulice.navigirajVerifikujUlice();
 		ulice.pretraziStavku(homePage.filterKolona2WE, "HERCEGOVAČKA");				// promijenjeno sa Hajduk Veljkova na HERCEGOVAČKA
-		ulice.verifikujUlice();
+		ulice.verifikacijaStranice("Šifarnici", "Ulice", "Ulice", ulice.columns, ulice.buttons);
 		ulice.verifikujStavku("HERCEGOVAČKA", homePage.podatak2Tabela2WE);
 		ulice.obrisiStavku();
 		ulice.verifikujPoruku("Brisanje ovog zapisa nije moguće.");

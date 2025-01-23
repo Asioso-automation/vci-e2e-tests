@@ -19,7 +19,7 @@ public class SveUplate extends PocetnaStranica{
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title') and contains(text(), 'Sve uplate')]")));
-		verifikacijaZajednickihElemenata("Finansije", "Sve Uplate", "Sve uplate", 16, false, false, false, true, true, true, false);
+		verifikacijaZajednickihElemenata2("Finansije", "Sve Uplate", "Sve uplate", 16, false, false, false, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaId1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojIzvoda1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumIzvoda1WE));

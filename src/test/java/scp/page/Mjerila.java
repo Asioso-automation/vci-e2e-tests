@@ -63,7 +63,7 @@ public class Mjerila extends PocetnaStranica{
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title') and contains(text(), 'Mjerila')]")));
-		verifikacijaZajednickihElemenata("Mjerila", "Mjerila", "Mjerila", 13, false, false, true, true, true, true, false);
+		verifikacijaZajednickihElemenata2("Mjerila", "Mjerila", "Mjerila", 13, false, false, true, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaId1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaProstorWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaSrBrojWE));
@@ -83,7 +83,7 @@ public class Mjerila extends PocetnaStranica{
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title') and contains(text(), 'Mjerila')]")));
-		verifikacijaZajednickihElemenata("Mjerila", "Mjerila", "Mjerila", 14, false, false, true, true, true, true, true);
+		verifikacijaZajednickihElemenata2("Mjerila", "Mjerila", "Mjerila", 14, false, false, true, true, true, true, true);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaId1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaProstorWE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaSrBrojWE));

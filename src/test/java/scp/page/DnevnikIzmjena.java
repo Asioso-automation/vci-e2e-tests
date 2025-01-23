@@ -19,7 +19,7 @@ public class DnevnikIzmjena extends PocetnaStranica{
 		Kolone kolone = new Kolone(driver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title') and contains(text(), 'Dnevnik izmjena')]")));
-		verifikacijaZajednickihElemenata("Administracija", "Dnevnik Izmjena", "Dnevnik izmjena", 7, false, false, false, true, true, true, false);
+		verifikacijaZajednickihElemenata2("Administracija", "Dnevnik Izmjena", "Dnevnik izmjena", 7, false, false, false, true, true, true, false);
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaId1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTabela1WE));
 		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatum1WE));
