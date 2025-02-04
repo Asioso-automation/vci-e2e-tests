@@ -31,7 +31,7 @@ public class PX_DIST_008_Naseljena_Mjesta_CRUD_Test extends BaseTest{
 		naseljenaMjesta.dodajNaseljenoMjesto(naseljenoMjesto);
 		naseljenaMjesta.verifikujPoruku("Uspješno završeno.");
 		naseljenaMjesta.pretraziStavku(homePage.filterKolona2WE, naseljenoMjesto);
-		naseljenaMjesta.verifikacijaStranice("Šifarnici", "Naseljena Mjesta", "Naseljena mjesta", naseljenaMjesta.columns, naseljenaMjesta.buttons);
+		naseljenaMjesta.verifikacijaStranice("Šifarnici", "Naseljena Mjesta", "Naseljena mjesta", 1, naseljenaMjesta.columns, naseljenaMjesta.buttons);
 		naseljenaMjesta.verifikujStavku(naseljenoMjesto, homePage.podatak2Tabela2WE);
 	}
 	
@@ -45,12 +45,12 @@ public class PX_DIST_008_Naseljena_Mjesta_CRUD_Test extends BaseTest{
 		NaseljenaMjesta naseljenaMjesta = new NaseljenaMjesta(driver);
 		naseljenaMjesta.navigirajVerifikujNaseljenaMjesta();
 		naseljenaMjesta.pretraziStavku(homePage.filterKolona2WE, naseljenoMjesto);
-		naseljenaMjesta.verifikacijaStranice("Šifarnici", "Naseljena Mjesta", "Naseljena mjesta", naseljenaMjesta.columns, naseljenaMjesta.buttons);
+		naseljenaMjesta.verifikacijaStranice("Šifarnici", "Naseljena Mjesta", "Naseljena mjesta", 1, naseljenaMjesta.columns, naseljenaMjesta.buttons);
 		naseljenaMjesta.verifikujStavku(naseljenoMjesto, homePage.podatak2Tabela2WE);
 		naseljenaMjesta.urediNaseljenoMjesto(novoNaseljenoMjesto);
 		naseljenaMjesta.verifikujPoruku("Uspješno završeno.");
 		naseljenaMjesta.pretraziStavku(homePage.filterKolona2WE, novoNaseljenoMjesto);
-		naseljenaMjesta.verifikacijaStranice("Šifarnici", "Naseljena Mjesta", "Naseljena mjesta", naseljenaMjesta.columns, naseljenaMjesta.buttons);
+		naseljenaMjesta.verifikacijaStranice("Šifarnici", "Naseljena Mjesta", "Naseljena mjesta", 1, naseljenaMjesta.columns, naseljenaMjesta.buttons);
 		naseljenaMjesta.verifikujStavku(novoNaseljenoMjesto, homePage.podatak2Tabela2WE);
 	}
 	
@@ -64,7 +64,7 @@ public class PX_DIST_008_Naseljena_Mjesta_CRUD_Test extends BaseTest{
 		NaseljenaMjesta naseljenaMjesta = new NaseljenaMjesta(driver);
 		naseljenaMjesta.navigirajVerifikujNaseljenaMjesta();
 		naseljenaMjesta.pretraziStavku(homePage.filterKolona2WE, novoNaseljenoMjesto);
-		naseljenaMjesta.verifikacijaStranice("Šifarnici", "Naseljena Mjesta", "Naseljena mjesta", naseljenaMjesta.columns, naseljenaMjesta.buttons);
+		naseljenaMjesta.verifikacijaStranice("Šifarnici", "Naseljena Mjesta", "Naseljena mjesta", 1, naseljenaMjesta.columns, naseljenaMjesta.buttons);
 		naseljenaMjesta.verifikujStavku(novoNaseljenoMjesto, homePage.podatak2Tabela2WE);
 		naseljenaMjesta.obrisiStavku();
 		naseljenaMjesta.verifikujPoruku("Brisanje je uspješno završeno");

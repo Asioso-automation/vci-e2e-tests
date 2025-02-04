@@ -38,7 +38,7 @@ public class Poste extends PocetnaStranicaPXD {
 		navigateOnPage(Poste.class, "Šifarnici", "Pošte");
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Pošte')]")));
-		verifikacijaStranice("Šifarnici", "Pošte", "Pošte", columns, buttons);
+		verifikacijaStranice("Šifarnici", "Pošte", "Pošte", 1, columns, buttons);
 	}
 	
 	public String[] dodajPostu(String[] podaci) throws InterruptedException {

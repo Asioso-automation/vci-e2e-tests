@@ -28,7 +28,7 @@ public class Monteri extends PocetnaStranicaPXD {
 		navigateOnPage(Monteri.class, "Šifarnici", "Monteri");
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Monteri')]")));
-		verifikacijaStranice("Šifarnici", "Monteri", "Monteri", columns, buttons);
+		verifikacijaStranice("Šifarnici", "Monteri", "Monteri", 1, columns, buttons);
 	}
 	
 	public String dodajMontera(String naziv)throws InterruptedException{

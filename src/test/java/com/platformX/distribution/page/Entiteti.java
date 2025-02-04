@@ -24,7 +24,7 @@ public class Entiteti extends PocetnaStranicaPXD {
 		navigateOnPage(Entiteti.class, "Šifarnici", "Entiteti");
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Entiteti')]")));
-		verifikacijaStranice("Šifarnici", "Entiteti", "Entiteti", columns, buttons);
+		verifikacijaStranice("Šifarnici", "Entiteti", "Entiteti", 1, columns, buttons);
 	}
 
 }

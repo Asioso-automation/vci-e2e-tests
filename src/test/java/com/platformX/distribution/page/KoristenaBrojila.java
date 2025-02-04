@@ -4,6 +4,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import com.platformX.base.Kolone;
 
@@ -13,22 +14,18 @@ public class KoristenaBrojila extends PocetnaStranicaPXD {
 		super(driver);
 	}
 	
-		public void verifikujKoristenaBrojila()throws InterruptedException, FileNotFoundException, IOException {
-		Kolone kolone = new Kolone(driver);
+	Kolone kolone = new Kolone(driver);
+	
+	public WebElement[] columns = {kolone.kolonaIdWE, kolone.kolonaBrojBrojilaWE, kolone.kolonaBrojDrzavnePlombeWE, kolone.kolonaTipBrojilaWE, kolone.kolonaGodinaIstekaZigaWE, kolone.kolonaGodinaProizvodnjeWE, 
+			kolone.kolonaVlasnistvoWE, kolone.kolonaBrojFazaWE, kolone.kolonaBrojTarifaWE, kolone.kolonaRedniBrojURegistruWE, kolone.kolonaPodrzavaAmmIntegracijuWE};
+	
+	public WebElement[] buttons = {preuzmiExcelBtnWE, ukloniFiltereBtnWE, osvjeziBtnWE};
+
+		public void navigirajVerifikujKoristenaBrojila()throws Exception {
+		navigateOnPage(KoristenaBrojila.class, "Brojila", "Korištena brojila");
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Korištena brojila')]")));
-		verifikacijaZajednickihElemenata2("Brojila", "Korištena Brojila", "Korištena brojila", 12, false, false, false, true, true, true, false);
-//		broj kolona na app ja 11, ali test prolazi samo ako se stavi broj kolona 12 - istraziti
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojBrojilaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojDrzavnePlombeWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTipBrojilaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaGodinaIstekaZigaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaGodinaProizvodnjeWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaVlasnistvoWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojFazaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojTarifaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaRedniBrojURegistruWE));	
+		verifikacijaStranice("Brojila", "Korištena Brojila", "Korištena brojila", 1, columns, buttons);
 	}
 	
 }

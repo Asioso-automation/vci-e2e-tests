@@ -36,7 +36,7 @@ public class NaseljenaMjesta extends PocetnaStranicaPXD {
 		navigateOnPage(NaseljenaMjesta.class, "Šifarnici", "Naseljena mjesta");
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Naseljena mjesta')]")));
-		verifikacijaStranice("Šifarnici", "Naseljena Mjesta", "Naseljena mjesta", columns, buttons);
+		verifikacijaStranice("Šifarnici", "Naseljena Mjesta", "Naseljena mjesta", 1, columns, buttons);
 	}
 
 	public String dodajNaseljenoMjesto(String naziv) throws Exception {

@@ -4,6 +4,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import com.platformX.base.Kolone;
 
@@ -13,19 +14,18 @@ public class CjenovnikNeovlastenePotrosnje extends PocetnaStranicaPXD {
 		super(driver);
 	}
 	
-	public void verifikujCjenovnikNeovlastenePotrosnje() throws InterruptedException, FileNotFoundException, IOException {
-		Kolone kolone = new Kolone(driver);
+	Kolone kolone = new Kolone(driver);
+	
+	public WebElement[] columns = {kolone.kolonaIdWE, kolone.kolonaTarifnaGrupaWE, kolone.kolonaSezonaWE, kolone.kolonaCijenaEnergijeWE, kolone.kolonaCijenaSnageWE, 
+			kolone.kolonaStopaPdvWE, kolone.kolonaDatumOdWE, kolone.kolonaDatumDoWE};
+	
+	public WebElement[] buttons = {dodajBtnWE, preuzmiExcelBtnWE, ukloniFiltereBtnWE, osvjeziBtnWE};
+
+	public void navigirajVerifikujCjenovnikNeovlastenePotrosnje() throws Exception {
+		navigateOnPage(CjenovnikNeovlastenePotrosnje.class, "Tarifni sistem", "Cjenovnik neovlaštene potrošnje");
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Cjenovnik neovlaštene potrošnje')]")));
-		verifikacijaZajednickihElemenata2("Tarifni Sistem", "Cjenovnik Neovlaštene Potrošnje", "Cjenovnik neovlaštene potrošnje", 9, false, false, true, true, true, true, false);
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTarifnaGrupaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaSezonaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaCijenaEnergijeWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaCijenaSnageWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaStopaPdvWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumOdWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumDoWE));
+		verifikacijaStranice("Tarifni sistem", "Cjenovnik Neovlaštene Potrošnje", "Cjenovnik neovlaštene potrošnje", 1, columns, buttons);
 	}
 
 }

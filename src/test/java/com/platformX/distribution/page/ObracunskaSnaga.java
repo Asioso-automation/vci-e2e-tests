@@ -29,17 +29,17 @@ public class ObracunskaSnaga extends PocetnaStranicaPXD {
 	@FindBy(xpath = "//div[2]/div/div/div/div[1]/div[1]/input[1]") 
 	private WebElement periodOdWE;
 	
-	public void verifikujObracunskaSnaga() throws InterruptedException, FileNotFoundException, IOException {
-		Kolone kolone = new Kolone(driver);
+	Kolone kolone = new Kolone(driver);
+	
+	public WebElement[] columns = {kolone.kolonaIdWE, kolone.kolonaTarifnaGrupaWE, kolone.kolonaPeriodOdWE, kolone.kolonaPeriodDoWE, kolone.kolonakWWE, kolone.kolonaValidnaWE};
+	
+	public WebElement[] buttons = {dodajBtnWE, preuzmiExcelBtnWE, ukloniFiltereBtnWE, osvjeziBtnWE};
+
+	public void navigirajVerifikujObracunskaSnaga() throws Exception {
+		navigateOnPage(ObracunskaSnaga.class, "Tarifni sistem", "Obračunska snaga");
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Obračunska snaga')]")));
-		verifikacijaZajednickihElemenata2("Tarifni Sistem", "Obračunska Snaga", "Obračunska snaga", 7, false, false, true, true, true, true, false);
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTarifnaGrupaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPeriodOdWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPeriodDoWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonakWWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaValidnaWE));
+		verifikacijaStranice("Tarifni sistem", "Obračunska Snaga", "Obračunska snaga", 1, columns, buttons);
 	}
 	
 	public void dodajObracunskuSnagu(String tarifnaGrupa) throws InterruptedException {

@@ -31,7 +31,7 @@ public class PX_DIST_006_Citaci_CRUD_Test extends BaseTest {
 		citaci.dodajCitaca(citac);
 		citaci.verifikujPoruku("Uspješno završeno.");
 		citaci.pretraziStavku(homePage.filterKolona2WE, citac);
-		citaci.verifikacijaStranice("Šifarnici", "Čitači", "Čitači", citaci.columns, citaci.buttons);
+		citaci.verifikacijaStranice("Šifarnici", "Čitači", "Čitači", 1, citaci.columns, citaci.buttons);
 		citaci.verifikujStavku(citac, homePage.podatak2Tabela2WE);
 	}
 	
@@ -45,12 +45,12 @@ public class PX_DIST_006_Citaci_CRUD_Test extends BaseTest {
 		Citaci citaci = new Citaci(driver);
 		citaci.navigirajVerifikujCitaci();
 		citaci.pretraziStavku(homePage.filterKolona2WE, citac);
-		citaci.verifikacijaStranice("Šifarnici", "Čitači", "Čitači", citaci.columns, citaci.buttons);
+		citaci.verifikacijaStranice("Šifarnici", "Čitači", "Čitači", 1, citaci.columns, citaci.buttons);
 		citaci.verifikujStavku(citac, homePage.podatak2Tabela2WE);
 		citaci.urediCitaca(noviCitac);
 		citaci.verifikujPoruku("Uspješno završeno.");
 		citaci.pretraziStavku(homePage.filterKolona2WE, noviCitac);
-		citaci.verifikacijaStranice("Šifarnici", "Čitači", "Čitači", citaci.columns, citaci.buttons);
+		citaci.verifikacijaStranice("Šifarnici", "Čitači", "Čitači", 1, citaci.columns, citaci.buttons);
 		citaci.verifikujStavku(noviCitac, homePage.podatak2Tabela2WE);
 	}
 	
@@ -64,7 +64,7 @@ public class PX_DIST_006_Citaci_CRUD_Test extends BaseTest {
 		Citaci citaci = new Citaci(driver);
 		citaci.navigirajVerifikujCitaci();
 		citaci.pretraziStavku(homePage.filterKolona2WE, noviCitac);
-		citaci.verifikacijaStranice("Šifarnici", "Čitači", "Čitači", citaci.columns, citaci.buttons);
+		citaci.verifikacijaStranice("Šifarnici", "Čitači", "Čitači", 1, citaci.columns, citaci.buttons);
 		citaci.verifikujStavku(noviCitac, homePage.podatak2Tabela2WE);
 		citaci.obrisiStavku();
 		citaci.verifikujPoruku("Brisanje je uspješno završeno");

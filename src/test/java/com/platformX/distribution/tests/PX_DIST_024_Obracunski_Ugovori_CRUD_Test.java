@@ -32,12 +32,12 @@ public class PX_DIST_024_Obracunski_Ugovori_CRUD_Test  extends BaseTest {
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		FizickaLica fizickaLica = homePage.navigateOnPage(FizickaLica.class, "Kupci", "Fizička lica");
-		fizickaLica.verifikujFizickaLica();
+		FizickaLica fizickaLica = new FizickaLica(driver);
+		fizickaLica.navigirajVerifikujFizickaLica();
 		fizickaLica.dodajFizickoLice(fizickoLice);
 		fizickaLica.verifikujPoruku("Uspješno završeno.");
 		fizickaLica.pretraziStavku(homePage.filterKolona2WE, fizickoLice);
-		fizickaLica.verifikujFizickaLica();
+		fizickaLica.verifikacijaStranice("Kupci", "Fizička Lica", "Fizička lica", 1, fizickaLica.columns, fizickaLica.buttons);
 		fizickaLica.verifikujStavku(fizickoLice, homePage.podatak2Tabela2WE);
 		String kupac = fizickaLica.kreirajFizickoLice();
 		ObracunskaMjernaMjesta mjernaMjesta = homePage.navigateOnPage(ObracunskaMjernaMjesta.class, "Mjerna mjesta", "Obračunska mjerna mjesta");
@@ -48,17 +48,17 @@ public class PX_DIST_024_Obracunski_Ugovori_CRUD_Test  extends BaseTest {
 		mjernaMjesta.verifikujMjernaMjesta();
 		mjernaMjesta.verifikujStavku(sifraMjernogMjesta, homePage.podatak2Tabela4WE);
 		eic = mjernaMjesta.kreirajMjernoMjesto();
-		RegistarBrojila registarBrojila = homePage.navigateOnPage(RegistarBrojila.class, "Brojila", "Registar brojila");
-		registarBrojila.verifikujRegistarBrojila();
+		RegistarBrojila registarBrojila = new RegistarBrojila(driver);
+		registarBrojila.navigirajVerifikujRegistarBrojila();
 		String brojilo = registarBrojila.dodajBrojilo();
 		registarBrojila.verifikujBrojilo(brojilo);
 		String brBrojila = registarBrojila.kreirajBrojilo();
-		ObracunskiUgovori obracunskiUgovori = homePage.navigateOnPage(ObracunskiUgovori.class, "Obračunski ugovori", "Obračunski ugovori");
-		obracunskiUgovori.verifikujObracunskiUgovori();
+		ObracunskiUgovori obracunskiUgovori = new ObracunskiUgovori(driver);
+		obracunskiUgovori.navigirajVerifikujObracunskiUgovori();
 		obracunskiUgovori.dodajObracunskiUgovor(kupac, eic, brBrojila);
 		obracunskiUgovori.verifikujPoruku("Uspješno završeno.");
 		obracunskiUgovori.pretraziStavku(homePage.filterKolona3WE, eic);
-		obracunskiUgovori.verifikujObracunskiUgovori();
+		obracunskiUgovori.verifikacijaStranice("Ugovori", "Obračunski Ugovori", "Obračunski ugovori", 2, obracunskiUgovori.columns, obracunskiUgovori.buttons);
 		obracunskiUgovori.verifikujStavku(eic, homePage.podatak2Tabela3WE);
 	}
 	
@@ -69,17 +69,16 @@ public class PX_DIST_024_Obracunski_Ugovori_CRUD_Test  extends BaseTest {
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		ObracunskiUgovori obracunskiUgovori = homePage.navigateOnPage(ObracunskiUgovori.class, "Obračunski ugovori", "Obračunski ugovori");
-		obracunskiUgovori.verifikujObracunskiUgovori();
+		ObracunskiUgovori obracunskiUgovori = new ObracunskiUgovori(driver);
+		obracunskiUgovori.navigirajVerifikujObracunskiUgovori();
 		obracunskiUgovori.pretraziStavku(homePage.filterKolona3WE, eic);
-		obracunskiUgovori.verifikujObracunskiUgovori();
+		obracunskiUgovori.verifikacijaStranice("Ugovori", "Obračunski Ugovori", "Obračunski ugovori", 2, obracunskiUgovori.columns, obracunskiUgovori.buttons);
 		obracunskiUgovori.verifikujStavku(eic, homePage.podatak2Tabela3WE);
 		obracunskiUgovori.urediObracunskiUgovor(konstanta);
 		obracunskiUgovori.verifikujPoruku("Uspješno završeno.");
-		obracunskiUgovori.navigateOnPage(ObracunskiUgovori.class, "Obračunski ugovori", "Obračunski ugovori");
-		obracunskiUgovori.verifikujObracunskiUgovori();
+		obracunskiUgovori.verifikacijaStranice("Ugovori", "Obračunski Ugovori", "Obračunski ugovori", 2, obracunskiUgovori.columns, obracunskiUgovori.buttons);
 		obracunskiUgovori.pretraziStavku(homePage.filterKolona3WE, eic);
-		obracunskiUgovori.verifikujObracunskiUgovori();
+		obracunskiUgovori.verifikacijaStranice("Ugovori", "Obračunski Ugovori", "Obračunski ugovori", 2, obracunskiUgovori.columns, obracunskiUgovori.buttons);
 		obracunskiUgovori.verifikujStavku(konstantaTabela, homePage.podatak2Tabela10WE);
 	}
 	
@@ -90,10 +89,10 @@ public class PX_DIST_024_Obracunski_Ugovori_CRUD_Test  extends BaseTest {
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		ObracunskiUgovori obracunskiUgovori = homePage.navigateOnPage(ObracunskiUgovori.class, "Obračunski ugovori", "Obračunski ugovori");
-		obracunskiUgovori.verifikujObracunskiUgovori();
+		ObracunskiUgovori obracunskiUgovori = new ObracunskiUgovori(driver);
+		obracunskiUgovori.navigirajVerifikujObracunskiUgovori();
 		obracunskiUgovori.pretraziStavku(homePage.filterKolona3WE, eic);
-		obracunskiUgovori.verifikujObracunskiUgovori();
+		obracunskiUgovori.verifikacijaStranice("Ugovori", "Obračunski Ugovori", "Obračunski ugovori", 2, obracunskiUgovori.columns, obracunskiUgovori.buttons);
 		obracunskiUgovori.verifikujStavku(eic, homePage.podatak2Tabela3WE);
 		obracunskiUgovori.obrisiStavku();
 		obracunskiUgovori.verifikujPoruku("Brisanje je uspješno završeno");

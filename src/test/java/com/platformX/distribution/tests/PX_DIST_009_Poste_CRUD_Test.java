@@ -31,7 +31,7 @@ public class PX_DIST_009_Poste_CRUD_Test extends BaseTest {
 		poste.dodajPostu(podaci);
 		poste.verifikujPoruku("Uspješno završeno.");
 		poste.pretraziStavku(homePage.filterKolona2WE, podaci[0]);
-		poste.verifikacijaStranice("Šifarnici", "Pošte", "Pošte", poste.columns, poste.buttons);
+		poste.verifikacijaStranice("Šifarnici", "Pošte", "Pošte", 1, poste.columns, poste.buttons);
 		poste.verifikujStavku(podaci[1], homePage.podatak2Tabela1WE);
 	}
 	
@@ -45,7 +45,7 @@ public class PX_DIST_009_Poste_CRUD_Test extends BaseTest {
 		Poste poste = new Poste(driver);
 		poste.navigirajVerifikujPoste();
 		poste.pretraziStavku(homePage.filterKolona2WE, podaci[0]);
-		poste.verifikacijaStranice("Šifarnici", "Pošte", "Pošte", poste.columns, poste.buttons);
+		poste.verifikacijaStranice("Šifarnici", "Pošte", "Pošte", 1, poste.columns, poste.buttons);
 		poste.verifikujStavku(podaci[1], homePage.podatak2Tabela1WE);
 		poste.dodajPostuSaPodacima(podaci[0], podaci[1], podaci[2]);
 		poste.verifikujPoruku("Pošta već postoji za dati ID.");
@@ -61,12 +61,12 @@ public class PX_DIST_009_Poste_CRUD_Test extends BaseTest {
 		Poste poste = new Poste(driver);
 		poste.navigirajVerifikujPoste();
 		poste.pretraziStavku(homePage.filterKolona2WE, podaci[0]);
-		poste.verifikacijaStranice("Šifarnici", "Pošte", "Pošte", poste.columns, poste.buttons);
+		poste.verifikacijaStranice("Šifarnici", "Pošte", "Pošte", 1, poste.columns, poste.buttons);
 		poste.verifikujStavku(podaci[1], homePage.podatak2Tabela1WE);
 		poste.urediPostu(novaPosta);
 		poste.verifikujPoruku("Uspješno završeno.");
 		poste.pretraziStavku(homePage.filterKolona2WE, novaPosta);
-		poste.verifikacijaStranice("Šifarnici", "Pošte", "Pošte", poste.columns, poste.buttons);
+		poste.verifikacijaStranice("Šifarnici", "Pošte", "Pošte", 1, poste.columns, poste.buttons);
 		poste.verifikujStavku(podaci[1], homePage.podatak2Tabela1WE);
 	}
 	
@@ -80,7 +80,7 @@ public class PX_DIST_009_Poste_CRUD_Test extends BaseTest {
 		Poste poste = new Poste(driver);
 		poste.navigirajVerifikujPoste();
 		poste.pretraziStavku(homePage.filterKolona2WE, novaPosta);
-		poste.verifikacijaStranice("Šifarnici", "Pošte", "Pošte", poste.columns, poste.buttons);
+		poste.verifikacijaStranice("Šifarnici", "Pošte", "Pošte", 1, poste.columns, poste.buttons);
 		poste.verifikujStavku(podaci[1], homePage.podatak2Tabela1WE);
 		poste.obrisiStavku();
 		poste.verifikujPoruku("Brisanje je uspješno završeno");
@@ -98,7 +98,7 @@ public class PX_DIST_009_Poste_CRUD_Test extends BaseTest {
 		Poste poste = new Poste(driver);
 		poste.navigirajVerifikujPoste();
 		poste.pretraziStavku(homePage.filterKolona2WE, "Trebinje");
-		poste.verifikacijaStranice("Šifarnici", "Pošte", "Pošte", poste.columns, poste.buttons);
+		poste.verifikacijaStranice("Šifarnici", "Pošte", "Pošte", 1, poste.columns, poste.buttons);
 		poste.verifikujStavku("89000", homePage.podatak2Tabela1WE);
 		poste.obrisiStavku();
 		poste.verifikujPoruku("Brisanje ovog zapisa nije moguće.");

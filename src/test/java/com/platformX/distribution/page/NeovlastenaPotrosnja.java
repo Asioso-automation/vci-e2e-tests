@@ -31,23 +31,19 @@ public class NeovlastenaPotrosnja extends PocetnaStranicaPXD {
 	 
 	 @FindBy(xpath = "//div[2]/div[1]/div/div/div[1]/div/input")  
 	 private WebElement poljeAvtWE;
+		
+	 Kolone kolone = new Kolone(driver);
+		
+	 public WebElement[] columns = {kolone.kolonaIdWE, kolone.kolonaKupacWE, kolone.kolonaMjernoMjestoWE, kolone.kolonaTerenskaJedinicaWE, kolone.kolonaObracunIzvrsioWE, 
+			 kolone.kolonaTarifnaGrupaWE, kolone.kolonaBrojiloWE, kolone.kolonaDatumOdWE, kolone.kolonaDatumDoWE, kolone.kolonaStatusWE, kolone.kolonaSifraTipaNeovlastenePotrosnjeWE};
+		
+	 public WebElement[] buttons = {dodajBtnWE, preuzmiExcelBtnWE, ukloniFiltereBtnWE, osvjeziBtnWE};
 
-	public void verifikujNeovlastenaPotrosnja()throws InterruptedException, FileNotFoundException, IOException {
-		Kolone kolone = new Kolone(driver);
+	 public void navigirajVerifikujNeovlastenaPotrosnja()throws Exception {
+		navigateOnPage(NeovlastenaPotrosnja.class, "Neovlaštena potrošnja", "Neovlaštena potrošnja");
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Neovlaštena potrošnja')]")));
-		verifikacijaZajednickihElemenata2("Neovlaštena Potrošnja", "Neovlaštena Potrošnja", "Neovlaštena potrošnja", 13, false, false, true, true, true, true, false);
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKupacWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMjernoMjestoWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTerenskaJedinicaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaObracunIzvrsioWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTarifnaGrupaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojiloWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumOdWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumDoWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaStatusWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaSifraTipaNeovlastenePotrosnjeWE));
+		verifikacijaStranice("Neovlaštena potrošnja", "Neovlaštena Potrošnja", "Neovlaštena potrošnja", 2, columns, buttons);
 	}
 	
 	public void dodajNeovlastenuPotrosnju(String kupac, String trafostanica) throws InterruptedException, FileNotFoundException, IOException {

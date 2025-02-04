@@ -27,11 +27,11 @@ public class PX_DIST_015_Tarifne_Nadgrupe_CRUD_Test extends BaseTest{
 	    PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 	    homePage.verifikujPocetnuStranicu();
 	    TarifneNadgrupe tarifneNadgrupe = homePage.navigateOnPage(TarifneNadgrupe.class, "Tarifni sistem", "Tarifne nadgrupe");
-	    tarifneNadgrupe.verifikujTarifneNadgrupe();
+	    tarifneNadgrupe.navigirajVerifikujTarifneNadgrupe();
 	    tarifneNadgrupe.dodajTarifnuNadrgupu(tarifnaNadgrupa);
 	    tarifneNadgrupe.verifikujPoruku("Uspješno završeno.");
 	    tarifneNadgrupe.pretraziStavku(homePage.filterKolona2WE, tarifnaNadgrupa);
-	    tarifneNadgrupe.verifikujTarifneNadgrupe();
+	    tarifneNadgrupe.navigirajVerifikujTarifneNadgrupe();
 	    tarifneNadgrupe.verifikujStavku(tarifnaNadgrupa, homePage.podatak2Tabela2WE); 
 	  }
 	
@@ -43,14 +43,14 @@ public class PX_DIST_015_Tarifne_Nadgrupe_CRUD_Test extends BaseTest{
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
 		TarifneNadgrupe tarifneNadgrupe = homePage.navigateOnPage(TarifneNadgrupe.class, "Tarifni sistem", "Tarifne nadgrupe");
-		tarifneNadgrupe.verifikujTarifneNadgrupe();
+		tarifneNadgrupe.navigirajVerifikujTarifneNadgrupe();
 	    tarifneNadgrupe.pretraziStavku(homePage.filterKolona2WE, tarifnaNadgrupa);
-	    tarifneNadgrupe.verifikujTarifneNadgrupe();
+	    tarifneNadgrupe.navigirajVerifikujTarifneNadgrupe();
 	    tarifneNadgrupe.verifikujStavku(tarifnaNadgrupa, homePage.podatak2Tabela2WE); 
 		tarifneNadgrupe.urediTarifnuNadgrupu(novaTarifnaNadgrupa);
 		tarifneNadgrupe.verifikujPoruku("Uspješno završeno.");
 	    tarifneNadgrupe.pretraziStavku(homePage.filterKolona2WE, novaTarifnaNadgrupa);
-	    tarifneNadgrupe.verifikujTarifneNadgrupe();
+	    tarifneNadgrupe.navigirajVerifikujTarifneNadgrupe();
 	    tarifneNadgrupe.verifikujStavku(novaTarifnaNadgrupa, homePage.podatak2Tabela2WE); 
 	}
 	
@@ -62,9 +62,9 @@ public class PX_DIST_015_Tarifne_Nadgrupe_CRUD_Test extends BaseTest{
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
 		TarifneNadgrupe tarifneNadgrupe = homePage.navigateOnPage(TarifneNadgrupe.class, "Tarifni sistem", "Tarifne nadgrupe");
-		tarifneNadgrupe.verifikujTarifneNadgrupe();
+		tarifneNadgrupe.navigirajVerifikujTarifneNadgrupe();
 	    tarifneNadgrupe.pretraziStavku(homePage.filterKolona2WE, novaTarifnaNadgrupa);
-	    tarifneNadgrupe.verifikujTarifneNadgrupe();
+	    tarifneNadgrupe.navigirajVerifikujTarifneNadgrupe();
 	    tarifneNadgrupe.verifikujStavku(novaTarifnaNadgrupa, homePage.podatak2Tabela2WE); 
 		tarifneNadgrupe.obrisiStavku();
 		tarifneNadgrupe.verifikujPoruku("Brisanje je uspješno završeno");

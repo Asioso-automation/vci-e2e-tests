@@ -52,24 +52,20 @@ public class ObracunskiUgovori extends PocetnaStranicaPXD {
 	
 	@FindBy(xpath = "//div[5]/div[1]/div/div/div[1]/div/input")
 	private WebElement poljeAktivnaKonstanta1WE;
+	
+	Kolone kolone = new Kolone(driver);
+	
+	public WebElement[] columns = {kolone.kolonaIdWE, kolone.kolonaKupacWE, kolone.kolonaMjMjestoWE, kolone.kolonaNazivMjMjestaWE, kolone.kolonaAdresaMjMjestaWE, 
+			kolone.kolonaTrenutniSnabdWE, kolone.kolonaTrenutniTipUgovoraWE, kolone.kolonaTrenutnaTGWE, kolone.kolonaTrenutnoBrojiloWE, kolone.kolonaTrenutnaKonstWE, 
+			kolone.kolonaUPripremiWE, kolone.kolonaAktivanWE};
+	
+	public WebElement[] buttons = {dodajBtnWE, preuzmiExcelBtnWE, ukloniFiltereBtnWE, osvjeziBtnWE, infoBtnWE};
 
-	public void verifikujObracunskiUgovori() throws InterruptedException, FileNotFoundException, IOException {
-		Kolone kolone = new Kolone(driver);
+	public void navigirajVerifikujObracunskiUgovori() throws Exception {
+		navigateOnPage(ObracunskiUgovori.class, "Obračunski ugovori", "Obračunski ugovori");
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Obračunski ugovori')]")));
-		verifikacijaZajednickihElemenata2("Ugovori", "Obračunski Ugovori", "Obračunski ugovori", 14, false, false, true, true, true, true, true);
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKupacWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMjMjestoWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNazivMjMjestaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAdresaMjMjestaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTrenutniSnabdWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTrenutniTipUgovoraWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTrenutnaTGWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTrenutnoBrojiloWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTrenutnaKonstWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaUPripremiWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAktivanWE));
+		verifikacijaStranice("Ugovori", "Obračunski Ugovori", "Obračunski ugovori", 2, columns, buttons);
 	}
 	
 	public void dodajObracunskiUgovor(String kupac, String mjernoMjesto, String brBrojila) throws InterruptedException, FileNotFoundException, IOException {

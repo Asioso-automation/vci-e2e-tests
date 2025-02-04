@@ -35,7 +35,7 @@ public class Ulice extends PocetnaStranicaPXD {
 		navigateOnPage(Ulice.class, "Šifarnici", "Ulice");
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Ulice')]")));
-		verifikacijaStranice("Šifarnici", "Ulice", "Ulice", columns, buttons);
+		verifikacijaStranice("Šifarnici", "Ulice", "Ulice", 1, columns, buttons);
 	}
 	
 	public String dodajUlicu(String naziv) throws InterruptedException {

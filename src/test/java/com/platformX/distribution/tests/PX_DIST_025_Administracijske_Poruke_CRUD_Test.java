@@ -26,12 +26,12 @@ public class PX_DIST_025_Administracijske_Poruke_CRUD_Test  extends BaseTest {
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		Poruke poruke = homePage.navigateOnPage(Poruke.class, "Administracija", "Poruke");
-		poruke.verifikujPoruke();
+		Poruke poruke = new Poruke(driver);
+		poruke.navigirajVerifikujPoruke();
 		poruke.dodajPoruku(podaci);
 		poruke.verifikujPoruku("Uspješno završeno.");
 		poruke.pretraziStavku(homePage.filterKolona3WE, podaci[0]);
-		poruke.verifikujPoruke();
+		poruke.verifikacijaStranice("Administracija", "Poruke", "Poruke", 2, poruke.columns, poruke.buttons);
 		poruke.verifikujStavku(podaci[0], homePage.podatak2Tabela3WE);
 	}
 	
@@ -42,8 +42,8 @@ public class PX_DIST_025_Administracijske_Poruke_CRUD_Test  extends BaseTest {
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		Poruke poruke = homePage.navigateOnPage(Poruke.class, "Administracija", "Poruke");
-		poruke.verifikujPoruke();
+		Poruke poruke = new Poruke(driver);
+		poruke.navigirajVerifikujPoruke();
 		poruke.dodajPoruku(podaci1);
 		poruke.verifikujPoruku("Uspješno završeno.");
 		homePage.navigirajNaPocetnaStranica();
@@ -61,10 +61,10 @@ public class PX_DIST_025_Administracijske_Poruke_CRUD_Test  extends BaseTest {
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		Poruke poruke = homePage.navigateOnPage(Poruke.class, "Administracija", "Poruke");
-		poruke.verifikujPoruke();
+		Poruke poruke = new Poruke(driver);
+		poruke.navigirajVerifikujPoruke();
 		poruke.pretraziStavku(homePage.filterKolona3WE, podaci[0]);
-		poruke.verifikujPoruke();
+		poruke.verifikacijaStranice("Administracija", "Poruke", "Poruke", 2, poruke.columns, poruke.buttons);
 		poruke.verifikujStavku(podaci[0], homePage.podatak2Tabela3WE);
 		poruke.obrisiStavku();
 		poruke.verifikujPoruku("Brisanje je uspješno završeno");

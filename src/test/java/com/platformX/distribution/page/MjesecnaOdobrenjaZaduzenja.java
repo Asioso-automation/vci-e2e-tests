@@ -4,6 +4,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import com.platformX.base.Kolone;
 
@@ -13,21 +14,18 @@ public class MjesecnaOdobrenjaZaduzenja extends PocetnaStranicaPXD {
 		super(driver);
 	}
 	
-	public void verifikujMjesecnaOdobrenjaZaduzenja()throws InterruptedException, FileNotFoundException, IOException {
-		Kolone kolone = new Kolone(driver);
+	Kolone kolone = new Kolone(driver);
+	
+	public WebElement[] columns = {kolone.kolonaIdWE, kolone.kolonaKupacWE, kolone.kolonaMjernoMjestoEicWE, kolone.kolonaObracunskiUgovorWE, kolone.kolonaPeriodWE, 
+			kolone.kolonaAvtWE, kolone.kolonaAmtWE, kolone.kolonaRvtWE, kolone.kolonaRmtWE, kolone.kolonaSnaga1WE};
+	
+	public WebElement[] buttons = {dodajBtnWE, preuzmiExcelBtnWE, ukloniFiltereBtnWE, osvjeziBtnWE};
+
+	public void navigirajVerifikujMjesecnaOdobrenjaZaduzenja()throws Exception {
+		navigateOnPage(MjesecnaOdobrenjaZaduzenja.class, "Obračun", "Mjesečna odobrenja/zaduženja");
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Mjesečna odobrenja/zaduženja')]")));
-		verifikacijaZajednickihElemenata2("Obračun", "Mjesečna Odobrenja/zaduženja", "Mjesečna odobrenja/zaduženja", 11, false, false, false, true, true, true, false);
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKupacWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMjernoMjestoEicWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaObracunskiUgovorWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPeriodWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAvtWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAmtWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaRvtWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaRmtWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaSnaga1WE));
+		verifikacijaStranice("Obračun", "Mjesečna Odobrenja/zaduženja", "Mjesečna odobrenja/zaduženja", 1, columns, buttons);
 	}
 
 }

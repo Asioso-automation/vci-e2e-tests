@@ -4,6 +4,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import com.platformX.base.Kolone;
 
@@ -13,26 +14,19 @@ public class TipoviBrojila extends PocetnaStranicaPXD {
 		super(driver);
 	}
 	
-	public void verifikujTipoviBrojila () throws InterruptedException, FileNotFoundException, IOException {
-		Kolone kolone = new Kolone(driver);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
+	Kolone kolone = new Kolone(driver);
+	
+	public WebElement[] columns = {kolone.kolonaIdWE, kolone.kolonaNazivWE, kolone.kolonaNivoStrujeWE, kolone.kolonaBrojSkalaWE, kolone.kolonaBrojCifaraWE, 
+			kolone.kolonaBrojDecCifaraWE, kolone.kolonaBrojCifaraMaksigrafaWE, kolone.kolonaBrojDecCifaraMaksigrafaWE, kolone.kolonaKlasaTacnostiAktivneEnWE, 
+			kolone.kolonaKlasaTacnostiReaktivneEnWE, kolone.kolonaKlasaTacnostiSnageWE, kolone.kolonaMjeriAktivnuEnWE, kolone.kolonaMjeriReaktivnuEnWE, 
+			kolone.kolonaMjeriSnaguWE, kolone.kolonaValidanWE};
+	
+	public WebElement[] buttons = {dodajBtnWE, preuzmiExcelBtnWE, ukloniFiltereBtnWE, osvjeziBtnWE};
+
+	public void navigirajVerifikujTipoviBrojila() throws Exception {
+		navigateOnPage(TipoviBrojila.class, "Šifarnici", "Tipovi brojila");		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Tipovi brojila')]")));
-		verifikacijaZajednickihElemenata2("Šifarnici", "Tipovi Brojila", "Tipovi brojila", 16, false, false, true, true, true, true, true);
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNazivWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNivoStrujeWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojSkalaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojCifaraWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojDecCifaraWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojCifaraMaksigrafaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojDecCifaraMaksigrafaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKlasaTacnostiAktivneEnWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKlasaTacnostiReaktivneEnWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKlasaTacnostiSnageWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMjeriAktivnuEnWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMjeriReaktivnuEnWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMjeriSnaguWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaValidanWE));
+		verifikacijaStranice("Šifarnici", "Tipovi Brojila", "Tipovi brojila", 1, columns, buttons);
 	}
 	
 }

@@ -36,7 +36,7 @@ public class Citaci extends PocetnaStranicaPXD {
 		navigateOnPage(Citaci.class, "Šifarnici", "Čitači");
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Čitači')]")));
-		verifikacijaStranice("Šifarnici", "Čitači", "Čitači", columns, buttons);
+		verifikacijaStranice("Šifarnici", "Čitači", "Čitači", 1, columns, buttons);
 	}
 
 	public String dodajCitaca(String ime) throws InterruptedException {

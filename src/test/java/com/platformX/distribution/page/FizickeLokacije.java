@@ -42,7 +42,7 @@ public class FizickeLokacije extends PocetnaStranicaPXD {
 		navigateOnPage(FizickeLokacije.class, "Šifarnici", "Fizičke lokacije");
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Fizičke lokacije')]")));
-		verifikacijaStranice("Šifarnici", "Fizičke Lokacije", "Fizičke lokacije", columns, buttons);
+		verifikacijaStranice("Šifarnici", "Fizičke Lokacije", "Fizičke lokacije", 1, columns, buttons);
 	}
 	
 	public String dodajFizickuLokaciju(String naziv, String terenskaJedinica) throws InterruptedException {

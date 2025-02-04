@@ -31,12 +31,12 @@ public class PX_DIST_026_Neovlastena_Potrosnja_CRUD_Test extends BaseTest{
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		FizickaLica fizickaLica = homePage.navigateOnPage(FizickaLica.class, "Kupci", "Fizička lica");
-		fizickaLica.verifikujFizickaLica();
+		FizickaLica fizickaLica = new FizickaLica(driver);
+		fizickaLica.navigirajVerifikujFizickaLica();
 		fizickaLica.dodajFizickoLice(fizickoLice);
 		fizickaLica.verifikujPoruku("Uspješno završeno.");
 		fizickaLica.pretraziStavku(homePage.filterKolona2WE, fizickoLice);
-		fizickaLica.verifikujFizickaLica();
+		fizickaLica.verifikacijaStranice("Kupci", "Fizička Lica", "Fizička lica", 1, fizickaLica.columns, fizickaLica.buttons);
 		fizickaLica.verifikujStavku(fizickoLice, homePage.podatak2Tabela2WE);
 		kupac = fizickaLica.kreirajFizickoLice();
 		Trafostanice trafostanice = homePage.navigateOnPage(Trafostanice.class, "Šifarnici", "Trafostanice");
@@ -46,12 +46,12 @@ public class PX_DIST_026_Neovlastena_Potrosnja_CRUD_Test extends BaseTest{
 		trafostanice.pretraziStavku(homePage.filterKolona3WE, trafostanica);
 		trafostanice.verifikujTrafostanice();
 		trafostanice.verifikujStavku(trafostanica, homePage.podatak2Tabela3WE);
-		NeovlastenaPotrosnja neovlastenaPotrosnja = homePage.navigateOnPage(NeovlastenaPotrosnja.class, "Neovlaštena potrošnja", "Neovlaštena potrošnja");
-		neovlastenaPotrosnja.verifikujNeovlastenaPotrosnja();
+		NeovlastenaPotrosnja neovlastenaPotrosnja = new NeovlastenaPotrosnja(driver);
+		neovlastenaPotrosnja.navigirajVerifikujNeovlastenaPotrosnja();
 		neovlastenaPotrosnja.dodajNeovlastenuPotrosnju(fizickoLice, trafostanica);
 		neovlastenaPotrosnja.verifikujPoruku("Uspješno završeno.");
 		neovlastenaPotrosnja.pretraziStavku(homePage.filterKolona2WE, fizickoLice);
-		neovlastenaPotrosnja.verifikujNeovlastenaPotrosnja();
+		neovlastenaPotrosnja.verifikacijaStranice("Neovlaštena potrošnja", "Neovlaštena Potrošnja", "Neovlaštena potrošnja", 2, neovlastenaPotrosnja.columns, neovlastenaPotrosnja.buttons);
 		neovlastenaPotrosnja.verifikujStavku(kupac, homePage.podatak2Tabela2WE);
 	}
 	
@@ -62,22 +62,23 @@ public class PX_DIST_026_Neovlastena_Potrosnja_CRUD_Test extends BaseTest{
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		FizickaLica fizickaLica = homePage.navigateOnPage(FizickaLica.class, "Kupci", "Fizička lica");
-		fizickaLica.verifikujFizickaLica();
+		FizickaLica fizickaLica = new FizickaLica(driver);
+		fizickaLica.navigirajVerifikujFizickaLica();
 		fizickaLica.dodajFizickoLice(novoFizickoLice);
 		fizickaLica.verifikujPoruku("Uspješno završeno.");
 		fizickaLica.pretraziStavku(homePage.filterKolona2WE, novoFizickoLice);
-		fizickaLica.verifikujFizickaLica();
+		fizickaLica.verifikacijaStranice("Kupci", "Fizička Lica", "Fizička lica", 1, fizickaLica.columns, fizickaLica.buttons);
 		fizickaLica.verifikujStavku(novoFizickoLice, homePage.podatak2Tabela2WE);
 		noviKupac = fizickaLica.kreirajFizickoLice();
-		NeovlastenaPotrosnja neovlastenaPotrosnja = homePage.navigateOnPage(NeovlastenaPotrosnja.class, "Neovlaštena potrošnja", "Neovlaštena potrošnja");
+		NeovlastenaPotrosnja neovlastenaPotrosnja = new NeovlastenaPotrosnja(driver);
+		neovlastenaPotrosnja.navigirajVerifikujNeovlastenaPotrosnja();
 		neovlastenaPotrosnja.pretraziStavku(homePage.filterKolona2WE, fizickoLice);
-		neovlastenaPotrosnja.verifikujNeovlastenaPotrosnja();
+		neovlastenaPotrosnja.verifikacijaStranice("Neovlaštena potrošnja", "Neovlaštena Potrošnja", "Neovlaštena potrošnja", 2, neovlastenaPotrosnja.columns, neovlastenaPotrosnja.buttons);
 		neovlastenaPotrosnja.verifikujStavku(kupac, homePage.podatak2Tabela2WE);
 		neovlastenaPotrosnja.urediNeovlastenuPotrosnju(novoFizickoLice);
 		neovlastenaPotrosnja.verifikujPoruku("Uspješno završeno.");
 		neovlastenaPotrosnja.pretraziStavku(homePage.filterKolona2WE, novoFizickoLice);
-		neovlastenaPotrosnja.verifikujNeovlastenaPotrosnja();
+		neovlastenaPotrosnja.verifikacijaStranice("Neovlaštena potrošnja", "Neovlaštena Potrošnja", "Neovlaštena potrošnja", 2, neovlastenaPotrosnja.columns, neovlastenaPotrosnja.buttons);
 		neovlastenaPotrosnja.verifikujStavku(noviKupac, homePage.podatak2Tabela2WE);
 	}
 	
@@ -88,10 +89,10 @@ public class PX_DIST_026_Neovlastena_Potrosnja_CRUD_Test extends BaseTest{
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		NeovlastenaPotrosnja neovlastenaPotrosnja = homePage.navigateOnPage(NeovlastenaPotrosnja.class, "Neovlaštena potrošnja", "Neovlaštena potrošnja");
-		neovlastenaPotrosnja.verifikujNeovlastenaPotrosnja();
+		NeovlastenaPotrosnja neovlastenaPotrosnja = new NeovlastenaPotrosnja(driver);
+		neovlastenaPotrosnja.navigirajVerifikujNeovlastenaPotrosnja();
 		neovlastenaPotrosnja.pretraziStavku(homePage.filterKolona2WE, novoFizickoLice);
-		neovlastenaPotrosnja.verifikujNeovlastenaPotrosnja();
+		neovlastenaPotrosnja.verifikacijaStranice("Neovlaštena potrošnja", "Neovlaštena Potrošnja", "Neovlaštena potrošnja", 2, neovlastenaPotrosnja.columns, neovlastenaPotrosnja.buttons);
 		neovlastenaPotrosnja.verifikujStavku(noviKupac, homePage.podatak2Tabela2WE);
 		neovlastenaPotrosnja.obrisiStavku();
 		neovlastenaPotrosnja.verifikujPoruku("Brisanje je uspješno završeno");

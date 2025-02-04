@@ -95,8 +95,11 @@ public abstract class PageBase {
 	@FindBy(xpath = "//i[contains(@class, 'fa-sync')]")
 	protected WebElement osvjeziBtnWE;
 
-	@FindBy(xpath = "//i[contains(@class, 'fa-info')]")
+	@FindBy(xpath = "//i[contains(@class, 'notranslate fa fa-info')]")
 	protected WebElement infoBtnWE;
+	
+	@FindBy(xpath = "//i[contains(@class, 'fa-filter')]")
+	protected WebElement filterBtnWE;
 	
 	@FindBy(xpath = "//div[contains(@class, 'v-card__title title')]")
 	private WebElement brisanjePopUpWE;
@@ -350,6 +353,8 @@ public abstract class PageBase {
 				driver.get(platformx_distribution_properties.getValue("URL.DIST.LOGIN") + platformx_distribution_properties.getValue(propertiesNaziv(stranica)));
 			}
 		}
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
+		Thread.sleep(500);
 //		pokusaj zaobilaska random otvaranja menija
 		try {
 			naslovStraniceWE.click();
@@ -446,7 +451,7 @@ public abstract class PageBase {
 //		}
 //	}
 
-	public void verifikacijaStranice(String sekcija, String stranica, String naslovStranice, WebElement[] listaKolona, WebElement[] btnElementi) throws InterruptedException {
+	public void verifikacijaStranice(String sekcija, String stranica, String naslovStranice, int brKolona, WebElement[] listaKolona, WebElement[] btnElementi) throws InterruptedException {
 //		verifikacijaZajednickihElemenata
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		try {
@@ -458,7 +463,7 @@ public abstract class PageBase {
 		assertTrue(toCamelCase(stranicaWE.getText().trim()).equals(stranica + " "), stranica + ": Naziv stranice nije dobar!");
 		assertTrue(toProperCase(naslovStraniceWE.getText().trim()).equals(naslovStranice + " "),
 					stranica + ": Naziv stranice nije dobar!");
-		assertTrue(brojKolona().size() == listaKolona.length+1, stranica + ": Broj kolona nije dobar!");
+		assertTrue(brojKolona().size() == listaKolona.length+brKolona, stranica + ": Broj kolona nije dobar!");		
 //		verifikacijaBtn
 		for (int i=0; i<btnElementi.length; i++) {
 //			System.out.println(i);		// provjera koji element liste uzima

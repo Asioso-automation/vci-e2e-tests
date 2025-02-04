@@ -38,21 +38,19 @@ public class RegistarBrojila extends PocetnaStranicaPXD {
 	
 	@FindBy(xpath = "//div[1]/div/div[2]/div/div/input")
 	 private WebElement napredniFilterJednakoWE;
+	
+	Kolone kolone = new Kolone(driver);
+	
+	public WebElement[] columns = {kolone.kolonaRedniBrojWE, kolone.kolonaBrojBrojilaWE, kolone.kolonaSerijskiBrojWE, kolone.kolonaBrojDrzavnePlombeWE, kolone.kolonaTipBrojilaWE, 
+			kolone.kolonaGodinaIstekaZigaWE, kolone.kolonaGodinaProizvodnjeWE, kolone.kolonaPodrzavaAmmIntegracijuWE, kolone.kolonaDlmsIntegrisanoWE};
+	
+	public WebElement[] buttons = {dodajBtnWE, preuzmiExcelBtnWE, ukloniFiltereBtnWE, osvjeziBtnWE};
 
-	public void verifikujRegistarBrojila()throws InterruptedException, FileNotFoundException, IOException {
-		Kolone kolone = new Kolone(driver);
+	public void navigirajVerifikujRegistarBrojila()throws Exception {
+		navigateOnPage(RegistarBrojila.class, "Brojila", "Registar brojila");
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Registar brojila')]")));
-		verifikacijaZajednickihElemenata2("Brojila", "Registar Brojila", "Registar brojila", 10, true, false, true, true, true, true, false);
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaRedniBrojWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojBrojilaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaSerijskiBrojWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojDrzavnePlombeWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTipBrojilaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaGodinaIstekaZigaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaGodinaProizvodnjeWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPodrzavaAmmIntegracijuWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDlmsIntegrisanoWE));
+		verifikacijaStranice("Brojila", "Registar Brojila", "Registar brojila", 1, columns, buttons);
 	}
 	
 	public String dodajBrojilo() throws InterruptedException, FileNotFoundException, IOException {

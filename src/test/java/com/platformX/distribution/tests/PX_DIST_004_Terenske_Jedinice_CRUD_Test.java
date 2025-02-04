@@ -31,7 +31,7 @@ public class PX_DIST_004_Terenske_Jedinice_CRUD_Test extends BaseTest {
 		terenskeJedinice.dodajTerenskuJedinicu(terenskaJedinica);
 		terenskeJedinice.verifikujPoruku("Uspješno završeno.");
 		terenskeJedinice.pretraziStavku(homePage.filterKolona2WE, terenskaJedinica);
-		terenskeJedinice.verifikacijaStranice("Šifarnici", "Terenske Jedinice", "Terenske jedinice", terenskeJedinice.columns, terenskeJedinice.buttons);
+		terenskeJedinice.verifikacijaStranice("Šifarnici", "Terenske Jedinice", "Terenske jedinice", 1, terenskeJedinice.columns, terenskeJedinice.buttons);
 		terenskeJedinice.verifikujStavku(terenskaJedinica, homePage.podatak2Tabela2WE);
 	}
 		
@@ -45,12 +45,12 @@ public class PX_DIST_004_Terenske_Jedinice_CRUD_Test extends BaseTest {
 		TerenskeJedinice terenskeJedinice = new TerenskeJedinice(driver);
 		terenskeJedinice.navigirajVerifikujTerenskeJedinice();
 		terenskeJedinice.pretraziStavku(homePage.filterKolona2WE, terenskaJedinica);
-		terenskeJedinice.verifikacijaStranice("Šifarnici", "Terenske Jedinice", "Terenske jedinice", terenskeJedinice.columns, terenskeJedinice.buttons);
+		terenskeJedinice.verifikacijaStranice("Šifarnici", "Terenske Jedinice", "Terenske jedinice", 1, terenskeJedinice.columns, terenskeJedinice.buttons);
 		terenskeJedinice.verifikujStavku(terenskaJedinica, homePage.podatak2Tabela2WE);
 		terenskeJedinice.urediTerenskuJedinicu(novaTerenskaJedinica);
 		terenskeJedinice.verifikujPoruku("Uspješno završeno.");
 		terenskeJedinice.pretraziStavku(homePage.filterKolona2WE, novaTerenskaJedinica);
-		terenskeJedinice.verifikacijaStranice("Šifarnici", "Terenske Jedinice", "Terenske jedinice", terenskeJedinice.columns, terenskeJedinice.buttons);
+		terenskeJedinice.verifikacijaStranice("Šifarnici", "Terenske Jedinice", "Terenske jedinice", 1, terenskeJedinice.columns, terenskeJedinice.buttons);
 		terenskeJedinice.verifikujStavku(novaTerenskaJedinica, homePage.podatak2Tabela2WE);
 	}
 	
@@ -63,7 +63,7 @@ public class PX_DIST_004_Terenske_Jedinice_CRUD_Test extends BaseTest {
 		TerenskeJedinice terenskeJedinice = new TerenskeJedinice(driver);
 		terenskeJedinice.navigirajVerifikujTerenskeJedinice();
 		terenskeJedinice.pretraziStavku(homePage.filterKolona2WE, novaTerenskaJedinica);
-		terenskeJedinice.verifikacijaStranice("Šifarnici", "Terenske Jedinice", "Terenske jedinice", terenskeJedinice.columns, terenskeJedinice.buttons);
+		terenskeJedinice.verifikacijaStranice("Šifarnici", "Terenske Jedinice", "Terenske jedinice", 1, terenskeJedinice.columns, terenskeJedinice.buttons);
 		terenskeJedinice.verifikujStavku(novaTerenskaJedinica, homePage.podatak2Tabela2WE);
 		terenskeJedinice.obrisiStavku();
 		terenskeJedinice.verifikujPoruku("Brisanje je uspješno završeno");

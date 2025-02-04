@@ -29,8 +29,8 @@ public class PXD_000_Prepare_And_Read_Data_Tests extends BaseTest {
 		logIn.logIn();
 		PocetnaStranicaPXD pocetna = new PocetnaStranicaPXD(driver);
 		pocetna.verifikujPocetnuStranicu();
-		Poruke poruke = pocetna.navigateOnPage(Poruke.class, "Administracija", "Poruke");
-		poruke.verifikujPoruke();
+		Poruke poruke = new Poruke(driver);
+		poruke.navigirajVerifikujPoruke();
 		GlobalVariables.id = poruke.pokupiIdStavkeString();
 	}
 	
@@ -42,7 +42,7 @@ public class PXD_000_Prepare_And_Read_Data_Tests extends BaseTest {
 		logIn.logIn();
 		PocetnaStranicaPXD pocetna = new PocetnaStranicaPXD(driver);
 		pocetna.verifikujPocetnuStranicu();
-		Organizacije organizacije = pocetna.navigateOnPage(Organizacije.class, "Šifarnici", "Organizacije");
+		Organizacije organizacije = new Organizacije(driver);
 		organizacije.navigirajVerifikujOrganizacije();
 		GlobalVariables.id = organizacije.pokupiIdStavkeString();
 	}

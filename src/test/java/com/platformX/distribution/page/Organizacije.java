@@ -25,7 +25,7 @@ public class Organizacije extends PocetnaStranicaPXD {
 		navigateOnPage(Organizacije.class, "Šifarnici", "Organizacije");
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Organizacije ')]")));
-		verifikacijaStranice("Šifarnici", "Organizacije", "Organizacije", columns, buttons);
+		verifikacijaStranice("Šifarnici", "Organizacije", "Organizacije", 1, columns, buttons);
 	}
 
 }

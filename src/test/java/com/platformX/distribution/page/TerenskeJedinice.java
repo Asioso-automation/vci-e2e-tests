@@ -36,7 +36,7 @@ public class TerenskeJedinice extends PocetnaStranicaPXD {
 		navigateOnPage(TerenskeJedinice.class, "Šifarnici", "Terenske jedinice");
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Terenske jedinice')]")));
-		verifikacijaStranice("Šifarnici", "Terenske Jedinice", "Terenske jedinice", columns, buttons);
+		verifikacijaStranice("Šifarnici", "Terenske Jedinice", "Terenske jedinice", 1, columns, buttons);
 	}
 
 	public String dodajTerenskuJedinicu(String naziv) throws InterruptedException {

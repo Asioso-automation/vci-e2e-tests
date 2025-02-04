@@ -31,7 +31,7 @@ public class PX_DIST_010_Ulice_CRUD_Test extends BaseTest {
 		ulice.dodajUlicu(ulica);
 		ulice.verifikujPoruku("Uspješno završeno.");
 		ulice.pretraziStavku(homePage.filterKolona2WE, ulica);
-		ulice.verifikacijaStranice("Šifarnici", "Ulice", "Ulice", ulice.columns, ulice.buttons);
+		ulice.verifikacijaStranice("Šifarnici", "Ulice", "Ulice", 1, ulice.columns, ulice.buttons);
 		ulice.verifikujStavku(ulica, homePage.podatak2Tabela2WE);
 	}
 	
@@ -45,12 +45,12 @@ public class PX_DIST_010_Ulice_CRUD_Test extends BaseTest {
 		Ulice ulice = new Ulice(driver);
 		ulice.navigirajVerifikujUlice();
 		ulice.pretraziStavku(homePage.filterKolona2WE, ulica);
-		ulice.verifikacijaStranice("Šifarnici", "Ulice", "Ulice", ulice.columns, ulice.buttons);
+		ulice.verifikacijaStranice("Šifarnici", "Ulice", "Ulice", 1, ulice.columns, ulice.buttons);
 		ulice.verifikujStavku(ulica, homePage.podatak2Tabela2WE);
 		ulice.urediUlicu(novaUlica);
 		ulice.verifikujPoruku("Uspješno završeno.");
 		ulice.pretraziStavku(homePage.filterKolona2WE, novaUlica);
-		ulice.verifikacijaStranice("Šifarnici", "Ulice", "Ulice", ulice.columns, ulice.buttons);
+		ulice.verifikacijaStranice("Šifarnici", "Ulice", "Ulice", 1, ulice.columns, ulice.buttons);
 		ulice.verifikujStavku(novaUlica, homePage.podatak2Tabela2WE);
 	}
 	
@@ -64,7 +64,7 @@ public class PX_DIST_010_Ulice_CRUD_Test extends BaseTest {
 		Ulice ulice = new Ulice(driver);
 		ulice.navigirajVerifikujUlice();
 		ulice.pretraziStavku(homePage.filterKolona2WE, novaUlica);
-		ulice.verifikacijaStranice("Šifarnici", "Ulice", "Ulice", ulice.columns, ulice.buttons);
+		ulice.verifikacijaStranice("Šifarnici", "Ulice", "Ulice", 1, ulice.columns, ulice.buttons);
 		ulice.verifikujStavku(novaUlica, homePage.podatak2Tabela2WE);
 		ulice.obrisiStavku();
 		ulice.verifikujPoruku("Brisanje je uspješno završeno");
@@ -82,7 +82,7 @@ public class PX_DIST_010_Ulice_CRUD_Test extends BaseTest {
 		Ulice ulice = new Ulice(driver);
 		ulice.navigirajVerifikujUlice();
 		ulice.pretraziStavku(homePage.filterKolona2WE, "HERCEGOVAČKA");				// promijenjeno sa Hajduk Veljkova na HERCEGOVAČKA
-		ulice.verifikacijaStranice("Šifarnici", "Ulice", "Ulice", ulice.columns, ulice.buttons);
+		ulice.verifikacijaStranice("Šifarnici", "Ulice", "Ulice", 1, ulice.columns, ulice.buttons);
 		ulice.verifikujStavku("HERCEGOVAČKA", homePage.podatak2Tabela2WE);
 		ulice.obrisiStavku();
 		ulice.verifikujPoruku("Brisanje ovog zapisa nije moguće.");

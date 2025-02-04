@@ -43,21 +43,19 @@ public class PravnaLica extends PocetnaStranicaPXD {
 
 	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '76300 - Bijeljina')]")			// 78000 - Banja Luka > 76300 - Bijeljina
 	 private WebElement odaberiPostuWE;
+	
+	Kolone kolone = new Kolone(driver);
+	
+	public WebElement[] columns = {kolone.kolonaIdWE, kolone.kolonaNazivWE, kolone.kolonaAdresaWE, kolone.kolonaJIBWE, kolone.kolonaIBWE, 
+			kolone.kolonaEmailWE, kolone.kolonaBrojTelefonaWE, kolone.kolonaPdvObveznikWE, kolone.kolonaAktivanWE};
+	
+	public WebElement[] buttons = {dodajBtnWE, preuzmiExcelBtnWE, ukloniFiltereBtnWE, osvjeziBtnWE};
 
-	public void verifikujPravnaLica() throws InterruptedException, FileNotFoundException, IOException {
-		Kolone kolone = new Kolone(driver);
+	public void navigirajVerifikujPravnaLica() throws Exception {
+		navigateOnPage(PravnaLica.class, "Kupci", "Pravna lica");
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Pravna lica')]")));
-		verifikacijaZajednickihElemenata2("Kupci", "Pravna Lica", "Pravna lica", 10, false, false, true, true, true, true, false);
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNazivWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAdresaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaJIBWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIBWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaEmailWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojTelefonaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPdvObveznikWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAktivanWE));
+		verifikacijaStranice("Kupci", "Pravna Lica", "Pravna lica", 1, columns, buttons);
 	}
 	
 	public String dodajPravnoLice(String naziv) throws InterruptedException, FileNotFoundException, IOException {

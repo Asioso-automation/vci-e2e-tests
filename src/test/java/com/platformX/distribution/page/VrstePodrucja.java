@@ -24,7 +24,7 @@ public class VrstePodrucja extends PocetnaStranicaPXD {
 		navigateOnPage(VrstePodrucja.class, "Šifarnici", "Vrste područja");
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Vrste područja')]")));
-		verifikacijaStranice("Šifarnici", "Vrste Područja", "Vrste područja", columns, buttons);
+		verifikacijaStranice("Šifarnici", "Vrste Područja", "Vrste područja", 1, columns, buttons);
 	}
 
 }

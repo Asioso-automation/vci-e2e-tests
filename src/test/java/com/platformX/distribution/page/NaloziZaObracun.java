@@ -4,6 +4,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import com.platformX.base.Kolone;
 
@@ -13,23 +14,19 @@ public class NaloziZaObracun extends PocetnaStranicaPXD {
 		super(driver);
 	}
 	
-	public void verifikujNaloziZaObracun()throws InterruptedException, FileNotFoundException, IOException {
-		Kolone kolone = new Kolone(driver);
+	Kolone kolone = new Kolone(driver);
+	
+	public WebElement[] columns = {kolone.kolonaIdWE, kolone.kolonaPeriodWE, kolone.kolonaTipUgovoraWE, kolone.kolonaSnabdjevacWE, kolone.kolonaSezonaWE, 
+			kolone.kolonaDatumWE, kolone.kolonaBrojKupacaWE, kolone.kolonaBrojMjernihMjestaWE, kolone.kolonaBrojObracunatihUgovoraWE, kolone.kolonaUkupnaEnergijaWE, 
+			kolone.kolonaUkupanIznosWE, kolone.kolonaZakljucenWE};
+	
+	public WebElement[] buttons = {dodajBtnWE, preuzmiExcelBtnWE, ukloniFiltereBtnWE, osvjeziBtnWE};
+
+	public void navigirajVerifikujNaloziZaObracun()throws Exception {
+		navigateOnPage(NaloziZaObracun.class, "Obračun", "Nalozi za obračun");
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Nalozi za obračun')]")));
-		verifikacijaZajednickihElemenata2("Obračun", "Nalozi Za Obračun", "Nalozi za obračun", 13, false, false, true, true, true, true, false);
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPeriodWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTipUgovoraWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaSnabdjevacWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaSezonaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojKupacaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojMjernihMjestaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojObracunatihUgovoraWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaUkupnaEnergijaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaUkupanIznosWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaZakljucenWE));
+		verifikacijaStranice("Obračun", "Nalozi Za Obračun", "Nalozi za obračun", 1, columns, buttons);
 	}
 
 }

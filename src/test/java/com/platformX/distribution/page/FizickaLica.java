@@ -15,42 +15,42 @@ public class FizickaLica extends PocetnaStranicaPXD {
 		super(driver);
 	}
 
-	 @FindBy(xpath = "//div[2]/div[1]/div/div/div[1]/div/input")  
-	 private WebElement poljeImeIPrezimeWE;
+	@FindBy(xpath = "//div[2]/div[1]/div/div/div[1]/div/input")  
+	private WebElement poljeImeIPrezimeWE;
 	 
-	 @FindBy(xpath = "//div[2]/div[2]/div/div/div[1]/div/input") 
-	 private WebElement poljeStampaniNazivNaDokumentimaWE;
+	@FindBy(xpath = "//div[2]/div[2]/div/div/div[1]/div/input") 
+	private WebElement poljeStampaniNazivNaDokumentimaWE;
 	 
-	 @FindBy(xpath = "//div[3]/div[1]/div/div/div[1]/div[1]/input[1]")
-	 private WebElement poljeMjestoWE;
+	@FindBy(xpath = "//div[3]/div[1]/div/div/div[1]/div[1]/input[1]")
+	private WebElement poljeMjestoWE;
 	 
-	 @FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '25 - Bijeljina')]")				// 6 - Banja Luka > 25 - Bijeljina
-	 private WebElement odaberiMjestoWE;
+	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '25 - Bijeljina')]")				// 6 - Banja Luka > 25 - Bijeljina
+	private WebElement odaberiMjestoWE;
 	 
-	 @FindBy(xpath = "//div[3]/div[2]/div/div/div[1]/div[1]/input[1]")
-	 private WebElement poljeUlicaWE;
+	@FindBy(xpath = "//div[3]/div[2]/div/div/div[1]/div[1]/input[1]")
+	private WebElement poljeUlicaWE;
 	 
-	 @FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '1001 - JASENICA III')]")			// 10950 - Svetog Save > 1001 - JASENICA III
-	 private WebElement odaberiUlicuWE;
+	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '1001 - JASENICA III')]")			// 10950 - Svetog Save > 1001 - JASENICA III
+	private WebElement odaberiUlicuWE;
 	 
-	 @FindBy(xpath = "//div[3]/div[4]/div/div/div[1]/div[1]/input[1]")
-	 private WebElement poljePostaWE;
+	@FindBy(xpath = "//div[3]/div[4]/div/div/div[1]/div[1]/input[1]")
+	private WebElement poljePostaWE;
 	 
-	 @FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '76300 - Bijeljina')]")			// 78000 - Banja Luka > 76300 - Bijeljina
-	 private WebElement odaberiPostuWE;
+	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '76300 - Bijeljina')]")			// 78000 - Banja Luka > 76300 - Bijeljina
+	private WebElement odaberiPostuWE;
+		
+	Kolone kolone = new Kolone(driver);
+		
+	public WebElement[] columns = {kolone.kolonaIdWE, kolone.kolonaImeIprezimeWE, kolone.kolonaBrojLicneKarteWE, kolone.kolonaAdresaWE, kolone.kolonaEmailWE, 
+				kolone.kolonaBrojTelefonaWE, kolone.kolonaAktivanWE};
+		
+	public WebElement[] buttons = {dodajBtnWE, preuzmiExcelBtnWE, ukloniFiltereBtnWE, osvjeziBtnWE};
 
-	public void verifikujFizickaLica() throws InterruptedException, FileNotFoundException, IOException {
-		Kolone kolone = new Kolone(driver);
+	public void navigirajVerifikujFizickaLica() throws Exception {
+		navigateOnPage(FizickaLica.class, "Kupci", "Fizička lica");
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Fizička lica')]")));
-		verifikacijaZajednickihElemenata2("Kupci", "Fizička Lica", "Fizička lica", 8, false, false, true, true, true, true, false);
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaImeIprezimeWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojLicneKarteWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAdresaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaEmailWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojTelefonaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAktivanWE));
+		verifikacijaStranice("Kupci", "Fizička Lica", "Fizička lica", 1, columns, buttons);
 	}
 	
 	public String dodajFizickoLice(String naziv) throws InterruptedException, FileNotFoundException, IOException {

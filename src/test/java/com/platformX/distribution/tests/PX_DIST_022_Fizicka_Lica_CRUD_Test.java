@@ -26,12 +26,12 @@ public class PX_DIST_022_Fizicka_Lica_CRUD_Test  extends BaseTest {
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		FizickaLica fizickaLica = homePage.navigateOnPage(FizickaLica.class, "Kupci", "Fizička lica");
-		fizickaLica.verifikujFizickaLica();
+		FizickaLica fizickaLica = new FizickaLica(driver);
+		fizickaLica.navigirajVerifikujFizickaLica();
 		fizickaLica.dodajFizickoLice(fizickoLice);
 		fizickaLica.verifikujPoruku("Uspješno završeno.");
 		fizickaLica.pretraziStavku(homePage.filterKolona2WE, fizickoLice);
-		fizickaLica.verifikujFizickaLica();
+		fizickaLica.verifikacijaStranice("Kupci", "Fizička Lica", "Fizička lica", 1, fizickaLica.columns, fizickaLica.buttons);
 		fizickaLica.verifikujStavku(fizickoLice, homePage.podatak2Tabela2WE);
 	}
 	
@@ -42,15 +42,15 @@ public class PX_DIST_022_Fizicka_Lica_CRUD_Test  extends BaseTest {
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		FizickaLica fizickaLica = homePage.navigateOnPage(FizickaLica.class, "Kupci", "Fizička lica");
-		fizickaLica.verifikujFizickaLica();
+		FizickaLica fizickaLica = new FizickaLica(driver);
+		fizickaLica.navigirajVerifikujFizickaLica();
 		fizickaLica.pretraziStavku(homePage.filterKolona2WE, fizickoLice);
-		fizickaLica.verifikujFizickaLica();
+		fizickaLica.verifikacijaStranice("Kupci", "Fizička Lica", "Fizička lica", 1, fizickaLica.columns, fizickaLica.buttons);
 		fizickaLica.verifikujStavku(fizickoLice, homePage.podatak2Tabela2WE);
 		fizickaLica.urediFizickoLice(novoFizickoLice);
 		fizickaLica.verifikujPoruku("Uspješno završeno.");
 		fizickaLica.pretraziStavku(homePage.filterKolona2WE, novoFizickoLice);
-		fizickaLica.verifikujFizickaLica();
+		fizickaLica.verifikacijaStranice("Kupci", "Fizička Lica", "Fizička lica", 1, fizickaLica.columns, fizickaLica.buttons);
 		fizickaLica.verifikujStavku(novoFizickoLice, homePage.podatak2Tabela2WE);
 	}
 	
@@ -61,10 +61,10 @@ public class PX_DIST_022_Fizicka_Lica_CRUD_Test  extends BaseTest {
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		FizickaLica fizickaLica = homePage.navigateOnPage(FizickaLica.class, "Kupci", "Fizička lica");
-		fizickaLica.verifikujFizickaLica();
+		FizickaLica fizickaLica = new FizickaLica(driver);
+		fizickaLica.navigirajVerifikujFizickaLica();
 		fizickaLica.pretraziStavku(homePage.filterKolona2WE, novoFizickoLice);
-		fizickaLica.verifikujFizickaLica();
+		fizickaLica.verifikacijaStranice("Kupci", "Fizička Lica", "Fizička lica", 1, fizickaLica.columns, fizickaLica.buttons);
 		fizickaLica.verifikujStavku(novoFizickoLice, homePage.podatak2Tabela2WE);
 		fizickaLica.obrisiStavku();
 		fizickaLica.verifikujPoruku("Brisanje je uspješno završeno");

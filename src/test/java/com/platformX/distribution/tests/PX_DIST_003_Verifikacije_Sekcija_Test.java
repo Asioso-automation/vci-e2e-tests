@@ -147,10 +147,10 @@ public class PX_DIST_003_Verifikacije_Sekcija_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		TipoviBrojila tipoviBrojila = homePage.navigateOnPage(TipoviBrojila.class, "Šifarnici", "Tipovi brojila");
-		tipoviBrojila.verifikujTipoviBrojila();
-		TipoviTransformatora tipoviTransformatora = homePage.navigateOnPage(TipoviTransformatora.class, "Šifarnici", "Tipovi transformatora");
-		tipoviTransformatora.verifikujTipoviTransformatora();
+		TipoviBrojila tipoviBrojila = new TipoviBrojila(driver);
+		tipoviBrojila.navigirajVerifikujTipoviBrojila();
+		TipoviTransformatora tipoviTransformatora = new TipoviTransformatora(driver);
+		tipoviTransformatora.navigirajVerifikujTipoviTransformatora();
 	}
 
 	@Test (retryAnalyzer = RetryAnalyzer.class, description = "test prolazi kroz sve stranice iz podsekcije FINANSIJSKI SIFARNICI i verifikuje ih")
@@ -160,12 +160,11 @@ public class PX_DIST_003_Verifikacije_Sekcija_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		Banke banke = homePage.navigateOnPage(Banke.class, "Šifarnici", "Banke");
-		banke.verifikujBanke();
-		ZiroRacuni ziroRacuni = homePage.navigateOnPage(ZiroRacuni.class, "Šifarnici", "Žiro računi");
-		ziroRacuni.verifikujZiroRacuni();
+		Banke banke = new Banke(driver);
+		banke.navigirajVerifikujBanke();
+		ZiroRacuni ziroRacuni = new ZiroRacuni(driver);
+		ziroRacuni.navigirajVerifikujZiroRacuni();
 	}
-
 	
 	@Test (retryAnalyzer = RetryAnalyzer.class, description = "test prolazi kroz sve stranice iz sekcije TARIFNI SISTEM i verifikuje ih")
 	public void px_dist_003_02_verifikacija_sekcije_tarifni_sistem_test() throws Exception {
@@ -174,20 +173,20 @@ public class PX_DIST_003_Verifikacije_Sekcija_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		KategorijePotrosnje kategorijePotrosnje = homePage.navigateOnPage(KategorijePotrosnje.class, "Tarifni sistem", "Kategorije potrošnje");
-		kategorijePotrosnje.verifikujKategorijePotrosnje();
-		Sezone sezone = homePage.navigateOnPage(Sezone.class, "Tarifni sistem", "Sezone");
-		sezone.verifikujSezone();
-		TarifneNadgrupe tarifneNadgrupe = homePage.navigateOnPage(TarifneNadgrupe.class, "Tarifni sistem", "Tarifne nadgrupe");
-		tarifneNadgrupe.verifikujTarifneNadgrupe();
-		TarifneGrupe tarifneGrupe = homePage.navigateOnPage(TarifneGrupe.class, "Tarifni sistem", "Tarifne grupe");
-		tarifneGrupe.verifikujTarifneGrupe();
-		ObracunskaSnaga obracunskaSnaga = homePage.navigateOnPage(ObracunskaSnaga.class, "Tarifni sistem", "Obračunska snaga");
-		obracunskaSnaga.verifikujObracunskaSnaga();
-		CjenovnikMrezarine cjenovnik = homePage.navigateOnPage(CjenovnikMrezarine.class, "Tarifni sistem", "Cjenovnik mrežarine");
-		cjenovnik.verifikujCjenovnikMrezarine();
-		CjenovnikNeovlastenePotrosnje cjenovnikNeovlastenePotrosnje = homePage.navigateOnPage(CjenovnikNeovlastenePotrosnje.class, "Tarifni sistem", "Cjenovnik neovlaštene potrošnje");
-		cjenovnikNeovlastenePotrosnje.verifikujCjenovnikNeovlastenePotrosnje();
+		KategorijePotrosnje kategorijePotrosnje = new KategorijePotrosnje(driver);
+		kategorijePotrosnje.navigirajVerifikujKategorijePotrosnje();
+		Sezone sezone = new Sezone(driver);
+		sezone.navigirajVerifikujSezone();
+		TarifneNadgrupe tarifneNadgrupe = new TarifneNadgrupe(driver);
+		tarifneNadgrupe.navigirajVerifikujTarifneNadgrupe();
+		TarifneGrupe tarifneGrupe = new TarifneGrupe(driver);
+		tarifneGrupe.navigirajVerifikujTarifneGrupe();
+		ObracunskaSnaga obracunskaSnaga = new ObracunskaSnaga(driver);
+		obracunskaSnaga.navigirajVerifikujObracunskaSnaga();
+		CjenovnikMrezarine cjenovnik = new CjenovnikMrezarine(driver);
+		cjenovnik.navigirajVerifikujCjenovnikMrezarine();
+		CjenovnikNeovlastenePotrosnje cjenovnikNeovlastenePotrosnje = new CjenovnikNeovlastenePotrosnje(driver);
+		cjenovnikNeovlastenePotrosnje.navigirajVerifikujCjenovnikNeovlastenePotrosnje();
 	}
 
 	@Test (retryAnalyzer = RetryAnalyzer.class, description = "test prolazi kroz sve stranice iz sekcije MJERNA MJESTA i verifikuje ih")
@@ -239,13 +238,12 @@ public class PX_DIST_003_Verifikacije_Sekcija_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		PravnaLica pravnaLica = homePage.navigateOnPage(PravnaLica.class, "Kupci", "Pravna lica");
-		pravnaLica.verifikujPravnaLica();
-		FizickaLica fizickaLica = homePage.navigateOnPage(FizickaLica.class, "Kupci", "Fizička lica");
-		fizickaLica.verifikujFizickaLica();
-		ZahtjeviZaDostavuPodatakaKUPCI zahtjeviZaDostavuPodatakaKupci = homePage
-				.navigateOnPage(ZahtjeviZaDostavuPodatakaKUPCI.class, "Kupci", "Zahtjevi za dostavu podataka kupci"); // dopisano "kupci" da bi ispravno navigiralo preko linka (isti naziv stranice u drugoj sekciji, nije jedinstven element)
-		zahtjeviZaDostavuPodatakaKupci.verifikujZahtjeviZaDostavuPodatakaKUPCI();
+		PravnaLica pravnaLica = new PravnaLica(driver);
+		pravnaLica.navigirajVerifikujPravnaLica();
+		FizickaLica fizickaLica = new FizickaLica(driver);
+		fizickaLica.navigirajVerifikujFizickaLica();
+		ZahtjeviZaDostavuPodatakaKUPCI zahtjeviZaDostavuPodatakaKupci = new ZahtjeviZaDostavuPodatakaKUPCI(driver);
+		zahtjeviZaDostavuPodatakaKupci.navigirajVerifikujZahtjeviZaDostavuPodatakaKUPCI();
 	}
 
 	@Test (retryAnalyzer = RetryAnalyzer.class, description = "test prolazi kroz sve stranice iz sekcije BROJILA i verifikuje ih")
@@ -255,16 +253,16 @@ public class PX_DIST_003_Verifikacije_Sekcija_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-//		KoristenaBrojila koristenaBrojila = homePage.navigateOnPage(KoristenaBrojila.class, "Brojila", "Korištena brojila");
-//	    koristenaBrojila.verifikujKoristenaBrojila();
-	    ZamjeneBrojila zamjeneBrojila = homePage.navigateOnPage(ZamjeneBrojila.class, "Brojila", "Zamjene brojila");
-	    zamjeneBrojila.verifikujZamjeneBrojila();
-		RegistarBrojila registarBrojila = homePage.navigateOnPage(RegistarBrojila.class, "Brojila", "Registar brojila");
-		registarBrojila.verifikujRegistarBrojila();
-		RelokacijeBrojila relokacijeBrojila = homePage.navigateOnPage(RelokacijeBrojila.class, "Brojila", "Relokacije brojila");
-		relokacijeBrojila.verifikujRelokacijeBrojila();
-		StrujniMjerniTransformatori transformatori = homePage.navigateOnPage(StrujniMjerniTransformatori.class, "Brojila", "Strujni mjerni transformatori");
-		transformatori.verifikujStrujniMjerniTransformatori();
+		KoristenaBrojila koristenaBrojila = new KoristenaBrojila(driver);
+		koristenaBrojila.navigirajVerifikujKoristenaBrojila();
+		ZamjeneBrojila zamjeneBrojila = new ZamjeneBrojila(driver);
+		zamjeneBrojila.navigirajVerifikujZamjeneBrojila();
+		RegistarBrojila registarBrojila = new RegistarBrojila(driver);
+		registarBrojila.navigirajVerifikujRegistarBrojila();
+		RelokacijeBrojila relokacijeBrojila = new RelokacijeBrojila(driver);
+		relokacijeBrojila.navigirajVerifikujRelokacijeBrojila();
+		StrujniMjerniTransformatori transformatori = new StrujniMjerniTransformatori(driver);
+		transformatori.navigirajVerifikujStrujniMjerniTransformatori();
 //		TODO NaponskiMjerniTransformatori
 	}
 
@@ -275,12 +273,12 @@ public class PX_DIST_003_Verifikacije_Sekcija_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		ObracunskiUgovori obracunskiUgovori = homePage.navigateOnPage(ObracunskiUgovori.class, "Obračunski ugovori", "Obračunski ugovori");
-		obracunskiUgovori.verifikujObracunskiUgovori();
-		ZahtjeviZaObracunskeUgovore zahtjeviZaObracunskeUgovore = homePage.navigateOnPage(ZahtjeviZaObracunskeUgovore.class, "Obračunski ugovori", "Zahtjevi za obračunske ugovore");
-		zahtjeviZaObracunskeUgovore.verifikujZahtjeviZaObracunskeUgovore();
-		ZahtjeviZaRaskidUgovora zahtjeviZaRaskidUgovora = homePage.navigateOnPage(ZahtjeviZaRaskidUgovora.class, "Obračunski ugovori", "Zahtjevi za raskid ugovora");
-		zahtjeviZaRaskidUgovora.verifikujZahtjeviZaRaskidUgovora();
+		ObracunskiUgovori obracunskiUgovori = new ObracunskiUgovori(driver);
+		obracunskiUgovori.navigirajVerifikujObracunskiUgovori();
+		ZahtjeviZaObracunskeUgovore zahtjeviZaObracunskeUgovore = new ZahtjeviZaObracunskeUgovore(driver);
+		zahtjeviZaObracunskeUgovore.navigirajVerifikujZahtjeviZaObracunskeUgovore();
+		ZahtjeviZaRaskidUgovora zahtjeviZaRaskidUgovora = new ZahtjeviZaRaskidUgovora(driver);
+		zahtjeviZaRaskidUgovora.navigirajVerifikujZahtjeviZaRaskidUgovora();
 	}
 
 	@Test (retryAnalyzer = RetryAnalyzer.class, description = "test prolazi kroz sve stranice iz sekcije OCITANJA i verifikuje ih")
@@ -322,10 +320,10 @@ public class PX_DIST_003_Verifikacije_Sekcija_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		NeovlastenaPotrosnja neovlastenaPotrosnja = homePage.navigateOnPage(NeovlastenaPotrosnja.class, "Neovlaštena potrošnja", "Neovlaštena potrošnja");
-		neovlastenaPotrosnja.verifikujNeovlastenaPotrosnja();
-		RacuniNeovlastenePotrosnje racuni = homePage.navigateOnPage(RacuniNeovlastenePotrosnje.class, "Neovlaštena potrošnja", "Računi");
-		racuni.verifikujRacuniNeovlastenePotrosnje();
+		NeovlastenaPotrosnja neovlastenaPotrosnja = new NeovlastenaPotrosnja(driver);
+		neovlastenaPotrosnja.navigirajVerifikujNeovlastenaPotrosnja();
+		RacuniNeovlastenePotrosnje racuni = new RacuniNeovlastenePotrosnje(driver);
+		racuni.navigirajVerifikujRacuniNeovlastenePotrosnje();
 	}
 
 	@Test (retryAnalyzer = RetryAnalyzer.class, description = "test prolazi kroz sve stranice iz sekcije OBRACUN i verifikuje ih")
@@ -335,14 +333,15 @@ public class PX_DIST_003_Verifikacije_Sekcija_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		NaloziZaObracun naloziZaObracun = homePage.navigateOnPage(NaloziZaObracun.class, "Obračun", "Nalozi za obračun");
-		naloziZaObracun.verifikujNaloziZaObracun();
-		KorekcijeEnergetskihObracuna korekcijeEnergetskihObracuna = homePage.navigateOnPage(KorekcijeEnergetskihObracuna.class, "Obračun", "Korekcije energetskih obračuna");
-		korekcijeEnergetskihObracuna.verifikujKorekcijeEnergetskihObracuna();
-		MjesecnaOdobrenjaZaduzenja mjesecnaOdobrenjaZaduzenja = homePage.navigateOnPage(MjesecnaOdobrenjaZaduzenja.class, "Obračun", "Mjesečna odobrenja/zaduženja");
-		mjesecnaOdobrenjaZaduzenja.verifikujMjesecnaOdobrenjaZaduzenja();
-		KorekcionaOdobrenjaZaduzenja korekcionaOdobrenjaZaduzenja = homePage.navigateOnPage(KorekcionaOdobrenjaZaduzenja.class, "Obračun", "Korekciona odobrenja/zaduženja");
-		korekcionaOdobrenjaZaduzenja.verifikujKorekcionaOdobrenjaZaduzenja();
+		NaloziZaObracun naloziZaObracun = new NaloziZaObracun(driver);
+		naloziZaObracun.navigirajVerifikujNaloziZaObracun();
+//		TODO EnergetskiObracun
+		KorekcijeEnergetskihObracuna korekcijeEnergetskihObracuna = new KorekcijeEnergetskihObracuna(driver);
+		korekcijeEnergetskihObracuna.navigirajVerifikujKorekcijeEnergetskihObracuna();
+		MjesecnaOdobrenjaZaduzenja mjesecnaOdobrenjaZaduzenja = new MjesecnaOdobrenjaZaduzenja(driver);
+		mjesecnaOdobrenjaZaduzenja.navigirajVerifikujMjesecnaOdobrenjaZaduzenja();
+		KorekcionaOdobrenjaZaduzenja korekcionaOdobrenjaZaduzenja = new KorekcionaOdobrenjaZaduzenja(driver);
+		korekcionaOdobrenjaZaduzenja.navigirajVerifikujKorekcionaOdobrenjaZaduzenja();
 	}
 	
 	@Test (retryAnalyzer = RetryAnalyzer.class, description = "test prolazi kroz sve stranice iz sekcije FINANSIJE i verifikuje ih")
@@ -353,12 +352,13 @@ public class PX_DIST_003_Verifikacije_Sekcija_Test extends BaseTest {
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
 		homePage.strelicaDesnoNavigate();
-		FinansijskeKartice finansijskeKartice = homePage.navigateOnPage(FinansijskeKartice.class, "Finansije", "Finansijske kartice");
+		FinansijskeKartice finansijskeKartice = new FinansijskeKartice(driver);
 		finansijskeKartice.verifikujFinansijskeKartice();
-		DnevniciUplata dnevniciUplata = homePage.navigateOnPage(DnevniciUplata.class, "Finansije", "Dnevnici uplata");
+		DnevniciUplata dnevniciUplata = new DnevniciUplata(driver);
 		dnevniciUplata.verifikujDnevniciUplata();
-		SveUplate sveUplate = homePage.navigateOnPage(SveUplate.class, "Finansije", "Sve uplate");
+		SveUplate sveUplate = new SveUplate(driver);
 		sveUplate.verifikujSveUplate();
+//		TODO verifikacija sekcije finansije
 	}
 
 	@Test (retryAnalyzer = RetryAnalyzer.class, description = "test prolazi kroz sve stranice iz sekcije ADMINISTRACIJA i verifikuje ih")
@@ -369,14 +369,12 @@ public class PX_DIST_003_Verifikacije_Sekcija_Test extends BaseTest {
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
 		homePage.strelicaDesnoNavigate();
-		Korisnici korisnici = homePage.navigateOnPage(Korisnici.class, "Administracija", "Korisnici");
-		korisnici.verifikujKorisnici();
-		Poruke poruke = homePage.navigateOnPage(Poruke.class, "Administracija", "Poruke");
-		poruke.verifikujPoruke();
-		DnevnikIzmjena dnevnikIzmjena = homePage.navigateOnPage(DnevnikIzmjena.class, "Administracija", "Dnevnik izmjena");
-		dnevnikIzmjena.verifikujDnevnikIzmjena();
-//		PozadinskiProcesi pozadinskiProcesi = homePage.navigirajNaPozadinskiProcesi();
-//		pozadinskiProcesi.verifikujPozadinskiProcesi();
+		Korisnici korisnici = new Korisnici(driver);
+		korisnici.navigirajVerifikujKorisnici();
+		Poruke poruke = new Poruke(driver);
+		poruke.navigirajVerifikujPoruke();
+		DnevnikIzmjena dnevnikIzmjena = new DnevnikIzmjena(driver);
+		dnevnikIzmjena.navigirajVerifikujDnevnikIzmjena();
 	}
 
 }

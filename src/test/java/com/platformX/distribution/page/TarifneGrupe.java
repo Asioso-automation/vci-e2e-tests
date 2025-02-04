@@ -46,21 +46,19 @@ public class TarifneGrupe extends PocetnaStranicaPXD {
 	
 	@FindBy(xpath = "//div[7]/div/div/div[1]/div[1]/input[1]") 
 	private WebElement naponskiNivoWE;
+	
+	Kolone kolone = new Kolone(driver);
+	
+	public WebElement[] columns = {kolone.kolonaIdWE, kolone.kolonaNazivWE, kolone.kolonaEbixSifraWE, kolone.kolonaNadgrupaWE, kolone.kolonaKategorijaWE, kolone.kolonaVrstaBrojilaWE, 
+			kolone.kolonaNaponskiNivoWE, kolone.kolonaMaxigrafWE, kolone.kolonaReaktivnaWE};
+	
+	public WebElement[] buttons = {preuzmiExcelBtnWE, ukloniFiltereBtnWE, osvjeziBtnWE};
 
-	public void verifikujTarifneGrupe() throws InterruptedException, FileNotFoundException, IOException {
-		Kolone kolone = new Kolone(driver);
+	public void navigirajVerifikujTarifneGrupe() throws Exception {
+		navigateOnPage(TarifneGrupe.class, "Tarifni sistem", "Tarifne grupe");
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Tarifne grupe')]")));
-		verifikacijaZajednickihElemenata2("Tarifni Sistem", "Tarifne Grupe", "Tarifne grupe", 10, false, false, false, true, true, true, false);
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNazivWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaEbixSifraWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNadgrupaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKategorijaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaVrstaBrojilaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNaponskiNivoWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMaxigrafWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaReaktivnaWE));
+		verifikacijaStranice("Tarifni sistem", "Tarifne Grupe", "Tarifne grupe", 1, columns, buttons);
 	}
 	
 	public String dodajTarifnuGrupu(String naziv) throws InterruptedException {

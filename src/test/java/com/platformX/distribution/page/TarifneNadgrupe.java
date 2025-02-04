@@ -17,14 +17,18 @@ public class TarifneNadgrupe extends PocetnaStranicaPXD {
 	
 	@FindBy(xpath = "//input") 
 	private WebElement nazivTarifneNadrupeWE;
+	
+	Kolone kolone = new Kolone(driver);
+	
+	public WebElement[] columns = {kolone.kolonaIdWE, kolone.kolonaNazivWE};
+	
+	public WebElement[] buttons = {dodajBtnWE, preuzmiExcelBtnWE, ukloniFiltereBtnWE, osvjeziBtnWE};
 
-	public void verifikujTarifneNadgrupe() throws InterruptedException, FileNotFoundException, IOException {
-		Kolone kolone = new Kolone(driver);
+	public void navigirajVerifikujTarifneNadgrupe() throws Exception {
+		navigateOnPage(TarifneNadgrupe.class, "Tarifni sistem", "Tarifne nadgrupe");
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Tarifne nadgrupe')]")));
-		verifikacijaZajednickihElemenata2("Tarifni Sistem", "Tarifne Nadgrupe", "Tarifne nadgrupe", 3, false, false, true, true, true, true, false);
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNazivWE));
+		verifikacijaStranice("Tarifni sistem", "Tarifne Nadgrupe", "Tarifne nadgrupe", 1, columns, buttons);
 	}
 
 	public String dodajTarifnuNadrgupu(String naziv) throws InterruptedException{

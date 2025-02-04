@@ -25,7 +25,7 @@ public class Snabdjevaci extends PocetnaStranicaPXD {
 		navigateOnPage(Snabdjevaci.class, "Šifarnici", "Snabdjevači");
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Snabdjevači')]")));
-		verifikacijaStranice("Šifarnici", "Snabdjevači", "Snabdjevači", columns, buttons);
+		verifikacijaStranice("Šifarnici", "Snabdjevači", "Snabdjevači", 1, columns, buttons);
 	}
 
 }

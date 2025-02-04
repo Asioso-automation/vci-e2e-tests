@@ -31,7 +31,7 @@ public class Opstine extends PocetnaStranicaPXD {
 		navigateOnPage(Opstine.class, "Šifarnici", "Opštine");
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Opštine')]")));
-		verifikacijaStranice("Šifarnici", "Opštine", "Opštine", columns, buttons);
+		verifikacijaStranice("Šifarnici", "Opštine", "Opštine", 1, columns, buttons);
 	}
 
 	public String dodajOpstinu(String naziv) throws InterruptedException {

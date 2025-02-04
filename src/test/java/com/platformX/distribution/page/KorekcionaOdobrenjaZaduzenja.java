@@ -4,6 +4,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import com.platformX.base.Kolone;
 
@@ -13,22 +14,19 @@ public class KorekcionaOdobrenjaZaduzenja extends PocetnaStranicaPXD {
 		super(driver);
 	}
 	
-	public void verifikujKorekcionaOdobrenjaZaduzenja()throws InterruptedException, FileNotFoundException, IOException {
-		Kolone kolone = new Kolone(driver);
+	Kolone kolone = new Kolone(driver);
+	
+	public WebElement[] columns = {kolone.kolonaIdWE, kolone.kolonaEnergetskiObracunWE, kolone.kolonaKupacWE, kolone.kolonaKorisnikWE, 
+			kolone.kolonaMjernoMjestoEicWE, kolone.kolonaDatumWE, kolone.kolonaAvtWE, kolone.kolonaAmtWE, kolone.kolonaRvtWE, kolone.kolonaRmtWE, 
+			kolone.kolonaSnaga1WE};
+	
+	public WebElement[] buttons = {preuzmiExcelBtnWE, ukloniFiltereBtnWE, osvjeziBtnWE};
+
+	public void navigirajVerifikujKorekcionaOdobrenjaZaduzenja()throws Exception {
+		navigateOnPage(KorekcionaOdobrenjaZaduzenja.class, "Obračun", "Korekciona odobrenja/zaduženja");
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 		"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Korekciona odobrenja/zaduženja')]")));
-		verifikacijaZajednickihElemenata2("Obračun", "Korekciona Odobrenja/zaduženja", "Korekciona odobrenja/zaduženja", 12, false, false, false, true, true, true, false);
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaEnergetskiObracunWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKupacWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKorisnikWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMjernoMjestoEicWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAvtWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAmtWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaRvtWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaRmtWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaSnaga1WE));
+		verifikacijaStranice("Obračun", "Korekciona Odobrenja/zaduženja", "Korekciona odobrenja/zaduženja", 1, columns, buttons);
 	}
 
 }

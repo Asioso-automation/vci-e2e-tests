@@ -20,15 +20,18 @@ public class KategorijePotrosnje extends PocetnaStranicaPXD {
 	
 	@FindBy(xpath = "//div[2]/div/div/div[1]/div[1]/input[1]") 
 	private WebElement kategorijaNaponskogNivoaWE;
+	
+	Kolone kolone = new Kolone(driver);
+	
+	public WebElement[] columns = {kolone.kolonaIdWE, kolone.kolonaNazivWE, kolone.kolonaKategorijaNaponskogNivoaWE};
+	
+	public WebElement[] buttons = {preuzmiExcelBtnWE, ukloniFiltereBtnWE, osvjeziBtnWE};
 
-	public void verifikujKategorijePotrosnje() throws InterruptedException, FileNotFoundException, IOException {
-		Kolone kolone = new Kolone(driver);
+	public void navigirajVerifikujKategorijePotrosnje() throws Exception {
+		navigateOnPage(KategorijePotrosnje.class, "Tarifni sistem", "Kategorije potrošnje");
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Kategorije potro')]")));
-		verifikacijaZajednickihElemenata2("Tarifni Sistem", "Kategorije Potrošnje", "Kategorije potrošnje", 3, false, false, false, true, true, true, false);
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNazivWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKategorijaNaponskogNivoaWE));
+		verifikacijaStranice("Tarifni sistem", "Kategorije Potrošnje", "Kategorije potrošnje", 0, columns, buttons);
 	}
 
 }

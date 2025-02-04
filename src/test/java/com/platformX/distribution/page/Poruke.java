@@ -45,18 +45,18 @@ public class Poruke extends PocetnaStranicaPXD {
 	
 //	@FindBy(xpath = "(//div[@class='pl-8'])[3]")
 //	private WebElement porukaSadrzaj3WE;
+	
+	Kolone kolone = new Kolone(driver);
+	
+	public WebElement[] columns = {kolone.kolonaIdWE, kolone.kolonaKorisnikWE, kolone.kolonaNaslovWE, kolone.kolonaDatumOdWE, kolone.kolonaDatumDoWE, kolone.kolonaPrioritetWE};
+	
+	public WebElement[] buttons = {dodajBtnWE, ukloniFiltereBtnWE, osvjeziBtnWE};
 
-	public void verifikujPoruke()throws InterruptedException, FileNotFoundException, IOException {
-		Kolone kolone = new Kolone(driver);
+	public void navigirajVerifikujPoruke()throws Exception {
+		navigateOnPage(Poruke.class, "Administracija", "Poruke");
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Poruke')]")));
-		verifikacijaZajednickihElemenata2("Administracija", "Poruke", "Poruke", 8, false, false, true, false, true, true, false);
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKorisnikWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNaslovWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumOdWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumDoWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPrioritetWE));
+		verifikacijaStranice("Administracija", "Poruke", "Poruke", 2, columns, buttons);
 	}
 	
 	public String[] dodajPoruku(String[] podaci) throws InterruptedException {

@@ -25,7 +25,7 @@ public class LokacijeMontera extends PocetnaStranicaPXD {
 		navigateOnPage(LokacijeMontera.class, "Šifarnici", "Lokacije montera");
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Lokacije montera')]")));
-		verifikacijaStranice("Šifarnici", "Lokacije Montera", "Lokacije montera", columns, buttons);
+		verifikacijaStranice("Šifarnici", "Lokacije Montera", "Lokacije montera", 1, columns, buttons);
 	}
 
 }
