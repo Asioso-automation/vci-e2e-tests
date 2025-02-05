@@ -4,6 +4,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import com.platformX.base.Kolone;
 
@@ -13,14 +14,17 @@ public class NaponskiPrenosniOdnos extends PocetnaStranicaPXD {
 		super(driver);
 	}
 	
-	public void verifikujNaponskiPrenosniOdnos() throws InterruptedException, FileNotFoundException, IOException {
-		Kolone kolone = new Kolone(driver);
+	Kolone kolone = new Kolone(driver);
+	
+	public WebElement[] columns = {kolone.kolonaIdWE, kolone.kolonaNazivWE, kolone.kolonaKonstantaWE};
+	
+	public WebElement[] buttons = {dodajBtnWE, preuzmiExcelBtnWE, ukloniFiltereBtnWE, osvjeziBtnWE};
+	
+	public void navigirajVerifikujNaponskiPrenosniOdnos() throws Exception {
+		navigateOnPage(NaponskiPrenosniOdnos.class, "Šifarnici", "Naponski prenosni odnos");
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Naponski prenosni odnos')]")));
-		verifikacijaZajednickihElemenata2("Šifarnici", "Naponski Prenosni Odnos", "Naponski prenosni odnos", 4, false, false, true, true, true, true, false);
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNazivWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKonstantaWE));
+		verifikacijaStranice("Šifarnici", "Naponski Prenosni Odnos", "Naponski prenosni odnos", 1, columns, buttons);
 	}	
 
 }

@@ -95,11 +95,17 @@ public abstract class PageBase {
 	@FindBy(xpath = "//i[contains(@class, 'fa-sync')]")
 	protected WebElement osvjeziBtnWE;
 
-	@FindBy(xpath = "//i[contains(@class, 'notranslate fa fa-info')]")
+	@FindBy(xpath = "//i[contains(@class, 'fa-sync')]")
 	protected WebElement infoBtnWE;
 	
 	@FindBy(xpath = "//i[contains(@class, 'fa-filter')]")
 	protected WebElement filterBtnWE;
+	
+	@FindBy(xpath = "//i[contains(@class, 'fa-download')]")
+	protected WebElement preuzmiProsireniExcelBtnWE;
+	
+	@FindBy(xpath = "//i[contains(@class, 'fa-plug-circle-xmark')]")
+	protected WebElement unistenaMmBtnWE;
 	
 	@FindBy(xpath = "//div[contains(@class, 'v-card__title title')]")
 	private WebElement brisanjePopUpWE;
@@ -357,9 +363,9 @@ public abstract class PageBase {
 		Thread.sleep(500);
 //		pokusaj zaobilaska random otvaranja menija
 		try {
-			naslovStraniceWE.click();
+			wait.until(ExpectedConditions.elementToBeClickable(naslovStraniceWE)).click();
 		} catch (Exception e) {
-			osvjeziBtnWE.click();
+			wait.until(ExpectedConditions.elementToBeClickable(osvjeziBtnWE)).click();
 		}
 //		
 		return pageClass.getDeclaredConstructor(WebDriver.class).newInstance(driver);

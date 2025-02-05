@@ -36,24 +36,20 @@ public class ZbirnaKontrolnaMjernaMjesta extends PocetnaStranicaPXD {
 	
 	@FindBy(xpath = "//div[7]/div/div/div[1]/div/input")
 	 private WebElement poljeBrojCitackogHodaWE;
-
-	public void verifikujZbirnaKontrolnaMjernaMjesta() throws InterruptedException, FileNotFoundException, IOException {
-		Kolone kolone = new Kolone(driver);
+	
+	Kolone kolone = new Kolone(driver);
+	
+	public WebElement[] columns = {kolone.kolonaIdWE, kolone.kolonaNazivWE, kolone.kolonaCitackiHodWE, kolone.kolonaRedniBrojWE, kolone.kolonaTrafostanicaWE, 
+			kolone.kolonaFizickaLokacijaWE, kolone.kolonaKonstantaWE, kolone.kolonaBrojiloWE, kolone.kolonaDatumOdWE, kolone.kolonaDatumDoWE, 
+			kolone.kolonaKontrolnoMjernoMjestoWE, kolone.kolonaAmmIntegrisano};
+	
+	public WebElement[] buttons = {dodajBtnWE, preuzmiExcelBtnWE, ukloniFiltereBtnWE, osvjeziBtnWE};
+	
+	public void navigirajVerifikujZbirnaKontrolnaMjernaMjesta() throws Exception {
+		navigateOnPage(ZbirnaKontrolnaMjernaMjesta.class, "Mjerna mjesta", "Zbirna/kontrolna mjerna mjesta");
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Zbirna/kontrolna mjerna mjesta')]")));
-		verifikacijaZajednickihElemenata2("Mjerna Mjesta", "Zbirna/kontrolna Mjerna Mjesta", "Zbirna/kontrolna mjerna mjesta", 13, false, false, true, true, true, true, false);
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNazivWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaCitackiHodWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaRedniBrojWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTrafostanicaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaFizickaLokacijaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKonstantaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojiloWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumOdWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumDoWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKontrolnoMjernoMjestoWE));
-//		kolonaAmmIntegrisano
+		verifikacijaStranice("Mjerna mjesta", "Zbirna/kontrolna Mjerna Mjesta", "Zbirna/kontrolna mjerna mjesta", 1, columns, buttons);
 	}
 	
 	public String dodajZbirnoKontrolnoMjernoMjesto(String brBrojila, String nazivZbirnogKontrolnogMjesta) throws InterruptedException, FileNotFoundException, IOException {

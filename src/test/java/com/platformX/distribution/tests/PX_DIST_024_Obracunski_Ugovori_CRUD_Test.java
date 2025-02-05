@@ -40,12 +40,12 @@ public class PX_DIST_024_Obracunski_Ugovori_CRUD_Test  extends BaseTest {
 		fizickaLica.verifikacijaStranice("Kupci", "Fizička Lica", "Fizička lica", 1, fizickaLica.columns, fizickaLica.buttons);
 		fizickaLica.verifikujStavku(fizickoLice, homePage.podatak2Tabela2WE);
 		String kupac = fizickaLica.kreirajFizickoLice();
-		ObracunskaMjernaMjesta mjernaMjesta = homePage.navigateOnPage(ObracunskaMjernaMjesta.class, "Mjerna mjesta", "Obračunska mjerna mjesta");
-		mjernaMjesta.verifikujMjernaMjesta();
+		ObracunskaMjernaMjesta mjernaMjesta = new ObracunskaMjernaMjesta(driver);
+		mjernaMjesta.navigirajVerifikujMjernaMjesta();
 		mjernaMjesta.dodajMjernoMjesto(sifraMjernogMjesta);
 		mjernaMjesta.verifikujPoruku("Uspješno završeno.");
 		mjernaMjesta.pretraziStavku(homePage.filterKolona4WE, sifraMjernogMjesta);
-		mjernaMjesta.verifikujMjernaMjesta();
+		mjernaMjesta.verifikacijaStranice("Mjerna mjesta", "Obračunska Mjerna Mjesta", "Obračunska mjerna mjesta", 2, mjernaMjesta.columns, mjernaMjesta.buttons);
 		mjernaMjesta.verifikujStavku(sifraMjernogMjesta, homePage.podatak2Tabela4WE);
 		eic = mjernaMjesta.kreirajMjernoMjesto();
 		RegistarBrojila registarBrojila = new RegistarBrojila(driver);

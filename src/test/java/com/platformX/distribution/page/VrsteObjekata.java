@@ -5,6 +5,7 @@ import java.io.IOException;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import com.platformX.base.Kolone;
@@ -14,15 +15,18 @@ public class VrsteObjekata extends PocetnaStranicaPXD {
 	public VrsteObjekata(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);
 	}
-
-	public void verifikujVrsteObjekata() throws InterruptedException, FileNotFoundException, IOException {
-		Kolone kolone = new Kolone(driver);
+	
+	Kolone kolone = new Kolone(driver);
+	
+	public WebElement[] columns = {kolone.kolonaIdWE, kolone.kolonaNazivWE, kolone.kolonaPrivremeniObjekatWE};
+	
+	public WebElement[] buttons = {dodajBtnWE, preuzmiExcelBtnWE, ukloniFiltereBtnWE, osvjeziBtnWE};
+	
+	public void navigirajVerifikujVrsteObjekata() throws Exception {
+		navigateOnPage(VrsteObjekata.class, "Šifarnici", "Vrste objekata");
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Vrste objekata')]")));
-		verifikacijaZajednickihElemenata2("Šifarnici", "Vrste Objekata", "Vrste objekata", 4, false, false, true, true, true, true, false);
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNazivWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPrivremeniObjekatWE));
+		verifikacijaStranice("Šifarnici", "Vrste Objekata", "Vrste objekata", 1, columns, buttons);
 	}
 	
 }

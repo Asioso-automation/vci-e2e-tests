@@ -63,31 +63,22 @@ public class ObracunskaMjernaMjesta extends PocetnaStranicaPXD {
 	@FindBy(xpath = "//div[contains(@class, 'v-list-item__title') and starts-with(., '76300 - Bijeljina')]")			// 78000 - Banja Luka > 76300 - Bijeljina
 	private WebElement odaberiPostuWE;
 	
-	public void verifikujMjernaMjesta() throws InterruptedException, FileNotFoundException, IOException {
-		Kolone kolone = new Kolone(driver);
+	Kolone kolone = new Kolone(driver);
+	
+	public WebElement[] columns = {kolone.kolonaIdWE, kolone.kolonaElektroenergetskaSaglasnostWE, kolone.kolonaEicWE, kolone.kolonaSifraEdBrojWE, kolone.kolonaUgovorWE, 
+			kolone.kolonaNazivMjernogMjestaWE, kolone.kolonaTerenskaJedinicaWE, kolone.kolonaFizickaLokacijaWE, kolone.kolonaTrafostanicaWE, kolone.kolonaCitackiHodWE, 
+			kolone.kolonaAdresaWE, kolone.kolonaLokacijaMjernogUredjajaWE, kolone.kolonaOdobrenaPrikljucnaSnagaWE, kolone.kolonaPodNaponomWE, kolone.kolonaUgovorUPripremiWE, 
+			kolone.kolonaAktivanUgovorWE, kolone.kolonaElektrana, kolone.kolonaAmmIntegrisano};
+	
+	public WebElement[] buttons = {dodajBtnWE, preuzmiExcelBtnWE, preuzmiProsireniExcelBtnWE, unistenaMmBtnWE, ukloniFiltereBtnWE, osvjeziBtnWE};
+	
+	public void navigirajVerifikujMjernaMjesta() throws Exception {
+		navigateOnPage(ObracunskaMjernaMjesta.class, "Mjerna mjesta", "Obračunska mjerna mjesta");
 		Thread.sleep(1000);
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Obračunska mjerna mjesta')]")));
-		verifikacijaZajednickihElemenata2("Mjerna Mjesta", "Obračunska Mjerna Mjesta", "Obračunska mjerna mjesta", 20, false, false, true, true, true, true, false);
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaElektroenergetskaSaglasnostWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaEicWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaSifraEdBrojWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaUgovorWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNazivMjernogMjestaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTerenskaJedinicaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaFizickaLokacijaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTrafostanicaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaCitackiHodWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAdresaWE));
-//		kolonaLokacijaMjernogMjestaWE
-//		kolonaOdobrenaPrikljucnaSnagaWE
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPodNaponomWE));
-//		TODO kolonaUgovorUPripremiWE
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAktivanUgovorWE));
-//		kolonaElektrana
-//		kolonaAmmIntegrisano
+		verifikacijaStranice("Mjerna mjesta", "Obračunska Mjerna Mjesta", "Obračunska mjerna mjesta", 2, columns, buttons);
 	}
 	
 	public String dodajMjernoMjesto(String sifraMjernogMjesta) throws InterruptedException, FileNotFoundException, IOException {

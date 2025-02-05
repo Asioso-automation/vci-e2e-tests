@@ -4,6 +4,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import com.platformX.base.Kolone;
 
@@ -13,13 +14,17 @@ public class VrsteZastitnihUredjaja extends PocetnaStranicaPXD {
 		super(driver);
 	}
 	
-	public void verifikujVrsteZastitnihUredjaja() throws InterruptedException, FileNotFoundException, IOException {
-		Kolone kolone = new Kolone(driver);
+	Kolone kolone = new Kolone(driver);
+	
+	public WebElement[] columns = {kolone.kolonaIdWE, kolone.kolonaNazivWE};
+	
+	public WebElement[] buttons = {dodajBtnWE, preuzmiExcelBtnWE, ukloniFiltereBtnWE, osvjeziBtnWE};
+	
+	public void navigirajVerifikujVrsteZastitnihUredjaja() throws Exception {
+		navigateOnPage(VrsteZastitnihUredjaja.class, "Šifarnici", "Vrste zaštitnih uređaja");
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Vrste zaštitnih uređaja')]")));
-		verifikacijaZajednickihElemenata2("Šifarnici", "Vrste Zaštitnih Uređaja", "Vrste zaštitnih uređaja", 3, false, false, true, true, true, true, false);
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNazivWE));
+		verifikacijaStranice("Šifarnici", "Vrste Zaštitnih Uređaja", "Vrste zaštitnih uređaja", 1, columns, buttons);
 	}
 
 }

@@ -4,6 +4,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import com.platformX.base.Kolone;
 
@@ -13,17 +14,17 @@ public class LokacijskeSaglasnosti extends PocetnaStranicaPXD {
 		super(driver);
 	}
 	
-	public void verifikujLokacijskeSaglasnosti() throws InterruptedException, FileNotFoundException, IOException {
-		Kolone kolone = new Kolone(driver);
+	Kolone kolone = new Kolone(driver);
+	
+	public WebElement[] columns = {kolone.kolonaIdWE, kolone.kolonaBrojProtokolaWE, kolone.kolonaKupacWE, kolone.kolonaFizickaLokacijaWE, kolone.kolonaNamjenaObjektaWE, kolone.kolonaDatumWE};
+	
+	public WebElement[] buttons = {dodajBtnWE, preuzmiExcelBtnWE, ukloniFiltereBtnWE, osvjeziBtnWE};
+	
+	public void navigirajVerifikujLokacijskeSaglasnosti() throws Exception {
+		navigateOnPage(LokacijskeSaglasnosti.class, "Mjerna mjesta", "Lokacijske saglasnosti");
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Lokacijske saglasnosti')]")));
-		verifikacijaZajednickihElemenata2("Mjerna Mjesta", "Lokacijske Saglasnosti", "Lokacijske saglasnosti", 7, false, false, true, true, true, true, false);
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojProtokolaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKupacWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaFizickaLokacijaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNamjenaObjektaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumWE));
+		verifikacijaStranice("Mjerna mjesta", "Lokacijske Saglasnosti", "Lokacijske saglasnosti", 1, columns, buttons);
 	}	
 
 }

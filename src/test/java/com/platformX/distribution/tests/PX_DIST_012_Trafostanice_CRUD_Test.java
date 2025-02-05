@@ -27,12 +27,12 @@ public class PX_DIST_012_Trafostanice_CRUD_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		Trafostanice trafostanice = homePage.navigateOnPage(Trafostanice.class, "Šifarnici", "Trafostanice");
-		trafostanice.verifikujTrafostanice();
+		Trafostanice trafostanice = new Trafostanice(driver);
+		trafostanice.navigirajVerifikujTrafostanice();
 		trafostanice.dodajTrafostanicu(trafostanica);
 		trafostanice.verifikujPoruku("Uspješno završeno.");
 		trafostanice.pretraziStavku(homePage.filterKolona3WE, trafostanica);
-		trafostanice.verifikujTrafostanice();
+		trafostanice.verifikacijaStranice("Šifarnici", "Trafostanice", "Trafostanice", 1, trafostanice.columns, trafostanice.buttons);
 		trafostanice.verifikujStavku(trafostanica, homePage.podatak2Tabela3WE);
 	}
 	
@@ -43,15 +43,15 @@ public class PX_DIST_012_Trafostanice_CRUD_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		Trafostanice trafostanice = homePage.navigateOnPage(Trafostanice.class, "Šifarnici", "Trafostanice");
-		trafostanice.verifikujTrafostanice();
+		Trafostanice trafostanice = new Trafostanice(driver);
+		trafostanice.navigirajVerifikujTrafostanice();
 		trafostanice.pretraziStavku(homePage.filterKolona3WE, trafostanica);
-		trafostanice.verifikujTrafostanice();
+		trafostanice.navigirajVerifikujTrafostanice();
 		trafostanice.verifikujStavku(trafostanica, homePage.podatak2Tabela3WE);
 		trafostanice.urediTrafostanicu(novaTrafostanica);
 		trafostanice.verifikujPoruku("Uspješno završeno.");
 		trafostanice.pretraziStavku(homePage.filterKolona3WE, novaTrafostanica);
-		trafostanice.verifikujTrafostanice();
+		trafostanice.verifikacijaStranice("Šifarnici", "Trafostanice", "Trafostanice", 1, trafostanice.columns, trafostanice.buttons);
 		trafostanice.verifikujStavku(novaTrafostanica, homePage.podatak2Tabela3WE);
 	}
 		
@@ -62,10 +62,10 @@ public class PX_DIST_012_Trafostanice_CRUD_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		Trafostanice trafostanice = homePage.navigateOnPage(Trafostanice.class, "Šifarnici", "Trafostanice");
-		trafostanice.verifikujTrafostanice();
+		Trafostanice trafostanice = new Trafostanice(driver);
+		trafostanice.navigirajVerifikujTrafostanice();
 		trafostanice.pretraziStavku(homePage.filterKolona3WE, novaTrafostanica);
-		trafostanice.verifikujTrafostanice();
+		trafostanice.verifikacijaStranice("Šifarnici", "Trafostanice", "Trafostanice", 1, trafostanice.columns, trafostanice.buttons);
 		trafostanice.verifikujStavku(novaTrafostanica, homePage.podatak2Tabela3WE);
 		String trafostanicaId = trafostanice.kreirajTrafostanicu();
 		CitackiHodovi citackiHodovi = homePage.navigateOnPage(CitackiHodovi.class, "Očitanja", "Čitački hodovi");
@@ -77,10 +77,9 @@ public class PX_DIST_012_Trafostanice_CRUD_Test extends BaseTest {
 		citackiHodovi.verifikujPoruku("Brisanje je uspješno završeno");
 		citackiHodovi.pretraziStavku(homePage.filterKolona4WE, trafostanicaId);
 		citackiHodovi.verifikujPraznuTabelu();
-		homePage.navigateOnPage(Trafostanice.class, "Šifarnici", "Trafostanice");
-		trafostanice.verifikujTrafostanice();
+		trafostanice.navigirajVerifikujTrafostanice();
 		trafostanice.pretraziStavku(homePage.filterKolona3WE, novaTrafostanica);
-		trafostanice.verifikujTrafostanice();
+		trafostanice.verifikacijaStranice("Šifarnici", "Trafostanice", "Trafostanice", 1, trafostanice.columns, trafostanice.buttons);
 		trafostanice.verifikujStavku(novaTrafostanica, homePage.podatak2Tabela3WE);
 		trafostanice.obrisiStavku();
 		trafostanice.verifikujPoruku("Brisanje je uspješno završeno");
@@ -95,10 +94,10 @@ public class PX_DIST_012_Trafostanice_CRUD_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		Trafostanice trafostanice = homePage.navigateOnPage(Trafostanice.class, "Šifarnici", "Trafostanice");
-		trafostanice.verifikujTrafostanice();
+		Trafostanice trafostanice = new Trafostanice(driver);
+		trafostanice.navigirajVerifikujTrafostanice();
 		trafostanice.pretraziStavku(homePage.filterKolona3WE, "ŽTS MOČILA");				// promijenjeno sa 001-Gradac na ŽTS MOČILA
-		trafostanice.verifikujTrafostanice();
+		trafostanice.verifikacijaStranice("Šifarnici", "Trafostanice", "Trafostanice", 1, trafostanice.columns, trafostanice.buttons);
 		trafostanice.verifikujStavku("ŽTS MOČILA", homePage.podatak2Tabela3WE);
 		trafostanice.obrisiStavku();
 		trafostanice.verifikujPoruku("Brisanje ovog zapisa nije moguće.");

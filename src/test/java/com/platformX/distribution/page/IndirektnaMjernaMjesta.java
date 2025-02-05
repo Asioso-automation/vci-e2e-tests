@@ -4,6 +4,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import com.platformX.base.Kolone;
 
@@ -13,21 +14,19 @@ public class IndirektnaMjernaMjesta extends PocetnaStranicaPXD {
 		super(driver);
 	}
 	
-	public void verifikujIndirektnaMjernaMjesta() throws InterruptedException, FileNotFoundException, IOException {
-		Kolone kolone = new Kolone(driver);
+	Kolone kolone = new Kolone(driver);
+	
+	public WebElement[] columns = {kolone.kolonaIdWE, kolone.kolonaMjernoMjestoEicWE, kolone.kolonaNazivMjernogMjestaWE, kolone.kolonaFizickaLokacijaMjmWE, 
+			kolone.kolonaIndirektnoMjernoMjestoEICWE, kolone.kolonaNazivIndirektnogMjmWE, kolone.kolonaFizickaLokacijaIndirektnogMjmWE, kolone.kolonaPeriodOdWE, 
+			kolone.kolonaPeriodDoWE, kolone.kolonaAktivnoWE};
+	
+	public WebElement[] buttons = {dodajBtnWE, preuzmiExcelBtnWE, ukloniFiltereBtnWE, osvjeziBtnWE};
+	
+	public void navigirajVerifikujIndirektnaMjernaMjesta() throws Exception {
+		navigateOnPage(IndirektnaMjernaMjesta.class, "Mjerna mjesta", "Indirektna mjerna mjesta");
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Indirektna mjerna mjesta')]")));
-		verifikacijaZajednickihElemenata2("Mjerna Mjesta", "Indirektna Mjerna Mjesta", "Indirektna mjerna mjesta", 11, false, false, true, true, true, true, false);
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMjernoMjestoEicWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNazivMjernogMjestaWE));		
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaFizickaLokacijaMjmWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIndirektnoMjernoMjestoEICWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNazivIndirektnogMjmWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaFizickaLokacijaIndirektnogMjmWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPeriodOdWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPeriodDoWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAktivnoWE));
+		verifikacijaStranice("Mjerna mjesta", "Indirektna Mjerna Mjesta", "Indirektna mjerna mjesta", 1, columns, buttons);
 	}
 
 }

@@ -29,12 +29,12 @@ public class PX_DIST_019_Elektroenergetske_Saglasnosti_CRUD_Test extends BaseTes
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		ElektroenergetskeSaglasnosti elektroenergetskeSaglasnosti = homePage.navigateOnPage(ElektroenergetskeSaglasnosti.class, "Mjerna mjesta", "Elektroenergetske saglasnosti");
-		elektroenergetskeSaglasnosti.verifikujElektroenergetskeSaglasnosti();
+		ElektroenergetskeSaglasnosti elektroenergetskeSaglasnosti = new ElektroenergetskeSaglasnosti(driver);
+		elektroenergetskeSaglasnosti.navigirajVerifikujElektroenergetskeSaglasnosti();
 		elektroenergetskeSaglasnosti.dodajElektronergetskuSaglasnostD(brojProtokola);
 		elektroenergetskeSaglasnosti.verifikujPoruku("Uspješno završeno.");
 		elektroenergetskeSaglasnosti.pretraziStavku(homePage.filterKolona2WE, brojProtokola);
-		elektroenergetskeSaglasnosti.verifikujElektroenergetskeSaglasnosti();
+		elektroenergetskeSaglasnosti.verifikacijaStranice("Mjerna mjesta", "Elektroenergetske Saglasnosti", "Elektroenergetske saglasnosti", 1, elektroenergetskeSaglasnosti.columns, elektroenergetskeSaglasnosti.buttons);
 		elektroenergetskeSaglasnosti.verifikujStavku(brojProtokolaTabela, homePage.podatak2Tabela2WE);
 	}
 	

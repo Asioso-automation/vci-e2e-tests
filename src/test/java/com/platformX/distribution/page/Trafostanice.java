@@ -16,7 +16,7 @@ public class Trafostanice extends PocetnaStranicaPXD {
 	public Trafostanice(WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);
 	}
-	
+
 	@FindBy(xpath = "//div[2]/div[1]/div/div/div[1]/div/input")
 	private WebElement nazivWE;
 	
@@ -40,25 +40,20 @@ public class Trafostanice extends PocetnaStranicaPXD {
 	
 	@FindBy(xpath = "//div[3]/div[4]/div/div/div[1]/div[1]/input[1]")
 	private WebElement postaWE;
-
-	public void verifikujTrafostanice() throws InterruptedException, FileNotFoundException, IOException {
-		Kolone kolone = new Kolone(driver);
+	
+	Kolone kolone = new Kolone(driver);
+	
+	public WebElement[] columns = {kolone.kolonaIdWE, kolone.kolonaSifraWE, kolone.kolonaNazivWE, kolone.kolonaVlasnikWE, kolone.kolonaFizickaLokacijaWE, 
+			kolone.kolonaAdresaWE, kolone.kolonaGodinaIzgradnjeWE, kolone.kolonaTipWE, kolone.kolonaBrojTransformatoraWE, kolone.kolonaBrojMjernihMjestaWE, 
+			kolone.kolonaPrenosniOdnosWE, kolone.kolonaSnaga1WE, kolone.kolonaAktivnaWE};
+	
+	public WebElement[] buttons = {dodajBtnWE, preuzmiExcelBtnWE, ukloniFiltereBtnWE, osvjeziBtnWE};
+	
+	public void navigirajVerifikujTrafostanice() throws Exception {
+		navigateOnPage(Trafostanice.class, "Šifarnici", "Trafostanice");
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Trafostanice')]")));
-		verifikacijaZajednickihElemenata2("Šifarnici", "Trafostanice", "Trafostanice", 14, false, false, true, true, true, true, false);
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaSifraWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNazivWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaVlasnikWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaFizickaLokacijaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAdresaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaGodinaIzgradnjeWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTipWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojTransformatoraWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojMjernihMjestaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPrenosniOdnosWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaSnaga1WE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAktivnaWE));
+		verifikacijaStranice("Šifarnici", "Trafostanice", "Trafostanice", 1, columns, buttons);
 	}
 	
 	public String dodajTrafostanicu(String naziv) throws Exception{

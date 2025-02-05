@@ -39,12 +39,12 @@ public class PX_DIST_026_Neovlastena_Potrosnja_CRUD_Test extends BaseTest{
 		fizickaLica.verifikacijaStranice("Kupci", "Fizička Lica", "Fizička lica", 1, fizickaLica.columns, fizickaLica.buttons);
 		fizickaLica.verifikujStavku(fizickoLice, homePage.podatak2Tabela2WE);
 		kupac = fizickaLica.kreirajFizickoLice();
-		Trafostanice trafostanice = homePage.navigateOnPage(Trafostanice.class, "Šifarnici", "Trafostanice");
-		trafostanice.verifikujTrafostanice();
+		Trafostanice trafostanice = new Trafostanice(driver);
+		trafostanice.navigirajVerifikujTrafostanice();
 		trafostanice.dodajTrafostanicu(trafostanica);
 		trafostanice.verifikujPoruku("Uspješno završeno.");
 		trafostanice.pretraziStavku(homePage.filterKolona3WE, trafostanica);
-		trafostanice.verifikujTrafostanice();
+		trafostanice.verifikacijaStranice("Šifarnici", "Trafostanice", "Trafostanice", 1, trafostanice.columns, trafostanice.buttons);
 		trafostanice.verifikujStavku(trafostanica, homePage.podatak2Tabela3WE);
 		NeovlastenaPotrosnja neovlastenaPotrosnja = new NeovlastenaPotrosnja(driver);
 		neovlastenaPotrosnja.navigirajVerifikujNeovlastenaPotrosnja();

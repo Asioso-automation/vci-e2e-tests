@@ -32,12 +32,12 @@ public class PX_DIST_018_Zbirna_Kontrolna_Mjerna_Mjesta_CRUD_Test extends BaseTe
 		String brojilo = registarBrojila.dodajBrojilo();
 		registarBrojila.verifikujBrojilo(brojilo);
 		String brBrojila = registarBrojila.kreirajBrojilo();
-		ZbirnaKontrolnaMjernaMjesta zbirnaKontrolnaMjernaMjesta = homePage.navigateOnPage(ZbirnaKontrolnaMjernaMjesta.class, "Mjerna mjesta", "Zbirna/kontrolna mjerna mjesta");
-		zbirnaKontrolnaMjernaMjesta.verifikujZbirnaKontrolnaMjernaMjesta();
+		ZbirnaKontrolnaMjernaMjesta zbirnaKontrolnaMjernaMjesta = new ZbirnaKontrolnaMjernaMjesta(driver);
+		zbirnaKontrolnaMjernaMjesta.navigirajVerifikujZbirnaKontrolnaMjernaMjesta();
 		zbirnaKontrolnaMjernaMjesta.dodajZbirnoKontrolnoMjernoMjesto(brBrojila, zbirnoKontrolnoMjernoMjesto);
 		zbirnaKontrolnaMjernaMjesta.verifikujPoruku("Uspješno završeno.");
 		zbirnaKontrolnaMjernaMjesta.pretraziStavku(homePage.filterKolona2WE, zbirnoKontrolnoMjernoMjesto);
-		zbirnaKontrolnaMjernaMjesta.verifikujZbirnaKontrolnaMjernaMjesta();
+		zbirnaKontrolnaMjernaMjesta.verifikacijaStranice("Mjerna mjesta", "Zbirna/kontrolna Mjerna Mjesta", "Zbirna/kontrolna mjerna mjesta", 1, zbirnaKontrolnaMjernaMjesta.columns, zbirnaKontrolnaMjernaMjesta.buttons);
 		zbirnaKontrolnaMjernaMjesta.verifikujStavku(zbirnoKontrolnoMjernoMjesto, homePage.podatak2Tabela2WE); 
 	}
 	
@@ -48,15 +48,15 @@ public class PX_DIST_018_Zbirna_Kontrolna_Mjerna_Mjesta_CRUD_Test extends BaseTe
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		ZbirnaKontrolnaMjernaMjesta zbirnaKontrolnaMjernaMjesta = homePage.navigateOnPage(ZbirnaKontrolnaMjernaMjesta.class, "Mjerna mjesta", "Zbirna/kontrolna mjerna mjesta");
-		zbirnaKontrolnaMjernaMjesta.verifikujZbirnaKontrolnaMjernaMjesta();
+		ZbirnaKontrolnaMjernaMjesta zbirnaKontrolnaMjernaMjesta = new ZbirnaKontrolnaMjernaMjesta(driver);
+		zbirnaKontrolnaMjernaMjesta.navigirajVerifikujZbirnaKontrolnaMjernaMjesta();
 		zbirnaKontrolnaMjernaMjesta.pretraziStavku(homePage.filterKolona2WE, zbirnoKontrolnoMjernoMjesto);
-		zbirnaKontrolnaMjernaMjesta.verifikujZbirnaKontrolnaMjernaMjesta();
+		zbirnaKontrolnaMjernaMjesta.verifikacijaStranice("Mjerna mjesta", "Zbirna/kontrolna Mjerna Mjesta", "Zbirna/kontrolna mjerna mjesta", 1, zbirnaKontrolnaMjernaMjesta.columns, zbirnaKontrolnaMjernaMjesta.buttons);
 		zbirnaKontrolnaMjernaMjesta.verifikujStavku(zbirnoKontrolnoMjernoMjesto, homePage.podatak2Tabela2WE); 
 		zbirnaKontrolnaMjernaMjesta.urediZbirnoKontrolnoMjernoMjesto(novoZbirnoKontrolnoMjernoMjesto);
 		zbirnaKontrolnaMjernaMjesta.verifikujPoruku("Uspješno završeno.");
 		zbirnaKontrolnaMjernaMjesta.pretraziStavku(homePage.filterKolona2WE, novoZbirnoKontrolnoMjernoMjesto);
-		zbirnaKontrolnaMjernaMjesta.verifikujZbirnaKontrolnaMjernaMjesta();
+		zbirnaKontrolnaMjernaMjesta.verifikacijaStranice("Mjerna mjesta", "Zbirna/kontrolna Mjerna Mjesta", "Zbirna/kontrolna mjerna mjesta", 1, zbirnaKontrolnaMjernaMjesta.columns, zbirnaKontrolnaMjernaMjesta.buttons);
 		zbirnaKontrolnaMjernaMjesta.verifikujStavku(novoZbirnoKontrolnoMjernoMjesto, homePage.podatak2Tabela2WE); 
 	}
 	
@@ -67,10 +67,10 @@ public class PX_DIST_018_Zbirna_Kontrolna_Mjerna_Mjesta_CRUD_Test extends BaseTe
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		ZbirnaKontrolnaMjernaMjesta zbirnaKontrolnaMjernaMjesta = homePage.navigateOnPage(ZbirnaKontrolnaMjernaMjesta.class, "Mjerna mjesta", "Zbirna/kontrolna mjerna mjesta");
-		zbirnaKontrolnaMjernaMjesta.verifikujZbirnaKontrolnaMjernaMjesta();
+		ZbirnaKontrolnaMjernaMjesta zbirnaKontrolnaMjernaMjesta = new ZbirnaKontrolnaMjernaMjesta(driver);
+		zbirnaKontrolnaMjernaMjesta.navigirajVerifikujZbirnaKontrolnaMjernaMjesta();
 		zbirnaKontrolnaMjernaMjesta.pretraziStavku(homePage.filterKolona2WE, novoZbirnoKontrolnoMjernoMjesto);
-		zbirnaKontrolnaMjernaMjesta.verifikujZbirnaKontrolnaMjernaMjesta();
+		zbirnaKontrolnaMjernaMjesta.verifikacijaStranice("Mjerna mjesta", "Zbirna/kontrolna Mjerna Mjesta", "Zbirna/kontrolna mjerna mjesta", 1, zbirnaKontrolnaMjernaMjesta.columns, zbirnaKontrolnaMjernaMjesta.buttons);
 		zbirnaKontrolnaMjernaMjesta.verifikujStavku(novoZbirnoKontrolnoMjernoMjesto, homePage.podatak2Tabela2WE); 
 		zbirnaKontrolnaMjernaMjesta.obrisiStavku();
 		zbirnaKontrolnaMjernaMjesta.verifikujPoruku("Brisanje je uspješno završeno");

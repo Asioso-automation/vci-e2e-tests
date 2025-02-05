@@ -179,28 +179,22 @@ public class ElektroenergetskeSaglasnosti extends PocetnaStranicaPXD {
 	
 	@FindBy(xpath = "//div[26]/div/div/div[1]/div[1]/input[1]")  
 	private WebElement rokVazenjaNWE;
-	
 
-	
 	@FindBy(xpath = "//div[2]/div[2]/div[1]/div/div[1]/div[2]/input")
 	private WebElement datumZahtjevaInputNNWE;
 	
-	public void verifikujElektroenergetskeSaglasnosti() throws InterruptedException, FileNotFoundException, IOException {
-		Kolone kolone = new Kolone(driver);
+	Kolone kolone = new Kolone(driver);
+	
+	public WebElement[] columns = {kolone.kolonaIdWE, kolone.kolonaBrojProtokolaWE, kolone.kolonaKupacWE, kolone.kolonaFizickaLokacijaWE, kolone.kolonaAdresaWE, kolone.kolonaVrstaObjektaWE, 
+			kolone.kolonaTipEesWE, kolone.kolonaRazlogEesWE, kolone.kolonaKategorijaPrikljuckaWE, kolone.kolonaDatumWE, kolone.kolonaAktiviranaWE};
+	
+	public WebElement[] buttons = {dodajBtnWE, preuzmiExcelBtnWE, ukloniFiltereBtnWE, osvjeziBtnWE};
+	
+	public void navigirajVerifikujElektroenergetskeSaglasnosti() throws Exception {
+		navigateOnPage(ElektroenergetskeSaglasnosti.class, "Mjerna mjesta", "Elektroenergetske saglasnosti");
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Elektroenergetske saglasnosti')]")));
-		verifikacijaZajednickihElemenata2("Mjerna Mjesta", "Elektroenergetske Saglasnosti", "Elektroenergetske saglasnosti", 12, false, false, true, true, true, true, false);
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojProtokolaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKupacWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaFizickaLokacijaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAdresaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaVrstaObjektaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTipEesWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaRazlogEesWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKategorijaPrikljuckaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAktiviranaWE));
+		verifikacijaStranice("Mjerna mjesta", "Elektroenergetske Saglasnosti", "Elektroenergetske saglasnosti", 1, columns, buttons);
 	}
 	
 //	TODO razdvojiti metodu za dodavanje EES na tri metode, za svaki tip EES

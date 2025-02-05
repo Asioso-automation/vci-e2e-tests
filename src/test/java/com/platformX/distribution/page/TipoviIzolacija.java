@@ -4,6 +4,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import com.platformX.base.Kolone;
 
@@ -13,13 +14,17 @@ public class TipoviIzolacija extends PocetnaStranicaPXD {
 		super(driver);
 	}
 	
-	public void verifikujTipoviIzolacija() throws InterruptedException, FileNotFoundException, IOException {
-		Kolone kolone = new Kolone(driver);
+	Kolone kolone = new Kolone(driver);
+	
+	public WebElement[] columns = {kolone.kolonaIdWE, kolone.kolonaNazivWE};
+	
+	public WebElement[] buttons = {dodajBtnWE, preuzmiExcelBtnWE, ukloniFiltereBtnWE, osvjeziBtnWE};
+	
+	public void navigirajVerifikujTipoviIzolacija() throws Exception {
+		navigateOnPage(TipoviIzolacija.class, "Šifarnici", "Tipovi izolacija");
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Tipovi izolacija')]")));
-		verifikacijaZajednickihElemenata2("Šifarnici", "Tipovi Izolacija", "Tipovi izolacija", 3, false, false, true, true, true, true, false);
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNazivWE));
+		verifikacijaStranice("Šifarnici", "Tipovi Izolacija", "Tipovi izolacija", 1, columns, buttons);
 	}
 
 }

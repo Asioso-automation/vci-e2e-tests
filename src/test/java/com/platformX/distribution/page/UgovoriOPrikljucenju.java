@@ -49,19 +49,18 @@ public class UgovoriOPrikljucenju extends PocetnaStranicaPXD {
 	@FindBy(xpath = "//div[4]/div[1]/div/div/div[1]/div[1]/input[1]")  
 	 private WebElement vrstaPodrucjaWE;
 	
-	public void verifikujUgovoriOPrikljucenju() throws InterruptedException, FileNotFoundException, IOException {
-		Kolone kolone = new Kolone(driver);
+	Kolone kolone = new Kolone(driver);
+	
+	public WebElement[] columns = {kolone.kolonaIdWE, kolone.kolonaElektroenergetskaSaglasnostWE, kolone.kolonaKupacWE, kolone.kolonaBrojProtokolaWE, 
+			kolone.kolonaDatumWE, kolone.kolonaVrstaPodrucjaWE, kolone.kolonaKategorijaPrikljuckaWE, kolone.kolonaAktiviranWE};
+	
+	public WebElement[] buttons = {dodajBtnWE, preuzmiExcelBtnWE, ukloniFiltereBtnWE, osvjeziBtnWE};
+	
+	public void navigirajVerifikujUgovoriOPrikljucenju() throws Exception {
+		navigateOnPage(UgovoriOPrikljucenju.class, "Mjerna mjesta", "Ugovori o priključenju");
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Ugovori o priključenju')]")));
-		verifikacijaZajednickihElemenata2("Mjerna Mjesta", "Ugovori O Priključenju", "Ugovori o priključenju", 9, false, false, true, true, true, true, false);
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaElektroenergetskaSaglasnostWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKupacWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojProtokolaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaVrstaPodrucjaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKategorijaPrikljuckaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAktiviranWE));
+		verifikacijaStranice("Mjerna mjesta", "Ugovori O Priključenju", "Ugovori o priključenju", 1, columns, buttons);
 	}
 
 	public String dodajUgovorOPrikljucenju(String nazivEES)throws Exception {
