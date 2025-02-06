@@ -68,7 +68,7 @@ public class ObracunskaMjernaMjesta extends PocetnaStranicaPXD {
 	public WebElement[] columns = {kolone.kolonaIdWE, kolone.kolonaElektroenergetskaSaglasnostWE, kolone.kolonaEicWE, kolone.kolonaSifraEdBrojWE, kolone.kolonaUgovorWE, 
 			kolone.kolonaNazivMjernogMjestaWE, kolone.kolonaTerenskaJedinicaWE, kolone.kolonaFizickaLokacijaWE, kolone.kolonaTrafostanicaWE, kolone.kolonaCitackiHodWE, 
 			kolone.kolonaAdresaWE, kolone.kolonaLokacijaMjernogUredjajaWE, kolone.kolonaOdobrenaPrikljucnaSnagaWE, kolone.kolonaPodNaponomWE, kolone.kolonaUgovorUPripremiWE, 
-			kolone.kolonaAktivanUgovorWE, kolone.kolonaElektrana, kolone.kolonaAmmIntegrisano};
+			kolone.kolonaAktivanUgovorWE, kolone.kolonaElektranaWE, kolone.kolonaAmmIntegrisanoWE};
 	
 	public WebElement[] buttons = {dodajBtnWE, preuzmiExcelBtnWE, preuzmiProsireniExcelBtnWE, unistenaMmBtnWE, ukloniFiltereBtnWE, osvjeziBtnWE};
 	

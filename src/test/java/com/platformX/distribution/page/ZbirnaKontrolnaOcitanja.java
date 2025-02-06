@@ -4,6 +4,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import com.platformX.base.Kolone;
 
@@ -13,22 +14,19 @@ public class ZbirnaKontrolnaOcitanja extends PocetnaStranicaPXD {
 		super(driver);
 	}
 	
-	public void verifikujZbirnaKontrolnaOcitanja()throws InterruptedException, FileNotFoundException, IOException {
-		Kolone kolone = new Kolone(driver);
+	Kolone kolone = new Kolone(driver);
+	
+	public WebElement[] columns = {kolone.kolonaIdWE, kolone.kolonaPeriodWE, kolone.kolonaDatumWE, kolone.kolonaIzvorOcitanjaWE, 
+			kolone.kolonaZbirnoKontrolnoMjernoMjestoWE, kolone.kolonaFizickaLokacijaWE, kolone.kolonaAvtWE, kolone.kolonaAmtWE, 
+			kolone.kolonaRvtWE, kolone.kolonaRmtWE, kolone.kolonaSnaga1WE};
+	
+	public WebElement[] buttons = {dodajBtnWE, preuzmiExcelBtnWE, ukloniFiltereBtnWE, osvjeziBtnWE, infoBtnWE};
+
+	public void navigirajVerifikujZbirnaKontrolnaOcitanja()throws Exception {
+		navigateOnPage(ZbirnaKontrolnaOcitanja.class, "Očitanja", "Zbirna/kontrolna očitanja");
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Zbirna/kontrolna očitanja')]")));
-		verifikacijaZajednickihElemenata2("Očitanja", "Zbirna/kontrolna Očitanja", "Zbirna/kontrolna očitanja", 13, false, false, true, true, true, true, true);
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPeriodWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIzvorOcitanjaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaZbirnoKontrolnoMjernoMjestoWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaFizickaLokacijaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAvtWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAmtWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaRvtWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaRmtWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaSnaga1WE));
+		verifikacijaStranice("Očitanja", "Zbirna/kontrolna Očitanja", "Zbirna/kontrolna očitanja", 2, columns, buttons);
 	}
 
 }

@@ -4,6 +4,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import com.platformX.base.Kolone;
 
@@ -12,27 +13,20 @@ public class ImportiOcitanja extends PocetnaStranicaPXD {
 	public ImportiOcitanja (WebDriver driver) throws FileNotFoundException, IOException {
 		super(driver);
 	}
+	
+	Kolone kolone = new Kolone(driver);
+	
+	public WebElement[] columns = {kolone.kolonaIdWE, kolone.kolonaKorisnikWE, kolone.kolonaCitacWE, kolone.kolonaDatumWE, kolone.kolonaCitackiHodWE, kolone.kolonaTrafostanicaWE, 
+			kolone.kolonaFizickaLokacijaWE, kolone.kolonaDatumPrvogOcitanjaWE, kolone.kolonaDatumZadnjegOcitanjaWE, kolone.kolonaIzvorOcitanjaWE, kolone.kolonaUspjesnoImportovanoWE, 
+			kolone.kolonaBrojNeuspjesnihUnosaWE, kolone.kolonaBrojUnosaBezVrijednostiSaNapomenomWE, kolone.kolonaBrojUnosaBezVrijednostBezNapomeneWE, kolone.kolonaNevalidnaOcitanjaWE};
+	
+	public WebElement[] buttons = {importujBtnWE, preuzmiExcelBtnWE, ukloniFiltereBtnWE, osvjeziBtnWE};
 
-	public void verifikujImportiOcitanja()throws InterruptedException, FileNotFoundException, IOException {
-		Kolone kolone = new Kolone(driver);
+	public void navigirajVerifikujImportiOcitanja()throws Exception {
+		navigateOnPage(ImportiOcitanja.class, "Očitanja", "Importi očitanja");
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Importi očitanja')]")));
-		verifikacijaZajednickihElemenata2("Očitanja", "Importi Očitanja", "Importi očitanja", 16, true, false, false, true, true, true, false);
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKorisnikWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaCitacWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaCitackiHodWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTrafostanicaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaFizickaLokacijaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumPrvogOcitanjaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumZadnjegOcitanjaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIzvorOcitanjaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaUspjesnoImportovanoWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojNeuspjesnihUnosaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojUnosaBezVrijednostiSaNapomenomWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojUnosaBezVrijednostBezNapomeneWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNevalidnaOcitanjaWE));
+		verifikacijaStranice("Očitanja", "Importi Očitanja", "Importi očitanja", 1, columns, buttons);
 	}
 
 }

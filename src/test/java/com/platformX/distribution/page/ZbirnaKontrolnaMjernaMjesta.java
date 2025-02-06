@@ -41,7 +41,7 @@ public class ZbirnaKontrolnaMjernaMjesta extends PocetnaStranicaPXD {
 	
 	public WebElement[] columns = {kolone.kolonaIdWE, kolone.kolonaNazivWE, kolone.kolonaCitackiHodWE, kolone.kolonaRedniBrojWE, kolone.kolonaTrafostanicaWE, 
 			kolone.kolonaFizickaLokacijaWE, kolone.kolonaKonstantaWE, kolone.kolonaBrojiloWE, kolone.kolonaDatumOdWE, kolone.kolonaDatumDoWE, 
-			kolone.kolonaKontrolnoMjernoMjestoWE, kolone.kolonaAmmIntegrisano};
+			kolone.kolonaKontrolnoMjernoMjestoWE, kolone.kolonaAmmIntegrisanoWE};
 	
 	public WebElement[] buttons = {dodajBtnWE, preuzmiExcelBtnWE, ukloniFiltereBtnWE, osvjeziBtnWE};
 	

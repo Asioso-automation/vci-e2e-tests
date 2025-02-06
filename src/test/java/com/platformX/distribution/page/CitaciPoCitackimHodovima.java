@@ -4,6 +4,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import com.platformX.base.Kolone;
 
@@ -13,21 +14,18 @@ public class CitaciPoCitackimHodovima extends PocetnaStranicaPXD {
 		super(driver);
 	}
 	
-	public void verifikujCitaciPoCitackimHodovima()throws InterruptedException, FileNotFoundException, IOException {
-		Kolone kolone = new Kolone(driver);
+	Kolone kolone = new Kolone(driver);
+	
+	public WebElement[] columns = {kolone.kolonaIdWE, kolone.kolonaKvalifikovaniCitacWE, kolone.kolonaCitacWE, kolone.kolonaFizickaLokacijaWE, kolone.kolonaCitackiHodWE, 
+			kolone.kolonaOdRedgnoBrojaWE, kolone.kolonaDoRednogBrojaWE, kolone.kolonaPeriodOdWE, kolone.kolonaPeriodDoWE, kolone.kolonaAktivanWE};
+	
+	public WebElement[] buttons = {dodajBtnWE, preuzmiExcelBtnWE, ukloniFiltereBtnWE, osvjeziBtnWE};
+
+	public void navigirajVerifikujCitaciPoCitackimHodovima()throws Exception {
+		navigateOnPage(CitaciPoCitackimHodovima.class, "Očitanja", "Čitači po čitačkim hodovima");
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Čitači po čitačkim hodovima')]")));
-		verifikacijaZajednickihElemenata2("Očitanja", "Čitači Po Čitačkim Hodovima", "Čitači po čitačkim hodovima", 11, false, false, true, true, true, true, false);
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKvalifikovaniCitacWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaCitacWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaFizickaLokacijaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaCitackiHodWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaOdRedgnoBrojaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDoRednogBrojaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPeriodOdWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPeriodDoWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAktivanWE));
+		verifikacijaStranice("Očitanja", "Čitači Po Čitačkim Hodovima", "Čitači po čitačkim hodovima", 1, columns, buttons);
 	}
 
 }

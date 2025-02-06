@@ -4,6 +4,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import com.platformX.base.Kolone;
 
@@ -13,26 +14,20 @@ public class IzmijenjenaOcitanja extends PocetnaStranicaPXD {
 		super(driver);
 	}
 	
-	public void verifikujIzmijenjenaOcitanja()throws InterruptedException, FileNotFoundException, IOException {
-		Kolone kolone = new Kolone(driver);
+	Kolone kolone = new Kolone(driver);
+	
+	public WebElement[] columns = {kolone.kolonaIdWE, kolone.kolonaBrojiloWE, kolone.kolonaMjernoMjestoEicWE, kolone.kolonaNazivMjernogMjestaWE, kolone.kolonaFizickaLokacijaWE, 
+			kolone.kolonaInicijalniUnosWE, kolone.kolonaIzmjenaWE, kolone.kolonaDatumWE, kolone.kolonaStariNoviAvtWE, kolone.kolonaStariNoviAmtWE, kolone.kolonaStariNoviRvtWE, 
+			kolone.kolonaStariNoviRmtWE, kolone.kolonaStaraNovaSnagaWE, kolone.kolonaStariNoviAvtMinusWE, kolone.kolonaStariNoviAmtMinusWE, 
+			kolone.kolonaStariNoviRvtMinusWE, kolone.kolonaStariNoviRmtMinusWE, kolone.kolonaStaraNovaSnagaMinusWE, kolone.kolonaIskljuceniSaPotrosnjomWE};
+	
+	public WebElement[] buttons = {ukloniFiltereBtnWE, preuzmiExcelBtnWE, osvjeziBtnWE, infoBtnWE};
+
+	public void verifikujIzmijenjenaOcitanja()throws Exception {
+		navigateOnPage(IzmijenjenaOcitanja.class, "Očitanja", "Izmijenjena očitanja");
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Izmijenjena očitanja')]")));
-		verifikacijaZajednickihElemenata2("Očitanja", "Izmijenjena Očitanja", "Izmijenjena očitanja", 19, false, false, false, true, true, true, true);
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojiloWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMjernoMjestoEicWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNazivMjernogMjestaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaFizickaLokacijaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaInicijalniUnosWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIzmjenaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaStariNoviAvtWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaStariNoviAmtWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaStariNoviRvtWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaStariNoviRmtWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaStaraNovaSnagaWE));
-//		TODO kolone StariNovi AVT- i StariNovi AMT-
-//		kolone Rvt, Rmt, Snaga minus
+		verifikacijaStranice("Očitanja", "Izmijenjena Očitanja", "Izmijenjena očitanja", 0, columns, buttons);
 	}
 
 }

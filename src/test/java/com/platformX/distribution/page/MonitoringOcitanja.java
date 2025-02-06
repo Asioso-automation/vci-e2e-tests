@@ -48,97 +48,82 @@ public class MonitoringOcitanja extends PocetnaStranicaPXD {
 	
 	@FindBy(xpath = "//i[contains(@class, 'mdi mdi-chevron-right theme--light')]")
     protected WebElement slideRightBtnWE;
+	
+	Kolone kolone = new Kolone(driver);
+	
+	public WebElement[] buttons = {};
+	
+//	ukupan broj kolona 134, broj dodatnih kolona po tabu: 134 minus broj elemenata iz liste kolona
+	
+	public WebElement[] columns1 = {kolone.kolonaMonObracunskiUgovorWE, kolone.kolonaMonMjernoMjestoEicWE, kolone.kolonaMonNazivMjernogMjestaWE, 
+			kolone.kolonaMonAdresaMjernogMjestaWE, kolone.kolonaMonBrojBrojilaWE, kolone.kolonaMonTrafostanicaWE, kolone.kolonaMonCitacWE}; //7
+	
+	public WebElement[] columns2 = {kolone.kolonaMonObracunskiUgovorWE, kolone.kolonaMonMjernoMjestoEicWE, kolone.kolonaMonNazivMjernogMjestaWE, 
+			kolone.kolonaMonAdresaMjernogMjestaWE, kolone.kolonaMonBrojBrojilaWE, kolone.kolonaMonTrafostanicaWE, kolone.kolonaMonCitacWE, 
+			kolone.kolonaMonAvtNeocitanoWE, kolone.kolonaMonAmtNeocitanoWE, kolone.kolonaMonRvtNeocitanoWE, kolone.kolonaMonRmtNeocitanoWE, 
+			kolone.kolonaMonSnagaNeocitanaWE}; //12
+	
+	public WebElement[] columns3 = {kolone.kolonaMonObracunskiUgovorWE, kolone.kolonaMonMjernoMjestoEicWE, kolone.kolonaMonNazivMjernogMjestaWE, 
+			kolone.kolonaMonAdresaMjernogMjestaWE, kolone.kolonaMonBrojBrojilaWE, kolone.kolonaMonTrafostanicaWE, kolone.kolonaMonCitacWE, 
+			kolone.kolonaMonStaraVtWE, kolone.kolonaMonNovaVtWE, kolone.kolonaMonStaraMtWE, kolone.kolonaMonNovaMtWE, kolone.kolonaMonAktivnoBrojiloWE, 
+			kolone.kolonaMonReaktivnoBrojiloWE}; //13
 
-	public void verifikujMonitoringOcitanja()throws InterruptedException, FileNotFoundException, IOException {
-		Kolone kolone = new Kolone(driver);
+	public WebElement[] columns4 = {kolone.kolonaMonObracunskiUgovorWE, kolone.kolonaMonMjernoMjestoEicWE, kolone.kolonaMonNazivMjernogMjestaWE, 
+			kolone.kolonaMonAdresaMjernogMjestaWE, kolone.kolonaMonBrojBrojilaWE, kolone.kolonaMonTrafostanicaWE, kolone.kolonaMonCitacWE, 
+			kolone.kolonaMonVtWE, kolone.kolonaMonMtWE, kolone.kolonaMonSnaga1WE, kolone.kolonaMonAktivnoBrojiloWE, kolone.kolonaMonReaktivnoBrojiloWE, 
+			kolone.kolonaMonVtResetovanaWE, kolone.kolonaMonMtResetovanaWE}; //14
+	
+	public WebElement[] columns5 = {kolone.kolonaMonObracunskiUgovorWE, kolone.kolonaMonMjernoMjestoEicWE, kolone.kolonaMonNazivMjernogMjestaWE, 
+			kolone.kolonaMonAdresaMjernogMjestaWE, kolone.kolonaMonBrojBrojilaWE, kolone.kolonaMonTrafostanicaWE, kolone.kolonaMonCitacWE, 
+			kolone.kolonaMonNovaPotrosnjaWE, kolone.kolonaMonProsjecnaPotrosnjaWE, kolone.kolonaMonProcenatOdstupanjaWE, kolone.kolonaMonAvtWE, 
+			kolone.kolonaMonAmtWE}; //12
+	
+	public WebElement[] columns6 = {kolone.kolonaMonObracunskiUgovorWE, kolone.kolonaMonMjernoMjestoEicWE, kolone.kolonaMonNazivMjernogMjestaWE, 
+			kolone.kolonaMonAdresaMjernogMjestaWE, kolone.kolonaMonBrojBrojilaWE, kolone.kolonaMonTrafostanicaWE, kolone.kolonaMonCitacWE, 
+			kolone.kolonaMonAvtWE, kolone.kolonaMonAmtWE, kolone.kolonaMonRvtWE, kolone.kolonaMonRmtWE, kolone.kolonaMonSnaga1WE}; //12
+
+	public WebElement[] columns7 = {kolone.kolonaMonBrojiloWE, kolone.kolonaMonNazivMjernogMjestaWE, kolone.kolonaMonMjernoMjestoEicWE, 
+			kolone.kolonaMonTrafostanicaWE, kolone.kolonaMonCitacWE, kolone.kolonaMonAvtWE, kolone.kolonaMonAmtWE, kolone.kolonaMonRvtWE, 
+			kolone.kolonaMonRmtWE, kolone.kolonaMonSnaga1WE, kolone.kolonaMonPorukaCitacaWE}; //11
+
+	public WebElement[] columns8 = {kolone.kolonaMonObracunskiUgovorWE, kolone.kolonaMonMjernoMjestoEicWE, kolone.kolonaMonNazivMjernogMjestaWE, 
+			kolone.kolonaMonAdresaMjernogMjestaWE, kolone.kolonaMonBrojBrojilaWE, kolone.kolonaMonTrafostanicaWE, kolone.kolonaMonCitacWE, 
+			kolone.kolonaMonAvtWE, kolone.kolonaMonAmtWE, kolone.kolonaMonRvtWE, kolone.kolonaMonRmtWE}; //11
+
+	public WebElement[] columns9 = {kolone.kolonaMonObracunskiUgovorWE, kolone.kolonaMonMjernoMjestoEicWE, kolone.kolonaMonNazivMjernogMjestaWE, 
+			kolone.kolonaMonAdresaMjernogMjestaWE, kolone.kolonaMonBrojBrojilaWE, kolone.kolonaMonTrafostanicaWE, kolone.kolonaMonCitacWE, 
+			kolone.kolonaMonStaraVtWE, kolone.kolonaMonNovaVtWE, kolone.kolonaMonStaraMtWE, kolone.kolonaMonNovaMtWE, kolone.kolonaMonAktivnoBrojiloWE, 
+			kolone.kolonaMonReaktivnoBrojiloWE}; //13
+
+	public WebElement[] columns10 = {kolone.kolonaMonZbirnoMjernoMjestoEicWE, kolone.kolonaMonBrojiloWE, kolone.kolonaMonTrafostanicaWE, 
+			kolone.kolonaMonTerenskaJedinicaWE, kolone.kolonaMonFizickaLokacijaWE, kolone.kolonaMonCitacWE}; //6
+	
+	public void verifikujMonitoringOcitanja()throws Exception {
+		navigateOnPage(MonitoringOcitanja.class, "Očitanja", "Monitoring očitanja");
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Monitoring očitanja')]")));
-		verifikacijaZajednickihElemenata2("Očitanja", "Monitoring Očitanja", "Monitoring očitanja", 134, false, false, false, false, false, false, false);
+//		verifikacijaZajednickihElemenata2("Očitanja", "Monitoring Očitanja", "Monitoring očitanja", 134, false, false, false, false, false, false, false);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].scrollIntoView(true);", neocitanaBrojilaBtnWE);
 		wait.until(ExpectedConditions.visibilityOf(neocitanaBrojilaBtnWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonObracunskiUgovorWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonMjernoMjestoEicWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonNazivMjernogMjestaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonAdresaMjernogMjestaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonBrojBrojilaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonTrafostanicaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonCitacWE));
+		verifikacijaStranice("Očitanja", "Monitoring Očitanja", "Monitoring očitanja", 127, columns1, buttons);	// 134-7=127
 		wait.until(ExpectedConditions.visibilityOf(djelimicnoOcitanaBrojilaBtnWE));
 		djelimicnoOcitanaBrojilaBtnWE.click();
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonObracunskiUgovorWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonMjernoMjestoEicWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonNazivMjernogMjestaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonAdresaMjernogMjestaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonBrojBrojilaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonTrafostanicaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonCitacWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonAvtNeocitanoWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonAmtNeocitanoWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonRvtNeocitanoWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonRmtNeocitanoWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonSnagaNeocitanaWE));
+		verifikacijaStranice("Očitanja", "Monitoring Očitanja", "Monitoring očitanja", 122, columns2, buttons);
 		wait.until(ExpectedConditions.visibilityOf(podcitanaBrojilaBtnWE));
 		podcitanaBrojilaBtnWE.click();
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonObracunskiUgovorWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonMjernoMjestoEicWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonNazivMjernogMjestaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonAdresaMjernogMjestaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonBrojBrojilaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonTrafostanicaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonCitacWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonStaraVtWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonNovaVtWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonStaraMtWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonNovaMtWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonAktivnoBrojiloWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonReaktivnoBrojiloWE));
+		verifikacijaStranice("Očitanja", "Monitoring Očitanja", "Monitoring očitanja", 121, columns3, buttons);
 		wait.until(ExpectedConditions.visibilityOf(precitanaBrojilaBtnWE));
 		precitanaBrojilaBtnWE.click();
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonObracunskiUgovorWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonMjernoMjestoEicWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonNazivMjernogMjestaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonAdresaMjernogMjestaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonBrojBrojilaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonTrafostanicaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonCitacWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonVtWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonMtWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonSnaga1WE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonAktivnoBrojiloWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonReaktivnoBrojiloWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonVtResetovanaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonMtResetovanaWE));
+		verifikacijaStranice("Očitanja", "Monitoring Očitanja", "Monitoring očitanja", 120, columns4, buttons);
 		wait.until(ExpectedConditions.visibilityOf(natprosjecnaOcitanjaBtnWE));
 		natprosjecnaOcitanjaBtnWE.click();
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonObracunskiUgovorWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonMjernoMjestoEicWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonNazivMjernogMjestaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonAdresaMjernogMjestaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonBrojBrojilaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonTrafostanicaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonCitacWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonNovaPotrosnjaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonProsjecnaPotrosnjaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonProcenatOdstupanjaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonAvtWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonAmtWE));
 //		slideRightBtnWE.click();
+		verifikacijaStranice("Očitanja", "Monitoring Očitanja", "Monitoring očitanja", 122, columns5, buttons);
 		wait.until(ExpectedConditions.visibilityOf(duplaOcitanjaBrojilaBtnWE));
 		duplaOcitanjaBrojilaBtnWE.click();
 		duplaOcitanjaBrojilaBtnWE.click();
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonObracunskiUgovorWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonMjernoMjestoEicWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonNazivMjernogMjestaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonAdresaMjernogMjestaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonBrojBrojilaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonTrafostanicaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonCitacWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonAvtWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonAmtWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonRvtWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonRmtWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonSnaga1WE));
+		verifikacijaStranice("Očitanja", "Monitoring Očitanja", "Monitoring očitanja", 122, columns6, buttons);
 		try {
 			slideRightBtnWE.click();
 		} catch (Exception e) {
@@ -146,54 +131,17 @@ public class MonitoringOcitanja extends PocetnaStranicaPXD {
 		wait.until(ExpectedConditions.visibilityOf(duplaNevalidnaOcitanjaBrojilaBtnWE));
 		duplaNevalidnaOcitanjaBrojilaBtnWE.click();
 		duplaNevalidnaOcitanjaBrojilaBtnWE.click();
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonBrojiloWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonNazivMjernogMjestaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonMjernoMjestoEicWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonTrafostanicaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonCitacWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonAvtWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonAmtWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonRvtWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonRmtWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonSnaga1WE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonPorukaCitacaWE));
+		verifikacijaStranice("Očitanja", "Monitoring Očitanja", "Monitoring očitanja", 123, columns7, buttons);
 		wait.until(ExpectedConditions.visibilityOf(nemaPotrosnjeBtnWE));
 		nemaPotrosnjeBtnWE.click();
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonObracunskiUgovorWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonMjernoMjestoEicWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonNazivMjernogMjestaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonAdresaMjernogMjestaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonBrojBrojilaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonTrafostanicaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonCitacWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonAvtWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonAmtWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonRvtWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonRmtWE));
+		verifikacijaStranice("Očitanja", "Monitoring Očitanja", "Monitoring očitanja", 123, columns8, buttons);		
 //		slideRightBtnWE.click();
 		wait.until(ExpectedConditions.visibilityOf(iskljucenaBrojilaSaPotrosnjomBtnWE));
 		iskljucenaBrojilaSaPotrosnjomBtnWE.click();
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonObracunskiUgovorWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonMjernoMjestoEicWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonNazivMjernogMjestaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonAdresaMjernogMjestaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonBrojBrojilaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonTrafostanicaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonCitacWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonStaraVtWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonNovaVtWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonStaraMtWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonNovaMtWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonAktivnoBrojiloWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonReaktivnoBrojiloWE));
+		verifikacijaStranice("Očitanja", "Monitoring Očitanja", "Monitoring očitanja", 121, columns9, buttons);
 		wait.until(ExpectedConditions.visibilityOf(neocitanaZbirnaKontrolnaMjernaMjestaBtnWE));
 		neocitanaZbirnaKontrolnaMjernaMjestaBtnWE.click();
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonZbirnoMjernoMjestoEicWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonBrojiloWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonTrafostanicaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonTerenskaJedinicaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonFizickaLokacijaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMonCitacWE));
+		verifikacijaStranice("Očitanja", "Monitoring Očitanja", "Monitoring očitanja", 128, columns10, buttons);
 	}
 	
 }

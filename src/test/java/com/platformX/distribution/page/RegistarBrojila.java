@@ -1,10 +1,8 @@
 package com.platformX.distribution.page;
 
-import static org.testng.Assert.assertTrue;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -72,19 +70,6 @@ public class RegistarBrojila extends PocetnaStranicaPXD {
 		submitBtnWE.click();
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		return brojBrojila;
-	}
-	
-	public void verifikujBrojilo(String brojBrojila) throws InterruptedException, FileNotFoundException, IOException {
-		wait.until(ExpectedConditions.elementToBeClickable(filterBrojBrojilaWE));
-		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
-		filterBrojBrojilaWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(napredniFilterJednakoWE));
-		napredniFilterJednakoWE.sendKeys(brojBrojila);
-		napredniFilterJednakoWE.sendKeys(Keys.ENTER);
-		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
-		wait.until(ExpectedConditions.visibilityOf(podatak2Tabela2WE));
-		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
-		assertTrue(podatak2Tabela2WE.getText().contains(brojBrojila),"Registar brojila: Broj brojila nije dobar!");
 	}
 	
 	public String kreirajBrojilo() {

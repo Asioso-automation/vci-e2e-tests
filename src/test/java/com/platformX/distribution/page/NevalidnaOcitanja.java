@@ -4,6 +4,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import com.platformX.base.Kolone;
 
@@ -13,30 +14,20 @@ public class NevalidnaOcitanja extends PocetnaStranicaPXD {
 		super(driver);
 	}
 	
-	public void verifikujNevalidnaOcitanja()throws InterruptedException, FileNotFoundException, IOException {
-		Kolone kolone = new Kolone(driver);
+	Kolone kolone = new Kolone(driver);
+	
+	public WebElement[] columns = {kolone.kolonaIdWE, kolone.kolonaBrojiloWE, kolone.kolonaMjernoMjestoEicWE, kolone.kolonaNazivMjernogMjestaWE, 
+			kolone.kolonaTrafostanicaWE, kolone.kolonaCitacWE, kolone.kolonaRazlogWE, kolone.kolonaAvtWE, kolone.kolonaAmtWE, kolone.kolonaRvtWE, 
+			kolone.kolonaRmtWE, kolone.kolonaSnaga1WE, kolone.kolonaAvt1WE, kolone.kolonaAmt1WE, kolone.kolonaRvt1WE, kolone.kolonaRmt1WE, 
+			kolone.kolonaSnagaMinusWE, kolone.kolonaPorukaCitacaWE, kolone.kolonaDatumWE, kolone.kolonaZbirnoKontrolnoOcitanjeWE, kolone.kolonaRijesenoWE};
+	
+	public WebElement[] buttons = {preuzmiExcelBtnWE, ukloniFiltereBtnWE, osvjeziBtnWE};
+
+	public void verifikujNevalidnaOcitanja()throws Exception {
+		navigateOnPage(NevalidnaOcitanja.class, "Očitanja", "Nevalidna očitanja");
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Nevalidna očitanja')]")));
-		verifikacijaZajednickihElemenata2("Očitanja", "Nevalidna Očitanja", "Nevalidna očitanja", 23, false, false, false, true, true, true, false);
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojiloWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMjernoMjestoEicWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNazivMjernogMjestaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTrafostanicaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaCitacWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaRazlogWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAvtWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAmtWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaRvtWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaRmtWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaSnaga1WE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAvt1WE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaAmt1WE));
-//		TODO Rvt, Rmt, Snaga minus
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPorukaCitacaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaZbirnoKontrolnoOcitanjeWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaRijesenoWE));
+		verifikacijaStranice("Očitanja", "Nevalidna Očitanja", "Nevalidna očitanja", 2, columns, buttons);
 	}
 
 }

@@ -101,6 +101,9 @@ public abstract class PageBase {
 	@FindBy(xpath = "//i[contains(@class, 'fa-filter')]")
 	protected WebElement filterBtnWE;
 	
+	@FindBy(xpath = "//i[contains(@class, 'fa-trash-can')]")
+	protected WebElement brisanjeBtnWE;
+	
 	@FindBy(xpath = "//i[contains(@class, 'fa-download')]")
 	protected WebElement preuzmiProsireniExcelBtnWE;
 	

@@ -68,10 +68,10 @@ public class PX_DIST_012_Trafostanice_CRUD_Test extends BaseTest {
 		trafostanice.verifikacijaStranice("Šifarnici", "Trafostanice", "Trafostanice", 1, trafostanice.columns, trafostanice.buttons);
 		trafostanice.verifikujStavku(novaTrafostanica, homePage.podatak2Tabela3WE);
 		String trafostanicaId = trafostanice.kreirajTrafostanicu();
-		CitackiHodovi citackiHodovi = homePage.navigateOnPage(CitackiHodovi.class, "Očitanja", "Čitački hodovi");
-		citackiHodovi.verifikujCitackiHodovi();
+		CitackiHodovi citackiHodovi = new CitackiHodovi(driver);
+		citackiHodovi.navigirajVerifikujCitackiHodovi();
 		citackiHodovi.pretraziStavku(homePage.filterKolona4WE, trafostanicaId);
-		citackiHodovi.verifikujCitackiHodovi();
+		citackiHodovi.verifikacijaStranice("Očitanja", "Čitački Hodovi", "Čitački hodovi", 1, citackiHodovi.columns, citackiHodovi.buttons);
 		citackiHodovi.verifikujStavku(trafostanicaId, homePage.podatak2Tabela4WE);
 		citackiHodovi.obrisiStavku();
 		citackiHodovi.verifikujPoruku("Brisanje je uspješno završeno");

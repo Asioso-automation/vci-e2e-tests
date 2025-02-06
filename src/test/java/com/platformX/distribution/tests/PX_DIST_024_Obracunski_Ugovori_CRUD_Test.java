@@ -51,7 +51,10 @@ public class PX_DIST_024_Obracunski_Ugovori_CRUD_Test  extends BaseTest {
 		RegistarBrojila registarBrojila = new RegistarBrojila(driver);
 		registarBrojila.navigirajVerifikujRegistarBrojila();
 		String brojilo = registarBrojila.dodajBrojilo();
-		registarBrojila.verifikujBrojilo(brojilo);
+		registarBrojila.verifikujPoruku("Uspješno završeno.");
+		registarBrojila.pretraziStavku(registarBrojila.filterBrojBrojilaWE, brojilo);
+		registarBrojila.verifikacijaStranice("Brojila", "Registar Brojila", "Registar brojila", 1, registarBrojila.columns, registarBrojila.buttons);
+		registarBrojila.verifikujStavku(brojilo, homePage.podatak2Tabela2WE);
 		String brBrojila = registarBrojila.kreirajBrojilo();
 		ObracunskiUgovori obracunskiUgovori = new ObracunskiUgovori(driver);
 		obracunskiUgovori.navigirajVerifikujObracunskiUgovori();

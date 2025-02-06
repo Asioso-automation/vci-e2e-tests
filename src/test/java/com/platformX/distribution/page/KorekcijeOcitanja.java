@@ -4,6 +4,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import com.platformX.base.Kolone;
 
@@ -13,28 +14,20 @@ public class KorekcijeOcitanja extends PocetnaStranicaPXD {
 		super(driver);
 	}
 	
-	public void verifikujKorekcijeOcitanja()throws InterruptedException, FileNotFoundException, IOException {
-		Kolone kolone = new Kolone(driver);
+	Kolone kolone = new Kolone(driver);
+	
+	public WebElement[] columns = {kolone.kolonaIdWE, kolone.kolonaMjernoMjestoEicWE, kolone.kolonaNazivMjernogMjestaWE, kolone.kolonaBrojiloWE, kolone.kolonaKupacWE, 
+			kolone.kolonaKorisnikWE, kolone.kolonaFizickaLokacijaWE, kolone.kolonaDatumWE, kolone.kolonaDatumKorigovanogOcitanjaWE, kolone.kolonaStariNoviAvtWE, kolone.kolonaStariNoviAmtWE, 
+			kolone.kolonaStariNoviRvtWE, kolone.kolonaStariNoviRmtWE, kolone.kolonaStaraNovaSnagaWE, kolone.kolonaStariNoviAvtMinusWE, kolone.kolonaStariNoviAmtMinusWE, 
+			kolone.kolonaStariNoviRvtMinusWE, kolone.kolonaStariNoviRmtMinusWE, kolone.kolonaStaraNovaSnagaMinusWE};
+	
+	public WebElement[] buttons = {dodajBtnWE, brisanjeBtnWE, ukloniFiltereBtnWE, preuzmiExcelBtnWE, osvjeziBtnWE, infoBtnWE};
+
+	public void navigirajVerifikujKorekcijeOcitanja()throws Exception {
+		navigateOnPage(KorekcijeOcitanja.class, "Očitanja", "Korekcije očitanja");
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Korekcije očitanja')]")));
-		verifikacijaZajednickihElemenata2("Očitanja", "Korekcije Očitanja", "Korekcije očitanja", 20, false, false, true, true, true, true, true);
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaIdWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaMjernoMjestoEicWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNazivMjernogMjestaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojiloWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKupacWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaKorisnikWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaFizickaLokacijaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDatumKorigovanogOcitanjaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaStariNoviAvtWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaStariNoviAmtWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaStariNoviRvtWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaStariNoviRmtWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaStaraNovaSnagaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaStariNoviAvtMinusWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaStariNoviAmtMinusWE));
-//		TODO Rvt, Rmt, Snaga minus
+		verifikacijaStranice("Očitanja", "Korekcije Očitanja", "Korekcije očitanja", 1, columns, buttons);
 	}
 	
 }

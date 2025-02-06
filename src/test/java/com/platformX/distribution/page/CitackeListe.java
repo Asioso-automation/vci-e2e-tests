@@ -4,6 +4,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import com.platformX.base.Kolone;
 
@@ -13,25 +14,19 @@ public class CitackeListe  extends PocetnaStranicaPXD {
 		super(driver);
 	}
 	
-	public void verifikujCitackeListe()throws InterruptedException, FileNotFoundException, IOException {
-		Kolone kolone = new Kolone(driver);
+	Kolone kolone = new Kolone(driver);
+	
+	public WebElement[] columns = {kolone.kolonaCitacWE, kolone.kolonaFizickaLokacijaWE, kolone.kolonaZonaWE, kolone.kolonaSektorWE, 
+			kolone.kolonaCitackiHodWE, kolone.kolonaUkupanBrojStavkiWE, kolone.kolonaBrojOcitanihStavkiWE, kolone.kolonaNeocitaniSaPorukomWE, 
+			kolone.kolonaNeocitaniWE, kolone.kolonaOdRedgnoBrojaWE, kolone.kolonaDoRednogBrojaWE, kolone.kolonaPrikaziPrethodnoOcitanjeWE};
+	
+	public WebElement[] buttons = {dodajSveBtnWE, dodajBtnWE, preuzmiExcelBtnWE, ukloniFiltereBtnWE, osvjeziBtnWE};
+
+	public void navigirajVerifikujCitackeListe()throws Exception {
+		navigateOnPage(CitackeListe.class, "Očitanja", "Čitačke liste");
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Čitačke liste')]")));
-		verifikacijaZajednickihElemenata2("Očitanja", "Čitačke Liste", "Čitačke liste", 13, false, true, true, true, true, true, false);
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaCitacWE));
-//		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaTrafostanicaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaFizickaLokacijaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaZonaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaSektorWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaCitackiHodWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaUkupanBrojStavkiWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaBrojOcitanihStavkiWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNeocitaniSaPorukomWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaNeocitaniWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaOdRedgnoBrojaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaDoRednogBrojaWE));
-		wait.until(ExpectedConditions.visibilityOf(kolone.kolonaPrikaziPrethodnoOcitanjeWE));
-		
+		verifikacijaStranice("Očitanja", "Čitačke Liste", "Čitačke liste", 1, columns, buttons);
 	}
 
 }

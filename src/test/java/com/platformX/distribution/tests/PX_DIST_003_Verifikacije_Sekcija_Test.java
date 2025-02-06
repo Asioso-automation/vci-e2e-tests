@@ -207,7 +207,7 @@ public class PX_DIST_003_Verifikacije_Sekcija_Test extends BaseTest {
 		lokacijskeSaglasnosti.navigirajVerifikujLokacijskeSaglasnosti();
 		ElektroenergetskeSaglasnosti elektroenergetskeSaglasnosti = new ElektroenergetskeSaglasnosti(driver);
 		elektroenergetskeSaglasnosti.navigirajVerifikujElektroenergetskeSaglasnosti();
-////		TODO Promjene EES - kreirati novu klasu
+//		TODO Promjene EES - kreirati novu klasu
 		UgovoriOPrikljucenju ugovoriOPrikljucenju = new UgovoriOPrikljucenju(driver);
 		ugovoriOPrikljucenju.navigirajVerifikujUgovoriOPrikljucenju();		
 		DeklaracijeOPrikljucku deklaracijeOPrikljucku = new DeklaracijeOPrikljucku(driver);
@@ -218,7 +218,7 @@ public class PX_DIST_003_Verifikacije_Sekcija_Test extends BaseTest {
 		zahtjeviZaIskljucenja.navigirajVerifikujZahtjeviZaIskljucenja();
 		ZahtjeviZaUkljucenja zahtjeviZaUkljucenja = new ZahtjeviZaUkljucenja(driver);
 		zahtjeviZaUkljucenja.navigirajVerifikujZahtjeviZaUkljucenja();
-////		TODO Importi obavjestenja o isklj. - kreirati novu klasu
+//		TODO Importi obavjestenja o isklj. - kreirati novu klasu
 		AktivnaIskljucenjaMjernihMjesta aktivnaIskljucenjaMjernihMjesta = new AktivnaIskljucenjaMjernihMjesta(driver);
 		aktivnaIskljucenjaMjernihMjesta.navigirajVerifikujAktivnaIskljucenjaMjernihMjesta();
 		RazloziNeizvrsavanjaZahtjeva razloziNeizvrsavanjaZahtjeva = new RazloziNeizvrsavanjaZahtjeva(driver);
@@ -286,28 +286,28 @@ public class PX_DIST_003_Verifikacije_Sekcija_Test extends BaseTest {
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		OcitanjaBrojila ocitanjabrojila = homePage.navigateOnPage(OcitanjaBrojila.class, "Očitanja", "Očitanja brojila");
-		ocitanjabrojila.verifikujOcitanjaBrojila();
-		KorekcijeOcitanja korekcijeocitanja = homePage.navigateOnPage(KorekcijeOcitanja.class, "Očitanja", "Korekcije očitanja");
-		korekcijeocitanja.verifikujKorekcijeOcitanja();
-		ImportiOcitanja importiocitanja = homePage.navigateOnPage(ImportiOcitanja.class, "Očitanja", "Importi očitanja");
-		importiocitanja.verifikujImportiOcitanja();
-		IzmijenjenaOcitanja izmijenjenaocitanja = homePage.navigateOnPage(IzmijenjenaOcitanja.class, "Očitanja", "Izmijenjena očitanja");
+		OcitanjaBrojila ocitanjabrojila = new OcitanjaBrojila(driver);
+		ocitanjabrojila.navigirajVerifikujOcitanjaBrojila();
+		KorekcijeOcitanja korekcijeocitanja = new KorekcijeOcitanja(driver);
+		korekcijeocitanja.navigirajVerifikujKorekcijeOcitanja();
+		ImportiOcitanja importiocitanja = new ImportiOcitanja(driver);
+		importiocitanja.navigirajVerifikujImportiOcitanja();
+		IzmijenjenaOcitanja izmijenjenaocitanja = new IzmijenjenaOcitanja(driver);
 		izmijenjenaocitanja.verifikujIzmijenjenaOcitanja();
-		NevalidnaOcitanja nevalidnaocitanja = homePage.navigateOnPage(NevalidnaOcitanja.class, "Očitanja", "Nevalidna očitanja");
+		NevalidnaOcitanja nevalidnaocitanja = new NevalidnaOcitanja(driver);
 		nevalidnaocitanja.verifikujNevalidnaOcitanja();
-		CitackiHodovi citackihodovi = homePage.navigateOnPage(CitackiHodovi.class, "Očitanja", "Čitački hodovi");
-		citackihodovi.verifikujCitackiHodovi();
-		CitackeListe citackeliste = homePage.navigateOnPage(CitackeListe.class, "Očitanja", "Čitačke liste");
-		citackeliste.verifikujCitackeListe();
-		CitaciPoCitackimHodovima citaciPoCitackimHodovima = homePage.navigateOnPage(CitaciPoCitackimHodovima.class, "Očitanja", "Čitači po čitačkim hodovima");
-		citaciPoCitackimHodovima.verifikujCitaciPoCitackimHodovima();
-		ZbirnaKontrolnaOcitanja zbirnaKontrolnaOcitanja = homePage.navigateOnPage(ZbirnaKontrolnaOcitanja.class, "Očitanja", "Zbirna/kontrolna očitanja");
-		zbirnaKontrolnaOcitanja.verifikujZbirnaKontrolnaOcitanja();
-		ZbirnaKontrolnaPotrosnja zbirnaKontrolnaPotrosnja = homePage.navigateOnPage(ZbirnaKontrolnaPotrosnja.class, "Očitanja", "Zbirna/kontrolna potrošnja");
-		zbirnaKontrolnaPotrosnja.verifikujZbirnaKontrolnaPotrosnja();
+		CitackiHodovi citackiHodovi = new CitackiHodovi(driver);
+		citackiHodovi.navigirajVerifikujCitackiHodovi();
+		CitackeListe citackeListe = new CitackeListe(driver);
+		citackeListe.navigirajVerifikujCitackeListe();
+		CitaciPoCitackimHodovima citaciPoCitackimHodovima = new CitaciPoCitackimHodovima(driver);
+		citaciPoCitackimHodovima.navigirajVerifikujCitaciPoCitackimHodovima();
+		ZbirnaKontrolnaOcitanja zbirnaKontrolnaOcitanja = new ZbirnaKontrolnaOcitanja(driver);
+		zbirnaKontrolnaOcitanja.navigirajVerifikujZbirnaKontrolnaOcitanja();
+		ZbirnaKontrolnaPotrosnja zbirnaKontrolnaPotrosnja = new ZbirnaKontrolnaPotrosnja(driver);
+		zbirnaKontrolnaPotrosnja.navigirajVerifikujZbirnaKontrolnaPotrosnja();
 //		TODO ProcjenaOcitanja
-		MonitoringOcitanja monitoringOcitanja = homePage.navigateOnPage(MonitoringOcitanja.class, "Očitanja", "Monitoring očitanja");
+		MonitoringOcitanja monitoringOcitanja = new MonitoringOcitanja(driver);
 		monitoringOcitanja.verifikujMonitoringOcitanja();
 	}
 

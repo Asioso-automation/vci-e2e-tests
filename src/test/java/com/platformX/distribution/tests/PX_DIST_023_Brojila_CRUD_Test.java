@@ -21,10 +21,13 @@ public class PX_DIST_023_Brojila_CRUD_Test  extends BaseTest {
 		logIn.logIn();
 		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
 		homePage.verifikujPocetnuStranicu();
-		RegistarBrojila registarBrojila = homePage.navigateOnPage(RegistarBrojila.class, "Brojila", "Registar brojila");
+		RegistarBrojila registarBrojila = new RegistarBrojila(driver);
 		registarBrojila.navigirajVerifikujRegistarBrojila();
 		String brojilo = registarBrojila.dodajBrojilo();
-		registarBrojila.verifikujBrojilo(brojilo);
+		registarBrojila.verifikujPoruku("Uspješno završeno.");
+		registarBrojila.pretraziStavku(registarBrojila.filterBrojBrojilaWE, brojilo);
+		registarBrojila.verifikacijaStranice("Brojila", "Registar Brojila", "Registar brojila", 1, registarBrojila.columns, registarBrojila.buttons);
+		registarBrojila.verifikujStavku(brojilo, homePage.podatak2Tabela2WE);
 	}
 
 }
