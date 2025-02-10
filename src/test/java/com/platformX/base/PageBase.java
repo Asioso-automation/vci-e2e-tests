@@ -355,6 +355,7 @@ public abstract class PageBase {
 			try {
 				wait.until(ExpectedConditions.elementToBeClickable(strelicaDesnoWE));
 				strelicaDesnoWE.click();
+				Thread.sleep(900);
 				wait.until(ExpectedConditions.elementToBeClickable(By.xpath(sekcijaXpath))).click();
 				wait.until(ExpectedConditions.visibilityOf(aktivniLookupWE));
 				wait.until(ExpectedConditions.elementToBeClickable(By.xpath(stranicaXpath))).click();

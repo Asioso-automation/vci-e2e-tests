@@ -140,6 +140,7 @@ public class PocetnaStranicaPXD extends PageBase {
 		wait.until(ExpectedConditions.elementToBeClickable(strelicaLijevoWE));
 		strelicaLijevoWE.click();
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
+		Thread.sleep(900);
 	}
 
 	public void logOut() {
