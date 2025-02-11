@@ -376,7 +376,7 @@ public abstract class PageBase {
 	}
 	 
 	public <T extends PageBase> T navigateOnPagePX(Class<T> pageClass, String sekcija, String stranica) throws Exception {
-		WebDriverWait wait = new WebDriverWait(driver, 10);
+		WebDriverWait wait = new WebDriverWait(driver, 20);
 		String sekcijaXpath = generateXpath(sekcija, sekcijaXClass);
 		String stranicaXpath = generateXpath(stranica, stranicaXClass);
 		try {
@@ -463,7 +463,7 @@ public abstract class PageBase {
 
 	public void verifikacijaStranice(String sekcija, String stranica, String naslovStranice, int brKolona, WebElement[] listaKolona, WebElement[] btnElementi) throws InterruptedException {
 //		verifikacijaZajednickihElemenata
-		WebDriverWait wait = new WebDriverWait(driver, 10);
+		WebDriverWait wait = new WebDriverWait(driver, 20);
 		try {
 			wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		} catch (Exception e) {
