@@ -16,8 +16,9 @@ public class EnergetskeKartice extends PocetnaStranicaPXD {
 	
 	Kolone kolone = new Kolone(driver);
 	
-	public WebElement[] columns = {kolone.kolonaNazivMjernogMjestaWE, kolone.kolonaObracunskiUgovorWE, kolone.kolonaVrstaZapisaWE, kolone.kolonaDatumWE, 
-			kolone.kolonaBrojiloWE, kolone.kolonaKonstantaWE, kolone.kolonaStanjeAVTWE, kolone.kolonaUtrosakAVTWE, kolone.kolonaStanjeAMTWE, kolone.kolonaUtrosakAMTWE, 
+	public WebElement[] columns = {kolone.kolonaIdWE, kolone.kolonaNazivMjernogMjestaWE, kolone.kolonaObracunskiUgovorWE, kolone.kolonaKupacWE, 
+			kolone.kolonaVrstaZapisaWE, kolone.kolonaDatumWE, kolone.kolonaTarifnaGrupaWE, kolone.kolonaBrojiloWE, kolone.kolonaKonstantaWE, 
+			kolone.kolonaOdobrenaPrikljucnaSnagaWE, kolone.kolonaStanjeAVTWE, kolone.kolonaUtrosakAVTWE, kolone.kolonaStanjeAMTWE, kolone.kolonaUtrosakAMTWE, 
 			kolone.kolonaStanjeRVTWE, kolone.kolonaUtrosakRVTWE, kolone.kolonaStanjeRMTWE, kolone.kolonaUtrosakRMTWE, kolone.kolonaStanjeSnageWE, kolone.kolonaUtrosakSnageWE};
 	
 	public WebElement[] buttons = {ukloniFiltereBtnWE, preuzmiExcelBtnWE, osvjeziBtnWE, infoBtnWE};
@@ -26,7 +27,7 @@ public class EnergetskeKartice extends PocetnaStranicaPXD {
 		navigateOnPage(EnergetskeKartice.class, "Mjerna mjesta", "Energetske kartice");
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"//div[contains(@class, 'v-toolbar__title subtitle-2 ml-0 pl-0 text-default') and starts-with(., ' Energetska kartica')]")));
-		verifikacijaStranice("Mjerna mjesta", "Energetske Kartice", "Energetska kartica", 1, columns, buttons);
+		verifikacijaStranice("Mjerna mjesta", "Energetske Kartice", "Energetska kartica", 2, columns, buttons);
 // TODO	klik na button za prelazak na prikaz proizvodnje energije
 //		kolonaStanjeAVTMinusWE
 //		kolonaUtrosakAVTMinusWE
