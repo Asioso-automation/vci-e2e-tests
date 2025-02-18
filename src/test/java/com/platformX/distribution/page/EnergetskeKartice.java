@@ -16,10 +16,11 @@ public class EnergetskeKartice extends PocetnaStranicaPXD {
 	
 	Kolone kolone = new Kolone(driver);
 	
-	public WebElement[] columns = {kolone.kolonaIdWE, kolone.kolonaNazivMjernogMjestaWE, kolone.kolonaObracunskiUgovorWE, kolone.kolonaKupacWE, 
-			kolone.kolonaVrstaZapisaWE, kolone.kolonaDatumWE, kolone.kolonaTarifnaGrupaWE, kolone.kolonaBrojiloWE, kolone.kolonaKonstantaWE, 
-			kolone.kolonaOdobrenaPrikljucnaSnagaWE, kolone.kolonaStanjeAVTWE, kolone.kolonaUtrosakAVTWE, kolone.kolonaStanjeAMTWE, kolone.kolonaUtrosakAMTWE, 
-			kolone.kolonaStanjeRVTWE, kolone.kolonaUtrosakRVTWE, kolone.kolonaStanjeRMTWE, kolone.kolonaUtrosakRMTWE, kolone.kolonaStanjeSnageWE, kolone.kolonaUtrosakSnageWE};
+	public WebElement[] columns = {kolone.kolonaIdWE, kolone.kolonaNazivMjernogMjestaWE, kolone.kolonaKupacWE, 
+			kolone.kolonaTarifnaGrupaWE, kolone.kolonaBrojiloWE, kolone.kolonaOdobrenaPrikljucnaSnagaWE, kolone.kolonaKonstantaWE, 
+			kolone.kolonaDatumWE, kolone.kolonaVrstaZapisaWE, kolone.kolonaStanjeAVTWE, kolone.kolonaUtrosakAVTWE, 
+			kolone.kolonaStanjeAMTWE, kolone.kolonaUtrosakAMTWE, kolone.kolonaStanjeRVTWE, kolone.kolonaUtrosakRVTWE, 
+			kolone.kolonaStanjeRMTWE, kolone.kolonaUtrosakRMTWE, kolone.kolonaStanjeSnageWE, kolone.kolonaUtrosakSnageWE};
 	
 	public WebElement[] buttons = {ukloniFiltereBtnWE, preuzmiExcelBtnWE, osvjeziBtnWE, infoBtnWE};
 	
