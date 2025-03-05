@@ -7,16 +7,16 @@ import com.platformX.base.RestApiBase;
 import data.GlobalVariables;
 import io.restassured.path.json.JsonPath;
 
-public class PXD_Smoke_Testing_Lists extends RestApiBase {
+public class PXD_SortingTest extends RestApiBase {
 
-	public PXD_Smoke_Testing_Lists() throws IOException {
+	public PXD_SortingTest() throws IOException {
 		super();
 	}
 	
 	// TODO Nazvati testnu klasu i metode po imenu ep koji se gadja, npr. PXD_SortingTest, a taj test moze biti dio smoke test suite-a
 	
 	@Test(description = "smoke test case: all lists sorted desc")
-	public void pxd_smoke_001_01_post_basic_lists_desc_test() throws Exception {
+	public void pxd_sorting_01_post_basic_lists_desc_test() throws Exception {
 		GlobalVariables.token = authorize();
 		addHeader("Authorization", "Bearer " + GlobalVariables.token);	
 		for (int i = 0; i < GlobalVariables.sveKolone.length; i++) {
@@ -28,7 +28,7 @@ public class PXD_Smoke_Testing_Lists extends RestApiBase {
 	}
 	
 	@Test(description = "smoke test case: all lists sorted asc")
-	public void pxd_smoke_001_02_post_basic_lists_asc_test() throws Exception {
+	public void pxd_sorting_02_post_basic_lists_asc_test() throws Exception {
 		GlobalVariables.token = authorize();
 		addHeader("Authorization", "Bearer " + GlobalVariables.token);	
 		for (int i = 0; i < GlobalVariables.sveKolone.length; i++) {

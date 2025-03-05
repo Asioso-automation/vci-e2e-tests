@@ -326,6 +326,41 @@ public class Payloads {
 				+ "}";
 	}
 	
+	public static String pxdLegalEntityCreate(boolean isLegalEntity, String name, int placeId, int postOfficeId, String printName, int streetId, String taxId, boolean vatPayer) {
+		return "{\r\n"
+				+ " \"isLegalEntity\": " + isLegalEntity + ", \r\n"
+				+ " \"name\": \"" + name + "\", \r\n"
+				+ " \"placeId\": " + placeId + ", \r\n"
+				+ " \"postOfficeId\": " + postOfficeId + ", \r\n"
+				+ " \"printName\": \"" + printName + "\", \r\n"
+				+ " \"streetId\": " + streetId + ", \r\n"
+				+ " \"taxId\": \"" + taxId + "\", \r\n"
+				+ " \"vatPayer\": " + vatPayer + " \r\n"
+				+ "}";
+	}
+	
+	public static String pxdLegalEntityUpdate(int id, int streetId, int placeId, boolean isLegalEntity, String taxId, int postOfficeId, String name, String printAddressText, boolean vatPayer, boolean active, boolean associatedLegalEntities, boolean testBills, String printName, String placeText, String postOfficeText, String streetText) {
+		return "{\r\n"
+				+ " \"id\": " + id + ", \r\n"
+				+ " \"streetId\": " + streetId + ", \r\n"
+				+ " \"placeId\": " + placeId + ", \r\n"
+				+ " \"isLegalEntity\": " + isLegalEntity + ", \r\n"
+				+ " \"taxId\": \"" + taxId + "\", \r\n"
+				+ " \"postOfficeId\": " + postOfficeId + ", \r\n"
+				+ " \"name\": \"" + name + "\", \r\n"
+				+ " \"printAddressText\": \"" + printAddressText + "\", \r\n"
+				+ " \"vatPayer\": " + vatPayer + ", \r\n"
+				+ " \"active\": " + active + ", \r\n"
+				+ " \"associatedLegalEntities\": " + associatedLegalEntities + ", \r\n"
+				+ " \"testBills\": " + testBills + ", \r\n"
+				+ " \"printName\": \"" + printName + "\", \r\n"
+				+ " \"placeText\": \"" + placeText + "\", \r\n"
+				+ " \"postOfficeText\": \"" + postOfficeText + "\", \r\n"
+				+ " \"streetText\": \"" + streetText + "\" \r\n"
+				+ "}";
+		
+	}
+	
 	public static String pxdTransformerStationTypeCreate(String type, String name) {
 		return "{\r\n"
 				+ " \"type\": \"" + type + "\", \r\n"

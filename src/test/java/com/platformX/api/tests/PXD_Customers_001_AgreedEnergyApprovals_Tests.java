@@ -71,7 +71,7 @@ public class PXD_Customers_001_AgreedEnergyApprovals_Tests extends RestApiBase {
 	}
 	
 	@Test(description = "positive test case: delete agreed energy approval", dependsOnMethods = { "pxd_customers_001_03_create_agreed_energy_approval_test1" })
-	public void pxd_customers_001_05_delete_field_unit_test1() throws Exception {
+	public void pxd_customers_001_05_delete_agreed_energy_approval_test1() throws Exception {
 		addHeader("Authorization", "Bearer " + GlobalVariables.token);
 		methodDELETE(api_properties.getValue("AGREED.ENERGY.APPROVALS.DELETE") + GlobalVariables.id, 204);
 	}

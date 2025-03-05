@@ -11,9 +11,9 @@ import com.platformX.distribution.page.RegistarBrojila;
 import com.platformX.distribution.page.ZbirnaKontrolnaMjernaMjesta;
 import com.platformX.util.Helper;
 
-public class PX_DIST_018_Zbirna_Kontrolna_Mjerna_Mjesta_CRUD_Test extends BaseTest {
+public class PX_DIST_015_Zbirna_Kontrolna_Mjerna_Mjesta_CRUD_Test extends BaseTest {
 	
-	public PX_DIST_018_Zbirna_Kontrolna_Mjerna_Mjesta_CRUD_Test() throws IOException, FileNotFoundException {
+	public PX_DIST_015_Zbirna_Kontrolna_Mjerna_Mjesta_CRUD_Test() throws IOException, FileNotFoundException {
 		super();
 	}
 
@@ -21,7 +21,7 @@ public class PX_DIST_018_Zbirna_Kontrolna_Mjerna_Mjesta_CRUD_Test extends BaseTe
 	String novoZbirnoKontrolnoMjernoMjesto = "NovoZbirnoMjm " + Helper.getRandomString(5);
 	
 	@Test (retryAnalyzer = RetryAnalyzer.class)
-	public void px_dist_018_1_dodavanje_zbirnog_kontrolnog_mjernog_mjesta_test() throws Exception {
+	public void px_dist_015_1_dodavanje_zbirnog_kontrolnog_mjernog_mjesta_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
@@ -44,8 +44,8 @@ public class PX_DIST_018_Zbirna_Kontrolna_Mjerna_Mjesta_CRUD_Test extends BaseTe
 		zbirnaKontrolnaMjernaMjesta.verifikujStavku(zbirnoKontrolnoMjernoMjesto, homePage.podatak2Tabela2WE); 
 	}
 	
-	@Test (retryAnalyzer = RetryAnalyzer.class, dependsOnMethods = { "px_dist_018_1_dodavanje_zbirnog_kontrolnog_mjernog_mjesta_test" })
-	public void px_dist_018_2_uredjivanje_zbirnog_kontrolnog_mjernog_mjesta_test() throws Exception {
+	@Test (retryAnalyzer = RetryAnalyzer.class, dependsOnMethods = { "px_dist_015_1_dodavanje_zbirnog_kontrolnog_mjernog_mjesta_test" })
+	public void px_dist_015_2_uredjivanje_zbirnog_kontrolnog_mjernog_mjesta_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
@@ -63,8 +63,8 @@ public class PX_DIST_018_Zbirna_Kontrolna_Mjerna_Mjesta_CRUD_Test extends BaseTe
 		zbirnaKontrolnaMjernaMjesta.verifikujStavku(novoZbirnoKontrolnoMjernoMjesto, homePage.podatak2Tabela2WE); 
 	}
 	
-	@Test (retryAnalyzer = RetryAnalyzer.class, dependsOnMethods = { "px_dist_018_2_uredjivanje_zbirnog_kontrolnog_mjernog_mjesta_test" })
-	public void px_dist_018_3_brisanje_zbirnog_kontrolnog_mjernog_mjesta_test() throws Exception {
+	@Test (retryAnalyzer = RetryAnalyzer.class, dependsOnMethods = { "px_dist_015_2_uredjivanje_zbirnog_kontrolnog_mjernog_mjesta_test" })
+	public void px_dist_015_3_brisanje_zbirnog_kontrolnog_mjernog_mjesta_test() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();

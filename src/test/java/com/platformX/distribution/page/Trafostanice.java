@@ -69,7 +69,7 @@ public class Trafostanice extends PocetnaStranicaPXD {
 		sifraWE.sendKeys(Helper.getRandomNumber(4));
 		wait.until(ExpectedConditions.elementToBeClickable(fizickaLokacijaWE));
 		fizickaLokacijaWE.click();
-		fizickaLokacijaWE.sendKeys(Helper.getRandomNumber(1));
+		fizickaLokacijaWE.sendKeys(Helper.getRandomNumberInRange(1, 6));
 		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
 		fizickaLokacijaWE.sendKeys(Keys.ARROW_DOWN);
 		fizickaLokacijaWE.sendKeys(Keys.ENTER);

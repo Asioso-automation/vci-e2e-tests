@@ -18,14 +18,13 @@ public class ElektroenergetskeSaglasnosti extends PocetnaStranicaPXD {
 		super(driver);
 	}
 	
+//	ZAJEDNICKI ELEMENTI
+	
 	@FindBy(xpath = "//form/div/div/div/div/div[1]/div[1]/input[1]")
 	private WebElement tipEESWE;
 	
-	@FindBy(xpath = "//div[contains(@class, 'v-stepper__step--active')]")
-	private WebElement odaberiTipEESWE;
-	
-	@FindBy(xpath = "//div[contains(text(), '1 - Domaćinstva') and @class='v-list-item__title']")
-	private WebElement tipEESDomacinstvaWE;
+	@FindBy(xpath = "//form/div/div[2]/div/div/div[1]/div[1]/div[1]/input")
+	private WebElement kategorijaPotrosnjeWE;
 	
 	@FindBy(xpath = "//span[contains(text(), 'Dalje') and @class='v-btn__content']")
 	private WebElement daljeBtnWE;
@@ -33,155 +32,113 @@ public class ElektroenergetskeSaglasnosti extends PocetnaStranicaPXD {
 	@FindBy(xpath = "//div[@class='v-card__title subtitle-2 title-border text-uppercase mb-5']")  
 	private WebElement naslovWE;
 	
-//	DOMACINSTVA
-	
-	@FindBy(xpath = "//div[2]/div[1]/div/div/div[1]/div[1]/input[1]")  
+	@FindBy(xpath = "//form/div/div[2]/div[2]/div[1]/div/div/div[1]/div[1]/input[1]")  
 	private WebElement kupacWE;
-	
-	@FindBy(xpath = "//div[2]/div[2]/div/div/div[1]/div[1]/input[1]")  
+
+	@FindBy(xpath = "//form/div/div[2]/div[2]/div[2]/div/div/div[1]/div[1]/input[1]")  
 	private WebElement fizickaLokacijaWE;
 	
-	@FindBy(xpath = "//div[3]/div[1]/div/div/div[1]/div[1]/input[1]")
+	@FindBy(xpath = "//form/div/div[2]/div[3]/div[1]/div/div/div[1]/div[1]/input[1]")
 	private WebElement kategorijaPrikljuckaWE;
-	
-	@FindBy(xpath = "//div[3]/div[2]/div/div/div[1]/div[1]/input[1]")  
+
+	@FindBy(xpath = "//form/div/div[2]/div[3]/div[2]/div/div/div[1]/div[1]/input[1]")  
 	private WebElement tipPrikljuckaWE;
-	
+
 	@FindBy(xpath = "//div[4]/div[1]/div/div/div[1]/div/input")  
 	private WebElement brojProtokolaWE;
-	
+
 	@FindBy(xpath = "//div[4]/div[2]/div/div/div[1]/div[1]/input[1]")  
 	private WebElement razlogEESWE;
-	
+
 	@FindBy(xpath = "//div[6]/div[1]/div/div/div[1]/div[1]/input[1]")  
 	private WebElement mjestoWE;
-	
+
 	@FindBy(xpath = "//div[6]/div[2]/div/div/div[1]/div[1]/input[1]")  
 	private WebElement postaWE;
-	
-	@FindBy(xpath = "//div[7]/div[2]/div/div/div[1]/div[1]/input[1]")
+
+	@FindBy(xpath = "//div[8]/div/div/div/div[1]/div[1]/input[1]")
 	private WebElement vrstaObjektaWE;
-	
-	@FindBy(xpath = "//div[9]/div[1]/div/div/div[1]/div[1]/input[1]")
-	private WebElement kategorijaPotrosnjeWE;
-	
-	@FindBy(xpath = "//div[13]/div[2]/div/div/div[1]/div[1]/input[1]")  
-	private WebElement mjestoPrikljucenjaWE;
-	
-	@FindBy(xpath = "//div[13]/div[3]/div/div/div[1]/div[1]/input[1]")  
-	private WebElement vrstaPrikljuckaWE;
-	
-	@FindBy(xpath = "//div[14]/div[1]/div/div/div[1]/div/input")  
-	 private WebElement brojPrikljucnihVodovaWE;
-	
-	@FindBy(xpath = "//div[14]/div[2]/div/div/div[1]/div[1]/input[1]")  
-	 private WebElement tipPrikljucnogVodaWE;
-	
-	@FindBy(xpath = "//div[14]/div[3]/div/div/div[1]/div[1]/input[1]")  
-	 private WebElement presjekMm2WE;
+
+//	DOMACINSTVA
 	
 	@FindBy(xpath = "//div[15]/div[2]/div/div/div[1]/div[1]/input[1]")  
+	private WebElement mjestoPrikljucenjaWE;
+	
+	@FindBy(xpath = "//div[15]/div[3]/div/div/div[1]/div[1]/input[1]")  
+	private WebElement vrstaPrikljuckaWE;
+	
+	@FindBy(xpath = "//div[16]/div[1]/div/div/div[1]/div/input")  
+	 private WebElement brojPrikljucnihVodovaWE;
+	
+	@FindBy(xpath = "//div[16]/div[2]/div/div/div[1]/div[1]/input[1]")  
+	 private WebElement tipPrikljucnogVodaWE;
+	
+	@FindBy(xpath = "//div[16]/div[3]/div/div/div[1]/div[1]/input[1]")  
+	 private WebElement presjekMm2WE;
+	
+	@FindBy(xpath = "//div[17]/div[2]/div/div/div[1]/div[1]/input[1]")  
 	 private WebElement napojnaTransformatorskaStanicaWE;
 	
-	@FindBy(xpath = "//div[15]/div[5]/div/div/div[1]/div[1]/input[1]")  
-	 private WebElement lokacijaMjernogMjestaWE;
-	
-	@FindBy(xpath = "//div[2]/div/div/div/div[1]/div/div/div[1]/div/input")  
+	@FindBy(xpath = "//div[20]/div[2]/div[1]/div/div/div/div/div[1]/div/div/div[1]/div/input")  
 	 private WebElement brojUgradjenihBrojilaWE;
 	
-	@FindBy(xpath = "//div[2]/div/div/div/div[2]/div/div/div[1]/div[1]/input[1]")  
+	@FindBy(xpath = "//div[20]/div[2]/div[1]/div/div/div/div/div[2]/div/div/div[1]/div[1]/input[1]")  
 	 private WebElement nazivnaStrujaGlavnogOsiguracaWE;
 	
-//	@FindBy(xpath = "//div[2]/div[1]/div/div[1]/div[2]/input")
-//	private WebElement datumZahtjevaInputWE;
+	@FindBy(xpath = "//div[17]/div[4]/div/div/div[1]/div[1]/input[1]")  
+	 private WebElement lokacijaMjernogMjestaWE;
 	
-	
-//	@FindBy(xpath = "//div[4]/div[3]/div/div/div[1]/div[1]/input[1]")  
-//	 private WebElement ulicaWE;
-//
-//	@FindBy(xpath = "//div[5]/div[1]/div/div/div[1]/div[1]/input[1]")  
-//	 private WebElement brojUuliciWE;
-	
+	@FindBy(xpath = "//div[20]/div[2]/div[2]/div[1]/div/div/div[1]/div[1]/input[1]")  
+	 private WebElement nazivnaStrujaBrojilaAktivneEnergijeWE;
 
-//	@FindBy(xpath = "//div[5]/div[2]/div/div/div[1]/div[1]/input[1]")
-//	 private WebElement vrstaObjektaInputWE;
-//	
-//	@FindBy(xpath = "//div[7]/div[2]/div/div/div[1]/div[1]/input[1]")  
-//	 private WebElement odobrenaPrikljucnaSnagaWE;
-//	
-//	@FindBy(xpath = "//div[7]/div[2]/div/div/div[1]/div[1]/input[1]")  
-//	 private WebElement tarifnaGrupaWE;
-//	
-//	@FindBy(xpath = "//div[10]/div[1]/div/div/div[1]/div[1]/input[1]")
-//	 private WebElement naponskiNivoWE;
-	
-//	@FindBy(xpath = "//div[21]/div[2]/div/div/div[1]/div[1]/input[1]")
-//	 private WebElement rokVazenjaWE;
-	
-//	@FindBy(xpath = "//div[contains(text(), 'Uspješno završeno.')]")
-//	private WebElement porukaWE;
-//	
-//	@FindBy(xpath = "//tr[2]/td[2]")
-//	private WebElement brojProtokolaTabelaWE;
-//	
+	@FindBy(xpath = "//div[20]/div[2]/div[2]/div[2]/div/div/div[1]/div[1]/input[1]")  
+	 private WebElement klasaTacnostiBrojilaAktivneEnergijeWE;
 
-//	
-
-//	
-
-		
 //	NISKI NAPON
-	
-	@FindBy(xpath = "//div[9]/div[1]/div/div/div[1]/div[1]/input[1]")
-	private WebElement odobrenaSnagaStambeniDioWE;
-	
-	@FindBy(xpath = "//div[9]/div[2]/div/div/div[1]/div[1]/input[1]")
-	private WebElement odobrenaSnagaPoslovniDioWE;
-	
-	@FindBy(xpath = "//div[12]/div[1]/div/div/div[1]/div[1]/input[1]")
-	 private WebElement naponskiNivoNWE;
-	
-	@FindBy(xpath = "//div[12]/div[2]/div/div/div[1]/div[1]/input[1]")  
-	 private WebElement mjestoPrikljucenjaNWE;
-	
-	@FindBy(xpath = "//div[12]/div[3]/div/div/div[1]/div[1]/input[1]")  
-	 private WebElement vrstaPrikljuckaNWE;
-	
-	@FindBy(xpath = "//div[13]/div[1]/div/div/div[1]/div[1]/input[1]")  
-	 private WebElement tipPrikljucnogVodaNWE;
-	
-	@FindBy(xpath = "//div[13]/div[2]/div/div/div[1]/div[1]/input[1]")  
-	 private WebElement presjekMm2NWE;
-	
-	@FindBy(xpath = "//div[14]/div[1]/div/div/div[1]/div[1]/input[1]")  
-	 private WebElement napojnaTransformatorskaStanicaNWE;
-	
-	@FindBy(xpath = "//div[18]/div[2]/div/div/div/div[1]/div/div/div[1]/div/input")  
-	 private WebElement brojUgradjenihBrojilaNSWE;
-	
-	@FindBy(xpath = "//div[18]/div[2]/div/div/div/div[2]/div/div/div[1]/div[1]/input[1]")  
-	 private WebElement nazivnaStrujaGlavnogOsiguracaNSWE;
-	
-	@FindBy(xpath = "//div[19]/div[1]/div/div/div[1]/div[1]/input[1]")  
-	 private WebElement lokacijaMjernogMjestaNSWE;
-	
-	@FindBy(xpath = "//div[22]/div[2]/div/div/div/div[1]/div/div/div[1]/div/input")
-	 private WebElement brojUgradjenihBrojilaNPWE;
-		
-	@FindBy(xpath = "//div[22]/div[2]/div/div/div/div[2]/div/div/div[1]/div/input")  
-	 private WebElement nazivnaStrujaGlavnogOsiguracaNPWE;
-	
-	@FindBy(xpath = "//div[23]/div[1]/div/div/div[1]/div[1]/input[1]")  
-	 private WebElement lokacijaMjernogMjestaNPWE;
-	
-	@FindBy(xpath = "//*[contains(text(), 'Stambeni dio')]")
-	private WebElement stambenioDioWE;
-	
-	@FindBy(xpath = "//div[26]/div/div/div[1]/div[1]/input[1]")  
-	private WebElement rokVazenjaNWE;
 
-	@FindBy(xpath = "//div[2]/div[2]/div[1]/div/div[1]/div[2]/input")
-	private WebElement datumZahtjevaInputNNWE;
+	@FindBy(xpath = "//div[18]/div[2]/div/div/div[1]/div[1]/input[1]")  
+	private WebElement mjestoPrikljucenjaNNWE;
+	
+	@FindBy(xpath = "//div[18]/div[3]/div/div/div[1]/div[1]/input[1]")  
+	private WebElement vrstaPrikljuckaNNWE;
+
+	@FindBy(xpath = "//div[19]/div[1]/div/div[1]/div/div[1]/div/div/div[1]/div/input")  
+	 private WebElement brojPrikljucnihVodovaNNWE;
+	
+	@FindBy(xpath = "//div[19]/div[1]/div/div[1]/div/div[2]/div/div/div[1]/div[1]/input[1]")  
+	 private WebElement tipPrikljucnogVodaNNWE;
+
+	@FindBy(xpath = "//div[19]/div[1]/div/div[1]/div/div[3]/div/div/div[1]/div[1]/input[1]")  
+	 private WebElement presjekMm2NNWE;
+	
+	@FindBy(xpath = "//div[20]/div[2]/div/div/div[1]/div[1]/input[1]")  
+	 private WebElement napojnaTransformatorskaStanicaNNWE;
+	
+	@FindBy(xpath = "//div[24]/div[2]/div[1]/div/div/div/div/div[1]/div/div/div[1]/div/input")  
+	 private WebElement brojUgradjenihBrojilaNNWE;
+	
+	@FindBy(xpath = "//div[24]/div[2]/div[1]/div/div/div/div/div[2]/div/div/div[1]/div[1]/input[1]")  
+	 private WebElement nazivnaStrujaGlavnogOsiguracaNNWE;
+
+	@FindBy(xpath = "//div[24]/div[2]/div[2]/div[1]/div/div/div[1]/div[1]/input[1]")  
+	 private WebElement lokacijaMjernogMjestaNNWE;
+	
+	@FindBy(xpath = "//div[24]/div[2]/div[2]/div[2]/div/div/div[1]/div[1]/input[1]")  
+	 private WebElement nazivnaStrujaBrojilaAktivneEnergijeNNWE;
+
+	@FindBy(xpath = "//div[24]/div[2]/div[2]/div[3]/div/div/div[1]/div[1]/input[1]")  
+	 private WebElement klasaTacnostiBrojilaAktivneEnergijeNNWE;
+
+	@FindBy(xpath = "//div[16]/div[2]/div/div/div[1]/div/input")  
+	 private WebElement poljeZaScrollWE;
+	
+//	10 - Javna rasvjeta
+	
+	@FindBy(xpath = "//div[24]/div[2]/div[3]/div[1]/div/div/div[1]/div[1]/input[1]")  
+	 private WebElement nazivnaStrujaBrojilaReaktivneEnergijeNNWE;
+
+	@FindBy(xpath = "//div[24]/div[2]/div[3]/div[2]/div/div/div[1]/div[1]/input[1]")  
+	 private WebElement klasaTacnostiBrojilaReaktivneEnergijeNNWE;
 	
 	Kolone kolone = new Kolone(driver);
 	
@@ -197,20 +154,29 @@ public class ElektroenergetskeSaglasnosti extends PocetnaStranicaPXD {
 		verifikacijaStranice("Mjerna mjesta", "Elektroenergetske Saglasnosti", "Elektroenergetske saglasnosti", 1, columns, buttons);
 	}
 	
-//	TODO razdvojiti metodu za dodavanje EES na tri metode, za svaki tip EES
-	public void dodajElektronergetskuSaglasnostD(String brojProtokola) throws Exception {
+	public void dodajOdaberiTipEES(String tipEES, String kategorijaPotrosnje) {
 		wait.until(ExpectedConditions.elementToBeClickable(dodajBtnWE));
 		dodajBtnWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(odaberiTipEESWE));
 		wait.until(ExpectedConditions.elementToBeClickable(tipEESWE));
 		tipEESWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
-		wait.until(ExpectedConditions.elementToBeClickable(tipEESDomacinstvaWE));
-		tipEESDomacinstvaWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(@class, 'v-list-item__title') and contains(., '" + tipEES + "')]"))).click();
+		try {
 		wait.until(ExpectedConditions.elementToBeClickable(daljeBtnWE));
 		daljeBtnWE.click();
+		} catch (Exception e) {
+			wait.until(ExpectedConditions.elementToBeClickable(kategorijaPotrosnjeWE));
+			kategorijaPotrosnjeWE.click();
+			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(@class, 'v-list-item__title') and contains(., '" + kategorijaPotrosnje + "')]"))).click();
+			tipEESWE.click();
+			wait.until(ExpectedConditions.elementToBeClickable(daljeBtnWE));
+			daljeBtnWE.click();
+		}
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
-		wait.until(ExpectedConditions.elementToBeClickable(odaberiTipEESWE));
+	}
+	
+	public void popuniZajednickaPoljaEES(String brojProtokola) {
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		wait.until(ExpectedConditions.elementToBeClickable(kupacWE));
 		kupacWE.click();
 		kupacWE.sendKeys(Helper.getRandomNumber(3));
@@ -247,10 +213,9 @@ public class ElektroenergetskeSaglasnosti extends PocetnaStranicaPXD {
 		trenutniDatum1WE.click();
 		wait.until(ExpectedConditions.visibilityOf(naslovWE));
 		naslovWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(datumBtn2WE));
-		datumBtn2WE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(trenutniDatum2WE));
-		trenutniDatum2WE.click();
+	}
+
+	public void dodajElektronergetskuSaglasnostD() throws Exception {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].scrollIntoView(true);", datumBtn2WE);
 		wait.until(ExpectedConditions.elementToBeClickable(mjestoWE));
@@ -263,19 +228,14 @@ public class ElektroenergetskeSaglasnosti extends PocetnaStranicaPXD {
 		postaWE.click();
 		postaWE.sendKeys("76300 - Bijeljina");
 		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
-		postaWE.sendKeys(Keys.ARROW_DOWN);
+		postaWE.sendKeys(Keys.ARROW_DOWN);																
 		postaWE.sendKeys(Keys.ENTER);
 		wait.until(ExpectedConditions.elementToBeClickable(vrstaObjektaWE));
 		vrstaObjektaWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
 		vrstaObjektaWE.sendKeys(Keys.ARROW_DOWN);
 		vrstaObjektaWE.sendKeys(Keys.ENTER);
-		wait.until(ExpectedConditions.elementToBeClickable(kategorijaPotrosnjeWE));
-		kategorijaPotrosnjeWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
-		kategorijaPotrosnjeWE.sendKeys(Keys.ARROW_DOWN);
-		kategorijaPotrosnjeWE.sendKeys(Keys.ENTER);
-		js.executeScript("arguments[0].scrollIntoView(true);", kategorijaPotrosnjeWE);
+		js.executeScript("arguments[0].scrollIntoView(true);", datumBtn3WE);
 		wait.until(ExpectedConditions.elementToBeClickable(mjestoPrikljucenjaWE));
 		mjestoPrikljucenjaWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
@@ -319,7 +279,17 @@ public class ElektroenergetskeSaglasnosti extends PocetnaStranicaPXD {
 		nazivnaStrujaGlavnogOsiguracaWE.click();
 		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
 		nazivnaStrujaGlavnogOsiguracaWE.sendKeys(Keys.ARROW_DOWN);
-		nazivnaStrujaGlavnogOsiguracaWE.sendKeys(Keys.ENTER);		
+		nazivnaStrujaGlavnogOsiguracaWE.sendKeys(Keys.ENTER);
+		wait.until(ExpectedConditions.elementToBeClickable(nazivnaStrujaBrojilaAktivneEnergijeWE));
+		nazivnaStrujaBrojilaAktivneEnergijeWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
+		nazivnaStrujaBrojilaAktivneEnergijeWE.sendKeys(Keys.ARROW_DOWN);
+		nazivnaStrujaBrojilaAktivneEnergijeWE.sendKeys(Keys.ENTER);
+		wait.until(ExpectedConditions.elementToBeClickable(klasaTacnostiBrojilaAktivneEnergijeWE));
+		klasaTacnostiBrojilaAktivneEnergijeWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
+		klasaTacnostiBrojilaAktivneEnergijeWE.sendKeys(Keys.ARROW_DOWN);
+		klasaTacnostiBrojilaAktivneEnergijeWE.sendKeys(Keys.ENTER);
 		js.executeScript("arguments[0].scrollIntoView(true);", submitBtnWE);
 		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
 		submitBtnWE.click();
@@ -327,24 +297,99 @@ public class ElektroenergetskeSaglasnosti extends PocetnaStranicaPXD {
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 	}
 	
-//	public void urediElektroenergetskuSaglasnost() throws InterruptedException {
-//		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
-//		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
-//		burgerBarWE.click();
-//		wait.until(ExpectedConditions.elementToBeClickable(urediWE));
-//		urediWE.click();
-//		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
-//		wait.until(ExpectedConditions.visibilityOf(stranicaBtnWE));
-//		JavascriptExecutor js = (JavascriptExecutor) driver;
-//		js.executeScript("arguments[0].scrollIntoView(true);", vrstaObjektaWE);
-//		wait.until(ExpectedConditions.elementToBeClickable(odobrenaPrikljucnaSnagaWE));
-//		odobrenaPrikljucnaSnagaWE.click();
-//		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
-//		odobrenaPrikljucnaSnagaWE.sendKeys(Keys.ARROW_DOWN);
-//		odobrenaPrikljucnaSnagaWE.sendKeys(Keys.ENTER);
-//		submitBtnWE.click();
-//		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
-//		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
-//	}
+	public void dodajElektronergetskuSaglasnostNN(int kategorijaPotrosnje) throws Exception {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView(true);", datumBtn2WE);
+		wait.until(ExpectedConditions.elementToBeClickable(mjestoWE));
+		mjestoWE.click();
+		mjestoWE.sendKeys("25 - Bijeljina");
+		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
+		mjestoWE.sendKeys(Keys.ARROW_DOWN);
+		mjestoWE.sendKeys(Keys.ENTER);
+		wait.until(ExpectedConditions.elementToBeClickable(postaWE));
+		postaWE.click();
+		postaWE.sendKeys("76300 - Bijeljina");
+		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
+		postaWE.sendKeys(Keys.ARROW_DOWN);																
+		postaWE.sendKeys(Keys.ENTER);
+		wait.until(ExpectedConditions.elementToBeClickable(vrstaObjektaWE));
+		vrstaObjektaWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
+		vrstaObjektaWE.sendKeys(Keys.ARROW_DOWN);
+		vrstaObjektaWE.sendKeys(Keys.ENTER);	
+		js.executeScript("arguments[0].scrollIntoView(true);", poljeZaScrollWE);		
+		wait.until(ExpectedConditions.elementToBeClickable(mjestoPrikljucenjaNNWE));
+		mjestoPrikljucenjaNNWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
+		mjestoPrikljucenjaNNWE.sendKeys(Keys.ARROW_DOWN);
+		mjestoPrikljucenjaNNWE.sendKeys(Keys.ENTER);		
+		wait.until(ExpectedConditions.elementToBeClickable(vrstaPrikljuckaNNWE));
+		vrstaPrikljuckaNNWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
+		vrstaPrikljuckaNNWE.sendKeys(Keys.ARROW_DOWN);
+		vrstaPrikljuckaNNWE.sendKeys(Keys.ENTER);		
+		wait.until(ExpectedConditions.elementToBeClickable(brojPrikljucnihVodovaNNWE));
+		brojPrikljucnihVodovaNNWE.click();
+		brojPrikljucnihVodovaNNWE.sendKeys(Helper.getRandomNumber(2));		
+		wait.until(ExpectedConditions.elementToBeClickable(tipPrikljucnogVodaNNWE));
+		tipPrikljucnogVodaNNWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
+		tipPrikljucnogVodaNNWE.sendKeys(Keys.ARROW_DOWN);
+		tipPrikljucnogVodaNNWE.sendKeys(Keys.ENTER);		
+		wait.until(ExpectedConditions.elementToBeClickable(presjekMm2NNWE));
+		presjekMm2NNWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
+		presjekMm2NNWE.sendKeys(Keys.ARROW_DOWN);
+		presjekMm2NNWE.sendKeys(Keys.ENTER);		
+		wait.until(ExpectedConditions.elementToBeClickable(napojnaTransformatorskaStanicaNNWE));
+		napojnaTransformatorskaStanicaNNWE.click();
+		napojnaTransformatorskaStanicaNNWE.sendKeys("410123 - MIRKA FILIPOVIĆA");
+		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
+		napojnaTransformatorskaStanicaNNWE.sendKeys(Keys.ARROW_DOWN);
+		napojnaTransformatorskaStanicaNNWE.sendKeys(Keys.ENTER);		
+		js.executeScript("arguments[0].scrollIntoView(true);", napojnaTransformatorskaStanicaNNWE);
+		wait.until(ExpectedConditions.elementToBeClickable(brojUgradjenihBrojilaNNWE));
+		brojUgradjenihBrojilaNNWE.click();
+		brojUgradjenihBrojilaNNWE.sendKeys(Helper.getRandomNumberInRange(1, 4));		
+		wait.until(ExpectedConditions.elementToBeClickable(nazivnaStrujaGlavnogOsiguracaNNWE));
+		nazivnaStrujaGlavnogOsiguracaNNWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
+		nazivnaStrujaGlavnogOsiguracaNNWE.sendKeys(Keys.ARROW_DOWN);
+		nazivnaStrujaGlavnogOsiguracaNNWE.sendKeys(Keys.ENTER);		
+		js.executeScript("arguments[0].scrollIntoView(true);", nazivnaStrujaGlavnogOsiguracaNNWE);		
+		wait.until(ExpectedConditions.elementToBeClickable(lokacijaMjernogMjestaNNWE));
+		lokacijaMjernogMjestaNNWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
+		lokacijaMjernogMjestaNNWE.sendKeys(Keys.ARROW_DOWN);
+		lokacijaMjernogMjestaNNWE.sendKeys(Keys.ENTER);
+		wait.until(ExpectedConditions.elementToBeClickable(nazivnaStrujaBrojilaAktivneEnergijeNNWE));
+		nazivnaStrujaBrojilaAktivneEnergijeNNWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
+		nazivnaStrujaBrojilaAktivneEnergijeNNWE.sendKeys(Keys.ARROW_DOWN);
+		nazivnaStrujaBrojilaAktivneEnergijeNNWE.sendKeys(Keys.ENTER);
+		wait.until(ExpectedConditions.elementToBeClickable(klasaTacnostiBrojilaAktivneEnergijeNNWE));
+		klasaTacnostiBrojilaAktivneEnergijeNNWE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
+		klasaTacnostiBrojilaAktivneEnergijeNNWE.sendKeys(Keys.ARROW_DOWN);
+		klasaTacnostiBrojilaAktivneEnergijeNNWE.sendKeys(Keys.ENTER);
+		if (kategorijaPotrosnje==10) {
+			wait.until(ExpectedConditions.elementToBeClickable(nazivnaStrujaBrojilaReaktivneEnergijeNNWE));
+			nazivnaStrujaBrojilaReaktivneEnergijeNNWE.click();
+			wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
+			nazivnaStrujaBrojilaReaktivneEnergijeNNWE.sendKeys(Keys.ARROW_DOWN);
+			nazivnaStrujaBrojilaReaktivneEnergijeNNWE.sendKeys(Keys.ENTER);
+			wait.until(ExpectedConditions.elementToBeClickable(klasaTacnostiBrojilaReaktivneEnergijeNNWE));
+			klasaTacnostiBrojilaReaktivneEnergijeNNWE.click();
+			wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
+			klasaTacnostiBrojilaReaktivneEnergijeNNWE.sendKeys(Keys.ARROW_DOWN);
+			klasaTacnostiBrojilaReaktivneEnergijeNNWE.sendKeys(Keys.ENTER);
+		}
+		js.executeScript("arguments[0].scrollIntoView(true);", submitBtnWE);
+		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
+		submitBtnWE.click();
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
+		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
+	}
+
 	
 }

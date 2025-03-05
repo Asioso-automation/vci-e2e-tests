@@ -86,13 +86,13 @@ public class PXD_Metering_MeteringCatalogs_001_TransformerStationType_Tests exte
 		GlobalVariables.id = response.asString();
 	}
 	@Test(description = "positive test case", dependsOnMethods = { "pxd_metering_meteringCatalogs_001_04_create_transformerStationType_test1" })
-	public void pxd_metering_meteringCatalogs_001_05_update_entity_test1() throws Exception {
+	public void pxd_metering_meteringCatalogs_001_05_update_transformerStationType_test1() throws Exception {
 		addHeader("Authorization", "Bearer " + GlobalVariables.token);
 		methodPUT(api_properties.getValue("TRANSFORMER.STATION.TYPE.UPDATE") + GlobalVariables.id, Payloads.pxdTransformerStationTypeUpdate(Integer.parseInt(GlobalVariables.id), "Z", "Trafostanica 1"), 204);
 	}
 	
 	@Test(description = "positive test case", dependsOnMethods = { "pxd_metering_meteringCatalogs_001_04_create_transformerStationType_test1" })
-	public void pxd_metering_meteringCatalogs_001_06_delete_entity_test1() throws Exception {
+	public void pxd_metering_meteringCatalogs_001_06_delete_transformerStationType_test1() throws Exception {
 		addHeader("Authorization", "Bearer " + GlobalVariables.token);
 		methodDELETE(api_properties.getValue("TRANSFORMER.STATION.TYPE.DELETE") + GlobalVariables.id, 204);
 	}
