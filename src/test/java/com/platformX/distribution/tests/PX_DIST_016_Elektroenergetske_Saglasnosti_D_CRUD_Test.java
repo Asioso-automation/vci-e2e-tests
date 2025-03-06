@@ -29,7 +29,7 @@ public class PX_DIST_016_Elektroenergetske_Saglasnosti_D_CRUD_Test extends BaseT
 		homePage.verifikujPocetnuStranicu();
 		ElektroenergetskeSaglasnosti elektroenergetskeSaglasnosti = new ElektroenergetskeSaglasnosti(driver);
 		elektroenergetskeSaglasnosti.navigirajVerifikujElektroenergetskeSaglasnosti();
-		elektroenergetskeSaglasnosti.dodajOdaberiTipEES("Domaćinstva", "Domaćinstva");
+		elektroenergetskeSaglasnosti.dodajOdaberiTipEES("Domaćinstva", "20 - Domaćinstva", null);
 		elektroenergetskeSaglasnosti.popuniZajednickaPoljaEES(brojProtokola);
 		elektroenergetskeSaglasnosti.dodajElektronergetskuSaglasnostD();
 		elektroenergetskeSaglasnosti.verifikujPoruku("Uspješno završeno.");
