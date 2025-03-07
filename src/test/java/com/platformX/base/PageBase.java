@@ -421,45 +421,6 @@ public abstract class PageBase {
 		spaces+temp.substring(1).toLowerCase()+" ";
 	  return temp;
   }
-  
-////	test - zajednicka metoda za verifikaciju kolona			
-//	public void verifikacijaKolona(WebElement pageName[]) {
-//		WebDriverWait wait = new WebDriverWait(driver, 10);
-//		for (int i=0; i<pageName.length; i++) {
-//			wait.until(ExpectedConditions.visibilityOf(pageName[i]));
-//			System.out.println(pageName[i].getText().trim());
-//		}
-//	}
-  
-//  public void verifikacijaBtn1(WebElement[] btnElementi) throws InterruptedException {
-//	  WebDriverWait wait = new WebDriverWait(driver, 10);
-//	  for (int i=0; i<btnElementi.length; i++) {
-//			System.out.println(i);;		// provjera koji element liste uzima
-//			wait.until(ExpectedConditions.elementToBeClickable(btnElementi[i]));
-//			System.out.println(i);;		// provjera da li je pronasao taj element na stranici
-//		}
-//  }
-  
-//	public void verifikacijaZajednickihElemenata1(String sekcija, String stranica, String naslovStranice, int brKolona,
-//			WebElement[] btnElementi) throws InterruptedException {
-//		WebDriverWait wait = new WebDriverWait(driver, 10);
-//		try {
-//			wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
-//		} catch (Exception e) {
-//			Thread.sleep(500);
-//		}
-//		assertTrue(sekcija.equals(sekcija), stranica + ": Naziv sekcije nije dobar!");
-//		assertTrue(stranica.equals(stranica), stranica + ": Naziv stranice nije dobar!");
-//		assertTrue(toProperCase(naslovStraniceWE.getText().trim()).equals(naslovStranice),
-//				stranica + ": Naziv stranice nije dobar!");
-//		assertTrue(brojKolona().size() == brKolona, stranica + ": Broj kolona nije dobar!");
-//		verifikacijaBtn1(btnElementi);	// novi nacin verifikacije button-a	
-//		try {
-//			wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
-//		} catch (Exception e) {
-//		Thread.sleep(1000);
-//		}
-//	}
 
 	public void verifikacijaStranice(String sekcija, String stranica, String naslovStranice, int brKolona, WebElement[] listaKolona, WebElement[] btnElementi) throws InterruptedException {
 //		verifikacijaZajednickihElemenata
@@ -485,6 +446,25 @@ public abstract class PageBase {
 			wait.until(ExpectedConditions.visibilityOf(listaKolona[i]));
 //			System.out.println(listaKolona[i].getText().trim());	// provjera koje kolone su provjerene
 		}
+	}
+	
+	public void lookupInput(WebElement element) {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(element));
+		element.click();
+		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
+		element.sendKeys(Keys.ARROW_DOWN);
+		element.sendKeys(Keys.ENTER);
+	}
+	
+	public void lookupInputValue(WebElement element, String value) {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(element));
+		element.click();
+		element.sendKeys(value);
+		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
+		element.sendKeys(Keys.ARROW_DOWN);
+		element.sendKeys(Keys.ENTER);
 	}
 	
 }
