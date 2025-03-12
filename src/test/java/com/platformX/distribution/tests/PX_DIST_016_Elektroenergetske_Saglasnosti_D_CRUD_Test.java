@@ -15,6 +15,8 @@ public class PX_DIST_016_Elektroenergetske_Saglasnosti_D_CRUD_Test extends BaseT
 	public PX_DIST_016_Elektroenergetske_Saglasnosti_D_CRUD_Test() throws IOException, FileNotFoundException {
 		super();
 	}
+	
+//	CRUD testovi za elektroenergetske saglasnosti tip EES 1 - Domaćinstva
 
 	String eeSaglasnost = new String();
 	String brojProtokola = "protokolBr." + Helper.getRandomString(5);

@@ -4,7 +4,6 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -170,7 +169,7 @@ public class ElektroenergetskeSaglasnosti extends PocetnaStranicaPXD {
 	
 	@FindBy(xpath = "//div[7]/div[4]/div/div/div[1]/div[1]/input[1]")
 	private WebElement vrstaObjektaSNWE;
-//	
+	
 	@FindBy(xpath = "//div[16]/div[1]/div/div/div[1]/div[1]/input[1]")
 	private WebElement naponskiNivoSNWE;
 	
@@ -216,8 +215,32 @@ public class ElektroenergetskeSaglasnosti extends PocetnaStranicaPXD {
 	@FindBy(xpath = "//div[23]/div[2]/div[4]/div[2]/div/div/div[1]/div[1]/input[1]")  
 	 private WebElement prenosniOdnosSmtSNWE;
 
-//
+//	PRIVREMENI OBJEKTI
 	
+	@FindBy(xpath = "//form/div/div[2]/div[2]/div[1]/div/div/div[1]/div[1]/input[1]")  
+	private WebElement brojProtokolaPOWE;
+	
+	@FindBy(xpath = "//form/div/div[2]/div[3]/div[1]/div/div/div[1]/div[1]/input[1]")
+	private WebElement kupacPOWE;
+	
+	@FindBy(xpath = "//form/div/div[2]/div[3]/div[2]/div/div/div[1]/div[1]/input[1]")  
+	private WebElement fizickaLokacijaPOWE;
+
+	@FindBy(xpath = "//div[4]/div[1]/div/div/div[1]/div/input")  
+	private WebElement kategorijaPrikljuckaPOWE;
+
+	@FindBy(xpath = "//div[4]/div[2]/div/div/div[1]/div[1]/input[1]")  
+	private WebElement tipPrikljuckaPOWE;
+
+	@FindBy(xpath = "//div[7]/div[1]/div/div/div[1]/div[1]/input[1]")  
+	private WebElement mjestoPOWE;
+
+	@FindBy(xpath = "//div[7]/div[2]/div/div/div[1]/div[1]/input[1]")  
+	private WebElement postaPOWE;
+
+	@FindBy(xpath = "//div[8]/div[4]/div/div/div[1]/div[1]/input[1]")
+	private WebElement vrstaObjektaPOWE;
+
 	JavascriptExecutor js = (JavascriptExecutor) driver;
 	
 	Kolone kolone = new Kolone(driver);
@@ -254,7 +277,7 @@ public class ElektroenergetskeSaglasnosti extends PocetnaStranicaPXD {
 			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(@class, 'v-list-item__title') and contains(., '" + kategorijaPotrosnje2 + "')]"))).click();
 			tipEESWE.click();
 		}
-		if (tipEES == "Srednji napon") {
+		if (tipEES == "Srednji napon" || tipEES == "Privremeni objekti") {
 			wait.until(ExpectedConditions.elementToBeClickable(kategorijaPotrosnjeWE));
 			kategorijaPotrosnjeWE.click();
 			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(@class, 'v-list-item__title') and contains(., '" + kategorijaPotrosnje1 + "')]"))).click();
@@ -275,9 +298,7 @@ public class ElektroenergetskeSaglasnosti extends PocetnaStranicaPXD {
 			lookupInput(kategorijaPrikljuckaWE);
 		}
 		lookupInput(tipPrikljuckaWE);
-		wait.until(ExpectedConditions.elementToBeClickable(brojProtokolaWE));
-		brojProtokolaWE.click();
-		brojProtokolaWE.sendKeys(brojProtokola);
+		fieldInputValue(brojProtokolaWE, brojProtokola);		
 		lookupInput(razlogEESWE);
 		wait.until(ExpectedConditions.elementToBeClickable(datumBtn1WE));
 		datumBtn1WE.click();
@@ -322,16 +343,12 @@ public class ElektroenergetskeSaglasnosti extends PocetnaStranicaPXD {
 		js.executeScript("arguments[0].scrollIntoView(true);", poljeZaScrollWE);
 		lookupInput(mjestoPrikljucenjaNNWE);
 		lookupInput(vrstaPrikljuckaNNWE);
-		wait.until(ExpectedConditions.elementToBeClickable(brojPrikljucnihVodovaNNWE));
-		brojPrikljucnihVodovaNNWE.click();
-		brojPrikljucnihVodovaNNWE.sendKeys(Helper.getRandomNumber(2));
+		fieldInputValue(brojPrikljucnihVodovaNNWE, Helper.getRandomNumber(2));
 		lookupInput(tipPrikljucnogVodaNNWE);
 		lookupInput(presjekMm2NNWE);
 		lookupInputValue(napojnaTransformatorskaStanicaNNWE, "410123 - MIRKA FILIPOVIĆA");
 		js.executeScript("arguments[0].scrollIntoView(true);", napojnaTransformatorskaStanicaNNWE);
-		wait.until(ExpectedConditions.elementToBeClickable(brojUgradjenihBrojilaNNWE));
-		brojUgradjenihBrojilaNNWE.click();
-		brojUgradjenihBrojilaNNWE.sendKeys(Helper.getRandomNumberInRange(1, 4));
+		fieldInputValue(brojUgradjenihBrojilaNNWE, Helper.getRandomNumberInRange(1, 4));
 		lookupInput(nazivnaStrujaGlavnogOsiguracaNNWE);
 		js.executeScript("arguments[0].scrollIntoView(true);", nazivnaStrujaGlavnogOsiguracaNNWE);
 		lookupInput(lokacijaMjernogMjestaNNWE);
@@ -343,9 +360,7 @@ public class ElektroenergetskeSaglasnosti extends PocetnaStranicaPXD {
 		}
 		if (kategorijaPotrosnje==2030) {
 			js.executeScript("arguments[0].scrollIntoView(true);", nazivnaStrujaGlavnogOsiguracaNNWE);
-			wait.until(ExpectedConditions.elementToBeClickable(brojUgradjenihBrojilaNN1WE));
-			brojUgradjenihBrojilaNN1WE.click();
-			brojUgradjenihBrojilaNN1WE.sendKeys(Helper.getRandomNumberInRange(1, 4));
+			fieldInputValue(brojUgradjenihBrojilaNN1WE, Helper.getRandomNumberInRange(1, 4));			
 			lookupInput(nazivnaStrujaGlavnogOsiguracaNN1WE);
 			lookupInput(lokacijaMjernogMjestaNN1WE);
 			lookupInput(nazivnaStrujaBrojilaAktivneEnergijeNN1WE);
@@ -363,82 +378,50 @@ public class ElektroenergetskeSaglasnosti extends PocetnaStranicaPXD {
 	public void dodajElektronergetskuSaglasnostSN(int kategorijaPotrosnje) throws Exception {
 		lookupInput(vrstaObjektaSNWE);
 		js.executeScript("arguments[0].scrollIntoView(true);", ukupnaPrikljucnaSnagaWE);
-		wait.until(ExpectedConditions.elementToBeClickable(naponskiNivoSNWE));
-		naponskiNivoSNWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
-		naponskiNivoSNWE.sendKeys(Keys.ARROW_DOWN);
-		naponskiNivoSNWE.sendKeys(Keys.ENTER);		
-		wait.until(ExpectedConditions.elementToBeClickable(nazivniNaponMjerenjaSNWE));
-		nazivniNaponMjerenjaSNWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
-		nazivniNaponMjerenjaSNWE.sendKeys(Keys.ARROW_DOWN);
-		nazivniNaponMjerenjaSNWE.sendKeys(Keys.ENTER);		
-		wait.until(ExpectedConditions.elementToBeClickable(mjestoPrikljucenjaSNWE));
-		mjestoPrikljucenjaSNWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
-		mjestoPrikljucenjaSNWE.sendKeys(Keys.ARROW_DOWN);
-		mjestoPrikljucenjaSNWE.sendKeys(Keys.ENTER);		
-		wait.until(ExpectedConditions.elementToBeClickable(brojPrikljucnihVodovaSNWE));
-		brojPrikljucnihVodovaSNWE.click();
-		brojPrikljucnihVodovaSNWE.sendKeys(Helper.getRandomNumber(2));		
-		wait.until(ExpectedConditions.elementToBeClickable(tipPrikljucnogVodaSNWE));
-		tipPrikljucnogVodaSNWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
-		tipPrikljucnogVodaSNWE.sendKeys(Keys.ARROW_DOWN);
-		tipPrikljucnogVodaSNWE.sendKeys(Keys.ENTER);		
-		wait.until(ExpectedConditions.elementToBeClickable(presjekMm2SNWE));
-		presjekMm2SNWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
-		presjekMm2SNWE.sendKeys(Keys.ARROW_DOWN);
-		presjekMm2SNWE.sendKeys(Keys.ENTER);		
-		wait.until(ExpectedConditions.elementToBeClickable(napojnaTransformatorskaStanicaSNWE));
-		napojnaTransformatorskaStanicaSNWE.click();
-		napojnaTransformatorskaStanicaSNWE.sendKeys("410123 - MIRKA FILIPOVIĆA");
-		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
-		napojnaTransformatorskaStanicaSNWE.sendKeys(Keys.ARROW_DOWN);
-		napojnaTransformatorskaStanicaSNWE.sendKeys(Keys.ENTER);
+		lookupInput(naponskiNivoSNWE);
+		lookupInput(nazivniNaponMjerenjaSNWE);
+		lookupInput(mjestoPrikljucenjaSNWE);
+		fieldInputValue(brojPrikljucnihVodovaSNWE, Helper.getRandomNumber(2));
+		lookupInput(tipPrikljucnogVodaSNWE);
+		lookupInput(presjekMm2SNWE);
+		lookupInputValue(napojnaTransformatorskaStanicaSNWE, "410123 - MIRKA FILIPOVIĆA");
 		js.executeScript("arguments[0].scrollIntoView(true);", napojnaTransformatorskaStanicaSNWE);
-		wait.until(ExpectedConditions.elementToBeClickable(prikljucnaSnagaSNWE));
-		prikljucnaSnagaSNWE.click();
-		prikljucnaSnagaSNWE.sendKeys(Helper.getRandomNumber(2));
-		wait.until(ExpectedConditions.elementToBeClickable(lokacijaMjernogMjestaSNWE));
-		lokacijaMjernogMjestaSNWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
-		lokacijaMjernogMjestaSNWE.sendKeys(Keys.ARROW_DOWN);
-		lokacijaMjernogMjestaSNWE.sendKeys(Keys.ENTER);
+		fieldInputValue(prikljucnaSnagaSNWE, Helper.getRandomNumber(2));
+		lookupInput(lokacijaMjernogMjestaSNWE);		
 		js.executeScript("arguments[0].scrollIntoView(true);", prikljucnaSnagaSNWE);
-		wait.until(ExpectedConditions.elementToBeClickable(nazivnaStrujaBrojilaAktivneEnergijeSNWE));
-		nazivnaStrujaBrojilaAktivneEnergijeSNWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
-		nazivnaStrujaBrojilaAktivneEnergijeSNWE.sendKeys(Keys.ARROW_DOWN);
-		nazivnaStrujaBrojilaAktivneEnergijeSNWE.sendKeys(Keys.ENTER);
-		wait.until(ExpectedConditions.elementToBeClickable(klasaTacnostiBrojilaAktivneEnergijeSNWE));
-		klasaTacnostiBrojilaAktivneEnergijeSNWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
-		klasaTacnostiBrojilaAktivneEnergijeSNWE.sendKeys(Keys.ARROW_DOWN);
-		klasaTacnostiBrojilaAktivneEnergijeSNWE.sendKeys(Keys.ENTER);
-		wait.until(ExpectedConditions.elementToBeClickable(nazivnaStrujaBrojilaReaktivneEnergijeSNWE));
-		nazivnaStrujaBrojilaReaktivneEnergijeSNWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
-		nazivnaStrujaBrojilaReaktivneEnergijeSNWE.sendKeys(Keys.ARROW_DOWN);
-		nazivnaStrujaBrojilaReaktivneEnergijeSNWE.sendKeys(Keys.ENTER);
-		wait.until(ExpectedConditions.elementToBeClickable(klasaTacnostiBrojilaReaktivneEnergijeSNWE));
-		klasaTacnostiBrojilaReaktivneEnergijeSNWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
-		klasaTacnostiBrojilaReaktivneEnergijeSNWE.sendKeys(Keys.ARROW_DOWN);
-		klasaTacnostiBrojilaReaktivneEnergijeSNWE.sendKeys(Keys.ENTER);
-		wait.until(ExpectedConditions.elementToBeClickable(prenosniOdnosSmtSNWE));
-		prenosniOdnosSmtSNWE.click();
-		wait.until(ExpectedConditions.elementToBeClickable(aktivniLookupWE));
-		prenosniOdnosSmtSNWE.sendKeys(Keys.ARROW_DOWN);
-		prenosniOdnosSmtSNWE.sendKeys(Keys.ENTER);
-		
+		lookupInput(nazivnaStrujaBrojilaAktivneEnergijeSNWE);
+		lookupInput(klasaTacnostiBrojilaAktivneEnergijeSNWE);
+		lookupInput(nazivnaStrujaBrojilaReaktivneEnergijeSNWE);
+		lookupInput(klasaTacnostiBrojilaReaktivneEnergijeSNWE);		
+		lookupInput(prenosniOdnosSmtSNWE);
 		js.executeScript("arguments[0].scrollIntoView(true);", submitBtnWE);
 		wait.until(ExpectedConditions.elementToBeClickable(submitBtnWE));
 		submitBtnWE.click();
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		wait.until(ExpectedConditions.elementToBeClickable(burgerBarWE));
 	}
-
 	
+	public void dodajElektronergetskuSaglasnostPO(String brojProtokola) throws Exception {
+		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
+		wait.until(ExpectedConditions.elementToBeClickable(brojProtokolaPOWE));
+		brojProtokolaWE.click();
+		brojProtokolaWE.sendKeys(brojProtokola);
+		lookupInputValue(kupacPOWE, Helper.getRandomNumber(3));
+		lookupInputValue(fizickaLokacijaPOWE, "4101 - 01 - BIJELJINA");
+		lookupInput(kategorijaPrikljuckaPOWE);
+		lookupInput(tipPrikljuckaPOWE);
+		wait.until(ExpectedConditions.elementToBeClickable(datumBtn1WE));
+		datumBtn1WE.click();
+		wait.until(ExpectedConditions.elementToBeClickable(trenutniDatum1WE));
+		trenutniDatum1WE.click();
+		wait.until(ExpectedConditions.visibilityOf(naslovWE));
+		naslovWE.click();
+		js.executeScript("arguments[0].scrollIntoView(true);", datumBtn2WE);
+		lookupInputValue(mjestoPOWE, "25 - Bijeljina");
+		lookupInputValue(postaPOWE, "76300 - Bijeljina");
+		lookupInput(vrstaObjektaWE);
+		js.executeScript("arguments[0].scrollIntoView(true);", datumBtn3WE);
+	}
+
+
 }

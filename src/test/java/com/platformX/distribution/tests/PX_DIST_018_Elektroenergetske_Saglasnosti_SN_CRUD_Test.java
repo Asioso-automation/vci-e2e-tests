@@ -15,13 +15,17 @@ public class PX_DIST_018_Elektroenergetske_Saglasnosti_SN_CRUD_Test extends Base
 	public PX_DIST_018_Elektroenergetske_Saglasnosti_SN_CRUD_Test() throws IOException, FileNotFoundException {
 		super();
 	}
+	
+//	CRUD testovi za elektroenergetske saglasnosti tip EES 3 - Srednji napon
 
 	String eeSaglasnost = new String();
 	String brojProtokola4 = "protokolBr.NestandardniPrikljucak.40_" + Helper.getRandomString(5);
 	String brojProtokola4Tabela = brojProtokola4 + "EES";
+	String brojProtokola5 = "protokolBr.NestandardniPrikljucak.50_" + Helper.getRandomString(5);
+	String brojProtokola5Tabela = brojProtokola5 + "EES";
 	
 	@Test (description = "Kreiranje EES za srednji napon za kategoriju 40 - Potrošnja na naponskom nivou od 1 kV do 35 kV; Indirektna mjerna garnitura", retryAnalyzer = RetryAnalyzer.class)
-	public void px_dist_018_1_dodavanje_elektroenergetske_saglasnosti_srednji_napon_40_test() throws Exception {
+	public void px_dist_018_1_dodavanje_elektroenergetske_saglasnosti_srednji_napon_40_test1() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
@@ -38,8 +42,8 @@ public class PX_DIST_018_Elektroenergetske_Saglasnosti_SN_CRUD_Test extends Base
 		elektroenergetskeSaglasnosti.verifikujStavku(brojProtokola4Tabela, homePage.podatak2Tabela2WE);
 	}
 	
-	@Test (retryAnalyzer = RetryAnalyzer.class, dependsOnMethods = { "px_dist_018_1_dodavanje_elektroenergetske_saglasnosti_srednji_napon_40_test" })
-	public void px_dist_018_1_brisanje_elektroenergetske_saglasnosti_srednji_napon_40_test() throws Exception {
+	@Test (retryAnalyzer = RetryAnalyzer.class, dependsOnMethods = { "px_dist_018_1_dodavanje_elektroenergetske_saglasnosti_srednji_napon_40_test1" })
+	public void px_dist_018_1_brisanje_elektroenergetske_saglasnosti_srednji_napon_40_test2() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
@@ -53,6 +57,42 @@ public class PX_DIST_018_Elektroenergetske_Saglasnosti_SN_CRUD_Test extends Base
 		elektroenergetskeSaglasnosti.obrisiStavku();
 		elektroenergetskeSaglasnosti.verifikujPoruku("Brisanje je uspješno završeno");
 		elektroenergetskeSaglasnosti.pretraziStavku(homePage.filterKolona2WE, brojProtokola4);
+		elektroenergetskeSaglasnosti.verifikujPraznuTabelu();
+	}
+	
+	@Test (description = "Kreiranje EES za srednji napon za kategoriju 50 - Potrošnja na 35 kV naponu; Indirektna mjerna garnitura", retryAnalyzer = RetryAnalyzer.class)
+	public void px_dist_018_2_dodavanje_elektroenergetske_saglasnosti_srednji_napon_50_test1() throws Exception {
+		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
+		logIn.verifikujLogIn();
+		logIn.logIn();
+		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
+		homePage.verifikujPocetnuStranicu();
+		ElektroenergetskeSaglasnosti elektroenergetskeSaglasnosti = new ElektroenergetskeSaglasnosti(driver);
+		elektroenergetskeSaglasnosti.navigirajVerifikujElektroenergetskeSaglasnosti();
+		elektroenergetskeSaglasnosti.dodajOdaberiTipEES("Srednji napon", "50 - Potrošnja na 35 kV naponu", null);
+		elektroenergetskeSaglasnosti.popuniZajednickaPoljaEES(brojProtokola5);
+		elektroenergetskeSaglasnosti.dodajElektronergetskuSaglasnostSN(50);
+		elektroenergetskeSaglasnosti.verifikujPoruku("Uspješno završeno.");
+		elektroenergetskeSaglasnosti.pretraziStavku(homePage.filterKolona2WE, brojProtokola5);
+		elektroenergetskeSaglasnosti.verifikacijaStranice("Mjerna mjesta", "Elektroenergetske Saglasnosti", "Elektroenergetske saglasnosti", 1, elektroenergetskeSaglasnosti.columns, elektroenergetskeSaglasnosti.buttons);
+		elektroenergetskeSaglasnosti.verifikujStavku(brojProtokola5Tabela, homePage.podatak2Tabela2WE);
+	}
+	
+	@Test (retryAnalyzer = RetryAnalyzer.class, dependsOnMethods = { "px_dist_018_2_dodavanje_elektroenergetske_saglasnosti_srednji_napon_50_test1" })
+	public void px_dist_018_2_brisanje_elektroenergetske_saglasnosti_srednji_napon_50_test2() throws Exception {
+		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
+		logIn.verifikujLogIn();
+		logIn.logIn();
+		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
+		homePage.verifikujPocetnuStranicu();
+		ElektroenergetskeSaglasnosti elektroenergetskeSaglasnosti = new ElektroenergetskeSaglasnosti(driver);
+		elektroenergetskeSaglasnosti.navigirajVerifikujElektroenergetskeSaglasnosti();
+		elektroenergetskeSaglasnosti.pretraziStavku(homePage.filterKolona2WE, brojProtokola5);
+		elektroenergetskeSaglasnosti.verifikacijaStranice("Mjerna mjesta", "Elektroenergetske Saglasnosti", "Elektroenergetske saglasnosti", 1, elektroenergetskeSaglasnosti.columns, elektroenergetskeSaglasnosti.buttons);
+		elektroenergetskeSaglasnosti.verifikujStavku(brojProtokola5Tabela, homePage.podatak2Tabela2WE);
+		elektroenergetskeSaglasnosti.obrisiStavku();
+		elektroenergetskeSaglasnosti.verifikujPoruku("Brisanje je uspješno završeno");
+		elektroenergetskeSaglasnosti.pretraziStavku(homePage.filterKolona2WE, brojProtokola5);
 		elektroenergetskeSaglasnosti.verifikujPraznuTabelu();
 	}
 

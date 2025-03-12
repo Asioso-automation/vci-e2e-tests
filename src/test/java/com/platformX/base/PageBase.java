@@ -159,6 +159,9 @@ public abstract class PageBase {
 	
 	@FindBy(xpath = "//i[contains(@class, 'mdi-chevron-right')]")
 	public static WebElement strelicaDesnoWE;
+	
+	@FindBy(xpath = "//div[contains(@class, 'v-snack__content')]")
+	public WebElement porukaStagingOkruzenjeWE;
 
 //	API params
 	
@@ -348,6 +351,7 @@ public abstract class PageBase {
 		String stranicaXpath = generateXpath(stranica, stranicaXClass);
 		wait.until(ExpectedConditions.invisibilityOf(obradaModalWE));
 		try {
+			wait.until(ExpectedConditions.elementToBeClickable(porukaStagingOkruzenjeWE)).click();
 			wait.until(ExpectedConditions.elementToBeClickable(By.xpath(sekcijaXpath))).click();
 			wait.until(ExpectedConditions.visibilityOf(aktivniLookupWE));
 			wait.until(ExpectedConditions.elementToBeClickable(By.xpath(stranicaXpath))).click();
@@ -466,5 +470,13 @@ public abstract class PageBase {
 		element.sendKeys(Keys.ARROW_DOWN);
 		element.sendKeys(Keys.ENTER);
 	}
+	
+	public void fieldInputValue(WebElement element, String value) {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(element));
+		element.click();
+		element.sendKeys(value);
+	}
+
 	
 }

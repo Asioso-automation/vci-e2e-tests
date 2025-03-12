@@ -15,6 +15,8 @@ public class PX_DIST_017_Elektroenergetske_Saglasnosti_NN_CRUD_Test extends Base
 	public PX_DIST_017_Elektroenergetske_Saglasnosti_NN_CRUD_Test() throws IOException, FileNotFoundException {
 		super();
 	}
+	
+//	CRUD testovi za elektroenergetske saglasnosti tip EES 2 - Niski napon
 
 	String eeSaglasnost = new String();
 	String brojProtokola1 = "protokolBr.10_" + Helper.getRandomString(5);
@@ -28,7 +30,7 @@ public class PX_DIST_017_Elektroenergetske_Saglasnosti_NN_CRUD_Test extends Base
 
 
 	@Test (description = "Kreiranje EES za niski napon za kategoriju 10 - Javna rasvjeta; Direktna mjerna garnitura", retryAnalyzer = RetryAnalyzer.class)
-	public void px_dist_017_1_dodavanje_elektroenergetske_saglasnosti_niski_napon_10_test() throws Exception {
+	public void px_dist_017_1_dodavanje_elektroenergetske_saglasnosti_niski_napon_10_test1() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
@@ -45,63 +47,8 @@ public class PX_DIST_017_Elektroenergetske_Saglasnosti_NN_CRUD_Test extends Base
 		elektroenergetskeSaglasnosti.verifikujStavku(brojProtokola1Tabela, homePage.podatak2Tabela2WE);
 	}
 	
-	@Test (description = "Kreiranje EES za niski napon za kategoriju 20 - Domaćinstva; Direktna brojila", retryAnalyzer = RetryAnalyzer.class)
-	public void px_dist_017_1_dodavanje_elektroenergetske_saglasnosti_niski_napon_20_test() throws Exception {
-		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
-		logIn.verifikujLogIn();
-		logIn.logIn();
-		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
-		homePage.verifikujPocetnuStranicu();
-		ElektroenergetskeSaglasnosti elektroenergetskeSaglasnosti = new ElektroenergetskeSaglasnosti(driver);
-		elektroenergetskeSaglasnosti.navigirajVerifikujElektroenergetskeSaglasnosti();
-		elektroenergetskeSaglasnosti.dodajOdaberiTipEES("Niski napon", "20 - Domaćinstva", null);
-		elektroenergetskeSaglasnosti.popuniZajednickaPoljaEES(brojProtokola2);
-		elektroenergetskeSaglasnosti.dodajElektronergetskuSaglasnostNN(20);
-		elektroenergetskeSaglasnosti.verifikujPoruku("Uspješno završeno.");
-		elektroenergetskeSaglasnosti.pretraziStavku(homePage.filterKolona2WE, brojProtokola2);
-		elektroenergetskeSaglasnosti.verifikacijaStranice("Mjerna mjesta", "Elektroenergetske Saglasnosti", "Elektroenergetske saglasnosti", 1, elektroenergetskeSaglasnosti.columns, elektroenergetskeSaglasnosti.buttons);
-		elektroenergetskeSaglasnosti.verifikujStavku(brojProtokola2Tabela, homePage.podatak2Tabela2WE);
-	}
-	
-	@Test (description = "Kreiranje EES za niski napon za kategoriju 30 - Ostala potrošnja na niskom naponu; Direktna mjerna garnitura", retryAnalyzer = RetryAnalyzer.class)
-	public void px_dist_017_1_dodavanje_elektroenergetske_saglasnosti_niski_napon_30_test() throws Exception {
-		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
-		logIn.verifikujLogIn();
-		logIn.logIn();
-		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
-		homePage.verifikujPocetnuStranicu();
-		ElektroenergetskeSaglasnosti elektroenergetskeSaglasnosti = new ElektroenergetskeSaglasnosti(driver);
-		elektroenergetskeSaglasnosti.navigirajVerifikujElektroenergetskeSaglasnosti();
-		elektroenergetskeSaglasnosti.dodajOdaberiTipEES("Niski napon", "30 - Ostala potrošnja na niskom naponu", null);
-		elektroenergetskeSaglasnosti.popuniZajednickaPoljaEES(brojProtokola3);
-		elektroenergetskeSaglasnosti.dodajElektronergetskuSaglasnostNN(30);
-		elektroenergetskeSaglasnosti.verifikujPoruku("Uspješno završeno.");
-		elektroenergetskeSaglasnosti.pretraziStavku(homePage.filterKolona2WE, brojProtokola3);
-		elektroenergetskeSaglasnosti.verifikacijaStranice("Mjerna mjesta", "Elektroenergetske Saglasnosti", "Elektroenergetske saglasnosti", 1, elektroenergetskeSaglasnosti.columns, elektroenergetskeSaglasnosti.buttons);
-		elektroenergetskeSaglasnosti.verifikujStavku(brojProtokola3Tabela, homePage.podatak2Tabela2WE);
-	}
-	
-	@Test (description = "Kreiranje EES za niski napon za kategorije 20 - Domaćinstva i 30 - Ostala potrošnja na niskom naponu; Direktna mjerna garnitura", retryAnalyzer = RetryAnalyzer.class)
-	public void px_dist_017_1_dodavanje_elektroenergetske_saglasnosti_niski_napon_20_30_test() throws Exception {
-		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
-		logIn.verifikujLogIn();
-		logIn.logIn();
-		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
-		homePage.verifikujPocetnuStranicu();
-		ElektroenergetskeSaglasnosti elektroenergetskeSaglasnosti = new ElektroenergetskeSaglasnosti(driver);
-		elektroenergetskeSaglasnosti.navigirajVerifikujElektroenergetskeSaglasnosti();
-		elektroenergetskeSaglasnosti.dodajOdaberiTipEES("Niski napon", "20 - Domaćinstva", "30 - Ostala potrošnja na niskom naponu");
-		elektroenergetskeSaglasnosti.popuniZajednickaPoljaEES(brojProtokola23);
-		elektroenergetskeSaglasnosti.dodajElektronergetskuSaglasnostNN(2030);
-		elektroenergetskeSaglasnosti.verifikujPoruku("Uspješno završeno.");
-		elektroenergetskeSaglasnosti.pretraziStavku(homePage.filterKolona2WE, brojProtokola23);
-		elektroenergetskeSaglasnosti.verifikacijaStranice("Mjerna mjesta", "Elektroenergetske Saglasnosti", "Elektroenergetske saglasnosti", 1, elektroenergetskeSaglasnosti.columns, elektroenergetskeSaglasnosti.buttons);
-		elektroenergetskeSaglasnosti.verifikujStavku(brojProtokola23Tabela, homePage.podatak2Tabela2WE);
-	}
-
-	
-	@Test (retryAnalyzer = RetryAnalyzer.class, dependsOnMethods = { "px_dist_017_1_dodavanje_elektroenergetske_saglasnosti_niski_napon_10_test" })
-	public void px_dist_017_2_brisanje_elektroenergetske_saglasnosti_niski_napon_10_test() throws Exception {
+	@Test (retryAnalyzer = RetryAnalyzer.class, dependsOnMethods = { "px_dist_017_1_dodavanje_elektroenergetske_saglasnosti_niski_napon_10_test1" })
+	public void px_dist_017_1_brisanje_elektroenergetske_saglasnosti_niski_napon_10_test2() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
@@ -118,8 +65,26 @@ public class PX_DIST_017_Elektroenergetske_Saglasnosti_NN_CRUD_Test extends Base
 		elektroenergetskeSaglasnosti.verifikujPraznuTabelu();
 	}
 	
-	@Test (retryAnalyzer = RetryAnalyzer.class, dependsOnMethods = { "px_dist_017_1_dodavanje_elektroenergetske_saglasnosti_niski_napon_20_test" })
-	public void px_dist_017_2_brisanje_elektroenergetske_saglasnosti_niski_napon_20_test() throws Exception {
+	@Test (description = "Kreiranje EES za niski napon za kategoriju 20 - Domaćinstva; Direktna brojila", retryAnalyzer = RetryAnalyzer.class)
+	public void px_dist_017_2_dodavanje_elektroenergetske_saglasnosti_niski_napon_20_test1() throws Exception {
+		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
+		logIn.verifikujLogIn();
+		logIn.logIn();
+		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
+		homePage.verifikujPocetnuStranicu();
+		ElektroenergetskeSaglasnosti elektroenergetskeSaglasnosti = new ElektroenergetskeSaglasnosti(driver);
+		elektroenergetskeSaglasnosti.navigirajVerifikujElektroenergetskeSaglasnosti();
+		elektroenergetskeSaglasnosti.dodajOdaberiTipEES("Niski napon", "20 - Domaćinstva", null);
+		elektroenergetskeSaglasnosti.popuniZajednickaPoljaEES(brojProtokola2);
+		elektroenergetskeSaglasnosti.dodajElektronergetskuSaglasnostNN(20);
+		elektroenergetskeSaglasnosti.verifikujPoruku("Uspješno završeno.");
+		elektroenergetskeSaglasnosti.pretraziStavku(homePage.filterKolona2WE, brojProtokola2);
+		elektroenergetskeSaglasnosti.verifikacijaStranice("Mjerna mjesta", "Elektroenergetske Saglasnosti", "Elektroenergetske saglasnosti", 1, elektroenergetskeSaglasnosti.columns, elektroenergetskeSaglasnosti.buttons);
+		elektroenergetskeSaglasnosti.verifikujStavku(brojProtokola2Tabela, homePage.podatak2Tabela2WE);
+	}
+	
+	@Test (retryAnalyzer = RetryAnalyzer.class, dependsOnMethods = { "px_dist_017_2_dodavanje_elektroenergetske_saglasnosti_niski_napon_20_test1" })
+	public void px_dist_017_2_brisanje_elektroenergetske_saglasnosti_niski_napon_20_test2() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
@@ -135,9 +100,27 @@ public class PX_DIST_017_Elektroenergetske_Saglasnosti_NN_CRUD_Test extends Base
 		elektroenergetskeSaglasnosti.pretraziStavku(homePage.filterKolona2WE, brojProtokola2);
 		elektroenergetskeSaglasnosti.verifikujPraznuTabelu();
 	}
-
-	@Test (retryAnalyzer = RetryAnalyzer.class, dependsOnMethods = { "px_dist_017_1_dodavanje_elektroenergetske_saglasnosti_niski_napon_30_test" })
-	public void px_dist_017_2_brisanje_elektroenergetske_saglasnosti_niski_napon_30_test() throws Exception {
+	
+	@Test (description = "Kreiranje EES za niski napon za kategoriju 30 - Ostala potrošnja na niskom naponu; Direktna mjerna garnitura", retryAnalyzer = RetryAnalyzer.class)
+	public void px_dist_017_3_dodavanje_elektroenergetske_saglasnosti_niski_napon_30_test1() throws Exception {
+		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
+		logIn.verifikujLogIn();
+		logIn.logIn();
+		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
+		homePage.verifikujPocetnuStranicu();
+		ElektroenergetskeSaglasnosti elektroenergetskeSaglasnosti = new ElektroenergetskeSaglasnosti(driver);
+		elektroenergetskeSaglasnosti.navigirajVerifikujElektroenergetskeSaglasnosti();
+		elektroenergetskeSaglasnosti.dodajOdaberiTipEES("Niski napon", "30 - Ostala potrošnja na niskom naponu", null);
+		elektroenergetskeSaglasnosti.popuniZajednickaPoljaEES(brojProtokola3);
+		elektroenergetskeSaglasnosti.dodajElektronergetskuSaglasnostNN(30);
+		elektroenergetskeSaglasnosti.verifikujPoruku("Uspješno završeno.");
+		elektroenergetskeSaglasnosti.pretraziStavku(homePage.filterKolona2WE, brojProtokola3);
+		elektroenergetskeSaglasnosti.verifikacijaStranice("Mjerna mjesta", "Elektroenergetske Saglasnosti", "Elektroenergetske saglasnosti", 1, elektroenergetskeSaglasnosti.columns, elektroenergetskeSaglasnosti.buttons);
+		elektroenergetskeSaglasnosti.verifikujStavku(brojProtokola3Tabela, homePage.podatak2Tabela2WE);
+	}
+	
+	@Test (retryAnalyzer = RetryAnalyzer.class, dependsOnMethods = { "px_dist_017_3_dodavanje_elektroenergetske_saglasnosti_niski_napon_30_test1" })
+	public void px_dist_017_3_brisanje_elektroenergetske_saglasnosti_niski_napon_30_test2() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
@@ -154,8 +137,26 @@ public class PX_DIST_017_Elektroenergetske_Saglasnosti_NN_CRUD_Test extends Base
 		elektroenergetskeSaglasnosti.verifikujPraznuTabelu();
 	}
 	
-	@Test (retryAnalyzer = RetryAnalyzer.class, dependsOnMethods = { "px_dist_017_1_dodavanje_elektroenergetske_saglasnosti_niski_napon_20_30_test" })
-	public void px_dist_017_2_brisanje_elektroenergetske_saglasnosti_niski_napon_20_30_test() throws Exception {
+	@Test (description = "Kreiranje EES za niski napon za kategorije 20 - Domaćinstva i 30 - Ostala potrošnja na niskom naponu; Direktna mjerna garnitura", retryAnalyzer = RetryAnalyzer.class)
+	public void px_dist_017_4_dodavanje_elektroenergetske_saglasnosti_niski_napon_20_30_test1() throws Exception {
+		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
+		logIn.verifikujLogIn();
+		logIn.logIn();
+		PocetnaStranicaPXD homePage = new PocetnaStranicaPXD(driver);
+		homePage.verifikujPocetnuStranicu();
+		ElektroenergetskeSaglasnosti elektroenergetskeSaglasnosti = new ElektroenergetskeSaglasnosti(driver);
+		elektroenergetskeSaglasnosti.navigirajVerifikujElektroenergetskeSaglasnosti();
+		elektroenergetskeSaglasnosti.dodajOdaberiTipEES("Niski napon", "20 - Domaćinstva", "30 - Ostala potrošnja na niskom naponu");
+		elektroenergetskeSaglasnosti.popuniZajednickaPoljaEES(brojProtokola23);
+		elektroenergetskeSaglasnosti.dodajElektronergetskuSaglasnostNN(2030);
+		elektroenergetskeSaglasnosti.verifikujPoruku("Uspješno završeno.");
+		elektroenergetskeSaglasnosti.pretraziStavku(homePage.filterKolona2WE, brojProtokola23);
+		elektroenergetskeSaglasnosti.verifikacijaStranice("Mjerna mjesta", "Elektroenergetske Saglasnosti", "Elektroenergetske saglasnosti", 1, elektroenergetskeSaglasnosti.columns, elektroenergetskeSaglasnosti.buttons);
+		elektroenergetskeSaglasnosti.verifikujStavku(brojProtokola23Tabela, homePage.podatak2Tabela2WE);
+	}
+
+	@Test (retryAnalyzer = RetryAnalyzer.class, dependsOnMethods = { "px_dist_017_4_dodavanje_elektroenergetske_saglasnosti_niski_napon_20_30_test1" })
+	public void px_dist_017_4_brisanje_elektroenergetske_saglasnosti_niski_napon_20_30_test2() throws Exception {
 		LogIn logIn = new LogIn(driver, PLATFORMX_DISTRIBUTION_PROPERTIES);
 		logIn.verifikujLogIn();
 		logIn.logIn();
