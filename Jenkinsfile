@@ -3,7 +3,7 @@ pipeline {
 
     tools {
         jdk 'Temurin-17'        // Name defined in Global Tool Configuration
-        maven 'Maven_3.9'
+        maven 'Apache Maven 3.9.9'
     }
 
     stages {
