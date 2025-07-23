@@ -1,9 +1,0 @@
-<suite name="SCP Tests">
-	<test name="SCP Tests">
-	<!--Duration of suite execution: ~25 minutes-->
-		<packages>
-			<package
-				name="scp.tests" />															
-		</packages>
-	</test>
-</suite>

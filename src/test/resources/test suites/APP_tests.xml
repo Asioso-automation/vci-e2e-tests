@@ -1,0 +1,9 @@
+<suite name="APP Tests">
+	<test name="APP Tests">
+	<!--Duration of suite execution: ~25 minutes-->
+		<packages>
+			<package
+				name="com.platformX.distribution.tests" />															
+		</packages>
+	</test>
+</suite>

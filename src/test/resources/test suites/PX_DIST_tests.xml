@@ -1,9 +1,0 @@
-<suite name="PXD Tests">
-	<test name="PXD Tests">
-	<!--Duration of suite execution: ~25 minutes-->
-		<packages>
-			<package
-				name="com.platformX.distribution.tests" />															
-		</packages>
-	</test>
-</suite>
