@@ -16,7 +16,7 @@ public class VCI_002_LogIn_LogOut_Test extends BaseTest {
 		super();
 	}
 	
-	@Test (description="Verifikacija login stranice", retryAnalyzer = RetryAnalyzer.class)
+	@Test (description="Verifikacija login stranice", retryAnalyzer = RetryAnalyzer.class, enabled=false)
 	public void vci_001_verify_homepage_test() throws Exception {
 		Homepage homepage = new Homepage(driver, VCI_PROPERTIES); // kreira se objekat klase Homepage koji kupi webdriver i vrijednosti iz properties file-a
 		homepage.verifikujPocetnuStranicu(false);

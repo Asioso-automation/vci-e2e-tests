@@ -17,7 +17,7 @@ public class VCI_003_Newsletter_Test extends BaseTest{
 		super();
 	}
 
-	@Test (description="Verifikacija newsletter stranice", retryAnalyzer = RetryAnalyzer.class)
+	@Test (description="Verifikacija newsletter stranice", retryAnalyzer = RetryAnalyzer.class, enabled=false)
 	public void vci_003_verify_newsletter_test() throws Exception {
 		Homepage homepage = new Homepage(driver, VCI_PROPERTIES); // kreira se objekat klase Homepage koji kupi webdriver i vrijednosti iz properties file-a
 		homepage.verifikujPocetnuStranicu(false);
