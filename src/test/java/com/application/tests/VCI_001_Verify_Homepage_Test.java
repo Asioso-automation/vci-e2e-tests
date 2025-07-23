@@ -4,9 +4,14 @@ import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.io.IOException;
+
 import com.app.base.BaseTest;
 
 public class VCI_001_Verify_Homepage_Test extends BaseTest {
+	public VCI_001_Verify_Homepage_Test() throws IOException {
+        super();
+    }
 
     @Test
     public void verifyHomePageTitle() {
